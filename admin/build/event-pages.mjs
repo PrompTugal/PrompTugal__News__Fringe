@@ -59,6 +59,7 @@ const CSS = `.star{background:linear-gradient(135deg,var(--on-bg),var(--card) 70
 .star .go{display:block;text-align:center;background:var(--accent);color:var(--bg);font-weight:600;text-decoration:none;padding:12px;border-radius:8px;font-size:1.1rem;box-shadow:0 1px 0 rgba(0,0,0,.2)}.star .go:hover,.star .go:focus-visible{filter:brightness(1.1)}
 .facts{display:grid;grid-template-columns:max-content 1fr;gap:6px 12px;margin:0}.facts dt{color:var(--muted)}.facts dd{margin:0;overflow-wrap:anywhere;min-width:0}
 @media (max-width:420px){.facts{grid-template-columns:1fr}.facts dt{margin-top:6px}}
+.share{display:inline-flex;align-items:center;gap:6px;margin:.2em 0 .8em;font:inherit;font-weight:600;padding:10px 16px;min-height:44px;border-radius:8px;border:2px solid var(--accent);background:transparent;color:var(--accent);cursor:pointer}.share:hover,.share:focus-visible{background:var(--accent);color:var(--bg)}.share-note{margin-left:8px}
 blockquote{margin:.4em 0;padding:.3em .8em;border-left:3px solid var(--line);color:var(--fg)}.yours{border-left:4px solid var(--warn)}`;
 
 // page(title, body, desc, head) and linkify come from build.mjs, so the layout, independence line and footer are the site's own.
@@ -93,6 +94,11 @@ export function eventPages(events, { page, esc, linkify, SITE, card, cardList, o
 <a class="go" href="${esc(e.url)}">Register or see details on their page &rarr;</a>
 <div class="muted" style="margin-top:8px">Opens ${esc(new URL(e.url).hostname.replace(/^www\./, ''))}: their page is the one that counts.</div></div>
 <h1>${esc(e.name)}</h1>
+<p class="sharerow" hidden><button type="button" class="share" id="share" data-url="${esc(url)}" data-title="${esc(e.name)}">Share this event</button><span class="muted share-note" id="share-note" role="status" aria-live="polite"></span></p>
+<script>(function(){var b=document.getElementById('share'),n=document.getElementById('share-note');if(!b)return;b.parentNode.hidden=false;b.onclick=function(){var u=b.dataset.url,t=b.dataset.title;function done(m){n.textContent=m;setTimeout(function(){n.textContent=''},3000)}
+if(navigator.share){navigator.share({title:t,text:t+' · Lisbon Fringe',url:u}).catch(function(){})}
+else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(function(){done('Link copied')},function(){done('Copy this address: '+u)})}
+else{done('Copy this address: '+u)}}})();</script>
 <dl class="facts">${facts}</dl>
 <p class="muted">Source: <a href="${esc(e.url)}">${esc(e.url)}</a>, read ${esc(String(e.read_at).slice(0, 16).replace('T', ' '))} UTC.</p>
 ${rel.length ? `<h2>Related events</h2>` + cardList(rel.map(({ o, why }) => card(o, { esc }, { why, date: day(o.start || o.date) }))) : ''}
