@@ -9,6 +9,7 @@ import { trafficBody, trafficCss } from './traffic.mjs';   // work/21, observabi
 import { meBody, meCss } from './me.mjs';   // work/26
 import { collectSwarm, swarmBody, swarmCss, swarmScript } from './swarm.mjs';   // work/25, dev.1.fringe@PrompTugal.dinis
 import { eventPages, eventPath, hasPage } from './event-pages.mjs';
+import { bigStrip, denseList, split, sizeOf, TIER_CSS } from './tiers.mjs';   // D18, design.3.fringe@PrompTugal.dinis
 import { programmeBody } from './programme.mjs';   // D3 follow-up, design.3.fringe@PrompTugal.dinis
 import { howBody } from './how.mjs';   // D11, design.3.fringe@PrompTugal.dinis
 import { eventCard as card, cardList, sortDay, CARD_CSS } from './cards.mjs';   // D3, design.3.fringe@PrompTugal.dinis   // work/22, dev.lead.fringe@PrompTugal.dinis
@@ -84,7 +85,7 @@ code{background:var(--paper-2);padding:1px var(--s1);border-radius:var(--radius)
 .tag.open{border-color:var(--warn)}.tag.claimed{border-color:var(--brand)}.tag.done{border-color:var(--ok)}
 .ptbar{background:var(--ink);font-size:var(--fs-meta);text-align:center}.ptbar a{display:block;padding:6px var(--gutter);color:var(--paper);text-decoration:none;font-weight:600;letter-spacing:.02em}.ptbar a:hover{text-decoration:underline;color:var(--paper)}
 .hero{padding:var(--s2) 0 var(--s1)}.hero h1{margin:.2em 0 .1em}.hero .tag-line{margin:0 0 .6em;color:var(--ink-3)}.hero .count{font-weight:600;margin:0 0 .6em}.hero .card{margin:6px 0;padding:var(--s2) var(--s3)}.hero .when{font-variant-numeric:tabular-nums;color:var(--brand);font-weight:600;font-size:var(--fs-meta)}.hero .muted{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}.btn{display:block;text-align:center;background:var(--brand);color:var(--paper);font-weight:600;text-decoration:none;padding:var(--s3) var(--s4);border-radius:var(--radius);margin:var(--s3) 0;min-height:44px}.btn:hover{color:var(--paper)}
-footer{max-width:var(--page);margin:var(--s5) auto;padding:var(--gutter);border-top:1px solid var(--rule-2)}${CARD_CSS}
+footer{max-width:var(--page);margin:var(--s5) auto;padding:var(--gutter);border-top:1px solid var(--rule-2)}${CARD_CSS}${TIER_CSS}
 .jumps{position:sticky;top:0;z-index:20;display:flex;gap:6px;padding:8px 0;margin:8px 0;background:var(--bg);overflow-x:auto}
 .jumps a{flex:0 0 auto;display:inline-flex;align-items:center;min-height:44px;padding:0 12px;font-size:.95rem;border-radius:99px;border:2px solid var(--accent);color:var(--accent);font-weight:700;text-decoration:none;background:var(--bg)}
 .jumps a:hover,.jumps a:focus-visible{background:var(--accent);color:var(--bg)}
@@ -125,19 +126,21 @@ function eventsHtml() {
   // D13 (design.2): today in jump-able parts. In person by time of day (past ones folded), online in its own part, so each event appears once.
   const t0 = Date.parse(BUILT), isOnl = (e) => /^online\b/i.test(e.place || '') || e.status === 'online';
   const over = (e) => { const sp = evSpan(e); return sp && sp.e <= t0; };
-  const todayAll = sortDay(events.filter((e) => e.date === today));
+  const bigs = split(events.filter((e) => e.date >= today)).majors;   // D18: the strip; the lists below hold the community events
+  const small = (l) => l.filter((e) => sizeOf(e) !== 'major');
+  const todayAll = small(sortDay(events.filter((e) => e.date === today)));
   const online = todayAll.filter(isOnl), inPerson = todayAll.filter((e) => !isOnl(e));
   const earlier = inPerson.filter(over), rest = inPerson.filter((e) => !over(e));
   const evening = rest.filter((e) => String(e.start).slice(11, 16) >= '18:00'), daytime = rest.filter((e) => String(e.start).slice(11, 16) < '18:00');
-  const sec = (id, title, list, note = '') => `<h3 id="${id}" class="jump">${title} <span class="muted">(${list.length})</span></h3>${note}` + (list.length ? cardList(list.map(eventCard)) : '<p class="muted">Nothing checked in this part.</p>');
-  const tom = sortDay(events.filter((e) => e.date === tomorrow));
+  const sec = (id, title, list, note = '') => `<h3 id="${id}" class="jump">${title} <span class="muted">(${list.length})</span></h3>${note}` + (list.length ? denseList(list, { esc }) : '<p class="muted">Nothing checked in this part.</p>');
+  const tom = small(sortDay(events.filter((e) => e.date === tomorrow)));
   const later = events.filter((e) => e.date > tomorrow).length;
-  return `<h2>Today, ${today}</h2>`
+  return bigStrip(bigs, { esc }, 'Big events this week') + `<h2>Small events today, ${today}</h2>`
     + (daytime.length ? sec('later-today', 'Later today, before 18:00', daytime) : '')
     + sec('tonight', 'Tonight, 18:00 on', evening)
     + sec('online', 'Online today, any time', online)
-    + (earlier.length ? `<details id="earlier" class="earlier"><summary>Earlier today (${earlier.length} already over)</summary>${cardList(earlier.map(eventCard))}</details>` : '')
-    + `<h2 id="tomorrow">Tomorrow, ${tomorrow}</h2>` + (tom.length ? cardList(tom.map(eventCard)) : '<p class="muted">Nothing checked yet for this day.</p>')
+    + (earlier.length ? `<details id="earlier" class="earlier"><summary>Earlier today (${earlier.length} already over)</summary>${denseList(earlier, { esc })}</details>` : '')
+    + `<h2 id="tomorrow">Tomorrow, ${tomorrow}</h2>` + (tom.length ? denseList(tom, { esc }) : '<p class="muted">Nothing checked yet for this day.</p>')
     + (later ? `<p class="muted">${later} more later this week: <a href="/programme/">browse the whole programme by day, place and kind</a>.</p>` : '');
 }
 

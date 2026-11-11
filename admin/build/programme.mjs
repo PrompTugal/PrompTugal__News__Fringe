@@ -1,6 +1,7 @@
 // /programme/: the whole week as a festival programme (D3 follow-up, brief 5; design.3.fringe@PrompTugal.dinis).
 // Browse by day, area and kind. Without JavaScript every day and every card is shown; with it, chips filter.
-import { eventCard, sortDay, placeShort } from './cards.mjs';
+import { placeShort } from './cards.mjs';
+import { bigCard, denseRow, split, sizeOf } from './tiers.mjs';
 import { area } from './event-pages.mjs';
 
 const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -24,7 +25,7 @@ export const programmeCss = `
 .pg-chip{flex:none;min-height:44px;display:inline-flex;align-items:center;padding:0 14px;border-radius:99px;border:1.5px solid var(--hair);background:var(--panel);color:var(--ink,var(--fg));font:inherit;font-size:.92rem;cursor:pointer;text-decoration:none}
 .pg-chip[aria-pressed=true]{background:var(--brand);color:var(--paper,var(--bg));border-color:var(--brand);font-weight:700}
 .pg-count{font-size:.85rem;color:var(--ink-3);margin:4px 0 0}
-.pg-day{scroll-margin-top:170px}.pg-day[hidden],.ev[hidden]{display:none}
+.pg-day{scroll-margin-top:170px}.pg-day[hidden]{display:none}.pg-day .bigs-row{margin-bottom:4px}
 .pg-empty{padding:16px;border:2px dashed var(--hair);border-radius:10px}`;
 
 export function programmeBody({ events, esc }) {
@@ -33,11 +34,12 @@ export function programmeBody({ events, esc }) {
     .filter(([w, n]) => w !== 'Online' && w !== 'Area not stated' && n >= 2).sort((a, b) => b[1] - a[1]).map(([w]) => w);
   const kinds = [...new Set(events.map(kindOf))].filter((k) => k !== 'other' || true);
   const chip = (group, val, label, pressed = false) => `<button type="button" class="pg-chip" data-g="${group}" data-v="${esc(val)}" aria-pressed="${pressed}">${esc(label)}</button>`;
-  const attrs = (e) => ` data-day="${esc(e.date)}" data-where="${esc(slug(where(e)))}" data-kind="${esc(kindOf(e))}" data-live="${e.status === 'cancelled' ? 0 : 1}"`;
+  const attrs = (e) => ` data-day="${esc(e.date)}" data-where="${esc(slug(where(e)))}" data-kind="${esc(kindOf(e))}" data-live="${e.status === 'cancelled' ? 0 : 1}" data-size="${sizeOf(e)}"`;
   const sections = days.map((d) => {
-    const list = sortDay(events.filter((e) => e.date === d));
-    return `<section class="pg-day" id="d-${d}" data-day="${d}"><h2>${esc(dayName(d))} <span class="muted">(<span class="pg-n">${list.length}</span>)</span></h2>
-<ul class="evs">${list.map((e) => eventCard(e, { esc }, { attrs: attrs(e) })).join('')}</ul></section>`;
+    const { majors, community } = split(events.filter((e) => e.date === d));
+    return `<section class="pg-day" id="d-${d}" data-day="${d}"><h2>${esc(dayName(d))} <span class="muted">(<span class="pg-n">${majors.length + community.length}</span>)</span></h2>
+${majors.length ? `<ul class="bigs-row">${majors.map((e) => bigCard(e, { esc }, attrs(e))).join('')}</ul>` : ''}
+${community.length ? `<ul class="dense">${community.map((e) => denseRow(e, { esc }, attrs(e))).join('')}</ul>` : ''}</section>`;
   }).join('');
   const whereChips = [chip('where', '', 'Anywhere', true), chip('where', 'online', 'Online'), chip('where', 'in-person', 'In person'), ...areas.map((a) => chip('where', slug(a), a))].join('');
   return `<style>${programmeCss}</style>
@@ -46,13 +48,14 @@ export function programmeBody({ events, esc }) {
 <div class="pg-bar" role="group" aria-label="Filter the programme">
 <div class="pg-row"><b>Day</b>${chip('day', '', 'All days', true)}${days.map((d) => chip('day', d, dayName(d).replace(/ \d+ \w+$/, '').slice(0, 3) + ' ' + dayName(d).split(' ')[1])).join('')}</div>
 <div class="pg-row"><b>Where</b>${whereChips}</div>
+<div class="pg-row"><b>Size</b>${chip('size', '', 'All sizes', true)}${chip('size', 'major', 'Big events')}${chip('size', 'community', 'Small and community')}</div>
 <div class="pg-row"><b>Kind</b>${chip('kind', '', 'Any kind', true)}${kinds.map((k) => chip('kind', k, KIND[k])).join('')}<button type="button" class="pg-chip" id="pg-live" aria-pressed="false">Hide cancelled</button></div>
 <p class="pg-count" id="pg-count" aria-live="polite">${events.length} events</p></div>
 ${sections}
 <p class="pg-empty" id="pg-empty" hidden>Nothing matches those filters. Try "All days" or "Anywhere".</p>
-<script>(function(){try{var f={day:'',where:'',kind:''},live=false,cards=[].slice.call(document.querySelectorAll('.ev')),secs=[].slice.call(document.querySelectorAll('.pg-day'));
-function run(){var n=0;cards.forEach(function(c){var d=c.dataset,w=f.where,ok=(!f.day||d.day===f.day)&&(!f.kind||d.kind===f.kind)&&(!live||d.live==='1')&&(!w||(w==='in-person'?d.where!=='online':d.where===w));c.hidden=!ok;if(ok)n++});
-secs.forEach(function(s){var v=s.querySelectorAll('.ev:not([hidden])').length;s.hidden=!v;s.querySelector('.pg-n').textContent=v});
+<script>(function(){try{var f={day:'',where:'',kind:'',size:''},live=false,cards=[].slice.call(document.querySelectorAll('.big,.row')),secs=[].slice.call(document.querySelectorAll('.pg-day'));
+function run(){var n=0;cards.forEach(function(c){var d=c.dataset,w=f.where,ok=(!f.day||d.day===f.day)&&(!f.kind||d.kind===f.kind)&&(!f.size||d.size===f.size)&&(!live||d.live==='1')&&(!w||(w==='in-person'?d.where!=='online':d.where===w));c.hidden=!ok;if(ok)n++});
+secs.forEach(function(s){var v=s.querySelectorAll('.big:not([hidden]),.row:not([hidden])').length;s.hidden=!v;s.querySelector('.pg-n').textContent=v});
 document.getElementById('pg-count').textContent=n+' of '+cards.length+' events';document.getElementById('pg-empty').hidden=n>0}
 document.querySelectorAll('.pg-chip[data-g]').forEach(function(b){b.addEventListener('click',function(){f[b.dataset.g]=b.dataset.v;document.querySelectorAll('.pg-chip[data-g="'+b.dataset.g+'"]').forEach(function(o){o.setAttribute('aria-pressed',o===b)});run()})});
 document.getElementById('pg-live').addEventListener('click',function(e){live=!live;e.target.setAttribute('aria-pressed',live);run()});

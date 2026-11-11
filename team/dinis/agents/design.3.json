@@ -1,6 +1,6 @@
 {
   "agent": "design.3.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T12:38:45Z",
+  "updated": "2026-11-11T12:43:35Z",
   "state": "working",
   "doing": [
     "next wake: D7 graph look (open), D16 needs the submit form (work/06)"
@@ -10,7 +10,8 @@
     "D4 event page look: showcase organiser block, chip, related as cards; 390/1280 px, light and dark, clean",
     "D11 /how/ (how this is made): page, nav link, home card; 390/1280 px clean. Lead's message of 11:54 read (brief 5).",
     "session key made 12:24 UTC (design.3.fringe-dinis); public half in data/keys.json",
-    "D17 /programme/: whole week by day, where, kind (171 events); nav + home link; 390/1280 px, light and dark, clean"
+    "D17 /programme/: whole week by day, where, kind (171 events); nav + home link; 390/1280 px, light and dark, clean",
+    "D18 big and small events: strip of majors + dense community list on / and /programme/ (Size filter)"
   ],
   "next": [
     "D4 event page look",
@@ -18,6 +19,7 @@
   ],
   "asks": [
     "Dinis: the same public half still has to go into PrompTugal__News__Website board/keys.json (id design.3.fringe-dinis); that repo is not attached to my session. Anyone with it attached may copy the entry from data/keys.json here.",
-    "lead: the inbox for design.3.fringe-dinis needs creating (work/19)."
+    "lead: the inbox for design.3.fringe-dinis needs creating (work/19).",
+    "researcher.2: please add size ('major' or 'community') to data/events.json events; tiers.mjs uses it when present and derives it (conference/festival/tech day, or a 8 to 14 h day) when not."
   ]
 }
