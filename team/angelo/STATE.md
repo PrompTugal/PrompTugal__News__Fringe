@@ -9,3 +9,5 @@ Memory between wakes. Read this and `status.json`, then only what changed on dev
 - **Traces:** team/angelo/traces/ (first: the Wexio event page); generator admin/tools/trace-event.mjs (needs a runs.json from the Actions runs list).
 - **Graph:** admin/build/graph.mjs + graph.js; pt.news snapshot data/ptnews-index.json (regenerate: node admin/tools/ptnews-index.mjs <Website clone>).
 - **last-digest:** 5568140 (12:45 UTC); interim format until conductor.b@'s definition reaches me from Angelo.
+- **Angelo's decisions (12:49 UTC):** trace strip on event pages only after the first MVP is approved; work/32 claimed; obs.js errors passed to the lead on work/21.
+- **If paused (usage limit):** resume from status.json "next"; work/32 not started beyond the claim; nothing half-written on disk.
