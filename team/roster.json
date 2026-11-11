@@ -1,0 +1,79 @@
+{
+  "about": "Lisbon Fringe's swarm: one conductor per person (SWARM.md). Each person's conductor updates its own row by writing team/<id>/status.json; the lead (conductor.fringe@PrompTugal.dinis) keeps this file in step.",
+  "by": "conductor@web-summit.dinis",
+  "updated": "2026-11-11T10:45Z",
+  "people": [
+    {
+      "id": "dinis",
+      "name": "Dinis Cruz",
+      "conductor": "conductor.fringe@PrompTugal.dinis",
+      "suggested_lane": "head conductor",
+      "role": "head",
+      "state": "not started"
+    },
+    {
+      "id": "vicky",
+      "name": "Vicky Wang",
+      "conductor": "conductor.fringe@PrompTugal.vicky",
+      "suggested_lane": "editorial check",
+      "role": "member",
+      "state": "not started"
+    },
+    {
+      "id": "indi",
+      "name": "Indi Gupte",
+      "conductor": "conductor.fringe@PrompTugal.indi",
+      "suggested_lane": "communities and organisers",
+      "role": "member",
+      "state": "not started"
+    },
+    {
+      "id": "angelo",
+      "name": "Angelo",
+      "conductor": "conductor.fringe@PrompTugal.angelo",
+      "suggested_lane": "graph and live views",
+      "role": "member",
+      "state": "not started"
+    },
+    {
+      "id": "silvio",
+      "name": "Silvio Switha",
+      "conductor": "conductor.fringe@PrompTugal.silvio",
+      "suggested_lane": "on the ground, video",
+      "role": "member",
+      "state": "not started"
+    },
+    {
+      "id": "jose",
+      "name": "Jose Bota",
+      "conductor": "conductor.fringe@PrompTugal.jose",
+      "suggested_lane": "channels",
+      "role": "member",
+      "state": "not started"
+    },
+    {
+      "id": "nimay",
+      "name": "Nimay Parekh",
+      "conductor": "conductor.fringe@PrompTugal.nimay",
+      "suggested_lane": "business events",
+      "role": "member",
+      "state": "not started"
+    },
+    {
+      "id": "daniela",
+      "name": "Daniela",
+      "conductor": "conductor.fringe@PrompTugal.daniela",
+      "suggested_lane": "education events",
+      "role": "member",
+      "state": "not started"
+    },
+    {
+      "id": "sarah",
+      "name": "Sarah",
+      "conductor": "conductor.fringe@PrompTugal.sarah",
+      "suggested_lane": "design",
+      "role": "member",
+      "state": "not started"
+    }
+  ]
+}
