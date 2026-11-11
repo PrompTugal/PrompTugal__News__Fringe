@@ -20,7 +20,11 @@ export function area(e) {
   const m = String(e.place || '').match(/\(([^()]+)\)\s*$/);
   return m ? m[1].split(/[\/,]/)[0].trim().toLowerCase() : null;
 }
-const orgKey = (e) => String(e.organiser || '').replace(/\s*\(.*?\)\s*/g, ' ').trim().toLowerCase();
+let ORGS = null;   // work/23: the lead organisation's id, from organisers.mjs, when the build passes it
+const orgKey = (e) => (ORGS?.of.get(e)?.[0]?.id) || String(e.organiser || '').replace(/\s*\(.*?\)\s*/g, ' ').trim().toLowerCase();
+
+// work/23: each organisation named, linked to /organisers/ (organisations only)
+const orgLinks = (e, esc) => { const l = ORGS?.of.get(e) || []; return l.length ? `<div class="muted" style="margin:-.3em 0 .6em">${l.map((o) => `<a href="/organisers/#${esc(encodeURIComponent(o.id))}">${esc(o.name)}</a>`).join(' · ')}: all their events</div>` : ''; };
 
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -84,7 +88,7 @@ export function eventPages(events, { page, esc, linkify, SITE, card, cardList })
     ].filter(Boolean).map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('');
     const rel = related(e, list);
     const body = `<style>${CSS}</style>
-<div class="star"><div class="by">Organised by</div><div class="org">${esc(org)}</div>
+<div class="star"><div class="by">Organised by</div><div class="org">${esc(org)}</div>${orgLinks(e, esc)}
 <a class="go" href="${esc(e.url)}">Register or see details on their page &rarr;</a>
 <div class="muted" style="margin-top:8px">Opens ${esc(new URL(e.url).hostname.replace(/^www\./, ''))}: their page is the one that counts.</div></div>
 <h1>${esc(e.name)}</h1>
