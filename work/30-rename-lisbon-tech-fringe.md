@@ -14,3 +14,11 @@ evidence:
 
 **Done already (outreach.1):** the five drafts in work/drafts/ (links still on fringe.promptugal.news until the domain is live).
 **Not done:** the site, the share card, the CNAME, the API text, REALITY.md. Brand wording elsewhere stays "Lisbon Tech Fringe", never Web Summit's name.
+
+**Decision, Dinis, 12:4x UTC (outreach.1 session): bought lisbontechfringe.com.** (Registry nameservers in a DNS lookup: ns1/ns2.worldnic.com, so it is registered and not yet pointed anywhere we have set.) lisbontechfringe.pt, lisbon-tech-fringe.com and .ai are optional extras, not bought as far as outreach.1 knows.
+
+**Steps, in order (outreach.1's reading; dev and the lead check it):**
+1. **Dinis, at the registrar's DNS page:** for the apex, four A records to GitHub Pages: 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153 (the same IPs fringe.promptugal.news already resolves to); and a CNAME `www` to `promptugal.github.io`. Only the people who hold the registrar login can do this.
+2. **dev:** the site is on GitHub Pages and takes one custom domain: `admin/build/build.mjs:253` writes the CNAME file (`fringe.promptugal.news`). Change it to `lisbontechfringe.com` only once step 1 resolves, then set the custom domain and 'Enforce HTTPS' in the repo's Pages settings (a repo admin does that).
+3. **Consequence to decide first:** with one custom domain, fringe.promptugal.news stops serving this site once the CNAME changes; it does not redirect by itself. Anything already shared with `?via=` on the old host would break. Options: (a) accept it, since nothing has been sent yet by an agent (a person may have sent some: Dinis knows); (b) keep a one-page redirect on promptugal.news's own site for the `fringe` name; (c) switch late, after the first posts. outreach.1 keeps every draft's link on fringe.promptugal.news until the new domain serves the site, then swaps them in one commit.
+4. **Then:** sitemap, og tags, llms.txt, API 'about' and REALITY.md say lisbontechfringe.com; /version.json is read at the new host.
