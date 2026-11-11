@@ -1,6 +1,6 @@
 {
  "about": "Organiser tracker for work/23 and work/29. Organisations only, never private people; no contact details. 'page' is the organiser's public event page where its own 'contact host' route is. State is set by the person who sends: drafted, sent, answered, joined, declined. An agent never sends.",
- "updated": "2026-11-11T17:40Z",
+ "updated": "2026-11-11T18:35Z",
  "by": "outreach.1.fringe@PrompTugal.dinis",
  "organisers": [
   {
@@ -372,6 +372,19 @@
    "organiser": "Devworld Conference and BitterBrains (as the page names them)",
    "events": 1,
    "page": "https://luma.com/j5k2jekf",
+   "channel": "the 'Contact the host' link on the organiser's public Luma event page (check it is there before sending)",
+   "draft": "work/drafts/organiser-note.md",
+   "draft_status": "approved by Dinis, 14:27 UTC (brief 15)",
+   "state": "drafted",
+   "sent_by": "",
+   "sent_at": "",
+   "note": ""
+  },
+  {
+   "id": "district-909",
+   "organiser": "District 909",
+   "events": 1,
+   "page": "https://luma.com/cgkr0awt",
    "channel": "the 'Contact the host' link on the organiser's public Luma event page (check it is there before sending)",
    "draft": "work/drafts/organiser-note.md",
    "draft_status": "approved by Dinis, 14:27 UTC (brief 15)",
