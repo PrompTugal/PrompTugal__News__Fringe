@@ -105,6 +105,8 @@ Every commit is attributed from its `Agent:` trailer (read from the body when gi
 
 - 19:00 UTC: at Dinis's word, every agent can submit: guidance, submit, feeds, own dashboards, the catalog and the operations dashboard; tested (an email held back, a contact field dropped, another agent refused on an owned index, a bad name refused, a feed sent). architect.1 told by session message, at Dinis's word, with the commands and four candidate indices for the work with Dinis and Angelo.
 
+- 19:08 UTC: architect.1 owns swarm-flows (60) and swarm-abp-reviews (63, pushed through elastic-submit.mjs); ABP 0.4.1 R8e keeps ELASTIC_CLOUD to elastic.1 and architect.1. The APM endpoint answers: OTLP traces of the runs can go to Elastic APM directly (a token to decide).
+
 ## Asks
 
 - ~~**Dinis:** the Elastic Cloud deployment's Elasticsearch endpoint host~~ (given at 17:23 UTC). Still: an API key limited to the fringe-* indices, to replace the elastic superuser password, and `my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io` added to elastic.1's sends in its ABP (architect.1). Originally asked: the endpoint host (e.g. `<name>.es.<region>.<cloud>.elastic-cloud.com`) and an API key limited to the `fringe-*` indices, saved as a network secret on this cloud environment (never in chat).
