@@ -1,7 +1,7 @@
 {
   "about": "Lisbon Fringe's events: the alternative, community and side events around Web Summit Lisbon, 11 to 13 November 2026 (and a few either side). Each event was re-read at its public source_url at read_at (UTC; Lisbon is on UTC in November). Each says whether Storm Charles moved it. Labels: fact (read on the organiser's page), evidence (read, but the page leaves the status open), hypothesis (not confirmed at source). 'unknown' means we do not know. Organisers are organisations; no private person is named and no contact details are given.",
   "contract": "api/v1/README.md (v1). Required: name, url, read_at, date, start, end, kind, organiser, place, join, status, storm_note, topics. Added by the researcher (v1 allows additions): id, label (fact | evidence | hypothesis), cost (as stated), storm_moved (true | false | null), check (what the page says about the storm, or why status is open), note.",
-  "updated": "2026-11-11T17:12:00Z",
+  "updated": "2026-11-11T17:23:00Z",
   "by": "researcher.2.fringe@PrompTugal.dinis",
   "independence": "Lisbon Fringe is independent of Web Summit and is not run by its organisers. For anything official see the organisers' own pages. Not a warning service: for the storm see IPMA (https://www.ipma.pt), ANEPC (https://www.prociv.gov.pt) and https://storm-charles.promptugal.news.",
   "sources": [
@@ -1660,7 +1660,7 @@
     {
       "name": "Funders & Founders Night by AltaIR Capital: the new shape of early stage",
       "url": "https://luma.com/h19cccc5",
-      "read_at": "2026-11-11T16:13:00Z",
+      "read_at": "2026-11-11T17:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:30:00Z",
       "end": "2026-11-11T22:00:00Z",
@@ -1668,18 +1668,18 @@
       "organiser": "AltaIR Capital",
       "place": "Address given to approved guests, Sintra (Sintra)",
       "join": "Luma (registration closed): https://luma.com/h19cccc5",
-      "status": "cancelled",
-      "storm_note": "The page says that due to the state of alert in Portugal the event will not take place as planned; a smaller gathering may be held that evening if conditions allow, confirmed to guests by 16:00 UTC.",
+      "status": "unknown",
+      "storm_note": "The page first said (read 11:23 UTC) that, due to the state of alert, the event would not take place as planned. At 17:23 UTC the page shows the event as scheduled, 18:30 to 22:00 UTC in Sintra, with no cancellation notice. Whether it goes ahead tonight is not confirmed.",
       "topics": [
         "venture capital",
         "founders"
       ],
       "id": "2026-11-11-funders-founders-night-altair",
-      "label": "fact",
+      "label": "evidence",
       "cost": "free",
-      "storm_moved": true,
-      "check": "The page says that due to the state of alert in Portugal the event will not take place as planned; a smaller gathering may be held that evening if conditions allow, confirmed to guests by 16:00 UTC.",
-      "note": "Re-read after 16:00 UTC.",
+      "storm_moved": false,
+      "check": "Two reads disagree over time. Ours at 11:23 UTC: title '[Cancelled: update below]' and a notice that it would not take place as planned. Ours at 17:23 UTC (single page, at a person's pace): no notice, scheduled 18:30 to 22:00 UTC in Sintra. Vicky's conductor's browser read at 15:35 UTC: on, 18:30 to 22:00 in Sintra, no notice. Our 16:13 UTC 'fact: cancelled' stamp was wrong: that pass bumped read_at without re-checking the notice. Status set to unknown until the organiser or a person confirms.",
+      "note": "Sintra is outside Lisbon.",
       "lane": "business",
       "size": "community",
       "in_lisbon": false,
