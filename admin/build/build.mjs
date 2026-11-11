@@ -9,6 +9,7 @@ import { trafficBody, trafficCss } from './traffic.mjs';   // work/21, observabi
 import { dataBody, dataCss } from './data-page.mjs';   // work/43
 import { loadDesigns, buildDesigns } from './designs.mjs';   // work/35
 import { collectActivity } from './activity.mjs';   // brief 10
+import { universeBody, universeCss, vendored as gravityVendored } from './universe.mjs';   // gravity.1.fringe@PrompTugal.silvio's page, served by dev.2
 import { modelsBody, modelsCss, modelsData } from './models.mjs';   // work/47, dev.2.fringe@PrompTugal.dinis
 import { tipBody, tipCss, tipStatus, intelBox, tipCounts } from './tip.mjs';   // work/41, dev.2.fringe@PrompTugal.dinis
 import { meBody, meCss } from './me.mjs';   // work/26
@@ -115,7 +116,7 @@ footer{max-width:var(--page);margin:var(--s5) auto;padding:var(--gutter);border-
 // D5: the one navigation. Flip `live` to true when a page ships (Now: work/16, Organisers: work/23); no JavaScript.
 const NAV = [['Today', '/', true], ['Programme', '/programme/', true], ['Now', '/now/', true], ['Map', '/graph/', true], ['Organisers', '/organisers/', true], ['Storm', '/storm/', true], ['The agentic team', '/how/', true], ['Join', '/join/', true]];
 // D31: "The agentic team" is a named section: /how/ is its front door; these live under it (a sub-row shows on every one of them)
-const TEAM = [['How it is made', '/how/'], ['Dashboard', '/dashboard/'], ['Policies', '/abp/'], ['Changes', '/changes/'], ['Designs', '/designs/'], ['Data', '/data/'], ['Guidance', '/guidance/'], ['Traffic', '/traffic/']];
+const TEAM = [['How it is made', '/how/'], ['Dashboard', '/dashboard/'], ['Policies', '/abp/'], ['Changes', '/changes/'], ['Designs', '/designs/'], ['Data', '/data/'], ['Guidance', '/guidance/'], ['Traffic', '/traffic/'], ['Universe', '/universe/']];
 const inTeam = (here) => TEAM.some(([, h]) => here === h || (h !== '/how/' && here.startsWith(h)));
 const navHtml = (here) => `<header><nav aria-label="Main"><span class="brand"><a href="/">${WORDMARK}</a></span>
 <ul class="nav">${NAV.filter((n) => n[2]).map(([label, href]) => `<li><a href="${href}"${(href === here || (href === '/how/' && inTeam(here))) ? ' aria-current="page"' : ''}>${label}</a></li>`).join('')}</ul></nav>${inTeam(here) ? `<nav class="subnav" aria-label="The agentic team"><b>The agentic team</b><ul>${TEAM.map(([label, href]) => `<li><a href="${href}"${href === here ? ' aria-current="page"' : ''}>${label}</a></li>`).join('')}</ul></nav>` : ''}<div class="tiles" aria-hidden="true"></div></header>`;
@@ -255,7 +256,7 @@ const joinPage = page('Join Lisbon Tech Fringe', `
 // --- /graph/ (work/05) ----------------------------------------------------
 const ptnews = existsSync(join(root, 'data/ptnews-index.json')) ? JSON.parse(read('data/ptnews-index.json')) : null;
 const graph = buildGraph(events, ptnews, existsSync(join(root, 'data/communities.json')) ? JSON.parse(read('data/communities.json')).communities : []);   // work/05 uses work/04's communities
-const graphPage = page('Connect the dots: Lisbon Tech Fringe', `<style>${graphCss}</style>` + graphBody(graph, esc), 'The fringe as a graph: events, communities, topics and places, with filters.', '', '/graph/');
+const graphPage = page('Connect the dots: Lisbon Tech Fringe', `<style>${graphCss}</style>` + graphBody(graph, esc) + '<p class="muted">Also drawn as <a href="/universe/">the Fringe universe</a>, with Gravity.</p>', 'The fringe as a graph: events, communities, topics and places, with filters.', '', '/graph/');
 
 // --- write ---------------------------------------------------------------
 mkdirSync(join(out, 'join'), { recursive: true });
@@ -353,6 +354,10 @@ writeFileSync(join(out, 'api', 'v1', 'activity.json'), JSON.stringify(activity, 
 // /me/ (work/26), /dashboard/ and /api/v1/swarm.json (work/25)
 for (const d of ['assets/me', 'assets/data', 'assets/tip', 'assets/vendor/pki/2026-11-06']) { mkdirSync(join(out, d), { recursive: true }); for (const f of readdirSync(join(root, d)).filter((x) => /\.js$/.test(x))) writeFileSync(join(out, d, f), read(`${d}/${f}`)); }
 mkdirSync(join(out, 'me'), { recursive: true });
+mkdirSync(join(out, 'universe'), { recursive: true });
+writeFileSync(join(out, 'universe', 'index.html'), page('The Fringe universe: Lisbon Tech Fringe', `<style>${universeCss}</style>` + universeBody(esc), 'Lisbon Tech Fringe drawn as a universe: topics, events, weather and agenda, with Gravity.', '', '/universe/'));
+writeFileSync(join(out, 'universe', 'fringe-gravity.js'), read('team/silvio/gravity/fringe-gravity.js'));
+if (gravityVendored()) { mkdirSync(join(out, 'assets', 'vendor', 'gravity'), { recursive: true }); writeFileSync(join(out, 'assets', 'vendor', 'gravity', 'gravity.js'), read('assets/vendor/gravity/gravity.js')); }
 mkdirSync(join(out, 'models'), { recursive: true });
 writeFileSync(join(out, 'models', 'index.html'), page('Model experiments: Lisbon Tech Fringe', `<style>${modelsCss}</style>` + modelsBody(esc), 'Every OpenRouter and open-weight model experiment: task, model, cost, result. Counts only.', '', '/how/'));
 writeFileSync(join(out, 'api', 'v1', 'models.json'), JSON.stringify({ site: SITE, built_at: BUILT, ...modelsData() }, null, 1) + '\n');
