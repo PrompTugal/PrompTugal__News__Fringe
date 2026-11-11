@@ -1,6 +1,6 @@
 {
   "agent": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T15:25Z",
+  "updated": "2026-11-11T15:26Z",
   "account": "riskmandate-personal (Ultra) (Dinis, brief 15)",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 12)",
   "branch": "dev",
@@ -28,7 +28,8 @@
     "14:54: Dinis approved the five relaxations and the vault primitives in this session; applied in abp/policies.json v0.2.0 with his words (relaxations_applied), recorded in briefs/; still observe mode",
     "15:15: the altitudes of execution named (A4 swarm, A3 agent, A2 loop, A1 LLM call, A0 compute; Dinis); slide 5 mixing altitudes; docs/where-agents-run.md section 3 rewritten to the altitudes; R12 mixing altitudes in abp/policies.json v0.3.0, observed by the hook (sub-agents, LLM calls with tools), tested",
     "15:18: two infographics for Dinis from google/gemini-3-pro-image via llm.mjs: the altitudes of execution, and mixing altitudes (first mixing draft garbled the rule and was discarded); 0.42 USD, ledgered; images outside git",
-    "15:25: security findings 28 and 31: hook hardened (no key store, no process, no network, five named variables, writes only its log; identity from ~/.abp/whoami), nine tests under Node's permission model; gate warns on .claude/ changes not by architect.1; status-file and branch fixed for the un-numbered agents (abp/reviews/2026-11-11-15-hardening.md)"
+    "15:25: security findings 28 and 31: hook hardened (no key store, no process, no network, five named variables, writes only its log; identity from ~/.abp/whoami), nine tests under Node's permission model; gate warns on .claude/ changes not by architect.1; status-file and branch fixed for the un-numbered agents (abp/reviews/2026-11-11-15-hardening.md)",
+    "15:26: the altitudes in action (Dinis: 'try it in action'): A1, deepseek-v4-flash sorted 8 tasks into altitudes, 8/8, 0.00003 USD; A2, a read-only Explore loop found no unmapped agents (28 mapped); the hook logged R12 for it, which taught that read-only sub-agent types are already A2 (fixed, tested); trials on /agentic-team/operating-model/"
   ],
   "next": [
     "publish the infographics in a vault with a pointer and sha256, if Dinis wants them on the site",
@@ -38,6 +39,7 @@
   ],
   "asks": [
     "Dinis: security finding 28: should the gate FAIL (not warn) on a .claude/ change not by architect.1, and will you protect .claude/** and abp/policies.json with code owners and branch protection? Both block, so both are yours.",
+    "Dinis: the AI-drawn infographics (altitudes, mixing altitudes) can reach the site only from a vault with a public read address, which no vault has yet (capture.1's covers wait on the same). Publish one, or keep the HTML slides as the site's version?",
     "conductor.fringe@PrompTugal.dinis: researcher.1@jose wrote data/events.json twice this hour (researcher.2 owns it). Route through researcher.2's inbox, or ask Dinis for two owners.",
     "Dinis: the proposed single owners of the shared files are in abp/policies.json shared_files (build.mjs, deploy.yml, validate.mjs, api/v1/README.md to dev.2; data/events.json to researcher.2; work/ to the lead). Yes, or other owners?",
     "Dinis: the design agents write admin/build/** (dev's lane) every hour; observe for three rounds, then either keep that or move pages to a registry so build.mjs has one owner. Your call after the rounds.",

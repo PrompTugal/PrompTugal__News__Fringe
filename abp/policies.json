@@ -1,7 +1,7 @@
 {
   "about": "The Agent Behaviour Policies of Lisbon Fringe (lisbontechfringe.com, origin in admin/site.json; WS-215) as data: deny by default, one grant per role and agent, across this repository and the others the swarm touches. Ported from PrompTugal__News__Website board/abp/policies.json (abp@PrompTugal.dinis, v1.7.0, since 6 November 2026), not invented anew; built on RiskMandate's Agent Behaviour Policy and Licence to Operate (https://riskmandate.ai/agent-behaviour-policy.html). Read by the hooks (.claude/settings.json, .claude/hooks/abp.mjs) and by the gate's commit check (abp/tools/abp.mjs check). abp/<agent>.md is generated from this file (node abp/tools/abp.mjs build), never edited by hand. Kept by architect.1.fringe@PrompTugal.dinis (work/39); any relaxation, and any move towards enforcement, is Dinis's decision.",
-  "version": "0.3.1",
-  "updated": "2026-11-11T15:25Z",
+  "version": "0.3.2",
+  "updated": "2026-11-11T15:26Z",
   "operator": "Dinis Cruz",
   "kept_by": "architect.1.fringe@PrompTugal.dinis",
   "status": "DRAFT: grants proposed from the git log (data/architecture.json observed); Dinis and the lead review",
@@ -931,7 +931,7 @@
       "for": "Dinis: observe for three rounds; then decide whether design keeps admin/build/** or works through a page registry"
     }
   ],
-  "hook_sha256": "b67ed1fff4fbc2be",
+  "hook_sha256": "389d2f64a4bb49ca",
   "effective": "2026-11-11T13:36:00Z",
   "effective_note": "Earlier commits are read against the grants as calibration, not counted.",
   "review": {
@@ -1032,7 +1032,16 @@
     "observed": [
       "Agent/Task (a sub-agent): an A2 loop that inherits its parent's A3 (or A4) grant",
       "an LLM call (llm.mjs or a direct API call) carrying tools: an A1 mandate given an A2 grant"
-    ]
+    ],
+    "narrow_subagents": {
+      "about": "Sub-agent types whose own tool set is read-only: their grant really is an A2 loop's, so starting one does not mix altitudes (learned from the first trial, 2026-11-11T15:26Z: an Explore loop was flagged though it could not write).",
+      "types": [
+        "Explore",
+        "Plan",
+        "claude-code-guide",
+        "web-fetch"
+      ]
+    }
   },
   "hook_contract": {
     "about": "What the hook may touch (security finding 28), tested by node abp/tools/abp.mjs test (28a to 28i) under Node's permission model.",

@@ -370,6 +370,7 @@ export function decide(input, who = whoAmI(), P = loadPolicy()) {
 export function altitudeCheck(input, who, P = loadPolicy()) {
     const tool = input.tool_name || '', ti = input.tool_input || {}
     const A = P.altitudes || {}, mine = (A.by_role || {})[who.role] || A.default || 'A3'
+    if (['Agent', 'Task'].includes(tool) && ((A.narrow_subagents || {}).types || []).includes(ti.subagent_type)) return null   // a read-only loop: its grant is A2
     if (['Agent', 'Task'].includes(tool)) return { rule: 'R12', mandate: 'A2', grant: mine, reason: `a sub-agent (an A2 loop${ti.subagent_type ? ', ' + ti.subagent_type : ''}) inherits ${who.agent || 'its parent'}'s ${mine} grant` }
     if (tool === 'Bash' && /(llm\.mjs|openrouter\.ai\/api\/v1\/chat)/.test(String(ti.command || '')) && /["']?tools["']?\s*[:=]|tool_choice/.test(String(ti.command || ''))) return { rule: 'R12', mandate: 'A1', grant: 'A2', reason: 'an LLM call (A1) made with tools (an A2 grant)' }
     return null

@@ -157,6 +157,7 @@ export function operatingModelBody(esc2, REPO) {
 <p>${esc2(M.about)}</p>
 ${frames}
 <script>(function(){function f(){document.querySelectorAll('.om-frame').forEach(function(e){if(innerWidth>760)e.style.setProperty('--om-s',e.clientWidth/1920)})}addEventListener('resize',f);f()})()</script>
+<h2>In action</h2>${(M.trials || []).map((t) => `<div class="card"><strong>${esc2(t.altitude)}:</strong> ${esc2(t.what)}<br><b>${esc2(t.result)}</b>${t.model ? ` · ${esc2(t.model)}, ${esc2(String(t.latency_ms))} ms, ${esc2(String(t.cost_usd))} USD` : ''}${t.hook ? `<br><span class="muted">The policy hook: ${esc2(t.hook)}</span>` : ''}<br><span class="muted">What it teaches: ${esc2(t.teaches)}</span></div>`).join('')}
 <h2>Still open</h2><ul>${M.open.map((o) => `<li>${esc2(o)}</li>`).join('')}</ul>
 <p class="muted">The data: <a href="/api/v1/operating-model.json">/api/v1/operating-model.json</a> (<code>data/operating-model.json</code>). Where each agent runs: <a href="/agentic-team/where-agents-run/">where agents run</a>. Who may edit what: <a href="/abp/">the ABPs</a>. Dinis's words: <a href="${esc2(REPO)}/blob/dev/briefs/2026-11-11-1440-the-operating-model.md">the brief</a>.</p>`;
 }

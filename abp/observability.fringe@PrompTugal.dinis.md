@@ -2,7 +2,7 @@
 title: "ABP: observability.fringe@PrompTugal.dinis"
 agent: observability.fringe@PrompTugal.dinis
 role: observability
-policy: abp/policies.json v0.3.1 (sha256:c068589488e6e2da)
+policy: abp/policies.json v0.3.2 (sha256:e97dcdef0c31e21e)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
