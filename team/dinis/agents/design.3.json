@@ -1,9 +1,9 @@
 {
   "agent": "design.3.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T22:31:21Z",
+  "updated": "2026-11-11T23:31:28Z",
   "state": "idle",
   "doing": [
-    "nothing open for design (22:31 wake): no new briefs; D28 is design.1's (my map is in it), D34 and D41 lane dev."
+    "nothing open for design (23:31 wake): no new briefs or tasks. Next wake 00:30 UTC; my wake runs to Friday 13 Nov 23:59 UTC."
   ],
   "done": [
     "D3 event cards: admin/build/cards.mjs; 390/1280 px, light and dark, no overflow or console errors",
