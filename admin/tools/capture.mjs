@@ -83,7 +83,7 @@ for (const t of targets) {
         text = await page.evaluate(() => document.body ? document.body.innerText : '');
         const og = await page.evaluate(() => (document.querySelector('meta[property="og:title"]') || {}).content || null);
         if (t.event) await page.addStyleTag({ content: 'img,picture,video,canvas,svg image,[style*="background-image"]{visibility:hidden!important}' });
-        const png = await page.screenshot({ type: 'jpeg', quality: 70, ...(t.event ? { clip: { x: 0, y: 0, width: w, height: 480 } } : {}) });
+        const png = await page.screenshot({ type: 'jpeg', quality: 70, ...(t.event ? { clip: { x: 0, y: 0, width: w, height: 400 } } : {}) });
         const shot = put(rel(t.site, base + '.jpg'), png);
         const body = (t.event ? cutText(text) : text).slice(0, 20000);
         const tsha = put(rel(t.site, base + '.txt'), body);

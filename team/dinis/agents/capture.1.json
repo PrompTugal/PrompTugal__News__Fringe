@@ -1,7 +1,7 @@
 {
   "agent": "capture.1.fringe@PrompTugal.dinis",
   "by": "capture.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T13:26Z",
+  "updated": "2026-11-11T13:28Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 4, ROLES.md)",
   "session": "session_01Kw9UwBDiRApLwAnCoij2Db",
   "key": "capture.1.fringe-dinis (data/keys.json)",
@@ -15,7 +15,8 @@
     "admin/tools/capture.mjs: 390 and 1280 px of our pages, each organiser page at 1280 px, text and extracted fields; never websummit.com or a login; rotates to a new vault at 15,000 files",
     "admin/build/evolution.mjs and /evolution/ (timeline from the index, no images)",
     "12:25 wake: second run captured into vault u4f3pl6f; pointers pushed",
-    "PRIVACY (lead's message, finding 21), 2026-11-11T13:26Z: no read key was ever published. capture.mjs now: Luma event pages only (Meetup, others skipped); images hidden, screenshot cropped to the top 480 px; page text cut before 'Hosted by/Going/guests/attendees'; each event page once a day; event captures deleted after 13 Nov. cap-001 (u4f3pl6f) marked private forever and its organiser-page captures deleted from its working tree (history stays in that private vault); new vault cap-002 (b1pw4zrm) is active for safe captures."
+    "PRIVACY (lead's message, finding 21), 2026-11-11T13:26Z: no read key was ever published. capture.mjs now: Luma event pages only (Meetup, others skipped); images hidden, screenshot cropped to the top 480 px; page text cut before 'Hosted by/Going/guests/attendees'; each event page once a day; event captures deleted after 13 Nov. cap-001 (u4f3pl6f) marked private forever and its organiser-page captures deleted from its working tree (history stays in that private vault); new vault cap-002 (b1pw4zrm) is active for safe captures.",
+    "2026-11-11T13:28Z wake: site still 404 (GitHub Pages), so no run of our pages; sample of 3 Luma pages checked: at 480 px a host name showed under 'Hosted By', so the crop is now 400 px (cover and title only), test captures deleted unpushed. No read key published."
   ],
   "next": [
     "each hour: run capture.mjs, commit pointers, push",
