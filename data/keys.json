@@ -34,6 +34,22 @@
         "fingerprint": "sha256:0fa7162784a49b23",
         "signing_fingerprint": "sha256:cb7afbe3025a6ec1"
       }
+    },
+    {
+      "id": "conductor.fringe-indi",
+      "agent": "conductor.fringe@PrompTugal.indi",
+      "role": "Indi Gupte's conductor for Lisbon Fringe (fringe.promptugal.news, WS-215): the communities and organisers lane (SWARM.md).",
+      "how": "Made in its own session (session_01SZXKK9aBakmkfmRPBZ8v6H) on 11 November 2026, 10:47 UTC (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab). A session key: it ends with the session.",
+      "added": "2026-11-11",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAti+QCPdUfzi+1TPIgEIq\n1av8u0mu2pKSxkG1KC0I1uk5MAfNFaKzOhXqbvyKdvWaOn3l8Lm+ZrskS7Y7+NPp\nagTmhHnsOgiShEtv8Vt6hrzQkf7cjCqUMhYoRTVbJ2Sbv3rYDzs0Oo2hm3ShcFS6\nb521hVYL1kOpipa472VdFGyf21xkwoEl7EVUvnLs7utSPDPgNwuYDlVR7K8l6fFR\n8FYnt47P1GvIoKGS6Ya5jfDBDDyHSWAXqmf1VwKVLGQ/asaeIdrwoSmDqr4vg8Kl\nRGHEMd29sIcnDwDEb/FHB3RL4Mjig3Ej5O2I7ndc2yLMRikZsnCszcLwxmPB30Vp\ndYYTSdnjHeuFV21CNZHFdO4+vBac7uylV1nQQ46oH8+gjgaoeh+aclkhZWVjuwFR\nJaTSyXNMitfNnzrLKpRgFgTeli7lW3jcsYnogrMP3a6Sj09ZX6qMOfQPiNeo7IQR\na2x6AQraYowD+Nk31v7rXxLyv7fS37w1njUSU+imMlwMiPwxU1UU8YZ55EWrjsVZ\nEtSWEYig+XsY/SjNy6wIIb96oQRJRncM/55BBw/3AuPIz7LlM9wri34NDvXy+70+\n++VfQSyCdyDKeDgNSRvHa9CaeBYa0bupBgiVfV+9xTcO8HVn3ZjA/x+XB0kQcjsK\nnps/Y1nPo3qeot+rjvNPQTMCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAElVRYoGM3pVPVGKyGhzqF+GeVx9TT\n3bTliSe3LVoqs+OpAOMg53BiAmyAz/hCXmraZ3NbFzPdpa8rWmuIAG0NCw==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor.fringe@PrompTugal.indi",
+        "fingerprint": "sha256:6e8f3f641c0f76a4",
+        "signing_fingerprint": "sha256:d36cd619bbb9ddbb"
+      }
     }
   ]
 }
