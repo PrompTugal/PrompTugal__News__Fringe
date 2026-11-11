@@ -1,73 +1,115 @@
 {
  "days": {
   "2026-11-11": {
-   "calls": 16,
-   "cost_usd": 0.000622,
-   "first": "2026-11-11T20:30:48Z",
-   "last": "2026-11-11T20:32:32Z",
+   "calls": 1017,
+   "cost_usd": 0.33697,
+   "first": "2026-11-11T12:01:19Z",
+   "last": "2026-11-11T16:26:13Z",
    "by_model": {
     "deepseek/deepseek-v4-flash": {
-     "calls": 16,
-     "ok": 10,
-     "cost_usd": 0.000623,
-     "tokens_in": 1806,
-     "tokens_out": 1446
+     "calls": 3,
+     "ok": 1,
+     "cost_usd": 0,
+     "tokens_in": 12,
+     "tokens_out": 8
+    },
+    "meta-llama/llama-3.1-8b-instruct": {
+     "calls": 176,
+     "ok": 176,
+     "cost_usd": 0.006035,
+     "tokens_in": 141379,
+     "tokens_out": 5477
+    },
+    "meta-llama/llama-3.3-70b-instruct": {
+     "calls": 838,
+     "ok": 838,
+     "cost_usd": 0.33093,
+     "tokens_in": 629733,
+     "tokens_out": 32587
     }
    },
    "by_tier": {
     "cheap": {
-     "calls": 16,
-     "ok": 10,
-     "cost_usd": 0.000623,
-     "tokens_in": 1806,
-     "tokens_out": 1446
+     "calls": 3,
+     "ok": 1,
+     "cost_usd": 0,
+     "tokens_in": 12,
+     "tokens_out": 8
+    },
+    "check": {
+     "calls": 1014,
+     "ok": 1014,
+     "cost_usd": 0.336965,
+     "tokens_in": 771112,
+     "tokens_out": 38064
     }
    },
    "by_agent": {
-    "conductor.fringe@PrompTugal.dinis": {
-     "calls": 16,
-     "ok": 10,
-     "cost_usd": 0.000623,
-     "tokens_in": 1806,
-     "tokens_out": 1446
+    "dev.2.fringe@PrompTugal.dinis": {
+     "calls": 1015,
+     "ok": 1014,
+     "cost_usd": 0.336965,
+     "tokens_in": 771112,
+     "tokens_out": 38064
+    },
+    "a": {
+     "calls": 2,
+     "ok": 1,
+     "cost_usd": 0,
+     "tokens_in": 12,
+     "tokens_out": 8
     }
    },
    "by_task": {
-    "WS-215/packet/2026-11-11-p3-persona-for-6-events": {
-     "calls": 12,
-     "ok": 6,
-     "cost_usd": 0.000358,
-     "tokens_in": 1114,
-     "tokens_out": 795
+    "WS-215/test": {
+     "calls": 1,
+     "ok": 0,
+     "cost_usd": 0,
+     "tokens_in": 0,
+     "tokens_out": 0
     },
-    "WS-215/packet/2026-11-11-p5-one-liners-for-4-events": {
-     "calls": 4,
-     "ok": 4,
-     "cost_usd": 0.000265,
-     "tokens_in": 692,
-     "tokens_out": 651
+    "t": {
+     "calls": 2,
+     "ok": 1,
+     "cost_usd": 0,
+     "tokens_in": 12,
+     "tokens_out": 8
+    },
+    "WS-215/second-opinion": {
+     "calls": 1014,
+     "ok": 1014,
+     "cost_usd": 0.336965,
+     "tokens_in": 771112,
+     "tokens_out": 38064
     }
    },
    "by_status": {
-    "error": {
-     "calls": 6,
+    "account_out_of_credit": {
+     "calls": 1,
      "ok": 0,
      "cost_usd": 0,
      "tokens_in": 0,
      "tokens_out": 0
     },
     "ok": {
-     "calls": 10,
-     "ok": 10,
-     "cost_usd": 0.000623,
-     "tokens_in": 1806,
-     "tokens_out": 1446
+     "calls": 1015,
+     "ok": 1015,
+     "cost_usd": 0.336965,
+     "tokens_in": 771124,
+     "tokens_out": 38072
+    },
+    "refused_low_credit": {
+     "calls": 1,
+     "ok": 0,
+     "cost_usd": 0,
+     "tokens_in": 0,
+     "tokens_out": 0
     }
    }
   }
  },
  "about": "Counts only, from the model ledger of the sessions that run admin/tools/llm.mjs (the ledger is per session, outside git). No prompt, page text or model output.",
- "updated": "2026-11-11T20:32:33Z",
+ "updated": "2026-11-11T21:21:31Z",
  "credit_at_update": {
   "key_remaining_usd": 72.42,
   "account_remaining_usd": 96.77
