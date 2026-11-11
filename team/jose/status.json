@@ -1,9 +1,9 @@
 {
   "by": "conductor.fringe@PrompTugal.jose",
-  "updated": "2026-11-11T17:09Z",
+  "updated": "2026-11-11T17:31Z",
   "person": "jose",
   "role": "member",
-  "state": "on: conductor.fringe@PrompTugal.jose; hourly wake at :07 until Friday 13 November, 23:59 UTC; wake 17:09: brief 16:30 read (R5, R8, R9 enforced); the lead's interim Luma rule received and passed to researcher.1; tracker shows 5 contacted, 0 answered",
+  "state": "on: conductor.fringe@PrompTugal.jose; hourly wake at :07 until Friday 13 November, 23:59 UTC; 17:31: Jose posted his LinkedIn post (short version, /now/?via=linkedin)",
   "lane": "channels (SWARM.md): the posts and messages that point people to the site; a person sends, the conductor never posts or messages anyone",
   "doing": [
     "work/18 and work/23 (channels): five organiser notes sent by Jose; watching for answers (Jose sees them on Luma)"
@@ -23,15 +23,16 @@
     "16:23 (Jose's word, relayed by researcher.1): Jose sent five organiser notes himself through each organiser's Luma 'Contact the host': WonderLead in Tech, ideaic.io, Canopy Community, FounderLink, Portugal Tech Week. Not sent: ALBAN Global Network and Kuma Partners (their events had started)",
     "16:24: asked outreach.1 (inbox) to mark the five sent in work/23's tracker, which it keeps",
     "16:36 (outreach.1): the five notes marked sent in work/23's tracker; the dashboard counts 5 contacted",
-    "wake 17:09: the lead's interim Luma rule (single event page at a person's pace, iCal feeds for researchers, no images) passed to researcher.1"
+    "wake 17:09: the lead's interim Luma rule (single event page at a person's pace, iCal feeds for researchers, no images) passed to researcher.1",
+    "17:31 (Jose's word): Jose posted the short LinkedIn post from work/drafts/linkedin-post-jose.md, linking https://lisbontechfringe.com/now/?via=linkedin"
   ],
   "next": [
-    "any organiser answer: a change goes to data/events.json only once the organiser's own page shows it (researcher.2 or researcher.1)",
-    "Jose's changes to the LinkedIn post, X thread and pitch",
-    "work/50: map Jose's agents at their altitudes"
+    "watch /traffic/ for ?via=linkedin visits and report them to Jose",
+    "the X thread",
+    "organiser answers on Luma (Jose sees them)"
   ],
   "asks": [
-    "jose: post your LinkedIn post and X thread (work/drafts/linkedin-post-jose.md, x-thread-jose.md); LinkedIn and X show 0 visits so far, every tagged visit is from WhatsApp. Tell me when they are up.",
+    "jose: post the X thread (work/drafts/x-thread-jose.md), or ask for a shorter one; X shows 0 visits so far.",
     "jose: read and approve (or change) work/drafts/linkedin-post-jose.md, work/drafts/x-thread-jose.md and work/drafts/pitch.md; you post them.",
     "Dinis: my public key is not in PrompTugal__News__Website board/keys.json; that repository is out of reach for this session.",
     "Dinis: this session's network refuses lisbontechfringe.com and fringe.promptugal.news, so the served version.json is checked through the deploy run, not the page."
