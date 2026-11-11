@@ -11,6 +11,12 @@ const CSS = `.gx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax
 .gx-chips a{display:inline-block;margin:.15rem .25rem .15rem 0;padding:.1rem .55rem;border:1px solid var(--line,#ddd);border-radius:99px;text-decoration:none;font-size:.9em}
 .gx-ev li{margin:.25rem 0}.gx-gram{border-collapse:collapse;font-size:.9em;display:block;overflow-x:auto}.gx-gram td,.gx-gram th{padding:.25rem .5rem;border-bottom:1px solid var(--line,#ddd);text-align:left;vertical-align:top}.gx-up{font-size:.9em}`;
 
+// No scheduled rebuild (the site builds on push only): if the visitor's date is past the build day, say so at the
+// "today" section and link to the right day's page. Lisbon is UTC in November.
+const dayNote = (built, days) => `<p class="ind yours" id="gx-daynote" hidden></p><script>(function(){var b='${built}',d=${JSON.stringify(days)},t=new Date().toISOString().slice(0,10);if(t<=b)return;
+var n=document.getElementById('gx-daynote'),l=document.createElement('a'),has=d.indexOf(t)>=0;l.setAttribute('href',has?['','d',t,''].join('/'):'/graph/types/');l.textContent=has?'see today\\'s events':'see the days';
+n.appendChild(document.createTextNode('This list was built on '+b+'. It is now '+t+': '));n.appendChild(l);n.appendChild(document.createTextNode('.'));n.hidden=false})();</script>`;
+
 // D39's lesson for the persona pages: the list is built once, but what has ended since then folds away in the browser.
 const FOLD_JS = `<script>(function(){var a=document.querySelector('#gx-ahead ul'),o=document.querySelector('#gx-over ul');if(!a||!o)return;
 function f(){var now=new Date().toISOString(),moved=0;[].slice.call(a.querySelectorAll('li[data-end]')).forEach(function(li){if(li.dataset.end<now){o.appendChild(li);moved++}});
@@ -65,7 +71,7 @@ ${parts.length ? `<h2>Its programmes</h2>${chips('organiser', parts.map((x) => x
   const rest = m.organisers.filter((o) => !stars.includes(o));
   write(PREFIX.organiser, 'Organisers', `<h1>The organisers</h1><p>The people who make this week are its organisers: organisations, never a private person. Each links to its events, places, days and partners.</p>
 ${m.festivals.length ? `<p class="muted">Festivals</p>${chips('festival', m.festivals.map((f) => f.id))}` : ''}
-<h2>Today in Lisbon: ${nowOrgs.length} organisers</h2>${nowOrgs.length ? `<div class="gx-grid">${nowOrgs.map(todayStar).join('')}</div>` : '<p class="muted">None leads an event in Lisbon today.</p>'}
+<h2>Today in Lisbon: ${nowOrgs.length} organisers</h2>${dayNote(day0, m.days.map((d) => d.id))}${nowOrgs.length ? `<div class="gx-grid">${nowOrgs.map(todayStar).join('')}</div>` : '<p class="muted">None leads an event in Lisbon today.</p>'}
 <h2>The week's stars</h2><p class="muted">Leading two or more events this week, or running a festival.</p><div class="gx-grid">${stars.map(star).join('')}</div>
 <details><summary>Everyone else: ${rest.length} organisations with one event, or named as partner, host or sponsor</summary>${chips('organiser', rest.map((o) => o.id))}</details>
 <p class="muted">${events.length - m.events.filter((e) => e.organisers.length).length} events name no organisation (a personal calendar, or an independent organiser) and are not listed here. What we offer organisers: <a href="/organisers/">/organisers/</a>.</p>${api('organisers')}`,
@@ -95,7 +101,7 @@ ${m.festivals.length ? `<p class="muted">Festivals</p>${chips('festival', m.fest
     const later = evs.filter((e) => e.day > day1);
     write(`${PREFIX.persona}/${p.id}`, p.name, `<h1>${esc(p.ask)}</h1><p>Events for: <strong>${esc(p.name)}</strong> (a role, never a person). <span class="muted">By rule, a hypothesis: ${esc(p.rule)}.</span></p>
 <p class="gx-chips">${m.personas.filter((x) => x.id !== p.id).map((x) => a('persona', x.id, x.ask)).join('')}</p>
-<h2>Today in Lisbon: <span id="gx-n">${ahead.length}</span> still to come</h2><p class="muted" id="gx-asof">As of ${esc(BUILT.slice(11, 16))} UTC, when this page was built (Lisbon time is UTC in November).</p><div id="gx-ahead">${ahead.length ? evList(ahead.map((e) => e.id)) : '<p class="muted">Nothing more today. See tomorrow below.</p>'}</div>
+<h2>Today in Lisbon: <span id="gx-n">${ahead.length}</span> still to come</h2>${dayNote(day1, m.days.map((d) => d.id))}<p class="muted" id="gx-asof">As of ${esc(BUILT.slice(11, 16))} UTC, when this page was built (Lisbon time is UTC in November).</p><div id="gx-ahead">${ahead.length ? evList(ahead.map((e) => e.id)) : '<p class="muted">Nothing more today. See tomorrow below.</p>'}</div>
 <details id="gx-over"${over.length ? '' : ' hidden'}><summary>Earlier today: <span id="gx-on">${over.length}</span></summary>${over.length ? evList(over.map((e) => e.id)) : '<ul class="gx-ev"></ul>'}</details>${FOLD_JS}
 ${later.length ? `<h2>The rest of the week: ${later.length}</h2>${chips('day', [...new Set(later.map((e) => e.day))])}${evList(later.map((e) => e.id))}` : ''}
 <p class="muted">Organisers</p>${chips('organiser', orgsOf(p.events).slice(0, 30))}${api('personas')}`, `Today's Lisbon side events for: ${p.name}, and the rest of the week.`);
