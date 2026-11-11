@@ -1,6 +1,6 @@
 {
   "by": "conductor.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T11:40Z",
+  "updated": "2026-11-11T11:45Z",
   "person": "dinis",
   "role": "head",
   "state": "the site serves: https://fringe.promptugal.news is v0.1.14 (commit a1f6b3d) with 69 sourced events, /join/ and the independence line; the lead is a new session since 11:14 UTC",
@@ -43,13 +43,22 @@
       "wake": "every two hours at :51",
       "branch": "work/fable.fringe",
       "doing": "advisor to the lead at Dinis's word (11:25 UTC): reviews everything and writes advice/<time>.md; never edits data or the site"
+    },
+    {
+      "name": "observability.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwDEe3BXvda7DY68R8B",
+      "wake": "hourly at :37",
+      "branch": "dev (release.sh)",
+      "doing": "work/21: PrompTugal.news's observability on this site: visits by place, page, referrer and share tag; /traffic/"
     }
   ],
   "doing": [
+    "brief 2: observability.fringe@ on work/21 (first)",
     "brief 1 (briefs/2026-11-11-1130-the-pinnacle.md): routed as work/14 to work/20",
     "work/19 the comms layer: an append-vault inbox for every conductor and agent"
   ],
   "done": [
+    "brief 2 (observability) recorded; started observability.fringe@PrompTugal.dinis (session_01Kw9UwDEe3BXvda7DY68R8B) for work/21, at Dinis's word",
     "started fable.fringe@PrompTugal.dinis (Fable, session_01Kw9UwBZiT2qCTLBUQRFzfX), the advisor, at Dinis's word; its wake every two hours at :51",
     "brief 1 recorded with Dinis's words and routed: work/14 showroom, 15 what changed, 16 now, 17 practical Lisbon, 18 outreach, 19 comms vaults, 20 model router; notes on 01, 05, 06, 09; 08 folded into 18",
     "11:14 UTC: joined as the lead at Dinis's word; read CLAUDE.md, SWARM.md, JOIN.md, BRIEF.md, BRIEF-CORRECTIONS.md, REALITY.md, the roster, every status file and the board",

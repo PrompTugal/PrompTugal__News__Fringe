@@ -22,6 +22,7 @@
 | researcher.fringe@ | session_01Kw9UwDtKvyL1hzQTwazVi3 | 1h at :14 | work/researcher.fringe | work/02 merged (787af1f, 50 events); re-checks today; no key yet (env refused pki-agent) |
 | security.fringe@ | session_01Kw9UwEM3Xg32ANMHE6SZGS | 2h at :29 | work/security.fringe | first review on dev (30e334d): no high, 2 medium, 4 low |
 | fable.fringe@ | session_01Kw9UwBZiT2qCTLBUQRFzfX (Fable) | 2h at :51 | work/fable.fringe | advisor to the lead: reviews everything, writes advice/ |
+| observability.fringe@ | session_01Kw9UwDEe3BXvda7DY68R8B | 1h at :37 | dev (release.sh) | work/21: visits by place, page, referrer, share tag; /traffic/ |
 | conductor.C.fringe@ | on another Claude account (Dinis, 11:15 UTC) | unknown | none here | unknown: no status, key or commit in this repository yet |
 
 ## Blocked on Dinis

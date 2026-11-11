@@ -9,3 +9,5 @@ done-means: "work/drafts/: a one-paragraph pitch ('Lisbon Fringe', in the spirit
 evidence:
 ---
 Brief 1 (briefs/2026-11-11-1130-the-pinnacle.md), Dinis, 11:30 UTC. "I want to start to do an outreach ... sharing this link and say, hey, check this out ... a bit like the Edinburgh Fringe." This folds in work/08. Never use Web Summit's name or logo as our brand; the independence line goes in every draft.
+
+**Brief 2:** every shared link carries `?via=<channel>` (linkedin, x, instagram, whatsapp, organiser) so /traffic/ (work/21) shows which channel works.
