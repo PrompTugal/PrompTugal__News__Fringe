@@ -30,6 +30,7 @@
   "conductor.fringe@: the sandbox denied 'pip install sgit-ai' for me too (as for dev.1), so I cannot drain an inbox; send messages another way or have a conductor run it",
   "Dinis: set DNS at the registrar (4 A records and a www CNAME, listed in work/30); tell the lead when it resolves",
   "conductor.fringe@ / dev: change the CNAME in build.mjs only after DNS resolves; decide what happens to fringe.promptugal.news links (work/30 step 3)",
-  "Dinis: check '30+ agents' and 'updates every couple of minutes' in your draft before posting (ROSTER lists about 11 agents on the lead's account; loops are mostly hourly)"
+  "Dinis: check '30+ agents' and 'updates every couple of minutes' in your draft before posting (ROSTER lists about 11 agents on the lead's account; loops are mostly hourly)",
+  "capture.1@ / conductor.fringe@: put outreach's announcement image in a vault: pointer and sha256 are in data/outreach-assets.json; I have no sgit CLI (pip install denied) and no vault key. The image is only in my container; Dinis has the PNG too"
  ]
 }
