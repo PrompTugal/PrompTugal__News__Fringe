@@ -25,6 +25,10 @@ Served at `https://fringe.promptugal.news/api/v1/`. Built from this repository o
       "status":     "on" | "moved" | "cancelled" | "online" | "unknown",
       "storm_note": string | null,          // what the storm changed, from the page
       "topics":     [string],
+      "cost":        "free" | "free, with paid tiers up to EUR n" | "paid, EUR n" | "not stated",   // added; from the page's ticket info
+      "in_lisbon":   true | false,            // added: false for online events and events outside Lisbon (Covilhã, Mértola, Santarém, Sintra, Estoril)
+      "personas":    [string],                // added: investor, founder, builder, corporate, student, anyone; from sentences on the page that name an audience; empty when the page names none
+      "umbrella":    string | absent,         // added: e.g. "Portugal Tech Week", when the page or its calendar says so
       "neighbourhood": string | absent,       // added: the area as the public page names it (Luma's address area when the address is shown, or an area named in the place); absent when the address is given to guests only. Never guessed from a hidden address
       "size":       "major" | "community",   // added: major = conference, festival or multi-session day (PTW days, WET SUMMIT); community = meetup, dinner, talk, drinks
       "lane":       "business" | absent,    // added: founders', investors' and partners' meetups (work/10); absent = not tagged

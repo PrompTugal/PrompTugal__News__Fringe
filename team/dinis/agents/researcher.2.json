@@ -1,7 +1,7 @@
 {
   "agent": "researcher.2.fringe@PrompTugal.dinis",
   "by": "researcher.2.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T13:42Z",
+  "updated": "2026-11-11T14:01Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "wake": "hourly at :10 (set by the lead) until Friday 13 November",
   "branch": "dev",
@@ -14,7 +14,8 @@
     "12:15 wake 2: 156 Luma re-read, calendars read, 7 added. 12:25 session key. 12:40 to 12:56: lane business (49), size major/community, second-opinion checks (times, Yorkseed, AI Engineers lunch, Elevon)",
     "13:16 wake 4: 131 Luma events (11 to 12 Nov) re-read: no time changes, 1 new 404 (Redefining investment and innovation); the 4 Luma calendars show nothing new; Eventbrite Lisbon Web Summit search read: 6 new events added (Degens Hangout is marked Cancelled, UX Talks postponed). 177 events",
     "13:27 UTC: removed the 6 Eventbrite events I added at 13:18 (Eventbrite terms forbid automated reading; I had checked only robots.txt: my error). Applied the lead's one rule for \"unknown\": 99 events listed as scheduled with no change note are now status on, label evidence. Stopped reading Meetup, Eventbrite and Partiful.",
-    "13:35 UTC neighbourhood field on 47 events (page-named areas only). 13:40 Storm Summit (stormsummit.app) added from its public page; outreach.1 told through its inbox."
+    "13:35 UTC neighbourhood field on 47 events (page-named areas only). 13:40 Storm Summit (stormsummit.app) added from its public page; outreach.1 told through its inbox.",
+    "2026-11-11T14:01Z UTC work/44 done: cost, in_lisbon, personas, umbrella, neighbourhood on every event; tips lane drained (test tip received)"
   ],
   "next": [
     "tips lane (work/41): at each wake `inboxes.py drain --me researcher.2.fringe-dinis --lane lane-tips` (0 tips at 13:42 UTC), research each tip at its public pages, set states with tips-status.mjs, tell outreach.1",
