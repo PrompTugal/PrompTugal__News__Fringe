@@ -1,0 +1,121 @@
+{
+  "about": "Practical Lisbon this week (work/17): cafés, coworking spaces and community venues near the week's events, each read on the venue's own public page at read_at (UTC; Lisbon is on UTC in November). 'open_today' is on | closed | unknown; 'unknown' means no public page says so for the storm days. Stated hours are what the venue publishes, not a promise it is open. No contact details, no private people.",
+  "updated": "2026-11-11T13:22:00Z",
+  "by": "researcher.fringe@PrompTugal.dinis",
+  "independence": "Lisbon Fringe is independent of Web Summit and is not run by its organisers. Not a warning service: for the storm see IPMA (https://www.ipma.pt), ANEPC (https://www.prociv.gov.pt) and https://storm-charles.promptugal.news.",
+  "storm": {
+    "about": "City-wide closures are the storm site's data. Read them there; they are not copied here.",
+    "links": [
+      "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/decisions/entities/museums.json",
+      "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/decisions/entities/retail.json",
+      "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/decisions/entities/metro.json",
+      "https://storm-charles.promptugal.news/api/v1/index.json"
+    ],
+    "read_at": "2026-11-11T13:20:00Z"
+  },
+  "fields": "id, name, kind, area, address, url (the venue's own page), read_at, hours (as stated), open_today (on | closed | unknown), label (fact | evidence | hypothesis), storm_note, events (ids in data/events.json held there this week), note",
+  "places": [
+    {
+      "id": "second-home-lisboa",
+      "name": "Second Home Lisboa",
+      "kind": "coworking",
+      "area": "Cais do Sodré",
+      "address": "1st floor, Time Out Market Lisboa (Mercado da Ribeira), Avenida 24 de Julho, 1200-479 Lisboa",
+      "url": "https://secondhome.io/coworking-space-lisbon/",
+      "read_at": "2026-11-11T13:21:00Z",
+      "hours": "Mon to Fri 08:00 to 22:00 (as stated by the venue); coworking day passes Mon to Fri 08:00 to 22:00",
+      "open_today": "unknown",
+      "label": "evidence",
+      "storm_note": "Not stated on the venue's page.",
+      "events": [],
+      "note": "Day passes sold by the venue. Its regular hours cover Wednesday; whether it opened during the storm is not stated."
+    },
+    {
+      "id": "teja-house",
+      "name": "Tejá House",
+      "kind": "café, bar and coworking",
+      "area": "Cais do Sodré",
+      "address": "Cais do Sodré 5, 1200-109 Lisboa",
+      "url": "https://www.tejahouse.com/",
+      "read_at": "2026-11-11T13:21:00Z",
+      "hours": "Mon to Sun 09:00 to 23:00 (the venue's own structured data)",
+      "open_today": "unknown",
+      "label": "evidence",
+      "storm_note": "Not stated on the venue's page. A Wednesday event planned there moved to YouTube 'due to a weather event' (luma.com/m146luuy).",
+      "events": [
+        "2026-11-13-rise-of-the-expert-creator",
+        "2026-11-11-roast-your-website"
+      ],
+      "note": null
+    },
+    {
+      "id": "impact-hub-lisbon-penha",
+      "name": "Impact Hub Lisbon (Penha de França)",
+      "kind": "coworking and event venue",
+      "area": "Penha de França",
+      "address": "Rua Neves Ferreira 13, 3rd floor, 1170-070 Lisboa",
+      "url": "https://lisbon.impacthub.net/",
+      "read_at": "2026-11-11T13:21:00Z",
+      "hours": "not stated on the page read",
+      "open_today": "unknown",
+      "label": "evidence",
+      "storm_note": "Not stated on the venue's page.",
+      "events": [
+        "2026-11-12-open-coffee-lisbon-53",
+        "2026-11-13-lisbon-community-week"
+      ],
+      "note": "Open Coffee Lisbon (Thu 12) says Impact Hub offers half-day coworking passes at EUR 15 (meetup.com/open-coffee-lisbon/events/316495551/)."
+    },
+    {
+      "id": "impact-hub-lisbon-baixa-chiado",
+      "name": "Impact Hub Lisbon (Baixa-Chiado)",
+      "kind": "coworking",
+      "area": "Baixa / Chiado",
+      "address": "Tv. Pedras Negras 1, 1st floor left, 1100-404 Lisboa",
+      "url": "https://lisbon.impacthub.net/",
+      "read_at": "2026-11-11T13:21:00Z",
+      "hours": "not stated on the page read",
+      "open_today": "unknown",
+      "label": "evidence",
+      "storm_note": "Not stated on the venue's page.",
+      "events": [],
+      "note": null
+    },
+    {
+      "id": "casa-do-impacto",
+      "name": "Casa do Impacto (Santa Casa da Misericórdia de Lisboa)",
+      "kind": "impact hub and event venue",
+      "area": "Santos / São Bento",
+      "address": "Travessa de São Pedro 8, 1200-432 Lisboa",
+      "url": "https://casadoimpacto.scml.pt/",
+      "read_at": "2026-11-11T13:21:00Z",
+      "hours": "not stated on the page read",
+      "open_today": "unknown",
+      "label": "evidence",
+      "storm_note": "Not stated on the venue's page.",
+      "events": [
+        "2026-11-11-lisboaux-web-summit-edition"
+      ],
+      "note": null
+    },
+    {
+      "id": "unicorn-factory-lisboa-beato",
+      "name": "Unicorn Factory Lisboa (Hub Criativo do Beato)",
+      "kind": "startup hub and event venue",
+      "area": "Beato",
+      "address": "Av. Infante Dom Henrique 141, 1960-406 Lisboa (as given on its events' Luma pages)",
+      "url": "https://unicornfactorylisboa.com/",
+      "read_at": "2026-11-11T13:21:00Z",
+      "hours": "not stated on the page read",
+      "open_today": "unknown",
+      "label": "evidence",
+      "storm_note": "Not stated on the venue's page.",
+      "events": [
+        "2026-11-11-european-tech-champions-italy-portugal",
+        "2026-11-12-ufl-web-summit-after-party",
+        "2026-11-12-disconnect-2-connect"
+      ],
+      "note": "An events venue for the week; not a drop-in workspace as far as its page says."
+    }
+  ]
+}
