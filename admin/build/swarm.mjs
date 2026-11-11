@@ -42,13 +42,13 @@ export async function collectSwarm({ root, roster, status, board, traffic, built
     return { updated: updated || null, age_min: t == null ? null : Math.max(0, Math.round((now - t) / 60000)), online: t != null && now - t <= ONLINE_MIN * 60000 };
   };
   const asks = [];
-  const addAsks = (who, list) => asList(list).forEach((a) => asks.push({ from: who, text: clip(a, 400), to_dinis: /^\s*dinis\s*:/i.test(a) }));
+  const addAsks = (who, list, at) => asList(list).forEach((a) => asks.push({ from: who, at: at || '', text: clip(a, 400), to_dinis: /^\s*dinis\s*:/i.test(a) }));
 
   // people and their conductors
   const people = roster.people.map((p) => {
     const s = status[p.id];
     const st = stamp(s?.updated);
-    addAsks(p.conductor, s?.asks);
+    addAsks(p.conductor, s?.asks, s?.updated);
     return {
       id: p.id, name: p.name, conductor: p.conductor, role: p.role, lane: s?.lane || p.suggested_lane, account: p.id,
       model: s?.model || null, started: !!s && !/^not started/i.test(p.state || '') || !!s,
@@ -64,7 +64,7 @@ export async function collectSwarm({ root, roster, status, board, traffic, built
     for (const f of readdirSync(dir).filter((x) => x.endsWith('.json')).sort()) {
       const a = jread(join(dir, f)) || {};
       const name = a.agent || a.by || f.replace(/\.json$/, '');
-      seen.add(name); addAsks(name, a.asks);
+      seen.add(name); addAsks(name, a.asks, a.updated);
       agents.push({ name, role: nameRole(name), account: a.account || d, person: d, model: a.model || (/fable/i.test(name) ? 'Fable' : null), wake: clip(a.wake, 80) || null,
         ...stamp(a.updated), state: clip(a.state, 240), doing: asList(a.doing).map((x) => clip(x)), file: `team/${d}/agents/${f}`, listed_only: false });
     }
@@ -73,14 +73,14 @@ export async function collectSwarm({ root, roster, status, board, traffic, built
     if (!a?.name || seen.has(a.name) || a.name === people.find((p) => p.id === pid)?.conductor) continue;
     seen.add(a.name);
     agents.push({ name: a.name, role: nameRole(a.name), account: a.account || pid, person: pid, model: a.model || null, wake: clip(a.wake, 80) || null,
-      updated: null, age_min: null, online: false, state: 'listed in the status file of ' + pid + '; no status file of its own', doing: a.doing ? [clip(a.doing)] : [], file: `team/${pid}/status.json`, listed_only: true });
+      updated: null, age_min: null, online: false, state: 'stopped or not reporting: listed in the status file of ' + pid + ', no status file of its own', doing: a.doing ? [clip(a.doing)] : [], file: `team/${pid}/status.json`, listed_only: true });
   }
 
   // inboxes: the lane exists; the count of waiting messages is read by the owner's drain, so it is unknown here
-  const counts = jread(join(root, 'data/inbox-counts.json'))?.counts || {};
+  const counts = jread(join(root, 'data/inbox-counts.json'))?.inboxes || {};
   const inboxes = existsSync(join(root, 'data/inboxes')) ? readdirSync(join(root, 'data/inboxes')).filter((f) => f.endsWith('.json')).sort().map((f) => {
     const i = jread(join(root, 'data/inboxes', f)) || {};
-    return { id: i.id || f.replace(/\.json$/, ''), agent: i.agent || null, updated: i.updated || null, messages: Number.isInteger(counts[i.id]) ? counts[i.id] : null };
+    return { id: i.id || f.replace(/\.json$/, ''), agent: i.agent || null, updated: i.updated || null, messages: Number.isInteger(counts[i.id]?.messages) ? counts[i.id].messages : null, last_at: counts[i.id]?.last_at || null };
   }) : [];
 
   // the board
@@ -92,7 +92,7 @@ export async function collectSwarm({ root, roster, status, board, traffic, built
   const ch = changes(root, repo);
   const online = (l) => l.filter((x) => x.online).length;
   const byAcc = {};
-  for (const x of [...people.filter((p) => p.updated), ...agents]) { const a = (byAcc[x.account] ||= { account: x.account, online: 0, total: 0 }); a.total++; if (x.online) a.online++; }
+  for (const x of [...people.filter((p) => p.updated), ...agents.filter((a) => !a.listed_only)]) { const a = (byAcc[x.account] ||= { account: x.account, online: 0, total: 0 }); a.total++; if (x.online) a.online++; }
   const t = traffic?.totals || null;
   // health of the ecosystem (brief 6): who is onboarded, who can be reached, how the data flows
   const ev = jread(join(root, 'data/events.json'))?.events || [];
@@ -118,21 +118,24 @@ export async function collectSwarm({ root, roster, status, board, traffic, built
   const hc = (ok, warn) => (ok ? 'green' : warn ? 'amber' : 'red');
   const sections = [
     { key: 'where', title: 'Where are we', health: hc(health.events.count > 0 && stale === 0, health.events.count > 0), headline: `${health.events.count} events live; ${tally(work).done} of ${work.length} work items done` },
-    { key: 'onboarded', title: 'Who is onboarded', health: hc(online(people) >= people.filter((p) => p.updated).length && people.filter((p) => !p.updated).length === 0, online(people) > 0), headline: `${health.onboarded.length} of ${people.length} people joined; ${online(people)} conductors and ${online(agents)} of ${agents.length} agents online` },
+    { key: 'onboarded', title: 'Who is onboarded', health: hc(online(people) >= people.filter((p) => p.updated).length && people.filter((p) => !p.updated).length === 0, online(people) > 0), headline: `${health.onboarded.length} of ${people.length} people joined; ${online(people)} conductors and ${online(agents)} of ${agents.filter((a) => !a.listed_only).length} agents online` },
     { key: 'communicating', title: 'What is communicating', health: hc(dinisAsks === 0 && inboxes.length > 0, inboxes.length > 0), headline: `${inboxes.length} inboxes; ${asks.length} open asks, ${dinisAsks} for Dinis` },
     { key: 'data', title: 'How the data flows', health: hc(newest != null && newest < 2 && trafficAge != null && trafficAge < 3, newest != null && newest < 6), headline: `events re-read ${newest == null ? '?' : newest < 1 ? Math.round(newest * 60) + ' min' : newest.toFixed(1) + ' h'} ago; traffic drained ${trafficAge == null ? 'never' : trafficAge < 1 ? Math.round(trafficAge * 60) + ' min ago' : trafficAge.toFixed(1) + ' h ago'}` },
     { key: 'outreach', title: 'Outreach', health: hc(outreach && outreach.contacted > 0, outreach && outreach.drafts_ready > 0), headline: outreach ? `${outreach.drafts_ready} drafts ready, ${outreach.contacted} of ${outreach.organisers_listed} organisers contacted, ${outreach.answered} answered` : 'no desk yet' },
   ];
-  const ask_groups = {}; for (const a of asks) { const k = a.to_dinis ? 'Dinis' : a.from; (ask_groups[k] ||= []).push(a.text); }
+  const bad = sections.filter((x) => x.health !== 'green');
+  const overall = { health: sections.some((x) => x.health === 'red') ? 'red' : bad.length ? 'amber' : 'green' };
+  overall.text = overall.health === 'green' ? 'Swarm healthy: every section is green' : `Swarm ${overall.health === 'red' ? 'broken' : 'needs a look'}: ` + bad.map((x) => `${x.title.toLowerCase()} (${x.headline})`).join('; ');
+  const ask_groups = {}; for (const a of asks) { const k = a.to_dinis ? 'Dinis' : a.from; (ask_groups[k] ||= []).push(a); }
   const flow = { version: process.env.VERSION || 'local', last_commit_by_agent: lastBy, last_capture: jread(join(root, 'data/captures.json'))?.updated || null, traffic_last_hour: lastHour, by_via: via };
 
   return {
-    sections, flow, asks_by_addressee: Object.entries(ask_groups).sort(([a], [b]) => (a === 'Dinis' ? -1 : b === 'Dinis' ? 1 : a.localeCompare(b))).map(([to, list]) => ({ to, count: list.length, asks: list.map((t) => clip(t, 300)) })),
+    overall, sections, flow, asks_by_addressee: Object.entries(ask_groups).sort(([a], [b]) => (a === 'Dinis' ? -1 : b === 'Dinis' ? 1 : a.localeCompare(b))).map(([to, list]) => ({ to, count: list.length, asks: list.sort((x, y) => String(y.at).localeCompare(String(x.at))).map((a) => clip(a.text, 300)) })),
     about: `Lisbon Fringe's swarm, built from the repository's team/, work/ and data/ files. "online" means the status file was updated in the last ${ONLINE_MIN} minutes (UTC). Counts only; no key, contact detail or private person. Independent of Web Summit.`,
     built_at: builtAt, online_minutes: ONLINE_MIN,
     counts: {
       conductors_online: online(people), conductors_started: people.filter((p) => p.updated).length, conductors_total: people.length,
-      agents_online: online(agents), agents_total: agents.length,
+      agents_online: online(agents), agents_total: agents.filter((a) => !a.listed_only).length, agents_stopped: agents.filter((a) => a.listed_only).length,
       inboxes: inboxes.length,
       by_account: Object.values(byAcc).sort((a, b) => b.online - a.online || a.account.localeCompare(b.account)),
     },
@@ -151,7 +154,7 @@ export const swarmCss = `.sg{display:grid;grid-template-columns:repeat(auto-fit,
 .cc{max-width:1200px;overflow-wrap:anywhere}.cc .pg>*,.cc .cols>*{min-width:0}main:has(.cc){max-width:1200px}.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:12px;align-items:start}
 .pn{background:var(--card);border:1px solid var(--line);border-top:6px solid #999;border-radius:8px;padding:4px 14px 10px}.pn.green{border-top-color:#1a9a5b}.pn.amber{border-top-color:#e0a100}.pn.red{border-top-color:#d33}
 .pn h2{margin:.6em 0 .2em}.pn h3{font-size:1rem;margin:.8em 0 .3em}.hl{font-size:1.05rem;margin:.2em 0 .6em;font-weight:600}.hd{display:inline-block;width:.85em;height:.85em;border-radius:50%;margin-right:.45em;vertical-align:baseline;background:#999}.hd.green{background:#1a9a5b}.hd.amber{background:#e0a100}.hd.red{background:#d33}
-.kv{padding-left:1.1em}.kv li{list-style:disc;margin:.25em 0}.ask ul{margin:.2em 0;padding-left:1.1em}.ask li{list-style:disc}.ask.me{border-left:4px solid #d33;padding-left:8px;margin:6px 0}
+.ov{font-size:1.15rem;font-weight:600;margin:.3em 0 .6em}.fold{margin:10px 0}.fold summary{cursor:pointer}details>summary{cursor:pointer}.pg{grid-template-columns:repeat(auto-fit,minmax(min(100%,370px),1fr))!important}.kv{padding-left:1.1em}.kv li{list-style:disc;margin:.25em 0}.ask ul{margin:.2em 0;padding-left:1.1em}.ask li{list-style:disc}.ask.me{border-left:4px solid #d33;padding-left:8px;margin:6px 0}
 .cols{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:0 12px}.bar .d{background:var(--accent)}.bar .c{background:#2f6fd6}.bar .o{background:#c7a100}.ask{border-left:4px solid #d33}`;
 
 export function swarmBody(s, esc, repo) {
@@ -168,21 +171,25 @@ export function swarmBody(s, esc, repo) {
   const ev = s.health.events;
   const where = `<ul class="kv"><li>Site <strong id="v-ver">${esc(f.version)}</strong> <span class="muted" id="v-age"></span></li><li>Events live: <strong>${ev.count}</strong>; read at source from ${hhmm(ev.oldest_read)} (stalest) to ${hhmm(ev.newest_read)} (freshest)</li><li>Work board: ${bar(s.board.work)}</li><li>Design board: ${bar(s.board.design)}</li></ul>`;
   const onboarded = `<p class="muted">Not yet joined: ${esc(s.health.not_onboarded.join(', ') || 'nobody')}. Joined: ${esc(s.health.onboarded.join(', '))}.</p><ul class="kv">${accounts}</ul>`;
-  const asks = s.asks_by_addressee.length ? s.asks_by_addressee.map((g) => `<div class="ask${g.to === 'Dinis' ? ' me' : ''}"><strong>${g.to === 'Dinis' ? 'Dinis: waiting for you' : esc(g.to)}</strong> (${g.count})<ul>${g.asks.slice(0, g.to === 'Dinis' ? 12 : 2).map((t) => `<li>${esc(t)}</li>`).join('')}</ul></div>`).join('') : '<p class="muted">No open asks.</p>';
-  const comm = `<ul class="kv">${s.inboxes.map((i) => { const lc = f.last_commit_by_agent[i.agent]; return `<li>${esc(i.agent || i.id)}: ${i.messages == null ? 'messages ?' : i.messages + ' waiting'}${lc ? ', last commit ' + hhmm(lc) : ''}</li>`; }).join('')}</ul><p class="muted">Waiting counts need the owner's drain (data/inbox-counts.json); the repository cannot read a lane. Last commit is from the recent history.</p><h3>Open asks, by addressee</h3>${asks}`;
+  const li = (l) => l.map((t) => `<li>${esc(t.length > 170 ? t.slice(0, 169) + '…' : t)}</li>`).join('');
+  const dg = s.asks_by_addressee.find((g) => g.to === 'Dinis'), others = s.asks_by_addressee.filter((g) => g.to !== 'Dinis');
+  const asks = (dg ? `<div class="ask me"><strong>Dinis: waiting for you</strong> (${dg.count}, newest first)<ul>${li(dg.asks.slice(0, 5))}</ul>${dg.asks.length > 5 ? `<details><summary>${dg.asks.length - 5} more for Dinis</summary><ul>${li(dg.asks.slice(5))}</ul></details>` : ''}</div>` : '<p class="muted">Nothing waiting for Dinis.</p>') +
+    (others.length ? `<details><summary>Asks for others: ${others.reduce((n, g) => n + g.count, 0)} from ${others.length} agents</summary>${others.map((g) => `<div class="ask"><strong>${esc(g.to)}</strong> (${g.count})<ul>${li(g.asks)}</ul></div>`).join('')}</details>` : '');
+  const comm = `<ul class="kv">${s.inboxes.map((i) => { const lc = f.last_commit_by_agent[i.agent]; return `<li>${esc((i.agent || i.id).replace('@PrompTugal.', '@'))}: ${i.messages == null ? 'messages ?' : i.messages + ' message' + (i.messages === 1 ? '' : 's') + (i.last_at ? ', last ' + hhmm(i.last_at) : '')}${lc ? ', last commit ' + hhmm(lc) : ''}</li>`; }).join('')}</ul><p class="muted">Counts from data/inbox-counts.json (the lead's count of each lane; read or not is up to each agent).</p><h3>Open asks, by addressee</h3>${asks}`;
   const tl = f.traffic_last_hour;
   const data = `<ul class="kv"><li>Last researcher re-read: <strong>${hhmm(ev.newest_read)}</strong></li><li>Last capture (work/27): ${f.last_capture ? esc(f.last_capture) : 'none yet'}</li><li>Last deploy: <span id="v-dep" class="muted">checking version.json…</span></li><li>Traffic in the last hour: ${tl ? `<strong>${tl[1]}</strong> views (${esc(tl[0])})` : 'no views yet'}${s.traffic ? ` · ${s.traffic.views} views in all, ${s.traffic.countries} countries · <a href="/traffic/">traffic</a>` : ''}</li><li>Gate: green (a deploy is built only after <code>validate.mjs</code> passes; this page is that build)</li></ul>`;
   const o = s.outreach;
   const outreach = o ? `<div class="sg"><div class="card"><b>${o.drafts_ready}</b>drafts ready</div><div class="card"><b>${o.contacted}</b>contacted of ${o.organisers_listed}</div><div class="card"><b>${o.answered}</b>answered</div><div class="card"><b>${o.joined}</b>joined</div></div>
 <p class="muted">Visits by ?via= channel: ${f.by_via.length ? f.by_via.map(([k, n]) => `${esc(k)} ${n}`).join(' · ') : 'none yet'}. An agent never sends: a person does. <a href="${repo}/blob/dev/work/29-outreach-desk.md">work/29</a> · <a href="${repo}/tree/dev/work/drafts">drafts</a>.</p>` : '<p class="muted">No outreach counts yet (work/29).</p>';
   return `<div class="sw cc"><h1>Control centre</h1>
+<p class="ov ${s.overall.health}"><span class="hd ${s.overall.health}"></span>${esc(s.overall.text)}</p>
 <p class="muted">Built ${esc(s.built_at.slice(0, 16).replace('T', ' '))} UTC from the repository; <span id="live">re-reading <a href="/api/v1/swarm.json">swarm.json</a> in your browser…</span> Online = status file updated in the last ${s.online_minutes} minutes. Health: <span class="hd green"></span> good · <span class="hd amber"></span> needs a look · <span class="hd red"></span> broken.</p>
 <div class="sg" id="counts"><div class="card"><b id="n-c">${c.conductors_online}</b>conductors online (of ${c.conductors_started} joined, ${c.conductors_total} people)</div><div class="card"><b id="n-a">${c.agents_online}</b>agents online (of ${c.agents_total})</div><div class="card"><b>${c.inboxes}</b>inboxes</div><div class="card"><b>${ev.count}</b>events live</div></div>
 <div class="pg">${panel('where', where)}${panel('onboarded', onboarded)}${panel('communicating', comm)}${panel('data', data)}${panel('outreach', outreach)}</div>
 ${talkBox()}
-<h2>Conductors</h2><ul class="cols">${s.people.map((p) => who(p, p.conductor, `${esc(p.name)} · ${esc(p.lane || '')}`)).join('')}</ul>
-<h2>Agents</h2><ul class="cols">${s.agents.map((a) => who(a, a.name, `${esc(a.role)} · ${esc(a.account)}${a.model ? ' · ' + esc(a.model) : ''}`)).join('')}</ul>
-<h2>The last ${s.changes.length} changes</h2>${s.changes_note ? `<p class="muted">${esc(s.changes_note)}</p>` : ''}<ul class="cols">${s.changes.map((x) => `<li class="card"><a href="${repo}/commit/${esc(x.hash)}"><code>${esc(x.hash)}</code></a> <span class="muted">${esc(x.at.slice(11, 16))} UTC</span><br>${esc(x.subject)}</li>`).join('')}</ul>
+<details class="fold"><summary><h2 style="display:inline">Conductors</h2> <span class="muted">(show)</span></summary><ul class="cols">${s.people.map((p) => who(p, p.conductor, `${esc(p.name)} · ${esc(p.lane || '')}`)).join('')}</ul></details>
+<details class="fold"><summary><h2 style="display:inline">Agents</h2> <span class="muted">(show)</span></summary><ul class="cols">${s.agents.map((a) => who(a, a.name, `${esc(a.role)} · ${esc(a.account)}${a.model ? ' · ' + esc(a.model) : ''}`)).join('')}</ul></details>
+<details class="fold"><summary><h2 style="display:inline">The last ${s.changes.length} changes</h2> <span class="muted">(show)</span></summary>${s.changes_note ? `<p class="muted">${esc(s.changes_note)}</p>` : ''}<ul class="cols">${s.changes.map((x) => `<li class="card"><a href="${repo}/commit/${esc(x.hash)}"><code>${esc(x.hash)}</code></a> <span class="muted">${esc(x.at.slice(11, 16))} UTC</span><br>${esc(x.subject)}</li>`).join('')}</ul></details>
 <p class="muted">The data behind this page: <a href="/api/v1/swarm.json">/api/v1/swarm.json</a>.</p></div>`;
 }
 
