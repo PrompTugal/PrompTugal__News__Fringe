@@ -1,25 +1,14 @@
 {
   "about": "Lisbon Fringe's communities (work/04): the groups behind this week's events, each with its public links and its events (ids in data/events.json; the id here is its /graph/ node id without 'community:'). Organisations only: a personal Luma calendar, a host or an independent organiser is never listed. No contact details. Independent of Web Summit.",
   "by": "conductor.fringe@PrompTugal.indi",
-  "updated": "2026-11-11T15:53:18Z",
-  "how": "admin/tools/communities.mjs: each Luma event page in data/events.json re-read once; only its hosting calendar (name, short description, website, public page) is kept, with the page and the time read. 'what' is quoted from that calendar, not written by us. Communities with no public calendar keep join 'unknown' until their own page is read.",
-  "unmatched_calendar_events": [
-    "2026-11-12-side-event-staaake-closing-ai-tech-power-walk",
-    "2026-11-12-staaake-side-event-hangover-rooftop-ai-tech-ev",
-    "2026-11-13-beach-field-trip-post-tech-ai-conference-rever",
-    "2026-11-13-founders-pastel-de-nata-reverse-network-meet",
-    "2026-11-14-ai-devs-hoopers-run",
-    "2026-11-14-staaake-side-event-saturday-tech-ai-dinner-sta"
-  ],
+  "updated": "2026-11-11T16:49:20Z",
+  "how": "admin/tools/communities.mjs: communities and their events from data/events.json. Each calendar link was found on the event page it cites (sources: url, read_at); since the Luma rule (16:2x UTC) no Luma page is fetched by machine and no Luma text is kept ('what' is null), so links are carried over from earlier reads. Communities with no public calendar keep join 'unknown'.",
+  "unmatched_calendar_events": [],
   "communities": [
     {
       "id": "portugal-tech-week",
       "name": "Portugal Tech Week",
-      "what": {
-        "text": "The largest decentralized innovation festival in Portugal",
-        "quoted_from": "https://luma.com/r1ixujpv",
-        "read_at": "2026-11-11T15:49:33Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/portugaltechweek",
       "links": [
         {
@@ -312,11 +301,7 @@
     {
       "id": "unicorn-factory-lisboa",
       "name": "Unicorn Factory Lisboa",
-      "what": {
-        "text": "Envisioned by the Lisbon City Council with the aim of expanding Lisbon’s entrepreneurial ecosystem, from startups to scaleups, and eventually unicorns, we work as an engine for economic growth and a driving force for innovation, attracting talent, new projects and investment.",
-        "quoted_from": "https://luma.com/rp4tgcfu",
-        "read_at": "2026-11-11T15:50:34Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/ufl-websummit26",
       "links": [
         {
@@ -378,11 +363,7 @@
     {
       "id": "yorkseed",
       "name": "Yorkseed ™",
-      "what": {
-        "text": "Global venture network for founders and investors.",
-        "quoted_from": "https://luma.com/bmu7tyec",
-        "read_at": "2026-11-11T15:50:00Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/Yorkseed",
       "links": [
         {
@@ -427,11 +408,7 @@
     {
       "id": "canopy-community",
       "name": "Canopy Community",
-      "what": {
-        "text": "Home of DemoNightLx",
-        "quoted_from": "https://luma.com/2ofzih7t",
-        "read_at": "2026-11-11T15:50:30Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/Canopy",
       "links": [
         {
@@ -530,11 +507,7 @@
     {
       "id": "lisboaux",
       "name": "LisboaUX",
-      "what": {
-        "text": "By the community, for the community — We're the User Experience Meetup in Lisboa.",
-        "quoted_from": "https://luma.com/yvm04djt",
-        "read_at": "2026-11-11T15:50:25Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/lisboaux",
       "links": [
         {
@@ -567,11 +540,7 @@
     {
       "id": "lisbon-business-leaders",
       "name": "Lisbon Business Leaders",
-      "what": {
-        "text": "Access real opportunities, build meaningful partnerships, and step into your next level of leadership through curated networking events, workshops, and immersive experiences",
-        "quoted_from": "https://luma.com/39950i36",
-        "read_at": "2026-11-11T15:52:14Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/lisbonbusinessleaders",
       "links": [
         {
@@ -599,11 +568,7 @@
     {
       "id": "teja-house",
       "name": "teja house",
-      "what": {
-        "text": "A music-led house in a converted warehouse at Cais do Sodré, Lisbon.",
-        "quoted_from": "https://luma.com/tejahouse-ues5",
-        "read_at": "2026-11-11T15:51:27Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/tejahouse",
       "links": [
         {
@@ -631,11 +596,7 @@
     {
       "id": "yorkseed-global-capital-network",
       "name": "Yorkseed Global Capital Network",
-      "what": {
-        "text": "Global venture network for founders and investors.",
-        "quoted_from": "https://luma.com/jmjk0qqh",
-        "read_at": "2026-11-11T15:49:42Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/Yorkseed",
       "links": [
         {
@@ -675,11 +636,7 @@
     {
       "id": "2day-founders",
       "name": "2Day Founders",
-      "what": {
-        "text": "A private founders' club.",
-        "quoted_from": "https://luma.com/jp6yr213",
-        "read_at": "2026-11-11T15:50:50Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/2dayfounders",
       "links": [
         {
@@ -796,11 +753,7 @@
     {
       "id": "altair-capital",
       "name": "AltaIR Capital",
-      "what": {
-        "text": "AltaIR Capital is a global early-stage venture capital firm with 400+ portfolio companies and more than 10 unicorns backed early, including Miro, Deel, PandaDoc, Turing, Fundamental, Mesh, etc.",
-        "quoted_from": "https://luma.com/h19cccc5",
-        "read_at": "2026-11-11T15:50:33Z"
-      },
+      "what": null,
       "join": "unknown: join through its event pages",
       "links": [],
       "events": [
@@ -842,11 +795,7 @@
     {
       "id": "best-web-summit-side-events-in-lisbon",
       "name": "Best Web Summit Side Events in Lisbon",
-      "what": {
-        "text": "The best of the best side events happing during the Web Summit 2026",
-        "quoted_from": "https://luma.com/m146luuy",
-        "read_at": "2026-11-11T15:49:30Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/websummit-grauberg",
       "links": [
         {
@@ -873,11 +822,7 @@
     {
       "id": "biohacking-longevity-lisbon",
       "name": "Biohacking & Longevity Lisbon",
-      "what": {
-        "text": "Handpicked selection of wellness, longevity, and biohacking events happening in Lisbon.",
-        "quoted_from": "https://luma.com/uau5nem3",
-        "read_at": "2026-11-11T15:51:39Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/biohackinglisbon",
       "links": [
         {
@@ -935,11 +880,7 @@
     {
       "id": "clay-clubs",
       "name": "Clay Clubs",
-      "what": {
-        "text": "Scale personalized outreach with better data enrichment; help your RevOps & growth teams implement any outreach idea.",
-        "quoted_from": "https://luma.com/ccl-websummit",
-        "read_at": "2026-11-11T15:50:27Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/clayclubs",
       "links": [
         {
@@ -978,11 +919,7 @@
     {
       "id": "code-n-surf",
       "name": "Code'n'Surf",
-      "what": {
-        "text": "An exclusive developer conference combining cutting-edge technology discussions with world-class surfing on the Portuguese coast...",
-        "quoted_from": "https://luma.com/5yucusdb",
-        "read_at": "2026-11-11T15:50:52Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/codensurf",
       "links": [
         {
@@ -1043,13 +980,21 @@
       "label": "from events.json only"
     },
     {
+      "id": "devworld-conference-and-bitterbrains-as-the-page-names-them",
+      "name": "Devworld Conference and BitterBrains (as the page names them)",
+      "what": null,
+      "join": "unknown: join through its event pages",
+      "links": [],
+      "events": [
+        "2026-11-11-stranded-networking-drinks-limited-seats"
+      ],
+      "sources": [],
+      "label": "from events.json only"
+    },
+    {
       "id": "ekiden-x-quants",
       "name": "Ekiden x Quants",
-      "what": {
-        "text": "Tokenized Capital Markets",
-        "quoted_from": "https://luma.com/f0ah5yl3",
-        "read_at": "2026-11-11T15:52:22Z"
-      },
+      "what": null,
       "join": "unknown: join through its event pages",
       "links": [],
       "events": [
@@ -1121,11 +1066,7 @@
     {
       "id": "female-founders-breakfasts-europe",
       "name": "Female Founders Breakfasts (Europe)",
-      "what": {
-        "text": "We are a community of purpose-driven founders connecting and empowering women globally, one breakfast at a time 🌐",
-        "quoted_from": "https://luma.com/sx67k4x0",
-        "read_at": "2026-11-11T15:51:07Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/femalefoundersevents",
       "links": [
         {
@@ -1175,11 +1116,7 @@
     {
       "id": "fsense-cvortex-partners",
       "name": "fSense & cVortex Partners",
-      "what": {
-        "text": "fSense & cVortex Partners brings together business leaders, technology professionals, and strategic partners to foster meaningful connections, share insights, and explore new opportunities for innovation and business collaboration.",
-        "quoted_from": "https://luma.com/vfsejd2k",
-        "read_at": "2026-11-11T15:51:24Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/fsensecvortex",
       "links": [
         {
@@ -1206,11 +1143,7 @@
     {
       "id": "functional-founders",
       "name": "Functional Founders",
-      "what": {
-        "text": "Movement, mentoring, networking and masterminds that help founders improve their health and business performance.",
-        "quoted_from": "https://luma.com/3z2xjz1p",
-        "read_at": "2026-11-11T15:49:24Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/functionalfounders",
       "links": [
         {
@@ -1261,11 +1194,7 @@
     {
       "id": "growth-division",
       "name": "Growth Division",
-      "what": {
-        "text": "We scale seed-stage startups through our team of world-class growth marketing experts.",
-        "quoted_from": "https://luma.com/f3c6aqvx",
-        "read_at": "2026-11-11T15:50:09Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/GrowthDivision",
       "links": [
         {
@@ -1292,11 +1221,7 @@
     {
       "id": "hardal",
       "name": "Hardal",
-      "what": {
-        "text": "Join our events and workshops on server-side and first-party analytics.",
-        "quoted_from": "https://luma.com/9c2kspye",
-        "read_at": "2026-11-11T15:50:57Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/hardal",
       "links": [
         {
@@ -1358,11 +1283,7 @@
     {
       "id": "innovate-bay",
       "name": "Innovate Bay",
-      "what": {
-        "text": "Innovate Bay is a founder-first community helping startups go from idea to growth with mentorship, connections, and real-world support.",
-        "quoted_from": "https://luma.com/ibconnect1",
-        "read_at": "2026-11-11T15:52:48Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/innovatebay",
       "links": [
         {
@@ -1425,11 +1346,7 @@
     {
       "id": "lateral",
       "name": "lateral.",
-      "what": {
-        "text": "Lateral is the horizontal axis of impact VC.",
-        "quoted_from": "https://luma.com/4mflwhj1",
-        "read_at": "2026-11-11T15:51:56Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/lateral_events",
       "links": [
         {
@@ -1452,11 +1369,7 @@
     {
       "id": "led-by-community",
       "name": "Led by Community",
-      "what": {
-        "text": "A Global Calendar for the events",
-        "quoted_from": "https://luma.com/lisbon-community-week-2026",
-        "read_at": "2026-11-11T15:52:32Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/ledbycommunity-meetups",
       "links": [
         {
@@ -1537,11 +1450,7 @@
     {
       "id": "lisboajs",
       "name": "LisboaJS",
-      "what": {
-        "text": "The Lisbon JavaScript Community.",
-        "quoted_from": "https://luma.com/ac4odk80",
-        "read_at": "2026-11-11T15:52:35Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/lisboajs",
       "links": [
         {
@@ -1568,11 +1477,7 @@
     {
       "id": "lunar-strategy",
       "name": "Lunar Strategy",
-      "what": {
-        "text": "Since 2019, we've been helping tech companies grow with strategy, content, and marketing.",
-        "quoted_from": "https://luma.com/lunar-ltdv",
-        "read_at": "2026-11-11T15:51:40Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/lunar_strategy",
       "links": [
         {
@@ -1635,11 +1540,7 @@
     {
       "id": "non-code-studio",
       "name": "non code studio",
-      "what": {
-        "text": "💻 Notion consulting for teams ready to scale 🚀 We help growing teams clean up Notion, connect their tools, automate manual work and turn AI into practical workflows (the kind people actually use!)",
-        "quoted_from": "https://luma.com/na45i7k7",
-        "read_at": "2026-11-11T15:52:45Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/noncode.studio",
       "links": [
         {
@@ -1666,11 +1567,7 @@
     {
       "id": "obriyai",
       "name": "ObriyAI",
-      "what": {
-        "text": "ObriyAI EVENTS",
-        "quoted_from": "https://luma.com/qnu3jyg0",
-        "read_at": "2026-11-11T15:52:00Z"
-      },
+      "what": null,
       "join": "unknown: join through its event pages",
       "links": [],
       "events": [
@@ -1688,11 +1585,7 @@
     {
       "id": "octo-health-web-summit-lisboa-2026",
       "name": "Octo Health | Web Summit Lisboa 2026",
-      "what": {
-        "text": "Meet Octo Health, a proactive health platform designed to help you test, check and act about your health.",
-        "quoted_from": "https://luma.com/erp6nqvm",
-        "read_at": "2026-11-11T15:52:21Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/octohealth",
       "links": [
         {
@@ -1793,11 +1686,7 @@
     {
       "id": "primal-events-workshops",
       "name": "Primal Events & Workshops",
-      "what": {
-        "text": "Welcome to Primal Moves Lisbon, a community driven movement studio in the heart of Santos.",
-        "quoted_from": "https://luma.com/rnm96bu0",
-        "read_at": "2026-11-11T15:51:57Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/primalmoveslisbon",
       "links": [
         {
@@ -1836,11 +1725,7 @@
     {
       "id": "productized",
       "name": "Productized",
-      "what": {
-        "text": "Events by Productized",
-        "quoted_from": "https://luma.com/whll1umb",
-        "read_at": "2026-11-11T15:51:52Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/productized-calendar",
       "links": [
         {
@@ -1926,11 +1811,7 @@
     {
       "id": "rockstart",
       "name": "Rockstart",
-      "what": {
-        "text": "Empowering mission driven founders on a global scale.",
-        "quoted_from": "https://luma.com/a2ackpa5",
-        "read_at": "2026-11-11T15:49:59Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/rockstartrocks",
       "links": [
         {
@@ -1965,11 +1846,7 @@
     {
       "id": "seattle-angel",
       "name": "Seattle Angel",
-      "what": {
-        "text": "Sessions focused on New Angel Investors and early pre-seed startups to grow more effective Angel Investors and more fundable startups.",
-        "quoted_from": "https://luma.com/seattle-1hwz",
-        "read_at": "2026-11-11T15:49:35Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/Seattle-Angel",
       "links": [
         {
@@ -2128,11 +2005,7 @@
     {
       "id": "kind-movement",
       "name": "The Kind Movement",
-      "what": {
-        "text": "🤍 Charity fitness classes in Lisbon",
-        "quoted_from": "https://luma.com/80ixzq5z",
-        "read_at": "2026-11-11T15:53:13Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/Kindmovement",
       "links": [
         {
@@ -2171,11 +2044,7 @@
     {
       "id": "offline-club-lisbon",
       "name": "The Offline Club | Lisbon",
-      "what": {
-        "text": "Offline community hangouts & events to swap screen time for real time.",
-        "quoted_from": "https://luma.com/Travel-Hangout",
-        "read_at": "2026-11-11T15:53:11Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/theofflineclublisbon",
       "links": [
         {
@@ -2222,11 +2091,7 @@
     {
       "id": "top-tier-impact-in-person-events",
       "name": "Top Tier Impact | In-person Events",
-      "what": {
-        "text": "Top Tier Impact (TTI) is the global ecosystem of investors, entrepreneurs and corporates who are focused on solving the critical issues of our time.",
-        "quoted_from": "https://luma.com/3504dzdm",
-        "read_at": "2026-11-11T15:50:26Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/toptierimpact",
       "links": [
         {
@@ -2253,11 +2118,7 @@
     {
       "id": "unblockai",
       "name": "UnblockAI",
-      "what": {
-        "text": "Unblock AI is a monthly meetup in Lisbon bringing together builders, leaders, and curious minds to share tools, ideas, and explore what AI can genuinely do.",
-        "quoted_from": "https://luma.com/unblockai-conference",
-        "read_at": "2026-11-11T15:52:30Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/unblockai",
       "links": [
         {
@@ -2296,11 +2157,7 @@
     {
       "id": "valois-by-yorkseed-yorkseed-global-capital-network",
       "name": "Valois by Yorkseed (Yorkseed Global Capital Network)",
-      "what": {
-        "text": "Global venture network for founders and investors.",
-        "quoted_from": "https://luma.com/k0zamjmi",
-        "read_at": "2026-11-11T15:49:40Z"
-      },
+      "what": null,
       "join": "Follow its public Luma calendar: https://luma.com/Yorkseed",
       "links": [
         {
