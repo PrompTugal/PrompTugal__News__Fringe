@@ -1,23 +1,26 @@
 {
   "agent": "security.fringe@PrompTugal.dinis",
   "by": "security.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T10:48Z",
-  "started_by": "conductor.fringe@PrompTugal.dinis, 10:48 UTC, under BRIEF.md §7 step 4",
-  "wake": "every two hours until Friday 13 November",
+  "updated": "2026-11-11T11:30Z",
+  "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwBGQe9BhMCbDw28aDA, the lead until 11:14 UTC), 10:48 UTC, under BRIEF.md §7 step 4",
+  "wake": "every two hours until Friday 13 November (scheduled task named in the outgoing lead's handover; its prompt still names the old lead)",
   "branch": "work/security.fringe",
-  "key": "security.fringe-promptugal (record sha256:477abd55a04f4577), public half in data/keys.json on this branch",
-  "state": "first review done: no high findings; 2 medium, 4 low, 6 notes",
+  "key": "security.fringe-promptugal (record sha256:477abd55a04f4577), in data/keys.json on dev",
+  "state": "second review done: no high findings; 1 new medium (the lead's identity rests on unsigned commits), 2 new low; findings 1, 2 and 4 are now live on dev",
   "doing": [],
   "done": [
-    "reviewed every commit on dev, main, work/dev.fringe and work/researcher.fringe from the first commit: security/reviews/2026-11-11-1048.md",
-    "made my session key; public half in data/keys.json"
+    "review 1 (10:48 UTC): security/reviews/2026-11-11-1048.md",
+    "review 2 (11:30 UTC, 35 new commits on every branch): security/reviews/2026-11-11-1130.md"
   ],
   "next": [
     "at the next wake: fetch, review what is new since security/last-reviewed.json, push"
   ],
   "asks": [
-    "Dinis: my session has GitHub access to PrompTugal__News__Fringe only, so I could not add my public key to PrompTugal__News__Website board/keys.json (CLAUDE.md 'Identity'). The public bundle is in data/keys.json on work/security.fringe, ready to copy.",
-    "conductor.fringe: two medium findings for dev.fringe@ (work/01 deploy.yml): the job runs repository code holding contents: write with a persisted token, and workflow_dispatch can deploy from any branch. Fixes are in security/reviews/2026-11-11-1048.md, findings 1 and 2.",
-    "Dinis: in the repository settings, protect main (pull requests only) and limit the github-pages environment to the dev branch (review findings 1 and 2)."
+    "conductor.fringe: findings 1 and 2 (deploy.yml: contents: write with a persisted token while repository code runs; workflow_dispatch from any branch) are now live on dev. Please route them to dev.fringe@. Fixes are in security/reviews/2026-11-11-1048.md.",
+    "conductor.fringe: finding 4. api/v1/events.json now publishes fields beyond the v1 contract (id, label, cost, storm_moved, check, note). Either add them to api/v1/README.md or map events to the contract. The data is clean today.",
+    "conductor.fringe: finding 15. Mark the 10:44 lead key (cb7afbe3025a6ec1) superseded in PrompTugal__News__Website board/keys.json. Finding 14: three keys share the id conductor.fringe-promptugal in data/keys.json.",
+    "Dinis: finding 13. The lead role has moved through three sessions on unsigned commits that quote you, and the outgoing lead could not confirm your word. Please confirm, in your own words, that session_01Kw9UwCFpT9ihNBcQFxkomq (signing sha256:d3c9e8a33293ef55) is conductor.fringe@PrompTugal.dinis.",
+    "Dinis: my session has GitHub access to PrompTugal__News__Fringe only, so my public key is not yet in PrompTugal__News__Website board/keys.json.",
+    "Dinis: protect main (pull requests only) and limit the github-pages environment to dev (findings 1 and 2)."
   ]
 }
