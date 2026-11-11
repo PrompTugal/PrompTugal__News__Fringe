@@ -1,7 +1,7 @@
 {
   "about": "The Agent Behaviour Policies of Lisbon Fringe (lisbontechfringe.com, origin in admin/site.json; WS-215) as data: deny by default, one grant per role and agent, across this repository and the others the swarm touches. Ported from PrompTugal__News__Website board/abp/policies.json (abp@PrompTugal.dinis, v1.7.0, since 6 November 2026), not invented anew; built on RiskMandate's Agent Behaviour Policy and Licence to Operate (https://riskmandate.ai/agent-behaviour-policy.html). Read by the hooks (.claude/settings.json, .claude/hooks/abp.mjs) and by the gate's commit check (abp/tools/abp.mjs check). abp/<agent>.md is generated from this file (node abp/tools/abp.mjs build), never edited by hand. Kept by architect.1.fringe@PrompTugal.dinis (work/39); any relaxation, and any move towards enforcement, is Dinis's decision.",
   "version": "0.4.1",
-  "updated": "2026-11-11T23:31Z",
+  "updated": "2026-11-11T23:42Z",
   "operator": "Dinis Cruz",
   "kept_by": "architect.1.fringe@PrompTugal.dinis",
   "status": "DRAFT: grants proposed from the git log (data/architecture.json observed); Dinis and the lead review",
@@ -296,6 +296,11 @@
         "added": "by Dinis, 2026-11-11T23:31Z, for the demo (12 November)",
         "rules": "read only by workflows triggered by push or workflow_dispatch (never pull_request_target); passed to a step through env, never echoed or written to a file in the repo; ELASTIC_CLOUD (the superuser password) to be replaced by a key limited to swarm-* when Dinis makes one; a secret no workflow uses should be removed"
       }
+    },
+    "promptugal/promptugal__news__swarm": {
+      "what": "swarm.promptugal.news: the swarm demo (swarm.1's lane); its CLAUDE.md adds its own rules (the gate tools/gate.mjs, runs in runs/, a budget per run)",
+      "writes": "the swarm role and its two workers below",
+      "branch": "dev; main only by Dinis"
     }
   },
   "common": {
@@ -649,6 +654,31 @@
       "writes_other_repos": [
         "PrompTugal__News__Swarm__Runs: requests/**, .github/workflows/**, docs/**"
       ]
+    },
+    "swarm-dev": {
+      "focus": "the swarm's code under swarm.1 (work/52): tools/ (the engine, the gate), the workflows, the runners; in PrompTugal__News__Swarm__Runs, the push-triggered runs of docs/handoffs/2026-11-11-swarm-runs-design.md",
+      "writes": [
+        "team/{person}/agents/{name}.json"
+      ],
+      "writes_other_repos": [
+        "PrompTugal__News__Swarm: tools/**, .github/workflows/**, runners/**, packets/**, data/**, RUNNER.md",
+        "PrompTugal__News__Swarm__Runs: requests/**, .github/workflows/**, docs/** (workflows there only after Dinis's word to swarm.1)"
+      ],
+      "send_hosts": [
+        "openrouter.ai"
+      ],
+      "never": "pushes a workflow next to the Runs repo's secrets without Dinis's word; prints a secret; uses ELASTIC_CLOUD outside a workflow (R8e); stores model text"
+    },
+    "swarm-designer": {
+      "focus": "the swarm's pages under swarm.1: swarm.promptugal.news (index.html, how.html, the run views), so the demo reads well on a laptop, a projector and a phone",
+      "writes": [
+        "team/{person}/agents/{name}.json"
+      ],
+      "writes_other_repos": [
+        "PrompTugal__News__Swarm: index.html, how.html, assets/**, css/**, pages/**, MAP.md"
+      ],
+      "send_hosts": [],
+      "never": "changes the engine, the workflows or the runs; uses Web Summit's name or logo as a brand; loads scripts from hosts other than the site's own and the pinned libraries"
     }
   },
   "agents": {
@@ -999,6 +1029,18 @@
       "role": "swarm",
       "account": "riskmandate-personal (Ultra)",
       "note": "started by the lead at Dinis's word (about 21:0x UTC); mapped 2026-11-11T21:51Z to its own lane (swarm/, work/52), the mapping rule"
+    },
+    "swarm.1.dev.fringe@PrompTugal.dinis": {
+      "role": "swarm-dev",
+      "under": "swarm.1.fringe@PrompTugal.dinis",
+      "account": "riskmandate-personal (Ultra)",
+      "note": "started by architect.1 at Dinis's word in its session (2026-11-11T23:42Z: 'can you spin up an swarm.1.dev@... and an swarm.1.designer@...', 'agents here in Claude')"
+    },
+    "swarm.1.designer.fringe@PrompTugal.dinis": {
+      "role": "swarm-designer",
+      "under": "swarm.1.fringe@PrompTugal.dinis",
+      "account": "riskmandate-personal (Ultra)",
+      "note": "started by architect.1 at Dinis's word in its session (2026-11-11T23:42Z: 'can you spin up an swarm.1.dev@... and an swarm.1.designer@...', 'agents here in Claude')"
     }
   },
   "external": {
