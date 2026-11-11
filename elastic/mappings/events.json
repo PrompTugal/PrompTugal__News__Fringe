@@ -1,0 +1,137 @@
+{
+  "settings": {
+    "number_of_shards": 1
+  },
+  "mappings": {
+    "dynamic": "strict",
+    "properties": {
+      "kind": {
+        "type": "keyword"
+      },
+      "source": {
+        "type": "keyword"
+      },
+      "read_at": {
+        "type": "date"
+      },
+      "signer": {
+        "type": "keyword"
+      },
+      "signer_key": {
+        "type": "keyword"
+      },
+      "commit": {
+        "type": "keyword"
+      },
+      "ingested_at": {
+        "type": "date"
+      },
+      "ingested_by": {
+        "type": "keyword"
+      },
+      "id": {
+        "type": "keyword"
+      },
+      "name": {
+        "type": "text",
+        "fields": {
+          "raw": {
+            "type": "keyword",
+            "ignore_above": 512
+          }
+        }
+      },
+      "url": {
+        "type": "keyword"
+      },
+      "date": {
+        "type": "date",
+        "format": "yyyy-MM-dd"
+      },
+      "start": {
+        "type": "date"
+      },
+      "end": {
+        "type": "date"
+      },
+      "type": {
+        "type": "keyword"
+      },
+      "organiser": {
+        "type": "text",
+        "fields": {
+          "raw": {
+            "type": "keyword",
+            "ignore_above": 512
+          }
+        }
+      },
+      "place": {
+        "type": "text",
+        "fields": {
+          "raw": {
+            "type": "keyword",
+            "ignore_above": 512
+          }
+        }
+      },
+      "join": {
+        "type": "text",
+        "fields": {
+          "raw": {
+            "type": "keyword",
+            "ignore_above": 512
+          }
+        }
+      },
+      "status": {
+        "type": "keyword"
+      },
+      "storm_note": {
+        "type": "text",
+        "fields": {
+          "raw": {
+            "type": "keyword",
+            "ignore_above": 512
+          }
+        }
+      },
+      "storm_moved": {
+        "type": "boolean"
+      },
+      "topics": {
+        "type": "keyword"
+      },
+      "personas": {
+        "type": "keyword"
+      },
+      "label": {
+        "type": "keyword"
+      },
+      "cost": {
+        "type": "text",
+        "fields": {
+          "raw": {
+            "type": "keyword",
+            "ignore_above": 512
+          }
+        }
+      },
+      "check": {
+        "type": "text",
+        "fields": {
+          "raw": {
+            "type": "keyword",
+            "ignore_above": 512
+          }
+        }
+      },
+      "size": {
+        "type": "keyword"
+      },
+      "in_lisbon": {
+        "type": "boolean"
+      }
+    }
+  }
+}

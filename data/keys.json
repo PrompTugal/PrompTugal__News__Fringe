@@ -356,6 +356,22 @@
         "fingerprint": "sha256:06910575865641d3",
         "signing_fingerprint": "sha256:371caaed5542ea3a"
       }
+    },
+    {
+      "id": "elastic.1.fringe-dinis",
+      "agent": "elastic.1.fringe@PrompTugal.dinis",
+      "role": "Elastic conductor for the lead (Lisbon Tech Fringe, WS-215): moves the swarm onto Elastic Cloud (logs, events and graph for search, tasks, ledger summaries).",
+      "how": "Made in its own session on 11 November 2026, 16:33 UTC (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab). A session key: it ends with the session. Public half only.",
+      "added": "2026-11-11",
+      "status": "active",
+      "bundle": {
+        "v": "1",
+        "label": "elastic.1.fringe@PrompTugal.dinis",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAiKnf/IDgX5TyioLFN1cQ\nCJcaJRb+FsABM6LuW5KrHYWbkyDMSb4JYh5kxoOluf9MQGV0xMRn0DUUBItwRK4O\nnb4RI8m/NAlpV0zOsmQz0QV7322CtI4lwz0V+XgTx4HRPpogsmnypdHw20tiFz3p\niUAOPpw3/ZFv31rnMSp2foJPU0ZNmtxIOBRd9IBS673oCihaG+7XS9zrJ3GYpHEO\nZwkE1RU5a9OYaCXxCe0y+w7eNqLhAVWyZ3h4EXbXgsb+Zh3zlQBLdFfLdoCuVOwq\nBg/RyqWIpuMXoCvCNOjQ6PDygNceP02CPA1got6aU5NuX/4FGBSMC/pTCPBq+E+G\nA0kZJOucft3kt5xG/YU/frMgnJnmwOR8bh/+TVzxq4Ect/bQRo52A1mi5rdbfTIK\nXRgaJNSUZ/qt4is9b9U8VtB9ommae4hxY1DGuKSC6OtH2BGYbudpfDTRnPWyUVNb\nVSJ2Cj72u47G0ghZpB30vieTNmsyZWO5wf+W+XPd2ZQw+FTxHF874EZuW8dzJggx\nywINpGaIkYvG+73TEa4BjpDfKhoDs1Peo7sMJNeUFgPAFsa2TNp+9ihIhWFOlb5G\nEZNC9Jn+Cp+QQTjOpUZ7PPAjBWdmgLFoSN1CCP6YeNNJxx3Z2/7DDpT+Gz/hDaUO\nba0Rquns4Z/lw68WroZhZ3kCAwEAAQ==\n-----END PUBLIC KEY-----",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEsDWSlzloFtQrhhWbqz/gLF/iDYD1\n/rYaxJIKI98y3q3+njSRg4NJxVOZMHcrxkR6LeE7G/EaPVRuhRoTBYrCGQ==\n-----END PUBLIC KEY-----",
+        "fingerprint": "sha256:2af27e5b88092227",
+        "signing_fingerprint": "sha256:25b303ee2e079116"
+      }
     }
   ]
 }
