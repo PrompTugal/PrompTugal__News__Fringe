@@ -45,6 +45,16 @@ jobs:
           mkdir -p _site/assets/og
           google-chrome --headless=new --no-sandbox --hide-scrollbars --window-size=1200,630 --screenshot="$PWD/_site/assets/og/share.png" "file://$PWD/admin/build/og/share.html" || echo "share card not rendered"
           ls -l _site/assets/og/ || true
+      - name: "Pictures of every design (soft: phone and desktop, from each design's own page; a failure never blocks a deploy)"
+        run: |
+          mkdir -p _site/assets/designs
+          (cd _site && python3 -m http.server 8321 >/dev/null 2>&1 &) ; sleep 2
+          node -e "const j=require('./_site/designs/index.json');for(const d of j.designs)console.log(d.id+' '+d.shoot)" | while read id path; do
+            google-chrome --headless=new --no-sandbox --hide-scrollbars --virtual-time-budget=4000 --window-size=390,844 --screenshot="$PWD/_site/assets/designs/$id-phone.png" "http://localhost:8321$path" >/dev/null 2>&1 || echo "no phone picture for $id"
+            google-chrome --headless=new --no-sandbox --hide-scrollbars --virtual-time-budget=4000 --window-size=1280,900 --screenshot="$PWD/_site/assets/designs/$id-desktop.png" "http://localhost:8321$path" >/dev/null 2>&1 || echo "no desktop picture for $id"
+          done
+          pkill -f "http.server 8321" || true
+          ls -l _site/assets/designs/ || true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

@@ -124,6 +124,9 @@
                 }
             } catch { }
         }
+        // the design lab's vote (work/35, dev.1.fringe@): "I prefer this one" is one more event, type 'vote' with the design id
+        // (a-z, 0-9, '-'); the same lane, no name, no cookie. Absent while counting is paused or off, so the page says so.
+        window.fringeObs = { vote: d => /^[a-z0-9-]{1,30}$/.test(String(d)) ? send(Object.assign(common(), { type: 'vote', design: String(d) })).catch(() => false) : Promise.resolve(false) }
         const view = () => { resend(); if (done.has('view')) return; done.add('view'); send(Object.assign(common(), { type: 'view' })).catch(() => { }) }
         const finish = () => {
             if (since !== null) { visibleMs += performance.now() - since; since = null }

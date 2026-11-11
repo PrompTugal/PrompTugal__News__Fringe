@@ -1,14 +1,14 @@
 {
   "agent": "dev.1.fringe@PrompTugal.dinis",
   "by": "dev.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T13:07Z",
+  "updated": "2026-11-11T13:33Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 4)",
   "model": "Sonnet",
   "wake": "hourly at :05 (set by the lead)",
   "branch": "dev",
   "state": "work/25 control centre (brief 6): five sections with health colours pushing; work/26 /me/ live",
   "doing": [
-    "work/30 (the domain): admin/site.json origin done; waiting for Dinis's DNS and Pages setting, then the one-line switch"
+    "work/35 the design lab frame: pushed; next, check it live, the CI pictures and the vote count"
   ],
   "done": [
     "session key dev.1.fringe-dinis in data/keys.json (signing sha256:d09d81c4e615ecde)",
@@ -20,7 +20,8 @@
     "brief 6: /dashboard/ is five ordered sections (where, onboarded, communicating, data flow, outreach), each with a health colour, wide layout for a 1280 px screenshot; 390 px no sideways scroll",
     "lead fixes: overall headline, 5 newest Dinis asks with the rest folded, stopped agents not counted, inbox counts from data/inbox-counts.json, lists folded (page 12,400 px to about 3,600)",
     "work/30: admin/site.json origin drives every absolute URL and the CNAME; steps and a redirect plan (admin/redirect/) in work/30-the-domain.md",
-    "brief 10: /api/v1/activity.json (commits and deploys of the last 3 h, totals for 15 min and 1 h; admin/build/activity.mjs) and the live counts in the dashboard"
+    "brief 10: /api/v1/activity.json (commits and deploys of the last 3 h, totals for 15 min and 1 h; admin/build/activity.mjs) and the live counts in the dashboard",
+    "work/35 frame: admin/build/designs.mjs, /designs/, /designs/<id>/, /?design=<id> swap on the home page, Design pill with vote (obs.js fringeObs.vote), CI pictures step, stub admin/build/designs/_stub.mjs"
   ],
   "next": [
     "live check of /me/ and the box",
