@@ -1,9 +1,9 @@
 {
   "by": "conductor.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T11:40Z",
+  "updated": "2026-11-11T11:56Z",
   "person": "dinis",
   "role": "head",
-  "state": "the site serves: https://fringe.promptugal.news is v0.1.14 (commit a1f6b3d) with 69 sourced events, /join/ and the independence line; the lead is a new session since 11:14 UTC",
+  "state": "full throttle (brief 4): 11 agents on the lead's account plus the lead; 3 on the other account; the site serves with 70 event pages",
   "conductor": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq, the lead since 11:14 UTC at Dinis's word; it replaces session_01Kw9UwBGQe9BhMCbDw28aDA)",
   "agents": [
     {
@@ -50,13 +50,80 @@
       "wake": "hourly at :37",
       "branch": "dev (release.sh)",
       "doing": "work/21: PrompTugal.news's observability on this site: visits by place, page, referrer and share tag; /traffic/"
+    },
+    {
+      "name": "design.1.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwBGhFtTgsGsavyFUxp",
+      "model": "Sonnet",
+      "wake": "1h at :53",
+      "doing": "D1 the first screen"
+    },
+    {
+      "name": "design.2.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwFEfLVDYsXegWLnJUi",
+      "model": "Sonnet",
+      "wake": "1h at :15",
+      "doing": "D2 the share card, then D10"
+    },
+    {
+      "name": "design.3.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwBH4pkn74Vmah14i8E",
+      "model": "Sonnet",
+      "wake": "1h at :30",
+      "doing": "D3 event cards, D4, then D11 /how/"
+    },
+    {
+      "name": "design.4.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwEW7V3kssqMCCXQdJa",
+      "model": "Sonnet",
+      "wake": "1h at :45",
+      "doing": "D8 tokens, then D9 identity"
+    },
+    {
+      "name": "dev.1.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwFjnHdNHRvLg7iLCpc",
+      "model": "Sonnet",
+      "wake": "1h at :05",
+      "doing": "work/25 dashboard, work/26 Dinis's key"
+    },
+    {
+      "name": "dev.2.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwDemN5VmUG3HdGkqXN",
+      "model": "Sonnet",
+      "wake": "1h at :20",
+      "doing": "work/16 now, 23 organisers, 15 changes, 20 router"
+    },
+    {
+      "name": "researcher.2.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+      "model": "Sonnet",
+      "wake": "1h at :10",
+      "doing": "work/24 the loop; pushes data to dev behind the gate"
+    },
+    {
+      "name": "capture.1.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwBDiRApLwAnCoij2Db",
+      "model": "Sonnet",
+      "wake": "1h at :25",
+      "doing": "work/27 captures in vaults, /evolution/"
+    },
+    {
+      "name": "usability.1.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwDmRCkM64WiDyuGb99",
+      "model": "Sonnet",
+      "wake": "2h at :40",
+      "doing": "work/28 phone tasks"
     }
   ],
   "doing": [
-    "brief 3 (briefs/2026-11-11-1137-make-them-the-star.md): work/22 event pages, 23 organiser outreach, 24 the loop; a sub-agent checks PTW Palace's move online",
-    "work/19: inboxes for each new key at each wake"
+    "briefs 4 and 5: the swarm at full throttle; four design agents on the Lisbon identity; dashboard, captures, usability, the loop",
+    "reviewing what lands on dev; routing Dinis's briefs"
   ],
   "done": [
+    "started 9 agents at Dinis's word (brief 4), all on Sonnet: design.1 to design.4 (one every 15 min), dev.1, dev.2, researcher.2, capture.1, usability.1; wakes set; ROLES.md lets anyone start one on any account",
+    "brief 5 (a celebration of Lisbon) relayed to the design agents directly; D9 identity, D10 PrompTugal bar, D11 /how/",
+    "OpenRouter key saved as this environment's network secret (credit about 74.50 of 100 USD at 11:57 UTC); the router is dev.2's work/20",
+    "work/22 done and checked live: 70 event pages at /e/<id>/",
     "work/19: seven inbox vaults (the lead, Indi, Vicky, Angelo, security.fringe@, observability.fringe@, fable.fringe@); admin/tools/inboxes.py tested end to end; a first message in each",
     "brought onto dev after review: researcher.fringe@'s eb07150 (70 events, 61 re-read 11:23 UTC; WET SUMMIT Lisbon, work/03 done; Elevon's catamaran moved to Thursday) and fable.fringe@'s first advice note; fable.fringe@'s key in data/keys.json",
     "the old lead's handover (work/conductor.fringe.handover 8d6d0ee): its wake is disabled, so one lead runs",
@@ -79,7 +146,8 @@
     "tell conductor@PrompTugal.dinis the URL so pt.news links it; tell incident.conductor@web-summit.dinis that we read the storm site's /api/v1/"
   ],
   "asks": [
-    "Dinis: three wakes on the OTHER account still report to the old lead; this session cannot change them (trigger not found): researcher.fringe@ trig_015p3eeHQJ3JEXzHdYgHaUb7, security.fringe@ trig_01XhtAq86wTjp2bLqwZMkwez, dev.fringe@ trig_01Wdx83QuHtzcqh48DimkhMj. Change their prompts there to name session_01Kw9UwCFpT9ihNBcQFxkomq, or tell me to start researcher/dev agents on this account (work/22 and 24 need them now).",
+    "Dinis: to onboard: 5 people's conductors (silvio, jose, nimay, daniela, sarah; JOIN.md, https://fringe.promptugal.news/join/), conductor.C.fringe@ (its key and status), and any extra agents on your other accounts (ROLES.md: one of each role per account).",
+    "Dinis: the three agents on the other account (researcher.fringe@, security.fringe@, dev.fringe@) still name the old lead in their wakes; change them there to name session_01Kw9UwCFpT9ihNBcQFxkomq, or stop them (this account now has researcher.2 and dev.1, dev.2).",
     "Dinis: approve the organiser offer in work/23 (their page, their report, join with one session) before any note is sent.",
     "Dinis: work/drafts/whatsapp-group-reply.md is ready for you to adapt and send.",
     "Dinis (from fable.fringe@): may researcher.fringe@ push data/events.json straight to dev behind the gate, with Vicky's check after?",

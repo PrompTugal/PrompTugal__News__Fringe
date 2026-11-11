@@ -1,6 +1,6 @@
 # Roster: who is on, what each is doing, what blocks
 
-> Written by conductor.fringe@PrompTugal.dinis at each wake. Last: 11 November 2026, 11:39 UTC. Source: team/*/status.json and the sessions' branches.
+> Written by conductor.fringe@PrompTugal.dinis at each wake. Last: 11 November 2026, 11:56 UTC. Source: team/*/status.json and the sessions' branches.
 
 | Person | Conductor | State | Doing | Blocked by |
 |---|---|---|---|---|
@@ -16,14 +16,30 @@
 
 ## Dinis's agents
 
-| Agent | Session | Wake | Branch | Doing |
+**On this account (the lead's), 11 agents plus the lead.** The lead runs on Opus; workers run on Sonnet; the OpenRouter router comes with work/20. Brief 4: full throttle.
+
+| Agent | Session (model) | Wake | Pushes to | Doing |
 |---|---|---|---|---|
-| dev.fringe@ | session_01Kw9UwBuse9ub7C5zboJbMs | 2h at :44 | work/dev.fringe | work/01 and work/07 merged; the site serves (v0.1.14); next, security findings 1, 2 and 4 to 6 |
-| researcher.fringe@ | session_01Kw9UwDtKvyL1hzQTwazVi3 | 1h at :14 | work/researcher.fringe | work/02 merged (787af1f, 50 events); re-checks today; no key yet (env refused pki-agent) |
-| security.fringe@ | session_01Kw9UwEM3Xg32ANMHE6SZGS | 2h at :29 | work/security.fringe | first review on dev (30e334d): no high, 2 medium, 4 low |
-| fable.fringe@ | session_01Kw9UwBZiT2qCTLBUQRFzfX (Fable) | 2h at :51 | work/fable.fringe | advisor to the lead: reviews everything, writes advice/ |
-| observability.fringe@ | session_01Kw9UwDEe3BXvda7DY68R8B | 1h at :37 | dev (release.sh) | work/21: visits by place, page, referrer, share tag; /traffic/ |
-| conductor.C.fringe@ | on another Claude account (Dinis, 11:15 UTC) | unknown | none here | unknown: no status, key or commit in this repository yet |
+| fable.fringe@ | session_01Kw9UwBZiT2qCTLBUQRFzfX (Fable) | 2h at :51 | dev (release.sh) | advisor: advice/ |
+| observability.fringe@ | session_01Kw9UwDEe3BXvda7DY68R8B (Opus) | 1h at :37 | dev (release.sh) | work/21 traffic, /traffic/ |
+| design.1.fringe@ | session_01Kw9UwBGhFtTgsGsavyFUxp (Sonnet) | 1h at :53 | dev (release.sh) | D1 the first screen |
+| design.2.fringe@ | session_01Kw9UwFEfLVDYsXegWLnJUi (Sonnet) | 1h at :15 | dev (release.sh) | D2 the share card, then D10 |
+| design.3.fringe@ | session_01Kw9UwBH4pkn74Vmah14i8E (Sonnet) | 1h at :30 | dev (release.sh) | D3 event cards, D4, then D11 /how/ |
+| design.4.fringe@ | session_01Kw9UwEW7V3kssqMCCXQdJa (Sonnet) | 1h at :45 | dev (release.sh) | D8 tokens, then D9 identity |
+| dev.1.fringe@ | session_01Kw9UwFjnHdNHRvLg7iLCpc (Sonnet) | 1h at :05 | dev (release.sh) | work/25 dashboard, work/26 Dinis's key |
+| dev.2.fringe@ | session_01Kw9UwDemN5VmUG3HdGkqXN (Sonnet) | 1h at :20 | dev (release.sh) | work/16 now, 23 organisers, 15 changes, 20 router |
+| researcher.2.fringe@ | session_01Kw9UwCy7tcG1KeCSbgf3Za (Sonnet) | 1h at :10 | dev (release.sh) | work/24 the loop; pushes data to dev behind the gate |
+| capture.1.fringe@ | session_01Kw9UwBDiRApLwAnCoij2Db (Sonnet) | 1h at :25 | dev (release.sh) | work/27 captures in vaults, /evolution/ |
+| usability.1.fringe@ | session_01Kw9UwDmRCkM64WiDyuGb99 (Sonnet) | 2h at :40 | dev (release.sh) | work/28 phone tasks |
+
+**On the other account** (started by the old lead; their wakes still name it, so their work waits on branches):
+
+| Agent | Session | Wake | Branch |
+|---|---|---|---|
+| researcher.fringe@ | session_01Kw9UwDtKvyL1hzQTwazVi3 | 1h at :14 | work/researcher.fringe |
+| security.fringe@ | session_01Kw9UwEM3Xg32ANMHE6SZGS | 2h at :29 | work/security.fringe |
+| dev.fringe@ | session_01Kw9UwBuse9ub7C5zboJbMs | 2h at :44 | work/dev.fringe |
+| conductor.C.fringe@ | another account (Dinis, 11:15 UTC) | unknown | none yet |
 
 ## Blocked on Dinis
 
