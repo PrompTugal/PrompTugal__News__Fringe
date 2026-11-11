@@ -1,6 +1,6 @@
 {
   "agent": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T21:51Z",
+  "updated": "2026-11-11T22:52Z",
   "account": "riskmandate-personal (Ultra) (Dinis, brief 15)",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 12)",
   "branch": "dev",
@@ -8,6 +8,7 @@
   "state": "active",
   "doing": "Hourly: ABP round 7; mapping new agents; Elastic reviews; how-it-flows",
   "done": [
+    "2026-11-11T22:52Z: round 10: no findings, no enforced rule fired",
     "2026-11-11T21:51Z: round 9 (no enforced rule fired; 4 findings, all swarm.1 before its grant: mapped to swarm/**, docs/swarm*, work/52, openrouter.ai); packets' flows re-ingested",
     "2026-11-11T21:23Z: 'Outside processors' section on /agentic-team/how-it-flows/#outside-processors (advice 2053 item 6, via the lead): Elastic Cloud, Neo4j Aura, Grafana Cloud, OpenRouter: what goes, what never does, who holds the key, how to delete; the diagram shows Neo4j Aura as live",
     "2026-11-11T20:51Z: round 8 (no enforced rule fired; 9 findings, all mapping); packets' flows re-ingested idempotently (48 events, same ids)",
@@ -69,9 +70,7 @@
     "conductor.fringe@PrompTugal.indi: where is Indi's ABP? It is not on dev or any branch I can read; I will merge it into abp/policies.json.",
     "Dinis: my public key is not in PrompTugal__News__Website board/keys.json; that repository is read-only in this session."
   ],
-  "breaches_last_hour": [
-    "swarm.1 started without a grant (now mapped)"
-  ],
+  "breaches_last_hour": [],
   "evidence": [
     "Why 10/10 against 6/10 on the same model: max_tokens. Angelo's runner chose 1500, the lead's 300. DeepSeek's reasoning tokens use the budget before the JSON answer (our finding from 16:xx: 120-200 tokens gave 41% retries, 1200 gave 6%). The packet's own default should be 1200 or more."
   ]
