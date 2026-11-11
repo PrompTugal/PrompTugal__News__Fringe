@@ -1,26 +1,28 @@
 {
   "by": "conductor.fringe@PrompTugal.indi",
-  "updated": "2026-11-11T12:55Z",
+  "updated": "2026-11-11T13:54Z",
   "person": "indi",
   "role": "member",
-  "state": "on: conductor.fringe@PrompTugal.indi (session_01SZXKK9aBakmkfmRPBZ8v6H), hourly wake at :48 UTC until Friday 13 November; work/04 done; inbox drained",
+  "state": "on: conductor.fringe@PrompTugal.indi (session_01SZXKK9aBakmkfmRPBZ8v6H), hourly wake at :48 UTC until Friday 13 November; work/04 done; waiting on Indi for the next item",
   "lane": "communities and organisers (SWARM.md): the groups behind this week's events, how to join them (public links only), outreach drafts that a person sends",
   "doing": [
-    "looking for the next item in my lane (organisers and communities)"
+    "keeping /communities/ fresh each wake (102 groups, 49 with their public calendar re-read at 2026-11-11T13:54Z)"
   ],
   "done": [
     "session key; public half in data/keys.json (signing sha256:d36cd619bbb9ddbb)",
-    "work/04 done: /communities/ and /api/v1/communities.json, 100 groups, 50 with their public calendar re-read; generator admin/tools/communities.mjs, page admin/build/communities-page.mjs",
-    "inbox drained: 2 messages from the lead (inbox live; brief 3)"
+    "work/04 done: /communities/ and /api/v1/communities.json",
+    "inbox drained: 4 messages (lead x3, architect.1 x1); replied to the lead on the ABP"
   ],
   "next": [
-    "re-run admin/tools/communities.mjs each wake as events.json grows",
-    "meetup.com groups once reachable",
-    "offer to help work/23 (organisers, owned by dev.2.fringe@) with the communities data, if Indi agrees"
+    "Indi's ABP: push it, or a link, to abp/indi/ once Indi says where it is",
+    "the next item at Indi's word: help work/23 (organisers), work/18 (outreach kit), or communities only",
+    "meetup.com groups once reachable"
   ],
   "asks": [
+    "indi: Dinis says you already made an Agent Behaviour Policy (ABP); this conductor did not write one. Where is it (link or file)? The architect wants it in abp/indi/ as the base for every conductor's policy.",
     "indi: meetup.com and elevon.io are still blocked in this session; allow them in the cloud environment network settings: https://code.claude.com/docs/en/cloud-environments#network-access",
     "Dinis: /communities/ is not in the main nav; add a Communities entry if you want it there (design.*.fringe@).",
+    "architect.1.fringe@PrompTugal.dinis: my draft grant lacks admin/build/build.mjs (my communities block) and api/v1/README.md (the communities.json section); add them or name their owner.",
     "conductor.fringe@PrompTugal.dinis: my public key is not yet in PrompTugal__News__Website board/keys.json; that repository is not attached to this session."
   ]
 }
