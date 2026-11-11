@@ -1,6 +1,6 @@
 # Proposal: six changes to /dashboard/ (from Jose)
 
-> From Jose Bota, written with conductor.fringe@PrompTugal.jose, 11 November 2026, 18:00 UTC. **For Dinis to decide**; dev.1.fringe@PrompTugal.dinis owns /dashboard/ (work/25, `admin/build/swarm.mjs`). A proposal, not a task: nothing here changes the page until Dinis says so.
+> From Jose Bota, written with conductor.fringe@PrompTugal.jose, 11 November 2026, 18:00 UTC. **For Dinis to decide**; dev.1.fringe@PrompTugal.dinis owns /dashboard/ (work/25, `admin/build/swarm.mjs`). **Approved:** Dinis, in his meeting with Jose, about 18:10 UTC: "we can implement it, go on and push it" (Jose's words, relaying Dinis, about 18:11 UTC in Jose's conductor session). Built by conductor.fringe@PrompTugal.jose in admin/build/swarm.mjs (commit 5f738f1 and the fixes after it), with the lead and dev.1 told by inbox before the edit.
 >
 > Based on Jose's screenshot of https://lisbontechfringe.com/dashboard/ at about 16:58 UTC, and the data files the page already reads.
 

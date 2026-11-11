@@ -123,7 +123,7 @@ export async function collectSwarm({ root, roster, status, board, traffic, activ
   // built by conductor.fringe@PrompTugal.jose. Additive: every field above stays as it was.
   // (1) for readers, now: what someone in Lisbon gets from the site at this hour
   const today = String(builtAt || '').slice(0, 10);
-  const toCome = ev.filter((e) => e.date === today && parseT(e.start) != null && parseT(e.start) >= now && e.status !== 'cancelled');
+  const toCome = ev.filter((e) => e.date === today && parseT(e.start) != null && parseT(e.start) >= now && e.status !== 'cancelled' && e.status !== 'moved');   // moved = postponed or moved away
   const viaViews = traffic?.via_detail ? Object.entries(traffic.via_detail).map(([k, v]) => [k, v?.views ?? 0]) : (traffic?.by_via || []).map(([k, n]) => [k, n]);
   const readers = {
     today, events_to_come_today: toCome.length, online_to_come_today: toCome.filter((e) => e.status === 'online').length,
@@ -133,8 +133,9 @@ export async function collectSwarm({ root, roster, status, board, traffic, activ
   };
   // (2) outreach as a funnel, with who sent each note (organisations only; the sender is a team id)
   const tracker = jread(join(root, 'data/outreach-tracker.json'))?.organisers || [];
+  const teamIds = new Set(people.map((p) => p.id));
   const outreach_sent = tracker.filter((r) => r.state && r.state !== 'drafted')
-    .map((r) => ({ organiser: clip(r.organiser, 90), state: r.state, sent_by: r.sent_by || null, sent_at: r.sent_at || null }))
+    .map((r) => ({ organiser: clip(r.organiser, 90), state: r.state, sent_by: teamIds.has(r.sent_by) ? r.sent_by : r.sent_by ? 'a person' : null, sent_at: r.sent_at || null }))
     .sort((a, b) => String(b.sent_at).localeCompare(String(a.sent_at)) || a.organiser.localeCompare(b.organiser));
   const sent_by = {}; for (const r of outreach_sent) if (r.sent_by) sent_by[r.sent_by] = (sent_by[r.sent_by] || 0) + 1;
   const organiser_visits = viaViews.find(([k]) => k === 'organiser')?.[1] ?? 0;
@@ -144,16 +145,18 @@ export async function collectSwarm({ root, roster, status, board, traffic, activ
     const s = status[p.id];
     if (Array.isArray(s.today) && s.today.length) return { id: p.id, name: p.name, source: 'today', items: asList(s.today).slice(0, 3).map((x) => clip(x, 170)), updated: s.updated || null };
     const d = asList(s.done).map((x, i) => ({ x, i, t: timeOf(x) }));
-    const timed = d.filter((o) => o.t != null).sort((a, b) => b.t - a.t || b.i - a.i);
+    const u = parseT(s.updated), uMin = u == null ? null : new Date(u).getUTCHours() * 60 + new Date(u).getUTCMinutes();
+    // a line's HH:MM has no date: one later than the status file's own time of day was written on an earlier day
+    const timed = d.filter((o) => o.t != null && (uMin == null || o.t <= uMin)).sort((a, b) => b.t - a.t || b.i - a.i);
     return { id: p.id, name: p.name, source: 'latest done', items: (timed.length ? timed.slice(0, 2) : d.slice(-2)).map((o) => clip(o.x, 170)), updated: s.updated || null };
   });
   // (4) the asks for Dinis, ranked: a deadline still ahead first (soonest), then urgent, then newest; a passed deadline last
-  const dueOf = (txt) => { const m = /\b(?:before|by|until)\s+(\d{1,2}):(\d{2})/i.exec(txt); if (!m || +m[1] > 23 || +m[2] > 59) return null; const d = new Date(now); d.setUTCHours(+m[1], +m[2], 0, 0); return d.getTime(); };
+  const dueOf = (txt, at) => { const m = /\b(?:before|by|until)\s+(\d{1,2}):(\d{2})/i.exec(txt); if (!m || +m[1] > 23 || +m[2] > 59) return null; const base = parseT(at); if (base == null) return null; const d = new Date(base); d.setUTCHours(+m[1], +m[2], 0, 0); return d.getTime(); };
   const dinis_ranked = asks.filter((a) => a.to_dinis).map((a) => {
-    const due = dueOf(a.text), urgent = /\b(urgent|asap|blocked|blocking|right now)\b/i.test(a.text);
+    const due = dueOf(a.text, a.at), urgent = /\b(urgent|asap|blocked|blocking|right now)\b/i.test(a.text);
     const tier = due != null && due >= now ? 0 : urgent ? 1 : due == null ? 2 : 3;
     return { from: a.from, at: a.at || null, text: a.text, due: due == null ? null : new Date(due).toISOString().slice(0, 16) + 'Z', urgent, tier };
-  }).sort((x, y) => x.tier - y.tier || (x.tier === 0 ? x.due.localeCompare(y.due) : String(y.at).localeCompare(String(x.at))));
+  }).sort((x, y) => x.tier - y.tier || (x.tier === 0 ? x.due.localeCompare(y.due) : String(y.at || '').localeCompare(String(x.at || ''))));
   // the top three come from three different senders where possible, so one busy status file cannot fill them
   const dinis_top = []; for (const a of dinis_ranked) if (dinis_top.length < 3 && !dinis_top.some((b) => b.from === a.from)) dinis_top.push(a);
   for (const a of dinis_ranked) if (dinis_top.length < 3 && !dinis_top.includes(a)) dinis_top.push(a);
@@ -235,6 +238,7 @@ export function swarmBody(s, esc, repo) {
   const bar = (t) => { const n = t.open + t.claimed + t.done + t.other || 1; return `<div class="bar" role="img" aria-label="${t.done} done, ${t.claimed} claimed, ${t.open} open"><i class="d" style="width:${100 * t.done / n}%"></i><i class="c" style="width:${100 * t.claimed / n}%"></i><i class="o" style="width:${100 * t.open / n}%"></i></div><p class="muted">${t.done} done · ${t.claimed} claimed · ${t.open} open</p>`; };
   const H = Object.fromEntries(s.sections.map((x) => [x.key, x]));
   const panel = (k, inner) => `<section class="pn ${H[k].health}" id="s-${k}"><h2><span class="hd ${H[k].health}" role="img" aria-label="health: ${H[k].health}"></span>${esc(H[k].title)}</h2><p class="hl">${esc(H[k].headline)}</p>${H[k].why ? `<p class="why"><strong>Why ${H[k].health}:</strong> ${esc(H[k].why)}</p>` : ''}${inner}</section>`;
+  const N = (x) => esc(String(Number.isFinite(Number(x)) ? Number(x) : 0));
   const R = s.readers, short = (n) => String(n || '').replace('.fringe@PrompTugal.', '@').replace('@PrompTugal.', '@');
   const accounts = c.by_account.map((a) => `<li>${esc(a.account)}: <strong>${a.online}</strong> of ${a.total} online</li>`).join('');
   const ev = s.health.events;
@@ -244,7 +248,7 @@ export function swarmBody(s, esc, repo) {
   const dg = s.asks_by_addressee.find((g) => g.to === 'Dinis'), others = s.asks_by_addressee.filter((g) => g.to !== 'Dinis');
   const rk = s.dinis_ranked || [];
   const askLi = (a) => `<li>${a.tier === 0 ? `<span class="chip due">due ${hhmm(a.due)}</span>` : a.urgent ? '<span class="chip urg">urgent</span>' : ''}${esc(a.text.length > 170 ? a.text.slice(0, 169) + '…' : a.text)} <span class="muted">(from ${esc(short(a.from))}${a.at ? ', status ' + hhmm(a.at) : ''})</span></li>`;
-  const asks = (rk.length ? `<div class="ask me"><strong>Dinis: the top ${Math.min(3, rk.length)} of ${rk.length}</strong> <span class="muted">(a deadline still ahead first, then urgent, then newest)</span><ul>${rk.slice(0, 3).map(askLi).join('')}</ul>${rk.length > 3 ? `<details><summary>${rk.length - 3} more for Dinis</summary><ul>${rk.slice(3).map(askLi).join('')}</ul></details>` : ''}</div>` : dg ? `<div class="ask me"><strong>Dinis: waiting for you</strong> (${dg.count})<ul>${li(dg.asks.slice(0, 5))}</ul></div>` : '<p class="muted">Nothing waiting for Dinis.</p>') +
+  const asks = (rk.length ? `<div class="ask me"><strong>Dinis: the top ${Math.min(3, rk.length)} of ${rk.length}</strong> <span class="muted">(a deadline still ahead first, then urgent, then the most recently updated status file; three different senders where possible)</span><ul>${rk.slice(0, 3).map(askLi).join('')}</ul>${rk.length > 3 ? `<details><summary>${rk.length - 3} more for Dinis</summary><ul>${rk.slice(3).map(askLi).join('')}</ul></details>` : ''}</div>` : dg ? `<div class="ask me"><strong>Dinis: waiting for you</strong> (${dg.count})<ul>${li(dg.asks.slice(0, 5))}</ul></div>` : '<p class="muted">Nothing waiting for Dinis.</p>') +
     (others.length ? `<details><summary>Asks for others: ${others.reduce((n, g) => n + g.count, 0)} from ${others.length} agents</summary>${others.map((g) => `<div class="ask"><strong>${esc(g.to)}</strong> (${g.count})<ul>${li(g.asks)}</ul></div>`).join('')}</details>` : '');
   const A = s.activity, act = (w) => `<strong>${w.commits}</strong> commits, <strong>${w.deploys}</strong> deploys, <strong>${w.agents}</strong> agents`;
   const ex = s.exceptions || [];
@@ -254,13 +258,13 @@ export function swarmBody(s, esc, repo) {
   const tl = f.traffic_last_hour;
   const data = `<ul class="kv"><li>Last researcher re-read: <strong>${hhmm(ev.newest_read)}</strong></li><li>Last capture (work/27): ${f.last_capture ? esc(f.last_capture) : 'none yet'}</li><li>Last deploy: <span id="v-dep" class="muted">checking version.json…</span></li><li>Traffic in the last hour: ${tl ? `<strong>${tl[1]}</strong> views (${esc(tl[0])})` : 'no views yet'}${s.traffic ? ` · ${s.traffic.views} views in all, ${s.traffic.countries} countries · <a href="/traffic/">traffic</a>` : ''}</li><li>Gate: green (a deploy is built only after <code>validate.mjs</code> passes; this page is that build)</li></ul>`;
   const o = s.outreach, sent = s.outreach_sent || [], sb = Object.entries(s.outreach_sent_by || {});
-  const outreach = o ? `<div class="fun" role="list" aria-label="outreach funnel"><div class="card" role="listitem"><b>${o.organisers_listed}</b>listed</div><span class="ar" aria-hidden="true">→</span><div class="card" role="listitem"><b>${o.contacted}</b>contacted</div><span class="ar" aria-hidden="true">→</span><div class="card" role="listitem"><b>${o.answered}</b>answered</div><span class="ar" aria-hidden="true">→</span><div class="card" role="listitem"><b>${o.joined}</b>joined</div></div>
-<p>Visits from organiser notes (<code>?via=organiser</code>): <strong>${s.organiser_visits ?? 0}</strong>${sb.length ? ` · sent by ${sb.map(([k, n]) => `<strong>${esc(k)}</strong> ${n}`).join(', ')}` : ''}</p>
+  const outreach = o ? `<div class="fun" role="list" aria-label="outreach funnel"><div class="card" role="listitem"><b>${N(o.organisers_listed)}</b>listed</div><span class="ar" aria-hidden="true">→</span><div class="card" role="listitem"><b>${N(o.contacted)}</b>contacted</div><span class="ar" aria-hidden="true">→</span><div class="card" role="listitem"><b>${N(o.answered)}</b>answered</div><span class="ar" aria-hidden="true">→</span><div class="card" role="listitem"><b>${N(o.joined)}</b>joined</div></div>
+<p>Visits from organiser notes (<code>?via=organiser</code>): <strong>${N(s.organiser_visits)}</strong>${sb.length ? ` · sent by ${sb.map(([k, n]) => `<strong>${esc(k)}</strong> ${N(n)}`).join(', ')}` : ''}</p>
 ${sent.length ? `<h3>Notes sent (${sent.length})</h3><ul class="sent">${sent.map((r) => `<li><strong>${esc(r.organiser)}</strong>: ${esc(r.state)}${r.sent_by ? ' by ' + esc(r.sent_by) : ''}${r.sent_at ? ', ' + hhmm(r.sent_at) : ''}</li>`).join('')}</ul>` : '<p class="muted">No note sent yet.</p>'}
-<p class="muted">${o.drafts_ready} drafts ready. Visits by ?via= channel: ${f.by_via.length ? f.by_via.map(([k, n]) => `${esc(k)} ${n}`).join(' · ') : 'none yet'}. An agent never sends: a person does. <a href="${repo}/blob/dev/work/23-tracker.md">tracker</a> · <a href="${repo}/blob/dev/work/29-outreach-desk.md">work/29</a> · <a href="${repo}/tree/dev/work/drafts">drafts</a>.</p>` : '<p class="muted">No outreach counts yet (work/29).</p>';
-  const readersBlock = R ? `<section class="rd" aria-label="For readers, now"><h2>For readers, now</h2><div class="sg"><div class="card"><b>${R.events_to_come_today}</b>events still to come today</div><div class="card"><b>${R.online_to_come_today}</b>of them online</div><div class="card"><b>${R.reread_last_hour}</b>events re-read at source in the last hour</div><div class="card"><b>${R.views_last_hour ? R.views_last_hour.views : 0}</b>views ${R.views_last_hour ? 'in the hour from ' + esc(String(R.views_last_hour.hour).slice(11, 16)) + ' UTC' : 'this hour'}</div></div>
-<p class="muted">As of the build (${esc(s.built_at.slice(11, 16))} UTC). Views by channel, all of today: ${R.views_by_channel.length ? R.views_by_channel.map(([k, n]) => `${esc(k)} ${n}`).join(' · ') : 'none tagged yet'}. <a href="/now/">What is on now</a> · <a href="/traffic/">traffic</a>.</p></section>` : '';
-  const tbp = (s.today_by_person || []).length ? `<section class="tbp" aria-label="Today, by person"><h2>Today, by person</h2><ul class="cols">${s.today_by_person.map((p) => `<li class="card"><strong>${esc(p.name)}</strong>${p.updated ? ` <span class="muted">· status ${hhmm(p.updated)}</span>` : ''}${p.items.map((x) => `<p>${esc(x)}</p>`).join('')}${p.source === 'today' ? '' : '<p class="muted">latest lines of their status file</p>'}</li>`).join('')}</ul></section>` : '';
+<p class="muted">${N(o.drafts_ready)} drafts ready. Visits by ?via= channel: ${f.by_via.length ? f.by_via.map(([k, n]) => `${esc(k)} ${n}`).join(' · ') : 'none yet'}. An agent never sends: a person does. <a href="${repo}/blob/dev/work/23-tracker.md">tracker</a> · <a href="${repo}/blob/dev/work/29-outreach-desk.md">work/29</a> · <a href="${repo}/tree/dev/work/drafts">drafts</a>.</p>` : '<p class="muted">No outreach counts yet (work/29).</p>';
+  const readersBlock = R ? `<section class="rd" aria-label="For readers, now"><h2>For readers, now</h2><div class="sg"><div class="card"><b>${N(R.events_to_come_today)}</b>events still to come today</div><div class="card"><b>${N(R.online_to_come_today)}</b>of them online</div><div class="card"><b>${N(R.reread_last_hour)}</b>events re-read at source in the last hour</div><div class="card"><b>${N(R.views_last_hour ? R.views_last_hour.views : 0)}</b>views ${R.views_last_hour ? 'in the hour from ' + esc(String(R.views_last_hour.hour).slice(11, 16)) + ' UTC' : 'this hour'}</div></div>
+<p class="muted">As of the build (${esc(s.built_at.slice(11, 16))} UTC). Views by channel since launch: ${R.views_by_channel.length ? R.views_by_channel.map(([k, n]) => `${esc(k)} ${N(n)}`).join(' · ') : 'none tagged yet'}. <a href="/now/">What is on now</a> · <a href="/traffic/">traffic</a>.</p></section>` : '';
+  const tbp = (s.today_by_person || []).length ? `<section class="tbp" aria-label="Today, by person"><h2>Today, by person</h2><ul class="cols">${s.today_by_person.map((p) => `<li class="card"><strong>${esc(p.name)}</strong>${p.updated ? ` <span class="muted">· status ${String(p.updated).slice(0, 10) === s.built_at.slice(0, 10) ? '' : esc(String(p.updated).slice(5, 10)) + ' '}${hhmm(p.updated)}</span>` : ''}${p.items.map((x) => `<p>${esc(x)}</p>`).join('')}${p.source === 'today' ? '' : '<p class="muted">latest lines of their status file</p>'}</li>`).join('')}</ul></section>` : '';
   const reasons = (s.overall.reasons || []).length ? `Swarm ${s.overall.health === 'red' ? 'broken' : 'needs a look'}: ` + s.overall.reasons.map((r) => `<a href="#s-${esc(r.key)}">${esc(r.title.toLowerCase())}</a>: ${esc(r.why)}`).join('; ') : esc(s.overall.text);
   return `<div class="sw cc"><h1>Control centre</h1>
 <p class="ov ${s.overall.health}"><span class="hd ${s.overall.health}"></span>${reasons}</p>

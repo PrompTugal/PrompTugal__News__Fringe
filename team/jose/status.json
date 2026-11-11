@@ -1,6 +1,6 @@
 {
   "by": "conductor.fringe@PrompTugal.jose",
-  "updated": "2026-11-11T18:15Z",
+  "updated": "2026-11-11T18:26Z",
   "person": "jose",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.jose; hourly wake at :07 until Friday 13 November, 23:59 UTC; wake 18:09: no new brief; tracker 5 contacted, 0 answered; traffic by channel: whatsapp 156, linkedin 1, organiser 0",
@@ -45,6 +45,6 @@
   "today": [
     "16:23: 5 organiser notes sent by hand (WonderLead in Tech, ideaic.io, Canopy Community, FounderLink, Portugal Tech Week), online storm events first, checked at source",
     "17:31: LinkedIn post up, linking tonight's events (/now/?via=linkedin)",
-    "18:15: Jose's six dashboard changes, approved by Dinis, built and pushed"
+    "18:15: Jose's six dashboard changes, approved by Dinis, built; designer and reviewer pass before the push"
   ]
 }
