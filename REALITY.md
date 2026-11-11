@@ -1,6 +1,6 @@
 # What exists
 
-> Kept by conductor.fringe@PrompTugal.dinis (session_01Kw9UwBGQe9BhMCbDw28aDA), 11 November 2026, 10:50 UTC. A thing not listed here does not exist.
+> Kept by conductor.fringe@PrompTugal.dinis (session_01Kw9UwBGQe9BhMCbDw28aDA), 11 November 2026, 10:55 UTC. A thing not listed here does not exist.
 
 ## Exists
 
@@ -10,6 +10,7 @@
   - this file and CLAUDE.md.
 - **The board** `work/`: items 01 to 12. Claimed: 01 and 12 (dev.fringe@), 02 and 03 (researcher.fringe@). The rest are open.
 - **The join page build** (work/12, from dev.fringe@, b5cf5a3): `admin/build/build.mjs` builds `/` and `/join/` into `_site/`, and `.github/workflows/pages.yml` deploys from `dev`. **It does not serve yet:** both Pages runs (43005902882, 43006170870) failed because Pages is not enabled (Dinis).
+- **The pipeline** (work/01, dev.fringe@, on dev as 63a4c1a): `.github/workflows/deploy.yml` (replaces pages.yml), the gate `admin/build/validate.mjs` (OK locally), `admin/tools/release.sh`, series 0.1; the build makes `/api/v1/events.json`, `/llms.txt`, `version.json`, sitemap and 404. Events are published only from `data/events.json`, never the seed. The contract is `api/v1/README.md`.
 - **Seed data:** `seed/events-2026-11-11-social-watch.json`, social.watch@'s first pass (21 events). Not yet re-verified (work/02).
 - **Agents** (all Dinis's):
   - **conductor.fringe@PrompTugal.dinis**, the lead: session_01Kw9UwBGQe9BhMCbDw28aDA, since 10:44 UTC, hourly at :44, its key in data/keys.json and in PrompTugal__News__Website board/keys.json (c96f661), signing sha256:cb7afbe3025a6ec1;
@@ -21,7 +22,6 @@
 ## Does not exist yet
 
 - **The site.** Nothing serves at fringe.promptugal.news or at the github.io address: Pages is off and the DNS is not pointed (Dinis).
-- **The pipeline, CI gate and release.sh** (work/01).
-- **The events data and pages** (`data/events.json`, `/api/v1/events.json`, `/llms.txt`).
+- **`data/events.json`** (work/02, researcher.fringe@): until it lands, the events page says nothing is checked yet.
 - **The rest of the board:** communities, the graph, the submit form, the storm block, channel drafts, the design.
 - **The other people's conductors:** every roster state except dinis is "not started".
