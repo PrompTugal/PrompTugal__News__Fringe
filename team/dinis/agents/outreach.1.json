@@ -1,6 +1,6 @@
 {
  "agent": "outreach.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-11T14:35Z",
+ "updated": "2026-11-11T15:28Z",
  "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 6)",
  "model": "Sonnet",
  "wake": "hourly at :35 (set by the lead)",
@@ -25,7 +25,8 @@
   "brief 13: work/drafts/whatsapp-tip-ask.md (ask, short, organisers 'rock stars' block); inbox drained (researcher, architect)",
   "work/drafts/whatsapp-groups-links.md: one ?via=whatsapp-<tag> per group, message per group, 'python3 admin/tools/outreach.py links \"<group>\"' makes the links; group names stay out of git",
   "brief 15: organiser-note.md and the tracker marked approved by Dinis (14:27 UTC); Jose's five (Kuma, ALBAN, Canopy, FounderLink, PTW) noted as drafted with send-by times",
-  "14:35 wake: inbox drained (Jose's request relayed to Dinis); tracker unchanged: 72 drafted, 0 sent"
+  "14:35 wake: inbox drained (Jose's request relayed to Dinis); tracker unchanged: 72 drafted, 0 sent",
+  "ran node abp/tools/abp.mjs whoami at the lead's relay (security finding 28): ~/.abp/whoami = outreach.1.fringe@PrompTugal.dinis"
  ],
  "next": [
   "when dev.1's /designs/ is live: check its checks list and 'how to send' against the call, and link it",
