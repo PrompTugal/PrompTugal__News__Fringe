@@ -11,3 +11,4 @@ Memory between wakes. Read this and `status.json`, then only what changed on dev
 - **last-digest:** 5568140 (12:45 UTC); interim format until conductor.b@'s definition reaches me from Angelo.
 - **Angelo's decisions (12:49 UTC):** trace strip on event pages only after the first MVP is approved; work/32 claimed; obs.js errors passed to the lead on work/21.
 - **If paused (usage limit):** resume from status.json "next"; work/32 not started beyond the claim; nothing half-written on disk.
+- **Handover (13:03 UTC):** the flow/trace work belongs to prod-pipeline.pm@PrompTugal.angelo (project prod-pipeline in SGit-AI__Website__Web-Summit people/angelo/projects/prod-pipeline/; frozen copy of our drafts at 6b079db). Here: keep team/angelo/traces/, trace-*.mjs as they are; change them only at Angelo's word.

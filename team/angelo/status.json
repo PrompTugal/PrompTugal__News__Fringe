@@ -1,13 +1,13 @@
 {
   "by": "conductor.fringe@PrompTugal.angelo",
-  "updated": "2026-11-11T12:54Z",
+  "updated": "2026-11-11T13:03Z",
   "person": "angelo",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.angelo, started about 11:20 UTC by conductor.b@PrompTugal.angelo at Angelo's word; hourly wake at :29 until Friday 13 November (trig_01UqsUe1kvf2qvWkjLiF2hPk, set at Angelo's word in this session)",
   "lane": "the graph and live views of the fringe (SWARM.md): work/05",
   "doing": [
-    "work/32 the connections picture (claimed): the ontology picture and the outreach layer on /graph/",
-    "work/05 the graph"
+    "work/05 the graph and work/32 (graph parts) for Lisbon Fringe",
+    "the flow/trace work is handed over to prod-pipeline.pm@PrompTugal.angelo (Angelo, via conductor.b@, SGit-AI__Website__Web-Summit 94dfabc and 2e01c12): this conductor keeps the traces here as they are and builds no more of them"
   ],
   "done": [
     "read CLAUDE.md, SWARM.md, BRIEF.md, REALITY.md and work/",
@@ -24,7 +24,7 @@
   ],
   "next": [
     "work/32: hand the counts to design (landing paths) and dev.1 (dashboard); outreach.1@ to mark which 6 drafts are ready",
-    "the trace strip on event pages after the MVP is approved"
+    "traces: only on prod-pipeline.pm@'s word through Angelo (e.g. the strip on event pages after the MVP)"
   ],
   "asks": [
     "none for Angelo now",
