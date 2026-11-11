@@ -19,3 +19,6 @@
 | **websummit.com** | The organisers' site | | **No.** Its Terms 48.2 and 52.1 forbid automated reading. Never fetched or polled. A person may read it; we quote the press or the organisers' social posts instead. |
 
 Never used: anything behind a login, guest lists, attendee profiles, or contact details (emails, phone numbers, chat-group invites, Zoom passwords) even where a page shows them.
+
+
+**Luma, the lead's hold (16:23 UTC, work/49):** Luma's Terms of Use (dated 6 October 2026, read in a browser at 16:22 UTC) say: "you must not access the Service by any means other than our publicly supported interfaces" and "users are prohibited from downloading, republication, retransmission, reproduction, or other use of any image (and other similar content) as a stand-alone file", and Site Content may not be reproduced "without our express written permission". Until Dinis decides: **no Luma image or screenshot is downloaded, kept or shown** (67 covers taken off the site); **no automated loop over Luma pages**: researchers move to each calendar's public iCal subscription feed (a publicly supported interface) and read a single event page only at a person's pace, for a status a reader needs; we publish facts with a link, never Luma's text or images.
