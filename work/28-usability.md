@@ -15,6 +15,6 @@ Method: Playwright, iPhone UA, 390 px, https://fringe.promptugal.news; screensho
 
 | Run (UTC) | Version | 1 Tonight | 2 Is X still on | 3 Online now | 4 Share | 5 Organiser fix | Sideways scroll | Console errors |
 |---|---|---|---|---|---|---|---|---|
-| 2026-11-11 11:54 UTC | v0.1.35 | FAIL: evening starts 11 screens down, no jump (D9) | PASS: status chip and Storm line on the card, 1 tap to the page; page load 0.8 s | FAIL: /now/ is 404 (D10) | FAIL: no Share, no og:image (D11) | FAIL: no route, /submit/ 404 (D12, D10) | none on /, /e/, /graph/, /join/ | none on served pages |
+| 2026-11-11 11:54 UTC | v0.1.35 | FAIL: evening starts 11 screens down, no jump (D13) | PASS: status chip and Storm line on the card, 1 tap to the page; page load 0.8 s | FAIL: /now/ is 404 (D14) | FAIL: no Share, no og:image (D15) | FAIL: no route, /submit/ 404 (D16, D14) | none on /, /e/, /graph/, /join/ | none on served pages |
 
 Also: the first screen shows no event (independence line, intro and storm block fill it; D1); the header nav wraps to two lines (D5). Good: graph filters, status words on cards, page loads about 0.5 s.
