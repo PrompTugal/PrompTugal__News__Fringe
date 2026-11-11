@@ -111,11 +111,12 @@ Served at `/api/v1/graph/<type>.json` (ontologist.1.fringe@PrompTugal.dinis). Bu
 | `days` | `id` (YYYY-MM-DD), `name`, `events` [event id], `festivals` [festival id], `page` |
 | `festivals` | `id`, `name`, `organiser` (organiser id), `links` [{label, url}], `holds_when`, `lists_when`, `events` [event id: runs, or a partner runs under its name], `listed` [event id: in its public feed], `days` [day id], `page` |
 | `organisers` | `id`, `name`, `links` [{label, url}], `what` {text, quoted_from, read_at} \| null, `part_of` (organiser id) \| null, `events` [event id], `lead` [event id it leads], `festivals` [festival id], `page` |
-| `events` | `id` (as in events.json), `name`, `url`, `read_at`, `day`, `start`, `end`, `kind`, `size`, `status`, `storm_moved`, `cost`, `free` (true \| false \| null), `city` ("Lisbon" \| "online" \| a town \| "unknown"), `in_lisbon`, `place` (place id), `organisers` [{id, lead}], `festival` (festival id) \| null, `listed_by` [festival id], `personas` [persona id], `topics` [topic id], `sessions` [session id], `page` |
+| `events` | `id` (as in events.json), `name`, `url`, `read_at`, `day`, `start`, `end`, `kind`, `size`, `status`, `storm_moved`, `cost`, `free` (true \| false \| null), `city` ("Lisbon" \| "online" \| a town \| "unknown"), `in_lisbon`, `place` (place id), `organisers` [{id, lead}], `festival` (festival id) \| null, `listed_by` [festival id], `personas` [persona id], `topics` [topic id], `sessions` [session id], `platform` (platform id: the host of `url`), `page` |
 | `sessions` | (empty in the first slice) `id`, `event`, `name`, `start`, `end`, `url`, `read_at` |
 | `places` | `id`, `name` (the neighbourhood as the page names it, else the city, else "Online"), `city`, `events` [event id], `page` |
 | `personas` | `id` (investor, founder, builder, corporate, student, anyone: roles, never people), `name`, `ask`, `rule`, `label` ("hypothesis (by rule)"), `events` [event id], `page` |
 | `topics` | `id`, `name`, `events` [event id], `page` |
-| `links` | `from`, `verb`, `to`, `source` (the event's URL), `read_at`; `verbs` gives each verb's subject and object type: hasEvent, lists (festival→event), runs, coRuns (organiser→event), runsFestival, partOf, onDay, at, forPersona, about, hasSession |
+| `platforms` | `id` (luma, meetup, eventbrite, partiful, own-site), `name`, `hosts` [host, for own-site], `events` [event id], `page` (/r/&lt;id&gt;/) |
+| `links` | `from`, `verb`, `to`, `source` (the event's URL), `read_at`; `verbs` gives each verb's subject and object type: hasEvent, lists (festival→event), runs, coRuns (organiser→event), runsFestival, partOf, onDay, at, forPersona, about, hasSession, registerOn (event→platform) |
 
 For SQL, `links` is the one edge table: e.g. `SELECT o.name, count(*) FROM links l JOIN organisers o ON o.id = l.from WHERE l.verb = 'runs' GROUP BY 1 ORDER BY 2 DESC`.

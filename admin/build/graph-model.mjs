@@ -15,9 +15,9 @@ const norm = (s) => String(s ?? '').normalize('NFKD').replace(/[̀-ͯ]/g, '').to
   .replace(/^the\s+/, '').replace(/[™®]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
 const slug = (s) => norm(s).replace(/ /g, '-') || 'x';
 
-export const TYPES = ['days', 'festivals', 'organisers', 'events', 'sessions', 'places', 'personas', 'topics'];
+export const TYPES = ['days', 'festivals', 'organisers', 'events', 'sessions', 'places', 'personas', 'topics', 'platforms'];
 // The page of each type (URLs may change freely while traffic is low; the API ids never do).
-export const PREFIX = { day: 'd', festival: 'f', organiser: 'o', event: 'e', session: 's', place: 'n', persona: 'p', topic: 't' };
+export const PREFIX = { day: 'd', festival: 'f', organiser: 'o', event: 'e', session: 's', place: 'n', persona: 'p', topic: 't', platform: 'r' };
 export const pathOf = (type, id) => `/${PREFIX[type]}/${encodeURIComponent(id)}/`;
 
 // The verbs (subject type, verb, object type): the schema of every link.
@@ -33,7 +33,17 @@ export const VERBS = {
   forPersona: ['event', 'persona'],
   about:      ['event', 'topic'],
   hasSession: ['event', 'session'],
+  registerOn: ['event', 'platform'],  // where you register: the host of the event's own URL (brief 13 addendum)
 };
+
+// The registration platform, from the host of the event's url. Anything else is the organiser's own site.
+const PLATFORMS = [['luma', 'Luma', /(^|\.)(lu\.ma|luma\.com)$/], ['meetup', 'Meetup', /(^|\.)meetup\.com$/], ['eventbrite', 'Eventbrite', /(^|\.)eventbrite\./],
+  ['partiful', 'Partiful', /(^|\.)partiful\.com$/]];
+export function platformOf(url) {
+  let host = ''; try { host = new URL(url).hostname.replace(/^www\./, ''); } catch {}
+  const p = PLATFORMS.find(([, , re]) => re.test(host));
+  return p ? { id: p[0], name: p[1] } : { id: 'own-site', name: "The organiser's own site", host };
+}
 
 const TOPIC_ALIAS = { vc: 'venture capital', vcs: 'venture capital', 'angel investors': 'angel investing',
   agents: 'AI agents', 'agentic internet': 'AI agents', 'ai agents': 'AI agents', ai: 'AI', 'deep tech': 'deeptech & hardware' };
@@ -88,7 +98,7 @@ export function buildModel(root, events) {
     const id = e.id;
     const city = cityOf(e);
     const ev = { id, type: 'event', name: e.name, url: e.url, read_at: e.read_at, day: e.date, start: e.start || null, end: e.end || null,
-      kind: e.kind || 'unknown', size: e.size || null, status: e.status || 'unknown', storm_moved: e.storm_moved ?? null, cost: e.cost || null,
+      kind: e.kind || 'unknown', size: e.size || null, status: e.status || 'unknown', storm_moved: e.storm_moved ?? null, cost: e.cost || null, platform: null,
       free: /^free\b/i.test(e.cost || '') ? true : (/EUR|€|\d/.test(e.cost || '') ? false : null),
       city, in_lisbon: city === 'Lisbon', place: null, organisers: [], festival: null, listed_by: [], personas: [], topics: [], sessions: [] };
     E.events.set(id, ev);
@@ -125,6 +135,12 @@ export function buildModel(root, events) {
       E.places.get(pid).events.push(id); ev.place = pid; link(id, 'at', pid, e);
     }
 
+    // platform
+    const pf = platformOf(e.url);
+    if (!E.platforms.has(pf.id)) E.platforms.set(pf.id, { id: pf.id, type: 'platform', name: pf.name, hosts: [], events: [] });
+    const P = E.platforms.get(pf.id); P.events.push(id); if (pf.host && !P.hosts.includes(pf.host)) P.hosts.push(pf.host);
+    ev.platform = pf.id; link(id, 'registerOn', pf.id, e);
+
     // topics
     for (const t of new Set((e.topics || []).map(topicName))) {
       const tid = slug(t);
@@ -158,6 +174,7 @@ export function buildModel(root, events) {
     .sort((a, b) => b.lead.length - a.lead.length || b.events.length - a.events.length || a.name.localeCompare(b.name));
   sorted.days.sort((a, b) => a.id.localeCompare(b.id));
   sorted.places.sort((a, b) => b.events.length - a.events.length);
+  sorted.platforms.sort((a, b) => b.events.length - a.events.length);
   sorted.topics.sort((a, b) => b.events.length - a.events.length);
   return { ...sorted, links, byId: E };
 }

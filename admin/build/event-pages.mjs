@@ -63,7 +63,7 @@ const CSS = `.star{background:var(--card);border:1px solid var(--line);border-le
 blockquote{margin:.4em 0;padding:.3em .8em;border-left:3px solid var(--line);color:var(--fg)}.yours{border-left:4px solid var(--warn)}`;
 
 // page(title, body, desc, head) and linkify come from build.mjs, so the layout, independence line and footer are the site's own.
-export function eventPages(events, { page, esc, linkify, SITE, card, cardList, orgs, dense, intel = "" }) {
+export function eventPages(events, { page, esc, linkify, SITE, card, cardList, orgs, dense, intel = "", graphLinks = () => '' }) {
   ORGS = orgs || null;
   const list = events.filter(hasPage);
   return list.map((e) => {
@@ -99,7 +99,7 @@ export function eventPages(events, { page, esc, linkify, SITE, card, cardList, o
 if(navigator.share){navigator.share({title:t,text:t+' · Lisbon Tech Fringe',url:u}).catch(function(){})}
 else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(function(){done('Link copied')},function(){done('Copy this address: '+u)})}
 else{done('Copy this address: '+u)}}})();</script>
-<dl class="facts">${facts}</dl>
+<dl class="facts">${facts}${graphLinks(e.id)}</dl>
 <p class="muted">Source: <a href="${esc(e.url)}">${esc(e.url)}</a>, read ${esc(String(e.read_at).slice(0, 16).replace('T', ' '))} UTC.</p>
 ${rel.length ? `<h2>Related events</h2>` + `<ul class="dense">${rel.map(({ o, why }) => dense(o, why)).join('')}</ul>` : ''}
 ${intel}

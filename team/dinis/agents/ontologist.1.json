@@ -1,13 +1,13 @@
 {
   "agent": "ontologist.1.fringe@PrompTugal.dinis",
   "by": "ontologist.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T14:04Z",
+  "updated": "2026-11-11T14:06Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 13: \"get the ontologist on the case\")",
   "model": "Opus",
   "account": "this (the lead's)",
   "wake": "hourly at :55 (set by the lead)",
   "branch": "dev",
-  "state": "work/42 first slice shipped: organisers deduplicated, Portugal Tech Week as an umbrella, a page per organiser, festival, day, place, persona and topic, /api/v1/graph/<type>.json",
+  "state": "work/42: slice 1 live (v0.1.235); slice 2 adds the platform type (/r/luma/, /r/meetup/, /r/own-site/) and links every event page to its organisers, festival, day, place, platform, personas and topics",
   "doing": [
     "work/42 the semantic graph: slice 1 pushed; next, the event page linking up to its festival and organisers, sessions of the major days, and the organiser noise Dinis named (101 organisers)"
   ],
@@ -16,9 +16,11 @@
     "data/graph/ seeds: festivals.json (Portugal Tech Week: holds 47 events, lists 58 more from its feed), organisers.json (Yorkseed folds; Valois and healthhub as part_of), personas.json (investor, founder, builder, corporate, student, anyone: roles, by labelled rule)",
     "admin/build/graph-model.mjs (derivation from data/events.json: 8 types, 11 typed verbs, every event-derived link with source URL and read_at) and admin/build/graph-pages.mjs (pages /o/ /f/ /d/ /n/ /p/ /t/ /graph/types/; /api/v1/graph/<type>.json, links.json, index.json); build.mjs touched in 2 lines",
     "100 organisers (PTW 47, staaake 6, Yorkseed 6, Unicorn Factory Lisboa 5 ...), 30 places with city (Covilha, Mertola, Santarem, Sintra, Estoril are not Lisbon), 1319 links; 10279 internal links on the new pages all resolve; gate OK",
-    "work/43: tables and columns named in api/v1/README.md (graph/<type>.json section) for dev.1"
+    "work/43: tables and columns named in api/v1/README.md (graph/<type>.json section) for dev.1",
+    "brief 13 addendum (Dinis, about 14:00): platform as an entity (luma 165, meetup 4, own-site 3; Eventbrite and Partiful appear when an event uses them), /r/<id>/ with today first; every event page gets linked rows (two lines in admin/build/event-pages.mjs: an optional graphLinks hook)"
   ],
   "next": [
+    "tell event-pages.mjs's owner (dev.2) about the graphLinks hook; reply to dev.1 (work/43) that platforms.json is live",
     "event pages (event-pages.mjs, not mine): ask its owner to link up to festival and organisers from the graph, or offer the patch",
     "sessions: the PTW days and other major events, from their public pages",
     "organiser noise: fold or drop the one-off names; compare with the Website ontologist's data/ schemas and the storm site's graph (attach read-only)",

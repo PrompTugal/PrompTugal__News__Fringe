@@ -293,7 +293,7 @@ writeFileSync(join(out, 'abp', 'index.html'), page('Agent Behaviour Policies: Li
 if (existsSync(join(root, 'data/architecture.json'))) writeFileSync(join(out, 'api', 'v1', 'architecture.json'), read('data/architecture.json'));
 mkdirSync(join(out, 'organisers'), { recursive: true });
 writeFileSync(join(out, 'organisers', 'index.html'), page('For organisers: Lisbon Tech Fringe', organisersBody(orgs, esc, { eventPath, hasPage }), 'What Lisbon Tech Fringe offers organisers of side events, and who is listed.'));
-writeGraph({ root, out, events, page, esc, eventPath, hasPage, SITE, VERSION, BUILT });   // work/42: /o/ /f/ /d/ /n/ /p/ /t/ and /api/v1/graph/<type>.json
+const graphM = writeGraph({ root, out, events, page, esc, eventPath, hasPage, SITE, VERSION, BUILT });   // work/42: /o/ /f/ /d/ /n/ /p/ /t/ and /api/v1/graph/<type>.json
 const changes = readChanges(root);
 const releases = buildReleases(root, changes.commits, VERSION);   // work/37: every commit gets the first tag that contains it
 mkdirSync(join(out, 'api', 'v1', 'releases'), { recursive: true });
@@ -306,7 +306,7 @@ releases.forEach((r, i) => {
 mkdirSync(join(out, 'changes'), { recursive: true });
 writeFileSync(join(out, 'changes', 'index.html'), page('What changed: Lisbon Tech Fringe', releasesIndexBody(releases, esc), 'Every release of Lisbon Tech Fringe: version, commit, time, agent and files touched.', '', '/changes/'));
 writeFileSync(join(out, 'api', 'v1', 'changes.json'), JSON.stringify({ about: 'Lisbon Tech Fringe releases from git: version (CI tag), commit, UTC time, agent, subject, files touched by area.', site: SITE, version: VERSION, built_at: BUILT, ...changes }, null, 1) + '\n');
-const ePages = eventPages(events, { page, esc, linkify, SITE, card, cardList, orgs, intel: intelBox(), dense: (o, why) => denseRow(o, { esc }, '', why, true) });   // work/22: /e/<id>/
+const ePages = eventPages(events, { page, esc, linkify, SITE, card, cardList, orgs, intel: intelBox(), graphLinks: graphM.eventLinks, dense: (o, why) => denseRow(o, { esc }, '', why, true) });   // work/22: /e/<id>/
 for (const p of ePages) { mkdirSync(join(out, p.path), { recursive: true }); writeFileSync(join(out, p.path, 'index.html'), p.html); }
 writeFileSync(join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n<url><loc>${SITE}</loc></url>\n<url><loc>${SITE}join/</loc></url>\n<url><loc>${SITE}how/</loc></url>\n<url><loc>${SITE}programme/</loc></url>\n<url><loc>${SITE}graph/</loc></url>\n<url><loc>${SITE}traffic/</loc></url>\n<url><loc>${SITE}designs/</loc></url>\n<url><loc>${SITE}data/</loc></url>\n<url><loc>${SITE}evolution/</loc></url>\n${ePages.map((p) => `<url><loc>${esc(p.url)}</loc></url>\n`).join('')}</urlset>\n`);
 writeFileSync(join(out, 'version.json'), JSON.stringify({ version: VERSION, commit: process.env.GITHUB_SHA || '', pushed_at: process.env.PUSHED_AT || '', built_at: BUILT }, null, 2) + '\n');
