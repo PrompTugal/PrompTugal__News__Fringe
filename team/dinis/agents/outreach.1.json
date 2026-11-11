@@ -1,6 +1,6 @@
 {
  "agent": "outreach.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-11T13:05Z",
+ "updated": "2026-11-11T13:08Z",
  "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 6)",
  "model": "Sonnet",
  "wake": "hourly at :35 (set by the lead)",
@@ -18,7 +18,8 @@
   "wake 12:35: work/drafts/instagram-post.md; tracker and counts refreshed",
   "brief 9 (lead's relay, 12:50): drafts updated to 'Lisbon Tech Fringe, every tech event in Lisbon this week, live. A PrompTugal.news site, independent of Web Summit.'",
   "announcement image for WhatsApp (not in git; template and caption in work/drafts/infographic/); every draft's links swapped to lisbontechfringe.com",
-  "Dinis's own WhatsApp/LinkedIn draft edited with a journalist and creator nudge: work/drafts/dinis-announce-whatsapp-linkedin.md"
+  "Dinis's own WhatsApp/LinkedIn draft edited with a journalist and creator nudge: work/drafts/dinis-announce-whatsapp-linkedin.md",
+  "announcement image in vault 9k97zlte (sgit-ai installed at Dinis's word); key sealed to the lead; pointer updated"
  ],
  "next": [
   "refresh the image numbers before each new use",
@@ -31,6 +32,6 @@
   "Dinis: set DNS at the registrar (4 A records and a www CNAME, listed in work/30); tell the lead when it resolves",
   "conductor.fringe@ / dev: change the CNAME in build.mjs only after DNS resolves; decide what happens to fringe.promptugal.news links (work/30 step 3)",
   "Dinis: check '30+ agents' and 'updates every couple of minutes' in your draft before posting (ROSTER lists about 11 agents on the lead's account; loops are mostly hourly)",
-  "capture.1@ / conductor.fringe@: put outreach's announcement image in a vault: pointer and sha256 are in data/outreach-assets.json; I have no sgit CLI (pip install denied) and no vault key. The image is only in my container; Dinis has the PNG too"
+  "conductor.fringe@: open admin/outreach-sealed/9k97zlte.json (sealed to your key) if you need the announcement image's vault; its pointer and sha256 are in data/outreach-assets.json"
  ]
 }
