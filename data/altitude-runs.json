@@ -1,6 +1,6 @@
 {
  "about": "Every agentic run as flat documents, one per unit (abp/tools/runs-export.mjs), for Elastic index fringe-altitudes. Signed sources only; keys appear as fingerprints, never key material.",
- "generated": "2026-11-11T18:31:48Z",
+ "generated": "2026-11-11T18:59:56Z",
  "count": 110,
  "by_altitude": {
   "A3": 1,

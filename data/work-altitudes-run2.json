@@ -1,0 +1,216 @@
+{
+ "body": {
+  "about": "Every board item placed at the lowest altitude that can do it, by the altitudes of execution in action (abp/tools/altitudes.mjs): A0 planned, three A2 loops each ran A1 calls on an open-weight model until valid, A0 verified every signature and merged; architect.1 (A3) started the loops. Each unit signed with a key that existed only while it ran. A model's placement is evidence, not a decision.",
+  "objective": "For every board item, the lowest altitude that can do it (the least power that suffices)",
+  "generated": "2026-11-11T18:57:10Z",
+  "signatures_verified": true,
+  "counts": {
+   "items": 15,
+   "by_altitude": {
+    "A3": 6,
+    "A2": 6,
+    "A4": 3
+   },
+   "signatures": 20
+  },
+  "trace": {
+   "A3": {
+    "name": "architect.1.fringe@PrompTugal.dinis",
+    "note": "started the loops as sub-agents; commits the result under its session key"
+   },
+   "A0": [
+    {
+     "name": "compute: plan",
+     "fp": "sha256:c48424a3fb0094b6",
+     "born": "2026-11-11T18:56:14Z"
+    },
+    {
+     "name": "compute: merge",
+     "fp": "sha256:61b215ffa27f6549",
+     "born": "2026-11-11T18:57:10Z"
+    }
+   ],
+   "A2": [
+    {
+     "name": "loop: slice 0",
+     "fp": "sha256:804219e0fca61485",
+     "born": "2026-11-11T18:56:30Z",
+     "signed_at": "2026-11-11T18:56:47Z",
+     "items": 5,
+     "calls": 6
+    },
+    {
+     "name": "loop: slice 1",
+     "fp": "sha256:c4051713d3bfb75b",
+     "born": "2026-11-11T18:56:31Z",
+     "signed_at": "2026-11-11T18:56:46Z",
+     "items": 5,
+     "calls": 5
+    },
+    {
+     "name": "loop: slice 2",
+     "fp": "sha256:60a3304da2157609",
+     "born": "2026-11-11T18:56:30Z",
+     "signed_at": "2026-11-11T18:56:34Z",
+     "items": 5,
+     "calls": 5
+    }
+   ],
+   "A1": {
+    "calls": 16,
+    "retried": 1,
+    "models": [
+     "deepseek/deepseek-v4-flash"
+    ],
+    "cost_usd": 0.001286,
+    "keys": 16
+   }
+  },
+  "items": [
+   {
+    "id": "work/01-pipeline",
+    "title": "The site's pipeline and a first page at fringe.promptugal.news",
+    "status": "done",
+    "altitude": "A3",
+    "why": "Needs scheduled runs, memory, and networking beyond sandbox.",
+    "attempts": 2,
+    "call_fp": "sha256:870a652d9c9abffa"
+   },
+   {
+    "id": "work/02-verify-seed-events",
+    "title": "Verify the 21 seed events at their URLs and publish them",
+    "status": "done",
+    "altitude": "A2",
+    "why": "It can call tools to fetch URLs and update JSON until task is complete.",
+    "attempts": 1,
+    "call_fp": "sha256:9f0e748dd78cd7e7"
+   },
+   {
+    "id": "work/03-find-the-uncon",
+    "title": "Find the unconference or alternative event Dinis heard about",
+    "status": "done",
+    "altitude": "A3",
+    "why": "Needs memory, web search, and persistent agent loop.",
+    "attempts": 1,
+    "call_fp": "sha256:3b8332232e2db5a6"
+   },
+   {
+    "id": "work/04-communities",
+    "title": "Communities page: who runs this week's events, how to join",
+    "status": "done",
+    "altitude": "A2",
+    "why": "Can edit code, run tools, complete single task without needing scheduling.",
+    "attempts": 1,
+    "call_fp": "sha256:4410bc99dbcd7025"
+   },
+   {
+    "id": "work/05-graph",
+    "title": "Connect the dots: the fringe graph",
+    "status": "claimed",
+    "altitude": "A2",
+    "why": "Needs tool use and iteration to build /graph/ filters; no cross-run memory or scheduling required.",
+    "attempts": 1,
+    "call_fp": "sha256:e68f6205352f9766"
+   },
+   {
+    "id": "work/06-submit-form",
+    "title": "Submit an event: the form and its sealed lane",
+    "status": "claimed",
+    "altitude": "A3",
+    "why": "Needs memory, inbox, and ability to check before publishing.",
+    "attempts": 1,
+    "call_fp": "sha256:f4ba5f8d28fd442c"
+   },
+   {
+    "id": "work/07-storm-block",
+    "title": "The storm block, read live from the storm site",
+    "status": "done",
+    "altitude": "A3",
+    "why": "Requires scheduled fetching and memory across runs.",
+    "attempts": 1,
+    "call_fp": "sha256:708071eca179db4a"
+   },
+   {
+    "id": "work/08-channel-drafts",
+    "title": "Posts that point people to the site (drafts; a person sends)",
+    "status": "done",
+    "altitude": "A3",
+    "why": "Needs to draft three posts, store files, and act on memory across runs.",
+    "attempts": 1,
+    "call_fp": "sha256:c115ea5773f36323"
+   },
+   {
+    "id": "work/09-design",
+    "title": "The look: mobile-first design from pt.news's Front Page",
+    "status": "open",
+    "altitude": "A4",
+    "why": "Requires scheduling mobile design work and coordinating multiple agents.",
+    "attempts": 1,
+    "call_fp": "sha256:06c3ba7cea793f41"
+   },
+   {
+    "id": "work/10-business-events",
+    "title": "Business meetups this week: founders, investors, partners",
+    "status": "claimed",
+    "altitude": "A2",
+    "why": "Loop with tools and memory can fetch, store, and process event data.",
+    "attempts": 1,
+    "call_fp": "sha256:dba927ab11922915"
+   },
+   {
+    "id": "work/11-education-events",
+    "title": "Education and learning events this week",
+    "status": "open",
+    "altitude": "A2",
+    "why": "Needs model to interpret, not just compute, but no scheduling.",
+    "attempts": 1,
+    "call_fp": "sha256:a87b90ddd5a0af54"
+   },
+   {
+    "id": "work/12-join-page",
+    "title": "The join page: /join/, so every person's conductor can join in five minutes",
+    "status": "done",
+    "altitude": "A3",
+    "why": "Needs environment, memory across runs, and scheduling from webhook.",
+    "attempts": 1,
+    "call_fp": "sha256:052c2c9847bd9b0a"
+   },
+   {
+    "id": "work/13-editorial-check",
+    "title": "The editorial check: every event verified before it goes up",
+    "status": "claimed",
+    "altitude": "A2",
+    "why": "Requires closed loop with model and tools to verify and write findings.",
+    "attempts": 1,
+    "call_fp": "sha256:75dcca7b50907bf5"
+   },
+   {
+    "id": "work/14-showroom-home",
+    "title": "The home page as a showroom: our agents in action",
+    "status": "open",
+    "altitude": "A4",
+    "why": "Orchestrates team state, build-time data, routing, and scheduling multiple agents.",
+    "attempts": 1,
+    "call_fp": "sha256:6529c51324723bd4"
+   },
+   {
+    "id": "work/15-what-changed",
+    "title": "What changed: every push visible to the whole team",
+    "status": "done",
+    "altitude": "A4",
+    "why": "Needs coordination of CI, git, and team-wide visibility across pushes.",
+    "attempts": 1,
+    "call_fp": "sha256:5c281d374f56f517"
+   }
+  ]
+ },
+ "by": {
+  "altitude": "A0",
+  "name": "compute: merge",
+  "fp": "sha256:61b215ffa27f6549",
+  "pub": "MCowBQYDK2VwAyEAia1DItTiTRNVV0OY/hby9NBESJf8Y1KgehwB/Xs8MgM=",
+  "born": "2026-11-11T18:57:10Z",
+  "signed_at": "2026-11-11T18:57:10Z"
+ },
+ "sig": "EkBrqgc1bsZbCQ5zWRhvyAZfZrgYqW09BoBdPej55Zko+0neBiXvQav5qSL0jMG8l5zDNcM3GOFZtZerHBp2CQ=="
+}

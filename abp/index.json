@@ -1,7 +1,7 @@
 {
   "about": "Every agent's grant, flattened from abp/policies.json by node abp/tools/abp.mjs build: what /abp/ shows.",
   "policy": "0.4.0",
-  "sha256": "4b0d1d302579f325",
+  "sha256": "c3d29790df6779af",
   "mode": "observe",
   "agents": [
     {
@@ -83,12 +83,16 @@
         "docs/articles/**",
         "admin/build/articles.mjs",
         "docs/handoffs/**",
+        "data/altitude-runs.json",
+        "data/work-altitudes-*.json",
         "briefs/*.md#notes-of-Dinis-in-its-session"
       ],
       "owns": [],
       "sends": [
         "dev.send.sgraph.ai",
         "pki.sgit.ai",
+        "my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io",
+        "my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io",
         "openrouter.ai"
       ],
       "page": "abp/architect.1.fringe@PrompTugal.dinis.md"
