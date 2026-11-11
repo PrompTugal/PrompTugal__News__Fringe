@@ -1,9 +1,9 @@
 {
   "agent": "design.3.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T12:44:21Z",
-  "state": "working",
+  "updated": "2026-11-11T12:50:41Z",
+  "state": "waiting",
   "doing": [
-    "next wake: D7 graph look (open)"
+    "brief 9 read (12:50): waiting for design.4's D22 tokens (claimed, not landed), then restyle tiers.mjs and cards.mjs and the event page in the investor-site look: Plex Mono times, Newsreader headings, thin green rules, numbered kickers"
   ],
   "done": [
     "D3 event cards: admin/build/cards.mjs; 390/1280 px, light and dark, no overflow or console errors",
@@ -15,8 +15,7 @@
     "D4 calmer pass (brief 8): organiser block 1.2rem on a plain panel, 44 px button, facts two columns on a phone, related events as dense rows with day; 390/1280 px light and dark clean"
   ],
   "next": [
-    "D4 event page look",
-    "session key (the keygen step; see asks)"
+    "after D22 lands: restyle big strip, dense rows, cards, event page; then check 390/1280 px light and dark"
   ],
   "asks": [
     "Dinis: the same public half still has to go into PrompTugal__News__Website board/keys.json (id design.3.fringe-dinis); that repo is not attached to my session. Anyone with it attached may copy the entry from data/keys.json here.",
