@@ -126,7 +126,8 @@
       "cost": "free",
       "storm_moved": true,
       "check": "Made because of the storm: the page says Web Summit is cancelled for Wednesday, so the organisers bring the room to Zoom as 'Storm Summit', three one-hour founder intro sessions.",
-      "note": "An alternative event born of the storm (see work/03)."
+      "note": "An alternative event born of the storm (see work/03).",
+      "lane": "business"
     },
     {
       "name": "Founders Break-fast @the Websummit",
@@ -148,7 +149,8 @@
       "label": "fact",
       "cost": "EUR 16.5",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business"
     },
     {
       "name": "Roast your website, or win a coffee (live on YouTube)",
@@ -269,7 +271,8 @@
       "cost": "EUR 10 standard, or a free 'Storm Charles' ticket",
       "storm_moved": true,
       "check": "The text still describes an in-person workshop in Lisbon, but the page now lists it on Zoom and offers a free ticket named 'Strom Charles'. That the storm moved it online is our reading of the page.",
-      "note": null
+      "note": null,
+      "lane": "business"
     },
     {
       "name": "The Startup Legal Roast: top mistakes that kill your startup",
@@ -293,7 +296,8 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note. The venue is not named, so whether it is affected by the storm or the Day 2 cancellation is unknown.",
-      "note": null
+      "note": null,
+      "lane": "business"
     },
     {
       "name": "PTW Classroom: Deep Work x Wexio, an hour to get your inbox back",
@@ -342,7 +346,8 @@
       "cost": "EUR 40 at the door for approved guests",
       "storm_moved": false,
       "check": "Re-read 11:23 UTC: the page now describes Valois's part in WET SUMMIT Lisbon (coworking and an investor-led unconference, 12:00 to 18:00); evening EUR 40 at the door.",
-      "note": "Valois's own listing for WET SUMMIT Lisbon (see 2026-11-11-wet-summit-lisbon)."
+      "note": "Valois's own listing for WET SUMMIT Lisbon (see 2026-11-11-wet-summit-lisbon).",
+      "lane": "business"
     },
     {
       "name": "WET SUMMIT Lisbon: an investors' unconference and pop-up club for the storm day",
@@ -369,7 +374,8 @@
       "cost": "EUR 40 via Luma, EUR 50 at the door (the organiser's site)",
       "storm_moved": true,
       "check": "Read at the organiser's site (11:24 UTC) and its Luma page https://luma.com/oe66d3mh (11:24 UTC).",
-      "note": "An unconference: sixty-second topic pitches and a dot vote at 12:45, three rounds of small groups, read-outs at 16:35, party from 18:00. About 70 places. The site's banner says 'We are now full' while Luma still showed places; the Luma text mentions a EUR 20 day ticket, the site EUR 40. Not open to founders. This is the 'Uncon' of work/03."
+      "note": "An unconference: sixty-second topic pitches and a dot vote at 12:45, three rounds of small groups, read-outs at 16:35, party from 18:00. About 70 places. The site's banner says 'We are now full' while Luma still showed places; the Luma text mentions a EUR 20 day ticket, the site EUR 40. Not open to founders. This is the 'Uncon' of work/03.",
+      "lane": "business"
     },
     {
       "name": "Завтрак русскоязычных фаундеров",
@@ -414,7 +420,8 @@
       "cost": "from EUR 119",
       "storm_moved": null,
       "check": "The page shows no storm note; it says the venue is still to be chosen between two Lisbon locations.",
-      "note": null
+      "note": null,
+      "lane": "business"
     },
     {
       "name": "AI Video Blueprint 2027",
@@ -463,7 +470,8 @@
       "cost": "free",
       "storm_moved": true,
       "check": "Made because of the storm: the page says Web Summit is cancelled for Wednesday, so the organisers bring the room to Zoom as 'Storm Summit', three one-hour founder intro sessions.",
-      "note": "An alternative event born of the storm (see work/03)."
+      "note": "An alternative event born of the storm (see work/03).",
+      "lane": "business"
     },
     {
       "name": "The Corporate Academy of Tomorrow",
@@ -512,7 +520,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business"
     },
     {
       "name": "Side Events Guide IRL: meet us during Web Summit (Wednesday)",
@@ -606,7 +615,8 @@
       "cost": "free",
       "storm_moved": null,
       "check": "Titled 'ONLINE Event' while its text describes a delegation meeting in Lisbon; no reason given. That the storm moved it is a hypothesis.",
-      "note": null
+      "note": null,
+      "lane": "business"
     },
     {
       "name": "How to align your leadership team when AI moves faster than people",
@@ -654,7 +664,8 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": "For investors, LPs and ecosystem leaders: a debate, not a panel."
+      "note": "For investors, LPs and ecosystem leaders: a debate, not a panel.",
+      "lane": "business"
     },
     {
       "name": "Yorkseed Investor Pitch",
@@ -677,7 +688,8 @@
       "label": "fact",
       "cost": "EUR 15",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business"
     },
     {
       "name": "The AI spam problem: how founders win clients in 2027",
@@ -755,7 +767,8 @@
       "cost": "Founders EUR 45; investors free; pitch slots EUR 35 to 150; afterparty only (from 20:00) free",
       "storm_moved": null,
       "check": "None of the five pages shows a storm note.",
-      "note": "Five tracks share one venue and evening, each with its own Luma page: luma.com/574bmobb (fintech), /9jtn1muw (travel tech), /hz3ma5fl (applied AI), /nuggtawe (healthtech), /wajdwhgx (gaming). Afterparty 21:00 to midnight."
+      "note": "Five tracks share one venue and evening, each with its own Luma page: luma.com/574bmobb (fintech), /9jtn1muw (travel tech), /hz3ma5fl (applied AI), /nuggtawe (healthtech), /wajdwhgx (gaming). Afterparty 21:00 to midnight.",
+      "lane": "business"
     },
     {
       "name": "Like minded | Web Summit (Ukrainian founders' community evening)",
@@ -825,7 +838,8 @@
       "label": "fact",
       "cost": "free tier; paid tiers up to EUR 150",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business"
     },
     {
       "name": "Healthtech Pitch Party",
@@ -845,7 +859,8 @@
       "label": "fact",
       "cost": "free tier; paid tiers up to EUR 150",
       "storm_moved": false,
-      "check": "Added from the public Luma calendar listing and event page read at 2026-11-11T12:15:00Z."
+      "check": "Added from the public Luma calendar listing and event page read at 2026-11-11T12:15:00Z.",
+      "lane": "business"
     },
     {
       "name": "AI for Business / Applied AI Pitch Party",
@@ -865,7 +880,8 @@
       "label": "fact",
       "cost": "free tier; paid tiers up to EUR 150",
       "storm_moved": false,
-      "check": "Added from the public Luma calendar listing and event page read at 2026-11-11T12:15:00Z."
+      "check": "Added from the public Luma calendar listing and event page read at 2026-11-11T12:15:00Z.",
+      "lane": "business"
     },
     {
       "name": "Travel Tech Pitch Party",
@@ -885,7 +901,8 @@
       "label": "fact",
       "cost": "free tier; paid tiers up to EUR 150",
       "storm_moved": false,
-      "check": "Added from the public Luma calendar listing and event page read at 2026-11-11T12:15:00Z."
+      "check": "Added from the public Luma calendar listing and event page read at 2026-11-11T12:15:00Z.",
+      "lane": "business"
     },
     {
       "name": "Taste Japan & make career connections: meet Japanese startups expanding into Europe",
@@ -1031,7 +1048,8 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page notes a venue change without giving a reason; that it was the storm is not stated.",
-      "note": null
+      "note": null,
+      "lane": "business"
     },
     {
       "name": "Frontier Founders & VCs Soirée (online)",
@@ -1057,7 +1075,8 @@
       "cost": "free",
       "storm_moved": true,
       "check": "The page says: location online due to storm forecast.",
-      "note": null
+      "note": null,
+      "lane": "business"
     },
     {
       "name": "LisboaUX: Web Summit Edition (second anniversary)",
@@ -1128,7 +1147,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": true,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business"
     },
     {
       "name": "DemoNightLx Web Summit Week Edition (Canopy Demo Night)",
@@ -1228,7 +1248,8 @@
       "cost": "free",
       "storm_moved": true,
       "check": "The page says that due to the state of alert in Portugal the event will not take place as planned; a smaller gathering may be held that evening if conditions allow, confirmed to guests by 16:00 UTC.",
-      "note": "Re-read after 16:00 UTC."
+      "note": "Re-read after 16:00 UTC.",
+      "lane": "business"
     },
     {
       "name": "European Tech Champions: Italy & Portugal",
@@ -1299,7 +1320,8 @@
       "cost": "not stated",
       "storm_moved": false,
       "check": "Scheduled on the page; no storm note.",
-      "note": "No talks: an open social."
+      "note": "No talks: an open social.",
+      "lane": "business"
     },
     {
       "name": "FounderLink Storm Summit: a torrent of intros (evening session, online)",
@@ -1324,7 +1346,8 @@
       "cost": "free",
       "storm_moved": true,
       "check": "Made because of the storm: the page says Web Summit is cancelled for Wednesday, so the organisers bring the room to Zoom as 'Storm Summit', three one-hour founder intro sessions.",
-      "note": "An alternative event born of the storm (see work/03)."
+      "note": "An alternative event born of the storm (see work/03).",
+      "lane": "business"
     },
     {
       "name": "Indvstry Power House: Diaspora Dinner Lisbon",
@@ -1349,7 +1372,8 @@
       "cost": "EUR 95 to 150 a seat; table of four EUR 500",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "lane": "business"
     },
     {
       "name": "Foundacious Lisbon: meet Germany's angel investors and startups",
@@ -1374,7 +1398,8 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "lane": "business"
     },
     {
       "name": "Agentic Engineering Lisbon",
@@ -1422,7 +1447,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business"
     },
     {
       "name": "Private Dinner for 30 defence leaders funding peace through power",
@@ -1446,7 +1472,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business"
     },
     {
       "name": "Post demo night happy hour (if the weather allows)",
@@ -1516,7 +1543,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business"
     },
     {
       "name": "Founders' House Party | Web Summit '26",
@@ -1541,7 +1569,8 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "lane": "business"
     },
     {
       "name": "R-Founders Week WebSummit'26 | R-Founders Party 11.11",
@@ -1743,7 +1772,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business"
     },
     {
       "name": "Guided Morning Walk in Lisbon Before Web Summit",
@@ -1810,7 +1840,8 @@
       "cost": "EUR 25 to 50",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "lane": "business"
     },
     {
       "name": "Sales Leaders Breakfast · Web Summit 2026",
@@ -1834,7 +1865,8 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "lane": "business"
     },
     {
       "name": "OVHcloud Exclusive Breakfast by Unicorn Factory Lisboa",
@@ -1882,7 +1914,8 @@
       "cost": "free (honesty jar for the coffee machine)",
       "storm_moved": false,
       "check": "Scheduled; the venue change to Impact Hub is not stated as storm related.",
-      "note": null
+      "note": null,
+      "lane": "business"
     },
     {
       "name": "Covilhã Tech Day 2026",
@@ -2114,7 +2147,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business"
     },
     {
       "name": "AI PROMISES TO GIVE US TIME BACK. WHO GETS TO KEEP IT?",
@@ -2275,7 +2309,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business"
     },
     {
       "name": "Yorkseed Cross-Border Venture Salon",
@@ -2299,7 +2334,8 @@
       "label": "fact",
       "cost": "EUR 15",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business"
     },
     {
       "name": "Founder Decompression",
@@ -2444,7 +2480,8 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "lane": "business"
     },
     {
       "name": "Healthcare [Re]imagined by AI",
@@ -2633,7 +2670,8 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "lane": "business"
     },
     {
       "name": "Rize - The Reset 11:11 | A Web Summit Wellness Experience",
@@ -2679,7 +2717,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business"
     },
     {
       "name": "Show What You Build: Makers & Doers (Web Summit special)",
@@ -2821,7 +2860,8 @@
       "cost": "EUR 45 to 65",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "lane": "business"
     },
     {
       "name": "Venture Dinner",
@@ -2845,7 +2885,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business"
     },
     {
       "name": "Contracts & Cocktails: A Founder Legal Tech Mixer",
@@ -2869,7 +2910,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business"
     },
     {
       "name": "Leadership Through Dance: Presence, Posture & Non-Verbal Communication",
@@ -2916,7 +2958,8 @@
       "label": "fact",
       "cost": "EUR 15",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business"
     },
     {
       "name": "Founders (don't) cry",
@@ -3051,7 +3094,8 @@
       "label": "fact",
       "cost": "EUR 60",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business"
     },
     {
       "name": "Match Me at Web Summit",
@@ -3120,7 +3164,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business"
     },
     {
       "name": "A reflection on Art & Technology by BoCA - Biennial of Contemporary Arts",
@@ -3215,7 +3260,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business"
     },
     {
       "name": "Web Summit After Party (Unicorn Factory Lisboa)",
@@ -3756,7 +3802,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business"
     },
     {
       "name": "Portugal Real Estate: Web Summit Edition",
@@ -3779,7 +3826,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business"
     },
     {
       "name": "How web apps work: for product managers who want to follow the technical conversation",
@@ -4005,7 +4053,8 @@
       "label": "fact",
       "cost": "EUR 25",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business"
     },
     {
       "name": "Life in Lisboa - A cultural comedy show in English",

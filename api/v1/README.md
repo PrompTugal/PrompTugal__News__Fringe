@@ -24,7 +24,8 @@ Served at `https://fringe.promptugal.news/api/v1/`. Built from this repository o
       "join":       string,                 // how to join, public links only
       "status":     "on" | "moved" | "cancelled" | "online" | "unknown",
       "storm_note": string | null,          // what the storm changed, from the page
-      "topics":     [string]
+      "topics":     [string],
+      "lane":       "business" | absent,    // added: founders', investors' and partners' meetups (work/10); absent = not tagged
     }
   ]
 }
