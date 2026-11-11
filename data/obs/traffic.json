@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-11T22:54Z",
+ "generated": "2026-11-11T23:09Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 505,
-  "reads": 433,
-  "tabs": 234,
+  "views": 506,
+  "reads": 434,
+  "tabs": 235,
   "countries": 19,
   "shares": 167,
-  "bots": 1689,
+  "bots": 1693,
   "crawler_tabs": 1,
-  "agent_runs": 248,
-  "agent_runs_signed": 226
+  "agent_runs": 253,
+  "agent_runs_signed": 231
  },
  "by_hour": [
   [
@@ -212,7 +212,7 @@
   ],
   [
    "2026-11-11 22:00",
-   8
+   9
   ]
  ],
  "by_page": [
@@ -377,6 +377,10 @@
    2
   ],
   [
+   "/e/2026-11-12-female-founders-breakfast/",
+   2
+  ],
+  [
    "/e/2026-11-11-lisbon-tech-side-event/",
    2
   ],
@@ -482,10 +486,6 @@
   ],
   [
    "/e/2026-11-12-lisbon-business-leaders-evening/",
-   1
-  ],
-  [
-   "/e/2026-11-12-female-founders-breakfast/",
    1
   ],
   [
@@ -791,6 +791,12 @@
    32
   ],
   [
+   "/e/2026-11-12-female-founders-breakfast/",
+   2,
+   26,
+   78
+  ],
+  [
    "/e/2026-11-11-lisbon-tech-side-event/",
    2,
    30,
@@ -941,12 +947,6 @@
    52
   ],
   [
-   "/e/2026-11-12-female-founders-breakfast/",
-   1,
-   23,
-   100
-  ],
-  [
    "/e/2026-11-12-the-founder-effect/",
    1,
    6,
@@ -1086,7 +1086,7 @@
   ],
   [
    "United Kingdom",
-   66
+   67
   ],
   [
    "United States",
@@ -1179,11 +1179,11 @@
    18
   ],
   [
-   "Harrietsham, United Kingdom",
-   13
+   "London, United Kingdom",
+   14
   ],
   [
-   "London, United Kingdom",
+   "Harrietsham, United Kingdom",
    13
   ],
   [
@@ -1221,29 +1221,29 @@
    2
   ],
   [
+   "www.google.com",
+   2
+  ],
+  [
    "org.telegram.messenger",
    1
   ],
   [
    "com.linkedin.android",
    1
-  ],
-  [
-   "www.google.com",
-   1
   ]
  ],
  "by_host": [
   [
    "lisbontechfringe.com",
-   466
+   467
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 2607,
+ "other_hosts_views": 2646,
  "by_via": [
   [
    "whatsapp",
@@ -1282,7 +1282,7 @@
   ],
   [
    "phone",
-   222
+   223
   ],
   [
    "tablet",
@@ -1303,6 +1303,10 @@
    20
   ],
   [
+   "ontologist.1.fringe@PrompTugal.dinis",
+   18
+  ],
+  [
    "researcher.1.fringe@PrompTugal.jose",
    17
   ],
@@ -1311,12 +1315,8 @@
    17
   ],
   [
-   "ontologist.1.fringe@PrompTugal.dinis",
-   17
-  ],
-  [
    "conductor.fringe@PrompTugal.jose",
-   15
+   16
   ],
   [
    "design.3.fringe@PrompTugal.dinis",
@@ -1335,12 +1335,12 @@
    10
   ],
   [
-   "capture.1.fringe@PrompTugal.dinis",
+   "dev.1.fringe@PrompTugal.dinis",
    10
   ],
   [
-   "dev.1.fringe@PrompTugal.dinis",
-   9
+   "capture.1.fringe@PrompTugal.dinis",
+   10
   ],
   [
    "researcher.2@PrompTugal.dinis",
@@ -1376,11 +1376,11 @@
   ],
   [
    "swarm.1.fringe@PrompTugal.dinis",
-   2
+   4
   ]
  ],
  "flows": {
-  "tabs": 234,
+  "tabs": 235,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
@@ -1392,7 +1392,7 @@
    ],
    [
     "from another site",
-    3
+    4
    ]
   ],
   "entry_pages": [
@@ -1624,7 +1624,7 @@
   "pages_per_tab": [
    [
     "1",
-    160
+    161
    ],
    [
     "2",
@@ -1643,7 +1643,7 @@
     21
    ]
   ],
-  "bounce_rate": 68,
+  "bounce_rate": 69,
   "via_reached": [
    [
     "whatsapp: /",
@@ -1718,7 +1718,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    "whatsapp: /e/2026-11-11-roast-your-website/",
     1
    ],
    [
@@ -1777,16 +1777,16 @@
     "lon": 8.7
    },
    {
+    "name": "London, United Kingdom",
+    "views": 14,
+    "lat": 51.5,
+    "lon": -0.1
+   },
+   {
     "name": "Harrietsham, United Kingdom",
     "views": 13,
     "lat": 51.2,
     "lon": 0.6
-   },
-   {
-    "name": "London, United Kingdom",
-    "views": 13,
-    "lat": 51.5,
-    "lon": -0.1
    },
    {
     "name": "Montijo, Portugal",
