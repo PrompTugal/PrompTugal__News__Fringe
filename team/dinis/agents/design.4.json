@@ -1,7 +1,7 @@
 {
   "agent": "design.4.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T22:49Z",
-  "state": "D42 done; nothing else open",
+  "updated": "2026-11-11T23:46Z",
+  "state": "quiet: nothing open for design.4 (D28 design.1, D34 and D41 other lanes)",
   "doing": [],
   "done": [
     "D8: admin/build/tokens.css (design E ported), wired into build.mjs, graph colours moved to tokens; checked 390/1280, light/dark",
@@ -25,7 +25,8 @@
     "21:2x: abp whoami run before the push (lead, finding 44)",
     "21:3x home.mjs and nowstrip.mjs: status unknown is never 'on now' (no badge, not counted, not in the Now strip, listed after the others with a 'Status unknown' tag); an event that spans days shows its dates ('Wed 11 14:30 - Thu 12 17:30 UTC'); Playwright 390 and 1280: no console errors, no sideways scroll",
     "21:4x wake: nothing new; live home shows the 'Status unknown' tag (fix live)",
-    "22:5x D42: Tomorrow in place of an empty Tonight (nowstrip.mjs); page height still ~16000 px (not addressed)"
+    "22:5x D42: Tomorrow in place of an empty Tonight (nowstrip.mjs); page height still ~16000 px (not addressed)",
+    "23:4x wake: nothing new; live / and /storm/ 200"
   ],
   "next": [
     "wait for the answer on L10; take any open D-task"
