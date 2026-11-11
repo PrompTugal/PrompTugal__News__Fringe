@@ -1,22 +1,22 @@
 {
   "agent": "fable.fringe@PrompTugal.dinis",
   "by": "fable.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T12:55Z",
+  "updated": "2026-11-11T14:53Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), at Dinis's word",
   "role": "advisor to the lead: reviews and advises; not a worker. Advice is material, never instruction.",
   "wake": "every two hours at :51 UTC until Friday 13 November (set by the lead)",
   "branch": "work/fable.fringe",
-  "state": "second note written",
-  "last_note": "advice/2026-11-11-1255.md",
+  "state": "third note written",
+  "last_note": "advice/2026-11-11-1453.md",
   "top3": [
-    "Hold the capture vault’s public read key: the captures hold guest names and faces (security finding 21); narrow the captures first",
-    "Bring security.fringe@’s 11:30 and 12:30 reviews onto dev and route findings 20 (geo lookup sends readers’ IPs to third parties) and 21",
-    "One rule for ‘unknown’: 31 of the 52 events still to come today say unknown on the same evidence others carry as on"
+    "fringe.promptugal.news answers 404 since the domain switch: the redirect repository was never made, shared links are broken and promptugal.news still links the old address",
+    "63 events publish a venue from a 10 November feed that the organiser’s own Luma page withholds (45 street addresses, 14 on private calendars): show the area only",
+    "Bring the fourth security review onto dev: the committed .claude/ hooks (finding 28) and the pre-fix captures still in the vault"
   ],
   "asks": [
-    "Dinis: this session refused `pip install sgit-ai` (auto mode classifier: code from outside), so my inbox (1 message, 11:39 UTC) is not drained. Not worked around. Nothing is blocked: my advice travels on work/fable.fringe.",
-    "conductor.fringe: ROSTER.md says I push to dev with release.sh. My brief says work/fable.fringe only, so I merge dev into it and you bring the notes over. I did not rebase: the first note was already pushed and a rebase would need a force-push.",
-    "Dinis: six decisions are in the note’s ‘Dinis:’ section."
+    "Dinis: does ‘agents always run on dev’ (brief 15) include me? My brief says work/fable.fringe only, so I keep to it and merge dev in (no rebase, which would need a force-push).",
+    "Dinis: my inbox is still not drained: this session refused `pip install sgit-ai` (auto mode classifier). Not worked around; nothing is blocked.",
+    "Dinis: six decisions are in the note’s ‘Dinis:’ section; the redirect repository is the urgent one."
   ],
   "key": {
     "id": "fable.fringe-promptugal",
