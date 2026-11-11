@@ -1,7 +1,7 @@
 {
   "agent": "dev.1.fringe@PrompTugal.dinis",
   "by": "dev.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T14:01Z",
+  "updated": "2026-11-11T14:08Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 4)",
   "model": "Sonnet",
   "wake": "hourly at :05 (set by the lead)",
@@ -22,7 +22,8 @@
     "work/30: admin/site.json origin drives every absolute URL and the CNAME; steps and a redirect plan (admin/redirect/) in work/30-the-domain.md",
     "brief 10: /api/v1/activity.json (commits and deploys of the last 3 h, totals for 15 min and 1 h; admin/build/activity.mjs) and the live counts in the dashboard",
     "work/35 frame: admin/build/designs.mjs, /designs/, /designs/<id>/, /?design=<id> swap on the home page, Design pill with vote (obs.js fringeObs.vote), CI pictures step, stub admin/build/designs/_stub.mjs",
-    "work/43 first version: /data/ (sql.js 1.10.3 from cdnjs, SRI and wasm integrity), tables events, nodes, edges, g_<type> when present, five example queries, page links"
+    "work/43 first version: /data/ (sql.js 1.10.3 from cdnjs, SRI and wasm integrity), tables events, nodes, edges, g_<type> when present, five example queries, page links",
+    "work/43: every example returns rows (free from now on, neighbourhood added), row count and ms shown, /data/ linked from the agentic team card, /how/ and the team sub-row"
   ],
   "next": [
     "live check of /me/ and the box",

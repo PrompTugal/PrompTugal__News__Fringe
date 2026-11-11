@@ -10,7 +10,7 @@ export function dataBody(esc) {
 <h2>Your query</h2><textarea id="sql" spellcheck="false" aria-label="SQL query">SELECT organiser, COUNT(*) AS events FROM events GROUP BY organiser ORDER BY events DESC LIMIT 20;</textarea>
 <p><button type="button" id="run" disabled>Run (Ctrl+Enter)</button> <span id="status" class="muted" aria-live="polite">Loading…</span></p>
 <div id="out"></div>
-<h2>The tables</h2><p class="muted">Every column is text or a number; lists (topics) are text, so use LIKE. <code>{today}</code> in a query becomes today's date (UTC). A column named <code>page</code> becomes a link to the site's page.</p><ul id="tables"><li>Loading…</li></ul>
+<h2>The tables</h2><p class="muted">Every column is text or a number; lists (topics) are text, so use LIKE. <code>{today}</code> in a query becomes today's date (UTC), and <code>{now}</code> the current time. A column named <code>page</code> becomes a link to the site's page.</p><ul id="tables"><li>Loading…</li></ul>
 <noscript><p>This page needs JavaScript: the SQL runs in your browser.</p></noscript></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js" integrity="sha384-8D3Rsfo535FqoC1pHCCQMrNf75UgzyoG/HQm9zOzITRrz3QKzecc2E7JXKGCXoWu" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="/assets/data/data.js" defer></script>`;

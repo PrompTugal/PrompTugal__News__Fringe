@@ -112,7 +112,7 @@ footer{max-width:var(--page);margin:var(--s5) auto;padding:var(--gutter);border-
 // D5: the one navigation. Flip `live` to true when a page ships (Now: work/16, Organisers: work/23); no JavaScript.
 const NAV = [['Today', '/', true], ['Programme', '/programme/', true], ['Now', '/now/', true], ['Map', '/graph/', true], ['Organisers', '/organisers/', true], ['Storm', '/storm/', true], ['The agentic team', '/how/', true], ['Join', '/join/', true]];
 // D31: "The agentic team" is a named section: /how/ is its front door; these live under it (a sub-row shows on every one of them)
-const TEAM = [['How it is made', '/how/'], ['Dashboard', '/dashboard/'], ['Policies', '/abp/'], ['Changes', '/changes/'], ['Designs', '/designs/'], ['Guidance', '/guidance/'], ['Traffic', '/traffic/']];
+const TEAM = [['How it is made', '/how/'], ['Dashboard', '/dashboard/'], ['Policies', '/abp/'], ['Changes', '/changes/'], ['Designs', '/designs/'], ['Data', '/data/'], ['Guidance', '/guidance/'], ['Traffic', '/traffic/']];
 const inTeam = (here) => TEAM.some(([, h]) => here === h || (h !== '/how/' && here.startsWith(h)));
 const navHtml = (here) => `<header><nav aria-label="Main"><span class="brand"><a href="/">${WORDMARK}</a></span>
 <ul class="nav">${NAV.filter((n) => n[2]).map(([label, href]) => `<li><a href="${href}"${(href === here || (href === '/how/' && inTeam(here))) ? ' aria-current="page"' : ''}>${label}</a></li>`).join('')}</ul></nav>${inTeam(here) ? `<nav class="subnav" aria-label="The agentic team"><b>The agentic team</b><ul>${TEAM.map(([label, href]) => `<li><a href="${href}"${href === here ? ' aria-current="page"' : ''}>${label}</a></li>`).join('')}</ul></nav>` : ''}<div class="tiles" aria-hidden="true"></div></header>`;
@@ -209,7 +209,7 @@ ${homeBody({ events, esc, eventPath, hasPage, now: new Date(BUILT) })}
 ${intelBox()}
 <p class="muted storm-line">Storm Charles: <a href="/storm/">warnings, what moved and transport</a> · <a href="https://storm-charles.promptugal.news">storm site</a> · official: <a href="https://www.ipma.pt/">IPMA</a>, <a href="https://www.prociv.gov.pt/">ANEPC</a>. This site is not a warning service.</p>
 <h2>The agentic team</h2>
-<div class="card">Built in the open by a swarm: one conductor per person, agents by role, Dinis as head. <a href="/how/"><strong>See how it is made</strong></a> · <a href="/join/">Bring your conductor in five minutes</a>.</div>
+<div class="card">Built in the open by a swarm: one conductor per person, agents by role, Dinis as head. <a href="/how/"><strong>See how it is made</strong></a> · <a href="/data/">Query the data with SQL</a> · <a href="/join/">Bring your conductor in five minutes</a>.</div>
 <!--SHOWROOM-->
 `, 'An independent guide to the side events around Web Summit Lisbon.');
 

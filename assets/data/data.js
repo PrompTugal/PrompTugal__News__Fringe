@@ -30,11 +30,12 @@
   }
 
   const EXAMPLES = [
-    ['Free events tonight near Marvila', `SELECT start, name, place, page\nFROM events\nWHERE cost = 'free' AND date = '{today}' AND start >= '{today}T17:00' AND place LIKE '%Marvila%'\nORDER BY start;`],
+    ['Free events from now on', `SELECT start, name, kind, neighbourhood, page\nFROM events\nWHERE cost = 'free' AND start >= '{now}'\nORDER BY start\nLIMIT 25;`],
     ['Organisers by number of events', `SELECT organiser, COUNT(*) AS events\nFROM events\nGROUP BY organiser\nORDER BY events DESC\nLIMIT 20;`],
-    ['Events for investors today', `SELECT start, name, organiser, page\nFROM events\nWHERE date = '{today}'\n  AND (topics LIKE '%invest%' OR name LIKE '%investor%' OR name LIKE '%VC%' OR name LIKE '%founder%')\nORDER BY start;`],
+    ['Events for investors and founders', `SELECT start, name, organiser, page\nFROM events\nWHERE date >= '{today}'\n  AND (topics LIKE '%invest%' OR name LIKE '%nvestor%' OR name LIKE '%VC%' OR name LIKE '%ounder%')\nORDER BY start\nLIMIT 25;`],
     ['What the storm moved', `SELECT date, name, status, storm_note, page\nFROM events\nWHERE storm_moved = 1 OR status IN ('moved', 'cancelled')\nORDER BY date, start;`],
-    ['Sessions of Portugal Tech Week', `SELECT date, start, name, organiser, page\nFROM events\nWHERE name LIKE '%Portugal Tech Week%' OR organiser LIKE '%Portugal Tech Week%' OR check_note LIKE '%PTW%'\nORDER BY start;`],
+    ['Sessions of Portugal Tech Week', `SELECT date, start, name, organiser, page\nFROM events\nWHERE name LIKE '%Portugal Tech Week%' OR organiser LIKE '%Portugal Tech Week%'\nORDER BY start\nLIMIT 50;`],
+    ['Events by neighbourhood', `SELECT neighbourhood, COUNT(*) AS events\nFROM events\nWHERE neighbourhood IS NOT NULL\nGROUP BY neighbourhood\nORDER BY events DESC;`],
   ];
 
   function render(cols, rows) {
@@ -76,8 +77,9 @@
       $('tables').innerHTML = '';
       for (const t of list) { const li = document.createElement('li'); const b = document.createElement('strong'); b.textContent = t.name; li.append(b, document.createTextNode(` (${t.rows} rows): ${t.columns.join(', ')}`)); $('tables').appendChild(li); }
       const run = () => {
-        const sql = $('sql').value.replace(/\{today\}/g, today);
-        try { const res = db.exec(sql); const r = res[res.length - 1]; if (!r) render([], []); else render(r.columns, r.values.slice(0, 1000)); status('Ran in your browser.'); }
+        const sql = $('sql').value.replace(/\{today\}/g, today).replace(/\{now\}/g, new Date().toISOString().slice(0, 16));
+        const t0 = performance.now();
+        try { const res = db.exec(sql); const r = res[res.length - 1]; if (!r) render([], []); else render(r.columns, r.values.slice(0, 1000)); const ms = Math.round(performance.now() - t0), n = r ? r.values.length : 0; status(n + ' row' + (n === 1 ? '' : 's') + ' in ' + ms + ' ms, run in your browser.'); }
         catch (e) { $('out').textContent = ''; status('SQL error: ' + e.message, true); }
         try { history.replaceState(null, '', '?sql=' + encodeURIComponent($('sql').value.slice(0, 1500))); } catch { /* ignore */ }
       };
