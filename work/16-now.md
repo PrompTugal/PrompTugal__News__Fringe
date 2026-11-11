@@ -1,8 +1,8 @@
 ---
 id: 16
 title: "Now: what is on right now and in the next three hours"
-owner:
-status: open
+owner: dev.2.fringe@PrompTugal.dinis
+status: claimed
 lane: researcher.fringe@ (data), dev.fringe@ (page)
 needs: 02
 done-means: "the top of the home page and /now/ show events on now and starting within 3 hours (Lisbon is UTC), each marked in person / online / moved / cancelled with its read_at; events whose read_at is over 3 hours old say so; works without JavaScript, with a small script that re-filters by the reader's clock"

@@ -1,8 +1,8 @@
 ---
 id: 23
 title: "Reach every organiser: their page, their report, join with one session"
-owner:
-status: open
+owner: dev.2.fringe@PrompTugal.dinis
+status: claimed
 lane: organisers (Indi), channels (Jose); a person sends
 needs: 22
 done-means: "data/organisers.json lists each organiser (an organisation, never a private person) with its public page and its events; /organisers/ explains the offer; work/drafts/organiser-note.md is the note a person sends through the organiser's own public channel (their Luma 'contact host' or public form, never a scraped address); a tracker in work/23 lists each organiser: drafted, sent by whom (a person), answered, joined"

@@ -72,7 +72,7 @@
     {
       "id": "security.fringe-promptugal",
       "agent": "security.fringe@PrompTugal.dinis",
-      "role": "Lisbon Fringe's security reviewer (WS-215): reviews every commit on dev and work/* for secrets, privacy, sources, the site and the repository rules; started by conductor.fringe@PrompTugal.dinis under BRIEF.md §7 step 4.",
+      "role": "Lisbon Fringe's security reviewer (WS-215): reviews every commit on dev and work/* for secrets, privacy, sources, the site and the repository rules; started by conductor.fringe@PrompTugal.dinis under BRIEF.md \u00a77 step 4.",
       "how": "Made in its own session on 11 November 2026, 10:47 UTC (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab). A session key: it ends with the session. Public halves only.",
       "added": "2026-11-11",
       "status": "active",
@@ -147,6 +147,22 @@
         "label": "fable.fringe@PrompTugal.dinis",
         "fingerprint": "sha256:00e3045c6ec7ba62",
         "signing_fingerprint": "sha256:6a5b66488fc4a81a"
+      }
+    },
+    {
+      "id": "dev.2.fringe-dinis",
+      "agent": "dev.2.fringe@PrompTugal.dinis",
+      "role": "dev agent 2 for Lisbon Fringe (WS-215), started by conductor.fringe@PrompTugal.dinis at Dinis's word (brief 4): /now/, /organisers/, /changes/, the model router.",
+      "how": "Made in its own session on 2026-11-11T11:53Z (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab, checked). A session key: it ends with the session. Public halves only.",
+      "added": "2026-11-11",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAzG/KJh04JE6TGFlr7wiU\nYhnT9B2MOmaEpICKrPno8HaTBSP5SuhPXTbQdwDEQNrOvuGRaEzkY5Qup3x3BK8i\nHbiV3gCWF0LKrcIl+1SLnALbql7jC2yP0i/caOHWKm6sYztAvAYW4WaHf9/evfjF\nNpOXe15nFQgmFJ6v9duEMMEq8PjWaIb71zTjfgAC2RjGr8gbjEwyJy+yq3sYCd4D\nEZIgoLprUKrNGQmSY/BTwoASo2hlTZ/AB8bJ4sXZPm0R33i/+LgNVdP+6jl/ZQbo\ngdZmFnz9TXy9/92oYn9DhONh7NCANaTb/Avt3WhJqnT77NgJKHirHal9G1Y8//yV\nGNIYRFWUrFA1g72MNDU0CyCDRpN78vnT0TcQvI6QMs+vgwgV4SBiV5FTMVRuZ0dp\n/TaoGn72GcvrWz/Pj8u7c0q/BMYQsZhAXc4Ek1bA4znOKqBhFDQ4qyFOEJg/BPPT\nR2PRs4TWblYWbdN+ANDWVYVYn9otAtHX0qugIUlEou4xUysKQlsrXrDwBVlUvBEm\neFeZuktZV8vKZAZbeV94imDYe8bEHd/LwKmVozg/Tm6diOQuyBWZxhECQBDJxbI6\nVNZohQqUJbgPHrn1I8PSnqD11Yg+FPtzyUBnXOewr5j6DFtnexXe6ocNAPPrpBjb\nna2CDrwi65VPxK/GkQv99gMCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEtOB0yJn35NUxwftRnZcTUxjw9FxZ\n4wiCdVd+UVBC/OjWOiSfFLXI+j8v36sDHYRoBbeYAVL97apg+xegyTy4UQ==\n-----END PUBLIC KEY-----\n",
+        "label": "dev.2.fringe@PrompTugal.dinis",
+        "fingerprint": "sha256:11137357a11e36cb",
+        "signing_fingerprint": "sha256:4768d94d8866b449"
       }
     }
   ]

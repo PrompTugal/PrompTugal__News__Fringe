@@ -1,0 +1,11 @@
+{
+  "agent": "dev.2.fringe@PrompTugal.dinis",
+  "updated": "2026-11-11T11:55Z",
+  "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
+  "branch": "dev",
+  "state": "working",
+  "doing": ["work/16 /now/ and the home page's on-now block", "then work/23 (/organisers/), work/15 (/changes/), work/20 (admin/tools/llm.mjs)"],
+  "done": ["session key made (dev.2.fringe-dinis in data/keys.json)"],
+  "next": ["work/23", "work/15", "work/20"],
+  "asks": []
+}

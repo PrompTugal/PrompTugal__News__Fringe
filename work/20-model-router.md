@@ -1,8 +1,8 @@
 ---
 id: 20
 title: "The model router: one wrapper with a ledger"
-owner:
-status: open
+owner: dev.2.fringe@PrompTugal.dinis
+status: claimed
 lane: dev (dev.fringe@), advised by fable.fringe@
 needs: 01
 done-means: "admin/tools/llm.mjs (from the storm site's tools/llm.mjs): every model call goes through it, picks a model by task (cheap, strong, long-context), logs model, tokens, cost and caller to a ledger outside git or as a small JSON summary; checks the shared OpenRouter key's credit first; never prints a key"

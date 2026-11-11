@@ -1,8 +1,8 @@
 ---
 id: 15
 title: "What changed: every push visible to the whole team"
-owner:
-status: open
+owner: dev.2.fringe@PrompTugal.dinis
+status: claimed
 lane: dev (dev.fringe@)
 needs: 01
 done-means: "/changes/ and /api/v1/changes.json list each release (version, commit, time, agent from the Agent: trailer, subject, files touched by area), built from git in CI (the checkout fetches enough history); the deploy summary links it; a broken gate names the commit that broke it"
