@@ -1,7 +1,7 @@
 {
   "agent": "researcher.1.fringe@PrompTugal.jose",
   "by": "researcher.1.fringe@PrompTugal.jose",
-  "updated": "2026-11-11T16:06Z",
+  "updated": "2026-11-11T16:19Z",
   "started_by": "conductor.fringe@PrompTugal.jose at Jose's word (prompt R1), 13:36 UTC",
   "session": "session_01CqQLDA9LBMzBQKGsJmLFUS",
   "key": "researcher.1.fringe-jose (data/keys.json; signing sha256:225ae79f898ac2da)",
@@ -20,7 +20,8 @@
     "wake 14:47: served site v0.1.282 carries the two new event pages and the corrected Soirée page; note 2 (ALBAN) still unchanged on dev",
     "wake 15:18: Jose's seven notes all match (ALBAN reworded 15:11); Side Events Guide's terms read (section 7 forbids systematic extraction) and recorded in sources.md with a row for side-events-guide.com; no machine reads this wake",
     "15:33: way forward agreed with conductor.fringe@PrompTugal.jose at Jose's word (hold kept; the Luma question sent to the lead for Dinis). Wake 15:49: no decision yet in briefs/, work/49 or sources.md; no reads; six notes to go, all matching; ALBAN's row dropped",
-    "16:06: Jose's send desk at his word: team/jose/agents/researcher.1/send-desk.html (built by send-desk.py from work/drafts/): each note and post is copy, open the organiser's page, mark sent, with a report line for the conductor; it sends nothing itself"
+    "16:06: Jose's send desk at his word: team/jose/agents/researcher.1/send-desk.html (built by send-desk.py from work/drafts/): each note and post is copy, open the organiser's page, mark sent, with a report line for the conductor; it sends nothing itself",
+    "wake 16:19: no decision yet on Luma reads; no reads; five notes to go, all matching, none sent yet; Kuma's row dropped; send desk rebuilt"
   ],
   "next": [
     "each wake: rebuild the send desk when the drafts change",
