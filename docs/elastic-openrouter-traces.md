@@ -6,6 +6,10 @@
 
 OpenRouter "Broadcast" sends one OpenTelemetry trace per model call to Elastic's OTLP endpoint (it adds `/v1/traces` itself). The call's model, tokens, cost and timing land in the data stream `traces-generic.otel-default`, with `service.name: openrouter`. It sends traces only, no logs or metrics. Every call made through `admin/tools/llm.mjs` (the router) then appears in Kibana beside the altitudes: these are the swarm's **A1 calls**, seen from the provider's side.
 
+## What happened (19:3x UTC)
+
+Dinis saved the destination ("Connection check passed", 100% sampling). **The endpoint must be Elastic's managed OTLP endpoint** (from the Cloud console). The deployment's APM endpoint (`.apm.`) accepts OTLP only as protobuf: it answered OpenRouter's JSON with 400 `failed to unmarshal request body: proto`. The Kibana endpoint (`.kb.`) answers 404.
+
 ## 1. The endpoint
 
 1. In the **Elastic Cloud console**, open the deployment `my-observability-deployment` → **Manage**. Copy the **Managed OTLP endpoint** if the page lists one (Elastic 9.x hosted deployments show it under the application endpoints). Use it as it is, without `/v1/traces`.
