@@ -1,6 +1,6 @@
 {
   "by": "conductor.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T11:20Z",
+  "updated": "2026-11-11T11:40Z",
   "person": "dinis",
   "role": "head",
   "state": "the site serves: https://fringe.promptugal.news is v0.1.14 (commit a1f6b3d) with 69 sourced events, /join/ and the independence line; the lead is a new session since 11:14 UTC",
@@ -35,13 +35,23 @@
     {
       "name": "conductor.C.fringe@PrompTugal.dinis",
       "doing": "unknown to the lead: Dinis says it runs on another Claude account; no status file, key or commit from it in this repository yet"
+    },
+    {
+      "name": "fable.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwBZiT2qCTLBUQRFzfX",
+      "model": "Fable",
+      "wake": "every two hours at :51",
+      "branch": "work/fable.fringe",
+      "doing": "advisor to the lead at Dinis's word (11:25 UTC): reviews everything and writes advice/<time>.md; never edits data or the site"
     }
   ],
   "doing": [
-    "taking over the lead: the board, the roster, reviews of the agents' branches onto dev",
-    "waiting for Dinis's details and voice memos, to turn them into board items and route them to the team's conductors"
+    "brief 1 (briefs/2026-11-11-1130-the-pinnacle.md): routed as work/14 to work/20",
+    "work/19 the comms layer: an append-vault inbox for every conductor and agent"
   ],
   "done": [
+    "started fable.fringe@PrompTugal.dinis (Fable, session_01Kw9UwBZiT2qCTLBUQRFzfX), the advisor, at Dinis's word; its wake every two hours at :51",
+    "brief 1 recorded with Dinis's words and routed: work/14 showroom, 15 what changed, 16 now, 17 practical Lisbon, 18 outreach, 19 comms vaults, 20 model router; notes on 01, 05, 06, 09; 08 folded into 18",
     "11:14 UTC: joined as the lead at Dinis's word; read CLAUDE.md, SWARM.md, JOIN.md, BRIEF.md, BRIEF-CORRECTIONS.md, REALITY.md, the roster, every status file and the board",
     "my session key (pki-agent.mjs sha256 fcb28a1c...02ab checked); public half in data/keys.json (signing sha256:d3c9e8a33293ef55); the earlier lead session's key marked superseded",
     "fact, read 11:18 UTC: https://fringe.promptugal.news/ and /join/ answer 200; /version.json says v0.1.14, commit a1f6b3d; /api/v1/events.json holds 69 events; the home page carries the independence line. Pages and the DNS are on",
@@ -57,14 +67,17 @@
     "tell conductor@PrompTugal.dinis the URL so pt.news links it; tell incident.conductor@web-summit.dinis that we read the storm site's /api/v1/"
   ],
   "asks": [
+    "Every conductor: read briefs/2026-11-11-1130-the-pinnacle.md (Dinis, 11:30 UTC). Fast shipping, every change visible, nothing broken.",
+    "sarah: work/14, the home page as a showroom of our agents at work, with dev.fringe@ (your lane, SWARM.md). Your conductor has not started: https://fringe.promptugal.news/join/",
+    "jose: work/18, the outreach kit: the Lisbon Fringe pitch and posts, which a person sends. indi: the organiser note in work/18 fits your lane.",
+    "silvio: work/17, practical Lisbon: places open to work and meet, from public sources.",
+    "angelo: work/05 now has Dinis's words: the graph is the map of who is doing what; link it from the showroom (work/14).",
+    "Dinis: what is conductor.C.fringe@PrompTugal.dinis's job (another account)? Once it has a key, it gets an inbox in work/19.",
     "Dinis: is the earlier lead session (session_01Kw9UwBGQe9BhMCbDw28aDA, hourly at :44) stopped? This session cannot see it. Two sessions under one name would overwrite each other's status and roster; its key is now marked superseded.",
-    "Dinis: conductor.C.fringe@PrompTugal.dinis is on another account. What is its job, and should it have a row on the roster and an item on the board?",
     "Dinis: send the details and voice memos here; each becomes a board item or an ask to the right conductor.",
-    "Dinis: PrompTugal__News__Website is not attached to this session, so four public keys (the lead's, Indi's, Vicky's, security.fringe@'s) are not yet in its board/keys.json. Say if I should attach it.",
     "Dinis: security.fringe@ asks you to protect main (pull requests only) and to limit the github-pages environment to the dev branch (security/reviews/2026-11-11-1048.md, findings 1 and 2).",
     "Dinis (carried over, not re-checked with you): dev.fringe@ asks you to confirm it in its own session (session_01Kw9UwBuse9ub7C5zboJbMs) before it pushes to dev; researcher.fringe@ (session_01Kw9UwDtKvyL1hzQTwazVi3) was refused `node pki-agent.mjs keygen --session` and has no key.",
     "Dinis (carried over): is the 'Uncon' you heard of FounderLink's Storm Summit (online, today), or something else? A name or link helps work/03.",
-    "Dinis: the site serves, so https://fringe.promptugal.news/join/ can go to the team now. Six people have not started: Angelo, Silvio, Jose, Nimay, Daniela, Sarah.",
     "vicky: your conductor's work/13 second pass is dated 11:25 UTC and its status 11:20 UTC, but both were pushed at 11:07 UTC. Times read should be the clock's UTC time.",
     "indi: your conductor's environment blocks luma.com, meetup.com and elevon.io; allow them in its cloud environment's network settings so it can re-read sources."
   ]
