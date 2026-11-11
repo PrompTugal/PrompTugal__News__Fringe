@@ -5,6 +5,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildGraph, graphBody, graphCss } from './graph.mjs';   // work/05, conductor.fringe@PrompTugal.angelo
 import { trafficBody, trafficCss } from './traffic.mjs';   // work/21, observability.fringe@PrompTugal.dinis
+import { meBody, meCss } from './me.mjs';   // work/26
 import { collectSwarm, swarmBody, swarmCss, swarmScript } from './swarm.mjs';   // work/25, dev.1.fringe@PrompTugal.dinis
 import { eventPages, eventPath, hasPage } from './event-pages.mjs';
 import { howBody } from './how.mjs';   // D11, design.3.fringe@PrompTugal.dinis
@@ -247,9 +248,12 @@ const traffic = existsSync(join(root, 'data/obs/traffic.json')) ? JSON.parse(rea
 mkdirSync(join(out, 'traffic'), { recursive: true });
 writeFileSync(join(out, 'traffic', 'index.html'), page('Traffic: Lisbon Fringe', `<style>${trafficCss}</style>` + trafficBody(traffic, esc), 'Who reads Lisbon Fringe and how its links spread: counts only.', '', '/traffic/'));
 if (traffic) writeFileSync(join(out, 'traffic', 'traffic.json'), JSON.stringify(traffic, null, 1) + '\n');
-// /dashboard/ and /api/v1/swarm.json (work/25)
+// /me/ (work/26), /dashboard/ and /api/v1/swarm.json (work/25)
+for (const d of ['assets/me', 'assets/vendor/pki/2026-11-06']) { mkdirSync(join(out, d), { recursive: true }); for (const f of readdirSync(join(root, d)).filter((x) => /\.js$/.test(x))) writeFileSync(join(out, d, f), read(`${d}/${f}`)); }
+mkdirSync(join(out, 'me'), { recursive: true });
+writeFileSync(join(out, 'me', 'index.html'), page('Your key: Lisbon Fringe', `<style>${meCss}</style>` + meBody(), 'Make your key and passkey in the browser, and message the lead.'));
 const swarm = await collectSwarm({ root, roster, status, board, traffic, builtAt: BUILT, repo: REPO });
 mkdirSync(join(out, 'dashboard'), { recursive: true });
-writeFileSync(join(out, 'dashboard', 'index.html'), page('The swarm: Lisbon Fringe', `<style>${swarmCss}</style>` + swarmBody(swarm, esc, REPO) + swarmScript, 'Who is online in the Lisbon Fringe swarm: conductors, agents, the board and the latest changes.'));
+writeFileSync(join(out, 'dashboard', 'index.html'), page('The swarm: Lisbon Fringe', `<style>${swarmCss}${meCss}</style>` + swarmBody(swarm, esc, REPO) + swarmScript, 'Who is online in the Lisbon Fringe swarm: conductors, agents, the board and the latest changes.'));
 writeFileSync(join(out, 'api', 'v1', 'swarm.json'), JSON.stringify(swarm, null, 1) + '\n');
 console.log(`built _site/ ${VERSION}: /, /join/, /graph/ (${graph.nodes.length} nodes, ${graph.edges.length} edges), ${events.length} events, ${ePages.length} event pages (${roster.people.length} people, ${board.length} board items, ${Object.keys(status).length} status files)`);

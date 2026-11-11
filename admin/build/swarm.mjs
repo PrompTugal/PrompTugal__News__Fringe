@@ -7,6 +7,7 @@
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { execFileSync } from 'node:child_process';
+import { talkBox } from './me.mjs';
 
 export const ONLINE_MIN = 90;
 const MAX_PROMPT = 200;
@@ -126,6 +127,7 @@ export function swarmBody(s, esc, repo) {
 <div class="sg" id="counts"><div class="card"><b id="n-c">${c.conductors_online}</b>conductors online (of ${c.conductors_started} started, ${c.conductors_total} people)</div><div class="card"><b id="n-a">${c.agents_online}</b>agents online (of ${c.agents_total})</div><div class="card"><b>${c.inboxes}</b>inboxes</div>${s.traffic ? `<div class="card"><b>${s.traffic.views}</b>views (<a href="/traffic/">traffic</a>)</div>` : ''}</div>
 <h2>By account</h2><p class="muted">The account is the person whose team/ folder the status file is in, unless the file says otherwise.</p><ul>${c.by_account.map((a) => `<li class="card"><strong>${esc(a.account)}</strong>: ${a.online} online of ${a.total}</li>`).join('')}</ul>
 <h2>Dinis: asks waiting for you</h2>${asks}
+${talkBox()}
 <h2>Conductors</h2><ul>${s.people.map((p) => who(p, p.conductor, `${esc(p.name)} · ${esc(p.lane || '')}`)).join('')}</ul>
 <h2>Agents</h2><ul>${s.agents.map((a) => who(a, a.name, `${esc(a.role)} · ${esc(a.account)}${a.model ? ' · ' + esc(a.model) : ''}`)).join('')}</ul>
 <h2>The board</h2><h3>Work</h3>${bar(s.board.work)}<h3>Design</h3>${bar(s.board.design)}

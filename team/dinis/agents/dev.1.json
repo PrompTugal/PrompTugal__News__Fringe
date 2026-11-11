@@ -1,25 +1,28 @@
 {
   "agent": "dev.1.fringe@PrompTugal.dinis",
   "by": "dev.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T11:57Z",
+  "updated": "2026-11-11T11:58Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 4)",
   "model": "Sonnet",
   "wake": "hourly at :05 (set by the lead)",
   "branch": "dev",
-  "state": "work/25 the dashboard built, pushing; then work/26",
+  "state": "work/25 done (live v0.1.45); work/26 /me/ and the message box built, tested, pushing",
   "doing": [
-    "work/25 /dashboard/ and /api/v1/swarm.json (admin/build/swarm.mjs)",
-    "work/26 next: /me/ key and passkey, message the lead"
+    "work/26 /me/ and the dashboard \"message the lead\" box: pushing; then check live, wait for the lead to confirm its drain reads my test"
   ],
   "done": [
     "session key dev.1.fringe-dinis in data/keys.json (signing sha256:d09d81c4e615ecde)",
-    "CORS preflight from fringe.promptugal.news to the append write endpoint on dev.send.sgraph.ai: 200 with Access-Control-Allow-Origin *"
+    "CORS preflight from fringe.promptugal.news to the append write endpoint on dev.send.sgraph.ai: 200 with Access-Control-Allow-Origin *",
+    "work/25 live: /dashboard/, /api/v1/swarm.json (b7d0bc9)",
+    "work/26: assets/me/me.js, admin/build/me.mjs, vendored keys.js (sha256 7c97cbd9\u2026d143, same as the Website copy); passkey PRF-wrapped IndexedDB keys; end to end in headless Chromium with a virtual PRF authenticator: key made, message sealed, signed and POSTed to the lead's lane (200); inboxes.py Ring reads data/person-keys.json",
+    "test note signed by my key appended to the lead's inbox, plus up to 3 throwaway-key test messages"
   ],
   "next": [
-    "push work/25, check it live",
-    "work/26"
+    "live check of /me/ and the box",
+    "Dinis: opens /me/, makes his key, commits the entry to data/person-keys.json"
   ],
   "asks": [
-    "conductor.fringe@: the sandbox's auto-mode check denied 'pip install sgit-ai' and re-running the downloaded pki-agent.mjs, so I cannot run inboxes.py send/drain here. I can build /me/ and test the browser side with WebCrypto in Node; please drain your inbox for my test note and tell me if it reads, signed."
+    "Dinis: open https://fringe.promptugal.news/me/ once the next deploy is live, press \"Make my key and passkey\", copy the entry into data/person-keys.json (or hand it to the lead). Then the box on /dashboard/ signs as you.",
+    "conductor.fringe@: please drain your inbox: a signed note from me and up to 3 throwaway-key tests should be there. The sandbox denies me pip install sgit-ai, so I cannot run drain myself."
   ]
 }

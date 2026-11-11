@@ -47,7 +47,13 @@ class Ring:
     signed what it sent before it was superseded)."""
     def __init__(self):
         self.by = {k['bundle'].get('signing_fingerprint'): {'signing_key_pem': k['bundle']['sign'], 'label': k.get('agent') or k['id']}
-                   for k in json.load(open(os.path.join(ROOT, 'data', 'keys.json')))['keys'] if (k.get('bundle') or {}).get('sign')}
+                   for k in json.load(open(os.path.join(ROOT, 'data', 'keys.json')))['keys'] + self.people() if (k.get('bundle') or {}).get('sign')}
+    @staticmethod
+    def people():
+        """data/person-keys.json (work/26): a person's own browser key, listed by a commit; its label says whose."""
+        f = os.path.join(ROOT, 'data', 'person-keys.json')
+        return [{'id': k.get('id'), 'agent': f"{k.get('name') or k.get('person')} (person key)", 'bundle': k.get('bundle')}
+                for k in (json.load(open(f)).get('keys', []) if os.path.exists(f) else []) if k.get('status') in (None, '', 'active')]
     def lookup_by_signing_fingerprint(self, fp): return self.by.get(fp)
 
 
