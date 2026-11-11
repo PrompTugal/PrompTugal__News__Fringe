@@ -9,3 +9,11 @@ done-means: "/dashboard/ (built at build time and refreshed by each push; a smal
 evidence:
 ---
 Brief 4: "I want to visualize how many conductors we actually have online ... I should have a dashboard for me to understand everything." /api/v1/swarm.json also feeds the showroom (D6, work/14).
+
+**Dinis, 11:58 UTC (brief 6, briefs/2026-11-11-1158-the-control-centre.md):** the dashboard is "the main newsroom ... the main control centre". It answers, in this order, and shows a "health" colour for each:
+1. **Where are we:** the site's version and age, events live (count, freshest and stalest read_at), board counts.
+2. **Who is onboarded:** each person (roster) as joined or not; each agent online or quiet (status updated in the last 90 min) or silent; grouped by account.
+3. **What is communicating:** per inbox, messages waiting (data/inboxes, where readable) and the time of each agent's last commit; asks open, gathered by addressee, Dinis first.
+4. **How the data flows:** last researcher re-read, last capture (work/27), last deploy and push-to-served (version.json), traffic in the last hour (work/21), gate red or green.
+5. **Outreach:** drafts ready (work/drafts/), organisers contacted, answered and joined (work/23's tracker), and visits by ?via= channel.
+The lead takes a screenshot of it at each wake and sends it to Dinis. It has to read well in a 1280 px screenshot as well as on a phone.
