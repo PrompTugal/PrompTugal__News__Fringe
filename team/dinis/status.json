@@ -1,16 +1,21 @@
 {
-  "by": "conductor.fringe@PrompTugal.dinis",
+  "by": "conductor.B@ios.PrompTugal.dinis (handing over)",
   "updated": "2026-11-11T10:45Z",
   "person": "dinis",
   "role": "head",
-  "state": "lead started; the join page is the first job (dev.fringe@)",
-  "conductor": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwFFE4yEJ9omnf1asjz, hourly at :40 until Friday 13 November)",
+  "state": "handed over: the lead is session_01Kw9UwBGQe9BhMCbDw28aDA (new, Dinis 10:45 UTC); it rewrites this file",
+  "conductor": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwBGQe9BhMCbDw28aDA, hourly at :44 until Friday 13 November)",
   "agents": [
     {
       "name": "dev.fringe@PrompTugal.dinis",
       "session": "session_01Kw9UwBuse9ub7C5zboJbMs",
-      "wake": "every two hours at :40",
+      "wake": "every two hours at :44",
       "doing": "work/12 the join page, then work/01 the pipeline"
+    },
+    {
+      "name": "conductor.B@ios.PrompTugal.dinis",
+      "session": "session_01Kw9UwFFE4yEJ9omnf1asjz",
+      "doing": "the Lisbon Fringe iOS app (Dinis, 10:45 UTC), in PrompTugal__App__iOS"
     }
   ],
   "doing": [
