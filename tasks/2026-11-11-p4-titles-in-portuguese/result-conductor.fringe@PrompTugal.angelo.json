@@ -1,0 +1,136 @@
+{
+ "body": {
+  "packet": "2026-11-11-p4-titles-in-portuguese",
+  "packet_fp": "sha256:6b5286cceb594cac",
+  "runner": "conductor.fringe@PrompTugal.angelo",
+  "environment": "R1 Claude Code cloud, Angelo account (label unknown); OpenRouter key from this environment (proxy-injected)",
+  "ran_at": "2026-11-11T20:30:17Z",
+  "runner_choices": {
+   "tier": "cheap",
+   "model": null,
+   "max_tokens": 1500
+  },
+  "outputs": [
+   {
+    "input": "2026-11-12-female-founders-breakfast",
+    "pt": "Female Founders Breakfast: Edição especial da Web Summit",
+    "tries": 1,
+    "call_fp": "sha256:d3a2d450494e74f3"
+   },
+   {
+    "input": "2026-11-12-sales-leaders-breakfast",
+    "pt": "Pequeno-almoço de Líderes de Vendas · Web Summit 2026",
+    "tries": 1,
+    "call_fp": "sha256:3fd07477c7b883bd"
+   },
+   {
+    "input": "2026-11-12-ovhcloud-breakfast-ufl",
+    "pt": "OVHcloud Exclusive Breakfast by Unicorn Factory Lisboa",
+    "tries": 1,
+    "call_fp": "sha256:946f79f2c76ef787"
+   },
+   {
+    "input": "2026-11-12-open-coffee-lisbon-53",
+    "pt": "Open Coffee Lisbon Web Summit Special #53",
+    "tries": 1,
+    "call_fp": "sha256:79ff42493b5e5c0d"
+   }
+  ],
+  "calls": [
+   {
+    "body": {
+     "input": "2026-11-12-female-founders-breakfast",
+     "try": 1,
+     "ok": true,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T203005-e1fb2529",
+     "cost_usd": 0.0000112464,
+     "latency_ms": 802,
+     "prompt_sha256": "f6596479fd2d2fd5c8608d68740d5e267f8f91c55fcc04f2af99f365331cde71"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p4-titles-in-portuguese 2026-11-12-female-founders-breakfast #1",
+     "fp": "sha256:d3a2d450494e74f3",
+     "pub": "MCowBQYDK2VwAyEA4Gp63Pd8FI7AbVROsWNRKQcgAC2o6vp/MXyXfncTlkg=",
+     "born": "2026-11-11T20:30:05Z",
+     "signed_at": "2026-11-11T20:30:06Z"
+    },
+    "sig": "Me21PRCBI4zMbEqRWQiuqjcdYVJdmJQvSEe8jZdbZEP/GQdI9US0rnPQGLQfmyuwF23zzvxx2Ox0AsNvlKwoDw=="
+   },
+   {
+    "body": {
+     "input": "2026-11-12-sales-leaders-breakfast",
+     "try": 1,
+     "ok": true,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T203006-362e6379",
+     "cost_usd": 0.0000128799,
+     "latency_ms": 10522,
+     "prompt_sha256": "4cb944393eea76b35fa59362c6aa1a2a8f5403bff316745e7285f55cd4aaa29c"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p4-titles-in-portuguese 2026-11-12-sales-leaders-breakfast #1",
+     "fp": "sha256:3fd07477c7b883bd",
+     "pub": "MCowBQYDK2VwAyEAmVrqFCY02BfshNtSf3c1qj94F/1uSnTxn7cIlWVakvs=",
+     "born": "2026-11-11T20:30:06Z",
+     "signed_at": "2026-11-11T20:30:16Z"
+    },
+    "sig": "awWNinUd14eThS4QmhqnxXK6YBLl//Vbx1exqHlCMszT5vP9sDZu7A8RF2q084uvgZS4H+OhuUcnW21y/W2HBQ=="
+   },
+   {
+    "body": {
+     "input": "2026-11-12-ovhcloud-breakfast-ufl",
+     "try": 1,
+     "ok": true,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T203016-ea31e9ce",
+     "cost_usd": 0.0000115533,
+     "latency_ms": 444,
+     "prompt_sha256": "0f1e95fa9f8d80b01d50edd83fe5496859b7a10419300650869a416033450044"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p4-titles-in-portuguese 2026-11-12-ovhcloud-breakfast-ufl #1",
+     "fp": "sha256:946f79f2c76ef787",
+     "pub": "MCowBQYDK2VwAyEAMdHIyqwBImVdQZ9vBSTx3TdRXPij3Wpz5LQIEQjvUwY=",
+     "born": "2026-11-11T20:30:16Z",
+     "signed_at": "2026-11-11T20:30:17Z"
+    },
+    "sig": "XhmtPfaDLek8ET1UarvpUqVZT15/uCrUoiHB+JQPfsSnXr5NwAmT/w6CwOcY35blV17RTiZum/5kyB/RnUNzCA=="
+   },
+   {
+    "body": {
+     "input": "2026-11-12-open-coffee-lisbon-53",
+     "try": 1,
+     "ok": true,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T203017-db6ed0f1",
+     "cost_usd": 0.0000108603,
+     "latency_ms": 568,
+     "prompt_sha256": "a7aa8ca826d130abfa970151a478625741bd3b082a68483a51bdba35ecc1a39b"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p4-titles-in-portuguese 2026-11-12-open-coffee-lisbon-53 #1",
+     "fp": "sha256:79ff42493b5e5c0d",
+     "pub": "MCowBQYDK2VwAyEAxrFS228YT17wq33SVsrbO6h2jYNYGAdZJYwOqvFYBhY=",
+     "born": "2026-11-11T20:30:17Z",
+     "signed_at": "2026-11-11T20:30:17Z"
+    },
+    "sig": "j85CSJa5AuwTucZmTGKgopv1MdcwQx5Xl+cCyo4gF4Bjzes5EU3niKC548h0tRScUVXgAQJI1bM4Ub7+w/klCw=="
+   }
+  ],
+  "cost_usd": 0.000047
+ },
+ "by": {
+  "altitude": "A1",
+  "name": "calls: 2026-11-11-p4-titles-in-portuguese by conductor.fringe@PrompTugal.angelo",
+  "fp": "sha256:8b4ec19fbcae4fe9",
+  "pub": "MCowBQYDK2VwAyEAiljsS7ZUtdsnBoLRG3FNvzU6UxaZ1fJN4Qell1MOqVg=",
+  "born": "2026-11-11T20:30:05Z",
+  "signed_at": "2026-11-11T20:30:17Z"
+ },
+ "sig": "X5mw0uijJ6coyWm2maTAMZx09ALV3lkIW0ddHWyaLVhsuyfldAbkCLQcKXg8RAUkzZ2JDiQXcPBKlHRWH4JBCQ=="
+}

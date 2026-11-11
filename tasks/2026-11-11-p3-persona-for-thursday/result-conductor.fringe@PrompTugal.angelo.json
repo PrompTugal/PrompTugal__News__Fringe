@@ -1,0 +1,196 @@
+{
+ "body": {
+  "packet": "2026-11-11-p3-persona-for-thursday",
+  "packet_fp": "sha256:fac92089880648cf",
+  "runner": "conductor.fringe@PrompTugal.angelo",
+  "environment": "R1 Claude Code cloud, Angelo account (label unknown); OpenRouter key from this environment (proxy-injected)",
+  "ran_at": "2026-11-11T20:30:05Z",
+  "runner_choices": {
+   "tier": "cheap",
+   "model": null,
+   "max_tokens": 1500
+  },
+  "outputs": [
+   {
+    "input": "2026-11-12-female-founders-breakfast",
+    "persona": "founder",
+    "why": "Targets women founders specifically.",
+    "tries": 1,
+    "call_fp": "sha256:07a7cfe7887321af"
+   },
+   {
+    "input": "2026-11-12-sales-leaders-breakfast",
+    "persona": "founder",
+    "why": "Sales topics target founders directly.",
+    "tries": 1,
+    "call_fp": "sha256:72c7c4c971dd2a74"
+   },
+   {
+    "input": "2026-11-12-ovhcloud-breakfast-ufl",
+    "persona": "founder",
+    "why": "Scaleups focus, cloud infrastructure for growth",
+    "tries": 1,
+    "call_fp": "sha256:3ec457a8cef9cc43"
+   },
+   {
+    "input": "2026-11-12-open-coffee-lisbon-53",
+    "persona": "builder",
+    "why": "Open format networking for makers and engineers connecting.",
+    "tries": 1,
+    "call_fp": "sha256:b77a0b919c834b7f"
+   },
+   {
+    "input": "2026-11-12-cafe-and-code-exa-mastra",
+    "persona": "builder",
+    "why": "Event focuses on developers and AI coding.",
+    "tries": 1,
+    "call_fp": "sha256:4c848f74ad4763ce"
+   },
+   {
+    "input": "2026-11-12-padel-encounters-lisbon-thu-12-nov",
+    "persona": "curious",
+    "why": "Free and open to anyone interested in tech.",
+    "tries": 1,
+    "call_fp": "sha256:209ba408ac42edd3"
+   }
+  ],
+  "calls": [
+   {
+    "body": {
+     "input": "2026-11-12-female-founders-breakfast",
+     "try": 1,
+     "ok": true,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T203000-9e584ed2",
+     "cost_usd": 0.0000166419,
+     "latency_ms": 471,
+     "prompt_sha256": "613d07c5fe909b607124a220e9a086dd1fd783d42c2ba191baa16fa7c1510a0c"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p3-persona-for-thursday 2026-11-12-female-founders-breakfast #1",
+     "fp": "sha256:07a7cfe7887321af",
+     "pub": "MCowBQYDK2VwAyEAXNkc6tZBJLgW3hzZRN5wI/PDnHFCljEdc1BkIncU3VQ=",
+     "born": "2026-11-11T20:30:00Z",
+     "signed_at": "2026-11-11T20:30:01Z"
+    },
+    "sig": "leuQCI9ODaQcQRGYom6T+AWtOEE+hbXfZUraNVuMnRiuqutnl6aIuKx0TY9KD+Z+tBYpjCFD2w4tCgnwZ6iWBw=="
+   },
+   {
+    "body": {
+     "input": "2026-11-12-sales-leaders-breakfast",
+     "try": 1,
+     "ok": true,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T203001-ab41a81f",
+     "cost_usd": 0.0000165231,
+     "latency_ms": 667,
+     "prompt_sha256": "50edaad4e1157c35426d8cc4ac8bbb4136a643415ab94428c98afea7871839c6"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p3-persona-for-thursday 2026-11-12-sales-leaders-breakfast #1",
+     "fp": "sha256:72c7c4c971dd2a74",
+     "pub": "MCowBQYDK2VwAyEAZrDNsTf6hSbRliB1Po2LdEPhVevMkK9mIVaDPdJkaJU=",
+     "born": "2026-11-11T20:30:01Z",
+     "signed_at": "2026-11-11T20:30:02Z"
+    },
+    "sig": "fPeFjyyzs6ffxgwLx3fdasUEUm8zPJMmGgR10u3aApy75eHM4W1+yFXFkVBSaLxrUBQfzE5cHzU8OdO2RwRfDA=="
+   },
+   {
+    "body": {
+     "input": "2026-11-12-ovhcloud-breakfast-ufl",
+     "try": 1,
+     "ok": true,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T203002-b1488737",
+     "cost_usd": 0.0000587664,
+     "latency_ms": 1228,
+     "prompt_sha256": "009429c6e2b0367161549365e0d48d51dda79cb95514db999871be7c7a075146"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p3-persona-for-thursday 2026-11-12-ovhcloud-breakfast-ufl #1",
+     "fp": "sha256:3ec457a8cef9cc43",
+     "pub": "MCowBQYDK2VwAyEA8ff/uZA1KmGP91ZyVpL7Y4+10MvVT+qquWbdQ+8t0qA=",
+     "born": "2026-11-11T20:30:02Z",
+     "signed_at": "2026-11-11T20:30:03Z"
+    },
+    "sig": "dp31XTbVjFp/zgI5ujXvq1PPxdgWFmWaNYdn2WAarGCvY/GESTdcc7QqlKt29I9NlgecpcpFa4nNsDnrSBqbBQ=="
+   },
+   {
+    "body": {
+     "input": "2026-11-12-open-coffee-lisbon-53",
+     "try": 1,
+     "ok": true,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T203003-46fd566a",
+     "cost_usd": 0.0000170973,
+     "latency_ms": 550,
+     "prompt_sha256": "40d98698b77c262bde9e0799a762d81d0486108a8808083cd73cfbef5c66fb10"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p3-persona-for-thursday 2026-11-12-open-coffee-lisbon-53 #1",
+     "fp": "sha256:b77a0b919c834b7f",
+     "pub": "MCowBQYDK2VwAyEAyg6uQMl2szB5vwNsXno1jcviLTkqnyfknIf2xuyBmSo=",
+     "born": "2026-11-11T20:30:03Z",
+     "signed_at": "2026-11-11T20:30:04Z"
+    },
+    "sig": "JrERB3p96bvpWsSFhZjX2UOZoFD87xnDJ6ZPl0L0oSJ1IQqbwqXw/iUQMf5TfiME3bObaHduiHCDs9o2xZHSDg=="
+   },
+   {
+    "body": {
+     "input": "2026-11-12-cafe-and-code-exa-mastra",
+     "try": 1,
+     "ok": true,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T203004-d0a7e46c",
+     "cost_usd": 0.0000176418,
+     "latency_ms": 509,
+     "prompt_sha256": "fba56f503e22916a25ae52e77c5fdae9e99029e8fa5851e59efd93fbafdf277a"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p3-persona-for-thursday 2026-11-12-cafe-and-code-exa-mastra #1",
+     "fp": "sha256:4c848f74ad4763ce",
+     "pub": "MCowBQYDK2VwAyEAxC6rM4Whdn/bk5iJKe6NaZ+0CjkaWp4sTGKdeNKOmsQ=",
+     "born": "2026-11-11T20:30:04Z",
+     "signed_at": "2026-11-11T20:30:04Z"
+    },
+    "sig": "RzweloUtFGkdyOZ+/D1Yn03NXkmVcKvzcqMB6OPM4P7m4FqUtdJ3m1t3AlQYfTMiD6mI3HFDF70AOl6L9HmcCA=="
+   },
+   {
+    "body": {
+     "input": "2026-11-12-padel-encounters-lisbon-thu-12-nov",
+     "try": 1,
+     "ok": true,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T203004-2ccfa82a",
+     "cost_usd": 0.0000179784,
+     "latency_ms": 660,
+     "prompt_sha256": "a039ca4b0982ddd7014c6aefc66dae0a28ad4cfaa7941a6b6623c971fa21e4c7"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p3-persona-for-thursday 2026-11-12-padel-encounters-lisbon-thu-12-nov #1",
+     "fp": "sha256:209ba408ac42edd3",
+     "pub": "MCowBQYDK2VwAyEAImhzMhdciXb3WZvyDrGUVgKO5HDTEjEbqH3E2kvjqaQ=",
+     "born": "2026-11-11T20:30:04Z",
+     "signed_at": "2026-11-11T20:30:05Z"
+    },
+    "sig": "YoaNaf4PbvCY9UYrkadGc8Unj1TjtXe4P+jCLNNbFExsdhRNQAJ/uN37CM1g6u4R045CYPLfVM71hlpKSvthAg=="
+   }
+  ],
+  "cost_usd": 0.000145
+ },
+ "by": {
+  "altitude": "A1",
+  "name": "calls: 2026-11-11-p3-persona-for-thursday by conductor.fringe@PrompTugal.angelo",
+  "fp": "sha256:f62b8933e093194c",
+  "pub": "MCowBQYDK2VwAyEAJJHHosDFyCzON75UWyTpP8+cCa6J24RXrRXOOR7KL9U=",
+  "born": "2026-11-11T20:30:00Z",
+  "signed_at": "2026-11-11T20:30:05Z"
+ },
+ "sig": "NHbwxZbI+yddrpWiCfQe0mlvpXb2uMx/FHgTk7P6ULFoKDKj6KUT9jN4GPOZp04gUhllyRUaCNBYp9tmgJxgBQ=="
+}

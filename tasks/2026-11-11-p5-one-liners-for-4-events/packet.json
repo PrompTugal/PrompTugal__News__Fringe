@@ -1,0 +1,78 @@
+{
+ "body": {
+  "v": 1,
+  "id": "2026-11-11-p5-one-liners-for-4-events",
+  "altitude": "A1",
+  "from": "conductor.fringe@PrompTugal.angelo",
+  "for": "conductor.fringe@PrompTugal.dinis",
+  "mandate": "Write a plain one-line description (at most 15 words) for each of 4 Friday events, for the event cards. The second packet of the cross-conductor OpenRouter test, at Dinis and Angelo's word (11 Nov, 20:2x UTC).",
+  "grant": [],
+  "tier": "cheap",
+  "max_tokens": 300,
+  "prompt": "You write for Lisbon Tech Fringe, an independent guide to side events in Lisbon. From this public listing, write ONE plain sentence of at most 15 words saying what the event is and who it suits. No hype, no emoji, nothing not in the listing. Answer only with JSON: {\"line\": \"...\", \"words\": <number of words>}. The event: {{input}}",
+  "inputs": [
+   {
+    "id": "2026-11-13-unblock-ai-conference",
+    "name": "Unblock AI • Conference",
+    "organiser": "UnblockAI (per the event page)",
+    "kind": "side event",
+    "topics": [
+     "ai",
+     "deeptech & hardware"
+    ],
+    "place": "Jupiter Lisboa Hotel - Rooftop & Spa, Av. da República 46, 1050-195 Lisboa, Portugal (address as shown on the event's Luma page)"
+   },
+   {
+    "id": "2026-11-13-lisbon-community-week",
+    "name": "Lisbon Community Week Conference 2026",
+    "organiser": "Led by Community",
+    "kind": "conference",
+    "topics": [
+     "community management",
+     "unconference"
+    ],
+    "place": "Impact Hub Lisbon - Penha, R. Neves Ferreira 13, 1170-273 Lisboa (Penha de França)"
+   },
+   {
+    "id": "2026-11-13-co-working-day-for-designers-mentoring",
+    "name": "Co-working Day for Designers + Mentoring",
+    "organiser": "LisboaUX (per the event page)",
+    "kind": "side event",
+    "topics": [
+     "climate & impact",
+     "international expansion",
+     "growth & product"
+    ],
+    "place": "Casa do Impacto, Tv. de São Pedro 8, 1200-432 Lisboa, Portugal (address as shown on the event's Luma page)"
+   },
+   {
+    "id": "2026-11-13-co-working-for-developers",
+    "name": "Co-working for Developers",
+    "organiser": "LisboaJS (per the event page)",
+    "kind": "side event",
+    "topics": [
+     "international expansion",
+     "growth & product"
+    ],
+    "place": "Casa do Impacto, Tv. de São Pedro 8, 1200-432 Lisboa, Portugal (address as shown on the event's Luma page)"
+   }
+  ],
+  "output": {
+   "required": [
+    "line",
+    "words"
+   ]
+  },
+  "return": "commit tasks/<id>/result-<your agent>.json (node abp/tools/packets.mjs run --id <id> --as <your agent> --env <your runtime and account>)",
+  "issued_at": "2026-11-11T20:30:33Z"
+ },
+ "by": {
+  "altitude": "A3",
+  "name": "issuer: conductor.fringe@PrompTugal.angelo",
+  "fp": "sha256:2bb000c5a2f7e190",
+  "pub": "MCowBQYDK2VwAyEA2XaAm7TsUAd0ENN/htDi/P/7E8g4OwYtAxgbX4GttJE=",
+  "born": "2026-11-11T20:30:33Z",
+  "signed_at": "2026-11-11T20:30:33Z"
+ },
+ "sig": "BMEVMWe8FY2rtyfnqsG6bcAzJnruvcMTsupV8rRM3mdeLvycxFHw9KBzEAvVmNMco8zwUqhqHpBekdwJiI92DA=="
+}
