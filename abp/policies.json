@@ -418,7 +418,8 @@
         "data/run-reach.json",
         "data/work-altitudes.json",
         "docs/articles/**",
-        "admin/build/articles.mjs"
+        "admin/build/articles.mjs",
+        "docs/handoffs/**"
       ],
       "touches_shared": [
         "admin/build/build.mjs (one line per page, until the registry lands)",

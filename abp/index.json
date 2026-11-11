@@ -1,7 +1,7 @@
 {
   "about": "Every agent's grant, flattened from abp/policies.json by node abp/tools/abp.mjs build: what /abp/ shows.",
   "policy": "0.3.2",
-  "sha256": "94cc5383d63a1e85",
+  "sha256": "f113758276e47fab",
   "mode": "observe",
   "agents": [
     {
@@ -82,6 +82,7 @@
         "data/work-altitudes.json",
         "docs/articles/**",
         "admin/build/articles.mjs",
+        "docs/handoffs/**",
         "briefs/*.md#notes-of-Dinis-in-its-session"
       ],
       "owns": [],
