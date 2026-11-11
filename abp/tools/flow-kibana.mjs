@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Kibana for fringe-flows (abp/tools/flow.mjs): "Flows: the beginning, the middle and the end" (Dinis, 18:5x UTC).
-// A data view on fringe-flows (time field 'at'); a Vega Gantt chart of every unit of the flows in the time range (one
+// Kibana for swarm-flows (abp/tools/flow.mjs): "Flows: the beginning, the middle and the end" (Dinis, 18:5x UTC).
+// A data view on swarm-flows (ids keep their first names, so the dashboard's URL stays) (time field 'at'); a Vega Gantt chart of every unit of the flows in the time range (one
 // bar per unit from its start to its end, coloured by altitude, retries as ticks); the units by altitude; a saved
 // search of the raw events. Imported by stable ids, so a re-run updates. The credential is read by
 // admin/tools/elastic-lib.mjs and never printed.
@@ -15,7 +15,7 @@ const COLORS = { A4: '#121317', A3: '#595c64', A2: '#1f4fa8', A1: '#c52830', A0:
 const gantt = {
   $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
   title: { text: 'Every unit, from its start to its end', subtitle: 'one bar per unit; colour = altitude; ticks = steps (retries)' },
-  data: { url: { '%context%': true, '%timefield%': 'at', index: 'fringe-flows', body: { size: 2000, _source: ['flow', 'unit_id', 'parent_id', 'altitude', 'name', 'phase', 'at', 'model', 'valid', 'note', 'environment', 'runner'] } }, format: { property: 'hits.hits' } },
+  data: { url: { '%context%': true, '%timefield%': 'at', index: 'swarm-flows', body: { size: 2000, _source: ['flow', 'unit_id', 'parent_id', 'altitude', 'name', 'phase', 'at', 'model', 'valid', 'note', 'environment', 'runner'] } }, format: { property: 'hits.hits' } },
   transform: [
     { calculate: 'time(toDate(datum._source.at))', as: 't' },
     { calculate: 'datum._source.unit_id', as: 'unit' }, { calculate: 'datum._source.altitude', as: 'altitude' },
@@ -36,13 +36,13 @@ const gantt = {
 };
 const byAlt = {
   $schema: 'https://vega.github.io/schema/vega-lite/v5.json', title: 'Units started, by altitude',
-  data: { url: { '%context%': true, '%timefield%': 'at', index: 'fringe-flows', body: { size: 0, aggs: { a: { terms: { field: 'altitude', size: 10 }, aggs: { p: { filter: { term: { phase: 'start' } } } } } } } }, format: { property: 'aggregations.a.buckets' } },
+  data: { url: { '%context%': true, '%timefield%': 'at', index: 'swarm-flows', body: { size: 0, aggs: { a: { terms: { field: 'altitude', size: 10 }, aggs: { p: { filter: { term: { phase: 'start' } } } } } } } }, format: { property: 'aggregations.a.buckets' } },
   mark: 'bar', width: 'container',
   encoding: { x: { field: 'key', type: 'nominal', title: null, sort: ['A4', 'A3', 'A2', 'A1', 'A0'] }, y: { field: 'p.doc_count', type: 'quantitative', title: 'units' }, color: { field: 'key', type: 'nominal', scale: { domain: Object.keys(COLORS), range: Object.values(COLORS) }, legend: null } },
 };
 const vis = (id, title, spec) => ({ id, type: 'visualization', attributes: { title, description: '', visState: JSON.stringify({ title, type: 'vega', aggs: [], params: { spec: JSON.stringify(spec, null, 1) } }), uiStateJSON: '{}', kibanaSavedObjectMeta: { searchSourceJSON: JSON.stringify({ query: { query: '', language: 'kuery' }, filter: [] }) } }, references: [] });
 const objects = [
-  { id: DV, type: 'index-pattern', attributes: { title: 'fringe-flows', name: 'Flows: every unit, start to end (live)', timeFieldName: 'at' }, references: [] },
+  { id: DV, type: 'index-pattern', attributes: { title: 'swarm-flows', name: 'Flows: every unit, start to end (live)', timeFieldName: 'at' }, references: [] },
   vis(GANTT, 'Flows: every unit from start to end', gantt),
   vis(ALT, 'Flows: units by altitude', byAlt),
   { id: SEARCH, type: 'search', attributes: { title: 'Flows: the events', description: '', columns: ['flow', 'phase', 'altitude', 'name', 'environment', 'model', 'duration_ms', 'valid', 'note'], sort: [['at', 'desc']], kibanaSavedObjectMeta: { searchSourceJSON: JSON.stringify({ query: { query: '', language: 'kuery' }, filter: [], indexRefName: 'kibanaSavedObjectMeta.searchSourceJSON.index' }) } }, references: [{ name: 'kibanaSavedObjectMeta.searchSourceJSON.index', type: 'index-pattern', id: DV }] },

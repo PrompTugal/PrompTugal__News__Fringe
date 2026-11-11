@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Flows: the execution of every unit, live, in Elastic (fringe-flows). Dinis, 11 November 2026, 18:5x UTC: "I want to
+// Flows: the execution of every unit, live, in Elastic (swarm-flows). Dinis, 11 November 2026, 18:5x UTC: "I want to
 // start to see the execution. I want to see the beginning, the middle, and ending ... especially as we add ChatGPT,
 // Cloudflare, AWS, maybe even GCP to the mix." Every unit (A4 swarm, A3 agent, A2 loop, A1 LLM call, A0 compute)
 // emits start, step and end events as it runs, from whatever environment it runs in; a flow is one run of units,
@@ -18,8 +18,8 @@ import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
-export const INDEX = 'fringe-flows';
-export const MAPPING = { mappings: { dynamic: 'strict', properties: {
+export const INDEX = 'swarm-flows';   // docs/elastic-guidance.md: swarm-<kind>, owned by its creator (_meta.owner)
+export const MAPPING = { mappings: { _meta: { owner: 'architect.1.fringe@PrompTugal.dinis', about: 'Flows: every unit\'s start, step and end, live (abp/tools/flow.mjs)' }, dynamic: 'strict', properties: {
   flow: { type: 'keyword' }, seq: { type: 'long' }, at: { type: 'date' }, phase: { type: 'keyword' },
   unit_id: { type: 'keyword' }, parent_id: { type: 'keyword' }, altitude: { type: 'keyword' }, role: { type: 'keyword' },
   name: { type: 'text', fields: { raw: { type: 'keyword', ignore_above: 256 } } },

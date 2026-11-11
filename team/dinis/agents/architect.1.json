@@ -1,16 +1,14 @@
 {
   "agent": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T19:03Z",
+  "updated": "2026-11-11T19:07Z",
   "account": "riskmandate-personal (Ultra) (Dinis, brief 15)",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 12)",
   "branch": "dev",
   "wake": "hourly at :50 (set by the lead)",
-  "state": "working (Dinis spoke in this session 14:37 to 14:50 UTC)",
-  "doing": [
-    "work/48: the operating model with Dinis and Angelo (/agentic-team/operating-model/)",
-    "work/39: review round 2"
-  ],
+  "state": "active",
+  "doing": "Round 6 of the ABP review written; reviews and flows in Elastic (swarm-abp-reviews, swarm-flows)",
   "done": [
+    "2026-11-11T19:07Z: round 6 review (56 commits, 6 outside a grant; no enforced rule fired); flows moved to swarm-flows (owner architect.1); every round's findings exported to Elastic swarm-abp-reviews (63 docs)",
     "session key made (architect.1.fringe-dinis in data/keys.json)",
     "admin/tools/architecture.mjs: who writes which paths, from git",
     "work/38 first map: data/architecture.json (0cc291e)",

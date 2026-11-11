@@ -266,10 +266,26 @@ function whoami() {
   fs.mkdirSync(path.dirname(out), { recursive: true }); fs.writeFileSync(out, [...labels][0] + '\n');
   console.log(`abp whoami: ${[...labels][0]} -> ~/.abp/whoami`);
 }
+// ---------- review-export: every round's findings as documents, for Elastic (swarm-abp-reviews; docs/elastic-guidance.md) ----------
+function reviewExport() {
+  const rounds = [{ round: 0, at: '2026-11-11T12:51:00Z' }, ...(P.review && P.review.rounds || [])].map((r) => ({ ...r, at: r.at.length === 17 ? r.at.replace('Z', ':00Z') : r.at }));
+  const docs = [];
+  for (let i = 1; i < rounds.length; i++) {
+    const from = rounds[i - 1].at, to = rounds[i].at, R = rounds[i].round;
+    const cs = commitsIn(`--since=${from}`).filter((c) => c.at <= to.replace('Z', '+00:00') || new Date(c.at) <= new Date(to));
+    let n = 0;
+    for (const c of cs) for (const f of checkCommit(c)) { n++; docs.push({ id: `r${R}:${c.h}:${f.rule}:${f.file || '-'}`, round: R, round_file: rounds[i].file, at: c.at.replace('+00:00', 'Z'), commit: c.h, agent: c.agent || '(none)', person: (/@PrompTugal\.([a-z]+)/i.exec(c.agent || '') || [, null])[1], rule: f.rule, file: f.file || null, area: f.file ? f.file.split('/').slice(0, 2).join('/') : null, kind: /shared file/.test(f.why) ? 'shared file' : /no grant/.test(f.why) ? 'no grant' : /protected/.test(f.why) ? 'protected' : /owned by/.test(f.why) ? 'claimed item' : 'outside grant', why: f.why.slice(0, 300), mode: abp.ruleMode(f.rule, P) }); }
+    docs.push({ id: `r${R}:summary`, round: R, round_file: rounds[i].file, at: to, kind: 'round summary', commits: cs.length, findings: n, agent: 'architect.1.fringe@PrompTugal.dinis', rule: null });
+  }
+  const out = arg('--out', path.join(os.tmpdir(), 'abp-reviews.json'));
+  fs.writeFileSync(out, JSON.stringify(docs, null, 1));
+  console.log(`review-export: ${docs.length} documents over ${rounds.length - 1} rounds -> ${out}`);
+}
 const cmd = process.argv[2];
 if (cmd === 'build') build();
 else if (cmd === 'check') check();
 else if (cmd === 'review') review();
 else if (cmd === 'test') test();
+else if (cmd === 'review-export') reviewExport();
 else if (cmd === 'whoami') whoami();
 else console.log('usage: node abp/tools/abp.mjs build | check [--range A..B] | review [--since ISO] [--out FILE] | test');
