@@ -71,6 +71,21 @@ These are facts about the repository as it was read. The lane crossings are comp
 
 Every query was run against Aura at 20:12 UTC and returned rows (`python3 admin/tools/neo4j-dashboard.py --check` rebuilds the file and checks it). To use it, open **Dashboards → Import**, then choose the file or paste its JSON into the editor.
 
+## Bloom
+
+Bloom reads the same Aura database (instance 4c760d12). With the Default Perspective:
+
+- **First, the `:Fringe` label.** Every node also carries `:Fringe`, which the loader adds so that `--wipe` touches only what it made. In the perspective, move the Fringe category to the bottom of the list or delete it. Otherwise many nodes may take its colour instead of their own label's (Agent, Commit, Unit…).
+- **Typed patterns** in the search bar work as they are, for example `Agent AUTHORED Commit CROSSES_INTO Role`, `Person SAID Word` or `Unit EXPOSES Reach`.
+- **Search phrases** (Perspective → Saved Cypher → add a phrase, then paste the Cypher). Each was checked against Aura at 20:13 UTC; the number is the paths it returned:
+  - *Dinis's words* (25): `MATCH p = (:Person {id:'dinis'})-[:SAID]->(:Word)<-[:ACTS_ON]-(:Commit)<-[:AUTHORED]-(:Agent) RETURN p`
+  - *Lane crossings* (74): `MATCH p = (:Agent)-[:AUTHORED]->(:Commit)-[:CROSSES_INTO]->(:Role) RETURN p`
+  - *Latest run* (14): `MATCH (r:Run) WITH r ORDER BY r.name DESC LIMIT 1 MATCH p = (r)-[:CONTAINS]->(u:Unit) OPTIONAL MATCH q = (u)-[:HANDS_TO]->(:Unit) OPTIONAL MATCH k = (:Key)-[:SIGNED]->(u) RETURN p, q, k`
+  - *Reach held without need* (208): `MATCH p = (:Unit)-[:EXPOSES]->(:Reach) RETURN p`
+  - *Live flows* (62): `MATCH p = (:Span)-[:IS_CHILD_OF*1..]->(:Span)-[:BELONGS_TO]->(:Flow) RETURN p`
+  - *Findings* (61): `MATCH p = (:Review)-[:RECORDS]->(:Finding)-[:FLAGS]->(:Agent) RETURN p`
+- **A ready-made perspective** (colours per label, captions and these phrases) is not written by hand here, because Bloom's perspective file format is not published. If Dinis exports the Default Perspective (Perspective → Export), it can be built on that file.
+
 ## To see it (Neo4j Browser)
 
 ```cypher
