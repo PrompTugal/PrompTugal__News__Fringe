@@ -116,6 +116,22 @@
         "fingerprint": "sha256:7a7ca4db914c8fc2",
         "signing_fingerprint": "sha256:ca2c782dbfd0147e"
       }
+    },
+    {
+      "id": "observability.fringe-promptugal",
+      "agent": "observability.fringe@PrompTugal.dinis",
+      "role": "Lisbon Fringe's observability agent (fringe.promptugal.news, WS-215, work/21): the sender on every page, the vaults, the hourly drain and /traffic/, at Dinis Cruz's word (brief 2, 11 November 2026).",
+      "how": "Made in its own session (session_01Kw9UwDEe3BXvda7DY68R8B) on 11 November 2026, 11:35 UTC (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab). A session key: it ends with the session.",
+      "added": "2026-11-11",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAl9QcBindIGkRku1usTtj\nnR9MHENI7eMN5Ib+NNdCaezWg6U4+sT0HAuABAM4t/NHxODRXKqsjCw92oIgu2ob\nt9dR2BmRr0SlH7n3Op9WhK3OwvzjoR2FC5X3m2aT6S09tGeGAA2OEygBZh7bEuYj\nZMsqhT+S9YCMeO72Tp/CMNahs7YYJYH44cB9sUCpHuuJyFNOuL3/boskc4bGGTKv\nRh+DP98ch+De1TkX1BF+8Z6qgdKZB8TXzi/VT5T06EQzqPPx04fNDQguVeRPu/CQ\n3ANOzf8sPO46ew+0usoAkLgHEQIFZXAmbyCoELT7MeTlw68JjjQ7IRp4L62SHSpu\nCOqQ5c7tmCJEr91xkUKSvsI31bzSE7gE6aNpyOwqkqRAXagYr2hhsZtQzvSv4ddl\nchlAWBX8plHmMrMR1kck2Voe07A/YYwMFiTSCQp8OZ+WcZErN2KTppiHRgmPFgqe\n7d0rE7UurnF2Xy3815cnYUfGG/l4HMjxJGmVOiAk5dn0oOBd3iKfuzPWNWJOoAI+\nRJTMHAKT2+vv6xZKcNqaXpOSSQ8s3Iw5iHasovv/AXP3wvjOqGFDKnxVAbfUBn79\nEnD9q05eACuqKNONMDP0a8fi87kZwYGlQbhHdv5Rq1AXnXvn16LMIaA8gsI1yFSH\nW3NPiGP4HzVjzwJV+MbQbY0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEWvFCmTACFgI0aUPWPaIgHRG2/Uat\nrKR4GgazUTjI+lOGmUEqENJVTxuYRw/Xa3S1oLxwpMwkrJp25mN4YZxF8Q==\n-----END PUBLIC KEY-----\n",
+        "label": "observability.fringe@PrompTugal.dinis",
+        "fingerprint": "sha256:6de5846ffc8c684e",
+        "signing_fingerprint": "sha256:7dc76da212785d2d"
+      }
     }
   ]
 }
