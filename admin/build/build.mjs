@@ -142,6 +142,7 @@ writeFileSync(join(out, 'join', 'index.html'), joinPage);
 writeFileSync(join(out, 'CNAME'), 'fringe.promptugal.news\n');
 writeFileSync(join(out, '404.html'), page('Not found', '<h1>Not found</h1><p><a href="/">Lisbon Fringe</a> · <a href="/join/">Join</a></p>', 'Page not found.'));
 mkdirSync(join(out, 'api', 'v1'), { recursive: true });
+writeFileSync(join(out, 'api', 'v1', 'README.md'), read('api/v1/README.md'));
 writeFileSync(join(out, 'api', 'v1', 'events.json'), JSON.stringify({ about: 'Lisbon Fringe events, each re-read at its public URL (read_at, UTC). Independent of Web Summit.', site: SITE, version: VERSION, built_at: BUILT, events }, null, 2) + '\n');
 writeFileSync(join(out, 'llms.txt'), `# Lisbon Fringe\n\n> An independent guide to the alternative, community and side events around Web Summit Lisbon, 9 to 15 November 2026. Independent of Web Summit; for anything official see the organisers' site. Not a warning service: for the storm see https://storm-charles.promptugal.news, IPMA and ANEPC.\n\n- [Events (JSON)](${SITE}api/v1/events.json): each event with its source URL and the time it was read\n- [Join the team](${SITE}join/)\n- [Repository](${REPO})\n`);
 writeFileSync(join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n<url><loc>${SITE}</loc></url>\n<url><loc>${SITE}join/</loc></url>\n</urlset>\n`);
