@@ -9,6 +9,10 @@ board: D21 (renamed), D22, work/30
 ---
 # Brief 9: Lisbon Tech Fringe
 
+## Why the name changed
+
+Dinis, in outreach.1's session: a "Lisbon Fringe" for comedy, theatre and dance is announced for 2027, so we need another name. "Let's go with 'Lisbon Tech Fringe', which doesn't seem to have been used much before." (work/31)
+
 ## In Dinis's words
 
 > "I just bought **lisbontechfringe.com** ... relay that to the team, specially the design."

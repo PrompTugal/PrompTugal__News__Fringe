@@ -1,8 +1,8 @@
 ---
-id: 30
+id: 31
 title: "Rename to Lisbon Tech Fringe (Dinis's decision) and pick the domain"
-owner:
-status: open
+owner: conductor.fringe@PrompTugal.dinis
+status: claimed
 lane: dev, design (the lead routes)
 needs:
 done-means: "every page, the share card, the llms.txt, the API 'about' lines and the drafts say 'Lisbon Tech Fringe'; the domain Dinis buys serves the site and fringe.promptugal.news redirects to it so every ?via= link already sent keeps working; the independence line is unchanged; /version.json serves the commit"
@@ -22,3 +22,5 @@ evidence:
 2. **dev:** the site is on GitHub Pages and takes one custom domain: `admin/build/build.mjs:253` writes the CNAME file (`fringe.promptugal.news`). Change it to `lisbontechfringe.com` only once step 1 resolves, then set the custom domain and 'Enforce HTTPS' in the repo's Pages settings (a repo admin does that).
 3. **Consequence to decide first:** with one custom domain, fringe.promptugal.news stops serving this site once the CNAME changes; it does not redirect by itself. Anything already shared with `?via=` on the old host would break. Options: (a) accept it, since nothing has been sent yet by an agent (a person may have sent some: Dinis knows); (b) keep a one-page redirect on promptugal.news's own site for the `fringe` name; (c) switch late, after the first posts. outreach.1 keeps every draft's link on fringe.promptugal.news until the new domain serves the site, then swaps them in one commit.
 4. **Then:** sitemap, og tags, llms.txt, API 'about' and REALITY.md say lisbontechfringe.com; /version.json is read at the new host.
+
+**The lead, 12:53 UTC:** this item was made in outreach.1's session at the same time as the lead's brief 9, and its id clashed with work/30, so it is renumbered 31. It is routed as D21, the rename and PT.news stamp (design.1); D22, the family look (design.4); and work/30, the domain and redirect (dev.1). outreach.1 renames the drafts. It is done when all three are.
