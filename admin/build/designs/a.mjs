@@ -6,12 +6,13 @@
 import { placeShort, STATUS } from '../cards.mjs';
 import { sizeOf } from '../tiers.mjs';
 
-export const design = {
+export const meta = {
   id: 'a',
   name: 'The programme',
   maker: 'design.1.fringe@PrompTugal.dinis',
   tool: 'Claude Sonnet, hand-written HTML and CSS on the PT.news tokens',
-  why: 'A printed festival programme: the whole week as one strip, then each day hour by hour. Built for the visitor who asks "what is on at 18:00 tomorrow?" rather than "what is on now?".',
+  status: 'candidate',
+  tagline: 'A printed festival programme: the whole week as one strip, then each day hour by hour. Built for the visitor who asks "what is on at 18:00 tomorrow?" rather than "what is on now?".',
 };
 
 const DOW = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -100,7 +101,7 @@ export function render({ events, esc, eventPath, hasPage, now = new Date() }) {
 
   const body = `<section class="pa"><p class="pa-kick">The programme · ${days.length} days</p>
 <h1 class="pa-title">Lisbon&rsquo;s week, <em>hour by hour</em></h1>
-<p class="pa-dek">${total} events across ${days.length} days, each re-read at its organiser&rsquo;s page. Darker means more start in that hour.</p>
+<p class="pa-dek">${total} events across ${days.length} days, each re-read at its organiser&rsquo;s page. The stronger the green, the more events start in that hour.</p>
 <div class="pa-glance"><div class="pa-g">${glanceRows}${axis}</div></div>
 <div class="pa-tabs" role="tablist" aria-label="Day">${tabs}</div>
 ${dayHtml}
@@ -110,7 +111,7 @@ function show(d){tabs.forEach(function(t){t.setAttribute('aria-selected',String(
 function mark(){var n=new Date(),d=n.toISOString().slice(0,10),h=n.getUTCHours(),rows=[].slice.call(document.querySelectorAll('.pa-hour'));rows.forEach(function(r){r.classList.remove('cur')});
 var s=document.getElementById('pa-'+d);if(!s||s.hidden)return;var best=null;[].slice.call(s.querySelectorAll('.pa-hour')).forEach(function(r){if(+r.dataset.h<=h)best=r});if(best)best.classList.add('cur');fold(s,best)}
 function fold(s,cur){if(s.dataset.f||!cur)return;s.dataset.f='1';var all=[].slice.call(s.querySelectorAll('.pa-hour')),i=all.indexOf(cur),past=all.slice(0,Math.max(0,i-0));if(!past.length)return;var n=0;past.forEach(function(r){r.classList.add('pa-past');n+=r.querySelectorAll('li').length});var b=document.createElement('button');b.type='button';b.className='pa-more';b.textContent='Earlier today: '+n+' events started before '+cur.dataset.h+':00. Show';b.addEventListener('click',function(){s.classList.add('pa-open');b.remove()});past[0].parentNode.insertBefore(b,past[0])}
-tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.day)})});
+tabs.forEach(function(t,i){t.addEventListener('click',function(){show(t.dataset.day)});t.addEventListener('keydown',function(e){var j=e.key==='ArrowRight'?i+1:e.key==='ArrowLeft'?i-1:-1;if(j>=0&&j<tabs.length){e.preventDefault();tabs[j].focus();show(tabs[j].dataset.day)}})});
 [].slice.call(document.querySelectorAll('.pa-g a.gl')).forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();show(a.dataset.day);document.querySelector('.pa-tabs').scrollIntoView({block:'start'})})});
 var today=new Date().toISOString().slice(0,10);if(document.getElementById('pa-'+today))show(today);else mark();setInterval(mark,60000)}catch(x){}})();</script>`;
   return { css, body };
