@@ -41,7 +41,7 @@ export const css = `
 .cy-node text{font:600 12px var(--mono);fill:var(--ink);text-anchor:middle;pointer-events:none}.cy-nm{display:none;font:600 10.5px var(--sans);fill:var(--ink-2);text-anchor:middle;pointer-events:none;paint-order:stroke;stroke:var(--paper-2,#fff);stroke-width:3px}.cy-nm.show,.cy-nm.sel{display:block}
 .cy-node[aria-pressed=true] circle{fill:var(--green,var(--accent))}.cy-node[aria-pressed=true] text:not(.nm){fill:var(--paper,#fff)}
 .cy-node.zero{opacity:.35}.cy-node:focus-visible circle{stroke:var(--focus,#1f4fa8);stroke-width:3}
-.cy-node.on circle{animation:cyp 2s ease-out infinite}@keyframes cyp{0%{stroke-width:1.6}50%{stroke-width:5}100%{stroke-width:1.6}}
+.cy-node.on circle{animation:cyp 2s ease-out infinite}.cy-node:hover circle,.cy-node:focus circle{animation-play-state:paused}@keyframes cyp{0%{stroke-width:1.6}50%{stroke-width:5}100%{stroke-width:1.6}}
 @media (prefers-reduced-motion:reduce){.cy-node.on circle{animation:none;stroke-width:4}}
 .cy-note{font:.72rem/1.4 var(--mono);color:var(--ink-3);margin:2px 0 8px}
 .cy-zones{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
@@ -52,12 +52,12 @@ export const css = `
 const DAY = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'], MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayLabel = (d) => { const x = new Date(d + 'T00:00:00Z'); return `${DAY[x.getUTCDay()]} ${x.getUTCDate()} ${MON[x.getUTCMonth()]}`; };
 
-export function render({ events, esc }) {
+export function render({ events, esc, now }) {
   const list = events.filter((e) => e.start || e.date).sort((a, b) => String(a.start || a.date).localeCompare(String(b.start || b.date)));
   const days = [...new Set(list.map((e) => e.date))].sort();
   const g = new Map(); for (const e of list) { const k = groupOf(e); g.set(k, (g.get(k) || 0) + 1); }
   const named = [...g.keys()].filter((k) => AREAS[k]);
-  const nodes = layout(named.map((k) => { const [x, y] = px(AREAS[k]); return { k, x, y, r: Math.min(24, 12 + 2.4 * Math.sqrt(g.get(k))) }; }), W, H);
+  const nodes = layout(named.map((k) => { const [x, y] = px(AREAS[k]); return { k, x, y, r: Math.min(24, 14 + 2.4 * Math.sqrt(g.get(k))) }; }), W, H);
   const water = `<polygon class="cy-water" points="${SHORE.map((p) => px(p).map((v) => v.toFixed(1)).join(',')).join(' ')} ${W},${H} 0,${H}"/>`;
   const svg = `<svg class="cy-map" viewBox="0 0 ${W} ${H}" role="group" aria-label="Schematic map of Lisbon by neighbourhood; not to scale">${water}<text class="cy-tag" x="${W * 0.7}" y="${H * 0.86}">Rio Tejo</text>
 ${nodes.map((n) => `<g class="cy-node" data-g="${esc(slug(n.k))}" role="button" tabindex="0" aria-pressed="false" aria-label="${esc(n.k)}"><circle cx="${n.x.toFixed(1)}" cy="${n.y.toFixed(1)}" r="${n.r.toFixed(1)}"/><text x="${n.x.toFixed(1)}" y="${(n.y + 4).toFixed(1)}" class="ct">${g.get(n.k)}</text></g>`).join('')}
@@ -65,6 +65,11 @@ ${nodes.map((n) => `<text class="cy-nm${g.get(n.k) >= 3 ? ' show' : ''}" data-g=
   const zones = ['Online', 'Beyond the map', 'Address with guests'].filter((k) => g.has(k)).map((k) => `<button type="button" class="cy-chip" data-g="${esc(slug(k))}" aria-pressed="false">${esc(k)} <b>${g.get(k)}</b></button>`).join('');
   const rows = list.map((e) => denseRow(e, { esc }, ` data-g="${esc(slug(groupOf(e)))}" data-d="${esc(e.date)}" data-s="${Date.parse(e.start) || ''}" data-e="${Date.parse(e.end) || ''}"`, groupOf(e) === 'Address with guests' ? '' : (groupOf(e) === 'Online' ? '' : groupOf(e)), true)).join('');
   const chips = [`<button type="button" class="cy-chip" data-d="" aria-pressed="true">All week <b>${list.length}</b></button>`, ...days.map((d) => `<button type="button" class="cy-chip" data-d="${esc(d)}" aria-pressed="false">${esc(dayLabel(d))} <b>${list.filter((e) => e.date === d).length}</b></button>`)].join('');
+  const t0 = (now instanceof Date ? now : new Date()).getTime();
+  const live = list.filter((e) => e.status !== 'cancelled' && Date.parse(e.start) <= t0 && (!e.end || Date.parse(e.end) > t0));
+  const next = list.filter((e) => e.status !== 'cancelled' && Date.parse(e.start) > t0).slice(0, 3);
+  const nowRows = [...live.slice(0, 3), ...next].slice(0, 3).map((e) => denseRow(e, { esc }, '', groupOf(e) === 'Address with guests' || groupOf(e) === 'Online' ? '' : groupOf(e), false)).join('');
+  const nowBlock = `<div class="cy-now"><div class="kick">${live.length ? 'On now' : 'Next'} <span class="muted">(${live.length} on now)</span></div><ul class="dense">${nowRows}</ul></div>`;
   const mapped = list.filter((e) => AREAS[groupOf(e)]).length;
   const script = `<script>(function(){try{var f={g:'',d:''},rows=[].slice.call(document.querySelectorAll('.cy-list .row')),nodes=[].slice.call(document.querySelectorAll('.cy-node')),dc=[].slice.call(document.querySelectorAll('.cy-chip[data-d]')),zc=[].slice.call(document.querySelectorAll('.cy-zones .cy-chip')),now=Date.now();
 function tog(el,v){el.setAttribute('aria-pressed',v)}
@@ -85,6 +90,7 @@ var d0=new Date(now).toISOString().slice(0,10),b=dc.filter(function(c){return c.
 ${svg}
 <p class="cy-note">Schematic of Lisbon, not to scale. ${mapped} of ${list.length} events name a neighbourhood the page can place; the rest are online, outside Lisbon, or have an address shared only with guests.</p>
 <div class="cy-zones" role="group" aria-label="Online and other places">${zones}</div>
+${nowRows ? nowBlock : ''}
 <div class="cy-head"><h2 id="cy-title">All of Lisbon</h2><span id="cy-count">${list.length} events</span></div>
 <ul class="dense cy-list">${rows}</ul><p class="cy-empty" id="cy-empty" hidden>Nothing here on this day. Try another day or "All week".</p></div>${script}`;
   return { css, body };
