@@ -2,7 +2,7 @@
 title: "ABP: researcher.2.fringe@PrompTugal.dinis"
 agent: researcher.2.fringe@PrompTugal.dinis
 role: researcher
-policy: abp/policies.json v0.4.1 (sha256:5bfa6724a86c2d27)
+policy: abp/policies.json v0.4.1 (sha256:f57383c15bb5707b)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -16,7 +16,7 @@ authority: Dinis Cruz, operator
 - **Role:** researcher. **Account:** riskmandate-personal (Ultra).
 - **Runs on:** R1 (models: M1 Sonnet; M2 for the second opinion); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** events re-read at their public source, hourly; sources.md.
-- **Writes (this repository):** `team/dinis/agents/researcher.2.json`, `team/dinis/agents/researcher.2.fringe.json`, `team/dinis/agents/researcher.2/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `data/events.json`, `seed/**`, `sources.md`, `api/v1/README.md`, `data/places.json`, `data/feeds/**`, `data/tips-status.json`.
+- **Writes (this repository):** `team/dinis/agents/researcher.2.json`, `team/dinis/agents/researcher.2.fringe.json`, `team/dinis/agents/researcher.2/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `data/models-ledger.json`, `data/events.json`, `seed/**`, `sources.md`, `api/v1/README.md`, `data/places.json`, `data/feeds/**`, `data/tips-status.json`.
 - **Owns (shared files; others send it their changes):** `data/events.json`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
 - **Writes (outside git):** `/tmp/**`, `~/.sg-send/**`, `~/.abp/**`, `~/pki/**`, `~/.claude/projects/*/memory/**`, `~/promptugal/**`.

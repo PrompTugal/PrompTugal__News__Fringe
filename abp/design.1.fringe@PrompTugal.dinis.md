@@ -2,7 +2,7 @@
 title: "ABP: design.1.fringe@PrompTugal.dinis"
 agent: design.1.fringe@PrompTugal.dinis
 role: design
-policy: abp/policies.json v0.4.1 (sha256:5bfa6724a86c2d27)
+policy: abp/policies.json v0.4.1 (sha256:f57383c15bb5707b)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -16,7 +16,7 @@ authority: Dinis Cruz, operator
 - **Role:** design. **Account:** riskmandate-personal (Ultra).
 - **Runs on:** R1 (models: M1 Sonnet); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** the look on a phone: page modules, tokens, the brand, the design lab.
-- **Writes (this repository):** `team/dinis/agents/design.1.json`, `team/dinis/agents/design.1.fringe.json`, `team/dinis/agents/design.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `admin/build/*.mjs (your own page modules)`, `admin/build/designs/**`, `admin/build/og/**`, `admin/build/tokens.css`, `assets/brand/**`, `assets/**`, `work/design/**`, `admin/build/*.js (your own page modules)`, `admin/build/identity.mjs`, `admin/build/programme.mjs`, `admin/build/designs/a.mjs`.
+- **Writes (this repository):** `team/dinis/agents/design.1.json`, `team/dinis/agents/design.1.fringe.json`, `team/dinis/agents/design.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `data/models-ledger.json`, `admin/build/*.mjs (your own page modules)`, `admin/build/designs/**`, `admin/build/og/**`, `admin/build/tokens.css`, `assets/brand/**`, `assets/**`, `work/design/**`, `admin/build/*.js (your own page modules)`, `admin/build/identity.mjs`, `admin/build/programme.mjs`, `admin/build/designs/a.mjs`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
 - **Writes (outside git):** `/tmp/**`, `~/.sg-send/**`, `~/.abp/**`, `~/pki/**`, `~/.claude/projects/*/memory/**`, `~/promptugal/**`.
 - **Tools:** reading, searching and writing files inside the paths above; the shell, within the rules below; reading the web (never websummit.com by machine); GitHub's read tools on `promptugal/promptugal__news__fringe`, `promptugal/promptugal__news__website`, `promptugal/promptugal__news__storm-charles`; the cloud session's documentation, `add_repo` for reading, and its own wake.

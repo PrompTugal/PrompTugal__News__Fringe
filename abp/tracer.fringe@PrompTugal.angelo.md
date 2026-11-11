@@ -2,7 +2,7 @@
 title: "ABP: tracer.fringe@PrompTugal.angelo"
 agent: tracer.fringe@PrompTugal.angelo
 role: observability
-policy: abp/policies.json v0.4.1 (sha256:5bfa6724a86c2d27)
+policy: abp/policies.json v0.4.1 (sha256:f57383c15bb5707b)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -16,7 +16,7 @@ authority: Dinis Cruz, operator
 - **Role:** observability, under conductor.fringe@PrompTugal.angelo. **Account:** Angelo's.
 - **Runs on:** R1 (models: M1 Opus); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** traffic and the agents' runs: /traffic/, the drain, the dashboard.
-- **Writes (this repository):** `team/angelo/agents/tracer.json`, `team/angelo/agents/tracer.fringe.json`, `team/angelo/agents/tracer/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `team/angelo/**`, `admin/tools/trace-event.mjs`.
+- **Writes (this repository):** `team/angelo/agents/tracer.json`, `team/angelo/agents/tracer.fringe.json`, `team/angelo/agents/tracer/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `data/models-ledger.json`, `team/angelo/**`, `admin/tools/trace-event.mjs`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
 - **Writes (outside git):** `/tmp/**`, `~/.sg-send/**`, `~/.abp/**`, `~/pki/**`, `~/.claude/projects/*/memory/**`, `~/promptugal/**`.
 - **Tools:** reading, searching and writing files inside the paths above; the shell, within the rules below; reading the web (never websummit.com by machine); GitHub's read tools on `promptugal/promptugal__news__fringe`, `promptugal/promptugal__news__website`, `promptugal/promptugal__news__storm-charles`; the cloud session's documentation, `add_repo` for reading, and its own wake.

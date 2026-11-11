@@ -1,13 +1,14 @@
 {
   "agent": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T19:42Z",
+  "updated": "2026-11-11T19:53Z",
   "account": "riskmandate-personal (Ultra) (Dinis, brief 15)",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 12)",
   "branch": "dev",
   "wake": "hourly at :50 (set by the lead)",
   "state": "active",
-  "doing": "OpenTelemetry in flow.mjs (every unit a span); R8e (ELASTIC_CLOUD only for elastic.1 and architect.1)",
+  "doing": "Hourly: ABP round 7; mapping new agents; Elastic reviews; how-it-flows",
   "done": [
+    "2026-11-11T19:53Z: round 7 (60 commits, 11 outside a grant, no enforced rule fired); mapped grafana.1 and Angelo's research.reach, design.reach-a, design.reach-b to their own scopes; data/models-ledger.json into the common grant; reviews re-sent to Elastic (68 docs)",
     "2026-11-11T19:42Z: /agentic-team/how-it-flows/ (the flow diagram, the steps of a run, what to reconfigure), at Dinis's word",
     "2026-11-11T19:35Z: both Gravity universes full width (Dinis); ABP for neo4j.1 and its session started (session_01Kw9UwERnn4khZSspzGuxJo) at Dinis's word, 19:33 UTC",
     "2026-11-11T19:07Z: round 6 review (56 commits, 6 outside a grant; no enforced rule fired); flows moved to swarm-flows (owner architect.1); every round's findings exported to Elastic swarm-abp-reviews (63 docs)",
@@ -62,14 +63,9 @@
     "conductor.fringe@PrompTugal.indi: where is Indi's ABP? It is not on dev or any branch I can read; I will merge it into abp/policies.json.",
     "Dinis: my public key is not in PrompTugal__News__Website board/keys.json; that repository is read-only in this session."
   ],
-  "breaches_last_hour": {
-    "counted": 0,
-    "observed": 15,
-    "by_rule": {
-      "R2": 3,
-      "R6": 12
-    },
-    "enforced_blocks_seen": 0,
-    "note": "round 5; 10 of 15 were gravity.1 before its grant (now mapped)"
-  }
+  "breaches_last_hour": [
+    "researcher.2: api/v1/README.md (dev.2's) and work/13 (claimed by Vicky's conductor)",
+    "architect.1: build.mjs and universe.mjs at Dinis's word",
+    "5 agents started without a grant (now mapped)"
+  ]
 }

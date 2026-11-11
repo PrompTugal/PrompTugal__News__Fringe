@@ -1,7 +1,7 @@
 {
   "about": "The Agent Behaviour Policies of Lisbon Fringe (lisbontechfringe.com, origin in admin/site.json; WS-215) as data: deny by default, one grant per role and agent, across this repository and the others the swarm touches. Ported from PrompTugal__News__Website board/abp/policies.json (abp@PrompTugal.dinis, v1.7.0, since 6 November 2026), not invented anew; built on RiskMandate's Agent Behaviour Policy and Licence to Operate (https://riskmandate.ai/agent-behaviour-policy.html). Read by the hooks (.claude/settings.json, .claude/hooks/abp.mjs) and by the gate's commit check (abp/tools/abp.mjs check). abp/<agent>.md is generated from this file (node abp/tools/abp.mjs build), never edited by hand. Kept by architect.1.fringe@PrompTugal.dinis (work/39); any relaxation, and any move towards enforcement, is Dinis's decision.",
   "version": "0.4.1",
-  "updated": "2026-11-11T19:34Z",
+  "updated": "2026-11-11T19:52Z",
   "operator": "Dinis Cruz",
   "kept_by": "architect.1.fringe@PrompTugal.dinis",
   "status": "DRAFT: grants proposed from the git log (data/architecture.json observed); Dinis and the lead review",
@@ -289,9 +289,10 @@
       "data/keys.json#own-entry",
       "data/inboxes/{keyid}.json",
       "work/{claimed}",
-      "tasks/*/result-*.json"
+      "tasks/*/result-*.json",
+      "data/models-ledger.json"
     ],
-    "writes_note": "data/keys.json: append or update your own entry only (the gate cannot tell entries apart yet; the hourly review reads the diff). work/{claimed}: the board file of an item you own or are claiming (owner, status, evidence lines), never another owner's item. data/inboxes/: the inbox tool writes them. tasks/*/result-*.json: any agent may return a signed result to a task packet (work/48, cross-environment runs at Dinis's word, 15:3x UTC).",
+    "writes_note": "data/keys.json: append or update your own entry only (the gate cannot tell entries apart yet; the hourly review reads the diff). work/{claimed}: the board file of an item you own or are claiming (owner, status, evidence lines), never another owner's item. data/inboxes/: the inbox tool writes them. tasks/*/result-*.json: any agent may return a signed result to a task packet (work/48, cross-environment runs at Dinis's word, 15:3x UTC). data/models-ledger.json: ROLES.md step 6 asks every agent that called admin/tools/llm.mjs to run models-summary.mjs and commit it (mapped 2026-11-11T19:52Z).",
     "writes_outside_repo": [
       "/tmp/**",
       "{home}/.sg-send/**",
@@ -599,6 +600,19 @@
       "send_hosts": [],
       "send_hosts_note": "none yet: where Neo4j runs (in its own container, or Neo4j Aura with a credential) is Dinis's decision; the host is mapped here once he names it",
       "never": "prints or commits a Neo4j password or key; loads personal data or contact details; changes another agent's files; uses ELASTIC_CLOUD (R8e)"
+    },
+    "grafana": {
+      "focus": "Grafana Cloud for the swarm (work/51): least-privilege access, data sources (Elastic, the public /api/v1/), the Swarm dashboard as JSON in admin/grafana/",
+      "writes": [
+        "admin/grafana/**",
+        "docs/grafana*",
+        "work/51-grafana.md"
+      ],
+      "send_hosts": [
+        "vividwombat1572.grafana.net"
+      ],
+      "send_hosts_note": "its own stack, from its status file (mapped 2026-11-11T19:52Z); started by the lead at Dinis's word, about 19:20 UTC: 'can you spin up a new Grafana agent so I can use it to manage and to help me set up this'",
+      "never": "prints or commits a Grafana or Elastic key; uses ELASTIC_CLOUD (R8e: it reads Elastic through a read-only key Dinis makes); changes another agent's files"
     }
   },
   "agents": {
@@ -882,6 +896,44 @@
       "role": "neo4j",
       "account": "riskmandate-personal (Ultra)",
       "note": "started by architect.1 at Dinis's word in its session (2026-11-11T19:33Z: 'also can you spin up an neo4j agent?')"
+    },
+    "grafana.1.fringe@PrompTugal.dinis": {
+      "role": "grafana",
+      "account": "riskmandate-personal (Ultra)",
+      "note": "started by the lead at Dinis's word; mapped 2026-11-11T19:52Z from its own status asks (its lane and its stack's host)"
+    },
+    "research.reach.fringe@PrompTugal.angelo": {
+      "role": "researcher",
+      "under": "conductor.fringe@PrompTugal.angelo",
+      "writes_override": [
+        "team/angelo/drafts/**",
+        "team/angelo/runs.md"
+      ],
+      "account": "Angelo's",
+      "lane": "reach circles: research",
+      "note": "mapped 2026-11-11T19:52Z: its own person's scope (team/angelo/drafts/, team/angelo/runs.md), the mapping rule"
+    },
+    "design.reach-a.fringe@PrompTugal.angelo": {
+      "role": "design",
+      "under": "conductor.fringe@PrompTugal.angelo",
+      "writes_override": [
+        "team/angelo/drafts/**",
+        "team/angelo/runs.md"
+      ],
+      "account": "Angelo's",
+      "lane": "reach circles: design A",
+      "note": "mapped 2026-11-11T19:52Z: its own person's scope (team/angelo/drafts/, team/angelo/runs.md), the mapping rule"
+    },
+    "design.reach-b.fringe@PrompTugal.angelo": {
+      "role": "design",
+      "under": "conductor.fringe@PrompTugal.angelo",
+      "writes_override": [
+        "team/angelo/drafts/**",
+        "team/angelo/runs.md"
+      ],
+      "account": "Angelo's",
+      "lane": "reach circles: design B",
+      "note": "mapped 2026-11-11T19:52Z: its own person's scope (team/angelo/drafts/, team/angelo/runs.md), the mapping rule"
     }
   },
   "external": {
@@ -1046,6 +1098,11 @@
         "round": 6,
         "file": "abp/reviews/2026-11-11-18.md",
         "at": "2026-11-11T19:04Z"
+      },
+      {
+        "round": 7,
+        "file": "abp/reviews/2026-11-11-19.md",
+        "at": "2026-11-11T19:52Z"
       }
     ]
   },

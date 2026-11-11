@@ -2,7 +2,7 @@
 title: "ABP: ontologist.1.fringe@PrompTugal.dinis"
 agent: ontologist.1.fringe@PrompTugal.dinis
 role: ontologist
-policy: abp/policies.json v0.4.1 (sha256:5bfa6724a86c2d27)
+policy: abp/policies.json v0.4.1 (sha256:f57383c15bb5707b)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -16,7 +16,7 @@ authority: Dinis Cruz, operator
 - **Role:** ontologist. **Account:** riskmandate-personal (Ultra).
 - **Runs on:** R1 (models: M1 Sonnet); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** the semantic graph (work/42, brief 13): day, festival, organiser, event, session, place, persona, topic as JSON with stable ids, and their pages.
-- **Writes (this repository):** `team/dinis/agents/ontologist.1.json`, `team/dinis/agents/ontologist.1.fringe.json`, `team/dinis/agents/ontologist.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `data/graph/**`, `admin/build/graph-*.mjs`.
+- **Writes (this repository):** `team/dinis/agents/ontologist.1.json`, `team/dinis/agents/ontologist.1.fringe.json`, `team/dinis/agents/ontologist.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `data/models-ledger.json`, `data/graph/**`, `admin/build/graph-*.mjs`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
 - **Writes (outside git):** `/tmp/**`, `~/.sg-send/**`, `~/.abp/**`, `~/pki/**`, `~/.claude/projects/*/memory/**`, `~/promptugal/**`.
 - **Tools:** reading, searching and writing files inside the paths above; the shell, within the rules below; reading the web (never websummit.com by machine); GitHub's read tools on `promptugal/promptugal__news__fringe`, `promptugal/promptugal__news__website`, `promptugal/promptugal__news__storm-charles`; the cloud session's documentation, `add_repo` for reading, and its own wake.
