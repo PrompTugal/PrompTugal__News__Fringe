@@ -40,7 +40,15 @@
    "captured_at": "2026-11-11T16:27:06Z",
    "count": 28,
    "ok": 28
+  },
+  {
+   "run": "2026-11-11-17",
+   "file": "capture-index-2026-11-11-17.json",
+   "vault_id": "to3xs2w3",
+   "captured_at": "2026-11-11T17:25:30Z",
+   "count": 28,
+   "ok": 28
   }
  ],
- "updated": "2026-11-11T16:28:17Z"
+ "updated": "2026-11-11T17:26:41Z"
 }
