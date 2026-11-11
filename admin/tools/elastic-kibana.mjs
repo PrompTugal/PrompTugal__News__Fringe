@@ -101,8 +101,8 @@ const heat = (key, title, dv, xField, yField, query, { xDate = false } = {}) =>
         { x: xDate ? C.date(xField, 'Time', '1h') : C.terms(xField, xField, 12), y: C.terms(yField, yField, 15), m: C.count() }, ['x', 'y', 'm'], query)
 
 // saved searches (the documents themselves, newest first)
-const search = (key, title, dv, columns, query = '', sortField = 't') => add({ type: 'search', id: uid('search', key), attributes: {
-    title, description: '', columns, sort: [[sortField, 'desc']], grid: {}, hideChart: true, isTextBasedQuery: false,
+const search = (key, title, dv, columns, query = '', sortField = 't', dir = 'desc') => add({ type: 'search', id: uid('search', key), attributes: {
+    title, description: '', columns, sort: [[sortField, dir]], grid: {}, hideChart: true, isTextBasedQuery: false,
     kibanaSavedObjectMeta: { searchSourceJSON: JSON.stringify({ query: { query, language: 'kuery' }, filter: [], indexRefName: 'kibanaSavedObjectMeta.searchSourceJSON.index' }) } },
     references: [{ name: 'kibanaSavedObjectMeta.searchSourceJSON.index', type: 'index-pattern', id: dv }] })
 
@@ -161,7 +161,7 @@ D.fringe = dashboard('fringe', 'Lisbon Tech Fringe: the week live', 'Side events
      [metric('fr-m5', 'Not on (moved, cancelled, unknown)', fe, C.count('Not on'), 'not status:on'), L, 9, 6]],
     [[overTime('fr-hours', 'Events by start hour, by type', fe, 'start', 'type', '', { interval: '3h' }), L, 32, 14], [donut('fr-status', 'Status', fe, 'status'), L, 16, 14]],
     [[top('fr-topics', 'Topics', fe, 'topics', '', { size: 15 }), L, 16, 16], [top('fr-personas', 'Who it is for', fe, 'personas'), L, 16, 16], [donut('fr-size', 'Size', fe, 'size'), L, 16, 16]],
-    [[search('fr-events', 'The events, soonest first', fe, ['name', 'date', 'type', 'organiser', 'place', 'status', 'cost', 'url'], '', 'start'), S, 48, 18]],
+    [[search('fr-events', 'The events, soonest first', fe, ['name', 'type', 'organiser', 'place', 'status', 'cost', 'url'], '', 'start', 'asc'), S, 48, 18]],
     [[overTime('fr-commits', 'The swarm: commits per hour, by agent', DV['fringe-commits'], 't', 'agent', '', { interval: '1h' }), L, 32, 14], [top('fr-agents', 'Agents by commits', DV['fringe-commits'], 'agent', '', { size: 15 }), L, 16, 14]],
     [[table('fr-hook', 'ABP hook: decisions by agent and tool', DV['fringe-hooklog'], [['agent', 'Agent', 20], ['decision', 'Decision', 5], ['tool_kind', 'Kind', 10]], [C.count('Calls')]), L, 24, 14],
      [top('fr-models', 'Model router: spend by model (USD)', DV['fringe-models'], 'model', 'group:by_model', { metricCol: C.sum('cost_usd', 'USD') }), L, 24, 14]],
@@ -176,7 +176,7 @@ D.fringe = dashboard('fringe', 'Lisbon Tech Fringe: the week live', 'Side events
 // =====================================================================================================
 const pe = DV['ptnews-entities'], pr = DV['ptnews-runs']
 D.ptnews = dashboard('ptnews', 'PrompTugal.news: the agentic newsroom', 'The newsroom of promptugal.news: its stories from idea to article, the companies, organisations, events and evidence it tracks, and the desks of agents that run it.', TAGS.ptnews, [
-    [[md('pt-head', `## PrompTugal.news: the agentic newsroom\nThe newsroom behind **[promptugal.news](https://promptugal.news)**: stories moving from idea to article, the companies, organisations, events and places it maps for Web Summit week, the evidence each claim rests on, and the agents' run reports. Read from [the public repository](https://github.com/PrompTugal/PrompTugal__News__Website); people's profiles are not indexed.\n\n_${INDEPENDENT}_`), V, 48, 6]],
+    [[md('pt-head', `## PrompTugal.news: the agentic newsroom\nThe newsroom behind **[promptugal.news](https://promptugal.news)**: stories moving from idea to article, the companies, organisations, events and places it maps for Web Summit week, the evidence each claim rests on, and the agents' run reports. Read from [the public repository](https://github.com/PrompTugal/PrompTugal__News__Website); people's profiles are not indexed.\n\n_${INDEPENDENT}_`), V, 48, 8]],
     [[metric('pt-m1', 'Stories', pe, C.count('Stories'), 'type:story'), L, 8, 6], [metric('pt-m2', 'Companies', pe, C.count('Companies'), 'type:company'), L, 8, 6],
      [metric('pt-m3', 'Organisations', pe, C.count('Organisations'), 'type:organisation'), L, 8, 6], [metric('pt-m4', 'Events', pe, C.count('Events'), 'type:event'), L, 8, 6],
      [metric('pt-m5', 'Agent runs', pr, C.count('Runs')), L, 8, 6], [metric('pt-m6', 'Tool calls in runs', pr, C.sum('n', 'Tool calls')), L, 8, 6]],
@@ -193,7 +193,7 @@ D.ptnews = dashboard('ptnews', 'PrompTugal.news: the agentic newsroom', 'The new
 // =====================================================================================================
 const we = DV['websummit-entities']
 D.websummit = dashboard('websummit', 'Web Summit site: the team\'s field guide', 'web-summit.sgit.ai: the sessions and side events the team picked, the companies, the model research runs (xray), the team\'s agents and their wakes, and every commit since 28 October.', TAGS.websummit, [
-    [[md('ws-head', `## Web Summit site (web-summit.sgit.ai): the team's field guide\nThe team's own guide to Web Summit week at **[web-summit.sgit.ai](https://web-summit.sgit.ai)**: sessions and side events picked for the team, the companies, the model research runs ("xray": leads, not facts, until sourced), and the agents and wakes behind it. Read from [the public repository](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit); people folders, mail, meetings and the CRM are not indexed.\n\n_${INDEPENDENT}_`), V, 48, 6]],
+    [[md('ws-head', `## Web Summit site (web-summit.sgit.ai): the team's field guide\nThe team's own guide to Web Summit week at **[web-summit.sgit.ai](https://web-summit.sgit.ai)**: sessions and side events picked for the team, the companies, the model research runs ("xray": leads, not facts, until sourced), and the agents and wakes behind it. Read from [the public repository](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit); people folders, mail, meetings and the CRM are not indexed.\n\n_${INDEPENDENT}_`), V, 48, 8]],
     [[metric('ws-m1', 'Commits', DV['websummit-commits'], C.count('Commits')), L, 8, 6], [metric('ws-m2', 'Sessions picked', we, C.count('Sessions'), 'type:session'), L, 8, 6],
      [metric('ws-m3', 'Side events', we, C.count('Side events'), 'type:side-event'), L, 8, 6], [metric('ws-m4', 'Companies', we, C.count('Companies'), 'type:company'), L, 8, 6],
      [metric('ws-m5', 'Model research runs', we, C.count('Runs'), 'type:xray'), L, 8, 6], [metric('ws-m6', 'Research spend (USD)', we, C.sum('cost_usd', 'USD'), 'type:xray'), L, 8, 6]],

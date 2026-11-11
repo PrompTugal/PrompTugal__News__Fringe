@@ -1,13 +1,13 @@
 {
   "agent": "elastic.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T17:23Z",
+  "updated": "2026-11-11T17:41Z",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis, at Dinis's word (briefs/2026-11-11-1630-r5-r8-r9-enforced-and-elastic.md)",
   "branch": "dev",
   "wake": "hourly, until Friday 13 November",
-  "state": "working: the first indices are live on Elastic Cloud",
+  "state": "working: three sites and five dashboards live on Elastic Cloud; ready to demo",
   "doing": [
-    "moving the swarm onto Elastic Cloud: docs/elastic-plan.md; next, the hook logs swarm-wide and Kibana views"
+    "Kibana with Dinis: the three sites' data and dashboards (docs/elastic-plan.md, 'Live on Elastic Cloud')"
   ],
   "done": [
     "16:33: session key made; elastic.1.fringe-dinis in data/keys.json (sha256:2af27e5b88092227, signing sha256:25b303ee2e079116); abp whoami set",
@@ -15,17 +15,17 @@
     "16:36: admin/tools/elastic.mjs (build, check, mappings, push) and elastic/mappings/*.json; first local build: events 178, graph 38, tasks 4, models 7, hook log 28 documents, 0 privacy findings; nothing sent",
     "16:37: pushed 32cb756 (key, plan, mappings, ingest tool). Dinis says the Elastic password is ELASTIC_CLOUD: it is saved as an environment variable on the 'PrompTugal Fringe' cloud environment, but not present in this running session (variables apply at the next start or resume); its value was never read or printed",
     "17:09 wake: ELASTIC_CLOUD is present in this session after the restart (value never read or printed); no endpoint host given yet, so nothing sent; no new brief",
-    "17:23: Dinis gave the deployment; Elasticsearch my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io (9.5.6) reached with the ELASTIC_CLOUD password (never printed); pushed fringe-events 178, fringe-graph 50, fringe-tasks 4, fringe-models 7, fringe-hooklog 53, 0 errors; search checked"
+    "17:23: Dinis gave the deployment; Elasticsearch my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io (9.5.6) reached with the ELASTIC_CLOUD password (never printed); pushed fringe-events 178, fringe-graph 50, fringe-tasks 4, fringe-models 7, fringe-hooklog 53, 0 errors; search checked",
+    "17:41: at Dinis's word, the three sites on Elastic: about 15,000 documents in 20 indices (fringe, ptnews from PrompTugal__News__Website, websummit from SGit-AI__Website__Web-Summit); people profiles, mail, meetings, CRM, inboxes, sealed data excluded; 43 of 10,124 commits unattributed; five dashboards (swarm, fringe, ptnews, websummit, ABP review), 112 saved objects, each rendered in Chromium with 0 error panels"
   ],
   "next": [
-    "a Kibana data view per index and a first view for the policy review (hook-log decisions by agent and rule), with architect.1",
-    "the hook logs swarm-wide: a line in each agent's wake (elastic.mjs push --kind hooklog), proposed to the lead",
-    "fringe-runs from observability.fringe@'s drain",
-    "re-push events and graph at each wake (stable ids: updates, never duplicates)"
+    "each hourly wake: pull the three repositories, re-push all indices and re-import the dashboards (ids are stable: updates, never duplicates)",
+    "with Dinis: more views (Maps of the events and places, ES|QL, alerts on asks for Dinis), and Kibana spaces per site for the team's accounts",
+    "the hook logs swarm-wide: proposed to the lead"
   ],
   "asks": [
     "Dinis: an Elastic API key limited to the fringe-* indices, to replace the elastic superuser password in ELASTIC_CLOUD (least privilege; every agent that pushes its hook log would hold it). Saved as a network secret for my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io via the secure form, or as ELASTIC_API_KEY; never in chat.",
-    "architect.1 / Dinis: my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io is not yet in elastic.1's 'Sends to' in its ABP; it was used at Dinis's word (17:23 UTC).",
-    "Dinis: 'pip install sgit-ai' was refused in this sandbox, so admin/tools/inboxes.py cannot send or drain; the lead is told through this status file and the commits."
+    "Dinis: 'pip install sgit-ai' was refused in this sandbox, so admin/tools/inboxes.py cannot send or drain; the lead is told through this status file and the commits.",
+    "architect.1 / Dinis: elastic.1's ABP has no read of SGit-AI/SGit-AI__Website__Web-Summit and no send to the deployment's hosts (es and kb); both used at Dinis's word (17:3x UTC). Please add them to the grant."
   ]
 }
