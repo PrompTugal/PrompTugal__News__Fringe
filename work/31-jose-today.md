@@ -1,14 +1,13 @@
 # Today's online events still to come (for Jose's organiser notes)
 
-> Kept by researcher.1.fringe@PrompTugal.jose for conductor.fringe@PrompTugal.jose (work/18, work/23, work/31), Wednesday 11 November 2026, 19:59 UTC (Lisbon is on UTC). Today only; online events first. Rewritten at each wake (every 30 minutes until 21:00 UTC); events that have started are dropped. An agent never sends: Jose sends.
+> Kept by researcher.1.fringe@PrompTugal.jose for conductor.fringe@PrompTugal.jose (work/18, work/23, work/31), Wednesday 11 November 2026, 20:31 UTC (Lisbon is on UTC). Today only; online events first. Rewritten at each wake (every 30 minutes until 21:00 UTC); events that have started are dropped. An agent never sends: Jose sends.
 >
-> **What this is checked against (fact):** `data/events.json` as updated 19:23 UTC by researcher.2.fringe@PrompTugal.dinis (each row's read_at is that agent's read of the organiser's page), and my own reads of the same pages at 14:36 to 14:41 UTC. **No machine reads by me at this wake:** the lead's rule (work/49; answers of 18:13 UTC) allows a single Luma page when a reader-facing status needs it but no loops, and Side Events Guide's terms forbid systematic extraction (sources.md). Open the Luma page once before sending.
+> **What this is checked against (fact):** `data/events.json` as updated 20:11 UTC by researcher.2.fringe@PrompTugal.dinis (each row's read_at is that agent's read of the organiser's page), and my own reads of the same pages at 14:36 to 14:41 UTC. **No machine reads by me at this wake:** the lead's rule (work/49; answers of 18:13 UTC) allows a single Luma page when a reader-facing status needs it but no loops, and Side Events Guide's terms forbid systematic extraction (sources.md). Open the Luma page once before sending.
 
 | Start | End | Organiser | Event | Our status | The source's status (the organiser's page, as last read) | Moved by the storm | Source | read_at (UTC) | Verdict |
 |---|---|---|---|---|---|---|---|---|---|
-| 20:30 | 22:00 | Portugal Tech Week | [FUTURE-TECH 2026: short films about technology](https://lisbontechfringe.com/e/2026-11-11-future-tech-2026/) | online (Google Meet (per the Luma page)) | Not stated on the page as a storm change. The page now lists it on Google Meet with a room at PTW Palace still in its text; it gives no reason. That the storm moved it online is a hypothesis. | unknown | https://luma.com/25z2ph1o | 16:13 | **ready**: listed on Google Meet, with a PTW Palace room still in the page text; Jose's note asks 'online or in person?' |
 
-**Count at 19:59 UTC:** 1 online event still to come today: 1 ready, 0 held, 0 with no note. A read_at marked * is my own read of the organiser's page. 'Moved by the storm' is 'yes' only where the organiser's page says so; 'unknown' means the page is online and gives no reason (that the storm moved it is a hypothesis).
+**Count at 20:31 UTC:** 0 online events still to come today: 0 ready, 0 held, 0 with no note. A read_at marked * is my own read of the organiser's page. 'Moved by the storm' is 'yes' only where the organiser's page says so; 'unknown' means the page is online and gives no reason (that the storm moved it is a hypothesis).
 
 ## Dropped: online events that have started
 
@@ -33,6 +32,15 @@
 - 18:00 ideaic.io: PropTech C-Level Board: Storm Edition (online) (https://luma.com/gasfz3vy)
 - 18:30 Canopy Community with Portugal Tech Week: DemoNightLx Web Summit Week Edition (Canopy Demo Night) (https://luma.com/2ofzih7t)
 - 19:00 FounderLink: FounderLink Storm Summit: a torrent of intros (evening session, online) (https://luma.com/stormsummit7pm)
+- 20:30 Portugal Tech Week: FUTURE-TECH 2026: short films about technology (https://luma.com/25z2ph1o)
+
+## Closing, 20:31 UTC: today's summary (researcher.1 stops at 21:00 UTC)
+
+- **Notes:** Jose sent five organiser notes himself at about 16:23 UTC (WonderLead in Tech, ideaic.io, Canopy Community, FounderLink, Portugal Tech Week); they are in the tracker. ALBAN's and Kuma's were not sent (their events had started). **Answers: 0** (tracker, 19:35 UTC). **Visits tagged `via=organiser`: 0** (traffic 20:25 UTC). The site had 480 views today; by channel: whatsapp 158, promptugal-news 5, linkedin 1.
+- **Corrections and additions (each from the organiser's own page):** the 18:00 Frontier Founders & VCs Soirée corrected to in person (14:36); WonderLead in Tech (16:30) and ideaic.io (18:00) added (14:41); the 17:30 Cisco session corrected to online (17:15, Jose's link); DISTRICT 909 (22:00) added (17:49, Jose's link). Since 18:09 UTC data/events.json is researcher.2's alone.
+- **Built for Jose:** the send desk (team/jose/agents/researcher.1/send-desk.html): copy, open the organiser's page, mark sent.
+- **With Dinis:** whether a person's read of an Eventbrite or Facebook page is enough to list an event (Just Boom!, Climate Fashion today).
+- **Tomorrow (Thursday 12, Web Summit reopens):** not decided by Jose. Suggested: a morning check of Thursday's evening events at their own pages (single Luma pages are now allowed), and that day's organiser notes. 68 events are listed for Thursday; some were last read on Wednesday morning.
 
 ## Jose's notes: five sent, recorded in the tracker
 
