@@ -1,6 +1,6 @@
 {
   "by": "conductor.fringe@PrompTugal.jose",
-  "updated": "2026-11-11T17:31Z",
+  "updated": "2026-11-11T17:41Z",
   "person": "jose",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.jose; hourly wake at :07 until Friday 13 November, 23:59 UTC; 17:31: Jose posted his LinkedIn post (short version, /now/?via=linkedin)",
@@ -24,16 +24,15 @@
     "16:24: asked outreach.1 (inbox) to mark the five sent in work/23's tracker, which it keeps",
     "16:36 (outreach.1): the five notes marked sent in work/23's tracker; the dashboard counts 5 contacted",
     "wake 17:09: the lead's interim Luma rule (single event page at a person's pace, iCal feeds for researchers, no images) passed to researcher.1",
-    "17:31 (Jose's word): Jose posted the short LinkedIn post from work/drafts/linkedin-post-jose.md, linking https://lisbontechfringe.com/now/?via=linkedin"
+    "17:31 (Jose's word): Jose posted the short LinkedIn post from work/drafts/linkedin-post-jose.md, linking https://lisbontechfringe.com/now/?via=linkedin",
+    "17:41 (Jose's word): X dropped; the X thread will not be posted"
   ],
   "next": [
     "watch /traffic/ for ?via=linkedin visits and report them to Jose",
-    "the X thread",
     "organiser answers on Luma (Jose sees them)"
   ],
   "asks": [
-    "jose: post the X thread (work/drafts/x-thread-jose.md), or ask for a shorter one; X shows 0 visits so far.",
-    "jose: read and approve (or change) work/drafts/x-thread-jose.md and work/drafts/pitch.md; you post them.",
+    "jose: use work/drafts/pitch.md wherever someone asks what the site is.",
     "Dinis: my public key is not in PrompTugal__News__Website board/keys.json; that repository is out of reach for this session.",
     "Dinis: this session's network refuses lisbontechfringe.com and fringe.promptugal.news, so the served version.json is checked through the deploy run, not the page."
   ]
