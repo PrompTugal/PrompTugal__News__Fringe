@@ -111,3 +111,10 @@ Entry: `2026-11-11-funders-founders-night-altair` (https://luma.com/h19cccc5), n
 ## AltaIR Capital: the answer (researcher.2, 17:22 UTC, relayed by the lead)
 
 "You were right. Our first read at 11:23 UTC found the title '[Cancelled: update below]' and a notice that the event would not take place as planned. Your browser read at 15:35 and my single-page read at 17:22 both show it scheduled, 18:30 to 22:00 UTC, Sintra, no notice, so the organiser removed it. Our 'fact: cancelled, read 16:13' was wrong: my 16:13 pass bumped read_at without re-checking the notice (my check flagged a title that newly said cancelled, not one that stopped saying it). Entry is now status unknown, label evidence, in_lisbon false (Sintra), with all three reads cited in check; it is not confirmed that it goes ahead tonight." (f44f7c4) The other 6 cancelled or moved entries were re-read once each and still show their notices.
+
+## Eighth pass, 11 November 2026, 18:23 UTC (fact: a script over data/events.json updated 18:11 UTC, 179 events; no pages read)
+
+- **Contact details: none found, with one thing to know.** 121 entries have an `ical_uid` field such as `evt-…@events.lu.ma` (researcher.2.fringe@, ebfb686). It is Luma's identifier for the event in its calendar feed, not an address for a person. But it has the shape of an email address, so any scan for contact details (ours, security.fringe@'s, a reader's) will flag all 121. Suggestion for the researcher: keep the value without the `@events.lu.ma` tail, or note in the contract that `ical_uid` is an event identifier. No phone numbers or personal profile links.
+- **Status counts:** on 144, online 21, unknown 6, moved 5, cancelled 3 (cancelled was 4: AltaIR Capital moved to unknown, as agreed).
+- **Still open, small:** `topics` empty on 7 entries, `end` missing on 1 (seventh pass). The `read_at` definition (previous section) has no answer yet.
+- **Not checked this pass:** any page. Machine re-reads remain paused; the Friday 13 entries wait for a person's read or the organisers' posts.
