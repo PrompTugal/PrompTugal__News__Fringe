@@ -1,10 +1,10 @@
-// D9: the Lisbon Tech Week identity (design.4.fringe@PrompTugal.dinis). Type-only wordmark, an azulejo-style pattern
+// D9: the Lisbon Tech Fringe identity (design.4.fringe@PrompTugal.dinis). Type-only wordmark, an azulejo-style pattern
 // drawn from scratch (a quatrefoil tile, SVG under 1 KB, nothing borrowed), and the CSS that uses the D8 palette tokens.
 // The pattern colour comes from --azulejo-ink / --azulejo-a, so it follows light and dark: it is a CSS mask, not a fixed image.
 const TILE = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><g fill="none" stroke="#000" stroke-width="1.4"><circle cx="16" cy="16" r="5"/><path d="M16 4c4 0 4 8 0 8s-4-8 0-8zM16 28c4 0 4-8 0-8s-4 8 0 8zM4 16c0-4 8-4 8 0s-8 4-8 0zM28 16c0 4-8 4-8 0s8-4 8 0z"/><path d="M0 0l4 4M32 0l-4 4M0 32l4-4M32 32l-4-4"/></g></svg>`;
 export const AZULEJO_URI = `url("data:image/svg+xml,${encodeURIComponent(TILE)}")`;
 
-export const WORDMARK = `<span class="wm"><span class="wm-a">Lisbon</span> <span class="wm-b">Tech Week</span></span>`;
+export const WORDMARK = `<span class="wm"><span class="wm-a">Lisbon Tech</span> <span class="wm-b">Fringe</span></span>`;
 
 export const IDENTITY_CSS = `
 .azulejo{background:rgba(var(--azulejo-ink),var(--azulejo-a));-webkit-mask:${AZULEJO_URI} 0 0/32px 32px;mask:${AZULEJO_URI} 0 0/32px 32px}
@@ -42,4 +42,17 @@ main{padding-top:0!important}
 .jumps{margin:var(--s1) 0;padding:var(--s1) 0}
 .jumps a{min-height:var(--chip-h);height:var(--chip-h);padding:0 var(--s3);font-size:13px;border-width:1px;font-weight:600}
 h2{margin-top:1.2em}
+
+/* D21 brief 9 (design.1): the PT.news family. Fonts are linked from promptugal.news (CORS open), never committed. */
+@font-face{font-family:"Newsreader";src:url(https://promptugal.news/assets/fonts/newsreader-variable.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";src:url(https://promptugal.news/assets/fonts/plex-mono-400.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+.wm{font-family:"Newsreader",Georgia,"Times New Roman",serif!important;font-weight:600!important;color:var(--ink)!important}
+.wm-b{font-style:italic;color:#006600!important}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .wm-b{color:#6dbb7e!important}}
+:root[data-theme="dark"] .wm-b{color:#6dbb7e!important}
+.ptbar{background:var(--paper-2)!important;border-bottom:1px solid var(--hair);text-align:left!important}
+.ptbar a{display:flex!important;align-items:center;gap:8px;color:var(--ink-2)!important;font:400 11px/1 "IBM Plex Mono",ui-monospace,monospace!important;letter-spacing:.03em!important;padding:4px var(--gutter)!important;max-width:var(--page);margin:0 auto}
+.ptbar a:hover{color:var(--ink)!important}.ptbar .stamp{height:20px;width:20px;display:block}.ptbar .stamp.d{display:none}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .ptbar .stamp.l{display:none}:root:not([data-theme="light"]) .ptbar .stamp.d{display:block}}
+:root[data-theme="dark"] .ptbar .stamp.l{display:none}:root[data-theme="dark"] .ptbar .stamp.d{display:block}
 `;
