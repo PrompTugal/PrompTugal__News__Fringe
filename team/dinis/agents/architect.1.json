@@ -1,6 +1,6 @@
 {
   "agent": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T23:43Z",
+  "updated": "2026-11-11T23:51Z",
   "account": "riskmandate-personal (Ultra) (Dinis, brief 15)",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 12)",
   "branch": "dev",
@@ -58,6 +58,7 @@
     "Indi's ABP merged once found"
   ],
   "asks": [
+    "Dinis: swarm.1.designer's session (session_01Kw9UwCNvq4z94R3XVA2Lvm) was refused add_repo PrompTugal__News__Fringe with push, and running abp.mjs whoami and pki-agent.mjs keygen, so it has no session key and no status file. Approve those in its session if you want it identified; its Swarm repo work (index.html: run timeline by altitude, budget, signatures) does not need them. swarm.1.dev may hit the same prompts.",
     "Dinis: security finding 44 (the lead, 21:2x): an unidentified session (no ~/.abp/whoami) may push only to dev under the enforced R5, which blocked security's push to work/security.fringe at 20:31. The proposed fix allows an unidentified session to push to its current work/* branch and prints `node abp/tools/abp.mjs whoami`. That widens an enforced rule and edits the hook, so it needs your word; today the fix is to run whoami, which the lead is asking every agent to do.",
     "Dinis: security finding 38 (the lead, 19:2x): overrides in abp/overrides.json count on a plain-text 'by'. The fix is ready in design: count only an override signed by your person key (data/person-keys.json) or an active conductor's key, log unsigned ones as refused, never deny reading HOLD.md or security's push to work/security.fringe. Editing the hook was refused in my session as self-modification on a non-Dinis request: say the word and I apply it. Today no abp/overrides.json exists, so nothing is open yet.",
     "Dinis: the OTLP spans need an APM credential (my creating one was refused): create an APM agent key in Kibana and set OTEL_EXPORTER_OTLP_ENDPOINT + OTEL_EXPORTER_OTLP_HEADERS, or give the word for me to create a 7-day event:write key. abp/policies.json open_questions.",
