@@ -1,12 +1,12 @@
 {
   "by": "conductor.fringe@PrompTugal.jose",
-  "updated": "2026-11-11T18:09Z",
+  "updated": "2026-11-11T18:15Z",
   "person": "jose",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.jose; hourly wake at :07 until Friday 13 November, 23:59 UTC; wake 18:09: no new brief; tracker 5 contacted, 0 answered; traffic by channel: whatsapp 156, linkedin 1, organiser 0",
   "lane": "channels (SWARM.md): the posts and messages that point people to the site; a person sends, the conductor never posts or messages anyone",
   "doing": [
-    "work/18 and work/23 (channels): five organiser notes sent by Jose; watching for answers (Jose sees them on Luma)"
+    "the dashboard changes Dinis approved (work/drafts/jose/dashboard-proposal.md): reader numbers first, the outreach funnel, today by person, asks for Dinis ranked, exceptions only, why each colour"
   ],
   "done": [
     "read CLAUDE.md, SWARM.md, BRIEF.md, BRIEF-CORRECTIONS.md, REALITY.md, ROLES.md, briefs 1 to 9 and work/README.md",
@@ -35,12 +35,16 @@
     "organiser answers on Luma (Jose sees them)"
   ],
   "asks": [
-    "Dinis: Jose proposes six changes to /dashboard/ (work/drafts/jose/dashboard-proposal.md); the quickest are the outreach funnel with who sent each note, and a 'Today, by person' line. Your call; dev.1 owns the page.",
     "Dinis: Luma: may a researcher read single Luma event pages we list (or a person passes on), one at a time, without a person's word each time? Today the 17:30 Cisco session stayed 'in person' on the site until Jose passed its link at 17:14 (its page said Virtual).",
     "Dinis: Eventbrite and Facebook: when an organiser's only page is there, may a person on the team read it and list the event as 'read by a person on the organiser's page', with the link? Today Just Boom! (22:00, Eventbrite) and Climate Fashion Lisbon 2026 (19:00, online, Facebook) were left off.",
     "Dinis: events run by a named individual, not an organisation: may we list them without naming the person, as we already do for 'an independent organiser'? Three online storm events were left out today for this reason.",
     "jose: use work/drafts/pitch.md wherever someone asks what the site is.",
     "Dinis: my public key is not in PrompTugal__News__Website board/keys.json; that repository is out of reach for this session.",
     "Dinis: this session's network refuses lisbontechfringe.com and fringe.promptugal.news, so the served version.json is checked through the deploy run, not the page."
+  ],
+  "today": [
+    "16:23: 5 organiser notes sent by hand (WonderLead in Tech, ideaic.io, Canopy Community, FounderLink, Portugal Tech Week), online storm events first, checked at source",
+    "17:31: LinkedIn post up, linking tonight's events (/now/?via=linkedin)",
+    "18:15: Jose's six dashboard changes, approved by Dinis, built and pushed"
   ]
 }
