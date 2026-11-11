@@ -1,7 +1,7 @@
 {
   "agent": "researcher.2.fringe@PrompTugal.dinis",
   "by": "researcher.2.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T17:23Z",
+  "updated": "2026-11-11T17:24Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "wake": "hourly at :10 (set by the lead) until Friday 13 November",
   "branch": "dev",
@@ -23,7 +23,8 @@
     "16:25 UTC: stopped the hourly Luma page loop; read the iCal feeds of 3 Luma calendars: 111 of our events match with the same start time; 14 feed-only events not added (no event link or organiser in the feed)",
     "16:27 UTC: saved the iCal feed reads as data/feeds/luma-ical.json (162 feed entries for 11 to 14 Nov, no description text), at the lead's ask",
     "17:12 UTC wake (iCal only): 3 Luma feeds re-read, 154 entries, added 0, gone 8, changed 0; data/feeds/luma-ical.json refreshed; Valois cost corrected to EUR 40 at the door (ontologist.1's note, one page read to confirm); tips lane: nothing new",
-    "17:23 UTC: AltaIR Capital corrected (was cancelled/fact, stamped 16:13 without a re-check): now unknown/evidence, in_lisbon false; read the other 6 cancelled or moved Luma events once each, spaced, to confirm their notices are still on the page: all 6 still correct"
+    "17:23 UTC: AltaIR Capital corrected (was cancelled/fact, stamped 16:13 without a re-check): now unknown/evidence, in_lisbon false; read the other 6 cancelled or moved Luma events once each, spaced, to confirm their notices are still on the page: all 6 still correct",
+    "17:24 UTC: ical_uid on 121 of 171 Luma events (matched by start time + name against the 3 feeds; the other 50 are on calendars we do not read, or have no feed entry); seed/status-check.py: a notice that STOPS counts as a change too; gave the Cyrillic-titled breakfast an ASCII id"
   ],
   "next": [
     "17:10 UTC wake: read the 3 iCal feeds only; no Luma event pages unless a person asks; tips lane; briefs",
