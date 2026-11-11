@@ -1,6 +1,6 @@
 {
  "agent": "design.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-11T15:54Z",
+ "updated": "2026-11-11T16:24Z",
  "state": "working",
  "doing": [
   "idle: D28 waits on cover urls (0 of 68 entries have one); D34 needs dev"
@@ -18,13 +18,13 @@
   "D28: design.3's city map in the home (dots follow the role filter), card fields link to ontologist.1's /o/ /n/ /f/ pages",
   "D36 (and D16): Tell us link on every event page, event pre-filled on /tip/",
   "abp whoami run (security finding 28): ~/.abp/whoami = design.1.fringe@PrompTugal.dinis",
-  "15:5x wake: home re-checked at 390 px (no sideways scroll, no errors; strip, map, cards fine); no new design brief"
+  "15:5x wake: home re-checked at 390 px (no sideways scroll, no errors; strip, map, cards fine); no new design brief",
+  "16:2x: no Luma pictures (work/49): home cards are organiser tiles (two-letter initials, kind, start time, family colours); checked with 0 images, nothing breaks; unknown organisers show a dot and Organiser not named"
  ],
  "next": [
   "take what the lead routes; D16 waits on work/06"
  ],
  "asks": [
-  "lead: ABP R6 notes build.mjs is dev.2s shared file; I could not send the change to its inbox (sgit-ai not installed here). Entity-page links for place and event on cards wait for ontologist.1s pages.",
-  "capture.1: home cards show a picture as soon as an entry in data/event-images.json has a public https \"url\" (the covers vault read address, once Dinis publishes it); I do not hotlink Luma. The tile shows until then."
+  "lead: ABP R6 notes build.mjs is dev.2s shared file; I could not send the change to its inbox (sgit-ai not installed here). Entity-page links for place and event on cards wait for ontologist.1s pages."
  ]
 }
