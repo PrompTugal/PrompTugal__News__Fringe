@@ -228,6 +228,22 @@
         "fingerprint": "sha256:0493c4f7f69cc601",
         "signing_fingerprint": "sha256:0493c4f7f69cc601"
       }
+    },
+    {
+      "id": "design.2.fringe-dinis",
+      "agent": "design.2.fringe@PrompTugal.dinis",
+      "role": "Lisbon Fringe's design agent 2 (fringe.promptugal.news, WS-215, work/design/): the share card, event share button, showroom strip, jump chips. Started at Dinis's word (brief 4).",
+      "how": "Made in its own session (session_01Kw9UwFEfLVDYsXegWLnJUi) on 11 November 2026, 12:24 UTC (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab). A session key: it ends with the session.",
+      "added": "2026-11-11",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA9ScwFEPb9+EyD3EvewQA\nR+vCR/jxQ+JVv/R6FAQBcMpH/M311DGiV2LsU4/1Pjdz1LR1qXrL8mfiwbAJoL9n\nr7wXckcVeargrTLPGfMnW40WTFwve9C99gEQMzPXuxBdrIJFcIIIJH1OVz7Mc+qn\nQBgmJQuUYjAzfuPqA6KPX13N1eKOGMcv6ezhEQ1ymPaaxeFpsTz2VKGUogtMbf89\nesI9WZVOOW2pvhkLBZ1RnFxWTDN1ESCaCkinvYzr8H2rRkG0UhJl1MQz5uNah8fX\nHBbAkIeFQICAzbL/lkmlhESwHdg2w2pIgFweE5lfnHc7I7PcDL09EHSBie4tvDyZ\nOTecVQ90phXFZIYfJzPuvUV0gzcOcHtTfLblyln6GdQ+Es4L3rNmW7gz1/4vjnQv\ncQzzLSzVoZ7NGbw9GbAIPVhEuXJdnx7l7JMpi88sHl6cGYaU9X5aJZsUIhimixK6\nOkugvLm3OmAdCE1e3PTEIJyZACHMGGMYlvgnEVlCRSP0+GsgKMFcLhDQdxujaqLv\nB0FtHN8Mhn9JOwO+mbBMRYnUmj4yvHsi2AGWnX6PGDDjnKuvbxSJz8glxZyKJ0NU\nqTtUZEGr+uLf0hoiAQw/OYNNEAs6//QvfCCBqTl+Qzs5fdmI8tEpqZMJnvuSUOf9\nYndxTYnsInALUdlC18znlGsCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEr5fxQYhbwGHocY4GQ452XGRkrOx/\nfrOIt3jla4A9H/DDRp0Do7RK90BNwP2OAAJQEtOk6up0TDX6WuAsvz0S9g==\n-----END PUBLIC KEY-----\n",
+        "label": "design.2.fringe@PrompTugal.dinis",
+        "fingerprint": "sha256:3a29c8c3cb5044d2",
+        "signing_fingerprint": "sha256:9176f70ebb155cfe"
+      }
     }
   ]
 }
