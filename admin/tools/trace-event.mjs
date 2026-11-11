@@ -20,6 +20,8 @@ if (!id) { console.error('usage: trace-event.mjs <event-id> [--runs runs.json] [
 
 const git = (...a) => execFileSync('git', a, { encoding: 'utf8', maxBuffer: 64 << 20 }).trim();
 const tryGit = (...a) => { try { return git(...a); } catch { return null; } };
+// the site's address, from the one setting (admin/site.json "origin", work/30), never a hard-coded host
+const ORIGIN = JSON.parse(readFileSync(new URL('../site.json', import.meta.url), 'utf8')).origin.replace(/\/+$/, '');
 const SERIES = (tryGit('show', 'HEAD:admin/series.txt') || '0.1').trim();
 const BUILDER = ['admin/build/event-pages.mjs', 'admin/build/build.mjs', 'admin/build/cards.mjs',
   'admin/build/identity.mjs', 'admin/build/organisers.mjs', 'admin/build/graph.mjs', 'admin/build/tokens.css',
@@ -138,7 +140,7 @@ for (const s of [...steps]) {
 
 steps.sort((a, b) => a.t.localeCompare(b.t));
 for (const s of steps) { delete s.sha; for (const k of Object.keys(s)) if (s[k] === null) delete s[k]; }
-const out = { event_id: id, page: `https://fringe.promptugal.news/e/${id}/`, generated_by: 'admin/tools/trace-event.mjs',
+const out = { event_id: id, page: `${ORIGIN}/e/${id}/`, generated_by: 'admin/tools/trace-event.mjs',
   generated_at: utc(new Date().toISOString()), head: git('rev-parse', '--short', 'HEAD'), steps,
   totals: { steps: steps.length, commits: commits.size, agents: [...new Set([...commits.values()].map(c => c.agent))].length, deploys: deploys.size } };
 const json = JSON.stringify(out, null, 2) + '\n';
