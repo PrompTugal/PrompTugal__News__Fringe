@@ -46,6 +46,7 @@ dataView('fringe-graph', 'Fringe: semantic graph', 'read_at')
 dataView('fringe-tasks', 'Fringe: task packets and results', 'read_at')
 dataView('fringe-models', 'Fringe: model router ledger', 'day')
 dataView('fringe-hooklog', 'Fringe: ABP hook decisions', 't')
+dataView('fringe-workloads', 'Distributed workloads: altitudes, runtimes, placements, traces', 't')
 for (const s of ['fringe', 'ptnews', 'websummit']) for (const k of ['commits', 'content', 'entities', 'runs', 'status']) dataView(`${s}-${k}`, `${{ fringe: 'Fringe', ptnews: 'PrompTugal.news', websummit: 'Web Summit' }[s]}: ${k}`, 't')
 for (const k of ['commits', 'content', 'entities', 'runs', 'status']) dataView(`fringe-${k},ptnews-${k},websummit-${k}`, `All sites: ${k}`, 't')
 const ALL = k => DV[`fringe-${k},ptnews-${k},websummit-${k}`]
@@ -214,6 +215,31 @@ D.abp = dashboard('abp', 'The agentic team: who did what, and under which policy
     [[search('abp-events', 'Hook events, newest first (commands redacted)', DV['fringe-hooklog'], ['agent', 'tool', 'tool_kind', 'decision', 'rule', 'target']), S, 48, 16]],
     [[heat('abp-heat', 'Commits: agent by site', ALL('commits'), 'site', 'agent'), L, 24, 20], [search('abp-asks', 'Asks for Dinis, all sites', ALL('status'), ['site', 'agent', 'state', 'n'], 'tags:asks-dinis'), S, 24, 20]],
 ], { from: 'now-24h', refresh: 60000 })
+
+// =====================================================================================================
+// 6. Distributed workloads (Dinis and Angelo): the altitudes of execution
+// =====================================================================================================
+const wl = DV['fringe-workloads']
+const F = f => `facet:${f}`
+D.workloads = dashboard('workloads', 'Distributed workloads: the altitudes of execution (Dinis and Angelo)', 'Where the agentic team\'s work runs and at what altitude: A4 swarm, A3 agent, A2 loop, A1 LLM call, A0 compute; the runtimes (R), model endpoints (M), I/O levels (L) and session modes (S); every agent\'s placement, every board item at its lowest altitude, the open-weight trials, the task packets run in other environments, the reach of each unit, and Angelo\'s run log and traces.', TAGS.swarm, [
+    [[md('wl-head', `## Distributed workloads: the altitudes of execution\nDinis and Angelo's model of where the agentic team's work runs (briefs 14, 15 and the operating model, 11 November 2026). **The same shape at every size**: an objective, a mandate, a grant, a key pair, a signed result; only the altitude changes: **A4** swarm (agents of agents) · **A3** agent (a loop with an identity and a wake) · **A2** loop with tools · **A1** one LLM call · **A0** compute. Each placement names its runtime (**R1** Claude Code cloud ...), model endpoint (**M1** Anthropic, **M2/M3** open-weight via the router ...), I/O level (**L0** chat to **L5**) and session mode (**S0** stateless call, **S1** chat session, **S2** agent loop).\n\n> "Try to use as much frontier models, so much open-weight models as we can ... the point here is not to slow down." (Dinis)\n\nSources: [where agents run](https://lisbontechfringe.com/agentic-team/where-agents-run/) · [the operating model](https://lisbontechfringe.com/agentic-team/operating-model/) · data/runtimes.json, data/operating-model.json, data/work-altitudes.json (signed), data/run-reach.json, tasks/, team/angelo/.`), V, 48, 10]],
+    [[metric('wl-m1', 'Agents placed', wl, C.unique('agent', 'Agents placed'), F('placement')), L, 8, 6], [metric('wl-m2', 'Board items at an altitude', wl, C.count('Board items'), F('work')), L, 8, 6],
+     [metric('wl-m3', 'Packet outputs (other environments)', wl, C.count('Outputs'), F('output')), L, 8, 6], [metric('wl-m4', 'Open-weight trial answers right', wl, C.count('Right'), 'facet:trial-row and correct:true'), L, 8, 6],
+     [metric('wl-m5', "Angelo's agentic activities", wl, C.count('Activities'), F('run')), L, 8, 6], [metric('wl-m6', 'Trace steps (one event page)', wl, C.count('Steps'), F('trace')), L, 8, 6]],
+    [[top('wl-work-alt', 'Board items by lowest altitude', wl, 'altitude', F('work'), { label: 'Altitude' }), L, 16, 14], [heat('wl-work-heat', 'Board items: altitude by status', wl, 'altitude', 'status', F('work')), L, 16, 14],
+     [donut('wl-out-alt', 'Packet outputs by altitude (a second placement)', wl, 'altitude', F('output')), L, 16, 14]],
+    [[heat('wl-place-heat', 'Agents: runtime by I/O level', wl, 'runtime', 'io_level', F('placement')), L, 16, 14], [donut('wl-place-model', 'Agents by model endpoint', wl, 'model', F('placement')), L, 16, 14],
+     [donut('wl-place-mode', 'Agents by session mode (S0, S1, S2)', wl, 'mode', F('placement')), L, 16, 14]],
+    [[search('wl-matrix', 'The matrix: each task, who does it now, and what could', wl, ['name', 'role', 'loop', 'io_level', 'judgement', 'data_class', 'now', 'could', 'mode'], F('task')), S, 48, 15]],
+    [[table('wl-reach', 'Reach of each unit: primitives needed, held, exposed, missing', wl, [['name.raw', 'Unit', 10], ['altitude', 'Altitude', 5]], [C.sum('needed', 'Needed'), C.sum('held', 'Held'), C.sum('exposed', 'Exposed'), C.sum('missing', 'Missing')], F('reach')), L, 24, 14],
+     [search('wl-trials', 'Open-weight trials (A1 calls): model, cost, latency, result', wl, ['name', 'model', 'cost_usd', 'latency_ms', 'text'], F('trial')), S, 24, 14]],
+    [[overTime('wl-runs-time', "Angelo's agentic activities over time (tool calls)", wl, 't', 'agent', F('run'), { interval: '30m', metricCol: C.sum('calls', 'Tool calls') }), L, 24, 14],
+     [overTime('wl-trace-time', 'Trace of one event page: steps by kind', wl, 't', 'step_kind', F('trace'), { interval: '10m' }), L, 24, 14]],
+    [[search('wl-runs', "Angelo's run log: one line per agentic activity", wl, ['agent', 'name', 'calls', 'text'], F('run')), S, 24, 16], [search('wl-trace', 'The trace, step by step (humans as "a person")', wl, ['n', 'step_kind', 'agent', 'name', 'label'], F('trace'), 't', 'asc'), S, 24, 16]],
+    [[overTime('wl-commits', 'Commits by the architect and Angelo\'s agents', ALL('commits'), 't', 'agent', 'agent:architect.1.fringe@PrompTugal.dinis or person:angelo', { interval: '1h' }), L, 32, 14],
+     [top('wl-commit-agents', 'Who builds it (commits)', ALL('commits'), 'agent', 'agent:architect.1.fringe@PrompTugal.dinis or person:angelo', { size: 15 }), L, 16, 14]],
+    [[search('wl-vocab', 'The vocabulary: altitudes, runtimes, endpoints, I/O levels, modes', wl, ['facet', 'id', 'name', 'text'], 'facet:(altitude or runtime or endpoint or io_level or mode)', 'id', 'asc'), S, 48, 16]],
+], { from: '2026-11-11T00:00:00.000Z', to: 'now+1h', refresh: 300000 })
 
 // ---------- build / import ----------
 const cmd = process.argv[2]

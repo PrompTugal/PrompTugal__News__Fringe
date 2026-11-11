@@ -79,6 +79,8 @@ Every commit is attributed from its `Agent:` trailer (read from the body when gi
 4. [Web Summit site: the team's field guide](https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io/app/dashboards#/view/2dc54923-4403-396d-1248-9ea115980957)
 5. [The agentic team: who did what, and under which policy](https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io/app/dashboards#/view/0352d7e2-ae87-b872-92d0-07935940f0f4)
 
+6. [Distributed workloads: the altitudes of execution (Dinis and Angelo)](https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io/app/dashboards#/view/d92f4855-670e-f9d4-2337-db284d6856f6): from fringe-workloads (admin/tools/elastic-workloads.mjs, 252 documents in 15 facets: runtimes, endpoints, I/O levels, modes, agent placements, the matrix, altitudes, open-weight trials, board items by altitude, reach, task packets and outputs, Angelo's run log and traces; humans in traces written as "a person").
+
 25 data views (one per index, plus "All sites" views for commits, content, entities, runs and status), four tags, saved searches for the documents themselves (full-text search over every page of writing).
 
 **To refresh:** `ELASTIC_URL=... node admin/tools/elastic.mjs push --kind all; node admin/tools/elastic-sites.mjs push --site all; KIBANA_URL=... node admin/tools/elastic-kibana.mjs import` (clones of the two other sites in ~/promptugal/, `git pull` first).
@@ -90,6 +92,8 @@ Every commit is attributed from its `Agent:` trailer (read from the body when gi
 - 17:23 UTC: Dinis gave the deployment (Kibana https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io/). Elasticsearch is my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io (9.5.6), user elastic with the password from ELASTIC_CLOUD. First push, 0 errors: fringe-events 178, fringe-graph 50, fringe-tasks 4, fringe-models 7, fringe-hooklog 53 (this session's hook log only). Checked: a search for "AI" on 12 November returns 11 events.
 
 - 18:10 UTC wake: refreshed, 0 errors: fringe-events 179, fringe-hooklog 116, fringe-commits 486, ptnews-commits 4,416, ptnews-runs 1,724, websummit-commits 5,277; 112 Kibana objects re-imported. No new brief.
+
+- 18:28 UTC: at Dinis's word ("a new dashboard that is going to focus on the work me and Angelo are doing on distributed workloads"): fringe-workloads (252 documents) and dashboard 6, rendered with 0 error panels.
 
 ## Asks
 
