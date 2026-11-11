@@ -11,7 +11,10 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..',
 const arg = (n, d) => { const i = process.argv.indexOf('--' + n); return i < 0 ? d : (process.argv[i + 1] && !process.argv[i + 1].startsWith('--') ? process.argv[i + 1] : true); };
 const DATE = arg('date', new Date().toISOString().slice(0, 10)), LIMIT = Number(arg('limit', 0)) || 0, NOPUSH = !!arg('no-push', false), FORCE = !!arg('force', false);
 const HOST = 'https://dev.send.sgraph.ai', MAX_FILES = 15000, MAX_BYTES = 1_500_000;
-const ALLOW = new Set(['luma.com', 'lu.ma']);
+// Luma (sources.md: public pages allowed) and organisers' own sites (the lead's addendum, 14:00 UTC). NO automated reading of
+// Meetup (on hold), Eventbrite, Partiful (forbid it) or websummit.com: those events get no automated cover, and are listed in the status.
+const NO = /(^|\.)(meetup\.com|eventbrite\.[a-z.]+|partiful\.com|websummit\.com)$/i;
+const allowed = e => { const h = new URL(e.url).hostname; return !NO.test(h); };
 const sha = b => crypto.createHash('sha256').update(b).digest('hex');
 const iso = () => new Date().toISOString().replace(/\.\d+Z$/, 'Z');
 const sgit = (cwd, ...a) => execFileSync('sgit', ['--base-url', HOST, '--token', 'proxy-injected', ...a], { cwd, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
@@ -31,7 +34,7 @@ const VDIR = path.join(VROOT, vault.dir);
 const ifile = path.join(ROOT, 'data/event-images.json');
 const out = fs.existsSync(ifile) ? JSON.parse(fs.readFileSync(ifile, 'utf8')) : { about: "Each event's own cover image (the og:image its organiser set on the public Luma page), kept in a covers vault with a public read key (data/capture-vaults.json). Pointers only: vault id, path, sha256, source URL, captured_at. Credit: 'image: <organiser>'. Covers only, never a guest list or a host's face from the page body (work/45).", images: [] };
 const have = new Map(out.images.map(i => [i.event_id, i]));
-let events = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/events.json'), 'utf8')).events.filter(e => e.date === DATE && ALLOW.has(new URL(e.url).hostname));
+let events = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/events.json'), 'utf8')).events.filter(e => e.date === DATE && allowed(e));
 if (LIMIT) events = events.slice(0, LIMIT);
 
 const { chromium } = require('playwright');

@@ -638,6 +638,18 @@
    "captured_at": "2026-11-11T14:01:01Z"
   },
   {
+   "event_id": "2026-11-11-storm-summit-stormsummit-app",
+   "vault_id": "9cf4rcf3",
+   "path": "2026-11-11-storm-summit-stormsummit-app.png",
+   "sha256": "197bd3839b671803c90e9dd124ba21edc7243e681f32aafb7b25386775c7c240",
+   "bytes": 113776,
+   "content_type": "image/png",
+   "source_url": "https://stormsummit.app/og.png?v=3",
+   "page_url": "https://stormsummit.app/",
+   "organiser": "Taiga AI Oy, Finland (as the page names it: 'an independent project by Taiga AI Oy', not affiliated with Web Summit)",
+   "captured_at": "2026-11-11T14:03:39Z"
+  },
+  {
    "event_id": "2026-11-11-strength-and-coffee-founders",
    "vault_id": "9cf4rcf3",
    "path": "2026-11-11-strength-and-coffee-founders.jpg",
@@ -746,7 +758,7 @@
    "captured_at": "2026-11-11T14:01:26Z"
   }
  ],
- "updated": "2026-11-11T14:02:24Z",
+ "updated": "2026-11-11T14:03:45Z",
  "vaults": [
   "9cf4rcf3"
  ]
