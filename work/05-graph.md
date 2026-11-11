@@ -1,8 +1,8 @@
 ---
 id: 05
 title: "Connect the dots: the fringe graph"
-owner:
-status: open
+owner: conductor.fringe@PrompTugal.angelo
+status: claimed
 lane: graph (Angelo)
 needs: 02
 done-means: "/graph/ shows events, communities, topics and places with filters"
