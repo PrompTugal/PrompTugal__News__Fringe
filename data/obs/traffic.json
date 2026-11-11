@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-11T17:44Z",
+ "generated": "2026-11-11T17:59Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 399,
-  "reads": 344,
-  "tabs": 184,
+  "views": 405,
+  "reads": 349,
+  "tabs": 189,
   "countries": 17,
-  "shares": 156,
-  "bots": 1138,
+  "shares": 157,
+  "bots": 1144,
   "crawler_tabs": 1,
-  "agent_runs": 115,
-  "agent_runs_signed": 107
+  "agent_runs": 124,
+  "agent_runs_signed": 116
  },
  "by_hour": [
   [
@@ -212,13 +212,13 @@
   ],
   [
    "2026-11-11 17:00",
-   36
+   42
   ]
  ],
  "by_page": [
   [
    "/",
-   178
+   179
   ],
   [
    "/now/",
@@ -245,6 +245,10 @@
    7
   ],
   [
+   "/traffic/",
+   6
+  ],
+  [
    "/e/2026-11-11-corporate-academy-of-tomorrow/",
    6
   ],
@@ -257,7 +261,7 @@
    5
   ],
   [
-   "/traffic/",
+   "/dashboard/",
    5
   ],
   [
@@ -271,10 +275,6 @@
   [
    "/e/2026-11-11-stranded-networking-drinks-limited-seats/",
    5
-  ],
-  [
-   "/dashboard/",
-   4
   ],
   [
    "/e/2026-11-11-life-with-artificials-kickoff/",
@@ -491,6 +491,18 @@
   [
    "/o/devworld-conference-and-bitterbrains/",
    1
+  ],
+  [
+   "/universe/",
+   1
+  ],
+  [
+   "/agentic-team/where-agents-run/",
+   1
+  ],
+  [
+   "/e/2026-11-12-disconnect-2-connect/",
+   1
   ]
  ],
  "reading": [
@@ -531,6 +543,12 @@
    25
   ],
   [
+   "/traffic/",
+   6,
+   14,
+   44
+  ],
+  [
    "/programme/",
    6,
    44,
@@ -543,28 +561,22 @@
    44
   ],
   [
-   "/traffic/",
-   5,
-   17,
-   53
-  ],
-  [
    "/graph/",
    5,
    13,
    20
   ],
   [
+   "/dashboard/",
+   5,
+   13,
+   17
+  ],
+  [
    "/e/2026-11-11-ai-horizon-conference/",
    5,
    11,
    38
-  ],
-  [
-   "/dashboard/",
-   4,
-   15,
-   18
   ],
   [
    "/e/2026-11-11-founderlink-storm-summit-afternoon/",
@@ -907,12 +919,30 @@
    1,
    5,
    100
+  ],
+  [
+   "/agentic-team/where-agents-run/",
+   1,
+   1,
+   0
+  ],
+  [
+   "/universe/",
+   1,
+   16,
+   0
+  ],
+  [
+   "/e/2026-11-12-disconnect-2-connect/",
+   1,
+   35,
+   36
   ]
  ],
  "by_country": [
   [
    "Portugal",
-   249
+   254
   ],
   [
    "United Kingdom",
@@ -920,7 +950,7 @@
   ],
   [
    "United States",
-   24
+   25
   ],
   [
    "Estonia",
@@ -982,7 +1012,7 @@
  "by_city": [
   [
    "Lisbon, Portugal",
-   179
+   183
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -1010,7 +1040,7 @@
   ],
   [
    "Montijo, Portugal",
-   9
+   10
   ],
   [
    "Boardman, United States",
@@ -1034,7 +1064,7 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   60
+   61
   ]
  ],
  "by_referrer": [
@@ -1046,18 +1076,18 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   360
+   366
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 1375,
+ "other_hosts_views": 1482,
  "by_via": [
   [
    "whatsapp",
-   155
+   156
   ],
   [
    "linkedin",
@@ -1066,7 +1096,7 @@
  ],
  "via_detail": {
   "whatsapp": {
-   "views": 155,
+   "views": 156,
    "tabs": 63,
    "countries": 9
   },
@@ -1079,7 +1109,7 @@
  "by_screen": [
   [
    "desktop",
-   200
+   206
   ],
   [
    "phone",
@@ -1093,19 +1123,23 @@
  "agents": [
   [
    "design.4.fringe@PrompTugal.dinis",
-   13
+   15
   ],
   [
    "design.1.fringe@PrompTugal.dinis",
-   13
+   14
   ],
   [
    "researcher.1.fringe@PrompTugal.jose",
-   11
+   12
   ],
   [
    "architect.1.fringe@PrompTugal.dinis",
-   10
+   11
+  ],
+  [
+   "ontologist.1.fringe@PrompTugal.dinis",
+   9
   ],
   [
    "observability.fringe@PrompTugal.dinis",
@@ -1120,20 +1154,16 @@
    8
   ],
   [
-   "ontologist.1.fringe@PrompTugal.dinis",
-   8
-  ],
-  [
    "design.2.fringe@PrompTugal.dinis",
    7
   ],
   [
-   "capture.1.fringe@PrompTugal.dinis",
+   "conductor.fringe@PrompTugal.indi",
    5
   ],
   [
-   "conductor.fringe@PrompTugal.indi",
-   4
+   "capture.1.fringe@PrompTugal.dinis",
+   5
   ],
   [
    "dev.1.fringe@PrompTugal.dinis",
@@ -1152,6 +1182,10 @@
    3
   ],
   [
+   "gravity.1.fringe@PrompTugal.silvio",
+   3
+  ],
+  [
    "dev.2.fringe@PrompTugal.dinis",
    2
   ],
@@ -1162,18 +1196,14 @@
   [
    "fable.fringe@PrompTugal.dinis",
    1
-  ],
-  [
-   "gravity.1.fringe@PrompTugal.silvio",
-   1
   ]
  ],
  "flows": {
-  "tabs": 184,
+  "tabs": 189,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    119
+    124
    ],
    [
     "shared link (?via=)",
@@ -1187,7 +1217,7 @@
   "entry_pages": [
    [
     "/",
-    136
+    137
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
@@ -1202,11 +1232,11 @@
     4
    ],
    [
-    "/me/",
-    2
+    "/dashboard/",
+    3
    ],
    [
-    "/dashboard/",
+    "/me/",
     2
    ],
    [
@@ -1249,7 +1279,7 @@
   "exit_pages": [
    [
     "/",
-    97
+    98
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
@@ -1261,7 +1291,7 @@
    ],
    [
     "/programme/",
-    6
+    5
    ],
    [
     "/how/",
@@ -1413,15 +1443,15 @@
   "pages_per_tab": [
    [
     "1",
-    121
+    126
    ],
    [
     "2",
-    31
+    30
    ],
    [
     "3",
-    12
+    13
    ],
    [
     "4",
@@ -1432,7 +1462,7 @@
     17
    ]
   ],
-  "bounce_rate": 66,
+  "bounce_rate": 67,
   "via_reached": [
    [
     "whatsapp: /",
@@ -1491,19 +1521,15 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
-    1
-   ],
-   [
     "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-yorkseed-investor-pitch/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    "whatsapp: /e/2026-11-11-yorkseed-investor-pitch/",
     1
    ],
    [
@@ -1512,6 +1538,10 @@
    ],
    [
     "whatsapp: /e/2026-11-11-roast-your-website/",
+    1
+   ],
+   [
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ]
   ]
@@ -1537,7 +1567,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 179,
+    "views": 183,
     "lat": 38.7,
     "lon": -9.1
    },
@@ -1579,7 +1609,7 @@
    },
    {
     "name": "Montijo, Portugal",
-    "views": 9,
+    "views": 10,
     "lat": 38.7,
     "lon": -9.0
    },
