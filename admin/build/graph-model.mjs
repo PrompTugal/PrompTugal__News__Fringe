@@ -76,6 +76,7 @@ export function buildModel(root, events) {
   // --- organisers: one per organisation ------------------------------------------------------------------------
   const alias = new Map();
   for (const o of orgSeed) for (const a of [o.name, o.id, ...(o.aliases || [])]) alias.set(norm(a), o.id);
+  const held = new Set(orgSeed.filter((o) => o.hold).map((o) => o.id));   // not yet confirmed an organisation: no name, no page
   const organiser = (raw) => {
     const id = alias.get(norm(raw)) || slug(raw);
     if (!E.organisers.has(id)) {
@@ -110,7 +111,7 @@ export function buildModel(root, events) {
     }
 
     // organisers, and the festival named among them
-    const names = organisersOf(e.organiser);
+    const names = organisersOf(e.organiser).filter((raw) => !held.has(alias.get(norm(raw)) || slug(raw)));
     names.forEach((raw, i) => {
       const fest = [...E.festivals.values()].find((f) => f._m.organiser && norm(raw) === norm(f._m.organiser));
       const o = organiser(raw);
