@@ -57,6 +57,48 @@ ELASTIC_URL=https://<host> node admin/tools/elastic.mjs push --kind ...         
 3. A0: `fringe-hooklog` from this session's log; then ask the lead how each machine sends its own (a line in each agent's wake, after agent-log.mjs).
 4. A2: the Kibana views and the review's queries, with architect.1.
 
+## Live on Elastic Cloud (17:40 UTC)
+
+At Dinis's word (17:3x UTC): "start putting as much data as you can in Elastic ... not just one dashboard for the fringe ... also one for the main PrompTugal website, and one for the Web Summit site". Kibana: https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io (log in with your own Elastic Cloud account).
+
+**The data (about 15,000 documents, 20 indices):**
+
+| Site | Repository | Indices |
+|---|---|---|
+| Lisbon Tech Fringe | PrompTugal/PrompTugal__News__Fringe | fringe-events, -graph, -tasks, -models, -hooklog (admin/tools/elastic.mjs); fringe-commits, -content, -entities, -status (admin/tools/elastic-sites.mjs) |
+| PrompTugal.news | PrompTugal/PrompTugal__News__Website | ptnews-commits (4,400), -content (717), -entities (894: stories, companies, organisations, events, places, evidence), -runs (1,717), -status |
+| Web Summit site | SGit-AI/SGit-AI__Website__Web-Summit | websummit-commits (5,266), -content (630), -entities (293: sessions, side events, companies, channels, plan, xray metadata), -runs, -status |
+
+Every commit is attributed from its `Agent:` trailer (read from the body when git does not parse it), else the agent named in its subject; 43 of 10,124 stay unattributed. The person is the last part of the agent's name. Never indexed: people profiles (data/people, people/), mail, meetings, CRM, cast and team rosters, sealed data, inboxes, outreach desks, keys files (elastic/sites.json, "never"); model research text (xray: metadata only).
+
+**The dashboards** (admin/tools/elastic-kibana.mjs, saved objects in elastic/kibana/objects.ndjson, imported by id so a re-run updates):
+
+1. [PrompTugal swarm: three sites, one view](https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io/app/dashboards#/view/1da64aaa-b205-96e6-f1c0-c0fc2d14d21b)
+2. [Lisbon Tech Fringe: the week live](https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io/app/dashboards#/view/7b9dd4c4-44c0-5e50-8aea-61fd6d0a8bce)
+3. [PrompTugal.news: the agentic newsroom](https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io/app/dashboards#/view/2b70a3e5-934d-a6a6-47a7-aeb0c3e86fc5)
+4. [Web Summit site: the team's field guide](https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io/app/dashboards#/view/2dc54923-4403-396d-1248-9ea115980957)
+5. [The agentic team: who did what, and under which policy](https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io/app/dashboards#/view/0352d7e2-ae87-b872-92d0-07935940f0f4)
+
+6. [Distributed workloads: the altitudes of execution (Dinis and Angelo)](https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io/app/dashboards#/view/d92f4855-670e-f9d4-2337-db284d6856f6): from fringe-workloads (admin/tools/elastic-workloads.mjs, 252 documents in 15 facets: runtimes, endpoints, I/O levels, modes, agent placements, the matrix, altitudes, open-weight trials, board items by altitude, reach, task packets and outputs, Angelo's run log and traces; humans in traces written as "a person").
+
+7. [The altitudes of execution, live](https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io/app/dashboards#/view/b6e128c4-656b-1555-c326-44248b5b62f9): from fringe-altitudes (admin/tools/elastic-altitudes.mjs, architect.1's data/altitude-runs.json and spec docs/handoffs/2026-11-11-altitudes-on-elastic.md): units over time, each run's tree, Dinis and Angelo by environment, the keys and their verification, cost and latency by model, mixing altitudes, retries.
+
+25 data views (one per index, plus "All sites" views for commits, content, entities, runs and status), four tags, saved searches for the documents themselves (full-text search over every page of writing).
+
+**To refresh:** `ELASTIC_URL=... node admin/tools/elastic.mjs push --kind all; node admin/tools/elastic-sites.mjs push --site all; KIBANA_URL=... node admin/tools/elastic-kibana.mjs import` (clones of the two other sites in ~/promptugal/, `git pull` first).
+
+## Log
+
+- 17:09 UTC: the password is in the session (ELASTIC_CLOUD, Dinis); the endpoint host is still unknown, so nothing is sent.
+
+- 17:23 UTC: Dinis gave the deployment (Kibana https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io/). Elasticsearch is my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io (9.5.6), user elastic with the password from ELASTIC_CLOUD. First push, 0 errors: fringe-events 178, fringe-graph 50, fringe-tasks 4, fringe-models 7, fringe-hooklog 53 (this session's hook log only). Checked: a search for "AI" on 12 November returns 11 events.
+
+- 18:10 UTC wake: refreshed, 0 errors: fringe-events 179, fringe-hooklog 116, fringe-commits 486, ptnews-commits 4,416, ptnews-runs 1,724, websummit-commits 5,277; 112 Kibana objects re-imported. No new brief.
+
+- 18:28 UTC: at Dinis's word ("a new dashboard that is going to focus on the work me and Angelo are doing on distributed workloads"): fringe-workloads (252 documents) and dashboard 6, rendered with 0 error panels.
+
+- 18:34 UTC: fringe-altitudes (110 units, 109 verified, 0 held) and dashboard 7 from architect.1's export and spec (material; Dinis's ask of 18:2x covers it); 44 panels, 0 errors. Findings on it: 38% of LLM calls invalid and retried; 5 compute and loop units with reach exposure 20 to 22. No unit of Angelo's yet.
+
 ## Asks
 
-- **Dinis:** the Elastic Cloud deployment's Elasticsearch endpoint host (e.g. `<name>.es.<region>.<cloud>.elastic-cloud.com`) and an API key limited to the `fringe-*` indices, saved as a network secret on this cloud environment (never in chat).
+- ~~**Dinis:** the Elastic Cloud deployment's Elasticsearch endpoint host~~ (given at 17:23 UTC). Still: an API key limited to the fringe-* indices, to replace the elastic superuser password, and `my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io` added to elastic.1's sends in its ABP (architect.1). Originally asked: the endpoint host (e.g. `<name>.es.<region>.<cloud>.elastic-cloud.com`) and an API key limited to the `fringe-*` indices, saved as a network secret on this cloud environment (never in chat).

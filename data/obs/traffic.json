@@ -5,31 +5,23 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-11T16:38Z",
+ "generated": "2026-11-11T18:54Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 354,
-  "reads": 303,
-  "tabs": 168,
-  "countries": 14,
-  "shares": 148,
-  "bots": 1044,
+  "views": 442,
+  "reads": 381,
+  "tabs": 205,
+  "countries": 18,
+  "shares": 159,
+  "bots": 1202,
   "crawler_tabs": 1,
-  "agent_runs": 90,
-  "agent_runs_signed": 85
+  "agent_runs": 141,
+  "agent_runs_signed": 130
  },
  "by_hour": [
-  [
-   "2026-11-09 17:00",
-   0
-  ],
-  [
-   "2026-11-09 18:00",
-   0
-  ],
   [
    "2026-11-09 19:00",
    0
@@ -212,37 +204,61 @@
   ],
   [
    "2026-11-11 16:00",
-   39
+   48
+  ],
+  [
+   "2026-11-11 17:00",
+   42
+  ],
+  [
+   "2026-11-11 18:00",
+   37
   ]
  ],
  "by_page": [
   [
    "/",
-   161
+   195
   ],
   [
    "/now/",
-   24
+   31
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
-   19
+   20
+  ],
+  [
+   "/programme/",
+   11
+  ],
+  [
+   "/how/",
+   11
+  ],
+  [
+   "/dashboard/",
+   10
   ],
   [
    "/organisers/",
    8
   ],
   [
-   "/programme/",
-   8
-  ],
-  [
-   "/how/",
-   8
-  ],
-  [
    "/join/",
    7
+  ],
+  [
+   "/traffic/",
+   7
+  ],
+  [
+   "/e/2026-11-11-tech-startups-on-the-rooftop/",
+   7
+  ],
+  [
+   "/e/2026-11-11-founderlink-storm-summit-afternoon/",
+   6
   ],
   [
    "/e/2026-11-11-corporate-academy-of-tomorrow/",
@@ -253,20 +269,12 @@
    5
   ],
   [
-   "/traffic/",
-   5
-  ],
-  [
-   "/e/2026-11-11-founderlink-storm-summit-afternoon/",
-   5
-  ],
-  [
-   "/e/2026-11-11-tech-startups-on-the-rooftop/",
-   5
-  ],
-  [
    "/e/2026-11-11-ai-horizon-conference/",
-   4
+   5
+  ],
+  [
+   "/e/2026-11-11-stranded-networking-drinks-limited-seats/",
+   5
   ],
   [
    "/e/2026-11-11-life-with-artificials-kickoff/",
@@ -281,11 +289,23 @@
    4
   ],
   [
+   "/universe/",
+   4
+  ],
+  [
    "/e/2026-11-11-yorkseed-allocator-lunch/",
    3
   ],
   [
+   "/e/2026-11-11-aubay-the-next-move/",
+   3
+  ],
+  [
    "/e/2026-11-11-roast-your-website/",
+   3
+  ],
+  [
+   "/e/2026-11-11-lisboaux-web-summit-edition/",
    3
   ],
   [
@@ -297,7 +317,19 @@
    3
   ],
   [
+   "/e/2026-11-11-foundacious-lisbon/",
+   3
+  ],
+  [
+   "/e/2026-11-11-like-minded/",
+   3
+  ],
+  [
    "/e/2026-11-11-valois-allocator-residence/",
+   3
+  ],
+  [
+   "/e/2026-11-11-open-mercato-night/",
    3
   ],
   [
@@ -309,19 +341,11 @@
    2
   ],
   [
-   "/dashboard/",
-   2
-  ],
-  [
    "/e/2026-11-11-kuma-align-leadership-ai/",
    2
   ],
   [
    "/e/2026-11-11-cisco-automation-to-autonomy/",
-   2
-  ],
-  [
-   "/e/2026-11-11-lisboaux-web-summit-edition/",
    2
   ],
   [
@@ -345,10 +369,6 @@
    2
   ],
   [
-   "/e/2026-11-11-foundacious-lisbon/",
-   2
-  ],
-  [
    "/e/2026-11-11-indiesummit-lisboa/",
    2
   ],
@@ -361,11 +381,11 @@
    2
   ],
   [
-   "/e/2026-11-11-like-minded/",
+   "/o/growth-division/",
    2
   ],
   [
-   "/o/growth-division/",
+   "/e/2026-11-11-travel-tech-pitch-party/",
    2
   ],
   [
@@ -378,10 +398,6 @@
   ],
   [
    "/e/2026-11-11-startup-legal-roast/",
-   1
-  ],
-  [
-   "/e/2026-11-11-aubay-the-next-move/",
    1
   ],
   [
@@ -473,32 +489,78 @@
    1
   ],
   [
-   "/e/2026-11-11-travel-tech-pitch-party/",
+   "/gravity",
    1
   ],
   [
-   "/e/2026-11-11-stranded-networking-drinks-limited-seats/",
+   "/o/devworld-conference-and-bitterbrains/",
+   1
+  ],
+  [
+   "/agentic-team/where-agents-run/",
+   1
+  ],
+  [
+   "/e/2026-11-12-disconnect-2-connect/",
+   1
+  ],
+  [
+   "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&source=alertsmail&hl=en&gl=US&msgid=NzU4MTg5ODA1MDE5MTA5ODQ2Nw&s=AB2Xq4jQ1Drb3m7Qggynlh6qcFTVucRvseru4e4",
+   1
+  ],
+  [
+   "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&ss=fb&rt=PTW+Classroom+-+Who+Flies+When+the+CEO+Ejects",
+   1
+  ],
+  [
+   "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/",
+   1
+  ],
+  [
+   "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&ct=ga&cd=CAEYACoTNzU4MTg5ODA1MDE5MTA5ODQ2NzIcMDE4ZGYwYTk5NWVlNmM3MDpjb206ZW46VVM6TA&usg=AOvVaw0652Ojza7KUs4TwPwCMRUX",
+   1
+  ],
+  [
+   "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&ss=tw&rt=PTW+Classroom+-+Who+Flies+When+the+CEO+Ejects",
    1
   ]
  ],
  "reading": [
   [
    "/",
-   128,
-   28,
+   154,
+   30,
    13
   ],
   [
    "/now/",
-   20,
-   49,
-   48
+   27,
+   41,
+   50
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
-   17,
+   18,
+   14,
+   31
+  ],
+  [
+   "/how/",
+   11,
    13,
-   30
+   2
+  ],
+  [
+   "/dashboard/",
+   10,
+   8,
+   8
+  ],
+  [
+   "/programme/",
+   9,
+   43,
+   53
   ],
   [
    "/organisers/",
@@ -507,22 +569,16 @@
    19
   ],
   [
-   "/how/",
-   8,
-   12,
-   2
-  ],
-  [
    "/join/",
    7,
    6,
    25
   ],
   [
-   "/programme/",
-   6,
-   44,
-   55
+   "/traffic/",
+   7,
+   14,
+   40
   ],
   [
    "/e/2026-11-11-corporate-academy-of-tomorrow/",
@@ -531,28 +587,28 @@
    44
   ],
   [
-   "/traffic/",
-   5,
-   17,
-   53
-  ],
-  [
    "/graph/",
    5,
    13,
    20
   ],
   [
+   "/e/2026-11-11-ai-horizon-conference/",
+   5,
+   11,
+   38
+  ],
+  [
+   "/e/2026-11-11-tech-startups-on-the-rooftop/",
+   5,
+   13,
+   29
+  ],
+  [
    "/e/2026-11-11-founderlink-storm-summit-afternoon/",
    4,
    16,
    37
-  ],
-  [
-   "/e/2026-11-11-ai-horizon-conference/",
-   4,
-   10,
-   40
   ],
   [
    "/e/2026-11-11-life-with-artificials-kickoff/",
@@ -567,10 +623,34 @@
    49
   ],
   [
+   "/e/2026-11-11-stranded-networking-drinks-limited-seats/",
+   4,
+   10,
+   36
+  ],
+  [
+   "/universe/",
+   4,
+   100,
+   27
+  ],
+  [
+   "/e/2026-11-11-aubay-the-next-move/",
+   3,
+   101,
+   33
+  ],
+  [
    "/e/2026-11-11-roast-your-website/",
    3,
    4,
    11
+  ],
+  [
+   "/e/2026-11-11-lisboaux-web-summit-edition/",
+   3,
+   16,
+   52
   ],
   [
    "/e/2026-11-11-ai-for-business-applied-ai-pitch-party/",
@@ -579,22 +659,28 @@
    32
   ],
   [
-   "/e/2026-11-11-tech-startups-on-the-rooftop/",
-   3,
-   16,
-   30
-  ],
-  [
    "/e/2026-11-11-innovation-wednesdays-azerbaijan/",
    3,
    3,
    0
   ],
   [
+   "/e/2026-11-11-like-minded/",
+   3,
+   9,
+   29
+  ],
+  [
    "/e/2026-11-11-valois-allocator-residence/",
    3,
    4,
    18
+  ],
+  [
+   "/e/2026-11-11-open-mercato-night/",
+   3,
+   0,
+   0
   ],
   [
    "/e/2026-11-11-human-side-of-ai/",
@@ -609,22 +695,10 @@
    28
   ],
   [
-   "/dashboard/",
-   2,
-   4,
-   12
-  ],
-  [
    "/e/2026-11-11-yorkseed-allocator-lunch/",
    2,
    20,
    26
-  ],
-  [
-   "/e/2026-11-11-lisboaux-web-summit-edition/",
-   2,
-   18,
-   62
   ],
   [
    "/e/2026-11-11-amplify-europe-lisbon/",
@@ -681,16 +755,16 @@
    32
   ],
   [
-   "/e/2026-11-11-like-minded/",
-   2,
-   2,
-   0
-  ],
-  [
    "/e/2026-11-11-lisbon-tech-side-event/",
    2,
    30,
    62
+  ],
+  [
+   "/e/2026-11-11-travel-tech-pitch-party/",
+   2,
+   8,
+   32
   ],
   [
    "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
@@ -709,12 +783,6 @@
    1,
    14,
    56
-  ],
-  [
-   "/e/2026-11-11-aubay-the-next-move/",
-   1,
-   7,
-   26
   ],
   [
    "/sitemap.txt",
@@ -867,28 +935,76 @@
    0
   ],
   [
-   "/e/2026-11-11-travel-tech-pitch-party/",
+   "/gravity",
    1,
-   11,
-   29
+   14,
+   0
+  ],
+  [
+   "/o/devworld-conference-and-bitterbrains/",
+   1,
+   5,
+   100
+  ],
+  [
+   "/agentic-team/where-agents-run/",
+   1,
+   1,
+   0
+  ],
+  [
+   "/e/2026-11-12-disconnect-2-connect/",
+   1,
+   35,
+   36
+  ],
+  [
+   "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&ss=fb&rt=PTW+Classroom+-+Who+Flies+When+the+CEO+Ejects",
+   1,
+   1,
+   0
+  ],
+  [
+   "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/",
+   1,
+   1,
+   0
+  ],
+  [
+   "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&ss=tw&rt=PTW+Classroom+-+Who+Flies+When+the+CEO+Ejects",
+   1,
+   1,
+   0
+  ],
+  [
+   "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&ct=ga&cd=CAEYACoTNzU4MTg5ODA1MDE5MTA5ODQ2NzIcMDE4ZGYwYTk5NWVlNmM3MDpjb206ZW46VVM6TA&usg=AOvVaw0652Ojza7KUs4TwPwCMRUX",
+   1,
+   1,
+   0
+  ],
+  [
+   "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&source=alertsmail&hl=en&gl=US&msgid=NzU4MTg5ODA1MDE5MTA5ODQ2Nw&s=AB2Xq4jQ1Drb3m7Qggynlh6qcFTVucRvseru4e4",
+   1,
+   1,
+   0
   ]
  ],
  "by_country": [
   [
    "Portugal",
-   212
+   283
   ],
   [
    "United Kingdom",
-   45
+   47
+  ],
+  [
+   "United States",
+   30
   ],
   [
    "Estonia",
    21
-  ],
-  [
-   "United States",
-   20
   ],
   [
    "Germany",
@@ -927,18 +1043,34 @@
    2
   ],
   [
+   "Czechia",
+   2
+  ],
+  [
    "Netherlands",
+   1
+  ],
+  [
+   "Cambodia",
+   1
+  ],
+  [
+   "Brazil",
+   1
+  ],
+  [
+   "Canada",
    1
   ]
  ],
  "by_city": [
   [
    "Lisbon, Portugal",
-   147
+   204
   ],
   [
    "Oliveira de Azemeis, Portugal",
-   42
+   50
   ],
   [
    "Tallinn, Estonia",
@@ -958,15 +1090,19 @@
   ],
   [
    "London, United Kingdom",
-   11
+   13
   ],
   [
    "Montijo, Portugal",
-   9
+   10
   ],
   [
    "Boardman, United States",
    7
+  ],
+  [
+   "Funchal, Portugal",
+   6
   ],
   [
    "Dodoma, Tanzania",
@@ -977,8 +1113,12 @@
    5
   ],
   [
+   "Oak Hill, United States",
+   5
+  ],
+  [
    "(places under 5 views, in their country above)",
-   58
+   67
   ]
  ],
  "by_referrer": [
@@ -990,35 +1130,44 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   315
+   403
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 1108,
+ "other_hosts_views": 1750,
  "by_via": [
   [
    "whatsapp",
-   148
+   158
+  ],
+  [
+   "linkedin",
+   1
   ]
  ],
  "via_detail": {
   "whatsapp": {
-   "views": 148,
-   "tabs": 62,
+   "views": 158,
+   "tabs": 64,
    "countries": 9
+  },
+  "linkedin": {
+   "views": 1,
+   "tabs": 1,
+   "countries": 1
   }
  },
  "by_screen": [
   [
-   "phone",
-   179
+   "desktop",
+   236
   ],
   [
-   "desktop",
-   171
+   "phone",
+   202
   ],
   [
    "tablet",
@@ -1028,79 +1177,91 @@
  "agents": [
   [
    "design.4.fringe@PrompTugal.dinis",
-   12
+   16
   ],
   [
    "design.1.fringe@PrompTugal.dinis",
+   14
+  ],
+  [
+   "researcher.1.fringe@PrompTugal.jose",
+   13
+  ],
+  [
+   "conductor.fringe@PrompTugal.jose",
    11
   ],
   [
    "architect.1.fringe@PrompTugal.dinis",
-   9
-  ],
-  [
-   "researcher.1.fringe@PrompTugal.jose",
-   8
+   11
   ],
   [
    "observability.fringe@PrompTugal.dinis",
-   7
+   9
   ],
   [
    "design.3.fringe@PrompTugal.dinis",
-   7
+   9
   ],
   [
    "ontologist.1.fringe@PrompTugal.dinis",
-   7
+   9
   ],
   [
    "design.2.fringe@PrompTugal.dinis",
-   6
-  ],
-  [
-   "conductor.fringe@PrompTugal.jose",
-   6
-  ],
-  [
-   "capture.1.fringe@PrompTugal.dinis",
-   4
-  ],
-  [
-   "conductor.fringe@PrompTugal.indi",
-   3
-  ],
-  [
-   "dev.1.fringe@PrompTugal.dinis",
-   3
-  ],
-  [
-   "researcher.2@PrompTugal.dinis",
-   3
-  ],
-  [
-   "researcher.fringe@PrompTugal.dinis",
-   2
-  ],
-  [
-   "dev.2.fringe@PrompTugal.dinis",
-   1
+   8
   ],
   [
    "elastic.1.fringe@PrompTugal.dinis",
+   7
+  ],
+  [
+   "capture.1.fringe@PrompTugal.dinis",
+   6
+  ],
+  [
+   "conductor.fringe@PrompTugal.indi",
+   5
+  ],
+  [
+   "dev.1.fringe@PrompTugal.dinis",
+   5
+  ],
+  [
+   "researcher.2@PrompTugal.dinis",
+   5
+  ],
+  [
+   "researcher.fringe@PrompTugal.dinis",
+   4
+  ],
+  [
+   "dev.2.fringe@PrompTugal.dinis",
+   3
+  ],
+  [
+   "gravity.1.fringe@PrompTugal.silvio",
+   3
+  ],
+  [
+   "usability.1.fringe@PrompTugal.dinis",
+   2
+  ],
+  [
+   "fable.fringe@PrompTugal.dinis",
    1
   ]
  ],
  "flows": {
-  "tabs": 168,
+  "tabs": 205,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    105
+    139
    ],
    [
     "shared link (?via=)",
-    62
+    65
    ],
    [
     "from another site",
@@ -1110,7 +1271,7 @@
   "entry_pages": [
    [
     "/",
-    125
+    143
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
@@ -1118,11 +1279,15 @@
    ],
    [
     "/now/",
+    6
+   ],
+   [
+    "/dashboard/",
     5
    ],
    [
     "/how/",
-    3
+    4
    ],
    [
     "/me/",
@@ -1141,11 +1306,15 @@
     2
    ],
    [
-    "/join/",
-    1
+    "/e/2026-11-11-open-mercato-night/",
+    2
    ],
    [
-    "/dashboard/",
+    "/universe/",
+    2
+   ],
+   [
+    "/join/",
     1
    ],
    [
@@ -1159,36 +1328,32 @@
    [
     "/e/2026-11-11-lisboaux-web-summit-edition/",
     1
-   ],
-   [
-    "/e/2026-11-11-amplify-europe-lisbon/",
-    1
-   ],
-   [
-    "/e/2026-11-11-gaming-entertainment-pitch-party/",
-    1
    ]
   ],
   "exit_pages": [
    [
     "/",
-    93
-   ],
-   [
-    "/e/2026-11-11-wet-summit-lisbon/",
-    11
+    103
    ],
    [
     "/now/",
-    9
+    13
+   ],
+   [
+    "/e/2026-11-11-wet-summit-lisbon/",
+    12
    ],
    [
     "/programme/",
-    6
+    7
    ],
    [
     "/e/2026-11-11-founderlink-storm-summit-afternoon/",
-    3
+    4
+   ],
+   [
+    "/how/",
+    4
    ],
    [
     "/e/2026-11-11-ai-for-business-applied-ai-pitch-party/",
@@ -1200,10 +1365,6 @@
    ],
    [
     "/e/2026-11-11-enchant-pitch-parties/",
-    3
-   ],
-   [
-    "/how/",
     3
    ],
    [
@@ -1219,41 +1380,49 @@
     2
    ],
    [
+    "/e/2026-11-11-foundacious-lisbon/",
+    2
+   ],
+   [
     "/e/2026-11-11-founders-house-party/",
     2
    ],
    [
     "/e/2026-11-11-tech-startups-on-the-rooftop/",
     2
-   ],
-   [
-    "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
-    1
    ]
   ],
   "steps": [
    [
     "/ → /now/",
-    13
+    16
    ],
    [
     "/ → /programme/",
-    5
+    8
    ],
    [
     "/ → /e/2026-11-11-wet-summit-lisbon/",
-    5
+    6
+   ],
+   [
+    "/traffic/ → /",
+    4
    ],
    [
     "/join/ → /",
     3
    ],
    [
-    "/traffic/ → /",
+    "/dashboard/ → /",
     3
    ],
    [
     "/ → /e/2026-11-11-founderlink-storm-summit-afternoon/",
+    3
+   ],
+   [
+    "/ → /how/",
     3
    ],
    [
@@ -1281,7 +1450,15 @@
     2
    ],
    [
+    "/e/2026-11-11-tech-startups-on-the-rooftop/ → /e/2026-11-11-ai-horizon-conference/",
+    2
+   ],
+   [
     "/join/ → /traffic/",
+    2
+   ],
+   [
+    "/how/ → /traffic/",
     2
    ],
    [
@@ -1305,72 +1482,60 @@
     2
    ],
    [
+    "/ → /e/2026-11-11-aubay-the-next-move/",
+    2
+   ],
+   [
     "/ → /e/2026-11-11-ptw-classroom-deep-work-wexio/",
     1
    ],
    [
     "/organisers/ → /traffic/",
     1
-   ],
-   [
-    "/traffic/ → /join/",
-    1
-   ],
-   [
-    "/organisers/ → /e/2026-11-11-human-side-of-ai/",
-    1
-   ],
-   [
-    "/e/2026-11-11-human-side-of-ai/ → /e/2026-11-11-ai-video-blueprint-2027/",
-    1
-   ],
-   [
-    "/e/2026-11-11-ai-video-blueprint-2027/ → /graph/",
-    1
-   ],
-   [
-    "/ → /e/2026-11-11-startup-legal-roast/",
-    1
    ]
   ],
   "pages_per_tab": [
    [
     "1",
-    115
+    136
    ],
    [
     "2",
-    25
+    33
    ],
    [
     "3",
-    11
+    14
    ],
    [
     "4",
-    2
+    3
    ],
    [
     "5+",
-    15
+    19
    ]
   ],
-  "bounce_rate": 68,
+  "bounce_rate": 66,
   "via_reached": [
    [
     "whatsapp: /",
-    62
+    64
    ],
    [
     "whatsapp: /now/",
     8
    ],
    [
+    "whatsapp: /programme/",
+    5
+   ],
+   [
     "whatsapp: /e/2026-11-11-wet-summit-lisbon/",
     5
    ],
    [
-    "whatsapp: /programme/",
+    "whatsapp: /e/2026-11-11-tech-startups-on-the-rooftop/",
     4
    ],
    [
@@ -1379,10 +1544,6 @@
    ],
    [
     "whatsapp: /e/2026-11-11-ai-horizon-conference/",
-    3
-   ],
-   [
-    "whatsapp: /e/2026-11-11-tech-startups-on-the-rooftop/",
     3
    ],
    [
@@ -1398,6 +1559,10 @@
     2
    ],
    [
+    "whatsapp: /e/2026-11-11-lisboaux-web-summit-edition/",
+    2
+   ],
+   [
     "whatsapp: /e/2026-11-11-side-events-guide-irl/",
     2
    ],
@@ -1410,15 +1575,19 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
-    1
-   ],
-   [
     "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    1
+   ],
+   [
     "whatsapp: /e/2026-11-11-yorkseed-investor-pitch/",
+    1
+   ],
+   [
+    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
     1
    ],
    [
@@ -1427,14 +1596,6 @@
    ],
    [
     "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
-    1
-   ],
-   [
-    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
-    1
-   ],
-   [
-    "whatsapp: /e/2026-11-11-life-with-artificials-kickoff/",
     1
    ]
   ]
@@ -1460,13 +1621,13 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 147,
+    "views": 204,
     "lat": 38.7,
     "lon": -9.1
    },
    {
     "name": "Oliveira de Azemeis, Portugal",
-    "views": 42,
+    "views": 50,
     "lat": 40.8,
     "lon": -8.6
    },
@@ -1496,13 +1657,13 @@
    },
    {
     "name": "London, United Kingdom",
-    "views": 11,
+    "views": 13,
     "lat": 51.5,
     "lon": -0.1
    },
    {
     "name": "Montijo, Portugal",
-    "views": 9,
+    "views": 10,
     "lat": 38.7,
     "lon": -9.0
    },
@@ -1511,6 +1672,12 @@
     "views": 7,
     "lat": 45.8,
     "lon": -119.7
+   },
+   {
+    "name": "Funchal, Portugal",
+    "views": 6,
+    "lat": 32.6,
+    "lon": -16.9
    },
    {
     "name": "Dodoma, Tanzania",
@@ -1523,6 +1690,12 @@
     "views": 5,
     "lat": 13.8,
     "lon": 100.5
+   },
+   {
+    "name": "Oak Hill, United States",
+    "views": 5,
+    "lat": 39.0,
+    "lon": -77.4
    }
   ]
  },
@@ -1537,6 +1710,10 @@
   ],
   [
    "/e/2026-11-11-healthtech-pitch-party/ → luma.com/nuggtawe",
+   3
+  ],
+  [
+   "/e/2026-11-11-stranded-networking-drinks-limited-seats/ → luma.com/j5k2jekf",
    3
   ],
   [
@@ -1556,6 +1733,10 @@
    2
   ],
   [
+   "/e/2026-11-11-ai-horizon-conference/ → luma.com/p6glepvg",
+   2
+  ],
+  [
    "/e/2026-11-11-wet-summit-lisbon/ → wetsummitlisbon.com/",
    2
   ],
@@ -1565,6 +1746,10 @@
   ],
   [
    "/e/2026-11-11-valois-allocator-residence/ → luma.com/k0zamjmi",
+   2
+  ],
+  [
+   "/e/2026-11-11-travel-tech-pitch-party/ → luma.com/9jtn1muw",
    2
   ],
   [
@@ -1628,23 +1813,11 @@
    1
   ],
   [
-   "/e/2026-11-11-ai-horizon-conference/ → luma.com/p6glepvg",
-   1
-  ],
-  [
    "/e/2026-11-11-roast-your-website/ → luma.com/m146luuy",
    1
   ],
   [
    "/e/2026-11-11-ai-for-business-applied-ai-pitch-party/ → luma.com/hz3ma5fl",
-   1
-  ],
-  [
-   "/e/2026-11-11-travel-tech-pitch-party/ → luma.com/9jtn1muw",
-   1
-  ],
-  [
-   "/e/2026-11-11-stranded-networking-drinks-limited-seats/ → luma.com/j5k2jekf",
    1
   ]
  ]

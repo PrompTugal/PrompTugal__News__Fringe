@@ -1,12 +1,12 @@
 {
   "by": "conductor.fringe@PrompTugal.vicky",
-  "updated": "2026-11-11T16:24Z",
+  "updated": "2026-11-11T18:23Z",
   "person": "vicky",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.vicky, started 11:05 UTC by conductor.B@PrompTugal.vicky; hourly wake until Friday 13 November (set by conductor.B)",
   "lane": "the editorial check (SWARM.md): every event verified before it goes up",
   "doing": [
-    "work/13 editorial check, data only (Luma, Meetup, Eventbrite machine reads paused; the lead's Luma hold, work/49, 16:23 UTC): AltaIR Capital entry still cancelled in the data while Vicky's 15:35 browser read shows no cancellation; request to mark unclear is on work/13"
+    "work/13 editorial check, data only: eighth pass at 18:11 UTC data (179 events): no contact details; ical_uid on 121 entries looks like an email address, flagged to the researcher; topics (7) and end (1) still open"
   ],
   "done": [
     "read CLAUDE.md, SWARM.md, JOIN.md, BRIEF.md, BRIEF-CORRECTIONS.md, REALITY.md, ROSTER.md and work/",
@@ -19,16 +19,16 @@
     "pass 5 of work/13 (6 non-Luma pages re-read, all match); ack to conductor.B on programme@ using this check",
     "pass 6 of work/13 (read the 14:15 data; earlier suggestions confirmed in the data)",
     "pass 7 of work/13 (data lint of 177 events)",
-    "AltaIR Capital: Vicky's browser read (15:35 UTC) passed to the researcher through work/13, with the earlier cancelled reads, asking for status unknown (unclear)"
+    "AltaIR Capital: Vicky's browser read (15:35 UTC) passed to the researcher through work/13, with the earlier cancelled reads, asking for status unknown (unclear)",
+    "AltaIR Capital corrected in the data (f44f7c4) after Vicky's browser read; read_at point added to work/13",
+    "pass 8 of work/13"
   ],
   "next": [
-    "see whether the researcher marks AltaIR unclear; forward the answer to conductor.B",
     "check the data at each wake; route mismatches to the researcher",
-    "a person's own read of the AltaIR page after 16:00 UTC would settle it"
+    "see whether the researcher defines read_at as 're-checked' and audits the 16:13 pass",
+    "Friday 13 events need a person's read or the organisers' posts, not machine re-reads"
   ],
-  "asks": [
-    "Vicky: if a team member can open https://luma.com/h19cccc5 in a browser now, that settles AltaIR Capital (data says cancelled, your 15:35 read says no notice)."
-  ],
+  "asks": [],
   "notes": [
     "Standing rules (Vicky's word relayed by conductor.B@PrompTugal.vicky, 11 Nov about 14:30 UTC, after Dinis's answer): (1) no machine reads of websummit.com, any subdomain, or the app: no curl, fetch, script, sub-agent, headless/automated browser, API or AI-agent access; its word comes only from a person's own browser read, the organisers' own public posts, or the press. (2) my tools, scripts, notes and wake prompt carry no such step (checked 14:3x UTC). (3) no new work from data copied from the organisers' site; if any is found in this repo, report it, do not change it, until Dinis says. Findings of that check: none found in data/events.json (no websummit.com URL in it); websummit.com appears in this repo only as prohibitions (sources.md, tool headers, data/architecture.json, data/runtimes.json) and as the independence line's link in admin/build/build.mjs, a link not a read.",
     "Standing rule 2 (Vicky's word, relayed by conductor.B, about 14:40 UTC, until Dinis decides on Luma): no machine reads of luma.com, lu.ma or Luma's API; and until their terms are checked, none of meetup.com or eventbrite.*. Account of what was read before: see work/13, 'Paused machine reads'."

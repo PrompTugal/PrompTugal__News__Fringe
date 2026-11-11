@@ -372,6 +372,22 @@
         "fingerprint": "sha256:2af27e5b88092227",
         "signing_fingerprint": "sha256:25b303ee2e079116"
       }
+    },
+    {
+      "id": "gravity.1.fringe-silvio",
+      "agent": "gravity.1.fringe@PrompTugal.silvio",
+      "role": "Silvio's Gravity agent (Lisbon Tech Fringe, WS-215): the adapter that draws the Fringe as a Gravity universe (library at https://web-summit.sgit.ai/lib/gravity/, never copied here).",
+      "how": "Made in its own session on 11 November 2026, 17:26 UTC (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab). A session key: it ends with the session. Public half only.",
+      "added": "2026-11-11",
+      "status": "active",
+      "bundle": {
+        "v": "1",
+        "label": "gravity.1.fringe@PrompTugal.silvio",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA3mHegOfiXe/FBqZPwVvi\ntQIhcxtb/PV9fBigPrOmAy1DmILeBkgcje1YqTSBfyvA0Tqa1zVilfv+zkInY7a9\n/dTfhxXIpW758Pq6VnYs4CXh4HqSID+ccWQTNG4P5bCIGgOsKxCW+tNHxI8BLfry\nSY26+9w42qTooVJCfjwoUfnfvuCAQkkeVjQn8iwAKu9a55dk8ZIxWvCu0g5kZYvG\nJLT6wQLqzsvblLIf2pT5wG84huOvCOlLRLss8IZnPm3/IBIeY6SSBDn3nB8A4NAd\nZrf7iyPlq1b7NV+88JzKITVvLhndOeJqHXHHwjBI8lgUVv0RYa5SOzo5rZBEt8KY\nc+7/VbDoW8lUFoTe1/nzZ52g1PLjxuksMFbozXxVHQ7RkJvepCI+86XRFQjeBS3F\n2pf1mdWw/QoeOv26ilS3/w84Kltu+YoIbg/oKE3aaQG4eZXsDE6InwRLCzQVLBwL\n+0P4FBeNZ4h4tcGxLj7Ltn45VMZsNAQCmue/iVdt/WrznfY3J5pQK8/eHMkBtDtR\n1DJjYB4Eym7hlGybPUFETs3bdL2USeOkFU5w5x+euP7SzGpshdDOZne9X0U0IIgG\nOMn/gqMfzY1QlYeGZyA4DLG1HPIkGhw85Rnn5LkYIDzR8HsfsxTD4ucuVoFEjkdK\njL8sI/Fr9fJLkAtQcTtQ4JMCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEr4CZ5wNeOtE/d48SI577LyDkBafF\nBVYir2GKonErZUk4J+WRmGj9logqi7R9KTwPW0jkis1aUIDRm7gTMp7lBA==\n-----END PUBLIC KEY-----\n",
+        "fingerprint": "sha256:59e59a4c456e8a65",
+        "signing_fingerprint": "sha256:1855389651d2172e"
+      }
     }
   ]
 }

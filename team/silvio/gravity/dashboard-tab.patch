@@ -1,0 +1,23 @@
+diff --git a/assets/cc/stand.js b/assets/cc/stand.js
+index fa61899..31e3c05 100644
+--- a/assets/cc/stand.js
++++ b/assets/cc/stand.js
+@@ -39,8 +39,17 @@
+         const shields = { id: 'shield', label: ['Três escudos', 'Three shields'], icon: 'M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z', mount(h, api) { this.p = shieldsPlugin(api, h) }, show() { this.p.show() }, frame(ms) { this.p.frame(ms) }, resize() { this.p.resize() } }
+         const xray = { id: 'xray', label: ['X-Ray', 'X-Ray'], icon: 'M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM21 21l-5-5', mount(h, api) { this.p = xrayPlugin(api, h, X) }, show(anim) { this.p.FX.open(anim) }, zoom(k) { this.p.FX.zoom(k) } }
+         const gamma = { id: 'gamma', label: ['GAMMA-Ray', 'GAMMA-Ray'], icon: 'M3 12h4l3-8 4 16 3-8h4', mount(h, api) { this.p = gammaPlugin(api, h, G) }, show() { this.p.gamma() } }
++        /* Lisbon Tech Fringe ✦ (gravity.1.fringe@PrompTugal.silvio, at Silvio's word): a second universe in a tab, so the stand can show
++           the team's works side by side. The adapter lives in the Fringe repository (team/silvio/gravity/), pinned by commit, never copied. */
++        const FRINGE = 'https://cdn.jsdelivr.net/gh/PrompTugal/PrompTugal__News__Fringe@bba934755194369f714c149b03258431800f3f17/team/silvio/gravity/fringe-gravity.js'
++        const fringe = { id: 'fringe', label: ['Lisbon Tech Fringe ✦', 'Lisbon Tech Fringe ✦'], icon: 'M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z',
++            mount(h, api) { h.innerHTML = '<div style="position:relative;min-height:78vh;border-radius:18px;overflow:hidden"><p style="padding:24px;color:#8EADA8">A abrir o universo da Lisbon Tech Fringe… / Opening the Lisbon Tech Fringe universe…</p></div>'
++                const fh = h.firstChild
++                const load = () => window.FringeUniverse ? Promise.resolve() : new Promise((ok, no) => { const s = document.createElement('script'); s.src = FRINGE; s.onload = ok; s.onerror = no; document.head.appendChild(s) })
++                load().then(() => { fh.innerHTML = ''; return window.FringeUniverse.mount(fh, { lang: api.lang }) })
++                    .catch(e => { fh.innerHTML = '<p style="padding:24px;color:#FF9AAE">O universo da Fringe não abriu (' + api.esc(String(e && e.message || e).slice(0, 80)) + '). <a href="https://lisbontechfringe.com/" target="_blank" rel="noopener" style="color:#43D9C6">lisbontechfringe.com ›</a></p>' }) } }
+         const BAR = R0.BAR
+-        await window.Gravity.mount(host, { data: gdata, start: 'uni', tourCentre: 'indi', metric: BAR ? { pct: BAR.pct, of: BAR.e, total: BAR.t } : null, detail: polHTML, views: [shields, xray, gamma],
++        await window.Gravity.mount(host, { data: gdata, start: 'uni', tourCentre: 'indi', metric: BAR ? { pct: BAR.pct, of: BAR.e, total: BAR.t } : null, detail: polHTML, views: [shields, xray, gamma, fringe],
+             liveLabel: null })
+     }
+     function shieldsPlugin(api, host) { const { SR, $, t, esc, ico, reduced } = api

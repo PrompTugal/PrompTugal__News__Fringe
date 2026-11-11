@@ -98,6 +98,15 @@ export function buildGraph(events, ptnews, communities) {
       }
       if (o) n.page = pathOf('organiser', o.id);
     }
+    // Festivals (umbrellas such as Portugal Tech Week) from the semantic graph: event -part of-> festival.
+    for (const f of m.byId.festivals.values()) {
+      const fid = `festival:${f.id}`, held = (f.events || []).filter((id) => nodes.has(`event:${id}`));
+      if (!held.length) continue;
+      nodes.set(fid, { id: fid, type: 'festival', label: f.name, page: pathOf('festival', f.id) });
+      for (const id of held) { const e = nodes.get(`event:${id}`); edges.push({ from: e.id, to: fid, verb: 'part of', source: e.url, read_at: e.read_at }); }
+    }
+    list.length = 0; list.push(...nodes.values());
+    for (const n of list) n.degree = edges.filter((e) => e.from === n.id || e.to === n.id).length;
   } catch { /* the semantic graph is optional here */ }
   layout(list, edges);
   return { nodes: list, edges, outreach: outreachCounts(list), ontology: ontology(list, edges, events, communities) };
@@ -244,7 +253,7 @@ ${links(n) ? `<div class="muted">${links(n)}</div>` : ''}<ul>${neighbours(n.id).
 ${ontologyBody(graph, esc)}
 <h2>The graph</h2>
 <p class="muted">Each dot is an event, a community, a topic or a place; a line means one event's own page names it. Tap a dot to see what it joins.</p>
-<p class="legend"><span class="dot t-event"></span>event (${ev.length}) <span class="dot t-community"></span>community (${count('community')}) <span class="dot t-topic"></span>topic (${count('topic')}) <span class="dot t-place"></span>place (${count('place')})</p>
+<p class="legend"><span class="dot t-festival"></span>festival <span class="dot t-event"></span>event (${ev.length}) <span class="dot t-community"></span>community (${count('community')}) <span class="dot t-topic"></span>topic (${count('topic')}) <span class="dot t-place"></span>place (${count('place')})</p>
 <p class="muted" id="gcount" aria-live="polite"></p>
 <div class="filters gout"><strong>Outreach</strong> ${OUTREACH.map((k) => chip('out', k, `${k} ${graph.outreach?.on_graph?.[k] ?? 0}`)).join('')}</div>
 <p class="muted legend">The ring on a community dot is its outreach state: <span class="nw"><span class="ring o-listed"></span>listed</span> <span class="nw"><span class="ring o-draft-ready"></span>draft ready</span> <span class="nw"><span class="ring o-contacted"></span>contacted</span> <span class="nw"><span class="ring o-answered"></span>answered</span> <span class="nw"><span class="ring o-joined"></span>joined</span>.${graph.outreach?.tracker ? ` Counts only, never a contact. The whole tracker (data/outreach.json, ${esc(graph.outreach.tracker.updated || '')}): ${graph.outreach.tracker.organisers_listed} organisers listed, ${graph.outreach.tracker.drafts_ready} drafts ready, ${graph.outreach.tracker.contacted} contacted, ${graph.outreach.tracker.answered} answered, ${graph.outreach.tracker.joined} joined; the graph shows the ${Object.values(graph.outreach.on_graph).reduce((a, b) => a + b, 0)} it can match to a community.` : ''}</p>
@@ -272,7 +281,7 @@ export const graphCss = `
 .chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--bg)}#gq{font:inherit;padding:4px 8px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--fg);min-width:0;flex:1 1 160px}
 .gwrap{position:relative;border:1px solid var(--line);border-radius:8px;background:var(--card);touch-action:none}#graph{display:block;width:100%;height:auto;aspect-ratio:1/1;max-height:70vh}.gfilters{margin:var(--s2) 0}.gfilters>summary{cursor:pointer;font-weight:600;font-size:var(--fs-ui);padding:var(--s2) 0;color:var(--brand)}
 .gzoom{position:absolute;top:8px;right:8px;display:flex;gap:4px}.gzoom button{font:inherit;width:32px;height:32px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
-.t-event{fill:var(--t-event);background:var(--t-event)}.t-community{fill:var(--t-community);background:var(--t-community)}.t-topic{fill:var(--t-topic);background:var(--t-topic)}.t-place{fill:var(--t-place);background:var(--t-place)}
+.t-festival{fill:var(--t-festival);background:var(--t-festival)}.t-event{fill:var(--t-event);background:var(--t-event)}.t-community{fill:var(--t-community);background:var(--t-community)}.t-topic{fill:var(--t-topic);background:var(--t-topic)}.t-place{fill:var(--t-place);background:var(--t-place)}
 .legend .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin:0 4px 0 10px}.legend{font-size:.85rem}
 #graph line{stroke:var(--line);stroke-width:1;vector-effect:non-scaling-stroke}#graph line.on{stroke:var(--fg);stroke-opacity:.5}#graph circle{cursor:pointer;stroke:var(--card);stroke-width:1;vector-effect:non-scaling-stroke}
 #graph text{fill:var(--fg);pointer-events:none;paint-order:stroke;stroke:var(--card)}#graph .off{opacity:.08}#graph .sel{stroke:var(--fg);stroke-width:3}#graph line.on{stroke-width:2}

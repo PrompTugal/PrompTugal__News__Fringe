@@ -1,0 +1,115 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "index.mapping.total_fields.limit": 200
+  },
+  "mappings": {
+    "dynamic": "strict",
+    "properties": {
+      "kind": {
+        "type": "keyword"
+      },
+      "site": {
+        "type": "keyword"
+      },
+      "source": {
+        "type": "keyword"
+      },
+      "read_at": {
+        "type": "date"
+      },
+      "signer": {
+        "type": "keyword"
+      },
+      "commit": {
+        "type": "keyword"
+      },
+      "ingested_at": {
+        "type": "date"
+      },
+      "ingested_by": {
+        "type": "keyword"
+      },
+      "id": {
+        "type": "keyword"
+      },
+      "path": {
+        "type": "keyword"
+      },
+      "dir": {
+        "type": "keyword"
+      },
+      "area": {
+        "type": "keyword"
+      },
+      "type": {
+        "type": "keyword"
+      },
+      "url": {
+        "type": "keyword"
+      },
+      "status": {
+        "type": "keyword"
+      },
+      "state": {
+        "type": "keyword"
+      },
+      "outcome": {
+        "type": "keyword"
+      },
+      "title": {
+        "type": "text",
+        "fields": {
+          "raw": {
+            "type": "keyword",
+            "ignore_above": 512
+          }
+        }
+      },
+      "text": {
+        "type": "text"
+      },
+      "t": {
+        "type": "date"
+      },
+      "end": {
+        "type": "date"
+      },
+      "agent": {
+        "type": "keyword"
+      },
+      "person": {
+        "type": "keyword"
+      },
+      "role": {
+        "type": "keyword"
+      },
+      "for": {
+        "type": "keyword"
+      },
+      "tags": {
+        "type": "keyword"
+      },
+      "n": {
+        "type": "long"
+      },
+      "files": {
+        "type": "long"
+      },
+      "words": {
+        "type": "long"
+      },
+      "cost_usd": {
+        "type": "double"
+      },
+      "duration_s": {
+        "type": "double"
+      },
+      "attrs": {
+        "type": "flattened",
+        "ignore_above": 1024,
+        "depth_limit": 6
+      }
+    }
+  }
+}

@@ -69,7 +69,8 @@ export async function collectSwarm({ root, roster, status, board, traffic, activ
         ...stamp(a.updated), state: clip(a.state, 240), doing: asList(a.doing).map((x) => clip(x)), file: `team/${d}/agents/${f}`, listed_only: false });
     }
   }
-  for (const [pid, s] of Object.entries(status)) for (const a of asList(s.agents).map((x) => (typeof x === 'string' ? { name: x } : x))) {
+  // (objects are kept as objects: asList() would turn them into JSON text, which then never matched `seen`)
+  for (const [pid, s] of Object.entries(status)) for (const a of (Array.isArray(s.agents) ? s.agents : s.agents ? [s.agents] : []).map((x) => (typeof x === 'string' ? { name: x } : x))) {
     if (!a?.name || seen.has(a.name) || a.name === people.find((p) => p.id === pid)?.conductor) continue;
     seen.add(a.name);
     agents.push({ name: a.name, role: nameRole(a.name), account: a.account || pid, person: pid, model: a.model || null, wake: clip(a.wake, 80) || null,
@@ -116,16 +117,77 @@ export async function collectSwarm({ root, roster, status, board, traffic, activ
   const lastHour = (traffic?.by_hour || []).at(-1) || null;
   const via = (traffic?.by_via || []).slice(0, 8);
   const hc = (ok, warn) => (ok ? 'green' : warn ? 'amber' : 'red');
+  const ago = (h) => (h == null ? 'never' : h < 1 ? Math.round(h * 60) + ' min ago' : h.toFixed(1) + ' h ago');
+
+  // Jose's dashboard proposal (work/drafts/jose/dashboard-proposal.md), approved by Dinis about 18:10 UTC, 11 Nov 2026;
+  // built by conductor.fringe@PrompTugal.jose. Additive: every field above stays as it was.
+  // (1) for readers, now: what someone in Lisbon gets from the site at this hour
+  const today = String(builtAt || '').slice(0, 10);
+  const toCome = ev.filter((e) => e.date === today && parseT(e.start) != null && parseT(e.start) >= now && e.status !== 'cancelled' && e.status !== 'moved');   // moved = postponed or moved away
+  const viaViews = traffic?.via_detail ? Object.entries(traffic.via_detail).map(([k, v]) => [k, v?.views ?? 0]) : (traffic?.by_via || []).map(([k, n]) => [k, n]);
+  const readers = {
+    today, events_to_come_today: toCome.length, online_to_come_today: toCome.filter((e) => e.status === 'online').length,
+    reread_last_hour: ev.filter((e) => { const r = parseT(e.read_at); return r != null && r <= now && now - r <= 3600000; }).length,
+    views_last_hour: lastHour ? { hour: lastHour[0], views: lastHour[1] } : null,
+    views_by_channel: viaViews.sort((a, b) => b[1] - a[1]),
+  };
+  // (2) outreach as a funnel, with who sent each note (organisations only; the sender is a team id)
+  const tracker = jread(join(root, 'data/outreach-tracker.json'))?.organisers || [];
+  const teamIds = new Set(people.map((p) => p.id));
+  const outreach_sent = tracker.filter((r) => r.state && r.state !== 'drafted')
+    .map((r) => ({ organiser: clip(r.organiser, 90), state: r.state, sent_by: teamIds.has(r.sent_by) ? r.sent_by : r.sent_by ? 'a person' : null, sent_at: r.sent_at || null }))
+    .sort((a, b) => String(b.sent_at).localeCompare(String(a.sent_at)) || a.organiser.localeCompare(b.organiser));
+  const sent_by = {}; for (const r of outreach_sent) if (r.sent_by) sent_by[r.sent_by] = (sent_by[r.sent_by] || 0) + 1;
+  const organiser_visits = viaViews.find(([k]) => k === 'organiser')?.[1] ?? 0;
+  // (3) today, by person: a status file's `today` list when it has one, else its latest timed `done` lines
+  const timeOf = (x) => { const m = /^\D{0,12}?(\d{1,2}):(\d{2})/.exec(String(x)); return m ? +m[1] * 60 + +m[2] : null; };
+  const today_by_person = people.filter((p) => status[p.id]).map((p) => {
+    const s = status[p.id];
+    if (Array.isArray(s.today) && s.today.length) return { id: p.id, name: p.name, source: 'today', items: asList(s.today).slice(0, 3).map((x) => clip(x, 170)), updated: s.updated || null };
+    const d = asList(s.done).map((x, i) => ({ x, i, t: timeOf(x) }));
+    const u = parseT(s.updated), uMin = u == null ? null : new Date(u).getUTCHours() * 60 + new Date(u).getUTCMinutes();
+    // a line's HH:MM has no date: one later than the status file's own time of day was written on an earlier day
+    const timed = d.filter((o) => o.t != null && (uMin == null || o.t <= uMin)).sort((a, b) => b.t - a.t || b.i - a.i);
+    return { id: p.id, name: p.name, source: 'latest done', items: (timed.length ? timed.slice(0, 2) : d.slice(-2)).map((o) => clip(o.x, 170)), updated: s.updated || null };
+  });
+  // (4) the asks for Dinis, ranked: a deadline still ahead first (soonest), then urgent, then newest; a passed deadline last
+  const dueOf = (txt, at) => { const m = /\b(?:before|by|until)\s+(\d{1,2}):(\d{2})/i.exec(txt); if (!m || +m[1] > 23 || +m[2] > 59) return null; const base = parseT(at); if (base == null) return null; const d = new Date(base); d.setUTCHours(+m[1], +m[2], 0, 0); return d.getTime(); };
+  const dinis_ranked = asks.filter((a) => a.to_dinis).map((a) => {
+    const due = dueOf(a.text, a.at), urgent = /\b(urgent|asap|blocked|blocking|right now)\b/i.test(a.text);
+    const tier = due != null && due >= now ? 0 : urgent ? 1 : due == null ? 2 : 3;
+    return { from: a.from, at: a.at || null, text: a.text, due: due == null ? null : new Date(due).toISOString().slice(0, 16) + 'Z', urgent, tier };
+  }).sort((x, y) => x.tier - y.tier || (x.tier === 0 ? x.due.localeCompare(y.due) : String(y.at || '').localeCompare(String(x.at || ''))));
+  // the top three come from three different senders where possible, so one busy status file cannot fill them
+  const dinis_top = []; for (const a of dinis_ranked) if (dinis_top.length < 3 && !dinis_top.some((b) => b.from === a.from)) dinis_top.push(a);
+  for (const a of dinis_ranked) if (dinis_top.length < 3 && !dinis_top.includes(a)) dinis_top.push(a);
+  dinis_ranked.sort((x, y) => (dinis_top.includes(y) ? 1 : 0) - (dinis_top.includes(x) ? 1 : 0) || dinis_top.indexOf(x) - dinis_top.indexOf(y));
+  // (5) only the exceptions: conductors and agents that are quiet or not reporting
+  const exceptions = [
+    ...people.filter((p) => p.updated && !p.online).map((p) => ({ name: p.conductor, kind: 'conductor', why: 'quiet', age_min: p.age_min })),
+    ...agents.filter((a) => !a.online).map((a) => ({ name: a.name, kind: 'agent', why: a.listed_only ? 'stopped or not reporting' : a.updated ? 'quiet' : 'no time in its status file', age_min: a.age_min })),
+  ].sort((a, b) => (b.age_min ?? 1e9) - (a.age_min ?? 1e9));
+  const watched = people.filter((p) => p.updated).length + agents.length;
+  // (6) every colour says why, in words
+  const notJoined = people.filter((p) => !p.updated), quietC = people.filter((p) => p.updated && !p.online);
+  const why = {
+    where: health.events.count === 0 ? 'no events live' : stale ? `${stale} events not re-read at source for over 3 h` : '',
+    onboarded: [notJoined.length ? `${notJoined.length} of ${people.length} people have not joined (${notJoined.map((p) => p.id).join(', ')})` : '', quietC.length ? `${quietC.length} conductors quiet for over ${ONLINE_MIN} min (${quietC.map((p) => p.id).join(', ')})` : ''].filter(Boolean).join('; '),
+    communicating: !inboxes.length ? 'no inboxes yet' : dinisAsks ? `${dinisAsks} asks are waiting for Dinis` : '',
+    data: [newest == null ? 'no event re-read yet' : newest >= 2 ? `events last re-read ${ago(newest)} (over 2 h)` : '', trafficAge == null ? 'traffic never drained' : trafficAge >= 3 ? `traffic last drained ${ago(trafficAge)} (over 3 h)` : ''].filter(Boolean).join('; '),
+    outreach: !outreach ? 'no outreach desk yet' : !outreach.contacted ? 'no organiser contacted yet' : '',
+  };
+
   const sections = [
     { key: 'where', title: 'Where are we', health: hc(health.events.count > 0 && stale === 0, health.events.count > 0), headline: `${health.events.count} events live; ${tally(work).done} of ${work.length} work items done` },
     { key: 'onboarded', title: 'Who is onboarded', health: hc(online(people) >= people.filter((p) => p.updated).length && people.filter((p) => !p.updated).length === 0, online(people) > 0), headline: `${health.onboarded.length} of ${people.length} people joined; ${online(people)} conductors and ${online(agents)} of ${agents.filter((a) => !a.listed_only).length} agents online` },
     { key: 'communicating', title: 'What is communicating', health: hc(dinisAsks === 0 && inboxes.length > 0, inboxes.length > 0), headline: `${inboxes.length} inboxes; ${asks.length} open asks, ${dinisAsks} for Dinis` },
     { key: 'data', title: 'How the data flows', health: hc(newest != null && newest < 2 && trafficAge != null && trafficAge < 3, newest != null && newest < 6), headline: `events re-read ${newest == null ? '?' : newest < 1 ? Math.round(newest * 60) + ' min' : newest.toFixed(1) + ' h'} ago; traffic drained ${trafficAge == null ? 'never' : trafficAge < 1 ? Math.round(trafficAge * 60) + ' min ago' : trafficAge.toFixed(1) + ' h ago'}` },
-    { key: 'outreach', title: 'Outreach', health: hc(outreach && outreach.contacted > 0, outreach && outreach.drafts_ready > 0), headline: outreach ? `${outreach.drafts_ready} drafts ready, ${outreach.contacted} of ${outreach.organisers_listed} organisers contacted, ${outreach.answered} answered` : 'no desk yet' },
-  ];
+    { key: 'outreach', title: 'Outreach', health: hc(outreach && outreach.contacted > 0, outreach && outreach.drafts_ready > 0), headline: outreach ? `${outreach.organisers_listed} organisers listed, ${outreach.contacted} contacted, ${outreach.answered} answered, ${outreach.joined} joined` : 'no desk yet' },
+  ].map((x) => ({ ...x, why: x.health === 'green' ? '' : why[x.key] || 'see the section' }));
   const bad = sections.filter((x) => x.health !== 'green');
   const overall = { health: sections.some((x) => x.health === 'red') ? 'red' : bad.length ? 'amber' : 'green' };
-  overall.text = overall.health === 'green' ? 'Swarm healthy: every section is green' : `Swarm ${overall.health === 'red' ? 'broken' : 'needs a look'}: ` + bad.map((x) => `${x.title.toLowerCase()} (${x.headline})`).join('; ');
+  overall.text = overall.health === 'green' ? 'Swarm healthy: every section is green' : `Swarm ${overall.health === 'red' ? 'broken' : 'needs a look'}: ` + bad.map((x) => `${x.title.toLowerCase()}: ${x.why}`).join('; ');
+  overall.reasons = bad.map((x) => ({ key: x.key, title: x.title, health: x.health, why: x.why }));
   const ask_groups = {}; for (const a of asks) { const k = a.to_dinis ? 'Dinis' : a.from; (ask_groups[k] ||= []).push(a); }
   const flow = { version: process.env.VERSION || 'local', last_commit_by_agent: lastBy, last_capture: jread(join(root, 'data/captures.json'))?.updated || null, traffic_last_hour: lastHour, by_via: via };
 
@@ -146,6 +208,10 @@ export async function collectSwarm({ root, roster, status, board, traffic, activ
     changes: ch.list, changes_note: ch.shallow ? 'The build checkout is shallow, so fewer than 20 changes are shown; the full list is at ' + repo + '/commits/dev.' : null,
     health, outreach: outreach ? { updated: outreach.updated, by: outreach.by, drafts_ready: outreach.drafts_ready, organisers_listed: outreach.organisers_listed, contacted: outreach.contacted, answered: outreach.answered, joined: outreach.joined } : null,
     traffic: t ? { generated: traffic.generated, views: t.views, reads: t.reads, tabs: t.tabs, countries: t.countries, shares: t.shares } : null,
+    // added by Jose's proposal (approved by Dinis, 11 Nov 2026): see the comment in collectSwarm
+    readers, outreach_sent, outreach_sent_by: sent_by, organiser_visits, today_by_person,
+    dinis_top, dinis_ranked,
+    exceptions, exceptions_note: `${watched - exceptions.length} of ${watched} conductors and agents reporting within ${ONLINE_MIN} min, as of the build`,
   };
 }
 
@@ -155,8 +221,19 @@ export const swarmCss = `.sg{display:grid;grid-template-columns:repeat(auto-fit,
 .cc{max-width:1200px;overflow-wrap:anywhere}.cc .pg>*,.cc .cols>*{min-width:0}main:has(.cc){max-width:1200px}.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:12px;align-items:start}
 .pn{background:var(--card);border:1px solid var(--line);border-top:6px solid #999;border-radius:8px;padding:4px 14px 10px}.pn.green{border-top-color:#1a9a5b}.pn.amber{border-top-color:#e0a100}.pn.red{border-top-color:#d33}
 .pn h2{margin:.6em 0 .2em}.pn h3{font-size:1rem;margin:.8em 0 .3em}.hl{font-size:1.05rem;margin:.2em 0 .6em;font-weight:600}.hd{display:inline-block;width:.85em;height:.85em;border-radius:50%;margin-right:.45em;vertical-align:baseline;background:#999}.hd.green{background:#1a9a5b}.hd.amber{background:#e0a100}.hd.red{background:#d33}
-.ov{font-size:1.15rem;font-weight:600;margin:.3em 0 .6em}.fold{margin:10px 0}.fold summary{cursor:pointer}details>summary{cursor:pointer}.pg{grid-template-columns:repeat(auto-fit,minmax(min(100%,370px),1fr))!important}.kv{padding-left:1.1em}.kv li{list-style:disc;margin:.25em 0}.ask ul{margin:.2em 0;padding-left:1.1em}.ask li{list-style:disc}.ask.me{border-left:4px solid #d33;padding-left:8px;margin:6px 0}
-.cols{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:0 12px}.bar .d{background:var(--accent)}.bar .c{background:#2f6fd6}.bar .o{background:#c7a100}.ask{border-left:4px solid #d33}`;
+.ov{margin:var(--s3) 0 var(--s4);font-size:var(--fs-ui);line-height:1.55;color:var(--ink-2)}.fold{margin:10px 0}.fold summary{cursor:pointer}details>summary{cursor:pointer}.pg{grid-template-columns:repeat(auto-fit,minmax(min(100%,370px),1fr))!important}.kv{padding-left:1.1em}.kv li{list-style:disc;margin:.25em 0}.ask ul{margin:.2em 0;padding-left:1.1em}.ask li{list-style:disc}.ask.me{border-left:4px solid #d33;padding-left:8px;margin:6px 0}
+.cols{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:0 12px}.bar .d{background:var(--accent)}.bar .c{background:#2f6fd6}.bar .o{background:#c7a100}.ask{border-left:4px solid #d33}
+/* design pass on Jose's blocks (designer.fringe@PrompTugal.jose): Newsreader figures, Plex Mono for times and sources, thin green rules, tokens only */
+.tm{font-family:var(--mono);font-size:.92em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ov .ovh{display:block;font:600 var(--fs-lead-hed)/1.2 var(--serif);letter-spacing:-.01em;color:var(--ink);margin:0 0 var(--s1)}.ov .ovh .hd{width:.55em;height:.55em;margin-right:.45em;vertical-align:.1em}.ov .ovr{display:block;padding-left:var(--fs-lead-hed)}.ov a{color:var(--ink);font-weight:600}
+.why{margin:-.2em 0 var(--s3);font-size:var(--fs-ui);line-height:1.45;color:var(--ink-2)}.why strong{font:500 var(--fs-label)/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-right:.3em;color:var(--warn)}.pn.red .why strong{color:var(--live)}
+.rd h2,.tbp h2{margin:.9em 0 .3em}.rd .sg{gap:var(--s4) var(--s5);margin:var(--s3) 0}.rd .card{margin:0;padding:var(--s2) 0 0;background:transparent;border:0;border-top:var(--rule-green);border-radius:0;font-size:var(--fs-ui);line-height:1.35;color:var(--ink-2)}.rd .sg b{font:600 clamp(2.5rem,8vw,3.25rem)/1 var(--serif);letter-spacing:-.02em;font-variant-numeric:lining-nums tabular-nums;color:var(--ink);margin:0 0 var(--s1)}.rd>.muted{font-family:var(--mono);font-size:var(--fs-label);line-height:1.5}
+.tbp .cols{gap:var(--s3)}.tbp li.card{margin:0;padding:var(--s3) var(--s3) var(--s2);display:flex;flex-direction:column;font-size:var(--fs-ui);line-height:1.45}.tbp .tbh{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:0 var(--s2);margin:0 0 var(--s1)}.tbp .tbh strong{font:600 var(--fs-hed)/1.2 var(--serif);color:var(--ink)}.tbp .tbh a{font:var(--fs-label)/1.3 var(--mono);color:var(--ink-3);text-decoration-color:var(--rule-2)}.tbp .tbh a:hover{color:var(--brand)}
+.tbp .it{margin:0 0 var(--s1);padding:var(--s1) 0 0;border-top:1px solid var(--hair);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}.tbp .it .tm{color:var(--ink-2);font-weight:500}.tbp .src{margin:auto 0 0;padding-top:var(--s1);font:var(--fs-label)/1.4 var(--mono);color:var(--ink-3)}
+.fun{display:flex;flex-wrap:wrap;align-items:flex-end;gap:var(--s2);margin:var(--s2) 0 var(--s3)}.fun .card{margin:0;flex:1 1 0;min-width:4.2em;padding:var(--s2) 0 0;background:transparent;border:0;border-top:var(--rule-green);border-radius:0;font-size:var(--fs-meta);line-height:1.3;color:var(--ink-2);overflow-wrap:normal;word-break:normal;hyphens:none}.fun b{display:block;font:600 1.75rem/1.05 var(--serif);font-variant-numeric:lining-nums tabular-nums;color:var(--ink)}.fun .ar{align-self:center;color:var(--ink-3)}.fun+p{font-size:var(--fs-ui)}
+.sent{padding:0;margin:var(--s1) 0 var(--s3);font-size:var(--fs-ui)}.sent li{list-style:none;margin:0;padding:var(--s1) 0;border-top:1px solid var(--hair)}.sent li:last-child{border-bottom:1px solid var(--hair)}.sent .tm,.kv .tm{color:var(--ink-3)}.kv .tm{font-size:var(--fs-meta)}
+.chip{display:inline-block;vertical-align:.1em;border:1px solid var(--rule-2);border-radius:var(--radius);padding:1px var(--s1);margin-right:var(--s2);font:500 var(--fs-label)/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;color:var(--ink-2)}.chip.due{border-color:var(--live);color:var(--live)}.chip.urg{border-color:var(--warn);color:var(--warn)}
+.ask ol.top{margin:.3em 0;padding-left:1.7em}.ask ol.top>li{list-style:decimal;margin:.5em 0}.ask ol.top>li::marker{font-family:var(--mono);font-size:var(--fs-label);color:var(--green)}.ask.me li{font-size:var(--fs-ui);line-height:1.45}.ask.me li>.muted{font-family:var(--mono);font-size:var(--fs-label)}`;
 
 export function swarmBody(s, esc, repo) {
   const c = s.counts, f = s.flow;
@@ -167,25 +244,44 @@ export function swarmBody(s, esc, repo) {
     (x.doing?.length ? `<p>${esc(x.doing[0])}</p>` : x.state ? `<p class="muted">${esc(x.state)}</p>` : '') + '</li>';
   const bar = (t) => { const n = t.open + t.claimed + t.done + t.other || 1; return `<div class="bar" role="img" aria-label="${t.done} done, ${t.claimed} claimed, ${t.open} open"><i class="d" style="width:${100 * t.done / n}%"></i><i class="c" style="width:${100 * t.claimed / n}%"></i><i class="o" style="width:${100 * t.open / n}%"></i></div><p class="muted">${t.done} done · ${t.claimed} claimed · ${t.open} open</p>`; };
   const H = Object.fromEntries(s.sections.map((x) => [x.key, x]));
-  const panel = (k, inner) => `<section class="pn ${H[k].health}" id="s-${k}"><h2><span class="hd ${H[k].health}" role="img" aria-label="health: ${H[k].health}"></span>${esc(H[k].title)}</h2><p class="hl">${esc(H[k].headline)}</p>${inner}</section>`;
+  const panel = (k, inner) => `<section class="pn ${H[k].health}" id="s-${k}"><h2><span class="hd ${H[k].health}" role="img" aria-label="health: ${H[k].health}"></span>${esc(H[k].title)}</h2><p class="hl">${esc(H[k].headline)}</p>${H[k].why ? `<p class="why"><strong>Why ${H[k].health}:</strong> ${esc(H[k].why)}</p>` : ''}${inner}</section>`;
+  const N = (x) => esc(String(Number.isFinite(Number(x)) ? Number(x) : 0));
+  const R = s.readers, short = (n) => String(n || '').replace('.fringe@PrompTugal.', '@').replace('@PrompTugal.', '@');
   const accounts = c.by_account.map((a) => `<li>${esc(a.account)}: <strong>${a.online}</strong> of ${a.total} online</li>`).join('');
   const ev = s.health.events;
   const where = `<ul class="kv"><li>Site <strong id="v-ver">${esc(f.version)}</strong> <span class="muted" id="v-age"></span></li><li>Events live: <strong>${ev.count}</strong>; read at source from ${hhmm(ev.oldest_read)} (stalest) to ${hhmm(ev.newest_read)} (freshest)</li><li>Work board: ${bar(s.board.work)}</li><li>Design board: ${bar(s.board.design)}</li></ul>`;
   const onboarded = `<p class="muted">Not yet joined: ${esc(s.health.not_onboarded.join(', ') || 'nobody')}. Joined: ${esc(s.health.onboarded.join(', '))}.</p><ul class="kv">${accounts}</ul>`;
   const li = (l) => l.map((t) => `<li>${esc(t.length > 170 ? t.slice(0, 169) + '…' : t)}</li>`).join('');
   const dg = s.asks_by_addressee.find((g) => g.to === 'Dinis'), others = s.asks_by_addressee.filter((g) => g.to !== 'Dinis');
-  const asks = (dg ? `<div class="ask me"><strong>Dinis: waiting for you</strong> (${dg.count}, newest first)<ul>${li(dg.asks.slice(0, 5))}</ul>${dg.asks.length > 5 ? `<details><summary>${dg.asks.length - 5} more for Dinis</summary><ul>${li(dg.asks.slice(5))}</ul></details>` : ''}</div>` : '<p class="muted">Nothing waiting for Dinis.</p>') +
+  const rk = s.dinis_ranked || [];
+  const askLi = (a) => `<li>${a.tier === 0 ? `<span class="chip due">due ${hhmm(a.due)}</span>` : a.urgent ? '<span class="chip urg">urgent</span>' : ''}${esc(a.text.length > 170 ? a.text.slice(0, 169) + '…' : a.text)} <span class="muted">(from ${esc(short(a.from))}${a.at ? ', status ' + hhmm(a.at) : ''})</span></li>`;
+  const asks = (rk.length ? `<div class="ask me"><strong>Dinis: the top ${Math.min(3, rk.length)} of ${rk.length}</strong> <span class="muted">(a deadline still ahead first, then urgent, then the most recently updated status file; three different senders where possible)</span><ol class="top">${rk.slice(0, 3).map(askLi).join('')}</ol>${rk.length > 3 ? `<details><summary>${rk.length - 3} more for Dinis</summary><ul>${rk.slice(3).map(askLi).join('')}</ul></details>` : ''}</div>` : dg ? `<div class="ask me"><strong>Dinis: waiting for you</strong> (${dg.count})<ul>${li(dg.asks.slice(0, 5))}</ul></div>` : '<p class="muted">Nothing waiting for Dinis.</p>') +
     (others.length ? `<details><summary>Asks for others: ${others.reduce((n, g) => n + g.count, 0)} from ${others.length} agents</summary>${others.map((g) => `<div class="ask"><strong>${esc(g.to)}</strong> (${g.count})<ul>${li(g.asks)}</ul></div>`).join('')}</details>` : '');
   const A = s.activity, act = (w) => `<strong>${w.commits}</strong> commits, <strong>${w.deploys}</strong> deploys, <strong>${w.agents}</strong> agents`;
-  const comm = `${A ? `<p class="hl" id="act">Last 15 min: ${act(A.last_15_min)}<br>Last hour: ${act(A.last_hour)}</p><p class="muted">As of the build; this line recounts by your clock from <a href="/api/v1/activity.json">activity.json</a>.</p>` : ''}<ul class="kv">${s.inboxes.map((i) => { const lc = f.last_commit_by_agent[i.agent]; return `<li>${esc((i.agent || i.id).replace('@PrompTugal.', '@'))}: ${i.messages == null ? 'messages ?' : i.messages + ' message' + (i.messages === 1 ? '' : 's') + (i.last_at ? ', last ' + hhmm(i.last_at) : '')}${lc ? ', last commit ' + hhmm(lc) : ''}</li>`; }).join('')}</ul><p class="muted">Counts from data/inbox-counts.json (the lead's count of each lane; read or not is up to each agent).</p><h3>Open asks, by addressee</h3>${asks}`;
+  const ex = s.exceptions || [];
+  const exList = ex.length ? `<h3>Needs attention (${ex.length})</h3><ul class="kv">${ex.slice(0, 8).map((x) => `<li><strong>${esc(short(x.name))}</strong>: ${esc(x.why)}${x.age_min != null ? `, last status <span class="tm">${age(x)}</span>` : ''}</li>`).join('')}</ul>${ex.length > 8 ? `<details><summary>${ex.length - 8} more</summary><ul class="kv">${ex.slice(8).map((x) => `<li>${esc(short(x.name))}: ${esc(x.why)}${x.age_min != null ? `, last status <span class="tm">${age(x)}</span>` : ''}</li>`).join('')}</ul></details>` : ''}` : '<h3>Needs attention</h3><p class="muted">Nobody: every conductor and agent reported recently.</p>';
+  const inboxList = `<ul class="kv">${s.inboxes.map((i) => { const lc = f.last_commit_by_agent[i.agent]; return `<li>${esc((i.agent || i.id).replace('@PrompTugal.', '@'))}: ${i.messages == null ? 'messages ?' : i.messages + ' message' + (i.messages === 1 ? '' : 's') + (i.last_at ? ', last ' + hhmm(i.last_at) : '')}${lc ? ', last commit ' + hhmm(lc) : ''}</li>`; }).join('')}</ul><p class="muted">Counts from data/inbox-counts.json (the lead's count of each lane; read or not is up to each agent).</p>`;
+  const comm = `${A ? `<p class="hl" id="act">Last 15 min: ${act(A.last_15_min)}<br>Last hour: ${act(A.last_hour)}</p><p class="muted">As of the build; this line recounts by your clock from <a href="/api/v1/activity.json">activity.json</a>.</p>` : ''}${exList}<p class="muted">${esc(s.exceptions_note || '')}.</p><details><summary>All ${s.inboxes.length} inboxes</summary>${inboxList}</details><h3>Open asks, by addressee</h3>${asks}`;
   const tl = f.traffic_last_hour;
   const data = `<ul class="kv"><li>Last researcher re-read: <strong>${hhmm(ev.newest_read)}</strong></li><li>Last capture (work/27): ${f.last_capture ? esc(f.last_capture) : 'none yet'}</li><li>Last deploy: <span id="v-dep" class="muted">checking version.json…</span></li><li>Traffic in the last hour: ${tl ? `<strong>${tl[1]}</strong> views (${esc(tl[0])})` : 'no views yet'}${s.traffic ? ` · ${s.traffic.views} views in all, ${s.traffic.countries} countries · <a href="/traffic/">traffic</a>` : ''}</li><li>Gate: green (a deploy is built only after <code>validate.mjs</code> passes; this page is that build)</li></ul>`;
-  const o = s.outreach;
-  const outreach = o ? `<div class="sg"><div class="card"><b>${o.drafts_ready}</b>drafts ready</div><div class="card"><b>${o.contacted}</b>contacted of ${o.organisers_listed}</div><div class="card"><b>${o.answered}</b>answered</div><div class="card"><b>${o.joined}</b>joined</div></div>
-<p class="muted">Visits by ?via= channel: ${f.by_via.length ? f.by_via.map(([k, n]) => `${esc(k)} ${n}`).join(' · ') : 'none yet'}. An agent never sends: a person does. <a href="${repo}/blob/dev/work/29-outreach-desk.md">work/29</a> · <a href="${repo}/tree/dev/work/drafts">drafts</a>.</p>` : '<p class="muted">No outreach counts yet (work/29).</p>';
+  const o = s.outreach, sent = s.outreach_sent || [], sb = Object.entries(s.outreach_sent_by || {});
+  const outreach = o ? `<div class="fun" role="list" aria-label="outreach funnel"><div class="card" role="listitem"><b>${N(o.organisers_listed)}</b>listed</div><span class="ar" aria-hidden="true">→</span><div class="card" role="listitem"><b>${N(o.contacted)}</b>contacted</div><span class="ar" aria-hidden="true">→</span><div class="card" role="listitem"><b>${N(o.answered)}</b>answered</div><span class="ar" aria-hidden="true">→</span><div class="card" role="listitem"><b>${N(o.joined)}</b>joined</div></div>
+<p>Visits from organiser notes (<code>?via=organiser</code>): <strong>${N(s.organiser_visits)}</strong>${sb.length ? ` · sent by ${sb.map(([k, n]) => `<strong>${esc(k)}</strong> ${N(n)}`).join(', ')}` : ''}</p>
+${sent.length ? `<h3>Notes sent (${sent.length})</h3><ul class="sent">${sent.map((r) => `<li><strong>${esc(r.organiser)}</strong>: ${esc(r.state)}${r.sent_by ? ' by ' + esc(r.sent_by) : ''}${r.sent_at ? `, <span class="tm">${hhmm(r.sent_at)}</span>` : ''}</li>`).join('')}</ul>` : '<p class="muted">No note sent yet.</p>'}
+<p class="muted">${N(o.drafts_ready)} drafts ready. Visits by ?via= channel: ${f.by_via.length ? f.by_via.map(([k, n]) => `${esc(k)} ${N(n)}`).join(' · ') : 'none yet'}. An agent never sends: a person does. <a href="${repo}/blob/dev/work/23-tracker.md">tracker</a> · <a href="${repo}/blob/dev/work/29-outreach-desk.md">work/29</a> · <a href="${repo}/tree/dev/work/drafts">drafts</a>.</p>` : '<p class="muted">No outreach counts yet (work/29).</p>';
+  const readersBlock = R ? `<section class="rd" aria-label="For readers, now"><h2>For readers, now</h2><div class="sg"><div class="card"><b>${N(R.events_to_come_today)}</b>events still to come today</div><div class="card"><b>${N(R.online_to_come_today)}</b>of them online</div><div class="card"><b>${N(R.reread_last_hour)}</b>events re-read at source in the last hour</div><div class="card"><b>${N(R.views_last_hour ? R.views_last_hour.views : 0)}</b>views ${R.views_last_hour ? 'in the hour from <span class="tm">' + esc(String(R.views_last_hour.hour).slice(11, 16)) + ' UTC</span>' : 'this hour'}</div></div>
+<p class="muted">As of the build (${esc(s.built_at.slice(11, 16))} UTC). Views by channel since launch: ${R.views_by_channel.length ? R.views_by_channel.map(([k, n]) => `${esc(k)} ${N(n)}`).join(' · ') : 'none tagged yet'}. <a href="/now/">What is on now</a> · <a href="/traffic/">traffic</a>.</p></section>` : '';
+  // a line's leading HH:MM (the same pattern collectSwarm's timeOf reads) set in Plex Mono; each piece escaped on its own
+  const tmLead = (x) => { const m = /^(\D{0,12}?)(\d{1,2}:\d{2})/.exec(x); return m ? `${esc(m[1])}<span class="tm">${esc(m[2])}</span>${esc(x.slice(m[0].length))}` : esc(x); };
+  const tbp = (s.today_by_person || []).length ? `<section class="tbp" aria-label="Today, by person"><h2>Today, by person</h2><ul class="cols">${s.today_by_person.map((p) => `<li class="card"><div class="tbh"><strong>${esc(p.name)}</strong>${p.updated ? ` <a href="${repo}/blob/dev/team/${esc(p.id)}/status.json" title="their status file, in full">status ${String(p.updated).slice(0, 10) === s.built_at.slice(0, 10) ? '' : esc(String(p.updated).slice(5, 10)) + ' '}${hhmm(p.updated)}</a>` : ''}</div>${p.items.map((x) => `<p class="it" title="${esc(x)}">${tmLead(x)}</p>`).join('')}${p.source === 'today' ? '' : '<p class="src">latest lines of their status file</p>'}</li>`).join('')}</ul></section>` : '';
+  const ovh = (t) => `<span class="ovh"><span class="hd ${esc(s.overall.health)}"></span>${t}</span>`;
+  const reasons = (s.overall.reasons || []).length ? ovh(`Swarm ${s.overall.health === 'red' ? 'broken' : 'needs a look'}:`) + ' ' + s.overall.reasons.map((r, i, all) => `<span class="ovr"><a href="#s-${esc(r.key)}">${esc(r.title.toLowerCase())}</a>: ${esc(r.why)}${i < all.length - 1 ? ';' : ''}</span>`).join(' ') : ovh(esc(s.overall.text));
   return `<div class="sw cc"><h1>Control centre</h1>
-<p class="ov ${s.overall.health}"><span class="hd ${s.overall.health}"></span>${esc(s.overall.text)}</p>
+<p class="ov ${esc(s.overall.health)}">${reasons}</p>
 <p class="muted">Built ${esc(s.built_at.slice(0, 16).replace('T', ' '))} UTC from the repository; <span id="live">re-reading <a href="/api/v1/swarm.json">swarm.json</a> in your browser…</span> Online = status file updated in the last ${s.online_minutes} minutes. Health: <span class="hd green"></span> good · <span class="hd amber"></span> needs a look · <span class="hd red"></span> broken.</p>
+${readersBlock}
+${tbp}
+<h2>The swarm</h2>
 <div class="sg" id="counts"><div class="card"><b id="n-c">${c.conductors_online}</b>conductors online (of ${c.conductors_started} joined, ${c.conductors_total} people)</div><div class="card"><b id="n-a">${c.agents_online}</b>agents online (of ${c.agents_total})</div><div class="card"><b>${c.inboxes}</b>inboxes</div><div class="card"><b>${ev.count}</b>events live</div></div>
 <div class="pg">${panel('where', where)}${panel('onboarded', onboarded)}${panel('communicating', comm)}${panel('data', data)}${panel('outreach', outreach)}</div>
 ${talkBox()}

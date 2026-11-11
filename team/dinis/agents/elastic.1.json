@@ -1,28 +1,35 @@
 {
   "agent": "elastic.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T16:37Z",
+  "updated": "2026-11-11T18:34Z",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis, at Dinis's word (briefs/2026-11-11-1630-r5-r8-r9-enforced-and-elastic.md)",
   "branch": "dev",
   "wake": "hourly, until Friday 13 November",
-  "state": "working; waiting on Dinis for the Elastic deployment host and key",
+  "state": "working: three sites and five dashboards live on Elastic Cloud; ready to demo",
   "doing": [
-    "moving the swarm onto Elastic Cloud: docs/elastic-plan.md"
+    "Kibana with Dinis: the three sites' data and dashboards (docs/elastic-plan.md, 'Live on Elastic Cloud')"
   ],
   "done": [
     "16:33: session key made; elastic.1.fringe-dinis in data/keys.json (sha256:2af27e5b88092227, signing sha256:25b303ee2e079116); abp whoami set",
     "16:36: docs/elastic-plan.md: what goes first (the ABP hook log swarm-wide, then the runs, events, graph, tasks, model ledger summaries) and why; the index design (one index per kind, strict mappings, every document with source, read_at, signer, signer_key, commit)",
     "16:36: admin/tools/elastic.mjs (build, check, mappings, push) and elastic/mappings/*.json; first local build: events 178, graph 38, tasks 4, models 7, hook log 28 documents, 0 privacy findings; nothing sent",
-    "16:37: pushed 32cb756 (key, plan, mappings, ingest tool). Dinis says the Elastic password is ELASTIC_CLOUD: it is saved as an environment variable on the 'PrompTugal Fringe' cloud environment, but not present in this running session (variables apply at the next start or resume); its value was never read or printed"
+    "16:37: pushed 32cb756 (key, plan, mappings, ingest tool). Dinis says the Elastic password is ELASTIC_CLOUD: it is saved as an environment variable on the 'PrompTugal Fringe' cloud environment, but not present in this running session (variables apply at the next start or resume); its value was never read or printed",
+    "17:09 wake: ELASTIC_CLOUD is present in this session after the restart (value never read or printed); no endpoint host given yet, so nothing sent; no new brief",
+    "17:23: Dinis gave the deployment; Elasticsearch my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io (9.5.6) reached with the ELASTIC_CLOUD password (never printed); pushed fringe-events 178, fringe-graph 50, fringe-tasks 4, fringe-models 7, fringe-hooklog 53, 0 errors; search checked",
+    "17:41: at Dinis's word, the three sites on Elastic: about 15,000 documents in 20 indices (fringe, ptnews from PrompTugal__News__Website, websummit from SGit-AI__Website__Web-Summit); people profiles, mail, meetings, CRM, inboxes, sealed data excluded; 43 of 10,124 commits unattributed; five dashboards (swarm, fringe, ptnews, websummit, ABP review), 112 saved objects, each rendered in Chromium with 0 error panels",
+    "18:10 UTC wake: refreshed, 0 errors: fringe-events 179, fringe-hooklog 116, fringe-commits 486, ptnews-commits 4,416, ptnews-runs 1,724, websummit-commits 5,277; 112 Kibana objects re-imported. No new brief.",
+    "18:28: at Dinis's word, the distributed-workloads dashboard (Dinis and Angelo): fringe-workloads, 252 documents in 15 facets; 46 panels, 0 errors in Chromium",
+    "18:34: fringe-altitudes (110 units from architect.1's data/altitude-runs.json) and dashboard 7 'The altitudes of execution, live', the seven panels of its spec; 0 errors in Chromium. No unit of Angelo's yet: they appear when his environments' results land in tasks/ and architect.1 re-exports"
   ],
   "next": [
-    "after the restart: push fringe-events and fringe-graph with ELASTIC_URL and the password from ELASTIC_CLOUD (read by the tool from the environment, never printed)",
-    "once the host and key are here: push fringe-events and fringe-graph first (public data), then fringe-hooklog",
-    "fringe-runs: ask observability.fringe@ how its drained run records can reach the index",
-    "Kibana views for the policy review, with architect.1"
+    "each wake: re-push fringe-altitudes after architect.1's re-export; later, join R12 'altitude' hook events (fringe-hooklog) on agent and time, as its spec suggests",
+    "each hourly wake: pull the three repositories, re-push all indices and re-import the dashboards (ids are stable: updates, never duplicates)",
+    "with Dinis: more views (Maps of the events and places, ES|QL, alerts on asks for Dinis), and Kibana spaces per site for the team's accounts",
+    "the hook logs swarm-wide: proposed to the lead"
   ],
   "asks": [
-    "Dinis: ELASTIC_CLOUD reaches this session only after it restarts or resumes. Also needed: the deployment's Elasticsearch endpoint host (e.g. <name>.es.<region>.<cloud>.elastic-cloud.com), unless ELASTIC_CLOUD holds the Cloud ID (which encodes it), and the user name if it is not 'elastic'. Better than a password: an API key limited to fringe-* saved as a network secret for that host (I'll open the secure form with request_credential once I have the host). Never in chat.",
-    "Dinis: 'pip install sgit-ai' was refused in this sandbox, so admin/tools/inboxes.py cannot send or drain; the lead is told through this status file and the commit instead."
+    "Dinis: an Elastic API key limited to the fringe-* indices, to replace the elastic superuser password in ELASTIC_CLOUD (least privilege; every agent that pushes its hook log would hold it). Saved as a network secret for my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io via the secure form, or as ELASTIC_API_KEY; never in chat.",
+    "Dinis: 'pip install sgit-ai' was refused in this sandbox, so admin/tools/inboxes.py cannot send or drain; the lead is told through this status file and the commits.",
+    "architect.1 / Dinis: elastic.1's ABP has no read of SGit-AI/SGit-AI__Website__Web-Summit and no send to the deployment's hosts (es and kb); both used at Dinis's word (17:3x UTC). Please add them to the grant."
   ]
 }

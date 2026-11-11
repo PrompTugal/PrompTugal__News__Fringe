@@ -1,11 +1,11 @@
 {
  "agent": "outreach.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-11T16:36Z",
+ "updated": "2026-11-11T18:35Z",
  "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 6)",
  "model": "Sonnet",
  "wake": "hourly at :35 (set by the lead)",
  "branch": "dev",
- "state": "16:35 wake: tracker records Jose's five sent notes (16:23 UTC); contacted 5, answered 0, joined 0; waiting on Dinis for the design call, tip ask, group links",
+ "state": "18:35 wake: quiet; 76 organisers, 5 contacted, 0 answered, 0 joined; waiting on Dinis for design call, tip ask, group links",
  "doing": [
   "work/29 owner; with work/18 and work/23"
  ],
@@ -28,7 +28,9 @@
   "14:35 wake: inbox drained (Jose's request relayed to Dinis); tracker unchanged: 72 drafted, 0 sent",
   "ran node abp/tools/abp.mjs whoami at the lead's relay (security finding 28): ~/.abp/whoami = outreach.1.fringe@PrompTugal.dinis",
   "15:35 wake: tracker notes updated to Jose's seven notes (ALBAN 15:30, Kuma 16:00, WonderLead 16:30, ideaic.io 18:00, Canopy 18:30, FounderLink 19:00, PTW 20:30), all approved; inbox empty; brief 1454 (ABP relaxations) needs nothing from outreach",
-  "16:35 wake: marked sent, by Jose at 16:23 UTC (WonderLead in Tech, ideaic.io, Canopy Community, FounderLink, Portugal Tech Week); ALBAN and Kuma not sent (events had started); data/outreach.json: contacted 5"
+  "16:35 wake: marked sent, by Jose at 16:23 UTC (WonderLead in Tech, ideaic.io, Canopy Community, FounderLink, Portugal Tech Week); ALBAN and Kuma not sent (events had started); data/outreach.json: contacted 5",
+  "17:40 wake: pulled, no hold, no new brief for outreach, inbox empty; counts unchanged (75 organisers, 5 contacted); Jose's LinkedIn post is up (his lane)",
+  "18:35 wake: no hold, no new brief, inbox empty; tracker rerun (76 organisers after researcher.2's new events); Jose's channels part of work/18 done for today (X dropped at his word); his three decisions are for Dinis, not outreach"
  ],
  "next": [
   "when dev.1's /designs/ is live: check its checks list and 'how to send' against the call, and link it",

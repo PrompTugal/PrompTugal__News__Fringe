@@ -1,6 +1,6 @@
 {
   "agent": "dev.2.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T16:27Z",
+  "updated": "2026-11-11T18:21Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "branch": "dev",
   "state": "working",
@@ -22,11 +22,15 @@
     "14:3x wake: second-opinion run 166 checked, 17 mismatches, 0.068 USD; models ledger refreshed",
     "15:3x wake: second-opinion 168 checked, 15 flagged, 0.077 USD; models ledger refreshed",
     "16:3x: second-opinion PAUSED for Luma/Meetup pages (lead's terms hold, work/49): code now skips luma.com, lu.ma, meetup.com; the 16:21 wake run fetched Luma pages before the hold reached me and its results were not committed",
-    "/models/: E1 to E3 noted as predating the Luma hold"
+    "/models/: E1 to E3 noted as predating the Luma hold",
+    "17:3x: second-opinion wired to data/feeds/luma-ical.json (no Luma page fetched, no model call for Luma): 100 Luma events compared, 1 status mismatch (funders-founders-night-altair)",
+    "/universe/ served (gravity.1's adapter), linked from the agentic-team nav and /graph/; one constant (admin/build/universe.mjs) picks vendored vs cross-site gravity.js",
+    "18:1x: Dinis decided /universe/ keeps loading gravity.js live from web-summit.sgit.ai (a domain he controls); constant left as is, ask closed",
+    "18:2x wake: second-opinion from the iCal feed (93 Luma events, 0 mismatches, $0); models ledger refreshed"
   ],
   "next": [
-    "when researcher.2 commits data/feeds/luma-ical.json (uid, url, start, end, location, status, feed, read_at), wire second-opinion.mjs to compare it with our entries by url/uid (no page fetch)",
-    "refresh /models/ ledger at each wake"
+    "refresh /models/ ledger at each wake",
+    "refresh /models/ ledger and second-opinion at each wake; ask researcher.2 for a stable event id/url in the feed so the 54 unmatched Luma events can be compared too"
   ],
   "asks": [
     "Dinis: approve the organiser offer in work/23 (it is marked 'draft until Dinis approves' on /organisers/); say yes and dev.2 flips it.",

@@ -1,7 +1,7 @@
 {
   "about": "Every agent's grant, flattened from abp/policies.json by node abp/tools/abp.mjs build: what /abp/ shows.",
   "policy": "0.4.0",
-  "sha256": "c616457892b22e84",
+  "sha256": "4b0d1d302579f325",
   "mode": "observe",
   "agents": [
     {
@@ -987,9 +987,34 @@
       "owns": [],
       "sends": [
         "dev.send.sgraph.ai",
-        "pki.sgit.ai"
+        "pki.sgit.ai",
+        "my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io",
+        "my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io"
       ],
       "page": "abp/elastic.1.fringe@PrompTugal.dinis.md"
+    },
+    {
+      "agent": "gravity.1.fringe@PrompTugal.silvio",
+      "role": "conductor",
+      "person": "silvio",
+      "account": "Silvio's",
+      "branch": "dev",
+      "writes": [
+        "team/silvio/agents/gravity.1.json",
+        "team/silvio/agents/gravity.1.fringe.json",
+        "team/silvio/agents/gravity.1/**",
+        "data/keys.json (your own entry)",
+        "data/inboxes/<your key id>.json",
+        "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
+        "team/silvio/**"
+      ],
+      "owns": [],
+      "sends": [
+        "dev.send.sgraph.ai",
+        "pki.sgit.ai"
+      ],
+      "page": "abp/gravity.1.fringe@PrompTugal.silvio.md"
     }
   ]
 }

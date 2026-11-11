@@ -1,7 +1,7 @@
 {
   "agent": "design.4.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T16:46Z",
-  "state": "D22, D27, D30, D31, D35 done; D37 filed (home online and cancelled controls, for design.1)",
+  "updated": "2026-11-11T18:52Z",
+  "state": "D39, D40 done (home.mjs, taken as design.1 had been silent since 17:54); nothing open",
   "doing": [],
   "done": [
     "D8: admin/build/tokens.css (design E ported), wired into build.mjs, graph colours moved to tokens; checked 390/1280, light/dark",
@@ -16,7 +16,10 @@
     "D35 nav state, 404 offer, tab-row scroll hint (14:5x UTC)",
     "abp whoami run (hook knows this session); D22 closed after a dark-mode check",
     "D27 closed: d is the live home page by the lab's design; audited against L1-L14, 44 px hit areas for header links",
-    "16:5x wake: read briefs to 16:30 (nothing for design); filed D37 from usability.1's scorecard (home is design.1's now)"
+    "16:5x wake: read briefs to 16:30 (nothing for design); filed D37 from usability.1's scorecard (home is design.1's now)",
+    "17:4x wake: nothing new for design; live pages /, /storm/, /how/, /designs/ checked",
+    "Checked Angelo's tokens.css edit (9a44247): --t-festival joins the graph-node kinds; it fits; made the dark value var(--red) (#f07278) so it follows the brand instead of a one-off #ff8a8f. Token changes: send them to design.4 (identity.mjs and tokens.css are in design.4's grant).",
+    "D39 online now and next; D40 counts agree (home.mjs)"
   ],
   "next": [
     "wait for the answer on L10; take any open D-task"

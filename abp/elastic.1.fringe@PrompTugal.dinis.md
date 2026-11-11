@@ -2,7 +2,7 @@
 title: "ABP: elastic.1.fringe@PrompTugal.dinis"
 agent: elastic.1.fringe@PrompTugal.dinis
 role: elastic
-policy: abp/policies.json v0.4.0 (sha256:c616457892b22e84)
+policy: abp/policies.json v0.4.0 (sha256:4b0d1d302579f325)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -19,7 +19,7 @@ authority: Dinis Cruz, operator
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
 - **Writes (outside git):** `/tmp/**`, `~/.sg-send/**`, `~/.abp/**`, `~/pki/**`, `~/.claude/projects/*/memory/**`, `~/promptugal/**`.
 - **Tools:** reading, searching and writing files inside the paths above; the shell, within the rules below; reading the web (never websummit.com by machine); GitHub's read tools on `promptugal/promptugal__news__fringe`, `promptugal/promptugal__news__website`, `promptugal/promptugal__news__storm-charles`; the cloud session's documentation, `add_repo` for reading, and its own wake.
-- **Sends to:** `dev.send.sgraph.ai`, `pki.sgit.ai` only.
+- **Sends to:** `dev.send.sgraph.ai`, `pki.sgit.ai`, `my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io`, `my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io` only.
 - **Pushes to:** `dev` with `AGENT=elastic.1.fringe@PrompTugal.dinis admin/tools/release.sh`.
 - **Never:** prints or commits an Elastic key; sends personal data or contact details to Elastic; changes another agent's files.
 - **Note:** started by architect.1 at Dinis's word in its session (2026-11-11T16:32Z: 'can you actually start a new Elastic conductor here? Because I want to move us to Elastic').
