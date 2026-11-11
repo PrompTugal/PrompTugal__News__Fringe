@@ -748,7 +748,7 @@
     {
       "name": "The Next Move (careers networking)",
       "url": "https://luma.com/aa65srr3",
-      "read_at": "2026-11-11T11:23:00Z",
+      "read_at": "2026-11-11T12:52:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:00:00Z",
       "end": "2026-11-11T19:00:00Z",
@@ -922,7 +922,7 @@
     {
       "name": "Travel Tech Pitch Party",
       "url": "https://luma.com/9jtn1muw",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T12:52:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:00:00Z",
       "end": "2026-11-11T21:00:00Z",
@@ -937,7 +937,7 @@
       "label": "fact",
       "cost": "free tier; paid tiers up to EUR 150",
       "storm_moved": false,
-      "check": "Added from the public Luma calendar listing and event page read at 2026-11-11T12:15:00Z.",
+      "check": "Luma start_at 17:00 UTC read 2026-11-11T12:52:00Z. The '6.30 PM' on the page is the Travel Tech pitch session inside the evening (5 PM networking, 6.30 PM pitch session, 7 PM to 9 PM networking, 9 PM afterparty), not the start.",
       "lane": "business",
       "size": "community"
     },
@@ -970,7 +970,7 @@
     {
       "name": "Kick off meeting WebSummit Lisbon",
       "url": "https://www.meetup.com/life-with-artificials/events/317058510/",
-      "read_at": "2026-11-11T11:23:00Z",
+      "read_at": "2026-11-11T12:52:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:30:00Z",
       "end": "2026-11-11T20:30:00Z",
@@ -988,8 +988,8 @@
       "label": "evidence",
       "cost": "free",
       "storm_moved": false,
-      "check": "Scheduled on the page (schema.org EventScheduled); no storm note.",
-      "note": "The page gives 18:30 to 21:30 at UTC+01:00 (17:30 to 20:30 UTC); Lisbon is UTC+00:00 in November, so the organiser may mean 18:30 Lisbon time. Check the page.",
+      "check": "Meetup page read 2026-11-11T12:52:00Z: startDate 2026-11-11T18:30:00+01:00 (= 17:30 UTC) and the event time zone is Europe/Copenhagen, while the venue is in Lisboa. The page shows '6:30 PM' in Copenhagen time. Hypothesis: if the organiser meant Lisbon clock time, it starts at 18:30 UTC; not confirmed. Check the Meetup page.",
+      "note": "Start time is uncertain by one hour: 17:30 UTC (as the page's Copenhagen time zone states) or 18:30 UTC (if the organiser meant Lisbon time).",
       "size": "community"
     },
     {
