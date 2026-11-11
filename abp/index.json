@@ -1,7 +1,7 @@
 {
   "about": "Every agent's grant, flattened from abp/policies.json by node abp/tools/abp.mjs build: what /abp/ shows.",
   "policy": "0.4.0",
-  "sha256": "c77ed4e13fb54ced",
+  "sha256": "c616457892b22e84",
   "mode": "observe",
   "agents": [
     {
@@ -391,6 +391,7 @@
         "sources.md",
         "api/v1/README.md",
         "data/places.json",
+        "data/feeds/**",
         "data/tips-status.json"
       ],
       "owns": [
@@ -499,7 +500,8 @@
         "seed/**",
         "sources.md",
         "api/v1/README.md",
-        "data/places.json"
+        "data/places.json",
+        "data/feeds/**"
       ],
       "owns": [],
       "sends": [
@@ -907,7 +909,8 @@
         "seed/**",
         "sources.md",
         "api/v1/README.md",
-        "data/places.json"
+        "data/places.json",
+        "data/feeds/**"
       ],
       "owns": [],
       "sends": [

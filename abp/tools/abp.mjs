@@ -147,7 +147,7 @@ function review() {
   try { for (const f of fs.readdirSync(LOG)) for (const l of fs.readFileSync(path.join(LOG, f), 'utf8').split('\n')) { try { const e = JSON.parse(l); if (e.t >= since && (e.decision === 'observe' || e.decision === 'override' || e.ev === 'hook-error' || e.ev === 'altitude')) events.push(e); } catch {} } } catch {}
   const lines = [
     `# ABP review, ${now()}`, '',
-    `Policy abp/policies.json v${P.version} (sha256:${P._sha}), mode ${P.mode}: nothing blocked. Since ${since}: ${rows.length} commits, ${rows.filter(c => c.findings.length).length} with paths outside their grant.`, '',
+    `Policy abp/policies.json v${P.version} (sha256:${P._sha}), mode ${P.mode}${(() => { const e = Object.entries(P.enforcement.rules).filter(([, r]) => r.mode === 'enforce').map(([k]) => k); return e.length ? `; enforced: ${e.join(', ')} (Dinis; the conductor override logged); every other rule observes` : ': nothing blocked'; })()}. Since ${since}: ${rows.length} commits, ${rows.filter(c => c.findings.length).length} with paths outside their grant.`, '',
     '## Commits outside a grant (observe)', '',
     ...(rows.filter(c => c.findings.length).flatMap(c => c.findings.map(f => `- \`${c.h}\` ${c.agent || '(no agent)'} **${f.rule}** ${f.file ? '`' + f.file + '`: ' : ''}${f.why}`))),
     '', '## By rule', '', ...Object.entries(byRule).map(([r, n]) => `- ${r}: ${n}`),
