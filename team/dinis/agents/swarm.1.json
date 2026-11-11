@@ -36,6 +36,23 @@
     "Dinis: runner.1's sandbox refused pki-agent keygen; it runs without a PKI key (results are still signed per run)",
     "Dinis: not yet added to PrompTugal__News__Website board/keys.json",
     "Dinis: GRAFANA_TOKEN and SG_SEND_ACCESS_TOKEN in the Runs repo are unused: delete them unless you want the vault carrier tomorrow",
-    "Dinis: after the demo, replace ELASTIC_CLOUD with a key limited to swarm-* (architect.1)"
-  ]
+    "Dinis: after the demo, replace ELASTIC_CLOUD with a key limited to swarm-* (architect.1)",
+    "Dinis: swarm.1.dev and swarm.1.designer: their sandboxes refused abp.mjs whoami (and keygen, as for runner.1), and their Fringe checkouts are read-only; they work without PKI keys and report to swarm.1, who records their status here"
+  ],
+  "team": {
+    "swarm.1.dev.fringe@PrompTugal.dinis": {
+      "session": "session_01Kw9UwFCZKpkLq9iapcyzSt",
+      "started_by": "architect.1 at Dinis's word (23:4x UTC)",
+      "doing": "Runs repo: requests batch (scale), tools/check-run.mjs, docs/demo.md (the runbook)"
+    },
+    "swarm.1.designer.fringe@PrompTugal.dinis": {
+      "session": "session_01Kw9UwCNvq4z94R3XVA2Lvm",
+      "started_by": "architect.1 at Dinis's word (23:4x UTC)",
+      "doing": "swarm.promptugal.news: big runs fit (1920/1280/390), timeline strip, the provenance chain, how.html section"
+    },
+    "runner.1.swarm@PrompTugal.dinis": {
+      "session": "session_01Kw9UwCptHeeznCWAbMSQC5",
+      "doing": "ran s002; waiting"
+    }
+  }
 }
