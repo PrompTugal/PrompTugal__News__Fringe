@@ -5004,6 +5004,68 @@
       "size": "community",
       "in_lisbon": true,
       "personas": []
+    },
+    {
+      "name": "Not Left Out from Web Summit: how to transform your role and become AI-native (online)",
+      "url": "https://luma.com/e6xzr89o",
+      "read_at": "2026-11-11T14:41:00Z",
+      "date": "2026-11-11",
+      "start": "2026-11-11T16:30:00Z",
+      "end": "2026-11-11T17:30:00Z",
+      "kind": "online",
+      "organiser": "WonderLead in Tech",
+      "place": "online (Zoom (link given to registered guests on Luma))",
+      "join": "Luma; open registration: https://luma.com/e6xzr89o",
+      "status": "online",
+      "storm_note": "Made because of the storm: the page says Web Summit's day 2 is cancelled, so the organisers run a talk, live demos and speed networking online.",
+      "topics": [
+        "AI",
+        "product teams",
+        "alternative event"
+      ],
+      "id": "2026-11-11-not-left-out-ai-native",
+      "label": "fact",
+      "cost": "free",
+      "storm_moved": true,
+      "check": "Read by researcher.1.fringe@PrompTugal.jose at 14:41 UTC on the organiser's Luma page (WonderLead in Tech's calendar): Zoom, 16:30 to 17:30, open registration, made because Wednesday was cancelled. First seen in Side Events Guide's Storm Summit Special (https://sideevents.guide/web-summit/2026/?date=2026-11-11, read 14:39 UTC).",
+      "note": "An alternative event born of the storm (see work/03).",
+      "size": "community",
+      "in_lisbon": false,
+      "personas": [
+        "builder"
+      ]
+    },
+    {
+      "name": "PropTech C-Level Board: Storm Edition (online)",
+      "url": "https://luma.com/gasfz3vy",
+      "read_at": "2026-11-11T14:41:00Z",
+      "date": "2026-11-11",
+      "start": "2026-11-11T18:00:00Z",
+      "end": "2026-11-11T19:30:00Z",
+      "kind": "online",
+      "organiser": "ideaic.io",
+      "place": "online (Google Meet (link given to approved guests))",
+      "join": "Luma; host approval; paid: https://luma.com/gasfz3vy",
+      "status": "online",
+      "storm_note": "Made because of the storm: the page says Storm Charles took Web Summit's day 2 away, so ten PropTech and real-estate leaders meet online on Google Meet for 90 minutes.",
+      "topics": [
+        "proptech",
+        "real estate",
+        "alternative event"
+      ],
+      "id": "2026-11-11-proptech-c-level-board-storm-edition",
+      "label": "fact",
+      "cost": "EUR 19.90 (as stated; ten seats)",
+      "storm_moved": true,
+      "check": "Read by researcher.1.fringe@PrompTugal.jose at 14:41 UTC on the organiser's Luma page (ideaic.io's calendar): Google Meet, 18:00 to 19:30, EUR 19.90, ten seats, host approval, made because of the storm. First seen in Side Events Guide's Storm Summit Special (https://sideevents.guide/web-summit/2026/?date=2026-11-11, read 14:39 UTC).",
+      "note": "An alternative event born of the storm (see work/03). The same organisers list an in-person event on Friday 13.",
+      "lane": "business",
+      "size": "community",
+      "in_lisbon": false,
+      "personas": [
+        "corporate",
+        "founder"
+      ]
     }
   ]
 }

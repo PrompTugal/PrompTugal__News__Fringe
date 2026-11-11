@@ -1,7 +1,7 @@
 {
   "agent": "researcher.1.fringe@PrompTugal.jose",
   "by": "researcher.1.fringe@PrompTugal.jose",
-  "updated": "2026-11-11T14:38Z",
+  "updated": "2026-11-11T14:42Z",
   "started_by": "conductor.fringe@PrompTugal.jose at Jose's word (prompt R1), 13:36 UTC",
   "session": "session_01CqQLDA9LBMzBQKGsJmLFUS",
   "key": "researcher.1.fringe-jose (data/keys.json; signing sha256:225ae79f898ac2da)",
@@ -15,16 +15,18 @@
     "session key made (pki-agent.mjs sha256 fcb28a1c...02ab checked); public half only in data/keys.json",
     "first list: 11 online events still to come at 13:39 UTC, from data/events.json (researcher.2's reads at 13:17 UTC); Jose's five notes checked against it",
     "wake 14:16: pulled; the four hosts are still refused; list regenerated from researcher.2's 14:15 reads; note 1 (Kuma) is ready now that it names only the 15:00 and 16:00 sessions",
-    "14:36: served site checked (v0.1.273, same 173 events as the repository; the Kuma and ALBAN pages load with the independence line); 10 Luma pages read once each; data/events.json corrected for the 18:00 Frontier Founders & VCs Soirée (in person per its page, hosted by Content Gym and Kuma Partners, ends 21:00; was listed online and moved by the storm)"
+    "14:36: served site checked (v0.1.273, same 173 events as the repository; the Kuma and ALBAN pages load with the independence line); 10 Luma pages read once each; data/events.json corrected for the 18:00 Frontier Founders & VCs Soirée (in person per its page, hosted by Content Gym and Kuma Partners, ends 21:00; was listed online and moved by the storm)",
+    "14:39 to 14:41: the three guides read once each; two new online events added from their organisers' own Luma pages (WonderLead in Tech 16:30, ideaic.io 18:00); the guides' online tag on the Diaspora Dinner and Cisco not followed (the organisers' pages do not say so)"
   ],
   "next": [
-    "read the three guides once and list online events we lack (candidates for Jose)",
-    "each wake: pull, drop started events, re-read the remaining Luma pages, update the list"
+    "each wake: pull, drop started events, re-read the remaining Luma pages and the first guide, update the list"
   ],
   "asks": [
     "jose: reword note 2 (ALBAN) before 15:30: their page says ONLINE in the title and in the text; drop 'its text still describes a venue'.",
+    "jose: two new organisers with online events today, if you want notes for them: WonderLead in Tech (16:30) and ideaic.io (18:00); see work/31-jose-today.md.",
     "conductor.fringe@PrompTugal.dinis: the 17:30 Cisco session is 'on' in data/events.json; its Luma page (14:36 UTC) has no location and names PTW Palace Room 2; work/24 says it stays 'unknown'. Not changed by me.",
     "conductor.fringe@PrompTugal.dinis: I corrected the 18:00 Soirée (2026-11-11-frontier-founders-vcs-soiree) from its page at 14:36 UTC; please have researcher.2 keep that unless its next read differs.",
+    "conductor.fringe@PrompTugal.dinis: sources.md has no rows for sideevents.guide and side-events-guide.com (both allow reading in robots.txt); researcher.fringe@ owns the file.",
     "Dinis: my public key is not in PrompTugal__News__Website board/keys.json; that repository is out of reach for this session."
   ]
 }
