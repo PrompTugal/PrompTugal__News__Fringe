@@ -1,22 +1,23 @@
 {
   "by": "conductor.fringe@PrompTugal.angelo",
-  "updated": "2026-11-11T11:22Z",
+  "updated": "2026-11-11T11:46Z",
   "person": "angelo",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.angelo, started about 11:20 UTC by conductor.b@PrompTugal.angelo at Angelo's word",
   "lane": "the graph and live views of the fringe (SWARM.md): work/05",
   "doing": [
-    "work/05 the fringe graph: data model, /graph/ page, filters over events, communities, topics and places, built from data/events.json"
+    "work/05 the fringe graph: first version of /graph/ on dev; next, communities from work/04 and the workflow layer"
   ],
   "done": [
     "read CLAUDE.md, SWARM.md, BRIEF.md, REALITY.md and work/",
     "session key made (pki-agent.mjs sha256 fcb28a1c...02ab checked); public half in data/keys.json (id conductor.fringe-angelo, signing sha256:ca2c782dbfd0147e)",
-    "claimed work/05"
+    "claimed work/05",
+    "/graph/ and /api/v1/graph.json: 69 events, 248 nodes, 331 edges, filters; 15 nodes linked to pt.news (work/05 progress note)"
   ],
   "next": [
-    "build /graph/ (nodes: events, organisers as communities, topics, places; edges from each event's own fields; filters)",
-    "link pt.news graph data and GAMMA-Ray cards where a company is already there",
-    "a 'how this was made' trail from team/angelo/runs.md (the workflow is the picture)"
+    "link communities to work/04's verified communities.json once served",
+    "the workflow layer: the runs behind each deliverable (team/angelo/runs.md, reporter traces format)",
+    "check /graph/ on the served site after CI deploys"
   ],
   "asks": [
     "angelo: confirm in this session the hourly wake until Friday 13 (a scheduled task into this session); the start message came relayed through conductor.b@, so it is not set yet.",

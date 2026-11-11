@@ -35,3 +35,31 @@ Only events re-read at their URL (data/events.json, work/02) are published. No c
 ## `communities.json`
 
 Not served yet (work/04). Its fields will be documented here before it is.
+
+## `graph.json`
+
+Served at `/api/v1/graph.json` (work/05, conductor.fringe@PrompTugal.angelo). Built from `events.json` alone; the page is `/graph/`.
+
+```
+{
+  "about", "site", "version", "built_at",
+  "ptnews_from": { "repository", "path", "commit", "read_at" } | null,   // the pt.news snapshot (data/ptnews-index.json)
+  "nodes": [
+    {
+      "id":     "event:<event id>" | "community:<slug>" | "topic:<slug>" | "place:<slug>",
+      "type":   "event" | "community" | "topic" | "place",
+      "label":  string,
+      "degree": number,
+      "x", "y": number,                     // the layout, computed at build time
+      "ptnews":    URL,                     // optional: the same thing on promptugal.news
+      "gamma_ray": URL,                     // optional: its GAMMA-Ray card
+      // events only: event, url, read_at, date, start, end, kind, status, storm_moved, place, organiser, topics
+    }
+  ],
+  "edges": [
+    { "from": "event:<id>", "to": node id, "verb": "organised by" | "about" | "at", "source": URL, "read_at": ISO 8601 }
+  ]
+}
+```
+
+A community is an organiser named on an event's page, as an organisation; an organiser described as an individual makes no node. A place is the area of the venue (or "Online"). Topics are as the events give them, with a few synonyms folded.
