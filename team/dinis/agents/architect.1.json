@@ -1,6 +1,6 @@
 {
   "agent": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T18:59Z",
+  "updated": "2026-11-11T19:03Z",
   "account": "riskmandate-personal (Ultra) (Dinis, brief 15)",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 12)",
   "branch": "dev",
@@ -38,7 +38,8 @@
     "16:51: review round 4 (the first with R5, R8, R9 enforced): 44 commits, 2 findings (researcher.2's data/feeds mapped; api/v1/README.md structural); no enforced rule fired in commits",
     "17:51: review round 5: 44 commits, 7 outside a grant, no enforced rule fired; Silvio's gravity.1 mapped (team/silvio/**); researcher.1@jose on events.json and Angelo on tokens.css raised to the lead",
     "18:32: Dinis: visualise the agentic runs on Elastic: abp/tools/runs-export.mjs -> data/altitude-runs.json (110 units, 109 signatures verified); spec for elastic.1 (fringe-altitudes, seven panels); elastic.1 told by session message, Angelo's conductor by inbox",
-    "18:59: flows (Dinis: 'see the beginning, the middle and the end'): abp/tools/flow.mjs streams start/step/end per unit to Elastic fringe-flows; altitudes.mjs instrumented; run 2 live (A4, A3, A0, 3 A2 loops, 16 A1 calls, 1 retry at 1200 tokens: was 41%), 47 events, 20 signatures verified; Kibana 'Flows: the beginning, the middle and the end' (Vega Gantt), tagged with the swarm"
+    "18:59: flows (Dinis: 'see the beginning, the middle and the end'): abp/tools/flow.mjs streams start/step/end per unit to Elastic fringe-flows; altitudes.mjs instrumented; run 2 live (A4, A3, A0, 3 A2 loops, 16 A1 calls, 1 retry at 1200 tokens: was 41%), 47 events, 20 signatures verified; Kibana 'Flows: the beginning, the middle and the end' (Vega Gantt), tagged with the swarm",
+    "19:03: Dinis: Gravity for the runs: /agentic-team/universe/ draws every agentic run (environments as centres, 132 units at their altitudes, parent-to-child flows), from /api/v1/altitude-runs.json, on dev.2's single Gravity source (vendored or pinned)"
   ],
   "next": [
     "re-run node abp/tools/runs-export.mjs whenever a run or a packet result lands",
