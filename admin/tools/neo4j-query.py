@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Run the named questions in neo4j/queries.cypher against Neo4j (neo4j.1.fringe@PrompTugal.dinis, WS-215).
 
-  python3 admin/tools/neo4j-query.py [--only NAME] [--out data/neo4j-answers.json] (--uri ... --password-file ... | NEO4J_CLOUD)
+  python3 admin/tools/neo4j-query.py [--only NAME] [--out data/neo4j-answers.json] (--uri ... --password-file ... | NEO4J_CLOUD) [--http: the Query API over HTTPS]
 Credentials as admin/tools/neo4j-load.py; nothing secret is printed.
 """
 import argparse, importlib.util, json, re, subprocess
@@ -25,14 +25,12 @@ def queries():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--only'); ap.add_argument('--out'); ap.add_argument('--limit', type=int, default=25)
-    ap.add_argument('--uri'); ap.add_argument('--user', default='neo4j'); ap.add_argument('--password-file'); ap.add_argument('--database')
+    ap.add_argument('--http', action='store_true'); ap.add_argument('--uri'); ap.add_argument('--user', default='neo4j'); ap.add_argument('--password-file'); ap.add_argument('--database')
     args = ap.parse_args()
-    from neo4j import GraphDatabase
     c = L.creds(args)
     answers = []
-    with GraphDatabase.driver(c['uri'], auth=(c['user'], c['password']), notifications_min_severity='OFF') as drv:
-        kw = {'database': c['database']} if c.get('database') else {}
-        with drv.session(**kw) as s:
+    if True:
+        with L.session(c, args.http) as s:
             for q in queries():
                 if args.only and q['name'] != args.only:
                     continue

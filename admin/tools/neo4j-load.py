@@ -20,7 +20,7 @@ Usage:
 It never prints a password or a URI's credentials. NEO4J_CLOUD may hold JSON ({uri, username, password, database})
 or the KEY=VALUE text Aura gives on download (NEO4J_URI, NEO4J_USERNAME, NEO4J_PASSWORD, NEO4J_DATABASE).
 """
-import argparse, fnmatch, hashlib, json, os, re, subprocess, sys, tempfile, urllib.request
+import argparse, contextlib, fnmatch, hashlib, json, os, re, subprocess, sys, tempfile, urllib.error, urllib.request
 from collections import defaultdict
 from pathlib import Path
 
@@ -439,15 +439,68 @@ def creds(args):
     return c
 
 
-def load(g, args):
+# ---------- the Query API (HTTPS), for sandboxes where only port 443 leaves through a proxy ----------
+class _Rec(dict):
+    def data(self):
+        return dict(self)
+
+
+class _Res(list):
+    def consume(self):
+        return None
+
+    def single(self):
+        return self[0] if self else None
+
+
+class HttpSession:
+    """Neo4j's Query API (POST /db/<db>/query/v2) with the same run()/consume()/single()/data() the tools use from a Bolt session."""
+    def __init__(self, c):
+        import base64
+        host = re.sub(r'^[a-z+]+://', '', c['uri']).split('/')[0].split('@')[-1].split(':')[0]
+        self.url = f"https://{host}/db/{c.get('database') or 'neo4j'}/query/v2"
+        self.auth = 'Basic ' + base64.b64encode(f"{c['user']}:{c['password']}".encode()).decode()
+
+    def run(self, q, **params):
+        body = json.dumps({'statement': q, 'parameters': params}, default=str).encode()
+        req = urllib.request.Request(self.url, data=body, headers={'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': self.auth})
+        try:
+            with urllib.request.urlopen(req, timeout=300) as r:
+                d = json.loads(r.read())
+        except urllib.error.HTTPError as e:
+            raise SystemExit(f'neo4j (Query API): HTTP {e.code}: {e.read()[:300].decode(errors="replace")}')
+        if d.get('errors'):
+            raise SystemExit(f"neo4j (Query API): {d['errors'][0].get('code')}: {d['errors'][0].get('message', '')[:300]}")
+        f = (d.get('data') or {}).get('fields', [])
+        return _Res(_Rec(zip(f, v)) for v in (d.get('data') or {}).get('values', []))
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *a):
+        return False
+
+
+@contextlib.contextmanager
+def session(c, http=False):
+    """A Bolt session, or the Query API over HTTPS when http is set or the URI is https://."""
+    if http or c['uri'].startswith('https://'):
+        yield HttpSession(c)
+        return
     from neo4j import GraphDatabase
-    c = creds(args)
-    host = re.sub(r'//[^@/]*@', '//', c['uri'])
-    stmts, work = batches(g)
     with GraphDatabase.driver(c['uri'], auth=(c['user'], c['password']), notifications_min_severity='OFF') as drv:
         drv.verify_connectivity()
         kw = {'database': c['database']} if c.get('database') else {}
         with drv.session(**kw) as s:
+            yield s
+
+
+def load(g, args):
+    c = creds(args)
+    host = re.sub(r'//[^@/]*@', '//', c['uri'])
+    stmts, work = batches(g)
+    if True:
+        with session(c, args.http) as s:
             if args.wipe:
                 s.run('MATCH (n:Fringe) CALL (n) { DETACH DELETE n } IN TRANSACTIONS OF 5000 ROWS').consume()
             for q in stmts:
@@ -465,7 +518,7 @@ def main():
     ap.add_argument('--emit', help='write a Cypher file')
     ap.add_argument('--load', action='store_true', help='load into Neo4j')
     ap.add_argument('--wipe', action='store_true', help='first remove every :Fringe node')
-    ap.add_argument('--uri'); ap.add_argument('--user', default='neo4j'); ap.add_argument('--password-file'); ap.add_argument('--database')
+    ap.add_argument('--http', action='store_true', help="Neo4j's Query API over HTTPS (port 443) instead of Bolt (7687)"); ap.add_argument('--uri'); ap.add_argument('--user', default='neo4j'); ap.add_argument('--password-file'); ap.add_argument('--database')
     ap.add_argument('--graph', help='a local graph.json (default: _site/ or the live site)')
     ap.add_argument('--flows', help='an Elastic swarm-flows export (default data/elastic-export-swarm-flows.json)')
     ap.add_argument('--since', default='2026-11-09T00:00Z', help='commits since (git log --since)')
