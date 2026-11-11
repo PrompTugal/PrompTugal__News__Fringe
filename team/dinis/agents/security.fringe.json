@@ -1,30 +1,32 @@
 {
   "agent": "security.fringe@PrompTugal.dinis",
   "by": "security.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T16:31Z",
+  "updated": "2026-11-11T18:31Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwBGQe9BhMCbDw28aDA, the lead until 11:14 UTC), 10:48 UTC, under BRIEF.md §7 step 4",
   "wake": "every two hours until Friday 13 November (scheduled task named in the outgoing lead's handover; its prompt still names the old lead)",
   "branch": "work/security.fringe",
   "key": "security.fringe-promptugal (record sha256:477abd55a04f4577), in data/keys.json on dev",
-  "state": "fifth review done (16:30 UTC, 102 new commits): no high, no new medium; finding 28 downgraded to low after the hook was hardened (e98f67d)",
+  "state": "sixth review done (18:30 UTC, 92 new commits): no high; 2 medium: /universe/ loads gravity.js cross-site without SRI on the origin that holds /me/ keys; the now-enforcing hook and its overrides are writable by any push to dev",
   "doing": [],
   "done": [
     "review 1 (10:48 UTC): security/reviews/2026-11-11-1048.md",
     "review 2 (11:30 UTC, 35 new commits on every branch): security/reviews/2026-11-11-1130.md",
     "review 3 (12:30 UTC, 94 new commits): security/reviews/2026-11-11-1230.md",
     "review 4 (14:30 UTC, 191 new commits): security/reviews/2026-11-11-1430.md",
-    "review 5 (16:30 UTC, 102 new commits): security/reviews/2026-11-11-1630.md"
+    "review 5 (16:30 UTC, 102 new commits): security/reviews/2026-11-11-1630.md",
+    "review 6 (18:30 UTC, 92 new commits): security/reviews/2026-11-11-1830.md"
   ],
   "next": [
     "at the next wake: fetch, review what is new since security/last-reviewed.json, push",
     "read my inbox (data/inboxes/security.fringe-promptugal.json) once I can do so without running other agents' code with my key"
   ],
   "asks": [
-    "Dinis: finding 28 (now low). The hook is safe as it stands, but .claude/** and abp/policies.json can still be changed by any push to dev, and agents run them before CI's gate. Please protect those paths with a CODEOWNERS file and a branch rule, so they change only through a pull request you approve.",
-    "conductor.fringe: findings 1, 2 and 29 are still open. The deploy job holds contents: write while it runs repository code, and workflow_dispatch can deploy from any branch. Fixes: security/reviews/2026-11-11-1048.md.",
-    "conductor.fringe: please have capture.1@ delete the pre-fix capture runs (11:00 and 12:00 UTC) from vault u4f3pl6f. They hold guests' names and photos.",
-    "conductor.fringe: finding 35. abp/policies.json now says I push to dev, but my wake (trig_01XhtAq86wTjp2bLqwZMkwez) says work/security.fringe only, and still names session_01Kw9UwBGQe9BhMCbDw28aDA as the lead with a send_message reply. I keep the branch and report here. Please update the wake's prompt if you want otherwise.",
-    "Dinis: finding 32. inboxes.py and agent-log.mjs (R10) need sgit-ai and my key. Shall a reviewer session install and run them? Until then I neither drain my inbox nor log runs to the vault.",
+    "conductor.fringe: finding 37 (medium). /universe/ loads https://web-summit.sgit.ai/lib/gravity/.../gravity.js at run time with no integrity, on the same origin as /me/'s person keys. Please have dev.2@ or gravity.1@ commit assets/vendor/gravity/gravity.js (the code already prefers it) or add SRI.",
+    "Dinis: finding 38 (medium). R5, R8 and R9 now block in every agent's session, but .claude/**, abp/policies.json and abp/overrides.json can be changed by any push to dev, including an override marked 'by: dinis'. Please protect those paths with a CODEOWNERS file and a branch rule, and make overrides count only when signed by your key.",
+    "conductor.fringe: findings 1, 2 and 29 are still open. The deploy job holds contents: write while it runs repository code, and workflow_dispatch can deploy from any branch.",
+    "conductor.fringe: please confirm capture.1@ deleted the pre-fix capture runs (11:00 and 12:00 UTC) from vault u4f3pl6f.",
+    "conductor.fringe: my wake (trig_01XhtAq86wTjp2bLqwZMkwez) still names session_01Kw9UwBGQe9BhMCbDw28aDA as the lead with a send_message reply. I report here only. Please update the wake's prompt.",
+    "Dinis: finding 32. inboxes.py and agent-log.mjs need sgit-ai and my key. Shall a reviewer session install and run them?",
     "Dinis: finding 13. Please confirm in your own words that session_01Kw9UwCFpT9ihNBcQFxkomq is conductor.fringe@PrompTugal.dinis.",
     "Dinis: protect main (pull requests only) and limit the github-pages environment to dev.",
     "Dinis: my session has GitHub access to PrompTugal__News__Fringe only, so my public key is not yet in PrompTugal__News__Website board/keys.json."
