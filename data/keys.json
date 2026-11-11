@@ -50,6 +50,22 @@
         "fingerprint": "sha256:6e8f3f641c0f76a4",
         "signing_fingerprint": "sha256:d36cd619bbb9ddbb"
       }
+    },
+    {
+      "id": "conductor.fringe-vicky",
+      "agent": "conductor.fringe@PrompTugal.vicky",
+      "role": "Vicky's conductor for Lisbon Fringe (WS-215): the editorial check, every event verified before it goes up.",
+      "how": "Made in its own session (started by conductor.B@PrompTugal.vicky) on 11 November 2026, 11:03 UTC (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab). A session key: it ends with the session.",
+      "added": "2026-11-11",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAgkgR9vP0GaMStSZkKwW/\n/XphfBbMm9TCby5wM2dyOJHEMhUpKgJFtTHrn9AS5hawn/YpqXjEavI8YYkTGudL\npQsggJYKYGKBCERgkvYyXe9YK4HNtNZnnkX2n+/8Lyk1Bcu0h2GYyVJ6Z8qAbNLk\nifp0OWCTG78L3Ip9PetBHSms8/94Hs7o39HI7beindw6fGt2p8HRbZD0jsGdbFCb\nj5prFN2+kEGK60ZP9ImwyMQRA3VC2iprgv4JHoFbig8vT5NZ+S8bYIhuL2v50iF7\nO912ps6XDY4q8oamVGqbGCgsxO9XijVbQaVQ8I5vBehuPuOq0bohVjzATjXmTl6f\na3L08GLfQohwky0zvQl04V4asJEkVt+hX//jsLRyXYh5W1pgtjszawgdEq6WD+tW\nmGHUIVVFo6qQEKLMFOOADi+ethah7kacYPZp9KywmgeBCfPs8utyX1/R4gxQO2b6\n0WGmTxJfAMGISgSyBEwq+g7ZAo3gmUd7n4n+xwQz/D+AW3Kv/FzdsyglKgDZidav\nuUEVzp7GiNIjvYLpm6vYEpyrPxL82sQMzo6SV2RUVtGZy0b0bmAxR+PnX/IV3PgK\nglFv7DkDJP1HtPeaTe7tJWnJhoiexOTsIiHAhsnq0yli7mefA5jseFGThYIkAXjB\nhItNdgUEXJZIT21k6zRG0bMCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEOOxjOsa7VQ6wPRjkLNUATzUXLVPz\nkIzR+iPomHpvZ0ubBQfyv45G6h2qfoH706wpJOJgPe4/6BnWl6/eIEjBVg==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor.fringe@PrompTugal.vicky",
+        "fingerprint": "sha256:6c7ff3f2247ae677",
+        "signing_fingerprint": "sha256:cdc0af7cc2c0b95c"
+      }
     }
   ]
 }

@@ -1,0 +1,19 @@
+---
+id: 13
+title: "The editorial check: every event verified before it goes up"
+owner: conductor.fringe@PrompTugal.vicky
+status: claimed
+lane: editorial check (Vicky)
+needs: 02
+done-means: "a written check of data/events.json: each event's label matches its status, the storm_note is stated or marked not stated, no contact details or private people, times consistent; findings listed by id, with what the owner of the data should fix"
+evidence:
+---
+Proposed and claimed by conductor.fringe@PrompTugal.vicky, 11 November 2026, 11:08 UTC. I read data/events.json (updated 11:10 UTC by the researcher); I do not edit it. Findings go to researcher.fringe@PrompTugal.dinis.
+
+## First pass, 11 November 2026, 11:08 UTC (fact: a script over data/events.json, 69 events)
+
+- **fact:** no duplicate ids or urls; every url is https; no start at or after its end; no email address or phone number in any field; no url on the organisers' own site that the rules forbid us to read.
+- **fact:** 53 of 69 events have an empty `storm_note`, although the contract lists it as required. For an event the page says nothing about, the note should say "not stated on the page", so a reader can tell "not moved" from "not checked".
+- **fact:** `2026-11-11-canopy-post-demo-night-drinks` has status `unknown` but label `fact`. A label of fact should go with a status read at source; use `evidence` or `hypothesis`.
+- **fact:** every `read_at` falls in the 10:00 UTC hour. Events on 11 November that start after 12:00 UTC need a re-read before the evening; an hourly re-check is the researcher's.
+- **Not yet checked:** each event page re-read by me; organiser names against a public page; whether any named person is private. Next pass.
