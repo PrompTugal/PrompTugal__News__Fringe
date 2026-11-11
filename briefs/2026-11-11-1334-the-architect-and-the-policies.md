@@ -32,3 +32,13 @@ Indi's conductor made an ABP for its own work (Dinis); the architect reads it an
 | work/38 | The map: every repository, Claude account, environment, agent and person, and who edits which paths (a picture on /how/) | architect.1 |
 | work/39 | The ABPs: `abp/policies.json` (paths per role and agent, across repositories and environments), one page per agent, observe-mode hooks, the gate checking each commit's paths against its Agent: trailer (warn first) | architect.1 |
 | work/40 | Public guidance: /guidance/ and CONTRIBUTING.md, "the public CLAUDE.md" for external contributors and their agents: how to join, what you may touch, how to send a design or an event, the rules | architect.1, with outreach.1 |
+
+## Dinis's ruling on enforcement (13:36 UTC)
+
+> "On these policies, for now, you should start with observe mode so we can learn. So it should not be blocking ... we take two or three rounds of execution, and only when we know that a particular thing is safe, we start to maybe a bit more enforcement. But for now, you should always have an escape hatch, and conductor should be able to override it for now ... but also we log it, so we learn, and that's part of the exercise here."
+
+**Rules for work/39:**
+1. **Observe only.** No hook and no gate check blocks anything; a call or a commit outside a grant is logged as `observe`.
+2. **Two or three rounds first.** A rule moves towards enforcement only after two or three rounds (wakes) of logs show it is safe, and then only by Dinis's decision, rule by rule, recorded in abp/policies.json with its date and his words.
+3. **An escape hatch, always.** Even an enforced rule can be overridden by a conductor (and by Dinis): the override names who, why and when, and is logged.
+4. **Log everything, to learn.** Every observe event and every override goes to the run log, and the architect's hourly review lists them, with what each teaches.
