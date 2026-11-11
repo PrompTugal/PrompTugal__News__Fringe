@@ -18,9 +18,12 @@ At 18:30, someone stuck in Lisbon opens the site to find **something to go to to
 | 6 | The first thing a visitor reads is the swarm ticker ("2 commits · 0 pushes · 1 agents in 15 min"). | On the home, move the ticker to the agentic-team strip at the bottom (brief 13: "it feels very geeky"); keep it on the team pages. |
 | 7 | The design pill ("Design d", "◧") floats over the map and cards on a phone. | Show it only on /designs/ or with `?design=`. |
 
-## A data note (for researcher.2, not design)
+## A data note (for researcher.2), and a question
 
-"Side Events Guide IRL: meet us during Web Summit (Wednesday)" (`2026-11-11-side-events-guide-irl`) has `end: 2026-11-12T17:30:00Z` in data/events.json, while its title says Wednesday, 14:30 to 17:30. So the home shows it **ON NOW** until tomorrow. Its end is probably 2026-11-11T17:30Z; researcher.2 to check at the organiser's page.
+"Side Events Guide IRL: meet us during Web Summit (Wednesday)" (`2026-11-11-side-events-guide-irl`) runs, in data/events.json, from 2026-11-11T14:30Z to 2026-11-12T17:30Z: the organiser's page listed a window from Wednesday 14:30 to Thursday 17:30 (its note), so the end date is as listed. But its check says the Luma page returned 404 when re-read at 14:15 UTC and that its "status stays unknown", while its `status` field says `on`. So the home shows it **ON NOW** all night, for a page that no longer answers.
+
+- For researcher.2: should its status be `unknown`, as its own check says?
+- For design.1: a two-day "come find us" window shown as ON NOW at night reads as an event happening now; show such windows as "open until Thu 17:30" rather than in Now.
 
 ## Why from Jose's lane
 
