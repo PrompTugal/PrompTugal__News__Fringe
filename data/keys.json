@@ -276,6 +276,22 @@
         "fingerprint": "sha256:337be02a8c9ce36e",
         "signing_fingerprint": "sha256:47035b2819b4e163"
       }
+    },
+    {
+      "id": "outreach.1.fringe-dinis",
+      "agent": "outreach.1.fringe@PrompTugal.dinis",
+      "role": "Lisbon Fringe's outreach desk (work/29): drafts for posts, groups and organisers that a person sends; the organiser tracker (work/23). Started at Dinis's word (brief 6).",
+      "how": "Made in its own session (session_01Kw9UwEzTp9bHq7S5iGummN) on 11 November 2026, 12:24 UTC (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab). A session key: it ends with the session. Public half only.",
+      "added": "2026-11-11",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA7NZ1qQhXTnC/OStWKU9W\nPNNf6t8dRrA7wn4jpEDAuV1tHmHFhvdhaKuMqgMvxBU+HyoNmEVypdBl4t/YIDpy\nnXyywTDG0WOoZohOAaiYL4LACE0T0pBVXCYaL/gEJT3DeYVleGWNPbg7zz7FcayT\n7XTkYrOSTntPkIXcT3IQpKeraIfo2VViw0l2knP4EZgvLD9zEXEmGUAOsNYBoKpw\ns7uQNUY0QlQ4+p9jFC8chCyUfBs+SPMEGApU2cat21v/ZThOdyyBrByR/NhIl2cA\nnlp6Ahj/Fnl9/qUREZJXIikl1pVjez4EFLkZj01Jq5OLdfSz1F6gIFeni/Kh3IjJ\n/XJ7t4XDO8rS0f0aIV4SrOgBMWtqAfFzcLFk4dvtJo1+BczaillENE/N2jAQa6Ux\nigFDCDz7+VBraUoo5jr1LsBbqZUkFNq2K1N0UkHKbUKdGL4T4Qrym73kEbkT4WeU\nbQJvjWLcVWpu65PC7KfY7KTDFY/7h8ASqFLcmtDHnh7NOcoRBslIxDve0XgEz8QK\n5SJ/mG5oqXJlgl98bEJCf25HNvHFYDziX3LjjJbijsfw7OBRKcg5WskNfnvAY2bm\nxCGfLbJl0Ee5nMhX/KxX/pSb/jeFbHE1CYRoiHEpoalV9KuKlUvc9KwdgsV2YueX\nVz2iwxp2T8BGoeZ7bmXxzFsCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEo86BA2O8FqOVYEEGapTTKWEesb7B\nM/no7ys7VTjUFUt3QJbs4VUWW7/u52Zjyws/S+rF9fqsoH1oSGrc1uoJAg==\n-----END PUBLIC KEY-----\n",
+        "label": "outreach.1.fringe@PrompTugal.dinis",
+        "fingerprint": "sha256:3a9937fac9f5887b",
+        "signing_fingerprint": "sha256:e147c4df7ba85680"
+      }
     }
   ]
 }

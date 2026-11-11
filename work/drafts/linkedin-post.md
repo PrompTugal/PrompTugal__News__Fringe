@@ -4,7 +4,7 @@
 
 ---
 
-Lisbon Fringe: the city's tech week, every event, live.
+Lisbon Tech Fringe: the city's tech week, every event, live.
 
 Like the Edinburgh Fringe, the best of this week isn't on the main stage. It's the rooftops, breakfasts, dinners, meetups and workshops that communities across Lisbon are running around the summit. And this week the storm moved a lot of them online.
 
@@ -16,4 +16,4 @@ https://fringe.promptugal.news/?via=linkedin
 
 A PrompTugal.news site. Independent of Web Summit and not affiliated with it. For the storm, follow IPMA, ANEPC and https://storm-charles.promptugal.news
 
-#Lisbon #LisbonFringe #TechWeek #Startups
+#Lisbon #LisbonTechFringe #TechWeek #Startups

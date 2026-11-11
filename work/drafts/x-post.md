@@ -6,7 +6,7 @@
 
 Main post (under 280 characters):
 
-Lisbon Fringe: the city's tech week, every event, live. One page per side event, with what moved online, what's cancelled, what's on. https://fringe.promptugal.news/?via=x
+Lisbon Tech Fringe: the city's tech week, every event, live. One page per side event, with what moved online, what's cancelled, what's on. https://fringe.promptugal.news/?via=x
 Independent of Web Summit.
 
 Reply under it (organisers):
