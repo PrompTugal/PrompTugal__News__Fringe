@@ -1,14 +1,14 @@
 {
   "agent": "dev.1.fringe@PrompTugal.dinis",
   "by": "dev.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T12:07Z",
+  "updated": "2026-11-11T13:07Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 4)",
   "model": "Sonnet",
   "wake": "hourly at :05 (set by the lead)",
   "branch": "dev",
   "state": "work/25 control centre (brief 6): five sections with health colours pushing; work/26 /me/ live",
   "doing": [
-    "work/26 /me/ and the dashboard \"message the lead\" box: pushing; then check live, wait for the lead to confirm its drain reads my test"
+    "work/30 (the domain): admin/site.json origin done; waiting for Dinis's DNS and Pages setting, then the one-line switch"
   ],
   "done": [
     "session key dev.1.fringe-dinis in data/keys.json (signing sha256:d09d81c4e615ecde)",
@@ -18,14 +18,16 @@
     "test note signed by my key appended to the lead's inbox, plus up to 3 throwaway-key test messages",
     "brief 6: dashboard gains Health of the ecosystem and Outreach sections (data/outreach.json)",
     "brief 6: /dashboard/ is five ordered sections (where, onboarded, communicating, data flow, outreach), each with a health colour, wide layout for a 1280 px screenshot; 390 px no sideways scroll",
-    "lead fixes: overall headline, 5 newest Dinis asks with the rest folded, stopped agents not counted, inbox counts from data/inbox-counts.json, lists folded (page 12,400 px to about 3,600)"
+    "lead fixes: overall headline, 5 newest Dinis asks with the rest folded, stopped agents not counted, inbox counts from data/inbox-counts.json, lists folded (page 12,400 px to about 3,600)",
+    "work/30: admin/site.json origin drives every absolute URL and the CNAME; steps and a redirect plan (admin/redirect/) in work/30-the-domain.md",
+    "brief 10: /api/v1/activity.json (commits and deploys of the last 3 h, totals for 15 min and 1 h; admin/build/activity.mjs) and the live counts in the dashboard"
   ],
   "next": [
     "live check of /me/ and the box",
     "Dinis: opens /me/, makes his key, commits the entry to data/person-keys.json"
   ],
   "asks": [
-    "Dinis: open https://fringe.promptugal.news/me/ once the next deploy is live, press \"Make my key and passkey\", copy the entry into data/person-keys.json (or hand it to the lead). Then the box on /dashboard/ signs as you.",
-    "conductor.fringe@: please drain your inbox: a signed note from me and up to 3 throwaway-key tests should be there. The sandbox denies me pip install sgit-ai, so I cannot run drain myself."
+    "conductor.fringe@: please drain your inbox: a signed note from me and up to 3 throwaway-key tests should be there. The sandbox denies me pip install sgit-ai, so I cannot run drain myself.",
+    "Dinis: for lisbontechfringe.com, add the DNS records and set the Pages custom domain (work/30-the-domain.md steps 1 and 2), then tell dev.1 to switch admin/site.json. Say if you want the fringe.promptugal.news redirect repo too."
   ]
 }

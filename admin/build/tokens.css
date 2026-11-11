@@ -4,6 +4,12 @@
    Dark follows the system; <html data-theme="dark|light"> forces either. Inlined into every page by admin/build/build.mjs.
    Legacy aliases at the end keep older page CSS working; new CSS uses the design-E names. */
 
+/* The brand's faces, linked from promptugal.news (CORS open; font files never in git). font-display: swap, so the page reads at once in Georgia. */
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:200 800;font-display:swap;src:url(https://promptugal.news/assets/fonts/newsreader-variable.woff2) format("woff2")}
+@font-face{font-family:"Newsreader";font-style:italic;font-weight:400;font-display:swap;src:url(https://promptugal.news/assets/fonts/newsreader-400-italic.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:100 700;font-display:swap;src:url(https://promptugal.news/assets/fonts/plex-sans-variable.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:400;font-display:swap;src:url(https://promptugal.news/assets/fonts/plex-mono-400.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:500;font-display:swap;src:url(https://promptugal.news/assets/fonts/plex-mono-500.woff2) format("woff2")}
 :root {
     color-scheme: light dark;
 
@@ -19,16 +25,21 @@
     --hair: #d9d2c1;         /* hairlines between list items */
 
     /* the brand: azulejo cobalt, the blue of Lisbon's tiles */
-    --brand: #1b4597;        /* links, the mark, selected states (8.0:1 on paper) */
-    --brand-2: #10306d;      /* hover, pressed */
-    --brand-soft: #e3e9f5;   /* tint behind a selected chip or "our pick" */
+    --brand: #1f4fa8;        /* cobalt, brand v2.0: links, selected states (7.2:1 on paper) */
+    --brand-2: #153a80;      /* hover, pressed */
+    --brand-soft: #e6ecf7;   /* tint behind a selected chip or "our pick" */
     --on-brand: #ffffff;
 
+    /* brand v2.0 (pt.news investor decks): the name's red and green; thin green rules, numbered kickers */
+    --red: #c52830; --green: #006600; --cobalt: #1f4fa8;
+    --red-soft: #f8e4df; --green-soft: #e2eedf;
+    --rule-green: 2px solid var(--green);
+
     /* signals, used sparingly and never alone (always with a word) */
-    --live: #b42318;         /* live now, breaking (6.0:1) */
+    --live: #c52830;         /* live now, breaking (6.0:1) */
     --live-soft: #f8e4df;
-    --ok: #2b6a3c;           /* confirmed, re-checked and live */
-    --ok-soft: #e1efe4;
+    --ok: #006600;           /* confirmed, re-checked and live */
+    --ok-soft: #e2eedf;
     --warn: #8a5200;         /* moved, not re-confirmed */
     --warn-soft: #f6ead6;
     --focus: #ffbf1f;        /* the focus ring: yellow, with an ink edge, as public-service sites do */
@@ -41,17 +52,17 @@
     --live-on-band: #ff8f7d;  /* the live red on the dark band (8.4:1) */
 
     /* faces */
-    --serif: Georgia, "Times New Roman", serif;   /* no webfonts in git (CLAUDE.md): system faces only */
-    --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    --mono: ui-monospace, Menlo, Consolas, monospace;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;   /* linked from promptugal.news, never in git */
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
 
     /* type scale (phone values; clamp() grows them to desktop) */
-    --fs-nameplate: clamp(38px, 9.4vw, 78px);
-    --fs-h1: clamp(31px, 6.2vw, 50px);
-    --fs-lead-hed: clamp(27px, 4.6vw, 40px);
-    --fs-hed: clamp(20px, 2.4vw, 23px);
-    --fs-body: 17.5px;       /* 18.5px from 768px */
-    --fs-dek: 18px;
+    --fs-nameplate: clamp(22px, 5vw, 32px);
+    --fs-h1: clamp(24px, 5vw, 32px);
+    --fs-lead-hed: clamp(20px, 3.5vw, 28px);
+    --fs-hed: clamp(18px, 2.4vw, 20px);
+    --fs-body: 16px;       /* 18.5px from 768px */
+    --fs-dek: 16px;
     --fs-ui: 14px;
     --fs-label: 12px;
     --fs-meta: 12.5px;
@@ -63,13 +74,13 @@
     --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 64px;
     --gutter: 16px;          /* the phone's side gutter; 24px from 768px */
     --page: 1200px;          /* the widest the grid gets */
-    --radius: 3px;           /* rules, not boxes: corners are barely there */
+    --radius: 2px;           /* rules, not boxes: corners are barely there */
     --radius-pill: 999px;
         --shadow: 0 1px 2px rgba(18, 19, 23, .06), 0 8px 24px rgba(18, 19, 23, .10);
 }
 
 @media (min-width: 768px) {
-    :root { --fs-body: 18.5px; --gutter: 24px; }
+    :root { --gutter: 24px; }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -77,9 +88,9 @@
         --paper: #111214; --paper-2: #1a1b1e; --panel: #1e1f23;
         --ink: #eceae4; --ink-2: #c3c0b7; --ink-3: #a6a39a;
         --rule: #eceae4; --rule-2: #5f5b51; --hair: #2e2f34;
-        --brand: #93b1ff; --brand-2: #bccfff; --brand-soft: #1a2440; --on-brand: #0b1530;
-        --live: #ff8f7d; --live-soft: #3a1b16;
-        --ok: #84cf9c; --ok-soft: #16281c;
+        --brand: #93b1ff; --brand-2: #bccfff; --red: #f07278; --green: #6dbb7e; --cobalt: #93b1ff; --red-soft: #3a1b16; --green-soft: #16281c; --brand-soft: #1a2440; --on-brand: #0b1530;
+        --live: #f07278; --live-soft: #3a1b16;
+        --ok: #6dbb7e; --ok-soft: #16281c;
         --warn: #e9b55e; --warn-soft: #2f2412;
         --focus: #ffcf4d; --focus-ink: #111214;
         --band: #1e1f23; --on-band: #eceae4; --on-band-2: #a6a39a;
@@ -90,9 +101,9 @@
     --paper: #111214; --paper-2: #1a1b1e; --panel: #1e1f23;
     --ink: #eceae4; --ink-2: #c3c0b7; --ink-3: #a6a39a;
     --rule: #eceae4; --rule-2: #5f5b51; --hair: #2e2f34;
-    --brand: #93b1ff; --brand-2: #bccfff; --brand-soft: #1a2440; --on-brand: #0b1530;
-    --live: #ff8f7d; --live-soft: #3a1b16;
-    --ok: #84cf9c; --ok-soft: #16281c;
+    --brand: #93b1ff; --brand-2: #bccfff; --red: #f07278; --green: #6dbb7e; --cobalt: #93b1ff; --red-soft: #3a1b16; --green-soft: #16281c; --brand-soft: #1a2440; --on-brand: #0b1530;
+    --live: #f07278; --live-soft: #3a1b16;
+    --ok: #6dbb7e; --ok-soft: #16281c;
     --warn: #e9b55e; --warn-soft: #2f2412;
     --focus: #ffcf4d; --focus-ink: #111214;
     --band: #1e1f23; --on-band: #eceae4; --on-band-2: #a6a39a;
@@ -116,6 +127,8 @@
     --terracotta-soft: #f7e0d6;
     --river: #1f8a8a;         /* the Tejo */
     --river-soft: #d9efee;
+    --fs-wordmark: 24px;     /* D20 taste pass: wordmark 28px at most on a phone */
+    --chip-h: 36px;           /* chips and jump links: 36px at most */
     --on-tram: #121317;       /* text on tram yellow */
     --azulejo-ink: 27, 69, 151;   /* r, g, b of the pattern line (see admin/build/identity.mjs) */
     --azulejo-a: .13;         /* pattern opacity */

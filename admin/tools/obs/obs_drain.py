@@ -25,6 +25,13 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(HERE)))
 AGENT = 'observability.fringe@PrompTugal.dinis'
 RUN_TYPE = 'web-summit.agent-run/v1'                                      # the team's record type, kept so all sources read alike
 SITE = 'fringe.promptugal.news'
+
+def hosts():
+    """The site's hosts, counted together (work/30: the move to lisbontechfringe.com): admin/site.json's origin, the
+    first address, and the new domain with and without www. Events from any other host (a local test) are not readers."""
+    try: origin = json.load(open(os.path.join(ROOT, 'admin', 'site.json')))['origin'].split('//', 1)[-1].strip('/')
+    except Exception: origin = SITE
+    return {origin, SITE, 'lisbontechfringe.com', 'www.lisbontechfringe.com'}
 CITY_MIN = 5
 BOTS = {'googlebot', 'bingbot', 'bot', 'webdriver', 'headless'}
 
@@ -121,6 +128,10 @@ def norm(path):
 def counts(rows, now, pub_id):
     pages = [r for r in rows if r.get('type') in ('view', 'read') and r.get('path')]
     bots = [r for r in pages if r.get('agent') in BOTS]
+    H = hosts()
+    off_site = [r for r in pages if r.get('site') and r['site'] not in H]   # a local test or a copy elsewhere
+    pages = [r for r in pages if not r.get('site') or r['site'] in H]
+    bots = [r for r in pages if r.get('agent') in BOTS]
     people = [r for r in pages if r.get('agent') not in BOTS]
     seen, reads = set(), []
     for r in people:                                                     # a read re-sent from the next page can arrive twice
@@ -130,7 +141,8 @@ def counts(rows, now, pub_id):
     views = [r for r in people if r['type'] == 'view']
     C = lambda it: collections.Counter(x for x in it if x)
     by_country = C(r.get('country') for r in views)
-    city_raw = C(', '.join(x for x in (r.get('city'), r.get('region'), r.get('country')) if x) if r.get('city') else '' for r in views)
+    # a town is its city and country: ipapi.co and ipwho.is name the same region differently ("Lisbon", "Distrito de Lisboa")
+    city_raw = C(', '.join(x for x in (r.get('city'), r.get('country')) if x) if r.get('city') else '' for r in views)
     by_city = [[k, n] for k, n in city_raw.most_common() if n >= CITY_MIN]
     other = sum(n for k, n in city_raw.items() if n < CITY_MIN)
     if other: by_city.append([f'(places under {CITY_MIN} views, in their country above)', other])
@@ -144,7 +156,7 @@ def counts(rows, now, pub_id):
     for r in reads: x = rd[norm(r['path'])]; x[0] += 1; x[1] += r.get('visible_s', 0) or 0; x[2] += r.get('scroll', 0) or 0
     runs = [r for r in rows if r.get('type') == RUN_TYPE]
     return {
-        'v': 1, 'site': SITE, 'generated': now, 'public_vault': pub_id, 'city_min': CITY_MIN, 'by': AGENT,
+        'v': 1, 'site': sorted(H), 'generated': now, 'public_vault': pub_id, 'city_min': CITY_MIN, 'by': AGENT,
         'about': 'Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).',
         'totals': {'views': len(views), 'reads': len(reads), 'tabs': len({r.get('sid') for r in people if r.get('sid')}),
                    'countries': len(by_country), 'shares': sum(1 for r in views if r.get('via')), 'bots': sum(1 for r in bots if r['type'] == 'view'),
@@ -154,7 +166,9 @@ def counts(rows, now, pub_id):
         'reading': sorted([[p, n, round(s / n), round(sc / n)] for p, (n, s, sc) in rd.items()], key=lambda x: -x[1]),
         'by_country': by_country.most_common(),
         'by_city': by_city,
-        'by_referrer': C(r.get('ref') for r in views if r.get('ref') != SITE).most_common(30),
+        'by_referrer': C(r.get('ref') for r in views if r.get('ref') not in H).most_common(30),
+        'by_host': C(r.get('site') or SITE for r in views).most_common(),
+        'other_hosts_views': sum(1 for r in off_site if r['type'] == 'view'),
         'by_via': C(r.get('via') for r in views).most_common(),
         'via_detail': {v: {'views': n, 'tabs': len({r.get('sid') for r in views if r.get('via') == v}),
                            'countries': len({r.get('country') for r in views if r.get('via') == v and r.get('country')})}

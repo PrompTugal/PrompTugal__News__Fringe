@@ -61,7 +61,7 @@ export function eventCard(e, { esc }, opts = {}) {
   const note = String(e.storm_note || '').trim();
   const cut = note.length > 110 ? note.slice(0, 110).replace(/\s+\S*$/, '') + '…' : note;
   const storm = e.storm_moved && note && !/^not stated/i.test(note) ? `<div class="ev-storm">Storm: ${esc(cut)}</div>` : '';
-  return `<li class="ev st-${st}"><div class="ev-top"><span class="chip ${st}">${STATUS[st]}</span><span class="ev-time">${esc(timeRange(e))} <small>Lisbon</small></span></div>
+  return `<li class="ev st-${st}"${opts.attrs || ''}><div class="ev-top"><span class="chip ${st}">${STATUS[st]}</span><span class="ev-time">${esc(timeRange(e))} <small>Lisbon</small></span></div>
 <h3 class="ev-name"><a href="${esc(href)}">${esc(e.name)}</a></h3>
 <div class="ev-meta"><b>${esc(placeShort(e))}</b> · ${esc(orgShort(e))}${opts.why ? ` · ${esc(opts.why)}` : ''}</div>${storm}
 <div class="ev-foot"><a href="${esc(e.url)}">Organiser's page</a>${opts.date ? ` · ${esc(opts.date)}` : ''}</div></li>`;

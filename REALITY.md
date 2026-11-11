@@ -1,6 +1,6 @@
 # What exists
 
-> Kept by conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), 11 November 2026, 11:56 UTC. A thing not listed here does not exist.
+> Kept by conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), 11 November 2026, 12:24 UTC. A thing not listed here does not exist.
 
 ## Exists
 
@@ -25,6 +25,12 @@
 - **Event pages:** 70, at /e/<id>/ (work/22, 0fd5052), in the sitemap.
 - **Inboxes:** 7 vaults (work/19), admin/tools/inboxes.py.
 - **OpenRouter key:** a network secret on the lead's environment (the proxy adds it).
+
+- **The control centre:** https://fringe.promptugal.news/dashboard/ (work/25, dev.1), five sections with health colours; /api/v1/swarm.json; /me/ (work/26) makes Dinis's key in his browser (not yet made by him).
+- **Traffic:** counted since work/21 (13 reader views, 2 countries, by 12:07 UTC); /traffic/; drained every 15 minutes inside observability's hourly wake.
+- **Pages:** /now/, /organisers/ (offer marked draft), /changes/, /how/, /graph/, /e/<id>/ (164 events).
+- **The model router** (admin/tools/llm.mjs, OpenRouter): funded again at about 12:30 UTC; first use is a second-model check of events, capped at 5 USD a day.
+- **Dinis's person key** is in data/person-keys.json (work/26).
 
 ## Does not exist yet
 

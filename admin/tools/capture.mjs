@@ -5,8 +5,8 @@
 //
 // Per run: our pages at 390 px and 1280 px; each event's public organiser page (data/events.json url): one screenshot,
 // its visible text, and our extracted fields. Files go to <vault>/<yyyy-mm-dd>/<hh>/<site>/. Git gets only
-// data/captures/runs/<yyyy-mm-dd>-<hh>.json (pointers: vault id, path, sha256, url, captured_at) and a small
-// data/captures/index.json that lists the runs. Never a binary in git. Never websummit.com. Never a page behind a login.
+// data/capture-index-<yyyy-mm-dd>-<hh>.json (pointers: vault id, path, sha256, url, captured_at) and a small
+// data/capture-index.json that lists the runs. Never a binary in git. Never websummit.com. Never a page behind a login.
 // A new vault opens before one reaches MAX_FILES (20,000 is the hard limit; we rotate at 15,000).
 import fs from 'node:fs'; import path from 'node:path'; import os from 'node:os'; import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process'; import { createRequire } from 'node:module';
@@ -22,8 +22,8 @@ const blocked = u => /(^|\.)websummit\.com$/i.test(new URL(u).hostname);
 const slug = s => s.replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').slice(0, 80) || 'index';
 const sgit = (cwd, ...a) => execFileSync('sgit', ['--base-url', HOST, '--token', 'proxy-injected', ...a], { cwd, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
 
-// ---- vault registry (data/captures/vaults.json) and the active vault
-const vfile = path.join(ROOT, 'data/captures/vaults.json');
+// ---- vault registry (data/capture-vaults.json) and the active vault
+const vfile = path.join(ROOT, 'data/capture-vaults.json');
 const reg = JSON.parse(fs.readFileSync(vfile, 'utf8'));
 const files = d => { let n = 0; for (const e of fs.readdirSync(d, { withFileTypes: true })) { if (e.name === '.sg_vault') continue; n += e.isDirectory() ? files(path.join(d, e.name)) : 1; } return n; };
 let active = reg.vaults.find(v => v.status === 'active');
@@ -38,7 +38,7 @@ const VDIR = path.join(VROOT, active.dir);
 
 // ---- what to capture
 const events = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/events.json'), 'utf8')).events;
-let pages = ['/', '/join/', '/graph/', '/traffic/', '/evolution/', '/storm/', '/now/', '/changes/', '/organisers/', '/api/v1/events.json']
+let pages = ['/', '/join/', '/graph/', '/traffic/', '/evolution/', '/storm/', '/now/', '/changes/', '/organisers/', '/dashboard/', '/how/', '/api/v1/events.json']
   .map(p => SITE + p);
 try { const sm = await (await fetch(SITE + '/sitemap.xml')).text(); for (const m of sm.matchAll(/<loc>([^<]+)<\/loc>/g)) if (!m[1].includes('/e/') && !pages.includes(m[1])) pages.push(m[1]); } catch {}
 pages = pages.filter(u => !u.endsWith('.json'));
@@ -97,11 +97,10 @@ await browser.close();
 
 // ---- pointers in git
 const run = { run: runId, captured_at: t0.toISOString().replace(/\.\d+Z$/, 'Z'), finished_at: iso(), vault: { id: active.id, host: HOST }, count: records.length, ok: records.filter(r => !r.error).length, captures: records };
-fs.mkdirSync(path.join(ROOT, 'data/captures/runs'), { recursive: true });
-fs.writeFileSync(path.join(ROOT, `data/captures/runs/${runId}.json`), JSON.stringify(run, null, 1) + '\n');
-const ifile = path.join(ROOT, 'data/captures/index.json');
+fs.writeFileSync(path.join(ROOT, `data/capture-index-${runId}.json`), JSON.stringify(run, null, 1) + '\n');
+const ifile = path.join(ROOT, 'data/capture-index.json');
 const idx = fs.existsSync(ifile) ? JSON.parse(fs.readFileSync(ifile, 'utf8')) : { about: 'Pointers only (work/27). Each run file lists vault id, path, sha256, url and captured_at; the files themselves live in the vault.', runs: [] };
-idx.runs = idx.runs.filter(r => r.run !== runId).concat([{ run: runId, file: `runs/${runId}.json`, vault_id: active.id, captured_at: run.captured_at, count: run.count, ok: run.ok }]);
+idx.runs = idx.runs.filter(r => r.run !== runId).concat([{ run: runId, file: `capture-index-${runId}.json`, vault_id: active.id, captured_at: run.captured_at, count: run.count, ok: run.ok }]);
 idx.updated = iso(); fs.writeFileSync(ifile, JSON.stringify(idx, null, 1) + '\n');
 
 // ---- commit and push the vault

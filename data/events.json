@@ -1,7 +1,7 @@
 {
   "about": "Lisbon Fringe's events: the alternative, community and side events around Web Summit Lisbon, 11 to 13 November 2026 (and a few either side). Each event was re-read at its public source_url at read_at (UTC; Lisbon is on UTC in November). Each says whether Storm Charles moved it. Labels: fact (read on the organiser's page), evidence (read, but the page leaves the status open), hypothesis (not confirmed at source). 'unknown' means we do not know. Organisers are organisations; no private person is named and no contact details are given.",
   "contract": "api/v1/README.md (v1). Required: name, url, read_at, date, start, end, kind, organiser, place, join, status, storm_note, topics. Added by the researcher (v1 allows additions): id, label (fact | evidence | hypothesis), cost (as stated), storm_moved (true | false | null), check (what the page says about the storm, or why status is open), note.",
-  "updated": "2026-11-11T12:15:00Z",
+  "updated": "2026-11-11T13:26:00Z",
   "by": "researcher.2.fringe@PrompTugal.dinis",
   "independence": "Lisbon Fringe is independent of Web Summit and is not run by its organisers. For anything official see the organisers' own pages. Not a warning service: for the storm see IPMA (https://www.ipma.pt), ANEPC (https://www.prociv.gov.pt) and https://storm-charles.promptugal.news.",
   "sources": [
@@ -12,7 +12,7 @@
     {
       "name": "Padel Encounters Lisbon · Wed 11 Nov",
       "url": "https://luma.com/zzup6tmo",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T08:00:00Z",
       "end": "2026-11-11T10:30:00Z",
@@ -29,12 +29,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Proof of Run: rain edition (coffee, no run)",
       "url": "https://luma.com/ryva47wc",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T08:30:00Z",
       "end": "2026-11-11T10:00:00Z",
@@ -53,12 +54,13 @@
       "cost": "free",
       "storm_moved": true,
       "check": "The run is cancelled due to heavy rain (title marked [CANCELLED]); the page keeps the morning coffee for founders.",
-      "note": "The coffee part may have gone ahead; it is in the past at the time read."
+      "note": "The coffee part may have gone ahead; it is in the past at the time read.",
+      "size": "community"
     },
     {
       "name": "Strength & Coffee for Founders & Builders",
       "url": "https://luma.com/3z2xjz1p",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T08:30:00Z",
       "end": "2026-11-11T10:00:00Z",
@@ -77,12 +79,13 @@
       "cost": "EUR 25",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": "A workout then coffee; in the past at the time read, and whether it ran is not stated."
+      "note": "A workout then coffee; in the past at the time read, and whether it ran is not stated.",
+      "size": "community"
     },
     {
       "name": "Creator Club @ Web Summit (breakfast)",
       "url": "https://luma.com/wgji1mfy",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T08:30:00Z",
       "end": "2026-11-11T11:00:00Z",
@@ -101,12 +104,13 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note. Billed as breakfast before heading to Web Summit, whose Wednesday was called off.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "FounderLink Storm Summit: a torrent of intros (morning session, online)",
       "url": "https://luma.com/stormsummit9am",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T09:00:00Z",
       "end": "2026-11-11T10:00:00Z",
@@ -126,12 +130,14 @@
       "cost": "free",
       "storm_moved": true,
       "check": "Made because of the storm: the page says Web Summit is cancelled for Wednesday, so the organisers bring the room to Zoom as 'Storm Summit', three one-hour founder intro sessions.",
-      "note": "An alternative event born of the storm (see work/03)."
+      "note": "An alternative event born of the storm (see work/03).",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Founders Break-fast @the Websummit",
       "url": "https://luma.com/9nzzd63p",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T09:30:00Z",
       "end": "2026-11-11T11:00:00Z",
@@ -148,12 +154,14 @@
       "label": "fact",
       "cost": "EUR 16.5",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Roast your website, or win a coffee (live on YouTube)",
       "url": "https://luma.com/m146luuy",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T10:00:00Z",
       "end": "2026-11-11T14:00:00Z",
@@ -172,12 +180,13 @@
       "cost": "free",
       "storm_moved": true,
       "check": "Was in person at Tejá House; the page says that due to a weather event it happens live on YouTube, not in person.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "Dear Gatekeepers podcast: creating new business models (live recording)",
       "url": "https://luma.com/o9y5xu0p",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T10:00:00Z",
       "end": "2026-11-11T11:00:00Z",
@@ -197,12 +206,13 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page offers an in-person seat inside MEO Arena, where Web Summit's Day 2 was called off, and an online stream; it shows no storm note.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "The Human Side of AI: emotional intelligence and the future of work",
       "url": "https://luma.com/r1ixujpv",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T10:00:00Z",
       "end": "2026-11-11T11:00:00Z",
@@ -221,12 +231,13 @@
       "cost": "free",
       "storm_moved": null,
       "check": "Listed on Zoom; no storm note.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "Human Performance Under Uncertainty: how the brain responds when we don't know what comes next",
       "url": "https://luma.com/xn30wgrj",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T10:00:00Z",
       "end": "2026-11-11T11:00:00Z",
@@ -245,12 +256,13 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page now lists it on Google Meet with a room at PTW Palace still in its text; it gives no reason. That the storm moved it online is a hypothesis.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "Connect, Collaborate, Invest: a purpose-driven experience",
       "url": "https://luma.com/seattle-1hwz",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T11:00:00Z",
       "end": "2026-11-11T13:00:00Z",
@@ -269,12 +281,14 @@
       "cost": "EUR 10 standard, or a free 'Storm Charles' ticket",
       "storm_moved": true,
       "check": "The text still describes an in-person workshop in Lisbon, but the page now lists it on Zoom and offers a free ticket named 'Strom Charles'. That the storm moved it online is our reading of the page.",
-      "note": null
+      "note": null,
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "The Startup Legal Roast: top mistakes that kill your startup",
       "url": "https://luma.com/e42tit8k",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T11:30:00Z",
       "end": "2026-11-11T12:30:00Z",
@@ -293,12 +307,14 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note. The venue is not named, so whether it is affected by the storm or the Day 2 cancellation is unknown.",
-      "note": null
+      "note": null,
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "PTW Classroom: Deep Work x Wexio, an hour to get your inbox back",
       "url": "https://luma.com/vwwf1kj1",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T11:30:00Z",
       "end": "2026-11-11T12:30:00Z",
@@ -317,12 +333,13 @@
       "cost": "free",
       "storm_moved": true,
       "check": "The page says: due to the incoming storm this event has been changed from in-person to online.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "Valois Lisbon: The Allocator Residence (day coworking and evening Allocator Table)",
       "url": "https://luma.com/k0zamjmi",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T12:00:00Z",
       "end": "2026-11-11T20:00:00Z",
@@ -342,7 +359,9 @@
       "cost": "EUR 40 at the door for approved guests",
       "storm_moved": false,
       "check": "Re-read 11:23 UTC: the page now describes Valois's part in WET SUMMIT Lisbon (coworking and an investor-led unconference, 12:00 to 18:00); evening EUR 40 at the door.",
-      "note": "Valois's own listing for WET SUMMIT Lisbon (see 2026-11-11-wet-summit-lisbon)."
+      "note": "Valois's own listing for WET SUMMIT Lisbon (see 2026-11-11-wet-summit-lisbon).",
+      "lane": "business",
+      "size": "major"
     },
     {
       "name": "WET SUMMIT Lisbon: an investors' unconference and pop-up club for the storm day",
@@ -369,12 +388,14 @@
       "cost": "EUR 40 via Luma, EUR 50 at the door (the organiser's site)",
       "storm_moved": true,
       "check": "Read at the organiser's site (11:24 UTC) and its Luma page https://luma.com/oe66d3mh (11:24 UTC).",
-      "note": "An unconference: sixty-second topic pitches and a dot vote at 12:45, three rounds of small groups, read-outs at 16:35, party from 18:00. About 70 places. The site's banner says 'We are now full' while Luma still showed places; the Luma text mentions a EUR 20 day ticket, the site EUR 40. Not open to founders. This is the 'Uncon' of work/03."
+      "note": "An unconference: sixty-second topic pitches and a dot vote at 12:45, three rounds of small groups, read-outs at 16:35, party from 18:00. About 70 places. The site's banner says 'We are now full' while Luma still showed places; the Luma text mentions a EUR 20 day ticket, the site EUR 40. Not open to founders. This is the 'Uncon' of work/03.",
+      "lane": "business",
+      "size": "major"
     },
     {
       "name": "Завтрак русскоязычных фаундеров",
       "url": "https://luma.com/pxwl1esg",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T12:00:00Z",
       "end": "2026-11-11T13:00:00Z",
@@ -391,12 +412,13 @@
       "label": "fact",
       "cost": "EUR 20",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Yorkseed Allocator Lunch",
       "url": "https://luma.com/jmjk0qqh",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T12:30:00Z",
       "end": "2026-11-11T14:30:00Z",
@@ -414,12 +436,14 @@
       "cost": "from EUR 119",
       "storm_moved": null,
       "check": "The page shows no storm note; it says the venue is still to be chosen between two Lisbon locations.",
-      "note": null
+      "note": null,
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "AI Video Blueprint 2027",
       "url": "https://luma.com/59m82tyo",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T13:00:00Z",
       "end": "2026-11-11T14:00:00Z",
@@ -438,12 +462,13 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page says the event will be held online, same time; it gives no reason.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "FounderLink Storm Summit: a torrent of intros (afternoon session, online)",
       "url": "https://luma.com/stormsummit2pm",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T14:00:00Z",
       "end": "2026-11-11T15:00:00Z",
@@ -463,12 +488,14 @@
       "cost": "free",
       "storm_moved": true,
       "check": "Made because of the storm: the page says Web Summit is cancelled for Wednesday, so the organisers bring the room to Zoom as 'Storm Summit', three one-hour founder intro sessions.",
-      "note": "An alternative event born of the storm (see work/03)."
+      "note": "An alternative event born of the storm (see work/03).",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "The Corporate Academy of Tomorrow",
       "url": "https://luma.com/6wcduo5u",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T14:00:00Z",
       "end": "2026-11-11T15:00:00Z",
@@ -488,12 +515,13 @@
       "cost": "free",
       "storm_moved": null,
       "check": "Listed on Google Meet; no storm note.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "Redefining investment and innovation | Where is opportunity emerging beyond the familiar investment pipeline?",
       "url": "https://luma.com/gplr46ot",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T14:00:00Z",
       "end": "2026-11-11T15:00:00Z",
@@ -512,12 +540,14 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Re-read 2026-11-11T13:26:00Z: the Luma page now returns 404 (it was live at 11:55 UTC); removed or made private is a hypothesis. Status stays unknown.",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Side Events Guide IRL: meet us during Web Summit (Wednesday)",
       "url": "https://luma.com/4fbc1s24",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T14:30:00Z",
       "end": "2026-11-12T17:30:00Z",
@@ -536,12 +566,13 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note, but it starts at MEO Arena, whose Web Summit Day 2 (Wednesday) was called off. Check the page before going.",
-      "note": "Informal 'come find us' meetup; the page lists a window from Wed 14:30 to Thu 17:30 UTC."
+      "note": "Informal 'come find us' meetup; the page lists a window from Wed 14:30 to Thu 17:30 UTC.",
+      "size": "community"
     },
     {
       "name": "Ethical AI Initiative: the different lenses of AI (roundtable)",
       "url": "https://luma.com/lg2qwq2l",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T14:30:00Z",
       "end": "2026-11-11T15:30:00Z",
@@ -559,12 +590,13 @@
       "cost": "free",
       "storm_moved": null,
       "check": "Listed on Zoom; the page says 'Please note this event is virtual.' No storm note.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "H2H 2.0: how AI's biggest threat isn't what you think",
       "url": "https://luma.com/i91jzozo",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T15:00:00Z",
       "end": "2026-11-11T15:45:00Z",
@@ -582,12 +614,13 @@
       "label": "fact",
       "cost": "free",
       "check": "This page shows no storm note, but the same organisers moved their 16:00 session online because of the red alert. Check the page before going.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "Bridging Capital Across Borders: investors, founders & ecosystems (online)",
       "url": "https://luma.com/148l175b",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T15:30:00Z",
       "end": "2026-11-11T17:00:00Z",
@@ -606,12 +639,14 @@
       "cost": "free",
       "storm_moved": null,
       "check": "Titled 'ONLINE Event' while its text describes a delegation meeting in Lisbon; no reason given. That the storm moved it is a hypothesis.",
-      "note": null
+      "note": null,
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "How to align your leadership team when AI moves faster than people",
       "url": "https://luma.com/az8uos4e",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T16:00:00Z",
       "end": "2026-11-11T16:45:00Z",
@@ -630,12 +665,13 @@
       "cost": "free",
       "storm_moved": true,
       "check": "Moved online from the SIXT Innovation Center: the page says due to the red alert in Lisbon (Storm Charles) and citywide closures; same time.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "Amplify Europe aperitivo (Lisbon)",
       "url": "https://luma.com/a2ackpa5",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T16:00:00Z",
       "end": "2026-11-11T19:00:00Z",
@@ -654,12 +690,14 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": "For investors, LPs and ecosystem leaders: a debate, not a panel."
+      "note": "For investors, LPs and ecosystem leaders: a debate, not a panel.",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Yorkseed Investor Pitch",
       "url": "https://luma.com/bmu7tyec",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T16:00:00Z",
       "end": "2026-11-11T20:00:00Z",
@@ -677,12 +715,14 @@
       "label": "fact",
       "cost": "EUR 15",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "The AI spam problem: how founders win clients in 2027",
       "url": "https://luma.com/samqquwk",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:00:00Z",
       "end": "2026-11-11T18:00:00Z",
@@ -702,12 +742,13 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page says the event will now take place online; it gives no reason. That the storm moved it is a hypothesis.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "The Next Move (careers networking)",
       "url": "https://luma.com/aa65srr3",
-      "read_at": "2026-11-11T11:23:00Z",
+      "read_at": "2026-11-11T12:52:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:00:00Z",
       "end": "2026-11-11T19:00:00Z",
@@ -726,12 +767,13 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The Luma page returned 404 at 11:23 and 11:25 UTC (it was live at 10:51 UTC). It may have been cancelled or made private.",
-      "note": "A recruitment and networking event."
+      "note": "A recruitment and networking event.",
+      "size": "community"
     },
     {
       "name": "Enchant Pitch Parties: Fintech, Travel Tech, Applied AI, Healthtech, Gaming & Entertainment",
       "url": "https://luma.com/574bmobb",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:00:00Z",
       "end": "2026-11-11T21:00:00Z",
@@ -755,12 +797,14 @@
       "cost": "Founders EUR 45; investors free; pitch slots EUR 35 to 150; afterparty only (from 20:00) free",
       "storm_moved": null,
       "check": "None of the five pages shows a storm note.",
-      "note": "Five tracks share one venue and evening, each with its own Luma page: luma.com/574bmobb (fintech), /9jtn1muw (travel tech), /hz3ma5fl (applied AI), /nuggtawe (healthtech), /wajdwhgx (gaming). Afterparty 21:00 to midnight."
+      "note": "Five tracks share one venue and evening, each with its own Luma page: luma.com/574bmobb (fintech), /9jtn1muw (travel tech), /hz3ma5fl (applied AI), /nuggtawe (healthtech), /wajdwhgx (gaming). Afterparty 21:00 to midnight.",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Like minded | Web Summit (Ukrainian founders' community evening)",
       "url": "https://luma.com/yatbt1w6",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:00:00Z",
       "end": "2026-11-11T22:00:00Z",
@@ -780,12 +824,13 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": "Page in Ukrainian."
+      "note": "Page in Ukrainian.",
+      "size": "community"
     },
     {
       "name": "Lisbon Tech Side Event",
       "url": "https://luma.com/f3c6aqvx",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:00:00Z",
       "end": "2026-11-11T19:30:00Z",
@@ -802,12 +847,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Gaming & Entertainment Pitch Party.",
       "url": "https://luma.com/wajdwhgx",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:00:00Z",
       "end": "2026-11-11T21:00:00Z",
@@ -825,12 +871,14 @@
       "label": "fact",
       "cost": "free tier; paid tiers up to EUR 150",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Healthtech Pitch Party",
       "url": "https://luma.com/nuggtawe",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:00:00Z",
       "end": "2026-11-11T21:00:00Z",
@@ -845,12 +893,14 @@
       "label": "fact",
       "cost": "free tier; paid tiers up to EUR 150",
       "storm_moved": false,
-      "check": "Added from the public Luma calendar listing and event page read at 2026-11-11T12:15:00Z."
+      "check": "Added from the public Luma calendar listing and event page read at 2026-11-11T12:15:00Z.",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "AI for Business / Applied AI Pitch Party",
       "url": "https://luma.com/hz3ma5fl",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:00:00Z",
       "end": "2026-11-11T21:00:00Z",
@@ -865,12 +915,14 @@
       "label": "fact",
       "cost": "free tier; paid tiers up to EUR 150",
       "storm_moved": false,
-      "check": "Added from the public Luma calendar listing and event page read at 2026-11-11T12:15:00Z."
+      "check": "Added from the public Luma calendar listing and event page read at 2026-11-11T12:15:00Z.",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Travel Tech Pitch Party",
       "url": "https://luma.com/9jtn1muw",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:00:00Z",
       "end": "2026-11-11T21:00:00Z",
@@ -885,12 +937,14 @@
       "label": "fact",
       "cost": "free tier; paid tiers up to EUR 150",
       "storm_moved": false,
-      "check": "Added from the public Luma calendar listing and event page read at 2026-11-11T12:15:00Z."
+      "check": "Luma start_at 17:00 UTC read 2026-11-11T12:52:00Z. The '6.30 PM' on the page is the Travel Tech pitch session inside the evening (5 PM networking, 6.30 PM pitch session, 7 PM to 9 PM networking, 9 PM afterparty), not the start.",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Taste Japan & make career connections: meet Japanese startups expanding into Europe",
       "url": "https://luma.com/f31mqr0v",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:25:00Z",
       "end": "2026-11-11T19:00:00Z",
@@ -910,12 +964,13 @@
       "cost": "free",
       "storm_moved": true,
       "check": "The title reads 'Canceled due to the weather'.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "Kick off meeting WebSummit Lisbon",
       "url": "https://www.meetup.com/life-with-artificials/events/317058510/",
-      "read_at": "2026-11-11T11:23:00Z",
+      "read_at": "2026-11-11T12:52:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:30:00Z",
       "end": "2026-11-11T20:30:00Z",
@@ -933,13 +988,14 @@
       "label": "evidence",
       "cost": "free",
       "storm_moved": false,
-      "check": "Scheduled on the page (schema.org EventScheduled); no storm note.",
-      "note": "The page gives 18:30 to 21:30 at UTC+01:00 (17:30 to 20:30 UTC); Lisbon is UTC+00:00 in November, so the organiser may mean 18:30 Lisbon time. Check the page."
+      "check": "Meetup page read 2026-11-11T12:52:00Z: startDate 2026-11-11T18:30:00+01:00 (= 17:30 UTC) and the event time zone is Europe/Copenhagen, while the venue is in Lisboa. The page shows '6:30 PM' in Copenhagen time. Hypothesis: if the organiser meant Lisbon clock time, it starts at 18:30 UTC; not confirmed. Check the Meetup page.",
+      "note": "Start time is uncertain by one hour: 17:30 UTC (as the page's Copenhagen time zone states) or 18:30 UTC (if the organiser meant Lisbon time).",
+      "size": "community"
     },
     {
       "name": "Cisco: from automation to autonomy, how AI is changing the way we run technology",
       "url": "https://luma.com/portugal-dezg",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:30:00Z",
       "end": "2026-11-11T18:30:00Z",
@@ -958,12 +1014,35 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note; its text names PTW Palace Room 2, but its location field is empty (no address, no online link).",
-      "note": null
+      "note": null,
+      "size": "community"
+    },
+    {
+      "name": "The Web Summit Soirée",
+      "url": "https://www.eventbrite.co.uk/e/the-web-summit-soiree-tickets-2004057889094",
+      "read_at": "2026-11-11T13:26:00Z",
+      "date": "2026-11-11",
+      "start": "2026-11-11T17:30:00Z",
+      "end": "2026-11-11T19:30:00Z",
+      "kind": "side event",
+      "organiser": "unknown (an individual organiser; not named here)",
+      "place": "Hotel Pátio do Tijolo, 41A Calçada do Tijolo, Lisboa",
+      "join": "Sold out on Eventbrite: https://www.eventbrite.co.uk/e/the-web-summit-soiree-tickets-2004057889094",
+      "status": "unknown",
+      "storm_note": "Not stated on the page.",
+      "topics": [],
+      "id": "2026-11-11-the-web-summit-soiree",
+      "label": "fact",
+      "cost": "unknown",
+      "storm_moved": false,
+      "size": "community",
+      "check": "Added from the public Eventbrite listing (Lisbon, Web Summit search) and event page read 2026-11-11T13:26:00Z.",
+      "lane": "business"
     },
     {
       "name": "Tech Startups on the Rooftop (Web Summit week edition)",
       "url": "https://luma.com/rjh3pf7g",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:00:00Z",
       "end": "2026-11-11T21:00:00Z",
@@ -982,12 +1061,13 @@
       "cost": "free (optional EUR 5 'buy the organiser a drink' ticket)",
       "storm_moved": false,
       "check": "The page shows no storm note; it is a rooftop venue on a storm day, so check before going.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "AI Horizon Conference 2026: AI talks, startup pitches & afterparty",
       "url": "https://luma.com/p6glepvg",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:00:00Z",
       "end": "2026-11-11T23:00:00Z",
@@ -1006,12 +1086,13 @@
       "cost": "General admission free; Premium EUR 50",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "size": "major"
     },
     {
       "name": "Innovation Wednesdays @ Web Summit (Azerbaijan's founders and delegation)",
       "url": "https://luma.com/pgpdzd1g",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:00:00Z",
       "end": "2026-11-11T20:00:00Z",
@@ -1031,12 +1112,14 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page notes a venue change without giving a reason; that it was the storm is not stated.",
-      "note": null
+      "note": null,
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Frontier Founders & VCs Soirée (online)",
       "url": "https://luma.com/tjed8ali",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:00:00Z",
       "end": "2026-11-11T20:00:00Z",
@@ -1057,12 +1140,14 @@
       "cost": "free",
       "storm_moved": true,
       "check": "The page says: location online due to storm forecast.",
-      "note": null
+      "note": null,
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "LisboaUX: Web Summit Edition (second anniversary)",
       "url": "https://luma.com/yvm04djt",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:00:00Z",
       "end": "2026-11-11T21:00:00Z",
@@ -1082,12 +1167,13 @@
       "cost": "talks EUR 5; talks and dinner EUR 10; community members free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "TTI at Web Summit: What's Next at the AI Frontier?",
       "url": "https://luma.com/3504dzdm",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:00:00Z",
       "end": "2026-11-11T20:00:00Z",
@@ -1105,12 +1191,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "[POSTPONED] Clay in Lisbon: GTM Battlecards",
       "url": "https://luma.com/ccl-websummit",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:00:00Z",
       "end": "2026-11-11T21:00:00Z",
@@ -1128,12 +1215,35 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": true,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business",
+      "size": "community"
+    },
+    {
+      "name": "Web Summit - Networking Event @ Delirium Café",
+      "url": "https://www.eventbrite.co.uk/e/web-summit-networking-event-delirium-cafe-tickets-2002956334314",
+      "read_at": "2026-11-11T13:26:00Z",
+      "date": "2026-11-11",
+      "start": "2026-11-11T18:00:00Z",
+      "end": "2026-11-11T22:00:00Z",
+      "kind": "side event",
+      "organiser": "WeRoad (per the event page)",
+      "place": "Delirium Café Lisboa, 2A Calçada Nova de São Francisco, Lisboa",
+      "join": "Register on Eventbrite: https://www.eventbrite.co.uk/e/web-summit-networking-event-delirium-cafe-tickets-2002956334314",
+      "status": "unknown",
+      "storm_note": "Not stated on the page.",
+      "topics": [],
+      "id": "2026-11-11-web-summit-networking-event-delirium-cafe",
+      "label": "fact",
+      "cost": "unknown",
+      "storm_moved": false,
+      "size": "community",
+      "check": "Added from the public Eventbrite listing (Lisbon, Web Summit search) and event page read 2026-11-11T13:26:00Z."
     },
     {
       "name": "DemoNightLx Web Summit Week Edition (Canopy Demo Night)",
       "url": "https://luma.com/2ofzih7t",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:30:00Z",
       "end": "2026-11-11T19:30:00Z",
@@ -1152,7 +1262,8 @@
       "cost": "free (optional EUR 10 'thank you Canopy' ticket)",
       "storm_moved": true,
       "check": "The page says that following the weather warning in Lisbon the event is now hosted on Canopy's YouTube channel.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "KCD Warmup & Web Summit Side Event #29 (Cloud Native Lisbon x DevOps Lisbon x GDG Lisbon)",
@@ -1178,12 +1289,13 @@
       "cost": null,
       "storm_moved": null,
       "check": "Cancelled on the page (schema.org EventCancelled); no reason given. That it was the storm is a hypothesis.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "Open Mercato Night: AI agents build a custom CRM, live",
       "url": "https://luma.com/mso0mrpr",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:30:00Z",
       "end": "2026-11-11T23:00:00Z",
@@ -1204,12 +1316,13 @@
       "cost": "free",
       "storm_moved": true,
       "check": "Postponed: the page says it will not take place on 11 November due to the bad weather forecast; new date not yet given.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "Funders & Founders Night by AltaIR Capital: the new shape of early stage",
       "url": "https://luma.com/h19cccc5",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:30:00Z",
       "end": "2026-11-11T22:00:00Z",
@@ -1228,12 +1341,14 @@
       "cost": "free",
       "storm_moved": true,
       "check": "The page says that due to the state of alert in Portugal the event will not take place as planned; a smaller gathering may be held that evening if conditions allow, confirmed to guests by 16:00 UTC.",
-      "note": "Re-read after 16:00 UTC."
+      "note": "Re-read after 16:00 UTC.",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "European Tech Champions: Italy & Portugal",
       "url": "https://luma.com/rp4tgcfu",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:30:00Z",
       "end": "2026-11-11T22:00:00Z",
@@ -1253,12 +1368,13 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "Romanian Tech Night at WEBSUMMIT",
       "url": "https://luma.com/4vu5ru1h",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:30:00Z",
       "end": "2026-11-11T21:30:00Z",
@@ -1275,7 +1391,29 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
+    },
+    {
+      "name": "[ Postponed ] Designing at AI's new pace - UX Talks",
+      "url": "https://www.eventbrite.pt/e/postponed-designing-at-ais-new-pace-ux-talks-registration-2003831182007",
+      "read_at": "2026-11-11T13:26:00Z",
+      "date": "2026-11-11",
+      "start": "2026-11-11T18:30:00Z",
+      "end": "2026-11-11T22:30:00Z",
+      "kind": "side event",
+      "organiser": "Deeploy (per the event page)",
+      "place": "Heden Workspaces - Santa Apolónia, Rua do Jardim do Tabaco, Lisboa",
+      "join": "Register on Eventbrite: https://www.eventbrite.pt/e/postponed-designing-at-ais-new-pace-ux-talks-registration-2003831182007",
+      "status": "moved",
+      "storm_note": "The Eventbrite page is marked Postponed; read the page for any new date.",
+      "topics": [],
+      "id": "2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks",
+      "label": "fact",
+      "cost": "unknown",
+      "storm_moved": true,
+      "size": "community",
+      "check": "Added from the public Eventbrite listing (Lisbon, Web Summit search) and event page read 2026-11-11T13:26:00Z."
     },
     {
       "name": "IndieSummit Lisboa Meetup: Entrepreneur Social",
@@ -1299,12 +1437,14 @@
       "cost": "not stated",
       "storm_moved": false,
       "check": "Scheduled on the page; no storm note.",
-      "note": "No talks: an open social."
+      "note": "No talks: an open social.",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "FounderLink Storm Summit: a torrent of intros (evening session, online)",
       "url": "https://luma.com/stormsummit7pm",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T19:00:00Z",
       "end": "2026-11-11T20:00:00Z",
@@ -1324,12 +1464,14 @@
       "cost": "free",
       "storm_moved": true,
       "check": "Made because of the storm: the page says Web Summit is cancelled for Wednesday, so the organisers bring the room to Zoom as 'Storm Summit', three one-hour founder intro sessions.",
-      "note": "An alternative event born of the storm (see work/03)."
+      "note": "An alternative event born of the storm (see work/03).",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Indvstry Power House: Diaspora Dinner Lisbon",
       "url": "https://luma.com/1hj85rcr",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T19:00:00Z",
       "end": "2026-11-11T22:30:00Z",
@@ -1349,12 +1491,14 @@
       "cost": "EUR 95 to 150 a seat; table of four EUR 500",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Foundacious Lisbon: meet Germany's angel investors and startups",
       "url": "https://luma.com/lapwcmfu",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T19:00:00Z",
       "end": "2026-11-11T23:00:00Z",
@@ -1374,12 +1518,14 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Agentic Engineering Lisbon",
       "url": "https://luma.com/lisbon-5",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T19:00:00Z",
       "end": "2026-11-11T22:00:00Z",
@@ -1398,12 +1544,13 @@
       "label": "fact",
       "cost": "USD 10",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Polymorphic Capital Soirée: Founders and Partners (Invite Only)",
       "url": "https://luma.com/z0vkl3ds",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T19:00:00Z",
       "end": "2026-11-11T23:00:00Z",
@@ -1422,12 +1569,14 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Private Dinner for 30 defence leaders funding peace through power",
       "url": "https://luma.com/edm55r5w",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T19:00:00Z",
       "end": "2026-11-11T22:00:00Z",
@@ -1446,12 +1595,35 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business",
+      "size": "community"
+    },
+    {
+      "name": "Degens Hangout",
+      "url": "https://www.eventbrite.pt/e/degens-hangout-tickets-913441898307",
+      "read_at": "2026-11-11T13:26:00Z",
+      "date": "2026-11-11",
+      "start": "2026-11-11T19:00:00Z",
+      "end": "2026-11-11T22:00:00Z",
+      "kind": "side event",
+      "organiser": "₿ased in Lisbon (per the event page)",
+      "place": "Delirium Café Lisboa, 2A Calçada Nova de São Francisco, Lisboa",
+      "join": "Register on Eventbrite: https://www.eventbrite.pt/e/degens-hangout-tickets-913441898307",
+      "status": "cancelled",
+      "storm_note": "The Eventbrite page is marked Cancelled; no reason is given.",
+      "topics": [],
+      "id": "2026-11-11-degens-hangout",
+      "label": "fact",
+      "cost": "unknown",
+      "storm_moved": true,
+      "size": "community",
+      "check": "Added from the public Eventbrite listing (Lisbon, Web Summit search) and event page read 2026-11-11T13:26:00Z."
     },
     {
       "name": "Post demo night happy hour (if the weather allows)",
       "url": "https://luma.com/qd9h2j25",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T19:30:00Z",
       "end": "2026-11-11T20:30:00Z",
@@ -1470,12 +1642,13 @@
       "cost": "free (a few drinks on the hosts)",
       "storm_moved": true,
       "check": "The page says the weather moved the demo night online, and the drinks happen only 'if the weather allows and you can arrive safely'; if not, 'stay indoors, stay safe'.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "Market Expansion Dinner",
       "url": "https://luma.com/6l83ko1d",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T19:30:00Z",
       "end": "2026-11-11T23:30:00Z",
@@ -1494,12 +1667,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Albanian Founders & Investors Meetup",
       "url": "https://luma.com/5wp4rmi9",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T19:30:00Z",
       "end": "2026-11-11T22:00:00Z",
@@ -1516,12 +1690,14 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Founders' House Party | Web Summit '26",
       "url": "https://luma.com/jp6yr213",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T20:00:00Z",
       "end": "2026-11-12T02:00:00Z",
@@ -1541,12 +1717,14 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "R-Founders Week WebSummit'26 | R-Founders Party 11.11",
       "url": "https://luma.com/wft7z9qj",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T20:00:00Z",
       "end": "2026-11-12T00:30:00Z",
@@ -1563,12 +1741,13 @@
       "label": "fact",
       "cost": "EUR 120",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Between the Waves",
       "url": "https://luma.com/5yucusdb",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T20:00:00Z",
       "end": "2026-11-11T23:00:00Z",
@@ -1585,12 +1764,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "FUTURE-TECH 2026: short films about technology",
       "url": "https://luma.com/25z2ph1o",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T20:30:00Z",
       "end": "2026-11-11T22:00:00Z",
@@ -1609,12 +1789,13 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page now lists it on Google Meet with a room at PTW Palace still in its text; it gives no reason. That the storm moved it online is a hypothesis.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "Karumi AI Lands in Lisbon",
       "url": "https://luma.com/bsjzwei2",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T21:00:00Z",
       "end": "2026-11-11T23:00:00Z",
@@ -1632,12 +1813,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "The Signal Room by Hardal",
       "url": "https://luma.com/9c2kspye",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T21:00:00Z",
       "end": "2026-11-11T23:00:00Z",
@@ -1654,12 +1836,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Web Summit x Tech Talks Run Club & Coffee",
       "url": "https://luma.com/mpv6bmso",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T07:00:00Z",
       "end": "2026-11-12T08:00:00Z",
@@ -1676,12 +1859,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "AM Run & Workout w/ BVC",
       "url": "https://luma.com/zaxt5ceb",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T08:00:00Z",
       "end": "2026-11-12T09:30:00Z",
@@ -1698,12 +1882,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Padel Encounters Lisbon · Thu 12 Nov",
       "url": "https://luma.com/8xqgougf",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T08:00:00Z",
       "end": "2026-11-12T10:30:00Z",
@@ -1720,12 +1905,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "The Right Hand Breakfast: Chiefs of Staff at Web Summit",
       "url": "https://luma.com/ci5jzmbs",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T08:30:00Z",
       "end": "2026-11-12T09:30:00Z",
@@ -1743,12 +1929,14 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Guided Morning Walk in Lisbon Before Web Summit",
       "url": "https://luma.com/ugpauofi",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T08:30:00Z",
       "end": "2026-11-12T09:30:00Z",
@@ -1765,12 +1953,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Networking Coffee & Breakfast | Web Summit",
       "url": "https://luma.com/52zu3v0i",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T08:30:00Z",
       "end": "2026-11-12T09:30:00Z",
@@ -1787,12 +1976,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Female Founders Breakfast: Web Summit special",
       "url": "https://luma.com/sx67k4x0",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T09:00:00Z",
       "end": "2026-11-12T10:30:00Z",
@@ -1810,12 +2000,14 @@
       "cost": "EUR 25 to 50",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Sales Leaders Breakfast · Web Summit 2026",
       "url": "https://luma.com/l4098oo8",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T09:00:00Z",
       "end": "2026-11-12T11:00:00Z",
@@ -1834,12 +2026,14 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "OVHcloud Exclusive Breakfast by Unicorn Factory Lisboa",
       "url": "https://luma.com/5qsia07c",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T09:00:00Z",
       "end": "2026-11-12T11:00:00Z",
@@ -1858,7 +2052,8 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "Open Coffee Lisbon Web Summit Special #53",
@@ -1882,12 +2077,14 @@
       "cost": "free (honesty jar for the coffee machine)",
       "storm_moved": false,
       "check": "Scheduled; the venue change to Impact Hub is not stated as storm related.",
-      "note": null
+      "note": null,
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Covilhã Tech Day 2026",
       "url": "https://luma.com/u522v47o",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T09:30:00Z",
       "end": "2026-11-12T17:30:00Z",
@@ -1905,12 +2102,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "major"
     },
     {
       "name": "Café & Code: a developer café takeover by Exa x Mastra",
       "url": "https://luma.com/u0iuhn8i",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T10:00:00Z",
       "end": "2026-11-12T16:00:00Z",
@@ -1929,12 +2127,13 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": "Drop-in coworking with demos."
+      "note": "Drop-in coworking with demos.",
+      "size": "community"
     },
     {
       "name": "Canopy Campfire: how is AI changing your life?",
       "url": "https://luma.com/g87gj7f6",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T10:00:00Z",
       "end": "2026-11-12T11:00:00Z",
@@ -1952,12 +2151,13 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "Kids Young Founders Pitch at Tech Week Palace 2026",
       "url": "https://luma.com/7jgs6qn9",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T10:00:00Z",
       "end": "2026-11-12T18:30:00Z",
@@ -1975,12 +2175,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "PTW COWORKING BY IDEA SPACES",
       "url": "https://luma.com/ho7yw9rv",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T10:00:00Z",
       "end": "2026-11-12T18:00:00Z",
@@ -1999,12 +2200,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "major"
     },
     {
       "name": "It's all about AI. Reimagining how we work, create, and think",
       "url": "https://luma.com/6j1ze0qi",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T11:30:00Z",
       "end": "2026-11-12T12:30:00Z",
@@ -2023,12 +2225,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "PTW Classroom - Portuguese for Tech Life: Meet, Greet, Connect.",
       "url": "https://luma.com/pcnppf6w",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T11:30:00Z",
       "end": "2026-11-12T12:30:00Z",
@@ -2046,12 +2249,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "AI Networking Lunch @ Web Summit 2026",
       "url": "https://luma.com/jcizfqc8",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T12:00:00Z",
       "end": "2026-11-12T13:00:00Z",
@@ -2068,12 +2272,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "AI Engineers' Lunch · Web Summit week",
       "url": "https://luma.com/85k5kz1g",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T12:30:00Z",
       "end": "2026-11-12T14:30:00Z",
@@ -2091,12 +2296,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Re-read 2026-11-11T12:56:00Z for the second-opinion check: the page still says Thu 12 Nov, 12:30 arrive, back to the conference 14:30; not moved. Luma shows it sold out.",
+      "size": "community"
     },
     {
       "name": "Business Lunch Lisbon | fSense & cVortex | Web Summit 2026 Side Event",
       "url": "https://luma.com/vfsejd2k",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T13:00:00Z",
       "end": "2026-11-12T15:00:00Z",
@@ -2114,12 +2320,14 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "AI PROMISES TO GIVE US TIME BACK. WHO GETS TO KEEP IT?",
       "url": "https://luma.com/nlqmie2v",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T13:00:00Z",
       "end": "2026-11-12T14:00:00Z",
@@ -2138,12 +2346,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "A Family-Style Gypsy Lunch | Web Summit Wind Down",
       "url": "https://luma.com/tejahouse-ues5",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T13:00:00Z",
       "end": "2026-11-12T15:30:00Z",
@@ -2160,12 +2369,13 @@
       "label": "fact",
       "cost": "EUR 25",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "WorkShop with Parents | Unicorn School",
       "url": "https://luma.com/kjbdyht9",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T13:00:00Z",
       "end": "2026-11-12T15:00:00Z",
@@ -2182,12 +2392,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Cultural Agility: The Missing Skill in the Future of Work",
       "url": "https://luma.com/yjh8n2px",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T14:30:00Z",
       "end": "2026-11-12T15:30:00Z",
@@ -2204,12 +2415,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "PTW Classroom - Storytelling Game by Pina",
       "url": "https://luma.com/gb225ul8",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T14:30:00Z",
       "end": "2026-11-12T15:30:00Z",
@@ -2228,12 +2440,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Entrepreneur Community Meet the Founder | Unicorn School",
       "url": "https://luma.com/h3nyq6ui",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T15:30:00Z",
       "end": "2026-11-12T18:00:00Z",
@@ -2251,12 +2464,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Breaking into America: US Fundraising Playbook for European Founders",
       "url": "https://luma.com/fdr23mdq",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T16:00:00Z",
       "end": "2026-11-12T17:00:00Z",
@@ -2275,12 +2489,14 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Yorkseed Cross-Border Venture Salon",
       "url": "https://luma.com/ymrb63b7",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T16:00:00Z",
       "end": "2026-11-12T20:00:00Z",
@@ -2299,12 +2515,14 @@
       "label": "fact",
       "cost": "EUR 15",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Re-read 2026-11-11T12:56:00Z for the second-opinion check: the Luma page is live, dated Thu 12 Nov 16:00 UTC, no cancellation or storm wording; EUR 15.",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Founder Decompression",
       "url": "https://luma.com/khjuq5zp",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T16:00:00Z",
       "end": "2026-11-12T18:30:00Z",
@@ -2323,12 +2541,13 @@
       "label": "fact",
       "cost": "EUR 25",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "PTW Classroom - Who Flies When the CEO Ejects? A TOPGUN Pilot's Leadership Challenge",
       "url": "https://luma.com/5aa4ivy5",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T16:00:00Z",
       "end": "2026-11-12T17:00:00Z",
@@ -2346,12 +2565,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Post Web Summit Reset: sauna & cold plunge",
       "url": "https://luma.com/uau5nem3",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T16:30:00Z",
       "end": "2026-11-12T18:00:00Z",
@@ -2369,12 +2589,13 @@
       "cost": "EUR 40",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "Elevon CZ/SK Community Night (catamaran on the Tagus)",
       "url": "https://elevon.io/websummit/night",
-      "read_at": "2026-11-11T11:23:00Z",
+      "read_at": "2026-11-11T12:56:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T17:00:00Z",
       "end": "2026-11-12T19:00:00Z",
@@ -2393,13 +2614,14 @@
       "label": "fact",
       "cost": "welcome drink included; cost not stated",
       "storm_moved": true,
-      "check": "The page now reads 'Thursday, 12 November 2026 · 17:00–19:00 (moved from Wednesday due to extreme weather)'.",
-      "note": "The id keeps its first date so that apps can follow it."
+      "check": "Re-read 2026-11-11T12:56:00Z at elevon.io/websummit/night: 'Thursday, 12 November 2026 · 17:00-19:00 (moved from Wednesday due to extreme weather)', catamaran on the Tagus. Our 'moved' is right; the second opinion's 'page says on' reads the new Thursday date.",
+      "note": "The id keeps its first date so that apps can follow it.",
+      "size": "community"
     },
     {
       "name": "Agents Are Ready. The Internet Isn't.",
       "url": "https://luma.com/lunar-ltdv",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T17:00:00Z",
       "end": "2026-11-12T19:30:00Z",
@@ -2419,12 +2641,13 @@
       "cost": "free",
       "storm_moved": true,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "Next Round's on Us | Web Summit 2026",
       "url": "https://luma.com/j2swdpb0",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T17:00:00Z",
       "end": "2026-11-12T19:00:00Z",
@@ -2444,12 +2667,14 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Healthcare [Re]imagined by AI",
       "url": "https://luma.com/uomuj3gw",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T17:00:00Z",
       "end": "2026-11-12T20:00:00Z",
@@ -2467,12 +2692,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "One Night in Lisbon with Replit",
       "url": "https://luma.com/ReplitLisbon",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T17:30:00Z",
       "end": "2026-11-12T20:30:00Z",
@@ -2489,12 +2715,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Building Better Trading Strategies with AI",
       "url": "https://luma.com/dwuofjy8",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T17:30:00Z",
       "end": "2026-11-12T18:30:00Z",
@@ -2513,12 +2740,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "EIT Jumpstarter 2026 Awards Ceremony | Web Summit Side event",
       "url": "https://luma.com/a2ue9hpo",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T17:30:00Z",
       "end": "2026-11-12T21:00:00Z",
@@ -2537,12 +2765,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Side Event: staaake Closing AI/Tech — Power Walk",
       "url": "https://luma.com/staaake-m5bj",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T17:30:00Z",
       "end": "2026-11-12T18:30:00Z",
@@ -2561,12 +2790,13 @@
       "label": "fact",
       "cost": "free tier; paid tiers up to EUR 1000",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "PTW Classroom -What Can AI Workers Do for Your Business?",
       "url": "https://luma.com/pq4aiajl",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T17:30:00Z",
       "end": "2026-11-12T18:30:00Z",
@@ -2583,12 +2813,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Defense Tech Meetup #9: Sovereignty by Design",
       "url": "https://luma.com/whll1umb",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T17:45:00Z",
       "end": "2026-11-12T21:15:00Z",
@@ -2608,12 +2839,13 @@
       "cost": "EUR 10",
       "storm_moved": true,
       "check": "Moved from Wednesday 11 to Thursday 12 November after IPMA's red wind warning; same time and lineup; registrations still count; paid tickets reimbursed if you cannot come.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "The Founder Effect: what you choose to build once you've already won",
       "url": "https://luma.com/wrz9dilz",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T18:00:00Z",
       "end": "2026-11-12T22:30:00Z",
@@ -2633,12 +2865,14 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Rize - The Reset 11:11 | A Web Summit Wellness Experience",
       "url": "https://luma.com/8xh639r3",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T18:00:00Z",
       "end": "2026-11-12T20:30:00Z",
@@ -2657,12 +2891,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "lateral. /Web Summit",
       "url": "https://luma.com/4mflwhj1",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T18:00:00Z",
       "end": "2026-11-12T20:30:00Z",
@@ -2679,12 +2914,14 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Show What You Build: Makers & Doers (Web Summit special)",
       "url": "https://luma.com/rnm96bu0",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T18:30:00Z",
       "end": "2026-11-12T21:00:00Z",
@@ -2703,12 +2940,13 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": "Correction to the seed: the page dates it Thursday 12 November, not Wednesday 11."
+      "note": "Correction to the seed: the page dates it Thursday 12 November, not Wednesday 11.",
+      "size": "community"
     },
     {
       "name": "Closing Night of Web Summit Week: founders, drinks and snacks at The Nest",
       "url": "https://luma.com/wt5b7nsg",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T18:30:00Z",
       "end": "2026-11-12T21:00:00Z",
@@ -2727,12 +2965,13 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "300 oysters and AI · Web Summit Lisbon side event",
       "url": "https://luma.com/qnu3jyg0",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T18:30:00Z",
       "end": "2026-11-12T22:00:00Z",
@@ -2749,12 +2988,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "staaake Side Event. Hangover Rooftop AI/Tech Event — Reverse Network Meet",
       "url": "https://luma.com/staaake-i8fm",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T18:30:00Z",
       "end": "2026-11-12T20:30:00Z",
@@ -2772,12 +3012,13 @@
       "label": "fact",
       "cost": "free tier; paid tiers up to EUR 1000",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Disconnect 2 Connect",
       "url": "https://luma.com/f9rois6p",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:00:00Z",
       "end": "2026-11-12T21:00:00Z",
@@ -2797,12 +3038,13 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": "Phones-away conversations."
+      "note": "Phones-away conversations.",
+      "size": "community"
     },
     {
       "name": "Lisbon Business Leaders Networking Evening",
       "url": "https://luma.com/4jmyv55l",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:00:00Z",
       "end": "2026-11-12T21:00:00Z",
@@ -2821,12 +3063,14 @@
       "cost": "EUR 45 to 65",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Venture Dinner",
       "url": "https://luma.com/0bx40d1c",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:00:00Z",
       "end": "2026-11-12T23:00:00Z",
@@ -2845,12 +3089,14 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Contracts & Cocktails: A Founder Legal Tech Mixer",
       "url": "https://luma.com/hihh4mxe",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:00:00Z",
       "end": "2026-11-12T21:00:00Z",
@@ -2869,12 +3115,14 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Leadership Through Dance: Presence, Posture & Non-Verbal Communication",
       "url": "https://luma.com/9ifnf5ev",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:00:00Z",
       "end": "2026-11-12T20:00:00Z",
@@ -2893,12 +3141,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Yorkseed Grand Finale | Web Summit 2026",
       "url": "https://luma.com/i7llsb2c",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:00:00Z",
       "end": "2026-11-12T23:00:00Z",
@@ -2916,12 +3165,14 @@
       "label": "fact",
       "cost": "EUR 15",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Founders (don't) cry",
       "url": "https://luma.com/ldiykyt8",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:00:00Z",
       "end": "2026-11-12T20:00:00Z",
@@ -2940,12 +3191,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Lisbon Digital Nomads After Hours @ PTW Palace",
       "url": "https://luma.com/portugal-hku2",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:00:00Z",
       "end": "2026-11-12T22:00:00Z",
@@ -2962,12 +3214,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Web Summit Networking Mixer",
       "url": "https://luma.com/39950i36",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:00:00Z",
       "end": "2026-11-12T21:00:00Z",
@@ -2985,12 +3238,13 @@
       "label": "fact",
       "cost": "EUR 55",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Conjugação Terra | Preview & Performance-Concerto",
       "url": "https://luma.com/bzfah6m5",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:00:00Z",
       "end": "2026-11-12T21:00:00Z",
@@ -3005,12 +3259,34 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma calendar listing and event page read at 2026-11-11T12:15:00Z."
+      "check": "Added from the public Luma calendar listing and event page read at 2026-11-11T12:15:00Z.",
+      "size": "community"
+    },
+    {
+      "name": "WAVE 2026 | Music & Tech Networking (Web Summit Side Event)",
+      "url": "https://www.eventbrite.pt/e/wave-2026-music-tech-networking-web-summit-side-event-tickets-2004542210713",
+      "read_at": "2026-11-11T13:26:00Z",
+      "date": "2026-11-12",
+      "start": "2026-11-12T19:00:00Z",
+      "end": null,
+      "kind": "side event",
+      "organiser": "The LX Sound (per the event page)",
+      "place": "House of Eors, 120 Rua da Esperança, Lisboa",
+      "join": "Register on Eventbrite: https://www.eventbrite.pt/e/wave-2026-music-tech-networking-web-summit-side-event-tickets-2004542210713",
+      "status": "on",
+      "storm_note": "Not stated on the page.",
+      "topics": [],
+      "id": "2026-11-12-wave-2026-music-tech-networking-web-summit-sid",
+      "label": "fact",
+      "cost": "unknown",
+      "storm_moved": false,
+      "size": "community",
+      "check": "Added from the public Eventbrite listing (Lisbon, Web Summit search) and event page read 2026-11-11T13:26:00Z."
     },
     {
       "name": "OPUS After Hours: Web Summit edition",
       "url": "https://luma.com/s73xrx2r",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:30:00Z",
       "end": "2026-11-12T22:30:00Z",
@@ -3029,12 +3305,13 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "Airplane Mode Lisbon: Founders Dinner #2 (Web Summit Edition)",
       "url": "https://luma.com/mykeqz0c",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:30:00Z",
       "end": "2026-11-12T22:30:00Z",
@@ -3051,12 +3328,14 @@
       "label": "fact",
       "cost": "EUR 60",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Match Me at Web Summit",
       "url": "https://luma.com/n6czryzo",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:30:00Z",
       "end": "2026-11-12T22:30:00Z",
@@ -3073,12 +3352,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "The 100-Year Dinner: Longevity Served",
       "url": "https://luma.com/erp6nqvm",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:45:00Z",
       "end": "2026-11-12T23:00:00Z",
@@ -3096,12 +3376,13 @@
       "label": "fact",
       "cost": "EUR 30",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Institutional Capital: Tokenized",
       "url": "https://luma.com/f0ah5yl3",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T20:00:00Z",
       "end": "2026-11-12T22:00:00Z",
@@ -3120,12 +3401,14 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "A reflection on Art & Technology by BoCA - Biennial of Contemporary Arts",
       "url": "https://luma.com/1q1n3mxr",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T20:00:00Z",
       "end": "2026-11-12T22:00:00Z",
@@ -3144,12 +3427,13 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "MOON SUMMIT | Web Summit Closing Night",
       "url": "https://luma.com/1tggnm7t",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T20:00:00Z",
       "end": "2026-11-13T02:00:00Z",
@@ -3166,12 +3450,13 @@
       "label": "fact",
       "cost": "EUR 35",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Get Down At The Dev House",
       "url": "https://luma.com/aivsqim4",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T20:30:00Z",
       "end": "2026-11-13T02:00:00Z",
@@ -3191,12 +3476,13 @@
       "cost": "free (open bar)",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "Fitness & Sports: Investor Meetup",
       "url": "https://luma.com/hf6h4k22",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T20:30:00Z",
       "end": "2026-11-12T22:30:00Z",
@@ -3215,12 +3501,14 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Web Summit After Party (Unicorn Factory Lisboa)",
       "url": "https://luma.com/z31f1c0y",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T13:26:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T21:00:00Z",
       "end": "2026-11-13T02:00:00Z",
@@ -3239,7 +3527,8 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": "The page names Web Summit among its partners; it is listed here as Unicorn Factory Lisboa's event."
+      "note": "The page names Web Summit among its partners; it is listed here as Unicorn Factory Lisboa's event.",
+      "size": "community"
     },
     {
       "name": "Unblock AI • Conference",
@@ -3262,7 +3551,8 @@
       "label": "fact",
       "cost": "EUR 190",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "major"
     },
     {
       "name": "Lisbon Community Week Conference 2026",
@@ -3286,7 +3576,8 @@
       "cost": "EUR 149 to 169 (vendor pass GBP 499)",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": "The pass includes talks, a workshop, an unconference session and an after party. Correction to the seed: starts 08:30 UTC, not 08:15."
+      "note": "The pass includes talks, a workshop, an unconference session and an after party. Correction to the seed: starts 08:30 UTC, not 08:15.",
+      "size": "major"
     },
     {
       "name": "Co-working Day for Designers + Mentoring",
@@ -3310,7 +3601,8 @@
       "label": "fact",
       "cost": "EUR 5",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Co-working for Developers",
@@ -3333,7 +3625,8 @@
       "label": "fact",
       "cost": "EUR 5",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "PTW Classroom: Ladies Who Build, Lovable & Grok use cases",
@@ -3358,7 +3651,8 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": "18 in-person seats."
+      "note": "18 in-person seats.",
+      "size": "community"
     },
     {
       "name": "Speak Up or Stay Silent? Emotional Intelligence for Leaders Across Cultures",
@@ -3382,7 +3676,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Liberate Talent for The Future",
@@ -3406,7 +3701,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Mértola Tech Day",
@@ -3429,7 +3725,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "major"
     },
     {
       "name": "PTW COWORKING BY IDEA SPACES",
@@ -3453,7 +3750,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "major"
     },
     {
       "name": "Yorkseed Legal & Compliance Clinic",
@@ -3475,7 +3773,8 @@
       "label": "fact",
       "cost": "EUR 15",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Web Summit | Notion Morning Power Walk (Friday)",
@@ -3499,7 +3798,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Beach Field Trip post Tech/AI Conference. — Reverse Network Meet",
@@ -3522,7 +3822,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "IB Connect by the Coast 🌊 | Post-Web Summit Meetup",
@@ -3544,7 +3845,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Is Your AI Startup Ready for Europe? The EU AI Act, Product Readiness and Investor Expectations",
@@ -3567,7 +3869,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "PTW Classroom – Ladies Who Build: Claude Use Cases",
@@ -3591,7 +3894,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "What can your body teach you about how you run your business? Body-based tools to thrive, not grind.",
@@ -3615,7 +3919,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "PTW Classroom – Ladies Who Build: AI for Marketing Use Cases",
@@ -3639,7 +3944,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Why Users Leave Your AI Feature (and How to Make Them Stay) | Portugal Tech Week",
@@ -3663,7 +3969,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Supergrowth: How to Build an AI-Powered Distribution Machine",
@@ -3687,7 +3994,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "The rise of the expert creator: how to turn what you know into opportunity",
@@ -3710,7 +4018,8 @@
       "cost": "EUR 28 to 30",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": null
+      "note": null,
+      "size": "community"
     },
     {
       "name": "Founders & Pastel de Nata — Reverse Network Meet",
@@ -3732,7 +4041,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "People Pitch - After Summit, Before the Future",
@@ -3756,7 +4066,9 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Portugal Real Estate: Web Summit Edition",
@@ -3779,7 +4091,9 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "How web apps work: for product managers who want to follow the technical conversation",
@@ -3803,7 +4117,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Meetball After Hours @ PTW Palace",
@@ -3826,7 +4141,29 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
+    },
+    {
+      "name": "Last Man/Woman Standing B(AI)rro Alto Bar Event — Reverse Network Meet",
+      "url": "https://www.eventbrite.ch/e/last-manwoman-standing-bairro-alto-bar-event-reverse-network-meet-tickets-1997546553514",
+      "read_at": "2026-11-11T13:26:00Z",
+      "date": "2026-11-13",
+      "start": "2026-11-13T22:00:00Z",
+      "end": "2026-11-13T23:00:00Z",
+      "kind": "side event",
+      "organiser": "staaake (per the event page)",
+      "place": "Yggy Bar, Yggy Bar, R. da Atalaia 21, 1200-223 Lisboa, Lisboa",
+      "join": "Register on Eventbrite: https://www.eventbrite.ch/e/last-manwoman-standing-bairro-alto-bar-event-reverse-network-meet-tickets-1997546553514",
+      "status": "on",
+      "storm_note": "Not stated on the page.",
+      "topics": [],
+      "id": "2026-11-13-last-man-woman-standing-b-ai-rro-alto-bar-even",
+      "label": "fact",
+      "cost": "unknown",
+      "storm_moved": false,
+      "size": "community",
+      "check": "Added from the public Eventbrite listing (Lisbon, Web Summit search) and event page read 2026-11-11T13:26:00Z."
     },
     {
       "name": "Primum Next",
@@ -3848,7 +4185,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "major"
     },
     {
       "name": "Bitcointalks: Cripto & IA Summit - Santarém",
@@ -3872,7 +4210,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "major"
     },
     {
       "name": "AI Devs & Hoopers Morning Run (Hoopers Meet)",
@@ -3897,7 +4236,8 @@
       "cost": "free",
       "storm_moved": null,
       "check": "The page shows no storm note.",
-      "note": "Saturday, after the three days this file covers."
+      "note": "Saturday, after the three days this file covers.",
+      "size": "community"
     },
     {
       "name": "Web Summit Unwind: A Traditional Banya Experience",
@@ -3921,7 +4261,8 @@
       "label": "fact",
       "cost": "EUR 110",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     },
     {
       "name": "Offline Hangout 📵 Travel Edition x WeRoad ✈️ | Rossio Gardens",
@@ -3941,7 +4282,8 @@
       "label": "fact",
       "cost": "EUR 12.5",
       "storm_moved": false,
-      "check": "Added from the public Luma calendar listing and event page read at 2026-11-11T12:15:00Z."
+      "check": "Added from the public Luma calendar listing and event page read at 2026-11-11T12:15:00Z.",
+      "size": "community"
     },
     {
       "name": "KindPilates - Donation-based Pilates Class 💕",
@@ -3961,7 +4303,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma calendar listing and event page read at 2026-11-11T12:15:00Z."
+      "check": "Added from the public Luma calendar listing and event page read at 2026-11-11T12:15:00Z.",
+      "size": "community"
     },
     {
       "name": "🐯 SpeakTiger: Speed Friending — Lisbon 14 Nov ✨",
@@ -3981,7 +4324,8 @@
       "label": "fact",
       "cost": "unknown",
       "storm_moved": false,
-      "check": "Added from the public Luma calendar listing and event page read at 2026-11-11T12:15:00Z."
+      "check": "Added from the public Luma calendar listing and event page read at 2026-11-11T12:15:00Z.",
+      "size": "community"
     },
     {
       "name": "staaake Side Event: Saturday Tech/AI Dinner staaake Dinner Club",
@@ -4005,7 +4349,9 @@
       "label": "fact",
       "cost": "EUR 25",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "lane": "business",
+      "size": "community"
     },
     {
       "name": "Life in Lisboa - A cultural comedy show in English",
@@ -4027,7 +4373,8 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC)."
+      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "size": "community"
     }
   ]
 }

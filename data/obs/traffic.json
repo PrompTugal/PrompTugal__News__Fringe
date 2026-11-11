@@ -1,26 +1,26 @@
 {
  "v": 1,
- "site": "fringe.promptugal.news",
- "generated": "2026-11-11T12:09Z",
+ "site": [
+  "fringe.promptugal.news",
+  "lisbontechfringe.com",
+  "www.lisbontechfringe.com"
+ ],
+ "generated": "2026-11-11T13:18Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 14,
-  "reads": 13,
-  "tabs": 7,
-  "countries": 2,
-  "shares": 0,
-  "bots": 53,
-  "agent_runs": 2,
-  "agent_runs_signed": 2
+  "views": 76,
+  "reads": 62,
+  "tabs": 42,
+  "countries": 7,
+  "shares": 25,
+  "bots": 82,
+  "agent_runs": 16,
+  "agent_runs_signed": 16
  },
  "by_hour": [
-  [
-   "2026-11-09 13:00",
-   0
-  ],
   [
    "2026-11-09 14:00",
    0
@@ -207,94 +207,302 @@
   ],
   [
    "2026-11-11 12:00",
-   3
+   35
+  ],
+  [
+   "2026-11-11 13:00",
+   30
   ]
  ],
  "by_page": [
   [
    "/",
-   7
+   41
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
-   3
+   5
   ],
   [
    "/join/",
+   4
+  ],
+  [
+   "/now/",
    3
   ],
   [
+   "/graph/",
+   3
+  ],
+  [
+   "/traffic/",
+   2
+  ],
+  [
+   "/organisers/",
+   2
+  ],
+  [
+   "/me/",
+   2
+  ],
+  [
+   "/dashboard/",
+   2
+  ],
+  [
+   "/e/2026-11-11-founderlink-storm-summit-afternoon/",
+   2
+  ],
+  [
+   "/programme/",
+   2
+  ],
+  [
    "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
+   1
+  ],
+  [
+   "/e/2026-11-11-human-side-of-ai/",
+   1
+  ],
+  [
+   "/e/2026-11-11-ai-video-blueprint-2027/",
+   1
+  ],
+  [
+   "/e/2026-11-11-startup-legal-roast/",
+   1
+  ],
+  [
+   "/e/2026-11-11-yorkseed-allocator-lunch/",
+   1
+  ],
+  [
+   "/e/2026-11-11-kuma-align-leadership-ai/",
+   1
+  ],
+  [
+   "/e/2026-11-11-aubay-the-next-move/",
+   1
+  ],
+  [
+   "/e/2026-11-11-cisco-automation-to-autonomy/",
    1
   ]
  ],
  "reading": [
   [
    "/",
-   7,
-   16,
-   18
+   31,
+   20,
+   9
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
-   3,
-   3,
-   37
+   4,
+   5,
+   35
   ],
   [
    "/join/",
+   3,
+   10,
+   43
+  ],
+  [
+   "/now/",
+   3,
+   5,
+   13
+  ],
+  [
+   "/graph/",
+   3,
+   13,
+   17
+  ],
+  [
+   "/organisers/",
    2,
-   12,
-   50
+   8,
+   13
+  ],
+  [
+   "/traffic/",
+   2,
+   11,
+   78
+  ],
+  [
+   "/me/",
+   2,
+   18,
+   28
+  ],
+  [
+   "/dashboard/",
+   2,
+   4,
+   12
+  ],
+  [
+   "/e/2026-11-11-founderlink-storm-summit-afternoon/",
+   2,
+   23,
+   30
+  ],
+  [
+   "/programme/",
+   2,
+   28,
+   66
   ],
   [
    "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
    1,
    205,
    100
+  ],
+  [
+   "/e/2026-11-11-human-side-of-ai/",
+   1,
+   19,
+   100
+  ],
+  [
+   "/e/2026-11-11-startup-legal-roast/",
+   1,
+   16,
+   56
+  ],
+  [
+   "/e/2026-11-11-ai-video-blueprint-2027/",
+   1,
+   14,
+   56
+  ],
+  [
+   "/e/2026-11-11-yorkseed-allocator-lunch/",
+   1,
+   3,
+   5
+  ],
+  [
+   "/e/2026-11-11-aubay-the-next-move/",
+   1,
+   7,
+   26
   ]
  ],
  "by_country": [
   [
    "Portugal",
-   11
+   55
+  ],
+  [
+   "United States",
+   8
+  ],
+  [
+   "United Kingdom",
+   6
+  ],
+  [
+   "Tanzania",
+   2
   ],
   [
    "The Netherlands",
+   1
+  ],
+  [
+   "France",
+   1
+  ],
+  [
+   "Estonia",
    1
   ]
  ],
  "by_city": [
   [
-   "Oliveira de Azemeis, Aveiro, Portugal",
-   6
+   "Lisbon, Portugal",
+   36
   ],
   [
-   "Lisbon, Lisbon, Portugal",
-   5
+   "Oliveira de Azemeis, Portugal",
+   14
   ],
   [
    "(places under 5 views, in their country above)",
-   1
+   24
   ]
  ],
  "by_referrer": [],
- "by_via": [],
- "via_detail": {},
+ "by_host": [
+  [
+   "fringe.promptugal.news",
+   39
+  ],
+  [
+   "lisbontechfringe.com",
+   37
+  ]
+ ],
+ "other_hosts_views": 35,
+ "by_via": [
+  [
+   "whatsapp",
+   25
+  ]
+ ],
+ "via_detail": {
+  "whatsapp": {
+   "views": 25,
+   "tabs": 15,
+   "countries": 4
+  }
+ },
  "by_screen": [
   [
    "desktop",
-   9
+   43
   ],
   [
    "phone",
-   5
+   29
+  ],
+  [
+   "tablet",
+   4
   ]
  ],
  "agents": [
   [
+   "design.4.fringe@PrompTugal.dinis",
+   6
+  ],
+  [
    "observability.fringe@PrompTugal.dinis",
+   3
+  ],
+  [
+   "design.3.fringe@PrompTugal.dinis",
+   3
+  ],
+  [
+   "conductor.fringe@PrompTugal.jose",
    2
+  ],
+  [
+   "design.2.fringe@PrompTugal.dinis",
+   1
+  ],
+  [
+   "design.1.fringe@PrompTugal.dinis",
+   1
   ]
  ]
 }

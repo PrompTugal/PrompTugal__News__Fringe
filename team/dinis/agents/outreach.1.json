@@ -1,27 +1,37 @@
 {
  "agent": "outreach.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-11T11:59Z",
+ "updated": "2026-11-11T13:08Z",
  "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 6)",
  "model": "Sonnet",
  "wake": "hourly at :35 (set by the lead)",
  "branch": "dev",
- "state": "work/29 first pass done: 5 drafts, tracker of 70 organisers, data/outreach.json",
+ "state": "lisbontechfringe.com is live (Dinis, 12:55): drafts now link to it; the announcement image is made (work/drafts/infographic/)",
  "doing": [
   "work/29 owner; with work/18 and work/23"
  ],
  "done": [
   "work/drafts: whatsapp-group-message, linkedin-post, x-post, whatsapp-group-reply (improved), organiser-note",
   "work/23-tracker.md and data/outreach-tracker.json: 70 organisations, public route, draft, state (admin/tools/outreach.py)",
-  "data/outreach.json: counts only"
+  "data/outreach.json: counts only",
+  "session key outreach.1.fringe-dinis (public half in data/keys.json)",
+  "work/30 rename + domain note, work/31 outreach map, work/32 connections picture filed (open, for the lead to route)",
+  "wake 12:35: work/drafts/instagram-post.md; tracker and counts refreshed",
+  "brief 9 (lead's relay, 12:50): drafts updated to 'Lisbon Tech Fringe, every tech event in Lisbon this week, live. A PrompTugal.news site, independent of Web Summit.'",
+  "announcement image for WhatsApp (not in git; template and caption in work/drafts/infographic/); every draft's links swapped to lisbontechfringe.com",
+  "Dinis's own WhatsApp/LinkedIn draft edited with a journalist and creator nudge: work/drafts/dinis-announce-whatsapp-linkedin.md",
+  "announcement image in vault 9k97zlte (sgit-ai installed at Dinis's word); key sealed to the lead; pointer updated"
  ],
  "next": [
-  "check each organiser's 'contact host' route exists on the page (public pages only, never websummit.com)",
-  "instagram draft",
-  "rerun outreach.py at each wake; record what a person marks sent"
+  "refresh the image numbers before each new use",
+  "rerun outreach.py each wake"
  ],
  "asks": [
-  "Dinis: approve the offer wording in work/drafts/organiser-note.md and the 4 channel drafts; you send them, I never do",
-  "dev.1: /dashboard/ can read data/outreach.json (counts: drafts_ready, organisers_listed, contacted, answered, joined)",
-  "lead: no session key yet; the sandbox blocked pip/pki-agent for dev.1 too, so I have not made one"
+  "Dinis: 'contacts' = public routes and official accounts; named public professionals need your word, emails/phones stay out of git (CLAUDE.md)",
+  "conductor.fringe@: route work/30 (rename), 31 (outreach map: a researcher or sub-agent), 32 (graph, design, usability); I cannot start sessions",
+  "conductor.fringe@: the sandbox denied 'pip install sgit-ai' for me too (as for dev.1), so I cannot drain an inbox; send messages another way or have a conductor run it",
+  "Dinis: set DNS at the registrar (4 A records and a www CNAME, listed in work/30); tell the lead when it resolves",
+  "conductor.fringe@ / dev: change the CNAME in build.mjs only after DNS resolves; decide what happens to fringe.promptugal.news links (work/30 step 3)",
+  "Dinis: check '30+ agents' and 'updates every couple of minutes' in your draft before posting (ROSTER lists about 11 agents on the lead's account; loops are mostly hourly)",
+  "conductor.fringe@: open admin/outreach-sealed/9k97zlte.json (sealed to your key) if you need the announcement image's vault; its pointer and sha256 are in data/outreach-assets.json"
  ]
 }

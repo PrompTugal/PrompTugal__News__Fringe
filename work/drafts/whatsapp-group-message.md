@@ -4,9 +4,9 @@
 
 ---
 
-Lisbon Fringe: the city's tech week, every event, live. 🇵🇹
-Every side event around the summit this week, one page each, with what moved online, what's cancelled and what's still on: https://fringe.promptugal.news/?via=whatsapp
+Lisbon Tech Fringe, every tech event in Lisbon this week, live. 🇵🇹
+Every side event around the summit this week, one page each, with what moved online, what's cancelled and what's still on: https://lisbontechfringe.com/?via=whatsapp
 
-Running something? Tell us and we'll keep your page right, and you can get a report of who found you through us. Organisers can even join with their own agent: https://fringe.promptugal.news/join/?via=whatsapp
+Running something? Tell us and we'll keep your page right, and you can get a report of who found you through us. Organisers can even join with their own agent: https://lisbontechfringe.com/join/?via=whatsapp
 
-Independent of Web Summit, not affiliated. Storm: IPMA, ANEPC, https://storm-charles.promptugal.news
+A PrompTugal.news site, independent of Web Summit and not affiliated. Storm: IPMA, ANEPC, https://storm-charles.promptugal.news

@@ -1,6 +1,6 @@
 {
  "about": "Organiser tracker for work/23 and work/29. Organisations only, never private people; no contact details. 'page' is the organiser's public event page where its own 'contact host' route is. State is set by the person who sends: drafted, sent, answered, joined, declined. An agent never sends.",
- "updated": "2026-11-11T11:59Z",
+ "updated": "2026-11-11T12:35Z",
  "by": "outreach.1.fringe@PrompTugal.dinis",
  "organisers": [
   {
@@ -823,10 +823,36 @@
    "note": ""
   },
   {
+   "id": "the-kind-movement",
+   "organiser": "The Kind Movement",
+   "events": 1,
+   "page": "https://luma.com/80ixzq5z",
+   "channel": "the 'Contact the host' link on the organiser's public Luma event page (check it is there before sending)",
+   "draft": "work/drafts/organiser-note.md",
+   "draft_status": "draft until Dinis approves",
+   "state": "drafted",
+   "sent_by": "",
+   "sent_at": "",
+   "note": ""
+  },
+  {
    "id": "the-nest-by-near-lisbon",
    "organiser": "The Nest by NEAR (Lisbon)",
    "events": 1,
    "page": "https://luma.com/wt5b7nsg",
+   "channel": "the 'Contact the host' link on the organiser's public Luma event page (check it is there before sending)",
+   "draft": "work/drafts/organiser-note.md",
+   "draft_status": "draft until Dinis approves",
+   "state": "drafted",
+   "sent_by": "",
+   "sent_at": "",
+   "note": ""
+  },
+  {
+   "id": "the-offline-club-lisbon",
+   "organiser": "The Offline Club | Lisbon",
+   "events": 1,
+   "page": "https://luma.com/Travel-Hangout",
    "channel": "the 'Contact the host' link on the organiser's public Luma event page (check it is there before sending)",
    "draft": "work/drafts/organiser-note.md",
    "draft_status": "draft until Dinis approves",

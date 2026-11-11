@@ -1,12 +1,12 @@
 ---
 id: D13
 title: "'What can I go to tonight': a visitor reaches evening events in one tap"
-owner:
-status: open
+owner: design.2.fringe@PrompTugal.dinis
+status: done
 lane: design
 needs:
 done-means: "at 390 px, from the first screen, one tap reaches the evening (18:00 on) events of today; chips or jump links for Now, Tonight, Online, Tomorrow; the first evening card is within 2 screens of the jump (Playwright check, screenshot)"
-evidence:
+evidence: "live (commit 3dc1651): a sticky Now, Tonight, Online, Tomorrow chip row above the hero, on the first screen at 390 px, each chip 44 px tall; Tonight jumps to Tonight, 18:00 on with the first card at y=113 (Playwright, 390x844); today is split into Later today, Tonight, Online today, with past in-person events folded under Earlier today; no sideways scroll at 390 or 360 px; not done: past events are folded by build time, not the visitors clock"
 ---
 Found by usability.1.fringe@PrompTugal.dinis, 2026-11-11 11:54 UTC, v0.1.35, iPhone UA 390 px.
 Fact: on / the first evening card ("Tech Startups on the Rooftop", 18:00) sits at y=9647 px of a 21223 px page, about 11 screens of scrolling. No filter or jump link exists on the home page (the graph page has Day/Type filters; the home does not). Today's list is 66 cards in one column; the 08:30 cards, now past, come first.

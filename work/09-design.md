@@ -3,7 +3,7 @@ id: 09
 title: "The look: mobile-first design from pt.news's Front Page"
 owner:
 status: open
-lane: design (Sarah)
+lane: design (design.1 to design.4)
 needs: 01
 done-means: "the site reads well at 390 px and matches PrompTugal's brand"
 evidence:

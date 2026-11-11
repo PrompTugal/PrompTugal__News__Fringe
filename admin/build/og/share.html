@@ -1,20 +1,39 @@
-<!doctype html><html><head><meta charset="utf-8"><style>
-*{box-sizing:border-box;margin:0}
-body{width:1200px;height:630px;background:#f7c82b;color:#10285c;font-family:system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;position:relative;overflow:hidden}
-/* azulejo texture: quiet tile pattern, right side */
-.tiles{position:absolute;right:0;top:0;bottom:0;width:380px;background-color:#1f4fa8;
- background-image:radial-gradient(circle at 50% 50%,#f4f1ea 0 14px,transparent 15px),radial-gradient(circle at 0 0,#8fb0e8 0 22px,transparent 23px),radial-gradient(circle at 100% 0,#8fb0e8 0 22px,transparent 23px),radial-gradient(circle at 0 100%,#8fb0e8 0 22px,transparent 23px),radial-gradient(circle at 100% 100%,#8fb0e8 0 22px,transparent 23px);
- background-size:95px 95px;border-left:10px solid #10285c}
-.in{position:absolute;left:70px;width:720px;top:56px;bottom:52px;display:flex;flex-direction:column}
-.k{font-size:28px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
-h1{font-size:112px;line-height:.98;font-weight:900;margin-top:28px;letter-spacing:-.03em}
-p{font-size:52px;line-height:1.2;margin-top:36px;font-weight:600;max-width:700px}
-.f{margin-top:auto;margin-bottom:30px;font-size:34px;font-weight:700}
-.bar{position:absolute;left:0;right:0;bottom:0;height:46px;background:#10285c;color:#f7c82b;font-size:22px;display:flex;justify-content:space-between;align-items:center;padding:0 70px;letter-spacing:.04em}
-.bar b{color:#fff}
-</style></head><body><div class="tiles"></div>
-<div class="in"><div class="k">Lisbon · 9–15 November 2026</div>
-<h1>Lisbon Fringe</h1>
-<p>The city’s tech week, every event, live.</p>
-<div class="f">fringe.promptugal.news</div></div>
-<div class="bar"><span><b>PrompTugal.news</b> · a PrompTugal site</span><span>Independent of Web Summit</span></div></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Lisbon Tech Fringe: share card</title><style>
+/* The share card (D2, design.2): 1200x630, rendered in CI by headless Chrome, never committed as a PNG.
+   The look is PrompTugal.news's investor site (brand v2.0): paper, ink, green rules, Newsreader, Plex Mono.
+   Fonts come from promptugal.news (CORS on); the fallbacks keep the card right if they do not load. */
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:200 800;font-display:block;src:url(https://promptugal.news/assets/fonts/newsreader-variable.woff2) format("woff2")}
+@font-face{font-family:"Newsreader";font-style:italic;font-weight:400;font-display:block;src:url(https://promptugal.news/assets/fonts/newsreader-400-italic.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:400;font-display:block;src:url(https://promptugal.news/assets/fonts/plex-mono-400.woff2) format("woff2")}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--paper:#f6f3ec;--ink:#121317;--ink-2:#3f424a;--hair:#d9d2c1;--green:#006600;--cobalt:#1f4fa8;--yellow:#f2b705}
+body{width:1200px;height:630px;background:var(--paper);color:var(--ink);font-family:"Newsreader",Georgia,"Times New Roman",serif;position:relative;overflow:hidden}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+/* one azulejo hairline: a thin tile band along the top, cobalt on paper, with a single tram-yellow tile */
+.tiles{position:absolute;left:0;right:0;top:0;height:14px;background:
+  radial-gradient(circle at 50% 50%,var(--paper) 0 2.5px,transparent 3px),
+  linear-gradient(var(--cobalt),var(--cobalt));background-size:28px 14px,100% 100%}
+.tiles::after{content:"";position:absolute;right:56px;top:0;width:28px;height:14px;background:var(--yellow)}
+.wrap{position:absolute;left:72px;right:72px;top:52px;bottom:48px;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;gap:20px}
+.top img{width:96px;height:96px;display:block}
+.top .fam{font-size:22px;line-height:1.35;color:var(--ink-2);letter-spacing:.02em}
+.top .fam b{display:block;font-weight:400;color:var(--ink)}
+.kick{margin-top:40px;font-size:24px;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
+h1{margin-top:10px;font-size:118px;line-height:1.02;white-space:nowrap;font-weight:600;letter-spacing:-.02em}
+h1 em{font-style:italic;font-weight:400;color:var(--green);letter-spacing:-.01em}
+.rule{height:3px;background:var(--green);width:120px;margin:26px 0 24px}
+.tag{font-size:42px;line-height:1.25;color:var(--ink-2);max-width:900px}
+.foot{margin-top:auto;display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--hair);padding-top:16px;font-size:26px}
+.foot .d{color:var(--ink)}.foot .i{color:var(--ink-2);font-size:22px}
+</style></head><body>
+<div class="tiles"></div>
+<div class="wrap">
+  <div class="top"><img src="../../../assets/brand/pt-news-stamp-light.svg" alt="PT.news"><div class="fam mono"><b>PrompTugal.news</b>a PrompTugal.news site</div></div>
+  <div class="kick mono">Lisbon · 9–15 November 2026</div>
+  <h1>Lisbon Tech <em>Fringe</em></h1>
+  <div class="rule"></div>
+  <div class="tag">Every event in the city, live, hour by hour.</div>
+  <div class="foot mono"><span class="d">lisbontechfringe.com</span><span class="i">Independent of Web Summit</span></div>
+</div>
+</body></html>

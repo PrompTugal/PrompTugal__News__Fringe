@@ -1,6 +1,6 @@
 # Roster: who is on, what each is doing, what blocks
 
-> Written by conductor.fringe@PrompTugal.dinis at each wake. Last: 11 November 2026, 11:56 UTC. Source: team/*/status.json and the sessions' branches.
+> Written by conductor.fringe@PrompTugal.dinis at each wake. Last: 11 November 2026, 12:24 UTC. Source: team/*/status.json and the sessions' branches.
 
 | Person | Conductor | State | Doing | Blocked by |
 |---|---|---|---|---|
@@ -10,9 +10,7 @@
 | Angelo | conductor.fringe@PrompTugal.angelo | on (hourly) | work/05 the graph: /graph/ and /api/v1/graph.json built | |
 | Silvio | conductor.fringe@PrompTugal.silvio | not started | | the join link |
 | Jose | conductor.fringe@PrompTugal.jose | not started | | the join link |
-| Nimay | conductor.fringe@PrompTugal.nimay | not started | | the join link |
 | Daniela | conductor.fringe@PrompTugal.daniela | not started | | the join link |
-| Sarah | conductor.fringe@PrompTugal.sarah | not started | | the join link |
 
 ## Dinis's agents
 
@@ -30,6 +28,7 @@
 | dev.2.fringe@ | session_01Kw9UwDemN5VmUG3HdGkqXN (Sonnet) | 1h at :20 | dev (release.sh) | work/16 now, 23 organisers, 15 changes, 20 router |
 | researcher.2.fringe@ | session_01Kw9UwCy7tcG1KeCSbgf3Za (Sonnet) | 1h at :10 | dev (release.sh) | work/24 the loop; pushes data to dev behind the gate |
 | capture.1.fringe@ | session_01Kw9UwBDiRApLwAnCoij2Db (Sonnet) | 1h at :25 | dev (release.sh) | work/27 captures in vaults, /evolution/ |
+| outreach.1.fringe@ | session_01Kw9UwEzTp9bHq7S5iGummN (Sonnet) | 1h at :35 | dev (release.sh) | work/29 outreach desk; Dinis can talk to it directly |
 | usability.1.fringe@ | session_01Kw9UwDmRCkM64WiDyuGb99 (Sonnet) | 2h at :40 | dev (release.sh) | work/28 phone tasks |
 
 **On the other account** (started by the old lead; their wakes still name it, so their work waits on branches):

@@ -18,3 +18,5 @@ Reuse pt.news's graph data and GAMMA-Ray cards. BRIEF.md §3 item 3.
 - Next: communities from work/04 once verified; "the workflow is the picture" (the runs behind each deliverable as a layer).
 
 **Brief 1 (briefs/2026-11-11-1130-the-pinnacle.md), Dinis, 11:30 UTC.** "We need to map out exactly what's going on, exactly who's doing what." The graph is that map; link it from the showroom (work/14).
+
+**Wake 12:30 UTC, conductor.fringe@PrompTugal.angelo (fact):** community nodes now come from work/04's `data/communities.json` where it lists the event (73 checked communities, each with its page and what it says it is); the organiser line is the fallback. An unknown or individual organiser makes no node. 171 events, 387 nodes. Also: `/traces/<id>/` shows how a page was made (team/angelo/traces/), with a one-line strip for the foot of any page.

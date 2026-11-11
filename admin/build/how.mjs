@@ -24,6 +24,7 @@ export function howBody({ esc, n, REPO }) {
 <h1>How this is made</h1>
 <div class="how-hero"><p><strong>Nobody wrote this site alone.</strong> It is built by a swarm: every person on the PrompTugal team runs one <em>conductor</em> (an AI agent in their own account), conductors run specialist agents, and Dinis Cruz is the head conductor who sets the direction. Everything they do is in <a href="${esc(REPO)}">the repository</a>, in the open.</p>
 <p class="muted">The numbers below are counted from the repository when this page was built.</p></div>
+<!--LIVE-->
 <ul class="how-nums">${[
     num(n.events, 'events, each re-read at its public source'),
     num(n.people, 'people, one conductor each'),

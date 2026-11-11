@@ -107,7 +107,8 @@ if (opt.dry) { const show = { ...rec }; if (show.sig) show.sig = { ...show.sig, 
 const ROOT = path.dirname(path.dirname(path.dirname(new URL(import.meta.url).pathname)))
 let cfg = null
 try { cfg = JSON.parse(fs.readFileSync(path.join(ROOT, 'assets', 'obs', 'obs.json'), 'utf8')) } catch { }
-if (!cfg) { try { cfg = await (await fetch('https://fringe.promptugal.news/assets/obs/obs.json')).json() } catch (e) { die('cannot read assets/obs/obs.json: ' + e.message) } }
+let origin = 'https://fringe.promptugal.news'; try { origin = JSON.parse(fs.readFileSync(path.join(ROOT, 'admin', 'site.json'), 'utf8')).origin || origin } catch { }
+if (!cfg) { try { cfg = await (await fetch(origin + '/assets/obs/obs.json')).json() } catch (e) { die('cannot read assets/obs/obs.json: ' + e.message) } }
 if (!cfg.enabled || !cfg.lanes?.agents?.length) die('the agents lane is not enabled in assets/obs/obs.json')
 
 function seal(pem, text) {                                              // sgit hybrid envelope v2: RSA-OAEP-SHA256 + AES-256-GCM
