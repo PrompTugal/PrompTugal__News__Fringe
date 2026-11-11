@@ -1,12 +1,12 @@
 {
   "agent": "swarm.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T23:00Z",
+  "updated": "2026-11-11T23:47Z",
   "account": "riskmandate-personal (Ultra)",
   "session": "session_01Kw9UwFHqLAjKake7UEDjL3",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (11 Nov 2026, about 21:0x UTC: 'start a new agent called Swarm ... for our Swarm capabilities and our risk mandate Swarm, which we want to demo tomorrow')",
   "branch": "dev",
   "wake": "none: works when Dinis talks to it in its session",
-  "state": "the GitHub flow is live on swarm.promptugal.news: packets issued, run and published; runner.1 started; Angelo asked",
+  "state": "every run starts with a push: PrompTugal__News__Swarm__Runs live (signed request, Action, signed result, attestation); swarm.promptugal.news shows it",
   "doing": [
     "work/52: the swarm demo: many A1 and A2 units at once, visible, measured, inside a written budget"
   ],
@@ -21,7 +21,10 @@
     "2026-11-11T22:54Z: started runner.1.swarm@PrompTugal.dinis at Dinis's word (one session, Sonnet, session_01Kw9UwCptHeeznCWAbMSQC5) to run s002",
     "2026-11-11T22:54Z: inbox to conductor.fringe-angelo: packet s003-storm-six, at Dinis's word ('yes you can send the requests to angelo')",
     "2026-11-11T23:00Z: Swarm 576bbe9: r5b (12 tasks x 4 models, 48 loops, 73 calls, 96 units at once, 0.031 USD); r4c on Claude Haiku and Sonnet via the router (first try out of tokens at 300: 3 of 32; at 1500: 12 of 12, 0.063 USD); r4s, 3 Claude Code sub-agents (Haiku), 3 of 3 valid, 241k tokens; a GitHub Actions runner workflow (needs the OPENROUTER_API_KEY repository secret)",
-    "2026-11-11T23:00Z: runner.1's keygen refused by its sandbox's classifier; told it to skip the PKI key (swarm.mjs signs per run) and run s002"
+    "2026-11-11T23:00Z: runner.1's keygen refused by its sandbox's classifier; told it to skip the PKI key (swarm.mjs signs per run) and run s002",
+    "2026-11-11T23:47Z: PrompTugal__News__Swarm__Runs (architect.1's design, at Dinis's go 23:3x UTC): tools/requests.mjs (new, verify against data/keys.json, plan, run, index), tools/engine.mjs (A0/A1/A2 with live flow hooks), .github/workflows/run.yml (plan, run matrix, commit with attest-build-provenance)",
+    "2026-11-11T23:47Z: first runs: push 6d72d7f -> workflow run 43122148416 -> result commit f3c2f1c (swarm-runs[bot]), attestation 66472238; A1 18/18 valid in 25 s, 0.0069 USD; A2 19 valid of 37 calls, 0.012 USD",
+    "2026-11-11T23:47Z: runner.1 ran s002 (20/33 valid, 0.0138 USD), published; swarm.promptugal.news reads the Runs repo (73428d8)"
   ],
   "next": [
     "bring in s002 (runner.1) and s003 (Angelo); the cross-account view",
@@ -29,9 +32,10 @@
     "vault as a second carrier; Elastic swarm-flows"
   ],
   "asks": [
-    "Dinis: for GitHub Actions as a runner, add the repository secret OPENROUTER_API_KEY to PrompTugal__News__Swarm (Settings > Secrets and variables > Actions), then Actions > 'run a packet' > Run workflow",
     "Dinis: the repo's About box: gear icon > Website: https://swarm.promptugal.news (or tick 'Use your GitHub Pages website'); my tools cannot edit it",
     "Dinis: runner.1's sandbox refused pki-agent keygen; it runs without a PKI key (results are still signed per run)",
-    "Dinis: not yet added to PrompTugal__News__Website board/keys.json"
+    "Dinis: not yet added to PrompTugal__News__Website board/keys.json",
+    "Dinis: GRAFANA_TOKEN and SG_SEND_ACCESS_TOKEN in the Runs repo are unused: delete them unless you want the vault carrier tomorrow",
+    "Dinis: after the demo, replace ELASTIC_CLOUD with a key limited to swarm-* (architect.1)"
   ]
 }
