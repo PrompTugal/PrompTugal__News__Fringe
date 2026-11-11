@@ -1,8 +1,8 @@
 # Today's online events still to come (for Jose's organiser notes)
 
-> Kept by researcher.1.fringe@PrompTugal.jose for conductor.fringe@PrompTugal.jose (work/18, work/23, work/31), Wednesday 11 November 2026, 14:42 UTC (Lisbon is on UTC). Today only; online events first. Rewritten at each wake (every 30 minutes until 21:00 UTC); events that have started are dropped. An agent never sends: Jose sends.
+> Kept by researcher.1.fringe@PrompTugal.jose for conductor.fringe@PrompTugal.jose (work/18, work/23, work/31), Wednesday 11 November 2026, 14:47 UTC (Lisbon is on UTC). Today only; online events first. Rewritten at each wake (every 30 minutes until 21:00 UTC); events that have started are dropped. An agent never sends: Jose sends.
 >
-> **What this is checked against (fact):** the organisers' own Luma pages, read by me once each between 14:36 and 14:41 UTC (Jose opened the network at about 14:35), and `data/events.json` as updated 14:15 UTC by researcher.2.fringe@PrompTugal.dinis. The served site (https://lisbontechfringe.com, v0.1.273, built 14:31 UTC) carried the same 173 events as the repository at 14:35, and the two pages Jose's first notes link to load with the right time, place and the independence line. The three guides were read once each between 14:39 and 14:41 UTC. Rows marked * were read by me (14:36 to 14:41), whatever their read_at says; the others carry researcher.2's read time. Open the Luma page once before sending.
+> **What this is checked against (fact):** the organisers' own Luma pages, read by me once each between 14:36 and 14:41 UTC (Jose opened the network at about 14:35), and `data/events.json` as updated 14:15 UTC by researcher.2.fringe@PrompTugal.dinis. The served site (https://lisbontechfringe.com, v0.1.282, built 14:46 UTC) serves the two new event pages and the corrected Soirée page (checked 14:47 UTC); the Kuma and ALBAN pages Jose's first notes link to load with the right time, place and the independence line (checked 14:35 UTC). The three guides were read once each between 14:39 and 14:41 UTC. Rows marked * were read by me (14:36 to 14:41), whatever their read_at says; the others carry researcher.2's read time. Open the Luma page once before sending.
 
 | Start | End | Organiser | Event | Our status | The source's status (the organiser's page, as last read) | Moved by the storm | Source | read_at (UTC) | Verdict |
 |---|---|---|---|---|---|---|---|---|---|
@@ -16,7 +16,7 @@
 | 19:00 | 20:00 | FounderLink | [FounderLink Storm Summit: a torrent of intros (evening session, online)](https://lisbontechfringe.com/e/2026-11-11-founderlink-storm-summit-evening/) | online (Zoom (link given to approved guests on Luma)) | Made because of the storm: the page says Web Summit is cancelled for Wednesday, so the organisers bring the room to Zoom as 'Storm Summit', three one-hour founder intro sessions. | yes | https://luma.com/stormsummit7pm | 14:15* | **ready** |
 | 20:30 | 22:00 | Portugal Tech Week | [FUTURE-TECH 2026: short films about technology](https://lisbontechfringe.com/e/2026-11-11-future-tech-2026/) | online (Google Meet (per the Luma page)) | Not stated on the page as a storm change. The page now lists it on Google Meet with a room at PTW Palace still in its text; it gives no reason. That the storm moved it online is a hypothesis. | unknown | https://luma.com/25z2ph1o | 14:15* | **ready**: listed on Google Meet, with a PTW Palace room still in the page text; Jose's note asks 'online or in person?' |
 
-**Count at 14:42 UTC:** 9 online events still to come today: 7 ready, 1 held, 1 with no note (an independent organiser). 'Moved by the storm' is 'yes' only where the organiser's page says so; 'unknown' means the page is online and gives no reason (that the storm moved it is a hypothesis).
+**Count at 14:47 UTC:** 9 online events still to come today: 7 ready, 1 held, 1 with no note (an independent organiser). 'Moved by the storm' is 'yes' only where the organiser's page says so; 'unknown' means the page is online and gives no reason (that the storm moved it is a hypothesis).
 
 ## Dropped: online events that have started
 
@@ -70,8 +70,8 @@ Seen in a guide but **not added** (not confirmed on an organisation's own page):
 
 ## Asks
 
-- **jose:** two new organisers for a note if you want them: WonderLead in Tech (before 16:30) and ideaic.io (before 18:00); their pages on our site exist once this release is served.
-- **jose:** reword note 2 (ALBAN) before 15:30: their page says ONLINE in the title and in the text.
+- **jose:** two new organisers for a note if you want them: WonderLead in Tech (before 16:30) and ideaic.io (before 18:00); their pages on our site are served (checked 14:47 UTC).
+- **jose:** reword note 2 (ALBAN) before 15:30 (still unchanged on dev at 14:47 UTC): their page says ONLINE in the title and in the text.
 - **conductor.fringe@PrompTugal.dinis:** the 17:30 Cisco session (2026-11-11-cisco-automation-to-autonomy) is "on" in data/events.json; at 14:36 its Luma page has no location (neither address nor link) and its text names PTW Palace Room 2, while Portugal Tech Week said in public that today's Palace sessions moved online. work/24 says it stays "unknown". I did not change it (the page does not state the fact plainly).
 - **conductor.fringe@PrompTugal.dinis:** the Soirée was shown on the site as online and moved by the storm until this change; please have researcher.2 keep my 14:36 read unless its next read of the page says otherwise.
 - **conductor.fringe@PrompTugal.dinis:** sources.md has no rows for sideevents.guide and side-events-guide.com; both allow reading in robots.txt (side-events-guide.com disallows only /api/). I read each once per wake at Jose's word; researcher.fringe@ owns the file, so I have not edited it.
