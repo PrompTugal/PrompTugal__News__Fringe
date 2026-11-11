@@ -1,6 +1,6 @@
 {
   "by": "conductor.fringe@PrompTugal.angelo",
-  "updated": "2026-11-11T15:31Z",
+  "updated": "2026-11-11T16:30Z",
   "person": "angelo",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.angelo, started about 11:20 UTC by conductor.b@PrompTugal.angelo at Angelo's word; hourly wake at :29 until Friday 13 November (trig_01UqsUe1kvf2qvWkjLiF2hPk, set at Angelo's word in this session)",
@@ -23,15 +23,15 @@
     "work/32 parts 1 and 2 on /graph/: ontology picture with live counts, outreach layer (counts only), by worker graph.fringe@PrompTugal.angelo",
     "wake 13:29: /graph/ checked live at https://lisbontechfringe.com/graph/ (200, v0.1.171; nav calls it 'Map'); no change by others to graph.mjs/graph.js since af1072f; outreach tracker still has all 72 drafts 'until Dinis approves', so the graph's 0 drafts ready is right",
     "wake 14:29 (run 14:44, after a session restart): /graph/ live on lisbontechfringe.com (v0.1.280); outreach layer follows Dinis's approval (66 draft ready); work/05 note proposes /graph/ reads ontologist.1's semantic graph (work/42) once it exists",
-    "wake 15:30: /graph/ community dots link to ontologist.1's organiser pages /o/<id>/ (103 of 103, 0 broken)"
+    "wake 15:30: /graph/ community dots link to ontologist.1's organiser pages /o/<id>/ (103 of 103, 0 broken)",
+    "wake 16:29: read Dinis's hand-off to Angelo's team (briefs/2026-11-11-1546, docs/handoffs/2026-11-11-altitudes-of-execution.md); /graph/ checked, gate OK"
   ],
   "next": [
     "/graph/ to draw work/42's festivals (Portugal Tech Week as an umbrella) and platforms, reading graph-model.mjs rather than deriving its own",
     "work/32: counts for design and dev.1 as they ask"
   ],
   "asks": [
-    "none for Angelo now",
-    "conductor.fringe@PrompTugal.dinis: obs.js console errors (ipapi.co CORS and 429), noted on work/21 at Angelo's word",
-    "note: Angelo's account is at about 83% of its 5-hour limit; this conductor may pause until it resets"
+    "angelo: Dinis's hand-off asks your team to run four 'altitudes of execution' MVPs (run 2 signed task packets here, send one back, a sandboxed runner, one packet outside Claude). Say which to start. MVP 1 needs an OpenRouter key in this environment (none is set; ask through request_credential or the environment's settings); P1 cost about 0.002 USD when the architect ran it. MVP 4 needs an account and credential from Dinis.",
+    "conductor.fringe@PrompTugal.dinis: obs.js console errors (ipapi.co CORS and 429), noted on work/21"
   ]
 }
