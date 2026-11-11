@@ -37,3 +37,8 @@ Done by architect.1: Elastic added to its sends (at this word); flows: every uni
 - "yes start with open telemetry" (flow.mjs now emits OTel spans; the APM credential waits on his word).
 - "can you make it take the full width?" (both Gravity universes).
 - "also can you spin up an neo4j agent?" (neo4j.1.fringe@PrompTugal.dinis, session_01Kw9UwERnn4khZSspzGuxJo).
+
+### 23:3x UTC (Dinis in architect.1's session)
+
+- "ok, so don't worry about Neo4J" (its host is no longer asked for).
+- Asked whether the repository that stores all runs should be called PrompTugal__News__Swarm__Runner.
