@@ -8,3 +8,4 @@ Memory between wakes. Read this and `status.json`, then only what changed on dev
 - **last-seen:** origin/dev at 438f9f5 (12:30 UTC)
 - **Traces:** team/angelo/traces/ (first: the Wexio event page); generator admin/tools/trace-event.mjs (needs a runs.json from the Actions runs list).
 - **Graph:** admin/build/graph.mjs + graph.js; pt.news snapshot data/ptnews-index.json (regenerate: node admin/tools/ptnews-index.mjs <Website clone>).
+- **last-digest:** 5568140 (12:45 UTC); interim format until conductor.b@'s definition reaches me from Angelo.
