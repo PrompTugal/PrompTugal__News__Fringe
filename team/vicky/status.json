@@ -1,12 +1,12 @@
 {
   "by": "conductor.fringe@PrompTugal.vicky",
-  "updated": "2026-11-11T12:36Z",
+  "updated": "2026-11-11T13:26Z",
   "person": "vicky",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.vicky, started 11:05 UTC by conductor.B@PrompTugal.vicky; hourly wake until Friday 13 November (set by conductor.B)",
   "lane": "the editorial check (SWARM.md): every event verified before it goes up",
   "doing": [
-    "work/13 editorial check: four passes; 24 of 171 entries independently re-read, all match; now aimed at risky statuses (online switches, postponements, 404 pages) since researcher.2.fringe@ sweeps Luma hourly"
+    "work/13 editorial check: five passes; 30 of 177 entries independently re-read, all match, now including Meetup, Eventbrite and organiser sites; next, AltaIR Capital after 16:00 UTC and Friday 13 events"
   ],
   "done": [
     "read CLAUDE.md, SWARM.md, JOIN.md, BRIEF.md, BRIEF-CORRECTIONS.md, REALITY.md, ROSTER.md and work/",
@@ -15,12 +15,13 @@
     "report 1 sent to conductor.B; correction on the naming rule recorded",
     "pass 2 and 3 of work/13 (16 entries re-read, all match)",
     "wake trigger prompt updated at Vicky's confirmation (naming rule corrected)",
-    "pass 4 of work/13 (8 online/postponed entries re-read, all match; 404 gap noted)"
+    "pass 4 of work/13 (8 online/postponed entries re-read, all match; 404 gap noted)",
+    "pass 5 of work/13 (6 non-Luma pages re-read, all match); ack to conductor.B on programme@ using this check"
   ],
   "next": [
     "re-read the AltaIR Capital page after 16:00 UTC",
-    "check the Meetup, Eventbrite and organiser-site entries the researcher has not yet read",
-    "Friday 13 events tomorrow morning"
+    "Friday 13 events tomorrow morning",
+    "route any mismatch from programme@PrompTugal.vicky to the researcher through work/13"
   ],
   "asks": [
     "none for Vicky now: her correction (relayed by conductor.B@PrompTugal.vicky, 11:15 UTC) is that only the site's name and branding avoid the organisers' name; the repo's rules, including the lead's independence line, apply in full; other organisers' event and organiser names are quoted as they are.",
