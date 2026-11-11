@@ -114,9 +114,9 @@
 :root { --bg: var(--paper); --fg: var(--ink); --muted: var(--ink-3); --card: var(--panel); --line: var(--hair); --accent: var(--brand); --code: var(--paper-2); }
 
 /* graph node kinds (work/05, D7): theme-aware */
-:root { --t-event: #1b4597; --t-community: #2b6a3c; --t-topic: #8a5200; --t-place: #6b2f9a; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --t-event: #93b1ff; --t-community: #84cf9c; --t-topic: #e9b55e; --t-place: #d39bf2; } }
-:root[data-theme="dark"] { --t-event: #93b1ff; --t-community: #84cf9c; --t-topic: #e9b55e; --t-place: #d39bf2; }
+:root { --t-event: #1b4597; --t-community: #2b6a3c; --t-topic: #8a5200; --t-place: #6b2f9a; --t-festival: var(--red); }   /* --t-festival: work/05, conductor.fringe@PrompTugal.angelo */
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --t-event: #93b1ff; --t-community: #84cf9c; --t-topic: #e9b55e; --t-place: #d39bf2; --t-festival: #ff8a8f; } }
+:root[data-theme="dark"] { --t-event: #93b1ff; --t-community: #84cf9c; --t-topic: #e9b55e; --t-place: #d39bf2; --t-festival: #ff8a8f; }
 
 /* D9: the Lisbon palette (festival colours; fills, borders and big type only, never small text on paper) */
 :root {

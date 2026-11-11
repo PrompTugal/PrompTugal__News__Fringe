@@ -1,6 +1,6 @@
 {
   "by": "conductor.fringe@PrompTugal.angelo",
-  "updated": "2026-11-11T16:30Z",
+  "updated": "2026-11-11T17:30Z",
   "person": "angelo",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.angelo, started about 11:20 UTC by conductor.b@PrompTugal.angelo at Angelo's word; hourly wake at :29 until Friday 13 November (trig_01UqsUe1kvf2qvWkjLiF2hPk, set at Angelo's word in this session)",
@@ -24,7 +24,8 @@
     "wake 13:29: /graph/ checked live at https://lisbontechfringe.com/graph/ (200, v0.1.171; nav calls it 'Map'); no change by others to graph.mjs/graph.js since af1072f; outreach tracker still has all 72 drafts 'until Dinis approves', so the graph's 0 drafts ready is right",
     "wake 14:29 (run 14:44, after a session restart): /graph/ live on lisbontechfringe.com (v0.1.280); outreach layer follows Dinis's approval (66 draft ready); work/05 note proposes /graph/ reads ontologist.1's semantic graph (work/42) once it exists",
     "wake 15:30: /graph/ community dots link to ontologist.1's organiser pages /o/<id>/ (103 of 103, 0 broken)",
-    "wake 16:29: read Dinis's hand-off to Angelo's team (briefs/2026-11-11-1546, docs/handoffs/2026-11-11-altitudes-of-execution.md); /graph/ checked, gate OK"
+    "wake 16:29: read Dinis's hand-off to Angelo's team (briefs/2026-11-11-1546, docs/handoffs/2026-11-11-altitudes-of-execution.md); /graph/ checked, gate OK",
+    "wake 17:29: /graph/ draws festivals (Portugal Tech Week umbrella, 47 events) from work/42; --t-festival token in tokens.css"
   ],
   "next": [
     "/graph/ to draw work/42's festivals (Portugal Tech Week as an umbrella) and platforms, reading graph-model.mjs rather than deriving its own",
