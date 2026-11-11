@@ -1,0 +1,110 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Where agents run</title><style>
+/* The formula of docs/where-agents-run.md as one 1920x1080 slide (the lead, brief 14). Fonts from promptugal.news (CORS open). */
+@font-face{font-family:Newsreader;src:url(https://promptugal.news/assets/fonts/newsreader-variable.woff2) format("woff2");font-weight:200 800}
+@font-face{font-family:"IBM Plex Sans";src:url(https://promptugal.news/assets/fonts/plex-sans-variable.woff2) format("woff2");font-weight:100 700}
+@font-face{font-family:"IBM Plex Mono";src:url(https://promptugal.news/assets/fonts/plex-mono-400.woff2) format("woff2")}
+:root{--paper:#f6f3ec;--panel:#fffdf8;--ink:#121317;--ink2:#3f424a;--ink3:#595c64;--hair:#d9d2c1;--red:#c52830;--green:#006600;--cobalt:#1f4fa8;--sand:#ece7db;--gsoft:#e2eedf}
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1920px;height:1080px;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans",sans-serif;padding:44px 72px 34px;overflow:hidden;position:relative}
+.top{display:flex;justify-content:space-between;align-items:center;font-family:"IBM Plex Mono";font-size:20px;color:var(--ink2)}
+.brand{display:flex;align-items:center;gap:12px}
+.stamp{border:2px solid var(--ink3);width:46px;height:46px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:Newsreader;font-weight:700;font-size:22px;line-height:1}
+.stamp i{color:var(--red);font-style:normal}.stamp small{font-size:8px;font-style:italic;font-weight:400;border-top:2px solid var(--green)}
+.rule{height:5px;background:var(--green);margin:16px 0 18px}
+.head{display:flex;justify-content:space-between;align-items:flex-end}
+h1{font-family:Newsreader;font-weight:650;font-size:68px;line-height:1;letter-spacing:-1px}
+h1 em{color:var(--green);font-style:italic;font-weight:500}
+.q{font-family:Newsreader;font-style:italic;font-size:22px;color:var(--ink2);max-width:760px;text-align:right;line-height:1.3}
+.k{font-family:"IBM Plex Mono";color:var(--green);font-size:17px;letter-spacing:3px;text-transform:uppercase;padding-bottom:7px;border-bottom:3px solid var(--ink);margin-bottom:12px}
+.row1{display:grid;grid-template-columns:1fr 1.25fr;gap:40px;margin-top:22px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.box{background:var(--panel);border:1px solid var(--hair);border-top:5px solid var(--cobalt);padding:12px 16px}
+.box.a{border-top-color:var(--green)}
+.box h3{font-family:Newsreader;font-size:28px;font-weight:650}
+.box p{font-size:17px;color:var(--ink2);line-height:1.35;margin-top:4px}
+.box .eg{font-family:"IBM Plex Mono";font-size:14px;color:var(--ink3);margin-top:6px}
+.formula{background:var(--ink);color:var(--paper);padding:16px 22px;font-family:"IBM Plex Mono";font-size:19px;line-height:1.55}
+.formula b{color:#6dbb7e;font-weight:600}.formula i{color:#f07278;font-style:normal}.formula .c{color:#b9b4a8}
+.row2{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:30px;margin-top:22px}
+.lv{display:grid;grid-template-columns:54px 1fr;gap:4px 10px;align-items:baseline;font-size:17px}
+.lv b{font-family:"IBM Plex Mono";color:var(--green);font-size:17px}
+.lv span{border-bottom:1px solid var(--hair);padding-bottom:4px;color:var(--ink2)}
+.lv span strong{color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-family:"IBM Plex Mono";font-size:15px;border:1.5px solid var(--ink3);padding:3px 8px;border-radius:3px;background:#fff}
+.chip.f{border-color:var(--green);color:var(--green)}.chip.o{border-color:var(--cobalt);color:var(--cobalt)}
+.mt{width:100%;border-collapse:collapse;font-size:16px}
+.mt td{padding:5px 4px;border-bottom:1px solid var(--hair);vertical-align:top}
+.mt td:last-child{text-align:right;white-space:nowrap}
+.go{font-family:"IBM Plex Mono";font-size:14px;padding:1px 7px;border-radius:10px}
+.go.c{background:var(--gsoft);color:var(--green)}.go.o{background:#e3eaf7;color:var(--cobalt)}
+.rule2{font-family:Newsreader;font-size:21px;line-height:1.3;margin-top:12px;color:var(--ink)}
+.rule2 b{color:var(--red)}
+.bar{position:absolute;left:72px;right:72px;bottom:28px;background:var(--ink);color:var(--paper);padding:11px 22px;display:flex;justify-content:space-between;align-items:center}
+.bar b{font-family:Newsreader;font-size:28px;font-weight:600}.bar span{font-size:16px;color:#e8e4da}
+</style></head><body>
+<div class="top"><div class="brand"><div class="stamp"><div><b>P</b><i>T</i></div><small>.news</small></div>a PrompTugal.news site · the agentic team</div><div>Lisbon Tech Fringe · brief 14 · Dinis Cruz with Angelo · 11 Nov 2026</div></div>
+<div class="rule"></div>
+<div class="head"><h1>Where <em>agents</em> run</h1><div class="q">"Use as much frontier models, so much open weight models as we can ... the point here is not to slow down."</div></div>
+
+<div class="row1">
+<div>
+<div class="k">01 · Two different things</div>
+<div class="split">
+<div class="box a"><h3>An agent</h3><p>a role, its craft, its rules, its context, its task and its <b>key</b>: a model in an environment, with tools, in a loop. It is <b>not</b> where it runs.</p><div class="eg">researcher.2 · design.1 · the lead</div></div>
+<div class="box"><h3>An LLM call</h3><p>one input, one output, from a model. An agent makes many, on many models and accounts.</p><div class="eg">the second opinion · Llama 3.3 70B</div></div>
+</div>
+<div class="rule2">Agents on <b>near-frontier</b> models; most calls inside them on <b>open-weight</b> models.</div>
+</div>
+<div>
+<div class="k">02 · The formula</div>
+<div class="formula">
+<span class="c"># for a task t, choose the runtime r and the model m:</span><br>
+<b>place(t)</b> = the cheapest (r, m) where<br>
+&nbsp;&nbsp;io(r) ≥ io(t) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c"># data in and out</span><br>
+&nbsp;&nbsp;loop(r) ⊇ loop(t) &nbsp;&nbsp;&nbsp;&nbsp;<span class="c"># the tools it needs</span><br>
+&nbsp;&nbsp;identity(r) ≥ identity(t) <span class="c"># can it sign?</span><br>
+&nbsp;&nbsp;trust(r,m) ≥ data(t) &nbsp;<span class="c"># private stays ours or local</span><br>
+&nbsp;&nbsp;capability(m) ≥ judgement(t)<br>
+<b>cost</b> = <i>quota pressure</i> × tokens × price &nbsp;<span class="c"># quota weighs most</span>
+</div>
+</div>
+</div>
+
+<div class="row2">
+<div>
+<div class="k">03 · Data in and out: the levels</div>
+<div class="lv">
+<b>L0</b><span><strong>chat</strong>: a person pastes in and out</span>
+<b>L1</b><span><strong>files</strong>: a markdown or a zip to download</span>
+<b>L2</b><span><strong>vault</strong>: given, or made by the agent (provenance)</span>
+<b>L3</b><span><strong>signed lanes</strong>: inboxes, /tip/</span>
+<b>L4</b><span><strong>git</strong>: push to dev behind the gate</span>
+<b>L5</b><span><strong>everything</strong>: git, vaults, network, wakes</span>
+</div>
+<div class="rule2" style="font-size:19px">An agent has a <b>key</b> and either <b>git</b> (L4) or <b>vaults</b> (L2).</div>
+</div>
+<div>
+<div class="k">04 · Where it can run</div>
+<div style="font-family:'IBM Plex Mono';font-size:14px;color:var(--ink3);margin-bottom:6px">runtimes (the loop)</div>
+<div class="chips"><span class="chip f">Claude Code · cloud</span><span class="chip f">Claude Code · laptops</span><span class="chip">ChatGPT</span><span class="chip">other agents</span><span class="chip">a person</span></div>
+<div style="font-family:'IBM Plex Mono';font-size:14px;color:var(--ink3);margin:14px 0 6px">models (the calls)</div>
+<div class="chips"><span class="chip f">Claude: Opus · Sonnet · Haiku</span><span class="chip o">OpenRouter: open weight</span><span class="chip o">Ollama on our laptops</span><span class="chip">OpenAI</span></div>
+<div class="rule2" style="font-size:19px">Work travels as a <b>task packet</b>: a signed task.json, picked up anywhere, returned signed to a vault.</div>
+</div>
+<div>
+<div class="k">05 · The matrix today</div>
+<table class="mt">
+<tr><td>Extract an event's facts</td><td><span class="go o">open weight</span></td></tr>
+<tr><td>Second opinion on an event</td><td><span class="go o">open weight</span></td></tr>
+<tr><td>Classify persona, topic, free/paid</td><td><span class="go o">open weight</span></td></tr>
+<tr><td>Parse a WhatsApp tip (private)</td><td><span class="go o">Ollama, local</span></td></tr>
+<tr><td>Translate to Portuguese</td><td><span class="go o">open weight</span></td></tr>
+<tr><td>Screenshots, usability runs</td><td><span class="go o">laptop agent</span></td></tr>
+<tr><td>Design, code, outreach drafts</td><td><span class="go c">Claude agent</span></td></tr>
+<tr><td>Policy, security, routing</td><td><span class="go c">Claude, frontier</span></td></tr>
+</table>
+</div>
+</div>
+<div class="bar"><b>lisbontechfringe.com · the agentic team</b><span>docs/where-agents-run.md · work/48 · a draft for Dinis and Angelo to correct</span></div>
+</body></html>
