@@ -1,18 +1,18 @@
 {
  "v": 1,
  "site": "fringe.promptugal.news",
- "generated": "2026-11-11T12:09Z",
+ "generated": "2026-11-11T12:24Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 14,
-  "reads": 13,
-  "tabs": 7,
-  "countries": 2,
+  "views": 22,
+  "reads": 20,
+  "tabs": 9,
+  "countries": 3,
   "shares": 0,
-  "bots": 53,
+  "bots": 64,
   "agent_runs": 2,
   "agent_runs_signed": 2
  },
@@ -207,33 +207,49 @@
   ],
   [
    "2026-11-11 12:00",
-   3
+   11
   ]
  ],
  "by_page": [
   [
    "/",
-   7
+   10
+  ],
+  [
+   "/join/",
+   4
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
    3
   ],
   [
-   "/join/",
-   3
+   "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
+   1
   ],
   [
-   "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
+   "/now/",
+   1
+  ],
+  [
+   "/graph/",
+   1
+  ],
+  [
+   "/traffic/",
+   1
+  ],
+  [
+   "/organisers/",
    1
   ]
  ],
  "reading": [
   [
    "/",
-   7,
-   16,
-   18
+   9,
+   18,
+   14
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
@@ -243,21 +259,49 @@
   ],
   [
    "/join/",
-   2,
-   12,
-   50
+   3,
+   10,
+   43
   ],
   [
    "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
    1,
    205,
    100
+  ],
+  [
+   "/organisers/",
+   1,
+   13,
+   21
+  ],
+  [
+   "/traffic/",
+   1,
+   5,
+   57
+  ],
+  [
+   "/now/",
+   1,
+   1,
+   0
+  ],
+  [
+   "/graph/",
+   1,
+   15,
+   6
   ]
  ],
  "by_country": [
   [
    "Portugal",
-   11
+   17
+  ],
+  [
+   "United States",
+   2
   ],
   [
    "The Netherlands",
@@ -267,7 +311,7 @@
  "by_city": [
   [
    "Oliveira de Azemeis, Aveiro, Portugal",
-   6
+   12
   ],
   [
    "Lisbon, Lisbon, Portugal",
@@ -275,7 +319,7 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   1
+   3
   ]
  ],
  "by_referrer": [],
@@ -284,11 +328,11 @@
  "by_screen": [
   [
    "desktop",
-   9
+   16
   ],
   [
    "phone",
-   5
+   6
   ]
  ],
  "agents": [
