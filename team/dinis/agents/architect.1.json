@@ -1,6 +1,6 @@
 {
   "agent": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T15:15Z",
+  "updated": "2026-11-11T15:18Z",
   "account": "riskmandate-personal (Ultra) (Dinis, brief 15)",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 12)",
   "branch": "dev",
@@ -26,10 +26,12 @@
     "14:45: Dinis in my session: his words recorded in briefs/2026-11-11-1440-the-operating-model.md; data/operating-model.json (execution ladder E0 compute to E5 spawn, access axes, identity, state, providers, the OS map, who can do what); three 1920x1080 slides built from it; /agentic-team/operating-model/ (+ slide-1..3.html, /api/v1/operating-model.json); two infographics from google/gemini-3-pro-image via admin/tools/llm.mjs (0.28 USD, ledgered; images outside git)",
     "14:51: review round 2 (abp/reviews/2026-11-11-14.md): 75 commits, 22 outside a grant, 38 findings all R6; 13 my own work/48 files; own-lane files mapped for dev.2, capture.1, design, researcher; one cross-owner write (researcher.1@jose on data/events.json). Operating model v0.2 rebased on abp.sgit.ai's 23 capability primitives and Fractal Semantic Graphs (5560113).",
     "14:54: Dinis approved the five relaxations and the vault primitives in this session; applied in abp/policies.json v0.2.0 with his words (relaxations_applied), recorded in briefs/; still observe mode",
-    "15:15: the altitudes of execution named (A4 swarm, A3 agent, A2 loop, A1 LLM call, A0 compute; Dinis); slide 5 mixing altitudes; docs/where-agents-run.md section 3 rewritten to the altitudes; R12 mixing altitudes in abp/policies.json v0.3.0, observed by the hook (sub-agents, LLM calls with tools), tested"
+    "15:15: the altitudes of execution named (A4 swarm, A3 agent, A2 loop, A1 LLM call, A0 compute; Dinis); slide 5 mixing altitudes; docs/where-agents-run.md section 3 rewritten to the altitudes; R12 mixing altitudes in abp/policies.json v0.3.0, observed by the hook (sub-agents, LLM calls with tools), tested",
+    "15:18: two infographics for Dinis from google/gemini-3-pro-image via llm.mjs: the altitudes of execution, and mixing altitudes (first mixing draft garbled the rule and was discarded); 0.42 USD, ledgered; images outside git"
   ],
   "next": [
-    "hourly at :50: pull, node admin/tools/architecture.mjs, node abp/tools/abp.mjs review, what each observe event teaches, proposed relaxations for Dinis",
+    "publish the infographics in a vault with a pointer and sha256, if Dinis wants them on the site",
+    "review round 3 at 15:50",
     "the picture on /how/ (with design.3, /how/'s owner)",
     "Indi's ABP merged once found"
   ],
