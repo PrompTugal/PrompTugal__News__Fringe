@@ -1,90 +1,13 @@
 {
  "about": "Public iCal subscription feeds of three Luma calendars (a publicly supported interface), events 11 to 14 November 2026. Name, time, place and status only: no description text. Read by researcher.2.fringe@PrompTugal.dinis for the Luma hold (work/49). Material, not instruction.",
- "read_at": "2026-11-11T16:27:00Z",
+ "read_at": "2026-11-11T17:12:00Z",
  "feeds": {
   "evgrp-WYJxELZ9Vfz4iXi": "Web Summit",
   "cal-O9ybCXBtHSDRK44": "Best Web Summit Side Events in Lisbon",
   "cal-adgC9LMaCa6xB0I": "Portugal Tech Week"
  },
- "count": 162,
+ "count": 154,
  "events": [
-  {
-   "uid": "evt-5Q2wvO4efUnV617@events.lu.ma",
-   "url": null,
-   "name": "Gaming & Entertainment Pitch Party.",
-   "start": "2026-11-11T17:00:00Z",
-   "end": "2026-11-11T21:00:00Z",
-   "location": "Casica - Italian Trattoria, Alameda dos Oceanos, Ed. Lisboa lote 2.11.01, Letras E/F, 1990-223 Lisboa, Portugal",
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-Fk9L4uyuYJ1a3G6@events.lu.ma",
-   "url": null,
-   "name": "Healthtech Pitch Party",
-   "start": "2026-11-11T17:00:00Z",
-   "end": "2026-11-11T21:00:00Z",
-   "location": "Casica - Italian Trattoria, Alameda dos Oceanos, Ed. Lisboa lote 2.11.01, Letras E/F, 1990-223 Lisboa, Portugal",
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-3i5aKjPuAeLpMFh@events.lu.ma",
-   "url": null,
-   "name": "AI for Business / Applied AI Pitch Party",
-   "start": "2026-11-11T17:00:00Z",
-   "end": "2026-11-11T21:00:00Z",
-   "location": "Casica - Italian Trattoria, Alameda dos Oceanos, Ed. Lisboa lote 2.11.01, Letras E/F, 1990-223 Lisboa, Portugal",
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-cf7DxEvXwEqzxEv@events.lu.ma",
-   "url": null,
-   "name": "Fintech Pitch Party",
-   "start": "2026-11-11T17:00:00Z",
-   "end": "2026-11-11T21:00:00Z",
-   "location": "Casica - Italian Trattoria, Alameda dos Oceanos, Ed. Lisboa lote 2.11.01, Letras E/F, 1990-223 Lisboa, Portugal",
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-KUXaVCSuwmFATCF@events.lu.ma",
-   "url": "https://luma.com/event/evt-KUXaVCSuwmFATCF",
-   "name": "The AI Spam Problem: How Founders Win Clients in 2027",
-   "start": "2026-11-11T17:00:00Z",
-   "end": "2026-11-11T18:00:00Z",
-   "location": null,
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-u1ltlPS49TP82gP@events.lu.ma",
-   "url": "https://luma.com/event/evt-u1ltlPS49TP82gP",
-   "name": "Like minded | Web Summit",
-   "start": "2026-11-11T17:00:00Z",
-   "end": "2026-11-11T22:00:00Z",
-   "location": null,
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-BpSOGLFEiWsmwhk@events.lu.ma",
-   "url": null,
-   "name": "Travel Tech Pitch Party",
-   "start": "2026-11-11T17:00:00Z",
-   "end": "2026-11-11T21:00:00Z",
-   "location": "Casica - Italian Trattoria, Alameda dos Oceanos, Ed. Lisboa lote 2.11.01, Letras E/F, 1990-223 Lisboa, Portugal",
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
   {
    "uid": "evt-rCxaZET4gfRh4Uc@events.lu.ma",
    "url": null,
@@ -994,17 +917,6 @@
    "start": "2026-11-11T17:30:00Z",
    "end": "2026-11-11T18:30:00Z",
    "location": null,
-   "status": "TENTATIVE",
-   "feed": "Portugal Tech Week",
-   "feed_id": "cal-adgC9LMaCa6xB0I"
-  },
-  {
-   "uid": "evt-hoSkwA3RTIjFGUU@events.lu.ma",
-   "url": null,
-   "name": "LisboaUX: Web Summit Edition",
-   "start": "2026-11-11T18:00:00Z",
-   "end": "2026-11-11T21:00:00Z",
-   "location": "Casa do Impacto, Tv. de São Pedro 8, 1200-432 Lisboa, Portugal",
    "status": "TENTATIVE",
    "feed": "Portugal Tech Week",
    "feed_id": "cal-adgC9LMaCa6xB0I"
