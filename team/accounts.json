@@ -1,6 +1,6 @@
 {
   "about": "Dinis's Claude accounts and what runs on each (work/33). Labels only: no email address is published. Kept by conductor.fringe@PrompTugal.dinis; Dinis gave the list on 11 November 2026 at about 13:28 UTC.",
-  "updated": "2026-11-11T19:22Z",
+  "updated": "2026-11-11T20:22Z",
   "accounts": [
     {
       "label": "dinis-owasp",
@@ -65,7 +65,8 @@
       "architect.1",
       "ontologist.1",
       "elastic.1",
-      "grafana.1"
+      "grafana.1",
+      "neo4j.1"
     ]
   }
 }

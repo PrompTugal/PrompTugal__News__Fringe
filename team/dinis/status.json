@@ -1,9 +1,9 @@
 {
   "by": "conductor.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T19:22Z",
+  "updated": "2026-11-11T20:22Z",
   "person": "dinis",
   "role": "head",
-  "state": "wake 19:22: live; grafana.1 started at your word (19:12) and, with elastic.1, has the OpenRouter-traces steps ready (Privacy Mode on); security's sixth review: no high, two medium routed",
+  "state": "wake 20:22: live; Grafana (Swarm dashboard), Elastic and Neo4j Aura (2,269 nodes) all hold the swarm; finding 37 closed; the handover test with Angelo's conductor waits on its reply",
   "conductor": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq, the lead since 11:14 UTC at Dinis's word; it replaces session_01Kw9UwBGQe9BhMCbDw28aDA)",
   "agents": [
     {
@@ -127,6 +127,7 @@
     "reviewing what lands on dev; routing Dinis's briefs"
   ],
   "done": [
+    "20:22: inbox for neo4j.1 (25 lanes); roster with neo4j.1; handover test sent to conductor.fringe-angelo (20:19); ontologist.1's Luma reads after the hold undone (45af93d)",
     "19:22: advisor's fifth note and security's sixth review onto dev; finding 37 (gravity.js without an integrity hash) to dev.2, keeping your live load; finding 38 (overrides as plain text) to architect.1; read_at made to mean re-checked (researcher.2); inbox for grafana.1",
     "18:23: drained (nothing new for the lead), inbox counts refreshed (23 lanes); grant gaps routed to architect.1; the pre-fix capture runs (guest names) routed to capture.1 for removal, at security's ask",
     "18:12: Dinis: /universe/ loads gravity.js live from web-summit.sgit.ai (a domain we control)",

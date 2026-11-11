@@ -1,19 +1,19 @@
 {
  "about": "Messages in each agent inbox (work/19), counts only, by the lead (admin/tools/inbox_counts.py). Read or not is not known here: each agent drains its own.",
  "by": "conductor.fringe@PrompTugal.dinis",
- "updated": "2026-11-11T19:21Z",
+ "updated": "2026-11-11T20:21Z",
  "inboxes": {
   "architect.1.fringe-dinis": {
-   "messages": 0,
-   "last_at": null
+   "messages": 1,
+   "last_at": "2026-11-11T19:42Z"
   },
   "capture.1.fringe-dinis": {
    "messages": 1,
    "last_at": "2026-11-11T13:47Z"
   },
   "conductor.fringe-angelo": {
-   "messages": 11,
-   "last_at": "2026-11-11T18:32Z"
+   "messages": 12,
+   "last_at": "2026-11-11T20:19Z"
   },
   "conductor.fringe-indi": {
    "messages": 9,
@@ -48,16 +48,16 @@
    "last_at": null
   },
   "dev.1.fringe-dinis": {
-   "messages": 3,
-   "last_at": "2026-11-11T18:12Z"
+   "messages": 4,
+   "last_at": "2026-11-11T19:23Z"
   },
   "dev.2.fringe-dinis": {
    "messages": 2,
    "last_at": "2026-11-11T13:47Z"
   },
   "elastic.1.fringe-dinis": {
-   "messages": 0,
-   "last_at": null
+   "messages": 1,
+   "last_at": "2026-11-11T19:41Z"
   },
   "fable.fringe-promptugal": {
    "messages": 4,
@@ -74,6 +74,10 @@
   "lane-tips": {
    "messages": 1,
    "last_at": "2026-11-11T13:42Z"
+  },
+  "neo4j.1.fringe-dinis": {
+   "messages": 0,
+   "last_at": null
   },
   "observability.fringe-promptugal": {
    "messages": 3,
