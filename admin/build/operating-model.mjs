@@ -56,6 +56,12 @@ width:1920px;height:1080px;background:var(--paper);color:var(--ink);font-family:
 .om .every h3{font-family:Newsreader;font-size:32px;color:#6dbb7e;font-weight:600}.om .every ol{padding-left:22px;font-size:19px;line-height:1.5}
 .om .every p{font-size:16px;color:#e8e4da;line-height:1.35}.om .every .name{margin-top:auto;border-top:1px solid #555;padding-top:12px;font-size:17px}
 .om .every .name .chip{background:transparent;color:var(--paper);border-color:#aaa;margin:3px 2px}.om .every .name .chip.g{border-color:#6dbb7e;color:#6dbb7e}
+.om .mix{display:grid;grid-template-columns:560px 1fr;gap:30px;margin-top:22px}
+.om .idea{background:var(--ink);color:var(--paper);padding:22px}.om .idea h3{font-family:Newsreader;font-size:30px;color:#f07278;font-weight:600}
+.om .idea p{font-size:18px;line-height:1.4;color:#e8e4da;margin-top:8px}.om .idea .rule3{font-family:Newsreader;font-size:26px;color:#fff;line-height:1.25}.om .idea .also{font-size:15px;color:#b9b4a8}
+.om table.mx{width:100%;border-collapse:collapse;font-size:18px}.om table.mx th{font-family:"IBM Plex Mono";font-size:14px;letter-spacing:1px;text-transform:uppercase;color:var(--green);text-align:left;padding:6px 8px;border-bottom:3px solid var(--ink)}
+.om table.mx td{padding:10px 8px;border-bottom:1px solid var(--hair);vertical-align:top;line-height:1.3}.om table.mx td.arr{font-size:26px;color:var(--red);width:40px}
+.om .mono.red{color:var(--red)}.om b.mono{color:var(--green)}.om .here{padding-left:22px;font-size:18px;line-height:1.45;color:var(--ink2)}
 .om .fsg{display:grid;grid-template-columns:420px 520px 1fr;gap:28px;margin-top:22px}
 .om .gr ol{list-style:none;counter-reset:g}.om .gr li{counter-increment:g;position:relative;padding:8px 0 8px 44px;border-bottom:1px solid var(--hair);font-size:18px;line-height:1.3}
 .om .gr li::before{content:counter(g);position:absolute;left:0;top:8px;width:30px;height:30px;border-radius:50%;background:var(--green);color:var(--paper);font-weight:700;display:grid;place-items:center;font-size:16px}
@@ -79,7 +85,7 @@ const NARROW = `@media (max-width:760px){
 .om-frame .om{position:static!important;transform:none!important;width:auto!important;height:auto!important;padding:14px!important;overflow:visible!important}
 .om .top{flex-direction:column;gap:4px;font-size:13px}.om .head{flex-direction:column;align-items:flex-start;gap:8px}.om h1{font-size:38px}.om .q{text-align:left;font-size:17px}
 .om .ladwrap,.om .osw{grid-template-columns:1fr;height:auto}.om .rung{grid-template-columns:60px 1fr;gap:4px 10px}.om .rung p,.om .rung .who{grid-column:1/-1;justify-content:flex-start}
-.om .rung h3{font-size:24px}.om .rung b.id{font-size:22px}.om .layer{grid-template-columns:1fr}.om .fsg,.om .alts,.om .alt2{grid-template-columns:1fr}.om .rch>div{grid-template-columns:1fr}.om .layer h3{font-size:22px}
+.om .rung h3{font-size:24px}.om .rung b.id{font-size:22px}.om .layer{grid-template-columns:1fr}.om .fsg,.om .alts,.om .alt2,.om .mix{grid-template-columns:1fr}.om table.mx{font-size:14px}.om .rch>div{grid-template-columns:1fr}.om .layer h3{font-size:22px}
 .om .axw{overflow-x:auto}.om table.ax{min-width:900px;font-size:14px}.om .bar{position:static;flex-direction:column;align-items:flex-start;gap:4px;margin-top:16px}.om .bar b{font-size:20px}.om .legend{flex-wrap:wrap}}`;
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
@@ -122,10 +128,19 @@ function graph(M) {
   return `${top(4)}<div class="head"><h1>The <em>altitudes</em> of execution</h1><div class="q">"It's work of work of work of work ... it's just how big it is." Meaning through connectivity: what each one is depends on where it is and what it can do.</div></div>
 <div class="alts"><div class="stack">${L.items.map((a) => `<div class="alt2"><div><b class="mono">${esc(a.id)}</b><h3>${esc(a.name)}</h3></div><div><p class="is">${esc(a.is)}</p><p class="can">${esc(a.can)}</p></div><div class="rx"><span class="chip c">reach: ${esc(a.reach)}</span><span class="eg">${esc(a.example)}</span></div></div>`).join('')}</div>
 <div class="every"><h3>Every altitude has</h3><ol>${L.every_altitude_has.map((x) => `<li>${esc(x)}</li>`).join('')}</ol><p>The grant is not a layer: it is given at every altitude, in one grammar (verb.object.reach, ${C.primitives.length} primitives, abp.sgit.ai).</p>
-<div class="name"><b>A model of what?</b> ${L.names_proposed.options.map((o) => `<span class="chip ${o.name === 'holon' ? 'g' : ''}">${esc(o.name)}</span>`).join(' ')}<p>Proposed: a <b>holon</b>, a whole that is also a part. Altitudes are its levels.</p></div></div></div>
+<div class="name"><b>Names for A2:</b> ${L.names_for.A2.options.map((o) => `<span class="chip ${o.name === L.names_for.A2.architect_recommends ? 'g' : ''}">${esc(o.name)}</span>`).join(' ')}<br><b>Names for A1:</b> ${L.names_for.A1.options.map((o) => `<span class="chip ${o.name === 'LLM call' ? 'g' : ''}">${esc(o.name)}</span>`).join(' ')}<p>Also called the <b>holarchy of work</b>: a stack of holons, each a whole and a part.</p></div></div></div>
 ${bar('Dinis and Angelo, 11 Nov 2026 · data/operating-model.json · a draft: names to decide')}`;
 }
-export const SLIDES = [ladder, access, os, graph];
+
+function mixing(M) {
+  const X = M.altitude_mixing, alt = (t) => (/A\d/.exec(t) || ['?'])[0];
+  return `${top(5)}<div class="head"><h1><em>Mixing</em> altitudes</h1><div class="q">"I'm asking for a worker or a call, but it has the power of an agent ... if it gets enthusiastic and starts to use the agentic capabilities ..."</div></div>
+<div class="mix"><div class="idea"><h3>The vulnerability</h3><p>${esc(X.idea.split(' (Dinis')[0])}</p><h3 style="margin-top:14px">The rule</h3><p class="rule3">${esc(X.rule)}</p><p>${esc(X.measure)}</p><p class="also">Also: ${X.also.map(esc).join(' · ')}</p></div>
+<div><div class="k">Asked for · given · what can go wrong</div><table class="mx"><thead><tr><th>Mandate (asked)</th><th></th><th>Grant (given)</th><th>Risk</th></tr></thead><tbody>${X.examples.map((e) => `<tr><td><b class="mono">${alt(e.asked)}</b> ${esc(e.asked.replace(/ \(A\d\)/, ''))}</td><td class="arr">&rarr;</td><td><b class="mono red">${alt(e.given)}</b> ${esc(e.given.replace(/ \(A\d[^)]*\)/, ''))}</td><td>${esc(e.risk)}</td></tr>`).join('')}</tbody></table>
+<div class="k" style="margin-top:20px">In this swarm</div><ul class="here">${X.in_this_swarm.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div></div>
+${bar('The altitudes of execution · data/operating-model.json altitude_mixing · Dinis and Angelo, 11 Nov 2026')}`;
+}
+export const SLIDES = [ladder, access, os, graph, mixing];
 export function slidePage(i) {
   const M = loadModel();
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=1920"><title>The operating model ${i + 1}/${SLIDES.length}</title><style>${FONTS}body{margin:0}${CSS}</style></head><body><div class="om">${SLIDES[i](M)}</div><p style="font:16px sans-serif;margin:12px 72px">Lisbon Tech Fringe is independent of Web Summit and not run by its organisers. For anything official, see <a href="https://websummit.com/">the organisers' official site</a>.</p></body></html>`;

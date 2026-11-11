@@ -1,8 +1,8 @@
 {
   "about": "The operating model of the agentic team (Dinis with Angelo, in architect.1's session, 14:40 UTC; briefs/2026-11-11-1440-the-operating-model.md; work/48): the primitives of the execution block, the access an entity has at a moment in time, identity, state, providers, and who can do what. What an entity is depends on where it runs and what it can reach (Dinis: 'what they are depends on where they are and what they can do'). A draft for Dinis and Angelo to correct.",
   "by": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T14:57Z",
-  "status": "draft v0.3",
+  "updated": "2026-11-11T15:05Z",
+  "status": "draft v0.4",
   "ladder": {
     "about": "The execution ladder: what an entity can do, bottom to top. Each rung includes the ones below it.",
     "rungs": [
@@ -114,8 +114,10 @@
     ]
   },
   "identity": {
-    "rule": "Every entity has an identity: a PKI key, even a chat session where it can carry one (Dinis: 'our identities have to flow to everything here').",
-    "ephemeral": "A session key's private half lives only as long as its session. That is a feature: a signature by it proves the agent existed at that moment (Dinis: 'that tells you that that agent exists at that moment in time').",
+    "rule": "An identity is a key pair: from the moment something holds a private key, it can identify itself, which is what an identity is (Dinis, 15:0x UTC). Identity of what is the altitude: a swarm, an agent, a loop, an LLM call, or a piece of compute.",
+    "ephemeral": "A private key that exists only where and while the holon runs proves it existed there, then (Dinis: 'that tells you that that agent exists at that moment in time').",
+    "down_to_compute": "Compute can hold one too: an expert vouches for a deployment and gives it a private key that exists only in that environment (or a KMS), so the code signs for itself (Dinis's example: signed code, deployments and environments).",
+    "not_what_makes_an_agent": "A key is not what makes an agent (every altitude has one); an agent is a loop with an environment: memory, its own wake, a wider reach.",
     "how": [
       "pki-agent.mjs keygen --session in each session; the public half in data/keys.json",
       "every output signed: commits (the Agent: trailer and the key), inbox messages, agent-log runs, vault records",
@@ -700,7 +702,7 @@
       "an objective (what done means)",
       "a mandate (what it is asked to do)",
       "a grant (what it may do: capability primitives)",
-      "an identity (a key, even if it lives only for the run)",
+      "a key pair (the identity: it can sign for itself while its private half stays where it runs)",
       "a result, signed"
     ],
     "items": [
@@ -715,7 +717,7 @@
       {
         "id": "A3",
         "name": "agent",
-        "is": "a worker with an environment: identity, memory (status file, inbox, vaults), its own wake, a wider reach",
+        "is": "a loop with an environment: memory (status file, inbox, vaults), its own wake, a wider reach",
         "can": "start workers (sub-agents), wake itself (E4), act across the host and the tenant",
         "reach": "host to tenant",
         "example": "design.1: a Claude Code session"
@@ -730,7 +732,7 @@
       },
       {
         "id": "A1",
-        "name": "call",
+        "name": "LLM call",
         "is": "one model call: a prompt in, an answer out",
         "can": "nothing but answer (E1); its caller acts",
         "reach": "none",
@@ -770,6 +772,107 @@
         }
       ],
       "architect_recommends": "holon for the thing (a whole that is part of a bigger whole), altitudes for the levels, and a mandate plus a grant on every holon"
+    },
+    "title": "The altitudes of execution",
+    "also_called": "the holarchy of work (Koestler's holarchy: a stack of holons, each a whole and a part). Not Holacracy, the trademarked management method, which this is not",
+    "names_for": {
+      "A2": {
+        "now": "worker",
+        "options": [
+          {
+            "name": "loop",
+            "why": "says what it is (a closed agentic loop) and matches the ladder's E2 and E3 rungs"
+          },
+          {
+            "name": "run",
+            "why": "what we already call it in the ABP (a run report); short; but every altitude 'runs'"
+          },
+          {
+            "name": "job",
+            "why": "the CI sense: given inputs, does one thing, ends, never starts others"
+          },
+          {
+            "name": "errand",
+            "why": "sent out, does one thing, comes back: closed by definition"
+          },
+          {
+            "name": "thread",
+            "why": "the operating-system reading: an agent is a process, this is a thread inside it; a thread cannot start a process"
+          },
+          {
+            "name": "worker",
+            "why": "clear, but it clashes with our branch workers and with Cloudflare Workers"
+          }
+        ],
+        "architect_recommends": "loop"
+      },
+      "A1": {
+        "now": "LLM call",
+        "options": [
+          {
+            "name": "LLM call",
+            "why": "Dinis's choice: says what it is"
+          },
+          {
+            "name": "inference",
+            "why": "model-neutral: also covers an image model (the infographics were an inference, not an LLM call)"
+          },
+          {
+            "name": "model call",
+            "why": "same as inference, plainer"
+          },
+          {
+            "name": "completion",
+            "why": "the API's word; dated"
+          },
+          {
+            "name": "turn",
+            "why": "one exchange; but a chat turn may carry tools"
+          }
+        ],
+        "architect_recommends": "LLM call, with 'inference' as the general name when the model is not a language model"
+      }
     }
+  },
+  "agent_rule_revised": {
+    "was": "Anything acting as an agent has a PKI key and either git (L4) or vaults (L2).",
+    "now": "Every altitude holds a key; what makes an agent (A3) is a loop with an environment: memory across runs, its own wake, a reach beyond its sandbox.",
+    "at": "2026-11-11T15:05Z"
+  },
+  "altitude_mixing": {
+    "name": "mixing altitudes",
+    "also": [
+      "altitude escalation (by analogy with privilege escalation)",
+      "altitude confusion (by analogy with the confused deputy)"
+    ],
+    "idea": "Many vulnerabilities come from mixing altitudes: the mandate is at one altitude and the grant at a higher one. Asking a chat for one call or a piece of research (an A1 or A2 mandate) hands that request an A3 agent's grant: tools, connectors, schedules, memory, reach. If the model gets enthusiastic and uses them, it acts beyond what was asked (Dinis, 15:0x UTC).",
+    "rule": "The grant's altitude must not be above the mandate's altitude. Give an A1 mandate an A1 grant; an A2 mandate an A2 grant.",
+    "measure": "abp.sgit.ai's delta (grant minus mandate) read by altitude: every primitive an altitude holds beyond what its mandate needs is the exposure.",
+    "examples": [
+      {
+        "asked": "a chat to research a question (A2)",
+        "given": "an agent's grant: connectors, memory, schedules, web (A3)",
+        "risk": "it books, sends, schedules or remembers what nobody asked for"
+      },
+      {
+        "asked": "a sub-agent to edit one file (A2)",
+        "given": "the parent session's full grant and tokens (A3)",
+        "risk": "it pushes, messages or starts others with the parent's name"
+      },
+      {
+        "asked": "a CI job to run the tests (A0)",
+        "given": "deploy credentials and write tokens (A3 reach)",
+        "risk": "a test dependency deploys or pushes"
+      },
+      {
+        "asked": "an LLM call to extract a field (A1)",
+        "given": "tool use and a browser inside the call (A2)",
+        "risk": "a page it reads instructs it, and it acts"
+      }
+    ],
+    "in_this_swarm": [
+      "the ABP hooks observe each agent's grant (A3); the loops and calls inside an agent inherit it today, with no narrower grant of their own",
+      "proposal: a task packet carries its own altitude and a narrower grant; the router's calls (A1) carry no tools"
+    ]
   }
 }
