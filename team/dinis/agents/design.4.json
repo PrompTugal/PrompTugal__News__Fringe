@@ -1,0 +1,16 @@
+{
+  "agent": "design.4.fringe@PrompTugal.dinis",
+  "updated": "2026-11-11T11:54Z",
+  "state": "D8 done; starting D5",
+  "doing": [
+    "D5 navigation"
+  ],
+  "done": [
+    "D8: admin/build/tokens.css (design E ported), wired into build.mjs, graph colours moved to tokens; checked 390/1280, light/dark"
+  ],
+  "next": [
+    "D5: one nav bar on every page, works without JS, current page marked"
+  ],
+  "asks": [],
+  "key": "none yet: GitHub-only session, keygen not run (needs pki-agent.mjs download); will add before next wake"
+}

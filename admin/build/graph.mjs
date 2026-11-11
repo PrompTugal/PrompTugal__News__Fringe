@@ -141,8 +141,6 @@ export const graphCss = `
 .chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--bg)}#gq{font:inherit;padding:4px 8px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--fg);min-width:0;flex:1 1 160px}
 .gwrap{position:relative;border:1px solid var(--line);border-radius:8px;background:var(--card);touch-action:none}#graph{display:block;width:100%;height:auto;aspect-ratio:1/1;max-height:80vh}
 .gzoom{position:absolute;top:8px;right:8px;display:flex;gap:4px}.gzoom button{font:inherit;width:32px;height:32px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
-:root{--t-event:#2f6fd6;--t-community:#0b6e4f;--t-topic:#b35c00;--t-place:#8a3ab9}
-@media (prefers-color-scheme:dark){:root{--t-event:#7aa7ff;--t-community:#5fd3a6;--t-topic:#ffae5c;--t-place:#d39bf2}}
 .t-event{fill:var(--t-event);background:var(--t-event)}.t-community{fill:var(--t-community);background:var(--t-community)}.t-topic{fill:var(--t-topic);background:var(--t-topic)}.t-place{fill:var(--t-place);background:var(--t-place)}
 .legend .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin:0 4px 0 10px}.legend{font-size:.85rem}
 #graph line{stroke:var(--line);stroke-width:1;vector-effect:non-scaling-stroke}#graph line.on{stroke:var(--fg);stroke-opacity:.5}#graph circle{cursor:pointer;stroke:var(--card);stroke-width:1;vector-effect:non-scaling-stroke}

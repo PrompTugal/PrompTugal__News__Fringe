@@ -53,22 +53,22 @@ const ids = roster.people.map((p) => p.id);
 
 // --- layout --------------------------------------------------------------
 const INDEPENDENCE = `Lisbon Fringe is independent of Web Summit and not run by its organisers. For anything official, see <a href="https://websummit.com/">the organisers' official site</a>.`;
-const css = `
-:root{--bg:#fbfaf7;--fg:#1b1b1b;--muted:#5d5d5d;--card:#fff;--line:#e4e1da;--accent:#0b6e4f;--code:#f2efe8}
-@media (prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--muted:#a8a8a8;--card:#1d1d1d;--line:#333;--accent:#5fd3a6;--code:#222}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-main{max-width:720px;margin:0 auto;padding:16px}a{color:var(--accent)}
-header{border-bottom:1px solid var(--line)}header nav{max-width:720px;margin:0 auto;padding:12px 16px;display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}
-header strong{font-size:1.1rem}h1{font-size:1.6rem;line-height:1.2;margin:.6em 0 .3em}h2{font-size:1.2rem;margin:1.6em 0 .5em}
-.ind{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);padding:10px 12px;border-radius:6px;font-size:.92rem}
-.card{overflow-wrap:anywhere;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px;margin:8px 0}
-.muted{color:var(--muted);font-size:.9rem}pre{background:var(--code);padding:12px;border-radius:8px;white-space:pre-wrap;word-break:break-word;font-size:.85rem;margin:0}
-.copy{position:relative}.copy button{position:absolute;top:8px;right:8px;font:inherit;font-size:.85rem;padding:4px 10px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
-code{background:var(--code);padding:1px 4px;border-radius:4px}ol li,ul li{margin:.3em 0}
-.tag{display:inline-block;font-size:.75rem;padding:1px 8px;border-radius:99px;border:1px solid var(--line);margin-left:6px}
-.tag.lvl-red{border-color:#d33;color:#d33}.tag.lvl-orange{border-color:#e07b00;color:#e07b00}.tag.lvl-yellow{border-color:#c7a100}#storm-live h3{font-size:1rem;margin:.8em 0 .3em}#storm-live ul{padding-left:1.2em;margin:.3em 0}
-.tag.open{border-color:#c7a100}.tag.claimed{border-color:#2f6fd6}.tag.done{border-color:var(--accent)}
-footer{max-width:720px;margin:24px auto;padding:16px;border-top:1px solid var(--line)}${CARD_CSS}`;
+const tokens = readFileSync(join(root, 'admin', 'build', 'tokens.css'), 'utf8'); // D8: the one set of design tokens
+const css = tokens + `
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;background:var(--paper);color:var(--ink);font:var(--fs-body)/var(--lh-body) var(--sans)}
+main{max-width:var(--page);margin:0 auto;padding:var(--gutter)}main>*{max-width:48rem}a{color:var(--brand)}a:hover{color:var(--brand-2)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;box-shadow:0 0 0 5px var(--focus-ink)}
+header{border-bottom:1px solid var(--rule-2)}header nav{max-width:var(--page);margin:0 auto;padding:var(--s3) var(--gutter);display:flex;gap:var(--s4);align-items:baseline;flex-wrap:wrap;font-size:var(--fs-ui)}
+header strong{font:600 var(--fs-hed)/1 var(--serif)}h1,h2,h3{font-family:var(--serif);line-height:var(--lh-hed);font-weight:600}h1{font-size:var(--fs-h1);margin:.6em 0 .3em}h2{font-size:var(--fs-hed);margin:1.6em 0 .5em;padding-top:var(--s2);border-top:2px solid var(--rule)}
+.ind{background:var(--panel);border:1px solid var(--hair);border-left:4px solid var(--brand);padding:var(--s3);border-radius:var(--radius);font-size:var(--fs-ui)}
+.card{overflow-wrap:anywhere;background:var(--panel);border:1px solid var(--hair);border-radius:var(--radius);padding:var(--s3);margin:var(--s2) 0}
+.muted{color:var(--ink-3);font-size:var(--fs-meta)}pre{background:var(--paper-2);padding:var(--s3);border-radius:var(--radius);white-space:pre-wrap;word-break:break-word;font:var(--fs-ui)/1.5 var(--mono);margin:0}
+.copy{position:relative}.copy button{position:absolute;top:var(--s2);right:var(--s2);font:inherit;font-size:var(--fs-ui);padding:var(--s1) var(--s3);border-radius:var(--radius);border:1px solid var(--rule-2);background:var(--panel);color:var(--ink);cursor:pointer}
+code{background:var(--paper-2);padding:1px var(--s1);border-radius:var(--radius);font-family:var(--mono);font-size:.9em}ol li,ul li{margin:.3em 0}
+.tag{display:inline-block;font-size:var(--fs-label);padding:1px var(--s2);border-radius:var(--radius-pill);border:1px solid var(--hair);margin-left:6px}
+.tag.lvl-red{border-color:var(--live);color:var(--live)}.tag.lvl-orange{border-color:var(--warn);color:var(--warn)}.tag.lvl-yellow{border-color:var(--warn)}#storm-live h3{font-size:var(--fs-dek);margin:.8em 0 .3em}#storm-live ul{padding-left:1.2em;margin:.3em 0}
+.tag.open{border-color:var(--warn)}.tag.claimed{border-color:var(--brand)}.tag.done{border-color:var(--ok)}
+footer{max-width:var(--page);margin:var(--s5) auto;padding:var(--gutter);border-top:1px solid var(--rule-2)}${CARD_CSS}`;
 const page = (title, body, desc, head = '') => `<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">${head}<style>${css}</style></head><body>

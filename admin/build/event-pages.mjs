@@ -55,7 +55,7 @@ const CSS = `.star{background:linear-gradient(135deg,var(--on-bg),var(--card) 70
 .star .go{display:block;text-align:center;background:var(--accent);color:var(--bg);font-weight:600;text-decoration:none;padding:12px;border-radius:8px;font-size:1.1rem;box-shadow:0 1px 0 rgba(0,0,0,.2)}.star .go:hover,.star .go:focus-visible{filter:brightness(1.1)}
 .facts{display:grid;grid-template-columns:max-content 1fr;gap:6px 12px;margin:0}.facts dt{color:var(--muted)}.facts dd{margin:0;overflow-wrap:anywhere;min-width:0}
 @media (max-width:420px){.facts{grid-template-columns:1fr}.facts dt{margin-top:6px}}
-blockquote{margin:.4em 0;padding:.3em .8em;border-left:3px solid var(--line);color:var(--fg)}.yours{border-left:4px solid #c7a100}`;
+blockquote{margin:.4em 0;padding:.3em .8em;border-left:3px solid var(--line);color:var(--fg)}.yours{border-left:4px solid var(--warn)}`;
 
 // page(title, body, desc, head) and linkify come from build.mjs, so the layout, independence line and footer are the site's own.
 export function eventPages(events, { page, esc, linkify, SITE, card, cardList }) {

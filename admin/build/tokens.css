@@ -1,0 +1,108 @@
+/* Lisbon Fringe design tokens (work/design/D8) · design.4.fringe@PrompTugal.dinis, 11 November 2026
+   ONE set of tokens for every page. Ported from PrompTugal's design E (pt.news, design/tokens.css): paper, ink, azulejo cobalt.
+   Same names as pt.news so a fix there ports here. Use var(--token) only: no hex colours, no px font sizes in page CSS.
+   Dark follows the system; <html data-theme="dark|light"> forces either. Inlined into every page by admin/build/build.mjs.
+   Legacy aliases at the end keep older page CSS working; new CSS uses the design-E names. */
+
+:root {
+    color-scheme: light dark;
+
+    /* paper and ink */
+    --paper: #f6f3ec;        /* the page */
+    --paper-2: #ece7db;      /* sunk: code, inputs, table stripes */
+    --panel: #fffdf8;        /* raised: panes, popovers, cards that float */
+    --ink: #121317;          /* text, strong rules */
+    --ink-2: #3f424a;        /* secondary text: deks, captions */
+    --ink-3: #595c64;        /* tertiary: meta, datelines (AA on paper and paper-2) */
+    --rule: #121317;         /* the strong rule under section heads */
+    --rule-2: #9d9580;       /* the mid rule: nav, cards */
+    --hair: #d9d2c1;         /* hairlines between list items */
+
+    /* the brand: azulejo cobalt, the blue of Lisbon's tiles */
+    --brand: #1b4597;        /* links, the mark, selected states (8.0:1 on paper) */
+    --brand-2: #10306d;      /* hover, pressed */
+    --brand-soft: #e3e9f5;   /* tint behind a selected chip or "our pick" */
+    --on-brand: #ffffff;
+
+    /* signals, used sparingly and never alone (always with a word) */
+    --live: #b42318;         /* live now, breaking (6.0:1) */
+    --live-soft: #f8e4df;
+    --ok: #2b6a3c;           /* confirmed, re-checked and live */
+    --ok-soft: #e1efe4;
+    --warn: #8a5200;         /* moved, not re-confirmed */
+    --warn-soft: #f6ead6;
+    --focus: #ffbf1f;        /* the focus ring: yellow, with an ink edge, as public-service sites do */
+    --focus-ink: #121317;
+
+    /* the band that carries "live" across the top during the summit */
+    --band: #121317;
+    --on-band: #f6f3ec;
+    --on-band-2: #c8c4ba;
+    --live-on-band: #ff8f7d;  /* the live red on the dark band (8.4:1) */
+
+    /* faces */
+    --serif: Georgia, "Times New Roman", serif;   /* no webfonts in git (CLAUDE.md): system faces only */
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: ui-monospace, Menlo, Consolas, monospace;
+
+    /* type scale (phone values; clamp() grows them to desktop) */
+    --fs-nameplate: clamp(38px, 9.4vw, 78px);
+    --fs-h1: clamp(31px, 6.2vw, 50px);
+    --fs-lead-hed: clamp(27px, 4.6vw, 40px);
+    --fs-hed: clamp(20px, 2.4vw, 23px);
+    --fs-body: 17.5px;       /* 18.5px from 768px */
+    --fs-dek: 18px;
+    --fs-ui: 14px;
+    --fs-label: 12px;
+    --fs-meta: 12.5px;
+    --lh-body: 1.6;
+    --lh-hed: 1.12;
+    --measure: 36em;         /* the reading column, about 70 characters */
+
+    /* space: a 4px base */
+    --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 64px;
+    --gutter: 16px;          /* the phone's side gutter; 24px from 768px */
+    --page: 1200px;          /* the widest the grid gets */
+    --radius: 3px;           /* rules, not boxes: corners are barely there */
+    --radius-pill: 999px;
+        --shadow: 0 1px 2px rgba(18, 19, 23, .06), 0 8px 24px rgba(18, 19, 23, .10);
+}
+
+@media (min-width: 768px) {
+    :root { --fs-body: 18.5px; --gutter: 24px; }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --paper: #111214; --paper-2: #1a1b1e; --panel: #1e1f23;
+        --ink: #eceae4; --ink-2: #c3c0b7; --ink-3: #a6a39a;
+        --rule: #eceae4; --rule-2: #5f5b51; --hair: #2e2f34;
+        --brand: #93b1ff; --brand-2: #bccfff; --brand-soft: #1a2440; --on-brand: #0b1530;
+        --live: #ff8f7d; --live-soft: #3a1b16;
+        --ok: #84cf9c; --ok-soft: #16281c;
+        --warn: #e9b55e; --warn-soft: #2f2412;
+        --focus: #ffcf4d; --focus-ink: #111214;
+        --band: #1e1f23; --on-band: #eceae4; --on-band-2: #a6a39a;
+        --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .5);
+    }
+}
+:root[data-theme="dark"] {
+    --paper: #111214; --paper-2: #1a1b1e; --panel: #1e1f23;
+    --ink: #eceae4; --ink-2: #c3c0b7; --ink-3: #a6a39a;
+    --rule: #eceae4; --rule-2: #5f5b51; --hair: #2e2f34;
+    --brand: #93b1ff; --brand-2: #bccfff; --brand-soft: #1a2440; --on-brand: #0b1530;
+    --live: #ff8f7d; --live-soft: #3a1b16;
+    --ok: #84cf9c; --ok-soft: #16281c;
+    --warn: #e9b55e; --warn-soft: #2f2412;
+    --focus: #ffcf4d; --focus-ink: #111214;
+    --band: #1e1f23; --on-band: #eceae4; --on-band-2: #a6a39a;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .5);
+}
+
+/* legacy aliases (the first build's names): do not use in new CSS */
+:root { --bg: var(--paper); --fg: var(--ink); --muted: var(--ink-3); --card: var(--panel); --line: var(--hair); --accent: var(--brand); --code: var(--paper-2); }
+
+/* graph node kinds (work/05, D7): theme-aware */
+:root { --t-event: #1b4597; --t-community: #2b6a3c; --t-topic: #8a5200; --t-place: #6b2f9a; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --t-event: #93b1ff; --t-community: #84cf9c; --t-topic: #e9b55e; --t-place: #d39bf2; } }
+:root[data-theme="dark"] { --t-event: #93b1ff; --t-community: #84cf9c; --t-topic: #e9b55e; --t-place: #d39bf2; }
