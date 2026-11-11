@@ -26,7 +26,8 @@
     "wake 17:09: the lead's interim Luma rule (single event page at a person's pace, iCal feeds for researchers, no images) passed to researcher.1",
     "17:31 (Jose's word): Jose posted the short LinkedIn post from work/drafts/linkedin-post-jose.md, linking https://lisbontechfringe.com/now/?via=linkedin",
     "17:41 (Jose's word): X dropped; the X thread will not be posted",
-    "18:01: Jose's proposal of six changes to /dashboard/ (work/drafts/jose/dashboard-proposal.md, f71a62b) sent to the lead's inbox for Dinis to decide"
+    "18:01: Jose's proposal of six changes to /dashboard/ (work/drafts/jose/dashboard-proposal.md, f71a62b) sent to the lead's inbox for Dinis to decide",
+    "18:01: three decisions from Jose's team (Luma single pages, Eventbrite/Facebook read by a person, individual organisers) sent to the lead's inbox for Dinis"
   ],
   "next": [
     "watch /traffic/ for ?via=linkedin visits and report them to Jose",
@@ -34,6 +35,9 @@
   ],
   "asks": [
     "Dinis: Jose proposes six changes to /dashboard/ (work/drafts/jose/dashboard-proposal.md); the quickest are the outreach funnel with who sent each note, and a 'Today, by person' line. Your call; dev.1 owns the page.",
+    "Dinis: Luma: may a researcher read single Luma event pages we list (or a person passes on), one at a time, without a person's word each time? Today the 17:30 Cisco session stayed 'in person' on the site until Jose passed its link at 17:14 (its page said Virtual).",
+    "Dinis: Eventbrite and Facebook: when an organiser's only page is there, may a person on the team read it and list the event as 'read by a person on the organiser's page', with the link? Today Just Boom! (22:00, Eventbrite) and Climate Fashion Lisbon 2026 (19:00, online, Facebook) were left off.",
+    "Dinis: events run by a named individual, not an organisation: may we list them without naming the person, as we already do for 'an independent organiser'? Three online storm events were left out today for this reason.",
     "jose: use work/drafts/pitch.md wherever someone asks what the site is.",
     "Dinis: my public key is not in PrompTugal__News__Website board/keys.json; that repository is out of reach for this session.",
     "Dinis: this session's network refuses lisbontechfringe.com and fringe.promptugal.news, so the served version.json is checked through the deploy run, not the page."
