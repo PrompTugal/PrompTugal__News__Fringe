@@ -31,6 +31,7 @@ import { timelineBlock, TIMELINE_CSS } from './timeline.mjs';
 import { MYDAY_CSS, myDayBody } from './myday.mjs';   // D29, design.2.fringe@PrompTugal.dinis   // D19, design.2.fringe@PrompTugal.dinis   // work/16, dev.2.fringe@PrompTugal.dinis
 import { guidanceBody, abpBody } from './guidance.mjs';   // work/40, work/39, architect.1.fringe@PrompTugal.dinis
 import { traceBody } from './trace-page.mjs';   // Angelo's traces, designer.fringe@PrompTugal.angelo
+import { writeGraph } from './graph-pages.mjs';   // work/42, ontologist.1.fringe@PrompTugal.dinis
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const out = join(root, '_site');
@@ -292,6 +293,7 @@ writeFileSync(join(out, 'abp', 'index.html'), page('Agent Behaviour Policies: Li
 if (existsSync(join(root, 'data/architecture.json'))) writeFileSync(join(out, 'api', 'v1', 'architecture.json'), read('data/architecture.json'));
 mkdirSync(join(out, 'organisers'), { recursive: true });
 writeFileSync(join(out, 'organisers', 'index.html'), page('For organisers: Lisbon Tech Fringe', organisersBody(orgs, esc, { eventPath, hasPage }), 'What Lisbon Tech Fringe offers organisers of side events, and who is listed.'));
+writeGraph({ root, out, events, page, esc, eventPath, hasPage, SITE, VERSION, BUILT });   // work/42: /o/ /f/ /d/ /n/ /p/ /t/ and /api/v1/graph/<type>.json
 const changes = readChanges(root);
 const releases = buildReleases(root, changes.commits, VERSION);   // work/37: every commit gets the first tag that contains it
 mkdirSync(join(out, 'api', 'v1', 'releases'), { recursive: true });

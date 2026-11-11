@@ -340,6 +340,22 @@
         "fingerprint": "sha256:9213505208a3abd3",
         "signing_fingerprint": "sha256:225ae79f898ac2da"
       }
+    },
+    {
+      "id": "ontologist.1.fringe-dinis",
+      "agent": "ontologist.1.fringe@PrompTugal.dinis",
+      "role": "Ontologist for the lead (Lisbon Tech Fringe, WS-215): work/42, the semantic graph (days, festivals, organisers, events, sessions, places, personas, topics) built from data/events.json.",
+      "how": "Made in its own session on 11 November 2026, 14:00 UTC (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab). A session key: it ends with the session. Public half only.",
+      "added": "2026-11-11",
+      "status": "active",
+      "bundle": {
+        "v": "1",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAvJyK1CgQI98h7BJDppBG\nxVAs6vKs4u1QL3jkKe8RrkbTbxtanbLDwTu802MXqpUcTHy22IDTV7HK8YC0sQyC\ntSjDiza9Fs9SPN9N93RpuGba251QOTNVyR3w1TaGld0CMZ9Sai2sfT2QSxQCRib5\nYVNh+mtuGVi3H9gROBRsu4lFZBqVzB33Edl7ocugjV9MqaRlrpakuJlJerhhYkma\nOpESSpZs0izcNOZvV56WwhavDA0D+RCMF1D70wCCSSCJjgEDD+DmbE5rKTMxatIS\ntXtu6HIyuHcADZcN/hIegTl+B1Eb2EEfM0rvj99xuxH8wIDwWiBALyHWjEtrwC30\nLGTeEE5IIbVhm1eHEqyR5RRKzmz+X2Nj7nEHTLzrpryE/HcWnkzE7Z5i5H/ruD1r\nLVp2jtvJGcp65Zl8jgISkJ32wS6rN/TXb7aeM7xuh8TI48KHCiif9J+qBCrkoMus\nJTv2jWu3dTcAuel1hiTCkOuXsZ8oLItK8rmanOtYgL+acvZGPyZfWrJLB05K8RPz\na084HQagFhfQYlxmxRheiuS3KxLgKWXcI0nRCkHMjvQ1lvC7byxzN7WQEHkJ1hGJ\nSfGrYBRHShhv8LQoHGLnh+oyoqLfEY2mqANHoRmk+rabLqvgX/Rb+RlAQZvg9gKp\nJ4KalG0t+ojqzD/NzHsVvIcCAwEAAQ==\n-----END PUBLIC KEY-----",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEm9DjVdnebR9iLbXhxx0wFJ1DzRgM\nS00rNMCM1l+uiK/Fe6vQuoOVaDZSla85BViVA/x0ou2LBSJCkaCEn2YooQ==\n-----END PUBLIC KEY-----",
+        "label": "ontologist.1.fringe@PrompTugal.dinis",
+        "fingerprint": "sha256:06910575865641d3",
+        "signing_fingerprint": "sha256:371caaed5542ea3a"
+      }
     }
   ]
 }

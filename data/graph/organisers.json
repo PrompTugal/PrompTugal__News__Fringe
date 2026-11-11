@@ -1,0 +1,13 @@
+{
+  "about": "The ontologist's folds for organisers (work/42), on top of data/organisers.json (dev.2's canonical names, work/23): spellings that are the same organisation, and an organisation that is a programme of another (part_of). Organisations only, never a private person; no contact details.",
+  "updated": "2026-11-11T14:01Z",
+  "by": "ontologist.1.fringe@PrompTugal.dinis",
+  "organisers": [
+    { "id": "portugal-tech-week", "name": "Portugal Tech Week", "aliases": [], "community": "portugal-tech-week" },
+    { "id": "yorkseed", "name": "Yorkseed", "aliases": ["Yorkseed ™", "Yorkseed Global Capital Network"], "community": "yorkseed" },
+    { "id": "valois-by-yorkseed", "name": "Valois by Yorkseed", "aliases": ["Valois by Yorkseed (Yorkseed Global Capital Network)"], "part_of": "yorkseed" },
+    { "id": "healthhub-by-unicorn-factory-lisboa", "name": "healthhub by Unicorn Factory Lisboa", "aliases": [], "part_of": "unicorn-factory-lisboa" },
+    { "id": "kuma-partners", "name": "Kuma Partners", "aliases": ["Kuma Partners (per the organisers' linked sessions)"] },
+    { "id": "indvstry-clvb", "name": "Indvstry Clvb", "aliases": [] }
+  ]
+}
