@@ -1,7 +1,7 @@
 {
   "about": "Every agent's grant, flattened from abp/policies.json by node abp/tools/abp.mjs build: what /abp/ shows.",
   "policy": "0.1.0",
-  "sha256": "8d160f210c5f018f",
+  "sha256": "57c69c77fa4930a9",
   "mode": "observe",
   "agents": [
     {

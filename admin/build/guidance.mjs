@@ -4,6 +4,10 @@ import { readFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+// the site's address comes from admin/site.json (work/30), never typed: the markdown's absolute links are rewritten to it
+const ORIGIN = JSON.parse(readFileSync(join(root, 'admin/site.json'), 'utf8')).origin.replace(/\/+$/, '');
+const KNOWN = [/https:\/\/fringe\.promptugal\.news/g, /https:\/\/lisbontechfringe\.com/g];
+const here = (s) => KNOWN.reduce((t, re) => t.replace(re, ORIGIN), s);
 
 export const guidanceCss = `.gd table{border-collapse:collapse;width:100%;font-size:.9rem;margin:.6em 0}.gd th,.gd td{border:1px solid var(--hair,#ccc);padding:6px 8px;text-align:left;vertical-align:top}
 .gd .tw{overflow-x:auto}.gd a,.gd td{overflow-wrap:anywhere}.gd blockquote{margin:.6em 0;padding:.4em .8em;border-left:3px solid var(--brand,#333);color:var(--ink-3,#555)}.gd code{overflow-wrap:anywhere}
@@ -38,7 +42,7 @@ export function md(src, esc) {
 }
 
 export function guidanceBody(esc) {
-  const src = readFileSync(join(root, 'CONTRIBUTING.md'), 'utf8');
+  const src = here(readFileSync(join(root, 'CONTRIBUTING.md'), 'utf8'));
   return `<style>${guidanceCss}</style><div class="gd">${md(src, esc)}</div>
 <p class="muted">This page is built from <code>CONTRIBUTING.md</code> in the repository. The grants it describes are in <a href="/abp/">the Agent Behaviour Policies</a>.</p>`;
 }
