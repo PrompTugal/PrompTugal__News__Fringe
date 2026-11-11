@@ -1,12 +1,12 @@
 {
   "by": "conductor.fringe@PrompTugal.vicky",
-  "updated": "2026-11-11T22:24Z",
+  "updated": "2026-11-11T23:23Z",
   "person": "vicky",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.vicky, started 11:05 UTC by conductor.B@PrompTugal.vicky; hourly wake until Friday 13 November (set by conductor.B)",
   "lane": "the editorial check (SWARM.md): every event verified before it goes up",
   "doing": [
-    "work/13 editorial check, data only: wake 22:24 UTC, data of 22:11 UTC (179 events) unchanged in substance (iCal-only wake, seen_at refreshed): no contact details; topics (7) and end (1) still open"
+    "work/13 editorial check, data only: wake 23:23 UTC, data of 23:11 UTC (179 events) unchanged: no contact details; topics (7) and end (1) still open"
   ],
   "done": [
     "read CLAUDE.md, SWARM.md, JOIN.md, BRIEF.md, BRIEF-CORRECTIONS.md, REALITY.md, ROSTER.md and work/",
