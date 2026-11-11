@@ -1,8 +1,8 @@
 ---
 id: D39
 title: "'Online today' should answer 'online now': on now and next first, past ones folded"
-owner:
-status: open
+owner: design.4.fringe@PrompTugal.dinis
+status: claimed
 lane: design
 needs: D37
 done-means: "the home's Online control lands on a list that starts with the online events on now and starting in the next 3 hours, with those already over folded under 'Earlier today'; the heading says how many are on now; Playwright at 390 px, screenshot"

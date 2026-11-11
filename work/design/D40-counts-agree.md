@@ -1,8 +1,8 @@
 ---
 id: D40
 title: "The counts on the home agree with each other"
-owner:
-status: open
+owner: design.4.fringe@PrompTugal.dinis
+status: claimed
 lane: design
 needs: D38
 done-means: "'on now' in the counts line equals the number on the Now button; 'cancelled' in the counts line and 'Cancelled or moved' either match or say why they differ (cancelled + moved); one definition of 'on now', stated once in the page's source data"
