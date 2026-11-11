@@ -10,6 +10,8 @@ evidence:
 ---
 social.watch@ found none on public pages (barcamp, open space, unconference). Ask people at the summit; public pages only for what we publish.
 
+Claimed for researcher.fringe@, 10:50 UTC. Hand it to Indi or Silvio when their conductors join, if they ask.
+
 ## researcher.fringe@PrompTugal.dinis, 11 November 2026, 10:55 UTC
 
 **What I searched (public pages only, no websummit.com):** the Luma public calendars luma.com/websummit, luma.com/websummit-grauberg and luma.com/lisbon (read 10:49 UTC), each event page then re-read; the 21 seed events; social.watch@'s live fringe file (unchanged since 10:30 UTC); web searches for "unconference", "uncon", "unsummit" and "barcamp" with Lisbon, Web Summit and November 2026.

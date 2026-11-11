@@ -1,37 +1,62 @@
 {
-  "by": "conductor.B@ios.PrompTugal.dinis (handing over)",
-  "updated": "2026-11-11T10:45Z",
+  "by": "conductor.fringe@PrompTugal.dinis",
+  "updated": "2026-11-11T10:58Z",
   "person": "dinis",
   "role": "head",
-  "state": "handed over: the lead is session_01Kw9UwBGQe9BhMCbDw28aDA (new, Dinis 10:45 UTC); it rewrites this file",
+  "state": "lead running (session_01Kw9UwBGQe9BhMCbDw28aDA, new at Dinis's word, 10:44 UTC); three agents working; the site does not serve yet (Pages not enabled)",
   "conductor": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwBGQe9BhMCbDw28aDA, hourly at :44 until Friday 13 November)",
   "agents": [
     {
       "name": "dev.fringe@PrompTugal.dinis",
       "session": "session_01Kw9UwBuse9ub7C5zboJbMs",
       "wake": "every two hours at :44",
-      "doing": "work/12 the join page, then work/01 the pipeline"
+      "branch": "work/dev.fringe",
+      "doing": "work/01 the pipeline, then the events page from data/events.json; work/07 the storm block"
+    },
+    {
+      "name": "researcher.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwDtKvyL1hzQTwazVi3",
+      "wake": "hourly at :14",
+      "branch": "work/researcher.fringe",
+      "doing": "work/02 data/events.json for 11-13 Nov, each re-read at its URL; work/03 the unconference"
+    },
+    {
+      "name": "security.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwEM3Xg32ANMHE6SZGS",
+      "wake": "every two hours at :29",
+      "branch": "work/security.fringe",
+      "doing": "reviews every commit on dev and work/* (secrets, contact details, private people, websummit.com, escaping, workflows)"
     },
     {
       "name": "conductor.B@ios.PrompTugal.dinis",
       "session": "session_01Kw9UwFFE4yEJ9omnf1asjz",
-      "doing": "the Lisbon Fringe iOS app (Dinis, 10:45 UTC), in PrompTugal__App__iOS"
+      "doing": "the Lisbon Fringe iOS app; it reads /api/v1/events.json and communities.json (fields kept stable)"
     }
   ],
   "doing": [
-    "the board and the rules (CLAUDE.md, REALITY.md)",
-    "the join page through dev.fringe@ (work/12)"
+    "the board, the roster and reviews of the agents' branches onto dev",
+    "day one (BRIEF.md §8): today's and tomorrow's events, sourced, phone-first, with the independence line and the storm block"
   ],
   "done": [
-    "CLAUDE.md, REALITY.md, BRIEF-CORRECTIONS.md entry, my key in data/keys.json"
+    "my own session key in data/keys.json (signing sha256:cb7afbe3025a6ec1); conductor.B@ios's key marked superseded",
+    "BRIEF-CORRECTIONS.md and REALITY.md: the lead is this session",
+    "started researcher.fringe@ and security.fringe@ (BRIEF.md §7 step 4), with their wakes",
+    "claims: work/01 dev.fringe@, work/02 and 03 researcher.fringe@",
+    "merged dev.fringe@'s work/01 pipeline (63a4c1a) and work/07 storm block onto dev after review",
+    "welcomed conductor.fringe@PrompTugal.indi (work/04); answered its asks on work/04"
   ],
   "next": [
-    "start researcher.fringe@ for work/02 and work/03 if nobody claims them by the 11:40 wake",
-    "start security.fringe@ once the first page ships",
-    "tell conductor@PrompTugal.dinis the URL once it serves"
+    "bring researcher.fringe@'s data/events.json and dev.fringe@'s pipeline onto dev after review",
+    "re-run Pages run 1 (43005902882) once Pages is on",
+    "send Dinis the /join/ link as soon as it serves; tell conductor@PrompTugal.dinis the URL so pt.news links it",
+    "tell incident.conductor@web-summit.dinis that we read the storm site's /api/v1/"
   ],
   "asks": [
-    "Dinis: point fringe.promptugal.news (CNAME) at PrompTugal.github.io for this repository's Pages site, as for storm-charles.promptugal.news",
-    "Dinis: send the /join/ page (or JOIN.md) to the team so each person starts their conductor"
+    "Dinis: in PrompTugal/PrompTugal__News__Fringe, Settings > Pages > Source: GitHub Actions. Both Pages runs so far (43005902882, 43006170870) failed for want of it. Then set the custom domain fringe.promptugal.news there.",
+    "Dinis: point fringe.promptugal.news (CNAME) at promptugal.github.io, as for storm-charles.promptugal.news.",
+    "Dinis: dev.fringe@ asks you to confirm it in its own session (session_01Kw9UwBuse9ub7C5zboJbMs) before it pushes to dev or publishes its key; until then the lead brings its branch onto dev.",
+    "Dinis: send the /join/ page (or JOIN.md) to the team so each person starts their conductor; I will send you the link the moment it serves.",
+    "Dinis: the name or link of the unconference you heard about (work/03); public searches found nothing.",
+    "indi: your conductor's environment blocks luma.com, meetup.com and elevon.io; allow them in its cloud environment's network settings so it can re-read sources (researcher.fringe@ covers events meanwhile)."
   ]
 }

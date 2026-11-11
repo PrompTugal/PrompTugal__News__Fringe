@@ -16,7 +16,40 @@
         "fingerprint": "sha256:823d0d38f31d4f8c",
         "signing_fingerprint": "sha256:2f7b009fb8c94153"
       },
-      "superseded": "2026-11-11T10:45Z"
+      "superseded": "2026-11-11T10:45Z",
+      "superseded_by": "the lead session_01Kw9UwBGQe9BhMCbDw28aDA (signing sha256:cb7afbe3025a6ec1), from 10:44 UTC; this key was conductor.B@ios.PrompTugal.dinis (session_01Kw9UwFFE4yEJ9omnf1asjz), the lead from about 10:40 to 10:45 UTC"
+    },
+    {
+      "id": "conductor.fringe-promptugal",
+      "agent": "conductor.fringe@PrompTugal.dinis",
+      "role": "The lead of Lisbon Fringe (fringe.promptugal.news, WS-215): routes the swarm's work, keeps the board, at Dinis Cruz's word (11 November 2026: 'you're going to be my main conductor from here').",
+      "how": "Made in its own session (session_01Kw9UwBGQe9BhMCbDw28aDA) on 11 November 2026, 10:44 UTC (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab). A session key: it ends with the session.",
+      "added": "2026-11-11",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEApOjZaGcUFU6Nkjmh1n3s\nsSGt+H2T8o3+SieKAActiZhPjDY3lbH6l3QWU6SB5hBZPOnsbX1ln5QcrDA0AOUM\nxCdUx8GAcH9PRUF/70GevuW9yBYoPAAGjBCsaX0rA5m/6es8LZ5Az87nVVWRESE+\n8ur9zA/ALM2lfaYHIfXmySa9RvT86d9UhUTGuSP8rJ5qnmg8VlSTLnIdfHmyLYZ8\n0WNT7xZUnL90raFVAI4f6t0LGyzblBpNEgNPYHW/NFA1TM9iMoizyQeccUA0WmDL\nuyFKvclSNwVk8aOog3hERoZjDE1NT+9dymtMn2W1h5GPhVdyFBgLM+uR1OfiokaF\nhpqZZYhLZVqRyO0GjrMDN4eaNmo/5hY++2peUA4t8wstIIfDAJ8kWVzHWYdkjt7b\nqkph+uUj97Kqk7eDmi7Iz/tT2+mP3SdabwFwOlJRsN/0EXgBPOT5IdqEBf4nJ5C8\nEU8g3IIJ/U+jB7ts/9yTjbmsMJV6lEEXU+H3/sf3tLrdl/NHFgUOIiF3wg9FxfxY\n3xmhIKwGQVKPbjRdBqmx1v8ITUQClip3orA/W+vuIoL0aDWgufHdU25n8HQQXJwZ\nCCWPAZrTXFq+8avWPPKkxoSPjtzJfJ2z4DA5F3BbA61PH68PLqho0TqLbrxf+suC\nirvx7esEcLAS30s3LNSlUz0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE7MGLCtfNA3w9Lw02ZfHRoBVwI9t8\ntdGBag8iQUep0YQ6siRqnzssZErEKGT/+cv65NR8CZJD9vlmD39wpqft8w==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor.fringe@PrompTugal.dinis",
+        "fingerprint": "sha256:0fa7162784a49b23",
+        "signing_fingerprint": "sha256:cb7afbe3025a6ec1"
+      }
+    },
+    {
+      "id": "conductor.fringe-indi",
+      "agent": "conductor.fringe@PrompTugal.indi",
+      "role": "Indi Gupte's conductor for Lisbon Fringe (fringe.promptugal.news, WS-215): the communities and organisers lane (SWARM.md).",
+      "how": "Made in its own session (session_01SZXKK9aBakmkfmRPBZ8v6H) on 11 November 2026, 10:47 UTC (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab). A session key: it ends with the session.",
+      "added": "2026-11-11",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAti+QCPdUfzi+1TPIgEIq\n1av8u0mu2pKSxkG1KC0I1uk5MAfNFaKzOhXqbvyKdvWaOn3l8Lm+ZrskS7Y7+NPp\nagTmhHnsOgiShEtv8Vt6hrzQkf7cjCqUMhYoRTVbJ2Sbv3rYDzs0Oo2hm3ShcFS6\nb521hVYL1kOpipa472VdFGyf21xkwoEl7EVUvnLs7utSPDPgNwuYDlVR7K8l6fFR\n8FYnt47P1GvIoKGS6Ya5jfDBDDyHSWAXqmf1VwKVLGQ/asaeIdrwoSmDqr4vg8Kl\nRGHEMd29sIcnDwDEb/FHB3RL4Mjig3Ej5O2I7ndc2yLMRikZsnCszcLwxmPB30Vp\ndYYTSdnjHeuFV21CNZHFdO4+vBac7uylV1nQQ46oH8+gjgaoeh+aclkhZWVjuwFR\nJaTSyXNMitfNnzrLKpRgFgTeli7lW3jcsYnogrMP3a6Sj09ZX6qMOfQPiNeo7IQR\na2x6AQraYowD+Nk31v7rXxLyv7fS37w1njUSU+imMlwMiPwxU1UU8YZ55EWrjsVZ\nEtSWEYig+XsY/SjNy6wIIb96oQRJRncM/55BBw/3AuPIz7LlM9wri34NDvXy+70+\n++VfQSyCdyDKeDgNSRvHa9CaeBYa0bupBgiVfV+9xTcO8HVn3ZjA/x+XB0kQcjsK\nnps/Y1nPo3qeot+rjvNPQTMCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAElVRYoGM3pVPVGKyGhzqF+GeVx9TT\n3bTliSe3LVoqs+OpAOMg53BiAmyAz/hCXmraZ3NbFzPdpa8rWmuIAG0NCw==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor.fringe@PrompTugal.indi",
+        "fingerprint": "sha256:6e8f3f641c0f76a4",
+        "signing_fingerprint": "sha256:d36cd619bbb9ddbb"
+      }
     }
   ]
 }

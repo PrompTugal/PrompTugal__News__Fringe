@@ -1,0 +1,70 @@
+# One job: checkout (shallow), build, gate, deploy, tag, measure. From the storm site's deploy.yml (PIPELINE.md section 3), for Lisbon Fringe:
+#   - fetch-depth 1 and nothing reads git history (a blobless full clone made the team site's gate 40x slower);
+#   - the newest push wins among the waiting runs; a running deploy is never cancelled (with agents pushing every few
+#     seconds, cancelling starved the site: nothing was served until pushes paused);
+#   - CI owns the version: v<series>.<run number>, written into the artifact and pushed as a tag; never committed
+#     (no second push, no rebase race: BRIEF-CORRECTIONS.md, at Dinis's yes, 10 November 2026);
+#   - after the deploy, it reads version.json from the live site until it serves this version, and reports push-to-served.
+name: deploy
+on:
+  push:
+    branches: [dev]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: false   # a running deploy always finishes (~25 s); GitHub keeps only the newest waiting run, so the newest push still wins and a burst of pushes cannot starve the site
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment2.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Version
+        run: |
+          echo "VERSION=v$(cat admin/series.txt).${{ github.run_number }}" >> "$GITHUB_ENV"
+          echo "PUSHED_AT=${{ github.event.head_commit.timestamp }}" >> "$GITHUB_ENV"
+      - name: Build and gate (the gate builds once; must print OK)
+        run: node admin/build/validate.mjs
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
+        continue-on-error: true   # 5 of the first 414 runs failed here with "No artifacts named github-pages were found" seconds after a good upload
+      - name: Wait before the second try
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 8
+      - id: deployment2
+        if: steps.deployment.outcome == 'failure'
+        uses: actions/deploy-pages@v4   # one more try; if this fails too the run is red, as before
+      - name: Tag the release
+        if: github.event_name == 'push'
+        run: |
+          git tag "$VERSION" && git push -q origin "refs/tags/$VERSION" || echo "tag $VERSION not pushed"
+      - name: Measure push to served
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url || steps.deployment2.outputs.page_url }}
+        run: |
+          # green does not mean live: fail unless the live site serves this version, or a newer one (a later push won)
+          n=${VERSION##*.}; got=""
+          for i in $(seq 1 45); do
+            got=$(curl -s -H 'Cache-Control: no-cache' "${PAGE_URL}version.json?t=$(date +%s%N)" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{console.log(JSON.parse(s).version)}catch{console.log('')}})")
+            g=${got##*.}
+            if [ -n "$got" ] && [ "${g:-0}" -ge "$n" ] 2>/dev/null; then break; fi
+            sleep 2
+          done
+          now=$(date -u +%s); pushed=$(date -u -d "${PUSHED_AT:-now}" +%s)
+          echo "push to served: $((now - pushed)) s ($VERSION, served: ${got:-nothing})" | tee -a "$GITHUB_STEP_SUMMARY"
+          echo "::notice title=push-to-served::$((now - pushed)) s ($VERSION)"
+          g=${got##*.}; [ -n "$got" ] && [ "${g:-0}" -ge "$n" ] || { echo "::error::$VERSION was deployed but the live site serves ${got:-nothing}"; exit 1; }

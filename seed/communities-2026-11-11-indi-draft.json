@@ -1,0 +1,392 @@
+{
+  "about": "DRAFT communities for work/04 (Lisbon Fringe, independent of Web Summit). Built from social.watch@'s seed event pages only: the organisers as organisations, no private people, no contact details. NOT re-read at source: luma.com, meetup.com and elevon.io are blocked by this session's network policy. what and join stay null (unknown) until each group's public page is read. Not for publishing until verified is true.",
+  "by": "conductor.fringe@PrompTugal.indi",
+  "updated": "2026-11-11T10:55Z",
+  "status": "draft, unverified",
+  "notes": [
+    "One seed event (Tech Startups on the Rooftop) is run by a private individual and is left out.",
+    "Joint organisers (with ..., x ...) are kept as one entry until their pages show which group is which."
+  ],
+  "communities": [
+    {
+      "name": "Best Web Summit Side Events in Lisbon",
+      "what": null,
+      "join": null,
+      "links": [
+        "https://luma.com/m146luuy"
+      ],
+      "events": [
+        {
+          "name": "[LIVE on YouTube] Roast your website, or win a coffee!",
+          "date": "2026-11-11",
+          "url": "https://luma.com/m146luuy",
+          "status": "online"
+        }
+      ],
+      "source": "seed/events-2026-11-11-social-watch.json",
+      "source_read_at": "2026-11-11T10:35:00Z",
+      "verified": false
+    },
+    {
+      "name": "Side Events Guide",
+      "what": null,
+      "join": null,
+      "links": [
+        "https://luma.com/4fbc1s24"
+      ],
+      "events": [
+        {
+          "name": "Side Events Guide IRL (Wednesday)",
+          "date": "2026-11-11",
+          "url": "https://luma.com/4fbc1s24",
+          "status": "unknown"
+        }
+      ],
+      "source": "seed/events-2026-11-11-social-watch.json",
+      "source_read_at": "2026-11-11T10:35:00Z",
+      "verified": false
+    },
+    {
+      "name": "DestiLabs",
+      "what": null,
+      "join": null,
+      "links": [
+        "https://luma.com/ryva47wc"
+      ],
+      "events": [
+        {
+          "name": "[CANCELLED] Proof of Run: rain edition (coffee, no run)",
+          "date": "2026-11-11",
+          "url": "https://luma.com/ryva47wc",
+          "status": "cancelled"
+        }
+      ],
+      "source": "seed/events-2026-11-11-social-watch.json",
+      "source_read_at": "2026-11-11T10:35:00Z",
+      "verified": false
+    },
+    {
+      "name": "Functional Founders",
+      "what": null,
+      "join": null,
+      "links": [
+        "https://luma.com/3z2xjz1p"
+      ],
+      "events": [
+        {
+          "name": "Strength & Coffee for Founders & Builders",
+          "date": "2026-11-11",
+          "url": "https://luma.com/3z2xjz1p",
+          "status": "unknown"
+        }
+      ],
+      "source": "seed/events-2026-11-11-social-watch.json",
+      "source_read_at": "2026-11-11T10:35:00Z",
+      "verified": false
+    },
+    {
+      "name": "Elevon",
+      "what": null,
+      "join": null,
+      "links": [
+        "https://elevon.io/websummit/night"
+      ],
+      "events": [
+        {
+          "name": "Elevon CZ/SK Community Night",
+          "date": "2026-11-11",
+          "url": "https://elevon.io/websummit/night",
+          "status": "unknown"
+        }
+      ],
+      "source": "seed/events-2026-11-11-social-watch.json",
+      "source_read_at": "2026-11-11T10:35:00Z",
+      "verified": false
+    },
+    {
+      "name": "Primal Events & Workshops with Yorkseed",
+      "what": null,
+      "join": null,
+      "links": [
+        "https://luma.com/rnm96bu0"
+      ],
+      "events": [
+        {
+          "name": "Show What You Build: Makers & Doers",
+          "date": "2026-11-11",
+          "url": "https://luma.com/rnm96bu0",
+          "status": "unknown"
+        }
+      ],
+      "source": "seed/events-2026-11-11-social-watch.json",
+      "source_read_at": "2026-11-11T10:35:00Z",
+      "verified": false
+    },
+    {
+      "name": "AI Ethics and Integrity International Association",
+      "what": null,
+      "join": null,
+      "links": [
+        "https://luma.com/p6glepvg"
+      ],
+      "events": [
+        {
+          "name": "AI Horizon Conference 2026",
+          "date": "2026-11-11",
+          "url": "https://luma.com/p6glepvg",
+          "status": "unknown"
+        }
+      ],
+      "source": "seed/events-2026-11-11-social-watch.json",
+      "source_read_at": "2026-11-11T10:35:00Z",
+      "verified": false
+    },
+    {
+      "name": "Canopy Community with Portugal Tech Week",
+      "what": null,
+      "join": null,
+      "links": [
+        "https://luma.com/2ofzih7t"
+      ],
+      "events": [
+        {
+          "name": "DemoNightLx Web Summit Week Edition (Canopy Demo Night)",
+          "date": "2026-11-11",
+          "url": "https://luma.com/2ofzih7t",
+          "status": "online"
+        }
+      ],
+      "source": "seed/events-2026-11-11-social-watch.json",
+      "source_read_at": "2026-11-11T10:35:00Z",
+      "verified": false
+    },
+    {
+      "name": "Google Developer Group Lisboa with Cloud Native Lisbon and DevOps Lisbon",
+      "what": null,
+      "join": null,
+      "links": [
+        "https://www.meetup.com/gdglisbon/events/317255985/"
+      ],
+      "events": [
+        {
+          "name": "KCD Warmup and Web Summit Side Event #29",
+          "date": "2026-11-11",
+          "url": "https://www.meetup.com/gdglisbon/events/317255985/",
+          "status": "cancelled"
+        }
+      ],
+      "source": "seed/events-2026-11-11-social-watch.json",
+      "source_read_at": "2026-11-11T10:35:00Z",
+      "verified": false
+    },
+    {
+      "name": "Life With Artificials",
+      "what": null,
+      "join": null,
+      "links": [
+        "https://www.meetup.com/life-with-artificials/events/317058510/"
+      ],
+      "events": [
+        {
+          "name": "Kick off meeting WebSummit Lisbon",
+          "date": "2026-11-11",
+          "url": "https://www.meetup.com/life-with-artificials/events/317058510/",
+          "status": "on"
+        }
+      ],
+      "source": "seed/events-2026-11-11-social-watch.json",
+      "source_read_at": "2026-11-11T10:35:00Z",
+      "verified": false
+    },
+    {
+      "name": "thegoodcode",
+      "what": null,
+      "join": null,
+      "links": [
+        "https://luma.com/mso0mrpr"
+      ],
+      "events": [
+        {
+          "name": "Open Mercato Night: AI agents build a custom CRM, live",
+          "date": "2026-11-11",
+          "url": "https://luma.com/mso0mrpr",
+          "status": "moved"
+        }
+      ],
+      "source": "seed/events-2026-11-11-social-watch.json",
+      "source_read_at": "2026-11-11T10:35:00Z",
+      "verified": false
+    },
+    {
+      "name": "IndieBeers Lisboa, powered by Ramen Club",
+      "what": null,
+      "join": null,
+      "links": [
+        "https://www.meetup.com/indiebeers-lisboa/events/317024539/"
+      ],
+      "events": [
+        {
+          "name": "IndieSummit Lisboa Meetup: Entrepreneur Social",
+          "date": "2026-11-11",
+          "url": "https://www.meetup.com/indiebeers-lisboa/events/317024539/",
+          "status": "on"
+        }
+      ],
+      "source": "seed/events-2026-11-11-social-watch.json",
+      "source_read_at": "2026-11-11T10:35:00Z",
+      "verified": false
+    },
+    {
+      "name": "MILL (Makers In Little Lisbon)",
+      "what": null,
+      "join": null,
+      "links": [
+        "https://luma.com/cxjjr2ko"
+      ],
+      "events": [
+        {
+          "name": "Tech Art Lisboa: PTW26 Edition",
+          "date": "2026-11-11",
+          "url": "https://luma.com/cxjjr2ko",
+          "status": "unknown"
+        }
+      ],
+      "source": "seed/events-2026-11-11-social-watch.json",
+      "source_read_at": "2026-11-11T10:35:00Z",
+      "verified": false
+    },
+    {
+      "name": "Open Coffee Lisbon",
+      "what": null,
+      "join": null,
+      "links": [
+        "https://www.meetup.com/open-coffee-lisbon/events/316495551/"
+      ],
+      "events": [
+        {
+          "name": "Open Coffee Lisbon Web Summit Special #53",
+          "date": "2026-11-12",
+          "url": "https://www.meetup.com/open-coffee-lisbon/events/316495551/",
+          "status": "on"
+        }
+      ],
+      "source": "seed/events-2026-11-11-social-watch.json",
+      "source_read_at": "2026-11-11T10:35:00Z",
+      "verified": false
+    },
+    {
+      "name": "Exa Events (Exa x Mastra)",
+      "what": null,
+      "join": null,
+      "links": [
+        "https://luma.com/u0iuhn8i"
+      ],
+      "events": [
+        {
+          "name": "Cafe and Code: Developer Cafe Takeover",
+          "date": "2026-11-12",
+          "url": "https://luma.com/u0iuhn8i",
+          "status": "on"
+        }
+      ],
+      "source": "seed/events-2026-11-11-social-watch.json",
+      "source_read_at": "2026-11-11T10:35:00Z",
+      "verified": false
+    },
+    {
+      "name": "Productized",
+      "what": null,
+      "join": null,
+      "links": [
+        "https://luma.com/whll1umb"
+      ],
+      "events": [
+        {
+          "name": "Defense Tech Meetup #9: Sovereignty by Design",
+          "date": "2026-11-12",
+          "url": "https://luma.com/whll1umb",
+          "status": "moved"
+        }
+      ],
+      "source": "seed/events-2026-11-11-social-watch.json",
+      "source_read_at": "2026-11-11T10:35:00Z",
+      "verified": false
+    },
+    {
+      "name": "Unicorn Factory Lisboa",
+      "what": null,
+      "join": null,
+      "links": [
+        "https://luma.com/f9rois6p"
+      ],
+      "events": [
+        {
+          "name": "Disconnect 2 Connect",
+          "date": "2026-11-12",
+          "url": "https://luma.com/f9rois6p",
+          "status": "on"
+        }
+      ],
+      "source": "seed/events-2026-11-11-social-watch.json",
+      "source_read_at": "2026-11-11T10:35:00Z",
+      "verified": false
+    },
+    {
+      "name": "Led by Community",
+      "what": null,
+      "join": null,
+      "links": [
+        "https://luma.com/lisbon-community-week-2026"
+      ],
+      "events": [
+        {
+          "name": "Lisbon Community Week Conference 2026",
+          "date": "2026-11-13",
+          "url": "https://luma.com/lisbon-community-week-2026",
+          "status": "on"
+        }
+      ],
+      "source": "seed/events-2026-11-11-social-watch.json",
+      "source_read_at": "2026-11-11T10:35:00Z",
+      "verified": false
+    },
+    {
+      "name": "Portugal Tech Week with Ladies Who Talk",
+      "what": null,
+      "join": null,
+      "links": [
+        "https://luma.com/zt9ss8co"
+      ],
+      "events": [
+        {
+          "name": "PTW Classroom: Ladies Who Build, Lovable and Grok",
+          "date": "2026-11-13",
+          "url": "https://luma.com/zt9ss8co",
+          "status": "on"
+        }
+      ],
+      "source": "seed/events-2026-11-11-social-watch.json",
+      "source_read_at": "2026-11-11T10:35:00Z",
+      "verified": false
+    },
+    {
+      "name": "staaake",
+      "what": null,
+      "join": null,
+      "links": [
+        "https://luma.com/staaake-hghb"
+      ],
+      "events": [
+        {
+          "name": "AI Devs and Hoopers Morning Run",
+          "date": "2026-11-14",
+          "url": "https://luma.com/staaake-hghb",
+          "status": "on"
+        }
+      ],
+      "source": "seed/events-2026-11-11-social-watch.json",
+      "source_read_at": "2026-11-11T10:35:00Z",
+      "verified": false
+    }
+  ]
+}
