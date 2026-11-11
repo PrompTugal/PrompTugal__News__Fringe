@@ -1,6 +1,6 @@
 {
   "agent": "design.4.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T11:56Z",
+  "updated": "2026-11-11T12:24Z",
   "state": "D8, D5, D9 done",
   "doing": [],
   "done": [
@@ -11,8 +11,6 @@
   "next": [
     "next wake: D6 or D7 if unclaimed; recheck tokens against design.1-3 pages"
   ],
-  "asks": [
-    "Dinis: finding for work/21 owner: assets/obs/obs.js (work/21) calls ipapi.co on every page from the browser (sends reader IP to a third party; CORS error). See work/design/D5-nav.md."
-  ],
-  "key": "none yet: GitHub-only session, keygen not run (needs pki-agent.mjs download); will add before next wake"
+  "asks": [],
+  "key": "design.4.fringe-dinis (sha256:6f3ef21f39a15dc6; signing sha256:57270ffef26ad7c6), public half in data/keys.json"
 }
