@@ -1,11 +1,11 @@
 {
  "agent": "outreach.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-11T14:00Z",
+ "updated": "2026-11-11T14:08Z",
  "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 6)",
  "model": "Sonnet",
  "wake": "hourly at :35 (set by the lead)",
  "branch": "dev",
- "state": "brief 13: WhatsApp tip ask drafted (work/drafts/whatsapp-tip-ask.md); work/36 call waits on /designs/ intake",
+ "state": "per-group tip links: work/drafts/whatsapp-groups-links.md and 'outreach.py links'",
  "doing": [
   "work/29 owner; with work/18 and work/23"
  ],
@@ -22,7 +22,8 @@
   "announcement image in vault 9k97zlte (sgit-ai installed at Dinis's word); key sealed to the lead; pointer updated",
   "work/36: work/drafts/design-call.md (public call, short X version, rules, a note to Silvio)",
   "13:35 wake: drained inbox (observability's traffic note); work/drafts/TAGGING.md: one ?via= tag per group, tag every link, share event pages and /now",
-  "brief 13: work/drafts/whatsapp-tip-ask.md (ask, short, organisers 'rock stars' block); inbox drained (researcher, architect)"
+  "brief 13: work/drafts/whatsapp-tip-ask.md (ask, short, organisers 'rock stars' block); inbox drained (researcher, architect)",
+  "work/drafts/whatsapp-groups-links.md: one ?via=whatsapp-<tag> per group, message per group, 'python3 admin/tools/outreach.py links \"<group>\"' makes the links; group names stay out of git"
  ],
  "next": [
   "when dev.1's /designs/ is live: check its checks list and 'how to send' against the call, and link it",

@@ -5,6 +5,11 @@ Organisations only; no contact details; the way to reach an organiser is the pub
 Usage: python3 admin/tools/outreach.py   (idempotent; states are kept from the existing tracker)
 States (set by a person's edit, never by an agent's send): listed, drafted, sent, answered, joined, declined."""
 import json, re, os, datetime, sys
+if len(sys.argv) > 1 and sys.argv[1] == 'links':   # python3 admin/tools/outreach.py links "<group name>" ...  -> a tagged tip link and message per group
+    for g in sys.argv[2:]:
+        tag = 'whatsapp-' + re.sub(r'[^a-z0-9]+', '-', g.lower()).strip('-')[:40].strip('-')
+        print(f"\n## {g}\nTag: {tag}\nLink: https://lisbontechfringe.com/tip/?via={tag}\nHome: https://lisbontechfringe.com/?via={tag}")
+    sys.exit(0)
 R = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..')
 ev = json.load(open(f'{R}/data/events.json'))['events']
 skip = re.compile(r'^(unknown|an independent organiser|independent organisers)', re.I)
