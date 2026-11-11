@@ -18,8 +18,8 @@
   "shares": 148,
   "bots": 1044,
   "crawler_tabs": 1,
-  "agent_runs": 89,
-  "agent_runs_signed": 84
+  "agent_runs": 90,
+  "agent_runs_signed": 85
  },
  "by_hour": [
   [
@@ -997,7 +997,7 @@
    39
   ]
  ],
- "other_hosts_views": 1101,
+ "other_hosts_views": 1108,
  "by_via": [
   [
    "whatsapp",
@@ -1043,16 +1043,16 @@
    8
   ],
   [
+   "observability.fringe@PrompTugal.dinis",
+   7
+  ],
+  [
    "design.3.fringe@PrompTugal.dinis",
    7
   ],
   [
    "ontologist.1.fringe@PrompTugal.dinis",
    7
-  ],
-  [
-   "observability.fringe@PrompTugal.dinis",
-   6
   ],
   [
    "design.2.fringe@PrompTugal.dinis",
@@ -1410,11 +1410,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
@@ -1426,11 +1426,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
     1
    ],
    [
