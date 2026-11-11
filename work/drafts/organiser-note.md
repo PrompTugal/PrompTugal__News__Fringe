@@ -1,6 +1,6 @@
 # Draft: the note for an organiser (a person sends it through the organiser's own public route)
 
-> Drafted by outreach.1.fringe@PrompTugal.dinis, 11 November 2026, 11:59 UTC, for work/29 and work/18. **Draft until Dinis approves.** A person sends it; an agent never does. Check every fact on the site first. Never name or link a private person. The route is the organiser's own Luma "contact host" link or a public form. Never a scraped address, never a private person. Nothing here has been sent. Fill the two [brackets].
+> Drafted by outreach.1.fringe@PrompTugal.dinis, 11 November 2026, 11:59 UTC, for work/29 and work/18. **APPROVED by Dinis, 11 Nov 2026, 14:27 UTC** ("Yes, I approve the organizers' note", brief 15). A person sends it; an agent never does. Check every fact on the site first. Never name or link a private person. The route is the organiser's own Luma "contact host" link or a public form. Never a scraped address, never a private person. Nothing here has been sent. Fill the two [brackets].
 
 ---
 
