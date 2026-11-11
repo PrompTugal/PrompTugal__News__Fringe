@@ -40,6 +40,7 @@ dataView('fringe-hooklog', 'Fringe: ABP hook decisions', 't')
 dataView('fringe-altitudes', 'The agentic runs: one unit per altitude (signed)', 't')
 dataView('elastic-submissions', 'Elastic operations: every submission', 't')
 dataView('fringe-*,ptnews-*,websummit-*,swarm-*,agents-*', 'Everything on Elastic (by ingest time)', 'ingested_at')
+dataView('traces-generic.otel-default', 'OpenRouter traces (OTel): the A1 calls from the provider side', '@timestamp')
 dataView('fringe-workloads', 'Distributed workloads: altitudes, runtimes, placements, traces', 't')
 for (const s of ['fringe', 'ptnews', 'websummit']) for (const k of ['commits', 'content', 'entities', 'runs', 'status']) dataView(`${s}-${k}`, `${{ fringe: 'Fringe', ptnews: 'PrompTugal.news', websummit: 'Web Summit' }[s]}: ${k}`, 't')
 for (const k of ['commits', 'content', 'entities', 'runs', 'status']) dataView(`fringe-${k},ptnews-${k},websummit-${k}`, `All sites: ${k}`, 't')
@@ -199,6 +200,24 @@ D.ops = dashboard('ops', 'Elastic operations: who submits what', 'For elastic.1 
     [[search('ops-held', 'Submissions with documents held back or errors (look at these)', subs, ['agent', 'index', 'via', 'sent', 'held', 'errors', 'source'], 'held > 0 or errors > 0'), S, 48, 12]],
     [[search('ops-all', 'Every submission, newest first', subs, ['agent', 'index', 'via', 'sent', 'held', 'errors', 'owner', 'source']), S, 48, 14]],
 ], { from: 'now-7d', to: 'now', refresh: 60000 })
+
+// =====================================================================================================
+// 9. A1 calls, from OpenRouter (OTel traces via OpenRouter Broadcast; prompts kept out of every panel)
+// =====================================================================================================
+const otr = DV['traces-generic.otel-default'], GEN = 'name:"LLM Generation"', A = 'attributes.', OR = 'attributes.trace.metadata.openrouter.'
+D.openrouter = dashboard('openrouter', 'A1 calls, from OpenRouter', 'Every model call the swarm makes through the router (admin/tools/llm.mjs), as OpenRouter sees it: model, provider, tokens, cost, time to first token and latency. OpenTelemetry traces sent by OpenRouter Broadcast to Elastic. Prompts are in the traces by Dinis\'s decision, and on no panel here: read them in Discover by drill-down.', TAGS.swarm, [
+    [[md('or-head', `## A1 calls, from OpenRouter\nEvery model call the swarm makes through the router (\`admin/tools/llm.mjs\`) is an **A1 unit** in the altitudes. Here it is from the **provider's side**: OpenRouter sends one OpenTelemetry trace per call to Elastic (Broadcast, \`service.name: openrouter\`): the model asked and served, the provider that answered, tokens, cost, time to first token and the router's own latency. The same calls are in our ledger and, when they are part of a run, in [The altitudes of execution, live](#/view/${uid('dash', 'altitudes')}).\n\nPrompts and completions are kept in the traces by Dinis's decision, and on **no panel here**: open a trace in Discover to read one.`), V, 48, 7]],
+    [[metric('or-m1', 'Model calls', otr, C.count('Calls'), GEN), L, 8, 6], [metric('or-m2', 'Cost (USD)', otr, C.sum(A + 'gen_ai.usage.total_cost', 'USD'), GEN), L, 8, 6],
+     [metric('or-m3', 'Tokens in', otr, C.sum(A + 'gen_ai.usage.input_tokens', 'Tokens in'), GEN), L, 8, 6], [metric('or-m4', 'Tokens out', otr, C.sum(A + 'gen_ai.usage.output_tokens', 'Tokens out'), GEN), L, 8, 6],
+     [metric('or-m5', 'Time to first token (avg ms)', otr, C.avg(OR + 'provider_time_to_first_token_ms', 'ms'), GEN), L, 8, 6], [metric('or-m6', "Router's own latency (avg ms)", otr, C.avg(OR + 'router_latency_ms', 'ms'), GEN), L, 8, 6]],
+    [[overTime('or-time', 'Calls over time, by model', otr, '@timestamp', A + 'gen_ai.request.model', GEN, { interval: 'auto' }), L, 32, 13], [donut('or-provider', 'Who served them (provider)', otr, OR + 'provider_name', GEN), L, 16, 13]],
+    [[top('or-cost', 'Cost by model (USD)', otr, A + 'gen_ai.request.model', GEN, { metricCol: C.sum(A + 'gen_ai.usage.total_cost', 'USD'), label: 'Model' }), L, 16, 13],
+     [top('or-ttft', 'Time to first token by model (avg ms)', otr, A + 'gen_ai.request.model', GEN, { metricCol: C.avg(OR + 'provider_time_to_first_token_ms', 'ms'), label: 'Model' }), L, 16, 13],
+     [donut('or-finish', 'How calls ended (finish reason)', otr, A + 'gen_ai.response.finish_reasons', GEN), L, 16, 13]],
+    [[table('or-table', 'Open-weight and frontier side by side: per model and provider', otr, [[A + 'gen_ai.request.model', 'Model', 15], [OR + 'provider_name', 'Provider', 10]],
+        [C.count('Calls'), C.sum(A + 'gen_ai.usage.total_cost', 'USD'), C.avg(A + 'gen_ai.usage.input_tokens', 'Avg tokens in'), C.avg(A + 'gen_ai.usage.output_tokens', 'Avg tokens out'), C.avg(OR + 'provider_time_to_first_token_ms', 'Avg TTFT ms'), C.avg(OR + 'router_latency_ms', 'Avg router ms')], GEN), L, 48, 13]],
+    [[search('or-calls', 'Each call, newest first (no prompt text: open one to read it)', otr, [A + 'gen_ai.request.model', OR + 'provider_name', A + 'gen_ai.usage.input_tokens', A + 'gen_ai.usage.output_tokens', A + 'gen_ai.usage.total_cost', OR + 'provider_time_to_first_token_ms', A + 'gen_ai.response.finish_reasons', 'trace_id'], GEN, '@timestamp'), S, 48, 16]],
+], { from: 'now-24h', to: 'now', refresh: 60000 })
 
 // ---------- build / import ----------
 const cmd = process.argv[2]

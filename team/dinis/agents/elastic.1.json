@@ -1,6 +1,6 @@
 {
   "agent": "elastic.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T19:26Z",
+  "updated": "2026-11-11T19:30Z",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis, at Dinis's word (briefs/2026-11-11-1630-r5-r8-r9-enforced-and-elastic.md)",
   "branch": "dev",
@@ -27,10 +27,11 @@
     "19:10 UTC wake: 27 indices, 16,019 documents refreshed, 0 errors; fringe-altitudes 132 units (a second run at 18:57: A3 2, A2 8, A1 118, A0 4), 130 verified; the 2 without are the A3 agent units, which sign with the session key, not a per-unit key (not a failure); no unit of Angelo's yet; submissions in the hour: architect.1 swarm-abp-reviews 0 held 0 errors; nothing to write back. No new brief.",
     "19:14: the lead's note (material): Dinis looking at OpenRouter > Observability > Traces > Elastic Observability (Beta). The exact steps are in docs/elastic-openrouter-traces.md: the endpoint (the managed OTLP one from the Cloud console, else the APM endpoint, which answers /v1/traces), a least-privilege key (traces-* create_doc, or an APM agent key), Privacy Mode on, and how to check. Proposal for grafana.1: Elastic is the main trace store and Grafana reads it, no second copy unless Dinis wants one",
     "19:21: OpenRouter > Observability > Traces > Elastic Observability saved by Dinis ('Connection check passed', 100% sampling). The APM endpoint refused OpenRouter's OTLP JSON (APM takes protobuf only: 'failed to unmarshal ... proto'); the working path is the managed OTLP endpoint. No openrouter trace yet: they arrive with the next model call through the router. Kibana's own Agent Builder traces are in traces-agent_builder.otel-default (5, 17:50 UTC) and carry gen_ai.input.messages (prompt text)",
-    "19:26: Dinis decided that Privacy Mode stays off ('actually I want to see the prompts'). Recorded in docs/elastic-guidance.md section 4 as the one exception: prompts stay in traces-*, are read by drill-down, are never on shared dashboards, with short retention proposed"
+    "19:26: Dinis decided that Privacy Mode stays off ('actually I want to see the prompts'). Recorded in docs/elastic-guidance.md section 4 as the one exception: prompts stay in traces-*, are read by drill-down, are never on shared dashboards, with short retention proposed",
+    "19:30 UTC: at Dinis's word ('can you now generate some traffic?'), 28 model calls through the router (task WS-215/elastic-traffic/classify-event: 12 public Fringe events; cheap deepseek-v4-flash 12, check llama-3.3-70b 12, strong claude-sonnet-5.5 4), 0.0105 USD, all ledgered; OpenRouter sent 56 spans to traces-generic.otel-default. Dashboard 9 [A1 calls, from OpenRouter](https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io/app/dashboards#/view/abaa023e-80ff-61c8-c8c4-1026793833ed): 28 panels, 0 errors, no prompt text on any panel. Seen: 7 providers served them; time to first token about 130 to 200 ms (open weight) against 1,877 ms (Sonnet); 17.9% ended at 'length' (max_tokens 200 too low, 2 of 4 Sonnet calls included)."
   ],
   "next": [
-    "each wake: check traces-* for service.name openrouter; prompts are expected (Privacy Mode off by Dinis's decision); keep them out of every dashboard panel; then add an 'A1 calls, from OpenRouter' section to 'The altitudes of execution, live'",
+    "each wake: the OpenRouter traces come in with every router call (dashboard 9); join them with fringe-altitudes A1 units on model and time",
     "check the APM integration's agent authorization: an empty OTLP protobuf request without credentials was accepted (200) at 19:3x UTC, so anonymous intake may be on",
     "OpenTelemetry (Dinis to architect.1, 19:0x UTC: 'start with OpenTelemetry'): the deployment's APM endpoint answers (my-observability-deployment-cd4ce8.apm.us-central1.gcp.cloud.es.io, HTTP 200 at 19:08 UTC); Elastic APM takes OTLP/HTTP, so architect.1's flow.mjs exporter can send spans there and Kibana shows each run as a distributed trace (A3 > A2 > A1 spans). Needs the APM secret token or an API key with APM write: Dinis's decision",
     "build, in order: five SLOs and five alert rules; the run-tree Vega and key-lifelines Vega-Lite panels; a Graph workspace; then the Altitudes analyst agent (Agent Builder) and the steward workflow (docs/elastic-kibana-features.md section 4)",
