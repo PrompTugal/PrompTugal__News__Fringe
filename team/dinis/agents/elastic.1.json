@@ -1,11 +1,11 @@
 {
   "agent": "elastic.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T16:37Z",
+  "updated": "2026-11-11T17:09Z",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis, at Dinis's word (briefs/2026-11-11-1630-r5-r8-r9-enforced-and-elastic.md)",
   "branch": "dev",
   "wake": "hourly, until Friday 13 November",
-  "state": "working; waiting on Dinis for the Elastic deployment host and key",
+  "state": "waiting on Dinis for the Elasticsearch endpoint host; the password (ELASTIC_CLOUD) is now in the session",
   "doing": [
     "moving the swarm onto Elastic Cloud: docs/elastic-plan.md"
   ],
@@ -13,7 +13,8 @@
     "16:33: session key made; elastic.1.fringe-dinis in data/keys.json (sha256:2af27e5b88092227, signing sha256:25b303ee2e079116); abp whoami set",
     "16:36: docs/elastic-plan.md: what goes first (the ABP hook log swarm-wide, then the runs, events, graph, tasks, model ledger summaries) and why; the index design (one index per kind, strict mappings, every document with source, read_at, signer, signer_key, commit)",
     "16:36: admin/tools/elastic.mjs (build, check, mappings, push) and elastic/mappings/*.json; first local build: events 178, graph 38, tasks 4, models 7, hook log 28 documents, 0 privacy findings; nothing sent",
-    "16:37: pushed 32cb756 (key, plan, mappings, ingest tool). Dinis says the Elastic password is ELASTIC_CLOUD: it is saved as an environment variable on the 'PrompTugal Fringe' cloud environment, but not present in this running session (variables apply at the next start or resume); its value was never read or printed"
+    "16:37: pushed 32cb756 (key, plan, mappings, ingest tool). Dinis says the Elastic password is ELASTIC_CLOUD: it is saved as an environment variable on the 'PrompTugal Fringe' cloud environment, but not present in this running session (variables apply at the next start or resume); its value was never read or printed",
+    "17:09 wake: ELASTIC_CLOUD is present in this session after the restart (value never read or printed); no endpoint host given yet, so nothing sent; no new brief"
   ],
   "next": [
     "after the restart: push fringe-events and fringe-graph with ELASTIC_URL and the password from ELASTIC_CLOUD (read by the tool from the environment, never printed)",
@@ -22,7 +23,7 @@
     "Kibana views for the policy review, with architect.1"
   ],
   "asks": [
-    "Dinis: ELASTIC_CLOUD reaches this session only after it restarts or resumes. Also needed: the deployment's Elasticsearch endpoint host (e.g. <name>.es.<region>.<cloud>.elastic-cloud.com), unless ELASTIC_CLOUD holds the Cloud ID (which encodes it), and the user name if it is not 'elastic'. Better than a password: an API key limited to fringe-* saved as a network secret for that host (I'll open the secure form with request_credential once I have the host). Never in chat.",
+    "Dinis: the password (ELASTIC_CLOUD) has arrived in this session. Still needed: the deployment's Elasticsearch endpoint host (e.g. <name>.es.<region>.<cloud>.elastic-cloud.com, from the deployment's page in cloud.elastic.co: 'Copy endpoint'), and the user name if it is not 'elastic'. Saving it as a non-secret environment variable ELASTIC_URL works too. With it I push fringe-events and fringe-graph first.",
     "Dinis: 'pip install sgit-ai' was refused in this sandbox, so admin/tools/inboxes.py cannot send or drain; the lead is told through this status file and the commit instead."
   ]
 }

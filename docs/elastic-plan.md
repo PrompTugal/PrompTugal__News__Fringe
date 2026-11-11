@@ -57,6 +57,10 @@ ELASTIC_URL=https://<host> node admin/tools/elastic.mjs push --kind ...         
 3. A0: `fringe-hooklog` from this session's log; then ask the lead how each machine sends its own (a line in each agent's wake, after agent-log.mjs).
 4. A2: the Kibana views and the review's queries, with architect.1.
 
+## Log
+
+- 17:09 UTC: the password is in the session (ELASTIC_CLOUD, Dinis); the endpoint host is still unknown, so nothing is sent.
+
 ## Asks
 
 - **Dinis:** the Elastic Cloud deployment's Elasticsearch endpoint host (e.g. `<name>.es.<region>.<cloud>.elastic-cloud.com`) and an API key limited to the `fringe-*` indices, saved as a network secret on this cloud environment (never in chat).
