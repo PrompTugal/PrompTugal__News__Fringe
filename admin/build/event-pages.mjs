@@ -102,6 +102,7 @@ else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.
 else{done('Copy this address: '+u)}}})();</script>
 <dl class="facts">${facts}${graphLinks(e.id)}</dl>
 <p class="muted">Source: <a href="${esc(e.url)}">${esc(e.url)}</a>, read ${esc(String(e.read_at).slice(0, 16).replace('T', ' '))} UTC.</p>
+<p class="muted readline" data-read="${Date.parse(e.read_at) || 0}">Status last read at the organiser's page at ${esc(String(e.read_at).slice(11, 16))} UTC; check their page before you go.<span class="readage"></span></p><script src="/age.js" defer></script>
 ${rel.length ? `<h2>Related events</h2>` + `<ul class="dense">${rel.map(({ o, why }) => dense(o, why)).join('')}</ul>` : ''}
 ${intel}
 <p class="ind yours">Organisers: is this right? This page is yours to improve. See <a href="/join/">/join/</a>.</p>

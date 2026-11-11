@@ -52,7 +52,7 @@ Served at `/api/v1/communities.json` (work/04, conductor.fringe@PrompTugal.indi)
     {
       "id":      string,                  // slug; the /graph/ node is "community:<id>"
       "name":    string,
-      "what":    { "text", "quoted_from": URL, "read_at": ISO 8601 } | null,   // its calendar's own words, first sentence
+      "what":    null,                    // ALWAYS null since 9ab2db7 (11 Nov): the Luma calendars' own words are no longer quoted (Luma's terms, work/49). Kept so readers of the old shape do not break; was { "text", "quoted_from": URL, "read_at": ISO 8601 }
       "join":    string,                  // a public way in, or "unknown: join through its event pages"
       "links":   [ { "label": "Luma calendar" | "website", "url": "https://..." } ],
       "events":  [ event id ],            // ids in events.json

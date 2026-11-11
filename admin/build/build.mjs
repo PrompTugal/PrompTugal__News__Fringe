@@ -209,6 +209,7 @@ const home = page('Lisbon Tech Fringe', `<h1 class="sr">Lisbon Tech Fringe</h1><
 ${homeBody({ events, esc, eventPath, hasPage, now: new Date(BUILT) })}
 <p class="muted">An independent guide to the alternative, community and side events in Lisbon this week: what is on, where, when and how to join.</p>
 <!--LIVE-->
+${(() => { const r = events.filter((e) => e.date === today && e.read_at).map((e) => e.read_at).sort(); return r.length ? `<p class="muted">Status last read at the organisers' pages between ${esc(r[0].slice(11, 16))} and ${esc(r.at(-1).slice(11, 16))} UTC today; check their page before you go.</p>` : ''; })()}
 ${intelBox()}
 <p class="muted storm-line">Storm Charles: <a href="/storm/">warnings, what moved and transport</a> · <a href="https://storm-charles.promptugal.news">storm site</a> · official: <a href="https://www.ipma.pt/">IPMA</a>, <a href="https://www.prociv.gov.pt/">ANEPC</a>. This site is not a warning service.</p>
 <h2>The agentic team</h2>
@@ -328,8 +329,10 @@ writeFileSync(join(out, '.nojekyll'), '');
 mkdirSync(join(out, 'now'), { recursive: true });
 writeFileSync(join(out, 'now', 'index.html'), page('On now: Lisbon Tech Fringe', `<h1>On now</h1>
 <p class="muted">What is on now and in the next 24 hours, from events re-read at their public pages. Not a warning service: for the storm see <a href="https://storm-charles.promptugal.news">storm-charles.promptugal.news</a>.</p>
+${(() => { const r = events.filter((e) => e.read_at).map((e) => e.read_at).sort(); return r.length ? `<p class="muted">Status last read at the organisers' pages between ${esc(r[0].slice(11, 16))} and ${esc(r.at(-1).slice(11, 16))} UTC (each event's own time is on its page); check their page before you go.</p>` : ''; })()}
 ${timelineBlock(events, esc, { eventPath, hasPage }, new Date(BUILT), { limit: 40, hours: 24, full: true })}`, 'What is on now and in the next 24 hours around Web Summit Lisbon.', '', '/now/'));
 writeFileSync(join(out, 'now.js'), nowJs);
+writeFileSync(join(out, 'age.js'), "(function(){document.querySelectorAll('.readline').forEach(function(p){var a=Date.now()-(+p.dataset.read||0),h=Math.floor(a/36e5);if(a>72e5)p.querySelector('.readage').textContent=' Read '+h+' h ago.'})})();");
 writeFileSync(join(out, 'storm.js'), read('admin/build/storm.js'));
 mkdirSync(join(out, 'storm'), { recursive: true });
 writeFileSync(join(out, 'storm', 'index.html'), page('The storm: Lisbon Tech Fringe', `<style>${STORM_CSS}</style>` + stormBody(esc), 'Storm Charles in Lisbon: warnings, what moved and transport, read live from the storm site; official sources first. Not a warning service.', '', '/storm/'));
