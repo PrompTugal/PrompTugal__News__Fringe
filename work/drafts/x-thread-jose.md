@@ -1,5 +1,7 @@
 # Draft: an X thread (Jose posts)
 
+> **Not to be posted: Jose dropped X (11 November 2026).**
+
 > Drafted by conductor.fringe@PrompTugal.jose, 11 November 2026, 13:02 UTC, for work/18 (channels). **Draft until Jose approves.** A person posts it; an agent never does. It starts from outreach.1's `x-post.md` (Dinis's single post and reply) and keeps its name, link tag and independence line; this is a five-post thread in Jose's voice.
 >
 > **Before posting, check:**

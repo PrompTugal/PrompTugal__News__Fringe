@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Fringe universe · Lisbon Tech Fringe</title>
+<meta name="description" content="The Lisbon Tech Fringe drawn as a universe: topics as centres, events orbiting them, weather and agenda views. Independent of Web Summit.">
+<style>
+:root{--bg:#04100F;--fg:#EAF6F3;--dim:#8EADA8;--gold:#D9B26E}
+html,body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.45 system-ui,sans-serif;overflow-x:hidden}
+.bar{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;padding:10px 16px;border-bottom:1px solid rgba(217,178,110,.25)}
+.bar b{color:var(--gold);letter-spacing:.04em}.bar small{color:var(--dim)}.bar a{color:#43D9C6}
+#universe{min-height:86vh}
+</style></head><body>
+<div class="bar"><b>Lisbon Tech Fringe · the universe</b><small>Independent of Web Summit · official pages: <a href="https://websummit.com/" rel="noopener">websummit.com</a> · drawn with <a href="https://web-summit.sgit.ai/lib/gravity/">Gravity v0.1.0</a> · data read live from <a href="https://lisbontechfringe.com/api/v1/events.json">/api/v1/events.json</a></small></div>
+<div id="universe" data-fringe-universe></div>
+<script src="https://web-summit.sgit.ai/lib/gravity/v0/v0.1/v0.1.0/gravity.js"></script>
+<script src="fringe-gravity.js"></script>
+</body></html>

@@ -52,7 +52,7 @@ Served at `/api/v1/communities.json` (work/04, conductor.fringe@PrompTugal.indi)
     {
       "id":      string,                  // slug; the /graph/ node is "community:<id>"
       "name":    string,
-      "what":    { "text", "quoted_from": URL, "read_at": ISO 8601 } | null,   // its calendar's own words, first sentence
+      "what":    null,                    // ALWAYS null since 9ab2db7 (11 Nov): the Luma calendars' own words are no longer quoted (Luma's terms, work/49). Kept so readers of the old shape do not break; was { "text", "quoted_from": URL, "read_at": ISO 8601 }
       "join":    string,                  // a public way in, or "unknown: join through its event pages"
       "links":   [ { "label": "Luma calendar" | "website", "url": "https://..." } ],
       "events":  [ event id ],            // ids in events.json
@@ -117,6 +117,7 @@ Served at `/api/v1/graph/<type>.json` (ontologist.1.fringe@PrompTugal.dinis). Bu
 | `personas` | `id` (investor, founder, builder, corporate, student, anyone: roles, never people), `name`, `ask`, `rule`, `label` ("hypothesis (by rule)"), `events` [event id], `page` |
 | `topics` | `id`, `name`, `events` [event id], `page` |
 | `platforms` | `id` (luma, meetup, eventbrite, partiful, own-site), `name`, `hosts` [host, for own-site], `events` [event id], `page` (/r/&lt;id&gt;/) |
+| `retired` | every event id the site once published that is no longer in events.json: `id`, `name`, `url`, `date`, `first_seen`, `last_seen`, `removed_in` (commit), `removed_at`, `removed_by` (that commit's subject), `status` (superseded \| no longer listed), `superseded_by` (event id, same URL) \| null. Its old page /e/&lt;id&gt;/ stays and says where it went (supersede, never delete). From data/graph/seen.json, made by `node admin/build/graph-seen.mjs --update` from git history |
 | `links` | `from`, `verb`, `to`, `source` (the event's URL), `read_at`; `verbs` gives each verb's subject and object type: hasEvent, lists (festival→event), runs, coRuns, hosts ("hosted by": the venue), supports ("powered by") (organiser→event), runsFestival, partOf, onDay, at, forPersona, about, hasSession, registerOn (event→platform) |
 
 For SQL, `links` is the one edge table: e.g. `SELECT o.name, count(*) FROM links l JOIN organisers o ON o.id = l.from WHERE l.verb = 'runs' GROUP BY 1 ORDER BY 2 DESC`.

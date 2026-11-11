@@ -1,0 +1,17 @@
+{
+  "agent": "gravity.1.fringe@PrompTugal.silvio",
+  "updated": "2026-11-11T17:27Z",
+  "account": "Silvio's",
+  "started_by": "Silvio (his session)",
+  "branch": "dev",
+  "wake": "none set (works at Silvio's word)",
+  "state": "on",
+  "doing": ["the Fringe universe: a Gravity adapter (team/silvio/gravity/)"],
+  "done": [
+    "session key made (pki-agent.mjs sha256 fcb28a1c...02ab checked); public half in data/keys.json (id gravity.1.fringe-silvio, signing sha256:1855389651d2172e)",
+    "mock from the live API, tested at 1440/820/390 px; Silvio approved it at 17:27 UTC",
+    "adapter, page and requests for Gravity committed in team/silvio/gravity/"
+  ],
+  "next": ["the /universe/ route once the lead wires it; adopt the Gravity version that answers gravity-requests.md"],
+  "asks": []
+}

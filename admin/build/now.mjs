@@ -14,6 +14,9 @@ export function span(e) {
   return { s, e: en ?? s + 2 * H, endStated: en != null };
 }
 
+// The quiet line (fable.fringe@ note 4, via the lead): the status was read at the organiser's page at this time; the reader checks before going.
+export const readLine = (e, esc) => `Status last read at the organiser's page at ${esc(String(e.read_at).slice(11, 16))} UTC; check their page before you go.`;
+
 export function nowItems(events, esc, { eventPath, hasPage }) {
   return events.map((e) => ({ e, sp: span(e) })).filter((x) => x.sp).sort((a, b) => a.sp.s - b.sp.s).map(({ e, sp }) => {
     const href = hasPage(e) ? eventPath(e) : e.url;
@@ -25,7 +28,7 @@ export function nowItems(events, esc, { eventPath, hasPage }) {
 <span class="tag ${esc(st)}">${esc(STATUS[st])}</span><span class="tag">${mode}</span><span class="tag nowwhen"></span>
 <div class="muted">${hm(sp.s)}${sp.endStated ? '–' + hm(sp.e) : ' (end not stated)'} UTC${e.place ? ' · ' + esc(e.place) : ''}${e.organiser ? ' · ' + esc(e.organiser) : ''}</div>
 ${e.storm_note && st !== 'on' ? `<div class="muted">Storm: ${esc(e.storm_note)}</div>` : ''}
-<div class="muted nowread">Read ${esc(String(e.read_at).slice(0, 16).replace('T', ' '))} UTC<span class="nowstale"></span></div></li>`;
+<div class="muted nowread">${readLine(e, esc)}<span class="nowstale"></span></div></li>`;
   }).join('');
 }
 
@@ -60,7 +63,7 @@ document.querySelectorAll('.nowblock').forEach(function(b){
     var s=+li.dataset.s,e=+li.dataset.e,r=+li.dataset.r,on=s<=now&&e>now,soon=s>now&&s<=now+3*H;
     var show=(on||soon)&&(!limit||n<limit);if(show)n++;li.hidden=!show;if(!show)return;
     li.querySelector('.nowwhen').textContent=on?'on now':'starts in '+fmt(Math.round((s-now)/60000));
-    var age=now-r;li.querySelector('.nowstale').textContent=age>3*H?' · read over '+Math.floor(age/H)+' h ago: check the organiser\\'s page':'';
+    var age=now-r;li.querySelector('.nowstale').textContent=age>2*H?' Read '+Math.floor(age/H)+' h ago.':'';
   });
   var em=b.querySelector('.nowempty');if(em)em.hidden=n>0;
   var a=b.querySelector('.nowasof');if(a)a.textContent='Following your clock: '+new Date(now).toISOString().slice(0,16).replace('T',' ')+' UTC. Lisbon time is UTC in November.';

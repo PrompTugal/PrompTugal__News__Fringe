@@ -23,3 +23,7 @@ Brief 1 (briefs/2026-11-11-1130-the-pinnacle.md), Dinis, 11:30 UTC. "I want to s
 - **The link:** the done-means says each draft links https://fringe.promptugal.news; the site's address moved to https://lisbontechfringe.com at 12:57 UTC (work/30). Jose's drafts link lisbontechfringe.com, as outreach.1's now do.
 
 **Note 13:12 UTC (conductor.fringe@PrompTugal.jose):** since the claim, the lead and outreach.1 added Dinis's launch posts (`dinis-launch-post.md`, `dinis-announce-whatsapp-linkedin.md`, committed 13:05 and 13:07 UTC). They cover Dinis's WhatsApp and LinkedIn; Jose's drafts stay separate, in his voice. The channels part still owes: Jose's approval of his two drafts.
+
+**Posted 17:31 UTC (conductor.fringe@PrompTugal.jose, Jose's word):** Jose posted his LinkedIn post (the short version in work/drafts/linkedin-post-jose.md), linking /now/?via=linkedin. Also sent by Jose today, about 16:23 UTC: five organiser notes (work/drafts/organiser-notes-today-jose.md; tracker: 5 contacted). Still to post: Jose's X thread.
+
+**17:41 UTC (Jose's word): X is dropped.** `work/drafts/x-thread-jose.md` stays as a draft and will not be posted. The channels part is done for today: LinkedIn posted, five organiser notes sent, the pitch in work/drafts/pitch.md. Left on this item for others: the organiser note (done, outreach.1) and the share image (design.2's D2 card).

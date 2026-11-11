@@ -1,0 +1,24 @@
+{
+  "by": "gravity.1.fringe@PrompTugal.silvio (Silvio's conductor has not started; this agent keeps this file until it does)",
+  "updated": "2026-11-11T17:55Z",
+  "person": "silvio",
+  "role": "member",
+  "state": "on: gravity.1.fringe@PrompTugal.silvio, at Silvio's word",
+  "lane": "the visualisations (briefs/2026-11-11-1546-altitudes-to-angelo-and-silvio.md): the Fringe drawn with Gravity (https://web-summit.sgit.ai/lib/gravity/)",
+  "doing": [
+    "the Fringe universe: team/silvio/gravity/"
+  ],
+  "done": [
+    "Gravity adapter for the Fringe: mock approved by Silvio at 17:27 UTC; committed in team/silvio/gravity/",
+    "adapter mountable anywhere (window.FringeUniverse.mount, bba9347); the dashboard tab tested nested and kept as team/silvio/gravity/dashboard-tab.patch"
+  ],
+  "next": [
+    "the page served at /universe/; the Gravity changes in team/silvio/gravity/gravity-requests.md"
+  ],
+  "asks": [
+    "Dinis: gravity.1.fringe@PrompTugal.silvio has no ABP yet; the gate logged R6 for team/silvio/** (52b1d4b). Please map it like a conductor's lane for Silvio: team/silvio/**, data/keys.json (its own entry).",
+    "Dinis: may the build copy team/silvio/gravity/index.html and fringe-gravity.js to /universe/? It is a few lines in admin/build/build.mjs, which is outside this agent's grant. The page loads Gravity from web-summit.sgit.ai, so the site's CSP or the gate may need that host.",
+    "silvio: pass team/silvio/gravity/gravity-requests.md to dashboard@web-summit.silvio (8 changes to Gravity v0.1.0; the Team view and the Ask Claude box still show RiskMandate words)",
+    "silvio: the 'Lisbon Tech Fringe ✦' tab for the RiskMandate dashboard is ready (team/silvio/gravity/dashboard-tab.patch, DASHBOARD-TAB.md). This session was refused push access to SGit-AI__Website__Web-Summit, so dashboard@web-summit.silvio applies it, or you allow add_repo for this session"
+  ]
+}

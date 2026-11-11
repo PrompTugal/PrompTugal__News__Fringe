@@ -16,7 +16,7 @@ export function communitiesBody(communities, events, esc, { eventPath, hasPage }
     return `<div class="card" id="${esc(c.id)}"><strong>${esc(c.name)}</strong> <span class="muted">· ${evs.length} event${evs.length === 1 ? '' : 's'}</span>${what}<p>${joinHtml}${links ? ' · ' + links : ''}</p>${evHtml ? `<details><summary>Its events this week</summary><ul>${evHtml}</ul></details>` : ''}</div>`;
   };
   return `<h1>Communities</h1>
-<p>The groups behind this week's side events: ${communities.length} organisers, ${withCal} with a public calendar we read. What each says of itself is quoted from its own calendar, with the time we read it. Organisations only: no private people, no contact details. To join a group, use its public calendar or its events.</p>
+<p>The groups behind this week's side events: ${communities.length} organisers, ${withCal} with a public calendar we found on their event pages. Organisations only: no private people, no contact details. To join a group, use its public calendar or its events.</p>
 <p class="muted">Also as data: <a href="/api/v1/communities.json">/api/v1/communities.json</a> · as a graph: <a href="/graph/">the map</a> · run one of these groups? <a href="/organisers/">For organisers</a>.</p>
 ${communities.map(card).join('\n')}`;
 }

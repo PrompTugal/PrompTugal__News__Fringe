@@ -76,12 +76,30 @@ for (const e of todo) {
   results.push({ id: e.id, url: e.url, read_at: e.read_at, ...parse(r.text, e) });
   if (!MOCK) await sleep(600);
 }
+// ---- Luma events: compared with the calendars' public iCal data that researcher.2 saves in data/feeds/luma-ical.json (a publicly supported
+// interface; work/49). No page is fetched and no model is called: pure code. Matched by name (status words such as [CANCELLED] stripped) and start
+// date; compared on UTC minutes; the feed's own status words are read from the event name. Evidence only, like the model's verdicts.
+const feedFile = path.join(ROOT, 'data/feeds/luma-ical.json');
+if (fs.existsSync(feedFile) && !MOCK) {
+  const feed = JSON.parse(fs.readFileSync(feedFile, 'utf8'));
+  const norm = (n) => String(n).toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[\[【(][^\]】)]*(cancel|postpon|moved|sold out|full)[^\]】)]*[\]】)]/gi, ' ').replace(/[^a-z0-9]+/g, ' ').trim();
+  const fstatus = (n) => (/cancel/i.test(n) ? 'cancelled' : /postpon|moved|rescheduled/i.test(n) ? 'moved' : 'on');
+  const byKey = new Map(); for (const f of feed.events || []) byKey.set(norm(f.name) + '|' + String(f.start).slice(0, 10), f);
+  const all = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/events.json'), 'utf8')).events;
+  let nf = 0;
+  for (const e of all.filter((x) => HELD.test(new URL(x.url).hostname) && !/(^|\.)websummit\.com$/i.test(new URL(x.url).hostname))) {
+    const f = byKey.get(norm(e.name) + '|' + String(e.start || e.date).slice(0, 10)); if (!f) continue; nf++;
+    const place = f.location ? cmpPlace(f.location, e.place) : { v: 'unclear' };
+    results.push({ id: e.id, url: e.url, read_at: feed.read_at, source: 'ical', status: cmpStatus(fstatus(f.name), e.status), start: cmpTime(f.start, e.start), end: cmpTime(f.end, e.end), place });
+  }
+  console.log(`ical feed: ${nf} Luma events compared (feed read ${feed.read_at})`);
+}
 // comparison is in code, on times normalised to UTC minutes
 const bad = results.filter((r) => !r.error && ['status', 'start', 'end', 'place'].some((k) => r[k]?.v === 'mismatch'));
 const noisy = (k) => results.filter((r) => !r.error && r[k]?.v === 'mismatch').length;
 const s = summary();
 const doc = { about: 'Second-opinion checks (work/20): a cheap open model read each event\'s public page and our entry. EVIDENCE only, never fact: no data changed from it. Verdicts only; no page or model text is kept in git. Mismatches are for work/13 and researcher.2 to re-read at source.',
-  run_at: new Date().toISOString().slice(0, 19) + 'Z', by: AGENT, model: 'tier check (see admin/tools/llm-models.json)', hours: HOURS, checked: results.filter((r) => !r.error).length, errors: results.filter((r) => r.error).length, mismatches: bad.length,
+  run_at: new Date().toISOString().slice(0, 19) + 'Z', by: AGENT, model: 'tier check (see admin/tools/llm-models.json) for non-Luma pages; Luma events from the calendars\' public iCal data (data/feeds/luma-ical.json), no page fetched', hours: HOURS, checked: results.filter((r) => !r.error).length, errors: results.filter((r) => r.error).length, mismatches: bad.length,
   cost_usd_this_run: +(s.cost_usd - spent0).toFixed(5), label: 'evidence', mismatched: bad.map((r) => ({ id: r.id, url: r.url, status: r.status, start: r.start, end: r.end, place: r.place })), all: results.map((r) => r.error ? { id: r.id, error: r.error } : { id: r.id, status: r.status.v, start: r.start.v, end: r.end.v, place: r.place.v }) };
 if (!MOCK) fs.writeFileSync(OUT, JSON.stringify(doc, null, 1) + '\n');
 console.log(JSON.stringify({ checked: doc.checked, errors: doc.errors, mismatches: doc.mismatches, cost_usd: doc.cost_usd_this_run, per_100_usd: doc.checked ? +(doc.cost_usd_this_run / doc.checked * 100).toFixed(5) : null }));

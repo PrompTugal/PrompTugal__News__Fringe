@@ -2,7 +2,7 @@
 title: "ABP: researcher.1.fringe@PrompTugal.jose"
 agent: researcher.1.fringe@PrompTugal.jose
 role: researcher
-policy: abp/policies.json v0.3.2 (sha256:72d72c891d2740e8)
+policy: abp/policies.json v0.4.0 (sha256:4b0d1d302579f325)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -16,7 +16,7 @@ authority: Dinis Cruz, operator
 - **Role:** researcher. **Account:** Jose's.
 - **Runs on:** R1 (models: M1 Sonnet; M2 for the second opinion); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** events re-read at their public source, hourly; sources.md.
-- **Writes (this repository):** `team/jose/agents/researcher.1.json`, `team/jose/agents/researcher.1.fringe.json`, `team/jose/agents/researcher.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `data/events.json`, `seed/**`, `sources.md`, `api/v1/README.md`, `data/places.json`.
+- **Writes (this repository):** `team/jose/agents/researcher.1.json`, `team/jose/agents/researcher.1.fringe.json`, `team/jose/agents/researcher.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `data/events.json`, `seed/**`, `sources.md`, `api/v1/README.md`, `data/places.json`, `data/feeds/**`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
 - **Writes (outside git):** `/tmp/**`, `~/.sg-send/**`, `~/.abp/**`, `~/pki/**`, `~/.claude/projects/*/memory/**`, `~/promptugal/**`.
 - **Tools:** reading, searching and writing files inside the paths above; the shell, within the rules below; reading the web (never websummit.com by machine); GitHub's read tools on `promptugal/promptugal__news__fringe`, `promptugal/promptugal__news__website`, `promptugal/promptugal__news__storm-charles`; the cloud session's documentation, `add_repo` for reading, and its own wake.
@@ -41,11 +41,11 @@ authority: Dinis Cruz, operator
 - **R2** The grant is the mandate: a tool, a path, a repository, a host or a connector not in it is outside the mandate. In observe mode it is logged, not blocked; where unsure, ask in your status file's asks ('Dinis:'). *(hook; mode observe)*
 - **R3** No connector (Gmail, Google Drive, Calendar, Claude Docs or any MCP server but GitHub's read tools and the cloud session's own tools in the grant) unless Dinis grants it in writing in this file. *(hook; mode observe)*
 - **R4** No new session, scheduled task, wake-up, environment change or workflow without its person's word (CLAUDE.md: 'A new session only at its person's word'). Setting your own wake, as ROLES.md asks, is allowed. Sub-agents only where the grant says so. *(hook; mode observe)*
-- **R5** Push to dev only, through admin/tools/release.sh (workers named for a branch push only to work/<name>). Never push to main, force-push, delete a branch, push tags (CI tags), rewrite history, disable a check or push an empty commit. *(hook; mode observe)*
+- **R5** Push to dev only, through admin/tools/release.sh (workers named for a branch push only to work/<name>). Never push to main, force-push, delete a branch, push tags (CI tags), rewrite history, disable a check or push an empty commit. *(hook; mode enforce)*
 - **R6** Write only the paths in your grant, in this repository and in others. abp/ and .claude/ are the architect's; the version is CI's; data/keys.json takes only your own entry. *(hook + gate; mode observe)*
 - **R7** Nothing sent outside (email, posts, comments, issues, pull requests, artifacts, external APIs) without a person. Sends only to the hosts in your grant (dev.send.sgraph.ai, the inboxes, for all). No automated reading of websummit.com (its Terms 48.2 and 52.1). *(hook; mode observe)*
-- **R8** Never print, log, commit or publish a key, a token, a vault key or a contact detail. Never read a private key or a credentials file into the conversation. *(hook + gate; mode observe)*
-- **R9** Commit and release only under your own name: subject '<agent>: ...', trailers Agent:, Issue: WS-215, For:; AGENT=<agent> for release.sh. *(hook + gate; mode observe)*
+- **R8** Never print, log, commit or publish a key, a token, a vault key or a contact detail. Never read a private key or a credentials file into the conversation. *(hook + gate; mode enforce)*
+- **R9** Commit and release only under your own name: subject '<agent>: ...', trailers Agent:, Issue: WS-215, For:; AGENT=<agent> for release.sh. *(hook + gate; mode enforce)*
 - **R10** Every run ends with its status file updated and its run logged (node admin/tools/agent-log.mjs, ROLES.md step 6). *(review; mode observe)*
 - **R11** If HOLD.md exists at the root, stop after pulling and say why. Only Dinis lifts a hold. *(rule; mode observe)*
 - **R12** Do not mix altitudes: the grant's altitude must not be above the mandate's (A4 swarm, A3 agent, A2 loop, A1 LLM call, A0 compute). A loop or an LLM call started for one task should hold only that task's grant. *(hook; mode observe)*

@@ -116,6 +116,7 @@ export function checkCommit(c) {
   const w = who(c.agent);
   if (w.kind !== 'team' || !P.agents[c.agent]) out.push({ rule: 'R2', file: null, why: `${c.agent} has no grant in abp/policies.json yet` });
   for (const f of c.files) if (/^\.claude\//.test(f) && c.agent !== 'architect.1.fringe@PrompTugal.dinis') out.push({ rule: 'R6', file: f, why: `a change to the hooks by ${c.agent} (security finding 28: only architect.1 changes .claude/; review before agents wake on it)` });
+  for (const f of c.files) if (f === 'abp/overrides.json' && !/^conductor\.|^architect\./.test(c.agent || '')) out.push({ rule: 'R6', file: f, why: `an override written by ${c.agent}: only a conductor (or Dinis) grants an override` });
   if (w.role === 'lead') return out;   // the lead writes widely by its role; its shared-file edits are listed by review
   for (const f of c.files) {
     if (f === 'data/keys.json' || /^team\/[^/]+\/(agents\/)?[^/]*\.json$/.test(f) && f.includes(w.name || '\0')) continue;
@@ -146,7 +147,7 @@ function review() {
   try { for (const f of fs.readdirSync(LOG)) for (const l of fs.readFileSync(path.join(LOG, f), 'utf8').split('\n')) { try { const e = JSON.parse(l); if (e.t >= since && (e.decision === 'observe' || e.decision === 'override' || e.ev === 'hook-error' || e.ev === 'altitude')) events.push(e); } catch {} } } catch {}
   const lines = [
     `# ABP review, ${now()}`, '',
-    `Policy abp/policies.json v${P.version} (sha256:${P._sha}), mode ${P.mode}: nothing blocked. Since ${since}: ${rows.length} commits, ${rows.filter(c => c.findings.length).length} with paths outside their grant.`, '',
+    `Policy abp/policies.json v${P.version} (sha256:${P._sha}), mode ${P.mode}${(() => { const e = Object.entries(P.enforcement.rules).filter(([, r]) => r.mode === 'enforce').map(([k]) => k); return e.length ? `; enforced: ${e.join(', ')} (Dinis; the conductor override logged); every other rule observes` : ': nothing blocked'; })()}. Since ${since}: ${rows.length} commits, ${rows.filter(c => c.findings.length).length} with paths outside their grant.`, '',
     '## Commits outside a grant (observe)', '',
     ...(rows.filter(c => c.findings.length).flatMap(c => c.findings.map(f => `- \`${c.h}\` ${c.agent || '(no agent)'} **${f.rule}** ${f.file ? '`' + f.file + '`: ' : ''}${f.why}`))),
     '', '## By rule', '', ...Object.entries(byRule).map(([r, n]) => `- ${r}: ${n}`),
@@ -191,12 +192,28 @@ function test() {
   // the hook process: observe mode never blocks, whatever it would deny
   const run = (input, env = {}) => spawnSync(process.execPath, [HOOK, 'pre-tool'], { input: JSON.stringify(input), encoding: 'utf8', env: { ...process.env, ABP_LOG_DIR: path.join(os.tmpdir(), 'abp-test-log'), ...env } });
   const r1 = run({ session_id: 'test', tool_name: 'Bash', tool_input: { command: 'git push --force origin main' }, cwd: ROOT }, { ABP_AGENT: 'dev.2.fringe@PrompTugal.dinis' });
-  t('hook: force-push to main is observed, not blocked (stdout empty, exit 0)', `${r1.status}:${r1.stdout.trim() === '' ? 'empty' : r1.stdout}`, '0:empty');
+  t('hook: R5 enforced (Dinis): force-push to main is BLOCKED, exit 0 with a deny', `${r1.status}:${/"permissionDecision":"deny"/.test(r1.stdout)}`, '0:true');
+  const r1o = run({ session_id: 'test', tool_name: 'Bash', tool_input: { command: 'git push --force origin main' }, cwd: ROOT }, { ABP_AGENT: 'dev.2.fringe@PrompTugal.dinis', ABP_OVERRIDE: 'R5:test of the conductor override', ABP_OVERRIDE_BY: 'conductor.fringe@PrompTugal.dinis' });
+  t('hook: a conductor override lets an enforced rule through (and is logged)', `${r1o.status}:${r1o.stdout.trim() === '' ? 'empty' : 'deny'}`, '0:empty');
+  const r8 = run({ session_id: 'test', tool_name: 'Bash', tool_input: { command: 'printenv' }, cwd: ROOT }, { ABP_AGENT: 'dev.2.fringe@PrompTugal.dinis' });
+  t('hook: R8 enforced: printing the environment is BLOCKED', /"permissionDecision":"deny"/.test(r8.stdout), true);
+  const r9 = run({ session_id: 'test', tool_name: 'Bash', tool_input: { command: 'AGENT=dev.1.fringe@PrompTugal.dinis admin/tools/release.sh' }, cwd: ROOT }, { ABP_AGENT: 'dev.2.fringe@PrompTugal.dinis' });
+  t('hook: R9 enforced: releasing under another name is BLOCKED', /"permissionDecision":"deny"/.test(r9.stdout), true);
+  const r6w = run({ session_id: 'test', tool_name: 'Edit', tool_input: { file_path: path.join(ROOT, 'data/events.json') }, cwd: ROOT }, { ABP_AGENT: 'design.1.fringe@PrompTugal.dinis' });
+  t('hook: R6 still observe: an out-of-grant write is logged, not blocked', r6w.stdout.trim(), '');
+  const ok5 = run({ session_id: 'test', tool_name: 'Bash', tool_input: { command: 'AGENT=dev.2.fringe@PrompTugal.dinis admin/tools/release.sh' }, cwd: ROOT }, { ABP_AGENT: 'dev.2.fringe@PrompTugal.dinis' });
+  t('hook: the normal release is never blocked', ok5.stdout.trim(), '');
+  const ok6 = run({ session_id: 'test', tool_name: 'Bash', tool_input: { command: 'git push -u origin work/security.fringe' }, cwd: ROOT }, { ABP_AGENT: 'security.fringe@PrompTugal.dinis' });
+  t('hook: a branch agent pushing its own work/<name> is not blocked', ok6.stdout.trim(), '');
+  const no6 = run({ session_id: 'test', tool_name: 'Bash', tool_input: { command: 'git push origin work/dev.fringe' }, cwd: ROOT }, { ABP_AGENT: 'security.fringe@PrompTugal.dinis' });
+  t('hook: pushing another agent\'s branch is blocked (R5)', /"permissionDecision":"deny"/.test(no6.stdout), true);
   const r3 = run({ session_id: 'test', tool_name: 'Edit', tool_input: { file_path: path.join(ROOT, 'abp/policies.json') }, cwd: ROOT }, { ABP_AGENT: 'design.1.fringe@PrompTugal.dinis', ABP_OVERRIDE: 'R6:test of the escape hatch', ABP_OVERRIDE_BY: 'conductor.fringe@PrompTugal.dinis' });
   t('hook: an override is allowed (exit 0)', `${r3.status}:${r3.stdout.trim() === '' ? 'empty' : r3.stdout}`, '0:empty');
   const logf = path.join(os.tmpdir(), 'abp-test-log', 'test.jsonl');
-  const last = fs.readFileSync(logf, 'utf8').trim().split('\n').slice(-2).map(l => JSON.parse(l));
-  t('hook: logged observe', last[0].decision, 'observe');
+  const last = fs.readFileSync(logf, 'utf8').trim().split('\n').map(l => JSON.parse(l)).filter(e => e.ev === 'tool').slice(-2);
+  const evs = fs.readFileSync(logf, 'utf8').trim().split('\n').map(l => JSON.parse(l)).filter(e => e.ev === 'tool');
+  t('hook: logged observe (R6 write)', (evs.find(e => e.rule === 'R6' && e.tool === 'Edit') || {}).decision, 'observe');
+  t('hook: logged deny (R5 force-push)', (evs.find(e => e.rule === 'R5') || {}).decision, 'deny');
   t('hook: logged override with who', last[1].decision === 'override' && last[1].override.by, 'conductor.fringe@PrompTugal.dinis');
   const r6 = run({ session_id: 'test', tool_name: 'Agent', tool_input: { subagent_type: 'general-purpose', prompt: 'x' }, cwd: ROOT }, { ABP_AGENT: 'design.1.fringe@PrompTugal.dinis' });
   const alt = fs.readFileSync(logf, 'utf8').trim().split('\n').map((l) => JSON.parse(l)).filter((e) => e.ev === 'altitude').pop();

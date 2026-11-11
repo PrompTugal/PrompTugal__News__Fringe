@@ -1,9 +1,9 @@
 {
   "by": "conductor.fringe@PrompTugal.jose",
-  "updated": "2026-11-11T16:24Z",
+  "updated": "2026-11-11T18:09Z",
   "person": "jose",
   "role": "member",
-  "state": "on: conductor.fringe@PrompTugal.jose; hourly wake at :07 until Friday 13 November, 23:59 UTC; 16:24: Jose sent five organiser notes by hand at about 16:23 UTC",
+  "state": "on: conductor.fringe@PrompTugal.jose; hourly wake at :07 until Friday 13 November, 23:59 UTC; wake 18:09: no new brief; tracker 5 contacted, 0 answered; traffic by channel: whatsapp 156, linkedin 1, organiser 0",
   "lane": "channels (SWARM.md): the posts and messages that point people to the site; a person sends, the conductor never posts or messages anyone",
   "doing": [
     "work/18 and work/23 (channels): five organiser notes sent by Jose; watching for answers (Jose sees them on Luma)"
@@ -21,17 +21,25 @@
     "15:34: agreed with researcher.1 to hold machine reads of Luma and sideevents.guide until Dinis answers on work/49; asked the lead (inbox) for his call and flagged that researcher.2 still reads Luma hourly",
     "wake 16:10: researcher.1's send desk (56fc772) noted: copy, open the organiser page, mark sent; a person still sends",
     "16:23 (Jose's word, relayed by researcher.1): Jose sent five organiser notes himself through each organiser's Luma 'Contact the host': WonderLead in Tech, ideaic.io, Canopy Community, FounderLink, Portugal Tech Week. Not sent: ALBAN Global Network and Kuma Partners (their events had started)",
-    "16:24: asked outreach.1 (inbox) to mark the five sent in work/23's tracker, which it keeps"
+    "16:24: asked outreach.1 (inbox) to mark the five sent in work/23's tracker, which it keeps",
+    "16:36 (outreach.1): the five notes marked sent in work/23's tracker; the dashboard counts 5 contacted",
+    "wake 17:09: the lead's interim Luma rule (single event page at a person's pace, iCal feeds for researchers, no images) passed to researcher.1",
+    "17:31 (Jose's word): Jose posted the short LinkedIn post from work/drafts/linkedin-post-jose.md, linking https://lisbontechfringe.com/now/?via=linkedin",
+    "17:41 (Jose's word): X dropped; the X thread will not be posted",
+    "18:01: Jose's proposal of six changes to /dashboard/ (work/drafts/jose/dashboard-proposal.md, f71a62b) sent to the lead's inbox for Dinis to decide",
+    "18:01: three decisions from Jose's team (Luma single pages, Eventbrite/Facebook read by a person, individual organisers) sent to the lead's inbox for Dinis",
+    "wake 18:09: the lead's note that data/events.json has one owner (researcher.2) passed to researcher.1: from now its new or changed events go to researcher.2 through this conductor or /tip/"
   ],
   "next": [
-    "any organiser answer: a change goes to data/events.json only once the organiser's own page shows it (researcher.2 or researcher.1)",
-    "Jose's changes to the LinkedIn post, X thread and pitch",
-    "work/50: map Jose's agents at their altitudes"
+    "watch /traffic/ for ?via=linkedin visits and report them to Jose",
+    "organiser answers on Luma (Jose sees them)"
   ],
   "asks": [
-    "outreach.1.fringe@PrompTugal.dinis: mark the five notes sent in work/23's tracker (sent_by jose, about 16:23 UTC); asked by inbox at 16:24 UTC.",
-    "Dinis: work/49: until it is settled, may a researcher read single Luma event pages we already list, one at a time, for today's status only? Jose's researcher holds until you answer; researcher.2 still reads Luma hourly.",
-    "jose: read and approve (or change) work/drafts/linkedin-post-jose.md, work/drafts/x-thread-jose.md and work/drafts/pitch.md; you post them.",
+    "Dinis: Jose proposes six changes to /dashboard/ (work/drafts/jose/dashboard-proposal.md); the quickest are the outreach funnel with who sent each note, and a 'Today, by person' line. Your call; dev.1 owns the page.",
+    "Dinis: Luma: may a researcher read single Luma event pages we list (or a person passes on), one at a time, without a person's word each time? Today the 17:30 Cisco session stayed 'in person' on the site until Jose passed its link at 17:14 (its page said Virtual).",
+    "Dinis: Eventbrite and Facebook: when an organiser's only page is there, may a person on the team read it and list the event as 'read by a person on the organiser's page', with the link? Today Just Boom! (22:00, Eventbrite) and Climate Fashion Lisbon 2026 (19:00, online, Facebook) were left off.",
+    "Dinis: events run by a named individual, not an organisation: may we list them without naming the person, as we already do for 'an independent organiser'? Three online storm events were left out today for this reason.",
+    "jose: use work/drafts/pitch.md wherever someone asks what the site is.",
     "Dinis: my public key is not in PrompTugal__News__Website board/keys.json; that repository is out of reach for this session.",
     "Dinis: this session's network refuses lisbontechfringe.com and fringe.promptugal.news, so the served version.json is checked through the deploy run, not the page."
   ]
