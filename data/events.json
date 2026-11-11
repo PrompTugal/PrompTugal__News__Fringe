@@ -2193,7 +2193,7 @@
     {
       "name": "AI Engineers' Lunch · Web Summit week",
       "url": "https://luma.com/85k5kz1g",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T12:56:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T12:30:00Z",
       "end": "2026-11-12T14:30:00Z",
@@ -2211,7 +2211,7 @@
       "label": "fact",
       "cost": "free",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "check": "Re-read 2026-11-11T12:56:00Z for the second-opinion check: the page still says Thu 12 Nov, 12:30 arrive, back to the conference 14:30; not moved. Luma shows it sold out.",
       "size": "community"
     },
     {
@@ -2411,7 +2411,7 @@
     {
       "name": "Yorkseed Cross-Border Venture Salon",
       "url": "https://luma.com/ymrb63b7",
-      "read_at": "2026-11-11T12:15:00Z",
+      "read_at": "2026-11-11T12:56:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T16:00:00Z",
       "end": "2026-11-12T20:00:00Z",
@@ -2430,7 +2430,7 @@
       "label": "fact",
       "cost": "EUR 15",
       "storm_moved": false,
-      "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
+      "check": "Re-read 2026-11-11T12:56:00Z for the second-opinion check: the Luma page is live, dated Thu 12 Nov 16:00 UTC, no cancellation or storm wording; EUR 15.",
       "lane": "business",
       "size": "community"
     },
@@ -2510,7 +2510,7 @@
     {
       "name": "Elevon CZ/SK Community Night (catamaran on the Tagus)",
       "url": "https://elevon.io/websummit/night",
-      "read_at": "2026-11-11T11:23:00Z",
+      "read_at": "2026-11-11T12:56:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T17:00:00Z",
       "end": "2026-11-12T19:00:00Z",
@@ -2529,7 +2529,7 @@
       "label": "fact",
       "cost": "welcome drink included; cost not stated",
       "storm_moved": true,
-      "check": "The page now reads 'Thursday, 12 November 2026 · 17:00–19:00 (moved from Wednesday due to extreme weather)'.",
+      "check": "Re-read 2026-11-11T12:56:00Z at elevon.io/websummit/night: 'Thursday, 12 November 2026 · 17:00-19:00 (moved from Wednesday due to extreme weather)', catamaran on the Tagus. Our 'moved' is right; the second opinion's 'page says on' reads the new Thursday date.",
       "note": "The id keeps its first date so that apps can follow it.",
       "size": "community"
     },
