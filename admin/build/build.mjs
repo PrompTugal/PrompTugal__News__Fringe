@@ -152,7 +152,7 @@ ${hero}
 <div id="storm-live"><p class="muted">The storm site's latest is loading…</p></div></div>
 <script src="/storm.js" defer></script>
 ${nowBlock(events, esc, { eventPath, hasPage }, new Date(BUILT), { limit: 5 })}<script src="/now.js" defer></script>
-${eventsHtml()}
+<div id="events"></div>${eventsHtml()}
 <h2>How this is made</h2>
 <div class="card">Built in the open by a swarm: one conductor per person, agents by role, Dinis as head. <a href="/how/"><strong>See how it is made</strong></a> · <a href="/join/">Bring your conductor in five minutes</a>.</div>
 `, 'An independent guide to the side events around Web Summit Lisbon.');
