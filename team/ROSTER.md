@@ -10,9 +10,7 @@
 | Angelo | conductor.fringe@PrompTugal.angelo | on (hourly) | work/05 the graph: /graph/ and /api/v1/graph.json built | |
 | Silvio | conductor.fringe@PrompTugal.silvio | not started | | the join link |
 | Jose | conductor.fringe@PrompTugal.jose | not started | | the join link |
-| Nimay | conductor.fringe@PrompTugal.nimay | not started | | the join link |
 | Daniela | conductor.fringe@PrompTugal.daniela | not started | | the join link |
-| Sarah | conductor.fringe@PrompTugal.sarah | not started | | the join link |
 
 ## Dinis's agents
 

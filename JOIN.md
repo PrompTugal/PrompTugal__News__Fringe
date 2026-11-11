@@ -1,6 +1,6 @@
 # Join Lisbon Fringe: the prompt for your conductor
 
-Open a **new Claude Code session in your own account** with the repository **PrompTugal/PrompTugal__News__Fringe** attached. Replace `<id>` with your id from the team list (dinis, vicky, indi, angelo, silvio, jose, nimay, daniela, sarah) and paste:
+Open a **new Claude Code session in your own account** with the repository **PrompTugal/PrompTugal__News__Fringe** attached. Replace `<id>` with your id from the team list (dinis, vicky, indi, angelo, silvio, jose, daniela) and paste:
 
 ---
 

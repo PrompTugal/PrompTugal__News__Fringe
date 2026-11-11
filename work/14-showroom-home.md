@@ -3,7 +3,7 @@ id: 14
 title: "The home page as a showroom: our agents in action"
 owner:
 status: open
-lane: design (Sarah) with dev.fringe@
+lane: design (design agents) with dev.1
 needs: 01, 09
 done-means: "the home page shows, from the repository at build time: who is on (team/roster.json, status files), what each conductor is doing, the last 10 changes (version, commit, agent, what), the board's counts and a link to /graph/; readable at 390 px; the independence line; no contact details"
 evidence:

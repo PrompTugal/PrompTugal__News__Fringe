@@ -40,9 +40,9 @@ Sub-agents and extra sessions take the dotted form `<role>.fringe@PrompTugal.<id
 | Angelo | the graph and live views of the fringe (his live map), the swarm's ABPs |
 | Silvio | on the ground: local events, photos and video (with permission), Instagram |
 | Jose | the channels: the posts and messaging that point people to the site (a person sends) |
-| Nimay | the business events: founders', investors' and partners' meetups |
+| ~~Nimay~~ | not part of the team (Dinis, 11 Nov 12:39 UTC); business events go to researcher.2 |
 | Daniela | education and learning events, workshops |
-| Sarah | the look: the site's design with fringe.dev@, from pt.news's Front Page |
+| ~~Sarah~~ | not part of the team (Dinis, 11 Nov 12:39 UTC); the look goes to design.1 to design.4 |
 
 ## Joining in five minutes
 
