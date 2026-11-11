@@ -65,6 +65,7 @@ export function agenticTeamBody(esc) {
   const item = (href, t, d) => `<div class="card"><a href="${href}"><strong>${esc(t)}</strong></a><div class="muted">${esc(d)}</div></div>`;
   return `<h1>The agentic team</h1>
 <p>Lisbon Tech Fringe is built by a swarm: one conductor per person, agents by role, Dinis Cruz as head conductor. These pages describe how the team works.</p>
+${item('/agentic-team/operating-model/', 'The operating model', 'The primitives: the execution ladder (compute to spawn), what each entity can reach, identity everywhere, a distributed operating system for agents.')}
 ${item('/agentic-team/where-agents-run/', 'Where agents run', 'An agent versus an LLM call; the runtimes, models and I/O levels; the formula that places a task; the matrix of our tasks.')}
 ${item('/abp/', 'Agent Behaviour Policies', 'Who may edit what, where: every agent\'s grant, in observe mode.')}
 ${item('/how/', 'How this is made', 'From a public page to a published event.')}

@@ -1,0 +1,332 @@
+{
+  "about": "The operating model of the agentic team (Dinis with Angelo, in architect.1's session, 14:40 UTC; briefs/2026-11-11-1440-the-operating-model.md; work/48): the primitives of the execution block, the access an entity has at a moment in time, identity, state, providers, and who can do what. What an entity is depends on where it runs and what it can reach (Dinis: 'what they are depends on where they are and what they can do'). A draft for Dinis and Angelo to correct.",
+  "by": "architect.1.fringe@PrompTugal.dinis",
+  "updated": "2026-11-11T14:44Z",
+  "status": "draft v0.1",
+  "ladder": {
+    "about": "The execution ladder: what an entity can do, bottom to top. Each rung includes the ones below it.",
+    "rungs": [
+      {
+        "id": "E0",
+        "name": "compute",
+        "what": "raw code execution: a script, a build, a CI job",
+        "example": "admin/build/build.mjs in GitHub Actions"
+      },
+      {
+        "id": "E1",
+        "name": "model call",
+        "what": "a prompt in, an answer out (the first chatbots)",
+        "example": "the second opinion via the router"
+      },
+      {
+        "id": "E2",
+        "name": "loop",
+        "what": "a simple agentic workflow: the model's output feeds its next step, without tools",
+        "example": "a chain of calls in one script"
+      },
+      {
+        "id": "E3",
+        "name": "loop with tools",
+        "what": "the loop can act: shell, files, web, git",
+        "example": "a Claude Code session; a ChatGPT agent"
+      },
+      {
+        "id": "E4",
+        "name": "schedules",
+        "what": "it can wake itself later (create and keep schedules)",
+        "example": "every agent's hourly wake"
+      },
+      {
+        "id": "E5",
+        "name": "spawn",
+        "what": "it can start new agents, sessions and environments: the control plane",
+        "example": "the lead starting architect.1"
+      }
+    ],
+    "across": [
+      "tools (what the loop can touch: tools appear at E3 but a call can also be given tools)",
+      "storage (what it can mount: a file system, git, vaults)"
+    ]
+  },
+  "access": {
+    "about": "The capabilities an entity has at a moment in time: what it can reach and change. Each axis has levels; 'who' below gives each runtime's level today.",
+    "axes": [
+      {
+        "id": "git",
+        "levels": [
+          "none",
+          "read",
+          "write a branch",
+          "write dev (behind the gate)"
+        ]
+      },
+      {
+        "id": "vault",
+        "levels": [
+          "none",
+          "read-only (given a read key)",
+          "write-only (an append lane: our inboxes, /tip/)",
+          "read-write",
+          "create (make its own vaults: its own record)"
+        ]
+      },
+      {
+        "id": "internet",
+        "levels": [
+          "none",
+          "our services only",
+          "allow-listed hosts (the environment's policy)",
+          "open"
+        ]
+      },
+      {
+        "id": "filesystem",
+        "levels": [
+          "none",
+          "ephemeral (the container's)",
+          "persistent (a laptop's)"
+        ]
+      },
+      {
+        "id": "install",
+        "levels": [
+          "no",
+          "packages (npm, pip)",
+          "system (apt, root)"
+        ]
+      },
+      {
+        "id": "control_plane",
+        "levels": [
+          "none",
+          "own wake",
+          "sessions, schedules, environments, credentials (Claude's control plane)"
+        ]
+      },
+      {
+        "id": "secrets",
+        "levels": [
+          "none",
+          "injected by the proxy (never seen)",
+          "held"
+        ]
+      }
+    ]
+  },
+  "identity": {
+    "rule": "Every entity has an identity: a PKI key, even a chat session where it can carry one (Dinis: 'our identities have to flow to everything here').",
+    "ephemeral": "A session key's private half lives only as long as its session. That is a feature: a signature by it proves the agent existed at that moment (Dinis: 'that tells you that that agent exists at that moment in time').",
+    "how": [
+      "pki-agent.mjs keygen --session in each session; the public half in data/keys.json",
+      "every output signed: commits (the Agent: trailer and the key), inbox messages, agent-log runs, vault records",
+      "a chat (S1) can be given a key by the person who runs it, and sign what it returns through that person's tool"
+    ]
+  },
+  "state": {
+    "about": "How state reaches a model and leaves it.",
+    "carriers": [
+      {
+        "id": "git",
+        "holds": "code, decisions, small data",
+        "provenance": "commit, trailer, key"
+      },
+      {
+        "id": "vault",
+        "holds": "evidence, captures, any state; easy to distribute, even as a zip",
+        "provenance": "made by one session: that session's record"
+      },
+      {
+        "id": "chat context",
+        "holds": "a conversation",
+        "provenance": "the provider's; never the only copy"
+      },
+      {
+        "id": "task packet",
+        "holds": "a task, its inputs and where the output goes, signed",
+        "provenance": "the lead's signature; the doer signs its output"
+      }
+    ]
+  },
+  "providers": [
+    {
+      "id": "anthropic",
+      "via": [
+        "Claude Code (cloud, laptop)",
+        "Claude chat",
+        "API"
+      ],
+      "models": "Opus, Sonnet, Haiku"
+    },
+    {
+      "id": "openrouter",
+      "via": [
+        "API, through admin/tools/llm.mjs"
+      ],
+      "models": "open weight (DeepSeek, Llama, Qwen) and others, image models included"
+    },
+    {
+      "id": "openai",
+      "via": [
+        "ChatGPT (chat, agent)",
+        "API"
+      ],
+      "models": "GPT"
+    },
+    {
+      "id": "ollama",
+      "via": [
+        "a laptop's own agent (R2)"
+      ],
+      "models": "open weight, local"
+    }
+  ],
+  "os": {
+    "about": "Read as a distributed operating system (Dinis: 'almost like ... a distributed operating system ... we decouple ... who's actually doing the task').",
+    "map": [
+      {
+        "os": "processes",
+        "here": "agents (S2 loops) and model calls (S0)"
+      },
+      {
+        "os": "kernel and scheduler",
+        "here": "the control plane: sessions, schedules, wakes, spawn (E4, E5)"
+      },
+      {
+        "os": "file systems",
+        "here": "git and vaults (zips to move them)"
+      },
+      {
+        "os": "inter-process communication",
+        "here": "signed inboxes and append lanes; task packets"
+      },
+      {
+        "os": "users and permissions",
+        "here": "PKI keys and the ABPs (abp/policies.json)"
+      },
+      {
+        "os": "drivers",
+        "here": "the model providers and endpoints"
+      },
+      {
+        "os": "package manager",
+        "here": "install: npm, pip, apt where allowed"
+      },
+      {
+        "os": "system log",
+        "here": "the ABP hook log, the router's ledger, agent-log runs"
+      }
+    ]
+  },
+  "who": {
+    "about": "Each runtime or entity with its rung and its access today (from data/runtimes.json and the environments as seen in this swarm).",
+    "items": [
+      {
+        "entity": "GitHub Actions (CI)",
+        "rung": "E0",
+        "git": "write tags; deploys",
+        "vault": "none",
+        "internet": "open",
+        "filesystem": "ephemeral",
+        "install": "system",
+        "control_plane": "none",
+        "identity": "the repository's token (no agent key)"
+      },
+      {
+        "entity": "A model call via OpenRouter (S0)",
+        "rung": "E1",
+        "git": "none",
+        "vault": "none",
+        "internet": "none",
+        "filesystem": "none",
+        "install": "no",
+        "control_plane": "none",
+        "identity": "none; the calling agent signs the result"
+      },
+      {
+        "entity": "A chat session (Claude chat, ChatGPT) (S1)",
+        "rung": "E1 to E3",
+        "git": "none",
+        "vault": "through a person (L0) or a link",
+        "internet": "the provider's tools",
+        "filesystem": "none of ours",
+        "install": "no",
+        "control_plane": "none",
+        "identity": "none today; proposed: the person's tool signs"
+      },
+      {
+        "entity": "A ChatGPT agent (R3)",
+        "rung": "E3",
+        "git": "none",
+        "vault": "read-write by link (L2)",
+        "internet": "open (its browser)",
+        "filesystem": "its own, ephemeral",
+        "install": "its sandbox",
+        "control_plane": "none of ours",
+        "identity": "a key given to it, or the person's"
+      },
+      {
+        "entity": "A Claude Code cloud agent (R1), e.g. design.1",
+        "rung": "E4",
+        "git": "write dev",
+        "vault": "read-write, create",
+        "internet": "allow-listed",
+        "filesystem": "ephemeral",
+        "install": "packages and system",
+        "control_plane": "own wake",
+        "identity": "session key (ephemeral)"
+      },
+      {
+        "entity": "The lead (R1)",
+        "rung": "E5",
+        "git": "write dev",
+        "vault": "read-write, create; issues inboxes",
+        "internet": "allow-listed",
+        "filesystem": "ephemeral",
+        "install": "packages and system",
+        "control_plane": "sessions, schedules (at Dinis's word)",
+        "identity": "session key (ephemeral)"
+      },
+      {
+        "entity": "A laptop agent (R2) with Ollama",
+        "rung": "E4 to E5",
+        "git": "write dev",
+        "vault": "read-write, create",
+        "internet": "the laptop's",
+        "filesystem": "persistent",
+        "install": "the person's choice",
+        "control_plane": "own wake (local)",
+        "identity": "its key (can persist)"
+      }
+    ]
+  },
+  "graph": {
+    "about": "Read as a graph (Dinis's 'meaning through connectivity'): every entity is a node, and what it is comes from its edges: runs-on (a runtime), uses (a model), reaches (git, a vault, a host), holds (a key), may (its ABP grant), does (a task). The same pattern repeats at every scale: a call inside an agent, an agent inside a team, a team inside the swarm.",
+    "node_types": [
+      "entity",
+      "craft",
+      "role",
+      "runtime",
+      "model",
+      "provider",
+      "access",
+      "key",
+      "task",
+      "vault"
+    ],
+    "edge_types": [
+      "runs_on",
+      "uses",
+      "reaches",
+      "holds",
+      "may",
+      "does",
+      "spawns",
+      "signs"
+    ]
+  },
+  "open": [
+    "Dinis's 'thinking in graphs' text on fractal semantic graphs: to read once linked",
+    "whether tools are a rung (E3) or an axis across rungs (Dinis: 'maybe tools is transversal')",
+    "the name of the unit: entity, craft or role"
+  ]
+}
