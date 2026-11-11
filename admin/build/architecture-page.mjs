@@ -7,7 +7,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { md, guidanceCss } from './guidance.mjs';
 import { readdirSync } from 'node:fs';
-import { GRAVITY_SRC, universeCss } from './universe.mjs';   // one Gravity for the site: dev.2's vendored-or-pinned choice
+import { GRAVITY_SRC, gravityAttrs, universeCss } from './universe.mjs';   // one Gravity for the site: dev.2's vendored-or-pinned choice
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const read = (p) => readFileSync(join(root, p), 'utf8');
 
@@ -99,7 +99,7 @@ export function runsUniverseBody(esc) {
 <h1>Every agentic run, as a universe</h1>
 <p>Each centre is an environment where work runs; each node is a unit of work at its altitude (A3 agent, A2 loop, A1 LLM call, A0 compute) signed by a key that lived only while it ran; each flow is a parent handing work to a child. From <a href="/api/v1/altitude-runs.json">/api/v1/altitude-runs.json</a>. Live start, middle and end of each unit: Elastic, <em>Flows: the beginning, the middle and the end</em>.</p>
 <style>${universeCss}</style><div id="universe"></div>
-<script src="${esc(src)}"></script>
+<script src="${esc(src)}"${gravityAttrs()}></script>
 <script>(async function(){
   const r = await fetch('/api/v1/altitude-runs.json'); const R = await r.json(); const U = R.docs;
   const COL = ['#43D9C6','#FF7FB0','#F5C542','#7FA8FF','#B48CFF','#FF9F5A'];

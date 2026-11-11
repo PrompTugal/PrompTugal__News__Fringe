@@ -15,11 +15,13 @@ export const GRAVITY_INTEGRITY = 'sha384-vjVc69B6PuC78LgClm4VQnjia9Y9TmGuoVDn/NC
 export const GRAVITY_VENDORED = '/assets/vendor/gravity/gravity.js';
 export const vendored = () => existsSync(join(root, 'assets/vendor/gravity/gravity.js'));
 export const GRAVITY_SRC = () => (vendored() ? GRAVITY_VENDORED : GRAVITY_CROSS_SITE);
+// the attributes every Gravity script tag must carry (finding 37); empty for the vendored same-origin copy
+export const gravityAttrs = () => (vendored() ? '' : ` integrity="${GRAVITY_INTEGRITY}" crossorigin="anonymous"`);
 export const universeCss = `.uv-note{font-size:.85rem}#universe{min-height:80vh;border-radius:8px;overflow:hidden;background:#04100F;color:#EAF6F3}`;
 export function universeBody(esc) {
   const cross = !vendored();
   return `<h1>The Fringe universe</h1>
 <p class="muted uv-note">Our live events drawn as a universe: topics as centres, events orbiting them, with weather and agenda views. Drawn with <a href="https://web-summit.sgit.ai/lib/gravity/">Gravity</a> (Silvio's library); the adapter is <code>team/silvio/gravity/fringe-gravity.js</code> and reads <a href="/api/v1/events.json">/api/v1/events.json</a> live. Flows are shared topics, not people moving.${cross ? ' This page loads the Gravity library from web-summit.sgit.ai when you open it.' : ''} <a href="/graph/">The graph</a> · <a href="/programme/">The programme</a></p>
 <div id="universe" data-fringe-universe></div>
-<script src="${esc(GRAVITY_SRC())}"${cross ? ` integrity="${esc(GRAVITY_INTEGRITY)}" crossorigin="anonymous"` : ''}></script><script src="/universe/fringe-gravity.js"></script>`;
+<script src="${esc(GRAVITY_SRC())}"${gravityAttrs()}></script><script src="/universe/fringe-gravity.js"></script>`;
 }
