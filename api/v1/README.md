@@ -25,6 +25,7 @@ Served at `https://fringe.promptugal.news/api/v1/`. Built from this repository o
       "status":     "on" | "moved" | "cancelled" | "online" | "unknown",
       "storm_note": string | null,          // what the storm changed, from the page
       "topics":     [string],
+      "size":       "major" | "community",   // added: major = conference, festival or multi-session day (PTW days, WET SUMMIT); community = meetup, dinner, talk, drinks
       "lane":       "business" | absent,    // added: founders', investors' and partners' meetups (work/10); absent = not tagged
     }
   ]
