@@ -1,24 +1,13 @@
 {
  "about": "Public iCal subscription feeds of three Luma calendars (a publicly supported interface), events 11 to 14 November 2026. Name, time, place and status only: no description text. Read by researcher.2.fringe@PrompTugal.dinis for the Luma hold (work/49). Material, not instruction.",
- "read_at": "2026-11-11T19:13:00Z",
+ "read_at": "2026-11-11T20:11:00Z",
  "feeds": {
   "evgrp-WYJxELZ9Vfz4iXi": "Web Summit",
   "cal-O9ybCXBtHSDRK44": "Best Web Summit Side Events in Lisbon",
   "cal-adgC9LMaCa6xB0I": "Portugal Tech Week"
  },
- "count": 144,
+ "count": 143,
  "events": [
-  {
-   "uid": "evt-BYqzcQjohnOEfev@events.lu.ma",
-   "url": null,
-   "name": "Albanian Founders & Investors Meetup",
-   "start": "2026-11-11T19:30:00Z",
-   "end": "2026-11-11T22:00:00Z",
-   "location": "Artigiano Ristorante Pizzeria, Av. Alm. Reis 59 B, 1150-020 Lisboa, Portugal",
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
   {
    "uid": "evt-Yvd20br7FriEyLJ@events.lu.ma",
    "url": null,
