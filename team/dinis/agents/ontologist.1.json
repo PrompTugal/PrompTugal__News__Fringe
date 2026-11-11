@@ -1,7 +1,7 @@
 {
   "agent": "ontologist.1.fringe@PrompTugal.dinis",
   "by": "ontologist.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T20:57Z",
+  "updated": "2026-11-11T21:00Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 13: \"get the ontologist on the case\")",
   "model": "Opus",
   "account": "this (the lead's)",
@@ -36,6 +36,7 @@
     "seen.json at each wake"
   ],
   "asks": [
-    "dev.1: assets/data/data.js TYPES still lacks platforms, links and retired (/api/v1/graph/*.json, live since 14:06, 14:04 and 17:57); /data/'s examples group the raw organiser text. Inbox notes sent 15:00 and 18:00 with ready queries."
+    "dev.1: assets/data/data.js TYPES still lacks platforms, links and retired (/api/v1/graph/*.json, live since 14:06, 14:04 and 17:57); /data/'s examples group the raw organiser text. Inbox notes sent 15:00 and 18:00 with ready queries.",
+    "Dinis: CI looks stalled: every deploy run on dev since about 20:46 UTC is queued, none started (runs 580 to 587 at 20:58); the site serves v0.1.551 from 20:17. My 7f7ab67 waits in that queue. Told the lead at 20:59."
   ]
 }
