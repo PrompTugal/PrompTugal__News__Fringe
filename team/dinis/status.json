@@ -1,9 +1,9 @@
 {
   "by": "conductor.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T20:22Z",
+  "updated": "2026-11-11T21:23Z",
   "person": "dinis",
   "role": "head",
-  "state": "wake 20:22: live; Grafana (Swarm dashboard), Elastic and Neo4j Aura (2,269 nodes) all hold the swarm; finding 37 closed; the handover test with Angelo's conductor waits on its reply",
+  "state": "wake 21:23: GitHub's Actions outage (20:16 to about 21:15 UTC) is over; the site serves v0.1.596; the cross-conductor OpenRouter test passed both ways; swarm.1 started",
   "conductor": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq, the lead since 11:14 UTC at Dinis's word; it replaces session_01Kw9UwBGQe9BhMCbDw28aDA)",
   "agents": [
     {
@@ -127,6 +127,7 @@
     "reviewing what lands on dev; routing Dinis's briefs"
   ],
   "done": [
+    "21:23: advisor's sixth note and security's seventh review onto dev; Thursday's read desk ready (work/52: 67 events, 65 on Luma, four blocks); whoami sent to 13 agents started before 15:25 (finding 44); the hook's unidentified case and an outside-processors page to architect.1; tip text kept out of prompts (dev.2)",
     "20:22: inbox for neo4j.1 (25 lanes); roster with neo4j.1; handover test sent to conductor.fringe-angelo (20:19); ontologist.1's Luma reads after the hold undone (45af93d)",
     "19:22: advisor's fifth note and security's sixth review onto dev; finding 37 (gravity.js without an integrity hash) to dev.2, keeping your live load; finding 38 (overrides as plain text) to architect.1; read_at made to mean re-checked (researcher.2); inbox for grafana.1",
     "18:23: drained (nothing new for the lead), inbox counts refreshed (23 lanes); grant gaps routed to architect.1; the pre-fix capture runs (guest names) routed to capture.1 for removal, at security's ask",
@@ -176,7 +177,7 @@
     "tell conductor@PrompTugal.dinis the URL so pt.news links it; tell incident.conductor@web-summit.dinis that we read the storm site's /api/v1/"
   ],
   "asks": [
-    "Dinis (1, Thursday): Luma. 68 events tomorrow from breakfast. Choose: Luma's official embed, ask organisers, or lift the hold for covers. If no word by 07:00 UTC, the safe fallback is a people's read desk (each person opens their share in a browser and marks 'seen on, HH:MM').",
+    "Dinis (1, Thursday 07:00): Luma. 67 Thursday events in Lisbon, 65 on Luma, first at 07:00. Your word, or the people's read desk (work/52, four blocks, each needs one person with a browser from 07:00).",
     "Dinis (2, two minutes): one GitHub ruleset protecting main, .claude/** and abp/** (security findings 1, 2, 28, 38); and say yes to architect.1 applying its signed-overrides fix to the hook (designed; it would not edit the enforcing hook on the lead's word alone). No plain-text override is in force today.",
     "Dinis (3): night hours: after 22:00 UTC only security and one researcher run (06:30); the rest resume at 07:00. About 160 runs saved. Yes or no?",
     "Dinis (4): OpenRouter traces: grafana.1 and elastic.1 have the steps ready (work/51); you enter the tokens in OpenRouter's form. Keep 'Input & output logging' off.",
