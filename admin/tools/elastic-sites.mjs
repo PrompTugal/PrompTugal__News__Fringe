@@ -55,7 +55,7 @@ const home = p => p.replace(/^~/, os.homedir())
 const sh = (dir, c) => execSync(c, { cwd: dir, encoding: 'utf8', maxBuffer: 1 << 28, stdio: ['ignore', 'pipe', 'ignore'] })
 const EXCL = CFG.exclude_always.map(r => new RegExp(r, 'i'))
 const allowed = p => !EXCL.some(r => r.test(p))
-const personOf = a => (String(a || '').match(/@[\w.-]*PrompTugal\.([a-z]+)/i) || String(a || '').match(/@[a-z-]+\.([a-z]+)$/i) || [])[1]?.toLowerCase()
+const personOf = a => String(a || '').includes('@') ? String(a).split('@')[1].split('.').pop().toLowerCase() : undefined
 const roleOf = a => String(a || '').split('@')[0].replace(/\.\d+$/, '').split('.')[0] || undefined
 const iso = v => {
     if (typeof v !== 'string') return undefined
@@ -84,13 +84,18 @@ function repoState(site) {
 
 // one pass over history: commits, and each path's last commit
 function history(dir) {
-    const raw = sh(dir, `git log --no-renames '--format=%x1e%H%x1f%cI%x1f%s%x1f%(trailers:key=Agent,valueonly,separator=%x2C)%x1f%(trailers:key=For,valueonly,separator=%x2C)%x1f%(trailers:key=Issue,valueonly,separator=%x2C)' --name-only`)
+    const raw = sh(dir, `git log --no-renames '--format=%x1e%H%x1f%cI%x1f%s%x1f%(trailers:key=Agent,valueonly,separator=%x2C)%x1f%(trailers:key=For,valueonly,separator=%x2C)%x1f%(trailers:key=Issue,valueonly,separator=%x2C)%x1f%b%x1d' --name-only`)
     const commits = [], last = new Map()
     for (const block of raw.split('\x1e').filter(b => b.trim())) {
-        const [head, ...rest] = block.split('\n')
-        const [sha, t, subject, agentT, forT, issue] = head.split('\x1f')
+        const [meta, names = ''] = block.split('\x1d')
+        const [sha, t, subject, agentT, forT, issue, body = ''] = meta.replace(/^\n+/, '').split('\x1f')
+        const rest = names.split('\n')
+        const bodyAgent = (body.match(/^Agent:\s*(\S+)/m) || [])[1]
         const files = rest.join('\n').split('\n').map(s => s.trim()).filter(Boolean)
-        const agent = (agentT || '').trim() || (subject.match(/^([\w.-]+@[\w.-]+):/) || [])[1] || 'unattributed'
+        const agent = (agentT || '').trim().split(',')[0].trim() || bodyAgent
+            || (subject.match(/([A-Za-z0-9][\w.-]*@[A-Za-z][\w-]*(?:\.[A-Za-z][\w-]*)+)(?=[:\s(),]|$)/) || [])[1]
+            || ((subject.match(/workers?\/([\w.-]+?)'s/) || [])[1] ? `${subject.match(/workers?\/([\w.-]+?)'s/)[1]} (worker)` : '')
+            || 'unattributed'
         commits.push({ sha, t, subject, agent, for: (forT || '').trim() || undefined, issue: (issue || '').trim() || undefined, files })
         for (const f of files) if (!last.has(f)) last.set(f, { sha, t, agent })
     }
