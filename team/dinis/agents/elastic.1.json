@@ -1,12 +1,13 @@
 {
   "agent": "elastic.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T20:25Z",
+  "updated": "2026-11-11T20:35Z",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis, at Dinis's word (briefs/2026-11-11-1630-r5-r8-r9-enforced-and-elastic.md)",
   "branch": "dev",
   "wake": "hourly, until Friday 13 November",
   "state": "working: the steward of the swarm's Elastic; every agent can now submit (docs/elastic-guidance.md)",
   "doing": [
+    "the cross-conductor test, live: https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io/app/dashboards#/view/c05d37c3-bf3c-6cb2-e2c9-a7dda8441c97 (watcher until about 22:3x UTC)",
     "stewarding Elastic: the agents' submissions (push and feed), the catalog, the operations dashboard; the eight dashboards refreshed hourly"
   ],
   "done": [
@@ -31,7 +32,8 @@
     "19:30 UTC: at Dinis's word ('can you now generate some traffic?'), 28 model calls through the router (task WS-215/elastic-traffic/classify-event: 12 public Fringe events; cheap deepseek-v4-flash 12, check llama-3.3-70b 12, strong claude-sonnet-5.5 4), 0.0105 USD, all ledgered; OpenRouter sent 56 spans to traces-generic.otel-default. Dashboard 9 [A1 calls, from OpenRouter](https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io/app/dashboards#/view/abaa023e-80ff-61c8-c8c4-1026793833ed): 28 panels, 0 errors, no prompt text on any panel. Seen: 7 providers served them; time to first token about 130 to 200 ms (open weight) against 1,877 ms (Sonnet); 17.9% ended at 'length' (max_tokens 200 too low, 2 of 4 Sonnet calls included).",
     "19:35: architect.1's note (material): neo4j.1.fringe@PrompTugal.dinis started at Dinis's word (19:33 UTC), without ELASTIC_CLOUD (R8e). Exported swarm-flows for it: data/elastic-export-swarm-flows.json (62 events, 4 flows, 51 with a parent link; trace_id, span_id, parent_span_id, unit_id, parent_id, altitude, role, phase, environment, runner, model, key_fp, at, seq, valid; 0 held back), with admin/tools/elastic-export.mjs, re-run hourly",
     "20:11 UTC wake: 27 indices, about 16,300 documents refreshed. fringe-events had 30 rejected: read_at with trailing punctuation ('2026-11-11T11:55:00Z;' x27, '...Z.' x3) since researcher.2's 33587a6; my ingest now takes the leading ISO time (0 errors), and researcher.2 is told. Mirrors are now pruned: a record gone from its source file leaves Elastic (events 1, graph 12, models 3 removed). Submissions in the hour: architect.1 swarm-flows (live, through logSubmission) and swarm-abp-reviews (68), 0 held, 0 errors. OpenRouter: 55 calls traced so far (27 new Sonnet calls from another agent, about 0.44 USD). No new brief.",
-    "20:25: Dinis on the OpenRouter traces: 'ok for a longer retention' (not 7 days). No change made: traces-generic.otel-default uses Elastic's managed traces@lifecycle (rollover at 30 days or 50 GB, no delete phase), so traces and their prompts are kept indefinitely. A cap later goes in traces-otel@custom with our own ILM policy, never by editing the managed one"
+    "20:25: Dinis on the OpenRouter traces: 'ok for a longer retention' (not 7 days). No change made: traces-generic.otel-default uses Elastic's managed traces@lifecycle (rollover at 30 days or 50 GB, no delete phase), so traces and their prompts are kept indefinitely. A cap later goes in traces-otel@custom with our own ILM policy, never by editing the managed one",
+    "20:35 UTC: the cross-conductor test (Dinis's word, relayed by the lead at 20:3x): fringe-packets (admin/tools/elastic-packets.mjs: packets, results, A1 calls and each run's flow events) and dashboard 10 [Cross-conductor test: Dinis and Angelo, live](https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io/app/dashboards#/view/c05d37c3-bf3c-6cb2-e2c9-a7dda8441c97) (34 panels, 0 errors). A watcher re-ingests within about a minute of any change to tasks/, the models ledger or the altitude runs until about 22:3x UTC. Results: Angelo's conductor ran p3 6/6 and p4 4/4 valid; the lead ran Angelo's p3-persona-for-6-events 4/6 and p5 2/4. OpenRouter's side: 10 calls on key dc:promptugal:agents match Angelo's. The generated Kibana objects left git (over 256 KB); pushIndex now adds new fields to existing indices."
   ],
   "next": [
     "each wake: the OpenRouter traces come in with every router call (dashboard 9); join them with fringe-altitudes A1 units on model and time",
