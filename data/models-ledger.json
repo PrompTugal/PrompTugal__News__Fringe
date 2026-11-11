@@ -1,104 +1,167 @@
 {
  "days": {
   "2026-11-11": {
-   "calls": 1017,
-   "cost_usd": 0.33697,
-   "first": "2026-11-11T12:01:19Z",
-   "last": "2026-11-11T16:26:13Z",
+   "calls": 53,
+   "cost_usd": 0.014812,
+   "first": "2026-11-11T21:34:09Z",
+   "last": "2026-11-11T21:34:59Z",
    "by_model": {
     "deepseek/deepseek-v4-flash": {
-     "calls": 3,
-     "ok": 1,
-     "cost_usd": 0,
-     "tokens_in": 12,
-     "tokens_out": 8
+     "calls": 20,
+     "ok": 20,
+     "cost_usd": 0.005884,
+     "tokens_in": 47843,
+     "tokens_out": 10489
     },
-    "meta-llama/llama-3.1-8b-instruct": {
-     "calls": 176,
-     "ok": 176,
-     "cost_usd": 0.006035,
-     "tokens_in": 141379,
-     "tokens_out": 5477
+    "qwen/qwen3.7-flash": {
+     "calls": 19,
+     "ok": 18,
+     "cost_usd": 0.001515,
+     "tokens_in": 48936,
+     "tokens_out": 5400
+    },
+    "mistralai/mistral-small-2603": {
+     "calls": 7,
+     "ok": 7,
+     "cost_usd": 0.003037,
+     "tokens_in": 18468,
+     "tokens_out": 298
     },
     "meta-llama/llama-3.3-70b-instruct": {
-     "calls": 838,
-     "ok": 838,
-     "cost_usd": 0.33093,
-     "tokens_in": 629733,
-     "tokens_out": 32587
+     "calls": 7,
+     "ok": 7,
+     "cost_usd": 0.004376,
+     "tokens_in": 15865,
+     "tokens_out": 169
     }
    },
    "by_tier": {
-    "cheap": {
-     "calls": 3,
-     "ok": 1,
-     "cost_usd": 0,
-     "tokens_in": 12,
-     "tokens_out": 8
-    },
-    "check": {
-     "calls": 1014,
-     "ok": 1014,
-     "cost_usd": 0.336965,
-     "tokens_in": 771112,
-     "tokens_out": 38064
+    "explicit": {
+     "calls": 53,
+     "ok": 52,
+     "cost_usd": 0.014812,
+     "tokens_in": 131112,
+     "tokens_out": 16356
     }
    },
    "by_agent": {
-    "dev.2.fringe@PrompTugal.dinis": {
-     "calls": 1015,
-     "ok": 1014,
-     "cost_usd": 0.336965,
-     "tokens_in": 771112,
-     "tokens_out": 38064
-    },
-    "a": {
-     "calls": 2,
-     "ok": 1,
-     "cost_usd": 0,
-     "tokens_in": 12,
-     "tokens_out": 8
+    "swarm.1.fringe@PrompTugal.dinis": {
+     "calls": 53,
+     "ok": 52,
+     "cost_usd": 0.014812,
+     "tokens_in": 131112,
+     "tokens_out": 16356
     }
    },
    "by_task": {
-    "WS-215/test": {
+    "WS-215/swarm/r2/warnings": {
      "calls": 1,
-     "ok": 0,
-     "cost_usd": 0,
-     "tokens_in": 0,
-     "tokens_out": 0
-    },
-    "t": {
-     "calls": 2,
      "ok": 1,
-     "cost_usd": 0,
-     "tokens_in": 12,
-     "tokens_out": 8
+     "cost_usd": 0.000212,
+     "tokens_in": 2285,
+     "tokens_out": 49
     },
-    "WS-215/second-opinion": {
-     "calls": 1014,
-     "ok": 1014,
-     "cost_usd": 0.336965,
-     "tokens_in": 771112,
-     "tokens_out": 38064
+    "WS-215/swarm/r3/warnings": {
+     "calls": 4,
+     "ok": 3,
+     "cost_usd": 0.001079,
+     "tokens_in": 6956,
+     "tokens_out": 430
+    },
+    "WS-215/swarm/r4/warnings": {
+     "calls": 1,
+     "ok": 1,
+     "cost_usd": 0.000279,
+     "tokens_in": 2285,
+     "tokens_out": 45
+    },
+    "WS-215/swarm/r4/flights": {
+     "calls": 1,
+     "ok": 1,
+     "cost_usd": 0.000195,
+     "tokens_in": 2097,
+     "tokens_out": 43
+    },
+    "WS-215/swarm/r4/forecast": {
+     "calls": 1,
+     "ok": 1,
+     "cost_usd": 0.000285,
+     "tokens_in": 2303,
+     "tokens_out": 66
+    },
+    "WS-215/swarm/r4/stations": {
+     "calls": 2,
+     "ok": 2,
+     "cost_usd": 0.00065,
+     "tokens_in": 5381,
+     "tokens_out": 1776
+    },
+    "WS-215/swarm/r4/tides": {
+     "calls": 1,
+     "ok": 1,
+     "cost_usd": 0.00036,
+     "tokens_in": 2478,
+     "tokens_out": 644
+    },
+    "WS-215/swarm/r4/transport": {
+     "calls": 2,
+     "ok": 2,
+     "cost_usd": 0.000876,
+     "tokens_in": 4909,
+     "tokens_out": 1250
+    },
+    "WS-215/swarm/r5/warnings": {
+     "calls": 6,
+     "ok": 6,
+     "cost_usd": 0.002234,
+     "tokens_in": 14479,
+     "tokens_out": 1010
+    },
+    "WS-215/swarm/r5/transport": {
+     "calls": 6,
+     "ok": 6,
+     "cost_usd": 0.001631,
+     "tokens_in": 16623,
+     "tokens_out": 995
+    },
+    "WS-215/swarm/r5/stations": {
+     "calls": 7,
+     "ok": 7,
+     "cost_usd": 0.001729,
+     "tokens_in": 20018,
+     "tokens_out": 2733
+    },
+    "WS-215/swarm/r5/flights": {
+     "calls": 7,
+     "ok": 7,
+     "cost_usd": 0.001901,
+     "tokens_in": 15836,
+     "tokens_out": 2893
+    },
+    "WS-215/swarm/r5/forecast": {
+     "calls": 8,
+     "ok": 8,
+     "cost_usd": 0.002073,
+     "tokens_in": 19274,
+     "tokens_out": 3389
+    },
+    "WS-215/swarm/r5/tides": {
+     "calls": 6,
+     "ok": 6,
+     "cost_usd": 0.001308,
+     "tokens_in": 16188,
+     "tokens_out": 1033
     }
    },
    "by_status": {
-    "account_out_of_credit": {
-     "calls": 1,
-     "ok": 0,
-     "cost_usd": 0,
-     "tokens_in": 0,
-     "tokens_out": 0
-    },
     "ok": {
-     "calls": 1015,
-     "ok": 1015,
-     "cost_usd": 0.336965,
-     "tokens_in": 771124,
-     "tokens_out": 38072
+     "calls": 52,
+     "ok": 52,
+     "cost_usd": 0.014812,
+     "tokens_in": 131112,
+     "tokens_out": 16356
     },
-    "refused_low_credit": {
+    "http_429": {
      "calls": 1,
      "ok": 0,
      "cost_usd": 0,
@@ -109,9 +172,9 @@
   }
  },
  "about": "Counts only, from the model ledger of the sessions that run admin/tools/llm.mjs (the ledger is per session, outside git). No prompt, page text or model output.",
- "updated": "2026-11-11T21:21:31Z",
+ "updated": "2026-11-11T21:39:05Z",
  "credit_at_update": {
-  "key_remaining_usd": 72.42,
-  "account_remaining_usd": 96.77
+  "key_remaining_usd": 72.4,
+  "account_remaining_usd": 96.76
  }
 }
