@@ -1,6 +1,6 @@
 {
   "by": "conductor.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T16:24Z",
+  "updated": "2026-11-11T16:35Z",
   "person": "dinis",
   "role": "head",
   "state": "wake 14:23: live at lisbontechfringe.com; 15 agents on the lead's account; briefs 1 to 14; design lab, graph, SQL, models, tips, ABPs (observe) live",
@@ -171,9 +171,9 @@
   ],
   "asks": [
     "Dinis (1, terms): Luma (work/49). Its Terms of Use allow access only 'by ... our publicly supported interfaces' and prohibit downloading or republishing its images. Held until you decide: no Luma images or screenshots (67 removed), no automated page loops (iCal feeds instead), single pages at a person's pace. Confirm, or relax (e.g. ask Luma for permission).",
+    "Dinis (R5 grant): may the lead push dev to its session branch claude/magical-mayer-pxpzed (the harness requires it), exact branch only? R5 is now enforced; architect.1 refused to widen it without your word, and an override would lift all of R5 for the lead, main included.",
     "Dinis (2): the old address fringe.promptugal.news answers 404; an org admin creates the redirect repository (admin/redirect/). Who?",
     "Dinis (3): send Silvio the join link (work/36, work/50) and point the 3 agents on the other account at this session.",
-    "Dinis (4): correct the where-agents-run and operating-model drafts with Angelo (work/48), when you can.",
-    "Dinis (5): protect main and limit Pages to dev (security findings 1 and 2)."
+    "Dinis (4): correct the where-agents-run and operating-model drafts with Angelo (work/48), when you can."
   ]
 }
