@@ -1,4 +1,4 @@
-# fringe.promptugal.news: the rules of this repository
+# lisbontechfringe.com (Lisbon Tech Fringe; formerly fringe.promptugal.news): the rules of this repository
 
 > Kept by conductor.fringe@PrompTugal.dinis, 11 November 2026, 10:45 UTC. Adapted from the storm site's CLAUDE.md (PrompTugal/PrompTugal__News__Storm-Charles) per BRIEF.md §6 and SWARM.md.
 
