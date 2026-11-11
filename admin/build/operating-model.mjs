@@ -1,0 +1,211 @@
+// /agentic-team/operating-model/ (work/48; Dinis in architect.1's session, 14:40 UTC; architect.1.fringe@PrompTugal.dinis).
+// Three 1920x1080 slides drawn from data/operating-model.json (nothing typed twice): the execution ladder, what each entity
+// can reach, and the distributed operating system with identity across it. Each is also a standalone page (slide-N.html)
+// for screenshots; on the site page each is a scaled frame that stacks under 760 px.
+import { readFileSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+
+const FONTS = `@font-face{font-family:Newsreader;src:url(https://promptugal.news/assets/fonts/newsreader-variable.woff2) format("woff2");font-weight:200 800}
+@font-face{font-family:"IBM Plex Sans";src:url(https://promptugal.news/assets/fonts/plex-sans-variable.woff2) format("woff2");font-weight:100 700}
+@font-face{font-family:"IBM Plex Mono";src:url(https://promptugal.news/assets/fonts/plex-mono-400.woff2) format("woff2")}`;
+// the slide CSS, scoped to .om (so it can sit inside a page); the family look of docs/where-agents-run.slide.html
+const CSS = `.om{--paper:#f6f3ec;--panel:#fffdf8;--ink:#121317;--ink2:#3f424a;--ink3:#595c64;--hair:#d9d2c1;--red:#c52830;--green:#006600;--cobalt:#1f4fa8;--gsoft:#e2eedf;--csoft:#e3eaf7;--rsoft:#f6e1e2;
+width:1920px;height:1080px;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans",sans-serif;padding:44px 72px 34px;overflow:hidden;position:relative;box-sizing:border-box}
+.om *{box-sizing:border-box;margin:0;padding:0}
+.om .top{display:flex;justify-content:space-between;font-family:"IBM Plex Mono";font-size:20px;color:var(--ink2)}
+.om .rule{height:5px;background:var(--green);margin:16px 0 18px}
+.om .head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+.om h1{font-family:Newsreader;font-weight:650;font-size:68px;line-height:1;letter-spacing:-1px}
+.om h1 em{color:var(--green);font-style:italic;font-weight:500}
+.om .q{font-family:Newsreader;font-style:italic;font-size:22px;color:var(--ink2);max-width:820px;text-align:right;line-height:1.3}
+.om .k{font-family:"IBM Plex Mono";color:var(--green);font-size:17px;letter-spacing:3px;text-transform:uppercase;padding-bottom:7px;border-bottom:3px solid var(--ink);margin-bottom:12px}
+.om .bar{position:absolute;left:72px;right:72px;bottom:28px;background:var(--ink);color:var(--paper);padding:11px 22px;display:flex;justify-content:space-between;align-items:center}
+.om .bar b{font-family:Newsreader;font-size:28px;font-weight:600}.om .bar span{font-size:16px;color:#e8e4da}
+.om .mono{font-family:"IBM Plex Mono"}
+/* 1: ladder */
+.om .ladwrap{display:grid;grid-template-columns:1fr 330px;gap:30px;margin-top:24px}
+.om .lad{display:flex;flex-direction:column-reverse;gap:8px}
+.om .rung{display:grid;grid-template-columns:90px 260px 1fr 470px;align-items:center;background:var(--panel);border:1px solid var(--hair);border-left:8px solid var(--green);padding:10px 16px;min-height:86px}
+.om .rung b.id{font-family:"IBM Plex Mono";font-size:30px;color:var(--green)}
+.om .rung h3{font-family:Newsreader;font-size:32px;font-weight:650}
+.om .rung p{font-size:18px;color:var(--ink2);line-height:1.3}
+.om .rung .who{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+.om .chip{font-family:"IBM Plex Mono";font-size:14px;border:1.5px solid var(--ink3);padding:3px 8px;border-radius:3px;background:#fff;white-space:nowrap}
+.om .chip.g{border-color:var(--green);color:var(--green)}.om .chip.c{border-color:var(--cobalt);color:var(--cobalt)}.om .chip.r{border-color:var(--red);color:var(--red)}
+.om .across{display:flex;flex-direction:column;gap:10px}
+.om .acr{flex:1;background:var(--ink);color:var(--paper);padding:16px 18px;display:flex;flex-direction:column;justify-content:center}
+.om .acr h3{font-family:Newsreader;font-size:30px;font-weight:600;color:#6dbb7e}.om .acr p{font-size:17px;line-height:1.35;color:#e8e4da;margin-top:6px}
+/* 2: access matrix */
+.om table.ax{width:100%;border-collapse:collapse;margin-top:18px;font-size:17px}
+.om table.ax th{font-family:"IBM Plex Mono";font-size:15px;letter-spacing:1px;text-transform:uppercase;color:var(--green);text-align:left;padding:6px 8px;border-bottom:3px solid var(--ink)}
+.om table.ax td{padding:7px 8px;border-bottom:1px solid var(--hair);vertical-align:top;line-height:1.25}
+.om table.ax td:first-child{font-weight:600;width:300px}
+.om table.ax td.rg{font-family:"IBM Plex Mono";color:var(--green);font-weight:600;width:90px}
+.om .lv0{color:var(--ink3)}.om .lv1{background:var(--csoft)}.om .lv2{background:var(--gsoft)}.om .lv3{background:var(--rsoft)}
+.om .legend{display:flex;gap:18px;margin-top:12px;font-size:15px;color:var(--ink2);align-items:center}
+.om .legend span{display:inline-block;width:18px;height:14px;margin-right:6px;vertical-align:middle;border:1px solid var(--hair)}
+.om .alts{display:grid;grid-template-columns:1fr 470px;gap:24px;margin-top:22px}
+.om .stack{display:flex;flex-direction:column;gap:8px}
+.om .alt2{display:grid;grid-template-columns:230px 1fr 300px;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--hair);border-left:8px solid var(--green);padding:10px 16px;min-height:112px}
+.om .alt2 b.mono{color:var(--green);font-size:20px}.om .alt2 h3{font-family:Newsreader;font-size:34px;font-weight:650;line-height:1.05}
+.om .alt2 .is{font-size:19px;line-height:1.3}.om .alt2 .can{font-size:16px;color:var(--ink2);margin-top:4px;line-height:1.3}
+.om .alt2 .rx{display:flex;flex-direction:column;gap:6px;align-items:flex-start}.om .alt2 .eg{font-family:"IBM Plex Mono";font-size:13px;color:var(--ink3)}
+.om .every{background:var(--ink);color:var(--paper);padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.om .every h3{font-family:Newsreader;font-size:32px;color:#6dbb7e;font-weight:600}.om .every ol{padding-left:22px;font-size:19px;line-height:1.5}
+.om .every p{font-size:16px;color:#e8e4da;line-height:1.35}.om .every .name{margin-top:auto;border-top:1px solid #555;padding-top:12px;font-size:17px}
+.om .every .name .chip{background:transparent;color:var(--paper);border-color:#aaa;margin:3px 2px}.om .every .name .chip.g{border-color:#6dbb7e;color:#6dbb7e}
+.om .mix{display:grid;grid-template-columns:560px 1fr;gap:30px;margin-top:22px}
+.om .idea{background:var(--ink);color:var(--paper);padding:22px}.om .idea h3{font-family:Newsreader;font-size:30px;color:#f07278;font-weight:600}
+.om .idea p{font-size:18px;line-height:1.4;color:#e8e4da;margin-top:8px}.om .idea .rule3{font-family:Newsreader;font-size:26px;color:#fff;line-height:1.25}.om .idea .also{font-size:15px;color:#b9b4a8}
+.om table.mx{width:100%;border-collapse:collapse;font-size:18px}.om table.mx th{font-family:"IBM Plex Mono";font-size:14px;letter-spacing:1px;text-transform:uppercase;color:var(--green);text-align:left;padding:6px 8px;border-bottom:3px solid var(--ink)}
+.om table.mx td{padding:10px 8px;border-bottom:1px solid var(--hair);vertical-align:top;line-height:1.3}.om table.mx td.arr{font-size:26px;color:var(--red);width:40px}
+.om .mono.red{color:var(--red)}.om b.mono{color:var(--green)}.om .here{padding-left:22px;font-size:18px;line-height:1.45;color:var(--ink2)}
+.om .act{display:grid;grid-template-columns:1fr 600px;gap:30px;margin-top:20px}
+.om .tree{display:flex;flex-direction:column;gap:8px}.om .tree .row{display:flex;gap:8px}.om .tree .row .node{flex:1}
+.om .node{background:var(--panel);border:1px solid var(--hair);border-left:8px solid var(--green);padding:8px 14px}
+.om .node.a3{border-left-color:var(--ink)}.om .node.a2{border-left-color:var(--cobalt)}.om .node.a1{border-left-color:var(--red)}
+.om .node b.mono{font-size:15px}.om .node h3{font-family:Newsreader;font-size:24px;font-weight:650;line-height:1.1}.om .node p{font-size:15px;color:var(--ink2);line-height:1.3}
+.om .fp{font-size:12px;color:var(--ink3)}
+.om .res .bar2{display:grid;grid-template-columns:50px 1fr 50px;align-items:center;gap:10px;margin:12px 0}.om .res .bar2 span{display:block;height:34px;background:var(--green)}
+.om .res .bar2 b{font-size:22px;color:var(--green)}.om .res .bar2 em{font-style:normal;font-family:Newsreader;font-size:30px;font-weight:650}
+.om .res .note{font-size:17px;color:var(--ink2);line-height:1.4;margin-top:16px}
+.om table.rm{border-collapse:collapse;margin-top:6px;width:100%}
+.om table.rm th.p{height:190px;vertical-align:bottom;padding:0 0 6px;width:40px}.om table.rm th.p div{writing-mode:vertical-rl;transform:rotate(180deg);font-family:"IBM Plex Mono";font-size:13px;color:var(--ink2);white-space:nowrap;margin:0 auto}
+.om table.rm th.u,.om table.rm th.n{font-family:"IBM Plex Mono";font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--green);text-align:left;vertical-align:bottom;padding:4px 8px}
+.om table.rm td{border:1px solid var(--hair);height:62px}.om table.rm td.u{width:400px;padding:4px 10px;font-size:17px;font-weight:600;line-height:1.2}.om table.rm td.u span{font-size:12px;font-weight:400;color:var(--ink3)}
+.om table.rm td.n{width:190px;text-align:center;font-family:"IBM Plex Mono";font-size:17px}.om table.rm td.n em{font-style:normal;font-weight:700}.om table.rm td.n em.hot{color:var(--red)}
+.om table.rm td.need{background:var(--green)}.om table.rm td.exp{background:#e9a3a7}.om table.rm td.miss{background:repeating-linear-gradient(45deg,#fff,#fff 4px,var(--red) 4px,var(--red) 6px)}
+.om .rlegend{display:flex;gap:10px;align-items:center;margin-top:10px;font-size:15px;color:var(--ink2)}.om .rlegend .sw{display:inline-block;width:22px;height:16px;border:1px solid var(--hair);margin-left:14px}
+.om .rlegend .sw.need{background:var(--green)}.om .rlegend .sw.exp{background:#e9a3a7}
+.om .ans{margin-top:12px;font-size:18px;line-height:1.4;max-width:1700px}
+.om .fsg{display:grid;grid-template-columns:420px 520px 1fr;gap:28px;margin-top:22px}
+.om .gr ol{list-style:none;counter-reset:g}.om .gr li{counter-increment:g;position:relative;padding:8px 0 8px 44px;border-bottom:1px solid var(--hair);font-size:18px;line-height:1.3}
+.om .gr li::before{content:counter(g);position:absolute;left:0;top:8px;width:30px;height:30px;border-radius:50%;background:var(--green);color:var(--paper);font-weight:700;display:grid;place-items:center;font-size:16px}
+.om .alt{display:flex;flex-direction:column;gap:6px}.om .alt div{background:var(--panel);border:1px solid var(--hair);border-left:8px solid var(--cobalt);padding:8px 12px}
+.om .alt b{font-family:Newsreader;font-size:24px}.om .alt p{font-size:15px;color:var(--ink2)}.om .alt i{display:block;font-style:normal;font-family:"IBM Plex Mono";font-size:13px;color:var(--green);margin-top:3px}
+.om .rch{display:flex;flex-direction:column;gap:6px}.om .rch>div{display:grid;grid-template-columns:96px 1fr;gap:8px;align-items:start;padding:6px 0;border-bottom:1px solid var(--hair)}
+.om .rch>div>b{font-family:"IBM Plex Mono";color:var(--green);font-size:17px}.om .rch .chips{display:flex;flex-wrap:wrap;gap:5px}.om .rch .chip{font-size:12.5px;padding:2px 6px}
+.om .chip.u-no{border-color:var(--red);color:var(--red)}.om .chip.u-yes{border-color:var(--green);color:var(--green)}.om .chip.prop{border-style:dashed;border-color:var(--cobalt);color:var(--cobalt)}
+/* 3: OS */
+.om .osw{display:grid;grid-template-columns:250px 1fr 250px;gap:18px;margin-top:22px;height:700px}
+.om .band{background:var(--ink);color:var(--paper);padding:18px;display:flex;flex-direction:column;gap:10px}
+.om .band h3{font-family:Newsreader;font-size:30px;font-weight:600;color:#6dbb7e}.om .band.p h3{color:#f07278}
+.om .band p{font-size:16px;line-height:1.35;color:#e8e4da}
+.om .layers{display:flex;flex-direction:column;gap:8px}
+.om .layer{flex:1;display:grid;grid-template-columns:290px 1fr;align-items:center;background:var(--panel);border:1px solid var(--hair);border-left:8px solid var(--cobalt);padding:8px 16px}
+.om .layer h3{font-family:Newsreader;font-size:27px;font-weight:650}
+.om .layer p{font-size:18px;color:var(--ink2)}
+.om .layer:nth-child(odd){border-left-color:var(--green)}`;
+const NARROW = `@media (max-width:760px){
+.om-frame{aspect-ratio:auto!important;overflow:visible!important;border:0!important}
+.om-frame .om{position:static!important;transform:none!important;width:auto!important;height:auto!important;padding:14px!important;overflow:visible!important}
+.om .top{flex-direction:column;gap:4px;font-size:13px}.om .head{flex-direction:column;align-items:flex-start;gap:8px}.om h1{font-size:38px}.om .q{text-align:left;font-size:17px}
+.om .ladwrap,.om .osw{grid-template-columns:1fr;height:auto}.om .rung{grid-template-columns:60px 1fr;gap:4px 10px}.om .rung p,.om .rung .who{grid-column:1/-1;justify-content:flex-start}
+.om .rung h3{font-size:24px}.om .rung b.id{font-size:22px}.om .layer{grid-template-columns:1fr}.om .fsg,.om .alts,.om .alt2,.om .mix,.om .act{grid-template-columns:1fr}.om .tree .row{flex-direction:column}.om table.rm{display:block;overflow-x:auto;max-width:100%}.om .rlegend{flex-wrap:wrap}.om .chip{white-space:normal}.om .ans{max-width:100%}.om table.mx{font-size:14px}.om .rch>div{grid-template-columns:1fr}.om .layer h3{font-size:22px}
+.om .axw{overflow-x:auto}.om table.ax{min-width:900px;font-size:14px}.om .bar{position:static;flex-direction:column;align-items:flex-start;gap:4px;margin-top:16px}.om .bar b{font-size:20px}.om .legend{flex-wrap:wrap}}`;
+
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+const top = (n) => `<div class="top"><div>a PrompTugal.news site · the agentic team · the operating model ${n}/${SLIDES.length}</div><div>Lisbon Tech Fringe · Dinis Cruz with Angelo · 11 Nov 2026</div></div><div class="rule"></div>`;
+const bar = (t) => `<div class="bar"><b>lisbontechfringe.com · the agentic team</b><span>${esc(t)}</span></div>`;
+
+export function loadModel() { return JSON.parse(readFileSync(join(root, 'data/operating-model.json'), 'utf8')); }
+
+function ladder(M) {
+  const at = {}; for (const w of M.who.items) { const r = w.rung.split(' ')[0]; (at[r] ||= []).push(w.entity.replace(/\s*\(.*?\)\s*/g, ' ').replace(/, e\.g\..*/, '').trim()); }
+  const cls = (r) => (+r.slice(1) >= 4 ? 'g' : +r.slice(1) >= 2 ? 'c' : '');
+  return `${top(1)}<div class="head"><h1>The <em>execution</em> ladder</h1><div class="q">"What they are depends on where they are and what they can do."</div></div>
+<div class="ladwrap"><div class="lad">${M.ladder.rungs.map((r) => `<div class="rung"><b class="id">${r.id}</b><h3>${esc(r.name)}</h3><p>${esc(r.what)}<br><span class="mono" style="font-size:14px;color:var(--ink3)">${esc(r.example)}</span></p><div class="who">${(at[r.id] || []).map((e) => `<span class="chip ${cls(r.id)}">${esc(e)}</span>`).join('')}</div></div>`).join('')}</div>
+<div class="across"><div class="acr"><h3>Tools</h3><p>cut across the rungs: a loop acts through them (E3), and a single call can be handed them too.</p></div><div class="acr"><h3>Storage</h3><p>what it can mount: a file system, git, vaults. State in, evidence out.</p></div><div class="acr"><h3>Identity</h3><p>a key on every rung, even a chat. An ephemeral key proves the agent existed at that moment.</p></div></div></div>
+${bar('data/operating-model.json · work/48 · a draft for Dinis and Angelo to correct')}`;
+}
+
+function access(M) {
+  const axes = ['git', 'vault', 'internet', 'filesystem', 'install', 'control_plane'];
+  const lvl = (ax, v) => { v = String(v); if (/^none|^no$/.test(v)) return 'lv0'; if (ax === 'control_plane') return /sessions/.test(v) ? 'lv3' : 'lv1'; if (/write dev|create|open|system|persistent/.test(v)) return 'lv2'; return 'lv1'; };
+  return `${top(2)}<div class="head"><h1>What it can <em>reach</em></h1><div class="q">"The capabilities that the agent has at that moment in time ... what network and what resources he has access to, and whether he can install things."</div></div>
+<div class="axw"><table class="ax"><thead><tr><th>Entity</th><th>Rung</th>${axes.map((a) => `<th>${esc(a.replace('_', ' '))}</th>`).join('')}<th>Identity</th></tr></thead><tbody>
+${M.who.items.map((w) => `<tr><td>${esc(w.entity)}</td><td class="rg">${esc(w.rung)}</td>${axes.map((a) => `<td class="${lvl(a, w[a])}">${esc(w[a])}</td>`).join('')}<td>${esc(w.identity)}</td></tr>`).join('')}
+</tbody></table></div>
+<div class="legend"><b class="mono" style="color:var(--green)">LEVELS</b><div><span class="lv0" style="background:none"></span>none</div><div><span class="lv1"></span>some</div><div><span class="lv2"></span>full on that axis</div><div><span class="lv3"></span>the control plane: can start others</div><div class="mono" style="color:var(--ink3)">vault: read-only · write-only (append lane) · read-write · create</div></div>
+${bar('Access axes: git · vault · internet · file system · install · control plane · secrets (data/operating-model.json)')}`;
+}
+
+function os(M) {
+  return `${top(3)}<div class="head"><h1>A distributed <em>operating system</em></h1><div class="q">"We decouple even more than we have now on who's actually doing the task."</div></div>
+<div class="osw"><div class="band"><h3>Identity</h3><p>${esc(M.identity.rule)}</p><p>${esc(M.identity.ephemeral)}</p></div>
+<div class="layers">${M.os.map.map((l) => `<div class="layer"><h3>${esc(l.os)}</h3><p>${esc(l.here)}</p></div>`).join('')}</div>
+<div class="band p"><h3>Policy</h3><p>Every process runs under a grant: abp/policies.json, one per agent, deny by default.</p><p>Observe mode: logged, never blocked; enforcement rule by rule, at Dinis's word; a conductor can always override.</p><p>State travels as vaults (even zips) and signed task packets.</p></div></div>
+${bar('Processes · kernel · file systems · IPC · permissions · drivers (data/operating-model.json)')}`;
+}
+
+
+function graph(M) {
+  const L = M.altitudes, C = M.capabilities;
+  return `${top(4)}<div class="head"><h1>The <em>altitudes</em> of execution</h1><div class="q">"It's work of work of work of work ... it's just how big it is." Meaning through connectivity: what each one is depends on where it is and what it can do.</div></div>
+<div class="alts"><div class="stack">${L.items.map((a) => `<div class="alt2"><div><b class="mono">${esc(a.id)}</b><h3>${esc(a.name)}</h3></div><div><p class="is">${esc(a.is)}</p><p class="can">${esc(a.can)}</p></div><div class="rx"><span class="chip c">reach: ${esc(a.reach)}</span><span class="eg">${esc(a.example)}</span></div></div>`).join('')}</div>
+<div class="every"><h3>Every altitude has</h3><ol>${L.every_altitude_has.map((x) => `<li>${esc(x)}</li>`).join('')}</ol><p>The grant is not a layer: it is given at every altitude, in one grammar (verb.object.reach, ${C.primitives.length} primitives, abp.sgit.ai).</p>
+<div class="name"><b>Named by Dinis:</b> <span class="chip g">A2 loop</span> <span class="chip g">A1 LLM call</span> <span class="chip">inference: any model</span><p>Also called the <b>holarchy of work</b>: a stack of holons, each a whole and a part.</p></div></div></div>
+${bar('Dinis and Angelo, 11 Nov 2026 · data/operating-model.json · names decided by Dinis')}`;
+}
+
+function mixing(M) {
+  const X = M.altitude_mixing, alt = (t) => (/A\d/.exec(t) || ['?'])[0];
+  return `${top(5)}<div class="head"><h1><em>Mixing</em> altitudes</h1><div class="q">"I'm asking for a worker or a call, but it has the power of an agent ... if it gets enthusiastic and starts to use the agentic capabilities ..."</div></div>
+<div class="mix"><div class="idea"><h3>The vulnerability</h3><p>${esc(X.idea.split(' (Dinis')[0])}</p><h3 style="margin-top:14px">The rule</h3><p class="rule3">${esc(X.rule)}</p><p>${esc(X.measure)}</p><p class="also">Also: ${X.also.map(esc).join(' · ')}</p></div>
+<div><div class="k">Asked for · given · what can go wrong</div><table class="mx"><thead><tr><th>Mandate (asked)</th><th></th><th>Grant (given)</th><th>Risk</th></tr></thead><tbody>${X.examples.map((e) => `<tr><td><b class="mono">${alt(e.asked)}</b> ${esc(e.asked.replace(/ \(A\d\)/, ''))}</td><td class="arr">&rarr;</td><td><b class="mono red">${alt(e.given)}</b> ${esc(e.given.replace(/ \(A\d[^)]*\)/, ''))}</td><td>${esc(e.risk)}</td></tr>`).join('')}</tbody></table>
+<div class="k" style="margin-top:20px">In this swarm</div><ul class="here">${X.in_this_swarm.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div></div>
+${bar('The altitudes of execution · data/operating-model.json altitude_mixing · Dinis and Angelo, 11 Nov 2026')}`;
+}
+
+function inAction() {
+  let W = null; try { W = JSON.parse(readFileSync(join(root, 'data/work-altitudes.json'), 'utf8')).body; } catch { return null; }
+  const T = W.trace, by = W.counts.by_altitude, fp = (x) => `<span class="mono fp">${esc(x)}</span>`;
+  const box = (alt, title, sub, extra = '') => `<div class="node a${alt}"><b class="mono">${alt === 'X' ? 'A0' : 'A' + alt}</b><h3>${esc(title)}</h3><p>${sub}</p>${extra}</div>`;
+  return `${top(6)}<div class="head"><h1>The altitudes, <em>in action</em></h1><div class="q">"Let's now try this in action, to spin up multiple altitudes." One objective; every unit signed by a key that lived only while it ran.</div></div>
+<div class="act"><div class="tree">
+${box(3, 'agent: architect.1', 'the objective: ' + esc(W.objective) + '; starts the loops; commits the result')}
+<div class="row">${box('X', T.A0[0].name, 'cuts ' + W.counts.items + ' board items into ' + T.A2.length + ' slices', fp(T.A0[0].fp))}</div>
+<div class="row">${T.A2.map((l) => box(2, l.name, l.items + ' items · ' + l.calls + ' LLM calls, until each answer is valid, then stop', fp(l.fp))).join('')}</div>
+${box(1, T.A1.calls + ' LLM calls', 'open weight (' + T.A1.models.map(esc).join(', ') + '), no tools · ' + T.A1.retried + ' retried · ' + T.A1.cost_usd + ' USD · ' + T.A1.keys + ' keys, one per call')}
+<div class="row">${box('X', T.A0[1].name, 'verifies all ' + W.counts.signatures + ' signatures: ' + (W.signatures_verified ? 'all valid' : 'NOT ALL VALID') + '; merges', fp(T.A0[1].fp))}</div>
+</div>
+<div class="res"><div class="k">The result: the lowest altitude each board item needs</div>${['A4', 'A3', 'A2', 'A1', 'A0'].map((a) => `<div class="bar2"><b class="mono">${a}</b><span style="width:${Math.round(((by[a] || 0) / W.counts.items) * 100)}%"></span><em>${by[a] || 0}</em></div>`).join('')}
+<p class="note">${esc(W.counts.items)} items${by.none ? `, ${by.none} with no valid answer in three calls` : ''}; ${T.A1.retried} of ${T.A1.calls} calls retried. A model's placement is evidence, not a decision. What it teaches: our board items are whole projects, each mixing altitudes; route work after cutting it into loops and calls, not before.</p></div></div>
+${bar('abp/tools/altitudes.mjs · data/work-altitudes.json · rule R12 observed the loops')}`;
+}
+
+function reach() {
+  let R = null; try { R = JSON.parse(readFileSync(join(root, 'data/run-reach.json'), 'utf8')); } catch { return null; }
+  const short = (p) => p.replace('authenticate-as', 'auth-as').replace('.credential', '.cred').replace('.endpoint', '.endp').replace('.repository', '.repo').replace('.process', '.proc');
+  const cell = (u, p) => { const n = u.needs.includes(p), h = u.held.includes(p); return `<td class="${n && h ? 'need' : h ? 'exp' : n ? 'miss' : ''}"></td>`; };
+  return `${top(7)}<div class="head"><h1>The <em>reach</em> of each unit</h1><div class="q">"Why is A0: compute: plan run with A3 privileges?" Needed (its mandate) against held (its grant in fact), in abp.sgit.ai's ${R.primitives.length} capability primitives.</div></div>
+<table class="rm"><thead><tr><th class="u">unit</th><th class="n">needs · held · exposure</th>${R.primitives.map((p) => `<th class="p"><div>${esc(short(p))}</div></th>`).join('')}</tr></thead><tbody>
+${R.units.map((u) => `<tr><td class="u"><b class="mono">${esc(u.altitude)}</b> ${esc(u.unit)}<br><span>${esc(u.how)}</span></td><td class="n"><b>${u.needs.length}</b> · ${u.held.length} · <em class="${u.exposure.length > 2 ? 'hot' : ''}">${u.exposure.length}</em></td>${R.primitives.map((p) => cell(u, p)).join('')}</tr>`).join('')}
+</tbody></table>
+<div class="rlegend"><span class="sw need"></span>needed and held <span class="sw exp"></span>held, not needed: the exposure <span class="sw"></span>neither</div>
+<p class="ans"><b>The answer:</b> ${esc(R.answer)}</p>
+${bar('data/run-reach.json · abp.sgit.ai capability grammar (+4 vault primitives) · the fix: a packet\'s grant becomes the sandbox')}`;
+}
+export const SLIDES = [ladder, access, os, graph, mixing, inAction, reach];
+export function slidePage(i) {
+  const M = loadModel();
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=1920"><title>The operating model ${i + 1}/${SLIDES.length}</title><style>${FONTS}body{margin:0}${CSS}</style></head><body><div class="om">${SLIDES[i](M) || '<p>Not run yet.</p>'}</div><p style="font:16px sans-serif;margin:12px 72px">Lisbon Tech Fringe is independent of Web Summit and not run by its organisers. For anything official, see <a href="https://websummit.com/">the organisers' official site</a>.</p></body></html>`;
+}
+
+export function operatingModelBody(esc2, REPO) {
+  const M = loadModel();
+  const frames = SLIDES.map((f, i) => f(M) && `<div class="om-frame"><div class="om">${f(M)}</div></div><p class="muted"><a href="/agentic-team/operating-model/slide-${i + 1}.html">Slide ${i + 1} at 1920x1080</a></p>`).filter(Boolean).join('');
+  return `<style>${FONTS}${CSS}
+.om-frame{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;margin:12px 0 4px;border:1px solid var(--hair,#ccc)}
+.om-frame .om{position:absolute;top:0;left:0;transform-origin:0 0;transform:scale(var(--om-s,.4))}${NARROW}</style>
+<p class="muted"><a href="/agentic-team/">The agentic team</a> · a draft for Dinis and Angelo to correct (work/48)</p>
+<h1>The operating model</h1>
+<p>${esc2(M.about)}</p>
+${frames}
+<script>(function(){function f(){document.querySelectorAll('.om-frame').forEach(function(e){if(innerWidth>760)e.style.setProperty('--om-s',e.clientWidth/1920)})}addEventListener('resize',f);f()})()</script>
+<h2>In action</h2>${(M.trials || []).map((t) => `<div class="card"><strong>${esc2(t.altitude)}:</strong> ${esc2(t.what)}<br><b>${esc2(t.result)}</b>${t.model ? ` · ${esc2(t.model)}, ${esc2(String(t.latency_ms))} ms, ${esc2(String(t.cost_usd))} USD` : ''}${t.hook ? `<br><span class="muted">The policy hook: ${esc2(t.hook)}</span>` : ''}<br><span class="muted">What it teaches: ${esc2(t.teaches)}</span></div>`).join('')}
+<h2>Still open</h2><ul>${M.open.map((o) => `<li>${esc2(o)}</li>`).join('')}</ul>
+<p class="muted">The data: <a href="/api/v1/operating-model.json">/api/v1/operating-model.json</a> (<code>data/operating-model.json</code>). Where each agent runs: <a href="/agentic-team/where-agents-run/">where agents run</a>. Who may edit what: <a href="/abp/">the ABPs</a>. Dinis's words: <a href="${esc2(REPO)}/blob/dev/briefs/2026-11-11-1440-the-operating-model.md">the brief</a>.</p>`;
+}

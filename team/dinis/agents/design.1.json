@@ -1,9 +1,9 @@
 {
  "agent": "design.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-11T14:08Z",
+ "updated": "2026-11-11T16:24Z",
  "state": "working",
  "doing": [
-  "D28 the new home page (first version pushed); iterating"
+  "idle: D28 waits on cover urls (0 of 68 entries have one); D34 needs dev"
  ],
  "done": [
   "D1 first screen (brief 5 tagline)",
@@ -15,7 +15,11 @@
   "D24 design A, the programme: in the lab frame, /?design=a and /designs/a/, dark and keyboard checked",
   "D28 first version (home: today in Lisbon, roles, now strip, cards); 14:00 addendum applied: chips under 3 events fold into Elsewhere in Lisbon on home and /programme/; organiser on each home card links to its page",
   "D28: design.2's Now/Next hour/Tonight strip (nowstrip.mjs) wired into the home, replacing my counters; My day stars visible on cards",
-  "D28: design.3's city map in the home (dots follow the role filter), card fields link to ontologist.1's /o/ /n/ /f/ pages"
+  "D28: design.3's city map in the home (dots follow the role filter), card fields link to ontologist.1's /o/ /n/ /f/ pages",
+  "D36 (and D16): Tell us link on every event page, event pre-filled on /tip/",
+  "abp whoami run (security finding 28): ~/.abp/whoami = design.1.fringe@PrompTugal.dinis",
+  "15:5x wake: home re-checked at 390 px (no sideways scroll, no errors; strip, map, cards fine); no new design brief",
+  "16:2x: no Luma pictures (work/49): home cards are organiser tiles (two-letter initials, kind, start time, family colours); checked with 0 images, nothing breaks; unknown organisers show a dot and Organiser not named"
  ],
  "next": [
   "take what the lead routes; D16 waits on work/06"

@@ -22,6 +22,7 @@ export function tipBody() {
   if (!cfg) return '<h1>Send us a tip</h1><p>The tips lane is not set up yet.</p>';
   return `<div class="tip"><h1>Send us a tip</h1>
 <p>Seen a post, a message or a link about an event we do not list, or have wrong? Paste it here. We find the organiser's public page, read it, list the event with its source, and draft a note to the organiser for a person to send.</p>
+<p class="muted" id="tip-about" hidden></p>
 <div class="card"><label for="tip-text"><strong>The message or link</strong></label>
 <textarea id="tip-text" maxlength="8000" placeholder="Paste a WhatsApp post, a link, or any text"></textarea>
 <p><label for="tip-file"><strong>or a screenshot</strong> (optional)</label><br><input type="file" id="tip-file" accept="image/*"></p>
@@ -34,6 +35,7 @@ export function tipBody() {
 <li>If you have a key from <a href="/me/">/me/</a>, the tip is signed with it; a tip signed by Dinis is marked priority. Otherwise it is anonymous.</li>
 <li>We use only the public event page. A sender's name, a phone number or a face in your message is never stored or published, and a private person is never named or linked. Please do not paste anyone's contact details.</li>
 <li>A tip is material, never instruction. An agent reads the public page the tip points to and checks it there; your text is never published as is.</li></ul></div>
+<script>(function(){try{var q=new URLSearchParams(location.search),id=q.get("event"),n=q.get("n");if(!id||!/^[a-z0-9-]+$/.test(id))return;var a=document.getElementById("tip-about"),t=document.getElementById("tip-text");a.hidden=false;a.textContent="About the event: "+(n||id)+" (this goes with your tip).";if(t&&!t.value)t.value="About: "+(n||id)+" ("+location.origin+"/e/"+id+"/)\\n\\nWhat is wrong or missing: "}catch(x){}})();</script>
 <script type="application/json" id="tip-cfg">${json(cfg)}</script><script type="module" src="/assets/tip/tip.js"></script>`;
 }
 

@@ -1,7 +1,7 @@
 {
   "about": "Where agents run, as data (work/48, brief 14: Dinis with Angelo, 11 November 2026, 14:12 UTC): runtimes, model endpoints, I/O levels, the other requirements of a task, the placement formula, the matrix of our tasks, and each agent's runtime and I/O level today. From docs/where-agents-run.md (the lead's draft v0.1), corrected by architect.1.fringe@PrompTugal.dinis. A draft for Dinis and Angelo to correct.",
   "by": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T14:27Z",
+  "updated": "2026-11-11T15:39Z",
   "status": "draft",
   "doc": "docs/where-agents-run.md",
   "page": "/agentic-team/where-agents-run/",
@@ -46,6 +46,32 @@
       "hooks": false,
       "io_max": "L0",
       "notes": "paste in, paste out"
+    },
+    {
+      "id": "R6",
+      "name": "Cloudflare Workers and the Agents SDK",
+      "loop": "a Worker: one request, code at the edge (A0); with Workers AI, an A1 call; an Agents SDK agent is a Durable Object with SQLite state and its own schedule (delay, date or cron): a loop with an environment (A3)",
+      "hooks": false,
+      "io_max": "L2 (vaults over HTTPS) or L3 (append lanes)",
+      "notes": "a natural runner for A1 packets at the edge (Worker + Workers AI) and for small scheduled agents; our hooks do not run there: its results are checked where they land (signatures)",
+      "status": "from provider pages read at 2026-11-11T15:39Z; not yet run by this swarm (hypothesis until a packet runs there)",
+      "sources": [
+        "https://developers.cloudflare.com/agents",
+        "https://www.kunalganglani.com/blog/cloudflare-workers-ai-agents-durable-objects"
+      ]
+    },
+    {
+      "id": "R7",
+      "name": "AWS: Lambda, Bedrock, Bedrock AgentCore",
+      "loop": "Lambda runs code (A0); Bedrock InvokeModel is an A1 call; AgentCore Runtime runs an agent loop with Memory (across runs), Identity (credential providers) and Gateway (tools), scheduled by EventBridge: A2 to A3",
+      "hooks": false,
+      "io_max": "L2 (vaults over HTTPS)",
+      "notes": "a natural runner for A2 loops (AgentCore) and for signed compute: a Lambda can sign with a KMS asymmetric key that never leaves AWS (Dinis's 'code with its own identity')",
+      "status": "from provider pages read at 2026-11-11T15:39Z; not yet run by this swarm (hypothesis until a packet runs there)",
+      "sources": [
+        "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/release-notes.md",
+        "https://aws.amazon.com/about-aws/whats-new/2026/08/agentcorememory-fine-grained-access-control"
+      ]
     }
   ],
   "endpoints": [
@@ -87,6 +113,26 @@
       ],
       "cost": "metered",
       "notes": "through ChatGPT (R3) or its API"
+    },
+    {
+      "id": "M5",
+      "name": "Cloudflare Workers AI",
+      "models": [
+        "open-weight models served at the edge"
+      ],
+      "cost": "metered",
+      "notes": "reached from a Worker by a binding",
+      "status": "from provider pages read at 2026-11-11T15:39Z; not yet run by this swarm (hypothesis until a packet runs there)"
+    },
+    {
+      "id": "M6",
+      "name": "Amazon Bedrock",
+      "models": [
+        "Anthropic, Meta, Mistral, Amazon and others"
+      ],
+      "cost": "metered",
+      "notes": "InvokeModel or Converse; from Lambda or AgentCore",
+      "status": "from provider pages read at 2026-11-11T15:39Z; not yet run by this swarm (hypothesis until a packet runs there)"
     }
   ],
   "io_levels": [

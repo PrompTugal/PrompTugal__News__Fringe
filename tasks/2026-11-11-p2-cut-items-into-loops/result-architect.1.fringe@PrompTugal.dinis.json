@@ -1,0 +1,427 @@
+{
+ "body": {
+  "packet": "2026-11-11-p2-cut-items-into-loops",
+  "packet_fp": "sha256:52d34f9f913e1e05",
+  "runner": "architect.1.fringe@PrompTugal.dinis",
+  "environment": "R1 Claude Code cloud, riskmandate-personal; router: OpenRouter open weight",
+  "ran_at": "2026-11-11T15:37:18Z",
+  "outputs": [
+   {
+    "input": "work/42-the-semantic-graph",
+    "units": [
+     {
+      "unit": "Define entity schemas and stable IDs for all 8 types",
+      "altitude": "A0",
+      "grant": [
+       "write.file.project"
+      ]
+     },
+     {
+      "unit": "Extract Portugal Tech Week umbrella and its event groupings from source data",
+      "altitude": "A2",
+      "grant": [
+       "read.file.project",
+       "write.file.project"
+      ]
+     },
+     {
+      "unit": "Extract and normalize organisers (one per organisation, no private persons)",
+      "altitude": "A2",
+      "grant": [
+       "read.file.project",
+       "write.file.project"
+      ]
+     },
+     {
+      "unit": "Extract days, festivals, events, sessions, places, personas, topics with typed links",
+      "altitude": "A2",
+      "grant": [
+       "read.file.project",
+       "write.file.project"
+      ]
+     },
+     {
+      "unit": "Write one JSON file per entity type in data/graph/ with stable ids and typed links",
+      "altitude": "A0",
+      "grant": [
+       "write.file.project"
+      ]
+     },
+     {
+      "unit": "Add deduplication: merge duplicate organisers and cross-link all edges (festival hasEvent, organiser runs, event hasSession, event at place, event forPersona, event about topic)",
+      "altitude": "A2",
+      "grant": [
+       "read.file.project",
+       "write.file.project"
+      ]
+     },
+     {
+      "unit": "Validate graph integrity: every typed link points to an existing entity id, no dangling references",
+      "altitude": "A1",
+      "grant": [
+       "read.file.project"
+      ]
+     }
+    ],
+    "agent_needed": true,
+    "tries": 3,
+    "call_fp": "sha256:f90661b1918a527d"
+   },
+   {
+    "input": "work/05-graph",
+    "units": [
+     {
+      "unit": "Backend: core graph data model and storage",
+      "altitude": "A0",
+      "grant": [
+       "write.file.project",
+       "read.file.project"
+      ]
+     },
+     {
+      "unit": "Backend: API endpoints for events, communities, topics, places",
+      "altitude": "A1",
+      "grant": [
+       "read.file.project",
+       "send.endpoint.allowed",
+       "write.file.project"
+      ]
+     },
+     {
+      "unit": "Backend: filtering logic for the graph query",
+      "altitude": "A1",
+      "grant": [
+       "read.file.project",
+       "write.file.project"
+      ]
+     },
+     {
+      "unit": "Frontend: graph visualization component (nodes, edges, layout)",
+      "altitude": "A2",
+      "grant": [
+       "read.file.project",
+       "write.file.project",
+       "send.endpoint.allowed"
+      ]
+     },
+     {
+      "unit": "Frontend: filter UI (events, communities, topics, places toggles)",
+      "altitude": "A1",
+      "grant": [
+       "read.file.project",
+       "write.file.project"
+      ]
+     },
+     {
+      "unit": "Frontend: wire filter changes to graph API and re-render",
+      "altitude": "A2",
+      "grant": [
+       "send.endpoint.allowed",
+       "read.file.project"
+      ]
+     },
+     {
+      "unit": "Integration: deploy /graph/ route and verify end-to-end",
+      "altitude": "A2",
+      "grant": [
+       "read.file.project",
+       "write.file.project",
+       "send.endpoint.allowed"
+      ]
+     }
+    ],
+    "agent_needed": false,
+    "tries": 1,
+    "call_fp": "sha256:48a0f8f324b0b861"
+   },
+   {
+    "input": "work/46-give-us-the-intel",
+    "units": [
+     {
+      "unit": "Build the /tip/ POST endpoint and lane for receiving event intel submissions",
+      "altitude": "A2",
+      "grant": [
+       "write.route.project",
+       "read.file.project",
+       "send.endpoint.allowed"
+      ]
+     },
+     {
+      "unit": "Add 'Seen an event? Give us the intel' box to homepage and every event page, posting to /tip/",
+      "altitude": "A2",
+      "grant": [
+       "write.component.project",
+       "read.file.project",
+       "send.endpoint.allowed"
+      ]
+     },
+     {
+      "unit": "Create 'Share to WhatsApp' button generating a ?via=whatsapp-<group> link",
+      "altitude": "A1",
+      "grant": [
+       "write.component.project",
+       "read.file.project"
+      ]
+     },
+     {
+      "unit": "Update outreach.1's group message to ask people to paste events at /tip/",
+      "altitude": "A1",
+      "grant": [
+       "write.string.project",
+       "read.file.project"
+      ]
+     },
+     {
+      "unit": "Build dashboard widget showing /tip/ status counts (tips today, listed)",
+      "altitude": "A2",
+      "grant": [
+       "write.component.project",
+       "read.file.project",
+       "send.endpoint.allowed"
+      ]
+     },
+     {
+      "unit": "Wire dashboard widget to /tip/stats endpoint returning aggregated counts",
+      "altitude": "A2",
+      "grant": [
+       "write.route.project",
+       "read.file.project",
+       "send.endpoint.allowed"
+      ]
+     }
+    ],
+    "agent_needed": false,
+    "tries": 1,
+    "call_fp": "sha256:b6d17fdddeef0b73"
+   },
+   {
+    "input": "work/24-the-loop",
+    "units": [
+     {
+      "unit": "Define and store the list of event sources with terms constraints",
+      "altitude": "A2",
+      "grant": [
+       "write.file.project",
+       "read.file.project",
+       "read.documentation.terms"
+      ]
+     },
+     {
+      "unit": "Implement a scheduler that triggers hourly polling of each source",
+      "altitude": "A3",
+      "grant": [
+       "schedule.interval.project",
+       "read.file.project",
+       "write.file.project"
+      ]
+     },
+     {
+      "unit": "Build fetcher for each source type (Luma, Meetup, Eventbrite, events.portugaltechweek.com) respecting rate limits and auth",
+      "altitude": "A2",
+      "grant": [
+       "fetch.url.allowed",
+       "parse.html.public",
+       "parse.json.public",
+       "store.credential.project"
+      ]
+     },
+     {
+      "unit": "Diff fetched events against current data/events.json, detect new/changed/cancelled entries",
+      "altitude": "A2",
+      "grant": [
+       "read.file.project",
+       "write.file.project",
+       "compare.diff.object"
+      ]
+     },
+     {
+      "unit": "Write updated events to data/events.json with read_at timestamp",
+      "altitude": "A1",
+      "grant": [
+       "write.file.project",
+       "format.json.timestamp"
+      ]
+     },
+     {
+      "unit": "Generate /changes/ page (work/15) from the diff",
+      "altitude": "A2",
+      "grant": [
+       "read.file.project",
+       "write.file.project",
+       "render.html.page"
+      ]
+     },
+     {
+      "unit": "Write sources.md doc enumerating all sources and their terms acceptance",
+      "altitude": "A1",
+      "grant": [
+       "write.file.project"
+      ]
+     }
+    ],
+    "agent_needed": true,
+    "tries": 2,
+    "call_fp": "sha256:78cb110d02d77a1d"
+   }
+  ],
+  "calls": [
+   {
+    "body": {
+     "input": "work/42-the-semantic-graph",
+     "try": 1,
+     "ok": false,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T153624-20a309a7",
+     "cost_usd": 0.0004219875,
+     "latency_ms": 8248,
+     "prompt_sha256": "ac029513bc13549e62286fc2117a914a46480f9a4f10c35ccffa5ddba814cfdd"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p2-cut-items-into-loops work/42-the-semantic-graph #1",
+     "fp": "sha256:bcc3e640f1a9e463",
+     "pub": "MCowBQYDK2VwAyEASlhN7KfMDl7WGYernsy9ZGgbtXVOfrTRkga37bP+QH8=",
+     "born": "2026-11-11T15:36:24Z",
+     "signed_at": "2026-11-11T15:36:32Z"
+    },
+    "sig": "onS71Yxa0X6fK/xave77ONDZcuHbc7J3/yOkDR4e4Yb27BWioYSUVI9OyhkkyxNKD2ueo5mwsrglyfZp/viFCg=="
+   },
+   {
+    "body": {
+     "input": "work/42-the-semantic-graph",
+     "try": 2,
+     "ok": false,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T153632-93806510",
+     "cost_usd": 0.000204606864,
+     "latency_ms": 17448,
+     "prompt_sha256": "ac029513bc13549e62286fc2117a914a46480f9a4f10c35ccffa5ddba814cfdd"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p2-cut-items-into-loops work/42-the-semantic-graph #2",
+     "fp": "sha256:1eab0a4f5586f6df",
+     "pub": "MCowBQYDK2VwAyEAL1hJd8t25KOPfb68CSETZPAi/aYyIP7ks0JsZBvUMG4=",
+     "born": "2026-11-11T15:36:32Z",
+     "signed_at": "2026-11-11T15:36:50Z"
+    },
+    "sig": "YprSz1SWqjLXXTDaHQR/2AT0mIBf7WpQzLyTHPjp14nXLicWGBa8nf4E4eJGupVOoeCfTDjOaaX0aWiuxLPwAw=="
+   },
+   {
+    "body": {
+     "input": "work/42-the-semantic-graph",
+     "try": 3,
+     "ok": true,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T153650-69aeaada",
+     "cost_usd": 0.0001033758,
+     "latency_ms": 4391,
+     "prompt_sha256": "ac029513bc13549e62286fc2117a914a46480f9a4f10c35ccffa5ddba814cfdd"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p2-cut-items-into-loops work/42-the-semantic-graph #3",
+     "fp": "sha256:f90661b1918a527d",
+     "pub": "MCowBQYDK2VwAyEAR36K6aysOW9N+umxHqBVCilkdtMlCvIZul/ecP7QTns=",
+     "born": "2026-11-11T15:36:50Z",
+     "signed_at": "2026-11-11T15:36:54Z"
+    },
+    "sig": "qXmtvQmfh8Ed0eRC3ZfVoylMBth/wgqN3MF8iok+oetpjqWPyYKFsPSB1I2GBH8godK3TlUgZ6kBsdvsGpeiAQ=="
+   },
+   {
+    "body": {
+     "input": "work/05-graph",
+     "try": 1,
+     "ok": true,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T153654-08e35f45",
+     "cost_usd": 0.0000796554,
+     "latency_ms": 5559,
+     "prompt_sha256": "8ec82e73b138f3bdcb6528ea8f414bd27a3a331d5b8df0470f0ec54bedf171b5"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p2-cut-items-into-loops work/05-graph #1",
+     "fp": "sha256:48a0f8f324b0b861",
+     "pub": "MCowBQYDK2VwAyEAjF1Mmh4mOnxuYV/VKl0e0PRFxmlG/brKKjobd/X7D8w=",
+     "born": "2026-11-11T15:36:54Z",
+     "signed_at": "2026-11-11T15:36:59Z"
+    },
+    "sig": "aXgs4jCIbIDaq3Cx7UP1X2EJ6bii5XtjlqMo7qqWBTBAAT/4SuZJBXuY14oQQroufkYCSSJOLyrXLsEyiml5Cw=="
+   },
+   {
+    "body": {
+     "input": "work/46-give-us-the-intel",
+     "try": 1,
+     "ok": true,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T153659-7083a23b",
+     "cost_usd": 0.0000869517,
+     "latency_ms": 3599,
+     "prompt_sha256": "1dfbfddc44c6b14eff3f91fc07a078d7de3d5cf3ac4a6ef5722956e2c3241dd9"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p2-cut-items-into-loops work/46-give-us-the-intel #1",
+     "fp": "sha256:b6d17fdddeef0b73",
+     "pub": "MCowBQYDK2VwAyEAQUmB3WrtGrHeZ7HNsfvMQP2YuEc6jFh6wZ8Z5l1qF18=",
+     "born": "2026-11-11T15:36:59Z",
+     "signed_at": "2026-11-11T15:37:03Z"
+    },
+    "sig": "loS2p6shIo+xIe8Va7hKWPBI8R+W7BiwENNiFXstYYfii/8G9UZwFOwUTQW8Lt880WawJO1KpcfWmLoYfm78Aw=="
+   },
+   {
+    "body": {
+     "input": "work/24-the-loop",
+     "try": 1,
+     "ok": false,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T153703-2a482838",
+     "cost_usd": 0.000420948,
+     "latency_ms": 6545,
+     "prompt_sha256": "8a98298ea88434d0fa1034e2eb037ad200f467a7d3a16b96c5966a0ce773083e"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p2-cut-items-into-loops work/24-the-loop #1",
+     "fp": "sha256:1d753043b4532166",
+     "pub": "MCowBQYDK2VwAyEAKP4uupNQxn9gMxR6rIOFYd6B4D1kCtdiiCscMDGn0EQ=",
+     "born": "2026-11-11T15:37:03Z",
+     "signed_at": "2026-11-11T15:37:10Z"
+    },
+    "sig": "aAHNxZLTZTDVc82ju2RRbMMl/jkeNymBtM4qyi9bEDgXHTFqnOXyUtS6bFv6JEnrAlUSPRvBbzZMkMOfATuODQ=="
+   },
+   {
+    "body": {
+     "input": "work/24-the-loop",
+     "try": 2,
+     "ok": true,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T153710-d8216b3e",
+     "cost_usd": 0.0001070091,
+     "latency_ms": 8190,
+     "prompt_sha256": "8a98298ea88434d0fa1034e2eb037ad200f467a7d3a16b96c5966a0ce773083e"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p2-cut-items-into-loops work/24-the-loop #2",
+     "fp": "sha256:78cb110d02d77a1d",
+     "pub": "MCowBQYDK2VwAyEAkXeXawiTMmG6tYXM5l0oNI4sgRx2ilnZKxAW+w4Sf+0=",
+     "born": "2026-11-11T15:37:10Z",
+     "signed_at": "2026-11-11T15:37:18Z"
+    },
+    "sig": "oBkVFyev3hVYzLtacbqOTqqyjDht9hD3DT/hnXNmC+Dv2VdBhbbWc/w/AbvWQeGhgDPzB82yVulyeTwGorONAQ=="
+   }
+  ],
+  "cost_usd": 0.001425
+ },
+ "by": {
+  "altitude": "A2",
+  "name": "loop: 2026-11-11-p2-cut-items-into-loops by architect.1.fringe@PrompTugal.dinis",
+  "fp": "sha256:9d3505c85f35ac9f",
+  "pub": "MCowBQYDK2VwAyEARS90YQTTV1ttwpcQf+65s45cRRuXl9aE/Qbm0M4M8do=",
+  "born": "2026-11-11T15:36:24Z",
+  "signed_at": "2026-11-11T15:37:18Z"
+ },
+ "sig": "XgzspevXA5h+v3zyVwXF8vFpyHaNKpVxYfPo889fUyBMKWuzrZVOdelQOBShSF2DbF5hzPf37NXSpdtnZ1x3AQ=="
+}

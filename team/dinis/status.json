@@ -1,6 +1,6 @@
 {
   "by": "conductor.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T14:23Z",
+  "updated": "2026-11-11T16:24Z",
   "person": "dinis",
   "role": "head",
   "state": "wake 14:23: live at lisbontechfringe.com; 15 agents on the lead's account; briefs 1 to 14; design lab, graph, SQL, models, tips, ABPs (observe) live",
@@ -127,6 +127,10 @@
     "reviewing what lands on dev; routing Dinis's briefs"
   ],
   "done": [
+    "16:24: Luma hold (work/49): its terms forbid downloading or republishing its images and allow access only through publicly supported interfaces; 67 Luma covers off the site; researchers to its iCal feeds; one rule sent to every team",
+    "since 15:21: architect.1's article, packets P1/P2 to Angelo, the altitudes hand-off (work/50), the policy hooks hardened (finding 28); researcher.fringe@'s spot-check: Thursday's 66 events match",
+    "15:22: brought onto dev: security.fringe@'s fourth review (no high; finding 28 hooks to architect.1), fable.fringe@'s third note, researcher.fringe@'s spot-check (46 of Wednesday's events match their pages); brief 14 written down; staaake out of communities (Indi's conductor); /agentic-team/where-agents-run/ live (architect.1)",
+    "privacy (fable.fringe@ item 2): researcher.2 told to withhold the 45 street addresses that organisers' own pages withhold",
     "Dinis decided (brief 15): keep the location lookup as on PrompTugal.news; finding 20 accepted",
     "14:23: inboxes for architect.1, ontologist.1 and researcher.1@jose (21 in all); researcher.fringe@'s places.json (12 places) onto dev; duplicate D18/D19 renumbered D32/D33",
     "since 13:21: brief 11 design lab (A, C, D live), brief 12 architect and ABPs (observe, with overrides), brief 13 today in Lisbon (graph, SQL, My day, storm and agentic team sections, intel box, /tip/ end to end), brief 14 where agents run (doc and slide), /models/, releases as JSON",
@@ -166,9 +170,10 @@
     "tell conductor@PrompTugal.dinis the URL so pt.news links it; tell incident.conductor@web-summit.dinis that we read the storm site's /api/v1/"
   ],
   "asks": [
-    "Dinis (1): approve the organiser note (work/23, work/drafts/organiser-note.md); Jose's conductor has 5 notes ready for today and Jose sends the first (Kuma Partners) before 15:00 UTC.",
-    "Dinis (3): which of your accounts is this one (riskmandate-team or -personal), the old lead's, and conductor.C's (work/33)? Then each can run its own agents.",
-    "Dinis (4): the three agents on the other account still name the old lead; point them at this session or stop them (researcher.fringe@ still pushes to its branch, and I bring it on).",
-    "Dinis (5): correct docs/where-agents-run.md with Angelo (work/48); and protect main and limit Pages to dev (security findings 1 and 2)."
+    "Dinis (1, terms): Luma (work/49). Its Terms of Use allow access only 'by ... our publicly supported interfaces' and prohibit downloading or republishing its images. Held until you decide: no Luma images or screenshots (67 removed), no automated page loops (iCal feeds instead), single pages at a person's pace. Confirm, or relax (e.g. ask Luma for permission).",
+    "Dinis (2): the old address fringe.promptugal.news answers 404; an org admin creates the redirect repository (admin/redirect/). Who?",
+    "Dinis (3): send Silvio the join link (work/36, work/50) and point the 3 agents on the other account at this session.",
+    "Dinis (4): correct the where-agents-run and operating-model drafts with Angelo (work/48), when you can.",
+    "Dinis (5): protect main and limit Pages to dev (security findings 1 and 2)."
   ]
 }

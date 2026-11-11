@@ -26,6 +26,8 @@ export const VERBS = {
   lists:      ['festival', 'event'],    // the festival's public feed lists it (weaker than hasEvent)
   runs:       ['organiser', 'event'],   // lead organiser (first named on the page)
   coRuns:     ['organiser', 'event'],   // named with others
+  hosts:      ['organiser', 'event'],   // "hosted by": gives the venue, not a co-organiser
+  supports:   ['organiser', 'event'],   // "powered by": a sponsor or partner
   runsFestival: ['organiser', 'festival'],
   partOf:     ['organiser', 'organiser'],
   onDay:      ['event', 'day'],
@@ -111,14 +113,23 @@ export function buildModel(root, events) {
     }
 
     // organisers, and the festival named among them
-    const names = organisersOf(e.organiser).filter((raw) => !held.has(alias.get(norm(raw)) || slug(raw)));
+    // A long aside in brackets is the researcher's note, not a name ("(as the page names it: ... not affiliated with
+    // Web Summit)" made a node "Web Summit)"); short brackets stay ("(ICE)"). "hosted by" and "powered by" give roles.
+    const line = String(e.organiser || '').replace(/\s*\((?:[^()\s]+\s+){2,}[^()]*\)/g, '');
+    const roleOf = new Map();
+    for (const [re, role] of [[/,?\s+hosted by\s+(.+)$/i, 'hosts'], [/,?\s+powered by\s+(.+)$/i, 'supports']]) {
+      const mm = line.match(re); if (mm) for (const n of organisersOf(mm[1])) roleOf.set(norm(n), role);
+    }
+    const names = organisersOf(line).filter((raw) => !held.has(alias.get(norm(raw)) || slug(raw)) && norm(raw) !== 'web summit');
     names.forEach((raw, i) => {
+      const role = i === 0 ? 'runs' : (roleOf.get(norm(raw)) || 'coRuns');
       const fest = [...E.festivals.values()].find((f) => f._m.organiser && norm(raw) === norm(f._m.organiser));
       const o = organiser(raw);
       if (ev.organisers.some((x) => x.id === o.id)) return;
-      ev.organisers.push({ id: o.id, lead: i === 0 });
+      ev.organisers.push({ id: o.id, lead: i === 0, role });
       o.events.push(id); if (i === 0) o.lead.push(id);
-      link(o.id, i === 0 ? 'runs' : 'coRuns', id, e);
+      if (role !== 'runs' && role !== 'coRuns') o[role] = (o[role] || 0) + 1;
+      link(o.id, role, id, e);
       if (fest && !ev.festival) { ev.festival = fest.id; fest.events.push(id); link(fest.id, 'hasEvent', id, e); }
     });
     // listed in a festival's feed (but not run under it)
@@ -158,6 +169,14 @@ export function buildModel(root, events) {
     }
   }
 
+  // sessions: the timed agenda an event's own page publishes (data/graph/sessions.json; title and time, never a speaker)
+  for (const x of readJSON(root, 'data/graph/sessions.json')?.sessions || []) {
+    const ev = E.events.get(x.event); if (!ev) continue;
+    E.sessions.set(x.id, { id: x.id, type: 'session', name: x.name, kind: x.kind || null, event: x.event, day: ev.day, start: x.start || null, end: x.end || null,
+      place: ev.place, festival: ev.festival, url: x.url, read_at: x.read_at, label: x.label || 'fact' });
+    ev.sessions.push(x.id); links.push({ from: x.event, verb: 'hasSession', to: x.id, source: x.url, read_at: x.read_at });
+  }
+
   // festival -> organiser, festival -> days; organiser part_of
   for (const f of E.festivals.values()) {
     if (f.organiser) { const o = organiser(E.organisers.get(f.organiser)?.name || f.name); o.festivals.push(f.id); link(o.id, 'runsFestival', f.id); }
@@ -173,6 +192,7 @@ export function buildModel(root, events) {
   for (const t of TYPES) sorted[t] = [...E[t].values()];
   sorted.organisers = sorted.organisers.filter((o) => o.events.length || o.festivals.length)
     .sort((a, b) => b.lead.length - a.lead.length || b.events.length - a.events.length || a.name.localeCompare(b.name));
+  sorted.sessions.sort((a, b) => String(a.start).localeCompare(String(b.start)));
   sorted.days.sort((a, b) => a.id.localeCompare(b.id));
   sorted.places.sort((a, b) => b.events.length - a.events.length);
   sorted.platforms.sort((a, b) => b.events.length - a.events.length);

@@ -1,0 +1,102 @@
+{
+ "body": {
+  "v": 1,
+  "id": "2026-11-11-p1-place-12-items",
+  "altitude": "A1",
+  "from": "architect.1.fringe@PrompTugal.dinis",
+  "for": "conductor.fringe@PrompTugal.angelo (or any environment)",
+  "mandate": "Place each board item at the lowest altitude of execution that can do it end to end. A second, independent placement from another environment and model, to compare with architect.1's run (data/work-altitudes.json).",
+  "grant": [],
+  "tier": "cheap",
+  "max_tokens": 200,
+  "prompt": "The altitudes of execution: A4 swarm: agents of agents; starts and schedules other agents. A3 agent: a loop with an environment: memory across runs, its own wake, reach beyond its sandbox. A2 loop: a closed agentic loop: calls a model and uses tools until one task is done, then stops; cannot start others or schedule. A1 LLM call: one prompt in, one answer out; no tools. A0 compute: code that runs, no model.\nWhich is the LOWEST altitude that can do this board item end to end? Answer only JSON: {\"altitude\":\"A0|A1|A2|A3|A4\",\"why\":\"<15 words\"}\nItem: {{input}}",
+  "inputs": [
+   {
+    "id": "work/03-find-the-uncon",
+    "title": "Find the unconference or alternative event Dinis heard about",
+    "done_means": "a sourced entry, or a note saying what was searched and found nothing"
+   },
+   {
+    "id": "work/04-communities",
+    "title": "Communities page: who runs this week's events, how to join",
+    "done_means": "/communities/ lists each group with its public joining link and its events"
+   },
+   {
+    "id": "work/37-releases-as-json",
+    "title": "Every release, as JSON and as a page: /changes/<version>/ lists exactly what shipped in it",
+    "done_means": "each CI release tag (v0.1.N) is a release = its tagged commit plus every commit since the previous tag; /api/v1/releases.json lists releases (version, time, push-to-served seconds, commit count, agents, areas touched) and /api/v1/releases/<version>.json holds each one's commits (sha, time, agent, subject, files by area) and what it changed in the data (events added, changed, removed, by id and fie"
+   },
+   {
+    "id": "work/01-pipeline",
+    "title": "The site's pipeline and a first page at fringe.promptugal.news",
+    "done_means": "a push is served in under a minute; the home page lists today's events with the independence line"
+   },
+   {
+    "id": "work/08-channel-drafts",
+    "title": "Posts that point people to the site (drafts; a person sends)",
+    "done_means": "drafts for LinkedIn, Instagram and WhatsApp in work/drafts/, each linking the site"
+   },
+   {
+    "id": "work/13-editorial-check",
+    "title": "The editorial check: every event verified before it goes up",
+    "done_means": "a written check of data/events.json: each event's label matches its status, the storm_note is stated or marked not stated, no contact details or private people, times consistent; findings listed by id, with what the owner of the data should fix"
+   },
+   {
+    "id": "work/18-outreach-kit",
+    "title": "Outreach: the Lisbon Fringe pitch, share card and posts (a person sends)",
+    "done_means": "work/drafts/: a one-paragraph pitch ('Lisbon Fringe', in the spirit of the Edinburgh Fringe, independent of Web Summit); posts for LinkedIn, X, Instagram and WhatsApp; a short note an organiser can receive offering a better listing, a link to their own page and the API; an Open Graph share image for the home page; each draft links https://fringe.promptugal.news; nothing is sent by an agent"
+   },
+   {
+    "id": "work/23-organiser-outreach",
+    "title": "Reach every organiser: their page, their report, join with one session",
+    "done_means": "data/organisers.json lists each organiser (an organisation, never a private person) with its public page and its events; /organisers/ explains the offer; work/drafts/organiser-note.md is the note a person sends through the organiser's own public channel (their Luma 'contact host' or public form, never a scraped address); a tracker in work/23 lists each organiser: drafted, sent by whom (a person), "
+   },
+   {
+    "id": "work/27-captures",
+    "title": "Captures: screenshots and data of our site and every organiser's page, in vaults; /evolution/",
+    "done_means": "each run: Playwright screenshots (390 px and 1280 px) of our pages and of each event's public page, plus the page's text and our extracted fields, stored in a normal sgit vault on dev.send.sgraph.ai (not a pack vault); a new vault opens before one reaches 20,000 files; data/capture-index.json in git holds only pointers (the gate forbids any captures/ path, on purpose) (vault id, path, sha256, url,"
+   },
+   {
+    "id": "work/31-outreach-map",
+    "title": "The outreach map: who to reach and where, from public sources",
+    "done_means": "data/outreach-map.json (each entry ≤ 256 KB total, sources and read_at on every item): (1) organisations (from data/communities.json and data/events.json) each with its public pages and official social accounts, read at source; (2) public roles, not private people: where an organisation's own public page names a host, speaker or team by professional role, the role and the page, nothing else; (3) p"
+   },
+   {
+    "id": "work/36-designs-from-the-community",
+    "title": "Designs from the community, Silvio's design agent first",
+    "done_means": "a public call on /designs/ and in work/drafts/design-call.md (a person sends): 'design Lisbon Tech Fringe: here is the brief, the data and the checks; send a pull request with designs/<slug>/ or a link'; the intake: a PR adding designs/<slug>/ (HTML, CSS, small JS reading /api/v1/; no binaries; gate green) is built into /designs/<slug>/ and the gallery; a link to a hosted mock is listed with its m"
+   },
+   {
+    "id": "work/42-the-semantic-graph",
+    "title": "The semantic graph: days, festivals, organisers, events, sessions, places, personas; everything linked",
+    "done_means": "data/graph/ holds one small JSON file per entity type (days, festivals, organisers, events, sessions, places, personas, topics) with stable ids and typed links (festival hasEvent, organiser runs, event hasSession, event at place, event forPersona, event about topic); Portugal Tech Week and other umbrellas group their events; organisers deduplicated (one per organisation, never a private person); /"
+   }
+  ],
+  "output": {
+   "required": [
+    "altitude",
+    "why"
+   ],
+   "enum": {
+    "altitude": [
+     "A0",
+     "A1",
+     "A2",
+     "A3",
+     "A4"
+    ]
+   }
+  },
+  "return": "commit tasks/<id>/result-<your agent>.json (node abp/tools/packets.mjs run --id <id> --as <your agent> --env <your runtime and account>)",
+  "issued_at": "2026-11-11T15:36:01Z"
+ },
+ "by": {
+  "altitude": "A3",
+  "name": "issuer: architect.1.fringe@PrompTugal.dinis",
+  "fp": "sha256:1853c951325c541b",
+  "pub": "MCowBQYDK2VwAyEAaF1ZADYz7ICXyEJelW4UhJinWSJXxknMxh3379dKmjE=",
+  "born": "2026-11-11T15:36:01Z",
+  "signed_at": "2026-11-11T15:36:01Z"
+ },
+ "sig": "3qI/TTL8D8f+w8ZdBaN3ltaWUTsK816QTFMZm+K4OJc2TG1ekTM3xrFvD8N5GL8DCUSzr5ZXUjNGF/VqDP0QDQ=="
+}

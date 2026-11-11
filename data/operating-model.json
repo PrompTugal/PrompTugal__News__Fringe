@@ -1,0 +1,1036 @@
+{
+  "about": "The operating model of the agentic team (Dinis with Angelo, in architect.1's session, 14:40 UTC; briefs/2026-11-11-1440-the-operating-model.md; work/48): the primitives of the execution block, the access an entity has at a moment in time, identity, state, providers, and who can do what. What an entity is depends on where it runs and what it can reach (Dinis: 'what they are depends on where they are and what they can do'). A draft for Dinis and Angelo to correct.",
+  "by": "architect.1.fringe@PrompTugal.dinis",
+  "updated": "2026-11-11T15:39Z",
+  "status": "draft v0.4",
+  "ladder": {
+    "about": "The execution ladder: what an entity can do, bottom to top. Each rung includes the ones below it.",
+    "rungs": [
+      {
+        "id": "E0",
+        "name": "compute",
+        "what": "raw code execution: a script, a build, a CI job",
+        "example": "admin/build/build.mjs in GitHub Actions"
+      },
+      {
+        "id": "E1",
+        "name": "model call",
+        "what": "a prompt in, an answer out (the first chatbots)",
+        "example": "the second opinion via the router"
+      },
+      {
+        "id": "E2",
+        "name": "loop",
+        "what": "a simple agentic workflow: the model's output feeds its next step, without tools",
+        "example": "a chain of calls in one script"
+      },
+      {
+        "id": "E3",
+        "name": "loop with tools",
+        "what": "the loop can act: shell, files, web, git",
+        "example": "a Claude Code session; a ChatGPT agent"
+      },
+      {
+        "id": "E4",
+        "name": "schedules",
+        "what": "it can wake itself later (create and keep schedules)",
+        "example": "every agent's hourly wake"
+      },
+      {
+        "id": "E5",
+        "name": "spawn",
+        "what": "it can start new agents, sessions and environments: the control plane",
+        "example": "the lead starting architect.1"
+      }
+    ],
+    "across": [
+      "tools (what the loop can touch: tools appear at E3 but a call can also be given tools)",
+      "storage (what it can mount: a file system, git, vaults)"
+    ]
+  },
+  "access": {
+    "about": "The capabilities an entity has at a moment in time: what it can reach and change. Each axis has levels; 'who' below gives each runtime's level today.",
+    "axes": [
+      {
+        "id": "git",
+        "levels": [
+          "none",
+          "read",
+          "write a branch",
+          "write dev (behind the gate)"
+        ]
+      },
+      {
+        "id": "vault",
+        "levels": [
+          "none",
+          "read-only (given a read key)",
+          "write-only (an append lane: our inboxes, /tip/)",
+          "read-write",
+          "create (make its own vaults: its own record)"
+        ]
+      },
+      {
+        "id": "internet",
+        "levels": [
+          "none",
+          "our services only",
+          "allow-listed hosts (the environment's policy)",
+          "open"
+        ]
+      },
+      {
+        "id": "filesystem",
+        "levels": [
+          "none",
+          "ephemeral (the container's)",
+          "persistent (a laptop's)"
+        ]
+      },
+      {
+        "id": "install",
+        "levels": [
+          "no",
+          "packages (npm, pip)",
+          "system (apt, root)"
+        ]
+      },
+      {
+        "id": "control_plane",
+        "levels": [
+          "none",
+          "own wake",
+          "sessions, schedules, environments, credentials (Claude's control plane)"
+        ]
+      },
+      {
+        "id": "secrets",
+        "levels": [
+          "none",
+          "injected by the proxy (never seen)",
+          "held"
+        ]
+      }
+    ]
+  },
+  "identity": {
+    "rule": "An identity is a key pair: from the moment something holds a private key, it can identify itself, which is what an identity is (Dinis, 15:0x UTC). Identity of what is the altitude: a swarm, an agent, a loop, an LLM call, or a piece of compute.",
+    "ephemeral": "A private key that exists only where and while the holon runs proves it existed there, then (Dinis: 'that tells you that that agent exists at that moment in time').",
+    "down_to_compute": "Compute can hold one too: an expert vouches for a deployment and gives it a private key that exists only in that environment (or a KMS), so the code signs for itself (Dinis's example: signed code, deployments and environments).",
+    "not_what_makes_an_agent": "A key is not what makes an agent (every altitude has one); an agent is a loop with an environment: memory, its own wake, a wider reach.",
+    "how": [
+      "pki-agent.mjs keygen --session in each session; the public half in data/keys.json",
+      "every output signed: commits (the Agent: trailer and the key), inbox messages, agent-log runs, vault records",
+      "a chat (S1) can be given a key by the person who runs it, and sign what it returns through that person's tool"
+    ]
+  },
+  "state": {
+    "about": "How state reaches a model and leaves it.",
+    "carriers": [
+      {
+        "id": "git",
+        "holds": "code, decisions, small data",
+        "provenance": "commit, trailer, key"
+      },
+      {
+        "id": "vault",
+        "holds": "evidence, captures, any state; easy to distribute, even as a zip",
+        "provenance": "made by one session: that session's record"
+      },
+      {
+        "id": "chat context",
+        "holds": "a conversation",
+        "provenance": "the provider's; never the only copy"
+      },
+      {
+        "id": "task packet",
+        "holds": "a task, its inputs and where the output goes, signed",
+        "provenance": "the lead's signature; the doer signs its output"
+      }
+    ]
+  },
+  "providers": [
+    {
+      "id": "anthropic",
+      "via": [
+        "Claude Code (cloud, laptop)",
+        "Claude chat",
+        "API"
+      ],
+      "models": "Opus, Sonnet, Haiku"
+    },
+    {
+      "id": "openrouter",
+      "via": [
+        "API, through admin/tools/llm.mjs"
+      ],
+      "models": "open weight (DeepSeek, Llama, Qwen) and others, image models included"
+    },
+    {
+      "id": "openai",
+      "via": [
+        "ChatGPT (chat, agent)",
+        "API"
+      ],
+      "models": "GPT"
+    },
+    {
+      "id": "ollama",
+      "via": [
+        "a laptop's own agent (R2)"
+      ],
+      "models": "open weight, local"
+    }
+  ],
+  "os": {
+    "about": "Read as a distributed operating system (Dinis: 'almost like ... a distributed operating system ... we decouple ... who's actually doing the task').",
+    "map": [
+      {
+        "os": "processes",
+        "here": "agents (S2 loops) and model calls (S0)"
+      },
+      {
+        "os": "kernel and scheduler",
+        "here": "the control plane: sessions, schedules, wakes, spawn (E4, E5)"
+      },
+      {
+        "os": "file systems",
+        "here": "git and vaults (zips to move them)"
+      },
+      {
+        "os": "inter-process communication",
+        "here": "signed inboxes and append lanes; task packets"
+      },
+      {
+        "os": "users and permissions",
+        "here": "PKI keys and the ABPs (abp/policies.json)"
+      },
+      {
+        "os": "drivers",
+        "here": "the model providers and endpoints"
+      },
+      {
+        "os": "package manager",
+        "here": "install: npm, pip, apt where allowed"
+      },
+      {
+        "os": "system log",
+        "here": "the ABP hook log, the router's ledger, agent-log runs"
+      }
+    ]
+  },
+  "who": {
+    "about": "Each runtime or entity with its rung and its access today (from data/runtimes.json and the environments as seen in this swarm).",
+    "items": [
+      {
+        "entity": "GitHub Actions (CI)",
+        "rung": "E0",
+        "git": "write tags; deploys",
+        "vault": "none",
+        "internet": "open",
+        "filesystem": "ephemeral",
+        "install": "system",
+        "control_plane": "none",
+        "identity": "the repository's token (no agent key)"
+      },
+      {
+        "entity": "A model call via OpenRouter (S0)",
+        "rung": "E1",
+        "git": "none",
+        "vault": "none",
+        "internet": "none",
+        "filesystem": "none",
+        "install": "no",
+        "control_plane": "none",
+        "identity": "none; the calling agent signs the result"
+      },
+      {
+        "entity": "A chat session (Claude chat, ChatGPT) (S1)",
+        "rung": "E1 to E3",
+        "git": "none",
+        "vault": "through a person (L0) or a link",
+        "internet": "the provider's tools",
+        "filesystem": "none of ours",
+        "install": "no",
+        "control_plane": "none",
+        "identity": "none today; proposed: the person's tool signs"
+      },
+      {
+        "entity": "A ChatGPT agent (R3)",
+        "rung": "E3",
+        "git": "none",
+        "vault": "read-write by link (L2)",
+        "internet": "open (its browser)",
+        "filesystem": "its own, ephemeral",
+        "install": "its sandbox",
+        "control_plane": "none of ours",
+        "identity": "a key given to it, or the person's"
+      },
+      {
+        "entity": "A Claude Code cloud agent (R1), e.g. design.1",
+        "rung": "E4",
+        "git": "write dev",
+        "vault": "read-write, create",
+        "internet": "allow-listed",
+        "filesystem": "ephemeral",
+        "install": "packages and system",
+        "control_plane": "own wake",
+        "identity": "session key (ephemeral)"
+      },
+      {
+        "entity": "The lead (R1)",
+        "rung": "E5",
+        "git": "write dev",
+        "vault": "read-write, create; issues inboxes",
+        "internet": "allow-listed",
+        "filesystem": "ephemeral",
+        "install": "packages and system",
+        "control_plane": "sessions, schedules (at Dinis's word)",
+        "identity": "session key (ephemeral)"
+      },
+      {
+        "entity": "A laptop agent (R2) with Ollama",
+        "rung": "E4 to E5",
+        "git": "write dev",
+        "vault": "read-write, create",
+        "internet": "the laptop's",
+        "filesystem": "persistent",
+        "install": "the person's choice",
+        "control_plane": "own wake (local)",
+        "identity": "its key (can persist)"
+      },
+      {
+        "entity": "A Cloudflare Worker with Workers AI (R6)",
+        "rung": "E1 (A0 code, A1 call)",
+        "git": "none",
+        "vault": "read-write over HTTPS (L2), if given keys",
+        "internet": "open (fetch)",
+        "filesystem": "none",
+        "install": "no (bundled at deploy)",
+        "control_plane": "none",
+        "identity": "an Ed25519 key made per invocation (Web Crypto): proof of that run; or a secret key bound at deploy",
+        "status": "from provider pages read at 2026-11-11T15:39Z; not yet run by this swarm (hypothesis until a packet runs there)"
+      },
+      {
+        "entity": "A Cloudflare Agents SDK agent (Durable Object) (R6)",
+        "rung": "E4 (own schedule, SQLite memory)",
+        "git": "none",
+        "vault": "read-write over HTTPS",
+        "internet": "open",
+        "filesystem": "its SQLite state",
+        "install": "no",
+        "control_plane": "own schedule; can address other Durable Objects",
+        "identity": "a key held in its own storage: an identity that lives as long as the object",
+        "status": "from provider pages read at 2026-11-11T15:39Z; not yet run by this swarm (hypothesis until a packet runs there)"
+      },
+      {
+        "entity": "An AWS Lambda with a KMS signing key (R7)",
+        "rung": "E0 (A0 compute)",
+        "git": "none",
+        "vault": "read-write over HTTPS",
+        "internet": "its VPC's egress",
+        "filesystem": "ephemeral /tmp",
+        "install": "no (packaged)",
+        "control_plane": "none",
+        "identity": "a KMS asymmetric key that never leaves AWS: signed compute",
+        "status": "from provider pages read at 2026-11-11T15:39Z; not yet run by this swarm (hypothesis until a packet runs there)"
+      },
+      {
+        "entity": "An AWS Bedrock AgentCore agent (R7)",
+        "rung": "E3 to E4 (loop with tools; scheduled by EventBridge)",
+        "git": "through Gateway tools, if granted",
+        "vault": "read-write over HTTPS",
+        "internet": "through Gateway or VPC egress",
+        "filesystem": "S3 Files or EFS (bring your own)",
+        "install": "its container",
+        "control_plane": "none of ours; AWS's own",
+        "identity": "AgentCore Identity (credential providers); plus a signing key we give it",
+        "status": "from provider pages read at 2026-11-11T15:39Z; not yet run by this swarm (hypothesis until a packet runs there)"
+      }
+    ]
+  },
+  "graph": {
+    "about": "The model as a fractal semantic graph (Dinis, newsroom.sgit.ai, 2026-09-20): no privileged level and no single schema; each altitude has its own ontology; the grammar never changes. What an entity is comes from its edges (meaning through connectivity).",
+    "grammar": [
+      "every edge is a verb, stated in both directions, with an inverse a person would say",
+      "relates_to is banned",
+      "properties carry data, never meaning",
+      "supersede, never delete",
+      "never render the whole graph: render the answer to a question"
+    ],
+    "edges": [
+      [
+        "runs_on",
+        "hosts"
+      ],
+      [
+        "calls",
+        "is_called_by"
+      ],
+      [
+        "holds",
+        "is_held_by"
+      ],
+      [
+        "is_granted",
+        "is_granted_to"
+      ],
+      [
+        "reaches",
+        "is_reached_by"
+      ],
+      [
+        "spawns",
+        "is_spawned_by"
+      ],
+      [
+        "schedules",
+        "is_scheduled_by"
+      ],
+      [
+        "signs",
+        "is_signed_by"
+      ],
+      [
+        "does",
+        "is_done_by"
+      ],
+      [
+        "writes",
+        "is_written_by"
+      ],
+      [
+        "reads",
+        "is_read_by"
+      ],
+      [
+        "plays",
+        "is_played_by"
+      ]
+    ],
+    "altitudes": [
+      {
+        "id": "swarm",
+        "ontology": "agents of agents",
+        "jump": ""
+      },
+      {
+        "id": "agent",
+        "ontology": "a loop with an environment: memory (status file, inbox, vaults), its own wake, a wider reach",
+        "jump": ""
+      },
+      {
+        "id": "loop",
+        "ontology": "a closed agentic loop: it calls and uses tools until the task is done, then stops",
+        "jump": ""
+      },
+      {
+        "id": "LLM call",
+        "ontology": "one model call: a prompt in, an answer out",
+        "jump": ""
+      },
+      {
+        "id": "compute",
+        "ontology": "code that runs",
+        "jump": ""
+      }
+    ],
+    "example": "design.1 plays the design role; design.1 runs_on R1; design.1 holds a session key; design.1 is_granted write.file.project over admin/build/designs/**; design.1 does D24; the D24 commit is_signed_by design.1's key. Read from the other end: R1 hosts design.1."
+  },
+  "open": [
+    "whether tools are a rung (E3) or an axis across rungs (Dinis: 'maybe tools is transversal')",
+    "the name of the unit: entity, craft or role",
+    "each agent's grant written as capability primitives, so /abp/ and abp.sgit.ai speak one language"
+  ],
+  "sources": [
+    {
+      "what": "Fractal Semantic Graphs (the term, the five-rule grammar)",
+      "url": "https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html",
+      "by": "Dinis Cruz, 2026-09-20",
+      "read_at": "2026-11-11T14:47Z"
+    },
+    {
+      "what": "The capability grammar: verb.object.reach, 23 primitives, reach and undo",
+      "url": "https://abp.sgit.ai/model/capabilities/index.md",
+      "read_at": "2026-11-11T14:47Z"
+    },
+    {
+      "what": "The grammar for drawing a graph, for agents",
+      "url": "https://graphs.sgit.ai/llms.txt",
+      "read_at": "2026-11-11T14:47Z"
+    }
+  ],
+  "capabilities": {
+    "about": "The access axes, rebased on the published capability grammar (abp.sgit.ai): each capability is verb.object.reach, with the reach it touches (self < project < host < tenant < world) and the undo class of its effect. Not invented here: the 23 primitives are abp.sgit.ai's, read at the time above.",
+    "reaches": [
+      {
+        "id": "self",
+        "means": "the agent's own process, sandbox or turn"
+      },
+      {
+        "id": "project",
+        "means": "the working tree or workspace it was pointed at"
+      },
+      {
+        "id": "host",
+        "means": "the machine, container or account it runs as"
+      },
+      {
+        "id": "tenant",
+        "means": "the organisation's accounts, repositories and services"
+      },
+      {
+        "id": "world",
+        "means": "anything on the internet"
+      }
+    ],
+    "primitives": [
+      {
+        "id": "read.file.project",
+        "gloss": "Read the project it is working on",
+        "reach": "project",
+        "undo": "yes",
+        "shapes": 7
+      },
+      {
+        "id": "write.file.project",
+        "gloss": "Change the project it is working on",
+        "reach": "project",
+        "undo": "with-effort",
+        "shapes": 6
+      },
+      {
+        "id": "read.file.host",
+        "gloss": "Read any file the account can reach",
+        "reach": "host",
+        "undo": "no",
+        "shapes": 11
+      },
+      {
+        "id": "write.file.host",
+        "gloss": "Change any file the account can reach",
+        "reach": "host",
+        "undo": "with-effort",
+        "shapes": 8
+      },
+      {
+        "id": "delete.file.host",
+        "gloss": "Delete files anywhere the account can reach",
+        "reach": "host",
+        "undo": "no",
+        "shapes": 5
+      },
+      {
+        "id": "read.record.history",
+        "gloss": "Read a retained record: shell history, past sessions",
+        "reach": "host",
+        "undo": "no",
+        "shapes": 8
+      },
+      {
+        "id": "execute.process.host",
+        "gloss": "Run programs as the account",
+        "reach": "host",
+        "undo": "with-effort",
+        "shapes": 7
+      },
+      {
+        "id": "execute.process.self",
+        "gloss": "Run programs inside its own sandbox only",
+        "reach": "self",
+        "undo": "yes",
+        "shapes": 0
+      },
+      {
+        "id": "send.endpoint.allowed",
+        "gloss": "Reach a permitted list of hosts",
+        "reach": "tenant",
+        "undo": "no",
+        "shapes": 1
+      },
+      {
+        "id": "send.endpoint.world",
+        "gloss": "Reach any host on the internet",
+        "reach": "world",
+        "undo": "no",
+        "shapes": 7
+      },
+      {
+        "id": "read.credential.host",
+        "gloss": "Read credentials stored where it runs",
+        "reach": "host",
+        "undo": "no",
+        "shapes": 11
+      },
+      {
+        "id": "authenticate-as.credential.tenant",
+        "gloss": "Act in accounts with the credentials it holds",
+        "reach": "tenant",
+        "undo": "no",
+        "shapes": 15
+      },
+      {
+        "id": "grant.credential.self",
+        "gloss": "Change its own permission settings",
+        "reach": "self",
+        "undo": "yes",
+        "shapes": 3
+      },
+      {
+        "id": "send.message.world",
+        "gloss": "Send a message to anyone",
+        "reach": "world",
+        "undo": "no",
+        "shapes": 4
+      },
+      {
+        "id": "read.message.tenant",
+        "gloss": "Read mail or chat it is connected to",
+        "reach": "tenant",
+        "undo": "no",
+        "shapes": 6
+      },
+      {
+        "id": "write.repository.project",
+        "gloss": "Commit to the repository it was pointed at",
+        "reach": "project",
+        "undo": "with-effort",
+        "shapes": 4
+      },
+      {
+        "id": "write.repository.tenant",
+        "gloss": "Push to a code host (any branch it can reach)",
+        "reach": "tenant",
+        "undo": "with-effort",
+        "shapes": 4
+      },
+      {
+        "id": "authenticate-as.credential.signing",
+        "gloss": "Sign commits with the key it holds",
+        "reach": "tenant",
+        "undo": "no",
+        "shapes": 3
+      },
+      {
+        "id": "create.record.world",
+        "gloss": "Publish packages, images or pages under the name it holds",
+        "reach": "world",
+        "undo": "no",
+        "shapes": 3
+      },
+      {
+        "id": "write.budget.tenant",
+        "gloss": "Spend money or tokens against an account it holds",
+        "reach": "tenant",
+        "undo": "no",
+        "shapes": 2
+      },
+      {
+        "id": "create.schedule.host",
+        "gloss": "Create something that outlives the turn where it runs (a cron, a service)",
+        "reach": "host",
+        "undo": "yes",
+        "shapes": 4
+      },
+      {
+        "id": "create.schedule.tenant",
+        "gloss": "Create something that outlives the session, on the platform (a routine, a scheduled trigger, a new session)",
+        "reach": "tenant",
+        "undo": "yes",
+        "shapes": 3
+      },
+      {
+        "id": "read.record.browsing",
+        "gloss": "Read every page you visit",
+        "reach": "host",
+        "undo": "no",
+        "shapes": 1
+      }
+    ],
+    "axes_to_primitives": {
+      "git": [
+        "read.file.project",
+        "write.repository.project",
+        "write.repository.tenant",
+        "authenticate-as.credential.signing"
+      ],
+      "internet": [
+        "send.endpoint.allowed",
+        "send.endpoint.world",
+        "read.record.browsing"
+      ],
+      "filesystem": [
+        "read.file.project",
+        "write.file.project",
+        "read.file.host",
+        "write.file.host",
+        "delete.file.host"
+      ],
+      "install": [
+        "execute.process.host",
+        "write.file.host"
+      ],
+      "control_plane": [
+        "create.schedule.host",
+        "create.schedule.tenant",
+        "grant.credential.self"
+      ],
+      "secrets": [
+        "read.credential.host",
+        "authenticate-as.credential.tenant"
+      ],
+      "money": [
+        "write.budget.tenant"
+      ],
+      "messages": [
+        "send.message.world",
+        "read.message.tenant"
+      ]
+    },
+    "ladder_to_primitives": {
+      "E0": [
+        "execute.process.self",
+        "execute.process.host"
+      ],
+      "E1": [
+        "write.budget.tenant (every call spends)"
+      ],
+      "E2": [
+        "execute.process.self"
+      ],
+      "E3": [
+        "read.file.project",
+        "write.file.project",
+        "execute.process.host",
+        "send.endpoint.allowed"
+      ],
+      "E4": [
+        "create.schedule.host",
+        "create.schedule.tenant (its own wake)"
+      ],
+      "E5": [
+        "create.schedule.tenant (a new session)",
+        "grant.credential.self"
+      ]
+    },
+    "proposed": {
+      "about": "Proposed for the grammar, NOT in abp.sgit.ai today: the vault axis Dinis named (read-only, write-only, create), in the same verb.object.reach form. For Dinis to accept, rename or drop.",
+      "items": [
+        {
+          "id": "read.vault.tenant",
+          "gloss": "read a vault it was given a read key for",
+          "reach": "tenant",
+          "undo": "yes"
+        },
+        {
+          "id": "send.message.tenant",
+          "gloss": "append to a write-only lane it holds the write token for (our inboxes, /tip/)",
+          "reach": "tenant",
+          "undo": "no"
+        },
+        {
+          "id": "write.vault.tenant",
+          "gloss": "change a vault it holds the write key for",
+          "reach": "tenant",
+          "undo": "with-effort"
+        },
+        {
+          "id": "create.vault.world",
+          "gloss": "make its own vault and publish its read key (its own record)",
+          "reach": "world",
+          "undo": "no"
+        }
+      ],
+      "status": "adopted in this swarm's model (Dinis, 2026-11-11T14:54Z); not in abp.sgit.ai's published grammar"
+    }
+  },
+  "altitudes": {
+    "about": "The altitudes of execution (Dinis and Angelo, 14:5x UTC): the same shape at every size: an objective, a mandate (what it is asked to do) and a grant (what it may do), a doer, and a result. 'Work of work of work': only the size changes. The grant is not an altitude: every altitude has its own mandate and grant.",
+    "every_altitude_has": [
+      "an objective (what done means)",
+      "a mandate (what it is asked to do)",
+      "a grant (what it may do: capability primitives)",
+      "a key pair (the identity: it can sign for itself while its private half stays where it runs)",
+      "a result, signed"
+    ],
+    "items": [
+      {
+        "id": "A4",
+        "name": "swarm",
+        "is": "agents of agents",
+        "can": "spawn and schedule others (the control plane, E5); route work; hold the people's word",
+        "reach": "tenant to world",
+        "example": "the lead and its 15 agents; the four people's conductors"
+      },
+      {
+        "id": "A3",
+        "name": "agent",
+        "is": "a loop with an environment: memory (status file, inbox, vaults), its own wake, a wider reach",
+        "can": "start workers (sub-agents), wake itself (E4), act across the host and the tenant",
+        "reach": "host to tenant",
+        "example": "design.1: a Claude Code session"
+      },
+      {
+        "id": "A2",
+        "name": "loop",
+        "is": "a closed agentic loop: it calls and uses tools until the task is done, then stops",
+        "can": "call models, use the tools it was handed, inside its sandbox and project (E2, E3); it cannot start others or schedule",
+        "reach": "self to project",
+        "example": "a sub-agent; one task packet done by a laptop"
+      },
+      {
+        "id": "A1",
+        "name": "LLM call",
+        "is": "one model call: a prompt in, an answer out",
+        "can": "nothing but answer (E1); its caller acts",
+        "reach": "none",
+        "example": "the second opinion"
+      },
+      {
+        "id": "A0",
+        "name": "compute",
+        "is": "code that runs",
+        "can": "what the code does (E0)",
+        "reach": "what its host gives it",
+        "example": "the build, CI"
+      }
+    ],
+    "names_proposed": {
+      "for": "what the model describes (the 'thing' at every altitude)",
+      "options": [
+        {
+          "name": "holon",
+          "why": "Koestler's word for something that is a whole and a part at once; a stack of them is a holarchy. Exactly 'work of work of work'; fractal by definition."
+        },
+        {
+          "name": "unit of work, with its doer",
+          "why": "plain English; but it names the work, not who does it, which is the half Angelo questioned"
+        },
+        {
+          "name": "actor",
+          "why": "the actor model: units that receive messages, act, and can create other actors; precise for A3 and A4, odd for a call"
+        },
+        {
+          "name": "executor",
+          "why": "names the doer at every altitude; neutral; pairs with 'task'"
+        },
+        {
+          "name": "mandate",
+          "why": "abp.sgit.ai's own word for what is asked; an altitude is a mandate given to a doer under a grant"
+        }
+      ],
+      "architect_recommends": "holon for the thing (a whole that is part of a bigger whole), altitudes for the levels, and a mandate plus a grant on every holon"
+    },
+    "title": "The altitudes of execution",
+    "also_called": "the holarchy of work (Koestler's holarchy: a stack of holons, each a whole and a part). Not Holacracy, the trademarked management method, which this is not",
+    "names_for": {
+      "A2": {
+        "now": "loop",
+        "options": [
+          {
+            "name": "loop",
+            "why": "says what it is (a closed agentic loop) and matches the ladder's E2 and E3 rungs"
+          },
+          {
+            "name": "run",
+            "why": "what we already call it in the ABP (a run report); short; but every altitude 'runs'"
+          },
+          {
+            "name": "job",
+            "why": "the CI sense: given inputs, does one thing, ends, never starts others"
+          },
+          {
+            "name": "errand",
+            "why": "sent out, does one thing, comes back: closed by definition"
+          },
+          {
+            "name": "thread",
+            "why": "the operating-system reading: an agent is a process, this is a thread inside it; a thread cannot start a process"
+          },
+          {
+            "name": "worker",
+            "why": "clear, but it clashes with our branch workers and with Cloudflare Workers"
+          }
+        ],
+        "architect_recommends": "loop",
+        "decided": {
+          "at": "2026-11-11T15:13Z",
+          "by": "Dinis",
+          "words": "use loop"
+        }
+      },
+      "A1": {
+        "now": "LLM call",
+        "options": [
+          {
+            "name": "LLM call",
+            "why": "Dinis's choice: says what it is"
+          },
+          {
+            "name": "inference",
+            "why": "model-neutral: also covers an image model (the infographics were an inference, not an LLM call)"
+          },
+          {
+            "name": "model call",
+            "why": "same as inference, plainer"
+          },
+          {
+            "name": "completion",
+            "why": "the API's word; dated"
+          },
+          {
+            "name": "turn",
+            "why": "one exchange; but a chat turn may carry tools"
+          }
+        ],
+        "architect_recommends": "LLM call, with 'inference' as the general name when the model is not a language model",
+        "decided": {
+          "at": "2026-11-11T15:13Z",
+          "by": "Dinis",
+          "words": "I think this should be LLM call, not just a call"
+        }
+      }
+    }
+  },
+  "agent_rule_revised": {
+    "was": "Anything acting as an agent has a PKI key and either git (L4) or vaults (L2).",
+    "now": "Every altitude holds a key; what makes an agent (A3) is a loop with an environment: memory across runs, its own wake, a reach beyond its sandbox.",
+    "at": "2026-11-11T15:05Z"
+  },
+  "altitude_mixing": {
+    "name": "mixing altitudes",
+    "also": [
+      "altitude escalation (by analogy with privilege escalation)",
+      "altitude confusion (by analogy with the confused deputy)"
+    ],
+    "idea": "Many vulnerabilities come from mixing altitudes: the mandate is at one altitude and the grant at a higher one. Asking a chat for one call or a piece of research (an A1 or A2 mandate) hands that request an A3 agent's grant: tools, connectors, schedules, memory, reach. If the model gets enthusiastic and uses them, it acts beyond what was asked (Dinis, 15:0x UTC).",
+    "rule": "The grant's altitude must not be above the mandate's altitude. Give an A1 mandate an A1 grant; an A2 mandate an A2 grant.",
+    "measure": "abp.sgit.ai's delta (grant minus mandate) read by altitude: every primitive an altitude holds beyond what its mandate needs is the exposure.",
+    "examples": [
+      {
+        "asked": "a chat to research a question (A2)",
+        "given": "an agent's grant: connectors, memory, schedules, web (A3)",
+        "risk": "it books, sends, schedules or remembers what nobody asked for"
+      },
+      {
+        "asked": "a sub-agent to edit one file (A2)",
+        "given": "the parent session's full grant and tokens (A3)",
+        "risk": "it pushes, messages or starts others with the parent's name"
+      },
+      {
+        "asked": "a CI job to run the tests (A0)",
+        "given": "deploy credentials and write tokens (A3 reach)",
+        "risk": "a test dependency deploys or pushes"
+      },
+      {
+        "asked": "an LLM call to extract a field (A1)",
+        "given": "tool use and a browser inside the call (A2)",
+        "risk": "a page it reads instructs it, and it acts"
+      }
+    ],
+    "in_this_swarm": [
+      "the ABP hooks observe each agent's grant (A3); the loops and calls inside an agent inherit it today, with no narrower grant of their own",
+      "proposal: a task packet carries its own altitude and a narrower grant; the router's calls (A1) carry no tools"
+    ]
+  },
+  "trials": [
+    {
+      "at": "2026-11-11T15:26Z",
+      "altitude": "A1 LLM call",
+      "what": "an open-weight model sorts eight tasks into altitudes (the lowest that suffices), no tools",
+      "model": "deepseek/deepseek-v4-flash",
+      "cost_usd": 3.3858e-05,
+      "latency_ms": 778,
+      "result": "8 of 8 right",
+      "rows": [
+        {
+          "id": "t1",
+          "want": "A3",
+          "got": "A3"
+        },
+        {
+          "id": "t2",
+          "want": "A1",
+          "got": "A1"
+        },
+        {
+          "id": "t3",
+          "want": "A4",
+          "got": "A4"
+        },
+        {
+          "id": "t4",
+          "want": "A2",
+          "got": "A2"
+        },
+        {
+          "id": "t5",
+          "want": "A0",
+          "got": "A0"
+        },
+        {
+          "id": "t6",
+          "want": "A1",
+          "got": "A1"
+        },
+        {
+          "id": "t7",
+          "want": "A2",
+          "got": "A2"
+        },
+        {
+          "id": "t8",
+          "want": "A4",
+          "got": "A4"
+        }
+      ],
+      "teaches": "the altitudes are simple enough that a cheap open-weight call can route work by them"
+    },
+    {
+      "at": "2026-11-11T15:26Z",
+      "altitude": "A2 loop",
+      "what": "a read-only Explore sub-agent: find agents with no grant (one closed task, then stop)",
+      "result": "none unmapped; 28 agent names mapped",
+      "hook": "R12 logged (observe): 'a sub-agent (an A2 loop, Explore) inherits architect.1's A3 grant'",
+      "teaches": "the hook saw the loop start but not its tools: Explore is read-only, so its grant was already A2 and no altitudes were mixed. Fixed: read-only sub-agent types are recognised (abp/policies.json altitudes.narrow_subagents); a general-purpose sub-agent still logs R12"
+    },
+    {
+      "at": "2026-11-11T15:31Z",
+      "altitude": "A3 agent -> A0 + 3 A2 loops -> 81 A1 calls -> A0",
+      "what": "one objective through the altitudes (abp/tools/altitudes.mjs): the lowest altitude each of the 51 board items needs; A0 planned, three sub-agent loops ran open-weight calls until valid, A0 verified and merged; every unit signed with a key that lived only while it ran",
+      "model": "deepseek/deepseek-v4-flash",
+      "cost_usd": 0.003394,
+      "latency_ms": "",
+      "result": "85 signatures, all verified; by altitude {'A4': 12, 'A2': 11, 'none': 3, 'A3': 21, 'A1': 3, 'A0': 1}; 33 of 81 calls retried",
+      "hook": "R12 logged each general-purpose loop (they held architect.1's A3 grant to do an A2 task)",
+      "teaches": "the mechanics hold (altitudes, loops, a key per unit, verification); the placements are weak: the board's items are whole projects mixing altitudes, so they must be cut into loops and calls before they are routed; and 41% invalid answers point at the call's own limits (a 120-token cap is the first suspect)"
+    }
+  ],
+  "environments_plan": {
+    "about": "Running the altitudes across environments (Dinis, 2026-11-11T15:39Z): the same signed task packets (tasks/<id>/packet.json, abp/tools/packets.mjs) run anywhere; each result is signed by its runner's own key and verified where it lands (our hooks do not run outside R1 and R2).",
+    "next": [
+      {
+        "env": "Angelo's team (his account's Claude Code)",
+        "packets": [
+          "tasks/2026-11-11-p1-place-12-items (A1)",
+          "tasks/2026-11-11-p2-cut-items-into-loops (A2)"
+        ],
+        "needs": "Angelo's conductor runs them at its wake (sent by inbox)"
+      },
+      {
+        "env": "Cloudflare (R6)",
+        "packets": [
+          "A1 packets in a Worker with Workers AI"
+        ],
+        "needs": "a Cloudflare account and a deploy token (Dinis); a runner port of packets.mjs to a Worker (Web Crypto Ed25519)"
+      },
+      {
+        "env": "AWS (R7)",
+        "packets": [
+          "A2 loops in AgentCore; signed compute in Lambda with KMS"
+        ],
+        "needs": "an AWS account and credentials (Dinis); the runner as an AgentCore agent"
+      }
+    ]
+  }
+}

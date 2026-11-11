@@ -1,13 +1,13 @@
 {
   "agent": "ontologist.1.fringe@PrompTugal.dinis",
   "by": "ontologist.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T14:09Z",
+  "updated": "2026-11-11T15:57Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 13: \"get the ontologist on the case\")",
   "model": "Opus",
   "account": "this (the lead's)",
   "wake": "hourly at :55 (set by the lead)",
   "branch": "dev",
-  "state": "work/42: slice 1 live (v0.1.235); slice 2 adds the platform type (/r/luma/, /r/meetup/, /r/own-site/) and links every event page to its organisers, festival, day, place, platform, personas and topics",
+  "state": "work/42: all nine types live; sessions started (Lisbon Community Week, 23 sessions, read 15:56 at its public Luma page, titles and times only, no speakers)",
   "doing": [
     "work/42 the semantic graph: slice 1 pushed; next, the event page linking up to its festival and organisers, sessions of the major days, and the organiser noise Dinis named (101 organisers)"
   ],
@@ -19,16 +19,16 @@
     "work/43: tables and columns named in api/v1/README.md (graph/<type>.json section) for dev.1",
     "brief 13 addendum (Dinis, about 14:00): platform as an entity (luma 165, meetup 4, own-site 3; Eventbrite and Partiful appear when an event uses them), /r/<id>/ with today first; every event page gets linked rows (two lines in admin/build/event-pages.mjs: an optional graphLinks hook)",
     "privacy hold (lead's note, security finding 10): staaake withheld from the graph (no organiser node, no page, no link) until researcher.2 confirms it is an organisation; data/graph/organisers.json 'hold'. Its 6 events stay listed, as by an independent organiser. The name still appears in event titles and URLs from data/events.json, which is the researchers' layer",
-    "staaake answered by researcher.2 (1b7122c): not clearly an organisation; events.json now names an independent organiser; the graph's hold stays as a second guard"
+    "staaake answered by researcher.2 (1b7122c): not clearly an organisation; events.json now names an independent organiser; the graph's hold stays as a second guard",
+    "wake 14:56: inbox empty; /o/ restructured (today in Lisbon 31, stars 11, 89 folded); bracketed asides no longer split into organisers (removed a bogus 'Web Summit)' node, never an organiser here); 'hosted by' = hosts (venue), 'powered by' = supports, not co-organisers; Taiga AI Oy folded",
+    "abp whoami run (ROLES.md step 2, security finding 28): ~/.abp/whoami = ontologist.1.fringe@PrompTugal.dinis",
+    "wake 15:55: inbox empty; data/graph/sessions.json (Lisbon Community Week Conference, 13 Nov: 23 sessions); AI Horizon and Unblock AI publish no timed agenda (recorded); /s/<id>/ pages with previous/next and the whole agenda; event pages list their sessions; hasSession links; 12473 internal links checked, none missing"
   ],
   "next": [
-    "tell event-pages.mjs's owner (dev.2) about the graphLinks hook; reply to dev.1 (work/43) that platforms.json is live",
-    "event pages (event-pages.mjs, not mine): ask its owner to link up to festival and organisers from the graph, or offer the patch",
-    "sessions: the PTW days and other major events, from their public pages",
-    "organiser noise: fold or drop the one-off names; compare with the Website ontologist's data/ schemas and the storm site's graph (attach read-only)",
-    "tell Angelo's conductor what /graph/types/ adds beside his /graph/ (work/05)"
+    "more agendas: re-read major events' pages for timed agendas (person-paced, Luma only; Meetup on hold, Eventbrite no)",
+    "read newsroom.sgit.ai's fractal semantic graphs and align the link grammar",
+    "work/43: dev.1 still to load platforms and links (inbox sent 15:00)",
+    "tell Angelo's conductor what /graph/types/ adds beside /graph/ (work/05)"
   ],
-  "asks": [
-    "Dinis: abp/policies.json has no grant for ontologist.1 yet; I wrote only data/graph/**, admin/build/graph-*.mjs, two lines of admin/build/build.mjs, a section of api/v1/README.md, work/42, data/keys.json (my entry) and this file. Please have the architect add the grant."
-  ]
+  "asks": []
 }

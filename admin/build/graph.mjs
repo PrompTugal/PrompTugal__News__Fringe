@@ -8,6 +8,7 @@
 
 import { readFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { buildModel, pathOf } from './graph-model.mjs';   // ontologist.1's semantic graph (work/42): its /o/ pages
 const ROOT = fileURLToPath(new URL('../../', import.meta.url));
 const readJSON = (f) => { try { return JSON.parse(readFileSync(ROOT + f, 'utf8')); } catch { return null; } };
 
@@ -83,6 +84,21 @@ export function buildGraph(events, ptnews, communities) {
   outreachOf(list);
   const degree = {}; for (const ed of edges) { degree[ed.from] = (degree[ed.from] || 0) + 1; degree[ed.to] = (degree[ed.to] || 0) + 1; }
   for (const n of list) n.degree = degree[n.id] || 0;
+  // Each community dot links to its organiser page in the semantic graph (work/42), matched by id, then name, then
+  // the organiser that leads most of the community's events. No match: no link (never a guessed URL).
+  try {
+    const m = buildModel(fileURLToPath(new URL('../..', import.meta.url)), events);
+    const orgs = [...m.byId.organisers.values()];
+    const byId = new Map(orgs.map((o) => [o.id, o])), byName = new Map(orgs.map((o) => [norm(o.name), o]));
+    for (const n of list.filter((x) => x.type === 'community')) {
+      let o = byId.get(n.community) || byName.get(norm(n.label));
+      if (!o) {
+        const evs = new Set(edges.filter((e) => e.to === n.id).map((e) => e.from.slice(6)));
+        let best = 0; for (const c of orgs) { const k = (c.events || []).filter((x) => evs.has(x)).length; if (k > best && k * 2 >= evs.size) { best = k; o = c; } }
+      }
+      if (o) n.page = pathOf('organiser', o.id);
+    }
+  } catch { /* the semantic graph is optional here */ }
   layout(list, edges);
   return { nodes: list, edges, outreach: outreachCounts(list), ontology: ontology(list, edges, events, communities) };
 }
@@ -247,7 +263,7 @@ ${ontologyBody(graph, esc)}
 <h2>Topics</h2>${group('topic')}
 <h2>Places</h2>${group('place')}
 <p class="muted">The data: <a href="/api/v1/graph.json">/api/v1/graph.json</a> (nodes and edges, each edge with its source and read time). Communities, places and topics already on <a href="https://promptugal.news/graph/">pt.news's graph</a> link to it. How this page was made: <a href="https://github.com/PrompTugal/PrompTugal__News__Fringe/blob/dev/work/05-graph.md">work/05</a> and <a href="https://github.com/PrompTugal/PrompTugal__News__Fringe/blob/dev/team/angelo/runs.md">every run behind it</a>.</p>
-<script type="application/json" id="gdata">${JSON.stringify({ nodes: graph.nodes.map(({ id, type, label, x, y, degree, url, date, kind, status, storm_moved, topics, organiser, place, ptnews, gamma_ray, home, what, verified, outreach }) => ({ id, type, label, x, y, degree, url, date, kind, status, storm_moved, topics, organiser, place, ptnews, gamma_ray, home, what, verified, outreach })), edges: graph.edges.map((e) => [e.from, e.to, e.verb]) }).replace(/</g, '\\u003c')}</script>
+<script type="application/json" id="gdata">${JSON.stringify({ nodes: graph.nodes.map(({ id, type, label, x, y, degree, url, date, kind, status, storm_moved, topics, organiser, place, ptnews, gamma_ray, home, what, verified, outreach, page }) => ({ id, type, label, x, y, degree, url, date, kind, status, storm_moved, topics, organiser, place, ptnews, gamma_ray, home, what, verified, outreach, page })), edges: graph.edges.map((e) => [e.from, e.to, e.verb]) }).replace(/</g, '\\u003c')}</script>
 <script src="/graph.js" defer></script>`;
 }
 

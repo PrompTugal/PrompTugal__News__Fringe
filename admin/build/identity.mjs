@@ -85,4 +85,10 @@ a{text-decoration-thickness:1px;text-underline-offset:2px}
 .subnav{max-width:var(--page);margin:0 auto;padding:var(--s2) var(--gutter);display:flex;align-items:center;gap:var(--s3);flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;border-top:1px solid var(--hair);font-size:13px}.subnav::-webkit-scrollbar{display:none}
 .subnav b{flex:none;font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
 .subnav ul{display:flex;gap:var(--s3);list-style:none;margin:0;padding:0}.subnav li{margin:0}.subnav a{white-space:nowrap;color:var(--ink-2);text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}.subnav a:hover{color:var(--brand)}.subnav a[aria-current="page"]{color:var(--ink);font-weight:600;border-bottom-color:var(--green)}
+/* D35: a visible scroll hint on the tab row on a phone (a green chevron over a fade, phones only) */
+header nav[aria-label="Main"]{position:relative}
+@media(max-width:700px){header nav[aria-label="Main"]::after{content:"\\203A";position:absolute;right:0;top:0;bottom:0;width:44px;display:flex;align-items:center;justify-content:flex-end;padding-right:var(--s3);font:600 22px/1 var(--sans);color:var(--green);background:linear-gradient(90deg,transparent,var(--paper) 55%);pointer-events:none}}
+/* lab check L10: 44 px hit areas for the small header links without making the header taller */
+.ptbar a,.brand a,.ind a{position:relative}
+.ptbar a::after,.brand a::after,.ind a::after{content:"";position:absolute;left:0;right:0;top:50%;height:44px;transform:translateY(-50%)}
 `;

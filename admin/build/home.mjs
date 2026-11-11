@@ -43,17 +43,28 @@ const slug = (s) => String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,
 const hoodOf = (e) => (e.neighbourhood ? String(e.neighbourhood).split(/[\/,]/)[0].trim() : '');   // only a neighbourhood the research named
 const ELSE = 'Elsewhere in Lisbon';
 const hm = (iso) => String(iso).slice(11, 16);
-const orgName = (e) => String(e.organiser || 'Organiser not named').replace(/\s*\((per|from|on|as)\b[^)]*\)\s*/gi, ' ').trim();
+const orgName = (e) => String(/^unknown/i.test(e.organiser || '') ? '' : e.organiser || '').trim() === '' ? 'Organiser not named' : String(e.organiser).replace(/\s*\((per|from|on|as)\b[^)]*\)\s*/gi, ' ').trim();
+// Two letters from the organiser's name (no picture is used: Luma's terms, work/49; an organiser's own logo only where their site allows it).
+const STOP = /^(the|a|an|of|by|and|&|per|from|in|on|at|for|to|with|lisbon|lisboa)$/i;
+function initials(name) {
+  if (/^organiser not named/i.test(name)) return '·';
+  const w = String(name).replace(/\([^)]*\)/g, ' ').split(/[\s/&+,-]+/).map((x) => x.replace(/[^\p{L}\p{N}]/gu, '')).filter((x) => x && !STOP.test(x));
+  const camel = w.length === 1 && w[0].match(/^(\p{Lu})\p{Ll}+(\p{Lu})/u);   // FounderLink -> FL
+  const a = camel ? [camel[1], camel[2]] : w.length > 1 ? [w[0][0], w[1][0]] : [...(w[0] || '·')].slice(0, 2);
+  return a.join('').replace(/^./, (c) => c.toUpperCase());
+}
 const TILES = ['--tile', '--river', '--terracotta', '--tram', '--ok'];
 const hash = (s) => [...String(s)].reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, 7);
 
+// data/event-images.json lists pointers (vault id, path, sha256, source URL). A card shows a picture only when its entry carries a public
+// https `url` (the covers vault's public read address, once capture.1 and Dinis publish it); we do not hotlink the organiser's own CDN.
 function images() {
   const f = join(root, 'data', 'event-images.json');
   if (!existsSync(f)) return {};
   try {
     const j = JSON.parse(readFileSync(f, 'utf8'));
-    const list = Array.isArray(j) ? j : Array.isArray(j.images) ? j.images : Object.entries(j.images || j).map(([id, v]) => ({ id, ...(typeof v === 'string' ? { url: v } : v) }));
-    return Object.fromEntries(list.filter((x) => x && x.id && /^https:\/\//.test(x.url || x.image || '')).map((x) => [x.id, x.url || x.image]));
+    const list = Array.isArray(j) ? j : Array.isArray(j.images) ? j.images : [];
+    return Object.fromEntries(list.filter((x) => x && (x.event_id || x.id) && /^https:\/\//.test(x.url || '')).map((x) => [x.event_id || x.id, x.url]));
   } catch { return {}; }
 }
 
@@ -77,9 +88,9 @@ export const homeCss = NOWSTRIP_CSS + `
 .hm-grid{display:grid;grid-template-columns:1fr;gap:var(--s4);list-style:none;margin:0;padding:0}
 .hm-c{position:relative;background:var(--panel);border:1px solid var(--hair);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
 .hm-c[hidden]{display:none}.hm-c.past{opacity:.6}
-.hm-img{display:block;height:132px;background:var(--paper-2);position:relative;overflow:hidden}.hm-img img{display:block;width:100%;height:100%;object-fit:cover}
+.hm-img{display:block;height:92px;background:var(--paper-2);position:relative;overflow:hidden}.hm-cr{position:absolute;left:0;bottom:0;right:0;padding:2px 6px;font:400 9.5px/1.3 var(--mono);color:#fff;background:rgba(0,0,0,.45)}.hm-img img{display:block;width:100%;height:100%;object-fit:cover}
 .hm-tile{display:flex;align-items:flex-end;justify-content:space-between;padding:10px 12px;color:var(--paper);background:color-mix(in srgb,var(--c) 78%,var(--ink))}
-.hm-tile b{font:600 44px/.9 var(--serif);letter-spacing:-.02em;opacity:.95}.hm-tile i{font:500 10.5px/1 var(--mono);font-style:normal;letter-spacing:.08em;text-transform:uppercase}
+.hm-tile b{font:600 46px/.9 var(--serif);letter-spacing:-.03em;opacity:.95}.hm-tile i{font:500 10.5px/1.5 var(--mono);font-style:normal;letter-spacing:.08em;text-transform:uppercase;text-align:right}.hm-tile u{text-decoration:none;font-weight:600;font-size:12px}
 .hm-tile::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.14);-webkit-mask:var(--az) 0 0/28px 28px;mask:var(--az) 0 0/28px 28px}
 .hm-body{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px;flex:1}
 .hm-pl{position:relative;z-index:1;color:inherit}.hm-tags a.hm-tag{position:relative;z-index:1;text-decoration:none}.hm-org a{position:relative;z-index:1;color:inherit;text-decoration:none}.hm-org a:hover{color:var(--brand);text-decoration:underline}.hm-org{font:600 11px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
@@ -91,7 +102,7 @@ export const homeCss = NOWSTRIP_CSS + `
 .hm-empty{padding:var(--s4);border:2px dashed var(--hair);border-radius:8px;color:var(--ink-2)}
 .hm-more{display:block;width:100%;min-height:44px;margin:var(--s3) 0;background:var(--panel);border:1px dashed var(--ink-3);border-radius:6px;color:var(--ink-2);font:500 13px/1 var(--mono);cursor:pointer}
 .hm-foot{margin:var(--s5) 0 var(--s3);font-size:14px;color:var(--ink-2)}.hm-storm{font:400 12.5px/1.5 var(--mono);color:var(--ink-3);border-top:1px solid var(--hair);padding-top:var(--s3);margin-top:var(--s5)}
-@media(min-width:620px){.hm-grid{grid-template-columns:repeat(2,1fr)}}@media(min-width:960px){.hm-grid{grid-template-columns:repeat(3,1fr)}.hm-img{height:150px}}
+@media(min-width:620px){.hm-grid{grid-template-columns:repeat(2,1fr)}}@media(min-width:960px){.hm-grid{grid-template-columns:repeat(3,1fr)}.hm-img{height:100px}}
 `;
 
 export function homeBody({ events, esc, eventPath, hasPage, now = new Date(), stormHref = 'https://storm-charles.promptugal.news' }) {
@@ -120,8 +131,8 @@ export function homeBody({ events, esc, eventPath, hasPage, now = new Date(), st
     const href = hasPage(e) ? eventPath(e) : e.url;
     const c = TILES[hash(org) % TILES.length];
     const media = imgs[e.id]
-      ? `<span class="hm-img"><img src="${esc(imgs[e.id])}" alt="" loading="lazy" decoding="async"></span>`
-      : `<span class="hm-img hm-tile" style="--c:var(${c})"><b>${esc([...org.replace(/[^\p{L}\p{N} ]/gu, '').trim()][0] || '·')}</b><i>${esc(e.kind || 'event')}</i></span>`;
+      ? `<span class="hm-img"><img src="${esc(imgs[e.id])}" alt="" loading="lazy" decoding="async"><small class="hm-cr">image: ${esc(org)}</small></span>`
+      : `<span class="hm-img hm-tile" style="--c:var(${c})"><b>${esc(initials(org))}</b><i>${esc(e.kind || 'event')}<br><u>${esc(hm(e.start))} UTC</u></i></span>`;
     const roles = roleOf(e).join(' ');
     return `<li id="ev-${esc(e.id)}" data-id="${esc(e.id)}" class="hm-c${e.status === 'cancelled' ? ' x' : ''}" data-s="${s}" data-e="${en}" data-r="${roles}" data-h="${esc(hoodKey(e))}">${media}
 <div class="hm-body"><span class="hm-org">${lead ? `<a href="${esc(pathOf('organiser', lead.id))}">${esc(org)}</a>` : esc(org)}</span><h3 class="hm-t"><a href="${esc(href)}">${esc(e.name)}</a></h3>

@@ -31,7 +31,8 @@ import { nowBlock, nowPageBody, nowJs, span as evSpan } from './now.mjs';
 import { timelineBlock, TIMELINE_CSS } from './timeline.mjs';
 import { MYDAY_CSS, myDayBody } from './myday.mjs';   // D29, design.2.fringe@PrompTugal.dinis   // D19, design.2.fringe@PrompTugal.dinis   // work/16, dev.2.fringe@PrompTugal.dinis
 import { guidanceBody, abpBody } from './guidance.mjs';
-import { whereAgentsRunBody, agenticTeamBody } from './architecture-page.mjs';   // work/48, architect.1.fringe@PrompTugal.dinis   // work/40, work/39, architect.1.fringe@PrompTugal.dinis
+import { whereAgentsRunBody, agenticTeamBody, articles } from './architecture-page.mjs';
+import { operatingModelBody, slidePage, SLIDES as OM_SLIDES } from './operating-model.mjs';   // work/48, Dinis 14:40 UTC, architect.1   // work/48, architect.1.fringe@PrompTugal.dinis   // work/40, work/39, architect.1.fringe@PrompTugal.dinis
 import { traceBody } from './trace-page.mjs';   // Angelo's traces, designer.fringe@PrompTugal.angelo
 import { writeGraph } from './graph-pages.mjs';   // work/42, ontologist.1.fringe@PrompTugal.dinis
 
@@ -121,7 +122,7 @@ const navHtml = (here) => `<header><nav aria-label="Main"><span class="brand"><a
 const OG_IMAGE = SITE + 'assets/og/share.png';   // work/design D2: 1200x630, rendered in CI from admin/build/og/share.html (never in git)
 const ogDefault = (title, desc) => [['og:type', 'website'], ['og:site_name', 'Lisbon Tech Fringe'], ['og:title', title], ['og:description', desc], ['og:image', OG_IMAGE], ['og:image:width', '1200'], ['og:image:height', '630']]
   .map(([p, v]) => `<meta property="${p}" content="${esc(v)}">`).join('') + `<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${OG_IMAGE}">`;
-const page = (title, body, desc, head = '', here = '/') => `<!doctype html><html lang="en"><head><meta charset="utf-8">
+const page = (title, body, desc, head = '', here = '') => `<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}"><link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">${/og:title/.test(head) ? head : ogDefault(title, desc) + head}<style>${css}</style></head><body>
 <div class="ptbar"><a href="https://promptugal.news"><img class="stamp l" src="/assets/brand/pt-news-stamp-light.svg" alt="PT.news" width="20" height="20"><img class="stamp d" src="/assets/brand/pt-news-stamp-dark.svg" alt="" width="20" height="20"><span>a PrompTugal.news site</span></a></div>
@@ -213,7 +214,7 @@ ${intelBox()}
 <h2>The agentic team</h2>
 <div class="card">Built in the open by a swarm: one conductor per person, agents by role, Dinis as head. <a href="/how/"><strong>See how it is made</strong></a> · <a href="/data/">Query the data with SQL</a> · <a href="/join/">Bring your conductor in five minutes</a>.</div>
 <!--SHOWROOM-->
-`, 'An independent guide to the side events around Web Summit Lisbon.');
+`, 'An independent guide to the side events around Web Summit Lisbon.', '', '/');
 
 // --- /join/ --------------------------------------------------------------
 const steps = (SWARM_STEPS()).map((s) => `<li>${s}</li>`).join('');
@@ -274,7 +275,7 @@ mkdirSync(join(out, 'graph'), { recursive: true });
 writeFileSync(join(out, 'graph', 'index.html'), graphPage);
 writeFileSync(join(out, 'graph.js'), read('admin/build/graph.js'));
 writeFileSync(join(out, 'CNAME'), new URL(ORIGIN).host + '\n');
-writeFileSync(join(out, '404.html'), page('Not found', '<h1>That page is not here</h1><p>It may have moved, or it is not built yet. Try one of these:</p><p><a class="btn" href="/">Today in Lisbon</a></p><ul><li><a href="/#events">All events, today and tomorrow</a></li><li><a href="/api/v1/events.json">Every event as data</a></li><li><a href="/join/">Join the team</a></li></ul>', 'Page not found.'));
+writeFileSync(join(out, '404.html'), page('Not found', '<h1>That page is not here</h1><p>It may have moved, or it is not built yet. Try one of these:</p><p><a class="btn" href="/">Today in Lisbon</a></p><ul><li><a href="/#events">All events, today and tomorrow</a></li><li><a href="/api/v1/events.json">Every event as data</a></li><li><a href="/now/">What is on now</a></li><li><a href="/tip/">Send a tip</a></li><li><a href="/join/">Join the team</a></li></ul>', 'Page not found.'));
 mkdirSync(join(out, 'api', 'v1'), { recursive: true });
 writeFileSync(join(out, 'api', 'v1', 'README.md'), read('api/v1/README.md'));
 writeFileSync(join(out, 'api', 'v1', 'events.json'), JSON.stringify({ about: 'Lisbon Tech Fringe events, each re-read at its public URL (read_at, UTC). Independent of Web Summit.', site: SITE, version: VERSION, built_at: BUILT, events }, null, 2) + '\n');
@@ -296,10 +297,15 @@ writeFileSync(join(out, 'abp', 'index.html'), page('Agent Behaviour Policies: Li
 mkdirSync(join(out, 'agentic-team', 'where-agents-run'), { recursive: true });
 writeFileSync(join(out, 'agentic-team', 'index.html'), page('The agentic team: Lisbon Tech Fringe', agenticTeamBody(esc), 'How the swarm that builds Lisbon Tech Fringe works: where agents run, who may edit what, how it is made.', '', '/agentic-team/'));
 writeFileSync(join(out, 'agentic-team', 'where-agents-run', 'index.html'), page('Where agents run: Lisbon Tech Fringe', whereAgentsRunBody(esc, REPO), 'An agent versus an LLM call; runtimes, models and I/O levels; the formula that places a task; the matrix of our tasks (brief 14).', '', '/agentic-team/where-agents-run/'));
+for (const ar of articles(esc, REPO)) { mkdirSync(join(out, 'agentic-team', 'articles', ar.slug), { recursive: true }); writeFileSync(join(out, 'agentic-team', 'articles', ar.slug, 'index.html'), page(ar.title + ': Lisbon Tech Fringe', ar.body, ar.title, '', `/agentic-team/articles/${ar.slug}/`)); }
+mkdirSync(join(out, 'agentic-team', 'operating-model'), { recursive: true });
+writeFileSync(join(out, 'agentic-team', 'operating-model', 'index.html'), page('The operating model: Lisbon Tech Fringe', operatingModelBody(esc, REPO), 'The primitives of the agentic team: the execution ladder, what each entity can reach, identity, and a distributed operating system for agents.', '', '/agentic-team/operating-model/'));
+OM_SLIDES.forEach((_, i) => writeFileSync(join(out, 'agentic-team', 'operating-model', `slide-${i + 1}.html`), slidePage(i)));
+writeFileSync(join(out, 'api', 'v1', 'operating-model.json'), read('data/operating-model.json'));
 if (existsSync(join(root, 'data/runtimes.json'))) writeFileSync(join(out, 'api', 'v1', 'runtimes.json'), read('data/runtimes.json'));
 if (existsSync(join(root, 'data/architecture.json'))) writeFileSync(join(out, 'api', 'v1', 'architecture.json'), read('data/architecture.json'));
 mkdirSync(join(out, 'organisers'), { recursive: true });
-writeFileSync(join(out, 'organisers', 'index.html'), page('For organisers: Lisbon Tech Fringe', organisersBody(orgs, esc, { eventPath, hasPage }), 'What Lisbon Tech Fringe offers organisers of side events, and who is listed.'));
+writeFileSync(join(out, 'organisers', 'index.html'), page('For organisers: Lisbon Tech Fringe', organisersBody(orgs, esc, { eventPath, hasPage }), 'What Lisbon Tech Fringe offers organisers of side events, and who is listed.', '', '/organisers/'));
 const graphM = writeGraph({ root, out, events, page, esc, eventPath, hasPage, SITE, VERSION, BUILT });   // work/42: /o/ /f/ /d/ /n/ /p/ /t/ and /api/v1/graph/<type>.json
 const changes = readChanges(root);
 const releases = buildReleases(root, changes.commits, VERSION);   // work/37: every commit gets the first tag that contains it

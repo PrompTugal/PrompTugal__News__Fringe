@@ -15,14 +15,17 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..',
 const arg = (n, d) => { const i = process.argv.indexOf('--' + n); return i < 0 ? d : (process.argv[i + 1] && !process.argv[i + 1].startsWith('--') ? process.argv[i + 1] : true); };
 const VROOT = arg('vault-root', path.join(os.homedir(), '.sg-send', 'captures'));
 const LIMIT = Number(arg('limit', 0)) || 0, NOPUSH = !!arg('no-push', false), ONLY = arg('only', '');
-const HOST = 'https://dev.send.sgraph.ai', SITE = 'https://fringe.promptugal.news', MAX_FILES = 15000;
+const HOST = 'https://dev.send.sgraph.ai', SITE = JSON.parse(fs.readFileSync(path.join(ROOT, 'admin/site.json'), 'utf8')).origin.replace(/\/$/, ''), MAX_FILES = 15000;
+const SITE_HOST = new URL(SITE).hostname;   // the origin comes from admin/site.json (architect's note, 13:47 UTC)
 const sha = b => crypto.createHash('sha256').update(b).digest('hex');
 const iso = () => new Date().toISOString().replace(/\.\d+Z$/, 'Z');
-const blocked = u => /(^|\.)websummit\.com$/i.test(new URL(u).hostname);
+// HARD BLOCK (lead, 16:2x UTC, work/49): Luma's Terms (6 Oct 2026) forbid the republication or reproduction of its images and content.
+// Nothing is captured from luma.com, lu.ma or lumacdn.com, nor from Meetup, Eventbrite, Partiful or websummit.com.
+const blocked = u => /(^|\.)(websummit\.com|luma\.com|lu\.ma|lumacdn\.com|meetup\.com|eventbrite\.[a-z.]+|partiful\.com)$/i.test(new URL(u).hostname);
 // PRIVACY (lead, 12:4x UTC, security finding 21): organiser pages show guest lists (private people's names and faces).
 // Only hosts that sources.md marks as machine-readable ("Yes"): Luma event pages. Meetup is on hold. Every event
 // screenshot hides images and is cropped to the header; page text stops at the first guest/host marker.
-const ALLOW_EVENT_HOSTS = new Set(['luma.com', 'lu.ma']);
+const ALLOW_EVENT_HOSTS = new Set([]);   // organiser-page screenshots are off until Dinis decides (terms of each organiser's site unchecked)
 const MARKERS = /(hosted by|hosts?\b\s*$|\bgoing\b|attendees|guests|who'?s going|\d+\s+(going|guests)|see all|featured in)/i;
 const cutText = t => { const m = MARKERS.exec(t); return m ? t.slice(0, m.index).trimEnd() : t; };
 const RETAIN_UNTIL = Date.parse('2026-11-14T00:00:00Z');   // events' captures are deleted after 13 November
@@ -51,7 +54,7 @@ let pages = ['/', '/join/', '/graph/', '/traffic/', '/evolution/', '/storm/', '/
 try { const sm = await (await fetch(SITE + '/sitemap.xml')).text(); for (const m of sm.matchAll(/<loc>([^<]+)<\/loc>/g)) if (!m[1].includes('/e/') && !pages.includes(m[1])) pages.push(m[1]); } catch {}
 pages = pages.filter(u => !u.endsWith('.json'));
 const targets = [];
-if (ONLY !== 'events') for (const u of pages) targets.push({ site: 'fringe.promptugal.news', url: u, widths: [390, 1280] });
+if (ONLY !== 'events') for (const u of pages) targets.push({ site: SITE_HOST, url: u, widths: [390, 1280] });
 const lastSeen = {};   // url -> ms of the last successful event capture, from the pointers in git
 try { const idx = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/capture-index.json'), 'utf8')); for (const r of idx.runs) { if (reg.vaults.find(v => v.id === r.vault_id)?.private) continue; const run = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', r.file), 'utf8')); for (const c of run.captures) if (!c.error && c.event_id && c.vault_ok !== false) lastSeen[c.url] = Math.max(lastSeen[c.url] || 0, Date.parse(c.captured_at)); } } catch {}
 const FORCE = !!arg('force', false);
@@ -116,7 +119,7 @@ idx.runs = idx.runs.filter(r => r.run !== runId).concat([{ run: runId, file: `ca
 idx.updated = iso(); fs.writeFileSync(ifile, JSON.stringify(idx, null, 1) + '\n');
 
 // ---- retention: after 13 November the event captures are deleted from the active vault
-if (Date.now() >= RETAIN_UNTIL) for (const d of fs.readdirSync(VDIR, { withFileTypes: true })) if (d.isDirectory() && d.name !== '.sg_vault') for (const h of fs.readdirSync(path.join(VDIR, d.name))) for (const site of fs.readdirSync(path.join(VDIR, d.name, h))) if (site !== 'fringe.promptugal.news') fs.rmSync(path.join(VDIR, d.name, h, site), { recursive: true, force: true });
+if (Date.now() >= RETAIN_UNTIL) for (const d of fs.readdirSync(VDIR, { withFileTypes: true })) if (d.isDirectory() && d.name !== '.sg_vault') for (const h of fs.readdirSync(path.join(VDIR, d.name))) for (const site of fs.readdirSync(path.join(VDIR, d.name, h))) if (site !== SITE_HOST) fs.rmSync(path.join(VDIR, d.name, h, site), { recursive: true, force: true });
 // ---- commit and push the vault
 if (!NOPUSH) {
   sgit(VDIR, 'commit', `capture run ${runId}: ${run.ok}/${run.count}`);

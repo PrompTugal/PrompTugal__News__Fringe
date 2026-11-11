@@ -46,7 +46,7 @@ path = f'{R}/data/outreach-tracker.json'
 old = {}
 if os.path.exists(path):
     old = {r['id']: r for r in json.load(open(path))['organisers']}
-jose = {'kuma-partners': "Jose's note drafted (work/drafts/organiser-notes-today-jose.md): send before 15:00 UTC", 'alban-global-network': "Jose's note drafted: before 15:30 UTC", 'canopy-community': "Jose's note drafted: before 18:30 UTC", 'founderlink': "Jose's note drafted: before 19:00 UTC", 'portugal-tech-week': "Jose's note drafted: before 20:30 UTC"}
+jose = {'alban-global-network': "Jose's note (work/drafts/organiser-notes-today-jose.md), approved: before 15:30 UTC", 'kuma-partners': "Jose's note, approved: before 16:00 UTC (the 16:00 session)", 'wonderlead-in-tech': "Jose's note, approved: before 16:30 UTC", 'ideaic-io': "Jose's note, approved: before 18:00 UTC", 'canopy-community': "Jose's note, approved: before 18:30 UTC", 'founderlink': "Jose's note, approved: before 19:00 UTC", 'portugal-tech-week': "Jose's note, approved: before 20:30 UTC"}
 now = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%MZ')
 out = []
 for k, r in sorted(rows.items(), key=lambda kv: (-len(kv[1]['events']), kv[1]['organiser'].lower())):
@@ -58,7 +58,7 @@ for k, r in sorted(rows.items(), key=lambda kv: (-len(kv[1]['events']), kv[1]['o
     out.append({'id': k, 'organiser': r['organiser'], 'events': len(r['events']), 'page': r['page'], 'channel': way,
                 'draft': 'work/drafts/organiser-note.md', 'draft_status': 'approved by Dinis, 14:27 UTC (brief 15)',
                 'state': o.get('state', 'drafted'), 'sent_by': o.get('sent_by', ''), 'sent_at': o.get('sent_at', ''),
-                'note': o.get('note') or jose.get(k, '')})
+                'note': (jose[k] if k in jose and (not o.get('note') or o['note'].startswith("Jose's note")) else o.get('note', ''))})
 doc = {'about': "Organiser tracker for work/23 and work/29. Organisations only, never private people; no contact details. 'page' is the organiser's public event page where its own 'contact host' route is. State is set by the person who sends: drafted, sent, answered, joined, declined. An agent never sends.",
        'updated': now, 'by': 'outreach.1.fringe@PrompTugal.dinis', 'organisers': out}
 json.dump(doc, open(path, 'w'), indent=1, ensure_ascii=False); open(path, 'a').write('\n')

@@ -1,6 +1,6 @@
 {
   "by": "conductor.fringe@PrompTugal.angelo",
-  "updated": "2026-11-11T13:30Z",
+  "updated": "2026-11-11T15:31Z",
   "person": "angelo",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.angelo, started about 11:20 UTC by conductor.b@PrompTugal.angelo at Angelo's word; hourly wake at :29 until Friday 13 November (trig_01UqsUe1kvf2qvWkjLiF2hPk, set at Angelo's word in this session)",
@@ -21,11 +21,13 @@
     "one-line 'how this page was made' strip (metro line; 6/9/14 stops by width; first live, failed deploys, live now), admin/build/trace-strip.mjs, shown on top of /traces/2026-11-11-ptw-classroom-deep-work-wexio/; by worker designer.fringe@PrompTugal.angelo",
     "wake 12:29: /graph/ now takes communities from work/04's data/communities.json (73 checked communities; organiser line only as fallback; an unknown or individual organiser makes no node); 171 events, 387 nodes",
     "work/32 parts 1 and 2 on /graph/: ontology picture with live counts, outreach layer (counts only), by worker graph.fringe@PrompTugal.angelo",
-    "wake 13:29: /graph/ checked live at https://lisbontechfringe.com/graph/ (200, v0.1.171; nav calls it 'Map'); no change by others to graph.mjs/graph.js since af1072f; outreach tracker still has all 72 drafts 'until Dinis approves', so the graph's 0 drafts ready is right"
+    "wake 13:29: /graph/ checked live at https://lisbontechfringe.com/graph/ (200, v0.1.171; nav calls it 'Map'); no change by others to graph.mjs/graph.js since af1072f; outreach tracker still has all 72 drafts 'until Dinis approves', so the graph's 0 drafts ready is right",
+    "wake 14:29 (run 14:44, after a session restart): /graph/ live on lisbontechfringe.com (v0.1.280); outreach layer follows Dinis's approval (66 draft ready); work/05 note proposes /graph/ reads ontologist.1's semantic graph (work/42) once it exists",
+    "wake 15:30: /graph/ community dots link to ontologist.1's organiser pages /o/<id>/ (103 of 103, 0 broken)"
   ],
   "next": [
-    "work/32: hand the counts to design (landing paths) and dev.1 (dashboard); outreach.1@ to mark which 6 drafts are ready",
-    "traces: only on prod-pipeline.pm@'s word through Angelo (e.g. the strip on event pages after the MVP)"
+    "/graph/ to draw work/42's festivals (Portugal Tech Week as an umbrella) and platforms, reading graph-model.mjs rather than deriving its own",
+    "work/32: counts for design and dev.1 as they ask"
   ],
   "asks": [
     "none for Angelo now",

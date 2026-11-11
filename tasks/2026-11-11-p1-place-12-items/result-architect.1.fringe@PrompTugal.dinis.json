@@ -1,0 +1,358 @@
+{
+ "body": {
+  "packet": "2026-11-11-p1-place-12-items",
+  "packet_fp": "sha256:1853c951325c541b",
+  "runner": "architect.1.fringe@PrompTugal.dinis",
+  "environment": "R1 Claude Code cloud, riskmandate-personal; router: OpenRouter open weight",
+  "ran_at": "2026-11-11T15:38:38Z",
+  "runner_choices": {
+   "tier": "cheap",
+   "model": null,
+   "max_tokens": 1500
+  },
+  "outputs": [
+   {
+    "input": "work/03-find-the-uncon",
+    "altitude": "A2",
+    "why": "Uses tools to search, returns result or note.",
+    "tries": 1,
+    "call_fp": "sha256:9201e260cc01e532"
+   },
+   {
+    "input": "work/04-communities",
+    "altitude": "A0",
+    "why": "Static/dynamic code can list groups, links, and events without a model.",
+    "tries": 1,
+    "call_fp": "sha256:8972748160f15df4"
+   },
+   {
+    "input": "work/37-releases-as-json",
+    "altitude": "A2",
+    "why": "Needs loop calling model and tools until done, no scheduling needed.",
+    "tries": 1,
+    "call_fp": "sha256:55a0ba02fbbb65ac"
+   },
+   {
+    "input": "work/01-pipeline",
+    "altitude": "A1",
+    "why": "Single LLM call suffices to generate static page",
+    "tries": 1,
+    "call_fp": "sha256:ea29d75f95859de7"
+   },
+   {
+    "input": "work/08-channel-drafts",
+    "altitude": "A1",
+    "why": "A single LLM call can generate three draft posts linking a site.",
+    "tries": 1,
+    "call_fp": "sha256:c02a5e650617db13"
+   },
+   {
+    "input": "work/13-editorial-check",
+    "altitude": "A0",
+    "why": "Data validation task can be done by code without a model.",
+    "tries": 1,
+    "call_fp": "sha256:2364f35e1c130e47"
+   },
+   {
+    "input": "work/18-outreach-kit",
+    "altitude": "A1",
+    "why": "Requires model output but no tools, loops, or scheduling beyond LLM call.",
+    "tries": 1,
+    "call_fp": "sha256:ec7042dbafc30eb5"
+   },
+   {
+    "input": "work/23-organiser-outreach",
+    "error": "no valid output in 1 try"
+   },
+   {
+    "input": "work/27-captures",
+    "altitude": "A2",
+    "why": "It requires a loop for Playwright, tools, and task completion.",
+    "tries": 1,
+    "call_fp": "sha256:ffa5a69aada0745b"
+   },
+   {
+    "input": "work/31-outreach-map",
+    "error": "no valid output in 1 try"
+   },
+   {
+    "input": "work/36-designs-from-the-community",
+    "altitude": "A3",
+    "why": "Requires memory across runs and ability to reach external APIs and PRs.",
+    "tries": 1,
+    "call_fp": "sha256:294a269d94328fc9"
+   },
+   {
+    "input": "work/42-the-semantic-graph",
+    "altitude": "A2",
+    "why": "A2 loop can manage files, use tools, and stop when done.",
+    "tries": 1,
+    "call_fp": "sha256:fd3858c3115307b2"
+   }
+  ],
+  "calls": [
+   {
+    "body": {
+     "input": "work/03-find-the-uncon",
+     "try": 1,
+     "ok": true,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T153737-7c1d56ff",
+     "cost_usd": 0.000063148932,
+     "latency_ms": 3474,
+     "prompt_sha256": "58f08967915fb732b45ee2476754caebcd00aeb7630418b332a6efa6e95424b5"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p1-place-12-items work/03-find-the-uncon #1",
+     "fp": "sha256:9201e260cc01e532",
+     "pub": "MCowBQYDK2VwAyEAswDHxtkEkFVIop9LeVwejPByXHH+CJrWRKsDrIP2hSc=",
+     "born": "2026-11-11T15:37:37Z",
+     "signed_at": "2026-11-11T15:37:41Z"
+    },
+    "sig": "969lBSdI+AkcFLmdGLxYpchDBX2q+56LX9OG/HZeMztJfqrOvgoAOuTZF3s4r8ESQ9gVB4zeWUWN+3XzMjQlCA=="
+   },
+   {
+    "body": {
+     "input": "work/04-communities",
+     "try": 1,
+     "ok": true,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T153741-1a70c461",
+     "cost_usd": 0.00007738731,
+     "latency_ms": 5297,
+     "prompt_sha256": "0e9cfde69e57997a5af3af45b1a7818fc057636a911beed2e5a04f63916cb1d3"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p1-place-12-items work/04-communities #1",
+     "fp": "sha256:8972748160f15df4",
+     "pub": "MCowBQYDK2VwAyEAurDUKDCagiGDReQwdA0c7cedbXmyR/6+pL6gr6isb5Q=",
+     "born": "2026-11-11T15:37:41Z",
+     "signed_at": "2026-11-11T15:37:46Z"
+    },
+    "sig": "2gIq+rZI0yVNCil74k0bGDiLrwX3/q0e1g1UUw0G8V0sQsuTeYlj0yU1Z+HuZLzJwg6rj2o3NK9fNFpJ6JPRCQ=="
+   },
+   {
+    "body": {
+     "input": "work/37-releases-as-json",
+     "try": 1,
+     "ok": true,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T153746-efe1d9f9",
+     "cost_usd": 0.0000309177,
+     "latency_ms": 2360,
+     "prompt_sha256": "893c25d1a4e4dcdcc14733db8139e30f544f23aa740b97630a7a066f51af0dbd"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p1-place-12-items work/37-releases-as-json #1",
+     "fp": "sha256:55a0ba02fbbb65ac",
+     "pub": "MCowBQYDK2VwAyEAljLbjuSSKGLhFK0/ajeQIpCEk4g//T4xVZZahHcheyM=",
+     "born": "2026-11-11T15:37:46Z",
+     "signed_at": "2026-11-11T15:37:49Z"
+    },
+    "sig": "PfBOstpdYctePVrHw6A3OWp2e+778ckcMMYCyxhAqEVXvKBpOFrOljophzMiIOeClX5e2o5c5hJ/L0hrETLlBg=="
+   },
+   {
+    "body": {
+     "input": "work/01-pipeline",
+     "try": 1,
+     "ok": true,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T153749-f43ed71e",
+     "cost_usd": 0.0000220968,
+     "latency_ms": 916,
+     "prompt_sha256": "b03d1c0b3f0410c05043fd68e5715a39c3e6b14a636a5b8519944739709be4d3"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p1-place-12-items work/01-pipeline #1",
+     "fp": "sha256:ea29d75f95859de7",
+     "pub": "MCowBQYDK2VwAyEANvX4lpmNLxQf+vvdQyAJPBHAIwf2o4P084nlwpgf/tE=",
+     "born": "2026-11-11T15:37:49Z",
+     "signed_at": "2026-11-11T15:37:50Z"
+    },
+    "sig": "d59KCt4lY59VJk2CQastgQ85ZVFzYFXkJIbU2ZVfR0gmv2SYzu5mk5l/IpRs5e/hSxX2c65nYI3refdWjCEdDA=="
+   },
+   {
+    "body": {
+     "input": "work/08-channel-drafts",
+     "try": 1,
+     "ok": true,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T153750-c629d9e8",
+     "cost_usd": 0.0000283239,
+     "latency_ms": 468,
+     "prompt_sha256": "b00ab08453232f12653e87c0955f8e3f5f11e632dacddf122dd83f8b115c211c"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p1-place-12-items work/08-channel-drafts #1",
+     "fp": "sha256:c02a5e650617db13",
+     "pub": "MCowBQYDK2VwAyEAdbGPlYOnGSy6AUvAtw+xp2NoE9xm3QdkRd48PpjpEYQ=",
+     "born": "2026-11-11T15:37:50Z",
+     "signed_at": "2026-11-11T15:37:50Z"
+    },
+    "sig": "+KdUw1bqEno/F/2H5UeiPLPOCGo//6aIDyyfGRRBPShs4ZsPsxwfKhlaXN3sG3GlfZ2+E1L2qTlD41jzFp+8DQ=="
+   },
+   {
+    "body": {
+     "input": "work/13-editorial-check",
+     "try": 1,
+     "ok": true,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T153750-0ed4df40",
+     "cost_usd": 0.0006530535,
+     "latency_ms": 13518,
+     "prompt_sha256": "d499e3a6db89f1067e4884435a17441769b75df5c6ed2066cf03b111924cf8ef"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p1-place-12-items work/13-editorial-check #1",
+     "fp": "sha256:2364f35e1c130e47",
+     "pub": "MCowBQYDK2VwAyEAUEI2fJ8moUVyZjgGT6pEAtw/eWbMPbhBFPeURdu0Jd4=",
+     "born": "2026-11-11T15:37:50Z",
+     "signed_at": "2026-11-11T15:38:04Z"
+    },
+    "sig": "t3wXU6js/DBpUm8Vuxo+1RbX2bIQXC4UXriaOse7WohK1wA+h9+kQHBqU6a+b2mySYy/ab8Cc8o0Rc9wSGATCg=="
+   },
+   {
+    "body": {
+     "input": "work/18-outreach-kit",
+     "try": 1,
+     "ok": true,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T153804-b04a5b13",
+     "cost_usd": 0.000038214,
+     "latency_ms": 854,
+     "prompt_sha256": "59a388fbc762be2a36d1dd946a94cf1e01532a99c926a28f00ba6e0ab2dcadd2"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p1-place-12-items work/18-outreach-kit #1",
+     "fp": "sha256:ec7042dbafc30eb5",
+     "pub": "MCowBQYDK2VwAyEAuwhE0QXOq/xay4Bkq/WdvfdjL8PEYgj8d3cPpuLyvUk=",
+     "born": "2026-11-11T15:38:04Z",
+     "signed_at": "2026-11-11T15:38:05Z"
+    },
+    "sig": "jYtEZptah1+5W9czpSwAiQO0o/EYe7z5Rrj+Ih2GD/Z/jiFeXeSGuCzlwUZ1uzRBgWnkh3j8sWJeENntDsySCQ=="
+   },
+   {
+    "body": {
+     "input": "work/23-organiser-outreach",
+     "try": 1,
+     "ok": false,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T153805-d9a51f6c",
+     "cost_usd": 0.0006862185,
+     "latency_ms": 14834,
+     "prompt_sha256": "05b9dd55aaa6b2344b6c39fedbd6a6b0ca5aa03b60f7304c4c6f86964ae3cbdd"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p1-place-12-items work/23-organiser-outreach #1",
+     "fp": "sha256:6fcd98c0ed28b285",
+     "pub": "MCowBQYDK2VwAyEAP04n+pJru1vborsEKkidAYGyIimxwd9KWeLbS4On7rU=",
+     "born": "2026-11-11T15:38:05Z",
+     "signed_at": "2026-11-11T15:38:19Z"
+    },
+    "sig": "ZJOCP2bwvmtHoiWZmqo59EjFCE8LofoHhLruGmfQqHf5nGTismZufS2/JXhrOXJ+QYVTjgBGkUmq8gOl1qn6CA=="
+   },
+   {
+    "body": {
+     "input": "work/27-captures",
+     "try": 1,
+     "ok": true,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T153819-7880f876",
+     "cost_usd": 0.00001284822,
+     "latency_ms": 537,
+     "prompt_sha256": "5dd0847a93ac513d35dea267183ff15f2bfe41b01e39a9cbe582e91fa5a00c8d"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p1-place-12-items work/27-captures #1",
+     "fp": "sha256:ffa5a69aada0745b",
+     "pub": "MCowBQYDK2VwAyEAbW7NWpk6AVzYKavQfUCFlKRKGsEX1YriWbSyvZ7Rz1w=",
+     "born": "2026-11-11T15:38:19Z",
+     "signed_at": "2026-11-11T15:38:20Z"
+    },
+    "sig": "NcRtHCcRHaPxG+oYDnhmoZbT2nUY5r+5d/q+QDVNbJxGMcp9lzqaPBQwtMBvCxdpGAEw9fz9VobTUgIsc9k4Cg=="
+   },
+   {
+    "body": {
+     "input": "work/31-outreach-map",
+     "try": 1,
+     "ok": false,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T153820-5c6fa21d",
+     "cost_usd": 0.000685971,
+     "latency_ms": 16260,
+     "prompt_sha256": "4a260fa04428151869031ccff76d771b73186c0add177ab5fef52882cd8389b4"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p1-place-12-items work/31-outreach-map #1",
+     "fp": "sha256:226728df43aabffe",
+     "pub": "MCowBQYDK2VwAyEAQc7iSbDUPnbQ6zH0bCmc8pkN87bh9mjXgd8SA827w74=",
+     "born": "2026-11-11T15:38:20Z",
+     "signed_at": "2026-11-11T15:38:36Z"
+    },
+    "sig": "J0IxTlS5bqKVOC+0MP5oLKz52w18a8yA722uZyHuEe+ZPiQqK5hrrQFzTt/Xv/KZXfX6IE4DQQFtdWXPMGItCQ=="
+   },
+   {
+    "body": {
+     "input": "work/36-designs-from-the-community",
+     "try": 1,
+     "ok": true,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T153836-26b220ab",
+     "cost_usd": 0.000039303,
+     "latency_ms": 593,
+     "prompt_sha256": "0e969e9bc2d1c621dac6361737564412d04fc436a13d7306c77b9f4f9a8f6cc0"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p1-place-12-items work/36-designs-from-the-community #1",
+     "fp": "sha256:294a269d94328fc9",
+     "pub": "MCowBQYDK2VwAyEA487svyRljI+8W7O5sWf1cmHM4Gv0NmEmgt/a1Vrumhk=",
+     "born": "2026-11-11T15:38:36Z",
+     "signed_at": "2026-11-11T15:38:37Z"
+    },
+    "sig": "1jZGPGUCBHCafjN6QiLJ7Y6eBqTf7Z9J/ltsG7WA55rkezoMSMC4w+3iDeDNIbAHupslz8i6sVuoUICsQEr/Aw=="
+   },
+   {
+    "body": {
+     "input": "work/42-the-semantic-graph",
+     "try": 1,
+     "ok": true,
+     "model": "deepseek/deepseek-v4-flash",
+     "ledger_id": "20261111T153837-45266f1e",
+     "cost_usd": 0.00001186812,
+     "latency_ms": 1357,
+     "prompt_sha256": "781878d114e33408acd1fe1f5128b063e392447b04f55337307c01833b9bd200"
+    },
+    "by": {
+     "altitude": "A1",
+     "name": "LLM call: 2026-11-11-p1-place-12-items work/42-the-semantic-graph #1",
+     "fp": "sha256:fd3858c3115307b2",
+     "pub": "MCowBQYDK2VwAyEAGkd7DEF6LjIz7xZ3m0rFjEnT+utvGHseqWQ6GFdIeN0=",
+     "born": "2026-11-11T15:38:37Z",
+     "signed_at": "2026-11-11T15:38:38Z"
+    },
+    "sig": "ryVKAX+tzRgES1mGcF1XqjDGsiJUUFADdYPFUxrF/UMknk0Z8U7bMg4bSm76dlfMl4AlMKlNIOp+eHfLs4+gAQ=="
+   }
+  ],
+  "cost_usd": 0.002349
+ },
+ "by": {
+  "altitude": "A1",
+  "name": "calls: 2026-11-11-p1-place-12-items by architect.1.fringe@PrompTugal.dinis",
+  "fp": "sha256:c0a04d4985d3d15d",
+  "pub": "MCowBQYDK2VwAyEAJoH/lgMPOuk/+aZ8x0MKXDhKDT8J7kxpxHoDJlNlLfY=",
+  "born": "2026-11-11T15:37:37Z",
+  "signed_at": "2026-11-11T15:38:38Z"
+ },
+ "sig": "k07celR5svadHqtjkoMPe7AUHPW9lSqz+nDaz5wU3KIOVqju11H4oIyiqwM/kbZxKf0NF/KVEUhaNpmatMB7AQ=="
+}

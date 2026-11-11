@@ -16,7 +16,14 @@ const AGENT = process.env.AGENT || 'dev.2.fringe@PrompTugal.dinis';
 const now = Date.now(), sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const events = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/events.json'), 'utf8')).events
   .filter((e) => /^https:\/\//.test(e.url) && !/(^|\.)websummit\.com$/i.test(new URL(e.url).hostname) && now - Date.parse(e.read_at) <= HOURS * 3600e3 + 60e3);
-const todo = LIMIT ? events.slice(0, LIMIT) : events;
+// THE LEAD'S HOLD (work/49, 16:23 UTC): Luma's terms allow access only through its publicly supported interfaces, and Meetup's terms are on hold for
+// machines (sources.md). This tool never fetches luma.com, lu.ma or meetup.com pages. Luma events are to be fed from the calendars' iCal data that
+// researcher.2 collects (a publicly supported interface), once that feed is wired in here; until then they are skipped, not checked.
+const HELD = /(^|\.)(luma\.com|lu\.ma|meetup\.com)$/i;
+const held = events.filter((e) => HELD.test(new URL(e.url).hostname));
+const free = events.filter((e) => !HELD.test(new URL(e.url).hostname));
+if (held.length) console.log(`terms hold (work/49): ${held.length} Luma/Meetup events not fetched`);
+const todo = LIMIT ? free.slice(0, LIMIT) : free;
 
 async function pageText(url) {
   const r = await fetch(url, { redirect: 'follow', signal: AbortSignal.timeout(20000), headers: { 'User-Agent': 'LisbonFringeCheck/1.0 (public pages only; fringe.promptugal.news)' } });

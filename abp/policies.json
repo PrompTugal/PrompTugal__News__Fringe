@@ -1,7 +1,7 @@
 {
   "about": "The Agent Behaviour Policies of Lisbon Fringe (lisbontechfringe.com, origin in admin/site.json; WS-215) as data: deny by default, one grant per role and agent, across this repository and the others the swarm touches. Ported from PrompTugal__News__Website board/abp/policies.json (abp@PrompTugal.dinis, v1.7.0, since 6 November 2026), not invented anew; built on RiskMandate's Agent Behaviour Policy and Licence to Operate (https://riskmandate.ai/agent-behaviour-policy.html). Read by the hooks (.claude/settings.json, .claude/hooks/abp.mjs) and by the gate's commit check (abp/tools/abp.mjs check). abp/<agent>.md is generated from this file (node abp/tools/abp.mjs build), never edited by hand. Kept by architect.1.fringe@PrompTugal.dinis (work/39); any relaxation, and any move towards enforcement, is Dinis's decision.",
-  "version": "0.1.0",
-  "updated": "2026-11-11T14:08Z",
+  "version": "0.3.2",
+  "updated": "2026-11-11T15:51Z",
   "operator": "Dinis Cruz",
   "kept_by": "architect.1.fringe@PrompTugal.dinis",
   "status": "DRAFT: grants proposed from the git log (data/architecture.json observed); Dinis and the lead review",
@@ -55,6 +55,10 @@
       "R11": {
         "mode": "observe",
         "since": "2026-11-11T13:36Z"
+      },
+      "R12": {
+        "mode": "observe",
+        "since": "2026-11-11T15:15Z"
       }
     }
   },
@@ -134,6 +138,13 @@
       "rule": "If HOLD.md exists at the root, stop after pulling and say why. Only Dinis lifts a hold.",
       "barrier": "rule",
       "hook": "anchor"
+    },
+    {
+      "id": "R12",
+      "rule": "Do not mix altitudes: the grant's altitude must not be above the mandate's (A4 swarm, A3 agent, A2 loop, A1 LLM call, A0 compute). A loop or an LLM call started for one task should hold only that task's grant.",
+      "barrier": "hook",
+      "hook": "pre-tool (an 'altitude' event)",
+      "source": "Dinis with Angelo, 15:0x UTC (briefs/2026-11-11-1440-the-operating-model.md); routed by the lead at 15:14 UTC as an observe-mode check"
     }
   ],
   "tools": {
@@ -259,12 +270,14 @@
     "about": "Every agent with a grant writes these, in addition to its own paths.",
     "writes": [
       "team/{person}/agents/{name}.json",
+      "team/{person}/agents/{name}.fringe.json",
       "team/{person}/agents/{name}/**",
       "data/keys.json#own-entry",
       "data/inboxes/{keyid}.json",
-      "work/{claimed}"
+      "work/{claimed}",
+      "tasks/*/result-*.json"
     ],
-    "writes_note": "data/keys.json: append or update your own entry only (the gate cannot tell entries apart yet; the hourly review reads the diff). work/{claimed}: the board file of an item you own or are claiming (owner, status, evidence lines), never another owner's item. data/inboxes/: the inbox tool writes them.",
+    "writes_note": "data/keys.json: append or update your own entry only (the gate cannot tell entries apart yet; the hourly review reads the diff). work/{claimed}: the board file of an item you own or are claiming (owner, status, evidence lines), never another owner's item. data/inboxes/: the inbox tool writes them. tasks/*/result-*.json: any agent may return a signed result to a task packet (work/48, cross-environment runs at Dinis's word, 15:3x UTC).",
     "writes_outside_repo": [
       "/tmp/**",
       "{home}/.sg-send/**",
@@ -284,7 +297,7 @@
       {
         "glob": ".claude/**",
         "owner": "architect",
-        "why": "the hooks that observe every agent; an agent that edits them switches off its own record"
+        "why": "the hooks that observe every agent; an agent that edits them switches off its own record (security finding 28: the gate warns on any .claude/ change not by architect.1; protecting the path with code owners and branch protection is Dinis's)"
       },
       {
         "glob": "abp/**",
@@ -304,7 +317,10 @@
       {
         "glob": "briefs/**",
         "owner": "conductor",
-        "why": "Dinis's words, relayed by the lead"
+        "why": "Dinis's words, relayed by the lead; the architect writes notes of Dinis in its own session (Dinis, 2026-11-11T14:54Z)",
+        "also": [
+          "architect"
+        ]
       },
       {
         "glob": "admin/series.txt",
@@ -331,7 +347,9 @@
       "**/.env.*",
       "**/*.pem",
       "**/.sg_vault/local/**"
-    ]
+    ],
+    "person_conductor_items": true,
+    "person_conductor_items_note": "a person's agents may edit work items owned by their own person's conductor (applied 2026-11-11T14:54Z)"
   },
   "roles": {
     "lead": {
@@ -390,7 +408,18 @@
         "admin/build/abp-page.mjs",
         "admin/build/architecture-page.mjs",
         "CONTRIBUTING.md",
-        "guidance/**"
+        "guidance/**",
+        "data/runtimes.json",
+        "data/operating-model.json",
+        "docs/where-agents-run*",
+        "admin/build/operating-model.mjs",
+        "abp/reviews/**",
+        "tasks/**",
+        "data/run-reach.json",
+        "data/work-altitudes.json",
+        "docs/articles/**",
+        "admin/build/articles.mjs",
+        "docs/handoffs/**"
       ],
       "touches_shared": [
         "admin/build/build.mjs (one line per page, until the registry lands)",
@@ -414,7 +443,8 @@
         "data/organisers.json",
         "data/person-keys.json",
         "admin/site.json",
-        "CNAME"
+        "CNAME",
+        "data/models-*.json"
       ],
       "send_hosts": [
         "openrouter.ai"
@@ -430,7 +460,8 @@
         "admin/build/tokens.css",
         "assets/brand/**",
         "assets/**",
-        "work/design/**"
+        "work/design/**",
+        "admin/build/*.js#own-modules"
       ],
       "send_hosts": [],
       "never": "changes the gate, CI or the data to make a design fit; the brand's logo without Dinis's yes"
@@ -441,7 +472,8 @@
         "data/events.json",
         "seed/**",
         "sources.md",
-        "api/v1/README.md"
+        "api/v1/README.md",
+        "data/places.json"
       ],
       "send_hosts": [],
       "never": "reads websummit.com by machine; publishes a guess as a fact; names a private person"
@@ -452,7 +484,9 @@
         "data/capture-*.json",
         "admin/capture-sealed/**",
         "admin/tools/capture.mjs",
-        "admin/build/evolution.mjs"
+        "admin/build/evolution.mjs",
+        "admin/tools/covers.mjs",
+        "data/event-images.json"
       ],
       "send_hosts": [
         "dev.send.sgraph.ai"
@@ -531,12 +565,21 @@
     },
     "architect.1.fringe@PrompTugal.dinis": {
       "role": "architect",
-      "account": "riskmandate-personal (Ultra)"
+      "account": "riskmandate-personal (Ultra)",
+      "messages": true,
+      "messages_note": "send_message to the lead's session only",
+      "extra_writes": [
+        "briefs/*.md#notes-of-Dinis-in-its-session"
+      ],
+      "send_hosts": [
+        "openrouter.ai"
+      ]
     },
     "fable.fringe@PrompTugal.dinis": {
       "role": "advisor",
-      "branch": "work/fable.fringe",
-      "account": "riskmandate-personal (Ultra)"
+      "branch": "dev",
+      "account": "riskmandate-personal (Ultra)",
+      "branch_note": "dev behind the gate, as every agent (Dinis, brief 15: 'The agents run always on dev'; security finding 31)"
     },
     "observability.fringe@PrompTugal.dinis": {
       "role": "observability",
@@ -618,7 +661,10 @@
       "owns_shared": [
         "data/events.json"
       ],
-      "account": "riskmandate-personal (Ultra)"
+      "account": "riskmandate-personal (Ultra)",
+      "extra_writes": [
+        "data/tips-status.json"
+      ]
     },
     "capture.1.fringe@PrompTugal.dinis": {
       "role": "capture",
@@ -634,18 +680,21 @@
     },
     "researcher.fringe@PrompTugal.dinis": {
       "role": "researcher",
-      "branch": "work/researcher.fringe",
-      "account": "the old lead's"
+      "branch": "dev",
+      "account": "the old lead's",
+      "branch_note": "dev behind the gate, as every agent (Dinis, brief 15: 'The agents run always on dev'; security finding 31)"
     },
     "security.fringe@PrompTugal.dinis": {
       "role": "security",
-      "branch": "work/security.fringe",
-      "account": "the old lead's"
+      "branch": "dev",
+      "account": "the old lead's",
+      "branch_note": "dev behind the gate, as every agent (Dinis, brief 15: 'The agents run always on dev'; security finding 31)"
     },
     "dev.fringe@PrompTugal.dinis": {
       "role": "dev",
-      "branch": "work/dev.fringe",
-      "account": "the old lead's"
+      "branch": "dev",
+      "account": "the old lead's",
+      "branch_note": "dev behind the gate, as every agent (Dinis, brief 15: 'The agents run always on dev'; security finding 31)"
     },
     "dev.lead.fringe@PrompTugal.dinis": {
       "role": "dev",
@@ -875,26 +924,7 @@
   },
   "proposed_relaxations": {
     "about": "Proposed by the architect, never applied: Dinis decides.",
-    "items": [
-      {
-        "agent": "researcher.2.fringe@PrompTugal.dinis",
-        "what": "data/tips-status.json",
-        "why": "the tips lane is researcher.2's (work/41); 34e8a64",
-        "since": "2026-11-11T13:51Z"
-      },
-      {
-        "agent": "* (a person's agents)",
-        "what": "work/<item> whose owner is their own person's conductor",
-        "why": "graph.fringe@PrompTugal.angelo on work/32 (af1072f), owned by Angelo's conductor",
-        "since": "2026-11-11T13:51Z"
-      },
-      {
-        "agent": "architect.1.fringe@PrompTugal.dinis",
-        "what": "send_message to the lead's session only",
-        "why": "two replies to the lead (13:46, 13:47) observed under R4",
-        "since": "2026-11-11T13:51Z"
-      }
-    ]
+    "items": []
   },
   "open_questions": [
     {
@@ -908,7 +938,7 @@
       "for": "Dinis: observe for three rounds; then decide whether design keeps admin/build/** or works through a page registry"
     }
   ],
-  "hook_sha256": "341be5468c890190",
+  "hook_sha256": "389d2f64a4bb49ca",
   "effective": "2026-11-11T13:36:00Z",
   "effective_note": "Earlier commits are read against the grants as calibration, not counted.",
   "review": {
@@ -918,8 +948,146 @@
         "round": 1,
         "file": "abp/reviews/2026-11-11-13.md",
         "at": "2026-11-11T13:51Z"
+      },
+      {
+        "round": 2,
+        "file": "abp/reviews/2026-11-11-14.md",
+        "at": "2026-11-11T14:51Z"
+      },
+      {
+        "round": 3,
+        "file": "abp/reviews/2026-11-11-15.md",
+        "at": "2026-11-11T15:51Z"
       }
     ]
   },
-  "mapping_rule": "Granting a new agent its own role's scope is mapping, done by the architect as agents start (the lead, 14:07 UTC). A grant that widens an agent's reach into another agent's paths is a relaxation: proposed_relaxations, Dinis decides."
+  "mapping_rule": "Granting a new agent its own role's scope is mapping, done by the architect as agents start (the lead, 14:07 UTC). A grant that widens an agent's reach into another agent's paths is a relaxation: proposed_relaxations, Dinis decides.",
+  "relaxations_applied": [
+    {
+      "agent": "researcher.2.fringe@PrompTugal.dinis",
+      "what": "data/tips-status.json",
+      "why": "the tips lane is researcher.2's (work/41); 34e8a64",
+      "since": "2026-11-11T13:51Z",
+      "decided": {
+        "at": "2026-11-11T14:54Z",
+        "by": "Dinis",
+        "decision": "yes",
+        "words": "Dinis, in architect.1's session: 'you can widen those permissions for now ... yes, you can write briefs and notes in brief ... all those are good'"
+      }
+    },
+    {
+      "agent": "* (a person's agents)",
+      "what": "work/<item> whose owner is their own person's conductor",
+      "why": "graph.fringe@PrompTugal.angelo on work/32 (af1072f), owned by Angelo's conductor",
+      "since": "2026-11-11T13:51Z",
+      "decided": {
+        "at": "2026-11-11T14:54Z",
+        "by": "Dinis",
+        "decision": "yes",
+        "words": "Dinis, in architect.1's session: 'you can widen those permissions for now ... yes, you can write briefs and notes in brief ... all those are good'"
+      }
+    },
+    {
+      "agent": "architect.1.fringe@PrompTugal.dinis",
+      "what": "send_message to the lead's session only",
+      "why": "two replies to the lead (13:46, 13:47) observed under R4",
+      "since": "2026-11-11T13:51Z",
+      "decided": {
+        "at": "2026-11-11T14:54Z",
+        "by": "Dinis",
+        "decision": "yes",
+        "words": "Dinis, in architect.1's session: 'you can widen those permissions for now ... yes, you can write briefs and notes in brief ... all those are good'"
+      }
+    },
+    {
+      "agent": "architect.1.fringe@PrompTugal.dinis",
+      "what": "briefs/<date>-<time>-*.md when Dinis speaks in its own session (a brief note with his words quoted)",
+      "why": "the lead's handover (14:30 UTC) asked it; a477106, 5560113 observed under R6 (briefs/ is the lead's)",
+      "since": "2026-11-11T14:51Z",
+      "decided": {
+        "at": "2026-11-11T14:54Z",
+        "by": "Dinis",
+        "decision": "yes",
+        "words": "Dinis, in architect.1's session: 'you can widen those permissions for now ... yes, you can write briefs and notes in brief ... all those are good'"
+      }
+    },
+    {
+      "agent": "architect.1.fringe@PrompTugal.dinis",
+      "what": "send to openrouter.ai, through admin/tools/llm.mjs only (ledger)",
+      "why": "Dinis asked for infographics from OpenRouter's image models in this session (14:37 UTC); two calls, 0.28 USD, ledgered",
+      "since": "2026-11-11T14:51Z",
+      "decided": {
+        "at": "2026-11-11T14:54Z",
+        "by": "Dinis",
+        "decision": "yes",
+        "words": "Dinis, in architect.1's session: 'you can widen those permissions for now ... yes, you can write briefs and notes in brief ... all those are good'"
+      }
+    }
+  ],
+  "vault_primitives": {
+    "status": "adopted in this swarm's model (Dinis, 2026-11-11T14:54Z)",
+    "items": [
+      "read.vault.tenant",
+      "send.message.tenant",
+      "write.vault.tenant",
+      "create.vault.world"
+    ],
+    "note": "not in abp.sgit.ai's published grammar"
+  },
+  "altitudes": {
+    "about": "The altitude each agent works at (data/operating-model.json). Its sub-agents are A2 loops; its router calls are A1.",
+    "default": "A3",
+    "by_role": {
+      "lead": "A4",
+      "conductor": "A4"
+    },
+    "observed": [
+      "Agent/Task (a sub-agent): an A2 loop that inherits its parent's A3 (or A4) grant",
+      "an LLM call (llm.mjs or a direct API call) carrying tools: an A1 mandate given an A2 grant"
+    ],
+    "narrow_subagents": {
+      "about": "Sub-agent types whose own tool set is read-only: their grant really is an A2 loop's, so starting one does not mix altitudes (learned from the first trial, 2026-11-11T15:26Z: an Explore loop was flagged though it could not write).",
+      "types": [
+        "Explore",
+        "Plan",
+        "claude-code-guide",
+        "web-fetch"
+      ]
+    }
+  },
+  "hook_contract": {
+    "about": "What the hook may touch (security finding 28), tested by node abp/tools/abp.mjs test (28a to 28i) under Node's permission model.",
+    "reads": [
+      "the tool-call input (stdin)",
+      "abp/ (policies.json, <agent>.md, overrides.json)",
+      "its own source (the sha check)",
+      "HOLD.md and .git/HEAD in the project",
+      "~/.abp/whoami (the agent's label)"
+    ],
+    "never": [
+      "~/.sg-send or any key store",
+      "the environment beyond CLAUDE_PROJECT_DIR, ABP_AGENT, ABP_LOG_DIR, ABP_OVERRIDE, ABP_OVERRIDE_BY",
+      "a child process",
+      "the network"
+    ],
+    "writes": [
+      "~/.abp/log/<session>.jsonl only"
+    ],
+    "identity": "node abp/tools/abp.mjs whoami writes ~/.abp/whoami from the key's label (metadata.json only), once per session, after keygen"
+  },
+  "proposed_enforcement": {
+    "about": "After three rounds (Dinis, 13:36 UTC: 'two or three rounds ... only when we know that a particular thing is safe'). Proposed by the architect, not applied: Dinis decides, rule by rule.",
+    "at": "2026-11-11T15:51Z",
+    "rules": {
+      "R5": "no finding in three rounds: push to dev only, no force-push, no tags, no empty commits",
+      "R8": "no finding in three rounds: no key or token printed or committed",
+      "R9": "no finding in three rounds: commit and release only under your own name"
+    },
+    "override": "stays open to any conductor and Dinis, logged (abp/overrides.json, ABP_OVERRIDE)",
+    "not_proposed": {
+      "R6": "still measures the grants' freshness",
+      "R7": "sends are invisible in commits; hook logs stay on each machine",
+      "R12": "fires on normal loops until the sandboxed runner exists"
+    }
+  }
 }

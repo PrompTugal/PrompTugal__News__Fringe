@@ -13,7 +13,7 @@ const DATE = arg('date', new Date().toISOString().slice(0, 10)), LIMIT = Number(
 const HOST = 'https://dev.send.sgraph.ai', MAX_FILES = 15000, MAX_BYTES = 1_500_000;
 // Luma (sources.md: public pages allowed) and organisers' own sites (the lead's addendum, 14:00 UTC). NO automated reading of
 // Meetup (on hold), Eventbrite, Partiful (forbid it) or websummit.com: those events get no automated cover, and are listed in the status.
-const NO = /(^|\.)(meetup\.com|eventbrite\.[a-z.]+|partiful\.com|websummit\.com)$/i;
+const NO = /(^|\.)(luma\.com|lu\.ma|lumacdn\.com|meetup\.com|eventbrite\.[a-z.]+|partiful\.com|websummit\.com)$/i;
 const allowed = e => { const h = new URL(e.url).hostname; return !NO.test(h); };
 const sha = b => crypto.createHash('sha256').update(b).digest('hex');
 const iso = () => new Date().toISOString().replace(/\.\d+Z$/, 'Z');
