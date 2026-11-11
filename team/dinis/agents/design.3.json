@@ -1,10 +1,9 @@
 {
   "agent": "design.3.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T13:34:24Z",
+  "updated": "2026-11-11T14:01:40Z",
   "state": "working",
   "doing": [
-    "D26: waiting for dev.1's frame to route ?design=c (README in admin/build/designs/); then the L1 to L14 checks and gallery pictures",
-    "D16 still needs /submit/ (work/06)"
+    "D26 design C waits for the lab frame; D28: design.1 mounts the map, I fix what its use shows"
   ],
   "done": [
     "D3 event cards: admin/build/cards.mjs; 390/1280 px, light and dark, no overflow or console errors",
@@ -16,7 +15,8 @@
     "D4 calmer pass (brief 8): organiser block 1.2rem on a plain panel, 44 px button, facts two columns on a phone, related events as dense rows with day; 390/1280 px light and dark clean",
     "D23 swarm-live strip on /, /how/, /dashboard/",
     "D23 follow-up: one-line live ticker under the header on every page (links to /how/)",
-    "D26 design C 'the city': c.mjs module written and previewed; waits for the lab frame"
+    "D26 design C 'the city': c.mjs module written and previewed; waits for the lab frame",
+    "D28 map: admin/build/city-map.mjs, a drop-in map (dot per event on a day, by neighbourhood; online, guests-only and outside-Lisbon counted not drawn); shared admin/build/lisbon-areas.mjs (uses researcher.2's neighbourhood and in_lisbon when present)"
   ],
   "next": [
     "after D22 lands: restyle big strip, dense rows, cards, event page; then check 390/1280 px light and dark"
