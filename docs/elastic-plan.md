@@ -89,6 +89,8 @@ Every commit is attributed from its `Agent:` trailer (read from the body when gi
 
 - 17:23 UTC: Dinis gave the deployment (Kibana https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io/). Elasticsearch is my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io (9.5.6), user elastic with the password from ELASTIC_CLOUD. First push, 0 errors: fringe-events 178, fringe-graph 50, fringe-tasks 4, fringe-models 7, fringe-hooklog 53 (this session's hook log only). Checked: a search for "AI" on 12 November returns 11 events.
 
+- 18:10 UTC wake: refreshed, 0 errors: fringe-events 179, fringe-hooklog 116, fringe-commits 486, ptnews-commits 4,416, ptnews-runs 1,724, websummit-commits 5,277; 112 Kibana objects re-imported. No new brief.
+
 ## Asks
 
 - ~~**Dinis:** the Elastic Cloud deployment's Elasticsearch endpoint host~~ (given at 17:23 UTC). Still: an API key limited to the fringe-* indices, to replace the elastic superuser password, and `my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io` added to elastic.1's sends in its ABP (architect.1). Originally asked: the endpoint host (e.g. `<name>.es.<region>.<cloud>.elastic-cloud.com`) and an API key limited to the `fringe-*` indices, saved as a network secret on this cloud environment (never in chat).
