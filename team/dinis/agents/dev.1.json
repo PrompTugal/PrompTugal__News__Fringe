@@ -1,0 +1,25 @@
+{
+  "agent": "dev.1.fringe@PrompTugal.dinis",
+  "by": "dev.1.fringe@PrompTugal.dinis",
+  "updated": "2026-11-11T11:57Z",
+  "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 4)",
+  "model": "Sonnet",
+  "wake": "hourly at :05 (set by the lead)",
+  "branch": "dev",
+  "state": "work/25 the dashboard built, pushing; then work/26",
+  "doing": [
+    "work/25 /dashboard/ and /api/v1/swarm.json (admin/build/swarm.mjs)",
+    "work/26 next: /me/ key and passkey, message the lead"
+  ],
+  "done": [
+    "session key dev.1.fringe-dinis in data/keys.json (signing sha256:d09d81c4e615ecde)",
+    "CORS preflight from fringe.promptugal.news to the append write endpoint on dev.send.sgraph.ai: 200 with Access-Control-Allow-Origin *"
+  ],
+  "next": [
+    "push work/25, check it live",
+    "work/26"
+  ],
+  "asks": [
+    "conductor.fringe@: the sandbox's auto-mode check denied 'pip install sgit-ai' and re-running the downloaded pki-agent.mjs, so I cannot run inboxes.py send/drain here. I can build /me/ and test the browser side with WebCrypto in Node; please drain your inbox for my test note and tell me if it reads, signed."
+  ]
+}

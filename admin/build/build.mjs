@@ -5,6 +5,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildGraph, graphBody, graphCss } from './graph.mjs';   // work/05, conductor.fringe@PrompTugal.angelo
 import { trafficBody, trafficCss } from './traffic.mjs';   // work/21, observability.fringe@PrompTugal.dinis
+import { collectSwarm, swarmBody, swarmCss, swarmScript } from './swarm.mjs';   // work/25, dev.1.fringe@PrompTugal.dinis
 import { eventPages, eventPath, hasPage } from './event-pages.mjs';
 import { eventCard as card, cardList, sortDay, CARD_CSS } from './cards.mjs';   // D3, design.3.fringe@PrompTugal.dinis   // work/22, dev.lead.fringe@PrompTugal.dinis
 
@@ -74,7 +75,7 @@ const page = (title, body, desc, head = '') => `<!doctype html><html lang="en"><
 <meta name="description" content="${esc(desc)}">${head}<style>${css}</style></head><body>
 <header><nav><strong><a href="/">Lisbon Fringe</a></strong><a href="/graph/">Graph</a><a href="/join/">Join the team</a><a href="https://storm-charles.promptugal.news">Storm Charles</a></nav></header>
 <main><p class="ind">${INDEPENDENCE}</p>${body}</main>
-<footer class="muted">${INDEPENDENCE}<br>Built from <a href="${REPO}">the repository</a> at ${BUILT.slice(0, 16).replace('T', ' ')} UTC · <a href="/version.json">${esc(VERSION)}</a>. <a href="/traffic/">Traffic</a>.</footer>
+<footer class="muted">${INDEPENDENCE}<br>Built from <a href="${REPO}">the repository</a> at ${BUILT.slice(0, 16).replace('T', ' ')} UTC · <a href="/version.json">${esc(VERSION)}</a>. <a href="/traffic/">Traffic</a> · <a href="/dashboard/">Swarm</a>.</footer>
 <script src="/assets/obs/obs.js" defer></script>
 </body></html>`;
 
@@ -178,4 +179,9 @@ const traffic = existsSync(join(root, 'data/obs/traffic.json')) ? JSON.parse(rea
 mkdirSync(join(out, 'traffic'), { recursive: true });
 writeFileSync(join(out, 'traffic', 'index.html'), page('Traffic: Lisbon Fringe', `<style>${trafficCss}</style>` + trafficBody(traffic, esc), 'Who reads Lisbon Fringe and how its links spread: counts only.'));
 if (traffic) writeFileSync(join(out, 'traffic', 'traffic.json'), JSON.stringify(traffic, null, 1) + '\n');
+// /dashboard/ and /api/v1/swarm.json (work/25)
+const swarm = await collectSwarm({ root, roster, status, board, traffic, builtAt: BUILT, repo: REPO });
+mkdirSync(join(out, 'dashboard'), { recursive: true });
+writeFileSync(join(out, 'dashboard', 'index.html'), page('The swarm: Lisbon Fringe', `<style>${swarmCss}</style>` + swarmBody(swarm, esc, REPO) + swarmScript, 'Who is online in the Lisbon Fringe swarm: conductors, agents, the board and the latest changes.'));
+writeFileSync(join(out, 'api', 'v1', 'swarm.json'), JSON.stringify(swarm, null, 1) + '\n');
 console.log(`built _site/ ${VERSION}: /, /join/, /graph/ (${graph.nodes.length} nodes, ${graph.edges.length} edges), ${events.length} events, ${ePages.length} event pages (${roster.people.length} people, ${board.length} board items, ${Object.keys(status).length} status files)`);

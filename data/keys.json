@@ -164,6 +164,22 @@
         "fingerprint": "sha256:11137357a11e36cb",
         "signing_fingerprint": "sha256:4768d94d8866b449"
       }
+    },
+    {
+      "id": "dev.1.fringe-dinis",
+      "agent": "dev.1.fringe@PrompTugal.dinis",
+      "role": "dev agent for the dashboard (work/25) and Dinis's key on the site (work/26); started by conductor.fringe@PrompTugal.dinis at Dinis's word (brief 4).",
+      "how": "Made in this session on 2026-11-11T11:53Z (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1cc40d05bf8ccc8fc61a2a907c934840cac7aa41d9d8283c1d461002ab, checked). A session key: it ends with the session. Public halves only.",
+      "added": "2026-11-11",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAxnD1E+52CxUY4EDaPtqy\ne/POSj1EmIlv7U6/EpvnYSC713VzdlGTkUmBWrF66pOXZd68aZKbmtym3AfDepkv\nFPZ3rYRgR6kihl6L7KV98VrSXK5LXBK3OwZrKGiq5p9XqNHnzmo6LQQLdiBJ0M40\n/ln03zPGbSdxReuDlK2t/+SnW3jrzYCi1MLAqOMxlXgwEL+jla5qReGxfBASvSqq\nmM7jXpo8JohBBBT3Ra0wsEjGEzbw18LuCLPcpnrSc/56EI3CIG+Oj49vMtAWa9yF\nTsFQ53L2aQ+qm5FF7vx2zofb3d2KHSWm3iyiZ8jr6VYAG6zvjxReL38ID3k4hOy3\nMu6lVBQfGvaE3c9v2khNnREKBtlsCgivSb+QidJ/oPkVKsKc9JF6TUFEvFjcBKbU\nbJiuv+t0KKOUrwb92qJDEfIDlmYwm/3R8tWXFL7taEHvXrBoHhfCarnxknkomFtf\nHhrdxRp1t4pIH5uhp3PUiXcz80jtjdk7o0Ea3V4hHQUMzlzeQzY30Kf23UemNfq3\n+QpSqdU8QfqHdmCA+Umd/X+cFukcd7P79yddkYhFX54CKnoVHsUnsFaCq/q5GZX2\nvL2vOM6huWhZ6AHLyJsuQjomkVypm9nkMmAQvWvlOxAyNknAsZz+W4Iz9pPGeKfo\nnLTsnCza1yQJIezyGdhgROcCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEGENk6uXDw/1o8qsqUl+gQYFcNv/H\nSlTL5KcKqvNp4NECwbJrlaQKhWbS4PkpxOfIt3OtmKM1qxfp3AlcWLKprw==\n-----END PUBLIC KEY-----\n",
+        "label": "dev.1.fringe@PrompTugal.dinis",
+        "fingerprint": "sha256:2be9891e59a91f52",
+        "signing_fingerprint": "sha256:d09d81c4e615ecde"
+      }
     }
   ]
 }
