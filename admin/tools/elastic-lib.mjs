@@ -54,7 +54,7 @@ export function base() {
     if (!/^https:\/\//.test(b)) throw new Error('ELASTIC_URL (https://<deployment>.es.<region>...) is not set')
     return b
 }
-export async function pushIndex(index, mapping, docs, { recreate = false } = {}) {
+export async function pushIndex(index, mapping, docs, { recreate = false, prune = null } = {}) {
     const B = base(), headers = { 'content-type': 'application/json', ...auth() }
     if (recreate) await fetch(`${B}/${index}`, { method: 'DELETE', headers })
     const head = await fetch(`${B}/${index}`, { method: 'HEAD', headers })
@@ -73,7 +73,12 @@ export async function pushIndex(index, mapping, docs, { recreate = false } = {})
         for (const it of bad.slice(0, 3)) console.log(`  error ${it.index._id}: ${it.index.error.type}: ${String(it.index.error.reason).slice(0, 200)}`)
     }
     await fetch(`${B}/${index}/_refresh`, { method: 'POST', headers })
-    return { sent, errors }
+    let pruned = 0
+    if (prune && errors === 0 && sent === docs.length) {   // a mirror of a file: remove what this full push did not touch
+        const r = await fetch(`${B}/${index}/_delete_by_query?refresh=true`, { method: 'POST', headers, body: JSON.stringify({ query: { range: { ingested_at: { lt: prune } } } }) })
+        if (r.ok) pruned = (await r.json()).deleted || 0
+    }
+    return { sent, errors, pruned }
 }
 
 // ---------- submissions by any agent (docs/elastic-guidance.md) ----------

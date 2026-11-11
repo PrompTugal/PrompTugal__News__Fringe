@@ -83,7 +83,7 @@ const by = {}; for (const x of ok) by[x.doc.altitude] = (by[x.doc.altitude] || 0
 console.log(`${INDEX}: ${ok.length} units (${Object.entries(by).sort().map(([k, v]) => `${k} ${v}`).join(', ')}), ${ok.filter(x => x.doc.verified).length} verified, ${docs.length - ok.length} held back`)
 for (const b of bad.slice(0, 8)) console.log(`  held: ${b}`)
 if (process.argv[2] === 'push') {
-    const r = await pushIndex(INDEX, MAPPING, ok, { recreate: process.argv.includes('--recreate') })
-    console.log(`${INDEX}: ${r.sent} sent, ${r.errors} errors`)
+    const r = await pushIndex(INDEX, MAPPING, ok, { recreate: process.argv.includes('--recreate'), prune: NOW })
+    console.log(`${INDEX}: ${r.sent} sent, ${r.errors} errors${r.pruned ? `, ${r.pruned} removed (gone from the source)` : ''}`)
     if (r.errors) process.exit(1)
 }

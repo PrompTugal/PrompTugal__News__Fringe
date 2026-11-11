@@ -227,8 +227,8 @@ async function main() {
             const { ok, bad } = check(s, kind, docs), index = `${s}-${kind}`
             const line = `${index}: ${ok.length} documents, ${docs.length - ok.length} held back by the checks`
             if (cmd === 'push') {
-                const r = await pushIndex(index, MAPPING, ok, { recreate: !!opt.recreate })
-                console.log(`${line}; ${r.sent} sent, ${r.errors} errors`); summary[index] = { docs: ok.length, held: docs.length - ok.length, errors: r.errors }
+                const r = await pushIndex(index, MAPPING, ok, { recreate: !!opt.recreate, prune: ['content', 'entities', 'status'].includes(kind) ? NOW : null })
+                console.log(`${line}; ${r.sent} sent, ${r.errors} errors${r.pruned ? `, ${r.pruned} removed (gone from the source)` : ''}`); summary[index] = { docs: ok.length, held: docs.length - ok.length, errors: r.errors }
             } else { console.log(line); summary[index] = { docs: ok.length, held: docs.length - ok.length } }
             for (const b of bad.slice(0, opt.verbose ? 40 : 3)) console.log(`  held: ${b}`)
         }

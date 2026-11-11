@@ -146,7 +146,7 @@ console.log(`${INDEX}: ${ok.length} documents (${Object.entries(by).map(([k, v])
 for (const b of bad.slice(0, 8)) console.log(`  held: ${b}`)
 if (process.argv[2] === "dump") for (const f of ["placement","run","output","trace","trial"]) console.log(JSON.stringify(ok.find(x => x.doc.facet === f)?.doc, (k, v) => ["source","ingested_at","ingested_by","commit","attrs","kind"].includes(k) ? undefined : v))
 if (process.argv[2] === "push") {
-    const r = await pushIndex(INDEX, MAPPING, ok, { recreate: process.argv.includes('--recreate') })
-    console.log(`${INDEX}: ${r.sent} sent, ${r.errors} errors`)
+    const r = await pushIndex(INDEX, MAPPING, ok, { recreate: process.argv.includes('--recreate'), prune: NOW })
+    console.log(`${INDEX}: ${r.sent} sent, ${r.errors} errors${r.pruned ? `, ${r.pruned} removed (gone from the source)` : ''}`)
     if (r.errors) process.exit(1)
 }
