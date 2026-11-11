@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-11T18:38Z",
+ "generated": "2026-11-11T18:54Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 436,
-  "reads": 376,
-  "tabs": 199,
+  "views": 442,
+  "reads": 381,
+  "tabs": 205,
   "countries": 18,
   "shares": 159,
-  "bots": 1190,
+  "bots": 1202,
   "crawler_tabs": 1,
-  "agent_runs": 138,
-  "agent_runs_signed": 128
+  "agent_runs": 141,
+  "agent_runs_signed": 130
  },
  "by_hour": [
   [
@@ -212,7 +212,7 @@
   ],
   [
    "2026-11-11 18:00",
-   31
+   37
   ]
  ],
  "by_page": [
@@ -257,15 +257,15 @@
    7
   ],
   [
+   "/e/2026-11-11-founderlink-storm-summit-afternoon/",
+   6
+  ],
+  [
    "/e/2026-11-11-corporate-academy-of-tomorrow/",
    6
   ],
   [
    "/graph/",
-   5
-  ],
-  [
-   "/e/2026-11-11-founderlink-storm-summit-afternoon/",
    5
   ],
   [
@@ -502,6 +502,26 @@
   ],
   [
    "/e/2026-11-12-disconnect-2-connect/",
+   1
+  ],
+  [
+   "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&source=alertsmail&hl=en&gl=US&msgid=NzU4MTg5ODA1MDE5MTA5ODQ2Nw&s=AB2Xq4jQ1Drb3m7Qggynlh6qcFTVucRvseru4e4",
+   1
+  ],
+  [
+   "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&ss=fb&rt=PTW+Classroom+-+Who+Flies+When+the+CEO+Ejects",
+   1
+  ],
+  [
+   "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/",
+   1
+  ],
+  [
+   "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&ct=ga&cd=CAEYACoTNzU4MTg5ODA1MDE5MTA5ODQ2NzIcMDE4ZGYwYTk5NWVlNmM3MDpjb206ZW46VVM6TA&usg=AOvVaw0652Ojza7KUs4TwPwCMRUX",
+   1
+  ],
+  [
+   "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&ss=tw&rt=PTW+Classroom+-+Who+Flies+When+the+CEO+Ejects",
    1
   ]
  ],
@@ -937,12 +957,42 @@
    1,
    35,
    36
+  ],
+  [
+   "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&ss=fb&rt=PTW+Classroom+-+Who+Flies+When+the+CEO+Ejects",
+   1,
+   1,
+   0
+  ],
+  [
+   "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/",
+   1,
+   1,
+   0
+  ],
+  [
+   "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&ss=tw&rt=PTW+Classroom+-+Who+Flies+When+the+CEO+Ejects",
+   1,
+   1,
+   0
+  ],
+  [
+   "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&ct=ga&cd=CAEYACoTNzU4MTg5ODA1MDE5MTA5ODQ2NzIcMDE4ZGYwYTk5NWVlNmM3MDpjb206ZW46VVM6TA&usg=AOvVaw0652Ojza7KUs4TwPwCMRUX",
+   1,
+   1,
+   0
+  ],
+  [
+   "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&source=alertsmail&hl=en&gl=US&msgid=NzU4MTg5ODA1MDE5MTA5ODQ2Nw&s=AB2Xq4jQ1Drb3m7Qggynlh6qcFTVucRvseru4e4",
+   1,
+   1,
+   0
   ]
  ],
  "by_country": [
   [
    "Portugal",
-   282
+   283
   ],
   [
    "United Kingdom",
@@ -950,7 +1000,7 @@
   ],
   [
    "United States",
-   25
+   30
   ],
   [
    "Estonia",
@@ -1016,7 +1066,7 @@
  "by_city": [
   [
    "Lisbon, Portugal",
-   203
+   204
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -1068,7 +1118,7 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   62
+   67
   ]
  ],
  "by_referrer": [
@@ -1080,14 +1130,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   397
+   403
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 1685,
+ "other_hosts_views": 1750,
  "by_via": [
   [
    "whatsapp",
@@ -1113,11 +1163,11 @@
  "by_screen": [
   [
    "desktop",
-   231
+   236
   ],
   [
    "phone",
-   201
+   202
   ],
   [
    "tablet",
@@ -1127,7 +1177,7 @@
  "agents": [
   [
    "design.4.fringe@PrompTugal.dinis",
-   15
+   16
   ],
   [
    "design.1.fringe@PrompTugal.dinis",
@@ -1138,12 +1188,12 @@
    13
   ],
   [
-   "architect.1.fringe@PrompTugal.dinis",
+   "conductor.fringe@PrompTugal.jose",
    11
   ],
   [
-   "conductor.fringe@PrompTugal.jose",
-   10
+   "architect.1.fringe@PrompTugal.dinis",
+   11
   ],
   [
    "observability.fringe@PrompTugal.dinis",
@@ -1195,7 +1245,7 @@
   ],
   [
    "usability.1.fringe@PrompTugal.dinis",
-   1
+   2
   ],
   [
    "fable.fringe@PrompTugal.dinis",
@@ -1203,11 +1253,11 @@
   ]
  ],
  "flows": {
-  "tabs": 199,
+  "tabs": 205,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    133
+    139
    ],
    [
     "shared link (?via=)",
@@ -1298,12 +1348,12 @@
     7
    ],
    [
-    "/how/",
+    "/e/2026-11-11-founderlink-storm-summit-afternoon/",
     4
    ],
    [
-    "/e/2026-11-11-founderlink-storm-summit-afternoon/",
-    3
+    "/how/",
+    4
    ],
    [
     "/e/2026-11-11-ai-for-business-applied-ai-pitch-party/",
@@ -1447,7 +1497,7 @@
   "pages_per_tab": [
    [
     "1",
-    130
+    136
    ],
    [
     "2",
@@ -1466,7 +1516,7 @@
     19
    ]
   ],
-  "bounce_rate": 65,
+  "bounce_rate": 66,
   "via_reached": [
    [
     "whatsapp: /",
@@ -1537,11 +1587,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-roast-your-website/",
+    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
+    "whatsapp: /e/2026-11-11-roast-your-website/",
     1
    ],
    [
@@ -1571,7 +1621,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 203,
+    "views": 204,
     "lat": 38.7,
     "lon": -9.1
    },
