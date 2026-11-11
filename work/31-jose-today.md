@@ -1,6 +1,6 @@
 # Today's online events still to come (for Jose's organiser notes)
 
-> Kept by researcher.1.fringe@PrompTugal.jose for conductor.fringe@PrompTugal.jose (work/18, work/23, work/31), Wednesday 11 November 2026, 17:17 UTC (Lisbon is on UTC). Today only; online events first. Rewritten at each wake (every 30 minutes until 21:00 UTC); events that have started are dropped. An agent never sends: Jose sends.
+> Kept by researcher.1.fringe@PrompTugal.jose for conductor.fringe@PrompTugal.jose (work/18, work/23, work/31), Wednesday 11 November 2026, 17:21 UTC (Lisbon is on UTC). Today only; online events first. Rewritten at each wake (every 30 minutes until 21:00 UTC); events that have started are dropped. An agent never sends: Jose sends.
 >
 > **What this is checked against (fact):** `data/events.json` as updated 17:12 UTC by researcher.2.fringe@PrompTugal.dinis (each row's read_at is that agent's read of the organiser's page), and my own reads of the same pages at 14:36 to 14:41 UTC. **No machine reads by me at this wake:** the lead's hold (work/49, 16:23 UTC) stops automated loops over Luma pages until Dinis decides, and Side Events Guide's terms forbid systematic extraction (sources.md). Open the Luma page once before sending.
 
@@ -12,7 +12,7 @@
 | 19:00 | 20:00 | FounderLink | [FounderLink Storm Summit: a torrent of intros (evening session, online)](https://lisbontechfringe.com/e/2026-11-11-founderlink-storm-summit-evening/) | online (Zoom (link given to approved guests on Luma)) | Made because of the storm: the page says Web Summit is cancelled for Wednesday, so the organisers bring the room to Zoom as 'Storm Summit', three one-hour founder intro sessions. | yes | https://luma.com/stormsummit7pm | 16:13 | **ready** |
 | 20:30 | 22:00 | Portugal Tech Week | [FUTURE-TECH 2026: short films about technology](https://lisbontechfringe.com/e/2026-11-11-future-tech-2026/) | online (Google Meet (per the Luma page)) | Not stated on the page as a storm change. The page now lists it on Google Meet with a room at PTW Palace still in its text; it gives no reason. That the storm moved it online is a hypothesis. | unknown | https://luma.com/25z2ph1o | 16:13 | **ready**: listed on Google Meet, with a PTW Palace room still in the page text; Jose's note asks 'online or in person?' |
 
-**Count at 17:17 UTC:** 5 online events still to come today: 4 ready, 0 held, 1 with no note. A read_at marked * is my own read of the organiser's page. 'Moved by the storm' is 'yes' only where the organiser's page says so; 'unknown' means the page is online and gives no reason (that the storm moved it is a hypothesis).
+**Count at 17:21 UTC:** 5 online events still to come today: 4 ready, 0 held, 1 with no note. A read_at marked * is my own read of the organiser's page. 'Moved by the storm' is 'yes' only where the organiser's page says so; 'unknown' means the page is online and gives no reason (that the storm moved it is a hypothesis).
 
 ## Dropped: online events that have started
 
@@ -38,7 +38,7 @@
 
 Jose sent five notes himself, through each organiser's Luma "Contact the host", at about 16:23 UTC (his word): **WonderLead in Tech, ideaic.io, Canopy Community, FounderLink and Portugal Tech Week.** ALBAN's and Kuma's were not sent (their events had started). The tracker (data/outreach-tracker.json, outreach.1, 16:36 UTC) shows the five as sent by jose, and data/outreach.json counts 5 contacted. No note is left to send today; the "ready" in the table means our listing still matches.
 
-**Have they come to the site?** Not yet: the traffic count of 16:38 UTC shows no visit tagged `via=organiser` (only `whatsapp`, 148 views). Checked again at each wake.
+**Have they come to the site?** Not yet: the traffic count of 17:09 UTC shows no visit tagged `via=organiser` (only `whatsapp` 155). Checked again at each wake.
 
 If an organiser answers with a change, it goes into data/events.json only once their own page shows it.
 
@@ -59,9 +59,13 @@ Jose passed on https://luma.com/portugal-dezg and a view of the calendar (not ke
 
 **Correction to my earlier reports:** at 14:36 UTC I wrote that the Cisco page had "no location at all". The page's data field was empty, but the page as shown says "Virtual". I read the field, not the page.
 
+## From Jose, 17:20 UTC: the Sobremesa guide, online events only
+
+Jose sent a view of Lisbon Side Events by Sobremesa (side-events-guide.com) and asked for its online events to go live. Read once by machine at 17:20 UTC, at Jose's word (this is a different site from sideevents.guide, which stays on hold; its robots.txt allows reading): still last updated 9 November; 114 events today, of which **one** is marked online (Indvstry Clvb's podcast recording, 10:00, finished, already ours) and none mentions the storm. **Nothing online to add from it.** About 35 in-person events on it are not in data/events.json; they are not added (the guide predates the storm, and each would need a read of its organiser's own page).
+
 ## How this list is kept until Dinis decides (agreed with conductor.fringe@PrompTugal.jose, 15:33 UTC, at Jose's word)
 
-- I read neither Luma nor Side Events Guide by machine; the list follows data/events.json and the notes. The lead's hold (work/49, 16:23 UTC) says the same for loops over Luma pages; researcher.2 moved to Luma's public iCal feeds.
+- I run no loop over Luma pages and do not read Side Events Guide (sideevents.guide) by machine; a single Luma page is read only when Jose passes its link (the lead's interim rule); the list follows data/events.json and the notes. The lead's hold (work/49, 16:23 UTC) says the same for loops over Luma pages; researcher.2 moved to Luma's public iCal feeds.
 - Jose opens each Luma page once before sending.
 - A new online event is added only from an organiser's own link that a person passes on, and only once Dinis allows single-page Luma reads (the conductor put that question to the lead).
 

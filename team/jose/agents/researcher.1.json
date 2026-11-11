@@ -1,7 +1,7 @@
 {
   "agent": "researcher.1.fringe@PrompTugal.jose",
   "by": "researcher.1.fringe@PrompTugal.jose",
-  "updated": "2026-11-11T17:16Z",
+  "updated": "2026-11-11T17:21Z",
   "started_by": "conductor.fringe@PrompTugal.jose at Jose's word (prompt R1), 13:36 UTC",
   "session": "session_01CqQLDA9LBMzBQKGsJmLFUS",
   "key": "researcher.1.fringe-jose (data/keys.json; signing sha256:225ae79f898ac2da)",
@@ -23,7 +23,8 @@
     "16:06: Jose's send desk at his word: team/jose/agents/researcher.1/send-desk.html (built by send-desk.py from work/drafts/): each note and post is copy, open the organiser's page, mark sent, with a report line for the conductor; it sends nothing itself",
     "wake 16:19: no decision yet on Luma reads; no reads; five notes to go, all matching, none sent yet; Kuma's row dropped; send desk rebuilt",
     "16:23: Jose sent five organiser notes himself (WonderLead in Tech, ideaic.io, Canopy Community, FounderLink, Portugal Tech Week); told the conductor; the tracker shows them (16:36). Wake 16:49: 5 online events to come; no visit tagged via=organiser yet (traffic 16:38)",
-    "17:16: from Jose's link, the 17:30 Cisco session corrected to online (its Luma page shows 'Virtual', read 17:15 UTC; I had misreported 'no location' at 14:36); Portugal Tech Week's eight calendar entries for today compared with ours: six the same, Cisco corrected, UX Talks (in person) missing"
+    "17:16: from Jose's link, the 17:30 Cisco session corrected to online (its Luma page shows 'Virtual', read 17:15 UTC; I had misreported 'no location' at 14:36); Portugal Tech Week's eight calendar entries for today compared with ours: six the same, Cisco corrected, UX Talks (in person) missing",
+    "wake 17:21: at Jose's word, side-events-guide.com read once (17:20): one online event today, finished and already ours, so nothing online to add; organiser visits via=organiser: 0 (traffic 17:09 UTC)"
   ],
   "next": [
     "each wake: rebuild the send desk when the drafts change",
