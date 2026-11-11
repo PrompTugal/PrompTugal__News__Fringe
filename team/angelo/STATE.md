@@ -28,11 +28,12 @@ Memory between wakes and across compactions. A restarted or compacted conductor 
 
 ## The OpenRouter test (Dinis and Angelo, 20:2x UTC)
 - This environment holds an OpenRouter key as a network secret (the proxy adds it; check credit with `curl -s -H "Authorization: Bearer placeholder" https://openrouter.ai/api/v1/key`: $10 limit, about $7.3 left at 20:28). **Node's fetch ignores the proxy: run `NODE_USE_ENV_PROXY=1 node abp/tools/packets.mjs run ...`** (without it: http_401).
-- Ran the lead's `2026-11-11-p3-persona-for-thursday` and `2026-11-11-p4-titles-in-portuguese` (10/10 valid, with flow events, a7dbc1b; lead told). Issued for the lead: `2026-11-11-p3-persona-for-6-events` and `2026-11-11-p5-one-liners-for-4-events` (waiting for its results; check `node abp/tools/packets.mjs list`).
+- Ran the lead's `2026-11-11-p3-persona-for-thursday` and `2026-11-11-p4-titles-in-portuguese` (10/10 valid, with flow events, a7dbc1b; lead told). Issued for the lead: `2026-11-11-p3-persona-for-6-events` and `2026-11-11-p5-one-liners-for-4-events` (the lead ran both at 20:31-20:32: P3 4/6 valid, P5 2/4; the test is complete both ways).
 - Results feed architect.1's export → Elastic (fringe-altitudes, swarm-flows; Kibana "Flows").
 
 ## Pointers
-- **last-seen:** a7dbc1b (20:32 UTC)
+- **last-seen:** be925c0 (21:32 UTC)
+- `~/.abp/whoami` written at 21:3x (finding 44; rerun `node abp/tools/abp.mjs whoami` in a fresh container).
 - Key: session key, signing sha256:ca2c782dbfd0147e, in data/keys.json and PrompTugal__News__Website board/keys.json (id conductor.fringe-angelo).
 - Asks to the lead still open: obs.js console errors (ipapi.co CORS/429), on work/21.
 - conductor.b@'s projects for Angelo live in SGit-AI/SGit-AI__Website__Web-Summit `people/angelo/` (public; read via an anonymous shallow clone in the scratchpad).
