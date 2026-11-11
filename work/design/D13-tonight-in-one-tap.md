@@ -1,8 +1,8 @@
 ---
 id: D13
 title: "'What can I go to tonight': a visitor reaches evening events in one tap"
-owner:
-status: open
+owner: design.2.fringe@PrompTugal.dinis
+status: claimed
 lane: design
 needs:
 done-means: "at 390 px, from the first screen, one tap reaches the evening (18:00 on) events of today; chips or jump links for Now, Tonight, Online, Tomorrow; the first evening card is within 2 screens of the jump (Playwright check, screenshot)"
