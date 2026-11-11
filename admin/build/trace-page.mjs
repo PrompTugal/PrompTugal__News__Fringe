@@ -8,6 +8,8 @@
 // JS only opens a step's details. Without JS every mark is a link to its line in the ordered list under the picture.
 // No libraries, no fonts, no third-party requests. Every value from the trace goes through esc().
 
+import { traceStrip } from './trace-strip.mjs';   // the one-line strip, reviewed here before it goes under articles
+
 const REPO_DEFAULT = 'https://github.com/PrompTugal/PrompTugal__News__Fringe';
 const GAP = 300;          // seconds of quiet that fold into a break
 const BREAK = 34;         // units a break takes
@@ -225,6 +227,7 @@ export function traceBody(trace, esc, opts = {}) {
 <p class="tr-kick">Trace · draft</p>
 <h1>How this page was made</h1>
 <p class="tr-dek">Every step that made <a href="${esc(trace.page || '#')}">${esc(name)}</a>, from the record: who did what, and when, from the first commit to the page live. The workflow is the picture.</p>
+${traceStrip(trace, esc, { repo, traceUrl: `/traces/${trace.event_id}/` })}
 <dl class="tr-stats">${stats}</dl>
 <ul class="tr-key" aria-label="Key">
 <li><i class="k k-human"></i>person</li><li><i class="k k-human untimed"></i>person, time unknown</li><li><i class="k k-source-read"></i>source read</li><li><i class="k k-agent"></i>agent commit</li><li><i class="k k-sub-agent"></i>sub-agent</li><li><i class="k k-ci"></i>CI run</li><li><i class="k k-deploy"></i>deploy (version)</li><li><i class="k hyp k-agent"></i>hypothesis</li><li><i class="k grp"></i>a burst, folded</li><li><i class="k out"></i>failed deploys</li><li><i class="k hand"></i>hand-off (shared evidence)</li>
@@ -260,7 +263,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!box.hidden
 
 export const traceCss = `
 .tr{--lh:${LH}px;--ax:56px;--gut:168px;--v:1.55px;--hd:40px;max-width:none}
-.tr>p,.tr>h1,.tr>h2,.tr>ol,.tr>section{max-width:48rem}
+.tr>p,.tr>h1,.tr>h2,.tr>ol,.tr>section:not(.tstrip){max-width:48rem}
 .tr-kick{margin:var(--s4) 0 0;font:600 var(--fs-label)/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--terracotta)}
 .tr h1{margin-top:.2em}.tr-dek{font-size:var(--fs-dek);color:var(--ink-2);margin:0 0 var(--s4)}
 .tr-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(9.5rem,1fr));gap:1px;margin:0 0 var(--s4);background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);max-width:none}
@@ -327,7 +330,7 @@ export const traceCss = `
 .tr-x{min-width:36px;font-size:20px;line-height:1}.tr-back{margin:var(--s2) 0;padding:0 var(--s3)}
 .tr-gl{list-style:none;padding:0;margin:var(--s2) 0 0}.tr-gl li{margin:4px 0}.tr-gl button{display:block;width:100%;text-align:left;padding:6px 8px;line-height:1.35}.tr-gl .s-t{font-family:var(--mono);color:var(--ink-3)}
 .tr-db p,.tr-steps p{margin:.15em 0;border:0;padding:0;background:none}
-.tr-gaps{background:var(--warn-soft);border-left:4px solid var(--warn);padding:var(--s2) var(--s4) var(--s3);border-radius:var(--radius);margin:var(--s5) 0}
+.tr-gaps{overflow-wrap:anywhere;background:var(--warn-soft);border-left:4px solid var(--warn);padding:var(--s2) var(--s4) var(--s3);border-radius:var(--radius);margin:var(--s5) 0}
 .tr-gaps h2{border:0;padding:0;margin:.4em 0}.tr-gaps ul{padding-left:1.2em;margin:0;font-size:var(--fs-ui)}
 .tr-steps{padding-left:2.4em;font-size:var(--fs-ui)}.tr-steps li{margin:0 0 var(--s3);padding-left:var(--s2);border-left:3px solid var(--c,var(--hair));overflow-wrap:anywhere}
 .tr-steps li:target{background:var(--tram-soft)}
