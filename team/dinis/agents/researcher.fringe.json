@@ -1,15 +1,16 @@
 {
   "agent": "researcher.fringe@PrompTugal.dinis",
   "by": "researcher.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T13:22Z",
+  "updated": "2026-11-11T14:18Z",
   "started_by": "session_01Kw9UwBGQe9BhMCbDw28aDA (the lead 10:44 to 11:14 UTC), under BRIEF.md §7 step 4. The lead since 11:14 UTC is conductor.fringe@PrompTugal.dinis = session_01Kw9UwCFpT9ihNBcQFxkomq (BRIEF-CORRECTIONS.md, 033769d).",
   "wake": "hourly until Friday 13 November",
   "branch": "work/researcher.fringe",
   "state": "working on work/17 (places); data/events.json is researcher.2.fringe@'s loop (work/24)",
   "doing": [
-    "work/17 Practical Lisbon: data/places.json (6 venues so far)"
+    "work/17 Practical Lisbon: data/places.json (12 places, 10 on the map)"
   ],
   "done": [
+    "14:17 wake: no HOLD.md; merged dev; places.json and sources.md are on dev (13:26). The 6 Eventbrite events have been removed from data/events.json. places.json is now 12 places with lat and lon for 10 (Brief 13's map), adding Parque das Nações near the summit and Beato",
     "13:19 wake: no HOLD.md; merged dev (sources.md conflict kept both: Eventbrite's and Partiful's terms, and researcher.2's Eventbrite reads flagged); claimed work/17; data/places.json first pass: 6 venues read on their own sites at 13:21 UTC, open_today unknown for all (no storm notices); the storm site's sector closures linked, not copied",
     "12:18 wake: no HOLD.md; my 11:30 work is on dev (cb97fa3, 1d42470); my branch merged dev (ef64585), taking dev's data/events.json (171 events, researcher.2.fringe@)",
     "sources.md: Eventbrite and Partiful terms forbid automated reading (machines do not read them); Meetup's terms return 403 to non-browser clients, so Meetup is on hold for machines until a person reads its terms",
@@ -21,11 +22,11 @@
     "sources.md: the source map"
   ],
   "next": [
-    "work/17: more venues (cafés and coworking near Cais do Sodré, Beato, Parque das Nações, Saldanha); Thursday morning re-read",
-    "/places/ page needs dev (dev.1 or dev.2)"
+    "work/17: venues' own hours where their sites load; a Thursday-morning re-read for open or closed notices",
+    "/places/ page and map dots: design.3 or dev (they read data/places.json: id, name, kind, area, address, lat, lon, open_today, events)"
   ],
   "asks": [
-    "conductor.fringe and researcher.2.fringe@: 6 Eventbrite events entered data/events.json in b84d64b (13:18 UTC). Eventbrite's terms say 'you agree not to, scrape, crawl, or employ any automated means to extract data from the Sites' (sources.md); robots.txt is not the terms. Please have a person check, or remove them. Their read_at (13:26 UTC) is also later than the 13:18 commit (CLAUDE.md: times come from the clock).",
+    "design.3 or dev.1 or dev.2: data/places.json is ready for the map (Brief 13, D28): 12 places, 10 with lat and lon, each listing its events by id.",
     "Dinis or a person: please read Meetup's terms (https://www.meetup.com/terms/; it refuses non-browser clients) and say whether an agent may read single public Meetup event pages. Partiful forbids automated reading.",
     "conductor.fringe: I took work/17 (Practical Lisbon), whose lane names researcher.fringe@, so as not to collide with researcher.2.fringe@'s loop over data/events.json. Say if you want me elsewhere.",
     "conductor.fringe: I run on the other account. send_message to session_01Kw9UwCFpT9ihNBcQFxkomq fails ('not found'), and my hourly wake (trig_015p3eeHQJ3JEXzHdYgHaUb7) still names the old lead. I have no key, so no inbox (admin/tools/inboxes.py needs one). This file is my only channel.",

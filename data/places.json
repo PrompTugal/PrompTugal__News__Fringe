@@ -1,6 +1,6 @@
 {
   "about": "Practical Lisbon this week (work/17): cafés, coworking spaces and community venues near the week's events, each read on the venue's own public page at read_at (UTC; Lisbon is on UTC in November). 'open_today' is on | closed | unknown; 'unknown' means no public page says so for the storm days. Stated hours are what the venue publishes, not a promise it is open. No contact details, no private people.",
-  "updated": "2026-11-11T13:22:00Z",
+  "updated": "2026-11-11T14:18:00Z",
   "by": "researcher.fringe@PrompTugal.dinis",
   "independence": "Lisbon Fringe is independent of Web Summit and is not run by its organisers. Not a warning service: for the storm see IPMA (https://www.ipma.pt), ANEPC (https://www.prociv.gov.pt) and https://storm-charles.promptugal.news.",
   "storm": {
@@ -13,7 +13,7 @@
     ],
     "read_at": "2026-11-11T13:20:00Z"
   },
-  "fields": "id, name, kind, area, address, url (the venue's own page), read_at, hours (as stated), open_today (on | closed | unknown), label (fact | evidence | hypothesis), storm_note, events (ids in data/events.json held there this week), note",
+  "fields": "id, name, kind, area, address, url (the venue's own page), read_at, hours (as stated), open_today (on | closed | unknown), label (fact | evidence | hypothesis), storm_note, events (ids in data/events.json held there this week), note, lat, lon (WGS84, from the source named in coords_from), coords_from",
   "places": [
     {
       "id": "second-home-lisboa",
@@ -28,7 +28,10 @@
       "label": "evidence",
       "storm_note": "Not stated on the venue's page.",
       "events": [],
-      "note": "Day passes sold by the venue. Its regular hours cover Wednesday; whether it opened during the storm is not stated."
+      "note": "Day passes sold by the venue. Its regular hours cover Wednesday; whether it opened during the storm is not stated.",
+      "lat": null,
+      "lon": null,
+      "coords_from": null
     },
     {
       "id": "teja-house",
@@ -46,7 +49,10 @@
         "2026-11-13-rise-of-the-expert-creator",
         "2026-11-11-roast-your-website"
       ],
-      "note": null
+      "note": null,
+      "lat": 38.70518,
+      "lon": -9.14441,
+      "coords_from": "the venue's public Luma event pages (luma.com coordinates)"
     },
     {
       "id": "impact-hub-lisbon-penha",
@@ -64,7 +70,10 @@
         "2026-11-12-open-coffee-lisbon-53",
         "2026-11-13-lisbon-community-week"
       ],
-      "note": "Open Coffee Lisbon (Thu 12) says Impact Hub offers half-day coworking passes at EUR 15 (meetup.com/open-coffee-lisbon/events/316495551/)."
+      "note": "Open Coffee Lisbon (Thu 12) says Impact Hub offers half-day coworking passes at EUR 15 (meetup.com/open-coffee-lisbon/events/316495551/).",
+      "lat": 38.73061,
+      "lon": -9.12992,
+      "coords_from": "the venue's public Luma event pages (luma.com coordinates)"
     },
     {
       "id": "impact-hub-lisbon-baixa-chiado",
@@ -79,7 +88,10 @@
       "label": "evidence",
       "storm_note": "Not stated on the venue's page.",
       "events": [],
-      "note": null
+      "note": null,
+      "lat": null,
+      "lon": null,
+      "coords_from": null
     },
     {
       "id": "casa-do-impacto",
@@ -96,7 +108,10 @@
       "events": [
         "2026-11-11-lisboaux-web-summit-edition"
       ],
-      "note": null
+      "note": null,
+      "lat": 38.71471,
+      "lon": -9.14581,
+      "coords_from": "the venue's public Luma event pages (luma.com coordinates)"
     },
     {
       "id": "unicorn-factory-lisboa-beato",
@@ -115,7 +130,133 @@
         "2026-11-12-ufl-web-summit-after-party",
         "2026-11-12-disconnect-2-connect"
       ],
-      "note": "An events venue for the week; not a drop-in workspace as far as its page says."
+      "note": "An events venue for the week; not a drop-in workspace as far as its page says.",
+      "lat": 38.73059,
+      "lon": -9.10626,
+      "coords_from": "the venue's public Luma event pages (luma.com coordinates)"
+    },
+    {
+      "id": "nina-brunch-parque-das-nacoes",
+      "name": "Nina Brunch & Speciality Coffee",
+      "kind": "café",
+      "area": "Parque das Nações",
+      "address": "R. Cais das Naus 2 B, 1990-304 Lisboa",
+      "url": "https://luma.com/u0iuhn8i",
+      "read_at": "2026-11-11T11:23:00Z",
+      "hours": "not read (the venue's own site did not load or gives none)",
+      "open_today": "unknown",
+      "label": "evidence",
+      "storm_note": "Not stated on the page read.",
+      "events": [
+        "2026-11-12-cafe-and-code-exa-mastra",
+        "2026-11-11-kyra-creator-club"
+      ],
+      "note": "Near MEO Arena and FIL. Exa x Mastra take the café over on Thu 12, 10:00 to 16:00 UTC, as an open coworking day (host approval).",
+      "lat": 38.77583,
+      "lon": -9.09237,
+      "coords_from": "the public Luma event page (url)"
+    },
+    {
+      "id": "honest-greens-parque-das-nacoes",
+      "name": "Honest Greens Parque das Nações",
+      "kind": "restaurant",
+      "area": "Parque das Nações",
+      "address": "Alameda dos Oceanos 21101F, 1990-225 Lisboa",
+      "url": "https://luma.com/pgpdzd1g",
+      "read_at": "2026-11-11T11:23:00Z",
+      "hours": "not read (the venue's own site did not load or gives none)",
+      "open_today": "unknown",
+      "label": "evidence",
+      "storm_note": "Not stated on the page read.",
+      "events": [
+        "2026-11-11-innovation-wednesdays-azerbaijan"
+      ],
+      "note": "Near MEO Arena and FIL.",
+      "lat": 38.76456,
+      "lon": -9.09552,
+      "coords_from": "the public Luma event page (url)"
+    },
+    {
+      "id": "avila-spaces-parque-das-nacoes",
+      "name": "Avila Spaces (Parque das Nações)",
+      "kind": "coworking",
+      "area": "Parque das Nações",
+      "address": "Av. Dom João II 1.7.2.1 and 52, piso 0, 1990-096 Lisboa",
+      "url": "https://luma.com/sx67k4x0",
+      "read_at": "2026-11-11T11:23:00Z",
+      "hours": "not read (the venue's own site did not load or gives none)",
+      "open_today": "unknown",
+      "label": "evidence",
+      "storm_note": "Not stated on the page read.",
+      "events": [
+        "2026-11-12-female-founders-breakfast",
+        "2026-11-11-aubay-the-next-move"
+      ],
+      "note": "Two buildings on Av. Dom João II, a few minutes from the Web Summit venue. Its own site sits behind a bot check, so it is not read.",
+      "lat": 38.77141,
+      "lon": -9.09729,
+      "coords_from": "the public Luma event page (url)"
+    },
+    {
+      "id": "martinhal-residences-parque-das-nacoes",
+      "name": "Martinhal Residences Parque das Nações",
+      "kind": "hotel bar",
+      "area": "Parque das Nações",
+      "address": "Praça Príncipe Perfeito, 1990-221 Lisboa",
+      "url": "https://luma.com/qd9h2j25",
+      "read_at": "2026-11-11T11:23:00Z",
+      "hours": "not read (the venue's own site did not load or gives none)",
+      "open_today": "unknown",
+      "label": "evidence",
+      "storm_note": "Not stated on the page read.",
+      "events": [
+        "2026-11-11-canopy-post-demo-night-drinks"
+      ],
+      "note": "Canopy's post-demo-night drinks, Wed 19:30 UTC, only if the weather allows.",
+      "lat": 38.76128,
+      "lon": -9.09765,
+      "coords_from": "the public Luma event page (url)"
+    },
+    {
+      "id": "the-browers-beato",
+      "name": "The Browers Beato (Super Bock Group)",
+      "kind": "brewery, restaurant and event venue",
+      "area": "Beato",
+      "address": "Tv. Grilo 1, 1950-145 Lisboa",
+      "url": "https://luma.com/f9rois6p",
+      "read_at": "2026-11-11T11:23:00Z",
+      "hours": "not read (the venue's own site did not load or gives none)",
+      "open_today": "unknown",
+      "label": "evidence",
+      "storm_note": "Not stated on the page read.",
+      "events": [
+        "2026-11-12-disconnect-2-connect",
+        "2026-11-11-taste-japan-career-connections"
+      ],
+      "note": "Hosts Disconnect 2 Connect on Thu 12 (19:00 UTC).",
+      "lat": 38.73195,
+      "lon": -9.10634,
+      "coords_from": "the public Luma event page (url)"
+    },
+    {
+      "id": "fabrica-de-pao-beato",
+      "name": "Fábrica de Pão, Beato Innovation District",
+      "kind": "event venue",
+      "area": "Beato",
+      "address": "Rua da Manutenção 71, 1900-500 Lisboa",
+      "url": "https://luma.com/z31f1c0y",
+      "read_at": "2026-11-11T11:23:00Z",
+      "hours": "not read (the venue's own site did not load or gives none)",
+      "open_today": "unknown",
+      "label": "evidence",
+      "storm_note": "Not stated on the page read.",
+      "events": [
+        "2026-11-12-ufl-web-summit-after-party"
+      ],
+      "note": "Unicorn Factory Lisboa's after party, Thu 12 from 21:00 UTC.",
+      "lat": 38.72982,
+      "lon": -9.10765,
+      "coords_from": "the public Luma event page (url)"
     }
   ]
 }
