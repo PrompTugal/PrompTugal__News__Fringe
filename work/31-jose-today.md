@@ -1,15 +1,14 @@
 # Today's online events still to come (for Jose's organiser notes)
 
-> Kept by researcher.1.fringe@PrompTugal.jose for conductor.fringe@PrompTugal.jose (work/18, work/23, work/31), Wednesday 11 November 2026, 18:57 UTC (Lisbon is on UTC). Today only; online events first. Rewritten at each wake (every 30 minutes until 21:00 UTC); events that have started are dropped. An agent never sends: Jose sends.
+> Kept by researcher.1.fringe@PrompTugal.jose for conductor.fringe@PrompTugal.jose (work/18, work/23, work/31), Wednesday 11 November 2026, 19:28 UTC (Lisbon is on UTC). Today only; online events first. Rewritten at each wake (every 30 minutes until 21:00 UTC); events that have started are dropped. An agent never sends: Jose sends.
 >
-> **What this is checked against (fact):** `data/events.json` as updated 18:11 UTC by researcher.2.fringe@PrompTugal.dinis (each row's read_at is that agent's read of the organiser's page), and my own reads of the same pages at 14:36 to 14:41 UTC. **No machine reads by me at this wake:** the lead's hold (work/49, 16:23 UTC) stops automated loops over Luma pages until Dinis decides, and Side Events Guide's terms forbid systematic extraction (sources.md). Open the Luma page once before sending.
+> **What this is checked against (fact):** `data/events.json` as updated 19:23 UTC by researcher.2.fringe@PrompTugal.dinis (each row's read_at is that agent's read of the organiser's page), and my own reads of the same pages at 14:36 to 14:41 UTC. **No machine reads by me at this wake:** the lead's rule (work/49; answers of 18:13 UTC) allows a single Luma page when a reader-facing status needs it but no loops, and Side Events Guide's terms forbid systematic extraction (sources.md). Open the Luma page once before sending.
 
 | Start | End | Organiser | Event | Our status | The source's status (the organiser's page, as last read) | Moved by the storm | Source | read_at (UTC) | Verdict |
 |---|---|---|---|---|---|---|---|---|---|
-| 19:00 | 20:00 | FounderLink | [FounderLink Storm Summit: a torrent of intros (evening session, online)](https://lisbontechfringe.com/e/2026-11-11-founderlink-storm-summit-evening/) | online (Zoom (link given to approved guests on Luma)) | Made because of the storm: the page says Web Summit is cancelled for Wednesday, so the organisers bring the room to Zoom as 'Storm Summit', three one-hour founder intro sessions. | yes | https://luma.com/stormsummit7pm | 16:13 | **ready** |
 | 20:30 | 22:00 | Portugal Tech Week | [FUTURE-TECH 2026: short films about technology](https://lisbontechfringe.com/e/2026-11-11-future-tech-2026/) | online (Google Meet (per the Luma page)) | Not stated on the page as a storm change. The page now lists it on Google Meet with a room at PTW Palace still in its text; it gives no reason. That the storm moved it online is a hypothesis. | unknown | https://luma.com/25z2ph1o | 16:13 | **ready**: listed on Google Meet, with a PTW Palace room still in the page text; Jose's note asks 'online or in person?' |
 
-**Count at 18:57 UTC:** 2 online events still to come today: 2 ready, 0 held, 0 with no note. A read_at marked * is my own read of the organiser's page. 'Moved by the storm' is 'yes' only where the organiser's page says so; 'unknown' means the page is online and gives no reason (that the storm moved it is a hypothesis).
+**Count at 19:28 UTC:** 1 online event still to come today: 1 ready, 0 held, 0 with no note. A read_at marked * is my own read of the organiser's page. 'Moved by the storm' is 'yes' only where the organiser's page says so; 'unknown' means the page is online and gives no reason (that the storm moved it is a hypothesis).
 
 ## Dropped: online events that have started
 
@@ -33,12 +32,13 @@
 - 17:30 351 Startups with Portugal Tech Week: Cisco: from automation to autonomy, how AI is changing the way we run technology (https://luma.com/portugal-dezg)
 - 18:00 ideaic.io: PropTech C-Level Board: Storm Edition (online) (https://luma.com/gasfz3vy)
 - 18:30 Canopy Community with Portugal Tech Week: DemoNightLx Web Summit Week Edition (Canopy Demo Night) (https://luma.com/2ofzih7t)
+- 19:00 FounderLink: FounderLink Storm Summit: a torrent of intros (evening session, online) (https://luma.com/stormsummit7pm)
 
 ## Jose's notes: five sent, recorded in the tracker
 
 Jose sent five notes himself, through each organiser's Luma "Contact the host", at about 16:23 UTC (his word): **WonderLead in Tech, ideaic.io, Canopy Community, FounderLink and Portugal Tech Week.** ALBAN's and Kuma's were not sent (their events had started). The tracker (data/outreach-tracker.json, outreach.1, 16:36 UTC) shows the five as sent by jose, and data/outreach.json counts 5 contacted. No note is left to send today; the "ready" in the table means our listing still matches.
 
-**Have they come to the site?** Not yet: the traffic count of 18:54 UTC shows no visit tagged `via=organiser` (`whatsapp` 158, `linkedin` 1); the tracker shows 0 answers (18:35 UTC). Checked again at each wake.
+**Have they come to the site?** Not yet: the traffic count of 19:25 UTC shows no visit tagged `via=organiser` (`whatsapp` 158, `promptugal-news` 5, `linkedin` 1); the tracker shows 0 answers (18:35 UTC). Checked again at each wake.
 
 If an organiser answers with a change, it goes into data/events.json only once their own page shows it.
 
@@ -75,7 +75,7 @@ Jose pasted the guide's three list pages for today (33 entries; I did not read t
 
 - **data/events.json has one owner, researcher.2.fringe@PrompTugal.dinis** (the lead, 17:52 UTC, relayed by Jose's conductor at 18:09). Since then I do not write it: a new or changed event goes to the conductor (source URL, read time, what changed), who passes it to researcher.2. My four changes today (below) stand.
 - No loop over Luma pages and no machine reads of sideevents.guide (the lead's interim rule, work/49). A single Luma page is read only when Jose passes its link.
-- Three decisions are with Dinis since 18:01 UTC (through the conductor and the lead): single Luma pages without a person's word each time; events whose only page is on Eventbrite or Facebook, read by a person; events run by a named individual, listed without the name.
+- The lead's answers (18:13 UTC, relayed 19:09): **a single Luma event page may be read** at a person's pace whenever a reader-facing status needs it (no loops, no internal API, no copying of images or text); **events run by a named individual are listed** as 'an independent organiser (named on the event page)', never the name; **Eventbrite or Facebook read by a person** stays with Dinis. Results go to researcher.2.
 
 ## Changed by me in data/events.json today (each from the organiser's own page)
 
@@ -96,6 +96,6 @@ Jose pasted the guide's three list pages for today (33 entries; I did not read t
 
 ## Asks
 
-- **Dinis:** the decision on Luma reads (work/49, the lead's hold of 16:23 UTC) is yours; until then I run no loop over Luma pages (a single page only when Jose passes its link) and read no guide.
+- **Dinis:** whether a person's read of an Eventbrite or Facebook page is enough to list an event (Just Boom!, Climate Fashion today).
 - **conductor.fringe@PrompTugal.dinis:** UX Talks: Designing at AI's new pace (18:30, in person, Santa Apolónia) is on Portugal Tech Week's Luma calendar today and not in data/events.json; it needs a read of its own page.
 - **conductor.fringe@PrompTugal.dinis:** two events from Side Events Guide's list for today cannot be read by an agent: Just Boom! (22:00, Eventbrite) and Climate Fashion Lisbon 2026 (19:00, online, a Facebook event). A person could read each page; whether we then list them is Dinis's call.
