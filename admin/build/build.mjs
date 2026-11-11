@@ -60,8 +60,12 @@ const css = tokens + `
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;background:var(--paper);color:var(--ink);font:var(--fs-body)/var(--lh-body) var(--sans)}
 main{max-width:var(--page);margin:0 auto;padding:var(--gutter)}main>*{max-width:48rem}a{color:var(--brand)}a:hover{color:var(--brand-2)}
 :focus-visible{outline:3px solid var(--focus);outline-offset:2px;box-shadow:0 0 0 5px var(--focus-ink)}
-header{border-bottom:1px solid var(--rule-2)}header nav{max-width:var(--page);margin:0 auto;padding:var(--s3) var(--gutter);display:flex;gap:var(--s4);align-items:baseline;flex-wrap:wrap;font-size:var(--fs-ui)}
-header strong{font:600 var(--fs-hed)/1 var(--serif)}h1,h2,h3{font-family:var(--serif);line-height:var(--lh-hed);font-weight:600}h1{font-size:var(--fs-h1);margin:.6em 0 .3em}h2{font-size:var(--fs-hed);margin:1.6em 0 .5em;padding-top:var(--s2);border-top:2px solid var(--rule)}
+header{border-bottom:1px solid var(--rule-2);background:var(--paper)}header nav{max-width:var(--page);margin:0 auto;padding:var(--s2) var(--gutter) 0;font-size:var(--fs-ui)}
+.brand{display:inline-block;padding:var(--s1) 0;font:600 var(--fs-hed)/1.2 var(--serif)}.brand a{color:var(--ink);text-decoration:none}
+.nav{display:flex;flex-wrap:wrap;gap:0 var(--s1);margin:0 calc(var(--s2) * -1);padding:0;list-style:none}.nav li{margin:0}
+.nav a{display:block;padding:var(--s3) var(--s2) calc(var(--s3) - 3px);min-height:44px;color:var(--ink-2);text-decoration:none;font-weight:500;border-bottom:3px solid transparent}
+.nav a:hover{color:var(--brand)}.nav a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--brand);font-weight:600}
+h1,h2,h3{font-family:var(--serif);line-height:var(--lh-hed);font-weight:600}h1{font-size:var(--fs-h1);margin:.6em 0 .3em}h2{font-size:var(--fs-hed);margin:1.6em 0 .5em;padding-top:var(--s2);border-top:2px solid var(--rule)}
 .ind{background:var(--panel);border:1px solid var(--hair);border-left:4px solid var(--brand);padding:var(--s3);border-radius:var(--radius);font-size:var(--fs-ui)}
 .card{overflow-wrap:anywhere;background:var(--panel);border:1px solid var(--hair);border-radius:var(--radius);padding:var(--s3);margin:var(--s2) 0}
 .muted{color:var(--ink-3);font-size:var(--fs-meta)}pre{background:var(--paper-2);padding:var(--s3);border-radius:var(--radius);white-space:pre-wrap;word-break:break-word;font:var(--fs-ui)/1.5 var(--mono);margin:0}
@@ -71,10 +75,14 @@ code{background:var(--paper-2);padding:1px var(--s1);border-radius:var(--radius)
 .tag.lvl-red{border-color:var(--live);color:var(--live)}.tag.lvl-orange{border-color:var(--warn);color:var(--warn)}.tag.lvl-yellow{border-color:var(--warn)}#storm-live h3{font-size:var(--fs-dek);margin:.8em 0 .3em}#storm-live ul{padding-left:1.2em;margin:.3em 0}
 .tag.open{border-color:var(--warn)}.tag.claimed{border-color:var(--brand)}.tag.done{border-color:var(--ok)}
 footer{max-width:var(--page);margin:var(--s5) auto;padding:var(--gutter);border-top:1px solid var(--rule-2)}${CARD_CSS}`;
-const page = (title, body, desc, head = '') => `<!doctype html><html lang="en"><head><meta charset="utf-8">
+// D5: the one navigation. Flip `live` to true when a page ships (Now: work/16, Organisers: work/23); no JavaScript.
+const NAV = [['Today', '/', true], ['Now', '/now/', false], ['Map', '/graph/', true], ['Organisers', '/organisers/', false], ['Traffic', '/traffic/', true], ['Join', '/join/', true]];
+const navHtml = (here) => `<header><nav aria-label="Main"><span class="brand"><a href="/">Lisbon Fringe</a></span>
+<ul class="nav">${NAV.filter((n) => n[2]).map(([label, href]) => `<li><a href="${href}"${href === here ? ' aria-current="page"' : ''}>${label}</a></li>`).join('')}</ul></nav></header>`;
+const page = (title, body, desc, head = '', here = '/') => `<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">${head}<style>${css}</style></head><body>
-<header><nav><strong><a href="/">Lisbon Fringe</a></strong><a href="/graph/">Graph</a><a href="/join/">Join the team</a><a href="https://storm-charles.promptugal.news">Storm Charles</a></nav></header>
+${navHtml(here)}
 <main><p class="ind">${INDEPENDENCE}</p>${body}</main>
 <footer class="muted">${INDEPENDENCE}<br>Built from <a href="${REPO}">the repository</a> at ${BUILT.slice(0, 16).replace('T', ' ')} UTC · <a href="/version.json">${esc(VERSION)}</a>. <a href="/traffic/">Traffic</a> · <a href="/dashboard/">Swarm</a>.</footer>
 <script src="/assets/obs/obs.js" defer></script>
@@ -146,12 +154,12 @@ const joinPage = page('Join Lisbon Fringe', `
 <h2>The team</h2>${rosterRows}
 <h2>The board</h2>${boardRows}
 <script>document.getElementById('copy').onclick=async function(){var t=document.getElementById('prompt').innerText;try{await navigator.clipboard.writeText(t);this.textContent='Copied'}catch(e){var r=document.createRange();r.selectNodeContents(document.getElementById('prompt'));var s=getSelection();s.removeAllRanges();s.addRange(r);this.textContent='Selected: copy it'}};</script>
-`, 'How a team member brings their own conductor to Lisbon Fringe.');
+`, 'How a team member brings their own conductor to Lisbon Fringe.', '', '/join/');
 
 // --- /graph/ (work/05) ----------------------------------------------------
 const ptnews = existsSync(join(root, 'data/ptnews-index.json')) ? JSON.parse(read('data/ptnews-index.json')) : null;
 const graph = buildGraph(events, ptnews);
-const graphPage = page('Connect the dots: Lisbon Fringe', `<style>${graphCss}</style>` + graphBody(graph, esc), 'The fringe as a graph: events, communities, topics and places, with filters.');
+const graphPage = page('Connect the dots: Lisbon Fringe', `<style>${graphCss}</style>` + graphBody(graph, esc), 'The fringe as a graph: events, communities, topics and places, with filters.', '', '/graph/');
 
 // --- write ---------------------------------------------------------------
 mkdirSync(join(out, 'join'), { recursive: true });
@@ -182,7 +190,7 @@ mkdirSync(join(out, 'assets', 'obs'), { recursive: true });
 for (const f of ['obs.js', 'obs.json']) writeFileSync(join(out, 'assets', 'obs', f), read(`assets/obs/${f}`));
 const traffic = existsSync(join(root, 'data/obs/traffic.json')) ? JSON.parse(read('data/obs/traffic.json')) : null;
 mkdirSync(join(out, 'traffic'), { recursive: true });
-writeFileSync(join(out, 'traffic', 'index.html'), page('Traffic: Lisbon Fringe', `<style>${trafficCss}</style>` + trafficBody(traffic, esc), 'Who reads Lisbon Fringe and how its links spread: counts only.'));
+writeFileSync(join(out, 'traffic', 'index.html'), page('Traffic: Lisbon Fringe', `<style>${trafficCss}</style>` + trafficBody(traffic, esc), 'Who reads Lisbon Fringe and how its links spread: counts only.', '', '/traffic/'));
 if (traffic) writeFileSync(join(out, 'traffic', 'traffic.json'), JSON.stringify(traffic, null, 1) + '\n');
 // /dashboard/ and /api/v1/swarm.json (work/25)
 const swarm = await collectSwarm({ root, roster, status, board, traffic, builtAt: BUILT, repo: REPO });

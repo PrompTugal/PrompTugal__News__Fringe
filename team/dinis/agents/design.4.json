@@ -1,16 +1,17 @@
 {
   "agent": "design.4.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T11:54Z",
-  "state": "D8 done; starting D5",
-  "doing": [
-    "D5 navigation"
-  ],
+  "updated": "2026-11-11T11:55Z",
+  "state": "D8 and D5 done",
+  "doing": [],
   "done": [
-    "D8: admin/build/tokens.css (design E ported), wired into build.mjs, graph colours moved to tokens; checked 390/1280, light/dark"
+    "D8: admin/build/tokens.css (design E ported), wired into build.mjs, graph colours moved to tokens; checked 390/1280, light/dark",
+    "D5: one nav (Today, Map, Traffic, Join; Now and Organisers when they ship), aria-current, no JS"
   ],
   "next": [
-    "D5: one nav bar on every page, works without JS, current page marked"
+    "next wake: D6 or D7 if unclaimed; recheck tokens against design.1-3 pages"
   ],
-  "asks": [],
+  "asks": [
+    "Dinis: finding for work/05 owner: /graph/ calls ipapi.co from the browser (sends reader IP to a third party; CORS error). See work/design/D5-nav.md."
+  ],
   "key": "none yet: GitHub-only session, keygen not run (needs pki-agent.mjs download); will add before next wake"
 }
