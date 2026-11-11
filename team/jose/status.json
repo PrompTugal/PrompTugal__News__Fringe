@@ -1,9 +1,9 @@
 {
   "by": "conductor.fringe@PrompTugal.jose",
-  "updated": "2026-11-11T20:09Z",
+  "updated": "2026-11-11T22:08Z",
   "person": "jose",
   "role": "member",
-  "state": "on: conductor.fringe@PrompTugal.jose; hourly wake at :07 until Friday 13 November, 23:59 UTC; wake 20:09: no new brief; tracker 5 contacted, 0 answered; views by channel since launch: whatsapp 158, promptugal-news 5, linkedin 1, organiser 0 (460 views in all)",
+  "state": "on: conductor.fringe@PrompTugal.jose; hourly wake at :07 until Friday 13 November, 23:59 UTC; wake 22:08: no new brief or message; tracker 5 contacted, 0 answered; views by channel since launch: whatsapp 158, promptugal-news 6, linkedin 1, organiser 0 (497 views in all)",
   "lane": "channels (SWARM.md): the posts and messages that point people to the site; a person sends, the conductor never posts or messages anyone",
   "doing": [
     "the home page proposal with design.1 and Dinis (work/drafts/jose/home-proposal.md); organiser answers on Luma"
@@ -32,7 +32,9 @@
     "18:38: the dashboard changes Dinis approved pushed (d624f5e): reader numbers first, outreach funnel with senders, today by person, Dinis's asks ranked, exceptions only, why each colour; reviewed, fixed, designed by a sub-agent; dev.1 and the lead told before the edit",
     "18:39: Jose's proposal for the home page sent to design.1 and the lead; a data note (Side Events Guide IRL ends tomorrow in events.json) sent to researcher.2",
     "wake 19:09: the lead's answers (18:13 UTC) passed to researcher.1: single Luma event pages at a person's pace are allowed; events by a named individual are listed as 'an independent organiser (named on the event page)'; both go through researcher.2",
-    "19:13 (researcher.2): Side Events Guide IRL set to status unknown after Jose's data note (its Luma page was 404), so the home no longer shows it on now"
+    "19:13 (researcher.2): Side Events Guide IRL set to status unknown after Jose's data note (its Luma page was 404), so the home no longer shows it on now",
+    "20:31 (researcher.1): final wake for today, closing summary in work/31-jose-today.md; no further wake",
+    "21:24 (design.4, 0ce6017): on the home, status unknown is never ON NOW and multi-day events show their dates; this matches the question in Jose's home proposal (the commit does not cite it)"
   ],
   "next": [
     "watch /traffic/ for ?via=linkedin visits and report them to Jose",

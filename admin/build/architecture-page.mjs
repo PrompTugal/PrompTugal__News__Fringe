@@ -69,6 +69,7 @@ export function agenticTeamBody(esc) {
 <p>Lisbon Tech Fringe is built by a swarm: one conductor per person, agents by role, Dinis Cruz as head conductor. These pages describe how the team works.</p>
 ${item('/agentic-team/articles/the-altitudes-of-execution/', 'Article: the altitudes of execution', 'What an agent is depends on where it runs and what it can reach: the model, mixing altitudes, the run and what it taught us.')}
 ${item('/agentic-team/how-it-flows/', 'How it flows', 'Who talks to whom, how data travels and how work runs: from Dinis to the agents, git, Elasticsearch, Kibana, APM and Neo4j.')}
+${item('/agentic-team/how-it-flows/#outside-processors', 'Outside processors', 'Elastic Cloud, Neo4j Aura, Grafana Cloud and OpenRouter: what goes to each, what never does, who holds the key, how to delete.')}
 ${item('/agentic-team/universe/', 'Every agentic run, as a universe', 'Drawn with Gravity: the environments, every unit at its altitude, and who handed work to whom.')}
 ${item('/agentic-team/operating-model/', 'The operating model', 'The primitives: the execution ladder (compute to spawn), what each entity can reach, identity everywhere, a distributed operating system for agents.')}
 ${item('/agentic-team/where-agents-run/', 'Where agents run', 'An agent versus an LLM call; the runtimes, models and I/O levels; the formula that places a task; the matrix of our tasks.')}
@@ -169,14 +170,14 @@ export function howItFlowsBody(esc) {
   node('site', 'stores', 140, 'lisbontechfringe.com', '/api/v1/*.json', 's');
   node('es', 'stores', 260, 'Elasticsearch', '27 indices: swarm-flows, reviews …', 's');
   node('apm', 'stores', 380, 'Elastic APM', 'traces (waits on a key)', 'x');
-  node('neo', 'stores', 480, 'Neo4j', 'where it runs: Dinis decides', 'x');
+  node('neo', 'stores', 480, 'Neo4j Aura', '2,300 nodes, loaded by neo4j.1', 's');
   node('local', 'stores', 580, '~/.abp in each container', 'hook log, OTLP files (lost with it)', 's');
   node('pages', 'views', 40, 'The site', 'agentic team, ABPs, operating model', 'v');
   node('universe', 'views', 130, 'Gravity universes', 'every run, every event', 'v');
   node('kdash', 'views', 230, 'Kibana dashboards', 'Flows: beginning, middle, end', 'v');
   node('kgraph', 'views', 320, 'Kibana Graph', 'run trees, who crosses lanes', 'v');
   node('ktrace', 'views', 410, 'Kibana APM traces', 'waits on the key', 'x');
-  node('bloom', 'views', 500, 'Neo4j Browser', 'Cypher, paths', 'x');
+  node('bloom', 'views', 500, 'Aura Query, Bloom, Dashboards', 'Cypher, paths', 'v');
   const E = [
     ['dinis', 'lead', 'i', ''], ['dinis', 'arch', 'i', ''], ['angelo', 'angeloc', 'i', ''], ['silvio', 'gravity', 'i', ''], ['others', 'otherc', 'i', ''],
     ['arch', 'hook', 'g', ''],
@@ -185,8 +186,8 @@ export function howItFlowsBody(esc) {
     ['git', 'ci', 'g', ''], ['ci', 'site', 'g', ''], ['git', 'repo', 'g', ''], ['gravity', 'hook', 'g', ''], ['angeloc', 'hook', 'g', ''], ['otherc', 'hook', 'g', ''],
     ['lead', 'inbox', 'm', ''], ['lead', 'msg', 'm', ''], ['review', 'feed', 'g', ''], ['feed', 'es', 'l', ''],
     ['flow', 'direct', 'l', ''], ['review', 'direct', 'l', ''], ['elastic', 'direct', 'l', ''], ['direct', 'es', 'l', ''], ['flow', 'otlp', 'x', ''], ['otlp', 'apm', 'x', ''],
-    ['flow', 'local', 'x', ''], ['es', 'neo', 'x', 'export → neo4j.1'],
-    ['site', 'pages', 'g', ''], ['site', 'universe', 'g', ''], ['es', 'kdash', 'l', ''], ['es', 'kgraph', 'l', ''], ['apm', 'ktrace', 'x', ''], ['neo', 'bloom', 'x', ''],
+    ['flow', 'local', 'x', ''], ['es', 'neo', 'g', 'export → neo4j.1'],
+    ['site', 'pages', 'g', ''], ['site', 'universe', 'g', ''], ['es', 'kdash', 'l', ''], ['es', 'kgraph', 'l', ''], ['apm', 'ktrace', 'x', ''], ['neo', 'bloom', 'g', ''],
   ];
   const K = { i: ['#121317', '', 'instructs'], m: ['#6b3fa0', '5 4', 'messages'], g: ['#1f6f3a', '', 'code and data (git, calls)'], l: ['#c52830', '', 'live telemetry'], x: ['#8a8f98', '6 5', 'waits on a decision'] };
   const T = { p: ['#121317', '#fff'], a: ['#1f4fa8', '#fff'], r: ['#eef2fb', '#1f2a44'], t: ['#f3eefa', '#2b1d44'], s: ['#eef7f0', '#13331f'], v: ['#fff6e6', '#3d2a07'], x: ['#f1f2f4', '#5b6070'] };
@@ -214,12 +215,11 @@ export function howItFlowsBody(esc) {
     ['Every unit reports its beginning, middle and end', 'flow.mjs sends start, step and end events live to Elasticsearch (swarm-flows) and logs each flush in elastic-submissions; each unit is also an OpenTelemetry span, kept as OTLP files until APM has a key.'],
     ['Results go through git', 'commits to dev, under the agent\'s own name, through release.sh; CI versions, gates and deploys lisbontechfringe.com. Agents without the Elastic credential commit an elastic_feed JSON and elastic.1 sends it hourly under their name.'],
     ['Every hour, the review', 'architect.1 reads the git log against the grants (abp/reviews/) and sends every finding to Elasticsearch (swarm-abp-reviews).'],
-    ['You see it', 'on the site (/agentic-team/), in the Gravity universes, in Kibana (the Flows dashboard, Graph), and next in Kibana APM traces and Neo4j once their decisions are made.'],
+    ['You see it', 'on the site (/agentic-team/), in the Gravity universes, in Kibana (the Flows dashboards, Graph), in Neo4j Aura (the graph, loaded by neo4j.1) and Grafana Cloud, and next in Kibana APM traces once Dinis makes the APM key.'],
   ];
   const asks = [
     ['Give Elastic scoped keys, not the shared superuser password', 'ELASTIC_CLOUD is in the environment every session in it shares; R8e only flags other agents, it cannot stop them. Make an API key per writer (elastic.1; architect.1) limited to swarm-* and elastic-submissions, and a read-only one for viewers. Best: put the Elastic credential only in a separate environment for those two sessions.'],
     ['Create an APM agent key', 'Kibana → Observability → APM → Settings → Agent keys (event:write). Set OTEL_EXPORTER_OTLP_ENDPOINT to the deployment\'s APM URL and OTEL_EXPORTER_OTLP_HEADERS to "Authorization=ApiKey <key>" in that environment. Every run then shows as a trace waterfall.'],
-    ['Decide where Neo4j runs', 'Neo4j Aura Free (an instance and its URI and password as a credential), or inside neo4j.1\'s container (lost when the container goes).'],
     ['Protect the branches in GitHub', 'main: only you merge. dev: no force-push, no deletion. Code owners on .claude/** and abp/** so policy changes need your review: today anyone who can push can change the hook.'],
     ['Say the word on signed overrides', 'security finding 38: an override counts only when signed by your person key or a conductor\'s key. Designed, not applied.'],
     ['Decide the lead\'s branch exception', 'whether the lead may push its session branch (R5).'],
@@ -234,5 +234,13 @@ export function howItFlowsBody(esc) {
 <ol class="hf-steps">${steps.map(([t, d]) => `<li><strong>${esc(t)}</strong>: ${esc(d)}</li>`).join('')}</ol>
 <h2>What to reconfigure</h2>
 <ol class="hf-asks">${asks.map(([t, d]) => `<li><strong>${esc(t)}</strong>. ${esc(d)}</li>`).join('')}</ol>
+<h2 id="outside-processors">Outside processors: what leaves, what never does</h2>
+<p>Four services outside this repository process the swarm's data (advice 2053, item 6). None of them is Web Summit's. All read 2026-11-11 from <code>docs/elastic-guidance.md</code>, <code>docs/neo4j.md</code>, <code>admin/grafana/README.md</code> and <code>docs/grafana-openrouter-traces.md</code>.</p>
+<div class="wr-tw"><table class="wr-agents"><thead><tr><th>Service</th><th>What goes there</th><th>What never does</th><th>Who holds the key</th><th>How to delete</th></tr></thead><tbody>
+<tr><td><strong>Elastic Cloud</strong> (Elasticsearch and Kibana, Google Cloud us-central1)</td><td>The swarm's own records: flows (unit names, timings, models, costs, key fingerprints, agent names), the hourly ABP findings (agent, rule, file), commits and hook decisions, the agents' feeds. OpenRouter's traces, <em>with prompts and answers</em>, in <code>traces-*</code> only: Dinis's decision, 19:26 UTC ("I want to see the prompts"), kept indefinitely (20:25 UTC).</td><td>Contact details, private people, tip text, submissions' contact fields, raw observation events, keys or tokens: the submit tool holds back any document that looks like one. Prompts never leave <code>traces-*</code> and never appear on a shared dashboard.</td><td>Dinis (the deployment's owner). The superuser password is <code>ELASTIC_CLOUD</code> in the shared cloud environment; only elastic.1 and architect.1 may use it (rule R8e). Others send through elastic.1's feed.</td><td>Each index's owner, or Dinis, deletes the index (<code>DELETE /&lt;index&gt;</code>) or a single document. Dinis can delete the whole deployment in the Elastic Cloud console.</td></tr>
+<tr><td><strong>Neo4j Aura</strong> (instance 4c760d12, Google Cloud europe-west1)</td><td>The swarm as a graph, loaded by neo4j.1 at Dinis's word (20:07 UTC): the public events graph, the agentic runs, the grants, the review findings, Dinis's recorded words. About 2,300 nodes, all labelled <code>:Fringe</code>.</td><td>Contact details, private people, prompts or answers, keys.</td><td>Dinis (the instance). Its password is <code>NEO4J_CLOUD</code> in the cloud environment, used by neo4j.1.</td><td><code>neo4j-load.py --wipe</code> removes every <code>:Fringe</code> node; Dinis can delete the instance in the Aura console.</td></tr>
+<tr><td><strong>Grafana Cloud</strong> (stack vividwombat1572)</td><td>Dashboards only. They read the public <code>/api/v1/</code> and, once Dinis adds a read-only key, Elastic's <code>fringe-*</code> indices. The Swarm folder's JSON is in <code>admin/grafana/</code>.</td><td>Stored copies of our data beyond what the dashboards query, contact details, keys.</td><td>Dinis (the stack). Agents use the service account <code>swarm-agents</code>: Viewer, with Edit on the Swarm folder only, as <code>GRAFANA_TOKEN</code>.</td><td>Delete the Swarm folder, or the stack, in Grafana Cloud.</td></tr>
+<tr><td><strong>OpenRouter</strong> (the model router)</td><td>Every model call made through <code>admin/tools/llm.mjs</code>: the prompt and the answer, with public data only (events, board items, task packets). Its broadcast sends traces to Elastic (above). The call ledger stays in each agent's container (<code>~/.fringe-ledger</code>) and in <code>data/models-ledger.json</code> (model, cost and caller, no text).</td><td>Contact details, private people, tip text, keys. <code>llm.mjs</code> sends no user or session ids.</td><td>The shared OpenRouter key, put into requests by the cloud environment's proxy; no agent sees it.</td><td>OpenRouter's own logging stays off; its broadcast can be switched off in OpenRouter's Settings → Observability. Traces already in Elastic are deleted as above.</td></tr>
+</tbody></table></div>
 <p class="muted">The sources: <code>abp/policies.json</code> (the grants), <code>abp/tools/flow.mjs</code> (flows and spans), <code>docs/elastic-guidance.md</code> (the indices and the feed), <a href="/api/v1/runtimes.json">/api/v1/runtimes.json</a> (where agents run). Lisbon Tech Fringe is independent of Web Summit.</p>`;
 }

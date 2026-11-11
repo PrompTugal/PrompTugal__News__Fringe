@@ -1,7 +1,7 @@
 {
   "about": "Lisbon Fringe's communities (work/04): the groups behind this week's events, each with its public links and its events (ids in data/events.json; the id here is its /graph/ node id without 'community:'). Organisations only: a personal Luma calendar, a host or an independent organiser is never listed. No contact details. Independent of Web Summit.",
   "by": "conductor.fringe@PrompTugal.indi",
-  "updated": "2026-11-11T19:49:20Z",
+  "updated": "2026-11-11T21:48:54Z",
   "how": "admin/tools/communities.mjs: communities and their events from data/events.json. Each calendar link was found on the event page it cites (sources: url, read_at); since the Luma rule (16:2x UTC) no Luma page is fetched by machine and no Luma text is kept ('what' is null), so links are carried over from earlier reads. Communities with no public calendar keep join 'unknown'.",
   "unmatched_calendar_events": [],
   "communities": [
@@ -594,6 +594,19 @@
       "label": "fact"
     },
     {
+      "id": "valois-by-yorkseed",
+      "name": "Valois by Yorkseed",
+      "what": null,
+      "join": "unknown: join through its event pages",
+      "links": [],
+      "events": [
+        "2026-11-11-valois-allocator-residence",
+        "2026-11-11-wet-summit-lisbon"
+      ],
+      "sources": [],
+      "label": "from events.json only"
+    },
+    {
       "id": "yorkseed-global-capital-network",
       "name": "Yorkseed Global Capital Network",
       "what": null,
@@ -992,8 +1005,8 @@
       "label": "from events.json only"
     },
     {
-      "id": "devworld-conference-and-bitterbrains-as-the-page-names-them",
-      "name": "Devworld Conference and BitterBrains (as the page names them)",
+      "id": "devworld-conference-and-bitterbrains",
+      "name": "Devworld Conference and BitterBrains",
       "what": null,
       "join": "unknown: join through its event pages",
       "links": [],
@@ -1115,27 +1128,16 @@
       "label": "fact"
     },
     {
-      "id": "friends-of-kyra-kyra-creator-club",
-      "name": "Friends of Kyra (Kyra Creator Club)",
+      "id": "friends-of-kyra",
+      "name": "Friends of Kyra",
       "what": null,
-      "join": "Follow its public Luma calendar: https://luma.com/kyraevents",
-      "links": [
-        {
-          "label": "Luma calendar",
-          "url": "https://luma.com/kyraevents"
-        }
-      ],
+      "join": "unknown: join through its event pages",
+      "links": [],
       "events": [
         "2026-11-11-kyra-creator-club"
       ],
-      "sources": [
-        {
-          "url": "https://luma.com/wgji1mfy",
-          "read_at": "2026-11-11T15:49:25Z",
-          "what": "the event page's hosting Luma calendar"
-        }
-      ],
-      "label": "fact"
+      "sources": [],
+      "label": "from events.json only"
     },
     {
       "id": "fsense-cvortex-partners",
@@ -1332,8 +1334,8 @@
       "label": "fact"
     },
     {
-      "id": "innovation-wednesdays-baku-s-innovation-community",
-      "name": "Innovation Wednesdays (Baku's innovation community)",
+      "id": "innovation-wednesdays",
+      "name": "Innovation Wednesdays",
       "what": null,
       "join": "unknown: join through its event pages",
       "links": [],
@@ -1943,8 +1945,8 @@
       "label": "from events.json only"
     },
     {
-      "id": "taiga-ai-oy-finland-as-the-page-names-it-an-independent-project-by-taiga-ai-oy-not-affiliated",
-      "name": "Taiga AI Oy, Finland (as the page names it: 'an independent project by Taiga AI Oy', not affiliated",
+      "id": "taiga-ai-oy-finland",
+      "name": "Taiga AI Oy, Finland",
       "what": null,
       "join": "unknown: join through its event pages",
       "links": [],
@@ -1967,8 +1969,8 @@
       "label": "from events.json only"
     },
     {
-      "id": "tech-startups-on-the-rooftop-lisbon-edition-of-tech-startups-in-the-pub",
-      "name": "Tech Startups on the Rooftop (Lisbon edition of Tech Startups in the Pub)",
+      "id": "tech-startups-on-the-rooftop",
+      "name": "Tech Startups on the Rooftop",
       "what": null,
       "join": "unknown: join through its event pages",
       "links": [],
@@ -2165,57 +2167,6 @@
         }
       ],
       "label": "fact"
-    },
-    {
-      "id": "valois-by-yorkseed",
-      "name": "Valois by Yorkseed",
-      "what": null,
-      "join": "unknown: join through its event pages",
-      "links": [],
-      "events": [
-        "2026-11-11-wet-summit-lisbon"
-      ],
-      "sources": [],
-      "label": "from events.json only"
-    },
-    {
-      "id": "valois-by-yorkseed-yorkseed-global-capital-network",
-      "name": "Valois by Yorkseed (Yorkseed Global Capital Network)",
-      "what": null,
-      "join": "Follow its public Luma calendar: https://luma.com/Yorkseed",
-      "links": [
-        {
-          "label": "Luma calendar",
-          "url": "https://luma.com/Yorkseed"
-        },
-        {
-          "label": "website",
-          "url": "https://yorkseed.co"
-        }
-      ],
-      "events": [
-        "2026-11-11-valois-allocator-residence"
-      ],
-      "sources": [
-        {
-          "url": "https://luma.com/k0zamjmi",
-          "read_at": "2026-11-11T15:49:40Z",
-          "what": "the event page's hosting Luma calendar"
-        }
-      ],
-      "label": "fact"
-    },
-    {
-      "id": "web-summit",
-      "name": "Web Summit)",
-      "what": null,
-      "join": "unknown: join through its event pages",
-      "links": [],
-      "events": [
-        "2026-11-11-storm-summit-stormsummit-app"
-      ],
-      "sources": [],
-      "label": "from events.json only"
     },
     {
       "id": "wet-summit-lisbon-a-group-of-investors",

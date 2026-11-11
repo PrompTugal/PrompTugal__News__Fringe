@@ -1,11 +1,11 @@
 {
  "agent": "outreach.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-11T19:35Z",
+ "updated": "2026-11-11T21:35Z",
  "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 6)",
  "model": "Sonnet",
  "wake": "hourly at :35 (set by the lead)",
  "branch": "dev",
- "state": "19:35 wake: quiet; 76 organisers, 5 contacted, 0 answered, 0 joined; waiting on Dinis for design call, tip ask, group links",
+ "state": "21:35 wake: quiet; 76 organisers, 5 contacted, 0 answered, 0 joined; waiting on Dinis for design call, tip ask, group links",
  "doing": [
   "work/29 owner; with work/18 and work/23"
  ],
@@ -31,7 +31,10 @@
   "16:35 wake: marked sent, by Jose at 16:23 UTC (WonderLead in Tech, ideaic.io, Canopy Community, FounderLink, Portugal Tech Week); ALBAN and Kuma not sent (events had started); data/outreach.json: contacted 5",
   "17:40 wake: pulled, no hold, no new brief for outreach, inbox empty; counts unchanged (75 organisers, 5 contacted); Jose's LinkedIn post is up (his lane)",
   "18:35 wake: no hold, no new brief, inbox empty; tracker rerun (76 organisers after researcher.2's new events); Jose's channels part of work/18 done for today (X dropped at his word); his three decisions are for Dinis, not outreach",
-  "19:35 wake: no hold, no new brief, inbox empty; /traffic/ at 19:25 UTC: 455 views, 18 countries (294 Portugal); no answer to Jose's five notes reported"
+  "19:35 wake: no hold, no new brief, inbox empty; /traffic/ at 19:25 UTC: 455 views, 18 countries (294 Portugal); no answer to Jose's five notes reported",
+  "20:35 wake: no hold, no new brief, inbox empty, nothing new in the repo for outreach; counts unchanged",
+  "21:23: ran node abp/tools/abp.mjs whoami again before pushing (lead's relay, security finding 44): ~/.abp/whoami = outreach.1.fringe@PrompTugal.dinis",
+  "21:35 wake: no hold, no new brief, inbox empty, nothing new for outreach in the repo; counts unchanged"
  ],
  "next": [
   "when dev.1's /designs/ is live: check its checks list and 'how to send' against the call, and link it",

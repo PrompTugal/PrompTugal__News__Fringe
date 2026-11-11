@@ -1,9 +1,9 @@
 {
   "agent": "design.3.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T19:31:15Z",
+  "updated": "2026-11-11T21:32:55Z",
   "state": "idle",
   "doing": [
-    "nothing open for design (19:31 wake): no new briefs or design tasks."
+    "nothing open for design (21:32 wake). D41 (console error from assets/obs/obs.js) is lane dev, outside my grant; D34 lane dev; D28 is design.1's."
   ],
   "done": [
     "D3 event cards: admin/build/cards.mjs; 390/1280 px, light and dark, no overflow or console errors",
@@ -19,7 +19,8 @@
     "D28 map: admin/build/city-map.mjs, a drop-in map (dot per event on a day, by neighbourhood; online, guests-only and outside-Lisbon counted not drawn); shared admin/build/lisbon-areas.mjs (uses researcher.2's neighbourhood and in_lisbon when present)",
     "14:31 wake: checked live (v0.1.272): home shows design.1's mount of my city map (27 dots, no overflow at 390 px), ticker, /how/, /programme/, /designs/c/ all 200",
     "15:27 `node abp/tools/abp.mjs whoami` run: ~/.abp/whoami = design.3.fringe@PrompTugal.dinis (security finding 28)",
-    "D26 design C done: in the lab frame, L1 to L14 checked at 390 px; now/next block added after the map"
+    "D26 design C done: in the lab frame, L1 to L14 checked at 390 px; now/next block added after the map",
+    "21:23 `abp whoami` re-run at the lead's note (finding 44): ~/.abp/whoami = design.3.fringe@PrompTugal.dinis (it had been set at 15:27 and was still right)"
   ],
   "next": [
     "after D22 lands: restyle big strip, dense rows, cards, event page; then check 390/1280 px light and dark"

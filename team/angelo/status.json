@@ -1,38 +1,29 @@
 {
   "by": "conductor.fringe@PrompTugal.angelo",
-  "updated": "2026-11-11T19:30Z",
+  "updated": "2026-11-11T21:33Z",
   "person": "angelo",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.angelo, started about 11:20 UTC by conductor.b@PrompTugal.angelo at Angelo's word; hourly wake at :29 until Friday 13 November (trig_01UqsUe1kvf2qvWkjLiF2hPk, set at Angelo's word in this session)",
   "lane": "the graph and live views of the fringe (SWARM.md): work/05",
   "doing": [
-    "with Angelo: review of docs/where-agents-run.md (work/48, Dinis's ask 4): concepts first, then structure, then details",
+    "with Angelo: reach vs altitude (drafts in team/angelo/drafts/reach-circles/) and the where-agents-run review (work/48)",
     "work/05 the graph (stable)"
   ],
   "done": [
-    "read CLAUDE.md, SWARM.md, BRIEF.md, REALITY.md and work/",
-    "session key made (pki-agent.mjs sha256 fcb28a1c...02ab checked); public half in data/keys.json (id conductor.fringe-angelo, signing sha256:ca2c782dbfd0147e)",
-    "claimed work/05",
-    "/graph/ and /api/v1/graph.json: 69 events, 248 nodes, 331 edges, filters; 15 nodes linked to pt.news (work/05 progress note)",
-    "public key in PrompTugal__News__Website board/keys.json (id conductor.fringe-angelo, commit 9e4cdc1b, through newsroom/tools/release.sh, gate OK), at Angelo's word",
-    "times corrected to the commit clock (fable.fringe@'s advice 3, 11:32 UTC): status 11:46Z→11:27, work/05 note 11:45→11:27, runs.md ranges; from now every time comes from date -u",
-    "trace of /e/2026-11-11-ptw-classroom-deep-work-wexio/: 77 steps, 15 agents, 38 commits, 17 deploys (team/angelo/traces/), by worker tracer.fringe@PrompTugal.angelo; generator admin/tools/trace-event.mjs",
-    "draft visual of the trace at /traces/2026-11-11-ptw-classroom-deep-work-wexio/ (swim lanes, folded quiet time, failed deploys, first live), by worker designer.fringe@PrompTugal.angelo; not linked yet",
-    "one-line 'how this page was made' strip (metro line; 6/9/14 stops by width; first live, failed deploys, live now), admin/build/trace-strip.mjs, shown on top of /traces/2026-11-11-ptw-classroom-deep-work-wexio/; by worker designer.fringe@PrompTugal.angelo",
-    "wake 12:29: /graph/ now takes communities from work/04's data/communities.json (73 checked communities; organiser line only as fallback; an unknown or individual organiser makes no node); 171 events, 387 nodes",
-    "work/32 parts 1 and 2 on /graph/: ontology picture with live counts, outreach layer (counts only), by worker graph.fringe@PrompTugal.angelo",
-    "wake 13:29: /graph/ checked live at https://lisbontechfringe.com/graph/ (200, v0.1.171; nav calls it 'Map'); no change by others to graph.mjs/graph.js since af1072f; outreach tracker still has all 72 drafts 'until Dinis approves', so the graph's 0 drafts ready is right",
     "wake 14:29 (run 14:44, after a session restart): /graph/ live on lisbontechfringe.com (v0.1.280); outreach layer follows Dinis's approval (66 draft ready); work/05 note proposes /graph/ reads ontologist.1's semantic graph (work/42) once it exists",
     "wake 15:30: /graph/ community dots link to ontologist.1's organiser pages /o/<id>/ (103 of 103, 0 broken)",
     "wake 16:29: read Dinis's hand-off to Angelo's team (briefs/2026-11-11-1546, docs/handoffs/2026-11-11-altitudes-of-execution.md); /graph/ checked, gate OK",
     "wake 17:29: /graph/ draws festivals (Portugal Tech Week umbrella, 47 events) from work/42; --t-festival token in tokens.css",
     "wake 18:29 (run 18:53, after a restart; Angelo: 'wake up'): pull 58 commits; design.4 checked our --t-festival edit (f2c1ed0); work/50 lists Angelo's team for the MVPs; Dinis wants Elastic to show his and Angelo's runs side by side (docs/handoffs/2026-11-11-altitudes-on-elastic.md), which needs Angelo's runs first",
     "handover: the altitudes MVPs (Dinis's hand-off, 15:46) belong to handover-market.mp@PrompTugal.angelo, at Angelo's word; digest 2 for Angelo (worker digest.fringe@PrompTugal.angelo)",
-    "wake 19:30: pull 48 commits, nothing new for Angelo or the graph; gate OK; /graph/ live"
+    "wake 19:30: pull 48 commits, nothing new for Angelo or the graph; gate OK; /graph/ live",
+    "cross-conductor OpenRouter test (Dinis and Angelo, 20:2x UTC): ran Dinis's conductor's P3 and P4 here (10/10 valid), re-run with flow events for Elastic; issued P3 and P5 for it; inbox replies sent",
+    "wake 21:29: inbox drained (16, nothing new since 20:32); the lead ran our P3 (4/6 valid) and P5 (2/4 valid), so the OpenRouter test is complete both ways; ran abp whoami (finding 44); no further handover test"
   ],
   "next": [
-    "/graph/ to draw work/42's festivals (Portugal Tech Week as an umbrella) and platforms, reading graph-model.mjs rather than deriving its own",
-    "work/32: counts for design and dev.1 as they ask"
+    "at Angelo's word: one designer redraws the reach circles on the capabilities research",
+    "at Angelo's word: the Claude feature feed (changelog + npm times + tool-list snapshots)",
+    "each wake: drain the inbox, move work/05 on"
   ],
   "asks": [
     "none for Angelo from this conductor; the altitudes MVPs are now with handover-market.mp@PrompTugal.angelo (Angelo, 18:5x UTC)",

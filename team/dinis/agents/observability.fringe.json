@@ -1,12 +1,12 @@
 {
   "agent": "observability.fringe@PrompTugal.dinis",
   "by": "observability.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T19:38Z",
+  "updated": "2026-11-11T21:38Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), about 11:45 UTC, at Dinis's word (brief 2)",
   "session": "session_01Kw9UwDEe3BXvda7DY68R8B",
   "wake": "hourly at :37 UTC until Friday 13 November (the lead), with a 15-minute drain loop inside each wake (brief 4)",
   "branch": "dev",
-  "state": "running: live sender yes; 15-minute drain loop; last drain 19:38 UTC: all time 458 reader views, 214 visits, 18 countries, 164 via shared links",
+  "state": "running: live sender yes; 15-minute drain loop; last drain 21:37 UTC: all time 495 reader views, 226 visits, 19 countries, 164 via shared links",
   "doing": [
     "work/21: drains every 15 minutes; /traffic/ with the map, flows, outbound clicks and the design lab"
   ],
@@ -23,7 +23,8 @@
     "Both hosts counted together (admin/site.json origin + fringe.promptugal.news + lisbontechfringe.com), host as a dimension; the design lab's votes and views (work/35)",
     "14:29 UTC: a tab with more than 40 views counts as a crawler (PrompTugal.news's rule); one US phone-sized tab had read 171 pages and doubled the reader views. Outbound clicks now flow: readers follow event pages to the organisers' luma.com pages",
     "Inbox: the architect's note on the old origin is handled (the drain counts admin/site.json's origin, fringe.promptugal.news and lisbontechfringe.com); Dinis keeps the place lookup (finding 20, 14:28 UTC)",
-    "15:27 UTC: abp whoami run at the lead's ask (finding 28); the ABP grant now lists this status file"
+    "15:27 UTC: abp whoami run at the lead's ask (finding 28); the ABP grant now lists this status file",
+    "21:23 UTC: abp whoami re-run at the lead's ask (finding 44)"
   ],
   "next": [
     "Each wake: drain loop, /traffic/, status; the first outbound-click and design-lab numbers to Dinis",
@@ -82,6 +83,16 @@
       "started": "2026-11-11T19:37Z",
       "outcome": "ok",
       "line": "all time 458 reader views, 18 countries"
+    },
+    {
+      "started": "2026-11-11T20:37Z",
+      "outcome": "ok",
+      "line": "all time 491 reader views, 19 countries"
+    },
+    {
+      "started": "2026-11-11T21:37Z",
+      "outcome": "ok",
+      "line": "all time 495 reader views, 19 countries; quiet evening"
     }
   ]
 }

@@ -62,6 +62,9 @@ export async function pushIndex(index, mapping, docs, { recreate = false, prune 
         const r = await fetch(`${B}/${index}`, { method: 'PUT', headers, body: JSON.stringify(mapping) })
         if (!r.ok) throw new Error(`create ${index}: HTTP ${r.status} ${(await r.text()).slice(0, 300)}`)
     } else if (!head.ok) throw new Error(`${index}: HTTP ${head.status}`)
+    else if (mapping?.mappings?.properties) {   // an existing index: add any new fields (additive; a changed type is refused by Elasticsearch, not here)
+        await fetch(`${B}/${index}/_mapping`, { method: 'PUT', headers, body: JSON.stringify({ properties: mapping.mappings.properties }) }).catch(() => {})
+    }
     let sent = 0, errors = 0
     for (let i = 0; i < docs.length; i += 500) {
         const body = docs.slice(i, i + 500).map(x => JSON.stringify({ index: { _index: index, _id: x._id } }) + '\n' + JSON.stringify(x.doc)).join('\n') + '\n'

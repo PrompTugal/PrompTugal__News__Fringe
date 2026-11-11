@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 // The Kibana side (elastic.1.fringe@PrompTugal.dinis, WS-215; Dinis, 11 November 2026: "a whole set of powerful
 // dashboards ... show the rest of the team the art of the possible"). Builds the data views, Lens charts, saved
-// searches, tags and dashboards as saved objects (elastic/kibana/objects.ndjson) and imports them, overwriting by id,
+// searches, tags and dashboards as saved objects (written to $TMPDIR/elastic-kibana-objects.ndjson, outside git) and imports them, overwriting by id,
 // so a re-run updates and never duplicates.
 //
-//   node admin/tools/elastic-kibana.mjs build                    write elastic/kibana/objects.ndjson
+//   node admin/tools/elastic-kibana.mjs build                    write $TMPDIR/elastic-kibana-objects.ndjson (outside git)
 //   KIBANA_URL=https://<deployment>.kb.<region>... node admin/tools/elastic-kibana.mjs import
 //
 // The password or key comes from the environment (elastic-lib.mjs auth()), never printed.
@@ -21,7 +21,7 @@ if (process.env.HTTPS_PROXY && !process.env.NODE_USE_ENV_PROXY && process.argv[2
     process.exit(r.status ?? 1)
 }
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..')
-const OUT = path.join(ROOT, 'elastic', 'kibana', 'objects.ndjson')
+const OUT = path.join(process.env.TMPDIR || '/tmp', 'elastic-kibana-objects.ndjson')   // generated from this file: outside git (it outgrew the 256 KB rule)
 
 // ---------- tags ----------
 const TAGS = {
@@ -41,6 +41,7 @@ dataView('fringe-altitudes', 'The agentic runs: one unit per altitude (signed)',
 dataView('elastic-submissions', 'Elastic operations: every submission', 't')
 dataView('fringe-*,ptnews-*,websummit-*,swarm-*,agents-*', 'Everything on Elastic (by ingest time)', 'ingested_at')
 dataView('traces-generic.otel-default', 'OpenRouter traces (OTel): the A1 calls from the provider side', '@timestamp')
+dataView('fringe-packets', 'Task packets: issued, run, every call (cross-conductor)', 't')
 dataView('fringe-workloads', 'Distributed workloads: altitudes, runtimes, placements, traces', 't')
 for (const s of ['fringe', 'ptnews', 'websummit']) for (const k of ['commits', 'content', 'entities', 'runs', 'status']) dataView(`${s}-${k}`, `${{ fringe: 'Fringe', ptnews: 'PrompTugal.news', websummit: 'Web Summit' }[s]}: ${k}`, 't')
 for (const k of ['commits', 'content', 'entities', 'runs', 'status']) dataView(`fringe-${k},ptnews-${k},websummit-${k}`, `All sites: ${k}`, 't')
@@ -219,11 +220,31 @@ D.openrouter = dashboard('openrouter', 'A1 calls, from OpenRouter', 'Every model
     [[search('or-calls', 'Each call, newest first (no prompt text: open one to read it)', otr, [A + 'gen_ai.request.model', OR + 'provider_name', A + 'gen_ai.usage.input_tokens', A + 'gen_ai.usage.output_tokens', A + 'gen_ai.usage.total_cost', OR + 'provider_time_to_first_token_ms', A + 'gen_ai.response.finish_reasons', 'trace_id'], GEN, '@timestamp'), S, 48, 16]],
 ], { from: 'now-24h', to: 'now', refresh: 60000 })
 
+// =====================================================================================================
+// 10. The cross-conductor test (Dinis and Angelo): packets issued by one conductor, run by the other
+// =====================================================================================================
+const pk = DV['fringe-packets']
+D.cross = dashboard('cross', 'Cross-conductor test: Dinis and Angelo, live', "Task packets issued by one person's conductor and run by the other's, through OpenRouter: who issued, who ran, in which environment and account, which models, at what cost and latency, and whether every call signed. Beside it, OpenRouter's own traces of the same calls, split by API key.", TAGS.swarm, [
+    [[md('x-head', `## Cross-conductor test: Dinis and Angelo, live\nAt Dinis's word (20:3x UTC): the lead (conductor.fringe@PrompTugal.dinis) issued task packets **p3** and **p4** (A1, cheap tier) to **conductor.fringe@PrompTugal.angelo**; Angelo's conductor issues two back. Each result lands on dev as \`tasks/<id>/result-<runner>.json\`, with every A1 call signed by its own key. **elastic.1 ingests each result within about a minute of it landing.** Left: our side (packets, results, calls). Right and below: **OpenRouter's side**, the same calls as OpenTelemetry traces, split by the API key that made them. Prompts are on no panel (only their sha256 in the packets).\n\nCompanions: [The altitudes of execution, live](#/view/${uid('dash', 'altitudes')}) · [A1 calls, from OpenRouter](#/view/${uid('dash', 'openrouter')}) · [Distributed workloads](#/view/${uid('dash', 'workloads')}).`), V, 48, 8]],
+    [[metric('x-m1', 'Packets issued', pk, C.count('Packets'), 'doc:packet'), L, 8, 6], [metric('x-m2', 'Results returned', pk, C.count('Results'), 'doc:result'), L, 8, 6],
+     [metric('x-m3', 'Cross-conductor results', pk, { ...C.count('Cross'), params: { emptyAsNull: false } }, 'doc:result and cross:true'), L, 8, 6], [metric('x-m4', 'A1 calls inside results', pk, C.count('Calls'), 'doc:call'), L, 8, 6],
+     [metric('x-m5', 'Cost of the calls (USD)', pk, C.sum('cost_usd', 'USD'), 'doc:call'), L, 8, 6], [metric('x-m6', 'Avg latency per call (ms)', pk, C.avg('latency_ms', 'ms'), 'doc:call'), L, 8, 6]],
+    [[table('x-flow', 'Who issued what to whom', pk, [['packet', 'Packet', 20], ['issuer_person', 'Issued by', 5], ['runner_person', 'Run by', 5]], [C.count('Documents'), C.sum('calls', 'Calls'), C.sum('cost_usd', 'USD')], 'doc:packet or doc:result'), L, 24, 14],
+     [table('x-side', 'Side by side: person, environment, account, model', pk, [['runner_person', 'Runner', 5], ['environment', 'Environment', 5], ['account', 'Account', 5], ['model', 'Model', 8]], [C.count('Calls'), C.sum('cost_usd', 'USD'), C.avg('latency_ms', 'Avg ms'), C.max('latency_ms', 'Max ms')], 'doc:call'), L, 24, 14]],
+    [[overTime('x-time', 'Calls over time, by runner', pk, 't', 'runner_person', 'doc:call', { interval: '1m' }), L, 24, 13], [heat('x-ok', 'Valid answers: runner by model (count of ok calls)', pk, 'runner_person', 'model', 'doc:call and ok:true'), L, 24, 13]],
+    [[overTime('x-events', 'The runs as they happened: flow events by runner (start and end of every unit)', pk, 't', 'runner_person', 'doc:event', { interval: '10s' }), L, 24, 13],
+     [table('x-units', 'Units by altitude and role, per runner (from the flow events)', pk, [['runner_person', 'Runner', 5], ['altitude', 'Altitude', 5], ['role', 'Role', 6]], [C.count('Events'), C.avg('duration_ms', 'Avg ms'), C.sum('cost_usd', 'USD')], 'doc:event and phase:end'), L, 24, 13]],
+    [[search('x-results', 'Results as they land (newest first)', pk, ['packet', 'runner', 'environment', 'account', 'calls', 'cost_usd', 'valid_share', 'signed', 'cross'], 'doc:result'), S, 48, 12]],
+    [[search('x-calls', 'Every A1 call: model, latency, cost, its own key (no prompt: only its sha256)', pk, ['packet', 'runner_person', 'input', 'try', 'model', 'ok', 'latency_ms', 'cost_usd', 'key_fp', 'prompt_sha256'], 'doc:call'), S, 48, 14]],
+    [[overTime('x-or-key', "OpenRouter's side: calls over time, by API key", DV['traces-generic.otel-default'], '@timestamp', 'attributes.trace.metadata.openrouter.api_key_name', 'name:"LLM Generation"', { interval: '1m' }), L, 24, 13],
+     [table('x-or-table', "OpenRouter's side: per key and model", DV['traces-generic.otel-default'], [['attributes.trace.metadata.openrouter.api_key_name', 'API key (name)', 6], ['attributes.gen_ai.request.model', 'Model', 8]], [C.count('Calls'), C.sum('attributes.gen_ai.usage.total_cost', 'USD'), C.avg('attributes.trace.metadata.openrouter.provider_time_to_first_token_ms', 'Avg TTFT ms')], 'name:"LLM Generation"'), L, 24, 13]],
+], { from: 'now-3h', to: 'now', refresh: 30000 })
+
 // ---------- build / import ----------
 const cmd = process.argv[2]
 fs.mkdirSync(path.dirname(OUT), { recursive: true })
 fs.writeFileSync(OUT, objects.map(o => JSON.stringify(o)).join('\n') + '\n')
-console.log(`${objects.length} saved objects (${Object.keys(D).length} dashboards) -> elastic/kibana/objects.ndjson`)
+console.log(`${objects.length} saved objects (${Object.keys(D).length} dashboards) -> ${OUT}`)
 if (cmd === 'import') {
     const j = await K.importObjects(process.env.KIBANA_URL)
     for (const [k, id] of Object.entries(D)) console.log(`  ${k}: ${String(process.env.KIBANA_URL).replace(/\/+$/, '')}/app/dashboards#/view/${id}`)

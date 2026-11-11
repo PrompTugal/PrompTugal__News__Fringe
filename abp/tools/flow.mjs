@@ -65,7 +65,7 @@ const now = () => new Date().toISOString();
 export function flow({ id = process.env.FLOW_ID, runner = process.env.FLOW_RUNNER || 'architect.1.fringe@PrompTugal.dinis', environment = process.env.FLOW_ENV || 'R1 Claude Code cloud, riskmandate-personal', objective } = {}) {
   const flowId = id || `flow-${new Date().toISOString().slice(0, 19).replace(/[-:]/g, '')}-${crypto.randomBytes(3).toString('hex')}`;
   const person = (/@PrompTugal\.([a-z]+)/i.exec(runner) || [, null])[1];
-  const pending = []; let seq = Date.now() * 1000; const tally = { sent: 0, errors: 0 };
+  const pending = [], events = []; let seq = Date.now() * 1000; const tally = { sent: 0, errors: 0 };
   let lib = null, ready = null;
   const send = async (ev) => {
     if (!process.env.ELASTIC_URL) { const d = path.join(os.homedir(), '.abp', 'flows'); fs.mkdirSync(d, { recursive: true }); fs.appendFileSync(path.join(d, flowId + '.jsonl'), JSON.stringify(ev) + '\n'); return; }
@@ -73,17 +73,19 @@ export function flow({ id = process.env.FLOW_ID, runner = process.env.FLOW_RUNNE
     const B = lib.base(), headers = { 'content-type': 'application/json', ...lib.auth() };
     ready ||= (async () => { const h = await fetch(`${B}/${INDEX}`, { method: 'HEAD', headers }); if (h.status === 404) await fetch(`${B}/${INDEX}`, { method: 'PUT', headers, body: JSON.stringify(MAPPING) }); })();
     await ready;
-    const r = await fetch(`${B}/${INDEX}/_doc`, { method: 'POST', headers, body: JSON.stringify(ev) });
+    const r = await fetch(`${B}/${INDEX}/_doc/${encodeURIComponent(ev.flow + ':' + ev.seq)}`, { method: 'PUT', headers, body: JSON.stringify(ev) });   // _id = flow:seq, so a later ingest of the same events is idempotent
     if (!r.ok) { tally.errors++; console.error(`flow: event not stored (HTTP ${r.status})`); } else tally.sent++;
   };
   const emit = (u, phase, extra = {}) => {
     const ev = { trace_id: traceIdOf(flowId), span_id: spanIdOf(u.id), parent_span_id: u.parent ? spanIdOf(u.parent) : undefined, flow: flowId, seq: seq++, at: now(), phase, unit_id: u.id, parent_id: u.parent || undefined, altitude: u.altitude, role: ROLE[u.altitude], name: u.name, runner, person, environment, host: os.hostname().slice(0, 64), key_fp: u.key_fp, objective: phase === 'start' ? (u.objective || objective) : undefined, source: 'abp/tools/flow.mjs', ...extra };
     for (const k of Object.keys(ev)) if (ev[k] === undefined) delete ev[k];
+    events.push(ev);
     pending.push(send(ev).catch((e) => console.error('flow:', String(e.message).slice(0, 120))));
     if (phase === 'end' || phase === 'error') pending.push(exportSpan(flowId, otlpSpan({ flowId, u, runner, environment, person, endAt: Date.now(), status: phase, extra })).catch((e) => console.error('flow: otlp', String(e.message).slice(0, 120))));
   };
   return {
     id: flowId,
+    events,   // every event emitted, so a runner without Elastic access can carry them in its signed result (packets.mjs)
     unit({ altitude, name, parent = process.env.FLOW_PARENT, id, key_fp, objective: obj } = {}) {
       const u = { id: id || key_fp || `${altitude}-${crypto.randomBytes(6).toString('hex')}`, altitude, name, parent, key_fp, objective: obj, t0: 0 };
       return {
