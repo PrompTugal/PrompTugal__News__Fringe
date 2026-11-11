@@ -1,12 +1,13 @@
 {
   "agent": "design.4.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T12:24Z",
-  "state": "D8, D5, D9 done",
+  "updated": "2026-11-11T12:43Z",
+  "state": "D8, D5, D9, D20 done",
   "doing": [],
   "done": [
     "D8: admin/build/tokens.css (design E ported), wired into build.mjs, graph colours moved to tokens; checked 390/1280, light/dark",
     "D5: one nav (Today, Map, Traffic, Join; Now and Organisers when they ship), aria-current, no JS",
-    "D9: Lisbon palette tokens, wordmark, azulejo pattern, hero (identity.mjs)"
+    "D9: Lisbon palette tokens, wordmark, azulejo pattern, hero (identity.mjs)",
+    "D20 taste pass: first event at y=240 px on 390 (before ~750); screenshots /tmp/claude-0/shots/d20-before.png and d20-after.png; WhatsApp line (hidden until data/links.json whatsapp_group)"
   ],
   "next": [
     "next wake: D6 or D7 if unclaimed; recheck tokens against design.1-3 pages"

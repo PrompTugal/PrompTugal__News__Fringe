@@ -63,6 +63,8 @@ const prompt = (join_md.split(/\n---\n/)[1] || '').trim();
 const ids = roster.people.map((p) => p.id);
 
 // --- layout --------------------------------------------------------------
+const links = existsSync(join(root, 'data/links.json')) ? JSON.parse(read('data/links.json')) : {};
+const WHATSAPP = /^https:\/\//.test(links.whatsapp_group || '') ? `<p class="wa"><a href="${esc(links.whatsapp_group)}" rel="noopener">Join the Lisbon Tech Week WhatsApp group</a></p>` : '';
 const INDEPENDENCE = `Lisbon Tech Week is independent of Web Summit and not run by its organisers. For anything official, see <a href="https://websummit.com/">the organisers' official site</a>.`;
 const tokens = readFileSync(join(root, 'admin', 'build', 'tokens.css'), 'utf8'); // D8: the one set of design tokens
 const css = tokens + `
@@ -105,7 +107,7 @@ const page = (title, body, desc, head = '', here = '/') => `<!doctype html><html
 <div class="ptbar"><a href="https://promptugal.news">Lisbon Tech Week · a PrompTugal.news site <span aria-hidden="true">↗</span></a></div>
 ${navHtml(here)}
 <p class="ind">Independent of Web Summit · <a href="https://websummit.com/">official site</a></p>
-<main>${body}</main>
+<main>${WHATSAPP}${body}</main>
 <footer class="muted">${INDEPENDENCE}<br>Built from <a href="${REPO}">the repository</a> at ${BUILT.slice(0, 16).replace('T', ' ')} UTC · <a href="/version.json">${esc(VERSION)}</a>. <a href="/traffic/">Traffic</a> · <a href="/changes/">Changes</a> · <a href="/evolution/">Evolution</a> · <a href="/dashboard/">Swarm</a>.</footer>
 <script src="/assets/obs/obs.js" defer></script>
 </body></html>`;

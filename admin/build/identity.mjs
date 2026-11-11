@@ -31,4 +31,15 @@ main{padding-top:0!important}
 .festival h1{font-size:24px!important;margin:0 0 2px!important;max-width:none!important}.festival .tag-line{font-size:14px!important;margin:0 0 4px!important}
 .hero .count{font-size:14px;margin:0 0 var(--s2)}.hero .btn{display:inline-block;padding:6px 14px;min-height:0;margin:0 0 var(--s2);font-size:14px}
 @media(min-width:768px){.wm{font-size:26px!important}}
+/* D20: the taste pass. Calm, small, events first. These rules come last and win. */
+.wa{font-size:12px;color:var(--ink-3);margin:var(--s1) 0 0}
+.festival{margin:var(--s2) calc(var(--gutter) * -1) var(--s1);background:var(--tram-soft);border-bottom:2px solid var(--tram)}
+.festival::before,.festival .kicker,.festival .tag-line{display:none}
+.festival h1{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.festival .count{font-size:13px;font-weight:600;margin:0;color:var(--ink)}
+.festival .btn{display:none}
+.hero .card{margin:var(--s2) 0}
+.jumps{margin:var(--s1) 0;padding:var(--s1) 0}
+.jumps a{min-height:var(--chip-h);height:var(--chip-h);padding:0 var(--s3);font-size:13px;border-width:1px;font-weight:600}
+h2{margin-top:1.2em}
 `;
