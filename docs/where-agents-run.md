@@ -49,10 +49,10 @@ board: work/48
 | **L1** | files | the agent returns a markdown file or a zip to download | the file's sha256, noted by whoever uploads it |
 | **L2** | vault | the agent reads and writes an sgit vault, given to it or **made by it** | strong: a vault made by one session is that session's record (as on ruv.sgit) |
 | **L3** | signed lanes | sealed, signed messages on append lanes (our inboxes, /tip/) | signature checked against data/keys.json |
-| **L4** | git | the agent pushes to **dev** behind the gate (Dinis, 14:27 UTC: "the agents run always on dev"; never main); CI deploys | the commit, its Agent: trailer, its key |
+| **L4** | git | the agent pushes to **dev** behind the gate (Dinis, 14:26 UTC: "the agents run always on dev"; never main); CI deploys | the commit, its Agent: trailer, its key |
 | **L5** | full | git, vaults, lanes, network, wakes | all of the above |
 
-### 2.3b The session layer (Angelo, 14:27 UTC)
+### 2.3b The session layer (Angelo, 14:26 UTC)
 
 | Mode | State | Example |
 |---|---|---|

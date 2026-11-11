@@ -22,4 +22,4 @@ Contact details are never published. Nobody is messaged by an agent.
 
 **dev.2's part (12:06 UTC, live):** /organisers/ with the offer exactly as drafted, marked "draft until Dinis approves" (APPROVED=false in admin/build/organisers.mjs: flip to true when he does); data/organisers.json (canonical names and folds; organisations only; events derived at build); event pages link each organisation to /organisers/#id and related events group by lead organisation. Still open: work/drafts/organiser-note.md, the tracker, the og:image card (design.2's D2).
 
-**Dinis, 14:27 UTC: "Yes, I approve the organizers' note."** The offer and work/drafts/organiser-note.md are approved (brief 15). A person sends each note through the organiser's own public channel; no agent sends.
+**Dinis, 14:26 UTC: "Yes, I approve the organizers' note."** The offer and work/drafts/organiser-note.md are approved (brief 15). A person sends each note through the organiser's own public channel; no agent sends.

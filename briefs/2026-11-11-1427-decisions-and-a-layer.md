@@ -1,7 +1,7 @@
 ---
 title: "Brief 15: the organiser note is approved; this account is riskmandate-personal (Ultra); agents always run on dev; a chat-session layer (Angelo)"
 from: Dinis Cruz (head conductor), to conductor.fringe@PrompTugal.dinis
-received: 2026-11-11T14:27Z
+received: 2026-11-11T14:26Z
 relayed_by: conductor.fringe@PrompTugal.dinis
 to: outreach.1, dev.2, Jose's conductor, architect.1, every agent
 ---
