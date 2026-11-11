@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 // The Kibana side (elastic.1.fringe@PrompTugal.dinis, WS-215; Dinis, 11 November 2026: "a whole set of powerful
 // dashboards ... show the rest of the team the art of the possible"). Builds the data views, Lens charts, saved
-// searches, tags and dashboards as saved objects (elastic/kibana/objects.ndjson) and imports them, overwriting by id,
+// searches, tags and dashboards as saved objects (written to $TMPDIR/elastic-kibana-objects.ndjson, outside git) and imports them, overwriting by id,
 // so a re-run updates and never duplicates.
 //
-//   node admin/tools/elastic-kibana.mjs build                    write elastic/kibana/objects.ndjson
+//   node admin/tools/elastic-kibana.mjs build                    write $TMPDIR/elastic-kibana-objects.ndjson (outside git)
 //   KIBANA_URL=https://<deployment>.kb.<region>... node admin/tools/elastic-kibana.mjs import
 //
 // The password or key comes from the environment (elastic-lib.mjs auth()), never printed.
@@ -21,7 +21,7 @@ if (process.env.HTTPS_PROXY && !process.env.NODE_USE_ENV_PROXY && process.argv[2
     process.exit(r.status ?? 1)
 }
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..')
-const OUT = path.join(ROOT, 'elastic', 'kibana', 'objects.ndjson')
+const OUT = path.join(process.env.TMPDIR || '/tmp', 'elastic-kibana-objects.ndjson')   // generated from this file: outside git (it outgrew the 256 KB rule)
 
 // ---------- tags ----------
 const TAGS = {
@@ -244,7 +244,7 @@ D.cross = dashboard('cross', 'Cross-conductor test: Dinis and Angelo, live', "Ta
 const cmd = process.argv[2]
 fs.mkdirSync(path.dirname(OUT), { recursive: true })
 fs.writeFileSync(OUT, objects.map(o => JSON.stringify(o)).join('\n') + '\n')
-console.log(`${objects.length} saved objects (${Object.keys(D).length} dashboards) -> elastic/kibana/objects.ndjson`)
+console.log(`${objects.length} saved objects (${Object.keys(D).length} dashboards) -> ${OUT}`)
 if (cmd === 'import') {
     const j = await K.importObjects(process.env.KIBANA_URL)
     for (const [k, id] of Object.entries(D)) console.log(`  ${k}: ${String(process.env.KIBANA_URL).replace(/\/+$/, '')}/app/dashboards#/view/${id}`)
