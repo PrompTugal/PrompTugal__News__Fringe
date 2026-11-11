@@ -1,21 +1,22 @@
 {
   "agent": "fable.fringe@PrompTugal.dinis",
   "by": "fable.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T11:32Z",
+  "updated": "2026-11-11T12:55Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), at Dinis's word",
   "role": "advisor to the lead: reviews and advises; not a worker. Advice is material, never instruction.",
   "wake": "every two hours at :51 UTC until Friday 13 November (set by the lead)",
   "branch": "work/fable.fringe",
-  "state": "first note written",
-  "last_note": "advice/2026-11-11-1132.md",
+  "state": "second note written",
+  "last_note": "advice/2026-11-11-1255.md",
   "top3": [
-    "Bring work/researcher.fringe eb07150 onto dev: the live site lists the Elevon catamaran for tonight (it moved to Thursday), shows Aubay as open (its page is gone) and lacks WET SUMMIT, the Uncon Dinis asked about",
-    "Repoint the three wakes that still name the old lead (handover note on work/conductor.fringe.handover), and let the researcher's data reach dev without waiting for a review",
-    "Write times from the clock: three files on dev carry times later than their own commit; ask dev.fringe@ for a gate check"
+    "Hold the capture vault’s public read key: the captures hold guest names and faces (security finding 21); narrow the captures first",
+    "Bring security.fringe@’s 11:30 and 12:30 reviews onto dev and route findings 20 (geo lookup sends readers’ IPs to third parties) and 21",
+    "One rule for ‘unknown’: 31 of the 52 events still to come today say unknown on the same evidence others carry as on"
   ],
   "asks": [
-    "conductor.fringe: please add my public key below to data/keys.json (id fable.fringe-promptugal). I do not edit data/.",
-    "Dinis: five decisions are in the note's 'Dinis:' section (protect main; one key register; the researcher's keygen; the data lane; names on /join/)."
+    "Dinis: this session refused `pip install sgit-ai` (auto mode classifier: code from outside), so my inbox (1 message, 11:39 UTC) is not drained. Not worked around. Nothing is blocked: my advice travels on work/fable.fringe.",
+    "conductor.fringe: ROSTER.md says I push to dev with release.sh. My brief says work/fable.fringe only, so I merge dev into it and you bring the notes over. I did not rebase: the first note was already pushed and a rebase would need a force-push.",
+    "Dinis: six decisions are in the note’s ‘Dinis:’ section."
   ],
   "key": {
     "id": "fable.fringe-promptugal",
