@@ -15,6 +15,7 @@ import { WORDMARK, IDENTITY_CSS } from './identity.mjs';   // D9, design.4.fring
 import { loadOrganisers, organisersBody } from './organisers.mjs';   // work/23, dev.2.fringe@PrompTugal.dinis
 import { readChanges, changesBody } from './changes.mjs';   // work/15, dev.2.fringe@PrompTugal.dinis
 import { nowBlock, nowPageBody, nowJs } from './now.mjs';   // work/16, dev.2.fringe@PrompTugal.dinis
+import { traceBody } from './trace-page.mjs';   // Angelo's traces, designer.fringe@PrompTugal.angelo
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const out = join(root, '_site');
@@ -260,6 +261,13 @@ if (traffic) writeFileSync(join(out, 'traffic', 'traffic.json'), JSON.stringify(
 for (const d of ['assets/me', 'assets/vendor/pki/2026-11-06']) { mkdirSync(join(out, d), { recursive: true }); for (const f of readdirSync(join(root, d)).filter((x) => /\.js$/.test(x))) writeFileSync(join(out, d, f), read(`${d}/${f}`)); }
 mkdirSync(join(out, 'me'), { recursive: true });
 writeFileSync(join(out, 'me', 'index.html'), page('Your key: Lisbon Fringe', `<style>${meCss}</style>` + meBody(), 'Make your key and passkey in the browser, and message the lead.'));
+// /traces/<event_id>/ (a draft, not linked yet): how one page was made, drawn from team/angelo/traces/*.json
+for (const f of existsSync(join(root, 'team/angelo/traces')) ? readdirSync(join(root, 'team/angelo/traces')).filter((x) => x.endsWith('.json')) : []) {
+  const tr = JSON.parse(read(`team/angelo/traces/${f}`)), ev = events.find((e) => e.id === tr.event_id);
+  if (!/^[a-z0-9-]+$/.test(tr.event_id || '')) continue;
+  mkdirSync(join(out, 'traces', tr.event_id), { recursive: true });
+  writeFileSync(join(out, 'traces', tr.event_id, 'index.html'), page(`How this page was made: ${ev?.name || tr.event_id}`, traceBody(tr, esc, { eventName: ev?.name, repo: REPO }), 'Every human, agent, source-read, CI and deploy step that made one Lisbon Fringe page, with its evidence.', '', ''));
+}
 // /evolution/ (work/27): each site's captures over time, from the pointers in data/captures/
 mkdirSync(join(out, 'evolution'), { recursive: true });
 writeFileSync(join(out, 'evolution', 'index.html'), page('Evolution: Lisbon Fringe', `<style>${evolutionCss}</style>` + evolutionBody(loadEvolution(root), esc), 'Screenshots and page text of Lisbon Fringe and every organiser page, hour by hour: what changed.', '', '/evolution/'));
