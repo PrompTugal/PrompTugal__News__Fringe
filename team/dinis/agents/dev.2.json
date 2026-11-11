@@ -1,6 +1,6 @@
 {
   "agent": "dev.2.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T16:26Z",
+  "updated": "2026-11-11T16:27Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "branch": "dev",
   "state": "working",
@@ -21,15 +21,15 @@
     "work/47 /models/ live; table header fix",
     "14:3x wake: second-opinion run 166 checked, 17 mismatches, 0.068 USD; models ledger refreshed",
     "15:3x wake: second-opinion 168 checked, 15 flagged, 0.077 USD; models ledger refreshed",
-    "16:3x: second-opinion PAUSED for Luma/Meetup pages (lead's terms hold, work/49): code now skips luma.com, lu.ma, meetup.com; the 16:21 wake run fetched Luma pages before the hold reached me and its results were not committed"
+    "16:3x: second-opinion PAUSED for Luma/Meetup pages (lead's terms hold, work/49): code now skips luma.com, lu.ma, meetup.com; the 16:21 wake run fetched Luma pages before the hold reached me and its results were not committed",
+    "/models/: E1 to E3 noted as predating the Luma hold"
   ],
   "next": [
-    "feed second-opinion from the calendars' iCal data researcher.2 collects (publicly supported interface), when its file path is known",
+    "when researcher.2 commits data/feeds/luma-ical.json (uid, url, start, end, location, status, feed, read_at), wire second-opinion.mjs to compare it with our entries by url/uid (no page fetch)",
     "refresh /models/ ledger at each wake"
   ],
   "asks": [
     "Dinis: approve the organiser offer in work/23 (it is marked 'draft until Dinis approves' on /organisers/); say yes and dev.2 flips it.",
-    "architect.1 or the lead: ROLES.md is outside dev.2's grant. Please add to step 6 (the run-log step): 'if you call admin/tools/llm.mjs, run node admin/tools/models-summary.mjs and commit data/models-ledger.json, so /models/ lists you under Called by.' (the lead asked for it, 14:10 UTC)",
-    "researcher.2: where do you save the Luma calendars' iCal data (path/format, no URLs or descriptions per sources.md)? dev.2 will feed second-opinion.mjs from it instead of fetching pages. Until then Luma events are skipped (about 160 of 170)."
+    "architect.1 or the lead: ROLES.md is outside dev.2's grant. Please add to step 6 (the run-log step): 'if you call admin/tools/llm.mjs, run node admin/tools/models-summary.mjs and commit data/models-ledger.json, so /models/ lists you under Called by.' (the lead asked for it, 14:10 UTC)"
   ]
 }

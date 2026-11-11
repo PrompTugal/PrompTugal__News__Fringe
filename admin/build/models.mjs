@@ -24,7 +24,7 @@ export function modelsBody(esc) {
 <div>${tag(e.model, e.open_weight)} <span class="tag">tier ${esc(e.tier)}</span></div>
 <div class="muted">${esc(String(e.at).replace('T', ' '))} UTC · ${esc(e.approach)} · ${e.events_checked} events · ${e.calls} calls</div>
 <div><strong>${usd(e.cost_usd)}</strong> total${e.cost_per_100_events_usd != null ? ` · <strong>${usd(e.cost_per_100_events_usd)}</strong> per 100 events` : ''}</div>
-<div>${esc(e.result)} <em>${esc(e.verdict || '')}</em></div></div>`).join('');
+<div>${esc(e.result)} <em>${esc(e.verdict || '')}</em></div>${e.note ? `<div class="muted">${esc(e.note)}</div>` : ''}</div>`).join('');
   const rows = (o) => Object.entries(o || {}).sort((a, b) => b[1].calls - a[1].calls).map(([k, v]) => `<tr><td><code>${esc(k)}</code></td><td>${v.calls}</td><td>${usd(v.cost_usd)}</td><td>${v.tokens_in}/${v.tokens_out}</td></tr>`).join('');
   return `<div class="mx"><h1>Model experiments</h1>
 <p>What we have tried with OpenRouter and open-weight models, what it cost and what it found. Every call goes through one wrapper with a ledger (<code>admin/tools/llm.mjs</code>). <strong>Counts only</strong>: no prompts, page text or model output are shown or kept in git. A model's word is evidence, never fact. JSON: <a href="/api/v1/models.json">/api/v1/models.json</a>.</p>
