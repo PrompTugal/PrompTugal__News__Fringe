@@ -79,4 +79,7 @@ a{text-decoration-thickness:1px;text-underline-offset:2px}
 .ht-side{margin-top:var(--s4)}
 @media(min-width:1100px){main>.home-top{max-width:none;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:var(--s7);align-items:start}.ht-side{margin-top:0}.ht-side>:first-child{margin-top:0}main>.home-top .timeline h2,.ht-side h2{margin-top:var(--s5)}}
 @media(min-width:1100px){.ht-side .bigs-row{flex-direction:column;overflow-y:auto;max-height:min(720px,78vh);gap:var(--s2);padding-right:var(--s1)}.ht-side .big{width:auto}.ht-side .big a{-webkit-line-clamp:2}}
+/* lab check D9: anything that moves stops under reduced motion and pauses on hover and focus */
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.tick:hover .pulse,.tick:focus-within .pulse,.live:hover .pulse,.live:focus-within .pulse{animation-play-state:paused}
 `;

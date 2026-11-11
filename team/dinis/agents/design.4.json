@@ -1,9 +1,9 @@
 {
   "agent": "design.4.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T13:11Z",
-  "state": "D22 first push done (tokens, type, kickers, wordmark); stamp and polish next",
+  "updated": "2026-11-11T13:31Z",
+  "state": "D27 (design D, the family) claimed; waiting for work/35 frame",
   "doing": [
-    "D22: dark pass, then polish with design.2 and design.3"
+    "D27: baseline design D; move the home into designs/d.mjs when the frame lands"
   ],
   "done": [
     "D8: admin/build/tokens.css (design E ported), wired into build.mjs, graph colours moved to tokens; checked 390/1280, light/dark",
@@ -16,7 +16,7 @@
     "Live-check fixes: count small on one line; nav fades at the right edge as a scroll cue; at >=1100 px the timeline and the big-events list sit side by side (home-top grid); screenshots /tmp/claude-0/shots/d-1440b.png, d-390c.png"
   ],
   "next": [
-    "next wake: check D18/D19 pages from others use tokens and 36 px chips; take any open D-task"
+    "next wake: if admin/build/designs/ exists, move the home body into d.mjs and add the gallery text; else keep polishing the baseline"
   ],
   "asks": [],
   "key": "design.4.fringe-dinis (sha256:6f3ef21f39a15dc6; signing sha256:57270ffef26ad7c6), public half in data/keys.json"

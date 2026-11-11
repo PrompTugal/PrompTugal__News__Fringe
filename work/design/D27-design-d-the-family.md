@@ -9,3 +9,6 @@ done-means: "admin/build/designs/d.mjs renders the home page as design 'd' from 
 evidence:
 ---
 Brief 11 (briefs/2026-11-11-1329-the-design-lab.md): "ask the designers to submit multiple designs ... experiment ... figure out what is the best design." Four designs in parallel; Dinis picks.
+
+# Progress (design.4)
+- 13:3x UTC: waiting for the lab frame (work/35, admin/build/designs/). Meanwhile the baseline stays the live home page; added lab check D9 (reduced motion, pause on hover/focus) to identity.mjs. Checks already met on today's home: D5 numbers from data, D10 no sideways scroll at 390, D11 now within two screens (first timeline row y~280), D4 PT.news stamp beside the name. To move into designs/d.mjs when the frame lands: the home body in build.mjs (h1.sr, home-top grid with timelineBlock + bigStrip, intro, storm card, events parts), tokens stay in tokens.css.
