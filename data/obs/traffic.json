@@ -5,27 +5,23 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-11T18:54Z",
+ "generated": "2026-11-11T19:09Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 442,
-  "reads": 381,
-  "tabs": 205,
+  "views": 449,
+  "reads": 386,
+  "tabs": 209,
   "countries": 18,
   "shares": 159,
-  "bots": 1202,
+  "bots": 1212,
   "crawler_tabs": 1,
-  "agent_runs": 141,
-  "agent_runs_signed": 130
+  "agent_runs": 152,
+  "agent_runs_signed": 141
  },
  "by_hour": [
-  [
-   "2026-11-09 19:00",
-   0
-  ],
   [
    "2026-11-09 20:00",
    0
@@ -212,17 +208,21 @@
   ],
   [
    "2026-11-11 18:00",
-   37
+   41
+  ],
+  [
+   "2026-11-11 19:00",
+   3
   ]
  ],
  "by_page": [
   [
    "/",
-   195
+   197
   ],
   [
    "/now/",
-   31
+   33
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
@@ -273,11 +273,15 @@
    5
   ],
   [
+   "/e/2026-11-11-life-with-artificials-kickoff/",
+   5
+  ],
+  [
    "/e/2026-11-11-stranded-networking-drinks-limited-seats/",
    5
   ],
   [
-   "/e/2026-11-11-life-with-artificials-kickoff/",
+   "/e/2026-11-11-lisboaux-web-summit-edition/",
    4
   ],
   [
@@ -302,10 +306,6 @@
   ],
   [
    "/e/2026-11-11-roast-your-website/",
-   3
-  ],
-  [
-   "/e/2026-11-11-lisboaux-web-summit-edition/",
    3
   ],
   [
@@ -386,6 +386,10 @@
   ],
   [
    "/e/2026-11-11-travel-tech-pitch-party/",
+   2
+  ],
+  [
+   "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&ct=ga&cd=CAEYACoTNzU4MTg5ODA1MDE5MTA5ODQ2NzIcMDE4ZGYwYTk5NWVlNmM3MDpjb206ZW46VVM6TA&usg=AOvVaw0652Ojza7KUs4TwPwCMRUX",
    2
   ],
   [
@@ -517,10 +521,6 @@
    1
   ],
   [
-   "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&ct=ga&cd=CAEYACoTNzU4MTg5ODA1MDE5MTA5ODQ2NzIcMDE4ZGYwYTk5NWVlNmM3MDpjb206ZW46VVM6TA&usg=AOvVaw0652Ojza7KUs4TwPwCMRUX",
-   1
-  ],
-  [
    "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&ss=tw&rt=PTW+Classroom+-+Who+Flies+When+the+CEO+Ejects",
    1
   ]
@@ -528,15 +528,15 @@
  "reading": [
   [
    "/",
-   154,
+   155,
    30,
    13
   ],
   [
    "/now/",
-   27,
-   41,
-   50
+   29,
+   40,
+   49
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
@@ -599,6 +599,12 @@
    38
   ],
   [
+   "/e/2026-11-11-life-with-artificials-kickoff/",
+   5,
+   11,
+   31
+  ],
+  [
    "/e/2026-11-11-tech-startups-on-the-rooftop/",
    5,
    13,
@@ -611,10 +617,10 @@
    37
   ],
   [
-   "/e/2026-11-11-life-with-artificials-kickoff/",
+   "/e/2026-11-11-lisboaux-web-summit-edition/",
    4,
-   12,
-   39
+   15,
+   44
   ],
   [
    "/e/2026-11-11-side-events-guide-irl/",
@@ -645,12 +651,6 @@
    3,
    4,
    11
-  ],
-  [
-   "/e/2026-11-11-lisboaux-web-summit-edition/",
-   3,
-   16,
-   52
   ],
   [
    "/e/2026-11-11-ai-for-business-applied-ai-pitch-party/",
@@ -992,7 +992,7 @@
  "by_country": [
   [
    "Portugal",
-   283
+   288
   ],
   [
    "United Kingdom",
@@ -1015,16 +1015,16 @@
    8
   ],
   [
+   "The Netherlands",
+   5
+  ],
+  [
    "Tanzania",
    5
   ],
   [
    "Thailand",
    5
-  ],
-  [
-   "The Netherlands",
-   4
   ],
   [
    "Ireland",
@@ -1047,6 +1047,10 @@
    2
   ],
   [
+   "Canada",
+   2
+  ],
+  [
    "Netherlands",
    1
   ],
@@ -1057,16 +1061,12 @@
   [
    "Brazil",
    1
-  ],
-  [
-   "Canada",
-   1
   ]
  ],
  "by_city": [
   [
    "Lisbon, Portugal",
-   204
+   209
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -1118,7 +1118,7 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   67
+   69
   ]
  ],
  "by_referrer": [
@@ -1130,14 +1130,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   403
+   410
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 1750,
+ "other_hosts_views": 1848,
  "by_via": [
   [
    "whatsapp",
@@ -1163,11 +1163,11 @@
  "by_screen": [
   [
    "desktop",
-   236
+   237
   ],
   [
    "phone",
-   202
+   208
   ],
   [
    "tablet",
@@ -1181,19 +1181,27 @@
   ],
   [
    "design.1.fringe@PrompTugal.dinis",
-   14
+   15
   ],
   [
    "researcher.1.fringe@PrompTugal.jose",
-   13
+   14
+  ],
+  [
+   "architect.1.fringe@PrompTugal.dinis",
+   12
   ],
   [
    "conductor.fringe@PrompTugal.jose",
    11
   ],
   [
-   "architect.1.fringe@PrompTugal.dinis",
-   11
+   "ontologist.1.fringe@PrompTugal.dinis",
+   10
+  ],
+  [
+   "elastic.1.fringe@PrompTugal.dinis",
+   10
   ],
   [
    "observability.fringe@PrompTugal.dinis",
@@ -1204,28 +1212,20 @@
    9
   ],
   [
-   "ontologist.1.fringe@PrompTugal.dinis",
-   9
-  ],
-  [
    "design.2.fringe@PrompTugal.dinis",
    8
   ],
   [
-   "elastic.1.fringe@PrompTugal.dinis",
-   7
+   "conductor.fringe@PrompTugal.indi",
+   6
+  ],
+  [
+   "dev.1.fringe@PrompTugal.dinis",
+   6
   ],
   [
    "capture.1.fringe@PrompTugal.dinis",
    6
-  ],
-  [
-   "conductor.fringe@PrompTugal.indi",
-   5
-  ],
-  [
-   "dev.1.fringe@PrompTugal.dinis",
-   5
   ],
   [
    "researcher.2@PrompTugal.dinis",
@@ -1236,11 +1236,11 @@
    4
   ],
   [
-   "dev.2.fringe@PrompTugal.dinis",
-   3
+   "gravity.1.fringe@PrompTugal.silvio",
+   4
   ],
   [
-   "gravity.1.fringe@PrompTugal.silvio",
+   "dev.2.fringe@PrompTugal.dinis",
    3
   ],
   [
@@ -1249,15 +1249,15 @@
   ],
   [
    "fable.fringe@PrompTugal.dinis",
-   1
+   2
   ]
  ],
  "flows": {
-  "tabs": 205,
+  "tabs": 209,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    139
+    143
    ],
    [
     "shared link (?via=)",
@@ -1271,7 +1271,7 @@
   "entry_pages": [
    [
     "/",
-    143
+    145
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
@@ -1279,7 +1279,7 @@
    ],
    [
     "/now/",
-    6
+    7
    ],
    [
     "/dashboard/",
@@ -1314,6 +1314,10 @@
     2
    ],
    [
+    "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&ct=ga&cd=CAEYACoTNzU4MTg5ODA1MDE5MTA5ODQ2NzIcMDE4ZGYwYTk5NWVlNmM3MDpjb206ZW46VVM6TA&usg=AOvVaw0652Ojza7KUs4TwPwCMRUX",
+    2
+   ],
+   [
     "/join/",
     1
    ],
@@ -1324,16 +1328,12 @@
    [
     "/e/2026-11-11-life-with-artificials-kickoff/",
     1
-   ],
-   [
-    "/e/2026-11-11-lisboaux-web-summit-edition/",
-    1
    ]
   ],
   "exit_pages": [
    [
     "/",
-    103
+    105
    ],
    [
     "/now/",
@@ -1364,6 +1364,10 @@
     3
    ],
    [
+    "/e/2026-11-11-lisboaux-web-summit-edition/",
+    3
+   ],
+   [
     "/e/2026-11-11-enchant-pitch-parties/",
     3
    ],
@@ -1373,10 +1377,6 @@
    ],
    [
     "/e/2026-11-11-yorkseed-allocator-lunch/",
-    2
-   ],
-   [
-    "/e/2026-11-11-lisboaux-web-summit-edition/",
     2
    ],
    [
@@ -1466,6 +1466,10 @@
     2
    ],
    [
+    "/now/ → /e/2026-11-11-life-with-artificials-kickoff/",
+    2
+   ],
+   [
     "/organisers/ → /",
     2
    ],
@@ -1488,16 +1492,12 @@
    [
     "/ → /e/2026-11-11-ptw-classroom-deep-work-wexio/",
     1
-   ],
-   [
-    "/organisers/ → /traffic/",
-    1
    ]
   ],
   "pages_per_tab": [
    [
     "1",
-    136
+    139
    ],
    [
     "2",
@@ -1509,14 +1509,14 @@
    ],
    [
     "4",
-    3
+    4
    ],
    [
     "5+",
     19
    ]
   ],
-  "bounce_rate": 66,
+  "bounce_rate": 67,
   "via_reached": [
    [
     "whatsapp: /",
@@ -1575,11 +1575,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
@@ -1587,7 +1587,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ],
    [
@@ -1595,7 +1595,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
     1
    ]
   ]
@@ -1621,7 +1621,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 204,
+    "views": 209,
     "lat": 38.7,
     "lon": -9.1
    },
@@ -1717,6 +1717,10 @@
    3
   ],
   [
+   "/e/2026-11-11-lisboaux-web-summit-edition/ → luma.com/yvm04djt",
+   2
+  ],
+  [
    "/e/2026-11-11-gaming-entertainment-pitch-party/ → luma.com/wajdwhgx",
    2
   ],
@@ -1751,10 +1755,6 @@
   [
    "/e/2026-11-11-travel-tech-pitch-party/ → luma.com/9jtn1muw",
    2
-  ],
-  [
-   "/e/2026-11-11-lisboaux-web-summit-edition/ → luma.com/yvm04djt",
-   1
   ],
   [
    "/e/2026-11-11-between-the-waves/ → luma.com/5yucusdb",
