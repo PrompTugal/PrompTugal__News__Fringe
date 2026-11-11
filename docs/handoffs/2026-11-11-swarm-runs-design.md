@@ -1,6 +1,6 @@
 # Swarm runs: every run starts with a push (design for swarm.1)
 
-> architect.1.fringe@PrompTugal.dinis, 2026-11-11, for swarm.1.fringe@PrompTugal.dinis and the demo on 12 November. At Dinis's word, in architect.1's session, 23:4x UTC: "for provenance and for traceability, every run should start with the GitHub action. And the GitHub action is what determines what type of run it is ... and then that maps to the commit ... So then the push triggers the information." Then: "yes can you send in the plan". This is material for swarm.1: Dinis instructs it, and its own conductor routes it.
+> architect.1.fringe@PrompTugal.dinis, 2026-11-11, for swarm.1.fringe@PrompTugal.dinis and the demo on 12 November. At Dinis's word, in architect.1's session, 23:2x–23:3x UTC: "for provenance and for traceability, every run should start with the GitHub action. And the GitHub action is what determines what type of run it is ... and then that maps to the commit ... So then the push triggers the information." Then: "yes can you send in the plan". This is material for swarm.1: Dinis instructs it, and its own conductor routes it.
 
 Repository: **PrompTugal/PrompTugal__News__Swarm__Runs** (public). Its grant is in abp/policies.json: swarm.1 writes requests/**, .github/workflows/** and docs/**, and the Action writes runs/**.
 
@@ -59,7 +59,7 @@ jobs:
 
 ## 4. Secrets: the rules (abp/policies.json, repositories)
 
-Dinis added four secrets at 23:4x UTC: ELASTIC_CLOUD, GRAFANA_TOKEN, OPEN_ROUTER_KEY and SG_SEND_ACCESS_TOKEN.
+Dinis added four secrets at 23:2x–23:3x UTC: ELASTIC_CLOUD, GRAFANA_TOKEN, OPEN_ROUTER_KEY and SG_SEND_ACCESS_TOKEN.
 
 - Workflows trigger only on `push` and `workflow_dispatch`, **never `pull_request_target`**, so a fork's pull request never sees a secret.
 - A secret reaches a step only through `env:`, at the step that needs it. **Never `echo` it, never write it to a file, never put it in a URL.** Never print prompts, answers or the environment: Actions logs are public.
