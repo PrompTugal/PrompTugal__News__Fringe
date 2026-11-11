@@ -122,7 +122,7 @@ const navHtml = (here) => `<header><nav aria-label="Main"><span class="brand"><a
 const OG_IMAGE = SITE + 'assets/og/share.png';   // work/design D2: 1200x630, rendered in CI from admin/build/og/share.html (never in git)
 const ogDefault = (title, desc) => [['og:type', 'website'], ['og:site_name', 'Lisbon Tech Fringe'], ['og:title', title], ['og:description', desc], ['og:image', OG_IMAGE], ['og:image:width', '1200'], ['og:image:height', '630']]
   .map(([p, v]) => `<meta property="${p}" content="${esc(v)}">`).join('') + `<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${OG_IMAGE}">`;
-const page = (title, body, desc, head = '', here = '/') => `<!doctype html><html lang="en"><head><meta charset="utf-8">
+const page = (title, body, desc, head = '', here = '') => `<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}"><link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">${/og:title/.test(head) ? head : ogDefault(title, desc) + head}<style>${css}</style></head><body>
 <div class="ptbar"><a href="https://promptugal.news"><img class="stamp l" src="/assets/brand/pt-news-stamp-light.svg" alt="PT.news" width="20" height="20"><img class="stamp d" src="/assets/brand/pt-news-stamp-dark.svg" alt="" width="20" height="20"><span>a PrompTugal.news site</span></a></div>
@@ -214,7 +214,7 @@ ${intelBox()}
 <h2>The agentic team</h2>
 <div class="card">Built in the open by a swarm: one conductor per person, agents by role, Dinis as head. <a href="/how/"><strong>See how it is made</strong></a> · <a href="/data/">Query the data with SQL</a> · <a href="/join/">Bring your conductor in five minutes</a>.</div>
 <!--SHOWROOM-->
-`, 'An independent guide to the side events around Web Summit Lisbon.');
+`, 'An independent guide to the side events around Web Summit Lisbon.', '', '/');
 
 // --- /join/ --------------------------------------------------------------
 const steps = (SWARM_STEPS()).map((s) => `<li>${s}</li>`).join('');
@@ -275,7 +275,7 @@ mkdirSync(join(out, 'graph'), { recursive: true });
 writeFileSync(join(out, 'graph', 'index.html'), graphPage);
 writeFileSync(join(out, 'graph.js'), read('admin/build/graph.js'));
 writeFileSync(join(out, 'CNAME'), new URL(ORIGIN).host + '\n');
-writeFileSync(join(out, '404.html'), page('Not found', '<h1>That page is not here</h1><p>It may have moved, or it is not built yet. Try one of these:</p><p><a class="btn" href="/">Today in Lisbon</a></p><ul><li><a href="/#events">All events, today and tomorrow</a></li><li><a href="/api/v1/events.json">Every event as data</a></li><li><a href="/join/">Join the team</a></li></ul>', 'Page not found.'));
+writeFileSync(join(out, '404.html'), page('Not found', '<h1>That page is not here</h1><p>It may have moved, or it is not built yet. Try one of these:</p><p><a class="btn" href="/">Today in Lisbon</a></p><ul><li><a href="/#events">All events, today and tomorrow</a></li><li><a href="/api/v1/events.json">Every event as data</a></li><li><a href="/now/">What is on now</a></li><li><a href="/tip/">Send a tip</a></li><li><a href="/join/">Join the team</a></li></ul>', 'Page not found.'));
 mkdirSync(join(out, 'api', 'v1'), { recursive: true });
 writeFileSync(join(out, 'api', 'v1', 'README.md'), read('api/v1/README.md'));
 writeFileSync(join(out, 'api', 'v1', 'events.json'), JSON.stringify({ about: 'Lisbon Tech Fringe events, each re-read at its public URL (read_at, UTC). Independent of Web Summit.', site: SITE, version: VERSION, built_at: BUILT, events }, null, 2) + '\n');
@@ -304,7 +304,7 @@ writeFileSync(join(out, 'api', 'v1', 'operating-model.json'), read('data/operati
 if (existsSync(join(root, 'data/runtimes.json'))) writeFileSync(join(out, 'api', 'v1', 'runtimes.json'), read('data/runtimes.json'));
 if (existsSync(join(root, 'data/architecture.json'))) writeFileSync(join(out, 'api', 'v1', 'architecture.json'), read('data/architecture.json'));
 mkdirSync(join(out, 'organisers'), { recursive: true });
-writeFileSync(join(out, 'organisers', 'index.html'), page('For organisers: Lisbon Tech Fringe', organisersBody(orgs, esc, { eventPath, hasPage }), 'What Lisbon Tech Fringe offers organisers of side events, and who is listed.'));
+writeFileSync(join(out, 'organisers', 'index.html'), page('For organisers: Lisbon Tech Fringe', organisersBody(orgs, esc, { eventPath, hasPage }), 'What Lisbon Tech Fringe offers organisers of side events, and who is listed.', '', '/organisers/'));
 const graphM = writeGraph({ root, out, events, page, esc, eventPath, hasPage, SITE, VERSION, BUILT });   // work/42: /o/ /f/ /d/ /n/ /p/ /t/ and /api/v1/graph/<type>.json
 const changes = readChanges(root);
 const releases = buildReleases(root, changes.commits, VERSION);   // work/37: every commit gets the first tag that contains it
