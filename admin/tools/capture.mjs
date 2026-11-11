@@ -38,7 +38,7 @@ const VDIR = path.join(VROOT, active.dir);
 
 // ---- what to capture
 const events = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/events.json'), 'utf8')).events;
-let pages = ['/', '/join/', '/graph/', '/traffic/', '/evolution/', '/storm/', '/now/', '/changes/', '/organisers/', '/api/v1/events.json']
+let pages = ['/', '/join/', '/graph/', '/traffic/', '/evolution/', '/storm/', '/now/', '/changes/', '/organisers/', '/dashboard/', '/how/', '/api/v1/events.json']
   .map(p => SITE + p);
 try { const sm = await (await fetch(SITE + '/sitemap.xml')).text(); for (const m of sm.matchAll(/<loc>([^<]+)<\/loc>/g)) if (!m[1].includes('/e/') && !pages.includes(m[1])) pages.push(m[1]); } catch {}
 pages = pages.filter(u => !u.endsWith('.json'));
