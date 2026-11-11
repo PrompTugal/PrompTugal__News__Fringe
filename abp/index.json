@@ -1,7 +1,7 @@
 {
   "about": "Every agent's grant, flattened from abp/policies.json by node abp/tools/abp.mjs build: what /abp/ shows.",
   "policy": "0.4.1",
-  "sha256": "5a4f3b7ca47cb5e6",
+  "sha256": "5bfa6724a86c2d27",
   "mode": "observe",
   "agents": [
     {
@@ -1019,6 +1019,32 @@
         "pki.sgit.ai"
       ],
       "page": "abp/gravity.1.fringe@PrompTugal.silvio.md"
+    },
+    {
+      "agent": "neo4j.1.fringe@PrompTugal.dinis",
+      "role": "neo4j",
+      "person": "dinis",
+      "account": "riskmandate-personal (Ultra)",
+      "branch": "dev",
+      "writes": [
+        "team/dinis/agents/neo4j.1.json",
+        "team/dinis/agents/neo4j.1.fringe.json",
+        "team/dinis/agents/neo4j.1/**",
+        "data/keys.json (your own entry)",
+        "data/inboxes/<your key id>.json",
+        "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
+        "neo4j/**",
+        "admin/tools/neo4j*",
+        "data/neo4j*.json",
+        "docs/neo4j*"
+      ],
+      "owns": [],
+      "sends": [
+        "dev.send.sgraph.ai",
+        "pki.sgit.ai"
+      ],
+      "page": "abp/neo4j.1.fringe@PrompTugal.dinis.md"
     }
   ]
 }

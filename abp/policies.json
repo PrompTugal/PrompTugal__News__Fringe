@@ -1,7 +1,7 @@
 {
   "about": "The Agent Behaviour Policies of Lisbon Fringe (lisbontechfringe.com, origin in admin/site.json; WS-215) as data: deny by default, one grant per role and agent, across this repository and the others the swarm touches. Ported from PrompTugal__News__Website board/abp/policies.json (abp@PrompTugal.dinis, v1.7.0, since 6 November 2026), not invented anew; built on RiskMandate's Agent Behaviour Policy and Licence to Operate (https://riskmandate.ai/agent-behaviour-policy.html). Read by the hooks (.claude/settings.json, .claude/hooks/abp.mjs) and by the gate's commit check (abp/tools/abp.mjs check). abp/<agent>.md is generated from this file (node abp/tools/abp.mjs build), never edited by hand. Kept by architect.1.fringe@PrompTugal.dinis (work/39); any relaxation, and any move towards enforcement, is Dinis's decision.",
   "version": "0.4.1",
-  "updated": "2026-11-11T19:06Z",
+  "updated": "2026-11-11T19:34Z",
   "operator": "Dinis Cruz",
   "kept_by": "architect.1.fringe@PrompTugal.dinis",
   "status": "DRAFT: grants proposed from the git log (data/architecture.json observed); Dinis and the lead review",
@@ -587,6 +587,18 @@
       ],
       "send_hosts_note": "the deployment Dinis named at 17:23 UTC (Elasticsearch and Kibana); mapped 2026-11-11T18:26Z as the role said it would be. Its credential is the environment's, never in git",
       "never": "prints or commits an Elastic key; sends personal data or contact details to Elastic; changes another agent's files"
+    },
+    "neo4j": {
+      "focus": "the swarm as a property graph in Neo4j (Dinis, 2026-11-11T19:33Z: 'can you spin up an neo4j agent?'): load the fringe graph, the agentic runs (A4 to A0, parent to child, key to unit) and the ABP grants and findings; Cypher queries and graph visualisations; the fractal semantic graph grammar (edges are verbs with inverses, never relates_to)",
+      "writes": [
+        "neo4j/**",
+        "admin/tools/neo4j*",
+        "data/neo4j*.json",
+        "docs/neo4j*"
+      ],
+      "send_hosts": [],
+      "send_hosts_note": "none yet: where Neo4j runs (in its own container, or Neo4j Aura with a credential) is Dinis's decision; the host is mapped here once he names it",
+      "never": "prints or commits a Neo4j password or key; loads personal data or contact details; changes another agent's files; uses ELASTIC_CLOUD (R8e)"
     }
   },
   "agents": {
@@ -865,6 +877,11 @@
       "account": "Silvio's",
       "lane": "the visualisations (briefs/2026-11-11-1546-altitudes-to-angelo-and-silvio.md): the Fringe drawn with Gravity, team/silvio/gravity/",
       "note": "mapped 2026-11-11T17:51Z: its own person's scope (team/silvio/**) and its own entry in data/keys.json, the mapping rule; serving /universe/ needs lines in admin/build/build.mjs (dev.2's) and Gravity's host web-summit.sgit.ai (Dinis)"
+    },
+    "neo4j.1.fringe@PrompTugal.dinis": {
+      "role": "neo4j",
+      "account": "riskmandate-personal (Ultra)",
+      "note": "started by architect.1 at Dinis's word in its session (2026-11-11T19:33Z: 'also can you spin up an neo4j agent?')"
     }
   },
   "external": {
