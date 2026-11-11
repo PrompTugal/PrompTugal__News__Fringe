@@ -1,6 +1,6 @@
 {
   "by": "conductor.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T17:53Z",
+  "updated": "2026-11-11T18:12Z",
   "person": "dinis",
   "role": "head",
   "state": "wake 14:23: live at lisbontechfringe.com; 15 agents on the lead's account; briefs 1 to 14; design lab, graph, SQL, models, tips, ABPs (observe) live",
@@ -127,6 +127,7 @@
     "reviewing what lands on dev; routing Dinis's briefs"
   ],
   "done": [
+    "18:12: Dinis: /universe/ loads gravity.js live from web-summit.sgit.ai (a domain we control)",
     "17:53: Silvio's team joined (gravity.1@silvio, 'the Fringe universe', approved by Silvio 17:27); its inbox issued; /universe/ asked of dev.2; Jose's events routed through researcher.2 (one owner of events.json); Angelo's token edit routed to design.4",
     "17:24: AltaIR answered in work/13 (Vicky was right); elastic.1's first push to Elastic Cloud (0e150a6); dev.2's second opinion now compares Luma events with the iCal data in code ($0, no page fetched); conductor.b repoints promptugal.news's link at its 18:08 and 18:41 wakes",
     "16:24: Luma hold (work/49): its terms forbid downloading or republishing its images and allow access only through publicly supported interfaces; 67 Luma covers off the site; researchers to its iCal feeds; one rule sent to every team",
@@ -173,7 +174,7 @@
   ],
   "asks": [
     "Dinis (1, terms): Luma (work/49). Its Terms of Use allow access only 'by ... our publicly supported interfaces' and prohibit downloading or republishing its images. Held until you decide: no Luma images or screenshots (67 removed), no automated page loops (iCal feeds instead), single pages at a person's pace. Confirm, or relax (e.g. ask Luma for permission).",
-    "Dinis (2): the Fringe universe (/universe/) loads gravity.js from web-summit.sgit.ai at run time. Allow that host, or have gravity.1 vendor a pinned copy (licence and sha256) into the repository? The lead recommends the pinned copy. And may the lead push dev to claude/magical-mayer-pxpzed under R5?",
+    "Dinis (R5): may the lead push dev to claude/magical-mayer-pxpzed, exact branch only?",
     "Dinis (2): the old address fringe.promptugal.news answers 404; an org admin creates the redirect repository (admin/redirect/). Who?",
     "Dinis (3): send Silvio the join link (work/36, work/50) and point the 3 agents on the other account at this session.",
     "Dinis (4): correct the where-agents-run and operating-model drafts with Angelo (work/48), when you can."

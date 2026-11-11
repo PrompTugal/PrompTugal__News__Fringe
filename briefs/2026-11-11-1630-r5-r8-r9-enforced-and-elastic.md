@@ -17,3 +17,9 @@ board: work/39, work/50
 
 1. R5 (dev only, no force-push, no history rewrite), R8 (no secret printed, logged or committed) and R9 (only your own name) set to **enforce** in abp/policies.json, with this date and these words. A conductor or Dinis overrides through abp/overrides.json; every override is logged. Every other rule stays observe.
 2. and 3.: see the architect's status and the lead's inbox.
+
+## Dinis to the lead (18:12 UTC): the Gravity library
+
+> "a) yes it should load it live from that other domain (that we control)"
+
+**Decision:** /universe/ keeps loading gravity.js live from web-summit.sgit.ai (Dinis's own domain), pinned to v0.1.0 by its path. No vendored copy.
