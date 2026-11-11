@@ -29,6 +29,8 @@ Served at `https://fringe.promptugal.news/api/v1/`. Built from this repository o
       "in_lisbon":   true | false,            // added: false for online events and events outside Lisbon (Covilhã, Mértola, Santarém, Sintra, Estoril)
       "personas":    [string],                // added: investor, founder, builder, corporate, student, anyone; from sentences on the page that name an audience; empty when the page names none
       "umbrella":    string | absent,         // added: e.g. "Portugal Tech Week", when the page or its calendar says so
+      "seen_at":     ISO 8601 UTC | absent,    // added: when a page or feed last showed the event, without re-checking its status; read_at means the status was re-checked at that time
+      "ical_uid":    string | absent,         // added: the event's uid in its calendar's iCal feed, the part before the @
       "neighbourhood": string | absent,       // added: the area as the public page names it (Luma's address area when the address is shown, or an area named in the place); absent when the address is given to guests only. Never guessed from a hidden address
       "size":       "major" | "community",   // added: major = conference, festival or multi-session day (PTW days, WET SUMMIT); community = meetup, dinner, talk, drinks
       "lane":       "business" | absent,    // added: founders', investors' and partners' meetups (work/10); absent = not tagged

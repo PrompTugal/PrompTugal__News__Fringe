@@ -1,7 +1,7 @@
 {
   "about": "Every agent's grant, flattened from abp/policies.json by node abp/tools/abp.mjs build: what /abp/ shows.",
-  "policy": "0.4.0",
-  "sha256": "4b0d1d302579f325",
+  "policy": "0.4.1",
+  "sha256": "f57383c15bb5707b",
   "mode": "observe",
   "agents": [
     {
@@ -18,6 +18,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "work/**",
         "briefs/**",
         "team/**",
@@ -63,6 +64,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "abp/**",
         ".claude/**",
         "data/architecture.json",
@@ -83,12 +85,16 @@
         "docs/articles/**",
         "admin/build/articles.mjs",
         "docs/handoffs/**",
+        "data/altitude-runs.json",
+        "data/work-altitudes-*.json",
         "briefs/*.md#notes-of-Dinis-in-its-session"
       ],
       "owns": [],
       "sends": [
         "dev.send.sgraph.ai",
         "pki.sgit.ai",
+        "my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io",
+        "my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io",
         "openrouter.ai"
       ],
       "page": "abp/architect.1.fringe@PrompTugal.dinis.md"
@@ -107,6 +113,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "advice/**"
       ],
       "owns": [],
@@ -130,6 +137,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "data/obs/**",
         "data/geo/**",
         "assets/obs/**",
@@ -164,6 +172,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "admin/build/*.mjs (your own page modules)",
         "admin/build/designs/**",
         "admin/build/og/**",
@@ -197,6 +206,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "admin/build/*.mjs (your own page modules)",
         "admin/build/designs/**",
         "admin/build/og/**",
@@ -231,6 +241,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "admin/build/*.mjs (your own page modules)",
         "admin/build/designs/**",
         "admin/build/og/**",
@@ -267,6 +278,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "admin/build/*.mjs (your own page modules)",
         "admin/build/designs/**",
         "admin/build/og/**",
@@ -302,6 +314,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "admin/build/**",
         "admin/tools/**",
         "admin/redirect/**",
@@ -345,6 +358,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "admin/build/**",
         "admin/tools/**",
         "admin/redirect/**",
@@ -386,6 +400,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "data/events.json",
         "seed/**",
         "sources.md",
@@ -417,6 +432,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "data/capture-*.json",
         "admin/capture-sealed/**",
         "admin/tools/capture.mjs",
@@ -446,6 +462,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "work/drafts/**",
         "data/outreach*.json",
         "admin/outreach-sealed/**",
@@ -472,6 +489,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "work/design/**",
         "work/28-usability.md"
       ],
@@ -496,6 +514,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "data/events.json",
         "seed/**",
         "sources.md",
@@ -524,6 +543,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "security/**",
         "HOLD.md"
       ],
@@ -548,6 +568,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "admin/build/**",
         "admin/tools/**",
         "admin/redirect/**",
@@ -584,6 +605,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "admin/build/**",
         "admin/tools/**",
         "admin/redirect/**",
@@ -620,6 +642,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "team/dinis/**",
         "work/drafts/dinis/**"
       ],
@@ -643,7 +666,8 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
-        "tasks/*/result-*.json"
+        "tasks/*/result-*.json",
+        "data/models-ledger.json"
       ],
       "owns": [],
       "sends": [
@@ -666,6 +690,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "team/vicky/**",
         "work/drafts/vicky/**",
         "work/13-editorial-check.md"
@@ -691,6 +716,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "team/indi/**",
         "work/drafts/indi/**",
         "data/communities.json",
@@ -720,6 +746,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "team/angelo/**",
         "work/drafts/angelo/**",
         "admin/build/graph.mjs",
@@ -755,6 +782,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "team/angelo/**",
         "admin/build/graph.mjs",
         "admin/build/graph.js"
@@ -780,6 +808,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "team/angelo/**",
         "admin/build/graph.mjs",
         "admin/build/graph.js",
@@ -807,6 +836,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "team/angelo/**",
         "admin/tools/trace-event.mjs"
       ],
@@ -831,6 +861,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "team/jose/**",
         "work/drafts/jose/**",
         "work/drafts/**",
@@ -857,6 +888,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "team/silvio/**",
         "work/drafts/silvio/**"
       ],
@@ -881,6 +913,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "team/daniela/**",
         "work/drafts/daniela/**"
       ],
@@ -905,6 +938,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "data/events.json",
         "seed/**",
         "sources.md",
@@ -933,6 +967,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "data/graph/**",
         "admin/build/graph-*.mjs"
       ],
@@ -956,7 +991,8 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
-        "tasks/*/result-*.json"
+        "tasks/*/result-*.json",
+        "data/models-ledger.json"
       ],
       "owns": [],
       "sends": [
@@ -979,6 +1015,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "elastic/**",
         "admin/tools/elastic*",
         "data/elastic*.json",
@@ -1007,6 +1044,7 @@
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
         "tasks/*/result-*.json",
+        "data/models-ledger.json",
         "team/silvio/**"
       ],
       "owns": [],
@@ -1015,6 +1053,135 @@
         "pki.sgit.ai"
       ],
       "page": "abp/gravity.1.fringe@PrompTugal.silvio.md"
+    },
+    {
+      "agent": "neo4j.1.fringe@PrompTugal.dinis",
+      "role": "neo4j",
+      "person": "dinis",
+      "account": "riskmandate-personal (Ultra)",
+      "branch": "dev",
+      "writes": [
+        "team/dinis/agents/neo4j.1.json",
+        "team/dinis/agents/neo4j.1.fringe.json",
+        "team/dinis/agents/neo4j.1/**",
+        "data/keys.json (your own entry)",
+        "data/inboxes/<your key id>.json",
+        "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
+        "data/models-ledger.json",
+        "neo4j/**",
+        "admin/tools/neo4j*",
+        "data/neo4j*.json",
+        "docs/neo4j*"
+      ],
+      "owns": [],
+      "sends": [
+        "dev.send.sgraph.ai",
+        "pki.sgit.ai"
+      ],
+      "page": "abp/neo4j.1.fringe@PrompTugal.dinis.md"
+    },
+    {
+      "agent": "grafana.1.fringe@PrompTugal.dinis",
+      "role": "grafana",
+      "person": "dinis",
+      "account": "riskmandate-personal (Ultra)",
+      "branch": "dev",
+      "writes": [
+        "team/dinis/agents/grafana.1.json",
+        "team/dinis/agents/grafana.1.fringe.json",
+        "team/dinis/agents/grafana.1/**",
+        "data/keys.json (your own entry)",
+        "data/inboxes/<your key id>.json",
+        "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
+        "data/models-ledger.json",
+        "admin/grafana/**",
+        "docs/grafana*",
+        "work/51-grafana.md"
+      ],
+      "owns": [],
+      "sends": [
+        "dev.send.sgraph.ai",
+        "pki.sgit.ai",
+        "vividwombat1572.grafana.net"
+      ],
+      "page": "abp/grafana.1.fringe@PrompTugal.dinis.md"
+    },
+    {
+      "agent": "research.reach.fringe@PrompTugal.angelo",
+      "role": "researcher",
+      "person": "angelo",
+      "account": "Angelo's",
+      "branch": "dev",
+      "writes": [
+        "team/angelo/agents/research.reach.json",
+        "team/angelo/agents/research.reach.fringe.json",
+        "team/angelo/agents/research.reach/**",
+        "data/keys.json (your own entry)",
+        "data/inboxes/<your key id>.json",
+        "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
+        "data/models-ledger.json",
+        "team/angelo/drafts/**",
+        "team/angelo/runs.md"
+      ],
+      "owns": [],
+      "sends": [
+        "dev.send.sgraph.ai",
+        "pki.sgit.ai"
+      ],
+      "page": "abp/research.reach.fringe@PrompTugal.angelo.md"
+    },
+    {
+      "agent": "design.reach-a.fringe@PrompTugal.angelo",
+      "role": "design",
+      "person": "angelo",
+      "account": "Angelo's",
+      "branch": "dev",
+      "writes": [
+        "team/angelo/agents/design.reach-a.json",
+        "team/angelo/agents/design.reach-a.fringe.json",
+        "team/angelo/agents/design.reach-a/**",
+        "data/keys.json (your own entry)",
+        "data/inboxes/<your key id>.json",
+        "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
+        "data/models-ledger.json",
+        "team/angelo/drafts/**",
+        "team/angelo/runs.md"
+      ],
+      "owns": [],
+      "sends": [
+        "dev.send.sgraph.ai",
+        "pki.sgit.ai"
+      ],
+      "page": "abp/design.reach-a.fringe@PrompTugal.angelo.md"
+    },
+    {
+      "agent": "design.reach-b.fringe@PrompTugal.angelo",
+      "role": "design",
+      "person": "angelo",
+      "account": "Angelo's",
+      "branch": "dev",
+      "writes": [
+        "team/angelo/agents/design.reach-b.json",
+        "team/angelo/agents/design.reach-b.fringe.json",
+        "team/angelo/agents/design.reach-b/**",
+        "data/keys.json (your own entry)",
+        "data/inboxes/<your key id>.json",
+        "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
+        "data/models-ledger.json",
+        "team/angelo/drafts/**",
+        "team/angelo/runs.md"
+      ],
+      "owns": [],
+      "sends": [
+        "dev.send.sgraph.ai",
+        "pki.sgit.ai"
+      ],
+      "page": "abp/design.reach-b.fringe@PrompTugal.angelo.md"
     }
   ]
 }

@@ -5,7 +5,7 @@ Memory between wakes. Read this and `status.json`, then only what changed on dev
 - **Item:** work/05 the fringe graph (claimed 11:21 UTC).
 - **Key:** session key, signing sha256:ca2c782dbfd0147e, in data/keys.json and Website board/keys.json (9e4cdc1b).
 - **Wake:** hourly at :29 until Fri 13 Nov 23:59 UTC (trig_01UqsUe1kvf2qvWkjLiF2hPk); after that the wake disables itself.
-- **last-seen:** origin/dev at eec15c4 (18:53 UTC)
+- **last-seen:** origin/dev at 155113b (20:31 UTC)
 - **Traces:** team/angelo/traces/ (first: the Wexio event page); generator admin/tools/trace-event.mjs (needs a runs.json from the Actions runs list).
 - **Graph:** admin/build/graph.mjs + graph.js; pt.news snapshot data/ptnews-index.json (regenerate: node admin/tools/ptnews-index.mjs <Website clone>).
 - **Angelo's decisions (12:49 UTC):** trace strip on event pages only after the first MVP is approved; work/32 claimed; obs.js errors passed to the lead on work/21.
@@ -14,3 +14,6 @@ Memory between wakes. Read this and `status.json`, then only what changed on dev
 - **Domain (13:30 UTC):** the site moved to https://lisbontechfringe.com (work/30, dev.1@; name Lisbon Tech Fringe, brief 9). fringe.promptugal.news now 404s until the redirect in admin/redirect/ is set up (dev.1@, waits on Dinis). Old URLs in team/angelo/traces/ are the record of their time; left as they are.
 - **Altitudes MVPs:** with handover-market.mp@PrompTugal.angelo since Angelo's word (18:56 UTC); not this conductor's.
 - **last-digest:** 107fd20 (18:56 UTC), in conductor.b@'s format (formats/conductor.md §0). Open points: Dinis's ask to correct the where-agents-run and operating-model drafts with Angelo (work/48); the old domain's redirect (Dinis).
+- **where-agents-run review (work/48, with Angelo):** review and 7 concepts given at about 19:05 UTC; waiting on Angelo to agree the concepts, then the structure, then the details; the rewrite goes to Dinis's lead as Angelo's corrections.
+- **Inbox drained 20:23 UTC:** 12 messages, all signatures checked (sgit-ai 0.27.0 installed this session). Last: the lead's handover test (20:19 UTC). Handover test answered at Angelo's word (20:26 UTC). Open for Angelo: ontologist.1's two organisersOf fixes (asides, hosted/powered by); architect.1's old origin in trace-event.mjs (trace work: only at Angelo's word). Noted: tokens.css is design.4's (ask, don't edit); Luma rule (work/49).
+- **OpenRouter test (20:31 UTC):** P3/P4 from Dinis's conductor run here twice; the second run carries flow events (packets.mjs 00c1e75) for Elastic swarm-flows. Our P3 (persona for 6 events) and P5 (one-liners) wait for Dinis's conductor. Run packets with NODE_USE_ENV_PROXY=1.

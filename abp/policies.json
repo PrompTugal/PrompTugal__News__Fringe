@@ -1,7 +1,7 @@
 {
   "about": "The Agent Behaviour Policies of Lisbon Fringe (lisbontechfringe.com, origin in admin/site.json; WS-215) as data: deny by default, one grant per role and agent, across this repository and the others the swarm touches. Ported from PrompTugal__News__Website board/abp/policies.json (abp@PrompTugal.dinis, v1.7.0, since 6 November 2026), not invented anew; built on RiskMandate's Agent Behaviour Policy and Licence to Operate (https://riskmandate.ai/agent-behaviour-policy.html). Read by the hooks (.claude/settings.json, .claude/hooks/abp.mjs) and by the gate's commit check (abp/tools/abp.mjs check). abp/<agent>.md is generated from this file (node abp/tools/abp.mjs build), never edited by hand. Kept by architect.1.fringe@PrompTugal.dinis (work/39); any relaxation, and any move towards enforcement, is Dinis's decision.",
-  "version": "0.4.0",
-  "updated": "2026-11-11T18:26Z",
+  "version": "0.4.1",
+  "updated": "2026-11-11T19:52Z",
   "operator": "Dinis Cruz",
   "kept_by": "architect.1.fringe@PrompTugal.dinis",
   "status": "DRAFT: grants proposed from the git log (data/architecture.json observed); Dinis and the lead review",
@@ -68,6 +68,10 @@
       "R12": {
         "mode": "observe",
         "since": "2026-11-11T15:15Z"
+      },
+      "R8e": {
+        "mode": "observe",
+        "note": "Observed from 2026-11-11T19:06Z; enforce on Dinis's word. Printing ELASTIC_CLOUD is already caught by R8 (enforced)."
       }
     }
   },
@@ -285,9 +289,10 @@
       "data/keys.json#own-entry",
       "data/inboxes/{keyid}.json",
       "work/{claimed}",
-      "tasks/*/result-*.json"
+      "tasks/*/result-*.json",
+      "data/models-ledger.json"
     ],
-    "writes_note": "data/keys.json: append or update your own entry only (the gate cannot tell entries apart yet; the hourly review reads the diff). work/{claimed}: the board file of an item you own or are claiming (owner, status, evidence lines), never another owner's item. data/inboxes/: the inbox tool writes them. tasks/*/result-*.json: any agent may return a signed result to a task packet (work/48, cross-environment runs at Dinis's word, 15:3x UTC).",
+    "writes_note": "data/keys.json: append or update your own entry only (the gate cannot tell entries apart yet; the hourly review reads the diff). work/{claimed}: the board file of an item you own or are claiming (owner, status, evidence lines), never another owner's item. data/inboxes/: the inbox tool writes them. tasks/*/result-*.json: any agent may return a signed result to a task packet (work/48, cross-environment runs at Dinis's word, 15:3x UTC). data/models-ledger.json: ROLES.md step 6 asks every agent that called admin/tools/llm.mjs to run models-summary.mjs and commit it (mapped 2026-11-11T19:52Z).",
     "writes_outside_repo": [
       "/tmp/**",
       "{home}/.sg-send/**",
@@ -429,7 +434,9 @@
         "data/work-altitudes.json",
         "docs/articles/**",
         "admin/build/articles.mjs",
-        "docs/handoffs/**"
+        "docs/handoffs/**",
+        "data/altitude-runs.json",
+        "data/work-altitudes-*.json"
       ],
       "touches_shared": [
         "admin/build/build.mjs (one line per page, until the registry lands)",
@@ -581,6 +588,31 @@
       ],
       "send_hosts_note": "the deployment Dinis named at 17:23 UTC (Elasticsearch and Kibana); mapped 2026-11-11T18:26Z as the role said it would be. Its credential is the environment's, never in git",
       "never": "prints or commits an Elastic key; sends personal data or contact details to Elastic; changes another agent's files"
+    },
+    "neo4j": {
+      "focus": "the swarm as a property graph in Neo4j (Dinis, 2026-11-11T19:33Z: 'can you spin up an neo4j agent?'): load the fringe graph, the agentic runs (A4 to A0, parent to child, key to unit) and the ABP grants and findings; Cypher queries and graph visualisations; the fractal semantic graph grammar (edges are verbs with inverses, never relates_to)",
+      "writes": [
+        "neo4j/**",
+        "admin/tools/neo4j*",
+        "data/neo4j*.json",
+        "docs/neo4j*"
+      ],
+      "send_hosts": [],
+      "send_hosts_note": "none yet: where Neo4j runs (in its own container, or Neo4j Aura with a credential) is Dinis's decision; the host is mapped here once he names it",
+      "never": "prints or commits a Neo4j password or key; loads personal data or contact details; changes another agent's files; uses ELASTIC_CLOUD (R8e)"
+    },
+    "grafana": {
+      "focus": "Grafana Cloud for the swarm (work/51): least-privilege access, data sources (Elastic, the public /api/v1/), the Swarm dashboard as JSON in admin/grafana/",
+      "writes": [
+        "admin/grafana/**",
+        "docs/grafana*",
+        "work/51-grafana.md"
+      ],
+      "send_hosts": [
+        "vividwombat1572.grafana.net"
+      ],
+      "send_hosts_note": "its own stack, from its status file (mapped 2026-11-11T19:52Z); started by the lead at Dinis's word, about 19:20 UTC: 'can you spin up a new Grafana agent so I can use it to manage and to help me set up this'",
+      "never": "prints or commits a Grafana or Elastic key; uses ELASTIC_CLOUD (R8e: it reads Elastic through a read-only key Dinis makes); changes another agent's files"
     }
   },
   "agents": {
@@ -598,8 +630,11 @@
         "briefs/*.md#notes-of-Dinis-in-its-session"
       ],
       "send_hosts": [
+        "my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io",
+        "my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io",
         "openrouter.ai"
-      ]
+      ],
+      "send_hosts_note": "Elastic at Dinis's word (2026-11-11T18:54Z): 'I think it's okay for you to use it here ... push directly to the Elastic stuff ... we don't want to have a bottleneck'"
     },
     "fable.fringe@PrompTugal.dinis": {
       "role": "advisor",
@@ -856,6 +891,49 @@
       "account": "Silvio's",
       "lane": "the visualisations (briefs/2026-11-11-1546-altitudes-to-angelo-and-silvio.md): the Fringe drawn with Gravity, team/silvio/gravity/",
       "note": "mapped 2026-11-11T17:51Z: its own person's scope (team/silvio/**) and its own entry in data/keys.json, the mapping rule; serving /universe/ needs lines in admin/build/build.mjs (dev.2's) and Gravity's host web-summit.sgit.ai (Dinis)"
+    },
+    "neo4j.1.fringe@PrompTugal.dinis": {
+      "role": "neo4j",
+      "account": "riskmandate-personal (Ultra)",
+      "note": "started by architect.1 at Dinis's word in its session (2026-11-11T19:33Z: 'also can you spin up an neo4j agent?')"
+    },
+    "grafana.1.fringe@PrompTugal.dinis": {
+      "role": "grafana",
+      "account": "riskmandate-personal (Ultra)",
+      "note": "started by the lead at Dinis's word; mapped 2026-11-11T19:52Z from its own status asks (its lane and its stack's host)"
+    },
+    "research.reach.fringe@PrompTugal.angelo": {
+      "role": "researcher",
+      "under": "conductor.fringe@PrompTugal.angelo",
+      "writes_override": [
+        "team/angelo/drafts/**",
+        "team/angelo/runs.md"
+      ],
+      "account": "Angelo's",
+      "lane": "reach circles: research",
+      "note": "mapped 2026-11-11T19:52Z: its own person's scope (team/angelo/drafts/, team/angelo/runs.md), the mapping rule"
+    },
+    "design.reach-a.fringe@PrompTugal.angelo": {
+      "role": "design",
+      "under": "conductor.fringe@PrompTugal.angelo",
+      "writes_override": [
+        "team/angelo/drafts/**",
+        "team/angelo/runs.md"
+      ],
+      "account": "Angelo's",
+      "lane": "reach circles: design A",
+      "note": "mapped 2026-11-11T19:52Z: its own person's scope (team/angelo/drafts/, team/angelo/runs.md), the mapping rule"
+    },
+    "design.reach-b.fringe@PrompTugal.angelo": {
+      "role": "design",
+      "under": "conductor.fringe@PrompTugal.angelo",
+      "writes_override": [
+        "team/angelo/drafts/**",
+        "team/angelo/runs.md"
+      ],
+      "account": "Angelo's",
+      "lane": "reach circles: design B",
+      "note": "mapped 2026-11-11T19:52Z: its own person's scope (team/angelo/drafts/, team/angelo/runs.md), the mapping rule"
     }
   },
   "external": {
@@ -977,9 +1055,14 @@
       "since": "2026-11-11T13:37Z",
       "what": "Commits that will show as outside their grant from the start: the lead's own code (admin/tools/**) and the design agents' edits to dev-owned build files",
       "for": "Dinis: observe for three rounds; then decide whether design keeps admin/build/** or works through a page registry"
+    },
+    {
+      "at": "2026-11-11T19:09Z",
+      "for": "Dinis",
+      "q": "OpenTelemetry to Elastic APM: the deployment's APM server (0475c85f….apm.us-central1.gcp.cloud.es.io) takes OTLP/HTTP natively, but it needs its own credential (an APM agent key or a scoped API key with apm event:write). Creating one was refused in my session as a credential I may not create. Either Dinis creates an APM agent key in Kibana (Observability > APM > Settings > Agent keys) and puts OTEL_EXPORTER_OTLP_ENDPOINT/OTEL_EXPORTER_OTLP_HEADERS in the environment, or says the word for architect.1 to create a 7-day key with event:write only. Until then spans go to ~/.abp/otlp/ as OTLP JSON and swarm-flows carries the OTel ids."
     }
   ],
-  "hook_sha256": "9977245033317bf6",
+  "hook_sha256": "9bbd992ed9fcc230",
   "effective": "2026-11-11T13:36:00Z",
   "effective_note": "Earlier commits are read against the grants as calibration, not counted.",
   "review": {
@@ -1010,6 +1093,16 @@
         "round": 5,
         "file": "abp/reviews/2026-11-11-17.md",
         "at": "2026-11-11T17:51Z"
+      },
+      {
+        "round": 6,
+        "file": "abp/reviews/2026-11-11-18.md",
+        "at": "2026-11-11T19:04Z"
+      },
+      {
+        "round": 7,
+        "file": "abp/reviews/2026-11-11-19.md",
+        "at": "2026-11-11T19:52Z"
       }
     ]
   },
@@ -1146,5 +1239,23 @@
       "by": "Dinis",
       "decision": "R5, R8, R9: enforce, with the conductor override and logging"
     }
-  }
+  },
+  "restricted_secrets": [
+    {
+      "var": "ELASTIC_CLOUD",
+      "about": "The Elastic Cloud superuser password, shared in the environment for now",
+      "hosts": [
+        "my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io",
+        "my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io"
+      ],
+      "agents": [
+        "elastic.1.fringe@PrompTugal.dinis",
+        "architect.1.fringe@PrompTugal.dinis"
+      ],
+      "instead": "docs/elastic-guidance.md section 3: commit a JSON with \"elastic_feed\"; elastic.1 sends it hourly under the committing agent's name",
+      "rule": "R8e",
+      "source": "Dinis in elastic.1's session, before 19:06 UTC, relayed by elastic.1: \"for now we will share that super user pwd but control that using ABPs so that only the elastic and architect agent can use that environment variable\"",
+      "added": "2026-11-11T19:06Z"
+    }
+  ]
 }

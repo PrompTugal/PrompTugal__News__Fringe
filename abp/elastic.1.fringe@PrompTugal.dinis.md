@@ -2,7 +2,7 @@
 title: "ABP: elastic.1.fringe@PrompTugal.dinis"
 agent: elastic.1.fringe@PrompTugal.dinis
 role: elastic
-policy: abp/policies.json v0.4.0 (sha256:4b0d1d302579f325)
+policy: abp/policies.json v0.4.1 (sha256:f57383c15bb5707b)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -15,7 +15,7 @@ authority: Dinis Cruz, operator
 
 - **Role:** elastic. **Account:** riskmandate-personal (Ultra).
 - **Focus:** move the swarm onto Elastic Cloud (Dinis, 2026-11-11T16:32Z): what to put there first (the agents' run and hook logs, swarm-wide; the events and the graph for search), the index design, the ingest tools, the dashboards.
-- **Writes (this repository):** `team/dinis/agents/elastic.1.json`, `team/dinis/agents/elastic.1.fringe.json`, `team/dinis/agents/elastic.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `elastic/**`, `admin/tools/elastic*`, `data/elastic*.json`, `docs/elastic*`.
+- **Writes (this repository):** `team/dinis/agents/elastic.1.json`, `team/dinis/agents/elastic.1.fringe.json`, `team/dinis/agents/elastic.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `data/models-ledger.json`, `elastic/**`, `admin/tools/elastic*`, `data/elastic*.json`, `docs/elastic*`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
 - **Writes (outside git):** `/tmp/**`, `~/.sg-send/**`, `~/.abp/**`, `~/pki/**`, `~/.claude/projects/*/memory/**`, `~/promptugal/**`.
 - **Tools:** reading, searching and writing files inside the paths above; the shell, within the rules below; reading the web (never websummit.com by machine); GitHub's read tools on `promptugal/promptugal__news__fringe`, `promptugal/promptugal__news__website`, `promptugal/promptugal__news__storm-charles`; the cloud session's documentation, `add_repo` for reading, and its own wake.

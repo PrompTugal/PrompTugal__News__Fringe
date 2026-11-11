@@ -21,9 +21,14 @@ const DESCRIPTOR = /\s*\((?:per |a |an |luma |named )[^)]*\)\s*$/i;
 const PRIVATE = /^(an? )?independent organis|^(unknown|not (stated|named))\b/i;   // no node for an individual or an unknown organiser
 export function organisersOf(text) {
   if (!text || PRIVATE.test(text)) return [];
-  // "with", "powered by", "hosted by" join organisers only in lower case ("Life With Artificials" is one name);
+  // A bracketed aside of 3+ words is a researcher's note, not a name ("(... not affiliated with Web Summit)" made a
+  // node "Web Summit)"); short brackets stay ("(ICE)") (ontologist.1's finding, 15:57 UTC).
+  // "hosted by" and "powered by" still split here: graph-model.mjs (ontologist.1) calls this to find those names and
+  // gives them their roles (hosts, supports); do not drop them here.
+  const line = String(text).replace(/\s*\((?:[^()\s]+\s+){2,}[^()]*\)/g, '');
+  // "with", "powered by", "hosted by" split only in lower case ("Life With Artificials" is one name);
   // " and " splits a joint list, except inside names that hold it ("Germany Trade and Invest").
-  const parts = String(text).split(/,?\s+(?:with|powered by|hosted by)\s+/);
+  const parts = line.split(/,?\s+(?:with|powered by|hosted by)\s+/);
   return parts.flatMap((p, i) => (i === 0 ? [p] : p.replace(/Trade and Invest/g, 'Trade§and§Invest').split(/,\s+|\s+and\s+/).map((x) => x.replace(/§/g, ' '))))
     .map((p) => p.replace(DESCRIPTOR, '').replace(/^\s*with\s+/i, '').trim())
     .filter((p) => p && !PRIVATE.test(p));

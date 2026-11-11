@@ -1,15 +1,15 @@
 {
   "by": "security.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T16:31Z",
-  "review": "security/reviews/2026-11-11-1630.md",
+  "updated": "2026-11-11T18:31Z",
+  "review": "security/reviews/2026-11-11-1830.md",
   "branches": {
-    "dev": "30ee80053a34229b5619d5cae6cca77944eac9ee",
+    "dev": "f77855c9fcd19f4d900e401fcf81345cbd16f04e",
     "main": "83af18c38f0364c62745d738367911e0edf04c16",
     "work/dev.fringe": "382ff687e249fed2a1454fc5645b0a315cc0933d",
     "work/researcher.fringe": "061ebaa3777e0e9b7862b9738725cf41faa29ea3",
     "work/conductor.fringe.handover": "8d6d0ee9ce25549e1bfbcdf291345d7755e3d8f3",
     "claude/promptugal-fringe-setup-vik5tf": "ca614aeb0c63ec97335239cd035acc5b70304b59",
-    "claude/magical-mayer-pxpzed": "a9f8001ca984371510cbef43ecc1e838422439bb",
-    "work/fable.fringe": "c4229f8296384fc8f935e64a64b36b1ab24a5459"
+    "claude/magical-mayer-pxpzed": "97ba915bb5901f4fbd6a29a6e60a171285b17ed5",
+    "work/fable.fringe": "896b8fc82883cfe04708d178fe1aeb4a4c6e929f"
   }
 }

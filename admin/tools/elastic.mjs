@@ -101,7 +101,9 @@ const keyOf = agent => {
     const k = KEYS.find(x => x.agent === agent && x.status !== 'superseded') || KEYS.find(x => x.agent === agent)
     return k ? k.id : 'unknown'
 }
-const stamp = (kind, src, readAt, signer) => ({ kind, source: src, read_at: readAt || NOW, signer, signer_key: keyOf(signer), commit: HEAD, ingested_at: NOW, ingested_by: ME })
+// the leading ISO time of a value (a source's read_at can carry trailing punctuation, e.g. '2026-11-11T11:55:00Z;')
+const isoLead = v => (String(v ?? '').match(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d+)?)?(Z|[+-]\d{2}:?\d{2})?/) || [])[0] || undefined
+const stamp = (kind, src, readAt, signer) => ({ kind, source: src, read_at: isoLead(readAt) || NOW, signer, signer_key: keyOf(signer), commit: HEAD, ingested_at: NOW, ingested_by: ME })
 const idOf = (kind, id) => crypto.createHash('sha256').update(`${kind}:${id}`).digest('hex').slice(0, 32)
 const pick = (o, keys) => Object.fromEntries(keys.filter(k => o[k] !== undefined && o[k] !== null).map(k => [k, o[k]]))
 const isoOrNull = v => (typeof v === 'string' && /^\d{4}-\d{2}-\d{2}T/.test(v)) ? v : undefined
@@ -207,7 +209,12 @@ async function push(kind, docs) {
         sent += j.items.length; errors += j.items.filter(it => it.index?.error).length
         for (const it of j.items.filter(it => it.index?.error).slice(0, 3)) console.log(`  error ${it.index._id}: ${it.index.error.type}: ${String(it.index.error.reason).slice(0, 160)}`)
     }
-    console.log(`${index}: ${sent} sent, ${errors} errors`)
+    let pruned = 0
+    if (kind !== 'hooklog' && errors === 0 && sent === docs.length) {   // a mirror of its file: remove what the source no longer has
+        const r = await fetch(`${base}/${index}/_delete_by_query?refresh=true`, { method: 'POST', headers, body: JSON.stringify({ query: { range: { ingested_at: { lt: NOW } } } }) })
+        if (r.ok) pruned = (await r.json()).deleted || 0
+    }
+    console.log(`${index}: ${sent} sent, ${errors} errors${pruned ? `, ${pruned} removed (gone from the source)` : ''}`)
     return errors
 }
 

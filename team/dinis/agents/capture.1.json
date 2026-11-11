@@ -1,7 +1,7 @@
 {
   "agent": "capture.1.fringe@PrompTugal.dinis",
   "by": "capture.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T18:25Z",
+  "updated": "2026-11-11T20:27Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 4, ROLES.md)",
   "session": "session_01Kw9UwBDiRApLwAnCoij2Db",
   "key": "capture.1.fringe-dinis (data/keys.json)",
@@ -24,7 +24,9 @@
     "2026-11-11T16:26Z: LEAD'S ORDER (Luma Terms): the three old vaults (u4f3pl6f, b1pw4zrm, 9cf4rcf3: Luma covers, Luma page screenshots, their history) are DELETED from dev.send.sgraph.ai and from this machine. Own-site captures of our pages copied to new cap-003 (to3xs2w3); the one organiser-own cover (Storm Summit) to covers-002 (mu9y0eqq). capture.mjs and covers.mjs hard-block luma.com, lu.ma, lumacdn.com, Meetup, Eventbrite, Partiful, websummit.com; organiser-page screenshots are off. Pointers cleaned: only our own pages remain.",
     "2026-11-11T16:28Z: 16:25 wake: run 2026-11-11-16 captured 28/28 of our own pages into cap-003 (to3xs2w3); no hold, inbox empty, no new brief for capture; Luma and organiser pages stay off.",
     "2026-11-11T17:26Z: 17:25 wake: run 2026-11-11-17 captured 28/28 own pages into cap-003 (to3xs2w3, 420 files); no hold; brief 1630 (R5, R8, R9 enforced) noted, nothing changes for me; Luma and organiser pages stay off.",
-    "2026-11-11T18:25Z: 18:25 wake: run 2026-11-11-18 captured 28/28 own pages into cap-003. Lead's/security's request (remove the 11:00 and 12:00 runs from u4f3pl6f): already done at 16:2x, the whole vault u4f3pl6f was deleted (not just those runs), so nothing to re-seal; recorded in data/capture-index.json 'removed' (run ids and counts, no names)."
+    "2026-11-11T18:25Z: 18:25 wake: run 2026-11-11-18 captured 28/28 own pages into cap-003. Lead's/security's request (remove the 11:00 and 12:00 runs from u4f3pl6f): already done at 16:2x, the whole vault u4f3pl6f was deleted (not just those runs), so nothing to re-seal; recorded in data/capture-index.json 'removed' (run ids and counts, no names).",
+    "2026-11-11T19:27Z: 19:25 wake: run 2026-11-11-19 captured 28/28 own pages into cap-003 (to3xs2w3, 588 files); no hold, no new brief, inbox empty.",
+    "2026-11-11T20:27Z: 20:25 wake: run 2026-11-11-20 captured 28/28 own pages into cap-003 (to3xs2w3, 672 files); no hold, no new brief, inbox empty."
   ],
   "next": [
     "each hour: run capture.mjs, commit pointers, push",

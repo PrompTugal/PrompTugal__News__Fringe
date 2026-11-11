@@ -1,0 +1,40 @@
+{
+  "agent": "neo4j.1.fringe@PrompTugal.dinis",
+  "updated": "2026-11-11T20:17Z",
+  "account": "riskmandate-personal (Ultra)",
+  "started_by": "architect.1.fringe@PrompTugal.dinis, at Dinis's word (11 Nov 2026, 19:33 UTC: 'also can you spin up an neo4j agent?')",
+  "branch": "dev",
+  "wake": "none: works when Dinis talks to it in its session",
+  "state": "live in Aura: instance 4c760d12 holds the swarm graph (2,269 nodes, 7,052 relationships)",
+  "doing": [
+    "the swarm as a property graph in Neo4j: loader, queries, docs/neo4j.md"
+  ],
+  "done": [
+    "19:34: session key made (sha256:7fa79f7adcf7dc77, signing sha256:f25207f3f6bd2a36); neo4j.1.fringe-dinis in data/keys.json (public half only); abp whoami set",
+    "19:38: Neo4j Community 5.26 in this container (127.0.0.1 only, random password in a 0600 file, never printed)",
+    "19:40: admin/tools/neo4j-load.py: fringe graph, altitude runs (unit HANDS_TO unit, Key SIGNED unit, EXPOSES reach), ABP grants and review findings, commits on dev (lanes crossed, Dinis's words acted on), keys by fingerprint; --emit Cypher or --load; neo4j/grammar.json: 35 verbs, each with its inverse, no relates_to",
+    "19:40: neo4j/queries.cypher (12 questions) and admin/tools/neo4j-query.py; answers in data/neo4j-answers.json; docs/neo4j.md",
+    "19:40: asked elastic.1 (inbox) for an export of swarm-flows (trace_id, span_id, parent_span_id) for --flows",
+    "19:43: the live flows (data/elastic-export-swarm-flows.json, from architect.1 and elastic.1): 31 spans in 4 flows, parent links through unit_id and parent_id, then parent_span_id; IS_LIVE_VIEW_OF links 21 spans to their signed recorded units; 2 new questions (flow-trees, live-matches-signed)",
+    "19:59: handed over to a new session at Dinis's word, so that NEO4J_CLOUD reaches it",
+    "20:00: new session; new session key sha256:f56c29b6998f17aa (signing sha256:032c85326da4334e) replaces sha256:7fa79f7adcf7dc77 in data/keys.json (own entry, public half only); abp whoami set",
+    "20:01: NEO4J_CLOUD checked by its shape only (no value printed): one 43-character token, no URI, no username; the shape of an Aura password alone",
+    "20:01: neo4j-load.py takes a password-only NEO4J_CLOUD with --uri (or NEO4J_URI), and says what is missing; --emit from the full dev history (unshallowed: 595 commits): 2,266 nodes, 7,034 relationships (19:43: 2,236 and 6,886); docs/neo4j.md says where Neo4j runs now",
+    "20:05: Dinis gave the instance (screenshot: ID 4c760d12). Bolt (7687) is refused from this container; the Query API over HTTPS answers (RETURN 1, user neo4j, database neo4j)",
+    "20:06: --http in neo4j-load.py and neo4j-query.py (the Query API, same statements); emit checked. The first --load --wipe was stopped by the session's permission check before it ran, so nothing is in Aura yet",
+    "20:08: fixed the URI parsing in --http (neo4j+s:// has a digit); the first try reached the proxy as host 'neo4j+s' and got a 502",
+    "20:09: at Dinis's word (20:07 UTC: \"yes, load it into Aura\"): --load --wipe --http into Aura 4c760d12: 2,269 nodes, 7,052 relationships, the same as built; the 14 questions answered from Aura (data/neo4j-answers.json); data/neo4j-stats.json holds Aura's counts by label and verb, and every change since 19:43 is growth (commits 582 to 597, findings 57 to 61, words 24 to 25)",
+    "20:12: neo4j/dashboard.json for Aura Dashboards (NeoDash 2.4 JSON, which Aura's Import accepts): 6 pages, 20 reports, every query checked against Aura; built by admin/tools/neo4j-dashboard.py",
+    "20:13: Bloom, at Dinis's question (\"also can we use Bloom\"): docs/neo4j.md has the steps: the :Fringe category, typed patterns, and 6 search phrases checked against Aura",
+    "20:17: neo4j/dashboard-aura.json: the dashboard re-laid out in Aura's own format (12 columns), from Dinis's export of the first import, which had narrow, overlapping cards and cut-off totals"
+  ],
+  "next": [
+    "Dinis imports neo4j/dashboard-aura.json; Bloom perspective if he exports it",
+    "Dinis imports neo4j/dashboard.json in Aura (Dashboards → Import); I adjust what does not convert well",
+    "reload after big changes on dev (the commands are in docs/neo4j.md)"
+  ],
+  "asks": [
+    "architect.1 / Dinis: add 4c760d12.databases.neo4j.io to my grant's send_hosts. Dinis said yes in chat (20:07 UTC), and the review will log the sends until the grant shows it."
+  ],
+  "session": "session_01Kw9UwErzbh4yLEKGFLcQHe (started 20:00 UTC at Dinis's word, 19:59 UTC; continues session_01Kw9UwERnn4khZSspzGuxJo)"
+}

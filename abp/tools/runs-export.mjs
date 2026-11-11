@@ -27,17 +27,18 @@ const reach = (() => { try { return Object.fromEntries(read('data/run-reach.json
 const withReach = (d, unitName) => { const r = reach[unitName]; return r ? { ...d, reach_needs: r.needs.length, reach_held: r.held.length, reach_exposure: r.exposure.length, reach_exposed: r.exposure } : d; };
 
 // 1. The altitudes run (data/work-altitudes.json, and its per-call records when the run folder is given)
-try {
-  const W = read('data/work-altitudes.json'), T = W.body.trace, run = 'altitudes-' + W.body.generated.slice(0, 16);
+for (const wf of fs.readdirSync(path.join(ROOT, 'data')).filter((f) => /^work-altitudes(-[\w]+)?\.json$/.test(f)).sort()) try {
+  const W = read('data/' + wf), T = W.body.trace, run = 'altitudes-' + W.body.generated.slice(0, 16);
   const base = { run, run_kind: 'altitudes', objective: W.body.objective, environment: 'R1 Claude Code cloud, riskmandate-personal', runner: 'architect.1.fringe@PrompTugal.dinis', person: 'dinis' };
   docs.push({ ...base, id: run + ':A3', altitude: 'A3', unit: T.A3.name, role: 'agent', parent: null });
   T.A0.forEach((u, i) => docs.push(withReach({ ...base, id: `${run}:A0:${i}`, altitude: 'A0', unit: u.name, role: 'compute', parent: run + ':A3', key_fp: u.fp, born: u.born, verified: W.body.signatures_verified }, i ? 'compute: merge' : 'compute: plan')));
   T.A2.forEach((u) => docs.push(withReach({ ...base, id: `${run}:A2:${u.fp}`, altitude: 'A2', unit: u.name, role: 'loop', parent: run + ':A3', key_fp: u.fp, born: u.born, signed_at: u.signed_at, items: u.items, calls: u.calls, verified: W.body.signatures_verified }, 'loop: slice 0..2 (x3)')));
   for (const dir of runDirs) for (const f of fs.readdirSync(dir).filter((x) => /^loop-\d+\.json$/.test(x))) {
     const L = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
+    if (!T.A2.some((u) => u.fp === L.by.fp)) continue;   // this loop belongs to another run
     for (const c of L.body.calls) docs.push(withReach({ ...base, id: `${run}:A1:${c.by.fp}`, altitude: 'A1', unit: c.by.name, role: 'llm call', parent: `${run}:A2:${L.by.fp}`, key_fp: c.by.fp, born: c.by.born, signed_at: c.by.signed_at, model: c.body.model, cost_usd: c.body.cost_usd, latency_ms: c.body.latency_ms, valid: c.body.valid, item: c.body.item, attempt: c.body.attempt, verified: verify(c) }, '81 LLM calls'));
   }
-} catch (e) { console.error('altitudes run:', e.message); }
+} catch (e) { console.error('altitudes run ' + wf + ':', e.message); }
 
 // 2. Task packets and every environment's results
 const TASKS = path.join(ROOT, 'tasks');

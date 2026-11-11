@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reach Target</title>
+<style>
+:root{
+  --bg:#fbfaf7; --surface:#ffffff; --ink:#1d1f24; --muted:#5d636e; --line:#c9ccd3;
+  --accent:#2f5d9e; --wall:#6b4f2a; --wall-bg:#fff4e2; --risk:#c0272d; --ok:#2c7a4b;
+  --ring-a:#e3ecf8; --ring-b:#f1f5fb; --focus:#e8a33d;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14161a; --surface:#1c1f25; --ink:#e8e9ec; --muted:#a3a8b2; --line:#3a3f49;
+    --accent:#8fb4ea; --wall:#e0b77a; --wall-bg:#2e2617; --risk:#ff6b6b; --ok:#6fcf97;
+    --ring-a:#22324a; --ring-b:#1a2433; --focus:#f2b85a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14161a; --surface:#1c1f25; --ink:#e8e9ec; --muted:#a3a8b2; --line:#3a3f49;
+  --accent:#8fb4ea; --wall:#e0b77a; --wall-bg:#2e2617; --risk:#ff6b6b; --ok:#6fcf97;
+  --ring-a:#22324a; --ring-b:#1a2433; --focus:#f2b85a;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:1240px;margin:0 auto;padding:20px 16px 40px}
+h1{font-size:1.5rem;margin:0 0 4px;letter-spacing:-.01em}
+.lede{color:var(--muted);margin:0 0 16px;max-width:70ch}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
+@media (min-width:960px){.layout{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);align-items:start}}
+.figure{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px}
+svg{display:block;width:100%;height:auto}
+svg text{font-family:inherit;fill:var(--ink)}
+.ring{cursor:pointer}
+.ring:hover path,.ring:focus path,.ring.on path{fill:color-mix(in oklab,var(--focus) 28%,var(--surface))}
+.ring:focus{outline:none}
+.rlabel{font-size:13px;font-weight:600;pointer-events:none}
+.wall{fill:none;stroke:var(--wall);stroke-width:3;stroke-dasharray:14 6}
+.wallpill rect{fill:var(--wall-bg);stroke:var(--wall);stroke-width:1}
+.wallpill text{font-size:11.5px;fill:var(--wall);font-weight:600}
+.mk{cursor:pointer}
+.mk:focus{outline:none}
+.mk .ln{stroke:var(--accent);stroke-width:3;stroke-linecap:round}
+.mk .ext{stroke:var(--accent);stroke-width:3;stroke-dasharray:3 5;stroke-linecap:round}
+.mk .dot{fill:var(--accent);stroke:var(--surface);stroke-width:2}
+.mk .tag rect{fill:var(--surface);stroke:var(--accent);stroke-width:1.5}
+.mk .tag text{font-size:12.5px;font-weight:600;fill:var(--accent)}
+.mk.risk .ln{stroke:var(--risk)} .mk.risk .ext{stroke:var(--risk)}
+.mk.risk .dot{fill:var(--risk)} .mk.risk .tag rect{stroke:var(--risk)}
+.mk.risk .tag text{fill:var(--risk)}
+.mk .mandate{fill:var(--surface);stroke:var(--risk);stroke-width:2.5}
+.mk:hover .tag rect,.mk:focus .tag rect,.mk.on .tag rect{stroke-width:3}
+.note{font-size:12px;fill:var(--muted);font-style:italic}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.panel h2{font-size:1.1rem;margin:0 0 6px}
+.panel .kind{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0}
+.panel p{margin:.4em 0}
+.panel .ex{border-left:3px solid var(--accent);padding-left:10px;color:var(--ink)}
+.panel.risk .ex{border-color:var(--risk)}
+.idea{margin-top:16px}
+.idea p{margin:.35em 0;max-width:70ch}
+.idea strong{color:var(--accent)}
+.idea .warn{color:var(--risk);font-weight:600}
+.legend{display:flex;flex-wrap:wrap;gap:10px 18px;margin:12px 0 0;padding:0;list-style:none;font-size:.9rem;color:var(--muted)}
+.legend li{display:flex;align-items:center;gap:6px}
+.sw{display:inline-block;width:22px;height:12px;border-radius:3px}
+.sw.ring{background:var(--ring-a);border:1px solid var(--line)}
+.sw.wall{border-top:3px dashed var(--wall);height:0;border-radius:0}
+.sw.mk{background:var(--accent);height:4px}
+.sw.ext{border-top:3px dotted var(--accent);height:0}
+.sw.risk{background:var(--risk);height:4px}
+.alts{font-size:.9rem;color:var(--muted);margin:10px 0 0}
+details{margin-top:18px}
+summary{cursor:pointer;font-weight:600}
+ol.rings{padding-left:1.4em;margin:8px 0 0}
+ol.rings li{margin:.45em 0}
+ol.rings .w{display:block;color:var(--wall);font-size:.9rem}
+.foot{margin-top:22px;font-size:.85rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+  <h1>Altitude is not reach</h1>
+  <p class="lede">A draft for Angelo. The rings are <em>reach</em>: what a thing can touch, from thinking alone at the centre to acting as a person at the edge. The walls between them are the barriers that hold it in. The altitudes of execution are not rings; they are markers placed on the target. Tap a ring or a marker.</p>
+
+  <div class="layout">
+    <div class="figure">
+      <svg id="target" viewBox="0 0 760 760" role="img" aria-labelledby="t-title t-desc">
+        <title id="t-title">The reach target</title>
+        <desc id="t-desc">Eight concentric rings of reach with named barriers between them, and markers for compute, an LLM call, a loop, an agent and a swarm placed at the reach each one usually has. A red marker shows a simple call that holds an agent's reach.</desc>
+      </svg>
+    </div>
+    <div>
+      <section class="panel" id="panel" aria-live="polite">
+        <p class="kind">The one idea</p>
+        <h2>Altitude says how the work is organised. Reach says what it can touch.</h2>
+        <p>Going up an altitude adds structure: a loop adds tools and steps, an agent adds memory and its own wake, a swarm adds others to coordinate. None of that moves a wall. Reach moves only when someone grants a tool, a network host, a credential, a connector or a schedule.</p>
+        <p>Tap any ring or marker for its detail.</p>
+      </section>
+      <ul class="legend" aria-label="Legend">
+        <li><span class="sw ring"></span>a ring of reach</li>
+        <li><span class="sw wall"></span>a barrier (wall with gates)</li>
+        <li><span class="sw mk"></span>reach an altitude usually has</li>
+        <li><span class="sw ext"></span>as far as its grant allows</li>
+        <li><span class="sw risk"></span>reach above the mandate</li>
+      </ul>
+      <p class="alts">Altitudes on the target: A0 compute, A1 LLM call, A2 loop, A3 agent, A4 swarm.</p>
+    </div>
+  </div>
+
+  <section class="idea">
+    <p><strong>Altitude</strong> is how the work is organised: one call, a loop, an agent with memory and a wake, a swarm of agents.</p>
+    <p><strong>Reach</strong> is what it can touch: set by the walls around it (tools, sandbox, network, credentials, connectors, approval), not by its altitude.</p>
+    <p>Climbing from a call to a loop usually widens reach because tools are handed over; climbing from an agent to a swarm adds coordination, not reach.</p>
+    <p class="warn">The risk is reach larger than the mandate needs: a low altitude holding a high reach, like a one-line question asked in a chat that holds an agent's connectors.</p>
+  </section>
+
+  <details open>
+    <summary>The rings and walls as a list</summary>
+    <ol class="rings" id="ringlist"></ol>
+  </details>
+
+  <p class="foot">Draft by a design worker for Angelo's conductor, 11 November 2026. Lisbon Tech Fringe is independent of Web Summit. Claude examples describe what the products can do, not what any agent here is granted.</p>
+</main>
+
+<script>
+(function(){
+  var NS = "http://www.w3.org/2000/svg";
+  var CX = 380, CY = 380, R1 = 52, STEP = 39.7;
+  function rOut(k){ return R1 + (k-1)*STEP; }         // outer radius of ring k (1..8)
+  function rMid(k){ return k===1 ? 0 : rOut(k) - STEP/2; }
+
+  var rings = [
+    {name:"Think", can:"Text in, text out. It touches nothing but the words it is given.",
+     ex:"A single Claude API message with no tools."},
+    {name:"Use handed tools", can:"Runs only the tools the caller hands it, in a sandbox; nothing it does persists.",
+     ex:"Claude with the code execution tool, or a function the calling program defines and runs for it."},
+    {name:"Own workspace", can:"Reads, writes and runs files and a shell in a workspace of its own.",
+     ex:"Claude Code in a cloud container: edits a checkout, runs the build and the tests."},
+    {name:"Read the world", can:"Searches and fetches public pages, through a network policy.",
+     ex:"Claude's web search and web fetch; Claude Code fetching docs through its environment's proxy."},
+    {name:"Change shared things", can:"Writes where others will see it: git, issues, documents, a site deploy.",
+     ex:"Claude Code pushing to a shared branch; a GitHub or documents connector creating an issue or a doc."},
+    {name:"Remember and wake", can:"Keeps memory between runs and acts when nobody is watching.",
+     ex:"A Claude Code session woken every hour by a scheduled routine, reading its status file and inbox."},
+    {name:"Start others", can:"Starts sub-agents, new sessions and triggers that run on their own.",
+     ex:"Claude Code's sub-agents; a cloud session that creates another session or a routine."},
+    {name:"Act as a person", can:"Sends, posts, pays or signs in someone's name, out in the world.",
+     ex:"Claude sending an email through a mail connector, or a browser agent completing a purchase."}
+  ];
+  var walls = [
+    {name:"tool grant", what:"The caller decides which tools exist at all. No tool, no action."},
+    {name:"permission mode", what:"Prompts or a mode decide whether it may edit files and run commands."},
+    {name:"sandbox + network allowlist", what:"The container's walls and the hosts its proxy lets through."},
+    {name:"credentials + connector consent", what:"A push token, a signed key, a connector a person has consented to."},
+    {name:"standing grant", what:"Someone gives it a memory store and a schedule; it cannot give itself a wake."},
+    {name:"spawn grant", what:"The right to create sessions or triggers, approved by a person."},
+    {name:"human approval", what:"A person sends, pays or signs. Our rules: an agent drafts, a person sends."}
+  ];
+  var markers = [
+    {id:"compute", label:"compute", alt:"A0 compute", ang:18, reach:5, from:null,
+     title:"Compute: a deploy job", text:"Code that runs, the lowest altitude. Yet a CI job holding a push token reaches “Change shared things”. Its mandate needs that reach, so it is not a risk; it shows that altitude does not set reach.",
+     ex:"A pipeline step that builds the site and deploys it."},
+    {id:"call", label:"LLM call", alt:"A1 LLM call", ang:52, reach:1, ext:2,
+     title:"LLM call", text:"A prompt in, an answer out. It usually sits in the centre, or reaches handed tools if the caller defines some.",
+     ex:"One Claude API message; with a tool definition it reaches the second ring."},
+    {id:"loop", label:"loop", alt:"A2 loop", ang:84, reach:2, ext:4,
+     title:"Loop: as far as its grant", text:"A closed loop that uses the tools it was handed until the task is done, then stops. Going up from a call to a loop raises what it could do, but the walls still decide what it can.",
+     ex:"Claude with code execution and web search, called by a program until the answer is complete."},
+    {id:"agent", label:"agent", alt:"A3 agent", ang:113, reach:5, ext:6,
+     title:"Agent: behind its walls", text:"A loop with an environment: memory, its own wake, reach beyond its sandbox. In Claude Code cloud it reaches shared things and, with a routine, wakes on its own, each step behind a wall.",
+     ex:"A Claude Code cloud session that pushes to a shared branch and is woken every hour."},
+    {id:"swarm", label:"swarm", alt:"A4 swarm", ang:140, reach:6, ext:null,
+     title:"Swarm: same reach, more coordination", text:"Agents of agents. Its work reaches no further than its agents do: the conductor holds one more grant (starting others), but every agent it starts sits behind the same walls. Going up from agent to swarm adds coordination, not reach.",
+     ex:"A conductor session routing work to sub-agents and other sessions, each with its own grant."},
+    {id:"risk", label:"mixing altitudes", alt:"mixing altitudes", ang:166, reach:6, mandate:1, risk:true,
+     title:"Mixing altitudes: the risk", text:"A mandate at the lowest reach (“answer this question”) asked of something that holds an agent's grant: connectors, a schedule. The gap between what it is asked and what it can touch is the risk. The rule: the grant must not be above the mandate.",
+     ex:"A one-line question asked in a chat that holds the team's connectors and can schedule tasks."}
+  ];
+
+  var svg = document.getElementById("target");
+  function el(tag, attrs, parent){
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    (parent||svg).appendChild(e); return e;
+  }
+  function pt(r, deg){ var a = deg*Math.PI/180; return [CX + r*Math.cos(a), CY + r*Math.sin(a)]; }
+  function annulus(r0, r1){
+    if (r0 === 0) return "M"+(CX-r1)+","+CY+"a"+r1+","+r1+" 0 1,0 "+(2*r1)+",0a"+r1+","+r1+" 0 1,0 "+(-2*r1)+",0Z";
+    return "M"+(CX-r1)+","+CY+"a"+r1+","+r1+" 0 1,0 "+(2*r1)+",0a"+r1+","+r1+" 0 1,0 "+(-2*r1)+",0Z"+
+           "M"+(CX-r0)+","+CY+"a"+r0+","+r0+" 0 1,1 "+(2*r0)+",0a"+r0+","+r0+" 0 1,1 "+(-2*r0)+",0Z";
+  }
+
+  var panel = document.getElementById("panel");
+  var current = null;
+  function show(node, kind, title, body, ex, risk){
+    if (current) current.classList.remove("on");
+    current = node; node.classList.add("on");
+    panel.className = "panel" + (risk ? " risk" : "");
+    panel.innerHTML = "";
+    var k = document.createElement("p"); k.className = "kind"; k.textContent = kind; panel.appendChild(k);
+    var h = document.createElement("h2"); h.textContent = title; panel.appendChild(h);
+    body.forEach(function(t){ var p = document.createElement("p"); p.textContent = t; panel.appendChild(p); });
+    if (ex){ var e = document.createElement("p"); e.className = "ex"; e.textContent = "Claude example: " + ex; panel.appendChild(e); }
+  }
+  function bind(node, fn){
+    node.setAttribute("tabindex","0");
+    node.addEventListener("click", fn);
+    node.addEventListener("keydown", function(ev){ if (ev.key==="Enter"||ev.key===" "){ ev.preventDefault(); fn(); } });
+  }
+
+  // Rings, outermost first so inner ones sit on top.
+  var gRings = el("g", {});
+  for (var k = 8; k >= 1; k--){
+    (function(k){
+      var g = el("g", {"class":"ring", role:"button", "aria-label":"Ring: "+rings[k-1].name}, gRings);
+      var p = el("path", {d: annulus(k===1?0:rOut(k-1), rOut(k)), "fill-rule":"evenodd"}, g);
+      p.style.fill = (k%2) ? "var(--ring-a)" : "var(--ring-b)";
+      var r = rings[k-1];
+      bind(g, function(){
+        var body = [r.can];
+        if (k > 1) body.push("To get here it passes the wall: " + walls[k-2].name + ". " + walls[k-2].what);
+        show(g, "Ring " + k + " of 8, from the centre", r.name, body, r.ex);
+      });
+    })(k);
+  }
+  // Ring labels at the top of each band.
+  for (var k2 = 1; k2 <= 8; k2++){
+    var y = CY - rMid(k2) + 4.5 - (k2===1 ? 16 : 0);
+    el("text", {x:CX, y:y, "text-anchor":"middle", "class":"rlabel"}).textContent = rings[k2-1].name;
+  }
+  // Walls with name pills on the upper-left diagonal.
+  for (var w = 1; w <= 7; w++){
+    el("circle", {cx:CX, cy:CY, r:rOut(w), "class":"wall"});
+  }
+  var gWallPills = el("g", {});
+  var pillAngles = [214,220,224,227,229,231,232];
+  for (var w2 = 1; w2 <= 7; w2++){
+    var pp = pt(rOut(w2), pillAngles[w2-1]);
+    var g = el("g", {"class":"wallpill"}, gWallPills);
+    var t = el("text", {x:pp[0], y:pp[1]+4, "text-anchor":"end"}, g);
+    t.textContent = walls[w2-1].name;
+    g._t = t; g._x = pp[0]; g._y = pp[1];
+  }
+
+  // Altitude markers in the lower half.
+  var gMk = el("g", {});
+  markers.forEach(function(m){
+    var g = el("g", {"class":"mk" + (m.risk?" risk":""), role:"button", "aria-label":"Marker: "+m.title}, gMk);
+    var end = pt(rMid(m.reach) + (m.reach===1?24:0), m.ang);
+    var start = m.mandate ? pt(rMid(m.mandate)+24, m.ang) : [CX, CY];
+    el("line", {x1:start[0], y1:start[1], x2:end[0], y2:end[1], "class":"ln"}, g);
+    if (m.ext){
+      var e2 = pt(rMid(m.ext), m.ang);
+      el("line", {x1:end[0], y1:end[1], x2:e2[0], y2:e2[1], "class":"ext"}, g);
+    }
+    if (m.mandate) el("circle", {cx:start[0], cy:start[1], r:6, "class":"mandate"}, g);
+    el("circle", {cx:end[0], cy:end[1], r:7, "class":"dot"}, g);
+    var tag = el("g", {"class":"tag"}, g);
+    var anchor = m.risk ? "middle" : (m.ang < 90 ? "start" : "end");
+    var off = m.risk ? 0 : (m.ang < 90 ? 12 : -12);
+    var tx = el("text", {x:end[0]+off, y:end[1]+(m.risk?-14:18), "text-anchor":anchor}, tag);
+    if (m.id === "swarm"){
+      var n1 = el("text", {x:end[0]-12, y:end[1]+40, "text-anchor":"end", "class":"note"}, g);
+      n1.textContent = "same reach as its agents:";
+      var n2 = el("text", {x:end[0]-12, y:end[1]+55, "text-anchor":"end", "class":"note"}, g);
+      n2.textContent = "adds coordination, not reach";
+    }
+    tx.textContent = m.label;
+    g._tag = tag; g._t = tx;
+    bind(g, function(){
+      show(g, m.risk ? "The risk: " + m.alt : "Altitude marker: " + m.alt, m.title, [m.text], m.ex, m.risk);
+    });
+  });
+
+  // Put background pills behind labels, measured after layout.
+  function pill(g, t, pad, cls){
+    var b = t.getBBox();
+    var r = document.createElementNS(NS, "rect");
+    r.setAttribute("x", b.x - pad); r.setAttribute("y", b.y - 2);
+    r.setAttribute("width", b.width + pad*2); r.setAttribute("height", b.height + 4);
+    r.setAttribute("rx", 6);
+    g.insertBefore(r, t);
+  }
+  Array.prototype.forEach.call(gWallPills.children, function(g){ pill(g, g._t, 5); });
+  Array.prototype.forEach.call(gMk.children, function(g){ pill(g._tag, g._t, 6); });
+  // The list version.
+  var ol = document.getElementById("ringlist");
+  rings.forEach(function(r, i){
+    var li = document.createElement("li");
+    var b = document.createElement("strong"); b.textContent = r.name + ": ";
+    li.appendChild(b); li.appendChild(document.createTextNode(r.can + " Claude example: " + r.ex));
+    if (i < 7){ var s = document.createElement("span"); s.className = "w";
+      s.textContent = "Wall to the next ring: " + walls[i].name + ". " + walls[i].what; li.appendChild(s); }
+    ol.appendChild(li);
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,12 +1,12 @@
 {
   "agent": "dev.1.fringe@PrompTugal.dinis",
   "by": "dev.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T18:06Z",
+  "updated": "2026-11-11T20:05Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 4)",
   "model": "Sonnet",
   "wake": "hourly at :05 (set by the lead)",
   "branch": "dev",
-  "state": "18:07 wake: no new brief since 16:30; my pages answer 200 on lisbontechfringe.com; nothing open",
+  "state": "20:06 wake: no new brief; my pages answer 200 on lisbontechfringe.com; nothing open",
   "doing": [],
   "done": [
     "session key dev.1.fringe-dinis in data/keys.json (signing sha256:d09d81c4e615ecde)",
@@ -21,7 +21,8 @@
     "brief 10: /api/v1/activity.json (commits and deploys of the last 3 h, totals for 15 min and 1 h; admin/build/activity.mjs) and the live counts in the dashboard",
     "work/35 frame: admin/build/designs.mjs, /designs/, /designs/<id>/, /?design=<id> swap on the home page, Design pill with vote (obs.js fringeObs.vote), CI pictures step, stub admin/build/designs/_stub.mjs",
     "work/43 first version: /data/ (sql.js 1.10.3 from cdnjs, SRI and wasm integrity), tables events, nodes, edges, g_<type> when present, five example queries, page links",
-    "work/43: every example returns rows (free from now on, neighbourhood added), row count and ms shown, /data/ linked from the agentic team card, /how/ and the team sub-row"
+    "work/43: every example returns rows (free from now on, neighbourhood added), row count and ms shown, /data/ linked from the agentic team card, /how/ and the team sub-row",
+    "owner review of conductor.fringe@PrompTugal.jose pushes to admin/build/swarm.mjs (6946cf6 to 9a19c85): additive, no removed field, gate OK, the only @ strings are agent labels"
   ],
   "next": [
     "live check of /me/ and the box",

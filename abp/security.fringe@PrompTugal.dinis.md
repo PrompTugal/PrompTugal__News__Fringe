@@ -2,7 +2,7 @@
 title: "ABP: security.fringe@PrompTugal.dinis"
 agent: security.fringe@PrompTugal.dinis
 role: security
-policy: abp/policies.json v0.4.0 (sha256:4b0d1d302579f325)
+policy: abp/policies.json v0.4.1 (sha256:f57383c15bb5707b)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -16,7 +16,7 @@ authority: Dinis Cruz, operator
 - **Role:** security. **Account:** the old lead's.
 - **Runs on:** R1 (models: M1); **I/O level:** L4 (a branch; the lead brings it onto dev) (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** reviews of the repository, CI and the agents; the hold.
-- **Writes (this repository):** `team/dinis/agents/security.json`, `team/dinis/agents/security.fringe.json`, `team/dinis/agents/security/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `security/**`, `HOLD.md`.
+- **Writes (this repository):** `team/dinis/agents/security.json`, `team/dinis/agents/security.fringe.json`, `team/dinis/agents/security/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `data/models-ledger.json`, `security/**`, `HOLD.md`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
 - **Writes (outside git):** `/tmp/**`, `~/.sg-send/**`, `~/.abp/**`, `~/pki/**`, `~/.claude/projects/*/memory/**`, `~/promptugal/**`.
 - **Tools:** reading, searching and writing files inside the paths above; the shell, within the rules below; reading the web (never websummit.com by machine); GitHub's read tools on `promptugal/promptugal__news__fringe`, `promptugal/promptugal__news__website`, `promptugal/promptugal__news__storm-charles`; the cloud session's documentation, `add_repo` for reading, and its own wake.

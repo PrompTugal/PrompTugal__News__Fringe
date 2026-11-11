@@ -1,0 +1,93 @@
+{
+ "body": {
+  "v": 1,
+  "altitude": "A1",
+  "from": "conductor.fringe@PrompTugal.dinis",
+  "for": "conductor.fringe@PrompTugal.angelo (the cross-conductor test, at Dinis's word 20:3x UTC)",
+  "grant": [],
+  "tier": "cheap",
+  "max_tokens": 200,
+  "return": "commit tasks/<id>/result-<your agent>.json (node abp/tools/packets.mjs run --id <id> --as <your agent> --env '<your runtime and account>'), then a one-line note to the lead's inbox",
+  "id": "2026-11-11-p3-persona-for-thursday",
+  "mandate": "Say which reader each of six public Thursday events is most for, from its public name, cost and topics only. A second opinion from another account's environment, to compare with data/events.json personas.",
+  "prompt": "Lisbon Tech Fringe lists side events around Web Summit for four readers: founder, investor, builder (engineers and makers), curious (anyone). Which ONE reader is this public event most for? Answer only JSON: {\"persona\":\"founder|investor|builder|curious\",\"why\":\"<12 words\"}\nEvent: {{input}}",
+  "inputs": [
+   {
+    "id": "2026-11-12-female-founders-breakfast",
+    "name": "Female Founders Breakfast: Web Summit special",
+    "cost": "paid, EUR 35",
+    "topics": [
+     "women founders"
+    ]
+   },
+   {
+    "id": "2026-11-12-sales-leaders-breakfast",
+    "name": "Sales Leaders Breakfast · Web Summit 2026",
+    "cost": "free",
+    "topics": [
+     "sales",
+     "founders"
+    ]
+   },
+   {
+    "id": "2026-11-12-ovhcloud-breakfast-ufl",
+    "name": "OVHcloud Exclusive Breakfast by Unicorn Factory Lisboa",
+    "cost": "free",
+    "topics": [
+     "cloud",
+     "scaleups"
+    ]
+   },
+   {
+    "id": "2026-11-12-open-coffee-lisbon-53",
+    "name": "Open Coffee Lisbon Web Summit Special #53",
+    "cost": "not stated",
+    "topics": [
+     "startups",
+     "networking"
+    ]
+   },
+   {
+    "id": "2026-11-12-cafe-and-code-exa-mastra",
+    "name": "Café & Code: a developer café takeover by Exa x Mastra",
+    "cost": "free",
+    "topics": [
+     "developers",
+     "AI"
+    ]
+   },
+   {
+    "id": "2026-11-12-padel-encounters-lisbon-thu-12-nov",
+    "name": "Padel Encounters Lisbon · Thu 12 Nov",
+    "cost": "free",
+    "topics": [
+     "tech & innovation"
+    ]
+   }
+  ],
+  "output": {
+   "required": [
+    "persona",
+    "why"
+   ],
+   "enum": {
+    "persona": [
+     "founder",
+     "investor",
+     "builder",
+     "curious"
+    ]
+   }
+  },
+  "issued_at": "2026-11-11T20:28:44Z"
+ },
+ "by": {
+  "altitude": "A3",
+  "name": "issuer: conductor.fringe@PrompTugal.dinis",
+  "fp": "sha256:fac92089880648cf",
+  "pub": "MCowBQYDK2VwAyEAAmZi6s8CKRmvR3kWusGasVbxMKiMdzxHOKajuoQ+Pw8=",
+  "born": "2026-11-11T20:28:44Z",
+  "signed_at": "2026-11-11T20:28:44Z"
+ },
+ "sig": "4Yemx4kwORuN60mmNJb9ngX0M5rJo68nfquy4+SRIQFZeBDAhqROUGfy0JdNwIYeE7bdLeT2A/wY6WDvT6SzCg=="
+}

@@ -1,12 +1,12 @@
 {
   "agent": "observability.fringe@PrompTugal.dinis",
   "by": "observability.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T18:38Z",
+  "updated": "2026-11-11T20:38Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), about 11:45 UTC, at Dinis's word (brief 2)",
   "session": "session_01Kw9UwDEe3BXvda7DY68R8B",
   "wake": "hourly at :37 UTC until Friday 13 November (the lead), with a 15-minute drain loop inside each wake (brief 4)",
   "branch": "dev",
-  "state": "running: live sender yes; 15-minute drain loop; last drain 18:37 UTC: all time 436 reader views, 199 visits, 18 countries, 159 via shared links",
+  "state": "running: live sender yes; 15-minute drain loop; last drain 20:38 UTC: all time 491 reader views, 223 visits, 19 countries, 164 via shared links",
   "doing": [
     "work/21: drains every 15 minutes; /traffic/ with the map, flows, outbound clicks and the design lab"
   ],
@@ -77,6 +77,16 @@
       "started": "2026-11-11T18:37Z",
       "outcome": "ok",
       "line": "all time 436 reader views, 18 countries"
+    },
+    {
+      "started": "2026-11-11T19:37Z",
+      "outcome": "ok",
+      "line": "all time 458 reader views, 18 countries"
+    },
+    {
+      "started": "2026-11-11T20:37Z",
+      "outcome": "ok",
+      "line": "all time 491 reader views, 19 countries"
     }
   ]
 }

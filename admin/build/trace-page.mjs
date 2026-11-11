@@ -226,7 +226,7 @@ export function traceBody(trace, esc, opts = {}) {
   return `<style>${traceCss}</style><article class="tr">
 <p class="tr-kick">Trace · draft</p>
 <h1>How this page was made</h1>
-<p class="tr-dek">Every step that made <a href="${esc(trace.page || '#')}">${esc(name)}</a>, from the record: who did what, and when, from the first commit to the page live. The workflow is the picture.</p>
+<p class="tr-dek">Every step that made <a href="/e/${encodeURIComponent(trace.event_id)}/">${esc(name)}</a>${trace.page ? ` <span class="tr-was">(recorded at the time as ${esc(trace.page)})</span>` : ''}, from the record: who did what, and when, from the first commit to the page live. The workflow is the picture.</p>
 ${traceStrip(trace, esc, { repo, traceUrl: `/traces/${trace.event_id}/` })}
 <dl class="tr-stats">${stats}</dl>
 <ul class="tr-key" aria-label="Key">
