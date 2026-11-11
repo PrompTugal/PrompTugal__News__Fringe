@@ -9,3 +9,5 @@ done-means: "admin/tools/llm.mjs (from the storm site's tools/llm.mjs): every mo
 evidence:
 ---
 Dinis, 11:30 UTC: "the router, which should be basically sending traffic to other models". CLAUDE.md, "Models".
+
+**Brief 4:** "leveraging both lower models and basically open router models ... it's about being optimized." Owner: dev.2. The OpenRouter key is a network secret on the lead's environment (the proxy adds it); code sends a placeholder, never a real key.
