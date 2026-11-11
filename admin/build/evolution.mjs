@@ -1,17 +1,17 @@
-// /evolution/ (work/27): each site's captures over time, built from data/captures/index.json and runs/*.json (pointers only).
-// capture.1.fringe@PrompTugal.dinis. No image is published here: the screenshots live in the capture vaults (data/captures/vaults.json);
+// /evolution/ (work/27): each site's captures over time, built from data/capture-index.json and runs/*.json (pointers only).
+// capture.1.fringe@PrompTugal.dinis. No image is published here: the screenshots live in the capture vaults (data/capture-vaults.json);
 // until Dinis says to publish a public read key, the page shows the timeline, the hashes and what changed between runs.
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 
 export function loadEvolution(root) {
-  const idxf = join(root, 'data/captures/index.json');
+  const idxf = join(root, 'data/capture-index.json');
   if (!existsSync(idxf)) return null;
   const idx = JSON.parse(readFileSync(idxf, 'utf8'));
   const runs = [];
-  for (const r of idx.runs) { const f = join(root, 'data/captures', r.file); if (existsSync(f)) runs.push(JSON.parse(readFileSync(f, 'utf8'))); }
+  for (const r of idx.runs) { const f = join(root, 'data', r.file); if (existsSync(f)) runs.push(JSON.parse(readFileSync(f, 'utf8'))); }
   runs.sort((a, b) => a.run.localeCompare(b.run));
-  const vaults = existsSync(join(root, 'data/captures/vaults.json')) ? JSON.parse(readFileSync(join(root, 'data/captures/vaults.json'), 'utf8')) : { vaults: [] };
+  const vaults = existsSync(join(root, 'data/capture-vaults.json')) ? JSON.parse(readFileSync(join(root, 'data/capture-vaults.json'), 'utf8')) : { vaults: [] };
   // per site -> per url -> the sequence of captures
   const sites = {};
   for (const run of runs) for (const c of run.captures) {
@@ -45,7 +45,7 @@ export function evolutionBody(ev, esc) {
   const vrows = ev.vaults.map(v => `<li>vault <code>${esc(v.id)}</code> (${esc(v.status)}, a normal vault on dev.send.sgraph.ai${v.read_key_public ? ', public read key' : ', read key kept private'})</li>`).join('');
   return `<h1>Evolution</h1>
 <p>Lisbon Fringe photographs its own pages and every organiser's public event page every hour, and keeps the screenshot, the visible text and the fields we extracted. Here is what that shows over time: each page, each capture, and where the page's text changed between captures. Independent of Web Summit; we never capture websummit.com or anything behind a login.</p>
-<p class="muted"><strong>Fact</strong> (from data/captures/index.json): ${nruns} run${nruns > 1 ? 's' : ''}, ${total} captures, ${esc(first.slice(0, 16).replace('T', ' '))} to ${esc(last.slice(0, 16).replace('T', ' '))} UTC · ${changed} page${changed === 1 ? '' : 's'} changed text between runs. Each dot is one capture; a red dot is a page we could not capture.</p>
+<p class="muted"><strong>Fact</strong> (from data/capture-index.json): ${nruns} run${nruns > 1 ? 's' : ''}, ${total} captures, ${esc(first.slice(0, 16).replace('T', ' '))} to ${esc(last.slice(0, 16).replace('T', ' '))} UTC · ${changed} page${changed === 1 ? '' : 's'} changed text between runs. Each dot is one capture; a red dot is a page we could not capture.</p>
 ${rows}
 <h2>Where the pictures are</h2>
 <p>Screenshots and text are stored encrypted in normal vaults (never in git; git holds only pointers with the vault id, path and sha256). A public viewer for them waits on Dinis's word.</p><ul>${vrows}</ul>`;
