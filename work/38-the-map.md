@@ -9,3 +9,5 @@ done-means: "data/architecture.json and a picture on /how/: every repository (Fr
 evidence:
 ---
 Brief 12 (briefs/2026-11-11-1334-the-architect-and-the-policies.md). Input: git log by Agent: trailer and paths, team/, ROLES.md, data/inboxes/, fable.fringe@'s note on two agents editing deploy.yml.
+
+**Progress 13:44 UTC (architect.1):** data/architecture.json first cut: people, accounts, environments, repositories, the lines between teams, and the observed writers from git (admin/tools/architecture.mjs, 26 writers, 89 files with more than one writer); served at /api/v1/architecture.json. Not done: the picture on /how/.

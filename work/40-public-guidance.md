@@ -9,3 +9,5 @@ done-means: "CONTRIBUTING.md at the root and /guidance/ on the site: who we are,
 evidence:
 ---
 Brief 12, Dinis: "we're now going to have even external contributors. So it's almost like that kind of public CLAUDE.md becomes super critical."
+
+**Progress 13:44 UTC (architect.1):** CONTRIBUTING.md at the root, rendered at /guidance/ from it; linked from every page's footer (so /join/ and /designs/ too). Not done: outreach.1's read, and a line on /join/ and /designs/ themselves.

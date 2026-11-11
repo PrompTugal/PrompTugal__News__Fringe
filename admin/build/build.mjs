@@ -26,6 +26,7 @@ import { readChanges, changesBody } from './changes.mjs';
 import { buildReleases, releasesIndexBody, releaseBody, releaseJson, releasePath } from './releases.mjs';   // work/37, dev.2.fringe@PrompTugal.dinis   // work/15, dev.2.fringe@PrompTugal.dinis
 import { nowBlock, nowPageBody, nowJs, span as evSpan } from './now.mjs';
 import { timelineBlock, TIMELINE_CSS } from './timeline.mjs';   // D19, design.2.fringe@PrompTugal.dinis   // work/16, dev.2.fringe@PrompTugal.dinis
+import { guidanceBody, abpBody } from './guidance.mjs';   // work/40, work/39, architect.1.fringe@PrompTugal.dinis
 import { traceBody } from './trace-page.mjs';   // Angelo's traces, designer.fringe@PrompTugal.angelo
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -118,7 +119,7 @@ const page = (title, body, desc, head = '', here = '/') => `<!doctype html><html
 ${navHtml(here)}<!--TICK-->
 <p class="ind">Independent of Web Summit · <a href="https://websummit.com/">official site</a></p>
 <main>${WHATSAPP}${body}</main>
-<footer class="muted">${INDEPENDENCE}<br>Built from <a href="${REPO}">the repository</a> at ${BUILT.slice(0, 16).replace('T', ' ')} UTC · <a href="/changes/${esc(VERSION)}/">${esc(VERSION)}</a>. <a href="/traffic/">Traffic</a> · <a href="/changes/">Changes</a> · <a href="/tip/">Send a tip</a> · <a href="/evolution/">Evolution</a> · <a href="/dashboard/">Swarm</a>.</footer>
+<footer class="muted">${INDEPENDENCE}<br>Built from <a href="${REPO}">the repository</a> at ${BUILT.slice(0, 16).replace('T', ' ')} UTC · <a href="/changes/${esc(VERSION)}/">${esc(VERSION)}</a>. <a href="/traffic/">Traffic</a> · <a href="/changes/">Changes</a> · <a href="/tip/">Send a tip</a> · <a href="/evolution/">Evolution</a> · <a href="/dashboard/">Swarm</a> · <a href="/guidance/">Contribute</a> · <a href="/abp/">Policies</a>.</footer>
 <script src="/assets/obs/obs.js" defer></script>
 </body></html>`;
 
@@ -287,6 +288,11 @@ if (existsSync(join(root, 'data/communities.json'))) {
 }
 writeFileSync(join(out, 'llms.txt'), `# Lisbon Tech Fringe\n\n> An independent guide to the alternative, community and side events around Web Summit Lisbon, 9 to 15 November 2026. Independent of Web Summit; for anything official see the organisers' site. Not a warning service: for the storm see https://storm-charles.promptugal.news, IPMA and ANEPC.\n\n- [Events (JSON)](${SITE}api/v1/events.json): each event with its source URL and the time it was read\n- [The graph (JSON)](${SITE}api/v1/graph.json): events, communities, topics and places, each edge with its source\n- [Join the team](${SITE}join/)\n- [Repository](${REPO})\n`);
 const orgs = loadOrganisers(root, events);
+// /guidance/ (CONTRIBUTING.md), /abp/ (abp/index.json), /api/v1/architecture.json (data/architecture.json): work/38 to 40, architect.1.fringe@
+for (const d of ['guidance', 'abp']) mkdirSync(join(out, d), { recursive: true });
+writeFileSync(join(out, 'guidance', 'index.html'), page('Contributing: Lisbon Tech Fringe', guidanceBody(esc), 'How to contribute to Lisbon Tech Fringe, for people and their agents: what you may touch, the rules, how to talk to the team.', '', '/guidance/'));
+writeFileSync(join(out, 'abp', 'index.html'), page('Agent Behaviour Policies: Lisbon Tech Fringe', abpBody(esc, REPO), 'Who may edit what, where: every agent\'s grant, in observe mode.', '', '/abp/'));
+if (existsSync(join(root, 'data/architecture.json'))) writeFileSync(join(out, 'api', 'v1', 'architecture.json'), read('data/architecture.json'));
 mkdirSync(join(out, 'organisers'), { recursive: true });
 writeFileSync(join(out, 'organisers', 'index.html'), page('For organisers: Lisbon Tech Fringe', organisersBody(orgs, esc, { eventPath, hasPage }), 'What Lisbon Tech Fringe offers organisers of side events, and who is listed.'));
 const changes = readChanges(root);
