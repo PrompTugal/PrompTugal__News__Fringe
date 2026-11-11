@@ -122,7 +122,7 @@ export function buildModel(root, events) {
     const id = e.id;
     const city = cityOf(e);
     const ev = { id, type: 'event', name: e.name, url: e.url, read_at: e.read_at, day: e.date, start: e.start || null, end: e.end || null,
-      kind: e.kind || 'unknown', size: e.size || null, status: e.status || 'unknown', storm_moved: e.storm_moved ?? null, cost: e.cost || null, platform: null,
+      kind: e.kind || 'unknown', size: e.size || null, status: e.status || 'unknown', storm_moved: e.storm_moved ?? null, cost: e.cost || null, platform: null, agenda_url: null,
       free: /^free\b/i.test(e.cost || '') ? true : (/EUR|€|\d/.test(e.cost || '') ? false : null),
       city, in_lisbon: city === 'Lisbon', place: null, organisers: [], festival: null, listed_by: [], personas: [], topics: [], sessions: [] };
     E.events.set(id, ev);
@@ -190,6 +190,8 @@ export function buildModel(root, events) {
     }
   }
 
+  // an agenda we do not copy (a platform hold): the event links to it on the organiser's page instead
+  for (const r of readJSON(root, 'data/graph/sessions.json')?.events_read || []) if (r.agenda_on_page && E.events.get(r.event)) E.events.get(r.event).agenda_url = r.url;
   // sessions: the timed agenda an event's own page publishes (data/graph/sessions.json; title and time, never a speaker)
   for (const x of readJSON(root, 'data/graph/sessions.json')?.sessions || []) {
     const ev = E.events.get(x.event); if (!ev) continue;

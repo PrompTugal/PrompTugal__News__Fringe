@@ -158,6 +158,7 @@ ${nx ? `<p><strong>This event has a new page:</strong> ${evLink(nx.id)}.</p>` : 
       + row('Day', a('day', e.day)) + row('Place', e.place ? a('place', e.place) + (e.in_lisbon || e.city === 'online' ? '' : ` <strong>not in Lisbon</strong>`) : '')
       + row('Register on', e.platform ? a('platform', e.platform) : '') + row('For', e.personas.map((p) => a('persona', p)).join(''))
       + row('About', e.topics.map((t) => a('topic', t)).join(''))
+      + (e.agenda_url ? row('Agenda', `<a href="${esc(e.agenda_url)}">on the organiser's page</a>`) : '')
       + (e.sessions.length ? row('Sessions', `${e.sessions.length} on the agenda`) + `<dt></dt><dd>${sessList(e.sessions)}</dd>` : '');
   };
   return { ...m, eventLinks };

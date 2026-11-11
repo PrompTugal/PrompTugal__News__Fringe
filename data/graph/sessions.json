@@ -1,5 +1,5 @@
 {
- "about": "Sessions inside an event (work/42): the timed agenda its own public page publishes, title and time only. Never a speaker's name: a session is about the talk, not a person. The page notes 'Agenda timings and sessions may be subject to change'. Lisbon is on UTC in November. Titles read from Luma pages are withheld under the lead's Luma hold (work/49, 16:23 UTC: facts with a link, never Luma's text): only the time, kind and link remain. No Luma page is read for agendas while the hold stands.",
+ "about": "Sessions inside an event (work/42): the timed agenda its own public page publishes, title and time only. Never a speaker's name: a session is about the talk, not a person. The page notes 'Agenda timings and sessions may be subject to change'. Lisbon is on UTC in November. Sessions read from Luma pages after the lead's hold (16:23 UTC) are dropped; titles read before it are withheld under the lead's Luma hold (work/49, 16:23 UTC: facts with a link, never Luma's text): only the time, kind and link remain. No Luma page is read for agendas while the hold stands.",
  "updated": "2026-11-11T19:57Z",
  "by": "ontologist.1.fringe@PrompTugal.dinis",
  "events_read": [
@@ -27,8 +27,9 @@
    "event": "2026-11-11-valois-allocator-residence",
    "url": "https://luma.com/k0zamjmi",
    "read_at": "2026-11-11T16:57:00Z",
-   "sessions": 12,
-   "note": "the page gives start times only: each session ends when the next begins; the last ends at the event's listed end (20:00). Read-outs run from 16:35 to the party at 18:00 (label evidence: the page leaves the end open)."
+   "sessions": 0,
+   "note": "read at 16:57 UTC, after the lead's Luma hold (work/49, 16:23 UTC); its sessions were dropped at the lead's ruling (19:56 UTC) until Dinis decides work/49. The event links to the agenda on the organiser's page.",
+   "agenda_on_page": true
   },
   {
    "event": "2026-11-11-side-events-guide-irl",
@@ -375,150 +376,6 @@
    "end": "2026-11-13T19:30:00Z",
    "url": "https://luma.com/lisbon-community-week-2026",
    "read_at": "2026-11-11T15:56:00Z",
-   "label": "fact",
-   "title_held": "the lead's Luma hold (work/49, 16:23 UTC): we publish facts with a link, never Luma's text; the title is on the organiser's page"
-  },
-  {
-   "id": "2026-11-11-valois-allocator-residence--1200",
-   "event": "2026-11-11-valois-allocator-residence",
-   "name": null,
-   "kind": "break",
-   "start": "2026-11-11T12:00:00Z",
-   "end": "2026-11-11T12:30:00Z",
-   "url": "https://luma.com/k0zamjmi",
-   "read_at": "2026-11-11T16:57:00Z",
-   "label": "fact",
-   "title_held": "the lead's Luma hold (work/49, 16:23 UTC): we publish facts with a link, never Luma's text; the title is on the organiser's page"
-  },
-  {
-   "id": "2026-11-11-valois-allocator-residence--1230",
-   "event": "2026-11-11-valois-allocator-residence",
-   "name": null,
-   "kind": "talk",
-   "start": "2026-11-11T12:30:00Z",
-   "end": "2026-11-11T12:45:00Z",
-   "url": "https://luma.com/k0zamjmi",
-   "read_at": "2026-11-11T16:57:00Z",
-   "label": "fact",
-   "title_held": "the lead's Luma hold (work/49, 16:23 UTC): we publish facts with a link, never Luma's text; the title is on the organiser's page"
-  },
-  {
-   "id": "2026-11-11-valois-allocator-residence--1245",
-   "event": "2026-11-11-valois-allocator-residence",
-   "name": null,
-   "kind": "unconference",
-   "start": "2026-11-11T12:45:00Z",
-   "end": "2026-11-11T13:15:00Z",
-   "url": "https://luma.com/k0zamjmi",
-   "read_at": "2026-11-11T16:57:00Z",
-   "label": "fact",
-   "title_held": "the lead's Luma hold (work/49, 16:23 UTC): we publish facts with a link, never Luma's text; the title is on the organiser's page"
-  },
-  {
-   "id": "2026-11-11-valois-allocator-residence--1315",
-   "event": "2026-11-11-valois-allocator-residence",
-   "name": null,
-   "kind": "unconference",
-   "start": "2026-11-11T13:15:00Z",
-   "end": "2026-11-11T13:30:00Z",
-   "url": "https://luma.com/k0zamjmi",
-   "read_at": "2026-11-11T16:57:00Z",
-   "label": "fact",
-   "title_held": "the lead's Luma hold (work/49, 16:23 UTC): we publish facts with a link, never Luma's text; the title is on the organiser's page"
-  },
-  {
-   "id": "2026-11-11-valois-allocator-residence--1330",
-   "event": "2026-11-11-valois-allocator-residence",
-   "name": null,
-   "kind": "unconference",
-   "start": "2026-11-11T13:30:00Z",
-   "end": "2026-11-11T14:15:00Z",
-   "url": "https://luma.com/k0zamjmi",
-   "read_at": "2026-11-11T16:57:00Z",
-   "label": "fact",
-   "title_held": "the lead's Luma hold (work/49, 16:23 UTC): we publish facts with a link, never Luma's text; the title is on the organiser's page"
-  },
-  {
-   "id": "2026-11-11-valois-allocator-residence--1415",
-   "event": "2026-11-11-valois-allocator-residence",
-   "name": null,
-   "kind": "break",
-   "start": "2026-11-11T14:15:00Z",
-   "end": "2026-11-11T14:30:00Z",
-   "url": "https://luma.com/k0zamjmi",
-   "read_at": "2026-11-11T16:57:00Z",
-   "label": "fact",
-   "title_held": "the lead's Luma hold (work/49, 16:23 UTC): we publish facts with a link, never Luma's text; the title is on the organiser's page"
-  },
-  {
-   "id": "2026-11-11-valois-allocator-residence--1430",
-   "event": "2026-11-11-valois-allocator-residence",
-   "name": null,
-   "kind": "unconference",
-   "start": "2026-11-11T14:30:00Z",
-   "end": "2026-11-11T15:15:00Z",
-   "url": "https://luma.com/k0zamjmi",
-   "read_at": "2026-11-11T16:57:00Z",
-   "label": "fact",
-   "title_held": "the lead's Luma hold (work/49, 16:23 UTC): we publish facts with a link, never Luma's text; the title is on the organiser's page"
-  },
-  {
-   "id": "2026-11-11-valois-allocator-residence--1515",
-   "event": "2026-11-11-valois-allocator-residence",
-   "name": null,
-   "kind": "break",
-   "start": "2026-11-11T15:15:00Z",
-   "end": "2026-11-11T15:30:00Z",
-   "url": "https://luma.com/k0zamjmi",
-   "read_at": "2026-11-11T16:57:00Z",
-   "label": "fact",
-   "title_held": "the lead's Luma hold (work/49, 16:23 UTC): we publish facts with a link, never Luma's text; the title is on the organiser's page"
-  },
-  {
-   "id": "2026-11-11-valois-allocator-residence--1530",
-   "event": "2026-11-11-valois-allocator-residence",
-   "name": null,
-   "kind": "unconference",
-   "start": "2026-11-11T15:30:00Z",
-   "end": "2026-11-11T16:15:00Z",
-   "url": "https://luma.com/k0zamjmi",
-   "read_at": "2026-11-11T16:57:00Z",
-   "label": "fact",
-   "title_held": "the lead's Luma hold (work/49, 16:23 UTC): we publish facts with a link, never Luma's text; the title is on the organiser's page"
-  },
-  {
-   "id": "2026-11-11-valois-allocator-residence--1615",
-   "event": "2026-11-11-valois-allocator-residence",
-   "name": null,
-   "kind": "unconference",
-   "start": "2026-11-11T16:15:00Z",
-   "end": "2026-11-11T16:35:00Z",
-   "url": "https://luma.com/k0zamjmi",
-   "read_at": "2026-11-11T16:57:00Z",
-   "label": "fact",
-   "title_held": "the lead's Luma hold (work/49, 16:23 UTC): we publish facts with a link, never Luma's text; the title is on the organiser's page"
-  },
-  {
-   "id": "2026-11-11-valois-allocator-residence--1635",
-   "event": "2026-11-11-valois-allocator-residence",
-   "name": null,
-   "kind": "talk",
-   "start": "2026-11-11T16:35:00Z",
-   "end": "2026-11-11T18:00:00Z",
-   "url": "https://luma.com/k0zamjmi",
-   "read_at": "2026-11-11T16:57:00Z",
-   "label": "evidence",
-   "title_held": "the lead's Luma hold (work/49, 16:23 UTC): we publish facts with a link, never Luma's text; the title is on the organiser's page"
-  },
-  {
-   "id": "2026-11-11-valois-allocator-residence--1800",
-   "event": "2026-11-11-valois-allocator-residence",
-   "name": null,
-   "kind": "party",
-   "start": "2026-11-11T18:00:00Z",
-   "end": "2026-11-11T20:00:00Z",
-   "url": "https://luma.com/k0zamjmi",
-   "read_at": "2026-11-11T16:57:00Z",
    "label": "fact",
    "title_held": "the lead's Luma hold (work/49, 16:23 UTC): we publish facts with a link, never Luma's text; the title is on the organiser's page"
   }
