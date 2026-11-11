@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-11T15:38Z",
+ "generated": "2026-11-11T15:54Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 284,
-  "reads": 248,
-  "tabs": 139,
+  "views": 311,
+  "reads": 266,
+  "tabs": 148,
   "countries": 14,
-  "shares": 131,
-  "bots": 937,
+  "shares": 136,
+  "bots": 954,
   "crawler_tabs": 1,
-  "agent_runs": 68,
-  "agent_runs_signed": 65
+  "agent_runs": 73,
+  "agent_runs_signed": 70
  },
  "by_hour": [
   [
@@ -212,17 +212,17 @@
   ],
   [
    "2026-11-11 15:00",
-   36
+   63
   ]
  ],
  "by_page": [
   [
    "/",
-   130
+   144
   ],
   [
    "/now/",
-   20
+   21
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
@@ -230,11 +230,15 @@
   ],
   [
    "/join/",
-   6
+   7
   ],
   [
    "/organisers/",
-   6
+   7
+  ],
+  [
+   "/how/",
+   7
   ],
   [
    "/programme/",
@@ -245,23 +249,19 @@
    6
   ],
   [
+   "/graph/",
+   5
+  ],
+  [
+   "/traffic/",
+   5
+  ],
+  [
    "/e/2026-11-11-founderlink-storm-summit-afternoon/",
    5
   ],
   [
-   "/graph/",
-   4
-  ],
-  [
-   "/traffic/",
-   4
-  ],
-  [
    "/e/2026-11-11-tech-startups-on-the-rooftop/",
-   4
-  ],
-  [
-   "/how/",
    4
   ],
   [
@@ -278,6 +278,10 @@
   ],
   [
    "/e/2026-11-11-side-events-guide-irl/",
+   3
+  ],
+  [
+   "/e/2026-11-11-valois-allocator-residence/",
    3
   ],
   [
@@ -443,14 +447,22 @@
   [
    "/e/2026-11-11-like-minded/",
    1
+  ],
+  [
+   "/storm/",
+   1
+  ],
+  [
+   "/stats",
+   1
   ]
  ],
  "reading": [
   [
    "/",
-   108,
-   30,
-   12
+   113,
+   29,
+   13
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
@@ -460,15 +472,27 @@
   ],
   [
    "/now/",
-   16,
-   56,
-   49
+   17,
+   53,
+   50
   ],
   [
    "/organisers/",
-   6,
+   7,
+   9,
+   21
+  ],
+  [
+   "/how/",
+   7,
    10,
-   25
+   3
+  ],
+  [
+   "/join/",
+   6,
+   6,
+   24
   ],
   [
    "/e/2026-11-11-corporate-academy-of-tomorrow/",
@@ -477,10 +501,16 @@
    44
   ],
   [
-   "/join/",
+   "/traffic/",
    5,
-   7,
-   29
+   17,
+   53
+  ],
+  [
+   "/graph/",
+   5,
+   13,
+   20
   ],
   [
    "/programme/",
@@ -489,28 +519,10 @@
    64
   ],
   [
-   "/traffic/",
-   4,
-   17,
-   64
-  ],
-  [
-   "/graph/",
-   4,
-   17,
-   25
-  ],
-  [
    "/e/2026-11-11-founderlink-storm-summit-afternoon/",
    4,
    16,
    37
-  ],
-  [
-   "/how/",
-   4,
-   15,
-   5
   ],
   [
    "/e/2026-11-11-ai-horizon-conference/",
@@ -535,6 +547,12 @@
    3,
    16,
    30
+  ],
+  [
+   "/e/2026-11-11-valois-allocator-residence/",
+   3,
+   4,
+   18
   ],
   [
    "/e/2026-11-11-human-side-of-ai/",
@@ -787,16 +805,28 @@
    1,
    42,
    89
+  ],
+  [
+   "/stats",
+   1,
+   5,
+   0
+  ],
+  [
+   "/storm/",
+   1,
+   1,
+   0
   ]
  ],
  "by_country": [
   [
    "Portugal",
-   175
+   183
   ],
   [
    "United Kingdom",
-   22
+   38
   ],
   [
    "Estonia",
@@ -808,7 +838,7 @@
   ],
   [
    "United States",
-   14
+   17
   ],
   [
    "Italy",
@@ -850,7 +880,7 @@
  "by_city": [
   [
    "Lisbon, Portugal",
-   111
+   119
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -859,6 +889,10 @@
   [
    "Tallinn, Estonia",
    21
+  ],
+  [
+   "Woking, United Kingdom",
+   16
   ],
   [
    "Frankfurt am Main, Germany",
@@ -874,7 +908,11 @@
   ],
   [
    "Boardman, United States",
-   5
+   7
+  ],
+  [
+   "Harrietsham, United Kingdom",
+   6
   ],
   [
    "Bangkok, Thailand",
@@ -882,7 +920,7 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   60
+   55
   ]
  ],
  "by_referrer": [
@@ -894,35 +932,35 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   245
+   272
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 816,
+ "other_hosts_views": 900,
  "by_via": [
   [
    "whatsapp",
-   131
+   136
   ]
  ],
  "via_detail": {
   "whatsapp": {
-   "views": 131,
-   "tabs": 54,
-   "countries": 8
+   "views": 136,
+   "tabs": 58,
+   "countries": 9
   }
  },
  "by_screen": [
   [
    "phone",
-   153
+   159
   ],
   [
    "desktop",
-   127
+   148
   ],
   [
    "tablet",
@@ -932,11 +970,15 @@
  "agents": [
   [
    "design.4.fringe@PrompTugal.dinis",
-   11
+   12
   ],
   [
    "design.1.fringe@PrompTugal.dinis",
    9
+  ],
+  [
+   "architect.1.fringe@PrompTugal.dinis",
+   8
   ],
   [
    "observability.fringe@PrompTugal.dinis",
@@ -947,7 +989,7 @@
    6
   ],
   [
-   "architect.1.fringe@PrompTugal.dinis",
+   "researcher.1.fringe@PrompTugal.jose",
    6
   ],
   [
@@ -959,16 +1001,12 @@
    5
   ],
   [
-   "researcher.1.fringe@PrompTugal.jose",
-   5
-  ],
-  [
    "conductor.fringe@PrompTugal.jose",
    4
   ],
   [
    "conductor.fringe@PrompTugal.indi",
-   2
+   3
   ],
   [
    "dev.1.fringe@PrompTugal.dinis",
@@ -992,15 +1030,15 @@
   ]
  ],
  "flows": {
-  "tabs": 139,
+  "tabs": 148,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    84
+    89
    ],
    [
     "shared link (?via=)",
-    54
+    58
    ],
    [
     "from another site",
@@ -1010,7 +1048,7 @@
   "entry_pages": [
    [
     "/",
-    101
+    110
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
@@ -1072,7 +1110,7 @@
   "exit_pages": [
    [
     "/",
-    77
+    85
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
@@ -1149,6 +1187,10 @@
     3
    ],
    [
+    "/traffic/ → /",
+    3
+   ],
+   [
     "/ → /e/2026-11-11-founderlink-storm-summit-afternoon/",
     3
    ],
@@ -1173,15 +1215,15 @@
     2
    ],
    [
-    "/traffic/ → /",
-    2
-   ],
-   [
     "/now/ → /e/2026-11-11-kuma-align-leadership-ai/",
     2
    ],
    [
     "/join/ → /traffic/",
+    2
+   ],
+   [
+    "/ → /e/2026-11-11-valois-allocator-residence/",
     2
    ],
    [
@@ -1227,20 +1269,16 @@
    [
     "/e/2026-11-11-wet-summit-lisbon/ → /e/2026-11-11-aubay-the-next-move/",
     1
-   ],
-   [
-    "/e/2026-11-11-aubay-the-next-move/ → /e/2026-11-11-cisco-automation-to-autonomy/",
-    1
    ]
   ],
   "pages_per_tab": [
    [
     "1",
-    98
+    104
    ],
    [
     "2",
-    21
+    22
    ],
    [
     "3",
@@ -1252,14 +1290,14 @@
    ],
    [
     "5+",
-    11
+    13
    ]
   ],
-  "bounce_rate": 71,
+  "bounce_rate": 70,
   "via_reached": [
    [
     "whatsapp: /",
-    54
+    58
    ],
    [
     "whatsapp: /now/",
@@ -1310,15 +1348,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-innovation-wednesdays-azerbaijan/",
-    1
-   ],
-   [
     "whatsapp: /e/2026-11-11-yorkseed-investor-pitch/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    "whatsapp: /e/2026-11-11-innovation-wednesdays-azerbaijan/",
     1
    ],
    [
@@ -1327,6 +1361,10 @@
    ],
    [
     "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
+    1
+   ],
+   [
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ],
    [
@@ -1342,7 +1380,7 @@
  "design_lab": [
   {
    "design": "b",
-   "views": 4,
+   "views": 6,
    "votes": 1
   },
   {
@@ -1360,7 +1398,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 111,
+    "views": 119,
     "lat": 38.7,
     "lon": -9.1
    },
@@ -1375,6 +1413,12 @@
     "views": 21,
     "lat": 59.4,
     "lon": 24.8
+   },
+   {
+    "name": "Woking, United Kingdom",
+    "views": 16,
+    "lat": 51.3,
+    "lon": -0.6
    },
    {
     "name": "Frankfurt am Main, Germany",
@@ -1396,9 +1440,15 @@
    },
    {
     "name": "Boardman, United States",
-    "views": 5,
+    "views": 7,
     "lat": 45.8,
     "lon": -119.7
+   },
+   {
+    "name": "Harrietsham, United Kingdom",
+    "views": 6,
+    "lat": 51.2,
+    "lon": 0.6
    },
    {
     "name": "Bangkok, Thailand",
@@ -1435,6 +1485,10 @@
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/ → wetsummitlisbon.com/",
+   2
+  ],
+  [
+   "/e/2026-11-11-valois-allocator-residence/ → luma.com/k0zamjmi",
    2
   ],
   [
