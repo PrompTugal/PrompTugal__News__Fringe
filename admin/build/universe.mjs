@@ -17,7 +17,7 @@ export const vendored = () => existsSync(join(root, 'assets/vendor/gravity/gravi
 export const GRAVITY_SRC = () => (vendored() ? GRAVITY_VENDORED : GRAVITY_CROSS_SITE);
 // the attributes every Gravity script tag must carry (finding 37); empty for the vendored same-origin copy
 export const gravityAttrs = () => (vendored() ? '' : ` integrity="${GRAVITY_INTEGRITY}" crossorigin="anonymous"`);
-export const universeCss = `.uv-note{font-size:.85rem}#universe{min-height:80vh;border-radius:8px;overflow:hidden;background:#04100F;color:#EAF6F3}`;
+export const universeCss = `.uv-note{font-size:.85rem}#universe{min-height:88vh;overflow:hidden;background:#04100F;color:#EAF6F3;max-width:none;width:100vw;margin-left:calc(50% - 50vw)}body{overflow-x:clip}`;
 export function universeBody(esc) {
   const cross = !vendored();
   return `<h1>The Fringe universe</h1>
