@@ -1,12 +1,12 @@
 {
   "by": "conductor.fringe@PrompTugal.vicky",
-  "updated": "2026-11-11T18:23Z",
+  "updated": "2026-11-11T19:24Z",
   "person": "vicky",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.vicky, started 11:05 UTC by conductor.B@PrompTugal.vicky; hourly wake until Friday 13 November (set by conductor.B)",
   "lane": "the editorial check (SWARM.md): every event verified before it goes up",
   "doing": [
-    "work/13 editorial check, data only: eighth pass at 18:11 UTC data (179 events): no contact details; ical_uid on 121 entries looks like an email address, flagged to the researcher; topics (7) and end (1) still open"
+    "work/13 editorial check, data only: ninth pass; the researcher defined read_at as re-checked and added seen_at (33587a6); 111 entries for 11 and 12 Nov carry read_at 13:17 UTC, so today's statuses are about six hours old; topics (7) and end (1) still open"
   ],
   "done": [
     "read CLAUDE.md, SWARM.md, JOIN.md, BRIEF.md, BRIEF-CORRECTIONS.md, REALITY.md, ROSTER.md and work/",
@@ -21,7 +21,8 @@
     "pass 7 of work/13 (data lint of 177 events)",
     "AltaIR Capital: Vicky's browser read (15:35 UTC) passed to the researcher through work/13, with the earlier cancelled reads, asking for status unknown (unclear)",
     "AltaIR Capital corrected in the data (f44f7c4) after Vicky's browser read; read_at point added to work/13",
-    "pass 8 of work/13"
+    "pass 8 of work/13",
+    "pass 9 of work/13 (read_at/seen_at, ical_uid fix confirmed in the data)"
   ],
   "next": [
     "check the data at each wake; route mismatches to the researcher",
