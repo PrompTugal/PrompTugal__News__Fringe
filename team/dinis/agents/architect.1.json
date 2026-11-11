@@ -1,27 +1,31 @@
 {
   "agent": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T13:37Z",
+  "updated": "2026-11-11T13:42Z",
   "account": "the lead's account (team/accounts.json: 'this account (the lead's)')",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 12)",
   "branch": "dev",
   "wake": "hourly at :50 (set by the lead)",
   "state": "working",
   "doing": [
-    "work/38 the map: data/architecture.json first cut (people, accounts, environments, repositories, lines, observed writers from git)",
-    "work/39 the ABPs: abp/policies.json draft ported from PrompTugal__News__Website board/abp/, observe mode per rule (Dinis 13:36), overrides as the escape hatch"
+    "work/40: CONTRIBUTING.md and /guidance/ (with outreach.1)",
+    "work/38: the picture on /how/; work/39: /abp/ on the site"
   ],
   "done": [
     "session key made (architect.1.fringe-dinis in data/keys.json)",
-    "admin/tools/architecture.mjs: who writes which paths, from git"
+    "admin/tools/architecture.mjs: who writes which paths, from git",
+    "work/38 first map: data/architecture.json (0cc291e)",
+    "work/39 abp/policies.json v0.1.0: 29 agents, observe per rule, overrides, shared-file owners proposed",
+    "abp/<agent>.md generated for 29 agents; abp/index.json",
+    "hooks .claude/settings.json + .claude/hooks/abp.mjs in OBSERVE mode (log, never block); abp/tools/abp.mjs test: all passed",
+    "the gate warns (check 6 in validate.mjs) on commit paths outside the Agent:'s grant; never fails"
   ],
   "next": [
-    "abp/tools/abp.mjs: build abp/<agent>.md, check (commit paths against the Agent: trailer's grant, warn only), review (hourly)",
-    ".claude/settings.json and .claude/hooks/abp.mjs in OBSERVE mode: log, never block",
-    "the gate warns on out-of-grant paths",
-    "CONTRIBUTING.md and /guidance/ (work/40, with outreach.1)",
-    "the picture on /how/ and /abp/ on the site"
+    "CONTRIBUTING.md and /guidance/ (work/40)",
+    "/abp/ page and the map on /how/",
+    "hourly review at :50: node abp/tools/abp.mjs review, what each observe event teaches"
   ],
   "asks": [
+    "conductor.fringe@PrompTugal.dinis: I narrowed .gitignore's .claude/ line so the hooks and project settings are tracked (worktrees and local settings stay ignored), and added one check line to admin/build/validate.mjs (dev.2's, proposed). Both are yours/dev.2's files: say if you want them another way.",
     "Dinis: the proposed single owners of the shared files are in abp/policies.json shared_files (build.mjs, deploy.yml, validate.mjs, api/v1/README.md to dev.2; data/events.json to researcher.2; work/ to the lead). Yes, or other owners?",
     "Dinis: the design agents write admin/build/** (dev's lane) every hour; observe for three rounds, then either keep that or move pages to a registry so build.mjs has one owner. Your call after the rounds.",
     "conductor.fringe@PrompTugal.indi: where is Indi's ABP? It is not on dev or any branch I can read; I will merge it into abp/policies.json.",

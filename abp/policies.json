@@ -152,7 +152,7 @@
     },
     "observability": {
       "focus": "traffic and the agents' runs: /traffic/, the drain, the dashboard",
-      "writes": ["data/obs/**", "data/geo/**", "assets/obs/**", "admin/obs/**", "admin/tools/obs/**", "admin/tools/agent-log.mjs", "admin/tools/trace-event.mjs", "admin/build/traffic.mjs", "admin/build/activity.mjs"],
+      "writes": ["data/obs/**", "data/geo/**", "assets/obs/**", "admin/obs/**", "admin/tools/obs/**", "admin/tools/agent-log.mjs", "admin/tools/trace-event.mjs", "admin/build/traffic.mjs", "admin/build/activity.mjs", "admin/build/worldmap.mjs"],
       "never": "logs a visitor's identity or a contact detail"
     },
     "advisor": {
@@ -180,7 +180,7 @@
     "fable.fringe@PrompTugal.dinis": {"role": "advisor", "branch": "work/fable.fringe", "account": "this (the lead's)"},
     "observability.fringe@PrompTugal.dinis": {"role": "observability", "account": "this (the lead's)"},
     "design.1.fringe@PrompTugal.dinis": {"role": "design", "extra_writes": ["admin/build/identity.mjs", "admin/build/programme.mjs", "admin/build/designs/a.mjs"], "account": "this (the lead's)"},
-    "design.2.fringe@PrompTugal.dinis": {"role": "design", "extra_writes": ["admin/build/og/**", "admin/build/timeline.mjs", "admin/tools/og-card.mjs"], "account": "this (the lead's)"},
+    "design.2.fringe@PrompTugal.dinis": {"role": "design", "extra_writes": ["admin/build/og/**", "admin/build/timeline.mjs", "admin/tools/og-card.mjs", "admin/tools/design-preview.mjs"], "account": "this (the lead's)"},
     "design.3.fringe@PrompTugal.dinis": {"role": "design", "extra_writes": ["admin/build/event-pages.mjs", "admin/build/cards.mjs", "admin/build/how.mjs", "admin/build/designs/c.mjs"], "account": "this (the lead's)"},
     "design.4.fringe@PrompTugal.dinis": {"role": "design", "extra_writes": ["admin/build/tokens.css", "admin/build/identity.mjs", "admin/build/tiers.mjs"], "account": "this (the lead's)"},
     "dev.1.fringe@PrompTugal.dinis": {"role": "dev", "extra_writes": ["admin/build/swarm.mjs", "admin/build/me.mjs", "assets/me/**", "assets/vendor/**", "admin/tools/inboxes.py"], "account": "this (the lead's)"},
@@ -237,7 +237,7 @@
     {"since": "2026-11-11T13:37Z", "what": "Indi's ABP is not on dev or any branch the architect can read", "for": "conductor.fringe@PrompTugal.indi, by inbox: where it lives, so it is merged here"},
     {"since": "2026-11-11T13:37Z", "what": "Commits that will show as outside their grant from the start: the lead's own code (admin/tools/**) and the design agents' edits to dev-owned build files", "for": "Dinis: observe for three rounds; then decide whether design keeps admin/build/** or works through a page registry"}
   ],
-  "hook_sha256": null,
+  "hook_sha256": "822d95d9199339fe",
   "effective": "2026-11-11T13:36:00Z",
   "effective_note": "Earlier commits are read against the grants as calibration, not counted."
 }
