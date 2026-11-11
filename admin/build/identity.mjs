@@ -82,4 +82,7 @@ a{text-decoration-thickness:1px;text-underline-offset:2px}
 /* lab check D9: anything that moves stops under reduced motion and pauses on hover and focus */
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .tick:hover .pulse,.tick:focus-within .pulse,.live:hover .pulse,.live:focus-within .pulse{animation-play-state:paused}
+.subnav{max-width:var(--page);margin:0 auto;padding:var(--s2) var(--gutter);display:flex;align-items:center;gap:var(--s3);flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;border-top:1px solid var(--hair);font-size:13px}.subnav::-webkit-scrollbar{display:none}
+.subnav b{flex:none;font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
+.subnav ul{display:flex;gap:var(--s3);list-style:none;margin:0;padding:0}.subnav li{margin:0}.subnav a{white-space:nowrap;color:var(--ink-2);text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}.subnav a:hover{color:var(--brand)}.subnav a[aria-current="page"]{color:var(--ink);font-weight:600;border-bottom-color:var(--green)}
 `;

@@ -120,7 +120,7 @@ export async function buildDesigns({ root, out, designs, ctx, page, esc, SITE, R
       if (typeof r === 'string') r = { body: r };
       r = { ...r, css: (d.css || '') + (r.css || '') };
       const head = `<meta name="robots" content="noindex"><meta name="variant" content="${esc(d.id)}"><link rel="canonical" href="${esc(SITE)}">`;
-      html = page(`${d.name}: Lisbon Tech Fringe (design ${d.id.toUpperCase()})`, `<style>${css}${r.css || ''}</style>${r.body || ''}${r.script ? `<script>${r.script}</script>` : ''}${pill(designs, d.id, esc)}`, d.tagline || 'A design of the Lisbon Tech Fringe home page.', head + (r.head || ''));
+      html = page(`${d.name}: Lisbon Tech Fringe (design ${d.id.toUpperCase()})`, `<style>${css}${r.css || ''}</style>${r.body || ''}${r.script ? `<script>${r.script}</script>` : ''}${pill(designs, d.id, esc)}`, d.tagline || 'A design of the Lisbon Tech Fringe home page.', head + (r.head || ''), '/designs/');
       writeFileSync(join(dirOut, 'index.html'), html);
     } else if (d.community) {
       for (const f of readdirSync(d.dir)) if (f !== 'design.json') writeFileSync(join(dirOut, f), readFileSync(join(d.dir, f), 'utf8'));
@@ -132,7 +132,7 @@ export async function buildDesigns({ root, out, designs, ctx, page, esc, SITE, R
     info.push({ id: d.id, name: d.name, maker: d.maker, tool: d.tool, status: d.status, url: `/?design=${d.id}`, shoot: `/designs/${d.id}/` });
   }
   mkdirSync(join(out, 'designs'), { recursive: true });
-  writeFileSync(join(out, 'designs', 'index.html'), page('The design lab: Lisbon Tech Fringe', `<style>${css}</style>` + labPage(designs, { esc, SITE, REPO }) + pill(designs, 'd', esc), 'Many designs of Lisbon Tech Fringe side by side: the brief, the gallery, the checks, and how to send a design.'));
+  writeFileSync(join(out, 'designs', 'index.html'), page('The design lab: Lisbon Tech Fringe', `<style>${css}</style>` + labPage(designs, { esc, SITE, REPO }) + pill(designs, 'd', esc), 'Many designs of Lisbon Tech Fringe side by side: the brief, the gallery, the checks, and how to send a design.', '', '/designs/'));
   writeFileSync(join(out, 'designs', 'index.json'), JSON.stringify({ about: 'The design lab (work/35): every design, its maker, and the stand-alone page used for its pictures.', default: 'd', designs: info }, null, 1) + '\n');
   // the real home page: the switcher script first in <head>, the pill before </body>
   const hp = join(out, 'index.html');
