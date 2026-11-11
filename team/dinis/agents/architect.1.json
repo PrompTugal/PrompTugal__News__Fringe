@@ -1,6 +1,6 @@
 {
   "agent": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T13:44Z",
+  "updated": "2026-11-11T13:51Z",
   "account": "the lead's account (team/accounts.json: 'this account (the lead's)')",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 12)",
   "branch": "dev",
@@ -8,7 +8,7 @@
   "state": "working",
   "doing": [
     "work/38: the picture on /how/",
-    "work/39: the first hourly review at :50",
+    "work/39: review rounds 2 and 3 (14:50, 15:50) before any rule is proposed for enforcement",
     "work/40: outreach.1's read of CONTRIBUTING.md"
   ],
   "done": [
@@ -19,7 +19,8 @@
     "abp/<agent>.md generated for 29 agents; abp/index.json",
     "hooks .claude/settings.json + .claude/hooks/abp.mjs in OBSERVE mode (log, never block); abp/tools/abp.mjs test: all passed",
     "the gate warns (check 6 in validate.mjs) on commit paths outside the Agent:'s grant; never fails",
-    "work/40 first cut: CONTRIBUTING.md, /guidance/ built from it, /abp/ from abp/index.json, /api/v1/architecture.json; footer links Contribute and Policies (one import and three lines in build.mjs, dev.2's)"
+    "work/40 first cut: CONTRIBUTING.md, /guidance/ built from it, /abp/ from abp/index.json, /api/v1/architecture.json; footer links Contribute and Policies (one import and three lines in build.mjs, dev.2's)",
+    "13:51 wake: review round 1 (abp/reviews/2026-11-11-13.md): 93 commits in the hour, 18 with paths outside a grant (22 findings: R6 21, R2 1); 14 of them build.mjs (structural). No R5/R7/R8/R9 finding. Calibration round: no breach counted."
   ],
   "next": [
     "hourly at :50: pull, node admin/tools/architecture.mjs, node abp/tools/abp.mjs review, what each observe event teaches, proposed relaxations for Dinis",
@@ -27,10 +28,21 @@
     "Indi's ABP merged once found"
   ],
   "asks": [
-    "conductor.fringe@PrompTugal.dinis: I narrowed .gitignore's .claude/ line so the hooks and project settings are tracked (worktrees and local settings stay ignored), and added one check line to admin/build/validate.mjs (dev.2's, proposed). Both are yours/dev.2's files: say if you want them another way.",
     "Dinis: the proposed single owners of the shared files are in abp/policies.json shared_files (build.mjs, deploy.yml, validate.mjs, api/v1/README.md to dev.2; data/events.json to researcher.2; work/ to the lead). Yes, or other owners?",
     "Dinis: the design agents write admin/build/** (dev's lane) every hour; observe for three rounds, then either keep that or move pages to a registry so build.mjs has one owner. Your call after the rounds.",
     "conductor.fringe@PrompTugal.indi: where is Indi's ABP? It is not on dev or any branch I can read; I will merge it into abp/policies.json.",
-    "Dinis: my public key is not in PrompTugal__News__Website board/keys.json; that repository is read-only in this session."
-  ]
+    "Dinis: my public key is not in PrompTugal__News__Website board/keys.json; that repository is read-only in this session.",
+    "Dinis: three relaxations proposed (abp/policies.json proposed_relaxations): researcher.2 writes data/tips-status.json; a person's agents may edit their own conductor's work items; the architect may send_message the lead's session. Yes or no each.",
+    "Dinis and conductor.fringe@PrompTugal.jose: researcher.1.fringe@PrompTugal.jose appeared in the log with no grant; I gave it the researcher role's grant. Confirm.",
+    "conductor.fringe@PrompTugal.dinis: I have no inbox yet (data/inboxes/architect.1.fringe-dinis.json); please issue one."
+  ],
+  "breaches_last_hour": {
+    "counted": 0,
+    "observed": 22,
+    "by_rule": {
+      "R6": 21,
+      "R2": 1
+    },
+    "note": "calibration round; most commits predate the policy (13:39 UTC); see abp/reviews/2026-11-11-13.md"
+  }
 }

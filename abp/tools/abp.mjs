@@ -134,7 +134,7 @@ function check() {
 // ---------- review: the hourly report ----------
 function review() {
   const since = arg('--since', new Date(Date.now() - 3600e3).toISOString());
-  const cs = commitsIn(`--since=${since}`.startsWith('--') ? 'HEAD' : 'HEAD').filter(c => c.at >= since.replace(/\.\d+Z$/, 'Z').replace('Z', '+00:00') || new Date(c.at) >= new Date(since));
+  const cs = commitsIn(`--since=${since}`);
   const rows = cs.map(c => ({ ...c, findings: checkCommit(c) }));
   const byRule = {}, byAgent = {};
   for (const c of rows) for (const f of c.findings) { byRule[f.rule] = (byRule[f.rule] || 0) + 1; byAgent[c.agent || '(none)'] = (byAgent[c.agent || '(none)'] || 0) + 1; }

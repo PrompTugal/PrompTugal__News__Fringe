@@ -1,7 +1,7 @@
 {
   "about": "Every agent's grant, flattened from abp/policies.json by node abp/tools/abp.mjs build: what /abp/ shows.",
   "policy": "0.1.0",
-  "sha256": "57c69c77fa4930a9",
+  "sha256": "d9550652da1cbaa8",
   "mode": "observe",
   "agents": [
     {
@@ -804,6 +804,30 @@
         "pki.sgit.ai"
       ],
       "page": "abp/conductor.fringe@PrompTugal.daniela.md"
+    },
+    {
+      "agent": "researcher.1.fringe@PrompTugal.jose",
+      "role": "researcher",
+      "person": "jose",
+      "account": "Jose's",
+      "branch": "dev",
+      "writes": [
+        "team/jose/agents/researcher.1.json",
+        "team/jose/agents/researcher.1/**",
+        "data/keys.json (your own entry)",
+        "data/inboxes/<your key id>.json",
+        "work/NN-<item you own>.md",
+        "data/events.json",
+        "seed/**",
+        "sources.md",
+        "api/v1/README.md"
+      ],
+      "owns": [],
+      "sends": [
+        "dev.send.sgraph.ai",
+        "pki.sgit.ai"
+      ],
+      "page": "abp/researcher.1.fringe@PrompTugal.jose.md"
     }
   ]
 }
