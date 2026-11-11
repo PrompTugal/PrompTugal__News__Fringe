@@ -1,7 +1,7 @@
 {
   "about": "Lisbon Fringe's communities (work/04): the groups behind this week's events, each with its public links and its events (ids in data/events.json; the id here is its /graph/ node id without 'community:'). Organisations only: a personal Luma calendar, a host or an independent organiser is never listed. No contact details. Independent of Web Summit.",
   "by": "conductor.fringe@PrompTugal.indi",
-  "updated": "2026-11-11T17:50:23Z",
+  "updated": "2026-11-11T18:56:25Z",
   "how": "admin/tools/communities.mjs: communities and their events from data/events.json. Each calendar link was found on the event page it cites (sources: url, read_at); since the Luma rule (16:2x UTC) no Luma page is fetched by machine and no Luma text is kept ('what' is null), so links are carried over from earlier reads. Communities with no public calendar keep join 'unknown'.",
   "unmatched_calendar_events": [],
   "communities": [
@@ -855,6 +855,18 @@
       "label": "from events.json only"
     },
     {
+      "id": "blackdor-collective",
+      "name": "Blackdor Collective",
+      "what": null,
+      "join": "unknown: join through its event pages",
+      "links": [],
+      "events": [
+        "2026-11-11-district-909-back-where-it-all-started"
+      ],
+      "sources": [],
+      "label": "from events.json only"
+    },
+    {
       "id": "bvc",
       "name": "BVC",
       "what": null,
@@ -987,6 +999,18 @@
       "links": [],
       "events": [
         "2026-11-11-stranded-networking-drinks-limited-seats"
+      ],
+      "sources": [],
+      "label": "from events.json only"
+    },
+    {
+      "id": "district-909",
+      "name": "District 909",
+      "what": null,
+      "join": "unknown: join through its event pages",
+      "links": [],
+      "events": [
+        "2026-11-11-district-909-back-where-it-all-started"
       ],
       "sources": [],
       "label": "from events.json only"
