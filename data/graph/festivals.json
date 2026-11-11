@@ -1,0 +1,21 @@
+{
+  "about": "Festivals and umbrellas (work/42): a week-long programme that holds many events, each run by it or by a partner under its name. Curated here; which events each holds is derived from data/events.json at build time (admin/build/graph-model.mjs). Organisations only. Independent of Web Summit.",
+  "updated": "2026-11-11T14:01Z",
+  "by": "ontologist.1.fringe@PrompTugal.dinis",
+  "festivals": [
+    {
+      "id": "portugal-tech-week",
+      "name": "Portugal Tech Week",
+      "organiser": "portugal-tech-week",
+      "links": [
+        { "label": "Luma calendar", "url": "https://luma.com/portugaltechweek" },
+        { "label": "website", "url": "https://portugaltechweek.com/" }
+      ],
+      "holds_when": "the event's organiser line names Portugal Tech Week (alone, or with a partner)",
+      "lists_when": "the event's own record says it was first listed in PTW's public feed",
+      "match": { "organiser": "portugal tech week", "listed": "PTW's public feed|Portugal Tech Week's (public )?(feed|listing)|per PTW feed" },
+      "source": "data/communities.json (the calendar and website re-read by conductor.fringe@PrompTugal.indi, work/04)",
+      "label": "fact"
+    }
+  ]
+}

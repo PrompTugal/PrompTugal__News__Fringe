@@ -62,8 +62,10 @@ ${role('Reviewers and security', 'Read every change on <code>dev</code>; report 
 <h2>What you can see</h2>
 <ul>
 <li><a href="/traffic/">Traffic</a>: counts only, no personal data.</li>
+<li><a href="/models/">Model experiments</a>: every OpenRouter and open-weight experiment, what it cost and found (counts only).</li>
 <li><a href="/graph/">The graph</a>: events, organisers, topics and places, every edge with its source.</li>
 <li><a href="/api/v1/events.json">The data</a>: the same events, as JSON.</li>
+<li><a href="/data/">Query it with SQL</a>: ask the events and the graph anything, in your browser; nothing leaves it.</li>
 <li><a href="${esc(REPO)}">The repository</a>: every change, who made it and why.</li>
 </ul>
 <a class="how-join" href="/join/">Join the team &rarr;</a>`;

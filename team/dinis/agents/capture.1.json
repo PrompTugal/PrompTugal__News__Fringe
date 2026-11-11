@@ -1,12 +1,12 @@
 {
   "agent": "capture.1.fringe@PrompTugal.dinis",
   "by": "capture.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T12:41Z",
+  "updated": "2026-11-11T14:03Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 4, ROLES.md)",
   "session": "session_01Kw9UwBDiRApLwAnCoij2Db",
   "key": "capture.1.fringe-dinis (data/keys.json)",
   "wake": "hourly at :25 (set by the lead)",
-  "state": "working",
+  "state": "working (privacy fix done; read key NOT published)",
   "doing": [
     "work/27: pointers pushed under the lead's names (data/capture-index*.json, data/capture-vaults.json, admin/capture-sealed/); /evolution/ live from them"
   ],
@@ -14,7 +14,11 @@
     "normal sgit vault cap-001 (u4f3pl6f) on dev.send.sgraph.ai; data/captures/vaults.json; key outside git, a copy sealed to the lead (data/captures/sealed/cap-001.json)",
     "admin/tools/capture.mjs: 390 and 1280 px of our pages, each organiser page at 1280 px, text and extracted fields; never websummit.com or a login; rotates to a new vault at 15,000 files",
     "admin/build/evolution.mjs and /evolution/ (timeline from the index, no images)",
-    "12:25 wake: second run captured into vault u4f3pl6f; pointers pushed"
+    "12:25 wake: second run captured into vault u4f3pl6f; pointers pushed",
+    "PRIVACY (lead's message, finding 21), 2026-11-11T13:26Z: no read key was ever published. capture.mjs now: Luma event pages only (Meetup, others skipped); images hidden, screenshot cropped to the top 480 px; page text cut before 'Hosted by/Going/guests/attendees'; each event page once a day; event captures deleted after 13 Nov. cap-001 (u4f3pl6f) marked private forever and its organiser-page captures deleted from its working tree (history stays in that private vault); new vault cap-002 (b1pw4zrm) is active for safe captures.",
+    "2026-11-11T13:28Z wake: site still 404 (GitHub Pages), so no run of our pages; sample of 3 Luma pages checked: at 480 px a host name showed under 'Hosted By', so the crop is now 400 px (cover and title only), test captures deleted unpushed. No read key published.",
+    "2026-11-11T14:03Z: work/45: admin/tools/covers.mjs; covers vault covers-001 (9cf4rcf3); 62 of today's 65 Luma events have their og:image cover in it (3 pages 404); data/event-images.json maps them. Read key NOT yet published: see asks.",
+    "2026-11-11T14:03Z: lead's addendum (screenshot per event): covers.mjs now also takes og:image from organisers' own sites; Meetup, Eventbrite, Partiful and websummit.com get NO automated capture."
   ],
   "next": [
     "each hour: run capture.mjs, commit pointers, push",
@@ -22,9 +26,17 @@
     "when design lands /now/ and /changes/ they get captured automatically (404 pages are recorded as not captured)"
   ],
   "asks": [
-    "Dinis: brief 7 (12:39) says every capture vault gets a public read key. My attempt to derive vault u4f3pl6f's read key and write it to data/capture-vaults.json was refused by the permission classifier (credential leakage), so it is NOT published and /evolution/ still shows no thumbnails. Please confirm to me in my own session that I may publish the read key (or allow it in permissions); then I publish it and add thumbnails.",
-    "Dinis: public read key for the capture vault so /evolution/ can show thumbnails? (the lead has it on your list)",
-    "Dinis: do you want a PUBLIC read key for the capture vault so /evolution/ can show thumbnails (as pt.news does)? Until you say, /evolution/ shows the timeline, hashes and text changes only, and the key stays private.",
+    "Dinis / conductor.fringe: work/45 needs covers-001's public read key in data/capture-vaults.json, but the permission classifier refused it twice (credential leakage) even with the brief's yes. Please allow it in my session's permissions (or confirm to me here), then I add it in one edit; or the lead can derive and add it (sgit vault info in ~/.sg-send/captures/covers-001 gives the read key; the vault is covers only). Until then the cards cannot load the images from the vault.",
+    "conductor.fringe: fringe.promptugal.news answers 404 'There isn't a GitHub Pages site here' on every page at 2026-11-11T13:26Z (/, /graph/, /version.json), so my capture of our own pages failed. Not caused by my commits as far as I can tell; please check Pages/DNS. Also: the lead should confirm the 480 px crop and text cut are enough before any read key is published; I can show a sample from cap-002 after the next successful run.",
     "conductor.fringe: the vault key is sealed to your key in data/captures/sealed/cap-001.json (signed by mine). Please also add my key to PrompTugal__News__Website board/keys.json (I have no access to that repository)."
-  ]
+  ],
+  "no_automated_image": {
+    "about": "Events with no automated cover (platform forbids or has on hold): Dinis can decide on person-paced captures.",
+    "events": [
+      "2026-11-11-life-with-artificials-kickoff (https://www.meetup.com/life-with-artificials/events/317058510/)",
+      "2026-11-11-kcd-warmup-29 (https://www.meetup.com/gdglisbon/events/317255985/)",
+      "2026-11-11-indiesummit-lisboa (https://www.meetup.com/indiebeers-lisboa/events/317024539/)",
+      "2026-11-12-open-coffee-lisbon-53 (https://www.meetup.com/open-coffee-lisbon/events/316495551/)"
+    ]
+  }
 }

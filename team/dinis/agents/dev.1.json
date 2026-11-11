@@ -1,15 +1,13 @@
 {
   "agent": "dev.1.fringe@PrompTugal.dinis",
   "by": "dev.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T13:07Z",
+  "updated": "2026-11-11T14:08Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 4)",
   "model": "Sonnet",
   "wake": "hourly at :05 (set by the lead)",
   "branch": "dev",
-  "state": "work/25 control centre (brief 6): five sections with health colours pushing; work/26 /me/ live",
-  "doing": [
-    "work/30 (the domain): admin/site.json origin done; waiting for Dinis's DNS and Pages setting, then the one-line switch"
-  ],
+  "state": "14:08 wake: all my pages live on lisbontechfringe.com (me, designs, data, activity.json, dashboard 200); nothing open",
+  "doing": [],
   "done": [
     "session key dev.1.fringe-dinis in data/keys.json (signing sha256:d09d81c4e615ecde)",
     "CORS preflight from fringe.promptugal.news to the append write endpoint on dev.send.sgraph.ai: 200 with Access-Control-Allow-Origin *",
@@ -20,7 +18,10 @@
     "brief 6: /dashboard/ is five ordered sections (where, onboarded, communicating, data flow, outreach), each with a health colour, wide layout for a 1280 px screenshot; 390 px no sideways scroll",
     "lead fixes: overall headline, 5 newest Dinis asks with the rest folded, stopped agents not counted, inbox counts from data/inbox-counts.json, lists folded (page 12,400 px to about 3,600)",
     "work/30: admin/site.json origin drives every absolute URL and the CNAME; steps and a redirect plan (admin/redirect/) in work/30-the-domain.md",
-    "brief 10: /api/v1/activity.json (commits and deploys of the last 3 h, totals for 15 min and 1 h; admin/build/activity.mjs) and the live counts in the dashboard"
+    "brief 10: /api/v1/activity.json (commits and deploys of the last 3 h, totals for 15 min and 1 h; admin/build/activity.mjs) and the live counts in the dashboard",
+    "work/35 frame: admin/build/designs.mjs, /designs/, /designs/<id>/, /?design=<id> swap on the home page, Design pill with vote (obs.js fringeObs.vote), CI pictures step, stub admin/build/designs/_stub.mjs",
+    "work/43 first version: /data/ (sql.js 1.10.3 from cdnjs, SRI and wasm integrity), tables events, nodes, edges, g_<type> when present, five example queries, page links",
+    "work/43: every example returns rows (free from now on, neighbourhood added), row count and ms shown, /data/ linked from the agentic team card, /how/ and the team sub-row"
   ],
   "next": [
     "live check of /me/ and the box",
@@ -28,6 +29,6 @@
   ],
   "asks": [
     "conductor.fringe@: please drain your inbox: a signed note from me and up to 3 throwaway-key tests should be there. The sandbox denies me pip install sgit-ai, so I cannot run drain myself.",
-    "Dinis: for lisbontechfringe.com, add the DNS records and set the Pages custom domain (work/30-the-domain.md steps 1 and 2), then tell dev.1 to switch admin/site.json. Say if you want the fringe.promptugal.news redirect repo too."
+    "conductor.fringe@: https://fringe.promptugal.news/ now answers 404 (the site moved to lisbontechfringe.com); the redirect repo in admin/redirect/ is still needed so shared ?via= links keep working (Dinis or an org admin creates it)."
   ]
 }

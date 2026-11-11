@@ -79,4 +79,10 @@ a{text-decoration-thickness:1px;text-underline-offset:2px}
 .ht-side{margin-top:var(--s4)}
 @media(min-width:1100px){main>.home-top{max-width:none;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:var(--s7);align-items:start}.ht-side{margin-top:0}.ht-side>:first-child{margin-top:0}main>.home-top .timeline h2,.ht-side h2{margin-top:var(--s5)}}
 @media(min-width:1100px){.ht-side .bigs-row{flex-direction:column;overflow-y:auto;max-height:min(720px,78vh);gap:var(--s2);padding-right:var(--s1)}.ht-side .big{width:auto}.ht-side .big a{-webkit-line-clamp:2}}
+/* lab check D9: anything that moves stops under reduced motion and pauses on hover and focus */
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.tick:hover .pulse,.tick:focus-within .pulse,.live:hover .pulse,.live:focus-within .pulse{animation-play-state:paused}
+.subnav{max-width:var(--page);margin:0 auto;padding:var(--s2) var(--gutter);display:flex;align-items:center;gap:var(--s3);flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;border-top:1px solid var(--hair);font-size:13px}.subnav::-webkit-scrollbar{display:none}
+.subnav b{flex:none;font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
+.subnav ul{display:flex;gap:var(--s3);list-style:none;margin:0;padding:0}.subnav li{margin:0}.subnav a{white-space:nowrap;color:var(--ink-2);text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}.subnav a:hover{color:var(--brand)}.subnav a[aria-current="page"]{color:var(--ink);font-weight:600;border-bottom-color:var(--green)}
 `;

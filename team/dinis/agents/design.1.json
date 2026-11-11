@@ -1,9 +1,9 @@
 {
  "agent": "design.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-11T12:55Z",
+ "updated": "2026-11-11T14:08Z",
  "state": "working",
  "doing": [
-  "idle: no open D-task I can take"
+  "D28 the new home page (first version pushed); iterating"
  ],
  "done": [
   "D1 first screen (brief 5 tagline)",
@@ -11,13 +11,16 @@
   "D14 no dead ends (404 helps)",
   "session key made (design.1.fringe-dinis in data/keys.json)",
   "D21 Lisbon Tech Fringe: name, PT.news stamp, wordmark, favicon, one-line header (037ba4a)",
-  "12:5x wake: header checked at 390 px on /, /now/, /programme/, /graph/, /how/, /join/, /organisers/, an event page: no sideways scroll, no errors"
+  "12:5x wake: header checked at 390 px on /, /now/, /programme/, /graph/, /how/, /join/, /organisers/, an event page: no sideways scroll, no errors",
+  "D24 design A, the programme: in the lab frame, /?design=a and /designs/a/, dark and keyboard checked",
+  "D28 first version (home: today in Lisbon, roles, now strip, cards); 14:00 addendum applied: chips under 3 events fold into Elsewhere in Lisbon on home and /programme/; organiser on each home card links to its page",
+  "D28: design.2's Now/Next hour/Tonight strip (nowstrip.mjs) wired into the home, replacing my counters; My day stars visible on cards",
+  "D28: design.3's city map in the home (dots follow the role filter), card fields link to ontologist.1's /o/ /n/ /f/ pages"
  ],
  "next": [
-  "D16 once work/06 (submit form) exists",
-  "italic Newsreader: none on promptugal.news, ask design.4 (D22)"
+  "take what the lead routes; D16 waits on work/06"
  ],
  "asks": [
-  "lead: D16 needs work/06 (the submit form); nothing else open for design.1. Give me a task or I check the live site each wake."
+  "lead: ABP R6 notes build.mjs is dev.2s shared file; I could not send the change to its inbox (sgit-ai not installed here). Entity-page links for place and event on cards wait for ontologist.1s pages."
  ]
 }

@@ -83,6 +83,10 @@ for (const rel of ['index.html', 'join/index.html', 'graph/index.html']) {   // 
     if (!h.includes(need)) fail(`${rel}: missing ${need}`);
 }
 const ms = Date.now() - t0;
+// 6. ABP (work/39, abp/tools/abp.mjs check): each new commit's paths against its Agent: trailer's grant.
+//    OBSERVE ONLY (Dinis, 11 November 2026, 13:36 UTC): a warning, never a failure.
+try { for (const l of execFileSync(process.execPath, [path.join(ROOT, 'abp/tools/abp.mjs'), 'check'], { cwd: ROOT, encoding: 'utf8', timeout: 3000 }).split('\n')) if (l.startsWith('WARN ')) warns.push(l.slice(5)); }
+catch (e) { warns.push(`abp check did not run (${String(e.message).split('\n')[0]}): logged, not blocking`); }
 if (ms > 5000) warns.push(`the gate took ${ms} ms: over its 5 s budget`);
 for (const w of warns) console.log('WARN ' + w);
 if (errors.length) { for (const e of errors) console.log('FAIL ' + e); console.log(`RED at commit ${(process.env.GITHUB_SHA || 'local').slice(0, 7)} (${process.env.GITHUB_ACTOR || 'local'}): ${errors.length} problem(s), ${ms} ms`); process.exit(1); }

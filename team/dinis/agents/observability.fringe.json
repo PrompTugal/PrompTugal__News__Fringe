@@ -1,14 +1,14 @@
 {
   "agent": "observability.fringe@PrompTugal.dinis",
   "by": "observability.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T12:40Z",
+  "updated": "2026-11-11T13:37Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), about 11:45 UTC, at Dinis's word (brief 2)",
   "session": "session_01Kw9UwDEe3BXvda7DY68R8B",
   "wake": "hourly at :37 UTC until Friday 13 November (the lead), with a 15-minute drain loop inside each wake (brief 4)",
   "branch": "dev",
-  "state": "running: live sender yes; 15-minute drain loop; last drain 12:39 UTC: all time 36 reader views, 34 reads, 14 tabs, 3 countries, 90 bot views, 6 agent runs",
+  "state": "running: live sender yes; 15-minute drain loop; last drain 13:34 UTC: all time 119 reader views, 69 visits, 10 countries, 50 via shared links",
   "doing": [
-    "work/21: hourly drain into the public vault and /traffic/"
+    "work/21: drains every 15 minutes; /traffic/ with the map, flows, outbound clicks and the design lab"
   ],
   "done": [
     "Session key observability.fringe-promptugal (signing sha256:7dc76da212785d2d) in data/keys.json (707ec08); claimed work/21",
@@ -18,15 +18,16 @@
     "admin/tools/agent-log.mjs: signed run records to the agents' lane; the drain verifies them against data/keys.json (first run: signed, verified)",
     "12:07 UTC, at the lead's check: obs.js on every live page checked (/, /join/, /graph/, /traffic/, /dashboard/, /changes/, /now/); drained 109 records: all time 13 reader views, 12 reads, 7 tabs, 2 countries, 51 bot views. Headless Chrome is counted as automation (bots), not readers, as on PrompTugal.news",
     "12:25 UTC: the ipapi.co 'CORS error' design.4 saw (work/design/D5-nav.md) is ipapi.co's 429 rate limit, whose answer has no CORS header. Checked on the live site: with ipapi.co at 429 the sender falls back to ipwho.is (200) and writes the event; with both lookups failing it writes the event without a place. The lookup stays, as approved in brief 2 and disclosed in the footer and on /traffic/; proxying it would send readers' IPs to our own server instead",
-    "12:40 UTC wake: inbox drained (1 message, the lead's welcome, signature checked); briefs 1 to 6 read; 15-minute loop: drains at 12:09, 12:24 and 12:39 pushed counts"
+    "12:40 UTC wake: inbox drained (1 message, the lead's welcome, signature checked); briefs 1 to 6 read; 15-minute loop: drains at 12:09, 12:24 and 12:39 pushed counts",
+    "13:00-13:40 UTC at Dinis's word: infographic (sent to Dinis); /traffic/ world map (build-time SVG, no map server), flows (arrived, entry/exit, steps, pages per visit, where shared links lead), outbound clicks ('out' events, host and path, disclosed); insights for outreach (admin/obs/insights/2026-11-11-1330.md, sent to outreach.1, Jose's conductor and the lead)",
+    "Both hosts counted together (admin/site.json origin + fringe.promptugal.news + lisbontechfringe.com), host as a dimension; the design lab's votes and views (work/35)"
   ],
   "next": [
-    "Each wake: pull, drain, refresh /traffic/ (commit data/obs/traffic.json), status, one line",
-    "Every fringe agent to run agent-log.mjs at the end of each wake (needs the lead's word on the board)"
+    "Each wake: drain loop, /traffic/, status; the first outbound-click and design-lab numbers to Dinis",
+    "Feed outreach new numbers when shares move"
   ],
   "asks": [
-    "conductor.fringe@PrompTugal.dinis: the vault credentials are sealed to your key in admin/obs/sealed/lead.json; if this session's container is recycled the drain stops until you open it",
-    "Dinis: /traffic/ is public, counts only, as on PrompTugal.news; say if you want it unlisted"
+    "conductor.fringe@PrompTugal.dinis: the vault credentials are sealed to your key in admin/obs/sealed/lead.json; if this session's container is recycled the drain stops until you open it"
   ],
   "wakes": [
     {
@@ -43,6 +44,11 @@
       "started": "2026-11-11T12:37Z",
       "outcome": "ok",
       "line": "loop drains 12:09/12:24/12:39; all time 36 reader views, 3 countries, 6 agent runs"
+    },
+    {
+      "started": "2026-11-11T13:37Z",
+      "outcome": "ok",
+      "line": "all time 119 reader views, 10 countries; 13:00 hour busiest"
     }
   ]
 }

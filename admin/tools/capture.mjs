@@ -19,6 +19,14 @@ const HOST = 'https://dev.send.sgraph.ai', SITE = 'https://fringe.promptugal.new
 const sha = b => crypto.createHash('sha256').update(b).digest('hex');
 const iso = () => new Date().toISOString().replace(/\.\d+Z$/, 'Z');
 const blocked = u => /(^|\.)websummit\.com$/i.test(new URL(u).hostname);
+// PRIVACY (lead, 12:4x UTC, security finding 21): organiser pages show guest lists (private people's names and faces).
+// Only hosts that sources.md marks as machine-readable ("Yes"): Luma event pages. Meetup is on hold. Every event
+// screenshot hides images and is cropped to the header; page text stops at the first guest/host marker.
+const ALLOW_EVENT_HOSTS = new Set(['luma.com', 'lu.ma']);
+const MARKERS = /(hosted by|hosts?\b\s*$|\bgoing\b|attendees|guests|who'?s going|\d+\s+(going|guests)|see all|featured in)/i;
+const cutText = t => { const m = MARKERS.exec(t); return m ? t.slice(0, m.index).trimEnd() : t; };
+const RETAIN_UNTIL = Date.parse('2026-11-14T00:00:00Z');   // events' captures are deleted after 13 November
+const EVENT_EVERY_MS = 24 * 3600 * 1000;                    // each event page at most once a day
 const slug = s => s.replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').slice(0, 80) || 'index';
 const sgit = (cwd, ...a) => execFileSync('sgit', ['--base-url', HOST, '--token', 'proxy-injected', ...a], { cwd, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
 
@@ -26,7 +34,7 @@ const sgit = (cwd, ...a) => execFileSync('sgit', ['--base-url', HOST, '--token',
 const vfile = path.join(ROOT, 'data/capture-vaults.json');
 const reg = JSON.parse(fs.readFileSync(vfile, 'utf8'));
 const files = d => { let n = 0; for (const e of fs.readdirSync(d, { withFileTypes: true })) { if (e.name === '.sg_vault') continue; n += e.isDirectory() ? files(path.join(d, e.name)) : 1; } return n; };
-let active = reg.vaults.find(v => v.status === 'active');
+let active = reg.vaults.find(v => v.status === 'active');   // a vault marked private is never active and never published
 if (files(path.join(VROOT, active.dir)) >= MAX_FILES) {           // rotate: open a new vault before the old one is full
   const dir = 'cap-' + String(reg.vaults.length + 1).padStart(3, '0');
   const out = sgit(VROOT, 'init', dir); const id = /Vault ID:\s*(\S+)/.exec(out)[1];
@@ -44,7 +52,10 @@ try { const sm = await (await fetch(SITE + '/sitemap.xml')).text(); for (const m
 pages = pages.filter(u => !u.endsWith('.json'));
 const targets = [];
 if (ONLY !== 'events') for (const u of pages) targets.push({ site: 'fringe.promptugal.news', url: u, widths: [390, 1280] });
-if (ONLY !== 'fringe') for (const e of events) { if (blocked(e.url)) continue; targets.push({ site: new URL(e.url).hostname, url: e.url, widths: [1280], event: e }); }
+const lastSeen = {};   // url -> ms of the last successful event capture, from the pointers in git
+try { const idx = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/capture-index.json'), 'utf8')); for (const r of idx.runs) { if (reg.vaults.find(v => v.id === r.vault_id)?.private) continue; const run = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', r.file), 'utf8')); for (const c of run.captures) if (!c.error && c.event_id && c.vault_ok !== false) lastSeen[c.url] = Math.max(lastSeen[c.url] || 0, Date.parse(c.captured_at)); } } catch {}
+const FORCE = !!arg('force', false);
+if (ONLY !== 'fringe' && Date.now() < RETAIN_UNTIL) for (const e of events) { if (blocked(e.url) || !ALLOW_EVENT_HOSTS.has(new URL(e.url).hostname)) continue; if (!FORCE && Date.now() - (lastSeen[e.url] || 0) < EVENT_EVERY_MS) continue; targets.push({ site: new URL(e.url).hostname, url: e.url, widths: [1280], event: e }); }
 if (LIMIT) targets.length = Math.min(targets.length, LIMIT);
 
 const { chromium } = require('playwright');
@@ -71,9 +82,10 @@ for (const t of targets) {
         title = await page.title();
         text = await page.evaluate(() => document.body ? document.body.innerText : '');
         const og = await page.evaluate(() => (document.querySelector('meta[property="og:title"]') || {}).content || null);
-        const png = await page.screenshot({ type: 'jpeg', quality: 70 });
+        if (t.event) await page.addStyleTag({ content: 'img,picture,video,canvas,svg image,[style*="background-image"]{visibility:hidden!important}' });
+        const png = await page.screenshot({ type: 'jpeg', quality: 70, ...(t.event ? { clip: { x: 0, y: 0, width: w, height: 400 } } : {}) });
         const shot = put(rel(t.site, base + '.jpg'), png);
-        const body = text.slice(0, 20000);
+        const body = (t.event ? cutText(text) : text).slice(0, 20000);
         const tsha = put(rel(t.site, base + '.txt'), body);
         if (t.event) {
           const e = t.event;
@@ -103,6 +115,8 @@ const idx = fs.existsSync(ifile) ? JSON.parse(fs.readFileSync(ifile, 'utf8')) : 
 idx.runs = idx.runs.filter(r => r.run !== runId).concat([{ run: runId, file: `capture-index-${runId}.json`, vault_id: active.id, captured_at: run.captured_at, count: run.count, ok: run.ok }]);
 idx.updated = iso(); fs.writeFileSync(ifile, JSON.stringify(idx, null, 1) + '\n');
 
+// ---- retention: after 13 November the event captures are deleted from the active vault
+if (Date.now() >= RETAIN_UNTIL) for (const d of fs.readdirSync(VDIR, { withFileTypes: true })) if (d.isDirectory() && d.name !== '.sg_vault') for (const h of fs.readdirSync(path.join(VDIR, d.name))) for (const site of fs.readdirSync(path.join(VDIR, d.name, h))) if (site !== 'fringe.promptugal.news') fs.rmSync(path.join(VDIR, d.name, h, site), { recursive: true, force: true });
 // ---- commit and push the vault
 if (!NOPUSH) {
   sgit(VDIR, 'commit', `capture run ${runId}: ${run.ok}/${run.count}`);

@@ -1,5 +1,5 @@
 # One job: checkout (shallow), build, gate, deploy, tag, measure. From the storm site's deploy.yml (PIPELINE.md section 3), for Lisbon Fringe:
-#   - fetch-depth 150 (work/15: /changes/ reads git; was 1: a blobless full clone made the team site's gate 40x slower, 150 commits do not);
+#   - fetch-depth 500 (work/15: /changes/ reads git; was 1: a blobless full clone made the team site's gate 40x slower, 500 commits do not);
 #   - the newest push wins among the waiting runs; a running deploy is never cancelled (with agents pushing every few
 #     seconds, cancelling starved the site: nothing was served until pushes paused);
 #   - CI owns the version: v<series>.<run number>, written into the artifact and pushed as a tag; never committed
@@ -29,7 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 150   # work/15: /changes/ is built from git; 150 commits is a second or two, not a full clone
+          fetch-depth: 500   # work/15, 37: /changes/ and the releases are built from git; 500 commits is a few seconds, not a full clone
           fetch-tags: true
       - name: Version
         run: |
@@ -45,6 +45,16 @@ jobs:
           mkdir -p _site/assets/og
           google-chrome --headless=new --no-sandbox --hide-scrollbars --window-size=1200,630 --screenshot="$PWD/_site/assets/og/share.png" "file://$PWD/admin/build/og/share.html" || echo "share card not rendered"
           ls -l _site/assets/og/ || true
+      - name: "Pictures of every design (soft: phone and desktop, from each design's own page; a failure never blocks a deploy)"
+        run: |
+          mkdir -p _site/assets/designs
+          (cd _site && python3 -m http.server 8321 >/dev/null 2>&1 &) ; sleep 2
+          node -e "const j=require('./_site/designs/index.json');for(const d of j.designs)console.log(d.id+' '+d.shoot)" | while read id path; do
+            google-chrome --headless=new --no-sandbox --hide-scrollbars --virtual-time-budget=4000 --window-size=390,844 --screenshot="$PWD/_site/assets/designs/$id-phone.png" "http://localhost:8321$path" >/dev/null 2>&1 || echo "no phone picture for $id"
+            google-chrome --headless=new --no-sandbox --hide-scrollbars --virtual-time-budget=4000 --window-size=1280,900 --screenshot="$PWD/_site/assets/designs/$id-desktop.png" "http://localhost:8321$path" >/dev/null 2>&1 || echo "no desktop picture for $id"
+          done
+          pkill -f "http.server 8321" || true
+          ls -l _site/assets/designs/ || true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
