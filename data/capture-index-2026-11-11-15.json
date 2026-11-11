@@ -1,0 +1,761 @@
+{
+ "run": "2026-11-11-15",
+ "captured_at": "2026-11-11T15:25:50Z",
+ "finished_at": "2026-11-11T15:27:41Z",
+ "vault": {
+  "id": "b1pw4zrm",
+  "host": "https://dev.send.sgraph.ai"
+ },
+ "count": 32,
+ "ok": 32,
+ "captures": [
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/",
+   "width": 390,
+   "captured_at": "2026-11-11T15:25:50Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-390.jpg",
+     "sha256": "c8ac1467425ad1e9990a85e477a9638838b88ad87b9e1a2c0bb9ee357d134437",
+     "bytes": 43833
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-390.txt",
+     "sha256": "4f324c8199ec0b1d8f655d70b19696e886e64f5a38a8ad638ccd0d885fa6ed33"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-390.json",
+     "sha256": "5bd60f6d52edb997827606f51e8c695930d5b2acc94983caeb8579bbde02c64f"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/",
+   "width": 1280,
+   "captured_at": "2026-11-11T15:25:53Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-1280.jpg",
+     "sha256": "662709ce2983ea6418793243a9df0360bdcd739027ed159f2e12c55ea26cd8c5",
+     "bytes": 74497
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-1280.txt",
+     "sha256": "9f9868af251c6d45cf40c2f95a8c2c3cd21b2c9936d558b2aefd40b2a721853c"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-1280.json",
+     "sha256": "31aa7e8b9fb4bb644bf8441bed04b3f14a390fcfff5e0d03c2f249252d4e0cf0"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/join/",
+   "width": 390,
+   "captured_at": "2026-11-11T15:25:56Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-join-390.jpg",
+     "sha256": "89e888fdfb9ef9981d4fc08caa39ab7f41df086cb127337167002378d6d998c8",
+     "bytes": 48709
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-join-390.txt",
+     "sha256": "789fa6775bd3e869f52c6f026cc1bbc3bdaac5b03063e4bd865bd99d9999915c"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-join-390.json",
+     "sha256": "739e7f6fd84e3590793796e86d5315118f7911e936461376151e3d9cd009c165"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/join/",
+   "width": 1280,
+   "captured_at": "2026-11-11T15:25:59Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-join-1280.jpg",
+     "sha256": "846a294ee930996e836a8c46625874cf049372e01b5511d59ce1980e1ffb2801",
+     "bytes": 89450
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-join-1280.txt",
+     "sha256": "789fa6775bd3e869f52c6f026cc1bbc3bdaac5b03063e4bd865bd99d9999915c"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-join-1280.json",
+     "sha256": "169ce5f16d34f5df34bef9a202c43533aa78bd7484007b82f3c53cbe707f0454"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/graph/",
+   "width": 390,
+   "captured_at": "2026-11-11T15:26:01Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-graph-390.jpg",
+     "sha256": "090b83e618e70ec844b0a5eb36bd4270e18ad7937ef0eb093cfdb2438dd4cb8a",
+     "bytes": 33720
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-graph-390.txt",
+     "sha256": "df7465c955d6c4b482a367c4a674635a56c7871a55f75f18463061e68194f92a"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-graph-390.json",
+     "sha256": "6cab47a360c14827d9e2405c6196a4075d530b6bfc78447c656b14873d59823d"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/graph/",
+   "width": 1280,
+   "captured_at": "2026-11-11T15:26:04Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-graph-1280.jpg",
+     "sha256": "c19c406b5bcdf33b4520624905e9388f3e1879f923a5b7fd2e460f636b84e236",
+     "bytes": 59854
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-graph-1280.txt",
+     "sha256": "eec49f3aac5ef970fcb11975d9f8b9efe2a8652184038030be46bc3b73529f98"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-graph-1280.json",
+     "sha256": "0e252671cbc83401295b91fdac20f8394bc47d9321a2d0e5c558af2599b870f7"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/traffic/",
+   "width": 390,
+   "captured_at": "2026-11-11T15:26:06Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-traffic-390.jpg",
+     "sha256": "b6bef247be7e8dae2e6babf9870574b402b4c7833ff2b87c56047898522eabcd",
+     "bytes": 50647
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-traffic-390.txt",
+     "sha256": "747432f73a111a99f4894922fb26184c82a64e7cf13cedc306b2adb2b7dfeeb3"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-traffic-390.json",
+     "sha256": "6271afde053aa7d377e4fad6d1e722e65274ee7e4d3b44d27539b01a6f741e5e"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/traffic/",
+   "width": 1280,
+   "captured_at": "2026-11-11T15:26:09Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-traffic-1280.jpg",
+     "sha256": "0dca31d90152ae5e9d5b0ecf7f8f61926c93676a1886687a8c4319b6264289d5",
+     "bytes": 79921
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-traffic-1280.txt",
+     "sha256": "747432f73a111a99f4894922fb26184c82a64e7cf13cedc306b2adb2b7dfeeb3"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-traffic-1280.json",
+     "sha256": "12a8c55f773177b1806562df7dcd2acb4c695490fea52670ea1a4b235661da23"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/evolution/",
+   "width": 390,
+   "captured_at": "2026-11-11T15:26:11Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-evolution-390.jpg",
+     "sha256": "23da87d78722efb0e63723e9b6567fdf077aa2efc7e257cb1b58fe059d41e762",
+     "bytes": 58291
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-evolution-390.txt",
+     "sha256": "2d870630e489fd545a3fdba7afbbbbb04ac1a5d1f3ae58f7e7a212b78185e5b4"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-evolution-390.json",
+     "sha256": "ed50d33a1c90d4cabeced0ee0257a57900809fa508ee7371f2bbc8a6e1c43816"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/evolution/",
+   "width": 1280,
+   "captured_at": "2026-11-11T15:26:14Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-evolution-1280.jpg",
+     "sha256": "3e2432bff07759d35b6d741c2077924c57cd0e2d7ce358b01797cbc34b9ac93c",
+     "bytes": 97932
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-evolution-1280.txt",
+     "sha256": "2d870630e489fd545a3fdba7afbbbbb04ac1a5d1f3ae58f7e7a212b78185e5b4"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-evolution-1280.json",
+     "sha256": "f2575a1fc174c48948084d8d46973e3dc8c13afb598a2ec8cba7b51ede92c2d0"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/storm/",
+   "width": 390,
+   "captured_at": "2026-11-11T15:26:16Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-storm-390.jpg",
+     "sha256": "12393c4196a835ecac7e74c2d182baefb0469a3d2daff0a39548d89a55589a8e",
+     "bytes": 59674
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-storm-390.txt",
+     "sha256": "6f72dba4d9b1828bb5f067469746fbb513f8d9ef64150b4bcbbf56b248725574"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-storm-390.json",
+     "sha256": "9a495047787faf24bb98da3c42a120466b71cf20019ae15f0b4ea94a5636d5ed"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/storm/",
+   "width": 1280,
+   "captured_at": "2026-11-11T15:26:19Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-storm-1280.jpg",
+     "sha256": "82e096bf1441ff7ab01456e326b4a06712c465d2e838e52035f69160b8b075b6",
+     "bytes": 111994
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-storm-1280.txt",
+     "sha256": "6f72dba4d9b1828bb5f067469746fbb513f8d9ef64150b4bcbbf56b248725574"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-storm-1280.json",
+     "sha256": "8da58393ff1636f99c353fb9b4d10db26f1ae7fc1c4d598f92ce3692d45e1366"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/now/",
+   "width": 390,
+   "captured_at": "2026-11-11T15:26:21Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-now-390.jpg",
+     "sha256": "84943f2bed443169b6a9a400509e65de2ab738feace1e5160872c1e607b250a2",
+     "bytes": 56066
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-now-390.txt",
+     "sha256": "484078e6fb09f86d0c283d5e8ca61d93d80b32f2580629203a8b2914496a60c0"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-now-390.json",
+     "sha256": "b6f84130684f94bc2953d5da359932d4de7dbbe6f50205fd476acda21c03aa02"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/now/",
+   "width": 1280,
+   "captured_at": "2026-11-11T15:26:24Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-now-1280.jpg",
+     "sha256": "4721166fad62cdee3a4b3cdd16b12dd705560f289706af04db8365c9b85e86fc",
+     "bytes": 92750
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-now-1280.txt",
+     "sha256": "484078e6fb09f86d0c283d5e8ca61d93d80b32f2580629203a8b2914496a60c0"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-now-1280.json",
+     "sha256": "4e1523a73b8ea62d312254e46fe48a3e9d2917fc68ec0d4a20ff44d84ed87a27"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/changes/",
+   "width": 390,
+   "captured_at": "2026-11-11T15:26:26Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-changes-390.jpg",
+     "sha256": "c319eb7525707e6b0201987cb934a02b2ca9e164a163c8aff8549307d21a9847",
+     "bytes": 53610
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-changes-390.txt",
+     "sha256": "a4d18171223cf9fe536bfadcd5ea0eb3f3529c7021d93b7d24fc9e015c3c87ec"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-changes-390.json",
+     "sha256": "2c66cb4a97a729fffb6b709cba37b58d64a4153f03e41b00b3799281d251b76f"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/changes/",
+   "width": 1280,
+   "captured_at": "2026-11-11T15:26:29Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-changes-1280.jpg",
+     "sha256": "b050c93d5ab1b88f8b425ff177fad46c753c71fbf6f91cbbf9f9835ad95bfb8f",
+     "bytes": 91237
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-changes-1280.txt",
+     "sha256": "a4d18171223cf9fe536bfadcd5ea0eb3f3529c7021d93b7d24fc9e015c3c87ec"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-changes-1280.json",
+     "sha256": "15abf0472f8dff7dd5a570c5219db0e47eec1a6aa2f376cc979bc7f7a28b1950"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/organisers/",
+   "width": 390,
+   "captured_at": "2026-11-11T15:26:31Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-organisers-390.jpg",
+     "sha256": "6be9f24474af48c602aa8dc9712b4e83c7552a0f147215d669611e9a989f9a48",
+     "bytes": 57785
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-organisers-390.txt",
+     "sha256": "a929d5a7ba661394a403705258664a891ceebdc26d346e3a8a1d691a8ec13857"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-organisers-390.json",
+     "sha256": "6476a3808b933af610a2e1dd7a93f5b56a4889c59cd7bbf243fb70eb07547850"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/organisers/",
+   "width": 1280,
+   "captured_at": "2026-11-11T15:26:34Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-organisers-1280.jpg",
+     "sha256": "8c255281284ca933931d8ad0d73343545dea3227af730ef6e2b58a75a2ed22be",
+     "bytes": 105760
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-organisers-1280.txt",
+     "sha256": "a929d5a7ba661394a403705258664a891ceebdc26d346e3a8a1d691a8ec13857"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-organisers-1280.json",
+     "sha256": "134df040a3e94265568c837b123e589740668e58c7465e8d32d85616569401cd"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/dashboard/",
+   "width": 390,
+   "captured_at": "2026-11-11T15:26:36Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-dashboard-390.jpg",
+     "sha256": "c42ccd7626ee6075cf14ec44292e678e5a6b1e07128feb41d3e355e5bdfbcc40",
+     "bytes": 56751
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-dashboard-390.txt",
+     "sha256": "9b17ffadda0ca50c9ca174698f2edc6a7cea437d0539322f8c0651fa1f3edbef"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-dashboard-390.json",
+     "sha256": "a5c8e58bb2cb2ba8790748a5f0ac8903c6299f0232da33d52d2c885af5421b1f"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/dashboard/",
+   "width": 1280,
+   "captured_at": "2026-11-11T15:26:39Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-dashboard-1280.jpg",
+     "sha256": "fc8f6bf785ca20f39157e3001544c08ae81dc286b74a634bae0c234d3e112afe",
+     "bytes": 126624
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-dashboard-1280.txt",
+     "sha256": "9b17ffadda0ca50c9ca174698f2edc6a7cea437d0539322f8c0651fa1f3edbef"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-dashboard-1280.json",
+     "sha256": "87587646beda0bb5421164be848747d7ce192fe8a76fe48b45db5503b5361d8b"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/how/",
+   "width": 390,
+   "captured_at": "2026-11-11T15:26:41Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-how-390.jpg",
+     "sha256": "b0781b5b9747d6d4bba60d12314eee6aeef300857ac3a5156b97c308367bdc76",
+     "bytes": 54587
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-how-390.txt",
+     "sha256": "8c077617ae620df7a054a288b9717ec12f3214e9da101d10d8a2247b28f2ef51"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-how-390.json",
+     "sha256": "8d8d0f0ec1126c56a75979865d728828fe2926d4eb56b536e40fcf33526db7dc"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/how/",
+   "width": 1280,
+   "captured_at": "2026-11-11T15:26:44Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-how-1280.jpg",
+     "sha256": "77c28b24013b771d80094d0fac24210b9b035c26019a347c59e494f85f81f9dc",
+     "bytes": 87971
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-how-1280.txt",
+     "sha256": "d741dc168ebd0e5c807d589d2047ca6ea34ecd0ea741d101f9fb0b5d83808f65"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-how-1280.json",
+     "sha256": "88a8f197adfe52a7f5158b12d7f615081253e60ca3ca1c91594499b2422f8142"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/programme/",
+   "width": 390,
+   "captured_at": "2026-11-11T15:26:46Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-programme-390.jpg",
+     "sha256": "be8269eb720fbcb1e18ca1342de6617c81cfbcdb45d20f639fcce1608338faab",
+     "bytes": 51356
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-programme-390.txt",
+     "sha256": "58c654a9b4ef854f93633908d339876b23432d53b89becf9e3846127c040a238"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-programme-390.json",
+     "sha256": "01925d2423fc0d84db23b9048fe76e3ca87d7d4c8d932e2a3a3d6e9fb97f5943"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/programme/",
+   "width": 1280,
+   "captured_at": "2026-11-11T15:26:49Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-programme-1280.jpg",
+     "sha256": "4924de748347a81e703ea912a858a6724ec86b66dd2d0edc86eec685d06091c7",
+     "bytes": 95879
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-programme-1280.txt",
+     "sha256": "58c654a9b4ef854f93633908d339876b23432d53b89becf9e3846127c040a238"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-programme-1280.json",
+     "sha256": "53f156c384ab6956ab21294a8302a3848be58389b1966c99ed3e7c5615763a80"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/designs/",
+   "width": 390,
+   "captured_at": "2026-11-11T15:26:51Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-designs-390.jpg",
+     "sha256": "47130e3675227e613367a1a9f53909bcbd9287df3744f019dbd25844efd44399",
+     "bytes": 54041
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-designs-390.txt",
+     "sha256": "e69c49fefc8d1bd81bfa9b697a495ed827a78b47da1872e34c20896f0cf7a8fa"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-designs-390.json",
+     "sha256": "0818d1948152b13d2d88ad3296e2186085eb4d7555d9346c352a21582c9addf3"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/designs/",
+   "width": 1280,
+   "captured_at": "2026-11-11T15:26:54Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-designs-1280.jpg",
+     "sha256": "2fd54eaa9e639959ff268167503299bcf7217e3e302c326a24e4219d47a4de76",
+     "bytes": 107759
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-designs-1280.txt",
+     "sha256": "598ed2ecb4e9ee28f70c78e25be800a79bc4989424def6f1d5fdfa8634ea3c61"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-designs-1280.json",
+     "sha256": "e0904e22d02d05dd7a83fe8d00b8d2273a3244039d38f091aa766e5f773582ba"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/data/",
+   "width": 390,
+   "captured_at": "2026-11-11T15:26:56Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-data-390.jpg",
+     "sha256": "204d698e0da4e3225846f83aff0f1eed2d61c6ea62d52eabeeb5c5ec9d5b840a",
+     "bytes": 44103
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-data-390.txt",
+     "sha256": "c6f324f7daf4bb9b9eeb59638fdbc78fca35ffc0e8c8cbd2087df166edda09e5"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-data-390.json",
+     "sha256": "4e1f7ebfaa35100ac8b5e91a716695d6c040be426db83c17902ebf624595a518"
+    }
+   }
+  },
+  {
+   "site": "lisbontechfringe.com",
+   "url": "https://lisbontechfringe.com/data/",
+   "width": 1280,
+   "captured_at": "2026-11-11T15:26:59Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-data-1280.jpg",
+     "sha256": "25d3ca49614a4a645dfd4f0f2f8c6f6cb82ce8498aba081dd86525c5eed9634d",
+     "bytes": 79274
+    },
+    "text": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-data-1280.txt",
+     "sha256": "17c2ace02433a4e6cefad936660d3b3a39714e3cf7b98472b7039faeef96e778"
+    },
+    "fields": {
+     "path": "2026-11-11/15/lisbontechfringe.com/lisbontechfringe-com-data-1280.json",
+     "sha256": "857a4112c9793c9b99d24a3a1ee7acb644bb62cd4fff2743c4ef003198aafbf0"
+    }
+   }
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/vvsqs244",
+   "width": 1280,
+   "captured_at": "2026-11-11T15:27:01Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/luma.com/luma-com-vvsqs244-1280.jpg",
+     "sha256": "065c87c23f5be790741be67e941b56723e9c0ee32da0b13696f67c2a5f3969d4",
+     "bytes": 24751
+    },
+    "text": {
+     "path": "2026-11-11/15/luma.com/luma-com-vvsqs244-1280.txt",
+     "sha256": "1176c8283495693dc1ef5722369479b384fe2f16a46a570e58e0a43facb7711e"
+    },
+    "fields": {
+     "path": "2026-11-11/15/luma.com/luma-com-vvsqs244-1280.json",
+     "sha256": "c2787e2558dcf6f3c7b194cb580ba1a69d9a6f575641ae8d70df662ce92881dc"
+    }
+   },
+   "event_id": "2026-11-11-women-in-tech-web-summit",
+   "our_status": "on",
+   "name_found_on_page": false
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/55lqvyex",
+   "width": 1280,
+   "captured_at": "2026-11-11T15:27:05Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/luma.com/luma-com-55lqvyex-1280.jpg",
+     "sha256": "2fe007096cec2732e9c449815ff6fea02dc4702c4547246e21022fdeb71150e5",
+     "bytes": 27528
+    },
+    "text": {
+     "path": "2026-11-11/15/luma.com/luma-com-55lqvyex-1280.txt",
+     "sha256": "1176c8283495693dc1ef5722369479b384fe2f16a46a570e58e0a43facb7711e"
+    },
+    "fields": {
+     "path": "2026-11-11/15/luma.com/luma-com-55lqvyex-1280.json",
+     "sha256": "1a0d95b51ff7e0a66933e99f9dd14f77bb2fae388f2a25fa4fee1dfe38582f15"
+    }
+   },
+   "event_id": "2026-11-11-coffee-and-connect-web-summit-2026",
+   "our_status": "on",
+   "name_found_on_page": false
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/e6xzr89o",
+   "width": 1280,
+   "captured_at": "2026-11-11T15:27:10Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/luma.com/luma-com-e6xzr89o-1280.jpg",
+     "sha256": "f07e5779a05215074e6b75c5ed9688a5eace06c5acc056946f95233611309137",
+     "bytes": 31455
+    },
+    "text": {
+     "path": "2026-11-11/15/luma.com/luma-com-e6xzr89o-1280.txt",
+     "sha256": "80e22b82a70a0ea8ef17be7cb86be1bb4cde1d6e5f4c315a90f5151ef6452f3c"
+    },
+    "fields": {
+     "path": "2026-11-11/15/luma.com/luma-com-e6xzr89o-1280.json",
+     "sha256": "6abc312d09a7ccfa0ec888427dadb5fea2286578e971b31049beaf34c9b3f8c3"
+    }
+   },
+   "event_id": "2026-11-11-not-left-out-ai-native",
+   "our_status": "online",
+   "name_found_on_page": false
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/gasfz3vy",
+   "width": 1280,
+   "captured_at": "2026-11-11T15:27:38Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/15/luma.com/luma-com-gasfz3vy-1280.jpg",
+     "sha256": "5895acff4cf5e6e262390be10abf0d167c2583068efd6e4052c346b4c66f6c46",
+     "bytes": 27427
+    },
+    "text": {
+     "path": "2026-11-11/15/luma.com/luma-com-gasfz3vy-1280.txt",
+     "sha256": "6e1aca41032a73daa14724ea94df2c33ccdcef9e1890132c74448030990f43f7"
+    },
+    "fields": {
+     "path": "2026-11-11/15/luma.com/luma-com-gasfz3vy-1280.json",
+     "sha256": "a2cf805cc093bca2cc6da689c22e807d1fa316a7139051c4468cf9a27b0abf32"
+    }
+   },
+   "event_id": "2026-11-11-proptech-c-level-board-storm-edition",
+   "our_status": "online",
+   "name_found_on_page": true
+  }
+ ]
+}

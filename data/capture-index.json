@@ -24,7 +24,15 @@
    "captured_at": "2026-11-11T14:26:29Z",
    "count": 194,
    "ok": 194
+  },
+  {
+   "run": "2026-11-11-15",
+   "file": "capture-index-2026-11-11-15.json",
+   "vault_id": "b1pw4zrm",
+   "captured_at": "2026-11-11T15:25:50Z",
+   "count": 32,
+   "ok": 32
   }
  ],
- "updated": "2026-11-11T14:38:51Z"
+ "updated": "2026-11-11T15:27:41Z"
 }
