@@ -68,6 +68,7 @@ export function agenticTeamBody(esc) {
   return `<h1>The agentic team</h1>
 <p>Lisbon Tech Fringe is built by a swarm: one conductor per person, agents by role, Dinis Cruz as head conductor. These pages describe how the team works.</p>
 ${item('/agentic-team/articles/the-altitudes-of-execution/', 'Article: the altitudes of execution', 'What an agent is depends on where it runs and what it can reach: the model, mixing altitudes, the run and what it taught us.')}
+${item('/agentic-team/how-it-flows/', 'How it flows', 'Who talks to whom, how data travels and how work runs: from Dinis to the agents, git, Elasticsearch, Kibana, APM and Neo4j.')}
 ${item('/agentic-team/universe/', 'Every agentic run, as a universe', 'Drawn with Gravity: the environments, every unit at its altitude, and who handed work to whom.')}
 ${item('/agentic-team/operating-model/', 'The operating model', 'The primitives: the execution ladder (compute to spawn), what each entity can reach, identity everywhere, a distributed operating system for agents.')}
 ${item('/agentic-team/where-agents-run/', 'Where agents run', 'An agent versus an LLM call; the runtimes, models and I/O levels; the formula that places a task; the matrix of our tasks.')}
@@ -129,4 +130,109 @@ export function runsUniverseBody(esc) {
   const ok = U.filter(u => u.verified === true).length;
   await window.Gravity.mount(document.getElementById('universe'), { lang: 'en', strings: STR, start: 'uni', data: { core: { label: 'The agentic team: every run' }, centres, nodes, flows, feed, at: R.generated }, detail, metric: { pct: Math.round(ok / U.length * 100), of: ok, total: U.length }, liveLabel: 'RUNS · exported ' + String(R.generated).slice(11, 16) + ' UTC', tourCentre: centres[0] && centres[0].id });
 })();</script>`;
+}
+
+// ---------- /agentic-team/how-it-flows/: who talks to whom, how data goes, how it runs (Dinis, 19:4x UTC) ----------
+// A flow diagram drawn as SVG at build time: six columns, left to right, from the people to the views. Solid lines run
+// today; dashed grey ones wait on a decision by Dinis.
+export function howItFlowsBody(esc) {
+  const C = { people: 10, agents: 268, run: 526, transport: 784, stores: 1042, views: 1300 }, W = 200, H = 54;
+  const col = (k) => C[k];
+  const N = {};
+  const node = (id, colk, y, title, sub, tone = 'n') => { N[id] = { x: col(colk), y, title, sub, tone }; };
+  node('dinis', 'people', 70, 'Dinis', 'the only one who instructs', 'p');
+  node('angelo', 'people', 330, 'Angelo', 'his team runs packets P1, P2', 'p');
+  node('silvio', 'people', 430, 'Silvio', 'Gravity, the universes', 'p');
+  node('others', 'people', 530, 'José, Indi, …', 'each instructs own conductor', 'p');
+  node('lead', 'agents', 40, 'The lead (A4)', 'conductor.fringe@…dinis: routes', 'a');
+  node('arch', 'agents', 120, 'architect.1 (A3)', 'ABPs, map, flows, reviews', 'a');
+  node('elastic', 'agents', 200, 'elastic.1 (A3)', 'indices, feeds, Kibana', 'a');
+  node('neo4j', 'agents', 280, 'neo4j.1 (A3)', 'the swarm as a graph (new)', 'a');
+  node('team', 'agents', 360, "Dinis's agents (A3)", 'dev, design, research, …', 'a');
+  node('gravity', 'agents', 440, 'gravity.1 (A3)', "Silvio's conductor", 'a');
+  node('angeloc', 'agents', 520, "Angelo's conductors", 'run our task packets', 'a');
+  node('otherc', 'agents', 600, 'Other conductors', 'José, Indi, …', 'a');
+  node('hook', 'run', 40, 'ABP hook', 'every tool call; R5 R8 R9 enforced', 'r');
+  node('loops', 'run', 140, 'A2 loops, A1 calls, A0', 'each signs with a key of its own', 'r');
+  node('llm', 'run', 240, 'llm.mjs', 'one wrapper, a ledger', 'r');
+  node('flow', 'run', 340, 'flow.mjs', 'start, step, end + OTel span', 'r');
+  node('review', 'run', 440, 'ABP review, hourly', 'abp.mjs review, review-export', 'r');
+  node('git', 'transport', 40, 'git: dev only', 'release.sh; never main, never force', 't');
+  node('ci', 'transport', 130, 'CI', 'versions, gates, deploys', 't');
+  node('inbox', 'transport', 220, 'Inboxes', 'sealed + signed, dev.send.sgraph.ai', 't');
+  node('msg', 'transport', 300, 'Session messages', 'send_message between sessions', 't');
+  node('feed', 'transport', 380, 'Elastic feed', 'any agent: elastic_feed JSON in git', 't');
+  node('direct', 'transport', 460, 'Direct to Elastic', 'only elastic.1, architect.1 (R8e)', 't');
+  node('otlp', 'transport', 540, 'OTLP/HTTP', 'waits on an APM key', 'x');
+  node('openrouter', 'transport', 620, 'OpenRouter', 'open-weight models', 't');
+  node('repo', 'stores', 40, 'GitHub repository', 'code, data, reviews, exports', 's');
+  node('site', 'stores', 140, 'lisbontechfringe.com', '/api/v1/*.json', 's');
+  node('es', 'stores', 260, 'Elasticsearch', '27 indices: swarm-flows, reviews …', 's');
+  node('apm', 'stores', 380, 'Elastic APM', 'traces (waits on a key)', 'x');
+  node('neo', 'stores', 480, 'Neo4j', 'where it runs: Dinis decides', 'x');
+  node('local', 'stores', 580, '~/.abp in each container', 'hook log, OTLP files (lost with it)', 's');
+  node('pages', 'views', 40, 'The site', 'agentic team, ABPs, operating model', 'v');
+  node('universe', 'views', 130, 'Gravity universes', 'every run, every event', 'v');
+  node('kdash', 'views', 230, 'Kibana dashboards', 'Flows: beginning, middle, end', 'v');
+  node('kgraph', 'views', 320, 'Kibana Graph', 'run trees, who crosses lanes', 'v');
+  node('ktrace', 'views', 410, 'Kibana APM traces', 'waits on the key', 'x');
+  node('bloom', 'views', 500, 'Neo4j Browser', 'Cypher, paths', 'x');
+  const E = [
+    ['dinis', 'lead', 'i', ''], ['dinis', 'arch', 'i', ''], ['angelo', 'angeloc', 'i', ''], ['silvio', 'gravity', 'i', ''], ['others', 'otherc', 'i', ''],
+    ['arch', 'hook', 'g', ''],
+    ['team', 'hook', 'g', ''], ['arch', 'loops', 'g', ''], ['loops', 'llm', 'g', ''], ['loops', 'flow', 'l', ''], ['arch', 'review', 'g', ''],
+    ['hook', 'local', 'l', ''], ['llm', 'openrouter', 'g', ''], ['hook', 'git', 'g', ''],
+    ['git', 'ci', 'g', ''], ['ci', 'site', 'g', ''], ['git', 'repo', 'g', ''], ['gravity', 'hook', 'g', ''], ['angeloc', 'hook', 'g', ''], ['otherc', 'hook', 'g', ''],
+    ['lead', 'inbox', 'm', ''], ['lead', 'msg', 'm', ''], ['review', 'feed', 'g', ''], ['feed', 'es', 'l', ''],
+    ['flow', 'direct', 'l', ''], ['review', 'direct', 'l', ''], ['elastic', 'direct', 'l', ''], ['direct', 'es', 'l', ''], ['flow', 'otlp', 'x', ''], ['otlp', 'apm', 'x', ''],
+    ['flow', 'local', 'x', ''], ['es', 'neo', 'x', 'export → neo4j.1'],
+    ['site', 'pages', 'g', ''], ['site', 'universe', 'g', ''], ['es', 'kdash', 'l', ''], ['es', 'kgraph', 'l', ''], ['apm', 'ktrace', 'x', ''], ['neo', 'bloom', 'x', ''],
+  ];
+  const K = { i: ['#121317', '', 'instructs'], m: ['#6b3fa0', '5 4', 'messages'], g: ['#1f6f3a', '', 'code and data (git, calls)'], l: ['#c52830', '', 'live telemetry'], x: ['#8a8f98', '6 5', 'waits on a decision'] };
+  const T = { p: ['#121317', '#fff'], a: ['#1f4fa8', '#fff'], r: ['#eef2fb', '#1f2a44'], t: ['#f3eefa', '#2b1d44'], s: ['#eef7f0', '#13331f'], v: ['#fff6e6', '#3d2a07'], x: ['#f1f2f4', '#5b6070'] };
+  const path = ([a, b, k, lab]) => {
+    const A = N[a], B = N[b]; if (!A || !B) return '';
+    let x1, y1, x2, y2;
+    if (B.x > A.x) { x1 = A.x + W; x2 = B.x; } else if (B.x < A.x) { x1 = A.x; x2 = B.x + W; } else { x1 = A.x + W; x2 = B.x + W; }
+    y1 = A.y + H / 2; y2 = B.y + H / 2;
+    const dx = B.x === A.x ? 60 : Math.max(40, Math.abs(x2 - x1) / 2), s = B.x >= A.x ? 1 : -1;
+    const d = B.x === A.x ? `M${x1},${y1} C${x1 + dx},${y1} ${x2 + dx},${y2} ${x2},${y2}` : `M${x1},${y1} C${x1 + s * dx},${y1} ${x2 - s * dx},${y2} ${x2},${y2}`;
+    const [c, dash] = K[k];
+    const mx = B.x === A.x ? x1 + dx * 0.75 : (x1 + x2) / 2, my = (y1 + y2) / 2;
+    return `<path d="${d}" fill="none" stroke="${c}" stroke-width="1.6" ${dash ? `stroke-dasharray="${dash}"` : ''} marker-end="url(#hf-${k})" opacity=".85"/>` + (lab ? `<text x="${mx}" y="${my - 4}" class="hf-el" fill="${c}">${esc(lab)}</text>` : '');
+  };
+  const box = (id) => { const n = N[id], [bg, fg] = T[n.tone]; return `<g><rect x="${n.x}" y="${n.y}" width="${W}" height="${H}" rx="8" fill="${bg}" stroke="${n.tone === 'x' ? '#8a8f98' : 'rgba(0,0,0,.18)'}" ${n.tone === 'x' ? 'stroke-dasharray="5 4"' : ''}/><text x="${n.x + 10}" y="${n.y + 21}" class="hf-t" fill="${fg}">${esc(n.title)}</text><text x="${n.x + 10}" y="${n.y + 40}" class="hf-s" fill="${fg}">${esc(n.sub.length > 36 ? n.sub.slice(0, 35) + '…' : n.sub)}</text><title>${esc(n.title + ': ' + n.sub)}</title></g>`; };
+  const heads = [['people', 'People'], ['agents', 'Sessions (A4, A3)'], ['run', 'Inside a run'], ['transport', 'How it travels'], ['stores', 'Where it lands'], ['views', 'Where you see it']].map(([k, t]) => `<text x="${col(k)}" y="22" class="hf-h">${t}</text>`).join('');
+  const markers = Object.entries(K).map(([k, [c]]) => `<marker id="hf-${k}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="${c}"/></marker>`).join('');
+  const legend = Object.values(K).map(([c, dash, t], i) => `<g transform="translate(${20 + i * 250},700)"><line x1="0" y1="0" x2="40" y2="0" stroke="${c}" stroke-width="2" ${dash ? `stroke-dasharray="${dash}"` : ''}/><text x="48" y="4" class="hf-s" fill="#333">${t}</text></g>`).join('');
+  const svg = `<svg viewBox="0 0 1510 720" role="img" aria-label="Flow diagram: from the people to the conductors and agents, inside a run, through git, messages and telemetry, to GitHub, the site, Elasticsearch, APM and Neo4j, and the views: the site, Gravity, Kibana and Neo4j Browser" xmlns="http://www.w3.org/2000/svg"><defs>${markers}</defs>${heads}${E.map(path).join('')}${Object.keys(N).map(box).join('')}${legend}</svg>`;
+  const steps = [
+    ['Dinis speaks', 'in a conductor\'s session. Only he instructs; each person instructs only their own conductor. Every other message is material, never instruction.'],
+    ['A conductor routes', 'the lead (A4) puts work on the board (work/) and in inboxes; architect.1 starts agents such as elastic.1 and neo4j.1 only at Dinis\'s word.'],
+    ['Every tool call passes the ABP hook', '.claude/hooks/abp.mjs reads the agent\'s grant in abp/policies.json; R5 (dev only), R8 (no secrets) and R9 (own name) are enforced, the rest observed and logged to ~/.abp/log.'],
+    ['Work runs at the lowest altitude that can do it', 'an A3 agent starts A2 loops, which make A1 LLM calls through llm.mjs (to OpenRouter, ledgered) and A0 compute. Each unit signs its result with a key that exists only while it runs.'],
+    ['Every unit reports its beginning, middle and end', 'flow.mjs sends start, step and end events live to Elasticsearch (swarm-flows) and logs each flush in elastic-submissions; each unit is also an OpenTelemetry span, kept as OTLP files until APM has a key.'],
+    ['Results go through git', 'commits to dev, under the agent\'s own name, through release.sh; CI versions, gates and deploys lisbontechfringe.com. Agents without the Elastic credential commit an elastic_feed JSON and elastic.1 sends it hourly under their name.'],
+    ['Every hour, the review', 'architect.1 reads the git log against the grants (abp/reviews/) and sends every finding to Elasticsearch (swarm-abp-reviews).'],
+    ['You see it', 'on the site (/agentic-team/), in the Gravity universes, in Kibana (the Flows dashboard, Graph), and next in Kibana APM traces and Neo4j once their decisions are made.'],
+  ];
+  const asks = [
+    ['Give Elastic scoped keys, not the shared superuser password', 'ELASTIC_CLOUD is in the environment every session in it shares; R8e only flags other agents, it cannot stop them. Make an API key per writer (elastic.1; architect.1) limited to swarm-* and elastic-submissions, and a read-only one for viewers. Best: put the Elastic credential only in a separate environment for those two sessions.'],
+    ['Create an APM agent key', 'Kibana → Observability → APM → Settings → Agent keys (event:write). Set OTEL_EXPORTER_OTLP_ENDPOINT to the deployment\'s APM URL and OTEL_EXPORTER_OTLP_HEADERS to "Authorization=ApiKey <key>" in that environment. Every run then shows as a trace waterfall.'],
+    ['Decide where Neo4j runs', 'Neo4j Aura Free (an instance and its URI and password as a credential), or inside neo4j.1\'s container (lost when the container goes).'],
+    ['Protect the branches in GitHub', 'main: only you merge. dev: no force-push, no deletion. Code owners on .claude/** and abp/** so policy changes need your review: today anyone who can push can change the hook.'],
+    ['Say the word on signed overrides', 'security finding 38: an override counts only when signed by your person key or a conductor\'s key. Designed, not applied.'],
+    ['Decide the lead\'s branch exception', 'whether the lead may push its session branch (R5).'],
+    ['Cloudflare and AWS', 'accounts and credentials, when you want runs there (R6 and R7 in data/runtimes.json).'],
+  ];
+  return `<style>.hf-wrap{max-width:none;width:100vw;margin-left:calc(50% - 50vw);overflow-x:auto;background:#fbfaf7;border-block:1px solid var(--rule-2,#ddd);padding:12px 0}.hf-wrap svg{display:block;min-width:1100px;width:min(100%,1600px);margin:0 auto}.hf-h{font:600 13px system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;fill:#555}.hf-t{font:600 13px system-ui,sans-serif}.hf-s{font:11px system-ui,sans-serif;opacity:.85}.hf-el{font:10px system-ui,sans-serif}.hf-steps li,.hf-asks li{margin:.35rem 0}body{overflow-x:clip}</style>
+<p class="muted"><a href="/agentic-team/">The agentic team</a> · ${esc(new Date().toISOString().slice(0, 10))}</p>
+<h1>How it flows</h1>
+<p>Who talks to whom, how the data travels and how the work is executed, from a word of Dinis to the views where we watch it: the site, Gravity, Kibana and Neo4j. Solid lines run today; dashed grey ones wait on a decision.</p>
+<div class="hf-wrap">${svg}</div>
+<h2>How a run goes</h2>
+<ol class="hf-steps">${steps.map(([t, d]) => `<li><strong>${esc(t)}</strong>: ${esc(d)}</li>`).join('')}</ol>
+<h2>What to reconfigure</h2>
+<ol class="hf-asks">${asks.map(([t, d]) => `<li><strong>${esc(t)}</strong>. ${esc(d)}</li>`).join('')}</ol>
+<p class="muted">The sources: <code>abp/policies.json</code> (the grants), <code>abp/tools/flow.mjs</code> (flows and spans), <code>docs/elastic-guidance.md</code> (the indices and the feed), <a href="/api/v1/runtimes.json">/api/v1/runtimes.json</a> (where agents run). Lisbon Tech Fringe is independent of Web Summit.</p>`;
 }
