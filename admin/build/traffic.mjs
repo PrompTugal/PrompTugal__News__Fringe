@@ -33,8 +33,9 @@ export function trafficBody(t, esc, origin = '') {
     table(esc, 'Shares: views by ?via= tag', t.by_via, 'Tag', 'Each tag is a link someone shared; its views include the pages read after arriving.') +
     table(esc, 'By page', t.by_page, 'Page') +
     table(esc, 'By country', t.by_country, 'Country') +
-    table(esc, 'By city', t.by_city, 'City, region, country') +
+    table(esc, 'By city', t.by_city, 'City, country') +
     table(esc, 'By referring site', t.by_referrer, 'Referrer') +
+    (t.by_host?.length ? table(esc, 'By address', t.by_host, 'Host', 'fringe.promptugal.news and lisbontechfringe.com are counted together.') : '') +
     (t.agents ? table(esc, "The agents' runs (admin/tools/agent-log.mjs)", t.agents, 'Agent', '', 'Runs') : '') +
     how;
 }

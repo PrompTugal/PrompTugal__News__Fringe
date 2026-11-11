@@ -1,18 +1,22 @@
 {
  "v": 1,
- "site": "fringe.promptugal.news",
- "generated": "2026-11-11T12:55Z",
+ "site": [
+  "fringe.promptugal.news",
+  "lisbontechfringe.com",
+  "www.lisbontechfringe.com"
+ ],
+ "generated": "2026-11-11T12:56Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 40,
-  "reads": 38,
-  "tabs": 16,
+  "views": 45,
+  "reads": 39,
+  "tabs": 21,
   "countries": 3,
   "shares": 0,
-  "bots": 113,
+  "bots": 79,
   "agent_runs": 13,
   "agent_runs_signed": 13
  },
@@ -207,13 +211,13 @@
   ],
   [
    "2026-11-11 12:00",
-   29
+   34
   ]
  ],
  "by_page": [
   [
    "/",
-   16
+   21
   ],
   [
    "/join/",
@@ -267,9 +271,9 @@
  "reading": [
   [
    "/",
-   15,
+   16,
    18,
-   10
+   9
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
@@ -347,11 +351,11 @@
  "by_country": [
   [
    "Portugal",
-   34
+   35
   ],
   [
    "United States",
-   3
+   7
   ],
   [
    "The Netherlands",
@@ -360,33 +364,44 @@
  ],
  "by_city": [
   [
-   "Oliveira de Azemeis, Aveiro, Portugal",
-   12
+   "Lisbon, Portugal",
+   22
   ],
   [
-   "Lisbon, Distrito de Lisboa, Portugal",
-   12
-  ],
-  [
-   "Lisbon, Lisbon, Portugal",
-   10
+   "Oliveira de Azemeis, Portugal",
+   13
   ],
   [
    "(places under 5 views, in their country above)",
-   4
+   8
   ]
  ],
  "by_referrer": [],
+ "by_host": [
+  [
+   "fringe.promptugal.news",
+   39
+  ],
+  [
+   "lisbontechfringe.com",
+   6
+  ]
+ ],
+ "other_hosts_views": 34,
  "by_via": [],
  "via_detail": {},
  "by_screen": [
   [
    "desktop",
-   34
+   35
   ],
   [
    "phone",
    6
+  ],
+  [
+   "tablet",
+   4
   ]
  ],
  "agents": [
