@@ -2,7 +2,7 @@
 title: "ABP: dev.fringe@PrompTugal.dinis"
 agent: dev.fringe@PrompTugal.dinis
 role: dev
-policy: abp/policies.json v0.3.0 (sha256:0083618bc31457b4)
+policy: abp/policies.json v0.3.1 (sha256:c068589488e6e2da)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -16,19 +16,19 @@ authority: Dinis Cruz, operator
 - **Role:** dev. **Account:** the old lead's.
 - **Runs on:** R1 (models: M1 Sonnet; M2 through admin/tools/llm.mjs); **I/O level:** L4 (a branch; the lead brings it onto dev) (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** the build, the gate, CI, the tools, the API.
-- **Writes (this repository):** `team/dinis/agents/dev.json`, `team/dinis/agents/dev/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `admin/build/**`, `admin/tools/**`, `admin/redirect/**`, `admin/series.txt`, `assets/**`, `api/**`, `.github/workflows/*.yml`, `data/second-opinion.json`, `data/organisers.json`, `data/person-keys.json`, `admin/site.json`, `CNAME`, `data/models-*.json`.
+- **Writes (this repository):** `team/dinis/agents/dev.json`, `team/dinis/agents/dev.fringe.json`, `team/dinis/agents/dev/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `admin/build/**`, `admin/tools/**`, `admin/redirect/**`, `admin/series.txt`, `assets/**`, `api/**`, `.github/workflows/*.yml`, `data/second-opinion.json`, `data/organisers.json`, `data/person-keys.json`, `admin/site.json`, `CNAME`, `data/models-*.json`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
 - **Writes (outside git):** `/tmp/**`, `~/.sg-send/**`, `~/.abp/**`, `~/pki/**`, `~/.claude/projects/*/memory/**`, `~/promptugal/**`.
 - **Tools:** reading, searching and writing files inside the paths above; the shell, within the rules below; reading the web (never websummit.com by machine); GitHub's read tools on `promptugal/promptugal__news__fringe`, `promptugal/promptugal__news__website`, `promptugal/promptugal__news__storm-charles`; the cloud session's documentation, `add_repo` for reading, and its own wake.
 - **Sends to:** `dev.send.sgraph.ai`, `pki.sgit.ai`, `openrouter.ai` only.
-- **Pushes to:** `work/dev.fringe` (the lead reviews and brings it onto dev).
+- **Pushes to:** `dev` with `AGENT=dev.fringe@PrompTugal.dinis admin/tools/release.sh`.
 - **Never:** changes content or data to make a check pass; adds a workflow without Dinis.
 
 ## Outside the mandate (logged, not blocked)
 
 - Any connector: Gmail, Google Drive, Calendar, Claude Docs, any MCP server but GitHub's read tools and the cloud session's own tools (R3).
 - New sessions, scheduled tasks for other sessions, environments, credentials, workflows (R4).
-- Pushing anywhere but `work/dev.fringe`; force-push, branch deletion, tags, history rewrites, empty commits (R5).
+- Pushing anywhere but `dev`; force-push, branch deletion, tags, history rewrites, empty commits (R5).
 - Writing outside the paths above; `abp/` and `.claude/` (the architect's), `briefs/` (the lead's), `BRIEF.md` (never rewritten), `admin/series.txt` (dev's, at a major release), and a shared file another agent owns (R6).
 - Comments, issues, pull requests or merges through GitHub's API; publishing artifacts; email; posts; a send to a host not listed (R7).
 - Printing the environment or a secret; reading a private key into the conversation (R8).

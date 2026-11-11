@@ -1,7 +1,7 @@
 {
   "about": "The Agent Behaviour Policies of Lisbon Fringe (lisbontechfringe.com, origin in admin/site.json; WS-215) as data: deny by default, one grant per role and agent, across this repository and the others the swarm touches. Ported from PrompTugal__News__Website board/abp/policies.json (abp@PrompTugal.dinis, v1.7.0, since 6 November 2026), not invented anew; built on RiskMandate's Agent Behaviour Policy and Licence to Operate (https://riskmandate.ai/agent-behaviour-policy.html). Read by the hooks (.claude/settings.json, .claude/hooks/abp.mjs) and by the gate's commit check (abp/tools/abp.mjs check). abp/<agent>.md is generated from this file (node abp/tools/abp.mjs build), never edited by hand. Kept by architect.1.fringe@PrompTugal.dinis (work/39); any relaxation, and any move towards enforcement, is Dinis's decision.",
-  "version": "0.3.0",
-  "updated": "2026-11-11T15:15Z",
+  "version": "0.3.1",
+  "updated": "2026-11-11T15:25Z",
   "operator": "Dinis Cruz",
   "kept_by": "architect.1.fringe@PrompTugal.dinis",
   "status": "DRAFT: grants proposed from the git log (data/architecture.json observed); Dinis and the lead review",
@@ -270,6 +270,7 @@
     "about": "Every agent with a grant writes these, in addition to its own paths.",
     "writes": [
       "team/{person}/agents/{name}.json",
+      "team/{person}/agents/{name}.fringe.json",
       "team/{person}/agents/{name}/**",
       "data/keys.json#own-entry",
       "data/inboxes/{keyid}.json",
@@ -295,7 +296,7 @@
       {
         "glob": ".claude/**",
         "owner": "architect",
-        "why": "the hooks that observe every agent; an agent that edits them switches off its own record"
+        "why": "the hooks that observe every agent; an agent that edits them switches off its own record (security finding 28: the gate warns on any .claude/ change not by architect.1; protecting the path with code owners and branch protection is Dinis's)"
       },
       {
         "glob": "abp/**",
@@ -569,8 +570,9 @@
     },
     "fable.fringe@PrompTugal.dinis": {
       "role": "advisor",
-      "branch": "work/fable.fringe",
-      "account": "riskmandate-personal (Ultra)"
+      "branch": "dev",
+      "account": "riskmandate-personal (Ultra)",
+      "branch_note": "dev behind the gate, as every agent (Dinis, brief 15: 'The agents run always on dev'; security finding 31)"
     },
     "observability.fringe@PrompTugal.dinis": {
       "role": "observability",
@@ -671,18 +673,21 @@
     },
     "researcher.fringe@PrompTugal.dinis": {
       "role": "researcher",
-      "branch": "work/researcher.fringe",
-      "account": "the old lead's"
+      "branch": "dev",
+      "account": "the old lead's",
+      "branch_note": "dev behind the gate, as every agent (Dinis, brief 15: 'The agents run always on dev'; security finding 31)"
     },
     "security.fringe@PrompTugal.dinis": {
       "role": "security",
-      "branch": "work/security.fringe",
-      "account": "the old lead's"
+      "branch": "dev",
+      "account": "the old lead's",
+      "branch_note": "dev behind the gate, as every agent (Dinis, brief 15: 'The agents run always on dev'; security finding 31)"
     },
     "dev.fringe@PrompTugal.dinis": {
       "role": "dev",
-      "branch": "work/dev.fringe",
-      "account": "the old lead's"
+      "branch": "dev",
+      "account": "the old lead's",
+      "branch_note": "dev behind the gate, as every agent (Dinis, brief 15: 'The agents run always on dev'; security finding 31)"
     },
     "dev.lead.fringe@PrompTugal.dinis": {
       "role": "dev",
@@ -926,7 +931,7 @@
       "for": "Dinis: observe for three rounds; then decide whether design keeps admin/build/** or works through a page registry"
     }
   ],
-  "hook_sha256": "38972f73cfb848c7",
+  "hook_sha256": "b67ed1fff4fbc2be",
   "effective": "2026-11-11T13:36:00Z",
   "effective_note": "Earlier commits are read against the grants as calibration, not counted.",
   "review": {
@@ -1028,5 +1033,25 @@
       "Agent/Task (a sub-agent): an A2 loop that inherits its parent's A3 (or A4) grant",
       "an LLM call (llm.mjs or a direct API call) carrying tools: an A1 mandate given an A2 grant"
     ]
+  },
+  "hook_contract": {
+    "about": "What the hook may touch (security finding 28), tested by node abp/tools/abp.mjs test (28a to 28i) under Node's permission model.",
+    "reads": [
+      "the tool-call input (stdin)",
+      "abp/ (policies.json, <agent>.md, overrides.json)",
+      "its own source (the sha check)",
+      "HOLD.md and .git/HEAD in the project",
+      "~/.abp/whoami (the agent's label)"
+    ],
+    "never": [
+      "~/.sg-send or any key store",
+      "the environment beyond CLAUDE_PROJECT_DIR, ABP_AGENT, ABP_LOG_DIR, ABP_OVERRIDE, ABP_OVERRIDE_BY",
+      "a child process",
+      "the network"
+    ],
+    "writes": [
+      "~/.abp/log/<session>.jsonl only"
+    ],
+    "identity": "node abp/tools/abp.mjs whoami writes ~/.abp/whoami from the key's label (metadata.json only), once per session, after keygen"
   }
 }

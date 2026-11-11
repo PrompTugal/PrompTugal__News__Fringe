@@ -1,7 +1,7 @@
 {
   "about": "Every agent's grant, flattened from abp/policies.json by node abp/tools/abp.mjs build: what /abp/ shows.",
-  "policy": "0.3.0",
-  "sha256": "0083618bc31457b4",
+  "policy": "0.3.1",
+  "sha256": "c068589488e6e2da",
   "mode": "observe",
   "agents": [
     {
@@ -12,6 +12,7 @@
       "branch": "dev",
       "writes": [
         "team/dinis/agents/conductor.json",
+        "team/dinis/agents/conductor.fringe.json",
         "team/dinis/agents/conductor/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -55,6 +56,7 @@
       "branch": "dev",
       "writes": [
         "team/dinis/agents/architect.1.json",
+        "team/dinis/agents/architect.1.fringe.json",
         "team/dinis/agents/architect.1/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -88,9 +90,10 @@
       "role": "advisor",
       "person": "dinis",
       "account": "riskmandate-personal (Ultra)",
-      "branch": "work/fable.fringe",
+      "branch": "dev",
       "writes": [
         "team/dinis/agents/fable.json",
+        "team/dinis/agents/fable.fringe.json",
         "team/dinis/agents/fable/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -112,6 +115,7 @@
       "branch": "dev",
       "writes": [
         "team/dinis/agents/observability.json",
+        "team/dinis/agents/observability.fringe.json",
         "team/dinis/agents/observability/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -144,6 +148,7 @@
       "branch": "dev",
       "writes": [
         "team/dinis/agents/design.1.json",
+        "team/dinis/agents/design.1.fringe.json",
         "team/dinis/agents/design.1/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -175,6 +180,7 @@
       "branch": "dev",
       "writes": [
         "team/dinis/agents/design.2.json",
+        "team/dinis/agents/design.2.fringe.json",
         "team/dinis/agents/design.2/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -207,6 +213,7 @@
       "branch": "dev",
       "writes": [
         "team/dinis/agents/design.3.json",
+        "team/dinis/agents/design.3.fringe.json",
         "team/dinis/agents/design.3/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -241,6 +248,7 @@
       "branch": "dev",
       "writes": [
         "team/dinis/agents/design.4.json",
+        "team/dinis/agents/design.4.fringe.json",
         "team/dinis/agents/design.4/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -274,6 +282,7 @@
       "branch": "dev",
       "writes": [
         "team/dinis/agents/dev.1.json",
+        "team/dinis/agents/dev.1.fringe.json",
         "team/dinis/agents/dev.1/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -315,6 +324,7 @@
       "branch": "dev",
       "writes": [
         "team/dinis/agents/dev.2.json",
+        "team/dinis/agents/dev.2.fringe.json",
         "team/dinis/agents/dev.2/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -354,6 +364,7 @@
       "branch": "dev",
       "writes": [
         "team/dinis/agents/researcher.2.json",
+        "team/dinis/agents/researcher.2.fringe.json",
         "team/dinis/agents/researcher.2/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -382,6 +393,7 @@
       "branch": "dev",
       "writes": [
         "team/dinis/agents/capture.1.json",
+        "team/dinis/agents/capture.1.fringe.json",
         "team/dinis/agents/capture.1/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -409,6 +421,7 @@
       "branch": "dev",
       "writes": [
         "team/dinis/agents/outreach.1.json",
+        "team/dinis/agents/outreach.1.fringe.json",
         "team/dinis/agents/outreach.1/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -433,6 +446,7 @@
       "branch": "dev",
       "writes": [
         "team/dinis/agents/usability.1.json",
+        "team/dinis/agents/usability.1.fringe.json",
         "team/dinis/agents/usability.1/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -452,9 +466,10 @@
       "role": "researcher",
       "person": "dinis",
       "account": "the old lead's",
-      "branch": "work/researcher.fringe",
+      "branch": "dev",
       "writes": [
         "team/dinis/agents/researcher.json",
+        "team/dinis/agents/researcher.fringe.json",
         "team/dinis/agents/researcher/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -477,9 +492,10 @@
       "role": "security",
       "person": "dinis",
       "account": "the old lead's",
-      "branch": "work/security.fringe",
+      "branch": "dev",
       "writes": [
         "team/dinis/agents/security.json",
+        "team/dinis/agents/security.fringe.json",
         "team/dinis/agents/security/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -499,9 +515,10 @@
       "role": "dev",
       "person": "dinis",
       "account": "the old lead's",
-      "branch": "work/dev.fringe",
+      "branch": "dev",
       "writes": [
         "team/dinis/agents/dev.json",
+        "team/dinis/agents/dev.fringe.json",
         "team/dinis/agents/dev/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -536,6 +553,7 @@
       "branch": "dev",
       "writes": [
         "team/dinis/agents/dev.lead.json",
+        "team/dinis/agents/dev.lead.fringe.json",
         "team/dinis/agents/dev.lead/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -570,6 +588,7 @@
       "branch": "dev",
       "writes": [
         "team/dinis/agents/conductor.c.json",
+        "team/dinis/agents/conductor.c.fringe.json",
         "team/dinis/agents/conductor.c/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -592,6 +611,7 @@
       "branch": "dev",
       "writes": [
         "team/?/agents/conductor.b.json",
+        "team/?/agents/conductor.b.fringe.json",
         "team/?/agents/conductor.b/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -612,6 +632,7 @@
       "branch": "dev",
       "writes": [
         "team/vicky/agents/conductor.json",
+        "team/vicky/agents/conductor.fringe.json",
         "team/vicky/agents/conductor/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -635,6 +656,7 @@
       "branch": "dev",
       "writes": [
         "team/indi/agents/conductor.json",
+        "team/indi/agents/conductor.fringe.json",
         "team/indi/agents/conductor/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -662,6 +684,7 @@
       "branch": "dev",
       "writes": [
         "team/angelo/agents/conductor.json",
+        "team/angelo/agents/conductor.fringe.json",
         "team/angelo/agents/conductor/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -695,6 +718,7 @@
       "branch": "dev",
       "writes": [
         "team/angelo/agents/designer.json",
+        "team/angelo/agents/designer.fringe.json",
         "team/angelo/agents/designer/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -718,6 +742,7 @@
       "branch": "dev",
       "writes": [
         "team/angelo/agents/graph.json",
+        "team/angelo/agents/graph.fringe.json",
         "team/angelo/agents/graph/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -743,6 +768,7 @@
       "branch": "dev",
       "writes": [
         "team/angelo/agents/tracer.json",
+        "team/angelo/agents/tracer.fringe.json",
         "team/angelo/agents/tracer/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -765,6 +791,7 @@
       "branch": "dev",
       "writes": [
         "team/jose/agents/conductor.json",
+        "team/jose/agents/conductor.fringe.json",
         "team/jose/agents/conductor/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -789,6 +816,7 @@
       "branch": "dev",
       "writes": [
         "team/silvio/agents/conductor.json",
+        "team/silvio/agents/conductor.fringe.json",
         "team/silvio/agents/conductor/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -811,6 +839,7 @@
       "branch": "dev",
       "writes": [
         "team/daniela/agents/conductor.json",
+        "team/daniela/agents/conductor.fringe.json",
         "team/daniela/agents/conductor/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -833,6 +862,7 @@
       "branch": "dev",
       "writes": [
         "team/jose/agents/researcher.1.json",
+        "team/jose/agents/researcher.1.fringe.json",
         "team/jose/agents/researcher.1/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -858,6 +888,7 @@
       "branch": "dev",
       "writes": [
         "team/dinis/agents/ontologist.1.json",
+        "team/dinis/agents/ontologist.1.fringe.json",
         "team/dinis/agents/ontologist.1/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
@@ -880,6 +911,7 @@
       "branch": "dev",
       "writes": [
         "team/?/agents/conductor.json",
+        "team/?/agents/conductor.fringe.json",
         "team/?/agents/conductor/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",

@@ -115,10 +115,11 @@ export function checkCommit(c) {
   if (!c.agent) return out;
   const w = who(c.agent);
   if (w.kind !== 'team' || !P.agents[c.agent]) out.push({ rule: 'R2', file: null, why: `${c.agent} has no grant in abp/policies.json yet` });
+  for (const f of c.files) if (/^\.claude\//.test(f) && c.agent !== 'architect.1.fringe@PrompTugal.dinis') out.push({ rule: 'R6', file: f, why: `a change to the hooks by ${c.agent} (security finding 28: only architect.1 changes .claude/; review before agents wake on it)` });
   if (w.role === 'lead') return out;   // the lead writes widely by its role; its shared-file edits are listed by review
   for (const f of c.files) {
     if (f === 'data/keys.json' || /^team\/[^/]+\/(agents\/)?[^/]*\.json$/.test(f) && f.includes(w.name || '\0')) continue;
-    const d = abp.checkWrite(w, path.join(ROOT, f), {}, P);
+    const d = abp.checkWrite(w, path.join(ROOT, f), { readOwner: (abs) => (/^owner:\s*(.*)$/m.exec(fs.readFileSync(abs, 'utf8')) || [, ''])[1].trim() }, P);
     if (d.decision === 'deny') out.push({ rule: d.rule, file: f, why: d.reason });
   }
   return out;
@@ -204,14 +205,52 @@ function test() {
   t('hook: garbage input exits 0', r4.status, 0);
   const r5 = spawnSync(process.execPath, [HOOK, 'session-start'], { input: '{"session_id":"test","source":"compact"}', encoding: 'utf8', env: { ...process.env, ABP_LOG_DIR: path.join(os.tmpdir(), 'abp-test-log'), ABP_AGENT: 'design.1.fringe@PrompTugal.dinis' } });
   t('hook: session-start re-anchors the ABP', /ABP: design\.1\.fringe@PrompTugal\.dinis/.test(JSON.parse(r5.stdout).hookSpecificOutput.additionalContext), true);
+  // finding 28: what the hook touches. Static: no network, process or key-store code, only the named variables.
+  const src = fs.readFileSync(HOOK, 'utf8');
+  t('28a hook source: no network module or fetch', /node:(https?|net|tls|dns|dgram|http2)\b|\bfetch\(|WebSocket/.test(src), false);
+  t('28b hook source: no child process or worker', /node:(child_process|worker_threads|cluster)|(?<![.\w])(spawn|spawnSync|exec|execSync|execFile|execFileSync|fork)\(/.test(src), false);
+  t('28c hook source: never names the key store in code', /path\.join\([^)]*['"]\.sg-send['"]/.test(src), false);
+  const envs = [...new Set([...src.matchAll(/process\.env\.([A-Z_]+)/g)].map((m) => m[1]))].sort().join(',');
+  t('28d hook source: reads only the named variables', envs, 'ABP_AGENT,ABP_LOG_DIR,ABP_OVERRIDE,ABP_OVERRIDE_BY,CLAUDE_PROJECT_DIR');
+  t('28e hook source: writes only through logEvent (one append, one mkdir)', (src.match(/fs\.(writeFileSync|appendFileSync|mkdirSync|rmSync|unlinkSync|renameSync|copyFileSync)/g) || []).sort().join(','), 'fs.appendFileSync,fs.mkdirSync');
+  // Dynamic: run every mode under Node's permission model: reads allowed only in abp/, the hook, HOLD.md, .git/HEAD
+  // and ~/.abp; writes only in the log folder; no child process. A fake HOME holds a private key it must not touch.
+  const H = fs.mkdtempSync(path.join(os.tmpdir(), 'abp-home-')), LOG = path.join(H, '.abp', 'log');
+  fs.mkdirSync(path.join(H, '.sg-send', 'keys', 'k'), { recursive: true }); fs.writeFileSync(path.join(H, '.sg-send', 'keys', 'k', 'private_key.pem'), 'NOT A KEY');
+  fs.mkdirSync(LOG, { recursive: true }); fs.writeFileSync(path.join(H, '.abp', 'whoami'), 'design.1.fringe@PrompTugal.dinis\n');
+  const allowRead = [path.join(ROOT, 'abp'), HOOK, path.join(ROOT, 'HOLD.md'), path.join(ROOT, '.git', 'HEAD'), path.join(H, '.abp')].map((p) => '--allow-fs-read=' + p);
+  const jail = (mode, input) => spawnSync(process.execPath, ['--permission', ...allowRead, '--allow-fs-write=' + LOG, HOOK, mode], { input: JSON.stringify(input), encoding: 'utf8', env: { PATH: process.env.PATH, HOME: H, CLAUDE_PROJECT_DIR: ROOT } });
+  const runs = [
+    jail('session-start', { session_id: 'jail', source: 'startup' }),
+    jail('prompt', { session_id: 'jail', prompt: 'hello' }),
+    jail('pre-tool', { session_id: 'jail', tool_name: 'Bash', tool_input: { command: 'cat ~/.sg-send/keys/k/private_key.pem; git push origin dev' }, cwd: ROOT }),
+    jail('pre-tool', { session_id: 'jail', tool_name: 'Edit', tool_input: { file_path: path.join(ROOT, 'work/48-where-agents-run.md') }, cwd: ROOT }),
+    jail('pre-tool', { session_id: 'jail', tool_name: 'Agent', tool_input: { prompt: 'x' }, cwd: ROOT }),
+    jail('pre-compact', { session_id: 'jail', trigger: 'auto' })];
+  const jlog = fs.readFileSync(path.join(LOG, 'jail.jsonl'), 'utf8').trim().split('\n').map((l) => JSON.parse(l));
+  t('28f under the permission model every mode exits 0', runs.map((r) => r.status).join(''), '000000');
+  t('28g no access denied, no hook error (nothing read or written outside the allowed paths)', runs.some((r) => /ERR_ACCESS_DENIED/.test(r.stderr)) || jlog.some((e) => e.ev === 'hook-error'), false);
+  t('28h it knows who it is from ~/.abp/whoami alone', jlog.find((e) => e.ev === 'session-start').agent, 'design.1.fringe@PrompTugal.dinis');
+  t('28i it wrote only its log (the fake home holds .abp and the untouched .sg-send)', fs.readdirSync(H).sort().join(',') + ':' + fs.readdirSync(path.join(H, '.abp')).sort().join(','), '.abp,.sg-send:log,whoami');
+  fs.rmSync(H, { recursive: true, force: true });
   fs.rmSync(path.join(os.tmpdir(), 'abp-test-log'), { recursive: true, force: true });
   console.log(fails ? `abp test: ${fails} failed` : 'abp test: all passed');
   process.exitCode = fails ? 1 : 0;
 }
 
+// ---------- whoami: the agent's label for the hook (finding 28: the hook itself never reads the key store) ----------
+function whoami() {
+  const KEYS = path.join(os.homedir(), '.sg-send', 'keys'), labels = new Set();
+  try { for (const d of fs.readdirSync(KEYS)) { try { const m = JSON.parse(fs.readFileSync(path.join(KEYS, d, 'metadata.json'), 'utf8')); if (abp.parseAgent(m.label)) labels.add(m.label); } catch {} } } catch {}
+  const out = path.join(os.homedir(), '.abp', 'whoami');
+  if (labels.size !== 1) { console.log(`abp whoami: ${labels.size} agent labels in the key store (${[...labels].join(', ') || 'none'}): not written; the hook stays unidentified`); return; }
+  fs.mkdirSync(path.dirname(out), { recursive: true }); fs.writeFileSync(out, [...labels][0] + '\n');
+  console.log(`abp whoami: ${[...labels][0]} -> ~/.abp/whoami`);
+}
 const cmd = process.argv[2];
 if (cmd === 'build') build();
 else if (cmd === 'check') check();
 else if (cmd === 'review') review();
 else if (cmd === 'test') test();
+else if (cmd === 'whoami') whoami();
 else console.log('usage: node abp/tools/abp.mjs build | check [--range A..B] | review [--since ISO] [--out FILE] | test');
