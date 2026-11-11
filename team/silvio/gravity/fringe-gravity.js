@@ -76,14 +76,16 @@
         by[d].sort((a, b) => a.start.localeCompare(b.start)).map(e => `<div data-ev="${esc(e.id)}" role="button" tabindex="0" style="cursor:pointer;padding:6px 0;border-bottom:1px solid var(--edge)${isOn(e) ? '' : ';color:var(--bad)'}"><b style="color:var(--gold2)">${hm(e.start)}</b> ${esc(e.name)}</div>`).join('') + '</div>').join('') + '</div>'
       this.h.onclick = ev => { const x = ev.target.closest('[data-ev]'); if (x) this.api.openNode(x.dataset.ev) } } })
 
-  async function start() {
-    const host = document.querySelector('[data-fringe-universe]') || document.getElementById('universe')
-    if (!host) return
+  /* window.FringeUniverse.mount(host, { lang }) mounts the universe into any element (the RiskMandate dashboard uses it
+     for its "Lisbon Tech Fringe" tab); a page with [data-fringe-universe] is mounted on load. */
+  async function mountInto(host, opt) { opt = opt || {}
     if (!window.Gravity) { host.textContent = 'Gravity did not load (web-summit.sgit.ai).'; return }
     let src; try { src = await getJ(API_EVENTS) } catch (e) { host.textContent = 'The Fringe API did not answer: ' + e.message; return }
-    const lang = (() => { try { return localStorage.getItem('gravity.lang') || 'en' } catch { return 'en' } })()
+    const lang = opt.lang || (() => { try { return localStorage.getItem('gravity.lang') || 'en' } catch { return 'en' } })()
     const D = build(src, lang)
     await window.Gravity.mount(host, { data: D.gdata, lang, start: 'uni', strings: STR, detail: detail(D), metric: D.metric, views: [weather, agenda(D)], tourCentre: D.gdata.centres[0].id, liveLabel: 'DATA · read ' + String(src.built_at).slice(11, 16) + ' UTC' })
   }
-  start()
+  window.FringeUniverse = { mount: mountInto }
+  const auto = document.querySelector('[data-fringe-universe]')
+  if (auto) mountInto(auto)
 })()
