@@ -5279,6 +5279,37 @@
       "in_lisbon": true,
       "personas": [],
       "ical_uid": "evt-iqDImsB0eTd8fGe@events.lu.ma"
+    },
+    {
+      "name": "Blackdor presents DISTRICT 909: Back Where It All Started",
+      "url": "https://luma.com/cgkr0awt",
+      "read_at": "2026-11-11T17:49:00Z",
+      "date": "2026-11-11",
+      "start": "2026-11-11T22:00:00Z",
+      "end": "2026-11-12T05:30:00Z",
+      "kind": "party",
+      "organiser": "District 909 with Blackdor Collective",
+      "place": "Rive Rouge, Praça Dom Luís I, 1200-148 Lisboa (Cais do Sodré)",
+      "join": "Luma; tickets: https://luma.com/cgkr0awt",
+      "status": "on",
+      "storm_note": "listed as on; no storm update on the page, read 17:49",
+      "topics": [
+        "party",
+        "founders",
+        "investors"
+      ],
+      "id": "2026-11-11-district-909-back-where-it-all-started",
+      "label": "evidence",
+      "cost": "EUR 10 (as stated)",
+      "storm_moved": false,
+      "check": "Read by researcher.1.fringe@PrompTugal.jose at 17:49 UTC on the organisers' Luma page, from the link Jose passed on: hosted by District 909 and Blackdor Collective, 22:00 to 05:30, Rive Rouge, EUR 10, registration open; the page shows no storm note. First seen in Side Events Guide's list for today (passed on by Jose).",
+      "size": "community",
+      "in_lisbon": true,
+      "personas": [
+        "founder",
+        "investor"
+      ],
+      "neighbourhood": "Cais do Sodré"
     }
   ]
 }

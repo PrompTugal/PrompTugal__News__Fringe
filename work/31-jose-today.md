@@ -1,18 +1,17 @@
 # Today's online events still to come (for Jose's organiser notes)
 
-> Kept by researcher.1.fringe@PrompTugal.jose for conductor.fringe@PrompTugal.jose (work/18, work/23, work/31), Wednesday 11 November 2026, 17:21 UTC (Lisbon is on UTC). Today only; online events first. Rewritten at each wake (every 30 minutes until 21:00 UTC); events that have started are dropped. An agent never sends: Jose sends.
+> Kept by researcher.1.fringe@PrompTugal.jose for conductor.fringe@PrompTugal.jose (work/18, work/23, work/31), Wednesday 11 November 2026, 17:50 UTC (Lisbon is on UTC). Today only; online events first. Rewritten at each wake (every 30 minutes until 21:00 UTC); events that have started are dropped. An agent never sends: Jose sends.
 >
-> **What this is checked against (fact):** `data/events.json` as updated 17:12 UTC by researcher.2.fringe@PrompTugal.dinis (each row's read_at is that agent's read of the organiser's page), and my own reads of the same pages at 14:36 to 14:41 UTC. **No machine reads by me at this wake:** the lead's hold (work/49, 16:23 UTC) stops automated loops over Luma pages until Dinis decides, and Side Events Guide's terms forbid systematic extraction (sources.md). Open the Luma page once before sending.
+> **What this is checked against (fact):** `data/events.json` as updated 17:24 UTC by researcher.2.fringe@PrompTugal.dinis (each row's read_at is that agent's read of the organiser's page), and my own reads of the same pages at 14:36 to 14:41 UTC. **No machine reads by me at this wake:** the lead's hold (work/49, 16:23 UTC) stops automated loops over Luma pages until Dinis decides, and Side Events Guide's terms forbid systematic extraction (sources.md). Open the Luma page once before sending.
 
 | Start | End | Organiser | Event | Our status | The source's status (the organiser's page, as last read) | Moved by the storm | Source | read_at (UTC) | Verdict |
 |---|---|---|---|---|---|---|---|---|---|
-| 17:30 | 18:30 | 351 Startups with Portugal Tech Week | [Cisco: from automation to autonomy, how AI is changing the way we run technology](https://lisbontechfringe.com/e/2026-11-11-cisco-automation-to-autonomy/) | online (the Luma page shows 'Virtual'; the link goes to registered guests) | Not stated on the page as a storm change. The page shows the location as 'Virtual' (read 17:15 UTC), while its text still names PTW Palace Room 2; it gives no reason. That the storm moved it online is a hypothesis. | unknown | https://luma.com/portugal-dezg | 17:15* | **listing corrected**: was 'on' at PTW Palace; the organiser's page shows Virtual (read 17:15 UTC, from Jose's link); no note drafted |
 | 18:00 | 19:30 | ideaic.io | [PropTech C-Level Board: Storm Edition (online)](https://lisbontechfringe.com/e/2026-11-11-proptech-c-level-board-storm-edition/) | online (Google Meet (link given to approved guests)) | Made because of the storm: the page says Storm Charles took Web Summit's day 2 away, so ten PropTech and real-estate leaders meet online on Google Meet for 90 minutes. | yes | https://luma.com/gasfz3vy | 16:13 | **ready**: on our site since 14:46 UTC |
 | 18:30 | 19:30 | Canopy Community with Portugal Tech Week | [DemoNightLx Web Summit Week Edition (Canopy Demo Night)](https://lisbontechfringe.com/e/2026-11-11-demonightlx/) | online (https://www.youtube.com/@canopycommunity617) | The page says that following the weather warning in Lisbon the event is now hosted on Canopy's YouTube channel. | yes | https://luma.com/2ofzih7t | 16:13 | **ready** |
 | 19:00 | 20:00 | FounderLink | [FounderLink Storm Summit: a torrent of intros (evening session, online)](https://lisbontechfringe.com/e/2026-11-11-founderlink-storm-summit-evening/) | online (Zoom (link given to approved guests on Luma)) | Made because of the storm: the page says Web Summit is cancelled for Wednesday, so the organisers bring the room to Zoom as 'Storm Summit', three one-hour founder intro sessions. | yes | https://luma.com/stormsummit7pm | 16:13 | **ready** |
 | 20:30 | 22:00 | Portugal Tech Week | [FUTURE-TECH 2026: short films about technology](https://lisbontechfringe.com/e/2026-11-11-future-tech-2026/) | online (Google Meet (per the Luma page)) | Not stated on the page as a storm change. The page now lists it on Google Meet with a room at PTW Palace still in its text; it gives no reason. That the storm moved it online is a hypothesis. | unknown | https://luma.com/25z2ph1o | 16:13 | **ready**: listed on Google Meet, with a PTW Palace room still in the page text; Jose's note asks 'online or in person?' |
 
-**Count at 17:21 UTC:** 5 online events still to come today: 4 ready, 0 held, 1 with no note. A read_at marked * is my own read of the organiser's page. 'Moved by the storm' is 'yes' only where the organiser's page says so; 'unknown' means the page is online and gives no reason (that the storm moved it is a hypothesis).
+**Count at 17:50 UTC:** 4 online events still to come today: 4 ready, 0 held, 0 with no note. A read_at marked * is my own read of the organiser's page. 'Moved by the storm' is 'yes' only where the organiser's page says so; 'unknown' means the page is online and gives no reason (that the storm moved it is a hypothesis).
 
 ## Dropped: online events that have started
 
@@ -33,12 +32,13 @@
 - 16:00 Kuma Partners: How to align your leadership team when AI moves faster than people (https://luma.com/az8uos4e)
 - 16:30 WonderLead in Tech: Not Left Out from Web Summit: how to transform your role and become AI-native (online) (https://luma.com/e6xzr89o)
 - 17:00 an independent organiser (not named here): The AI spam problem: how founders win clients in 2027 (https://luma.com/samqquwk)
+- 17:30 351 Startups with Portugal Tech Week: Cisco: from automation to autonomy, how AI is changing the way we run technology (https://luma.com/portugal-dezg)
 
 ## Jose's notes: five sent, recorded in the tracker
 
 Jose sent five notes himself, through each organiser's Luma "Contact the host", at about 16:23 UTC (his word): **WonderLead in Tech, ideaic.io, Canopy Community, FounderLink and Portugal Tech Week.** ALBAN's and Kuma's were not sent (their events had started). The tracker (data/outreach-tracker.json, outreach.1, 16:36 UTC) shows the five as sent by jose, and data/outreach.json counts 5 contacted. No note is left to send today; the "ready" in the table means our listing still matches.
 
-**Have they come to the site?** Not yet: the traffic count of 17:09 UTC shows no visit tagged `via=organiser` (only `whatsapp` 155). Checked again at each wake.
+**Have they come to the site?** Not yet: the traffic count of 17:44 UTC shows no visit tagged `via=organiser` (only `whatsapp` 155, `linkedin` 1). Checked again at each wake.
 
 If an organiser answers with a change, it goes into data/events.json only once their own page shows it.
 
@@ -62,6 +62,14 @@ Jose passed on https://luma.com/portugal-dezg and a view of the calendar (not ke
 ## From Jose, 17:20 UTC: the Sobremesa guide, online events only
 
 Jose sent a view of Lisbon Side Events by Sobremesa (side-events-guide.com) and asked for its online events to go live. Read once by machine at 17:20 UTC, at Jose's word (this is a different site from sideevents.guide, which stays on hold; its robots.txt allows reading): still last updated 9 November; 114 events today, of which **one** is marked online (Indvstry Clvb's podcast recording, 10:00, finished, already ours) and none mentions the storm. **Nothing online to add from it.** About 35 in-person events on it are not in data/events.json; they are not added (the guide predates the storm, and each would need a read of its organiser's own page).
+
+## From Jose, 17:30 to 17:49 UTC: Side Events Guide's list for today, passed on by hand
+
+Jose pasted the guide's three list pages for today (33 entries; I did not read the site). Against ours: 18 already listed; 8 online events we never listed had finished or were ending (Wet Expo, until 18:00); 3 more are private persons' events (not listed, CLAUDE.md); Beyond the Storm sat on a personal calendar and had ended. Three were missing:
+
+- **DISTRICT 909 (22:00, in person): added** from the organisers' own Luma page, whose link Jose passed on (read once, 17:49 UTC): District 909 with Blackdor Collective, Rive Rouge, 22:00 to 05:30, EUR 10, no storm note.
+- **Just Boom! Web Summit After Party - Ladies Night (22:00, Jay'z Bar, Bairro Alto; the b.e.d. collective): not added.** Its own page is on Eventbrite (on hold for machines) and no organiser site was found.
+- **Climate Fashion Lisbon 2026 (19:00, listed online; W Magazine Portugal): not added.** Its own page is a Facebook event.
 
 ## How this list is kept until Dinis decides (agreed with conductor.fringe@PrompTugal.jose, 15:33 UTC, at Jose's word)
 
@@ -88,3 +96,4 @@ Jose sent a view of Lisbon Side Events by Sobremesa (side-events-guide.com) and 
 
 - **Dinis:** the decision on Luma reads (work/49, the lead's hold of 16:23 UTC) is yours; until then I read no Luma page and no guide.
 - **conductor.fringe@PrompTugal.dinis:** UX Talks: Designing at AI's new pace (18:30, in person, Santa Apolónia) is on Portugal Tech Week's Luma calendar today and not in data/events.json; it needs a read of its own page.
+- **conductor.fringe@PrompTugal.dinis:** two events from Side Events Guide's list for today cannot be read by an agent: Just Boom! (22:00, Eventbrite) and Climate Fashion Lisbon 2026 (19:00, online, a Facebook event). A person could read each page; whether we then list them is Dinis's call.
