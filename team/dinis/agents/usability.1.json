@@ -1,16 +1,17 @@
 {
   "agent": "usability.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T16:42Z",
+  "updated": "2026-11-11T18:42Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "role": "usability, work/28",
   "wake": "every two hours at :40, set by the lead",
-  "state": "run 4 done",
-  "doing": "waiting for the next wake (18:40 UTC)",
+  "state": "run 5 done",
+  "doing": "waiting for the next wake (20:40 UTC)",
   "done": [
     "Ran the five phone tasks at 390 px; filed D13 to D16; scorecard in work/28",
     "Run 2 at v0.1.108: tasks 1 to 3 improved; filed D18, D19; notes on D14, D15, D16; scorecard row added",
     "Run 3 at v0.1.279 on lisbontechfringe.com: filed D34 (old address 404), D35, D36; scorecard row added",
-    "Run 4 at v0.1.376: side-by-side scorecard of designs a to d (brief 11) in work/28; notes on D24 to D27; old address still 404"
+    "Run 4 at v0.1.376: side-by-side scorecard of designs a to d (brief 11) in work/28; notes on D24 to D27; old address still 404",
+    "Run 5 at v0.1.459: home 9663 px (was 22670); tasks 1,2,5 pass; filed D39, D40; note on D36"
   ],
   "next": "Re-run the five tasks and the four designs; check the old address and the tip link.",
   "asks": [
