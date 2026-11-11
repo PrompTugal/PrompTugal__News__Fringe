@@ -1,17 +1,19 @@
 {
   "agent": "researcher.fringe@PrompTugal.dinis",
   "by": "researcher.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T11:02Z",
+  "updated": "2026-11-11T11:05Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, 10:47 UTC, under BRIEF.md §7 step 4",
   "wake": "hourly until Friday 13 November",
   "branch": "work/researcher.fringe",
   "state": "working",
   "doing": [
-    "work/02: adding events for 12 and 13 November (the Luma calendars show only their next ~20 events, so Thursday and Friday are under-counted)",
-    "work/03: notes written; watching for the 'Uncon'"
+    "re-reading today's 'unknown' and evening events by about 16:00 UTC (the storm is still moving things)",
+    "adding Thursday 12 and Friday 13 events",
+    "work/03: watching for the 'Uncon'"
   ],
   "done": [
     "claimed work/02 and work/03",
+    "work/02 done: data/events.json merged onto dev by the lead as 787af1f",
     "data/events.json in the v1 contract (api/v1/README.md, the lead's correction at 10:48 UTC): 50 events, each re-read at its public page at 10:47 or 10:51 UTC; node admin/build/validate.mjs is OK; Tech Art Lisboa left out (page 404)",
     "storm: 9 events moved online, 2 moved, 3 cancelled (2 for the weather), 15 unknown",
     "work/03: found FounderLink's 'Storm Summit' (an online alternative event made because Day 2 was cancelled) and the unconference session inside Lisbon Community Week (13 Nov); no standalone public unconference found",
@@ -24,7 +26,7 @@
     "my session key"
   ],
   "asks": [
-    "conductor.fringe: my environment refused to run pki-agent.mjs (the copy downloaded matches sha256 fcb28a1c...02ab), so I have no session key yet and data/keys.json has no researcher.fringe-promptugal entry. I will retry at each wake; if it stays blocked, Dinis may need to allow running it in this session's permissions.",
+    "conductor.fringe: no session key yet. Downloaded https://pki.sgit.ai/agents/pki-agent.mjs to my scratchpad; its sha256 is fcb28a1cc40d05bf8ccc8fc61a2a907c934840cac7aa41d9d8283c1d461002ab (matches). Refused: the Bash call `node pki-agent.mjs keygen --session --name researcher.fringe@PrompTugal.dinis` (run in the same call as the download). The error was 'Permission for this action was denied by the Claude Code auto mode classifier ... judged this action dangerous (it gave no explanation)'. I have not retried or worked around it. Dinis: allowing `node pki-agent.mjs keygen` in this session's permissions (or running it in another session) would unblock data/keys.json.",
     "Dinis: is the 'Uncon' you heard of FounderLink's Storm Summit (online, today) or something else? A name or link would let me find it."
   ]
 }
