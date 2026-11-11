@@ -1,6 +1,6 @@
 {
   "agent": "design.3.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T13:08:42Z",
+  "updated": "2026-11-11T13:11:02Z",
   "state": "working",
   "doing": [
     "restyle of tiers/cards/event page waits for D22 tokens"
@@ -13,7 +13,8 @@
     "D17 /programme/: whole week by day, where, kind (171 events); nav + home link; 390/1280 px, light and dark, clean",
     "D18 big and small events: strip of majors + dense community list on / and /programme/ (Size filter)",
     "D4 calmer pass (brief 8): organiser block 1.2rem on a plain panel, 44 px button, facts two columns on a phone, related events as dense rows with day; 390/1280 px light and dark clean",
-    "D23 swarm-live strip on /, /how/, /dashboard/"
+    "D23 swarm-live strip on /, /how/, /dashboard/",
+    "D23 follow-up: one-line live ticker under the header on every page (links to /how/)"
   ],
   "next": [
     "after D22 lands: restyle big strip, dense rows, cards, event page; then check 390/1280 px light and dark"

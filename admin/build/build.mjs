@@ -10,7 +10,7 @@ import { collectActivity } from './activity.mjs';   // brief 10
 import { meBody, meCss } from './me.mjs';   // work/26
 import { collectSwarm, swarmBody, swarmCss, swarmScript } from './swarm.mjs';   // work/25, dev.1.fringe@PrompTugal.dinis
 import { eventPages, eventPath, hasPage } from './event-pages.mjs';
-import { liveData, liveStrip, liveCss, liveJs } from './live.mjs';   // D23, design.3.fringe@PrompTugal.dinis
+import { liveData, liveStrip, tickHtml, liveCss, liveJs } from './live.mjs';   // D23, design.3.fringe@PrompTugal.dinis
 import { bigStrip, denseRow, denseList, split, sizeOf, TIER_CSS } from './tiers.mjs';   // D18, design.3.fringe@PrompTugal.dinis
 import { programmeBody } from './programme.mjs';   // D3 follow-up, design.3.fringe@PrompTugal.dinis
 import { howBody } from './how.mjs';   // D11, design.3.fringe@PrompTugal.dinis
@@ -110,7 +110,7 @@ const page = (title, body, desc, head = '', here = '/') => `<!doctype html><html
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}"><link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">${/og:title/.test(head) ? head : ogDefault(title, desc) + head}<style>${css}</style></head><body>
 <div class="ptbar"><a href="https://promptugal.news"><img class="stamp l" src="/assets/brand/pt-news-stamp-light.svg" alt="PT.news" width="20" height="20"><img class="stamp d" src="/assets/brand/pt-news-stamp-dark.svg" alt="" width="20" height="20"><span>a PrompTugal.news site</span></a></div>
-${navHtml(here)}
+${navHtml(here)}<!--TICK-->
 <p class="ind">Independent of Web Summit · <a href="https://websummit.com/">official site</a></p>
 <main>${WHATSAPP}${body}</main>
 <footer class="muted">${INDEPENDENCE}<br>Built from <a href="${REPO}">the repository</a> at ${BUILT.slice(0, 16).replace('T', ' ')} UTC · <a href="/version.json">${esc(VERSION)}</a>. <a href="/traffic/">Traffic</a> · <a href="/changes/">Changes</a> · <a href="/evolution/">Evolution</a> · <a href="/dashboard/">Swarm</a>.</footer>
@@ -331,9 +331,12 @@ writeFileSync(join(out, 'api', 'v1', 'swarm.json'), JSON.stringify(swarm, null, 
 {
   const data = liveData(activity), strip = liveStrip(data, Date.parse(BUILT), esc, activity.totals);
   writeFileSync(join(out, 'assets', 'live.js'), liveJs);
-  for (const f of ['index.html', 'how/index.html', 'dashboard/index.html']) {
-    const fp = join(out, f); let h = readFileSync(fp, 'utf8');
-    h = h.replace('<!--LIVE-->', strip).replace('</body>', '<script src="/assets/live.js" defer></script></body>');
+  const tick = tickHtml(activity, Date.parse(BUILT));
+  const walk = (d) => readdirSync(d, { withFileTypes: true }).flatMap((x) => (x.isDirectory() ? walk(join(d, x.name)) : x.name.endsWith('.html') ? [join(d, x.name)] : []));
+  for (const fp of walk(out)) {
+    let h = readFileSync(fp, 'utf8');
+    if (!h.includes('<!--TICK-->') && !h.includes('<!--LIVE-->')) continue;
+    h = h.replace('<!--LIVE-->', strip).replace('<!--TICK-->', tick).replace('</body>', '<script src="/assets/live.js" defer></script></body>');
     writeFileSync(fp, h);
   }
 }
