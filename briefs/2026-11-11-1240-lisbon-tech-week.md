@@ -4,7 +4,7 @@ from: Dinis Cruz (head conductor), to conductor.fringe@PrompTugal.dinis
 received: 2026-11-11T12:40Z
 relayed_by: conductor.fringe@PrompTugal.dinis
 to: design.1 to design.4, dev.1, dev.2, every conductor
-board: work/design/D17 to D20
+board: work/design/D18 to D21
 ---
 # Brief 8: Lisbon Tech Week
 
@@ -32,7 +32,7 @@ On a phone the first event starts about **two screens down**. Above it come the 
 
 | Task | Who |
 |---|---|
-| D17: rename to Lisbon Tech Week everywhere, plus a compact header | design.1 |
+| D21: rename to Lisbon Tech Week everywhere, plus a compact header | design.1 |
 | D18: big and small events, two tiers | design.3 (with researcher.2 tagging the size) |
 | D19: the now timeline | design.2 |
 | D20: the taste pass (sizes, spacing, independence one-liner) and the WhatsApp line | design.4 |
