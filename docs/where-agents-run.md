@@ -1,7 +1,7 @@
 ---
 title: "Where agents run: the primitives, the matrix and the formula"
 by: conductor.fringe@PrompTugal.dinis (the lead), from Dinis Cruz's brief 14 (talking with Angelo), 11 November 2026, 14:12 UTC
-status: draft v0.1, for Dinis, Angelo and architect.1 to correct
+status: draft v0.2 (architect.1's corrections, §8), for Dinis and Angelo to correct
 board: work/48
 ---
 # Where agents run
@@ -27,8 +27,8 @@ board: work/48
 | id | Runtime | Loop and tools | Notes |
 |---|---|---|---|
 | R1 | **Claude Code, cloud** (this account and the team's) | full: shell, git, browser, network, scheduled wakes | what runs today; quota is the bottleneck |
-| R2 | **Claude Code, local** on our laptops | full, plus the laptop's own models | the bridge to the laptops' Ollama models |
-| R3 | **ChatGPT** (an agent mode) | its own tools; no git of ours | talks to us through vaults, files or chat |
+| R2 | **Claude Code, local** on our laptops | full, plus the laptop's own models | the bridge to the laptops' Ollama models: the laptop's agent **pulls** task packets and calls its own Ollama; nothing on the laptop is exposed |
+| R3 | **ChatGPT** (an agent mode) | its own tools; no git of ours | talks to us through vaults, files or chat; our ABP hooks do not run there, so its output is checked where it lands |
 | R4 | **Other agent providers** | varies | to add as we find them |
 | R5 | **A person** with a chat window | the person is the loop | level 0: paste in, paste out |
 
@@ -38,7 +38,7 @@ board: work/48
 |---|---|---|---|---|
 | M1 | Anthropic, through Claude | Opus, Sonnet, Haiku | quota | the agents' own brains |
 | M2 | **OpenRouter** | open-weight (Llama, Qwen, DeepSeek) and others | metered, cheap | live: admin/tools/llm.mjs, /models/ |
-| M3 | **Ollama on our laptops** | open-weight, local | free at the margin | private data never leaves; needs a bridge (R2) |
+| M3 | **Ollama on our laptops** | open-weight, local | free at the margin | private data never leaves; reached only by an agent on the same laptop (R2) |
 | M4 | OpenAI | GPT models | metered | through ChatGPT (R3) or its API |
 
 ### 2.3 The I/O level: how data gets in and out of an agent
@@ -62,6 +62,7 @@ board: work/48
 | **Data** | public / internal / private (people, keys): private stays on our runtimes or on local models (M3) |
 | **Network** | none / public web (within sources.md) / our services only |
 | **Time** | interactive / within the hour / batch |
+| **Oversight** | none / reviewed output (the gate, a vault check) / ABP hooks in the loop (R1, R2): what a task that writes our repository or speaks for us needs |
 
 ## 3. Dinis's rule for "an agent"
 
@@ -79,6 +80,8 @@ place(t) = the cheapest (r, m) such that
     trust(r, m)  ≥ data(t)                      # private data only on our runtimes or local models
     capability(m) ≥ judgement(t)                # the model is good enough for the judgement
     reach(r)     ⊇ network(t)                   # it can reach what the task must read
+    latency(r,m) ≤ time(t)                      # it answers in time
+    oversight(r) ≥ oversight(t)                 # its actions can be observed against the ABP
 cost(r, m) = quota_pressure(r) × tokens(t) × price(m)      # quota is the scarce thing, so it weighs most
 ```
 
@@ -121,6 +124,15 @@ The runtime that takes it signs a claim, does the work, and writes the output, s
 
 1. Dinis and Angelo correct this draft (the runtimes, the levels, the rule in §3).
 2. architect.1: put the matrix into data/runtimes.json and a page under "The agentic team", and add `runtime` and `io_level` to each agent's ABP.
-3. dev.2: add an Ollama tier to the router behind a bridge (a laptop exposing its Ollama to one of our agents, never to the internet), and move one task to it (the tips lane's parsing, which is private).
+3. dev.2: add an Ollama tier to the router for an agent running on the same laptop (R2), which pulls its work as task packets; no laptop exposes its Ollama to a cloud agent or to the internet. Move one task to it (the tips lane's parsing, which is private).
 4. researcher.2 and ontologist.1: move extraction and classification calls to the router's open-weight tier; log them on /models/.
 5. The lead: the task-packet format (task.json) and a first packet (translate today's event pages) for any runtime to pick up.
+
+## 8. Changes in v0.2 (architect.1.fringe@PrompTugal.dinis, 14:23 UTC)
+
+1. **The laptop bridge runs the other way.** v0.1 had a laptop expose its Ollama to one of our cloud agents. A cloud container cannot reach a laptop without opening the laptop to the network. So the laptop's own agent (R2) **pulls** task packets (§6) and calls its local Ollama (M3), and nothing is exposed. M3 is reached only from R2. (§2.1, §2.2, §7.3)
+2. **Two constraints were missing from the formula.** `time(t)` was listed as a need but never checked: added `latency(r,m) ≤ time(t)`. And the ABP: our hooks run only on R1 and R2, so added **oversight** (§2.4) and `oversight(r) ≥ oversight(t)`. A task that writes our repository or speaks for us needs a runtime we can observe, or output that is reviewed where it lands (the gate, a vault check).
+3. **R3 (ChatGPT) is not observed by our hooks.** It can be an agent under §3 (key plus vaults), but its work is checked when it lands, not while it runs. (§2.1)
+4. **The data is in `data/runtimes.json`**: runtimes, endpoints, levels, requirements, the formula, the matrix, and each agent's runtime and I/O level today (every agent is on R1). Each agent's ABP page names them (abp/<agent>.md).
+
+Not changed, for Dinis and Angelo: the rule in §3 (key plus git or vaults); whether L3 (signed lanes) alone makes an agent (our lanes are vaults underneath, so it already counts as L2); the matrix's "could run on" column, which is a proposal until a task actually moves.

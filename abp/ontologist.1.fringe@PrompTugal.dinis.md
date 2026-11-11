@@ -14,6 +14,7 @@ authority: Dinis Cruz, operator
 ## Mandate (the grant)
 
 - **Role:** ontologist. **Account:** this (the lead's).
+- **Runs on:** R1 (models: M1 Sonnet); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** the semantic graph (work/42, brief 13): day, festival, organiser, event, session, place, persona, topic as JSON with stable ids, and their pages.
 - **Writes (this repository):** `team/dinis/agents/ontologist.1.json`, `team/dinis/agents/ontologist.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `data/graph/**`, `admin/build/graph-*.mjs`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.

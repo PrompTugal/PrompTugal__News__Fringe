@@ -14,6 +14,7 @@ authority: Dinis Cruz, operator
 ## Mandate (the grant)
 
 - **Role:** lead. **Account:** this (the lead's).
+- **Runs on:** R1 (models: M1 Opus); **I/O level:** L5 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** the swarm: routes work, keeps the board, REALITY.md, the roster, the briefs; brings branch workers' reviewed work onto dev.
 - **Writes (this repository):** `team/dinis/agents/conductor.json`, `team/dinis/agents/conductor/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `work/**`, `briefs/**`, `team/**`, `REALITY.md`, `BRIEF-CORRECTIONS.md`, `CLAUDE.md`, `ROLES.md`, `SWARM.md`, `JOIN.md`, `KICKOFF.md`, `README.md`, `sources.md`, `security/**`, `data/inboxes/**`, `data/inbox-counts.json`, `data/person-keys.json`, `data/links.json`, `data/places.json`, `admin/site.json`, `.gitignore`, `HOLD.md`.
 - **Owns (shared files; others send it their changes):** `work/`.

@@ -14,6 +14,7 @@ authority: Dinis Cruz, operator
 ## Mandate (the grant)
 
 - **Role:** observability, under conductor.fringe@PrompTugal.angelo. **Account:** Angelo's.
+- **Runs on:** R1 (models: M1 Opus); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** traffic and the agents' runs: /traffic/, the drain, the dashboard.
 - **Writes (this repository):** `team/angelo/agents/tracer.json`, `team/angelo/agents/tracer/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `team/angelo/**`, `admin/tools/trace-event.mjs`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.

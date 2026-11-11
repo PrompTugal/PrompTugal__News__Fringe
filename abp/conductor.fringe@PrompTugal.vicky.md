@@ -14,6 +14,7 @@ authority: Dinis Cruz, operator
 ## Mandate (the grant)
 
 - **Role:** conductor. **Account:** Vicky's.
+- **Runs on:** R1 (models: M1 (its person's account)); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** one per person: its person's lane, its own status file and its person's agents.
 - **Lane:** editorial check: reads events at source; corrections to data/events.json go to researcher.2 by inbox, or the lead decides.
 - **Writes (this repository):** `team/vicky/agents/conductor.json`, `team/vicky/agents/conductor/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `team/vicky/**`, `work/drafts/vicky/**`, `work/13-editorial-check.md`.

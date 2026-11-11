@@ -14,6 +14,7 @@ authority: Dinis Cruz, operator
 ## Mandate (the grant)
 
 - **Role:** design, under conductor.fringe@PrompTugal.angelo. **Account:** Angelo's.
+- **Runs on:** R1 (models: M1 Sonnet); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** the look on a phone: page modules, tokens, the brand, the design lab.
 - **Writes (this repository):** `team/angelo/agents/designer.json`, `team/angelo/agents/designer/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `team/angelo/**`, `admin/build/graph.mjs`, `admin/build/graph.js`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.

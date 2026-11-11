@@ -14,6 +14,7 @@ authority: Dinis Cruz, operator
 ## Mandate (the grant)
 
 - **Role:** conductor. **Account:** Angelo's.
+- **Runs on:** R1 (models: M1 (its person's account)); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** one per person: its person's lane, its own status file and its person's agents.
 - **Lane:** the graph and live views; SWARM.md also names 'the swarm's ABPs' in Angelo's lane: the architect proposes Angelo reviews these.
 - **Writes (this repository):** `team/angelo/agents/conductor.json`, `team/angelo/agents/conductor/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `team/angelo/**`, `work/drafts/angelo/**`, `admin/build/graph.mjs`, `admin/build/graph.js`, `admin/build/trace-page.mjs`, `admin/build/trace-strip.mjs`, `admin/tools/ptnews-index.mjs`, `admin/tools/trace-event.mjs`, `data/ptnews-index.json`, `api/v1/graph.json`.

@@ -30,7 +30,8 @@ import { buildReleases, releasesIndexBody, releaseBody, releaseJson, releasePath
 import { nowBlock, nowPageBody, nowJs, span as evSpan } from './now.mjs';
 import { timelineBlock, TIMELINE_CSS } from './timeline.mjs';
 import { MYDAY_CSS, myDayBody } from './myday.mjs';   // D29, design.2.fringe@PrompTugal.dinis   // D19, design.2.fringe@PrompTugal.dinis   // work/16, dev.2.fringe@PrompTugal.dinis
-import { guidanceBody, abpBody } from './guidance.mjs';   // work/40, work/39, architect.1.fringe@PrompTugal.dinis
+import { guidanceBody, abpBody } from './guidance.mjs';
+import { whereAgentsRunBody, agenticTeamBody } from './architecture-page.mjs';   // work/48, architect.1.fringe@PrompTugal.dinis   // work/40, work/39, architect.1.fringe@PrompTugal.dinis
 import { traceBody } from './trace-page.mjs';   // Angelo's traces, designer.fringe@PrompTugal.angelo
 import { writeGraph } from './graph-pages.mjs';   // work/42, ontologist.1.fringe@PrompTugal.dinis
 
@@ -268,7 +269,7 @@ writeFileSync(join(out, 'programme', 'index.html'), page('The programme: Lisbon 
 mkdirSync(join(out, 'how'), { recursive: true });
 const count = (d, re) => { try { return readdirSync(join(root, d)).filter((f) => re.test(f)).length; } catch { return 0; } };
 const nAgents = readdirSync(join(root, 'team')).reduce((a, d) => a + count(`team/${d}/agents`, /\.json$/) + (existsSync(join(root, 'team', d, 'status.json')) ? 1 : 0), 0);
-writeFileSync(join(out, 'how', 'index.html'), page('How Lisbon Tech Fringe is made', howBody({ esc, REPO, n: { events: events.length, people: roster.people.length, agents: nAgents, board: board.length, boardDone: board.filter((b) => b.status === 'done').length, briefs: count('briefs', /\.md$/), inboxes: count('data/inboxes', /\.json$/) } }), 'How Lisbon Tech Fringe is made: a swarm of conductors and agents, one conductor per person, Dinis as head.', '', '/how/'));
+writeFileSync(join(out, 'how', 'index.html'), page('How Lisbon Tech Fringe is made', howBody({ esc, REPO, n: { events: events.length, people: roster.people.length, agents: nAgents, board: board.length, boardDone: board.filter((b) => b.status === 'done').length, briefs: count('briefs', /\.md$/), inboxes: count('data/inboxes', /\.json$/) } }) + `<div class="card"><strong>The agentic team:</strong> <a href="/agentic-team/where-agents-run/">where agents run</a> (the formula that places a task) · <a href="/abp/">who may edit what</a></div>`, 'How Lisbon Tech Fringe is made: a swarm of conductors and agents, one conductor per person, Dinis as head.', '', '/how/'));
 mkdirSync(join(out, 'graph'), { recursive: true });
 writeFileSync(join(out, 'graph', 'index.html'), graphPage);
 writeFileSync(join(out, 'graph.js'), read('admin/build/graph.js'));
@@ -291,6 +292,11 @@ const orgs = loadOrganisers(root, events);
 for (const d of ['guidance', 'abp']) mkdirSync(join(out, d), { recursive: true });
 writeFileSync(join(out, 'guidance', 'index.html'), page('Contributing: Lisbon Tech Fringe', guidanceBody(esc), 'How to contribute to Lisbon Tech Fringe, for people and their agents: what you may touch, the rules, how to talk to the team.', '', '/guidance/'));
 writeFileSync(join(out, 'abp', 'index.html'), page('Agent Behaviour Policies: Lisbon Tech Fringe', abpBody(esc, REPO), 'Who may edit what, where: every agent\'s grant, in observe mode.', '', '/abp/'));
+// /agentic-team/ and /agentic-team/where-agents-run/ (work/48, brief 14), /api/v1/runtimes.json
+mkdirSync(join(out, 'agentic-team', 'where-agents-run'), { recursive: true });
+writeFileSync(join(out, 'agentic-team', 'index.html'), page('The agentic team: Lisbon Tech Fringe', agenticTeamBody(esc), 'How the swarm that builds Lisbon Tech Fringe works: where agents run, who may edit what, how it is made.', '', '/agentic-team/'));
+writeFileSync(join(out, 'agentic-team', 'where-agents-run', 'index.html'), page('Where agents run: Lisbon Tech Fringe', whereAgentsRunBody(esc, REPO), 'An agent versus an LLM call; runtimes, models and I/O levels; the formula that places a task; the matrix of our tasks (brief 14).', '', '/agentic-team/where-agents-run/'));
+if (existsSync(join(root, 'data/runtimes.json'))) writeFileSync(join(out, 'api', 'v1', 'runtimes.json'), read('data/runtimes.json'));
 if (existsSync(join(root, 'data/architecture.json'))) writeFileSync(join(out, 'api', 'v1', 'architecture.json'), read('data/architecture.json'));
 mkdirSync(join(out, 'organisers'), { recursive: true });
 writeFileSync(join(out, 'organisers', 'index.html'), page('For organisers: Lisbon Tech Fringe', organisersBody(orgs, esc, { eventPath, hasPage }), 'What Lisbon Tech Fringe offers organisers of side events, and who is listed.'));

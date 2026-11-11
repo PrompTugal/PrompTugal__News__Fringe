@@ -14,6 +14,7 @@ authority: Dinis Cruz, operator
 ## Mandate (the grant)
 
 - **Role:** dev. **Account:** this (the lead's).
+- **Runs on:** R1 (models: M1 Sonnet; M2 through admin/tools/llm.mjs); **I/O level:** L5 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** the build, the gate, CI, the tools, the API.
 - **Writes (this repository):** `team/dinis/agents/dev.1.json`, `team/dinis/agents/dev.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `admin/build/**`, `admin/tools/**`, `admin/redirect/**`, `admin/series.txt`, `assets/**`, `api/**`, `.github/workflows/*.yml`, `data/second-opinion.json`, `data/organisers.json`, `data/person-keys.json`, `admin/site.json`, `CNAME`, `admin/build/swarm.mjs`, `admin/build/me.mjs`, `assets/me/**`, `assets/vendor/**`, `admin/tools/inboxes.py`.
 - **Owns (shared files; others send it their changes):** `admin/build/swarm.mjs`.

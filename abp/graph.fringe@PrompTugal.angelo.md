@@ -14,6 +14,7 @@ authority: Dinis Cruz, operator
 ## Mandate (the grant)
 
 - **Role:** dev, under conductor.fringe@PrompTugal.angelo. **Account:** Angelo's.
+- **Runs on:** R1 (models: M1 Sonnet; M2 through admin/tools/llm.mjs); **I/O level:** L5 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** the build, the gate, CI, the tools, the API.
 - **Writes (this repository):** `team/angelo/agents/graph.json`, `team/angelo/agents/graph/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `team/angelo/**`, `admin/build/graph.mjs`, `admin/build/graph.js`, `api/v1/graph.json`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.

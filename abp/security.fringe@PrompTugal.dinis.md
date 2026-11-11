@@ -14,6 +14,7 @@ authority: Dinis Cruz, operator
 ## Mandate (the grant)
 
 - **Role:** security. **Account:** the old lead's.
+- **Runs on:** R1 (models: M1); **I/O level:** L4 (a branch; the lead brings it onto dev) (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** reviews of the repository, CI and the agents; the hold.
 - **Writes (this repository):** `team/dinis/agents/security.json`, `team/dinis/agents/security/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `security/**`, `HOLD.md`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.

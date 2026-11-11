@@ -14,6 +14,7 @@ authority: Dinis Cruz, operator
 ## Mandate (the grant)
 
 - **Role:** conductor. **Account:** conductor.C's.
+- **Runs on:** R1 (models: M1 (its person's account)); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** one per person: its person's lane, its own status file and its person's agents.
 - **Writes (this repository):** `team/dinis/agents/conductor.c.json`, `team/dinis/agents/conductor.c/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `team/dinis/**`, `work/drafts/dinis/**`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.

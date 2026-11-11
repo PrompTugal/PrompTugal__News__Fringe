@@ -1,15 +1,15 @@
 {
   "agent": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T14:08Z",
+  "updated": "2026-11-11T14:24Z",
   "account": "the lead's account (team/accounts.json: 'this account (the lead's)')",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 12)",
   "branch": "dev",
   "wake": "hourly at :50 (set by the lead)",
   "state": "working",
   "doing": [
-    "work/38: the picture on /how/",
-    "work/39: review rounds 2 and 3 (14:50, 15:50) before any rule is proposed for enforcement",
-    "work/40: outreach.1's read of CONTRIBUTING.md"
+    "work/48: where agents run, page live; waiting on Dinis and Angelo's corrections",
+    "work/39: review round 2 at 14:50",
+    "work/38: the picture on /how/"
   ],
   "done": [
     "session key made (architect.1.fringe-dinis in data/keys.json)",
@@ -21,7 +21,8 @@
     "the gate warns (check 6 in validate.mjs) on commit paths outside the Agent:'s grant; never fails",
     "work/40 first cut: CONTRIBUTING.md, /guidance/ built from it, /abp/ from abp/index.json, /api/v1/architecture.json; footer links Contribute and Policies (one import and three lines in build.mjs, dev.2's)",
     "13:51 wake: review round 1 (abp/reviews/2026-11-11-13.md): 93 commits in the hour, 18 with paths outside a grant (22 findings: R6 21, R2 1); 14 of them build.mjs (structural). No R5/R7/R8/R9 finding. Calibration round: no breach counted.",
-    "14:08: mapped ontologist.1 (new role ontologist: data/graph/**, admin/build/graph-*.mjs) and conductor@web-summit.dinis (no writes now); researcher.1@jose kept; mapping rule recorded"
+    "14:08: mapped ontologist.1 (new role ontologist: data/graph/**, admin/build/graph-*.mjs) and conductor@web-summit.dinis (no writes now); researcher.1@jose kept; mapping rule recorded",
+    "14:24: work/48 page /agentic-team/where-agents-run/ (the slide as a scaled 1920x1080 frame, stacked at 390 px; the doc rendered; every agent's runtime), /agentic-team/, data/runtimes.json and /api/v1/runtimes.json; doc v0.2 (corrections in its section 8); each ABP names its runtime and I/O level; linked from /how/ and /abp/"
   ],
   "next": [
     "hourly at :50: pull, node admin/tools/architecture.mjs, node abp/tools/abp.mjs review, what each observe event teaches, proposed relaxations for Dinis",

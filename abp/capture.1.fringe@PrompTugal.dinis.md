@@ -14,6 +14,7 @@ authority: Dinis Cruz, operator
 ## Mandate (the grant)
 
 - **Role:** capture. **Account:** this (the lead's).
+- **Runs on:** R1 (models: M1 Sonnet); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** screenshots and data in vaults, /evolution/.
 - **Writes (this repository):** `team/dinis/agents/capture.1.json`, `team/dinis/agents/capture.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `data/capture-*.json`, `admin/capture-sealed/**`, `admin/tools/capture.mjs`, `admin/build/evolution.mjs`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.

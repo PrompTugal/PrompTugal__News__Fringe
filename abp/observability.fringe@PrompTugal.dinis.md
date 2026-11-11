@@ -14,6 +14,7 @@ authority: Dinis Cruz, operator
 ## Mandate (the grant)
 
 - **Role:** observability. **Account:** this (the lead's).
+- **Runs on:** R1 (models: M1 Opus); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** traffic and the agents' runs: /traffic/, the drain, the dashboard.
 - **Writes (this repository):** `team/dinis/agents/observability.json`, `team/dinis/agents/observability/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `data/obs/**`, `data/geo/**`, `assets/obs/**`, `admin/obs/**`, `admin/tools/obs/**`, `admin/tools/agent-log.mjs`, `admin/tools/trace-event.mjs`, `admin/build/traffic.mjs`, `admin/build/activity.mjs`, `admin/build/worldmap.mjs`.
 - **Owns (shared files; others send it their changes):** `admin/build/traffic.mjs`.

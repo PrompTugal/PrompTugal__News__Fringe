@@ -14,6 +14,7 @@ authority: Dinis Cruz, operator
 ## Mandate (the grant)
 
 - **Role:** usability. **Account:** this (the lead's).
+- **Runs on:** R1 (models: M1 Sonnet); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** phone tasks and findings, filed as D-tasks.
 - **Writes (this repository):** `team/dinis/agents/usability.1.json`, `team/dinis/agents/usability.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `work/design/**`, `work/28-usability.md`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.

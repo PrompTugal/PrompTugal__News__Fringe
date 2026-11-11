@@ -14,6 +14,7 @@ authority: Dinis Cruz, operator
 ## Mandate (the grant)
 
 - **Role:** reviewer. **Account:** another account (the Web Summit team's site).
+- **Runs on:** R1 (models: M1); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** everything new on dev: findings to the owner's inbox.
 - **Writes (this repository):** `team/?/agents/conductor.json`, `team/?/agents/conductor/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.

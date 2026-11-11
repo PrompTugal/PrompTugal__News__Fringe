@@ -14,6 +14,7 @@ authority: Dinis Cruz, operator
 ## Mandate (the grant)
 
 - **Role:** design. **Account:** this (the lead's).
+- **Runs on:** R1 (models: M1 Sonnet); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** the look on a phone: page modules, tokens, the brand, the design lab.
 - **Writes (this repository):** `team/dinis/agents/design.3.json`, `team/dinis/agents/design.3/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `admin/build/*.mjs (your own page modules)`, `admin/build/designs/**`, `admin/build/og/**`, `admin/build/tokens.css`, `assets/brand/**`, `assets/**`, `work/design/**`, `admin/build/event-pages.mjs`, `admin/build/cards.mjs`, `admin/build/how.mjs`, `admin/build/designs/c.mjs`.
 - **Owns (shared files; others send it their changes):** `admin/build/event-pages.mjs`.

@@ -14,6 +14,7 @@ authority: Dinis Cruz, operator
 ## Mandate (the grant)
 
 - **Role:** conductor. **Account:** Jose's.
+- **Runs on:** R1 (models: M1 (its person's account)); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** one per person: its person's lane, its own status file and its person's agents.
 - **Lane:** the channels: posts a person sends.
 - **Writes (this repository):** `team/jose/agents/conductor.json`, `team/jose/agents/conductor/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `team/jose/**`, `work/drafts/jose/**`, `work/drafts/**`, `work/18-outreach-kit.md`.

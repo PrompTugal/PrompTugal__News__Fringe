@@ -14,6 +14,7 @@ authority: Dinis Cruz, operator
 ## Mandate (the grant)
 
 - **Role:** outreach. **Account:** this (the lead's).
+- **Runs on:** R1 (models: M1 Sonnet); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** drafts to organisers and partners, the tracker; a person sends.
 - **Writes (this repository):** `team/dinis/agents/outreach.1.json`, `team/dinis/agents/outreach.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `work/drafts/**`, `data/outreach*.json`, `admin/outreach-sealed/**`, `admin/tools/outreach.py`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.

@@ -36,6 +36,7 @@ function finishWho(w) {
 function build() {
   const dir = path.join(ROOT, 'abp');
   const index = [];
+  const RT = (() => { try { return Object.fromEntries(JSON.parse(fs.readFileSync(path.join(ROOT, 'data/runtimes.json'), 'utf8')).agents.map((x) => [x.agent, x])); } catch { return {}; } })();
   for (const [agent, a] of Object.entries(P.agents).filter(([k]) => k !== 'about')) {
     const w = who(agent), g = abp.grantOf(w, P), r = P.roles[w.role] || {};
     const fill = s => s.replace(/\{person\}/g, w.person || '?').replace(/\{name\}/g, w.name || '?').replace(/\{claimed\}/g, 'NN-<item you own>.md').replace(/\{keyid\}/g, '<your key id>').replace(/#own-entry/, ' (your own entry)').replace(/#own-modules/, ' (your own page modules)');
@@ -56,7 +57,7 @@ authority: Dinis Cruz, operator
 
 ## Mandate (the grant)
 
-- **Role:** ${w.role}${a.under ? `, under ${a.under}` : ''}. **Account:** ${a.account || 'unknown'}.
+- **Role:** ${w.role}${a.under ? `, under ${a.under}` : ''}. **Account:** ${a.account || 'unknown'}.${RT[agent] ? `\n- **Runs on:** ${RT[agent].runtime} (models: ${RT[agent].models}); **I/O level:** ${RT[agent].io_level} (data/runtimes.json, /agentic-team/where-agents-run/).` : ''}
 - **Focus:** ${r.focus || a.lane || 'its status file only, until its grant is written'}.${a.lane ? `\n- **Lane:** ${a.lane}.` : ''}
 - **Writes (this repository):** ${g.writes.map(x => '`' + fill(x) + '`').join(', ')}.${shared.length ? `\n- **Owns (shared files; others send it their changes):** ${shared.map(x => '`' + x + '`').join(', ')}.` : ''}
 - **Writes (other repositories):** \`PrompTugal__News__Website board/keys.json\` (its own public key) only.

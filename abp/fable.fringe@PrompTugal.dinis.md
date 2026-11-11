@@ -14,6 +14,7 @@ authority: Dinis Cruz, operator
 ## Mandate (the grant)
 
 - **Role:** advisor. **Account:** this (the lead's).
+- **Runs on:** R1 (models: M1 Fable); **I/O level:** L4 (a branch; the lead brings it onto dev) (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** advice to Dinis and the lead.
 - **Writes (this repository):** `team/dinis/agents/fable.json`, `team/dinis/agents/fable/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `advice/**`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
