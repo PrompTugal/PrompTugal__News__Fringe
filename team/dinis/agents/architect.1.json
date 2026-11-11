@@ -1,6 +1,6 @@
 {
   "agent": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T19:52Z",
+  "updated": "2026-11-11T19:42Z",
   "account": "riskmandate-personal (Ultra) (Dinis, brief 15)",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 12)",
   "branch": "dev",
@@ -8,7 +8,7 @@
   "state": "active",
   "doing": "OpenTelemetry in flow.mjs (every unit a span); R8e (ELASTIC_CLOUD only for elastic.1 and architect.1)",
   "done": [
-    "2026-11-11T19:52Z: /agentic-team/how-it-flows/ (the flow diagram, the steps of a run, what to reconfigure), at Dinis's word",
+    "2026-11-11T19:42Z: /agentic-team/how-it-flows/ (the flow diagram, the steps of a run, what to reconfigure), at Dinis's word",
     "2026-11-11T19:35Z: both Gravity universes full width (Dinis); ABP for neo4j.1 and its session started (session_01Kw9UwERnn4khZSspzGuxJo) at Dinis's word, 19:33 UTC",
     "2026-11-11T19:07Z: round 6 review (56 commits, 6 outside a grant; no enforced rule fired); flows moved to swarm-flows (owner architect.1); every round's findings exported to Elastic swarm-abp-reviews (63 docs)",
     "session key made (architect.1.fringe-dinis in data/keys.json)",
