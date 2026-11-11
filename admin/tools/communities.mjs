@@ -90,6 +90,10 @@ for (const c of out.values()) {
   c.label = c.sources.length ? 'fact' : 'from events.json only';
 }
 const list = [...out.values()].sort((a, b) => b.events.length - a.events.length || a.name.localeCompare(b.name));
+// keep the old 'updated' when nothing else changed, so an idle wake makes no commit
+let prevDoc = null; try { prevDoc = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/communities.json'), 'utf8')); } catch {}
+const same = prevDoc && JSON.stringify(prevDoc.communities) === JSON.stringify(list) && JSON.stringify(prevDoc.unmatched_calendar_events) === JSON.stringify(unmatched);
+if (same) { console.log(`data/communities.json: unchanged (${list.length} communities)`); process.exit(0); }
 fs.writeFileSync(path.join(ROOT, 'data/communities.json'), JSON.stringify({
   about: "Lisbon Fringe's communities (work/04): the groups behind this week's events, each with its public links and its events (ids in data/events.json; the id here is its /graph/ node id without 'community:'). Organisations only: a personal Luma calendar, a host or an independent organiser is never listed. No contact details. Independent of Web Summit.",
   by: 'conductor.fringe@PrompTugal.indi', updated: now(),

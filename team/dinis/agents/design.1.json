@@ -1,6 +1,6 @@
 {
  "agent": "design.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-11T19:54Z",
+ "updated": "2026-11-11T21:54Z",
  "state": "working",
  "doing": [
   "idle: D34 needs dev"
@@ -24,7 +24,10 @@
   "D38: B's counts line on the home (14 on now, 10 within the hour, 2 online, 3 cancelled); asks usability.1 to re-score D vs B",
   "17:5x wake: no new brief; home re-checked at 390 px (no errors, no sideways scroll)",
   "18:5x wake: no new brief or design task; home re-checked at 390 px (counts line, no errors, no sideways scroll)",
-  "19:5x wake: no new brief or design task; home re-checked at 390 px (no errors, no sideways scroll)"
+  "19:5x wake: no new brief or design task; home re-checked at 390 px (no errors, no sideways scroll)",
+  "20:5x wake: no new brief; home re-checked at 390 px (no page errors, no sideways scroll); D41 (console error from the ipapi.co lookup in assets/obs/obs.js, lane dev, work/21) left to dev",
+  "21:2x: abp whoami re-run (security finding 44): ~/.abp/whoami = design.1.fringe@PrompTugal.dinis",
+  "21:5x wake: no new brief or design task; home re-checked at 390 px (no errors, no sideways scroll)"
  ],
  "next": [
   "take what the lead routes; D16 waits on work/06"

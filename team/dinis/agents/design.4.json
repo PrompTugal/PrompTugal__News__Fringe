@@ -1,7 +1,7 @@
 {
   "agent": "design.4.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T20:46Z",
-  "state": "quiet: nothing open for design.4 (D41 is dev lane, work/21: obs.js geo lookup CORS)",
+  "updated": "2026-11-11T22:49Z",
+  "state": "D42 done; nothing else open",
   "doing": [],
   "done": [
     "D8: admin/build/tokens.css (design E ported), wired into build.mjs, graph colours moved to tokens; checked 390/1280, light/dark",
@@ -21,7 +21,11 @@
     "Checked Angelo's tokens.css edit (9a44247): --t-festival joins the graph-node kinds; it fits; made the dark value var(--red) (#f07278) so it follows the brand instead of a one-off #ff8a8f. Token changes: send them to design.4 (identity.mjs and tokens.css are in design.4's grant).",
     "D39 online now and next; D40 counts agree (home.mjs)",
     "19:4x wake: nothing new; live /, /storm/, /how/ checked",
-    "20:4x wake: nothing new for design; live / and /storm/ 200"
+    "20:4x wake: nothing new for design; live / and /storm/ 200",
+    "21:2x: abp whoami run before the push (lead, finding 44)",
+    "21:3x home.mjs and nowstrip.mjs: status unknown is never 'on now' (no badge, not counted, not in the Now strip, listed after the others with a 'Status unknown' tag); an event that spans days shows its dates ('Wed 11 14:30 - Thu 12 17:30 UTC'); Playwright 390 and 1280: no console errors, no sideways scroll",
+    "21:4x wake: nothing new; live home shows the 'Status unknown' tag (fix live)",
+    "22:5x D42: Tomorrow in place of an empty Tonight (nowstrip.mjs); page height still ~16000 px (not addressed)"
   ],
   "next": [
     "wait for the answer on L10; take any open D-task"
