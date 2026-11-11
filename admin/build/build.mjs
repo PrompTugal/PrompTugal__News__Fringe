@@ -241,7 +241,7 @@ mkdirSync(join(out, 'graph'), { recursive: true });
 writeFileSync(join(out, 'graph', 'index.html'), graphPage);
 writeFileSync(join(out, 'graph.js'), read('admin/build/graph.js'));
 writeFileSync(join(out, 'CNAME'), 'fringe.promptugal.news\n');
-writeFileSync(join(out, '404.html'), page('Not found', '<h1>Not found</h1><p><a href="/">Lisbon Fringe</a> · <a href="/join/">Join</a></p>', 'Page not found.'));
+writeFileSync(join(out, '404.html'), page('Not found', '<h1>That page is not here</h1><p>It may have moved, or it is not built yet. Try one of these:</p><p><a class="btn" href="/">Today in Lisbon</a></p><ul><li><a href="/#events">All events, today and tomorrow</a></li><li><a href="/api/v1/events.json">Every event as data</a></li><li><a href="/join/">Join the team</a></li></ul>', 'Page not found.'));
 mkdirSync(join(out, 'api', 'v1'), { recursive: true });
 writeFileSync(join(out, 'api', 'v1', 'README.md'), read('api/v1/README.md'));
 writeFileSync(join(out, 'api', 'v1', 'events.json'), JSON.stringify({ about: 'Lisbon Fringe events, each re-read at its public URL (read_at, UTC). Independent of Web Summit.', site: SITE, version: VERSION, built_at: BUILT, events }, null, 2) + '\n');
