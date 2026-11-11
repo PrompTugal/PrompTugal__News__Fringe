@@ -1,6 +1,6 @@
 {
   "agent": "dev.2.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T21:21Z",
+  "updated": "2026-11-11T21:23Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "branch": "dev",
   "state": "working",
@@ -30,7 +30,8 @@
     "19:2x wake: second-opinion run (iCal feed), models ledger refreshed",
     "security finding 37: /universe/ gravity.js tag now has integrity=sha384 and crossorigin=anonymous (web-summit.sgit.ai sends access-control-allow-origin: *); tested good bytes load, tampered bytes refused",
     "20:2x wake: second-opinion run (iCal feed), models ledger refreshed",
-    "21:2x wake: second-opinion run (iCal feed), models ledger refreshed"
+    "21:2x wake: second-opinion run (iCal feed), models ledger refreshed",
+    "21:2x: abp whoami run (finding 44); audited every llm.mjs caller: only second-opinion.mjs (public organiser page text and iCal data, never tip text); llm.mjs now refuses any task named tip/tips (advice 2053 item 7)"
   ],
   "next": [
     "refresh /models/ ledger at each wake",

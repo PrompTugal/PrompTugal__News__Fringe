@@ -80,6 +80,9 @@ async function send(model, messages, max_tokens, extra) {
 
 export async function call({ task, agent, tier, model, messages, max_tokens = 2000, mock = false, extra = {} }) {
   if (!task || !agent || !Array.isArray(messages)) throw new Error('call({ task, agent, messages }) needs all three');
+  // NO TIP TEXT IN A MODEL PROMPT (advice 2053 item 7, 11 Nov 2026): a tip can hold a private person's words, and OpenRouter traces keep prompts.
+  // A call whose task names tips is refused and the refusal is ledgered; nothing is sent. Page text from public organiser pages is not tip text.
+  if (/(^|[\/\s._-])tips?([\/\s._-]|$)/i.test(String(task))) { const at = new Date().toISOString().slice(0, 19) + 'Z'; const line = { at, id: 'refused-' + crypto.randomBytes(4).toString('hex'), task, agent, status: 'refused_tip_text', tokens_in: 0, tokens_out: 0, cost_usd: 0, latency_ms: 0 }; appendLedger(line); return { text: null, line, response: null }; }
   const pick = route({ tier, model });
   const at = new Date().toISOString(), id = `${at.replace(/[-:.]/g, '').slice(0, 15)}-${crypto.randomBytes(4).toString('hex')}`;
   const base = { at: at.slice(0, 19) + 'Z', id, task, agent, tier: pick.tier, provider: mock ? 'mock' : 'openrouter', model: pick.model, cap_usd: CAP };
