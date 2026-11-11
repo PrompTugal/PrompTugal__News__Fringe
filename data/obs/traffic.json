@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-11T22:25Z",
+ "generated": "2026-11-11T22:38Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 500,
-  "reads": 431,
-  "tabs": 231,
+  "views": 503,
+  "reads": 432,
+  "tabs": 232,
   "countries": 19,
-  "shares": 166,
-  "bots": 1645,
+  "shares": 167,
+  "bots": 1675,
   "crawler_tabs": 1,
-  "agent_runs": 239,
-  "agent_runs_signed": 218
+  "agent_runs": 241,
+  "agent_runs_signed": 220
  },
  "by_hour": [
   [
@@ -212,13 +212,13 @@
   ],
   [
    "2026-11-11 22:00",
-   3
+   6
   ]
  ],
  "by_page": [
   [
    "/",
-   206
+   208
   ],
   [
    "/now/",
@@ -393,6 +393,10 @@
    2
   ],
   [
+   "/gravity",
+   2
+  ],
+  [
    "/agentic-team/where-agents-run/",
    2
   ],
@@ -513,10 +517,6 @@
    1
   ],
   [
-   "/gravity",
-   1
-  ],
-  [
    "/o/devworld-conference-and-bitterbrains/",
    1
   ],
@@ -560,7 +560,7 @@
  "reading": [
   [
    "/",
-   162,
+   163,
    29,
    13
   ],
@@ -1072,11 +1072,11 @@
  "by_country": [
   [
    "Portugal",
-   315
+   317
   ],
   [
    "United Kingdom",
-   65
+   66
   ],
   [
    "United States",
@@ -1150,7 +1150,7 @@
  "by_city": [
   [
    "Lisbon, Portugal",
-   233
+   235
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -1202,7 +1202,7 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   78
+   79
   ]
  ],
  "by_referrer": [
@@ -1222,18 +1222,18 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   461
+   464
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 2534,
+ "other_hosts_views": 2566,
  "by_via": [
   [
    "whatsapp",
-   159
+   160
   ],
   [
    "promptugal-news",
@@ -1246,8 +1246,8 @@
  ],
  "via_detail": {
   "whatsapp": {
-   "views": 159,
-   "tabs": 65,
+   "views": 160,
+   "tabs": 66,
    "countries": 9
   },
   "linkedin": {
@@ -1264,11 +1264,11 @@
  "by_screen": [
   [
    "desktop",
-   277
+   279
   ],
   [
    "phone",
-   219
+   220
   ],
   [
    "tablet",
@@ -1306,7 +1306,7 @@
   ],
   [
    "design.3.fringe@PrompTugal.dinis",
-   13
+   14
   ],
   [
    "observability.fringe@PrompTugal.dinis",
@@ -1315,6 +1315,10 @@
   [
    "design.2.fringe@PrompTugal.dinis",
    12
+  ],
+  [
+   "capture.1.fringe@PrompTugal.dinis",
+   10
   ],
   [
    "conductor.fringe@PrompTugal.indi",
@@ -1326,10 +1330,6 @@
   ],
   [
    "researcher.2@PrompTugal.dinis",
-   9
-  ],
-  [
-   "capture.1.fringe@PrompTugal.dinis",
    9
   ],
   [
@@ -1366,7 +1366,7 @@
   ]
  ],
  "flows": {
-  "tabs": 231,
+  "tabs": 232,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
@@ -1374,7 +1374,7 @@
    ],
    [
     "shared link (?via=)",
-    68
+    69
    ],
    [
     "from another site",
@@ -1384,7 +1384,7 @@
   "entry_pages": [
    [
     "/",
-    152
+    153
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
@@ -1446,7 +1446,7 @@
   "exit_pages": [
    [
     "/",
-    109
+    110
    ],
    [
     "/now/",
@@ -1610,15 +1610,15 @@
   "pages_per_tab": [
    [
     "1",
-    157
+    158
    ],
    [
     "2",
-    35
+    34
    ],
    [
     "3",
-    14
+    15
    ],
    [
     "4",
@@ -1633,7 +1633,7 @@
   "via_reached": [
    [
     "whatsapp: /",
-    65
+    66
    ],
    [
     "whatsapp: /now/",
@@ -1692,11 +1692,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
@@ -1704,7 +1704,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
+    "whatsapp: /e/2026-11-11-roast-your-website/",
     1
    ],
    [
@@ -1734,7 +1734,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 233,
+    "views": 235,
     "lat": 38.7,
     "lon": -9.1
    },
