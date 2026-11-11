@@ -128,8 +128,9 @@ function linkify(text) {
 }
 const STATUS = { on: 'On', moved: 'Moved', cancelled: 'Cancelled', online: 'Online', unknown: 'Unknown' };
 const eventCard = (e) => card(e, { esc });
-function eventsHtml() {
-  if (!events.length) return `<h2>Events</h2><p class="muted">The event listings arrive here once each one has been checked at its public source.</p>`;
+function eventsHtml() { const p = eventsParts(); return p.strip + p.rest; }
+function eventsParts() {
+  if (!events.length) return { strip: '', rest: `<h2>Events</h2><p class="muted">The event listings arrive here once each one has been checked at its public source.</p>` };
   // D13 (design.2): today in jump-able parts. In person by time of day (past ones folded), online in its own part, so each event appears once.
   const t0 = Date.parse(BUILT), isOnl = (e) => /^online\b/i.test(e.place || '') || e.status === 'online';
   const over = (e) => { const sp = evSpan(e); return sp && sp.e <= t0; };
@@ -142,13 +143,13 @@ function eventsHtml() {
   const sec = (id, title, list, note = '') => `<h3 id="${id}" class="jump">${title} <span class="muted">(${list.length})</span></h3>${note}` + (list.length ? denseList(list, { esc }) : '<p class="muted">Nothing checked in this part.</p>');
   const tom = small(sortDay(events.filter((e) => e.date === tomorrow)));
   const later = events.filter((e) => e.date > tomorrow).length;
-  return bigStrip(bigs, { esc }, 'Big events this week') + `<h2>Small events today, ${today}</h2>`
+  return { strip: bigStrip(bigs, { esc }, 'Big events this week'), rest: `<h2>Small events today, ${today}</h2>`
     + (daytime.length ? sec('later-today', 'Later today, before 18:00', daytime) : '')
     + sec('tonight', 'Tonight, 18:00 on', evening)
     + sec('online', 'Online today, any time', online)
     + (earlier.length ? `<details id="earlier" class="earlier"><summary>Earlier today (${earlier.length} already over)</summary>${denseList(earlier, { esc })}</details>` : '')
     + `<h2 id="tomorrow">Tomorrow, ${tomorrow}</h2>` + (tom.length ? denseList(tom, { esc }) : '<p class="muted">Nothing checked yet for this day.</p>')
-    + (later ? `<p class="muted">${later} more later this week: <a href="/programme/">browse the whole programme by day, place and kind</a>.</p>` : '');
+    + (later ? `<p class="muted">${later} more later this week: <a href="/programme/">browse the whole programme by day, place and kind</a>.</p>` : '') };
 }
 
 
@@ -186,16 +187,18 @@ r=live.concat(nx).slice(0,3);if(!r.length)return;
 var box=document.getElementById('hero-list');box.textContent='';r.forEach(function(x){var e=x[0],c=document.createElement('div');c.className='card';var w=document.createElement('span');w.className='when';w.textContent=x[1]+' · '+e.start.slice(11,16)+(e.end?'–'+e.end.slice(11,16):'')+' UTC';var l=document.createElement('a');l.setAttribute('href',/^[a-z0-9][a-z0-9-]*$/.test(e.id||'')?'/e/'+encodeURIComponent(e.id)+'/':e.url);var st=document.createElement('strong');st.textContent=e.name;l.appendChild(st);var m=document.createElement('div');m.className='muted';m.textContent=[e.place,e.organiser].filter(Boolean).join(' · ');c.appendChild(w);c.appendChild(document.createElement('br'));c.appendChild(l);c.appendChild(m);box.appendChild(c)})}catch(x){}})();</script>`;
 
 // --- / -------------------------------------------------------------------
+const homeParts = eventsParts();
 const home = page('Lisbon Tech Fringe', `
 <h1 class="sr">Lisbon Tech Fringe</h1>
-${timelineBlock(events, esc, { eventPath, hasPage }, new Date(BUILT), { limit: 6, jumps: `<p class="tl-jumps" aria-label="Jump to"><a href="#tonight">Tonight</a><a href="#online">Online</a><a href="#tomorrow">Tomorrow</a><a href="#events">All events</a><span class="tl-count">${esc(heroCount(events, today))}</span></p>` })}
+<div class="home-top"><div class="ht-main">${timelineBlock(events, esc, { eventPath, hasPage }, new Date(BUILT), { limit: 6, jumps: `<p class="tl-jumps" aria-label="Jump to"><a href="#tonight">Tonight</a><a href="#online">Online</a><a href="#tomorrow">Tomorrow</a><a href="#events">All events</a><span class="tl-count">${esc(heroCount(events, today))}</span></p>` })}</div>
+<aside class="ht-side">${homeParts.strip}</aside></div>
 <!--LIVE-->
 <p class="muted">An independent guide to the alternative, community and side events around Web Summit Lisbon this week: what is on, where, when and how to join.</p>
 <div class="card"><strong>The storm.</strong> For weather warnings and what moved because of Storm Charles, see
 <a href="https://storm-charles.promptugal.news">storm-charles.promptugal.news</a>, <a href="https://www.ipma.pt/">IPMA</a> and <a href="https://www.prociv.gov.pt/">ANEPC</a>. This site is not a warning service.
 <div id="storm-live"><p class="muted">The storm site's latest is loading…</p></div></div>
 <script src="/storm.js" defer></script>
-<div id="events"></div>${eventsHtml()}
+<div id="events"></div>${homeParts.rest}
 <h2>How this is made</h2>
 <div class="card">Built in the open by a swarm: one conductor per person, agents by role, Dinis as head. <a href="/how/"><strong>See how it is made</strong></a> · <a href="/join/">Bring your conductor in five minutes</a>.</div>
 <!--SHOWROOM-->

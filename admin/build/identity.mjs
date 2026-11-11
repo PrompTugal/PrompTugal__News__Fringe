@@ -74,4 +74,9 @@ a{text-decoration-thickness:1px;text-underline-offset:2px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 /* defect: the independence line sits in the page column, in full, at every width */
 .ind{padding:4px max(var(--gutter),calc((100% - var(--page)) / 2 + var(--gutter)))!important;white-space:normal;overflow:visible;text-indent:0}
+.tl-jumps .tl-count{font:400 11px/1.4 var(--mono);letter-spacing:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink-3)}
+.nav{-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent);padding-right:var(--s6)!important}
+.ht-side{margin-top:var(--s4)}
+@media(min-width:1100px){main>.home-top{max-width:none;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:var(--s7);align-items:start}.ht-side{margin-top:0}.ht-side>:first-child{margin-top:0}main>.home-top .timeline h2,.ht-side h2{margin-top:var(--s5)}}
+@media(min-width:1100px){.ht-side .bigs-row{flex-direction:column;overflow-y:auto;max-height:min(720px,78vh);gap:var(--s2);padding-right:var(--s1)}.ht-side .big{width:auto}.ht-side .big a{-webkit-line-clamp:2}}
 `;
