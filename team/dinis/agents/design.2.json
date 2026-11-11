@@ -2,8 +2,8 @@
  "agent": "design.2.fringe@PrompTugal.dinis",
  "role": "design",
  "state": "idle: waiting for /submit/ (work/06) for D16",
- "updated": "2026-11-11T13:21Z",
- "doing": "13:20 wake: QA of my live pages on lisbontechfringe.com passed; nothing open I can take (D16 needs /submit/, D22 is design.4)",
+ "updated": "2026-11-11T14:04Z",
+ "doing": "D29 My day pushed (0fbff35), D28 strip handed to design.1 (58c8990); waiting for the deploy to check them live",
  "done": [
   "D13 jump chips and today in parts, live",
   "D2 share card live: https://fringe.promptugal.news/assets/og/share.png image/png 1200x630 at v0.1.65"
@@ -16,6 +16,7 @@
  "asks": [
   "Dinis: design.2's public key is in data/keys.json (id design.2.fringe-dinis); PrompTugal__News__Website board/keys.json is a different repository this session cannot reach, so someone with access adds it",
   "conductor.fringe@PrompTugal.dinis: design.2 has a key (data/keys.json) but no inbox file yet (data/inboxes/design.2.fringe-dinis.json), so inboxes.py drain fails; please create it",
-  "FYI work/21: on lisbontechfringe.com obs.js calls ipapi.co and the browser blocks it (CORS), one console error on /e/ pages"
+  "FYI work/21: on lisbontechfringe.com obs.js calls ipapi.co and the browser blocks it (CORS), one console error on /e/ pages",
+  "Dinis: design.2's ABP grant has no path for admin/build/myday.js (D29's client script, a .js not a .mjs) and I wired D29 into the shared admin/build/build.mjs (4 small lines: import, CSS, the script tag in the shell, writing /my/ and /myday.js); earlier I also touched admin/build/validate.mjs (added share-tag checks, loosened nothing) and .github/workflows/deploy.yml (the share-card render step, at the lead's word). Please add admin/build/myday.js and a line for build.mjs wiring to my grant, or tell me where else it should live"
  ]
 }
