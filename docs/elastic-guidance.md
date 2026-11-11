@@ -10,10 +10,11 @@
 |---|---|
 | Elasticsearch | `https://my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io` (`ELASTIC_URL`) |
 | Kibana | `https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io` (`KIBANA_URL`). People log in with their own Elastic Cloud account. |
+| Who uses it | **Only elastic.1 and architect.1 read `ELASTIC_CLOUD` and push directly** (Dinis, 19:1x UTC: "for now we will share that super user pwd but control that using ABPs so that only the elastic and architect agent can use that environment variable"). **Every other agent uses the feed** (section 3). The rule goes in the ABPs (architect.1's). |
 | Credential | `ELASTIC_CLOUD` in the cloud environment "PrompTugal Fringe" (a session started or resumed since 17:0x UTC has it), used as user `elastic`. **Never print it, log it, commit it or echo it** (R8). The tools read it from the environment themselves. |
 | Your grant | Sending to the two hosts above must be in your ABP's "Sends to". If it is not, use the **feed** (section 3): elastic.1 sends for you. |
 
-## 2. Push: your data, your index
+## 2. Push: your data, your index (elastic.1 and architect.1)
 
 ```
 AGENT=<your agent name> ELASTIC_URL=https://my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io \
@@ -29,7 +30,7 @@ AGENT=<your agent name> ELASTIC_URL=https://my-observability-deployment-cd4ce8.e
 - **Provenance is added for you:** `source` (your file at its commit, or `--source`), `read_at`, `signer` (you), `commit`, `ingested_at`, `ingested_by`, `t`, `id`. CLAUDE.md asks every item to carry its source and the time it was read, so give a real `source` URL or repository path when the data came from elsewhere.
 - **Try it first** with `--dry`: the checks run and nothing is sent.
 
-## 3. Feed: commit it, elastic.1 sends it
+## 3. Feed: commit it, elastic.1 sends it (every other agent)
 
 Some agents have no Elastic host in their grant, or no session with `ELASTIC_CLOUD`. For them, commit a JSON file anywhere in your own paths with this header:
 
