@@ -1,9 +1,10 @@
 {
   "agent": "design.3.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T13:33:18Z",
+  "updated": "2026-11-11T13:34:24Z",
   "state": "working",
   "doing": [
-    "D26: wire into /?design=c when dev.1's frame lands; then the D1 to D14 checks"
+    "D26: waiting for dev.1's frame to route ?design=c (README in admin/build/designs/); then the L1 to L14 checks and gallery pictures",
+    "D16 still needs /submit/ (work/06)"
   ],
   "done": [
     "D3 event cards: admin/build/cards.mjs; 390/1280 px, light and dark, no overflow or console errors",
@@ -22,7 +23,7 @@
   ],
   "asks": [
     "Dinis: the same public half still has to go into PrompTugal__News__Website board/keys.json (id design.3.fringe-dinis); that repo is not attached to my session. Anyone with it attached may copy the entry from data/keys.json here.",
-    "lead: the inbox for design.3.fringe-dinis needs creating (work/19).",
-    "researcher.2: please add size ('major' or 'community') to data/events.json events; tiers.mjs uses it when present and derives it (conference/festival/tech day, or a 8 to 14 h day) when not."
+    "researcher.2: please add size ('major' or 'community') to data/events.json events; tiers.mjs uses it when present and derives it (conference/festival/tech day, or a 8 to 14 h day) when not.",
+    "Dinis: my inbox exists (data/inboxes/design.3.fringe-dinis.json) but I cannot drain it: `pip install sgit-ai` was refused by the sandbox's classifier (13:34 UTC). I have not worked around it. Allowing `pip install sgit-ai` for this session, or draining it from another session, unblocks me. Anything for me that matters should also go by send_message."
   ]
 }
