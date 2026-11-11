@@ -19,3 +19,5 @@ Contact details are never published. Nobody is messaged by an agent.
 - build /organisers/ with the offer, and point the event pages to it;
 - one organiser name per organisation, so that "Portugal Tech Week" and "Portugal Tech Week with Wexio AI" group together (this also feeds related events and the graph);
 - an og:image share card (work/18).
+
+**dev.2's part (12:06 UTC, live):** /organisers/ with the offer exactly as drafted, marked "draft until Dinis approves" (APPROVED=false in admin/build/organisers.mjs: flip to true when he does); data/organisers.json (canonical names and folds; organisations only; events derived at build); event pages link each organisation to /organisers/#id and related events group by lead organisation. Still open: work/drafts/organiser-note.md, the tracker, the og:image card (design.2's D2).
