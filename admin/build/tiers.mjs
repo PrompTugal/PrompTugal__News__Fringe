@@ -24,7 +24,7 @@ export const TIER_CSS = `
 .big .bw{font-size:.82rem;color:var(--ink-3)}
 .big.st-on{--st:var(--on)}.big.st-online{--st:var(--online)}.big.st-moved{--st:var(--moved)}.big.st-cancelled{--st:var(--cancelled);opacity:.75}.big.st-cancelled a{text-decoration:line-through}
 .dense{list-style:none;margin:6px 0;padding:0;border-top:1px solid var(--hair)}
-.row{position:relative;display:grid;grid-template-columns:3.6em 1fr;gap:0 8px;padding:7px 2px;border-bottom:1px solid var(--hair);overflow-wrap:anywhere}
+.row{position:relative;display:grid;grid-template-columns:3.8em 1fr;gap:0 8px;padding:7px 2px;border-bottom:1px solid var(--hair);overflow-wrap:anywhere}
 .row .rt{grid-row:span 2;font-variant-numeric:tabular-nums;font-weight:600;font-size:.9rem;color:var(--ink-2,var(--fg));padding-top:1px}
 .row a{color:var(--ink,var(--fg));text-decoration:none;font-weight:600;line-height:1.3}.row a::after{content:"";position:absolute;inset:0}.row a:focus-visible,.row a:hover{text-decoration:underline}
 .row .rm{font-size:.84rem;color:var(--ink-3)}
@@ -46,9 +46,9 @@ export function bigCard(e, { esc }, attrs = '') {
   const st = stOf(e);
   return `<li class="big st-${st}"${attrs}><div class="bt"><b>${esc(dayShort(e))}</b> · ${esc(timeRange(e))} · ${esc(STATUS[st])}</div><a href="${esc(href(e))}">${esc(e.name)}</a><div class="bw">${esc(placeShort(e))}</div></li>`;
 }
-export function denseRow(e, { esc }, attrs = '') {
+export function denseRow(e, { esc }, attrs = '', why = '', withDay = false) {
   const st = stOf(e), org = orgShort(e);
-  return `<li class="row st-${st}"${attrs}><span class="rt">${esc(startHm(e))}</span><a href="${esc(href(e))}">${esc(e.name)}</a><span class="rm"><span class="dot"></span>${st === 'on' ? '' : `<span class="stx">${esc(STATUS[st])}</span>`}${esc(placeShort(e))}${org ? ' · ' + esc(org) : ''}</span></li>`;
+  return `<li class="row st-${st}"${attrs}><span class="rt">${withDay ? esc(dayShort(e)) + '<br>' : ''}${esc(startHm(e))}</span><a href="${esc(href(e))}">${esc(e.name)}</a><span class="rm"><span class="dot"></span>${st === 'on' ? '' : `<span class="stx">${esc(STATUS[st])}</span>`}${esc(placeShort(e))}${org ? ' · ' + esc(org) : ''}${why ? ' · ' + esc(why) : ''}</span></li>`;
 }
 export const bigStrip = (list, deps, title = 'Big events') => list.length
   ? `<section class="bigs" aria-label="${title}"><h2>${title} <span class="muted">(${list.length})</span></h2><ul class="bigs-row">${list.map((e) => bigCard(e, deps)).join('')}</ul></section>` : '';

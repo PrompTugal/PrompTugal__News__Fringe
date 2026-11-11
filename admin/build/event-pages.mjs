@@ -53,17 +53,17 @@ function related(e, all) {
   }).filter((r) => r.score > 0).sort((x, y) => y.score - x.score || x.gap - y.gap).slice(0, 6);
 }
 
-const CSS = `.star{background:linear-gradient(135deg,var(--on-bg),var(--card) 70%);border:2px solid var(--accent);border-radius:14px;padding:18px 16px;margin:12px 0;overflow-wrap:anywhere;box-shadow:0 2px 12px rgba(0,0,0,.08)}
-.star .by{font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
-.star .org{font-size:1.7rem;line-height:1.2;font-weight:800;margin:.1em 0 .2em}.star .host{font-size:.9rem;color:var(--muted);margin:0 0 14px}
-.star .go{display:block;text-align:center;background:var(--accent);color:var(--bg);font-weight:600;text-decoration:none;padding:12px;border-radius:8px;font-size:1.1rem;box-shadow:0 1px 0 rgba(0,0,0,.2)}.star .go:hover,.star .go:focus-visible{filter:brightness(1.1)}
+const CSS = `.star{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:10px 12px;margin:10px 0;overflow-wrap:anywhere}
+.star .by{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.star .org{font-size:1.2rem;line-height:1.25;font-weight:700;margin:.05em 0 .5em}.star .host{font-size:.9rem;color:var(--muted);margin:0 0 14px}
+.star .go{display:block;text-align:center;background:var(--accent);color:var(--bg);font-weight:600;text-decoration:none;padding:10px 12px;min-height:44px;border-radius:8px;font-size:1rem}.star .go:hover,.star .go:focus-visible{filter:brightness(1.1)}
 .facts{display:grid;grid-template-columns:max-content 1fr;gap:6px 12px;margin:0}.facts dt{color:var(--muted)}.facts dd{margin:0;overflow-wrap:anywhere;min-width:0}
-@media (max-width:420px){.facts{grid-template-columns:1fr}.facts dt{margin-top:6px}}
+@media (max-width:420px){.facts{grid-template-columns:5.2em 1fr;gap:4px 10px;font-size:.95rem}.facts dt{font-size:.85rem;padding-top:1px}}
 .share{display:inline-flex;align-items:center;gap:6px;margin:.2em 0 .8em;font:inherit;font-weight:600;padding:10px 16px;min-height:44px;border-radius:8px;border:2px solid var(--accent);background:transparent;color:var(--accent);cursor:pointer}.share:hover,.share:focus-visible{background:var(--accent);color:var(--bg)}.share-note{margin-left:8px}
 blockquote{margin:.4em 0;padding:.3em .8em;border-left:3px solid var(--line);color:var(--fg)}.yours{border-left:4px solid var(--warn)}`;
 
 // page(title, body, desc, head) and linkify come from build.mjs, so the layout, independence line and footer are the site's own.
-export function eventPages(events, { page, esc, linkify, SITE, card, cardList, orgs }) {
+export function eventPages(events, { page, esc, linkify, SITE, card, cardList, orgs, dense }) {
   ORGS = orgs || null;
   const list = events.filter(hasPage);
   return list.map((e) => {
@@ -101,7 +101,7 @@ else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.
 else{done('Copy this address: '+u)}}})();</script>
 <dl class="facts">${facts}</dl>
 <p class="muted">Source: <a href="${esc(e.url)}">${esc(e.url)}</a>, read ${esc(String(e.read_at).slice(0, 16).replace('T', ' '))} UTC.</p>
-${rel.length ? `<h2>Related events</h2>` + cardList(rel.map(({ o, why }) => card(o, { esc }, { why, date: day(o.start || o.date) }))) : ''}
+${rel.length ? `<h2>Related events</h2>` + `<ul class="dense">${rel.map(({ o, why }) => dense(o, why)).join('')}</ul>` : ''}
 <p class="ind yours">Organisers: is this right? This page is yours to improve. See <a href="/join/">/join/</a>.</p>
 <p class="muted"><a href="/">All events</a> · <a href="/graph/">The graph</a> · <a href="/api/v1/events.json">The data</a></p>`;
     return { id: e.id, path: eventPath(e), url, html: page(title, body, desc, head) };
