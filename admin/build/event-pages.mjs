@@ -94,6 +94,7 @@ export function eventPages(events, { page, esc, linkify, SITE, card, cardList, o
 <a class="go" href="${esc(e.url)}">Register or see details on their page &rarr;</a>
 <div class="muted" style="margin-top:8px">Opens ${esc(new URL(e.url).hostname.replace(/^www\./, ''))}: their page is the one that counts.</div></div>
 <h1>${esc(e.name)}</h1>
+<p class="muted" style="margin:-.2em 0 .8em">Wrong or missing? <a href="/tip/?event=${esc(encodeURIComponent(e.id))}&amp;n=${esc(encodeURIComponent(e.name))}"><strong>Tell us</strong></a>: it takes one tap, and the event is already named.</p>
 <p class="sharerow" hidden><button type="button" class="share" id="share" data-url="${esc(url)}" data-title="${esc(e.name)}">Share this event</button><span class="muted share-note" id="share-note" role="status" aria-live="polite"></span></p>
 <script>(function(){var b=document.getElementById('share'),n=document.getElementById('share-note');if(!b)return;b.parentNode.hidden=false;b.onclick=function(){var u=b.dataset.url,t=b.dataset.title;function done(m){n.textContent=m;setTimeout(function(){n.textContent=''},3000)}
 if(navigator.share){navigator.share({title:t,text:t+' · Lisbon Tech Fringe',url:u}).catch(function(){})}
