@@ -175,7 +175,53 @@ def counts(rows, now, pub_id):
                        for v, n in C(r.get('via') for r in views).items()},
         'by_screen': C(r.get('screen') for r in views).most_common(),
         'agents': C(r.get('agent') for r in runs).most_common(),
+        **flows(views, H),
+        'map': geo(views),
+        'outbound': C(f"{norm(r.get('path'))} → {r.get('to')}" for r in people_out(rows, H)).most_common(30),
     }
+
+def people_out(rows, H):
+    """Clicks on links to other sites (obs.js 'out' events: the target's host and path, no query), readers only."""
+    return [r for r in rows if r.get('type') == 'out' and r.get('to') and (not r.get('site') or r['site'] in H) and r.get('agent') not in BOTS]
+
+def flows(views, H):
+    """The paths readers take (Dinis, 11 November 2026: "understand the paths that people are going ... the flows and
+    the most popular"): each tab's views in order, folded into counts. No tab id leaves this function."""
+    tabs = collections.defaultdict(list)
+    for r in views:
+        if r.get('sid'): tabs[r['sid']].append(r)
+    entries, exits, steps, depth, how, via_pages = (collections.Counter() for _ in range(6))
+    for rs in tabs.values():
+        rs.sort(key=lambda r: (r.get('ts') or '', r.get('_received') or 0))
+        ps = [norm(r['path']) for r in rs]
+        entries[ps[0]] += 1; exits[ps[-1]] += 1; depth[min(len(ps), 5)] += 1
+        for a, b in zip(ps, ps[1:]):
+            if a != b: steps[f'{a} → {b}'] += 1
+        first = rs[0]
+        how['shared link (?via=)' if first.get('via') else 'from another site' if first.get('ref') and first['ref'] not in H
+            else 'no referrer (an app, typed or bookmarked)'] += 1
+        if first.get('via'):
+            for p in set(ps): via_pages[f"{first['via']}: {p}"] += 1
+    n = len(tabs) or 1
+    return {'flows': {
+        'tabs': len(tabs),
+        'arrived': how.most_common(),
+        'entry_pages': entries.most_common(15),
+        'exit_pages': exits.most_common(15),
+        'steps': steps.most_common(25),
+        'pages_per_tab': [[('5+' if k == 5 else str(k)), depth[k]] for k in sorted(depth)],
+        'bounce_rate': round(100 * depth.get(1, 0) / n),
+        'via_reached': via_pages.most_common(20)}}
+
+def geo(views):
+    """For the map: countries (all), and towns with CITY_MIN views or more at their position (already rounded to 0.1
+    degree in the browser; averaged here). Smaller places are in their country only."""
+    towns = collections.defaultdict(list)
+    for r in views:
+        if r.get('city') and 'lat' in r: towns[(r['city'], r.get('country', ''))].append((r['lat'], r['lon']))
+    pts = [{'name': f'{c}, {k}', 'views': len(p), 'lat': round(sum(x for x, _ in p) / len(p), 1), 'lon': round(sum(y for _, y in p) / len(p), 1)}
+           for (c, k), p in towns.items() if len(p) >= CITY_MIN]
+    return {'towns': sorted(pts, key=lambda x: -x['views'])}
 
 def main():
     ap = argparse.ArgumentParser()
