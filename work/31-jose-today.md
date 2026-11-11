@@ -1,6 +1,6 @@
 # Today's online events still to come (for Jose's organiser notes)
 
-> Kept by researcher.1.fringe@PrompTugal.jose for conductor.fringe@PrompTugal.jose (work/18, work/23, work/31), Wednesday 11 November 2026, 19:28 UTC (Lisbon is on UTC). Today only; online events first. Rewritten at each wake (every 30 minutes until 21:00 UTC); events that have started are dropped. An agent never sends: Jose sends.
+> Kept by researcher.1.fringe@PrompTugal.jose for conductor.fringe@PrompTugal.jose (work/18, work/23, work/31), Wednesday 11 November 2026, 19:59 UTC (Lisbon is on UTC). Today only; online events first. Rewritten at each wake (every 30 minutes until 21:00 UTC); events that have started are dropped. An agent never sends: Jose sends.
 >
 > **What this is checked against (fact):** `data/events.json` as updated 19:23 UTC by researcher.2.fringe@PrompTugal.dinis (each row's read_at is that agent's read of the organiser's page), and my own reads of the same pages at 14:36 to 14:41 UTC. **No machine reads by me at this wake:** the lead's rule (work/49; answers of 18:13 UTC) allows a single Luma page when a reader-facing status needs it but no loops, and Side Events Guide's terms forbid systematic extraction (sources.md). Open the Luma page once before sending.
 
@@ -8,7 +8,7 @@
 |---|---|---|---|---|---|---|---|---|---|
 | 20:30 | 22:00 | Portugal Tech Week | [FUTURE-TECH 2026: short films about technology](https://lisbontechfringe.com/e/2026-11-11-future-tech-2026/) | online (Google Meet (per the Luma page)) | Not stated on the page as a storm change. The page now lists it on Google Meet with a room at PTW Palace still in its text; it gives no reason. That the storm moved it online is a hypothesis. | unknown | https://luma.com/25z2ph1o | 16:13 | **ready**: listed on Google Meet, with a PTW Palace room still in the page text; Jose's note asks 'online or in person?' |
 
-**Count at 19:28 UTC:** 1 online event still to come today: 1 ready, 0 held, 0 with no note. A read_at marked * is my own read of the organiser's page. 'Moved by the storm' is 'yes' only where the organiser's page says so; 'unknown' means the page is online and gives no reason (that the storm moved it is a hypothesis).
+**Count at 19:59 UTC:** 1 online event still to come today: 1 ready, 0 held, 0 with no note. A read_at marked * is my own read of the organiser's page. 'Moved by the storm' is 'yes' only where the organiser's page says so; 'unknown' means the page is online and gives no reason (that the storm moved it is a hypothesis).
 
 ## Dropped: online events that have started
 
@@ -38,7 +38,7 @@
 
 Jose sent five notes himself, through each organiser's Luma "Contact the host", at about 16:23 UTC (his word): **WonderLead in Tech, ideaic.io, Canopy Community, FounderLink and Portugal Tech Week.** ALBAN's and Kuma's were not sent (their events had started). The tracker (data/outreach-tracker.json, outreach.1, 16:36 UTC) shows the five as sent by jose, and data/outreach.json counts 5 contacted. No note is left to send today; the "ready" in the table means our listing still matches.
 
-**Have they come to the site?** Not yet: the traffic count of 19:25 UTC shows no visit tagged `via=organiser` (`whatsapp` 158, `promptugal-news` 5, `linkedin` 1); the tracker shows 0 answers (18:35 UTC). Checked again at each wake.
+**Have they come to the site?** Not yet: the traffic count of 19:54 UTC shows no visit tagged `via=organiser` (`whatsapp` 158, `promptugal-news` 5, `linkedin` 1); the tracker shows 0 answers (19:35 UTC). Checked again at each wake.
 
 If an organiser answers with a change, it goes into data/events.json only once their own page shows it.
 
