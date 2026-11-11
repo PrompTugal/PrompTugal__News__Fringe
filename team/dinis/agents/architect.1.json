@@ -1,6 +1,6 @@
 {
   "agent": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T17:51Z",
+  "updated": "2026-11-11T18:32Z",
   "account": "riskmandate-personal (Ultra) (Dinis, brief 15)",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 12)",
   "branch": "dev",
@@ -36,9 +36,11 @@
     "15:51: review round 3 (abp/reviews/2026-11-11-15.md): 54 commits, 4 findings (from 38): grants caught up; a regex bug in the owner check fixed; R12 fired only on my own loops; three rounds clean for R5, R8, R9",
     "16:33: Dinis: R5, R8, R9 enforced with the conductor override, logged (e9ddc18, tested); Silvio pinged through his PrompTugal.news conductor jornal@PrompTugal.silvio (sealed and signed); elastic.1.fringe@PrompTugal.dinis started at Dinis's word (session_01Kw9UwFQ9LkDgjM3v4cwi9k)",
     "16:51: review round 4 (the first with R5, R8, R9 enforced): 44 commits, 2 findings (researcher.2's data/feeds mapped; api/v1/README.md structural); no enforced rule fired in commits",
-    "17:51: review round 5: 44 commits, 7 outside a grant, no enforced rule fired; Silvio's gravity.1 mapped (team/silvio/**); researcher.1@jose on events.json and Angelo on tokens.css raised to the lead"
+    "17:51: review round 5: 44 commits, 7 outside a grant, no enforced rule fired; Silvio's gravity.1 mapped (team/silvio/**); researcher.1@jose on events.json and Angelo on tokens.css raised to the lead",
+    "18:32: Dinis: visualise the agentic runs on Elastic: abp/tools/runs-export.mjs -> data/altitude-runs.json (110 units, 109 signatures verified); spec for elastic.1 (fringe-altitudes, seven panels); elastic.1 told by session message, Angelo's conductor by inbox"
   ],
   "next": [
+    "re-run node abp/tools/runs-export.mjs whenever a run or a packet result lands",
     "publish the infographics in a vault with a pointer and sha256, if Dinis wants them on the site",
     "review round 3 at 15:50",
     "the picture on /how/ (with design.3, /how/'s owner)",
