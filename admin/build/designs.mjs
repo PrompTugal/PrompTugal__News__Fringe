@@ -20,11 +20,11 @@ export async function loadDesigns(root) {
   const dir = join(root, 'admin/build/designs');
   if (existsSync(dir)) for (const f of readdirSync(dir).filter((x) => /^[a-z0-9][a-z0-9-]*\.mjs$/.test(x)).sort()) {
     const m = await import(pathToFileURL(join(dir, f)).href);
-    const meta = m.meta || {};
+    const meta = m.meta || m.design || {};   // the designs written first export `design` or `meta`; `why` is the tagline
     if (meta.id !== f.replace(/\.mjs$/, '') || !ID.test(meta.id)) throw new Error(`designs/${f}: meta.id must equal the file name (a-z, 0-9, -)`);
     if (meta.id === 'd') throw new Error('designs/d.mjs: d is the live home page and is built by the site itself');
     if (typeof m.render !== 'function') throw new Error(`designs/${f}: export render(ctx)`);
-    out.push({ tagline: '', status: 'draft', tool: '', maker: '', ...meta, render: m.render });
+    out.push({ tagline: meta.why || '', status: 'draft', tool: '', maker: '', ...meta, render: m.render, css: m.css || '' });
   }
   // designs from anyone: designs/<slug>/design.json + index.html, HTML and CSS only
   const cdir = join(root, 'designs');
@@ -114,7 +114,9 @@ export async function buildDesigns({ root, out, designs, ctx, page, esc, SITE, R
     if (d.id === 'd') { info.push({ id: d.id, name: d.name, maker: d.maker, tool: d.tool, status: d.status, url: '/', shoot: '/' }); continue; }
     let html;
     if (d.render) {
-      const r = (await d.render({ ...ctx, esc })) || {};
+      let r = (await d.render({ ...ctx, builtAt: ctx.now.toISOString(), esc })) || {};
+      if (typeof r === 'string') r = { body: r };
+      r = { ...r, css: (d.css || '') + (r.css || '') };
       const head = `<meta name="robots" content="noindex"><meta name="variant" content="${esc(d.id)}"><link rel="canonical" href="${esc(SITE)}">`;
       html = page(`${d.name}: Lisbon Tech Fringe (design ${d.id.toUpperCase()})`, `<style>${css}${r.css || ''}</style>${r.body || ''}${pill(designs, d.id, esc)}`, d.tagline || 'A design of the Lisbon Tech Fringe home page.', head + (r.head || ''));
       writeFileSync(join(dirOut, 'index.html'), html);
