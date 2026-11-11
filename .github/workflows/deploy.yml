@@ -1,5 +1,5 @@
 # One job: checkout (shallow), build, gate, deploy, tag, measure. From the storm site's deploy.yml (PIPELINE.md section 3), for Lisbon Fringe:
-#   - fetch-depth 150 (work/15: /changes/ reads git; was 1: a blobless full clone made the team site's gate 40x slower, 150 commits do not);
+#   - fetch-depth 500 (work/15: /changes/ reads git; was 1: a blobless full clone made the team site's gate 40x slower, 500 commits do not);
 #   - the newest push wins among the waiting runs; a running deploy is never cancelled (with agents pushing every few
 #     seconds, cancelling starved the site: nothing was served until pushes paused);
 #   - CI owns the version: v<series>.<run number>, written into the artifact and pushed as a tag; never committed
@@ -29,7 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 150   # work/15: /changes/ is built from git; 150 commits is a second or two, not a full clone
+          fetch-depth: 500   # work/15, 37: /changes/ and the releases are built from git; 500 commits is a few seconds, not a full clone
           fetch-tags: true
       - name: Version
         run: |

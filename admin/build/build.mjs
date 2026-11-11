@@ -19,7 +19,8 @@ import { eventCard as card, cardList, sortDay, CARD_CSS } from './cards.mjs';   
 import { WORDMARK, IDENTITY_CSS } from './identity.mjs';   // D9, design.4.fringe@PrompTugal.dinis
 import { loadOrganisers, organisersBody } from './organisers.mjs';   // work/23, dev.2.fringe@PrompTugal.dinis
 import { communitiesBody } from './communities-page.mjs';   // work/04, conductor.fringe@PrompTugal.indi
-import { readChanges, changesBody } from './changes.mjs';   // work/15, dev.2.fringe@PrompTugal.dinis
+import { readChanges, changesBody } from './changes.mjs';
+import { buildReleases, releasesIndexBody, releaseBody, releaseJson, releasePath } from './releases.mjs';   // work/37, dev.2.fringe@PrompTugal.dinis   // work/15, dev.2.fringe@PrompTugal.dinis
 import { nowBlock, nowPageBody, nowJs, span as evSpan } from './now.mjs';
 import { timelineBlock, TIMELINE_CSS } from './timeline.mjs';   // D19, design.2.fringe@PrompTugal.dinis   // work/16, dev.2.fringe@PrompTugal.dinis
 import { traceBody } from './trace-page.mjs';   // Angelo's traces, designer.fringe@PrompTugal.angelo
@@ -114,7 +115,7 @@ const page = (title, body, desc, head = '', here = '/') => `<!doctype html><html
 ${navHtml(here)}<!--TICK-->
 <p class="ind">Independent of Web Summit · <a href="https://websummit.com/">official site</a></p>
 <main>${WHATSAPP}${body}</main>
-<footer class="muted">${INDEPENDENCE}<br>Built from <a href="${REPO}">the repository</a> at ${BUILT.slice(0, 16).replace('T', ' ')} UTC · <a href="/version.json">${esc(VERSION)}</a>. <a href="/traffic/">Traffic</a> · <a href="/changes/">Changes</a> · <a href="/evolution/">Evolution</a> · <a href="/dashboard/">Swarm</a>.</footer>
+<footer class="muted">${INDEPENDENCE}<br>Built from <a href="${REPO}">the repository</a> at ${BUILT.slice(0, 16).replace('T', ' ')} UTC · <a href="/changes/${esc(VERSION)}/">${esc(VERSION)}</a>. <a href="/traffic/">Traffic</a> · <a href="/changes/">Changes</a> · <a href="/evolution/">Evolution</a> · <a href="/dashboard/">Swarm</a>.</footer>
 <script src="/assets/obs/obs.js" defer></script>
 </body></html>`;
 
@@ -281,8 +282,16 @@ const orgs = loadOrganisers(root, events);
 mkdirSync(join(out, 'organisers'), { recursive: true });
 writeFileSync(join(out, 'organisers', 'index.html'), page('For organisers: Lisbon Tech Fringe', organisersBody(orgs, esc, { eventPath, hasPage }), 'What Lisbon Tech Fringe offers organisers of side events, and who is listed.'));
 const changes = readChanges(root);
+const releases = buildReleases(root, changes.commits, VERSION);   // work/37: every commit gets the first tag that contains it
+mkdirSync(join(out, 'api', 'v1', 'releases'), { recursive: true });
+writeFileSync(join(out, 'api', 'v1', 'releases.json'), JSON.stringify({ about: 'Lisbon Tech Fringe releases: one CI tag each = its tagged commit plus every commit since the previous tag. One file per release at /api/v1/releases/<version>.json with the commits and the events-data diff.', site: SITE, version: VERSION, built_at: BUILT, releases: releases.map((r) => ({ ...r.summary, url: SITE + releasePath(r.version).slice(1), json: `${SITE}api/v1/releases/${r.version}.json` })) }, null, 1) + '\n');
+releases.forEach((r, i) => {
+  mkdirSync(join(out, 'changes', r.version), { recursive: true });
+  writeFileSync(join(out, 'changes', r.version, 'index.html'), page(`${r.version}: what changed`, releaseBody(r, esc, REPO, releases[i + 1]?.version, releases[i - 1]?.version, (id) => events.some((e) => e.id === id && hasPage(e))), `Exactly what shipped in ${r.version} of Lisbon Tech Fringe.`));
+  writeFileSync(join(out, 'api', 'v1', 'releases', `${r.version}.json`), JSON.stringify(releaseJson(r, { site: SITE, built_at: BUILT }), null, 1) + '\n');
+});
 mkdirSync(join(out, 'changes'), { recursive: true });
-writeFileSync(join(out, 'changes', 'index.html'), page('What changed: Lisbon Tech Fringe', changesBody(changes, esc, REPO), 'Every release of Lisbon Tech Fringe: version, commit, time, agent and files touched.'));
+writeFileSync(join(out, 'changes', 'index.html'), page('What changed: Lisbon Tech Fringe', releasesIndexBody(releases, esc), 'Every release of Lisbon Tech Fringe: version, commit, time, agent and files touched.'));
 writeFileSync(join(out, 'api', 'v1', 'changes.json'), JSON.stringify({ about: 'Lisbon Tech Fringe releases from git: version (CI tag), commit, UTC time, agent, subject, files touched by area.', site: SITE, version: VERSION, built_at: BUILT, ...changes }, null, 1) + '\n');
 const ePages = eventPages(events, { page, esc, linkify, SITE, card, cardList, orgs, dense: (o, why) => denseRow(o, { esc }, '', why, true) });   // work/22: /e/<id>/
 for (const p of ePages) { mkdirSync(join(out, p.path), { recursive: true }); writeFileSync(join(out, p.path, 'index.html'), p.html); }
