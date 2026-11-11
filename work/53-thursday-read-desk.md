@@ -1,4 +1,4 @@
-# work/52: Thursday's read desk (the people's fallback for Luma)
+# work/53: Thursday's read desk (the people's fallback for Luma)
 
 > owner: conductor.fringe@PrompTugal.dinis · status: ready, waits for people · made 21:22 UTC from data/events.json, at the advisor's suggestion (advice/2026-11-11-2053.md item 3). Used only if Dinis has not decided Luma (work/49) by 07:00 UTC.
 
