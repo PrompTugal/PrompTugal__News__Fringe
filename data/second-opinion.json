@@ -1,33 +1,15 @@
 {
  "about": "Second-opinion checks (work/20): a cheap open model read each event's public page and our entry. EVIDENCE only, never fact: no data changed from it. Verdicts only; no page or model text is kept in git. Mismatches are for work/13 and researcher.2 to re-read at source.",
- "run_at": "2026-11-11T17:21:42Z",
+ "run_at": "2026-11-11T18:20:54Z",
  "by": "dev.2.fringe@PrompTugal.dinis",
  "model": "tier check (see admin/tools/llm-models.json) for non-Luma pages; Luma events from the calendars' public iCal data (data/feeds/luma-ical.json), no page fetched",
  "hours": 2,
- "checked": 100,
+ "checked": 93,
  "errors": 0,
- "mismatches": 1,
+ "mismatches": 0,
  "cost_usd_this_run": 0,
  "label": "evidence",
- "mismatched": [
-  {
-   "id": "2026-11-11-funders-founders-night-altair",
-   "url": "https://luma.com/h19cccc5",
-   "status": {
-    "v": "mismatch",
-    "says": "on"
-   },
-   "start": {
-    "v": "match"
-   },
-   "end": {
-    "v": "match"
-   },
-   "place": {
-    "v": "unclear"
-   }
-  }
- ],
+ "mismatched": [],
  "all": [
   {
    "id": "2026-11-11-padel-encounters-lisbon-wed-11-nov",
@@ -93,13 +75,6 @@
    "place": "unclear"
   },
   {
-   "id": "2026-11-11-taste-japan-career-connections",
-   "status": "match",
-   "start": "match",
-   "end": "match",
-   "place": "match"
-  },
-  {
    "id": "2026-11-11-cisco-automation-to-autonomy",
    "status": "match",
    "start": "match",
@@ -107,46 +82,11 @@
    "place": "unclear"
   },
   {
-   "id": "2026-11-11-ai-horizon-conference",
-   "status": "match",
-   "start": "match",
-   "end": "match",
-   "place": "match"
-  },
-  {
-   "id": "2026-11-11-frontier-founders-vcs-soiree",
-   "status": "match",
-   "start": "match",
-   "end": "match",
-   "place": "unclear"
-  },
-  {
-   "id": "2026-11-11-tti-at-web-summit-what-s-next-at-the-ai-fronti",
-   "status": "match",
-   "start": "match",
-   "end": "match",
-   "place": "unclear"
-  },
-  {
-   "id": "2026-11-11-postponed-clay-in-lisbon-gtm-battlecards",
-   "status": "match",
-   "start": "match",
-   "end": "match",
-   "place": "unclear"
-  },
-  {
    "id": "2026-11-11-funders-founders-night-altair",
-   "status": "mismatch",
-   "start": "match",
-   "end": "match",
-   "place": "unclear"
-  },
-  {
-   "id": "2026-11-11-european-tech-champions-italy-portugal",
    "status": "match",
    "start": "match",
    "end": "match",
-   "place": "match"
+   "place": "unclear"
   },
   {
    "id": "2026-11-11-indvstry-diaspora-dinner",
@@ -668,13 +608,6 @@
   },
   {
    "id": "2026-11-13-why-users-leave-your-ai-feature-and-how-to-mak",
-   "status": "match",
-   "start": "match",
-   "end": "match",
-   "place": "match"
-  },
-  {
-   "id": "2026-11-13-supergrowth-how-to-build-an-ai-powered-distrib",
    "status": "match",
    "start": "match",
    "end": "match",
