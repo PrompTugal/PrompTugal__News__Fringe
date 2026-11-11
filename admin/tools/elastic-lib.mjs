@@ -75,3 +75,60 @@ export async function pushIndex(index, mapping, docs, { recreate = false } = {})
     await fetch(`${B}/${index}/_refresh`, { method: 'POST', headers })
     return { sent, errors }
 }
+
+// ---------- submissions by any agent (docs/elastic-guidance.md) ----------
+// An index is <prefix>-<kind>; its owner is written in the index's own _meta when it is created, and only the owner
+// (or elastic.1, who keeps the deployment) writes to it after. Every submission is logged in elastic-submissions.
+export const STEWARD = 'elastic.1.fringe@PrompTugal.dinis'
+export const PREFIXES = ['fringe', 'ptnews', 'websummit', 'swarm', 'agents']
+export const INDEX_RX = new RegExp(`^(${PREFIXES.join('|')})-[a-z0-9][a-z0-9-]{1,60}$`)
+const AGENT_RX = /^[a-z0-9][\w.-]*@[A-Za-z][\w.-]+$/
+const kwT = { type: 'keyword' }, dateT = { type: 'date' }
+export const PROVENANCE = { kind: kwT, source: kwT, read_at: dateT, signer: kwT, commit: kwT, ingested_at: dateT, ingested_by: kwT, t: dateT, id: kwT }
+export const openMapping = (owner, about = '') => ({
+    settings: { number_of_shards: 1, 'index.mapping.total_fields.limit': 400 },
+    mappings: {
+        _meta: { owner, created_by: owner, created_at: new Date().toISOString(), guidance: 'docs/elastic-guidance.md', about },
+        date_detection: true, dynamic_date_formats: ['strict_date_optional_time'],
+        dynamic_templates: [
+            { text_fields: { match_pattern: 'regex', match: '^(text|body|summary|description|why|notes?)$', mapping: { type: 'text' } } },
+            { strings: { match_mapping_type: 'string', mapping: { type: 'keyword', ignore_above: 1024, fields: { text: { type: 'text' } } } } },
+        ],
+        properties: { ...PROVENANCE },
+    },
+})
+
+async function indexMeta(index) {
+    const r = await fetch(`${base()}/${index}/_mapping`, { headers: auth() })
+    if (r.status === 404) return null
+    if (!r.ok) throw new Error(`${index}: HTTP ${r.status}`)
+    const j = await r.json()
+    return Object.values(j)[0]?.mappings?._meta || {}
+}
+
+export async function submitDocs({ index, docs, agent, idField = 'id', timeField, source, commit = '', about = '', dry = false, via = 'push' }) {
+    if (!INDEX_RX.test(index)) throw new Error(`index "${index}": must be <${PREFIXES.join('|')}>-<kind> (lower case, digits, hyphens)`)
+    if (!AGENT_RX.test(agent || '')) throw new Error('AGENT (your agent name, as for release.sh) is not set or not an agent name')
+    const now = new Date().toISOString().replace(/\.\d+Z$/, 'Z'), ok = [], held = []
+    for (const [i, raw] of docs.entries()) {
+        if (!raw || typeof raw !== 'object' || Array.isArray(raw)) { held.push(`#${i}: not an object`); continue }
+        const d = scrubFields(raw)
+        const key = d[idField] ?? crypto.createHash('sha256').update(JSON.stringify(d)).digest('hex').slice(0, 24)
+        const t = timeField && d[timeField] ? d[timeField] : (d.t || d.read_at || now)
+        const doc = clean({ ...d, id: String(key), t, kind: d.kind || index.split('-').slice(1).join('-'), source: d.source || source, read_at: d.read_at || now,
+            signer: agent, commit: d.commit || commit, ingested_at: now, ingested_by: agent })
+        const f = findings(doc, `#${i} ${key}`)
+        if (f.length) held.push(...f.slice(0, 2)); else ok.push({ _id: idOf(index, key), doc })
+    }
+    const meta = dry ? null : await indexMeta(index)
+    const owner = meta ? (meta.owner || STEWARD) : agent   // an index made before owners were recorded is the steward's
+    if (owner !== agent && agent !== STEWARD) throw new Error(`${index} is owned by ${owner}: write to your own index (docs/elastic-guidance.md)`)
+    let r = { sent: 0, errors: 0 }
+    if (!dry && ok.length) r = await pushIndex(index, openMapping(agent, about), ok)
+    if (!dry) {   // the audit trail (elastic.1 reads it every wake)
+        const log = { t: now, agent, index, via, sent: r.sent, errors: r.errors, held: held.length, source, commit, owner: meta ? (meta.owner || STEWARD) : agent }
+        await pushIndex('elastic-submissions', { settings: { number_of_shards: 1 }, mappings: { _meta: { owner: STEWARD }, properties: { t: dateT, agent: kwT, index: kwT, via: kwT, owner: kwT, source: kwT, commit: kwT, sent: { type: 'long' }, errors: { type: 'long' }, held: { type: 'long' } } } },
+            [{ _id: idOf('submission', agent, index, now), doc: log }]).catch(() => {})
+    }
+    return { ok: ok.length, held, ...r, owner: meta ? (meta.owner || STEWARD) : agent }
+}

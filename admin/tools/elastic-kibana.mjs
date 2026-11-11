@@ -11,10 +11,10 @@
 
 import fs from 'node:fs'
 import path from 'node:path'
-import crypto from 'node:crypto'
 import { spawnSync } from 'node:child_process'
-import { fileURLToPath } from 'node:url'
-import { auth } from './elastic-lib.mjs'
+import { fileURLToPath, pathToFileURL } from 'node:url'
+import * as K from './elastic-kibana-lib.mjs'
+const { uid, add, objects, INDEPENDENT, DV, dataView, C, lens, metric, overTime, top, donut, table, heat, search, md, dashboard, L, S, V } = K
 
 if (process.env.HTTPS_PROXY && !process.env.NODE_USE_ENV_PROXY && process.argv[2] === 'import') {
     const r = spawnSync(process.execPath, ['--no-warnings', ...process.argv.slice(1)], { stdio: 'inherit', env: { ...process.env, NODE_USE_ENV_PROXY: '1' } })
@@ -22,10 +22,6 @@ if (process.env.HTTPS_PROXY && !process.env.NODE_USE_ENV_PROXY && process.argv[2
 }
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..')
 const OUT = path.join(ROOT, 'elastic', 'kibana', 'objects.ndjson')
-const uid = (...p) => crypto.createHash('sha256').update(p.join(':')).digest('hex').replace(/^(.{8})(.{4})(.{4})(.{4})(.{12}).*/, '$1-$2-$3-$4-$5')
-const objects = []
-const add = o => { objects.push(o); return o.id }
-const INDEPENDENT = 'Independent of Web Summit; built by the PrompTugal agentic team from public sources. Not a warning service.'
 
 // ---------- tags ----------
 const TAGS = {
@@ -36,106 +32,19 @@ const TAGS = {
 }
 
 // ---------- data views ----------
-const DV = {}
-function dataView(pattern, name, timeField) {
-    DV[pattern] = add({ type: 'index-pattern', id: uid('dv', pattern), attributes: { title: pattern, name, timeFieldName: timeField, allowNoIndex: true }, references: [] })
-    return DV[pattern]
-}
 dataView('fringe-events', 'Fringe: events', 'start')
 dataView('fringe-graph', 'Fringe: semantic graph', 'read_at')
 dataView('fringe-tasks', 'Fringe: task packets and results', 'read_at')
 dataView('fringe-models', 'Fringe: model router ledger', 'day')
 dataView('fringe-hooklog', 'Fringe: ABP hook decisions', 't')
 dataView('fringe-altitudes', 'The agentic runs: one unit per altitude (signed)', 't')
+dataView('elastic-submissions', 'Elastic operations: every submission', 't')
+dataView('fringe-*,ptnews-*,websummit-*,swarm-*,agents-*', 'Everything on Elastic (by ingest time)', 'ingested_at')
 dataView('fringe-workloads', 'Distributed workloads: altitudes, runtimes, placements, traces', 't')
 for (const s of ['fringe', 'ptnews', 'websummit']) for (const k of ['commits', 'content', 'entities', 'runs', 'status']) dataView(`${s}-${k}`, `${{ fringe: 'Fringe', ptnews: 'PrompTugal.news', websummit: 'Web Summit' }[s]}: ${k}`, 't')
 for (const k of ['commits', 'content', 'entities', 'runs', 'status']) dataView(`fringe-${k},ptnews-${k},websummit-${k}`, `All sites: ${k}`, 't')
 const ALL = k => DV[`fringe-${k},ptnews-${k},websummit-${k}`]
 
-// ---------- Lens columns ----------
-const C = {
-    count: (label = 'Count') => ({ label, customLabel: true, dataType: 'number', operationType: 'count', isBucketed: false, scale: 'ratio', sourceField: '___records___', params: { emptyAsNull: true } }),
-    unique: (f, label) => ({ label, customLabel: true, dataType: 'number', operationType: 'unique_count', isBucketed: false, scale: 'ratio', sourceField: f, params: { emptyAsNull: true } }),
-    avg: (f, label) => ({ label, customLabel: true, dataType: 'number', operationType: 'average', isBucketed: false, scale: 'ratio', sourceField: f, params: { emptyAsNull: true } }),
-    max: (f, label) => ({ label, customLabel: true, dataType: 'number', operationType: 'max', isBucketed: false, scale: 'ratio', sourceField: f, params: { emptyAsNull: true } }),
-    sum: (f, label) => ({ label, customLabel: true, dataType: 'number', operationType: 'sum', isBucketed: false, scale: 'ratio', sourceField: f, params: { emptyAsNull: true } }),
-    date: (f, label = 'Time', interval = 'auto') => ({ label, customLabel: true, dataType: 'date', operationType: 'date_histogram', isBucketed: true, scale: 'interval', sourceField: f, params: { interval, includeEmptyRows: true, dropPartials: false } }),
-    terms: (f, label, size = 10, orderBy = 'm', other = true) => ({ label, customLabel: true, dataType: 'string', operationType: 'terms', isBucketed: true, scale: 'ordinal', sourceField: f, params: { size, orderBy: { type: 'column', columnId: orderBy }, orderDirection: 'desc', otherBucket: other, missingBucket: false, parentFormat: { id: 'terms' } } }),
-}
-
-function lens(key, title, dv, visType, visualization, columns, columnOrder, query = '') {
-    const id = uid('lens', key)
-    return add({ type: 'lens', id, typeMigrationVersion: '10.1.0', coreMigrationVersion: '8.8.0', attributes: { title, description: '', visualizationType: visType, state: {
-        visualization, query: { query, language: 'kuery' }, filters: [], internalReferences: [], adHocDataViews: {},
-        datasourceStates: { formBased: { layers: { L: { columns, columnOrder, incompleteColumns: {}, sampling: 1 } } } } } },
-        references: [{ type: 'index-pattern', id: dv, name: 'indexpattern-datasource-layer-L' }] })
-}
-// a metric tile
-const METRICS = new Set()
-const metric = (key, title, dv, col, query) => { col.label = title; const id = lens(key, title, dv, 'lnsMetric', { layerId: 'L', layerType: 'data', metricAccessor: 'm' }, { m: col }, ['m'], query); METRICS.add(id); return id }
-// bars over time, split by a field
-const overTime = (key, title, dv, timeField, split, query, { series = 'bar_stacked', interval = 'auto', metricCol } = {}) => {
-    const cols = { x: C.date(timeField, 'Time', interval), m: metricCol || C.count() }, order = ['x']
-    if (split) { cols.s = C.terms(split, split, 10); order.push('s') }
-    order.push('m')
-    return lens(key, title, dv, 'lnsXY', { legend: { isVisible: true, position: 'right' }, valueLabels: 'hide', preferredSeriesType: series, fittingFunction: 'None',
-        layers: [{ layerId: 'L', layerType: 'data', seriesType: series, xAccessor: 'x', accessors: ['m'], ...(split ? { splitAccessor: 's' } : {}), position: 'top', showGridlines: false }] }, cols, order, query)
-}
-// top values as horizontal bars
-const top = (key, title, dv, field, query, { size = 12, metricCol, label } = {}) =>
-    lens(key, title, dv, 'lnsXY', { legend: { isVisible: false, position: 'right' }, valueLabels: 'show', preferredSeriesType: 'bar_horizontal', fittingFunction: 'None',
-        layers: [{ layerId: 'L', layerType: 'data', seriesType: 'bar_horizontal', xAccessor: 'x', accessors: ['m'], position: 'top', showGridlines: false }] },
-        { x: C.terms(field, label || field, size, 'm', false), m: metricCol || C.count() }, ['x', 'm'], query)
-// a donut
-const donut = (key, title, dv, field, query, { size = 8, metricCol } = {}) =>
-    lens(key, title, dv, 'lnsPie', { shape: 'donut', layers: [{ layerId: 'L', layerType: 'data', primaryGroups: ['g'], metrics: ['m'], numberDisplay: 'percent', categoryDisplay: 'default', legendDisplay: 'default', nestedLegend: false }] },
-        { g: C.terms(field, field, size), m: metricCol || C.count() }, ['g', 'm'], query)
-// a table: rows by fields, then metrics
-const table = (key, title, dv, rows, metrics, query) => {
-    const cols = {}, order = []
-    metrics.forEach((m, i) => { cols[`m${i}`] = m })
-    rows.forEach(([f, label, size], i) => { cols[`r${i}`] = C.terms(f, label, size || 20, 'm0', false); order.push(`r${i}`) })
-    metrics.forEach((_, i) => order.push(`m${i}`))
-    return lens(key, title, dv, 'lnsDatatable', { layerId: 'L', layerType: 'data', columns: order.map(c => ({ columnId: c, isTransposed: false })) }, cols, order, query)
-}
-// a heatmap: x by y
-const heat = (key, title, dv, xField, yField, query, { xDate = false } = {}) =>
-    lens(key, title, dv, 'lnsHeatmap', { layerId: 'L', layerType: 'data', shape: 'heatmap', xAccessor: 'x', yAccessor: 'y', valueAccessor: 'm',
-        legend: { isVisible: true, position: 'right', type: 'heatmap_legend' }, gridConfig: { type: 'heatmap_grid', isCellLabelVisible: false, isYAxisLabelVisible: true, isXAxisLabelVisible: true, isYAxisTitleVisible: false, isXAxisTitleVisible: false } },
-        { x: xDate ? C.date(xField, 'Time', '1h') : C.terms(xField, xField, 12), y: C.terms(yField, yField, 15), m: C.count() }, ['x', 'y', 'm'], query)
-
-// saved searches (the documents themselves, newest first)
-const search = (key, title, dv, columns, query = '', sortField = 't', dir = 'desc') => add({ type: 'search', id: uid('search', key), attributes: {
-    title, description: '', columns, sort: [[sortField, dir]], grid: {}, hideChart: true, isTextBasedQuery: false,
-    kibanaSavedObjectMeta: { searchSourceJSON: JSON.stringify({ query: { query, language: 'kuery' }, filter: [], indexRefName: 'kibanaSavedObjectMeta.searchSourceJSON.index' }) } },
-    references: [{ name: 'kibanaSavedObjectMeta.searchSourceJSON.index', type: 'index-pattern', id: dv }] })
-
-// a markdown panel
-const md = (key, text) => add({ type: 'visualization', id: uid('md', key), attributes: { title: '', description: '', uiStateJSON: '{}', version: 1,
-    visState: JSON.stringify({ title: '', type: 'markdown', aggs: [], params: { fontSize: 12, openLinksInNewTab: true, markdown: text } }),
-    kibanaSavedObjectMeta: { searchSourceJSON: JSON.stringify({ query: { query: '', language: 'kuery' }, filter: [] }) } }, references: [] })
-
-// a dashboard: rows of [id, type, width, height]
-function dashboard(key, title, description, tag, rows, { from = 'now-30d', to = 'now', refresh = 300000 } = {}) {
-    const panels = [], refs = []
-    let y = 0, n = 0
-    for (const row of rows) {
-        let x = 0, h = 0
-        for (const [id, type, w, ph] of row) {
-            const i = `p${++n}`
-            panels.push({ type, gridData: { x, y, w, h: ph, i }, panelIndex: i, embeddableConfig: { enhancements: {}, ...(type === 'visualization' || METRICS.has(id) ? { hidePanelTitles: true } : {}) }, panelRefName: `panel_${i}` })
-            refs.push({ name: `${i}:panel_${i}`, type, id })
-            x += w; h = Math.max(h, ph)
-        }
-        y += h
-    }
-    refs.push({ type: 'tag', id: tag, name: `tag-ref-${tag}` })
-    return add({ type: 'dashboard', id: uid('dash', key), attributes: { title, description, panelsJSON: JSON.stringify(panels),
-        optionsJSON: JSON.stringify({ useMargins: true, syncColors: true, syncCursor: true, syncTooltips: true, hidePanelTitles: false }),
-        timeRestore: true, timeFrom: from, timeTo: to, refreshInterval: { pause: false, value: refresh },
-        kibanaSavedObjectMeta: { searchSourceJSON: JSON.stringify({ query: { query: '', language: 'kuery' }, filter: [] }) } }, references: refs })
-}
-const L = 'lens', S = 'search', V = 'visualization'
 
 // =====================================================================================================
 // 1. The swarm: all three sites
@@ -275,21 +184,29 @@ D.altitudes = dashboard('altitudes', 'The altitudes of execution, live', 'Every 
      [donut('al-valid', '7. LLM calls: valid answers (false = retried)', al, 'valid', 'role:"llm call"'), L, 12, 14], [top('al-items', '7. Items that needed most attempts', al, 'item', 'role:"llm call"', { metricCol: C.max('attempt', 'Attempts'), size: 10 }), L, 12, 14]],
 ], { from: '2026-11-11T00:00:00.000Z', to: 'now+1h', refresh: 60000 })
 
+// =====================================================================================================
+// 8. Elastic operations: who submits what (elastic.1 keeps the deployment)
+// =====================================================================================================
+const subs = DV['elastic-submissions'], every = DV['fringe-*,ptnews-*,websummit-*,swarm-*,agents-*']
+D.ops = dashboard('ops', 'Elastic operations: who submits what', 'For elastic.1 and Dinis: every submission by every agent (push or feed), what was held back by the privacy checks, which indices exist, who owns them and when each was last fed.', TAGS.swarm, [
+    [[md('ops-head', `## Elastic operations: who submits what\nAny agent submits to its own index with \`admin/tools/elastic-submit.mjs\` (push) or commits a JSON file with an \`elastic_feed\` header that elastic.1 sends each hour (feed); dashboards come from a spec in the agent's own path (\`admin/tools/elastic-dashboard.mjs\`). The rules: **docs/elastic-guidance.md**. A **held** document failed the privacy checks (an email, a phone, a key) and was not sent; **errors** are mapping rejections. Indices are \`<fringe|ptnews|websummit|swarm|agents>-<kind>\`, owned by the agent that created them.`), V, 48, 6]],
+    [[metric('ops-m1', 'Submissions', subs, C.count('Submissions')), L, 8, 6], [metric('ops-m2', 'Agents submitting', subs, C.unique('agent', 'Agents')), L, 8, 6], [metric('ops-m3', 'Documents sent', subs, C.sum('sent', 'Sent')), L, 8, 6],
+     [metric('ops-m4', 'Held back by the checks', subs, { ...C.sum('held', 'Held'), params: { emptyAsNull: false } }), L, 8, 6], [metric('ops-m5', 'Mapping errors', subs, { ...C.sum('errors', 'Errors'), params: { emptyAsNull: false } }), L, 8, 6],
+     [metric('ops-m6', 'Documents on Elastic', every, C.count('Documents')), L, 8, 6]],
+    [[overTime('ops-time', 'Submissions over time, by agent', subs, 't', 'agent', '', { interval: '1h' }), L, 32, 13], [donut('ops-via', 'Push or feed', subs, 'via'), L, 16, 13]],
+    [[table('ops-indices', 'Indices: documents, ingested by, last fed', every, [['_index', 'Index', 60], ['ingested_by', 'Ingested by', 3]], [C.count('Documents'), { ...C.max('ingested_at', 'Last fed'), dataType: 'date' }]), L, 32, 18],
+     [table('ops-owners', 'Submissions by agent and index', subs, [['agent', 'Agent', 20], ['index', 'Index', 30]], [C.count('Submissions'), C.sum('sent', 'Sent'), C.sum('held', 'Held'), C.sum('errors', 'Errors')]), L, 16, 18]],
+    [[search('ops-held', 'Submissions with documents held back or errors (look at these)', subs, ['agent', 'index', 'via', 'sent', 'held', 'errors', 'source'], 'held > 0 or errors > 0'), S, 48, 12]],
+    [[search('ops-all', 'Every submission, newest first', subs, ['agent', 'index', 'via', 'sent', 'held', 'errors', 'owner', 'source']), S, 48, 14]],
+], { from: 'now-7d', to: 'now', refresh: 60000 })
+
 // ---------- build / import ----------
 const cmd = process.argv[2]
 fs.mkdirSync(path.dirname(OUT), { recursive: true })
 fs.writeFileSync(OUT, objects.map(o => JSON.stringify(o)).join('\n') + '\n')
 console.log(`${objects.length} saved objects (${Object.keys(D).length} dashboards) -> elastic/kibana/objects.ndjson`)
 if (cmd === 'import') {
-    const K = (process.env.KIBANA_URL || '').replace(/\/+$/, '')
-    if (!/^https:\/\//.test(K)) { console.error('KIBANA_URL is not set'); process.exit(1) }
-    const form = new FormData()
-    form.append('file', new Blob([fs.readFileSync(OUT)], { type: 'application/ndjson' }), 'objects.ndjson')
-    const r = await fetch(`${K}/api/saved_objects/_import?overwrite=true`, { method: 'POST', headers: { 'kbn-xsrf': 'true', ...auth() }, body: form })
-    const raw = await r.text(); let j = {}; try { j = JSON.parse(raw) } catch {}
-    if (!r.ok) console.log(raw.slice(0, 600))
-    console.log(`import: HTTP ${r.status}, success ${j.success}, ${j.successCount ?? 0} objects`)
-    for (const e of (j.errors || []).slice(0, 10)) console.log(`  ${e.type} ${e.id}: ${JSON.stringify(e.error).slice(0, 200)}`)
-    for (const [k, id] of Object.entries(D)) console.log(`  ${k}: ${K}/app/dashboards#/view/${id}`)
+    const j = await K.importObjects(process.env.KIBANA_URL)
+    for (const [k, id] of Object.entries(D)) console.log(`  ${k}: ${String(process.env.KIBANA_URL).replace(/\/+$/, '')}/app/dashboards#/view/${id}`)
     if (!j.success) process.exit(1)
 }
