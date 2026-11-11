@@ -22,11 +22,25 @@
   "seq",
   "valid"
  ],
- "read_at": "2026-11-11T22:09:17Z",
+ "read_at": "2026-11-11T23:09:32Z",
  "total_in_index": 110,
  "exported": 110,
  "held_back": 0,
  "docs": [
+  {
+   "_id": "WyP3y6EBgWESH0O8VMqU",
+   "flow": "flow-test-1794423345",
+   "seq": 1794423345946000,
+   "at": "2026-11-11T18:55:45.946Z",
+   "phase": "start",
+   "unit_id": "sha256:b6c91d8e1e5d0a9f",
+   "altitude": "A0",
+   "role": "compute",
+   "runner": "architect.1.fringe@PrompTugal.dinis",
+   "person": "dinis",
+   "environment": "R1 Claude Code cloud, riskmandate-personal",
+   "key_fp": "sha256:b6c91d8e1e5d0a9f"
+  },
   {
    "_id": "XCP3y6EBgWESH0O8VMqZ",
    "flow": "flow-test-1794423345",
@@ -969,20 +983,6 @@
    "runner": "architect.1.fringe@PrompTugal.dinis",
    "person": "dinis",
    "environment": "R1 Claude Code cloud, riskmandate-personal"
-  },
-  {
-   "_id": "WyP3y6EBgWESH0O8VMqU",
-   "flow": "flow-test-1794423345",
-   "seq": 1794423345946000,
-   "at": "2026-11-11T18:55:45.946Z",
-   "phase": "start",
-   "unit_id": "sha256:b6c91d8e1e5d0a9f",
-   "altitude": "A0",
-   "role": "compute",
-   "runner": "architect.1.fringe@PrompTugal.dinis",
-   "person": "dinis",
-   "environment": "R1 Claude Code cloud, riskmandate-personal",
-   "key_fp": "sha256:b6c91d8e1e5d0a9f"
   },
   {
    "_id": "packet-2026-11-11-p3-persona-for-6-events-conductor.fringe-20261111T203106:1794429066360000",
