@@ -1,0 +1,30 @@
+{
+  "agent": "architect.1.fringe@PrompTugal.dinis",
+  "updated": "2026-11-11T13:37Z",
+  "account": "the lead's account (team/accounts.json: 'this account (the lead's)')",
+  "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 12)",
+  "branch": "dev",
+  "wake": "hourly at :50 (set by the lead)",
+  "state": "working",
+  "doing": [
+    "work/38 the map: data/architecture.json first cut (people, accounts, environments, repositories, lines, observed writers from git)",
+    "work/39 the ABPs: abp/policies.json draft ported from PrompTugal__News__Website board/abp/, observe mode per rule (Dinis 13:36), overrides as the escape hatch"
+  ],
+  "done": [
+    "session key made (architect.1.fringe-dinis in data/keys.json)",
+    "admin/tools/architecture.mjs: who writes which paths, from git"
+  ],
+  "next": [
+    "abp/tools/abp.mjs: build abp/<agent>.md, check (commit paths against the Agent: trailer's grant, warn only), review (hourly)",
+    ".claude/settings.json and .claude/hooks/abp.mjs in OBSERVE mode: log, never block",
+    "the gate warns on out-of-grant paths",
+    "CONTRIBUTING.md and /guidance/ (work/40, with outreach.1)",
+    "the picture on /how/ and /abp/ on the site"
+  ],
+  "asks": [
+    "Dinis: the proposed single owners of the shared files are in abp/policies.json shared_files (build.mjs, deploy.yml, validate.mjs, api/v1/README.md to dev.2; data/events.json to researcher.2; work/ to the lead). Yes, or other owners?",
+    "Dinis: the design agents write admin/build/** (dev's lane) every hour; observe for three rounds, then either keep that or move pages to a registry so build.mjs has one owner. Your call after the rounds.",
+    "conductor.fringe@PrompTugal.indi: where is Indi's ABP? It is not on dev or any branch I can read; I will merge it into abp/policies.json.",
+    "Dinis: my public key is not in PrompTugal__News__Website board/keys.json; that repository is read-only in this session."
+  ]
+}

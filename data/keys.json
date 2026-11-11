@@ -308,6 +308,22 @@
         "fingerprint": "sha256:56665ebf42e70ba5",
         "signing_fingerprint": "sha256:a7f4baa8c316daf3"
       }
+    },
+    {
+      "id": "architect.1.fringe-dinis",
+      "agent": "architect.1.fringe@PrompTugal.dinis",
+      "role": "The architect of Lisbon Fringe (WS-215, brief 12): the map of repositories, accounts, agents and who edits where (work/38), the Agent Behaviour Policies (work/39) and the public guidance for contributors (work/40).",
+      "how": "Made in its own session on 11 November 2026, 13:34 UTC (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab). A session key: it ends with the session. Public half only.",
+      "added": "2026-11-11",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAwJbkmZ+X3/pVAoETiKlx\nOvGj4eMImCGSjIxekGSfOPPHRMtj7IsqC4lym7cLanIlpRX8EMi4AjfDKs+w5A0N\neZQTW6B5AaXg0uQ5bFBuElcPVyez0L3FrktedjZYZ3MzDhUWdu43RA3NRvGVcVYd\nLovamp/CF6AKyRF8zYSonluyZjl+GRj+DFBJyuQpvOQ2qgyOzFwQBKXiO/2e6dXq\nm3sUNQ78yIb3/RdHwJDVf73PpgLNIaGA20d1RV1vC7fmUuiZRwyt1qzCvI5B4KUy\nagYNFo4NGQ6zMVZWun2nqlGR8P6dh6ztIIlYza3CWbhthTdGpb8tPtzVN2eaPTBK\nLDTTIqR3EH0LGxEWiR4yT34HGXAgMaSsZEie3qZWTcLwxa5WIquhfZdEOuukIEUw\nyK5S/3b/rwQ2EgFfjGkXA8TB11OX68DSfxeBgFviPQQnlsAnDxlNc861ikUoSfTs\nYX+2iGjmPlytcN/a46ikiiH4akxDtA5OTViUFZGEuaCWwIEdbX4Sm1yxeUfL0l9Y\nEKq1zTjos820F8OvsqSMO3qGAEuBSLxaNH2vlSdM8mSrZxI1pZpCkJNu6NOh3/2P\nCyCw9c/chvRfnwim74SmJWAS5xtc0fPaWBxcMQI35SRCR2YzKEWZ+tmiDDxq0idK\nBcBwt/Q2RImG+OAphLCYGBkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEwSgduAqr4dOh6JYnX6lOk2u3EInt\nyed7LoIU52KmqAV/P9ChvFYH0CehPQaQ+AA0nAbrFql9fnAevFCL6v4sxQ==\n-----END PUBLIC KEY-----\n",
+        "label": "architect.1.fringe@PrompTugal.dinis",
+        "fingerprint": "sha256:ed5e2c22bed5f595",
+        "signing_fingerprint": "sha256:f72a0804da0343b4"
+      }
     }
   ]
 }
