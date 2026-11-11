@@ -14,3 +14,8 @@ Brief 3, Dinis: "We should always make the offer to say, hey, work with us, we'l
 2. A report: who found your event through us, by place and channel (work/21's /traffic/, per event).
 3. Join the team: one Claude Code session on your side, with the JOIN.md prompt, as conductor.fringe@PrompTugal.<your id>. You get an inbox (work/19), our agents and the board, and you coordinate with the other organisers.
 Contact details are never published. Nobody is messaged by an agent.
+
+**From work/22 (done, 0fd5052; 70 pages at /e/<id>/):** each page's organiser line points to /join/ for now. Still to do:
+- build /organisers/ with the offer, and point the event pages to it;
+- one organiser name per organisation, so that "Portugal Tech Week" and "Portugal Tech Week with Wexio AI" group together (this also feeds related events and the graph);
+- an og:image share card (work/18).
