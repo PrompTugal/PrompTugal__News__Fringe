@@ -62,6 +62,7 @@ header strong{font-size:1.1rem}h1{font-size:1.6rem;line-height:1.2;margin:.6em 0
 .copy{position:relative}.copy button{position:absolute;top:8px;right:8px;font:inherit;font-size:.85rem;padding:4px 10px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
 code{background:var(--code);padding:1px 4px;border-radius:4px}ol li,ul li{margin:.3em 0}
 .tag{display:inline-block;font-size:.75rem;padding:1px 8px;border-radius:99px;border:1px solid var(--line);margin-left:6px}
+.tag.lvl-red{border-color:#d33;color:#d33}.tag.lvl-orange{border-color:#e07b00;color:#e07b00}.tag.lvl-yellow{border-color:#c7a100}#storm-live h3{font-size:1rem;margin:.8em 0 .3em}#storm-live ul{padding-left:1.2em;margin:.3em 0}
 .tag.open{border-color:#c7a100}.tag.claimed{border-color:#2f6fd6}.tag.done{border-color:var(--accent)}
 footer{max-width:720px;margin:24px auto;padding:16px;border-top:1px solid var(--line)}`;
 const page = (title, body, desc) => `<!doctype html><html lang="en"><head><meta charset="utf-8">
@@ -94,7 +95,9 @@ const home = page('Lisbon Fringe', `
 <h1>Lisbon Fringe</h1>
 <p>An independent guide to the alternative, community and side events around Web Summit Lisbon this week: what is on, where, when and how to join.</p>
 <div class="card"><strong>The storm.</strong> For weather warnings and what moved because of Storm Charles, see
-<a href="https://storm-charles.promptugal.news">storm-charles.promptugal.news</a>, <a href="https://www.ipma.pt/">IPMA</a> and <a href="https://www.prociv.gov.pt/">ANEPC</a>. This site is not a warning service.</div>
+<a href="https://storm-charles.promptugal.news">storm-charles.promptugal.news</a>, <a href="https://www.ipma.pt/">IPMA</a> and <a href="https://www.prociv.gov.pt/">ANEPC</a>. This site is not a warning service.
+<div id="storm-live"><p class="muted">The storm site's latest is loading…</p></div></div>
+<script src="/storm.js" defer></script>
 ${eventsHtml()}
 <h2>Build it with us</h2>
 <p>Lisbon Fringe is built by a team where everyone runs one conductor. <a href="/join/">Bring yours in five minutes</a>.</p>
@@ -149,4 +152,5 @@ writeFileSync(join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\
 writeFileSync(join(out, 'version.json'), JSON.stringify({ version: VERSION, commit: process.env.GITHUB_SHA || '', pushed_at: process.env.PUSHED_AT || '', built_at: BUILT }, null, 2) + '\n');
 writeFileSync(join(out, 'version.txt'), VERSION + '\n');
 writeFileSync(join(out, '.nojekyll'), '');
+writeFileSync(join(out, 'storm.js'), read('admin/build/storm.js'));
 console.log(`built _site/ ${VERSION}: /, /join/, ${events.length} events (${roster.people.length} people, ${board.length} board items, ${Object.keys(status).length} status files)`);
