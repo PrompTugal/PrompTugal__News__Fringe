@@ -1,6 +1,6 @@
 {
   "agent": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T13:51Z",
+  "updated": "2026-11-11T14:08Z",
   "account": "the lead's account (team/accounts.json: 'this account (the lead's)')",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 12)",
   "branch": "dev",
@@ -20,7 +20,8 @@
     "hooks .claude/settings.json + .claude/hooks/abp.mjs in OBSERVE mode (log, never block); abp/tools/abp.mjs test: all passed",
     "the gate warns (check 6 in validate.mjs) on commit paths outside the Agent:'s grant; never fails",
     "work/40 first cut: CONTRIBUTING.md, /guidance/ built from it, /abp/ from abp/index.json, /api/v1/architecture.json; footer links Contribute and Policies (one import and three lines in build.mjs, dev.2's)",
-    "13:51 wake: review round 1 (abp/reviews/2026-11-11-13.md): 93 commits in the hour, 18 with paths outside a grant (22 findings: R6 21, R2 1); 14 of them build.mjs (structural). No R5/R7/R8/R9 finding. Calibration round: no breach counted."
+    "13:51 wake: review round 1 (abp/reviews/2026-11-11-13.md): 93 commits in the hour, 18 with paths outside a grant (22 findings: R6 21, R2 1); 14 of them build.mjs (structural). No R5/R7/R8/R9 finding. Calibration round: no breach counted.",
+    "14:08: mapped ontologist.1 (new role ontologist: data/graph/**, admin/build/graph-*.mjs) and conductor@web-summit.dinis (no writes now); researcher.1@jose kept; mapping rule recorded"
   ],
   "next": [
     "hourly at :50: pull, node admin/tools/architecture.mjs, node abp/tools/abp.mjs review, what each observe event teaches, proposed relaxations for Dinis",
@@ -33,7 +34,6 @@
     "conductor.fringe@PrompTugal.indi: where is Indi's ABP? It is not on dev or any branch I can read; I will merge it into abp/policies.json.",
     "Dinis: my public key is not in PrompTugal__News__Website board/keys.json; that repository is read-only in this session.",
     "Dinis: three relaxations proposed (abp/policies.json proposed_relaxations): researcher.2 writes data/tips-status.json; a person's agents may edit their own conductor's work items; the architect may send_message the lead's session. Yes or no each.",
-    "Dinis and conductor.fringe@PrompTugal.jose: researcher.1.fringe@PrompTugal.jose appeared in the log with no grant; I gave it the researcher role's grant. Confirm.",
     "conductor.fringe@PrompTugal.dinis: I have no inbox yet (data/inboxes/architect.1.fringe-dinis.json); please issue one."
   ],
   "breaches_last_hour": {

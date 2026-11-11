@@ -2,7 +2,7 @@
 title: "ABP: dev.1.fringe@PrompTugal.dinis"
 agent: dev.1.fringe@PrompTugal.dinis
 role: dev
-policy: abp/policies.json v0.1.0 (sha256:d9550652da1cbaa8)
+policy: abp/policies.json v0.1.0 (sha256:04390640c12e9e1b)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator

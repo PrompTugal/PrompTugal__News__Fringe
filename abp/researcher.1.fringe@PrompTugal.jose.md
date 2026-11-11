@@ -2,7 +2,7 @@
 title: "ABP: researcher.1.fringe@PrompTugal.jose"
 agent: researcher.1.fringe@PrompTugal.jose
 role: researcher
-policy: abp/policies.json v0.1.0 (sha256:d9550652da1cbaa8)
+policy: abp/policies.json v0.1.0 (sha256:04390640c12e9e1b)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -22,7 +22,7 @@ authority: Dinis Cruz, operator
 - **Sends to:** `dev.send.sgraph.ai`, `pki.sgit.ai` only.
 - **Pushes to:** `dev` with `AGENT=researcher.1.fringe@PrompTugal.jose admin/tools/release.sh`.
 - **Never:** reads websummit.com by machine; publishes a guess as a fact; names a private person.
-- **Note:** seen in the git log at 13:4x UTC (b339cdf); added with its role's grant, for Dinis and Jose to confirm.
+- **Note:** Jose's researcher (work/31); mapped with its role's grant (mapping, not a relaxation: the lead, 14:07 UTC).
 
 ## Outside the mandate (logged, not blocked)
 

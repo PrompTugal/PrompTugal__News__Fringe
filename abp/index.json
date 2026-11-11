@@ -1,7 +1,7 @@
 {
   "about": "Every agent's grant, flattened from abp/policies.json by node abp/tools/abp.mjs build: what /abp/ shows.",
   "policy": "0.1.0",
-  "sha256": "d9550652da1cbaa8",
+  "sha256": "04390640c12e9e1b",
   "mode": "observe",
   "agents": [
     {
@@ -828,6 +828,48 @@
         "pki.sgit.ai"
       ],
       "page": "abp/researcher.1.fringe@PrompTugal.jose.md"
+    },
+    {
+      "agent": "ontologist.1.fringe@PrompTugal.dinis",
+      "role": "ontologist",
+      "person": "dinis",
+      "account": "this (the lead's)",
+      "branch": "dev",
+      "writes": [
+        "team/dinis/agents/ontologist.1.json",
+        "team/dinis/agents/ontologist.1/**",
+        "data/keys.json (your own entry)",
+        "data/inboxes/<your key id>.json",
+        "work/NN-<item you own>.md",
+        "data/graph/**",
+        "admin/build/graph-*.mjs"
+      ],
+      "owns": [],
+      "sends": [
+        "dev.send.sgraph.ai",
+        "pki.sgit.ai"
+      ],
+      "page": "abp/ontologist.1.fringe@PrompTugal.dinis.md"
+    },
+    {
+      "agent": "conductor@web-summit.dinis",
+      "role": "reviewer",
+      "person": null,
+      "account": "another account (the Web Summit team's site)",
+      "branch": "dev",
+      "writes": [
+        "team/?/agents/conductor.json",
+        "team/?/agents/conductor/**",
+        "data/keys.json (your own entry)",
+        "data/inboxes/<your key id>.json",
+        "work/NN-<item you own>.md"
+      ],
+      "owns": [],
+      "sends": [
+        "dev.send.sgraph.ai",
+        "pki.sgit.ai"
+      ],
+      "page": "abp/conductor@web-summit.dinis.md"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "about": "The Agent Behaviour Policies of Lisbon Fringe (lisbontechfringe.com, origin in admin/site.json; WS-215) as data: deny by default, one grant per role and agent, across this repository and the others the swarm touches. Ported from PrompTugal__News__Website board/abp/policies.json (abp@PrompTugal.dinis, v1.7.0, since 6 November 2026), not invented anew; built on RiskMandate's Agent Behaviour Policy and Licence to Operate (https://riskmandate.ai/agent-behaviour-policy.html). Read by the hooks (.claude/settings.json, .claude/hooks/abp.mjs) and by the gate's commit check (abp/tools/abp.mjs check). abp/<agent>.md is generated from this file (node abp/tools/abp.mjs build), never edited by hand. Kept by architect.1.fringe@PrompTugal.dinis (work/39); any relaxation, and any move towards enforcement, is Dinis's decision.",
   "version": "0.1.0",
-  "updated": "2026-11-11T13:37Z",
+  "updated": "2026-11-11T14:08Z",
   "operator": "Dinis Cruz",
   "kept_by": "architect.1.fringe@PrompTugal.dinis",
   "status": "DRAFT: grants proposed from the git log (data/architecture.json observed); Dinis and the lead review",
@@ -513,6 +513,14 @@
       "focus": "everything new on dev: findings to the owner's inbox",
       "writes": [],
       "never": "edits the file it reviews"
+    },
+    "ontologist": {
+      "focus": "the semantic graph (work/42, brief 13): day, festival, organiser, event, session, place, persona, topic as JSON with stable ids, and their pages",
+      "writes": [
+        "data/graph/**",
+        "admin/build/graph-*.mjs"
+      ],
+      "never": "hand-edits a derived file; edits data/events.json (researcher.2's: corrections by inbox)"
     }
   },
   "agents": {
@@ -729,8 +737,19 @@
     },
     "researcher.1.fringe@PrompTugal.jose": {
       "role": "researcher",
-      "note": "seen in the git log at 13:4x UTC (b339cdf); added with its role's grant, for Dinis and Jose to confirm",
+      "note": "Jose's researcher (work/31); mapped with its role's grant (mapping, not a relaxation: the lead, 14:07 UTC)",
       "account": "Jose's"
+    },
+    "ontologist.1.fringe@PrompTugal.dinis": {
+      "role": "ontologist",
+      "account": "this (the lead's)",
+      "note": "started for brief 13 (work/42); mapped 2026-11-11T14:08Z at the lead's routing: its own role's scope, not a relaxation. Its edits to build.mjs, event-pages.mjs and api/v1/README.md are shared files and stay observed"
+    },
+    "conductor@web-summit.dinis": {
+      "role": "reviewer",
+      "writes_override": [],
+      "account": "another account (the Web Summit team's site)",
+      "note": "wrote BRIEF.md, KICKOFF.md and the seed at the start (5 commits); no writes here now: its team's line is in data/architecture.json"
     }
   },
   "external": {
@@ -885,5 +904,6 @@
         "at": "2026-11-11T13:51Z"
       }
     ]
-  }
+  },
+  "mapping_rule": "Granting a new agent its own role's scope is mapping, done by the architect as agents start (the lead, 14:07 UTC). A grant that widens an agent's reach into another agent's paths is a relaxation: proposed_relaxations, Dinis decides."
 }
