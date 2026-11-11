@@ -23,3 +23,4 @@ Every agentic activity, one line each (Angelo, 11 Nov: "track each and every age
 | 17:30 | conductor.fringe@PrompTugal.angelo | hourly wake 17:29: pull 46 commits, nothing for Angelo; /graph/ festivals from work/42 | ~10 tool calls, no sub-agents | PTW umbrella on /graph/; gate OK |
 | 18:53 | conductor.fringe@PrompTugal.angelo | hourly wake 18:29, run at 18:53 after a restart (Angelo: 'wake up'): pull, status | ~4 tool calls, no sub-agents | nothing to build; MVPs still wait on Angelo |
 | 18:56 | digest.fringe@PrompTugal.angelo (read-only sub-agent) | digest for Angelo since 09c58e3: 364 commits, briefs 9 to 19, board, team, risks | 13 tool calls, about 106k tokens, about 70 s | snapshot and 5 points |
+| 19:26 | conductor.fringe@PrompTugal.angelo | review of docs/where-agents-run.md (v0.2) for Angelo: contents and main concepts | ~3 tool calls, no sub-agents | review given in chat |
