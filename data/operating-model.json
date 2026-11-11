@@ -1,7 +1,7 @@
 {
   "about": "The operating model of the agentic team (Dinis with Angelo, in architect.1's session, 14:40 UTC; briefs/2026-11-11-1440-the-operating-model.md; work/48): the primitives of the execution block, the access an entity has at a moment in time, identity, state, providers, and who can do what. What an entity is depends on where it runs and what it can reach (Dinis: 'what they are depends on where they are and what they can do'). A draft for Dinis and Angelo to correct.",
   "by": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T15:05Z",
+  "updated": "2026-11-11T15:13Z",
   "status": "draft v0.4",
   "ladder": {
     "about": "The execution ladder: what an entity can do, bottom to top. Each rung includes the ones below it.",
@@ -368,16 +368,16 @@
       },
       {
         "id": "agent",
-        "ontology": "a worker with an environment: identity, memory (status file, inbox, vaults), its own wake, a wider reach",
+        "ontology": "a loop with an environment: memory (status file, inbox, vaults), its own wake, a wider reach",
         "jump": ""
       },
       {
-        "id": "worker (the run)",
+        "id": "loop",
         "ontology": "a closed agentic loop: it calls and uses tools until the task is done, then stops",
         "jump": ""
       },
       {
-        "id": "call",
+        "id": "LLM call",
         "ontology": "one model call: a prompt in, an answer out",
         "jump": ""
       },
@@ -724,7 +724,7 @@
       },
       {
         "id": "A2",
-        "name": "worker (the run)",
+        "name": "loop",
         "is": "a closed agentic loop: it calls and uses tools until the task is done, then stops",
         "can": "call models, use the tools it was handed, inside its sandbox and project (E2, E3); it cannot start others or schedule",
         "reach": "self to project",
@@ -777,7 +777,7 @@
     "also_called": "the holarchy of work (Koestler's holarchy: a stack of holons, each a whole and a part). Not Holacracy, the trademarked management method, which this is not",
     "names_for": {
       "A2": {
-        "now": "worker",
+        "now": "loop",
         "options": [
           {
             "name": "loop",
@@ -804,7 +804,12 @@
             "why": "clear, but it clashes with our branch workers and with Cloudflare Workers"
           }
         ],
-        "architect_recommends": "loop"
+        "architect_recommends": "loop",
+        "decided": {
+          "at": "2026-11-11T15:13Z",
+          "by": "Dinis",
+          "words": "use loop"
+        }
       },
       "A1": {
         "now": "LLM call",
@@ -830,7 +835,12 @@
             "why": "one exchange; but a chat turn may carry tools"
           }
         ],
-        "architect_recommends": "LLM call, with 'inference' as the general name when the model is not a language model"
+        "architect_recommends": "LLM call, with 'inference' as the general name when the model is not a language model",
+        "decided": {
+          "at": "2026-11-11T15:13Z",
+          "by": "Dinis",
+          "words": "I think this should be LLM call, not just a call"
+        }
       }
     }
   },

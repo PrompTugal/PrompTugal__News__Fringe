@@ -55,3 +55,9 @@ Done: slide 4 is now "The altitudes of execution": A4 swarm, A3 agent, A2 worker
 > "Every one of these has an identity. In fact, they're all signed ... I'm going to vouch for that PHP deployment on that app, and I'm going to give it a private key that only exists in that environment. So now that code actually has an identity ... the PKI is what allow us to make something an identity. Because from that moment on, that thing can identify itself, which is kind of the definition of an identity ... Identity of what? Is different ... But let's just run with it."
 
 Decided: **the altitudes of execution** (also the holarchy of work; the architect notes "Holacracy" is a trademarked management method, so "holarchy", Koestler's word, is the safe spelling); A4 swarm, A3 agent, A1 **LLM call**, A0 compute; A2's name open (options in data/operating-model.json). Identity: every altitude holds a key pair; a key is not what makes an agent. New: **mixing altitudes** as a class of vulnerability (slide 5), with the rule "the grant's altitude must not be above the mandate's".
+
+## A2 is the loop (15:13 UTC)
+
+> "use loop"
+
+The altitudes of execution: A4 swarm, A3 agent, A2 loop, A1 LLM call, A0 compute.

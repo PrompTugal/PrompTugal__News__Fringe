@@ -128,8 +128,8 @@ function graph(M) {
   return `${top(4)}<div class="head"><h1>The <em>altitudes</em> of execution</h1><div class="q">"It's work of work of work of work ... it's just how big it is." Meaning through connectivity: what each one is depends on where it is and what it can do.</div></div>
 <div class="alts"><div class="stack">${L.items.map((a) => `<div class="alt2"><div><b class="mono">${esc(a.id)}</b><h3>${esc(a.name)}</h3></div><div><p class="is">${esc(a.is)}</p><p class="can">${esc(a.can)}</p></div><div class="rx"><span class="chip c">reach: ${esc(a.reach)}</span><span class="eg">${esc(a.example)}</span></div></div>`).join('')}</div>
 <div class="every"><h3>Every altitude has</h3><ol>${L.every_altitude_has.map((x) => `<li>${esc(x)}</li>`).join('')}</ol><p>The grant is not a layer: it is given at every altitude, in one grammar (verb.object.reach, ${C.primitives.length} primitives, abp.sgit.ai).</p>
-<div class="name"><b>Names for A2:</b> ${L.names_for.A2.options.map((o) => `<span class="chip ${o.name === L.names_for.A2.architect_recommends ? 'g' : ''}">${esc(o.name)}</span>`).join(' ')}<br><b>Names for A1:</b> ${L.names_for.A1.options.map((o) => `<span class="chip ${o.name === 'LLM call' ? 'g' : ''}">${esc(o.name)}</span>`).join(' ')}<p>Also called the <b>holarchy of work</b>: a stack of holons, each a whole and a part.</p></div></div></div>
-${bar('Dinis and Angelo, 11 Nov 2026 · data/operating-model.json · a draft: names to decide')}`;
+<div class="name"><b>Named by Dinis:</b> <span class="chip g">A2 loop</span> <span class="chip g">A1 LLM call</span> <span class="chip">inference: any model</span><p>Also called the <b>holarchy of work</b>: a stack of holons, each a whole and a part.</p></div></div></div>
+${bar('Dinis and Angelo, 11 Nov 2026 · data/operating-model.json · names decided by Dinis')}`;
 }
 
 function mixing(M) {
