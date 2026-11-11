@@ -43,6 +43,9 @@ const slug = (s) => String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,
 const hoodOf = (e) => (e.neighbourhood ? String(e.neighbourhood).split(/[\/,]/)[0].trim() : '');   // only a neighbourhood the research named
 const ELSE = 'Elsewhere in Lisbon';
 const hm = (iso) => String(iso).slice(11, 16);
+const dayShort = (iso) => { const d = new Date(String(iso).slice(0, 10) + 'T12:00:00Z'); return DOW[d.getUTCDay()].slice(0, 3) + ' ' + d.getUTCDate(); };
+// an event that spans days says its dates, so '14:30-17:30' never reads as a time already past
+const whenOf = (e) => e.end && String(e.end).slice(0, 10) !== String(e.start).slice(0, 10) ? `${dayShort(e.start)} ${hm(e.start)} – ${dayShort(e.end)} ${hm(e.end)}` : `${hm(e.start)}${e.end ? '–' + hm(e.end) : ''}`;
 const orgName = (e) => String(/^unknown/i.test(e.organiser || '') ? '' : e.organiser || '').trim() === '' ? 'Organiser not named' : String(e.organiser).replace(/\s*\((per|from|on|as)\b[^)]*\)\s*/gi, ' ').trim();
 // Two letters from the organiser's name (no picture is used: Luma's terms, work/49; an organiser's own logo only where their site allows it).
 const STOP = /^(the|a|an|of|by|and|&|per|from|in|on|at|for|to|with|lisbon|lisboa)$/i;
@@ -137,12 +140,12 @@ export function homeBody({ events, esc, eventPath, hasPage, now = new Date(), st
       ? `<span class="hm-img"><img src="${esc(imgs[e.id])}" alt="" loading="lazy" decoding="async"><small class="hm-cr">image: ${esc(org)}</small></span>`
       : `<span class="hm-img hm-tile" style="--c:var(${c})"><b>${esc(initials(org))}</b><i>${esc(e.kind || 'event')}<br><u>${esc(hm(e.start))} UTC</u></i></span>`;
     const roles = roleOf(e).join(' ');
-    return `<li id="ev-${esc(e.id)}" data-id="${esc(e.id)}" class="hm-c${e.status === 'cancelled' ? ' x' : ''}" data-s="${s}" data-e="${en}" data-r="${roles}" data-o="${isOnline(e) ? 1 : 0}" data-c="${e.status === 'cancelled' ? 1 : 0}" data-x="${e.status === 'cancelled' || e.status === 'moved' ? 1 : 0}" data-h="${esc(hoodKey(e))}">${media}
+    return `<li id="ev-${esc(e.id)}" data-id="${esc(e.id)}" class="hm-c${e.status === 'cancelled' ? ' x' : ''}" data-s="${s}" data-e="${en}" data-r="${roles}" data-o="${isOnline(e) ? 1 : 0}" data-u="${e.status === 'unknown' ? 1 : 0}" data-c="${e.status === 'cancelled' ? 1 : 0}" data-x="${e.status === 'cancelled' || e.status === 'moved' ? 1 : 0}" data-h="${esc(hoodKey(e))}">${media}
 <div class="hm-body"><span class="hm-org">${lead ? `<a href="${esc(pathOf('organiser', lead.id))}">${esc(org)}</a>` : esc(org)}</span><h3 class="hm-t"><a href="${esc(href)}">${esc(e.name)}</a></h3>
-<span class="hm-m">${hm(e.start)}${e.end ? '–' + hm(e.end) : ''} UTC · ${pl ? `<a class="hm-pl" href="${esc(pathOf('place', pl))}">${esc(placeTxt)}</a>` : esc(placeTxt)}</span>
-<span class="hm-tags"><span class="hm-tag ${price.k}">${esc(price.t)}</span>${fest ? `<a class="hm-tag" href="${esc(pathOf('festival', fest.id))}">${esc(fest.name)}</a>` : ''}${isBig ? '<span class="hm-tag hm-anchor">Anchor</span>' : ''}${e.status === 'cancelled' ? '<span class="hm-tag x">Cancelled</span>' : e.status === 'moved' ? '<span class="hm-tag x">Moved</span>' : ''}<span class="hm-tag now" hidden>On now</span></span></div></li>`;
+<span class="hm-m">${whenOf(e)} UTC · ${pl ? `<a class="hm-pl" href="${esc(pathOf('place', pl))}">${esc(placeTxt)}</a>` : esc(placeTxt)}</span>
+<span class="hm-tags"><span class="hm-tag ${price.k}">${esc(price.t)}</span>${fest ? `<a class="hm-tag" href="${esc(pathOf('festival', fest.id))}">${esc(fest.name)}</a>` : ''}${isBig ? '<span class="hm-tag hm-anchor">Anchor</span>' : ''}${e.status === 'unknown' ? '<span class="hm-tag">Status unknown</span>' : ''}${e.status === 'cancelled' ? '<span class="hm-tag x">Cancelled</span>' : e.status === 'moved' ? '<span class="hm-tag x">Moved</span>' : ''}<span class="hm-tag now" hidden>On now</span></span></div></li>`;
   };
-  const state = (e) => { const s = Date.parse(e.start), en = e.end ? Date.parse(e.end) : s + 36e5; return t >= en ? 'past' : t >= s ? 'now' : 'next'; };
+  const state = (e) => { if (e.status === 'unknown') return e.end && t >= Date.parse(e.end) ? 'past' : 'unknown'; const s = Date.parse(e.start), en = e.end ? Date.parse(e.end) : s + 36e5; return t >= en ? 'past' : t >= s ? 'now' : 'next'; };
   // D39: the Online control answers "online now": on now first, then in start order (so the next 3 hours come first), the ones already over folded
   const onlineLive = online.filter((e) => state(e) !== 'past'), onlinePast = online.filter((e) => state(e) === 'past');
   const onlineNow = online.filter((e) => state(e) === 'now' && e.status !== 'cancelled').length, onlineSoon = online.filter((e) => { const s0 = Date.parse(e.start); return s0 > t && s0 <= t + 3 * 36e5 && e.status !== 'cancelled'; }).length;
@@ -157,7 +160,7 @@ export function homeBody({ events, esc, eventPath, hasPage, now = new Date(), st
   const everyone = [...inCity, ...online];
   const stats = statsLine(liveAll.length, liveAll.filter((e) => !isOnline(e)).length, liveAll.filter(isOnline).length, hourAll.length, everyone.filter((e) => e.status === 'cancelled').length, everyone.filter((e) => e.status === 'moved').length);
   const sigN = [...inCity, ...online].filter((e) => e.status === 'cancelled' || e.status === 'moved').length;
-  const live = inCity.filter((e) => state(e) !== 'past'), past = inCity.filter((e) => state(e) === 'past');
+  const live = inCity.filter((e) => state(e) !== 'past').sort((a, b) => (a.status === 'unknown') - (b.status === 'unknown') || a.start.localeCompare(b.start)), past = inCity.filter((e) => state(e) === 'past');
   const roleChips = ROLES.map(([id, label], i) => `<button type="button" class="hm-chip" data-role="${id}" aria-pressed="${i === 0}">${esc(label)}</button>`).join('');
   const hoodChips = goodHoods.length ? `<div class="hm-where"><div class="hm-hood" role="group" aria-label="Neighbourhood">${goodHoods.map(([h, n]) => `<button type="button" class="hm-h" data-hood="${esc(h)}" aria-pressed="false">${esc(h)} · ${n}</button>`).join('')}</div></div>` : '';
   const data = JSON.stringify({ today });
@@ -178,9 +181,9 @@ ${online.length ? `<div id="hm-online-wrap"><div class="hm-sec" role="heading" a
 <p class="hm-foot">Roles are our reading of each event&rsquo;s topics, not the organiser&rsquo;s claim; nothing is stored about you. Tomorrow and the rest of the week are on <a href="/programme/">the programme</a>.${away ? ` ${away} event${away === 1 ? '' : 's'} today ${away === 1 ? 'is' : 'are'} outside Lisbon and not shown here.` : ''} Missing something? <a href="/join/">Tell us</a>.</p>
 </section>
 <script>(function(){try{var R='all',W='',H='',A=false,OO=false,EX=false,FOLD=12,cards=[].slice.call(document.querySelectorAll('.hm-c'));
-function st(c,n){var s=+c.dataset.s,e=+c.dataset.e;return n>=e?'past':n>=s?'now':'next'}
+function st(c,n){var s=+c.dataset.s,e=+c.dataset.e;if(c.dataset.u==='1')return n>=e?'past':'unk';return n>=e?'past':n>=s?'now':'next'}
 function tick(){var n=Date.now(),SN=0,SX=0,SO=0,SC=0,SM=0,OS=0,N=0,X=0,T=0,eve=new Date(new Date(n).toISOString().slice(0,10)+'T18:00:00Z').getTime();
-cards.forEach(function(c){if(c.dataset.x==='1'&&c.dataset.c!=='1')SM++;if(c.dataset.c==='1'){SC++}else{var s0=+c.dataset.s,e0=+c.dataset.e;if(n>=s0&&n<e0){SN++;if(c.dataset.o==='1'){SO++;OS++}}if(s0>n&&s0<=n+36e5)SX++}if(c.classList.contains('x'))return;var s=+c.dataset.s,e=+c.dataset.e,k=st(c,n);if(c.closest('#hm-online'))return;if(k==='now')N++;if(s>n&&s<=n+36e5)X++;if(e>=eve)T++;
+cards.forEach(function(c){if(c.dataset.x==='1'&&c.dataset.c!=='1')SM++;if(c.dataset.c==='1'){SC++}else{var s0=+c.dataset.s,e0=+c.dataset.e;if(n>=s0&&n<e0&&c.dataset.u!=='1'){SN++;if(c.dataset.o==='1'){SO++;OS++}}if(s0>n&&s0<=n+36e5)SX++}if(c.classList.contains('x'))return;var s=+c.dataset.s,e=+c.dataset.e,k=st(c,n);if(c.closest('#hm-online'))return;if(k==='now')N++;if(s>n&&s<=n+36e5)X++;if(e>=eve)T++;
 var b=c.querySelector('.hm-tag.now');if(b)b.hidden=k!=='now';c.classList.toggle('past',k==='past')});
 var sp=document.getElementById('hm-stats');if(sp)sp.innerHTML='<b>'+SN+'</b> on now'+(SN?' ('+(SN-SO)+' in Lisbon, '+SO+' online)':'')+' \u00b7 <b>'+SX+'</b> start within the hour'+(SC||SM?' \u00b7 <b>'+SC+'</b> cancelled \u00b7 <b>'+SM+'</b> moved':'');
 var on1=document.getElementById('hm-online-n');if(on1)on1.textContent=OS?OS+' on now, ':'';

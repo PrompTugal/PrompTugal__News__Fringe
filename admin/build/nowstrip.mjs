@@ -21,7 +21,9 @@ function nsEsc(s) {
 }
 function nsItem(i, now, mode) {
   var hm = function (t) { return new Date(t).toISOString().slice(11, 16); };
-  var when = hm(i.s), until = mode === 'now' ? 'until ' + hm(i.e) + ' \u00b7 ' : '';
+  var dn = function (t) { var d = new Date(t); return ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][d.getUTCDay()] + ' ' + d.getUTCDate(); };
+  var multi = new Date(i.s).toISOString().slice(0, 10) !== new Date(i.e).toISOString().slice(0, 10);
+  var when = hm(i.s), until = mode === 'now' ? 'until ' + (multi ? dn(i.e) + ' ' : '') + hm(i.e) + ' \u00b7 ' : '';
   var chip = i.st === 'moved' ? ' <span class=\'ns-chip\'>Moved</span>' : (i.st === 'unknown' ? ' <span class=\'ns-chip ns-dash\'>Unconfirmed</span>' : '');
   return '<li class=\'ns-i\'><span class=\'ns-t\'>' + when + '</span><div class=\'ns-c\'><a class=\'ns-n\' href=\'' + nsEsc(i.h) + '\'>' + nsEsc(i.n) + '</a>'
     + '<div class=\'ns-m\'>' + until + (i.l ? 'Online' : nsEsc(i.p)) + chip + '</div></div></li>';
@@ -30,7 +32,7 @@ function nsRender(D, now) {
   var items = D.items.filter(function (i) { return i.st !== 'cancelled'; }), per = D.per || 3;
   var day = new Date(now).toISOString().slice(0, 10), tonightS = Date.parse(day + 'T' + D.from + ':00Z'), endOfDay = Date.parse(day + 'T00:00:00Z') + 24 * 3600000;
   var byTier = function (a, b) { return (b.z - a.z) || (a.s - b.s); };
-  var live = items.filter(function (i) { return i.s <= now && i.e > now; }).sort(byTier);
+  var live = items.filter(function (i) { return i.s <= now && i.e > now && i.st !== 'unknown'; }).sort(byTier);
   var nextH = items.filter(function (i) { return i.s > now && i.s <= now + 3600000; }).sort(function (a, b) { return a.s - b.s; });
   var tonight = items.filter(function (i) { return i.s >= Math.max(tonightS, now) && i.s < endOfDay; }).sort(byTier);
   var panel = function (list, mode, empty) {
