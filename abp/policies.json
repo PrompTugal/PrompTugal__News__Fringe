@@ -1,7 +1,7 @@
 {
   "about": "The Agent Behaviour Policies of Lisbon Fringe (lisbontechfringe.com, origin in admin/site.json; WS-215) as data: deny by default, one grant per role and agent, across this repository and the others the swarm touches. Ported from PrompTugal__News__Website board/abp/policies.json (abp@PrompTugal.dinis, v1.7.0, since 6 November 2026), not invented anew; built on RiskMandate's Agent Behaviour Policy and Licence to Operate (https://riskmandate.ai/agent-behaviour-policy.html). Read by the hooks (.claude/settings.json, .claude/hooks/abp.mjs) and by the gate's commit check (abp/tools/abp.mjs check). abp/<agent>.md is generated from this file (node abp/tools/abp.mjs build), never edited by hand. Kept by architect.1.fringe@PrompTugal.dinis (work/39); any relaxation, and any move towards enforcement, is Dinis's decision.",
   "version": "0.4.1",
-  "updated": "2026-11-11T23:28Z",
+  "updated": "2026-11-11T23:31Z",
   "operator": "Dinis Cruz",
   "kept_by": "architect.1.fringe@PrompTugal.dinis",
   "status": "DRAFT: grants proposed from the git log (data/architecture.json observed); Dinis and the lead review",
@@ -285,7 +285,17 @@
         "swarm.1.fringe@PrompTugal.dinis: requests/** and the workflows, until the design is set"
       ],
       "branch": "dev; the Action commits results back",
-      "note": "created by Dinis, 2026-11-11T23:28Z (\"ok, repo created\"; \"every run should start with the GitHub action ... that maps to the commit\"); small JSON only, no prompt or answer text, no keys"
+      "note": "created by Dinis, 2026-11-11T23:28Z (\"ok, repo created\"; \"every run should start with the GitHub action ... that maps to the commit\"); small JSON only, no prompt or answer text, no keys",
+      "secrets": {
+        "names": [
+          "ELASTIC_CLOUD",
+          "GRAFANA_TOKEN",
+          "OPEN_ROUTER_KEY",
+          "SG_SEND_ACCESS_TOKEN"
+        ],
+        "added": "by Dinis, 2026-11-11T23:31Z, for the demo (12 November)",
+        "rules": "read only by workflows triggered by push or workflow_dispatch (never pull_request_target); passed to a step through env, never echoed or written to a file in the repo; ELASTIC_CLOUD (the superuser password) to be replaced by a key limited to swarm-* when Dinis makes one; a secret no workflow uses should be removed"
+      }
     }
   },
   "common": {
