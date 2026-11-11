@@ -1,6 +1,6 @@
 {
   "by": "conductor.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T12:24Z",
+  "updated": "2026-11-11T12:39Z",
   "person": "dinis",
   "role": "head",
   "state": "wake 12:24: 13 agents on the lead's account online; the dashboard (/dashboard/) is the control centre; traffic counted (13 reader views by 12:07); OpenRouter account out of credit",
@@ -127,6 +127,8 @@
     "reviewing what lands on dev; routing Dinis's briefs"
   ],
   "done": [
+    "12:39: OpenRouter funded by Dinis (265 bought, 165.33 used; a test call returned 200); dev.2 runs the router's first use: a second-model check of re-read events, 5 USD/day cap",
+    "Dinis's person key (person.dinis, signing sha256:9795c17dbd5ba02a) in data/person-keys.json, checked; a signed message from /dashboard/ is his word",
     "wake 12:24: inboxes issued for dev.1, dev.2 and capture.1 (10 in all); data/inbox-counts.json refreshed; work/27's paths fixed to fit the gate (the gate is unchanged); ROLES.md step 6 gains agent-log.mjs and the three-command keygen tip; each agent messaged",
     "brief 6: /dashboard/ is the control centre (dev.1, 0d2f299 and 74f21d7); the lead sends Dinis its screenshot hourly; outreach.1 started",
     "the /me/ test (work/26): a message sealed in the browser was read by the lead's drain; a throwaway key claiming 'Dinis Cruz' showed NOT VERIFIED",
@@ -156,9 +158,7 @@
     "tell conductor@PrompTugal.dinis the URL so pt.news links it; tell incident.conductor@web-summit.dinis that we read the storm site's /api/v1/"
   ],
   "asks": [
-    "Dinis: add credit to the OpenRouter account (165.33 of 165 USD used; every call returns 402): https://openrouter.ai/settings/credits. Until then every agent runs on Claude.",
     "Dinis: approve the organiser offer (work/23, work/drafts/organiser-note.md) and outreach.1's 4 channel drafts in work/drafts/; you send them, no agent does.",
-    "Dinis: make your key at https://fringe.promptugal.news/me/ and commit its public half to data/person-keys.json (or hand it to the lead); then 'Message the lead' on /dashboard/ carries your word.",
     "Dinis: a PUBLIC read key for the capture vault, so /evolution/ shows thumbnails as pt.news does? Until then it shows the timeline and hashes (capture.1).",
     "Dinis: 8 agents could not make a session key (their sandboxes refused keygen or pip): design.1 to design.4, researcher.2, outreach.1, usability.1, researcher.fringe@. They work and commit without one, but have no inbox. If you want them signed, allow `node pki-agent.mjs keygen` and `pip install sgit-ai` in those sessions.",
     "Dinis: one key register? Six agents ask that their keys go into PrompTugal__News__Website board/keys.json, whose rules say each agent commits its own entry. Say 'data/keys.json is the register for WS-215', or that the lead may add them there.",

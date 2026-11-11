@@ -29,7 +29,8 @@
 - **The control centre:** https://fringe.promptugal.news/dashboard/ (work/25, dev.1), five sections with health colours; /api/v1/swarm.json; /me/ (work/26) makes Dinis's key in his browser (not yet made by him).
 - **Traffic:** counted since work/21 (13 reader views, 2 countries, by 12:07 UTC); /traffic/; drained every 15 minutes inside observability's hourly wake.
 - **Pages:** /now/, /organisers/ (offer marked draft), /changes/, /how/, /graph/, /e/<id>/ (164 events).
-- **The OpenRouter account is out of credit** (12:08 UTC): the router (admin/tools/llm.mjs) exists but every call returns 402.
+- **The model router** (admin/tools/llm.mjs, OpenRouter): funded again at about 12:30 UTC; first use is a second-model check of events, capped at 5 USD a day.
+- **Dinis's person key** is in data/person-keys.json (work/26).
 
 ## Does not exist yet
 
