@@ -1,7 +1,7 @@
 {
   "about": "Lisbon Fringe's events: the alternative, community and side events around Web Summit Lisbon, 11 to 13 November 2026 (and a few either side). Each event was re-read at its public source_url at read_at (UTC; Lisbon is on UTC in November). Each says whether Storm Charles moved it. Labels: fact (read on the organiser's page), evidence (read, but the page leaves the status open), hypothesis (not confirmed at source). 'unknown' means we do not know. Organisers are organisations; no private person is named and no contact details are given.",
   "contract": "api/v1/README.md (v1). Required: name, url, read_at, date, start, end, kind, organiser, place, join, status, storm_note, topics. Added by the researcher (v1 allows additions): id, label (fact | evidence | hypothesis), cost (as stated), storm_moved (true | false | null), check (what the page says about the storm, or why status is open), note.",
-  "updated": "2026-11-11T11:30:00Z",
+  "updated": "2026-11-11T11:40:00Z",
   "by": "researcher.fringe@PrompTugal.dinis",
   "independence": "Lisbon Fringe is independent of Web Summit and is not run by its organisers. For anything official see the organisers' own pages. Not a warning service: for the storm see IPMA (https://www.ipma.pt), ANEPC (https://www.prociv.gov.pt) and https://storm-charles.promptugal.news.",
   "sources": [
@@ -158,7 +158,7 @@
     {
       "name": "The Human Side of AI: emotional intelligence and the future of work",
       "url": "https://luma.com/r1ixujpv",
-      "read_at": "2026-11-11T10:57:00Z",
+      "read_at": "2026-11-11T11:40:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T10:00:00Z",
       "end": "2026-11-11T11:00:00Z",
@@ -182,7 +182,7 @@
     {
       "name": "Human Performance Under Uncertainty: how the brain responds when we don't know what comes next",
       "url": "https://luma.com/xn30wgrj",
-      "read_at": "2026-11-11T10:57:00Z",
+      "read_at": "2026-11-11T11:40:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T10:00:00Z",
       "end": "2026-11-11T11:00:00Z",
@@ -230,16 +230,16 @@
     {
       "name": "The Startup Legal Roast: top mistakes that kill your startup",
       "url": "https://luma.com/e42tit8k",
-      "read_at": "2026-11-11T11:23:00Z",
+      "read_at": "2026-11-11T11:40:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T11:30:00Z",
       "end": "2026-11-11T12:30:00Z",
       "kind": "workshop",
       "organiser": "Portugal Tech Week with Lex Padilla (a business law firm)",
-      "place": "'Room 2' (venue not named on the page)",
+      "place": "'Room 2' at PTW Palace, Rua Gomes Freire 98 (per Portugal Tech Week's listing); the Luma location field is now empty",
       "join": "Luma; open: https://luma.com/e42tit8k",
       "status": "unknown",
-      "storm_note": "Not stated on the page. The venue is not named, so whether it is affected by the storm or the Day 2 cancellation is unknown.",
+      "storm_note": "Not stated on the page. The venue is not named, so whether it is affected by the storm is unknown.",
       "topics": [
         "startups",
         "legal"
@@ -254,13 +254,13 @@
     {
       "name": "PTW Classroom: Deep Work x Wexio, an hour to get your inbox back",
       "url": "https://luma.com/vwwf1kj1",
-      "read_at": "2026-11-11T11:23:00Z",
+      "read_at": "2026-11-11T11:40:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T11:30:00Z",
       "end": "2026-11-11T12:30:00Z",
       "kind": "online",
       "organiser": "Portugal Tech Week with Wexio AI",
-      "place": "online (Google Meet (link on the Luma page))",
+      "place": "online (Google Meet; the link goes to registered guests on the Luma page)",
       "join": "Luma; open: https://luma.com/vwwf1kj1",
       "status": "online",
       "storm_note": "The page says: due to the incoming storm this event has been changed from in-person to online.",
@@ -353,7 +353,7 @@
     {
       "name": "AI Video Blueprint 2027",
       "url": "https://luma.com/59m82tyo",
-      "read_at": "2026-11-11T11:23:00Z",
+      "read_at": "2026-11-11T11:40:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T13:00:00Z",
       "end": "2026-11-11T14:00:00Z",
@@ -402,7 +402,7 @@
     {
       "name": "The Corporate Academy of Tomorrow",
       "url": "https://luma.com/6wcduo5u",
-      "read_at": "2026-11-11T11:23:00Z",
+      "read_at": "2026-11-11T11:40:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T14:00:00Z",
       "end": "2026-11-11T15:00:00Z",
@@ -451,7 +451,7 @@
     {
       "name": "Ethical AI Initiative: the different lenses of AI (roundtable)",
       "url": "https://luma.com/lg2qwq2l",
-      "read_at": "2026-11-11T11:23:00Z",
+      "read_at": "2026-11-11T11:40:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T14:30:00Z",
       "end": "2026-11-11T15:30:00Z",
@@ -460,7 +460,7 @@
       "place": "online (Zoom (per the Luma page))",
       "join": "Luma; open: https://luma.com/lg2qwq2l",
       "status": "online",
-      "storm_note": "Not stated on the page as a storm change. Listed on Zoom; no storm note.",
+      "storm_note": "Not stated on the page as a storm change. Listed on Zoom; the page says 'Please note this event is virtual.' No storm note.",
       "topics": [
         "AI ethics"
       ],
@@ -468,7 +468,7 @@
       "label": "evidence",
       "cost": "free",
       "storm_moved": null,
-      "check": "Listed on Zoom; no storm note.",
+      "check": "Listed on Zoom; the page says 'Please note this event is virtual.' No storm note.",
       "note": null
     },
     {
@@ -498,7 +498,7 @@
     {
       "name": "Bridging Capital Across Borders: investors, founders & ecosystems (online)",
       "url": "https://luma.com/148l175b",
-      "read_at": "2026-11-11T11:23:00Z",
+      "read_at": "2026-11-11T11:40:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T15:30:00Z",
       "end": "2026-11-11T17:00:00Z",
@@ -722,13 +722,13 @@
     {
       "name": "Cisco: from automation to autonomy, how AI is changing the way we run technology",
       "url": "https://luma.com/portugal-dezg",
-      "read_at": "2026-11-11T11:23:00Z",
+      "read_at": "2026-11-11T11:40:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:30:00Z",
       "end": "2026-11-11T18:30:00Z",
       "kind": "side event",
       "organiser": "351 Startups with Portugal Tech Week",
-      "place": "not stated on the page (Portugal Tech Week calendar)",
+      "place": "PTW Palace - Room 2 (Ground Floor), per the page text; the Luma location field is empty",
       "join": "Luma; open: https://luma.com/portugal-dezg",
       "status": "unknown",
       "storm_note": "Not stated on the page.",
@@ -740,7 +740,7 @@
       "label": "evidence",
       "cost": "free",
       "storm_moved": null,
-      "check": "The page shows no storm note and no venue.",
+      "check": "The page shows no storm note; its text names PTW Palace Room 2, but its location field is empty (no address, no online link).",
       "note": null
     },
     {
@@ -870,7 +870,7 @@
     {
       "name": "DemoNightLx Web Summit Week Edition (Canopy Demo Night)",
       "url": "https://luma.com/2ofzih7t",
-      "read_at": "2026-11-11T11:23:00Z",
+      "read_at": "2026-11-11T11:40:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:30:00Z",
       "end": "2026-11-11T19:30:00Z",
@@ -1143,7 +1143,7 @@
     {
       "name": "FUTURE-TECH 2026: short films about technology",
       "url": "https://luma.com/25z2ph1o",
-      "read_at": "2026-11-11T11:23:00Z",
+      "read_at": "2026-11-11T11:40:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T20:30:00Z",
       "end": "2026-11-11T22:00:00Z",
