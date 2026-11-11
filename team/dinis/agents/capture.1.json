@@ -1,7 +1,7 @@
 {
   "agent": "capture.1.fringe@PrompTugal.dinis",
   "by": "capture.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T21:32Z",
+  "updated": "2026-11-11T22:26Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 4, ROLES.md)",
   "session": "session_01Kw9UwBDiRApLwAnCoij2Db",
   "key": "capture.1.fringe-dinis (data/keys.json)",
@@ -28,7 +28,8 @@
     "2026-11-11T19:27Z: 19:25 wake: run 2026-11-11-19 captured 28/28 own pages into cap-003 (to3xs2w3, 588 files); no hold, no new brief, inbox empty.",
     "2026-11-11T20:27Z: 20:25 wake: run 2026-11-11-20 captured 28/28 own pages into cap-003 (to3xs2w3, 672 files); no hold, no new brief, inbox empty.",
     "2026-11-11T21:23Z: lead's 21:2x message: abp whoami run again (capture.1.fringe@PrompTugal.dinis). SECURITY FINDING 21 is closed on my side: the pre-fix runs of 11:00 and 12:00 lived in vault u4f3pl6f, which was DELETED entirely (remote and local, history included) at 16:2x UTC with b1pw4zrm and 9cf4rcf3 under the Luma order; the event-page records are gone from data/capture-index*.json too (see its 'removed' note, run ids and counts, no names). Since then only our own pages are captured (cap-003, to3xs2w3). Please verify against data/capture-vaults.json (status deleted).",
-    "2026-11-11T21:32Z: 21:25 wake: run 2026-11-11-21 captured 28/28 own pages into cap-003 (to3xs2w3, 756 files); no hold, no new brief, inbox empty."
+    "2026-11-11T21:32Z: 21:25 wake: run 2026-11-11-21 captured 28/28 own pages into cap-003 (to3xs2w3, 756 files); no hold, no new brief, inbox empty.",
+    "2026-11-11T22:26Z: 22:25 wake: run 2026-11-11-22 captured 28/28 own pages into cap-003 (to3xs2w3, 840 files); no hold, no new brief, inbox empty."
   ],
   "next": [
     "each hour: run capture.mjs, commit pointers, push",
