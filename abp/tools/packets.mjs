@@ -117,6 +117,12 @@ function check() {
   process.exitCode = bad ? 1 : 0;
 }
 
+process.on('unhandledRejection', (e) => {
+  const m = String(e && (e.cause && e.cause.message || e.message) || e);
+  console.error('packets:', m.slice(0, 300));
+  if (/fetch failed|ECONNREFUSED|ENOTFOUND|certificate/i.test(m)) console.error('hint: in a proxied cloud container, Node\'s fetch needs NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt (the lead, 20:3x UTC)');
+  process.exit(1);
+});
 const cmd = process.argv[2];
 if (cmd === 'new') create(); else if (cmd === 'run') await run(); else if (cmd === 'ingest-flows') await ingestFlows(); else if (cmd === 'verify' || cmd === 'list') check();
 else console.log('usage: node abp/tools/packets.mjs new --spec FILE | run --id ID --as AGENT --env ENV | verify [--id ID] | list');
