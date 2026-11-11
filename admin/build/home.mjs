@@ -7,6 +7,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { placeShort } from './cards.mjs';
+import { nowStrip, NOWSTRIP_CSS } from './nowstrip.mjs';   // design.2.fringe@PrompTugal.dinis
 import { AZULEJO_URI } from './identity.mjs';
 import { loadOrganisers, organiserPath } from './organisers.mjs';
 
@@ -55,7 +56,7 @@ function images() {
   } catch { return {}; }
 }
 
-export const homeCss = `
+export const homeCss = NOWSTRIP_CSS + `
 .hm{--az:${AZULEJO_URI}}
 .hm{margin-top:var(--s3)}
 .hm-kick{font:400 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin:0 0 6px}
@@ -137,7 +138,7 @@ export function homeBody({ events, esc, eventPath, hasPage, now = new Date(), st
   return `<section class="hm" data-today="${today}"><p class="hm-kick">${DOW[x.getUTCDay()]} ${x.getUTCDate()} ${MON[x.getUTCMonth()]} · Lisbon</p>
 <h1>What are you <em>looking for?</em></h1>
 <div class="hm-roles" role="group" aria-label="What are you looking for?">${roleChips}</div>
-<div class="hm-when" role="group" aria-label="When"><button type="button" class="hm-w live" data-when="now" aria-pressed="false"><b id="hm-n-now">${nowN}</b><span>On now</span></button><button type="button" class="hm-w" data-when="hour" aria-pressed="false"><b id="hm-n-hour">${nextN}</b><span>Next hour</span></button><button type="button" class="hm-w" data-when="tonight" aria-pressed="false"><b id="hm-n-tonight">${tonN}</b><span>Tonight</span></button></div>
+${nowStrip(events, esc, { eventPath, hasPage }, now, { isLisbon: (e) => inLisbon(e) && !isOnline(e) })}
 ${hoodChips}
 <!-- the map of Lisbon with a dot per event goes here (D28, design.3) -->
 <div class="hm-sec" role="heading" aria-level="2" id="today">In Lisbon today<small id="hm-count">${inCity.length} events</small></div>
@@ -151,7 +152,7 @@ function st(c,n){var s=+c.dataset.s,e=+c.dataset.e;return n>=e?'past':n>=s?'now'
 function tick(){var n=Date.now(),N=0,X=0,T=0,eve=new Date(new Date(n).toISOString().slice(0,10)+'T18:00:00Z').getTime();
 cards.forEach(function(c){if(c.classList.contains('x'))return;var s=+c.dataset.s,e=+c.dataset.e,k=st(c,n);if(c.closest('#hm-online'))return;if(k==='now')N++;if(s>n&&s<=n+36e5)X++;if(e>=eve)T++;
 var b=c.querySelector('.hm-tag.now');if(b)b.hidden=k!=='now';c.classList.toggle('past',k==='past')});
-document.getElementById('hm-n-now').textContent=N;document.getElementById('hm-n-hour').textContent=X;document.getElementById('hm-n-tonight').textContent=T;apply()}
+apply()}
 function apply(){var n=Date.now(),eve=new Date(new Date(n).toISOString().slice(0,10)+'T18:00:00Z').getTime(),shown=0,all=document.querySelectorAll('#hm-list .hm-c,#hm-past .hm-c');
 cards.forEach(function(c){var ok=(R==='all'||c.dataset.r.split(' ').indexOf(R)>-1)&&(!H||c.dataset.h===H);var s=+c.dataset.s,e=+c.dataset.e;
 if(W==='now')ok=ok&&n>=s&&n<e;if(W==='hour')ok=ok&&s>n&&s<=n+36e5;if(W==='tonight')ok=ok&&e>=eve;c.hidden=!ok;if(ok&&!c.closest('#hm-online'))shown++});
@@ -160,7 +161,7 @@ document.getElementById('hm-count').textContent=shown+(shown===1?' event':' even
 function bind(sel,attr,set){[].slice.call(document.querySelectorAll(sel)).forEach(function(b){b.addEventListener('click',function(){var v=b.dataset[attr],on=b.getAttribute('aria-pressed')==='true';
 [].slice.call(document.querySelectorAll(sel)).forEach(function(o){o.setAttribute('aria-pressed','false')});
 if(attr==='role'){set(v);document.querySelector('[data-role="'+v+'"]').setAttribute('aria-pressed','true')}else{set(on?'':v);if(!on)b.setAttribute('aria-pressed','true')}apply()})})}
-bind('.hm-chip','role',function(v){R=v});bind('.hm-w','when',function(v){W=v});bind('.hm-h','hood',function(v){H=v});
+bind('.hm-chip','role',function(v){R=v});bind('.hm-h','hood',function(v){H=v});
 var pb=document.getElementById('hm-past-b');if(pb)pb.addEventListener('click',function(){document.getElementById('hm-past').hidden=false;pb.remove()});
 tick();setInterval(tick,60000)}catch(x){}})();</script>`;
 }

@@ -1,6 +1,6 @@
 {
  "agent": "design.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-11T14:03Z",
+ "updated": "2026-11-11T14:04Z",
  "state": "working",
  "doing": [
   "D28 the new home page (first version pushed); iterating"
@@ -13,7 +13,8 @@
   "D21 Lisbon Tech Fringe: name, PT.news stamp, wordmark, favicon, one-line header (037ba4a)",
   "12:5x wake: header checked at 390 px on /, /now/, /programme/, /graph/, /how/, /join/, /organisers/, an event page: no sideways scroll, no errors",
   "D24 design A, the programme: in the lab frame, /?design=a and /designs/a/, dark and keyboard checked",
-  "D28 first version (home: today in Lisbon, roles, now strip, cards); 14:00 addendum applied: chips under 3 events fold into Elsewhere in Lisbon on home and /programme/; organiser on each home card links to its page"
+  "D28 first version (home: today in Lisbon, roles, now strip, cards); 14:00 addendum applied: chips under 3 events fold into Elsewhere in Lisbon on home and /programme/; organiser on each home card links to its page",
+  "D28: design.2's Now/Next hour/Tonight strip (nowstrip.mjs) wired into the home, replacing my counters; My day stars visible on cards"
  ],
  "next": [
   "take what the lead routes; D16 waits on work/06"
