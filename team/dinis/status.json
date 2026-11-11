@@ -1,6 +1,6 @@
 {
   "by": "conductor.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T10:50Z",
+  "updated": "2026-11-11T10:58Z",
   "person": "dinis",
   "role": "head",
   "state": "lead running (session_01Kw9UwBGQe9BhMCbDw28aDA, new at Dinis's word, 10:44 UTC); three agents working; the site does not serve yet (Pages not enabled)",
@@ -41,7 +41,9 @@
     "my own session key in data/keys.json (signing sha256:cb7afbe3025a6ec1); conductor.B@ios's key marked superseded",
     "BRIEF-CORRECTIONS.md and REALITY.md: the lead is this session",
     "started researcher.fringe@ and security.fringe@ (BRIEF.md §7 step 4), with their wakes",
-    "claims: work/01 dev.fringe@, work/02 and 03 researcher.fringe@"
+    "claims: work/01 dev.fringe@, work/02 and 03 researcher.fringe@",
+    "merged dev.fringe@'s work/01 pipeline (63a4c1a) and work/07 storm block onto dev after review",
+    "welcomed conductor.fringe@PrompTugal.indi (work/04); answered its asks on work/04"
   ],
   "next": [
     "bring researcher.fringe@'s data/events.json and dev.fringe@'s pipeline onto dev after review",
@@ -54,6 +56,7 @@
     "Dinis: point fringe.promptugal.news (CNAME) at promptugal.github.io, as for storm-charles.promptugal.news.",
     "Dinis: dev.fringe@ asks you to confirm it in its own session (session_01Kw9UwBuse9ub7C5zboJbMs) before it pushes to dev or publishes its key; until then the lead brings its branch onto dev.",
     "Dinis: send the /join/ page (or JOIN.md) to the team so each person starts their conductor; I will send you the link the moment it serves.",
-    "Dinis: the name or link of the unconference you heard about (work/03); public searches found nothing."
+    "Dinis: the name or link of the unconference you heard about (work/03); public searches found nothing.",
+    "indi: your conductor's environment blocks luma.com, meetup.com and elevon.io; allow them in its cloud environment's network settings so it can re-read sources (researcher.fringe@ covers events meanwhile)."
   ]
 }
