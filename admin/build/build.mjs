@@ -8,6 +8,7 @@ import { trafficBody, trafficCss } from './traffic.mjs';   // work/21, observabi
 import { collectSwarm, swarmBody, swarmCss, swarmScript } from './swarm.mjs';   // work/25, dev.1.fringe@PrompTugal.dinis
 import { eventPages, eventPath, hasPage } from './event-pages.mjs';
 import { eventCard as card, cardList, sortDay, CARD_CSS } from './cards.mjs';   // D3, design.3.fringe@PrompTugal.dinis   // work/22, dev.lead.fringe@PrompTugal.dinis
+import { nowBlock, nowPageBody, nowJs } from './now.mjs';   // work/16, dev.2.fringe@PrompTugal.dinis
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const out = join(root, '_site');
@@ -106,6 +107,7 @@ const home = page('Lisbon Fringe', `
 <a href="https://storm-charles.promptugal.news">storm-charles.promptugal.news</a>, <a href="https://www.ipma.pt/">IPMA</a> and <a href="https://www.prociv.gov.pt/">ANEPC</a>. This site is not a warning service.
 <div id="storm-live"><p class="muted">The storm site's latest is loading…</p></div></div>
 <script src="/storm.js" defer></script>
+${nowBlock(events, esc, { eventPath, hasPage }, new Date(BUILT), { limit: 5 })}<script src="/now.js" defer></script>
 ${eventsHtml()}
 <h2>Build it with us</h2>
 <p>Lisbon Fringe is built by a team where everyone runs one conductor. <a href="/join/">Bring yours in five minutes</a>.</p>
@@ -171,6 +173,9 @@ writeFileSync(join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\
 writeFileSync(join(out, 'version.json'), JSON.stringify({ version: VERSION, commit: process.env.GITHUB_SHA || '', pushed_at: process.env.PUSHED_AT || '', built_at: BUILT }, null, 2) + '\n');
 writeFileSync(join(out, 'version.txt'), VERSION + '\n');
 writeFileSync(join(out, '.nojekyll'), '');
+mkdirSync(join(out, 'now'), { recursive: true });
+writeFileSync(join(out, 'now', 'index.html'), page('On now: Lisbon Fringe', nowPageBody(events, esc, { eventPath, hasPage }, new Date(BUILT)), 'What is on now and in the next three hours around Web Summit Lisbon.'));
+writeFileSync(join(out, 'now.js'), nowJs);
 writeFileSync(join(out, 'storm.js'), read('admin/build/storm.js'));
 // observability (work/21): the sender and its public config on every page, and /traffic/ from the drain's counts
 mkdirSync(join(out, 'assets', 'obs'), { recursive: true });
