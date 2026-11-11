@@ -169,6 +169,14 @@ export function buildModel(root, events) {
     }
   }
 
+  // sessions: the timed agenda an event's own page publishes (data/graph/sessions.json; title and time, never a speaker)
+  for (const x of readJSON(root, 'data/graph/sessions.json')?.sessions || []) {
+    const ev = E.events.get(x.event); if (!ev) continue;
+    E.sessions.set(x.id, { id: x.id, type: 'session', name: x.name, kind: x.kind || null, event: x.event, day: ev.day, start: x.start || null, end: x.end || null,
+      place: ev.place, festival: ev.festival, url: x.url, read_at: x.read_at, label: x.label || 'fact' });
+    ev.sessions.push(x.id); links.push({ from: x.event, verb: 'hasSession', to: x.id, source: x.url, read_at: x.read_at });
+  }
+
   // festival -> organiser, festival -> days; organiser part_of
   for (const f of E.festivals.values()) {
     if (f.organiser) { const o = organiser(E.organisers.get(f.organiser)?.name || f.name); o.festivals.push(f.id); link(o.id, 'runsFestival', f.id); }
@@ -184,6 +192,7 @@ export function buildModel(root, events) {
   for (const t of TYPES) sorted[t] = [...E[t].values()];
   sorted.organisers = sorted.organisers.filter((o) => o.events.length || o.festivals.length)
     .sort((a, b) => b.lead.length - a.lead.length || b.events.length - a.events.length || a.name.localeCompare(b.name));
+  sorted.sessions.sort((a, b) => String(a.start).localeCompare(String(b.start)));
   sorted.days.sort((a, b) => a.id.localeCompare(b.id));
   sorted.places.sort((a, b) => b.events.length - a.events.length);
   sorted.platforms.sort((a, b) => b.events.length - a.events.length);

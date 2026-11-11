@@ -81,6 +81,18 @@ ${m.festivals.length ? `<p class="muted">Festivals</p>${chips('festival', m.fest
   for (const p of m.personas) write(`${PREFIX.persona}/${p.id}`, p.name, `<h1>${esc(p.ask)}</h1><p>Events for: <strong>${esc(p.name)}</strong> (a role, never a person). <span class="muted">By rule, a hypothesis: ${esc(p.rule)}.</span></p>
 <p class="muted">Days</p>${chips('day', neighbours(p.events, 'day'))}<p class="muted">Organisers</p>${chips('organiser', orgsOf(p.events).slice(0, 30))}<h2>${p.events.length} events</h2>${evList(p.events)}${api('personas')}`, `This week's Lisbon side events for: ${p.name}.`);
   for (const t of m.topics) write(`${PREFIX.topic}/${t.id}`, t.name, `<h1>${esc(t.name)}</h1><p class="muted">Organisers</p>${chips('organiser', orgsOf(t.events))}<h2>${t.events.length} events</h2>${evList(t.events)}${api('topics')}`, `Side events in Lisbon this week about ${t.name}.`);
+  // --- sessions: each with its event, festival, day and place ---------------------------------------------------
+  const hm = (t) => (t ? String(t).slice(11, 16) : '');
+  const sessList = (ids) => `<ol class="gx-ev">${ids.map((id) => B.sessions.get(id)).map((x) => `<li><span class="muted">${esc(hm(x.start))}–${esc(hm(x.end))}</span> ${a('session', x.id)}${x.kind && x.kind !== 'talk' ? ` <span class="muted">· ${esc(x.kind)}</span>` : ''}</li>`).join('')}</ol>`;
+  for (const x of m.sessions) {
+    const sib = B.events.get(x.event).sessions; const i = sib.indexOf(x.id);
+    write(`${PREFIX.session}/${x.id}`, x.name, `<p class="gx-up">A session of ${evLink(x.event)}</p><h1>${esc(x.name)}</h1>
+<p><strong>${esc(hm(x.start))}–${esc(hm(x.end))} UTC</strong> (Lisbon time) on ${a('day', x.day)}${x.place ? ` · ${a('place', x.place)}` : ''}${x.festival ? ` · part of ${a('festival', x.festival)}` : ''}</p>
+<p class="muted">From the agenda on <a href="${esc(x.url)}">the event's own page</a>, read ${esc(String(x.read_at).slice(0, 16).replace('T', ' '))} UTC. Timings may change: their page is the one that counts.</p>
+<p>${i > 0 ? `&larr; ${a('session', sib[i - 1])}` : ''}${i > 0 && i < sib.length - 1 ? ' · ' : ''}${i < sib.length - 1 ? `${a('session', sib[i + 1])} &rarr;` : ''}</p>
+<h2>The whole agenda</h2>${sessList(sib)}${api('sessions')}`, `${x.name}: a session at ${B.events.get(x.event).name}, ${hm(x.start)} UTC.`);
+  }
+
   const today = BUILT.slice(0, 10);
   for (const r of m.platforms) {
     const now = r.events.filter((id) => B.events.get(id).day === today), later = r.events.filter((id) => B.events.get(id).day !== today);
@@ -92,7 +104,7 @@ ${later.length ? `<h2>The rest of the week: ${later.length}</h2>${evList(later)}
     `Lisbon side events this week that you register for on ${r.name}.`);
   }
   write('graph/types', 'The graph, by type', `<h1>The graph, by type</h1><p>Every thing on the site is linked to everything it touches. Who are you? ${chips('persona', m.personas.map((p) => p.id))}</p>
-<h2>Days</h2>${chips('day', m.days.map((d) => d.id))}<h2>Festivals</h2>${chips('festival', m.festivals.map((f) => f.id))}<h2>Organisers</h2><p><a href="/o/">All ${m.organisers.length}</a></p>
+<h2>Days</h2>${chips('day', m.days.map((d) => d.id))}${m.sessions.length ? `<h2>Events with an agenda</h2>${chips('event', [...new Set(m.sessions.map((x) => x.event))])}` : ''}<h2>Festivals</h2>${chips('festival', m.festivals.map((f) => f.id))}<h2>Organisers</h2><p><a href="/o/">All ${m.organisers.length}</a></p>
 <h2>Places</h2>${chips('place', m.places.map((p) => p.id))}<h2>Where you register</h2>${chips('platform', m.platforms.map((r) => r.id))}<h2>Topics</h2>${chips('topic', m.topics.map((t) => t.id))}
 <h2>As data</h2><ul>${TYPES.map((t) => `<li><a href="/api/v1/graph/${t}.json">/api/v1/graph/${t}.json</a></li>`).join('')}<li><a href="/api/v1/graph/links.json">/api/v1/graph/links.json</a> (every typed link)</li></ul>`,
   'Lisbon Tech Fringe as a semantic graph: days, festivals, organisers, events, places, personas and topics.');
@@ -112,7 +124,8 @@ ${later.length ? `<h2>The rest of the week: ${later.length}</h2>${evList(later)}
       + row('Festival', [e.festival, ...e.listed_by].filter(Boolean).map((f) => a('festival', f, name('festival', f) + (f === e.festival ? '' : ' (in its feed)'))).join(''))
       + row('Day', a('day', e.day)) + row('Place', e.place ? a('place', e.place) + (e.in_lisbon || e.city === 'online' ? '' : ` <strong>not in Lisbon</strong>`) : '')
       + row('Register on', e.platform ? a('platform', e.platform) : '') + row('For', e.personas.map((p) => a('persona', p)).join(''))
-      + row('About', e.topics.map((t) => a('topic', t)).join(''));
+      + row('About', e.topics.map((t) => a('topic', t)).join(''))
+      + (e.sessions.length ? row('Sessions', `${e.sessions.length} on the agenda`) + `<dt></dt><dd>${sessList(e.sessions)}</dd>` : '');
   };
   return { ...m, eventLinks };
 }
