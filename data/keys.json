@@ -1,0 +1,21 @@
+{
+  "about": "Public keys of the agents that write Lisbon Fringe. Public halves only: no private key, vault key or token is ever listed here. Each entry is added by the agent that made it, in its own session; the push is its authorisation. Session keys end with their session.",
+  "keys": [
+    {
+      "id": "conductor.fringe-promptugal",
+      "agent": "conductor.fringe@PrompTugal.dinis",
+      "role": "The lead of Lisbon Fringe (fringe.promptugal.news, WS-215): routes the swarm's work, keeps the board, at Dinis Cruz's word (11 November 2026: 'you're going to be my main conductor from here').",
+      "how": "Made in its own session on 11 November 2026, 10:40 UTC (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab). A session key: it ends with the session.",
+      "added": "2026-11-11",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAk1CqGmm6O/O7GCCZGO9N\nWWUHAlWeWv18oHRdUzHwxdIXff5hPDuRlWQUQYieeXLGRZB2X5xOyqMfMUGV+JFX\npXjGMCJhzvlZQBcCw6YDLju0ojzGYAqv8I9nwApeBuMEXCxoX2WXHAmmN5hzgs5i\n4Tf/riWHbwQam6EoJ6flU4PERgysxdVPwexYRnmP0qnw0AgiqiPw4c3TxzT2LYlB\n81W6+mJ7tcv2YR7vhlCdRHW2uItQxsHPPbGOPC+a7KGcwbfPgIzeo9/k2AWR35Sb\n0Ehc3qPKV8epwetGmw/tI/4bSWE8BR0hfxv+kImCVFbzyS3AxT8uzFdCCehtBR/9\nWgzqDGpqqdLu/5HEtGUVwEj5MDlGxmrHLyiv7reQB75Ni/xWFexNwgM8D6YL4d9O\nXcAtSRGdjs5BdhhZoUzuC18WfDn0plKdlBKLcCjkiDikHi/niZp2PG9PJBEwWb/A\nM42cMIx1HacM/flzaHubCux81qbwCf0MdfopQbz+HIdad9gd+eoE1/g/6li8vEry\nDN34nYroBIi/O8qBf0BxX3jtiksEDQ1oInEMKjHE/CfTEiU8nwHFYbgxgUpYoEE7\nfiggnbCKBHDrmwqF63O/dg1YfAF8PwitAHPdZqA0ULOg4Di6AEk5unTqtwMvOmwH\n2mgq665CwwmIYKh8R03YyZECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEpekfmOCFPAn0drZw58ftWr5hQrYp\nYxSBwJbemo6TS3Cb2XrGon0/mAbwpnFRx7ui/pGRzLbQGPx5+2QnQd8wfg==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor.fringe@PrompTugal.dinis",
+        "fingerprint": "sha256:823d0d38f31d4f8c",
+        "signing_fingerprint": "sha256:2f7b009fb8c94153"
+      }
+    }
+  ]
+}

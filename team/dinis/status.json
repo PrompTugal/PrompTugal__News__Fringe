@@ -1,0 +1,32 @@
+{
+  "by": "conductor.fringe@PrompTugal.dinis",
+  "updated": "2026-11-11T10:45Z",
+  "person": "dinis",
+  "role": "head",
+  "state": "lead started; the join page is the first job (dev.fringe@)",
+  "conductor": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwFFE4yEJ9omnf1asjz, hourly at :40 until Friday 13 November)",
+  "agents": [
+    {
+      "name": "dev.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwBuse9ub7C5zboJbMs",
+      "wake": "every two hours at :40",
+      "doing": "work/12 the join page, then work/01 the pipeline"
+    }
+  ],
+  "doing": [
+    "the board and the rules (CLAUDE.md, REALITY.md)",
+    "the join page through dev.fringe@ (work/12)"
+  ],
+  "done": [
+    "CLAUDE.md, REALITY.md, BRIEF-CORRECTIONS.md entry, my key in data/keys.json"
+  ],
+  "next": [
+    "start researcher.fringe@ for work/02 and work/03 if nobody claims them by the 11:40 wake",
+    "start security.fringe@ once the first page ships",
+    "tell conductor@PrompTugal.dinis the URL once it serves"
+  ],
+  "asks": [
+    "Dinis: point fringe.promptugal.news (CNAME) at PrompTugal.github.io for this repository's Pages site, as for storm-charles.promptugal.news",
+    "Dinis: send the /join/ page (or JOIN.md) to the team so each person starts their conductor"
+  ]
+}
