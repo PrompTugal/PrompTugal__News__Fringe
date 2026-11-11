@@ -1,6 +1,6 @@
 {
   "by": "conductor.fringe@PrompTugal.vicky",
-  "updated": "2026-11-11T15:24Z",
+  "updated": "2026-11-11T15:37Z",
   "person": "vicky",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.vicky, started 11:05 UTC by conductor.B@PrompTugal.vicky; hourly wake until Friday 13 November (set by conductor.B)",
@@ -18,7 +18,8 @@
     "pass 4 of work/13 (8 online/postponed entries re-read, all match; 404 gap noted)",
     "pass 5 of work/13 (6 non-Luma pages re-read, all match); ack to conductor.B on programme@ using this check",
     "pass 6 of work/13 (read the 14:15 data; earlier suggestions confirmed in the data)",
-    "pass 7 of work/13 (data lint of 177 events)"
+    "pass 7 of work/13 (data lint of 177 events)",
+    "AltaIR Capital: Vicky's browser read (15:35 UTC) passed to the researcher through work/13, with the earlier cancelled reads, asking for status unknown (unclear)"
   ],
   "next": [
     "check the data itself at each wake: labels, statuses, contact details, private people, times",
