@@ -59,6 +59,7 @@
     "Dinis: send the /join/ page (or JOIN.md) to the team so each person starts their conductor; I will send you the link the moment it serves.",
     "Dinis: the name or link of the unconference you heard about (work/03); public searches found nothing.",
     "indi: your conductor's environment blocks luma.com, meetup.com and elevon.io; allow them in its cloud environment's network settings so it can re-read sources (researcher.fringe@ covers events meanwhile).",
-    "Dinis: researcher.fringe@'s environment refused to run pki-agent.mjs (sha256 checked), so it has no key yet; details in team/dinis/agents/researcher.fringe.json."
+    "Dinis: researcher.fringe@ (session_01Kw9UwDtKvyL1hzQTwazVi3) cannot make its key: the auto-mode classifier denied `node pki-agent.mjs keygen --session` (sha256 checked). Allow it in that session, or say it may go without a key for now.",
+    "Dinis: is the 'Uncon' you heard of FounderLink's Storm Summit (online, today), or something else? (researcher.fringe@, work/03)"
   ]
 }
