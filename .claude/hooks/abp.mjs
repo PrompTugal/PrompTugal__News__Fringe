@@ -181,7 +181,7 @@ function currentBranch() {
 }
 
 const SEND_FLAGS = /^(-d|--data.*|-F|--form.*|-T|--upload-file|--json|--post-data.*|--post-file.*|--body-data.*|--body-file.*)$/
-const SECRET_VAR = /\$\{?[A-Z0-9_]*(KEY|TOKEN|SECRET|PASSPHRASE|PASSWORD|CREDENTIAL)[A-Z0-9_]*\}?/
+const SECRET_VAR = /\$\{?([A-Z0-9_]*(KEY|TOKEN|SECRET|PASSPHRASE|PASSWORD|CREDENTIAL)[A-Z0-9_]*|ELASTIC_CLOUD)\}?/
 // kept for reference: the verbs writeTargets reads
 const WRITE_VERBS = /(^|\s)(>|>>)|\btee\b|\bsed\s+(-[a-z]*i|--in-place)|\bperl\s+-[a-z]*i|^\s*(rm|mv|cp|truncate|ln|chmod|chown|unlink|install|rsync|dd)\b|\bgit\s+(rm|mv|checkout|restore|apply)\b/
 
@@ -290,6 +290,12 @@ export function checkBash(who, command, cwd, P = loadPolicy()) {
         if (verb === 'printenv' || (verb === 'env' && !args.length) || (verb === 'export' && (args[0] === '-p' || !args.length)) || (verb === 'declare' && /^-[a-z]*[px]/.test(args[0] || '')) || (verb === 'set' && !args.length))
             return deny('R8', `${verb} prints the environment, which holds keys and tokens`, 'secret')
         if (['echo', 'printf'].includes(verb) && SECRET_VAR.test(seg)) return deny('R8', `${verb} of a secret variable`, 'secret')
+        // R8e: a shared credential only its listed agents may use (abp/policies.json restricted_secrets; Dinis, 19:1x UTC)
+        for (const rs of (P.restricted_secrets || [])) {
+            if (who.kind === 'team' && (rs.agents || []).some(a => a.toLowerCase() === (who.agent || '').toLowerCase())) continue
+            const v = new RegExp(`\\b${rs.var}\\b`).test(seg), h = (rs.hosts || []).find(x => seg.toLowerCase().includes(x))
+            if (v || h) return deny('R8e', `${v ? rs.var : h}: only ${(rs.agents || []).join(' and ')} may use ${rs.var} or send to its hosts; submit through the feed (${rs.instead || 'docs/elastic-guidance.md'})`, 'secret')
+        }
         if (['cat', 'head', 'tail', 'less', 'more', 'xxd', 'od', 'hexdump', 'base64', 'strings', 'bat', 'nl', 'awk', 'sed', 'grep', 'jq'].includes(verb)) {
             // grep, sed, awk and jq take a pattern or a script first (unless given with -e/-f): that is not a path (security@'s grep, 10:xx)
             let pos = args.filter(a => !a.startsWith('-'))

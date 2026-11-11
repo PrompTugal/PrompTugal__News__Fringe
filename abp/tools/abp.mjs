@@ -167,6 +167,12 @@ function test() {
   const W = a => who(a);
   const d = (w, tool, ti) => abp.decide({ tool_name: tool, tool_input: ti, cwd: ROOT }, w, P).decision;
   const dev2 = W('dev.2.fringe@PrompTugal.dinis'), d1 = W('design.1.fringe@PrompTugal.dinis'), r2 = W('researcher.2.fringe@PrompTugal.dinis'), lead = W('conductor.fringe@PrompTugal.dinis'), indi = W('conductor.fringe@PrompTugal.indi');
+  { const b = (w, c) => abp.decide({ tool_name: 'Bash', tool_input: { command: c }, cwd: ROOT }, w, P);
+    const e = 'curl -s https://my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io/_cat/indices';
+    t('R8e dev.2 uses the Elastic host (only elastic.1 and architect.1 may)', (b(W('dev.2.fringe@PrompTugal.dinis'), e).rule), 'R8e');
+    t('R8e elastic.1 uses the Elastic host', b(W('elastic.1.fringe@PrompTugal.dinis'), e).decision, 'allow');
+    t('R8e architect.1 uses ELASTIC_CLOUD', b(W('architect.1.fringe@PrompTugal.dinis'), 'node x.mjs --pw "$ELASTIC_CLOUD"').decision, 'allow');
+    t('R8 anyone echoes ELASTIC_CLOUD', b(W('architect.1.fringe@PrompTugal.dinis'), 'echo $ELASTIC_CLOUD').rule, 'R8'); }
   t('dev.2 writes build.mjs (owns it)', d(dev2, 'Write', { file_path: path.join(ROOT, 'admin/build/build.mjs') }), 'allow');
   t('design.1 writes build.mjs (dev.2 owns it)', d(d1, 'Edit', { file_path: path.join(ROOT, 'admin/build/build.mjs') }), 'deny');
   t('design.1 writes its design module', d(d1, 'Edit', { file_path: path.join(ROOT, 'admin/build/designs/a.mjs') }), 'allow');

@@ -1,7 +1,7 @@
 {
   "about": "The Agent Behaviour Policies of Lisbon Fringe (lisbontechfringe.com, origin in admin/site.json; WS-215) as data: deny by default, one grant per role and agent, across this repository and the others the swarm touches. Ported from PrompTugal__News__Website board/abp/policies.json (abp@PrompTugal.dinis, v1.7.0, since 6 November 2026), not invented anew; built on RiskMandate's Agent Behaviour Policy and Licence to Operate (https://riskmandate.ai/agent-behaviour-policy.html). Read by the hooks (.claude/settings.json, .claude/hooks/abp.mjs) and by the gate's commit check (abp/tools/abp.mjs check). abp/<agent>.md is generated from this file (node abp/tools/abp.mjs build), never edited by hand. Kept by architect.1.fringe@PrompTugal.dinis (work/39); any relaxation, and any move towards enforcement, is Dinis's decision.",
-  "version": "0.4.0",
-  "updated": "2026-11-11T19:04Z",
+  "version": "0.4.1",
+  "updated": "2026-11-11T19:06Z",
   "operator": "Dinis Cruz",
   "kept_by": "architect.1.fringe@PrompTugal.dinis",
   "status": "DRAFT: grants proposed from the git log (data/architecture.json observed); Dinis and the lead review",
@@ -68,6 +68,10 @@
       "R12": {
         "mode": "observe",
         "since": "2026-11-11T15:15Z"
+      },
+      "R8e": {
+        "mode": "observe",
+        "note": "Observed from 2026-11-11T19:06Z; enforce on Dinis's word. Printing ELASTIC_CLOUD is already caught by R8 (enforced)."
       }
     }
   },
@@ -984,7 +988,7 @@
       "for": "Dinis: observe for three rounds; then decide whether design keeps admin/build/** or works through a page registry"
     }
   ],
-  "hook_sha256": "9977245033317bf6",
+  "hook_sha256": "005475ea2edf6e58",
   "effective": "2026-11-11T13:36:00Z",
   "effective_note": "Earlier commits are read against the grants as calibration, not counted.",
   "review": {
@@ -1156,5 +1160,23 @@
       "by": "Dinis",
       "decision": "R5, R8, R9: enforce, with the conductor override and logging"
     }
-  }
+  },
+  "restricted_secrets": [
+    {
+      "var": "ELASTIC_CLOUD",
+      "about": "The Elastic Cloud superuser password, shared in the environment for now",
+      "hosts": [
+        "my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io",
+        "my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io"
+      ],
+      "agents": [
+        "elastic.1.fringe@PrompTugal.dinis",
+        "architect.1.fringe@PrompTugal.dinis"
+      ],
+      "instead": "docs/elastic-guidance.md section 3: commit a JSON with \"elastic_feed\"; elastic.1 sends it hourly under the committing agent's name",
+      "rule": "R8e",
+      "source": "Dinis in elastic.1's session, 19:1x UTC, relayed by elastic.1: \"for now we will share that super user pwd but control that using ABPs so that only the elastic and architect agent can use that environment variable\"",
+      "added": "2026-11-11T19:06Z"
+    }
+  ]
 }
