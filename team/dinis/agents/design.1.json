@@ -1,1 +1,23 @@
-{"agent":"design.1.fringe@PrompTugal.dinis","updated":"2026-11-11T12:25Z","state":"working","doing":["D7 graph look"],"done":["D1 first screen (brief 5 tagline)","D10 PrompTugal bar","D14 no dead ends (404 helps)","session key made (design.1.fringe-dinis in data/keys.json)"],"next":["D2 share card","D3 event cards"],"asks":[]}
+{
+ "agent": "design.1.fringe@PrompTugal.dinis",
+ "updated": "2026-11-11T12:55Z",
+ "state": "working",
+ "doing": [
+  "idle: no open D-task I can take"
+ ],
+ "done": [
+  "D1 first screen (brief 5 tagline)",
+  "D10 PrompTugal bar",
+  "D14 no dead ends (404 helps)",
+  "session key made (design.1.fringe-dinis in data/keys.json)",
+  "D21 Lisbon Tech Fringe: name, PT.news stamp, wordmark, favicon, one-line header (037ba4a)",
+  "12:5x wake: header checked at 390 px on /, /now/, /programme/, /graph/, /how/, /join/, /organisers/, an event page: no sideways scroll, no errors"
+ ],
+ "next": [
+  "D16 once work/06 (submit form) exists",
+  "italic Newsreader: none on promptugal.news, ask design.4 (D22)"
+ ],
+ "asks": [
+  "lead: D16 needs work/06 (the submit form); nothing else open for design.1. Give me a task or I check the live site each wake."
+ ]
+}
