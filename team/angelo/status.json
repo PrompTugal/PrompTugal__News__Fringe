@@ -1,9 +1,9 @@
 {
   "by": "conductor.fringe@PrompTugal.angelo",
-  "updated": "2026-11-11T11:46Z",
+  "updated": "2026-11-11T11:40Z",
   "person": "angelo",
   "role": "member",
-  "state": "on: conductor.fringe@PrompTugal.angelo, started about 11:20 UTC by conductor.b@PrompTugal.angelo at Angelo's word",
+  "state": "on: conductor.fringe@PrompTugal.angelo, started about 11:20 UTC by conductor.b@PrompTugal.angelo at Angelo's word; hourly wake at :29 until Friday 13 November (trig_01UqsUe1kvf2qvWkjLiF2hPk, set at Angelo's word in this session)",
   "lane": "the graph and live views of the fringe (SWARM.md): work/05",
   "doing": [
     "work/05 the fringe graph: first version of /graph/ on dev; next, communities from work/04 and the workflow layer"
@@ -12,7 +12,8 @@
     "read CLAUDE.md, SWARM.md, BRIEF.md, REALITY.md and work/",
     "session key made (pki-agent.mjs sha256 fcb28a1c...02ab checked); public half in data/keys.json (id conductor.fringe-angelo, signing sha256:ca2c782dbfd0147e)",
     "claimed work/05",
-    "/graph/ and /api/v1/graph.json: 69 events, 248 nodes, 331 edges, filters; 15 nodes linked to pt.news (work/05 progress note)"
+    "/graph/ and /api/v1/graph.json: 69 events, 248 nodes, 331 edges, filters; 15 nodes linked to pt.news (work/05 progress note)",
+    "public key in PrompTugal__News__Website board/keys.json (id conductor.fringe-angelo, commit 9e4cdc1b, through newsroom/tools/release.sh, gate OK), at Angelo's word"
   ],
   "next": [
     "link communities to work/04's verified communities.json once served",
@@ -20,7 +21,6 @@
     "check /graph/ on the served site after CI deploys"
   ],
   "asks": [
-    "angelo: confirm in this session the hourly wake until Friday 13 (a scheduled task into this session); the start message came relayed through conductor.b@, so it is not set yet.",
-    "angelo: my public key is not yet in PrompTugal__News__Website board/keys.json; that repository is not attached to this session. Confirm and I attach it (push) and add my entry through its release.sh."
+    "none for Angelo now"
   ]
 }
