@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-11T19:25Z",
+ "generated": "2026-11-11T19:38Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 455,
-  "reads": 391,
-  "tabs": 211,
+  "views": 458,
+  "reads": 395,
+  "tabs": 214,
   "countries": 18,
   "shares": 164,
-  "bots": 1352,
+  "bots": 1402,
   "crawler_tabs": 1,
-  "agent_runs": 163,
-  "agent_runs_signed": 150
+  "agent_runs": 170,
+  "agent_runs_signed": 157
  },
  "by_hour": [
   [
@@ -212,7 +212,7 @@
   ],
   [
    "2026-11-11 19:00",
-   9
+   12
   ]
  ],
  "by_page": [
@@ -257,6 +257,10 @@
    7
   ],
   [
+   "/universe/",
+   7
+  ],
+  [
    "/graph/",
    6
   ],
@@ -278,10 +282,6 @@
   ],
   [
    "/e/2026-11-11-stranded-networking-drinks-limited-seats/",
-   5
-  ],
-  [
-   "/universe/",
    5
   ],
   [
@@ -523,6 +523,10 @@
   [
    "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&ss=tw&rt=PTW+Classroom+-+Who+Flies+When+the+CEO+Ejects",
    1
+  ],
+  [
+   "/agentic-team/universe/",
+   1
   ]
  ],
  "reading": [
@@ -581,6 +585,12 @@
    40
   ],
   [
+   "/universe/",
+   7,
+   90,
+   31
+  ],
+  [
    "/graph/",
    6,
    13,
@@ -609,12 +619,6 @@
    5,
    13,
    29
-  ],
-  [
-   "/universe/",
-   5,
-   118,
-   42
   ],
   [
    "/e/2026-11-11-founderlink-storm-summit-afternoon/",
@@ -765,6 +769,12 @@
    2,
    8,
    32
+  ],
+  [
+   "/agentic-team/where-agents-run/",
+   2,
+   580,
+   50
   ],
   [
    "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
@@ -947,12 +957,6 @@
    100
   ],
   [
-   "/agentic-team/where-agents-run/",
-   1,
-   1,
-   0
-  ],
-  [
    "/e/2026-11-12-disconnect-2-connect/",
    1,
    35,
@@ -987,12 +991,18 @@
    1,
    1,
    0
+  ],
+  [
+   "/agentic-team/universe/",
+   1,
+   13,
+   0
   ]
  ],
  "by_country": [
   [
    "Portugal",
-   294
+   297
   ],
   [
    "United Kingdom",
@@ -1066,7 +1076,7 @@
  "by_city": [
   [
    "Lisbon, Portugal",
-   215
+   217
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -1118,7 +1128,7 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   69
+   70
   ]
  ],
  "by_referrer": [
@@ -1134,14 +1144,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   416
+   419
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 1971,
+ "other_hosts_views": 2075,
  "by_via": [
   [
    "whatsapp",
@@ -1176,11 +1186,11 @@
  "by_screen": [
   [
    "desktop",
-   243
+   245
   ],
   [
    "phone",
-   208
+   209
   ],
   [
    "tablet",
@@ -1193,16 +1203,16 @@
    16
   ],
   [
+   "elastic.1.fringe@PrompTugal.dinis",
+   16
+  ],
+  [
    "design.1.fringe@PrompTugal.dinis",
    15
   ],
   [
    "researcher.1.fringe@PrompTugal.jose",
-   14
-  ],
-  [
-   "elastic.1.fringe@PrompTugal.dinis",
-   14
+   15
   ],
   [
    "conductor.fringe@PrompTugal.jose",
@@ -1213,6 +1223,10 @@
    12
   ],
   [
+   "design.3.fringe@PrompTugal.dinis",
+   10
+  ],
+  [
    "ontologist.1.fringe@PrompTugal.dinis",
    10
   ],
@@ -1221,12 +1235,12 @@
    9
   ],
   [
-   "design.3.fringe@PrompTugal.dinis",
+   "design.2.fringe@PrompTugal.dinis",
    9
   ],
   [
-   "design.2.fringe@PrompTugal.dinis",
-   9
+   "capture.1.fringe@PrompTugal.dinis",
+   7
   ],
   [
    "conductor.fringe@PrompTugal.indi",
@@ -1238,10 +1252,6 @@
   ],
   [
    "researcher.2@PrompTugal.dinis",
-   6
-  ],
-  [
-   "capture.1.fringe@PrompTugal.dinis",
    6
   ],
   [
@@ -1257,24 +1267,24 @@
    4
   ],
   [
+   "grafana.1.fringe@PrompTugal.dinis",
+   4
+  ],
+  [
    "usability.1.fringe@PrompTugal.dinis",
    2
   ],
   [
    "fable.fringe@PrompTugal.dinis",
    2
-  ],
-  [
-   "grafana.1.fringe@PrompTugal.dinis",
-   2
   ]
  ],
  "flows": {
-  "tabs": 211,
+  "tabs": 214,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    144
+    147
    ],
    [
     "shared link (?via=)",
@@ -1303,12 +1313,12 @@
     5
    ],
    [
-    "/how/",
-    4
+    "/universe/",
+    5
    ],
    [
-    "/universe/",
-    3
+    "/how/",
+    4
    ],
    [
     "/me/",
@@ -1365,6 +1375,10 @@
     7
    ],
    [
+    "/universe/",
+    5
+   ],
+   [
     "/e/2026-11-11-founderlink-storm-summit-afternoon/",
     4
    ],
@@ -1386,10 +1400,6 @@
    ],
    [
     "/e/2026-11-11-enchant-pitch-parties/",
-    3
-   ],
-   [
-    "/universe/",
     3
    ],
    [
@@ -1514,7 +1524,7 @@
   "pages_per_tab": [
    [
     "1",
-    140
+    143
    ],
    [
     "2",
@@ -1533,7 +1543,7 @@
     20
    ]
   ],
-  "bounce_rate": 66,
+  "bounce_rate": 67,
   "via_reached": [
    [
     "whatsapp: /",
@@ -1604,15 +1614,15 @@
     1
    ],
    [
+    "whatsapp: /e/2026-11-11-roast-your-website/",
+    1
+   ],
+   [
     "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ],
    [
     "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
-    1
-   ],
-   [
-    "whatsapp: /e/2026-11-11-roast-your-website/",
     1
    ]
   ]
@@ -1638,7 +1648,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 215,
+    "views": 217,
     "lat": 38.7,
     "lon": -9.1
    },
