@@ -5,27 +5,23 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-11T22:09Z",
+ "generated": "2026-11-11T22:25Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 497,
-  "reads": 430,
-  "tabs": 228,
+  "views": 500,
+  "reads": 431,
+  "tabs": 231,
   "countries": 19,
-  "shares": 165,
-  "bots": 1578,
+  "shares": 166,
+  "bots": 1645,
   "crawler_tabs": 1,
-  "agent_runs": 233,
-  "agent_runs_signed": 214
+  "agent_runs": 239,
+  "agent_runs_signed": 218
  },
  "by_hour": [
-  [
-   "2026-11-09 22:00",
-   0
-  ],
   [
    "2026-11-09 23:00",
    0
@@ -213,12 +209,16 @@
   [
    "2026-11-11 21:00",
    3
+  ],
+  [
+   "2026-11-11 22:00",
+   3
   ]
  ],
  "by_page": [
   [
    "/",
-   204
+   206
   ],
   [
    "/now/",
@@ -237,12 +237,12 @@
    12
   ],
   [
-   "/universe/",
+   "/programme/",
    12
   ],
   [
-   "/programme/",
-   11
+   "/universe/",
+   12
   ],
   [
    "/traffic/",
@@ -560,7 +560,7 @@
  "reading": [
   [
    "/",
-   161,
+   162,
    29,
    13
   ],
@@ -1072,7 +1072,7 @@
  "by_country": [
   [
    "Portugal",
-   314
+   315
   ],
   [
    "United Kingdom",
@@ -1080,7 +1080,7 @@
   ],
   [
    "United States",
-   30
+   31
   ],
   [
    "Estonia",
@@ -1096,7 +1096,7 @@
   ],
   [
    "The Netherlands",
-   6
+   7
   ],
   [
    "Tanzania",
@@ -1150,7 +1150,7 @@
  "by_city": [
   [
    "Lisbon, Portugal",
-   232
+   233
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -1202,7 +1202,7 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   76
+   78
   ]
  ],
  "by_referrer": [
@@ -1222,18 +1222,18 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   458
+   461
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 2486,
+ "other_hosts_views": 2534,
  "by_via": [
   [
    "whatsapp",
-   158
+   159
   ],
   [
    "promptugal-news",
@@ -1246,8 +1246,8 @@
  ],
  "via_detail": {
   "whatsapp": {
-   "views": 158,
-   "tabs": 64,
+   "views": 159,
+   "tabs": 65,
    "countries": 9
   },
   "linkedin": {
@@ -1264,11 +1264,11 @@
  "by_screen": [
   [
    "desktop",
-   276
+   277
   ],
   [
    "phone",
-   217
+   219
   ],
   [
    "tablet",
@@ -1282,7 +1282,7 @@
   ],
   [
    "elastic.1.fringe@PrompTugal.dinis",
-   20
+   21
   ],
   [
    "design.1.fringe@PrompTugal.dinis",
@@ -1302,7 +1302,7 @@
   ],
   [
    "conductor.fringe@PrompTugal.jose",
-   14
+   15
   ],
   [
    "design.3.fringe@PrompTugal.dinis",
@@ -1314,7 +1314,7 @@
   ],
   [
    "design.2.fringe@PrompTugal.dinis",
-   11
+   12
   ],
   [
    "conductor.fringe@PrompTugal.indi",
@@ -1322,6 +1322,10 @@
   ],
   [
    "dev.1.fringe@PrompTugal.dinis",
+   9
+  ],
+  [
+   "researcher.2@PrompTugal.dinis",
    9
   ],
   [
@@ -1333,16 +1337,12 @@
    9
   ],
   [
-   "researcher.2@PrompTugal.dinis",
+   "researcher.fringe@PrompTugal.dinis",
    8
   ],
   [
-   "researcher.fringe@PrompTugal.dinis",
-   7
-  ],
-  [
    "dev.2.fringe@PrompTugal.dinis",
-   6
+   7
   ],
   [
    "gravity.1.fringe@PrompTugal.silvio",
@@ -1366,15 +1366,15 @@
   ]
  ],
  "flows": {
-  "tabs": 228,
+  "tabs": 231,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    159
+    161
    ],
    [
     "shared link (?via=)",
-    67
+    68
    ],
    [
     "from another site",
@@ -1384,7 +1384,7 @@
   "entry_pages": [
    [
     "/",
-    150
+    152
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
@@ -1407,15 +1407,15 @@
     4
    ],
    [
+    "/programme/",
+    3
+   ],
+   [
     "/me/",
     2
    ],
    [
     "/e/2026-11-11-corporate-academy-of-tomorrow/",
-    2
-   ],
-   [
-    "/programme/",
     2
    ],
    [
@@ -1446,7 +1446,7 @@
   "exit_pages": [
    [
     "/",
-    107
+    109
    ],
    [
     "/now/",
@@ -1462,7 +1462,7 @@
    ],
    [
     "/programme/",
-    7
+    8
    ],
    [
     "/how/",
@@ -1610,7 +1610,7 @@
   "pages_per_tab": [
    [
     "1",
-    154
+    157
    ],
    [
     "2",
@@ -1633,7 +1633,7 @@
   "via_reached": [
    [
     "whatsapp: /",
-    64
+    65
    ],
    [
     "whatsapp: /now/",
@@ -1692,11 +1692,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
@@ -1704,7 +1704,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-roast-your-website/",
+    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
     1
    ],
    [
@@ -1734,7 +1734,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 232,
+    "views": 233,
     "lat": 38.7,
     "lon": -9.1
    },
