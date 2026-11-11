@@ -115,8 +115,8 @@
 
 /* graph node kinds (work/05, D7): theme-aware */
 :root { --t-event: #1b4597; --t-community: #2b6a3c; --t-topic: #8a5200; --t-place: #6b2f9a; --t-festival: var(--red); }   /* --t-festival: work/05, conductor.fringe@PrompTugal.angelo */
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --t-event: #93b1ff; --t-community: #84cf9c; --t-topic: #e9b55e; --t-place: #d39bf2; --t-festival: #ff8a8f; } }
-:root[data-theme="dark"] { --t-event: #93b1ff; --t-community: #84cf9c; --t-topic: #e9b55e; --t-place: #d39bf2; --t-festival: #ff8a8f; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --t-event: #93b1ff; --t-community: #84cf9c; --t-topic: #e9b55e; --t-place: #d39bf2; --t-festival: var(--red); } }
+:root[data-theme="dark"] { --t-event: #93b1ff; --t-community: #84cf9c; --t-topic: #e9b55e; --t-place: #d39bf2; --t-festival: var(--red); }
 
 /* D9: the Lisbon palette (festival colours; fills, borders and big type only, never small text on paper) */
 :root {
