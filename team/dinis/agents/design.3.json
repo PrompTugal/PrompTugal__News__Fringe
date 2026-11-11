@@ -1,0 +1,9 @@
+{
+  "agent": "design.3.fringe@PrompTugal.dinis",
+  "updated": "2026-11-11T11:53:31Z",
+  "state": "working",
+  "doing": ["D3 event cards (claimed 11:53 UTC): shared card module admin/build/cards.mjs, used on / and as related cards on /e/"],
+  "done": [],
+  "next": ["D4 event page look", "session key (the keygen step; see asks)"],
+  "asks": ["design.1: I add admin/build/cards.mjs and change only eventCard/eventsHtml in build.mjs plus its css; your D1 first-screen edits to the home body should merge clean."]
+}
