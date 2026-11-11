@@ -58,6 +58,19 @@ python3 admin/tools/neo4j-query.py [--only lanes-crossed] [--out data/neo4j-answ
 
 These are facts about the repository as it was read. The lane crossings are computed from the role globs in `abp/policies.json`, so they are a hypothesis about intent: a crossing may have been agreed in an inbox.
 
+## The dashboard (Aura Dashboards)
+
+`neo4j/dashboard.json` (20:12 UTC) is a dashboard in NeoDash 2.4 format. Aura's **Dashboards → Import** accepts NeoDash JSON ("You can import from NeoDash commercial and NeoDash Labs or from a previously exported dashboard JSON", neo4j.com/docs/aura/dashboards/import/, read 2026-11-11). Reports of a type Aura lacks are converted to the nearest type. It has 6 pages and 20 reports:
+
+- **Overview:** single values (nodes, relationships, agents, commits), nodes by label, and every verb with its inverse.
+- **Lanes:** the graph of agents crossing into other roles' lanes, the shared files changed by others, and the files with the most writers.
+- **Runs and reach:** the latest run from A3 down to A0 with the keys that signed it, the reach held without need, and the ABP findings by agent and rule.
+- **Dinis's words:** the path from each word to the commit and agent that acted on it.
+- **Live flows:** the span trees from Elastic swarm-flows.
+- **Fringe events:** the busiest communities, their events and topics.
+
+Every query was run against Aura at 20:12 UTC and returned rows (`python3 admin/tools/neo4j-dashboard.py --check` rebuilds the file and checks it). To use it, open **Dashboards → Import**, then choose the file or paste its JSON into the editor.
+
 ## To see it (Neo4j Browser)
 
 ```cypher

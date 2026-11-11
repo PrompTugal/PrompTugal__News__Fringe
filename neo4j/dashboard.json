@@ -1,0 +1,321 @@
+{
+ "uuid": "c09ea094-8a03-479b-9eb4-1b691170bc5c",
+ "title": "Lisbon Tech Fringe swarm",
+ "version": "2.4",
+ "settings": {
+  "pagenumber": 0,
+  "editable": true,
+  "fullscreenEnabled": false,
+  "parameters": {},
+  "theme": "light"
+ },
+ "pages": [
+  {
+   "title": "Overview",
+   "reports": [
+    {
+     "id": "940db9b5-5c8f-4d96-aa13-f4c06c5611a1",
+     "title": "Nodes",
+     "query": "MATCH (n:Fringe) RETURN count(n)",
+     "width": 3,
+     "height": 2,
+     "x": 0,
+     "y": 0,
+     "type": "value",
+     "selection": {},
+     "settings": {},
+     "schema": []
+    },
+    {
+     "id": "a43c6af7-24ae-4605-b68f-b66b87771f65",
+     "title": "Relationships",
+     "query": "MATCH (:Fringe)-[e]->(:Fringe) RETURN count(e)",
+     "width": 3,
+     "height": 2,
+     "x": 3,
+     "y": 0,
+     "type": "value",
+     "selection": {},
+     "settings": {},
+     "schema": []
+    },
+    {
+     "id": "23b07d31-6b69-4fcf-a14a-90fa63a330fb",
+     "title": "Agents",
+     "query": "MATCH (a:Agent) RETURN count(a)",
+     "width": 3,
+     "height": 2,
+     "x": 6,
+     "y": 0,
+     "type": "value",
+     "selection": {},
+     "settings": {},
+     "schema": []
+    },
+    {
+     "id": "a5421658-7267-4baf-a427-faf21252645e",
+     "title": "Commits on dev",
+     "query": "MATCH (c:Commit) WHERE c.subject IS NOT NULL RETURN count(c)",
+     "width": 3,
+     "height": 2,
+     "x": 9,
+     "y": 0,
+     "type": "value",
+     "selection": {},
+     "settings": {},
+     "schema": []
+    },
+    {
+     "id": "350d1c3f-5edd-4ea6-a3e9-37458178d143",
+     "title": "Nodes by label",
+     "query": "MATCH (n:Fringe) UNWIND [l IN labels(n) WHERE l <> 'Fringe'] AS label RETURN label, count(*) AS nodes ORDER BY nodes DESC",
+     "width": 6,
+     "height": 4,
+     "x": 0,
+     "y": 2,
+     "type": "bar",
+     "selection": {
+      "index": "label",
+      "value": "nodes",
+      "key": "(none)"
+     },
+     "settings": {},
+     "schema": []
+    },
+    {
+     "id": "182cdcda-3725-4ae9-9531-1bc35136de67",
+     "title": "Relationships by verb (with inverse)",
+     "query": "MATCH (:Fringe)-[e]->(:Fringe) RETURN type(e) AS verb, e.inverse AS inverse, count(*) AS uses ORDER BY uses DESC",
+     "width": 6,
+     "height": 4,
+     "x": 6,
+     "y": 2,
+     "type": "table",
+     "selection": {},
+     "settings": {},
+     "schema": []
+    }
+   ]
+  },
+  {
+   "title": "Lanes",
+   "reports": [
+    {
+     "id": "08cdb1b1-3847-4371-b3a7-7a721d5ac44e",
+     "title": "Agents crossing into other roles' lanes",
+     "query": "MATCH (a:Agent)-[:AUTHORED]->(c:Commit)-[x:CROSSES_INTO]->(lane:Role) WITH a, lane, count(DISTINCT c) AS n MATCH p = (a)-[:PLAYS]->(:Role) RETURN p, a, lane, apoc.create.vRelationship(a, 'CROSSES_INTO', {commits: n}, lane) AS crossing",
+     "width": 7,
+     "height": 6,
+     "x": 0,
+     "y": 0,
+     "type": "graph",
+     "selection": {},
+     "settings": {},
+     "schema": []
+    },
+    {
+     "id": "276e0b23-8707-489f-8314-fe1063130381",
+     "title": "Lane crossings",
+     "query": "MATCH (a:Agent)-[:AUTHORED]->(c:Commit)-[x:CROSSES_INTO]->(lane:Role) RETURN a.name AS agent, a.role AS own_role, lane.name AS lane, count(DISTINCT c) AS commits ORDER BY commits DESC",
+     "width": 5,
+     "height": 6,
+     "x": 7,
+     "y": 0,
+     "type": "table",
+     "selection": {},
+     "settings": {},
+     "schema": []
+    },
+    {
+     "id": "02f404fa-3b86-4b54-a351-5dbcc70a3d3d",
+     "title": "Shared files changed by others",
+     "query": "MATCH (owner:Agent)-[:OWNS]->(f:File)<-[:CHANGES]-(c:Commit)<-[:AUTHORED]-(a:Agent) WHERE a <> owner RETURN f.path AS file, owner.name AS owner, count(DISTINCT c) AS commits_by_others ORDER BY commits_by_others DESC",
+     "width": 6,
+     "height": 4,
+     "x": 0,
+     "y": 6,
+     "type": "table",
+     "selection": {},
+     "settings": {},
+     "schema": []
+    },
+    {
+     "id": "ff5a4d08-7a91-48f7-b443-009a7c9e0eed",
+     "title": "Files with the most writers",
+     "query": "MATCH (a:Agent)-[:AUTHORED]->(:Commit)-[:CHANGES]->(f:File) RETURN f.path AS file, count(DISTINCT a) AS writers ORDER BY writers DESC LIMIT 12",
+     "width": 6,
+     "height": 4,
+     "x": 6,
+     "y": 6,
+     "type": "bar",
+     "selection": {
+      "index": "file",
+      "value": "writers",
+      "key": "(none)"
+     },
+     "settings": {},
+     "schema": []
+    }
+   ]
+  },
+  {
+   "title": "Runs and reach",
+   "reports": [
+    {
+     "id": "16b91d1f-2c03-4c1a-a2d7-be0308156de9",
+     "title": "One run, A3 down to A0, with the keys that signed",
+     "query": "MATCH (r:Run) WITH r ORDER BY r.name DESC LIMIT 1 MATCH p = (r)-[:CONTAINS]->(u:Unit) OPTIONAL MATCH q = (u)-[:HANDS_TO]->(:Unit) OPTIONAL MATCH k = (:Key)-[:SIGNED]->(u) RETURN p, q, k",
+     "width": 7,
+     "height": 6,
+     "x": 0,
+     "y": 0,
+     "type": "graph",
+     "selection": {},
+     "settings": {},
+     "schema": []
+    },
+    {
+     "id": "28e330b2-cd2a-4360-bb68-3ae5432ca790",
+     "title": "Reach held without need, by altitude",
+     "query": "MATCH (u:Unit) WHERE u.reach_held > u.reach_needs RETURN u.altitude AS altitude, u.role AS role, count(u) AS units, round(avg(u.reach_needs),1) AS needs, round(avg(u.reach_held),1) AS held ORDER BY altitude",
+     "width": 5,
+     "height": 3,
+     "x": 7,
+     "y": 0,
+     "type": "table",
+     "selection": {},
+     "settings": {},
+     "schema": []
+    },
+    {
+     "id": "73c715db-8e26-4f7f-ad13-9e442b950623",
+     "title": "Capabilities held without need",
+     "query": "MATCH (u:Unit)-[:EXPOSES]->(x:Reach) RETURN x.name AS reach, count(u) AS units ORDER BY units DESC LIMIT 10",
+     "width": 5,
+     "height": 3,
+     "x": 7,
+     "y": 3,
+     "type": "bar",
+     "selection": {
+      "index": "reach",
+      "value": "units",
+      "key": "(none)"
+     },
+     "settings": {},
+     "schema": []
+    },
+    {
+     "id": "87d74f34-eece-42c8-be52-0a5a7f863653",
+     "title": "ABP findings by agent and rule",
+     "query": "MATCH (f:Finding)-[:FLAGS]->(a:Agent), (f)-[:BREACHES]->(r:Rule) RETURN a.name AS agent, r.id AS rule, r.mode AS mode, count(f) AS findings ORDER BY findings DESC",
+     "width": 12,
+     "height": 4,
+     "x": 0,
+     "y": 6,
+     "type": "table",
+     "selection": {},
+     "settings": {},
+     "schema": []
+    }
+   ]
+  },
+  {
+   "title": "Dinis's words",
+   "reports": [
+    {
+     "id": "69356595-8d50-491c-9970-b87277ad3b9e",
+     "title": "From a word to the commit that acted on it",
+     "query": "MATCH p = (:Person {id:'dinis'})-[:SAID]->(:Word)<-[:ACTS_ON]-(:Commit)<-[:AUTHORED]-(:Agent) RETURN p",
+     "width": 7,
+     "height": 7,
+     "x": 0,
+     "y": 0,
+     "type": "graph",
+     "selection": {},
+     "settings": {},
+     "schema": []
+    },
+    {
+     "id": "3bce7c97-a2f0-4c74-a660-241b859623ba",
+     "title": "Words, agents and commits",
+     "query": "MATCH (:Person {id:'dinis'})-[:SAID]->(w:Word)<-[:ACTS_ON]-(c:Commit)<-[:AUTHORED]-(a:Agent) RETURN w.said_at AS said_at, w.text AS word, a.name AS agent, c.sha AS commit, c.at AS committed_at ORDER BY c.at DESC",
+     "width": 5,
+     "height": 7,
+     "x": 7,
+     "y": 0,
+     "type": "table",
+     "selection": {},
+     "settings": {},
+     "schema": []
+    }
+   ]
+  },
+  {
+   "title": "Live flows",
+   "reports": [
+    {
+     "id": "c1b3e22e-b580-46e4-8473-2e8f6c0bfc14",
+     "title": "Span trees (Elastic swarm-flows)",
+     "query": "MATCH p = (:Span)-[:IS_CHILD_OF]->(:Span) RETURN p",
+     "width": 7,
+     "height": 6,
+     "x": 0,
+     "y": 0,
+     "type": "graph",
+     "selection": {},
+     "settings": {},
+     "schema": []
+    },
+    {
+     "id": "e84e58a5-9696-4045-b9ef-96ac929169ae",
+     "title": "Spans by flow and altitude",
+     "query": "MATCH (s:Span) RETURN s.flow AS flow, s.altitude AS altitude, count(s) AS spans, max(s.duration_ms) AS longest_ms, sum(CASE WHEN s.finished THEN 0 ELSE 1 END) AS unfinished ORDER BY flow, altitude",
+     "width": 5,
+     "height": 6,
+     "x": 7,
+     "y": 0,
+     "type": "table",
+     "selection": {},
+     "settings": {},
+     "schema": []
+    }
+   ]
+  },
+  {
+   "title": "Fringe events",
+   "reports": [
+    {
+     "id": "65f0b01e-3fe1-4388-b605-56f2b28a77aa",
+     "title": "Communities, their events and topics",
+     "query": "MATCH (c:Community)<-[:IS_ORGANISED_BY]-(e:Event) WITH c, count(e) AS n ORDER BY n DESC LIMIT 8 MATCH p = (c)<-[:IS_ORGANISED_BY]-(:Event)-[:IS_ABOUT]->(:Topic) RETURN p",
+     "width": 8,
+     "height": 7,
+     "x": 0,
+     "y": 0,
+     "type": "graph",
+     "selection": {},
+     "settings": {},
+     "schema": []
+    },
+    {
+     "id": "7d94d428-db47-49b0-b53d-66a125dc8b7c",
+     "title": "Busiest organisers",
+     "query": "MATCH (c:Community)<-[:IS_ORGANISED_BY]-(e:Event) RETURN c.name AS community, count(e) AS events ORDER BY events DESC LIMIT 15",
+     "width": 4,
+     "height": 7,
+     "x": 8,
+     "y": 0,
+     "type": "table",
+     "selection": {},
+     "settings": {},
+     "schema": []
+    }
+   ]
+  }
+ ],
+ "parameters": {},
+ "extensions": {
+  "active": true,
+  "activeReducers": []
+ }
+}

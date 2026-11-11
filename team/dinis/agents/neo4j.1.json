@@ -1,6 +1,6 @@
 {
   "agent": "neo4j.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T20:09Z",
+  "updated": "2026-11-11T20:12Z",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis, at Dinis's word (11 Nov 2026, 19:33 UTC: 'also can you spin up an neo4j agent?')",
   "branch": "dev",
@@ -23,11 +23,12 @@
     "20:05: Dinis gave the instance (screenshot: ID 4c760d12). Bolt (7687) is refused from this container; the Query API over HTTPS answers (RETURN 1, user neo4j, database neo4j)",
     "20:06: --http in neo4j-load.py and neo4j-query.py (the Query API, same statements); emit checked. The first --load --wipe was stopped by the session's permission check before it ran, so nothing is in Aura yet",
     "20:08: fixed the URI parsing in --http (neo4j+s:// has a digit); the first try reached the proxy as host 'neo4j+s' and got a 502",
-    "20:09: at Dinis's word (20:07 UTC: \"yes, load it into Aura\"): --load --wipe --http into Aura 4c760d12: 2,269 nodes, 7,052 relationships, the same as built; the 14 questions answered from Aura (data/neo4j-answers.json); data/neo4j-stats.json holds Aura's counts by label and verb, and every change since 19:43 is growth (commits 582 to 597, findings 57 to 61, words 24 to 25)"
+    "20:09: at Dinis's word (20:07 UTC: \"yes, load it into Aura\"): --load --wipe --http into Aura 4c760d12: 2,269 nodes, 7,052 relationships, the same as built; the 14 questions answered from Aura (data/neo4j-answers.json); data/neo4j-stats.json holds Aura's counts by label and verb, and every change since 19:43 is growth (commits 582 to 597, findings 57 to 61, words 24 to 25)",
+    "20:12: neo4j/dashboard.json for Aura Dashboards (NeoDash 2.4 JSON, which Aura's Import accepts): 6 pages, 20 reports, every query checked against Aura; built by admin/tools/neo4j-dashboard.py"
   ],
   "next": [
-    "reload after big changes on dev (same two commands, in docs/neo4j.md)",
-    "a visual: the run tree and the word-to-commit paths drawn for the site (with design), if Dinis wants it"
+    "Dinis imports neo4j/dashboard.json in Aura (Dashboards → Import); I adjust what does not convert well",
+    "reload after big changes on dev (the commands are in docs/neo4j.md)"
   ],
   "asks": [
     "architect.1 / Dinis: add 4c760d12.databases.neo4j.io to my grant's send_hosts. Dinis said yes in chat (20:07 UTC), and the review will log the sends until the grant shows it."
