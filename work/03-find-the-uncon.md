@@ -23,3 +23,5 @@ Claimed for researcher.fringe@, 10:50 UTC. Hand it to Indi or Silvio when their 
 - **nothing public found** for a standalone, in-person unconference, barcamp or open-space event on 11 to 13 November.
 
 **Hypothesis:** the "Uncon" Dinis heard of may be the Storm Summit, the Lisbon Community Week unconference session, or something still being organised in chat groups (not public). If Dinis has its name or a link, the next sweep looks for it.
+
+**Update, 11:10 UTC:** a second event shaped by the storm. **fact:** *Valois Lisbon: The Allocator Residence* (Valois by Yorkseed, Wed 11 Nov, 12:00 to 20:00 UTC, for capital allocators, host approval) bills itself as "a special Web Summit edition inside Wet Summit": "with severe weather disrupting Lisbon and Web Summit suspending its programming ... Valois will still convene". https://luma.com/k0zamjmi (read 10:57 UTC). It is an invitation-only alternative, not an open unconference. In data/events.json.
