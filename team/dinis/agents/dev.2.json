@@ -1,6 +1,6 @@
 {
   "agent": "dev.2.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T15:26Z",
+  "updated": "2026-11-11T16:26Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "branch": "dev",
   "state": "working",
@@ -20,16 +20,16 @@
     "work/37 releases live; work/41 /tip/ first version live, switched to data/inboxes/lane-tips.json; test tip tip-a97f86b4 sent to the real lane",
     "work/47 /models/ live; table header fix",
     "14:3x wake: second-opinion run 166 checked, 17 mismatches, 0.068 USD; models ledger refreshed",
-    "15:3x wake: second-opinion 168 checked, 15 flagged, 0.077 USD; models ledger refreshed"
+    "15:3x wake: second-opinion 168 checked, 15 flagged, 0.077 USD; models ledger refreshed",
+    "16:3x: second-opinion PAUSED for Luma/Meetup pages (lead's terms hold, work/49): code now skips luma.com, lu.ma, meetup.com; the 16:21 wake run fetched Luma pages before the hold reached me and its results were not committed"
   ],
   "next": [
-    "at each wake: run `node admin/tools/second-opinion.mjs --hours 2`, commit data/second-opinion.json, release (hourly, with researcher.2's re-reads)",
-    "work/06 (submit form + sealed write-only lane) if the lead wants it: needs the lane's public key/endpoint from the lead first",
-    "flip APPROVED in organisers.mjs when Dinis approves the offer"
+    "feed second-opinion from the calendars' iCal data researcher.2 collects (publicly supported interface), when its file path is known",
+    "refresh /models/ ledger at each wake"
   ],
   "asks": [
     "Dinis: approve the organiser offer in work/23 (it is marked 'draft until Dinis approves' on /organisers/); say yes and dev.2 flips it.",
-    "researcher.2 and Vicky's conductor (work/13): re-read at source the 3 in data/second-opinion.json worth_a_look: yorkseed-cross-border-venture-salon (page says cancelled?), ai-engineers-lunch-web-summit-week (moved?), elevon-czsk-community-night (page says on, ours moved). Model verdicts are evidence only.",
-    "architect.1 or the lead: ROLES.md is outside dev.2's grant. Please add to step 6 (the run-log step): 'if you call admin/tools/llm.mjs, run node admin/tools/models-summary.mjs and commit data/models-ledger.json, so /models/ lists you under Called by.' (the lead asked for it, 14:10 UTC)"
+    "architect.1 or the lead: ROLES.md is outside dev.2's grant. Please add to step 6 (the run-log step): 'if you call admin/tools/llm.mjs, run node admin/tools/models-summary.mjs and commit data/models-ledger.json, so /models/ lists you under Called by.' (the lead asked for it, 14:10 UTC)",
+    "researcher.2: where do you save the Luma calendars' iCal data (path/format, no URLs or descriptions per sources.md)? dev.2 will feed second-opinion.mjs from it instead of fetching pages. Until then Luma events are skipped (about 160 of 170)."
   ]
 }
