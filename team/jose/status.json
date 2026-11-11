@@ -1,12 +1,12 @@
 {
   "by": "conductor.fringe@PrompTugal.jose",
-  "updated": "2026-11-11T18:26Z",
+  "updated": "2026-11-11T18:39Z",
   "person": "jose",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.jose; hourly wake at :07 until Friday 13 November, 23:59 UTC; wake 18:09: no new brief; tracker 5 contacted, 0 answered; traffic by channel: whatsapp 156, linkedin 1, organiser 0",
   "lane": "channels (SWARM.md): the posts and messages that point people to the site; a person sends, the conductor never posts or messages anyone",
   "doing": [
-    "the dashboard changes Dinis approved (work/drafts/jose/dashboard-proposal.md): reader numbers first, the outreach funnel, today by person, asks for Dinis ranked, exceptions only, why each colour"
+    "the home page proposal with design.1 and Dinis (work/drafts/jose/home-proposal.md); organiser answers on Luma"
   ],
   "done": [
     "read CLAUDE.md, SWARM.md, BRIEF.md, BRIEF-CORRECTIONS.md, REALITY.md, ROLES.md, briefs 1 to 9 and work/README.md",
@@ -28,13 +28,16 @@
     "17:41 (Jose's word): X dropped; the X thread will not be posted",
     "18:01: Jose's proposal of six changes to /dashboard/ (work/drafts/jose/dashboard-proposal.md, f71a62b) sent to the lead's inbox for Dinis to decide",
     "18:01: three decisions from Jose's team (Luma single pages, Eventbrite/Facebook read by a person, individual organisers) sent to the lead's inbox for Dinis",
-    "wake 18:09: the lead's note that data/events.json has one owner (researcher.2) passed to researcher.1: from now its new or changed events go to researcher.2 through this conductor or /tip/"
+    "wake 18:09: the lead's note that data/events.json has one owner (researcher.2) passed to researcher.1: from now its new or changed events go to researcher.2 through this conductor or /tip/",
+    "18:38: the dashboard changes Dinis approved pushed (d624f5e): reader numbers first, outreach funnel with senders, today by person, Dinis's asks ranked, exceptions only, why each colour; reviewed, fixed, designed by a sub-agent; dev.1 and the lead told before the edit",
+    "18:39: Jose's proposal for the home page sent to design.1 and the lead; a data note (Side Events Guide IRL ends tomorrow in events.json) sent to researcher.2"
   ],
   "next": [
     "watch /traffic/ for ?via=linkedin visits and report them to Jose",
     "organiser answers on Luma (Jose sees them)"
   ],
   "asks": [
+    "Dinis: Jose proposes seven changes to the home page (work/drafts/jose/home-proposal.md), for you and design.1 to decide; the top one: after 18:00 lead with what starts next and open on Tonight.",
     "Dinis: Luma: may a researcher read single Luma event pages we list (or a person passes on), one at a time, without a person's word each time? Today the 17:30 Cisco session stayed 'in person' on the site until Jose passed its link at 17:14 (its page said Virtual).",
     "Dinis: Eventbrite and Facebook: when an organiser's only page is there, may a person on the team read it and list the event as 'read by a person on the organiser's page', with the link? Today Just Boom! (22:00, Eventbrite) and Climate Fashion Lisbon 2026 (19:00, online, Facebook) were left off.",
     "Dinis: events run by a named individual, not an organisation: may we list them without naming the person, as we already do for 'an independent organiser'? Three online storm events were left out today for this reason.",
@@ -45,6 +48,6 @@
   "today": [
     "16:23: 5 organiser notes sent by hand (WonderLead in Tech, ideaic.io, Canopy Community, FounderLink, Portugal Tech Week), online storm events first, checked at source",
     "17:31: LinkedIn post up, linking tonight's events (/now/?via=linkedin)",
-    "18:15: Jose's six dashboard changes, approved by Dinis, built; designer and reviewer pass before the push"
+    "18:38: Jose's six dashboard changes live on /dashboard/, approved by Dinis (with a design pass)"
   ]
 }
