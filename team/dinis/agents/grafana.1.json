@@ -1,25 +1,28 @@
 {
   "agent": "grafana.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T19:15Z",
+  "updated": "2026-11-11T19:27Z",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (11 Nov 2026, about 19:20 UTC: 'can you spin up a new Grafana agent so I can use it to manage and to help me set up this')",
   "branch": "dev",
   "wake": "none: works when Dinis talks to it in its session",
-  "state": "onboarded; waiting for Dinis's Grafana stack URL and a least-privilege token",
+  "state": "working: Swarm dashboard built and tested; waiting for Edit on the Swarm folder to import it",
   "doing": [
     "work/51: Grafana Cloud for the swarm: least-privilege access, data sources (Elastic, the public /api/v1/), the Swarm dashboard as JSON in admin/grafana/"
   ],
   "done": [
     "19:13: session key made (sha256:60a7318f318830d6, signing sha256:f6334c7f4a430677); grafana.1.fringe-dinis in data/keys.json (public half only); abp whoami set",
-    "2026-11-11T19:15Z: docs/grafana-openrouter-traces.md: OpenRouter Broadcast to Grafana Cloud (OTLP endpoint, instance id, a traces:write-only access policy on one stack); its docs read: traces carry prompt and completion text unless Privacy Mode is on for the destination, so Privacy Mode ON; llm.mjs sends no user or session id (lead's message, 19:13 UTC)"
+    "2026-11-11T19:15Z: docs/grafana-openrouter-traces.md: OpenRouter Broadcast to Grafana Cloud (OTLP endpoint, instance id, a traces:write-only access policy on one stack); its docs read: traces carry prompt and completion text unless Privacy Mode is on for the destination, so Privacy Mode ON; llm.mjs sends no user or session id (lead's message, 19:13 UTC)",
+    "2026-11-11T19:27Z: GRAFANA_TOKEN works on vividwombat1572.grafana.net (Grafana 13.4; service account swarm-agents, Viewer; value never printed). admin/grafana/build-swarm.py builds swarm.json (20 panels: health, agents, commits per agent, releases, events by status/kind/day, model spend, and 4 Elastic panels for commits over time and ABP decisions); all 16 Infinity queries tested on the stack. Import refused (403: needs dashboards:create on the folder), as expected"
   ],
   "next": [
-    "Dinis gives the stack host (<stack>.grafana.net); a service account 'swarm-agents' (Viewer at org level, Editor on one folder 'Swarm'); its token saved as a network secret for that host (secure form), never in chat",
-    "connect data sources: Elasticsearch (the swarm's indices, read-only key) and Infinity/JSON for https://lisbontechfringe.com/api/v1/",
-    "build the Swarm dashboard (commits and pushes per agent, wakes, ABP decisions, model calls and spend, events by status) as JSON in admin/grafana/; alerts where Grafana is better than Kibana"
+    "Dinis grants swarm-agents Edit on the Swarm folder; then import swarm.json and check each panel renders",
+    "Dinis adds an Elasticsearch data source (index fringe-*, time field t, a read-only API key) for the ABP and commit-history panels",
+    "OpenRouter traces into Tempo with Privacy Mode on (docs/grafana-openrouter-traces.md); then the model-call latency panels",
+    "alerts: swarm health red, no deploy in 2 h, stale events"
   ],
   "asks": [
-    "Dinis: the Grafana stack URL (e.g. <stack>.grafana.net) so I can open the secure form for its token.",
-    "architect.1 / Dinis: grafana.1 has no grant in abp/policies.json yet (no abp/grafana.1.fringe@PrompTugal.dinis.md); its writes are logged outside a grant. It needs: team/dinis/agents/grafana.1.json, work/51-grafana.md, admin/grafana/, docs/grafana-*.md; sends to the Grafana stack host only."
+    "Dinis: give swarm-agents Edit on the Swarm folder (Swarm > Folder actions > Manage permissions > Add a permission > Service account: swarm-agents > Edit). Then I import the dashboard.",
+    "Dinis: for the ABP panels, an Elasticsearch data source in Grafana (Connections > Add new connection > Elasticsearch): URL the deployment's es host, index fringe-*, time field t, auth an API key created in Kibana with read on fringe-* only. You add it; I can't (Viewer).",
+    "architect.1 / Dinis: grafana.1 has no grant in abp/policies.json yet. It writes team/dinis/agents/grafana.1.json, work/51-grafana.md, admin/grafana/, docs/grafana-*.md and sends to vividwombat1572.grafana.net only."
   ]
 }
