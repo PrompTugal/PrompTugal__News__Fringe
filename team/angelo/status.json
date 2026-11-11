@@ -1,6 +1,6 @@
 {
   "by": "conductor.fringe@PrompTugal.angelo",
-  "updated": "2026-11-11T19:30Z",
+  "updated": "2026-11-11T20:31Z",
   "person": "angelo",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.angelo, started about 11:20 UTC by conductor.b@PrompTugal.angelo at Angelo's word; hourly wake at :29 until Friday 13 November (trig_01UqsUe1kvf2qvWkjLiF2hPk, set at Angelo's word in this session)",
@@ -28,7 +28,8 @@
     "wake 17:29: /graph/ draws festivals (Portugal Tech Week umbrella, 47 events) from work/42; --t-festival token in tokens.css",
     "wake 18:29 (run 18:53, after a restart; Angelo: 'wake up'): pull 58 commits; design.4 checked our --t-festival edit (f2c1ed0); work/50 lists Angelo's team for the MVPs; Dinis wants Elastic to show his and Angelo's runs side by side (docs/handoffs/2026-11-11-altitudes-on-elastic.md), which needs Angelo's runs first",
     "handover: the altitudes MVPs (Dinis's hand-off, 15:46) belong to handover-market.mp@PrompTugal.angelo, at Angelo's word; digest 2 for Angelo (worker digest.fringe@PrompTugal.angelo)",
-    "wake 19:30: pull 48 commits, nothing new for Angelo or the graph; gate OK; /graph/ live"
+    "wake 19:30: pull 48 commits, nothing new for Angelo or the graph; gate OK; /graph/ live",
+    "cross-conductor OpenRouter test (Dinis and Angelo, 20:2x UTC): ran Dinis's conductor's P3 and P4 here (10/10 valid), re-run with flow events for Elastic; issued P3 and P5 for it; inbox replies sent"
   ],
   "next": [
     "/graph/ to draw work/42's festivals (Portugal Tech Week as an umbrella) and platforms, reading graph-model.mjs rather than deriving its own",
