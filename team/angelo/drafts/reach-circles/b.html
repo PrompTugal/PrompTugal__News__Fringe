@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reach and altitude</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#f1efe9;--ink:#1d232b;--muted:#5b6470;--line:#d5d9de;--reach:#2f6db5;--soft:#d6e3f2;--wall:#1d232b;--leak:#c8322b;}
+@media (prefers-color-scheme:dark){:root{--bg:#12161b;--panel:#1a2027;--ink:#e8ebef;--muted:#9aa4af;--line:#2c333c;--reach:#5c9ae0;--soft:#223349;--wall:#f2f4f6;--leak:#ff6b5e;}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1240px;margin:0 auto;padding:24px 16px 40px}
+h1{font-size:1.6rem;margin:0 0 4px;letter-spacing:-.01em}
+.lede{color:var(--muted);margin:0 0 20px;max-width:62ch}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:28px;align-items:start}
+svg{width:100%;height:auto;display:block}
+.gapbg{fill:var(--panel)}
+.base{fill:var(--bg)}
+.on{fill:var(--reach)}
+.maybe{fill:url(#hatch);stroke:var(--reach);stroke-dasharray:4 3;stroke-width:1}
+.principle{fill:url(#dots)}
+.leak{fill:var(--leak);opacity:.9}
+.sep{fill:none;stroke:var(--line);stroke-width:1}
+.wall{fill:none;stroke:var(--wall);stroke-width:5;stroke-linecap:butt}
+.wall.shared{stroke-width:7}
+.slabel{font-size:17px;font-weight:650;fill:var(--ink)}
+.callout{font-size:12.5px;fill:var(--ink);font-weight:600}
+.leaktxt{fill:var(--leak);color:var(--leak)}
+.leakline{stroke:var(--leak);stroke-width:1.5}
+.rname{font-size:13px;font-weight:650;fill:var(--ink)}
+.rcan{font-size:11px;fill:var(--muted)}
+.axis{font-size:12px;fill:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.hit{fill:transparent}
+.slice,.rlabel{cursor:pointer;outline:none}
+.slice:hover .base,.slice:focus .base{fill:var(--soft)}
+.rlabel:hover .hit,.rlabel:focus .hit{fill:var(--soft)}
+#detail{min-height:3.2em;margin:8px 0 0;padding:10px 12px;border-left:3px solid var(--reach);background:var(--panel);font-size:.95rem}
+.key{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.85rem;color:var(--muted);margin:10px 0 0}
+.key i{display:inline-block;width:14px;height:14px;vertical-align:-2px;margin-right:6px;border:1px solid var(--line)}
+.k-on{background:var(--reach)}.k-maybe{background:repeating-linear-gradient(45deg,var(--reach) 0 2px,transparent 2px 6px)}
+.k-pr{background:radial-gradient(var(--muted) 1px,transparent 1.5px) 0 0/5px 5px}.k-leak{background:var(--leak)}
+.k-wall{background:var(--wall);height:5px!important;border:0!important;vertical-align:3px!important}
+ol{list-style:none;margin:0;padding:0;counter-reset:r}
+ol li{padding:9px 0;border-top:1px solid var(--line);display:flex;flex-direction:column;font-size:.92rem}
+ol li b{font-size:.98rem}
+ol li .ex{color:var(--muted)}
+ol li .w{font-size:.82rem;color:var(--muted);font-style:italic}
+h2{font-size:1rem;margin:0 0 6px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.lines{margin:28px 0 0;padding:16px 18px;background:var(--panel);max-width:80ch}
+.lines p{margin:4px 0}
+.note{font-size:.88rem;color:var(--muted);margin-top:14px;max-width:80ch}
+.bars{display:none}
+.bar{display:grid;grid-template-columns:96px minmax(0,1fr);gap:8px;align-items:center;margin:6px 0}
+.bname{font-weight:650;font-size:.95rem;line-height:1.15}.bname small{display:block;font-weight:400;font-size:.72rem;color:var(--muted)}
+.cells{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.c{height:26px;background:var(--bg);border:1px solid var(--line)}
+.c.on{background:var(--reach);border-color:var(--reach)}
+.c.maybe{background:repeating-linear-gradient(45deg,var(--reach) 0 2px,transparent 2px 6px)}
+.c.principle{background:radial-gradient(var(--muted) 1px,transparent 1.5px) 0 0/5px 5px}
+.c.leak{background:var(--leak);border-color:var(--leak)}
+.c.wallr{box-shadow:4px 0 0 var(--wall)}
+.cl{font-size:.62rem;color:var(--muted);line-height:1.1;word-break:break-word}
+.indep{font-size:.8rem;color:var(--muted);margin-top:24px}
+@media (max-width:760px){.grid{grid-template-columns:minmax(0,1fr)}.disc{display:none}.bars{display:block}h1{font-size:1.35rem}}
+</style></head><body><main>
+<h1>Reach is not altitude</h1>
+<p class="lede">The rings are <b>reach</b>: what a Claude setup can touch, from thinking at the centre to acting as a person at the edge. The slices are <b>altitudes</b>: how the work is organised. The shading is what each altitude reaches; the heavy line is the wall where a typical setup stops it.</p>
+<div class="grid">
+<div>
+<div class="disc">
+<svg viewBox="0 0 800 760" role="img" aria-labelledby="t d">
+<title id="t">Reach rings cut by altitude slices</title>
+<desc id="d">Seven rings of reach; four slices for LLM call, loop, agent and swarm. Agent and swarm stop at the same wall, before acting as a person. A loop is walled at its tools but can be pushed out by its grant. A red leak shows a loop holding an agent's reach.</desc>
+<defs>
+<pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="var(--bg)"/><rect width="2.4" height="7" fill="var(--reach)"/></pattern>
+<pattern id="dots" width="7" height="7" patternUnits="userSpaceOnUse"><rect width="7" height="7" fill="var(--bg)"/><circle cx="3.5" cy="3.5" r="1.1" fill="var(--muted)"/></pattern>
+</defs>
+<path d="M400,390 L400.0,68.0 A322,322 0 0 1 722.0,390.0 Z" class="gapbg"/><g class="slice" data-tip="LLM call: a prompt in, an answer out. It can only think. The wall is that nothing was handed to it." tabindex="0" role="button" aria-label="LLM call: a prompt in, an answer out. It can only think. The wall is that nothing was handed to it."><path d="M400,390 L721.8,401.2 A322,322 0 0 1 531.0,684.2 Z" class="base"/><path d="M400,390 L446.0,391.6 A46,46 0 0 1 418.7,432.0 Z" class="on"/></g><g class="slice" data-tip="Loop: uses the tools it was handed until the task is done. Typically walled at its tools and sandbox, but a grant can push it out as far as changing shared things. It has no memory or wake of its own." tabindex="0" role="button" aria-label="Loop: uses the tools it was handed until the task is done. Typically walled at its tools and sandbox, but a grant can push it out as far as changing shared things. It has no memory or wake of its own."><path d="M400,390 L520.6,688.6 A322,322 0 0 1 176.3,621.6 Z" class="base"/><path d="M400,390 L434.5,475.3 A92,92 0 0 1 336.1,456.2 Z" class="on"/><path d="M424.0,618.7 A230,230 0 0 1 240.2,555.4 L336.1,456.2 A92,92 0 0 0 409.6,481.5 Z" class="maybe"/></g><g class="slice" data-tip="Agent: a loop with an environment (memory, its own wake, reach beyond its sandbox). A typical Claude Code setup stops it at human approval: it does not act as a person." tabindex="0" role="button" aria-label="Agent: a loop with an environment (memory, its own wake, reach beyond its sandbox). A typical Claude Code setup stops it at human approval: it does not act as a person."><path d="M400,390 L168.4,613.7 A322,322 0 0 1 101.4,269.4 Z" class="base"/><path d="M400,390 L201.5,581.7 A276,276 0 0 1 144.1,286.6 Z" class="on"/><path d="M168.4,613.7 A322,322 0 0 1 101.4,269.4 L144.1,286.6 A276,276 0 0 0 201.5,581.7 Z" class="principle"/></g><g class="slice" data-tip="Swarm: agents of agents, which spawn and schedule each other. Same wall as one agent: it adds coordination and scale, not reach." tabindex="0" role="button" aria-label="Swarm: agents of agents, which spawn and schedule each other. Same wall as one agent: it adds coordination and scale, not reach."><path d="M400,390 L105.8,259.0 A322,322 0 0 1 388.8,68.2 Z" class="base"/><path d="M400,390 L147.9,277.7 A276,276 0 0 1 390.4,114.2 Z" class="on"/><path d="M105.8,259.0 A322,322 0 0 1 388.8,68.2 L390.4,114.2 A276,276 0 0 0 147.9,277.7 Z" class="principle"/></g><circle cx="400" cy="390" r="46" class="sep"/><circle cx="400" cy="390" r="92" class="sep"/><circle cx="400" cy="390" r="138" class="sep"/><circle cx="400" cy="390" r="184" class="sep"/><circle cx="400" cy="390" r="230" class="sep"/><circle cx="400" cy="390" r="276" class="sep"/><circle cx="400" cy="390" r="322" class="sep"/><g class="slice" tabindex="0" role="button" data-tip="Leak: a loop (or a single call) granted an agent's reach, such as connectors that write to shared things. Its mandate is one task; its reach is an agent's. That is mixing altitudes." aria-label="Leak: a loop granted an agent's reach"><path d="M400,390 L478.7,606.1 A230,230 0 0 1 424.0,618.7 Z" class="leak"/></g><path d="M446.0,391.6 A46,46 0 0 1 418.7,432.0" class="wall"/><path d="M434.5,475.3 A92,92 0 0 1 431.5,476.5" class="wall"/><path d="M409.6,481.5 A92,92 0 0 1 336.1,456.2" class="wall"/><path d="M201.5,581.7 A276,276 0 0 1 390.4,114.2" class="wall shared"/><text x="688.5" y="584.6" class="slabel" text-anchor="start" dominant-baseline="middle">LLM call</text><text x="333.6" y="731.6" class="slabel" text-anchor="middle" dominant-baseline="middle">loop</text><text x="58.4" y="456.4" class="slabel" text-anchor="end" dominant-baseline="middle">agent</text><text x="205.4" y="101.5" class="slabel" text-anchor="end" dominant-baseline="middle">swarm</text><text x="24" y="40" class="callout">agent and swarm stop at the same wall:</text><text x="24" y="56" class="callout">human approval. A swarm adds scale, not reach.</text><line x1="453.5" y1="621.9" x2="493.5" y2="655.9" class="leakline"/><text x="497.5" y="661.9" class="callout leaktxt">leak: a loop with an agent's reach</text><text x="333.6" y="751.6" class="callout" text-anchor="middle">pushed out as far as its grant allows</text><g class="rlabel" data-tip="Think: Reads a prompt and writes text back. Touches nothing. Claude: One call to the Claude API: prompt in, answer out." tabindex="0" role="button" aria-label="Think"><rect x="402" y="346" width="316" height="42" class="hit"/><text x="410" y="365" class="rname">Think</text><text x="410" y="380" class="rcan">Reads a prompt and writes text back. Touches nothing</text></g><g class="rlabel" data-tip="Use the tools handed to it: Calls only the tools it was given, inside a sandbox. Claude: The Claude API with tool use, or its code execution tool." tabindex="0" role="button" aria-label="Use the tools handed to it"><rect x="402" y="300" width="312.69734859267345" height="42" class="hit"/><text x="410" y="319" class="rname">Use the tools handed to it</text><text x="410" y="334" class="rcan">Calls only the tools it was given, inside a sandbox</text></g><g class="rlabel" data-tip="Its own workspace: Reads and writes files and runs a shell on its own machine. Claude: Claude Code in a cloud container, editing a checkout." tabindex="0" role="button" aria-label="Its own workspace"><rect x="402" y="254" width="302.577380894971" height="42" class="hit"/><text x="410" y="273" class="rname">Its own workspace</text><text x="410" y="288" class="rcan">Reads and writes files and runs a shell on its own machine</text></g><g class="rlabel" data-tip="Read the web: Searches and fetches public pages. Claude: Claude Code fetching a page through the network allowlist." tabindex="0" role="button" aria-label="Read the web"><rect x="402" y="208" width="284.9295447354909" height="42" class="hit"/><text x="410" y="227" class="rname">Read the web</text><text x="410" y="242" class="rcan">Searches and fetches public pages</text></g><g class="rlabel" data-tip="Change shared things: Writes where others see it: pushes to git, edits through connectors. Claude: Claude Code pushing to a branch; an MCP connector writing a doc." tabindex="0" role="button" aria-label="Change shared things"><rect x="402" y="162" width="258.24988174074934" height="42" class="hit"/><text x="410" y="181" class="rname">Change shared things</text><text x="410" y="196" class="rcan">Writes where others see it</text></g><g class="rlabel" data-tip="Remember and wake: Keeps memory across runs and wakes itself on a schedule. Claude: A status file and inbox, and a scheduled Routine waking a Claude Code session." tabindex="0" role="button" aria-label="Remember and wake"><rect x="402" y="116" width="219.3530563360524" height="42" class="hit"/><text x="410" y="135" class="rname">Remember and wake</text><text x="410" y="150" class="rcan">Keeps memory across runs and wakes itself on a schedule</text></g><g class="rlabel" data-tip="Act as a person in the world: Sends, posts, pays or signs in someone's name. Claude: Sending mail or posting from a person's account. In this swarm, a person does it." tabindex="0" role="button" aria-label="Act as a person in the world"><rect x="402" y="70" width="159.8553586713435" height="42" class="hit"/><text x="410" y="89" class="rname">Act as a person in the world</text><text x="410" y="104" class="rcan">Sends, posts, pays or signs in someone's name</text></g><text x="410" y="54" class="axis">reach, from the centre out</text>
+</svg>
+</div>
+<div class="bars" aria-label="The same picture as bars: each altitude, its reach from think to act as a person">
+<h2>Each altitude, reach from the centre out</h2>
+<div class="bar"><div class="bname">LLM call<small>wall: nothing handed to it</small></div><div class="cells"><span class="c on wallr" title="Think"></span><span class="c off" title="Use the tools handed to it"></span><span class="c off" title="Its own workspace"></span><span class="c off" title="Read the web"></span><span class="c off" title="Change shared things"></span><span class="c off" title="Remember and wake"></span><span class="c off" title="Act as a person in the world"></span></div></div><div class="bar"><div class="bname">loop<small>wall: tool grant and sandbox</small></div><div class="cells"><span class="c on" title="Think"></span><span class="c on wallr" title="Use the tools handed to it"></span><span class="c maybe" title="Its own workspace"></span><span class="c maybe" title="Read the web"></span><span class="c maybe" title="Change shared things"></span><span class="c off" title="Remember and wake"></span><span class="c off" title="Act as a person in the world"></span></div></div><div class="bar"><div class="bname leaktxt">leak<small>a loop with an agent's reach</small></div><div class="cells"><span class="c leak"></span><span class="c leak"></span><span class="c leak"></span><span class="c leak"></span><span class="c leak"></span><span class="c off"></span><span class="c off"></span></div></div><div class="bar"><div class="bname">agent<small>wall: human approval</small></div><div class="cells"><span class="c on" title="Think"></span><span class="c on" title="Use the tools handed to it"></span><span class="c on" title="Its own workspace"></span><span class="c on" title="Read the web"></span><span class="c on" title="Change shared things"></span><span class="c on wallr" title="Remember and wake"></span><span class="c principle" title="Act as a person in the world"></span></div></div><div class="bar"><div class="bname">swarm<small>wall: human approval</small></div><div class="cells"><span class="c on" title="Think"></span><span class="c on" title="Use the tools handed to it"></span><span class="c on" title="Its own workspace"></span><span class="c on" title="Read the web"></span><span class="c on" title="Change shared things"></span><span class="c on wallr" title="Remember and wake"></span><span class="c principle" title="Act as a person in the world"></span></div></div><div class="bar axisrow"><div class="bname"></div><div class="cells"><span class="cl">think</span><span class="cl">tools</span><span class="cl">own files</span><span class="cl">web</span><span class="cl">shared</span><span class="cl">wake</span><span class="cl">person</span></div></div>
+</div>
+<div class="key"><span><i class="k-on"></i>reaches, typical setup</span><span><i class="k-maybe"></i>reachable if granted</span><span><i class="k-pr"></i>possible in principle, walled</span><span><i class="k-wall"></i>the wall</span><span><i class="k-leak"></i>leak</span></div>
+<p id="detail" aria-live="polite">Tap or hover a slice or a ring for detail.</p>
+</div>
+<aside><h2>The rings of reach</h2><ol><li><b>Think</b><span>Reads a prompt and writes text back. Touches nothing.</span><span class="ex">Claude: One call to the Claude API: prompt in, answer out.</span></li><li><b>Use the tools handed to it</b><span>Calls only the tools it was given, inside a sandbox.</span><span class="ex">Claude: The Claude API with tool use, or its code execution tool.</span><span class="w">Wall into it: the tool grant (no tools, no way out)</span></li><li><b>Its own workspace</b><span>Reads and writes files and runs a shell on its own machine.</span><span class="ex">Claude: Claude Code in a cloud container, editing a checkout.</span><span class="w">Wall into it: the sandbox (which machine, which folders)</span></li><li><b>Read the web</b><span>Searches and fetches public pages.</span><span class="ex">Claude: Claude Code fetching a page through the network allowlist.</span><span class="w">Wall into it: the network allowlist</span></li><li><b>Change shared things</b><span>Writes where others see it: pushes to git, edits through connectors.</span><span class="ex">Claude: Claude Code pushing to a branch; an MCP connector writing a doc.</span><span class="w">Wall into it: credentials, connector consent and the permission prompt</span></li><li><b>Remember and wake</b><span>Keeps memory across runs and wakes itself on a schedule.</span><span class="ex">Claude: A status file and inbox, and a scheduled Routine waking a Claude Code session.</span><span class="w">Wall into it: the environment: a scheduler and a place to keep state</span></li><li><b>Act as a person in the world</b><span>Sends, posts, pays or signs in someone's name.</span><span class="ex">Claude: Sending mail or posting from a person's account. In this swarm, a person does it.</span><span class="w">Wall into it: human approval</span></li></ol></aside>
+</div>
+<div class="lines">
+<p><b>Altitude</b> is how the work is organised: a call, a loop, an agent with memory and its own wake, a swarm of agents.</p>
+<p><b>Reach</b> is what it can touch, and it is set by permissions and capabilities, not by altitude.</p>
+<p><b>Barriers</b> decide reach at every altitude: the tool grant, the sandbox, the network allowlist, credentials and prompts, human approval. An agent and a swarm stop at the same wall.</p>
+<p><b>The risk</b> is reach larger than the mandate: a call or a loop holding an agent's reach.</p>
+</div>
+<p class="note">Altitudes, for reference: A1 LLM call, A2 loop, A3 agent, A4 swarm. A0 compute (code that runs) sits under every slice: its reach is whatever the machine and its keys allow, so it is not drawn as a slice. Starting other agents is left out of the rings on purpose: it changes how work is organised, not what it touches.</p>
+<p class="indep">A draft for Lisbon Tech Fringe, an independent guide, not affiliated with Web Summit.</p>
+</main>
+<script>
+(function(){var d=document.getElementById('detail');document.querySelectorAll('[data-tip]').forEach(function(el){function show(){d.textContent=el.getAttribute('data-tip');}el.addEventListener('mouseenter',show);el.addEventListener('focus',show);el.addEventListener('click',show);el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();show();}});});})();
+</script>
+</body></html>
