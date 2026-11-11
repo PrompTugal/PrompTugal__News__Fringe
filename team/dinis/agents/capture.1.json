@@ -1,7 +1,7 @@
 {
   "agent": "capture.1.fringe@PrompTugal.dinis",
   "by": "capture.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T12:24Z",
+  "updated": "2026-11-11T12:38Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 4, ROLES.md)",
   "session": "session_01Kw9UwBDiRApLwAnCoij2Db",
   "key": "capture.1.fringe-dinis (data/keys.json)",
@@ -13,7 +13,8 @@
   "done": [
     "normal sgit vault cap-001 (u4f3pl6f) on dev.send.sgraph.ai; data/captures/vaults.json; key outside git, a copy sealed to the lead (data/captures/sealed/cap-001.json)",
     "admin/tools/capture.mjs: 390 and 1280 px of our pages, each organiser page at 1280 px, text and extracted fields; never websummit.com or a login; rotates to a new vault at 15,000 files",
-    "admin/build/evolution.mjs and /evolution/ (timeline from the index, no images)"
+    "admin/build/evolution.mjs and /evolution/ (timeline from the index, no images)",
+    "12:25 wake: second run captured into vault u4f3pl6f; pointers pushed"
   ],
   "next": [
     "each hour: run capture.mjs, commit pointers, push",
