@@ -1,11 +1,11 @@
 {
  "agent": "outreach.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-11T13:08Z",
+ "updated": "2026-11-11T13:31Z",
  "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 6)",
  "model": "Sonnet",
  "wake": "hourly at :35 (set by the lead)",
  "branch": "dev",
- "state": "lisbontechfringe.com is live (Dinis, 12:55): drafts now link to it; the announcement image is made (work/drafts/infographic/)",
+ "state": "work/36 (brief 11): design-call and the note to Silvio drafted; waiting on /designs/ (work/35) and Dinis's approval",
  "doing": [
   "work/29 owner; with work/18 and work/23"
  ],
@@ -19,10 +19,12 @@
   "brief 9 (lead's relay, 12:50): drafts updated to 'Lisbon Tech Fringe, every tech event in Lisbon this week, live. A PrompTugal.news site, independent of Web Summit.'",
   "announcement image for WhatsApp (not in git; template and caption in work/drafts/infographic/); every draft's links swapped to lisbontechfringe.com",
   "Dinis's own WhatsApp/LinkedIn draft edited with a journalist and creator nudge: work/drafts/dinis-announce-whatsapp-linkedin.md",
-  "announcement image in vault 9k97zlte (sgit-ai installed at Dinis's word); key sealed to the lead; pointer updated"
+  "announcement image in vault 9k97zlte (sgit-ai installed at Dinis's word); key sealed to the lead; pointer updated",
+  "work/36: work/drafts/design-call.md (public call, short X version, rules, a note to Silvio)"
  ],
  "next": [
-  "refresh the image numbers before each new use",
+  "when dev.1's /designs/ is live: check its checks list and 'how to send' against the call, and link it",
+  "the intake rule for dev.1 (work/36): a PR adding designs/<slug>/ is built into /designs/<slug>/ and the gallery",
   "rerun outreach.py each wake"
  ],
  "asks": [
@@ -32,6 +34,8 @@
   "Dinis: set DNS at the registrar (4 A records and a www CNAME, listed in work/30); tell the lead when it resolves",
   "conductor.fringe@ / dev: change the CNAME in build.mjs only after DNS resolves; decide what happens to fringe.promptugal.news links (work/30 step 3)",
   "Dinis: check '30+ agents' and 'updates every couple of minutes' in your draft before posting (ROSTER lists about 11 agents on the lead's account; loops are mostly hourly)",
-  "conductor.fringe@: open admin/outreach-sealed/9k97zlte.json (sealed to your key) if you need the announcement image's vault; its pointer and sha256 are in data/outreach-assets.json"
+  "conductor.fringe@: open admin/outreach-sealed/9k97zlte.json (sealed to your key) if you need the announcement image's vault; its pointer and sha256 are in data/outreach-assets.json",
+  "Dinis: approve work/drafts/design-call.md and send the note to Silvio yourself (add the name of his design tool if you want it in)",
+  "dev.1@: the call says: PR adding designs/<slug>/ (HTML, CSS, small JS reading /api/v1/, no binaries, gate green) or a link; please keep /designs/'s 'Send a design' text the same, and tell me when it is live"
  ]
 }

@@ -9,3 +9,5 @@ done-means: "a public call on /designs/ and in work/drafts/design-call.md (a per
 evidence:
 ---
 Brief 11, Dinis: "Silvio, I know, has a really good design agent, which uses another tool ... we then even ask the community to do that." Silvio's conductor has not started (team/ROSTER.md).
+
+**Progress 13:3x UTC (outreach.1):** work/drafts/design-call.md written: the public call (long and X), the rules a design must meet (from brief 11; full checks on /designs/), and a personal note to Silvio for Dinis to send. Not done: the intake on /designs/ (dev.1, work/35); the call is not sent. Silvio's conductor has not started.
