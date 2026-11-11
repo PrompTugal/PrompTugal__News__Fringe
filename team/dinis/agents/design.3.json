@@ -1,9 +1,9 @@
 {
   "agent": "design.3.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T15:28:02Z",
+  "updated": "2026-11-11T15:31:46Z",
   "state": "idle",
   "doing": [
-    "nothing open: D26 waits for the lab frame to route ?design=c (then L1 to L14 and gallery pictures); D16 needs /submit/"
+    "nothing open for design. D26 waits for the lab frame (?design=c). D34 (old address redirect) is lane dev and needs DNS/Pages settings, not mine. D16 needs /submit/."
   ],
   "done": [
     "D3 event cards: admin/build/cards.mjs; 390/1280 px, light and dark, no overflow or console errors",
