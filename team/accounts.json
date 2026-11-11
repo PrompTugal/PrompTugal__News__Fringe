@@ -1,0 +1,16 @@
+{
+  "about": "Dinis's Claude accounts and what runs on each (work/32). Labels only: no email address is published. Kept by conductor.fringe@PrompTugal.dinis; Dinis gave the list on 11 November 2026 at about 13:28 UTC.",
+  "updated": "2026-11-11T13:30Z",
+  "accounts": [
+    {"label": "dinis-owasp", "what": "Dinis's main personal account", "plan": "Ultra (Dinis believes; to confirm)", "fringe_agents": "unknown: possibly conductor.C or the old lead's", "wired": "unknown"},
+    {"label": "riskmandate-team", "what": "the RiskMandate team (organisation) account", "plan": "Team, standard or premium seat (Dinis believes; to confirm)", "fringe_agents": "unknown", "wired": "unknown"},
+    {"label": "riskmandate-personal", "what": "Dinis's personal account at RiskMandate", "plan": "Ultra (Dinis believes; to confirm)", "fringe_agents": "unknown", "wired": "unknown"},
+    {"label": "diniscruz-ai", "what": "the agent account at diniscruz.ai", "plan": "standard (Dinis believes; to confirm)", "fringe_agents": "none known", "wired": "no"}
+  ],
+  "sessions_by_account": {
+    "this account (the lead's; called 'account B' by pt.news's agents; one of the two riskmandate accounts, Dinis to confirm which)": ["conductor.fringe (lead, Opus)", "fable.fringe", "observability.fringe", "design.1", "design.2", "design.3", "design.4", "dev.1", "dev.2", "researcher.2", "capture.1", "usability.1", "outreach.1"],
+    "the old lead's account (not reachable from the lead's account)": ["researcher.fringe", "security.fringe", "dev.fringe", "conductor.B@ios (the iOS app)"],
+    "conductor.C's account": ["conductor.C.fringe"],
+    "the team's own accounts": ["conductor.fringe@vicky", "conductor.fringe@indi", "conductor.fringe@angelo", "conductor.fringe@jose"]
+  }
+}
