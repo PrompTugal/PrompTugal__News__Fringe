@@ -1,7 +1,7 @@
 {
   "about": "Every agent's grant, flattened from abp/policies.json by node abp/tools/abp.mjs build: what /abp/ shows.",
-  "policy": "0.1.0",
-  "sha256": "4773392f85c6326c",
+  "policy": "0.2.0",
+  "sha256": "58174013f46325c4",
   "mode": "observe",
   "agents": [
     {
@@ -72,12 +72,14 @@
         "data/operating-model.json",
         "docs/where-agents-run*",
         "admin/build/operating-model.mjs",
-        "abp/reviews/**"
+        "abp/reviews/**",
+        "briefs/*.md#notes-of-Dinis-in-its-session"
       ],
       "owns": [],
       "sends": [
         "dev.send.sgraph.ai",
-        "pki.sgit.ai"
+        "pki.sgit.ai",
+        "openrouter.ai"
       ],
       "page": "abp/architect.1.fringe@PrompTugal.dinis.md"
     },
@@ -360,7 +362,8 @@
         "seed/**",
         "sources.md",
         "api/v1/README.md",
-        "data/places.json"
+        "data/places.json",
+        "data/tips-status.json"
       ],
       "owns": [
         "data/events.json"

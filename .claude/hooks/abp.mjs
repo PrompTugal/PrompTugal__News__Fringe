@@ -138,6 +138,7 @@ export function checkWrite(who, abs, { creating = false } = {}, P = loadPolicy()
         let owner = ''
         try { owner = (/^owner:\s*(.*)$/m.exec(fs.readFileSync(abs, 'utf8')) || [, ''])[1].trim() } catch { owner = '' }
         if (!owner || owner.toLowerCase().includes(String(who.agent).toLowerCase())) return allow('write', `board item ${r} (owner: ${owner || 'none'})`)
+        if (P.common.person_conductor_items && who.person && owner.toLowerCase().includes(`conductor.fringe@promptugal.${who.person}`)) return allow('write', `board item ${r}, owned by its own person's conductor`)
         return deny('R6', `${r} is owned by ${owner}: ask the lead before taking a claimed item`)
     }
     return deny('R6', `${r} is not in ${who.agent}'s grant (abp/${who.agent}.md); if you need it, say so in your status asks ('Dinis:')`)
@@ -208,7 +209,7 @@ export function checkProtected(who, abs, P = loadPolicy()) {
     for (const pr of P.common.protected) {
         const re = globToRe(fill(pr.glob, who))
         if (re.test(target) || re.test(target + '/x')) {   // a folder (rm -rf .claude) counts as its contents
-            if (pr.owner && who.kind === 'team' && (who.role === pr.owner || (pr.owner === 'conductor' && who.role === 'lead'))) return null
+            if (who.kind === 'team' && ((pr.owner && (who.role === pr.owner || (pr.owner === 'conductor' && who.role === 'lead'))) || (pr.also || []).includes(who.role))) return null
             return deny('R6', `${target} is protected: ${pr.why}${pr.owner ? ` (the ${pr.owner}'s)` : ''}`)
         }
     }

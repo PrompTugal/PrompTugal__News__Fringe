@@ -1,7 +1,7 @@
 {
   "about": "The operating model of the agentic team (Dinis with Angelo, in architect.1's session, 14:40 UTC; briefs/2026-11-11-1440-the-operating-model.md; work/48): the primitives of the execution block, the access an entity has at a moment in time, identity, state, providers, and who can do what. What an entity is depends on where it runs and what it can reach (Dinis: 'what they are depends on where they are and what they can do'). A draft for Dinis and Angelo to correct.",
   "by": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T14:47Z",
+  "updated": "2026-11-11T14:54Z",
   "status": "draft v0.2",
   "ladder": {
     "about": "The execution ladder: what an entity can do, bottom to top. Each rung includes the ones below it.",
@@ -390,7 +390,6 @@
   "open": [
     "whether tools are a rung (E3) or an axis across rungs (Dinis: 'maybe tools is transversal')",
     "the name of the unit: entity, craft or role",
-    "the vault primitives proposed in capabilities.proposed (read.vault, send.message to an append lane, write.vault, create.vault): adopt into abp.sgit.ai's grammar or not",
     "each agent's grant written as capability primitives, so /abp/ and abp.sgit.ai speak one language"
   ],
   "sources": [
@@ -691,7 +690,8 @@
           "reach": "world",
           "undo": "no"
         }
-      ]
+      ],
+      "status": "adopted in this swarm's model (Dinis, 2026-11-11T14:54Z); not in abp.sgit.ai's published grammar"
     }
   }
 }

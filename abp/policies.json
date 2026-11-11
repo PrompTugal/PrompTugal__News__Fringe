@@ -1,7 +1,7 @@
 {
   "about": "The Agent Behaviour Policies of Lisbon Fringe (lisbontechfringe.com, origin in admin/site.json; WS-215) as data: deny by default, one grant per role and agent, across this repository and the others the swarm touches. Ported from PrompTugal__News__Website board/abp/policies.json (abp@PrompTugal.dinis, v1.7.0, since 6 November 2026), not invented anew; built on RiskMandate's Agent Behaviour Policy and Licence to Operate (https://riskmandate.ai/agent-behaviour-policy.html). Read by the hooks (.claude/settings.json, .claude/hooks/abp.mjs) and by the gate's commit check (abp/tools/abp.mjs check). abp/<agent>.md is generated from this file (node abp/tools/abp.mjs build), never edited by hand. Kept by architect.1.fringe@PrompTugal.dinis (work/39); any relaxation, and any move towards enforcement, is Dinis's decision.",
-  "version": "0.1.0",
-  "updated": "2026-11-11T14:51Z",
+  "version": "0.2.0",
+  "updated": "2026-11-11T14:54Z",
   "operator": "Dinis Cruz",
   "kept_by": "architect.1.fringe@PrompTugal.dinis",
   "status": "DRAFT: grants proposed from the git log (data/architecture.json observed); Dinis and the lead review",
@@ -304,7 +304,10 @@
       {
         "glob": "briefs/**",
         "owner": "conductor",
-        "why": "Dinis's words, relayed by the lead"
+        "why": "Dinis's words, relayed by the lead; the architect writes notes of Dinis in its own session (Dinis, 2026-11-11T14:54Z)",
+        "also": [
+          "architect"
+        ]
       },
       {
         "glob": "admin/series.txt",
@@ -331,7 +334,9 @@
       "**/.env.*",
       "**/*.pem",
       "**/.sg_vault/local/**"
-    ]
+    ],
+    "person_conductor_items": true,
+    "person_conductor_items_note": "a person's agents may edit work items owned by their own person's conductor (applied 2026-11-11T14:54Z)"
   },
   "roles": {
     "lead": {
@@ -541,7 +546,15 @@
     },
     "architect.1.fringe@PrompTugal.dinis": {
       "role": "architect",
-      "account": "riskmandate-personal (Ultra)"
+      "account": "riskmandate-personal (Ultra)",
+      "messages": true,
+      "messages_note": "send_message to the lead's session only",
+      "extra_writes": [
+        "briefs/*.md#notes-of-Dinis-in-its-session"
+      ],
+      "send_hosts": [
+        "openrouter.ai"
+      ]
     },
     "fable.fringe@PrompTugal.dinis": {
       "role": "advisor",
@@ -628,7 +641,10 @@
       "owns_shared": [
         "data/events.json"
       ],
-      "account": "riskmandate-personal (Ultra)"
+      "account": "riskmandate-personal (Ultra)",
+      "extra_writes": [
+        "data/tips-status.json"
+      ]
     },
     "capture.1.fringe@PrompTugal.dinis": {
       "role": "capture",
@@ -885,38 +901,7 @@
   },
   "proposed_relaxations": {
     "about": "Proposed by the architect, never applied: Dinis decides.",
-    "items": [
-      {
-        "agent": "researcher.2.fringe@PrompTugal.dinis",
-        "what": "data/tips-status.json",
-        "why": "the tips lane is researcher.2's (work/41); 34e8a64",
-        "since": "2026-11-11T13:51Z"
-      },
-      {
-        "agent": "* (a person's agents)",
-        "what": "work/<item> whose owner is their own person's conductor",
-        "why": "graph.fringe@PrompTugal.angelo on work/32 (af1072f), owned by Angelo's conductor",
-        "since": "2026-11-11T13:51Z"
-      },
-      {
-        "agent": "architect.1.fringe@PrompTugal.dinis",
-        "what": "send_message to the lead's session only",
-        "why": "two replies to the lead (13:46, 13:47) observed under R4",
-        "since": "2026-11-11T13:51Z"
-      },
-      {
-        "agent": "architect.1.fringe@PrompTugal.dinis",
-        "what": "briefs/<date>-<time>-*.md when Dinis speaks in its own session (a brief note with his words quoted)",
-        "why": "the lead's handover (14:30 UTC) asked it; a477106, 5560113 observed under R6 (briefs/ is the lead's)",
-        "since": "2026-11-11T14:51Z"
-      },
-      {
-        "agent": "architect.1.fringe@PrompTugal.dinis",
-        "what": "send to openrouter.ai, through admin/tools/llm.mjs only (ledger)",
-        "why": "Dinis asked for infographics from OpenRouter's image models in this session (14:37 UTC); two calls, 0.28 USD, ledgered",
-        "since": "2026-11-11T14:51Z"
-      }
-    ]
+    "items": []
   },
   "open_questions": [
     {
@@ -930,7 +915,7 @@
       "for": "Dinis: observe for three rounds; then decide whether design keeps admin/build/** or works through a page registry"
     }
   ],
-  "hook_sha256": "341be5468c890190",
+  "hook_sha256": "40e576e520a845ea",
   "effective": "2026-11-11T13:36:00Z",
   "effective_note": "Earlier commits are read against the grants as calibration, not counted.",
   "review": {
@@ -948,5 +933,77 @@
       }
     ]
   },
-  "mapping_rule": "Granting a new agent its own role's scope is mapping, done by the architect as agents start (the lead, 14:07 UTC). A grant that widens an agent's reach into another agent's paths is a relaxation: proposed_relaxations, Dinis decides."
+  "mapping_rule": "Granting a new agent its own role's scope is mapping, done by the architect as agents start (the lead, 14:07 UTC). A grant that widens an agent's reach into another agent's paths is a relaxation: proposed_relaxations, Dinis decides.",
+  "relaxations_applied": [
+    {
+      "agent": "researcher.2.fringe@PrompTugal.dinis",
+      "what": "data/tips-status.json",
+      "why": "the tips lane is researcher.2's (work/41); 34e8a64",
+      "since": "2026-11-11T13:51Z",
+      "decided": {
+        "at": "2026-11-11T14:54Z",
+        "by": "Dinis",
+        "decision": "yes",
+        "words": "Dinis, in architect.1's session: 'you can widen those permissions for now ... yes, you can write briefs and notes in brief ... all those are good'"
+      }
+    },
+    {
+      "agent": "* (a person's agents)",
+      "what": "work/<item> whose owner is their own person's conductor",
+      "why": "graph.fringe@PrompTugal.angelo on work/32 (af1072f), owned by Angelo's conductor",
+      "since": "2026-11-11T13:51Z",
+      "decided": {
+        "at": "2026-11-11T14:54Z",
+        "by": "Dinis",
+        "decision": "yes",
+        "words": "Dinis, in architect.1's session: 'you can widen those permissions for now ... yes, you can write briefs and notes in brief ... all those are good'"
+      }
+    },
+    {
+      "agent": "architect.1.fringe@PrompTugal.dinis",
+      "what": "send_message to the lead's session only",
+      "why": "two replies to the lead (13:46, 13:47) observed under R4",
+      "since": "2026-11-11T13:51Z",
+      "decided": {
+        "at": "2026-11-11T14:54Z",
+        "by": "Dinis",
+        "decision": "yes",
+        "words": "Dinis, in architect.1's session: 'you can widen those permissions for now ... yes, you can write briefs and notes in brief ... all those are good'"
+      }
+    },
+    {
+      "agent": "architect.1.fringe@PrompTugal.dinis",
+      "what": "briefs/<date>-<time>-*.md when Dinis speaks in its own session (a brief note with his words quoted)",
+      "why": "the lead's handover (14:30 UTC) asked it; a477106, 5560113 observed under R6 (briefs/ is the lead's)",
+      "since": "2026-11-11T14:51Z",
+      "decided": {
+        "at": "2026-11-11T14:54Z",
+        "by": "Dinis",
+        "decision": "yes",
+        "words": "Dinis, in architect.1's session: 'you can widen those permissions for now ... yes, you can write briefs and notes in brief ... all those are good'"
+      }
+    },
+    {
+      "agent": "architect.1.fringe@PrompTugal.dinis",
+      "what": "send to openrouter.ai, through admin/tools/llm.mjs only (ledger)",
+      "why": "Dinis asked for infographics from OpenRouter's image models in this session (14:37 UTC); two calls, 0.28 USD, ledgered",
+      "since": "2026-11-11T14:51Z",
+      "decided": {
+        "at": "2026-11-11T14:54Z",
+        "by": "Dinis",
+        "decision": "yes",
+        "words": "Dinis, in architect.1's session: 'you can widen those permissions for now ... yes, you can write briefs and notes in brief ... all those are good'"
+      }
+    }
+  ],
+  "vault_primitives": {
+    "status": "adopted in this swarm's model (Dinis, 2026-11-11T14:54Z)",
+    "items": [
+      "read.vault.tenant",
+      "send.message.tenant",
+      "write.vault.tenant",
+      "create.vault.world"
+    ],
+    "note": "not in abp.sgit.ai's published grammar"
+  }
 }
