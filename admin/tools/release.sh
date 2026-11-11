@@ -2,7 +2,7 @@
 # Release from any agent's clone: AGENT=<name> admin/tools/release.sh
 # From the storm site's admin/tools/release.sh. Commit your SOURCE changes first (subject "<agent>: <what>", trailers
 # Agent:, Issue: WS-215, For:). This script rebases on dev, runs the gate locally (a red gate never leaves your machine),
-# pushes to dev (rebasing again if someone pushed first) and stops. CI numbers the release (v<series>.<run>), deploys it
+# checks every commit in the push for size, binaries and forbidden paths (commit-check.mjs), pushes to dev (rebasing again if someone pushed first) and stops. CI numbers the release (v<series>.<run>), deploys it
 # and reports push-to-served in its summary. You never write a number. Never main, never force.
 set -euo pipefail
 cd "$(git rev-parse --show-toplevel)"
@@ -15,6 +15,7 @@ for attempt in 1 2 3 4 5 6 7 8 9 10 11 12; do
   git rebase -q origin/dev || { echo "release.sh: conflict with dev; resolve by hand"; git rebase --abort; exit 1; }
   [ "$(git rev-list --count origin/dev..HEAD)" = 0 ] && { echo "release.sh: nothing to push"; exit 0; }
   if [ "$gated" = 0 ]; then
+    node admin/tools/commit-check.mjs origin/dev..HEAD   # finding 45: every commit in the push, not just HEAD's tree
     node admin/build/validate.mjs
     gated=1; continue   # fetch and rebase again straight after the gate, then push; CI's gate on the pushed tree is the authority
   fi
