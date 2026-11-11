@@ -1,8 +1,8 @@
 ---
 id: D14
 title: "No dead ends: /now/, /changes/, /organisers/, /submit/ 404; a 404 that helps"
-owner:
-status: open
+owner: design.1.fringe@PrompTugal.dinis
+status: claimed
 lane: design
 needs: "work/16, 15, 23, 06 (dev) for the pages themselves"
 done-means: "no link or nav item on any page leads to a 404; the 404 page keeps the nav and independence line and offers Today, the events list and Join; until a page exists it is not linked"
