@@ -1,6 +1,6 @@
 # Roster: who is on, what each is doing, what blocks
 
-> Written by conductor.fringe@PrompTugal.dinis at each wake. Last: 11 November 2026, 13:26 UTC. Source: team/*/status.json and the sessions' branches.
+> Written by conductor.fringe@PrompTugal.dinis at each wake. Last: 11 November 2026, 14:23 UTC. Source: team/*/status.json and the sessions' branches.
 
 | Person | Conductor | State | Doing | Blocked by |
 |---|---|---|---|---|
@@ -9,7 +9,7 @@
 | Indi | conductor.fringe@PrompTugal.indi | on (session_01SZXKK9aBakmkfmRPBZ8v6H) | work/04 communities (data/communities.json) | its key in the Website board/keys.json (needs that repo attached) |
 | Angelo | conductor.fringe@PrompTugal.angelo | on (hourly) | work/05 the graph: /graph/ and /api/v1/graph.json built | |
 | Silvio | conductor.fringe@PrompTugal.silvio | not started | | the join link |
-| Jose | conductor.fringe@PrompTugal.jose | not started | | the join link |
+| Jose | conductor.fringe@PrompTugal.jose | on (with researcher.1@jose) | channels; organiser notes; online events | its network refused lisbontechfringe.com earlier |
 | Daniela | conductor.fringe@PrompTugal.daniela | not started | | the join link |
 
 ## Dinis's agents
@@ -29,6 +29,8 @@
 | researcher.2.fringe@ | session_01Kw9UwCy7tcG1KeCSbgf3Za (Sonnet) | 1h at :10 | dev (release.sh) | work/24 the loop; pushes data to dev behind the gate |
 | capture.1.fringe@ | session_01Kw9UwBDiRApLwAnCoij2Db (Sonnet) | 1h at :25 | dev (release.sh) | work/27 captures in vaults, /evolution/ |
 | outreach.1.fringe@ | session_01Kw9UwEzTp9bHq7S5iGummN (Sonnet) | 1h at :35 | dev (release.sh) | work/29 outreach desk; Dinis can talk to it directly |
+| architect.1.fringe@ | session_01Kw9UwEQqEzzggNTF6rxqSR (Opus) | 1h at :50 | dev (release.sh) | work/38-40 map, ABPs (observe), guidance; work/48 where agents run |
+| ontologist.1.fringe@ | session_01Kw9UwCdAbJSk1oD7XCtVqj (Opus) | 1h at :55 | dev (release.sh) | work/42 the semantic graph: /o/ /f/ /r/ /n/ /p/ /t/ |
 | usability.1.fringe@ | session_01Kw9UwDmRCkM64WiDyuGb99 (Sonnet) | 2h at :40 | dev (release.sh) | work/28 phone tasks |
 
 **On the other account** (started by the old lead; their wakes still name it, so their work waits on branches):

@@ -1,9 +1,9 @@
 {
   "by": "conductor.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T13:26Z",
+  "updated": "2026-11-11T14:23Z",
   "person": "dinis",
   "role": "head",
-  "state": "wake 13:26: live at lisbontechfringe.com; ~18 agents active in the last hour (78 commits, 55 pushes); 17 inboxes; captures held back for privacy",
+  "state": "wake 14:23: live at lisbontechfringe.com; 15 agents on the lead's account; briefs 1 to 14; design lab, graph, SQL, models, tips, ABPs (observe) live",
   "conductor": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq, the lead since 11:14 UTC at Dinis's word; it replaces session_01Kw9UwBGQe9BhMCbDw28aDA)",
   "agents": [
     {
@@ -127,6 +127,8 @@
     "reviewing what lands on dev; routing Dinis's briefs"
   ],
   "done": [
+    "14:23: inboxes for architect.1, ontologist.1 and researcher.1@jose (21 in all); researcher.fringe@'s places.json (12 places) onto dev; duplicate D18/D19 renumbered D32/D33",
+    "since 13:21: brief 11 design lab (A, C, D live), brief 12 architect and ABPs (observe, with overrides), brief 13 today in Lisbon (graph, SQL, My day, storm and agentic team sections, intel box, /tip/ end to end), brief 14 where agents run (doc and slide), /models/, releases as JSON",
     "13:26: brought onto dev: security.fringe@'s 11:30 and 12:30 reviews, fable.fringe@'s second note, dev.fringe@'s board update, researcher.fringe@'s sources.md and places.json",
     "13:26: the capture vault's read key is held back (finding 21: guest lists); capture.1 told to crop them, allow-list hosts, delete, and set a retention; brief 7 corrected",
     "13:26: vault credentials re-sealed to Dinis's person key (admin/obs/sealed/lead.dinis.json, admin/capture-sealed/u4f3pl6f.dinis.json; finding 24)",
@@ -163,10 +165,10 @@
     "tell conductor@PrompTugal.dinis the URL so pt.news links it; tell incident.conductor@web-summit.dinis that we read the storm site's /api/v1/"
   ],
   "asks": [
-    "Dinis (1, privacy): the geo lookup. Every page sends each reader's IP address to ipapi.co or ipwho.is unless they opt out (security finding 20; GDPR wants consent in Lisbon). The lead recommends dropping it and taking the country from the browser's time zone. pt.news runs the same counter, so it is your call: drop, make it opt-in, or keep.",
-    "Dinis (2): approve and send the launch post (work/drafts/dinis-launch-post.md) and outreach.1's drafts. Tonight's events start at 17:00 UTC.",
-    "Dinis (3): the redirect from fringe.promptugal.news. Links already shared there answer 404. An org admin creates a small Pages repository for that address with dev.1's admin/redirect/. Yes, and who?",
-    "Dinis (4): the three agents on the other account still name the old lead in their wakes (researcher.fringe@ trig_015p3eeHQJ3JEXzHdYgHaUb7, security.fringe@ trig_01XhtAq86wTjp2bLqwZMkwez, dev.fringe@ trig_01Wdx83QuHtzcqh48DimkhMj). Point them at session_01Kw9UwCFpT9ihNBcQFxkomq; security's reviews are the ones that matter.",
-    "Dinis (5): protect main (pull requests only) and limit the github-pages environment to dev (security findings 1 and 2, open since 10:48)."
+    "Dinis (1): approve the organiser note (work/23, work/drafts/organiser-note.md); Jose's conductor has 5 notes ready for today and Jose sends the first (Kuma Partners) before 15:00 UTC.",
+    "Dinis (2, privacy): the geo lookup on every page (security finding 20): drop, make opt-in, or keep. The lead recommends the country from the time zone instead.",
+    "Dinis (3): which of your accounts is this one (riskmandate-team or -personal), the old lead's, and conductor.C's (work/33)? Then each can run its own agents.",
+    "Dinis (4): the three agents on the other account still name the old lead; point them at this session or stop them (researcher.fringe@ still pushes to its branch, and I bring it on).",
+    "Dinis (5): correct docs/where-agents-run.md with Angelo (work/48); and protect main and limit Pages to dev (security findings 1 and 2)."
   ]
 }
