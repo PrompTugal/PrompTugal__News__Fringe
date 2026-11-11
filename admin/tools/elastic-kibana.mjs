@@ -46,6 +46,7 @@ dataView('fringe-graph', 'Fringe: semantic graph', 'read_at')
 dataView('fringe-tasks', 'Fringe: task packets and results', 'read_at')
 dataView('fringe-models', 'Fringe: model router ledger', 'day')
 dataView('fringe-hooklog', 'Fringe: ABP hook decisions', 't')
+dataView('fringe-altitudes', 'The agentic runs: one unit per altitude (signed)', 't')
 dataView('fringe-workloads', 'Distributed workloads: altitudes, runtimes, placements, traces', 't')
 for (const s of ['fringe', 'ptnews', 'websummit']) for (const k of ['commits', 'content', 'entities', 'runs', 'status']) dataView(`${s}-${k}`, `${{ fringe: 'Fringe', ptnews: 'PrompTugal.news', websummit: 'Web Summit' }[s]}: ${k}`, 't')
 for (const k of ['commits', 'content', 'entities', 'runs', 'status']) dataView(`fringe-${k},ptnews-${k},websummit-${k}`, `All sites: ${k}`, 't')
@@ -55,6 +56,8 @@ const ALL = k => DV[`fringe-${k},ptnews-${k},websummit-${k}`]
 const C = {
     count: (label = 'Count') => ({ label, customLabel: true, dataType: 'number', operationType: 'count', isBucketed: false, scale: 'ratio', sourceField: '___records___', params: { emptyAsNull: true } }),
     unique: (f, label) => ({ label, customLabel: true, dataType: 'number', operationType: 'unique_count', isBucketed: false, scale: 'ratio', sourceField: f, params: { emptyAsNull: true } }),
+    avg: (f, label) => ({ label, customLabel: true, dataType: 'number', operationType: 'average', isBucketed: false, scale: 'ratio', sourceField: f, params: { emptyAsNull: true } }),
+    max: (f, label) => ({ label, customLabel: true, dataType: 'number', operationType: 'max', isBucketed: false, scale: 'ratio', sourceField: f, params: { emptyAsNull: true } }),
     sum: (f, label) => ({ label, customLabel: true, dataType: 'number', operationType: 'sum', isBucketed: false, scale: 'ratio', sourceField: f, params: { emptyAsNull: true } }),
     date: (f, label = 'Time', interval = 'auto') => ({ label, customLabel: true, dataType: 'date', operationType: 'date_histogram', isBucketed: true, scale: 'interval', sourceField: f, params: { interval, includeEmptyRows: true, dropPartials: false } }),
     terms: (f, label, size = 10, orderBy = 'm', other = true) => ({ label, customLabel: true, dataType: 'string', operationType: 'terms', isBucketed: true, scale: 'ordinal', sourceField: f, params: { size, orderBy: { type: 'column', columnId: orderBy }, orderDirection: 'desc', otherBucket: other, missingBucket: false, parentFormat: { id: 'terms' } } }),
@@ -240,6 +243,37 @@ D.workloads = dashboard('workloads', 'Distributed workloads: the altitudes of ex
      [top('wl-commit-agents', 'Who builds it (commits)', ALL('commits'), 'agent', 'agent:architect.1.fringe@PrompTugal.dinis or person:angelo', { size: 15 }), L, 16, 14]],
     [[search('wl-vocab', 'The vocabulary: altitudes, runtimes, endpoints, I/O levels, modes', wl, ['facet', 'id', 'name', 'text'], 'facet:(altitude or runtime or endpoint or io_level or mode)', 'id', 'asc'), S, 48, 16]],
 ], { from: '2026-11-11T00:00:00.000Z', to: 'now+1h', refresh: 300000 })
+
+// =====================================================================================================
+// 7. The altitudes of execution, live (architect.1's spec: docs/handoffs/2026-11-11-altitudes-on-elastic.md)
+// =====================================================================================================
+const al = DV['fringe-altitudes']
+D.altitudes = dashboard('altitudes', 'The altitudes of execution, live', 'Every unit of every agentic run Dinis and Angelo make: the A3 agent, its A2 loops, A1 LLM calls and A0 compute, task packets and each environment\'s results; each signed by its own key, born and signed, with its model, cost, verification and reach.', TAGS.swarm, [
+    [[md('al-head', `## The altitudes of execution, live\nEvery **unit of work** in the agentic runs Dinis and Angelo make, one document each, from signed sources only (\`data/altitude-runs.json\`, written by architect.1's \`abp/tools/runs-export.mjs\`). A run is a tree: **A3** agent → **A2** loops → **A1** LLM calls and **A0** compute; or a **task packet** → each environment's **result** → its calls. Every unit has its own key (\`key_fp\`), born when it starts and signing its result; \`verified\` is that signature checked. **Reach** counts capability primitives: needed, held, and **exposure** (held but not needed): above 2 is the *mixing altitudes* finding.\n\nCompanion: [Distributed workloads](#/view/${uid('dash', 'workloads')}) (placements, matrix, Angelo's run log and traces). Fingerprints only, never key material; prompts only as their sha256.`), V, 48, 8]],
+    [[metric('al-m1', 'Units', al, C.count('Units')), L, 8, 6], [metric('al-m2', 'Runs', al, C.unique('run', 'Runs')), L, 8, 6], [metric('al-m3', 'Signatures verified', al, C.count('Verified'), 'verified:true'), L, 8, 6],
+     [metric('al-m4', 'Unverified signatures (should be 0)', al, { ...C.sum('unverified', 'Unverified'), params: { emptyAsNull: false } }), L, 8, 6], [metric('al-m5', 'Model spend (USD)', al, C.sum('cost_usd', 'USD')), L, 8, 6],
+     [metric('al-m6', 'Units mixing altitudes (exposure > 2)', al, C.count('Mixing'), 'mixing:true'), L, 8, 6]],
+    // 1. units over time by altitude
+    [[overTime('al-time', '1. Units by altitude over time (when each key was born)', al, 't', 'altitude', '', { interval: 'auto' }), L, 48, 13]],
+    // 2. the tree of one run
+    [[table('al-tree', '2. The tree of each run: depth, altitude and role', al, [['run', 'Run', 10], ['depth', 'Depth', 5], ['altitude', 'Altitude', 5], ['role', 'Role', 6]], [C.count('Units'), C.sum('cost_usd', 'USD'), C.sum('invalid', 'Invalid answers')]), L, 24, 18],
+     [search('al-tree-units', '2. Units, in the order they were born (filter on a run)', al, ['run', 'depth', 'altitude', 'role', 'unit', 'parent', 'verified'], '', 't', 'asc'), S, 24, 18]],
+    // 3. Dinis and Angelo side by side
+    [[table('al-people', "3. Dinis's runs and Angelo's, by environment", al, [['person', 'Person', 5], ['environment', 'Environment', 8], ['altitude', 'Altitude', 5]], [C.count('Units'), C.avg('valid_share', 'Valid share (results)'), C.sum('cost_usd', 'USD'), C.avg('latency_ms', 'Latency ms (avg)')]), L, 32, 14],
+     [donut('al-people-donut', '3. Units by person', al, 'person'), L, 16, 14]],
+    // 4. the keys
+    [[table('al-keys', '4. The keys: one per unit, born to signed, verified', al, [['key_fp', 'Key fingerprint', 120], ['altitude', 'Altitude', 5]], [C.count('Units'), C.sum('unverified', 'Unverified'), C.max('duration_ms', 'Life ms (born to signed)')]), L, 24, 16],
+     [donut('al-verified', '4. Signatures: verified or not', al, 'verified'), L, 12, 16], [top('al-life', '4. Key life by altitude (avg ms, born to signed)', al, 'altitude', '', { metricCol: C.avg('duration_ms', 'ms') }), L, 12, 16]],
+    // 5. cost and latency by model and altitude
+    [[table('al-models', '5. Cost and latency by model and altitude', al, [['model', 'Model', 10], ['altitude', 'Altitude', 5]], [C.count('Calls'), C.sum('cost_usd', 'USD'), C.avg('latency_ms', 'Avg latency ms'), C.max('latency_ms', 'Max latency ms')], 'model:*'), L, 24, 13],
+     [overTime('al-latency', '5. Latency of each LLM call over time (avg ms)', al, 't', 'model', 'role:"llm call"', { interval: '1m', series: 'line', metricCol: C.avg('latency_ms', 'ms') }), L, 24, 13]],
+    // 6. mixing altitudes
+    [[top('al-mixing', '6. Mixing altitudes: reach exposure by unit (held, not needed)', al, 'unit.raw', 'reach_exposure:*', { size: 15, metricCol: C.max('reach_exposure', 'Exposure'), label: 'Unit' }), L, 24, 16],
+     [table('al-mixing-alt', '6. Reach by altitude: needed, held, exposed (avg)', al, [['altitude', 'Altitude', 5]], [C.avg('reach_needs', 'Needed'), C.avg('reach_held', 'Held'), C.avg('reach_exposure', 'Exposed'), C.count('Units')], 'reach_exposure:*'), L, 24, 16]],
+    // 7. retries
+    [[table('al-retries', '7. Retries: LLM calls by model, attempt and validity', al, [['model', 'Model', 6], ['attempt', 'Attempt', 5], ['valid', 'Valid', 3]], [C.count('Calls'), C.avg('latency_ms', 'Avg latency ms')], 'role:"llm call"'), L, 24, 14],
+     [donut('al-valid', '7. LLM calls: valid answers (false = retried)', al, 'valid', 'role:"llm call"'), L, 12, 14], [top('al-items', '7. Items that needed most attempts', al, 'item', 'role:"llm call"', { metricCol: C.max('attempt', 'Attempts'), size: 10 }), L, 12, 14]],
+], { from: '2026-11-11T00:00:00.000Z', to: 'now+1h', refresh: 60000 })
 
 // ---------- build / import ----------
 const cmd = process.argv[2]

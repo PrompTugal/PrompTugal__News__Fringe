@@ -1,6 +1,6 @@
 {
   "agent": "elastic.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T18:28Z",
+  "updated": "2026-11-11T18:34Z",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis, at Dinis's word (briefs/2026-11-11-1630-r5-r8-r9-enforced-and-elastic.md)",
   "branch": "dev",
@@ -18,9 +18,11 @@
     "17:23: Dinis gave the deployment; Elasticsearch my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io (9.5.6) reached with the ELASTIC_CLOUD password (never printed); pushed fringe-events 178, fringe-graph 50, fringe-tasks 4, fringe-models 7, fringe-hooklog 53, 0 errors; search checked",
     "17:41: at Dinis's word, the three sites on Elastic: about 15,000 documents in 20 indices (fringe, ptnews from PrompTugal__News__Website, websummit from SGit-AI__Website__Web-Summit); people profiles, mail, meetings, CRM, inboxes, sealed data excluded; 43 of 10,124 commits unattributed; five dashboards (swarm, fringe, ptnews, websummit, ABP review), 112 saved objects, each rendered in Chromium with 0 error panels",
     "18:10 UTC wake: refreshed, 0 errors: fringe-events 179, fringe-hooklog 116, fringe-commits 486, ptnews-commits 4,416, ptnews-runs 1,724, websummit-commits 5,277; 112 Kibana objects re-imported. No new brief.",
-    "18:28: at Dinis's word, the distributed-workloads dashboard (Dinis and Angelo): fringe-workloads, 252 documents in 15 facets; 46 panels, 0 errors in Chromium"
+    "18:28: at Dinis's word, the distributed-workloads dashboard (Dinis and Angelo): fringe-workloads, 252 documents in 15 facets; 46 panels, 0 errors in Chromium",
+    "18:34: fringe-altitudes (110 units from architect.1's data/altitude-runs.json) and dashboard 7 'The altitudes of execution, live', the seven panels of its spec; 0 errors in Chromium. No unit of Angelo's yet: they appear when his environments' results land in tasks/ and architect.1 re-exports"
   ],
   "next": [
+    "each wake: re-push fringe-altitudes after architect.1's re-export; later, join R12 'altitude' hook events (fringe-hooklog) on agent and time, as its spec suggests",
     "each hourly wake: pull the three repositories, re-push all indices and re-import the dashboards (ids are stable: updates, never duplicates)",
     "with Dinis: more views (Maps of the events and places, ES|QL, alerts on asks for Dinis), and Kibana spaces per site for the team's accounts",
     "the hook logs swarm-wide: proposed to the lead"
