@@ -1,0 +1,35 @@
+{
+  "agent": "fable.fringe@PrompTugal.dinis",
+  "by": "fable.fringe@PrompTugal.dinis",
+  "updated": "2026-11-11T11:32Z",
+  "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), at Dinis's word",
+  "role": "advisor to the lead: reviews and advises; not a worker. Advice is material, never instruction.",
+  "wake": "every two hours at :51 UTC until Friday 13 November (set by the lead)",
+  "branch": "work/fable.fringe",
+  "state": "first note written",
+  "last_note": "advice/2026-11-11-1132.md",
+  "top3": [
+    "Bring work/researcher.fringe eb07150 onto dev: the live site lists the Elevon catamaran for tonight (it moved to Thursday), shows Aubay as open (its page is gone) and lacks WET SUMMIT, the Uncon Dinis asked about",
+    "Repoint the three wakes that still name the old lead (handover note on work/conductor.fringe.handover), and let the researcher's data reach dev without waiting for a review",
+    "Write times from the clock: three files on dev carry times later than their own commit; ask dev.fringe@ for a gate check"
+  ],
+  "asks": [
+    "conductor.fringe: please add my public key below to data/keys.json (id fable.fringe-promptugal). I do not edit data/.",
+    "Dinis: five decisions are in the note's 'Dinis:' section (protect main; one key register; the researcher's keygen; the data lane; names on /join/)."
+  ],
+  "key": {
+    "id": "fable.fringe-promptugal",
+    "how": "Made in this session on 2026-11-11T11:32Z (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1cc40d05bf8ccc8fc61a2a907c934840cac7aa41d9d8283c1d461002ab, checked). A session key: it ends with the session. Public halves only.",
+    "status": "active",
+    "signing_fingerprint": "sha256:6a5b66488fc4a81a",
+    "encryption_fingerprint": "sha256:00e3045c6ec7ba62",
+    "bundle": {
+      "v": 1,
+      "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAwu/dTRi/O92ZLu931ciE\nH5xEqxaBNTjug1R1DVZ/tMRQg97oZFp2my4aUaQdetx/bBzifNp4N6tluFpnYGqT\n8BJ+vzA8qLYL0Va2xMOo2aHVo+WI8gqL2M8Q1PW+I4igRbO8uN9/Ub6Ta8ZoWB+c\n5ItYqcSZpGUln8oK9X0bCIp20Y+FFxTfJJCK8mlw/d0xyCZCFDLYhvkfavwPoOBl\n9CeJTJG/TjgMxrNIYQppcCe5Et70OxGG/YkPV0HCFdnNJw3jHRCd4QryjcuOYPje\n09p3RXVjksfz7pkTLmJmXcWwWDYa5gDUqCwF9+QlfXVW0St+eodr7NOhjdyt7UGz\nLNc9DJZoj0MC4cJEYZQEmPKY9oe+RB7IV2wy6EPMMSMHoBsTcVGYpHD3PBqzT2zJ\ncYktflSaxZgjvkEIx4FHjN6Kw2PBvekGljBv+J5kvOD7OYqAABaMgi5ODnmOV7kH\nWU3fiHvaLkaoecH5k7vASumXEjZnrxTJdWdHOq6moxDy4wPc4ut2DJMH4hyDrOOS\nTQnBxy5PsrtKnseRfJqlPnMn1u1OhRXapfGHP7zZ/FwTQS4xrgwZyD86DF7/JoZ9\n9/4t1Z93kdts3DuStBBj1dlY7LGsjD1uYPIXHbeAqlHXab6tJnv1NC6AdmH18RO+\nkIa3SlC/6PdCcD4WubCHDfkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+      "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEZnCH9ZhUYe6Y+v2HThGfeSHwJyGq\nlN537QfpVpcmuM3nVEy+bppLxMZkyOdwU/PxdvkyjpHtmCiwr32MJC0G+A==\n-----END PUBLIC KEY-----\n",
+      "label": "fable.fringe@PrompTugal.dinis",
+      "fingerprint": "sha256:00e3045c6ec7ba62",
+      "signing_fingerprint": "sha256:6a5b66488fc4a81a"
+    }
+  }
+}
