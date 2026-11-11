@@ -2,7 +2,7 @@
 title: "ABP: conductor@web-summit.dinis"
 agent: conductor@web-summit.dinis
 role: reviewer
-policy: abp/policies.json v0.4.1 (sha256:f57383c15bb5707b)
+policy: abp/policies.json v0.4.1 (sha256:ccb6364a72004e5a)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator

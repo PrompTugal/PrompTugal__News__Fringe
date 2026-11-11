@@ -2,7 +2,7 @@
 title: "ABP: conductor.fringe@PrompTugal.daniela"
 agent: conductor.fringe@PrompTugal.daniela
 role: conductor
-policy: abp/policies.json v0.4.1 (sha256:f57383c15bb5707b)
+policy: abp/policies.json v0.4.1 (sha256:ccb6364a72004e5a)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -16,7 +16,7 @@ authority: Dinis Cruz, operator
 - **Role:** conductor. **Account:** Daniela's.
 - **Runs on:** R1 (models: M1 (its person's account)); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** one per person: its person's lane, its own status file and its person's agents.
-- **Writes (this repository):** `team/daniela/agents/conductor.json`, `team/daniela/agents/conductor.fringe.json`, `team/daniela/agents/conductor/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `data/models-ledger.json`, `team/daniela/**`, `work/drafts/daniela/**`.
+- **Writes (this repository):** `team/daniela/agents/conductor.json`, `team/daniela/agents/conductor.fringe.json`, `team/daniela/agents/conductor/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `data/models-ledger.json`, `team/daniela/**`, `work/drafts/daniela/**`, `tasks/*/packet.json`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
 - **Writes (outside git):** `/tmp/**`, `~/.sg-send/**`, `~/.abp/**`, `~/pki/**`, `~/.claude/projects/*/memory/**`, `~/promptugal/**`.
 - **Tools:** reading, searching and writing files inside the paths above; the shell, within the rules below; reading the web (never websummit.com by machine); GitHub's read tools on `promptugal/promptugal__news__fringe`, `promptugal/promptugal__news__website`, `promptugal/promptugal__news__storm-charles`; the cloud session's documentation, `add_repo` for reading, and its own wake.

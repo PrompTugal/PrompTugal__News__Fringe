@@ -2,7 +2,7 @@
 title: "ABP: conductor.fringe@PrompTugal.jose"
 agent: conductor.fringe@PrompTugal.jose
 role: conductor
-policy: abp/policies.json v0.4.1 (sha256:f57383c15bb5707b)
+policy: abp/policies.json v0.4.1 (sha256:ccb6364a72004e5a)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -17,7 +17,7 @@ authority: Dinis Cruz, operator
 - **Runs on:** R1 (models: M1 (its person's account)); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** one per person: its person's lane, its own status file and its person's agents.
 - **Lane:** the channels: posts a person sends.
-- **Writes (this repository):** `team/jose/agents/conductor.json`, `team/jose/agents/conductor.fringe.json`, `team/jose/agents/conductor/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `data/models-ledger.json`, `team/jose/**`, `work/drafts/jose/**`, `work/drafts/**`, `work/18-outreach-kit.md`.
+- **Writes (this repository):** `team/jose/agents/conductor.json`, `team/jose/agents/conductor.fringe.json`, `team/jose/agents/conductor/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `data/models-ledger.json`, `team/jose/**`, `work/drafts/jose/**`, `tasks/*/packet.json`, `work/drafts/**`, `work/18-outreach-kit.md`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
 - **Writes (outside git):** `/tmp/**`, `~/.sg-send/**`, `~/.abp/**`, `~/pki/**`, `~/.claude/projects/*/memory/**`, `~/promptugal/**`.
 - **Tools:** reading, searching and writing files inside the paths above; the shell, within the rules below; reading the web (never websummit.com by machine); GitHub's read tools on `promptugal/promptugal__news__fringe`, `promptugal/promptugal__news__website`, `promptugal/promptugal__news__storm-charles`; the cloud session's documentation, `add_repo` for reading, and its own wake.

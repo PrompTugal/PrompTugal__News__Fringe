@@ -1,7 +1,7 @@
 {
   "about": "Every agent's grant, flattened from abp/policies.json by node abp/tools/abp.mjs build: what /abp/ shows.",
   "policy": "0.4.1",
-  "sha256": "f57383c15bb5707b",
+  "sha256": "ccb6364a72004e5a",
   "mode": "observe",
   "agents": [
     {
@@ -644,7 +644,8 @@
         "tasks/*/result-*.json",
         "data/models-ledger.json",
         "team/dinis/**",
-        "work/drafts/dinis/**"
+        "work/drafts/dinis/**",
+        "tasks/*/packet.json"
       ],
       "owns": [],
       "sends": [
@@ -693,6 +694,7 @@
         "data/models-ledger.json",
         "team/vicky/**",
         "work/drafts/vicky/**",
+        "tasks/*/packet.json",
         "work/13-editorial-check.md"
       ],
       "owns": [],
@@ -719,6 +721,7 @@
         "data/models-ledger.json",
         "team/indi/**",
         "work/drafts/indi/**",
+        "tasks/*/packet.json",
         "data/communities.json",
         "seed/communities-*.json",
         "admin/tools/communities.mjs",
@@ -749,6 +752,7 @@
         "data/models-ledger.json",
         "team/angelo/**",
         "work/drafts/angelo/**",
+        "tasks/*/packet.json",
         "admin/build/graph.mjs",
         "admin/build/graph.js",
         "admin/build/trace-page.mjs",
@@ -864,6 +868,7 @@
         "data/models-ledger.json",
         "team/jose/**",
         "work/drafts/jose/**",
+        "tasks/*/packet.json",
         "work/drafts/**",
         "work/18-outreach-kit.md"
       ],
@@ -890,7 +895,8 @@
         "tasks/*/result-*.json",
         "data/models-ledger.json",
         "team/silvio/**",
-        "work/drafts/silvio/**"
+        "work/drafts/silvio/**",
+        "tasks/*/packet.json"
       ],
       "owns": [],
       "sends": [
@@ -915,7 +921,8 @@
         "tasks/*/result-*.json",
         "data/models-ledger.json",
         "team/daniela/**",
-        "work/drafts/daniela/**"
+        "work/drafts/daniela/**",
+        "tasks/*/packet.json"
       ],
       "owns": [],
       "sends": [
@@ -1182,6 +1189,61 @@
         "pki.sgit.ai"
       ],
       "page": "abp/design.reach-b.fringe@PrompTugal.angelo.md"
+    },
+    {
+      "agent": "tracer.fix.fringe@PrompTugal.angelo",
+      "role": "observability",
+      "person": "angelo",
+      "account": "Angelo's",
+      "branch": "dev",
+      "writes": [
+        "team/angelo/agents/tracer.fix.json",
+        "team/angelo/agents/tracer.fix.fringe.json",
+        "team/angelo/agents/tracer.fix/**",
+        "data/keys.json (your own entry)",
+        "data/inboxes/<your key id>.json",
+        "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
+        "data/models-ledger.json",
+        "team/angelo/**",
+        "admin/tools/trace-event.mjs",
+        "admin/build/trace-page.mjs",
+        "admin/build/trace-strip.mjs"
+      ],
+      "owns": [],
+      "sends": [
+        "dev.send.sgraph.ai",
+        "pki.sgit.ai"
+      ],
+      "page": "abp/tracer.fix.fringe@PrompTugal.angelo.md"
+    },
+    {
+      "agent": "graph.fix.fringe@PrompTugal.angelo",
+      "role": "dev",
+      "person": "angelo",
+      "account": "Angelo's",
+      "branch": "dev",
+      "writes": [
+        "team/angelo/agents/graph.fix.json",
+        "team/angelo/agents/graph.fix.fringe.json",
+        "team/angelo/agents/graph.fix/**",
+        "data/keys.json (your own entry)",
+        "data/inboxes/<your key id>.json",
+        "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
+        "data/models-ledger.json",
+        "team/angelo/**",
+        "admin/build/graph.mjs",
+        "admin/build/graph.js",
+        "api/v1/graph.json"
+      ],
+      "owns": [],
+      "sends": [
+        "dev.send.sgraph.ai",
+        "pki.sgit.ai",
+        "openrouter.ai"
+      ],
+      "page": "abp/graph.fix.fringe@PrompTugal.angelo.md"
     }
   ]
 }

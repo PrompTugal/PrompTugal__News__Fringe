@@ -1,7 +1,7 @@
 {
   "about": "The Agent Behaviour Policies of Lisbon Fringe (lisbontechfringe.com, origin in admin/site.json; WS-215) as data: deny by default, one grant per role and agent, across this repository and the others the swarm touches. Ported from PrompTugal__News__Website board/abp/policies.json (abp@PrompTugal.dinis, v1.7.0, since 6 November 2026), not invented anew; built on RiskMandate's Agent Behaviour Policy and Licence to Operate (https://riskmandate.ai/agent-behaviour-policy.html). Read by the hooks (.claude/settings.json, .claude/hooks/abp.mjs) and by the gate's commit check (abp/tools/abp.mjs check). abp/<agent>.md is generated from this file (node abp/tools/abp.mjs build), never edited by hand. Kept by architect.1.fringe@PrompTugal.dinis (work/39); any relaxation, and any move towards enforcement, is Dinis's decision.",
   "version": "0.4.1",
-  "updated": "2026-11-11T19:52Z",
+  "updated": "2026-11-11T20:51Z",
   "operator": "Dinis Cruz",
   "kept_by": "architect.1.fringe@PrompTugal.dinis",
   "status": "DRAFT: grants proposed from the git log (data/architecture.json observed); Dinis and the lead review",
@@ -405,12 +405,14 @@
       "focus": "one per person: its person's lane, its own status file and its person's agents",
       "writes": [
         "team/{person}/**",
-        "work/drafts/{person}/**"
+        "work/drafts/{person}/**",
+        "tasks/*/packet.json"
       ],
       "subagents": true,
       "notify_person": true,
       "lane_writes_note": "a conductor's lane paths are listed under agents below (e.g. Indi's communities, Angelo's graph)",
-      "never": "instructs another person's agents; takes a claimed item without asking the lead"
+      "never": "instructs another person's agents; takes a claimed item without asking the lead",
+      "writes_note": "tasks/*/packet.json: a conductor issues signed task packets to another team's conductor and back (Dinis, 15:5x and 20:3x UTC: loops and calls for Angelo's team to run and vice versa); mapped 2026-11-11T20:51Z."
     },
     "architect": {
       "focus": "the map (data/architecture.json, /how/'s picture), the ABPs (abp/, .claude/), public guidance (CONTRIBUTING.md, /guidance/)",
@@ -598,7 +600,7 @@
         "docs/neo4j*"
       ],
       "send_hosts": [],
-      "send_hosts_note": "none yet: where Neo4j runs (in its own container, or Neo4j Aura with a credential) is Dinis's decision; the host is mapped here once he names it",
+      "send_hosts_note": "none yet: neo4j.1 reports (its inbox, 19:42 UTC, signer not yet verified) that Dinis made a Neo4j Aura instance and saved NEO4J_CLOUD; the instance's host (<id>.databases.neo4j.io, Bolt 7687) is added when Dinis confirms it",
       "never": "prints or commits a Neo4j password or key; loads personal data or contact details; changes another agent's files; uses ELASTIC_CLOUD (R8e)"
     },
     "grafana": {
@@ -934,6 +936,30 @@
       "account": "Angelo's",
       "lane": "reach circles: design B",
       "note": "mapped 2026-11-11T19:52Z: its own person's scope (team/angelo/drafts/, team/angelo/runs.md), the mapping rule"
+    },
+    "tracer.fix.fringe@PrompTugal.angelo": {
+      "role": "observability",
+      "under": "conductor.fringe@PrompTugal.angelo",
+      "writes_override": [
+        "team/angelo/**",
+        "admin/tools/trace-event.mjs",
+        "admin/build/trace-page.mjs",
+        "admin/build/trace-strip.mjs"
+      ],
+      "account": "Angelo's",
+      "note": "mapped 2026-11-11T20:51Z: a fixer under Angelo's conductor, inside the files its conductor's lane already holds (the mapping rule)"
+    },
+    "graph.fix.fringe@PrompTugal.angelo": {
+      "role": "dev",
+      "under": "conductor.fringe@PrompTugal.angelo",
+      "writes_override": [
+        "team/angelo/**",
+        "admin/build/graph.mjs",
+        "admin/build/graph.js",
+        "api/v1/graph.json"
+      ],
+      "account": "Angelo's",
+      "note": "mapped 2026-11-11T20:51Z: a fixer under Angelo's conductor, the same files as graph.fringe@PrompTugal.angelo (the mapping rule)"
     }
   },
   "external": {
@@ -1103,6 +1129,11 @@
         "round": 7,
         "file": "abp/reviews/2026-11-11-19.md",
         "at": "2026-11-11T19:52Z"
+      },
+      {
+        "round": 8,
+        "file": "abp/reviews/2026-11-11-20.md",
+        "at": "2026-11-11T20:51Z"
       }
     ]
   },
