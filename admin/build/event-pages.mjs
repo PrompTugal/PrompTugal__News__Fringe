@@ -62,7 +62,8 @@ const CSS = `.star{background:linear-gradient(135deg,var(--on-bg),var(--card) 70
 blockquote{margin:.4em 0;padding:.3em .8em;border-left:3px solid var(--line);color:var(--fg)}.yours{border-left:4px solid var(--warn)}`;
 
 // page(title, body, desc, head) and linkify come from build.mjs, so the layout, independence line and footer are the site's own.
-export function eventPages(events, { page, esc, linkify, SITE, card, cardList }) {
+export function eventPages(events, { page, esc, linkify, SITE, card, cardList, orgs }) {
+  ORGS = orgs || null;
   const list = events.filter(hasPage);
   return list.map((e) => {
     const url = SITE.replace(/\/$/, '') + eventPath(e);
