@@ -1,6 +1,6 @@
 {
   "agent": "elastic.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T20:11Z",
+  "updated": "2026-11-11T20:25Z",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis, at Dinis's word (briefs/2026-11-11-1630-r5-r8-r9-enforced-and-elastic.md)",
   "branch": "dev",
@@ -30,7 +30,8 @@
     "19:26: Dinis decided that Privacy Mode stays off ('actually I want to see the prompts'). Recorded in docs/elastic-guidance.md section 4 as the one exception: prompts stay in traces-*, are read by drill-down, are never on shared dashboards, with short retention proposed",
     "19:30 UTC: at Dinis's word ('can you now generate some traffic?'), 28 model calls through the router (task WS-215/elastic-traffic/classify-event: 12 public Fringe events; cheap deepseek-v4-flash 12, check llama-3.3-70b 12, strong claude-sonnet-5.5 4), 0.0105 USD, all ledgered; OpenRouter sent 56 spans to traces-generic.otel-default. Dashboard 9 [A1 calls, from OpenRouter](https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io/app/dashboards#/view/abaa023e-80ff-61c8-c8c4-1026793833ed): 28 panels, 0 errors, no prompt text on any panel. Seen: 7 providers served them; time to first token about 130 to 200 ms (open weight) against 1,877 ms (Sonnet); 17.9% ended at 'length' (max_tokens 200 too low, 2 of 4 Sonnet calls included).",
     "19:35: architect.1's note (material): neo4j.1.fringe@PrompTugal.dinis started at Dinis's word (19:33 UTC), without ELASTIC_CLOUD (R8e). Exported swarm-flows for it: data/elastic-export-swarm-flows.json (62 events, 4 flows, 51 with a parent link; trace_id, span_id, parent_span_id, unit_id, parent_id, altitude, role, phase, environment, runner, model, key_fp, at, seq, valid; 0 held back), with admin/tools/elastic-export.mjs, re-run hourly",
-    "20:11 UTC wake: 27 indices, about 16,300 documents refreshed. fringe-events had 30 rejected: read_at with trailing punctuation ('2026-11-11T11:55:00Z;' x27, '...Z.' x3) since researcher.2's 33587a6; my ingest now takes the leading ISO time (0 errors), and researcher.2 is told. Mirrors are now pruned: a record gone from its source file leaves Elastic (events 1, graph 12, models 3 removed). Submissions in the hour: architect.1 swarm-flows (live, through logSubmission) and swarm-abp-reviews (68), 0 held, 0 errors. OpenRouter: 55 calls traced so far (27 new Sonnet calls from another agent, about 0.44 USD). No new brief."
+    "20:11 UTC wake: 27 indices, about 16,300 documents refreshed. fringe-events had 30 rejected: read_at with trailing punctuation ('2026-11-11T11:55:00Z;' x27, '...Z.' x3) since researcher.2's 33587a6; my ingest now takes the leading ISO time (0 errors), and researcher.2 is told. Mirrors are now pruned: a record gone from its source file leaves Elastic (events 1, graph 12, models 3 removed). Submissions in the hour: architect.1 swarm-flows (live, through logSubmission) and swarm-abp-reviews (68), 0 held, 0 errors. OpenRouter: 55 calls traced so far (27 new Sonnet calls from another agent, about 0.44 USD). No new brief.",
+    "20:25: Dinis on the OpenRouter traces: 'ok for a longer retention' (not 7 days). No change made: traces-generic.otel-default uses Elastic's managed traces@lifecycle (rollover at 30 days or 50 GB, no delete phase), so traces and their prompts are kept indefinitely. A cap later goes in traces-otel@custom with our own ILM policy, never by editing the managed one"
   ],
   "next": [
     "each wake: the OpenRouter traces come in with every router call (dashboard 9); join them with fringe-altitudes A1 units on model and time",
@@ -42,7 +43,6 @@
     "Maps of events and places; alerts on asks for Dinis; Kibana spaces per site"
   ],
   "asks": [
-    "Dinis: OK to set 7-day retention on the OpenRouter traces data stream (traces-generic.otel-default), now that it holds prompts by your decision?",
     "Dinis: the APM key for OpenTelemetry traces. In Kibana: Observability > Applications > Service inventory > Settings > Agent keys > Create APM agent key (event:write only), or Fleet > Agent policies > Elastic Cloud agent policy > Elastic APM > Agent authorization > Secret token. Save it as a Network secret on the 'PrompTugal Fringe' environment (title bar > environment > Edit): host my-observability-deployment-cd4ce8.apm.us-central1.gcp.cloud.es.io, header Authorization, value 'ApiKey <key>' (or 'Bearer <token>'). The secure form cannot take it (the host name is over 64 characters). Never in chat. Then elastic.1 sends one test span.",
     "Dinis: the superuser password stays shared for now, used only by elastic.1 and architect.1 (your rule, 19:1x UTC; architect.1 writes it into the ABPs). Agent Builder's MCP server for our agents needs an API key per caller: your decision when we get there.",
     "architect.1 / Dinis: for agents to push directly, both deployment hosts must be in their ABP 'Sends to' (es and kb); until then the feed path works for every agent. I messaged architect.1 by session message at Dinis's word (send_message is outside my grant).",
