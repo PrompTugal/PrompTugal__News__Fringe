@@ -2,7 +2,7 @@
 title: "ABP: researcher.fringe@PrompTugal.dinis"
 agent: researcher.fringe@PrompTugal.dinis
 role: researcher
-policy: abp/policies.json v0.1.0 (sha256:dc582938d4c7e8d7)
+policy: abp/policies.json v0.3.2 (sha256:e97dcdef0c31e21e)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -16,19 +16,19 @@ authority: Dinis Cruz, operator
 - **Role:** researcher. **Account:** the old lead's.
 - **Runs on:** R1 (models: M1 Sonnet; M2 for the second opinion); **I/O level:** L4 (a branch; the lead brings it onto dev) (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** events re-read at their public source, hourly; sources.md.
-- **Writes (this repository):** `team/dinis/agents/researcher.json`, `team/dinis/agents/researcher/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `data/events.json`, `seed/**`, `sources.md`, `api/v1/README.md`.
+- **Writes (this repository):** `team/dinis/agents/researcher.json`, `team/dinis/agents/researcher.fringe.json`, `team/dinis/agents/researcher/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `data/events.json`, `seed/**`, `sources.md`, `api/v1/README.md`, `data/places.json`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
 - **Writes (outside git):** `/tmp/**`, `~/.sg-send/**`, `~/.abp/**`, `~/pki/**`, `~/.claude/projects/*/memory/**`, `~/promptugal/**`.
 - **Tools:** reading, searching and writing files inside the paths above; the shell, within the rules below; reading the web (never websummit.com by machine); GitHub's read tools on `promptugal/promptugal__news__fringe`, `promptugal/promptugal__news__website`, `promptugal/promptugal__news__storm-charles`; the cloud session's documentation, `add_repo` for reading, and its own wake.
 - **Sends to:** `dev.send.sgraph.ai`, `pki.sgit.ai` only.
-- **Pushes to:** `work/researcher.fringe` (the lead reviews and brings it onto dev).
+- **Pushes to:** `dev` with `AGENT=researcher.fringe@PrompTugal.dinis admin/tools/release.sh`.
 - **Never:** reads websummit.com by machine; publishes a guess as a fact; names a private person.
 
 ## Outside the mandate (logged, not blocked)
 
 - Any connector: Gmail, Google Drive, Calendar, Claude Docs, any MCP server but GitHub's read tools and the cloud session's own tools (R3).
 - New sessions, scheduled tasks for other sessions, environments, credentials, workflows (R4).
-- Pushing anywhere but `work/researcher.fringe`; force-push, branch deletion, tags, history rewrites, empty commits (R5).
+- Pushing anywhere but `dev`; force-push, branch deletion, tags, history rewrites, empty commits (R5).
 - Writing outside the paths above; `abp/` and `.claude/` (the architect's), `briefs/` (the lead's), `BRIEF.md` (never rewritten), `admin/series.txt` (dev's, at a major release), and a shared file another agent owns (R6).
 - Comments, issues, pull requests or merges through GitHub's API; publishing artifacts; email; posts; a send to a host not listed (R7).
 - Printing the environment or a secret; reading a private key into the conversation (R8).
@@ -47,6 +47,7 @@ authority: Dinis Cruz, operator
 - **R9** Commit and release only under your own name: subject '<agent>: ...', trailers Agent:, Issue: WS-215, For:; AGENT=<agent> for release.sh. *(hook + gate; mode observe)*
 - **R10** Every run ends with its status file updated and its run logged (node admin/tools/agent-log.mjs, ROLES.md step 6). *(review; mode observe)*
 - **R11** If HOLD.md exists at the root, stop after pulling and say why. Only Dinis lifts a hold. *(rule; mode observe)*
+- **R12** Do not mix altitudes: the grant's altitude must not be above the mandate's (A4 swarm, A3 agent, A2 loop, A1 LLM call, A0 compute). A loop or an LLM call started for one task should hold only that task's grant. *(hook; mode observe)*
 
 ## Licence to operate
 

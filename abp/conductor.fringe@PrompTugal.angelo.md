@@ -2,7 +2,7 @@
 title: "ABP: conductor.fringe@PrompTugal.angelo"
 agent: conductor.fringe@PrompTugal.angelo
 role: conductor
-policy: abp/policies.json v0.1.0 (sha256:dc582938d4c7e8d7)
+policy: abp/policies.json v0.3.2 (sha256:e97dcdef0c31e21e)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -17,7 +17,7 @@ authority: Dinis Cruz, operator
 - **Runs on:** R1 (models: M1 (its person's account)); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** one per person: its person's lane, its own status file and its person's agents.
 - **Lane:** the graph and live views; SWARM.md also names 'the swarm's ABPs' in Angelo's lane: the architect proposes Angelo reviews these.
-- **Writes (this repository):** `team/angelo/agents/conductor.json`, `team/angelo/agents/conductor/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `team/angelo/**`, `work/drafts/angelo/**`, `admin/build/graph.mjs`, `admin/build/graph.js`, `admin/build/trace-page.mjs`, `admin/build/trace-strip.mjs`, `admin/tools/ptnews-index.mjs`, `admin/tools/trace-event.mjs`, `data/ptnews-index.json`, `api/v1/graph.json`.
+- **Writes (this repository):** `team/angelo/agents/conductor.json`, `team/angelo/agents/conductor.fringe.json`, `team/angelo/agents/conductor/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `team/angelo/**`, `work/drafts/angelo/**`, `admin/build/graph.mjs`, `admin/build/graph.js`, `admin/build/trace-page.mjs`, `admin/build/trace-strip.mjs`, `admin/tools/ptnews-index.mjs`, `admin/tools/trace-event.mjs`, `data/ptnews-index.json`, `api/v1/graph.json`.
 - **Owns (shared files; others send it their changes):** `admin/build/graph.mjs, graph.js`, `team/angelo/status.json`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
 - **Writes (outside git):** `/tmp/**`, `~/.sg-send/**`, `~/.abp/**`, `~/pki/**`, `~/.claude/projects/*/memory/**`, `~/promptugal/**`.
@@ -50,6 +50,7 @@ authority: Dinis Cruz, operator
 - **R9** Commit and release only under your own name: subject '<agent>: ...', trailers Agent:, Issue: WS-215, For:; AGENT=<agent> for release.sh. *(hook + gate; mode observe)*
 - **R10** Every run ends with its status file updated and its run logged (node admin/tools/agent-log.mjs, ROLES.md step 6). *(review; mode observe)*
 - **R11** If HOLD.md exists at the root, stop after pulling and say why. Only Dinis lifts a hold. *(rule; mode observe)*
+- **R12** Do not mix altitudes: the grant's altitude must not be above the mandate's (A4 swarm, A3 agent, A2 loop, A1 LLM call, A0 compute). A loop or an LLM call started for one task should hold only that task's grant. *(hook; mode observe)*
 
 ## Licence to operate
 

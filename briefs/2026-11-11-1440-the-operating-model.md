@@ -33,3 +33,31 @@ board: work/48
 > "see also newsroom.sgit.ai , namely the fractal semantic graphs"
 
 Read: https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html (the term and the five-rule grammar) and, from it, abp.sgit.ai's capability grammar (verb.object.reach, 23 primitives). The access axes in data/operating-model.json are rebased on those primitives rather than invented; the vault axis is proposed in the same grammar, for Dinis to accept.
+
+## The altitudes (14:57 UTC, Dinis with Angelo)
+
+> "We really like this meaning to connectivity, although you could just rename this to the ... altitudes? Yeah, the altitudes ... make this already about the code execution or the task execution ... or the craft execution."
+
+> "Even at the swarm level, it's still a unit of work ... it's work of work of work of work ... it's just how big it is ... Like, this is a model of what? ... Claude, propose some ideas, architect."
+
+> "I'm not 100% sure that the grant should be there in the middle, because the grant is actually happens at every altitude. Every altitude has fundamentally a mandate and the grant that we give. But I like how you say that the top level is a swarm ... agents of agents. Then you have a specific agent ... the run is like a worker ... something that has an agentic loop ... can make calls until it gets something done ... it's a closed unit of work."
+
+Done: slide 4 is now "The altitudes of execution": A4 swarm, A3 agent, A2 worker (the run: a closed loop that cannot start others or schedule), A1 call, A0 compute; the mandate and the grant on every altitude, not as a layer. Names proposed for what the model describes (data/operating-model.json altitudes.names_proposed): holon (recommended), unit of work with its doer, actor, executor, mandate.
+
+## Decisions and a discovery (15:06 UTC, Dinis with Angelo)
+
+> "I think he's altitudes of execution. That's exactly what we're saying ... the holacracy of work ... That's a good name ... Let's go along there. I think the altitudes of execution are very good."
+
+> "I think we just hit on something that is ridiculously powerful. Which is this idea that a lot of the vulnerabilities that happens is because we mix altitudes ... if I go to ChatGPT or Claude ... and I say, make this call, maybe this research ... I'm asking for a worker or a call but he has the power of an agent. So if he ... is enthusiastic, or starts to use the agentic capabilities ... scheduling, all those extra stuff."
+
+> "I like swarm, I like agents, I like call. I think this should be LLM call, not just a call ... And then compute ... propose different ones [for A2 and A1]."
+
+> "Every one of these has an identity. In fact, they're all signed ... I'm going to vouch for that PHP deployment on that app, and I'm going to give it a private key that only exists in that environment. So now that code actually has an identity ... the PKI is what allow us to make something an identity. Because from that moment on, that thing can identify itself, which is kind of the definition of an identity ... Identity of what? Is different ... But let's just run with it."
+
+Decided: **the altitudes of execution** (also the holarchy of work; the architect notes "Holacracy" is a trademarked management method, so "holarchy", Koestler's word, is the safe spelling); A4 swarm, A3 agent, A1 **LLM call**, A0 compute; A2's name open (options in data/operating-model.json). Identity: every altitude holds a key pair; a key is not what makes an agent. New: **mixing altitudes** as a class of vulnerability (slide 5), with the rule "the grant's altitude must not be above the mandate's".
+
+## A2 is the loop (15:13 UTC)
+
+> "use loop"
+
+The altitudes of execution: A4 swarm, A3 agent, A2 loop, A1 LLM call, A0 compute.

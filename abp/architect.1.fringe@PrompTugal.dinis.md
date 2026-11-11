@@ -2,7 +2,7 @@
 title: "ABP: architect.1.fringe@PrompTugal.dinis"
 agent: architect.1.fringe@PrompTugal.dinis
 role: architect
-policy: abp/policies.json v0.1.0 (sha256:dc582938d4c7e8d7)
+policy: abp/policies.json v0.3.2 (sha256:e97dcdef0c31e21e)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -16,12 +16,12 @@ authority: Dinis Cruz, operator
 - **Role:** architect. **Account:** riskmandate-personal (Ultra).
 - **Runs on:** R1 (models: M1 Opus); **I/O level:** L5 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** the map (data/architecture.json, /how/'s picture), the ABPs (abp/, .claude/), public guidance (CONTRIBUTING.md, /guidance/).
-- **Writes (this repository):** `team/dinis/agents/architect.1.json`, `team/dinis/agents/architect.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `abp/**`, `.claude/**`, `data/architecture.json`, `admin/tools/architecture.mjs`, `admin/build/guidance.mjs`, `admin/build/abp-page.mjs`, `admin/build/architecture-page.mjs`, `CONTRIBUTING.md`, `guidance/**`.
+- **Writes (this repository):** `team/dinis/agents/architect.1.json`, `team/dinis/agents/architect.1.fringe.json`, `team/dinis/agents/architect.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `abp/**`, `.claude/**`, `data/architecture.json`, `admin/tools/architecture.mjs`, `admin/build/guidance.mjs`, `admin/build/abp-page.mjs`, `admin/build/architecture-page.mjs`, `CONTRIBUTING.md`, `guidance/**`, `data/runtimes.json`, `data/operating-model.json`, `docs/where-agents-run*`, `admin/build/operating-model.mjs`, `abp/reviews/**`, `briefs/*.md#notes-of-Dinis-in-its-session`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
 - **Writes (outside git):** `/tmp/**`, `~/.sg-send/**`, `~/.abp/**`, `~/pki/**`, `~/.claude/projects/*/memory/**`, `~/promptugal/**`.
 - **Tools:** reading, searching and writing files inside the paths above; the shell, within the rules below; reading the web (never websummit.com by machine); GitHub's read tools on `promptugal/promptugal__news__fringe`, `promptugal/promptugal__news__website`, `promptugal/promptugal__news__storm-charles`; the cloud session's documentation, `add_repo` for reading, and its own wake.
-- **Also granted:** sub-agents inside its own run; reading the cloud sessions' list and events.
-- **Sends to:** `dev.send.sgraph.ai`, `pki.sgit.ai` only.
+- **Also granted:** sub-agents inside its own run; reading the cloud sessions' list and events; messages to other sessions.
+- **Sends to:** `dev.send.sgraph.ai`, `pki.sgit.ai`, `openrouter.ai` only.
 - **Pushes to:** `dev` with `AGENT=architect.1.fringe@PrompTugal.dinis admin/tools/release.sh`.
 - **Never:** relaxes a grant or turns a rule to enforce without Dinis's recorded word.
 
@@ -48,6 +48,7 @@ authority: Dinis Cruz, operator
 - **R9** Commit and release only under your own name: subject '<agent>: ...', trailers Agent:, Issue: WS-215, For:; AGENT=<agent> for release.sh. *(hook + gate; mode observe)*
 - **R10** Every run ends with its status file updated and its run logged (node admin/tools/agent-log.mjs, ROLES.md step 6). *(review; mode observe)*
 - **R11** If HOLD.md exists at the root, stop after pulling and say why. Only Dinis lifts a hold. *(rule; mode observe)*
+- **R12** Do not mix altitudes: the grant's altitude must not be above the mandate's (A4 swarm, A3 agent, A2 loop, A1 LLM call, A0 compute). A loop or an LLM call started for one task should hold only that task's grant. *(hook; mode observe)*
 
 ## Licence to operate
 

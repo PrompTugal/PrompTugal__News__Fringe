@@ -63,7 +63,7 @@ for (const e of events) {
   if (!got?.calendar) continue;
   const cal = got.calendar, key = CAL_ALIAS[norm(cal.name)] ?? norm(cal.name);
   const o = orgs.find((x) => norm(x).includes(key) || key.includes(norm(x)));
-  if (!o) { unmatched.push(`${cal.name} (${e.id})`); continue; }
+  if (!o) { unmatched.push(e.id); continue; }
   const c = community(o);
   const src = { url: e.url, read_at: got.read_at, what: "the event page's hosting Luma calendar" };
   if (!c.sources.some((s) => s.url === e.url)) c.sources.push(src);
@@ -81,7 +81,7 @@ fs.writeFileSync(path.join(ROOT, 'data/communities.json'), JSON.stringify({
   about: "Lisbon Fringe's communities (work/04): the groups behind this week's events, each with its public links and its events (ids in data/events.json; the id here is its /graph/ node id without 'community:'). Organisations only: a personal Luma calendar, a host or an independent organiser is never listed. No contact details. Independent of Web Summit.",
   by: 'conductor.fringe@PrompTugal.indi', updated: now(),
   how: "admin/tools/communities.mjs: each Luma event page in data/events.json re-read once; only its hosting calendar (name, short description, website, public page) is kept, with the page and the time read. 'what' is quoted from that calendar, not written by us. Communities with no public calendar keep join 'unknown' until their own page is read.",
-  unmatched_calendars: unmatched,
+  unmatched_calendar_events: unmatched,   // events whose calendar matched none of its organisers (ids only: a calendar held out stays unnamed)
   communities: list,
 }, null, 2) + '\n');
 console.log(`data/communities.json: ${list.length} communities, ${list.filter((c) => c.sources.length).length} with a public calendar read; unmatched: ${unmatched.length}`);

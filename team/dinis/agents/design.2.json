@@ -1,9 +1,9 @@
 {
  "agent": "design.2.fringe@PrompTugal.dinis",
  "role": "design",
- "state": "idle: nothing open I can take; D16 waits for /submit/ (work/06, dev.2)",
- "updated": "2026-11-11T14:20Z",
- "doing": "14:18 wake: live QA of My day, design B with stars, the gallery and the new home strip passed; nothing to fix",
+ "state": "idle: nothing open in my lane",
+ "updated": "2026-11-11T15:19Z",
+ "doing": "15:17 wake: read briefs 15, the operating model and the relaxations (no change for design); inbox empty; live QA of home stars, /now/ timeline, design B, /my/ and the share card passed; D34 (old address redirect) is a dev task, not mine",
  "done": [
   "D29 My day live at /my/ with stars everywhere",
   "D28 now strip module (nowstrip.mjs) handed to design.1",
@@ -11,9 +11,9 @@
   "D2 share card live: https://fringe.promptugal.news/assets/og/share.png image/png 1200x630 at v0.1.65"
  ],
  "next": [
-  "D16 once /submit/ exists (work/06)",
-  "restyle design B or /my/ if D22 changes the tokens",
-  "any new D-task or brief"
+  "any new D-task or brief",
+  "restyle design B, /my/ or the share card if D22 changes the tokens",
+  "Dinis: pick a design from the lab (A to D) and I polish it"
  ],
  "asks": [
   "Dinis: design.2's public key is in data/keys.json (id design.2.fringe-dinis); PrompTugal__News__Website board/keys.json is a different repository this session cannot reach, so someone with access adds it",

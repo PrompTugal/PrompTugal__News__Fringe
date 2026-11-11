@@ -1,12 +1,12 @@
 {
   "by": "conductor.fringe@PrompTugal.vicky",
-  "updated": "2026-11-11T14:37Z",
+  "updated": "2026-11-11T15:24Z",
   "person": "vicky",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.vicky, started 11:05 UTC by conductor.B@PrompTugal.vicky; hourly wake until Friday 13 November (set by conductor.B)",
   "lane": "the editorial check (SWARM.md): every event verified before it goes up",
   "doing": [
-    "work/13 editorial check, now on the data only: machine re-reads of Luma, Meetup and Eventbrite paused at Vicky's word (30 pages read earlier, all matched)"
+    "work/13 editorial check, data only (machine reads of Luma, Meetup, Eventbrite paused): seven passes; at 15:14 UTC data no contact details, no duplicates; 7 entries lack topics and 1 lacks end (sent to the researcher in work/13)"
   ],
   "done": [
     "read CLAUDE.md, SWARM.md, JOIN.md, BRIEF.md, BRIEF-CORRECTIONS.md, REALITY.md, ROSTER.md and work/",
@@ -17,7 +17,8 @@
     "wake trigger prompt updated at Vicky's confirmation (naming rule corrected)",
     "pass 4 of work/13 (8 online/postponed entries re-read, all match; 404 gap noted)",
     "pass 5 of work/13 (6 non-Luma pages re-read, all match); ack to conductor.B on programme@ using this check",
-    "pass 6 of work/13 (read the 14:15 data; earlier suggestions confirmed in the data)"
+    "pass 6 of work/13 (read the 14:15 data; earlier suggestions confirmed in the data)",
+    "pass 7 of work/13 (data lint of 177 events)"
   ],
   "next": [
     "check the data itself at each wake: labels, statuses, contact details, private people, times",

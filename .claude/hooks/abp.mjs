@@ -13,11 +13,16 @@
 // abp/overrides.json, both logged as 'override' with who, why and when. Today every rule is 'observe'.
 // Every decision is appended to ~/.abp/log/<session>.jsonl (no secrets: commands are cut and redacted).
 // A broken hook must never stop an agent: every mode catches its own errors, logs them and exits 0.
+// WHAT IT TOUCHES (security finding 28, hardened 11 November 2026; tested by abp/tools/abp.mjs test under Node's
+// permission model): it reads only the tool-call input on stdin, abp/ (the policy, the agent's ABP, overrides), its own
+// source (the sha check), HOLD.md and .git/HEAD in the project, and ~/.abp/whoami (the agent's label, written by
+// `node abp/tools/abp.mjs whoami`). It never reads ~/.sg-send or any key store, never lists or dumps the environment
+// (it reads only CLAUDE_PROJECT_DIR, ABP_AGENT, ABP_LOG_DIR, ABP_OVERRIDE and ABP_OVERRIDE_BY), starts no process,
+// makes no network call, and writes only its own log in ~/.abp/log/.
 import fs from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
 import crypto from 'node:crypto'
-import { execFileSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 
 const HERE = path.dirname(fileURLToPath(import.meta.url))
@@ -37,7 +42,7 @@ export function loadPolicy(dir = PROJECT) {
 }
 
 // ---------- who am I ----------
-// The agent comes from the session's own key label (~/.sg-send/keys/*/metadata.json), or ABP_AGENT.
+// The agent comes from ~/.abp/whoami (its key's label, written by `node abp/tools/abp.mjs whoami`), or ABP_AGENT.
 // Names: <name>.fringe@PrompTugal.<person> (name = role or role.n); anything else with an @ is external.
 export function parseAgent(label) {
     let m = /^([a-z][a-z0-9.-]*?)\.fringe@PrompTugal\.([a-z]+)$/i.exec(label || '')
@@ -46,7 +51,7 @@ export function parseAgent(label) {
     if (m) return { kind: 'external', name: m[1].toLowerCase(), person: null, agent: label }
     return null
 }
-export function whoAmI(keysDir = process.env.ABP_KEYS_DIR || path.join(HOME, '.sg-send', 'keys'), P = null) {
+export function whoAmI(whoFile = path.join(HOME, '.abp', 'whoami'), P = null) {
     const finish = w => {
         if (!w) return w
         try { P = P || loadPolicy() } catch { return w }
@@ -57,17 +62,9 @@ export function whoAmI(keysDir = process.env.ABP_KEYS_DIR || path.join(HOME, '.s
         return w
     }
     if (process.env.ABP_AGENT) { const r = parseAgent(process.env.ABP_AGENT); if (r) return { ...finish(r), how: 'ABP_AGENT' } }
-    const found = new Map()
-    try {
-        for (const d of fs.readdirSync(keysDir)) {
-            try {
-                const m = JSON.parse(fs.readFileSync(path.join(keysDir, d, 'metadata.json'), 'utf8'))
-                const w = parseAgent(m.label); if (w) found.set(w.agent, w)
-            } catch { /* not a key folder */ }
-        }
-    } catch { /* no key store */ }
-    if (found.size === 1) return { ...finish([...found.values()][0]), how: 'session key label' }
-    return { kind: 'unidentified', role: null, name: null, person: null, agent: null, how: found.size ? `ambiguous: ${[...found.keys()].join(', ')}` : 'no agent key in this session' }
+    // the label only, from the hook's own folder; never the key store (finding 28)
+    try { const r = parseAgent(fs.readFileSync(whoFile, 'utf8').trim().split('\n')[0]); if (r) return { ...finish(r), how: '~/.abp/whoami' } } catch { /* not written yet */ }
+    return { kind: 'unidentified', role: null, name: null, person: null, agent: null, how: 'no ~/.abp/whoami (run: node abp/tools/abp.mjs whoami)' }
 }
 
 // ---------- globs and paths ----------
@@ -116,12 +113,11 @@ export function sharedOwner(r, who, P = loadPolicy()) {
 }
 
 // a write to an absolute path: protected first, then shared files, then the grant
-export function checkWrite(who, abs, { creating = false } = {}, P = loadPolicy()) {
+export function checkWrite(who, abs, { readOwner = null } = {}, P = loadPolicy()) {
     const r = rel(abs)
     const target = r ?? path.resolve(abs)
     const prot = checkProtected(who, abs, P)
     if (prot) return prot
-    if (r !== null && /^\.github\/workflows\//.test(r) && creating) return deny('R4', `a new workflow (${r}) only with Dinis`)
     if (r === null) {
         if (matches(target, P.common.writes_outside_repo, who)) return allow('write-outside')
         return deny('R6', `${target} is outside the repository and outside the scratch paths of the grant`)
@@ -135,9 +131,11 @@ export function checkWrite(who, abs, { creating = false } = {}, P = loadPolicy()
     if (matches(r, g.writes, who)) return allow('write')
     // work/{claimed}: a board item whose owner: line names this agent, or no one yet (a claim)
     if (/^work\/(design\/)?[^/]+\.md$/.test(r) && !/README\.md$/.test(r) && g.writes.includes('work/{claimed}')) {
+        if (!readOwner) return allow('write', `board item ${r}: its owner is checked at the gate, not by the hook`)
         let owner = ''
-        try { owner = (/^owner:\s*(.*)$/m.exec(fs.readFileSync(abs, 'utf8')) || [, ''])[1].trim() } catch { owner = '' }
+        try { owner = String(readOwner(abs) || '') } catch { owner = '' }
         if (!owner || owner.toLowerCase().includes(String(who.agent).toLowerCase())) return allow('write', `board item ${r} (owner: ${owner || 'none'})`)
+        if (P.common.person_conductor_items && who.person && owner.toLowerCase().includes(`conductor.fringe@promptugal.${who.person}`)) return allow('write', `board item ${r}, owned by its own person's conductor`)
         return deny('R6', `${r} is owned by ${owner}: ask the lead before taking a claimed item`)
     }
     return deny('R6', `${r} is not in ${who.agent}'s grant (abp/${who.agent}.md); if you need it, say so in your status asks ('Dinis:')`)
@@ -177,8 +175,9 @@ function verbOf(seg) {
     return { verb: path.basename(t[i] || ''), args: t.slice(i + 1), all: t }
 }
 
-function currentBranch(cwd) {
-    try { return execFileSync('git', ['rev-parse', '--abbrev-ref', 'HEAD'], { cwd: cwd || PROJECT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'], timeout: 3000 }).trim() } catch { return null }
+function currentBranch() {
+    // .git/HEAD, read as a file: no git process (finding 28)
+    try { const h = fs.readFileSync(path.join(PROJECT, '.git', 'HEAD'), 'utf8').trim(); const m = /^ref: refs\/heads\/(.+)$/.exec(h); return m ? m[1] : 'HEAD' } catch { return null }
 }
 
 const SEND_FLAGS = /^(-d|--data.*|-F|--form.*|-T|--upload-file|--json|--post-data.*|--post-file.*|--body-data.*|--body-file.*)$/
@@ -208,7 +207,7 @@ export function checkProtected(who, abs, P = loadPolicy()) {
     for (const pr of P.common.protected) {
         const re = globToRe(fill(pr.glob, who))
         if (re.test(target) || re.test(target + '/x')) {   // a folder (rm -rf .claude) counts as its contents
-            if (pr.owner && who.kind === 'team' && (who.role === pr.owner || (pr.owner === 'conductor' && who.role === 'lead'))) return null
+            if (who.kind === 'team' && ((pr.owner && (who.role === pr.owner || (pr.owner === 'conductor' && who.role === 'lead'))) || (pr.also || []).includes(who.role))) return null
             return deny('R6', `${target} is protected: ${pr.why}${pr.owner ? ` (the ${pr.owner}'s)` : ''}`)
         }
     }
@@ -244,7 +243,7 @@ export function checkBash(who, command, cwd, P = loadPolicy()) {
                 const esc = target.replace(/[.\/]/g, '\\$&')
                 const okRef = r => new RegExp(`^(HEAD:|${esc}:)?(refs/heads/)?${esc}$`).test(r)
                 if (refs.length && !refs.every(okRef)) return deny('R5', `git push ${refs.join(' ')}: push to ${target} only${target !== 'dev' ? ' (a branch worker never pushes to dev; the lead reviews and brings its work)' : ''}`, 'git-push')
-                if (!refs.length) { const b = currentBranch(cwd); if (b !== target) return deny('R5', `git push from branch ${b || 'unknown'}: push to ${target} only`, 'git-push') }
+                if (!refs.length) { const b = currentBranch(); if (b !== target) return deny('R5', `git push from branch ${b || 'unknown'}: push to ${target} only`, 'git-push') }
             }
             if (sub === 'commit') {
                 if (rest.includes('--allow-empty')) return deny('R5', 'no empty commits', 'git-commit')
@@ -351,7 +350,7 @@ export function decide(input, who = whoAmI(), P = loadPolicy()) {
     if (['Edit', 'MultiEdit', 'Write', 'NotebookEdit'].includes(tool)) {
         const fp = ti.file_path || ti.notebook_path
         if (!fp) return allow('write')
-        const res = checkWrite(who, path.resolve(input.cwd || PROJECT, fp), { creating: tool === 'Write' && !fs.existsSync(path.resolve(input.cwd || PROJECT, fp)) }, P)
+        const res = checkWrite(who, path.resolve(input.cwd || PROJECT, fp), {}, P)
         return res.kind ? res : { ...res, kind: 'write' }
     }
     if (['Read', 'NotebookRead', 'Grep', 'Glob', 'LS'].includes(tool)) {
@@ -362,6 +361,19 @@ export function decide(input, who = whoAmI(), P = loadPolicy()) {
     if (tool === 'Bash') return checkBash(who, String(ti.command || ''), input.cwd, P)
     if (tool === 'WebFetch' || tool === 'WebSearch') return allow('web')
     return allow('other')
+}
+
+
+// ---------- R12: mixing altitudes (observe only) ----------
+// A lower-altitude unit of work handed a higher altitude's grant: a sub-agent (an A2 loop) inherits its parent's whole
+// grant; an LLM call (A1) made with tools. Logged as its own event; never blocks (Dinis, 13:36 UTC; R12 observe).
+export function altitudeCheck(input, who, P = loadPolicy()) {
+    const tool = input.tool_name || '', ti = input.tool_input || {}
+    const A = P.altitudes || {}, mine = (A.by_role || {})[who.role] || A.default || 'A3'
+    if (['Agent', 'Task'].includes(tool) && ((A.narrow_subagents || {}).types || []).includes(ti.subagent_type)) return null   // a read-only loop: its grant is A2
+    if (['Agent', 'Task'].includes(tool)) return { rule: 'R12', mandate: 'A2', grant: mine, reason: `a sub-agent (an A2 loop${ti.subagent_type ? ', ' + ti.subagent_type : ''}) inherits ${who.agent || 'its parent'}'s ${mine} grant` }
+    if (tool === 'Bash' && /(llm\.mjs|openrouter\.ai\/api\/v1\/chat)/.test(String(ti.command || '')) && /["']?tools["']?\s*[:=]|tool_choice/.test(String(ti.command || ''))) return { rule: 'R12', mandate: 'A1', grant: 'A2', reason: 'an LLM call (A1) made with tools (an A2 grant)' }
+    return null
 }
 
 // ---------- logging (no secrets) ----------
@@ -475,6 +487,7 @@ async function main() {
                 decision = m === 'enforce' && !override ? 'deny' : override ? 'override' : 'observe'
             }
             logEvent(sid, { ev: 'tool', agent: who.agent, who: who.kind, role: who.role, tool: input.tool_name, kind: d.kind, decision, would: d.decision === 'deny' ? 'deny' : undefined, rule: d.rule, reason: d.reason ? redact(d.reason) : undefined, override, target: targetOf(input), note: d.note })
+            try { const alt = altitudeCheck(input, who, P); if (alt) { const ov = overrideFor('R12', who, P); logEvent(sid, { ev: 'altitude', agent: who.agent, role: who.role, tool: input.tool_name, decision: ov ? 'override' : 'observe', rule: 'R12', mandate: alt.mandate, grant: alt.grant, reason: redact(alt.reason), override: ov || undefined }) } } catch { /* the altitude check never stops a call */ }
             if (decision === 'deny')
                 process.stdout.write(JSON.stringify({ hookSpecificOutput: { hookEventName: 'PreToolUse', permissionDecision: 'deny', permissionDecisionReason: `ABP ${d.rule} (abp/policies.json v${P.version}, enforced at Dinis's word): ${d.reason}. Logged. The escape hatch: a conductor or Dinis may override (abp/overrides.json or ABP_OVERRIDE); otherwise say so in your status asks for Dinis.` } }))
         }

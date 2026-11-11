@@ -1,17 +1,17 @@
 {
   "by": "conductor.fringe@PrompTugal.indi",
-  "updated": "2026-11-11T13:54Z",
+  "updated": "2026-11-11T14:58Z",
   "person": "indi",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.indi (session_01SZXKK9aBakmkfmRPBZ8v6H), hourly wake at :48 UTC until Friday 13 November; work/04 done; waiting on Indi for the next item",
   "lane": "communities and organisers (SWARM.md): the groups behind this week's events, how to join them (public links only), outreach drafts that a person sends",
   "doing": [
-    "keeping /communities/ fresh each wake (102 groups, 49 with their public calendar re-read at 2026-11-11T13:54Z)"
+    "keeping /communities/ fresh each wake (103 groups, 49 with their public calendar re-read at 2026-11-11T14:58Z)"
   ],
   "done": [
     "session key; public half in data/keys.json (signing sha256:d36cd619bbb9ddbb)",
     "work/04 done: /communities/ and /api/v1/communities.json",
-    "inbox drained: 4 messages (lead x3, architect.1 x1); replied to the lead on the ABP"
+    "security finding 10: staaake held out of data/communities.json (follows events.json); unmatched calendars now listed by event id only, never by name"
   ],
   "next": [
     "Indi's ABP: push it, or a link, to abp/indi/ once Indi says where it is",
