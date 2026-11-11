@@ -6,7 +6,7 @@ The Lisbon Tech Fringe swarm loaded into Neo4j as a property graph. It covers th
 
 ## What is in it (fact, read 2026-11-11T19:40Z, repo head 23442b9)
 
-2,236 nodes and 6,886 relationships (19:47 UTC, with the live flows). The counts by label and by verb are in `data/neo4j-stats.json`.
+2,236 nodes and 6,886 relationships (19:43 UTC, with the live flows). The counts by label and by verb are in `data/neo4j-stats.json`.
 
 | Source | Becomes |
 |---|---|
