@@ -2,7 +2,7 @@
 title: "ABP: ontologist.1.fringe@PrompTugal.dinis"
 agent: ontologist.1.fringe@PrompTugal.dinis
 role: ontologist
-policy: abp/policies.json v0.1.0 (sha256:0d0cc1ca1077e886)
+policy: abp/policies.json v0.1.0 (sha256:dc582938d4c7e8d7)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -13,7 +13,7 @@ authority: Dinis Cruz, operator
 
 ## Mandate (the grant)
 
-- **Role:** ontologist. **Account:** this (the lead's).
+- **Role:** ontologist. **Account:** riskmandate-personal (Ultra).
 - **Runs on:** R1 (models: M1 Sonnet); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** the semantic graph (work/42, brief 13): day, festival, organiser, event, session, place, persona, topic as JSON with stable ids, and their pages.
 - **Writes (this repository):** `team/dinis/agents/ontologist.1.json`, `team/dinis/agents/ontologist.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `data/graph/**`, `admin/build/graph-*.mjs`.

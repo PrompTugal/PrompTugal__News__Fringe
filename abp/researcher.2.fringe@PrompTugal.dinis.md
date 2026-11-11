@@ -2,7 +2,7 @@
 title: "ABP: researcher.2.fringe@PrompTugal.dinis"
 agent: researcher.2.fringe@PrompTugal.dinis
 role: researcher
-policy: abp/policies.json v0.1.0 (sha256:0d0cc1ca1077e886)
+policy: abp/policies.json v0.1.0 (sha256:dc582938d4c7e8d7)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -13,7 +13,7 @@ authority: Dinis Cruz, operator
 
 ## Mandate (the grant)
 
-- **Role:** researcher. **Account:** this (the lead's).
+- **Role:** researcher. **Account:** riskmandate-personal (Ultra).
 - **Runs on:** R1 (models: M1 Sonnet; M2 for the second opinion); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** events re-read at their public source, hourly; sources.md.
 - **Writes (this repository):** `team/dinis/agents/researcher.2.json`, `team/dinis/agents/researcher.2/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `data/events.json`, `seed/**`, `sources.md`, `api/v1/README.md`.

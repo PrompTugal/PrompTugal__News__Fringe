@@ -527,20 +527,20 @@
     "about": "Every agent in team/ROSTER.md, with its role and what it adds to the role's grant. 'branch' is where it pushes (dev unless named). The {person} and {name} in globs are filled from the agent's name <name>.fringe@PrompTugal.<person>.",
     "conductor.fringe@PrompTugal.dinis": {
       "role": "lead",
-      "account": "this (the lead's)"
+      "account": "riskmandate-personal (Ultra)"
     },
     "architect.1.fringe@PrompTugal.dinis": {
       "role": "architect",
-      "account": "this (the lead's)"
+      "account": "riskmandate-personal (Ultra)"
     },
     "fable.fringe@PrompTugal.dinis": {
       "role": "advisor",
       "branch": "work/fable.fringe",
-      "account": "this (the lead's)"
+      "account": "riskmandate-personal (Ultra)"
     },
     "observability.fringe@PrompTugal.dinis": {
       "role": "observability",
-      "account": "this (the lead's)",
+      "account": "riskmandate-personal (Ultra)",
       "owns_shared": [
         "admin/build/traffic.mjs"
       ]
@@ -552,7 +552,7 @@
         "admin/build/programme.mjs",
         "admin/build/designs/a.mjs"
       ],
-      "account": "this (the lead's)"
+      "account": "riskmandate-personal (Ultra)"
     },
     "design.2.fringe@PrompTugal.dinis": {
       "role": "design",
@@ -562,7 +562,7 @@
         "admin/tools/og-card.mjs",
         "admin/tools/design-preview.mjs"
       ],
-      "account": "this (the lead's)"
+      "account": "riskmandate-personal (Ultra)"
     },
     "design.3.fringe@PrompTugal.dinis": {
       "role": "design",
@@ -572,7 +572,7 @@
         "admin/build/how.mjs",
         "admin/build/designs/c.mjs"
       ],
-      "account": "this (the lead's)",
+      "account": "riskmandate-personal (Ultra)",
       "owns_shared": [
         "admin/build/event-pages.mjs"
       ]
@@ -584,7 +584,7 @@
         "admin/build/identity.mjs",
         "admin/build/tiers.mjs"
       ],
-      "account": "this (the lead's)",
+      "account": "riskmandate-personal (Ultra)",
       "owns_shared": [
         "admin/build/identity.mjs"
       ]
@@ -598,7 +598,7 @@
         "assets/vendor/**",
         "admin/tools/inboxes.py"
       ],
-      "account": "this (the lead's)",
+      "account": "riskmandate-personal (Ultra)",
       "owns_shared": [
         "admin/build/swarm.mjs"
       ]
@@ -611,26 +611,26 @@
         ".github/workflows/**",
         "api/v1/README.md"
       ],
-      "account": "this (the lead's)"
+      "account": "riskmandate-personal (Ultra)"
     },
     "researcher.2.fringe@PrompTugal.dinis": {
       "role": "researcher",
       "owns_shared": [
         "data/events.json"
       ],
-      "account": "this (the lead's)"
+      "account": "riskmandate-personal (Ultra)"
     },
     "capture.1.fringe@PrompTugal.dinis": {
       "role": "capture",
-      "account": "this (the lead's)"
+      "account": "riskmandate-personal (Ultra)"
     },
     "outreach.1.fringe@PrompTugal.dinis": {
       "role": "outreach",
-      "account": "this (the lead's)"
+      "account": "riskmandate-personal (Ultra)"
     },
     "usability.1.fringe@PrompTugal.dinis": {
       "role": "usability",
-      "account": "this (the lead's)"
+      "account": "riskmandate-personal (Ultra)"
     },
     "researcher.fringe@PrompTugal.dinis": {
       "role": "researcher",
@@ -758,7 +758,7 @@
     },
     "ontologist.1.fringe@PrompTugal.dinis": {
       "role": "ontologist",
-      "account": "this (the lead's)",
+      "account": "riskmandate-personal (Ultra)",
       "note": "started for brief 13 (work/42); mapped 2026-11-11T14:08Z at the lead's routing: its own role's scope, not a relaxation. Its edits to build.mjs, event-pages.mjs and api/v1/README.md are shared files and stay observed"
     },
     "conductor@web-summit.dinis": {

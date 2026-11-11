@@ -2,7 +2,7 @@
 title: "ABP: outreach.1.fringe@PrompTugal.dinis"
 agent: outreach.1.fringe@PrompTugal.dinis
 role: outreach
-policy: abp/policies.json v0.1.0 (sha256:0d0cc1ca1077e886)
+policy: abp/policies.json v0.1.0 (sha256:dc582938d4c7e8d7)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -13,7 +13,7 @@ authority: Dinis Cruz, operator
 
 ## Mandate (the grant)
 
-- **Role:** outreach. **Account:** this (the lead's).
+- **Role:** outreach. **Account:** riskmandate-personal (Ultra).
 - **Runs on:** R1 (models: M1 Sonnet); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** drafts to organisers and partners, the tracker; a person sends.
 - **Writes (this repository):** `team/dinis/agents/outreach.1.json`, `team/dinis/agents/outreach.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `work/drafts/**`, `data/outreach*.json`, `admin/outreach-sealed/**`, `admin/tools/outreach.py`.

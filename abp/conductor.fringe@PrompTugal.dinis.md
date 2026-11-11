@@ -2,7 +2,7 @@
 title: "ABP: conductor.fringe@PrompTugal.dinis"
 agent: conductor.fringe@PrompTugal.dinis
 role: lead
-policy: abp/policies.json v0.1.0 (sha256:0d0cc1ca1077e886)
+policy: abp/policies.json v0.1.0 (sha256:dc582938d4c7e8d7)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -13,7 +13,7 @@ authority: Dinis Cruz, operator
 
 ## Mandate (the grant)
 
-- **Role:** lead. **Account:** this (the lead's).
+- **Role:** lead. **Account:** riskmandate-personal (Ultra).
 - **Runs on:** R1 (models: M1 Opus); **I/O level:** L5 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** the swarm: routes work, keeps the board, REALITY.md, the roster, the briefs; brings branch workers' reviewed work onto dev.
 - **Writes (this repository):** `team/dinis/agents/conductor.json`, `team/dinis/agents/conductor/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `work/**`, `briefs/**`, `team/**`, `REALITY.md`, `BRIEF-CORRECTIONS.md`, `CLAUDE.md`, `ROLES.md`, `SWARM.md`, `JOIN.md`, `KICKOFF.md`, `README.md`, `sources.md`, `security/**`, `data/inboxes/**`, `data/inbox-counts.json`, `data/person-keys.json`, `data/links.json`, `data/places.json`, `admin/site.json`, `.gitignore`, `HOLD.md`.

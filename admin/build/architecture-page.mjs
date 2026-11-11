@@ -51,13 +51,13 @@ export function whereAgentsRunBody(esc, REPO) {
   const { css, body } = slideParts();
   const rt = existsSync(join(root, 'data/runtimes.json')) ? JSON.parse(read('data/runtimes.json')) : { agents: [] };
   const doc = md(read('docs/where-agents-run.md'), esc);
-  const rows = rt.agents.map((a) => `<tr><td><code>${esc(a.agent)}</code></td><td>${esc(a.role)}</td><td>${esc(a.runtime)}</td><td>${esc(a.models)}</td><td>${esc(a.io_level)}</td></tr>`).join('');
+  const rows = rt.agents.map((a) => `<tr><td><code>${esc(a.agent)}</code></td><td>${esc(a.role)}</td><td>${esc(a.runtime)}</td><td>${esc(a.models)}</td><td>${esc(a.io_level)}</td><td>${esc(a.mode || '')}</td></tr>`).join('');
   return `<style>${guidanceCss}${css}${PAGE_CSS}</style>
 <p class="muted"><a href="/agentic-team/">The agentic team</a> · a draft for Dinis and Angelo to correct (work/48)</p>
 <div class="wr-frame"><div class="wr-slide">${body}</div></div>${SCALE_JS}
 <div class="gd">${doc}</div>
 <h2>Every agent, where it runs today</h2>
-<div class="wr-tw"><table class="wr-agents"><thead><tr><th>Agent</th><th>Role</th><th>Runtime</th><th>Models</th><th>I/O level</th></tr></thead><tbody>${rows}</tbody></table></div>
+<div class="wr-tw"><table class="wr-agents"><thead><tr><th>Agent</th><th>Role</th><th>Runtime</th><th>Models</th><th>I/O level</th><th>Mode</th></tr></thead><tbody>${rows}</tbody></table></div>
 <p class="muted">The data: <a href="/api/v1/runtimes.json">/api/v1/runtimes.json</a> (from <code>data/runtimes.json</code>). The document: <a href="${esc(REPO)}/blob/dev/docs/where-agents-run.md"><code>docs/where-agents-run.md</code></a>. Who may edit what: <a href="/abp/">the Agent Behaviour Policies</a>.</p>`;
 }
 

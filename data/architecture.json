@@ -1,7 +1,7 @@
 {
   "about": "The map of Lisbon Fringe (work/38, brief 12): every repository, Claude account, environment, agent and person, the lines between teams and what flows across them, and who writes which paths. The 'observed' block is generated from git (node admin/tools/architecture.mjs); the rest is written by architect.1.fringe@PrompTugal.dinis from team/, ROLES.md, REALITY.md and team/accounts.json. The policy is abp/policies.json; this is the evidence it is drawn from.",
   "by": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T13:37Z",
+  "updated": "2026-11-11T14:27Z",
   "status": "first cut",
   "people": [
     {
@@ -51,7 +51,7 @@
     "source": "team/accounts.json (labels only, no address)",
     "items": [
       {
-        "label": "the lead's account (one of the two riskmandate accounts; Dinis to confirm)",
+        "label": "riskmandate-personal (Ultra): the lead's account (Dinis, brief 15)",
         "agents": [
           "conductor.fringe@PrompTugal.dinis",
           "architect.1",

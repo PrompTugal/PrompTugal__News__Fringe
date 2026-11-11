@@ -2,7 +2,7 @@
 title: "ABP: fable.fringe@PrompTugal.dinis"
 agent: fable.fringe@PrompTugal.dinis
 role: advisor
-policy: abp/policies.json v0.1.0 (sha256:0d0cc1ca1077e886)
+policy: abp/policies.json v0.1.0 (sha256:dc582938d4c7e8d7)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -13,7 +13,7 @@ authority: Dinis Cruz, operator
 
 ## Mandate (the grant)
 
-- **Role:** advisor. **Account:** this (the lead's).
+- **Role:** advisor. **Account:** riskmandate-personal (Ultra).
 - **Runs on:** R1 (models: M1 Fable); **I/O level:** L4 (a branch; the lead brings it onto dev) (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** advice to Dinis and the lead.
 - **Writes (this repository):** `team/dinis/agents/fable.json`, `team/dinis/agents/fable/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `advice/**`.

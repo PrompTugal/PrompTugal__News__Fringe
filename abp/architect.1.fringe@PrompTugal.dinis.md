@@ -2,7 +2,7 @@
 title: "ABP: architect.1.fringe@PrompTugal.dinis"
 agent: architect.1.fringe@PrompTugal.dinis
 role: architect
-policy: abp/policies.json v0.1.0 (sha256:0d0cc1ca1077e886)
+policy: abp/policies.json v0.1.0 (sha256:dc582938d4c7e8d7)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -13,7 +13,7 @@ authority: Dinis Cruz, operator
 
 ## Mandate (the grant)
 
-- **Role:** architect. **Account:** this (the lead's).
+- **Role:** architect. **Account:** riskmandate-personal (Ultra).
 - **Runs on:** R1 (models: M1 Opus); **I/O level:** L5 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** the map (data/architecture.json, /how/'s picture), the ABPs (abp/, .claude/), public guidance (CONTRIBUTING.md, /guidance/).
 - **Writes (this repository):** `team/dinis/agents/architect.1.json`, `team/dinis/agents/architect.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `abp/**`, `.claude/**`, `data/architecture.json`, `admin/tools/architecture.mjs`, `admin/build/guidance.mjs`, `admin/build/abp-page.mjs`, `admin/build/architecture-page.mjs`, `CONTRIBUTING.md`, `guidance/**`.

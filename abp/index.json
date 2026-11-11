@@ -1,14 +1,14 @@
 {
   "about": "Every agent's grant, flattened from abp/policies.json by node abp/tools/abp.mjs build: what /abp/ shows.",
   "policy": "0.1.0",
-  "sha256": "0d0cc1ca1077e886",
+  "sha256": "dc582938d4c7e8d7",
   "mode": "observe",
   "agents": [
     {
       "agent": "conductor.fringe@PrompTugal.dinis",
       "role": "lead",
       "person": "dinis",
-      "account": "this (the lead's)",
+      "account": "riskmandate-personal (Ultra)",
       "branch": "dev",
       "writes": [
         "team/dinis/agents/conductor.json",
@@ -51,7 +51,7 @@
       "agent": "architect.1.fringe@PrompTugal.dinis",
       "role": "architect",
       "person": "dinis",
-      "account": "this (the lead's)",
+      "account": "riskmandate-personal (Ultra)",
       "branch": "dev",
       "writes": [
         "team/dinis/agents/architect.1.json",
@@ -80,7 +80,7 @@
       "agent": "fable.fringe@PrompTugal.dinis",
       "role": "advisor",
       "person": "dinis",
-      "account": "this (the lead's)",
+      "account": "riskmandate-personal (Ultra)",
       "branch": "work/fable.fringe",
       "writes": [
         "team/dinis/agents/fable.json",
@@ -101,7 +101,7 @@
       "agent": "observability.fringe@PrompTugal.dinis",
       "role": "observability",
       "person": "dinis",
-      "account": "this (the lead's)",
+      "account": "riskmandate-personal (Ultra)",
       "branch": "dev",
       "writes": [
         "team/dinis/agents/observability.json",
@@ -133,7 +133,7 @@
       "agent": "design.1.fringe@PrompTugal.dinis",
       "role": "design",
       "person": "dinis",
-      "account": "this (the lead's)",
+      "account": "riskmandate-personal (Ultra)",
       "branch": "dev",
       "writes": [
         "team/dinis/agents/design.1.json",
@@ -163,7 +163,7 @@
       "agent": "design.2.fringe@PrompTugal.dinis",
       "role": "design",
       "person": "dinis",
-      "account": "this (the lead's)",
+      "account": "riskmandate-personal (Ultra)",
       "branch": "dev",
       "writes": [
         "team/dinis/agents/design.2.json",
@@ -194,7 +194,7 @@
       "agent": "design.3.fringe@PrompTugal.dinis",
       "role": "design",
       "person": "dinis",
-      "account": "this (the lead's)",
+      "account": "riskmandate-personal (Ultra)",
       "branch": "dev",
       "writes": [
         "team/dinis/agents/design.3.json",
@@ -227,7 +227,7 @@
       "agent": "design.4.fringe@PrompTugal.dinis",
       "role": "design",
       "person": "dinis",
-      "account": "this (the lead's)",
+      "account": "riskmandate-personal (Ultra)",
       "branch": "dev",
       "writes": [
         "team/dinis/agents/design.4.json",
@@ -259,7 +259,7 @@
       "agent": "dev.1.fringe@PrompTugal.dinis",
       "role": "dev",
       "person": "dinis",
-      "account": "this (the lead's)",
+      "account": "riskmandate-personal (Ultra)",
       "branch": "dev",
       "writes": [
         "team/dinis/agents/dev.1.json",
@@ -299,7 +299,7 @@
       "agent": "dev.2.fringe@PrompTugal.dinis",
       "role": "dev",
       "person": "dinis",
-      "account": "this (the lead's)",
+      "account": "riskmandate-personal (Ultra)",
       "branch": "dev",
       "writes": [
         "team/dinis/agents/dev.2.json",
@@ -337,7 +337,7 @@
       "agent": "researcher.2.fringe@PrompTugal.dinis",
       "role": "researcher",
       "person": "dinis",
-      "account": "this (the lead's)",
+      "account": "riskmandate-personal (Ultra)",
       "branch": "dev",
       "writes": [
         "team/dinis/agents/researcher.2.json",
@@ -363,7 +363,7 @@
       "agent": "capture.1.fringe@PrompTugal.dinis",
       "role": "capture",
       "person": "dinis",
-      "account": "this (the lead's)",
+      "account": "riskmandate-personal (Ultra)",
       "branch": "dev",
       "writes": [
         "team/dinis/agents/capture.1.json",
@@ -388,7 +388,7 @@
       "agent": "outreach.1.fringe@PrompTugal.dinis",
       "role": "outreach",
       "person": "dinis",
-      "account": "this (the lead's)",
+      "account": "riskmandate-personal (Ultra)",
       "branch": "dev",
       "writes": [
         "team/dinis/agents/outreach.1.json",
@@ -412,7 +412,7 @@
       "agent": "usability.1.fringe@PrompTugal.dinis",
       "role": "usability",
       "person": "dinis",
-      "account": "this (the lead's)",
+      "account": "riskmandate-personal (Ultra)",
       "branch": "dev",
       "writes": [
         "team/dinis/agents/usability.1.json",
@@ -833,7 +833,7 @@
       "agent": "ontologist.1.fringe@PrompTugal.dinis",
       "role": "ontologist",
       "person": "dinis",
-      "account": "this (the lead's)",
+      "account": "riskmandate-personal (Ultra)",
       "branch": "dev",
       "writes": [
         "team/dinis/agents/ontologist.1.json",

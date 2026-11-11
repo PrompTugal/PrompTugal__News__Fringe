@@ -2,7 +2,7 @@
 title: "ABP: usability.1.fringe@PrompTugal.dinis"
 agent: usability.1.fringe@PrompTugal.dinis
 role: usability
-policy: abp/policies.json v0.1.0 (sha256:0d0cc1ca1077e886)
+policy: abp/policies.json v0.1.0 (sha256:dc582938d4c7e8d7)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -13,7 +13,7 @@ authority: Dinis Cruz, operator
 
 ## Mandate (the grant)
 
-- **Role:** usability. **Account:** this (the lead's).
+- **Role:** usability. **Account:** riskmandate-personal (Ultra).
 - **Runs on:** R1 (models: M1 Sonnet); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** phone tasks and findings, filed as D-tasks.
 - **Writes (this repository):** `team/dinis/agents/usability.1.json`, `team/dinis/agents/usability.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `work/design/**`, `work/28-usability.md`.

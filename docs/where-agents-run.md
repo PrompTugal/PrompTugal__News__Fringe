@@ -60,7 +60,17 @@ board: work/48
 | chat session | a conversation's context, kept by the provider | a person with ChatGPT or Claude chat (L0); an API conversation |
 | agent loop | its context, files, vaults, status, inbox, wakes | researcher.2, the lead |
 
-The same model can serve all three; what changes is who holds the state and for how long. architect.1 maps it (work/48).
+The same model can serve all three; what changes is who holds the state and for how long.
+
+**Mapped by architect.1 (brief 15).** Each mode, with whose state it is and what that means for the record and the ABP:
+
+| id | Mode | State held by | Our record | ABP | Endpoints |
+|---|---|---|---|---|---|
+| S0 | stateless call | nobody | the router's ledger (prompt hash, model, cost) | the calling agent's grant; the call cannot act | M1 (API), M2, M3, M4 (API) |
+| S1 | chat session | the provider | none unless exported: outside git and the vaults | no hooks: a person is the loop (L0), or the output is checked where it lands | M1 (Claude chat), M4 (ChatGPT) |
+| S2 | agent loop | us: container, git, vaults | commits, status files, inboxes, the hook log | its grant, the hooks (R1, R2), the gate | M1 via R1/R2; M2/M3 via the router |
+
+Rules: a task's **state(t)** is the longest-lived state it needs (none, a conversation, memory across runs), and the formula adds `modes(r, m) ⊇ state(t)`. State the swarm must keep (decisions, evidence) lives in our record; **a chat session is never the only copy**. Dinis talking to an agent in its own session is an S1 input into an S2 agent: the agent writes it down (briefs/, its status) so it outlives the session.
 
 ### 2.4 The other requirements of a task
 
@@ -92,6 +102,7 @@ place(t) = the cheapest (r, m) such that
     reach(r)     ⊇ network(t)                   # it can reach what the task must read
     latency(r,m) ≤ time(t)                      # it answers in time
     oversight(r) ≥ oversight(t)                 # its actions can be observed against the ABP
+    modes(r,m)   ⊇ state(t)                     # stateless, chat session or agent loop (§2.3b)
 cost(r, m) = quota_pressure(r) × tokens(t) × price(m)      # quota is the scarce thing, so it weighs most
 ```
 
