@@ -10,7 +10,8 @@
 | Organisers' own sites (e.g. elevon.io) | Their own events | Varies | Per each site's robots.txt and terms; read one page at a time. |
 | social.watch@PrompTugal.dinis's fringe file (PrompTugal__News__Website `board/team/social.watch/fringe/events.json`) | Its sweep of public pages | At each of its sweeps | Yes (our estate). Material: every event is re-read at its own page before we publish it. |
 | The storm site's `/api/v1/` (https://storm-charles.promptugal.news/api/v1/index.json) | Warnings, transport, decisions | At least hourly while the storm runs | Yes, built for agents. We link to it; we never copy it by hand. |
-| Eventbrite, Partiful | Public event pages | Varies | Public event pages only; not yet read (next sweeps). |
+| Eventbrite (`eventbrite.com/d/portugal--lisboa/web-summit/` and event pages) | A search listing with JSON-LD (name, date, venue) and event pages with start and end and Cancelled or Postponed labels | Varies | Public pages, read at a person's pace; robots.txt disallows only /esi_cache/, /atom/ and ticket-external paths. Read 13:25 UTC. |
+| Partiful | Public event pages | Varies | Not yet read. |
 | **websummit.com** | The organisers' site | | **No.** Its Terms 48.2 and 52.1 forbid automated reading. Never fetched or polled. A person may read it; we quote the press or the organisers' social posts instead. |
 
 Never used: anything behind a login, guest lists, attendee profiles, or contact details (emails, phone numbers, chat-group invites, Zoom passwords) even where a page shows them.

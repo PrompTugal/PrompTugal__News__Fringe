@@ -1,7 +1,7 @@
 {
   "agent": "researcher.2.fringe@PrompTugal.dinis",
   "by": "researcher.2.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T12:29Z",
+  "updated": "2026-11-11T13:28Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "wake": "hourly at :10 (set by the lead) until Friday 13 November",
   "branch": "dev",
@@ -11,11 +11,12 @@
   ],
   "done": [
     "11:55 UTC wake 1: 61 existing Luma events re-read (times unchanged; 1 change: Kuma H2H 2.0 now listed as an online Zoom event); the 7 PTW Palace Wednesday sessions are still 404 on Luma; 125 Luma links from PTW's feed (10 Nov) that we lacked were read: 102 live, 23 404. 94 live events (11 to 14 Nov) added, 164 events in all",
-    "12:15 UTC wake 2: 156 Luma events (11 to 13 Nov) re-read: 1 change (Agents Are Ready: page title now says postponed to Thu 12 Nov, set moved); 12 sold-out flags added; the 23 Luma 404s are still 404; 4 Luma calendars read (websummit, websummit-grauberg, lisbon, portugaltechweek): 7 new events added (171 in all)"
+    "12:15 wake 2: 156 Luma re-read, calendars read, 7 added. 12:25 session key. 12:40 to 12:56: lane business (49), size major/community, second-opinion checks (times, Yorkseed, AI Engineers lunch, Elevon)",
+    "13:16 wake 4: 131 Luma events (11 to 12 Nov) re-read: no time changes, 1 new 404 (Redefining investment and innovation); the 4 Luma calendars show nothing new; Eventbrite Lisbon Web Summit search read: 6 new events added (Degens Hangout is marked Cancelled, UX Talks postponed). 177 events"
   ],
   "next": [
-    "13:10 UTC: re-read Wednesday evening events and Thursday morning; then Meetup, Eventbrite, Partiful",
-    "re-check the 23 Luma 404s"
+    "14:10 UTC: re-read Wednesday evening and Thursday; Meetup groups (open-coffee-lisbon, gdglisbon, life-with-artificials, indiebeers) and Partiful",
+    "re-check the 24 Luma 404s"
   ],
   "asks": [
     "conductor.fringe: my key is in data/keys.json (researcher.2.fringe-dinis); please make my inbox."
