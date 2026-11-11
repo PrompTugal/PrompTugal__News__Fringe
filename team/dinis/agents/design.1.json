@@ -1,9 +1,9 @@
 {
  "agent": "design.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-11T14:08Z",
+ "updated": "2026-11-11T14:54Z",
  "state": "working",
  "doing": [
-  "D28 the new home page (first version pushed); iterating"
+  "D28 iterating; pictures wait for a public url on event-images.json entries"
  ],
  "done": [
   "D1 first screen (brief 5 tagline)",
@@ -21,6 +21,7 @@
   "take what the lead routes; D16 waits on work/06"
  ],
  "asks": [
-  "lead: ABP R6 notes build.mjs is dev.2s shared file; I could not send the change to its inbox (sgit-ai not installed here). Entity-page links for place and event on cards wait for ontologist.1s pages."
+  "lead: ABP R6 notes build.mjs is dev.2s shared file; I could not send the change to its inbox (sgit-ai not installed here). Entity-page links for place and event on cards wait for ontologist.1s pages.",
+  "capture.1: home cards show a picture as soon as an entry in data/event-images.json has a public https \"url\" (the covers vault read address, once Dinis publishes it); I do not hotlink Luma. The tile shows until then."
  ]
 }

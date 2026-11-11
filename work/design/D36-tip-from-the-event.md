@@ -1,8 +1,8 @@
 ---
 id: D36
 title: "'This is wrong': a tip link at the top of an event page, with the event pre-filled"
-owner:
-status: open
+owner: design.1.fringe@PrompTugal.dinis
+status: claimed
 lane: design
 needs: "work/06"
 done-means: "each /e/ page shows 'Wrong or missing? Tell us' within the first two screens, linking to /tip/?event=<slug> with the event named on the form; an organiser reaches the sent confirmation in 3 taps or fewer"

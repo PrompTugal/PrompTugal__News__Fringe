@@ -47,13 +47,15 @@ const orgName = (e) => String(e.organiser || 'Organiser not named').replace(/\s*
 const TILES = ['--tile', '--river', '--terracotta', '--tram', '--ok'];
 const hash = (s) => [...String(s)].reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, 7);
 
+// data/event-images.json lists pointers (vault id, path, sha256, source URL). A card shows a picture only when its entry carries a public
+// https `url` (the covers vault's public read address, once capture.1 and Dinis publish it); we do not hotlink the organiser's own CDN.
 function images() {
   const f = join(root, 'data', 'event-images.json');
   if (!existsSync(f)) return {};
   try {
     const j = JSON.parse(readFileSync(f, 'utf8'));
-    const list = Array.isArray(j) ? j : Array.isArray(j.images) ? j.images : Object.entries(j.images || j).map(([id, v]) => ({ id, ...(typeof v === 'string' ? { url: v } : v) }));
-    return Object.fromEntries(list.filter((x) => x && x.id && /^https:\/\//.test(x.url || x.image || '')).map((x) => [x.id, x.url || x.image]));
+    const list = Array.isArray(j) ? j : Array.isArray(j.images) ? j.images : [];
+    return Object.fromEntries(list.filter((x) => x && (x.event_id || x.id) && /^https:\/\//.test(x.url || '')).map((x) => [x.event_id || x.id, x.url]));
   } catch { return {}; }
 }
 
@@ -77,7 +79,7 @@ export const homeCss = NOWSTRIP_CSS + `
 .hm-grid{display:grid;grid-template-columns:1fr;gap:var(--s4);list-style:none;margin:0;padding:0}
 .hm-c{position:relative;background:var(--panel);border:1px solid var(--hair);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
 .hm-c[hidden]{display:none}.hm-c.past{opacity:.6}
-.hm-img{display:block;height:132px;background:var(--paper-2);position:relative;overflow:hidden}.hm-img img{display:block;width:100%;height:100%;object-fit:cover}
+.hm-img{display:block;height:132px;background:var(--paper-2);position:relative;overflow:hidden}.hm-cr{position:absolute;left:0;bottom:0;right:0;padding:2px 6px;font:400 9.5px/1.3 var(--mono);color:#fff;background:rgba(0,0,0,.45)}.hm-img img{display:block;width:100%;height:100%;object-fit:cover}
 .hm-tile{display:flex;align-items:flex-end;justify-content:space-between;padding:10px 12px;color:var(--paper);background:color-mix(in srgb,var(--c) 78%,var(--ink))}
 .hm-tile b{font:600 44px/.9 var(--serif);letter-spacing:-.02em;opacity:.95}.hm-tile i{font:500 10.5px/1 var(--mono);font-style:normal;letter-spacing:.08em;text-transform:uppercase}
 .hm-tile::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.14);-webkit-mask:var(--az) 0 0/28px 28px;mask:var(--az) 0 0/28px 28px}
@@ -120,7 +122,7 @@ export function homeBody({ events, esc, eventPath, hasPage, now = new Date(), st
     const href = hasPage(e) ? eventPath(e) : e.url;
     const c = TILES[hash(org) % TILES.length];
     const media = imgs[e.id]
-      ? `<span class="hm-img"><img src="${esc(imgs[e.id])}" alt="" loading="lazy" decoding="async"></span>`
+      ? `<span class="hm-img"><img src="${esc(imgs[e.id])}" alt="" loading="lazy" decoding="async"><small class="hm-cr">image: ${esc(org)}</small></span>`
       : `<span class="hm-img hm-tile" style="--c:var(${c})"><b>${esc([...org.replace(/[^\p{L}\p{N} ]/gu, '').trim()][0] || '·')}</b><i>${esc(e.kind || 'event')}</i></span>`;
     const roles = roleOf(e).join(' ');
     return `<li id="ev-${esc(e.id)}" data-id="${esc(e.id)}" class="hm-c${e.status === 'cancelled' ? ' x' : ''}" data-s="${s}" data-e="${en}" data-r="${roles}" data-h="${esc(hoodKey(e))}">${media}
