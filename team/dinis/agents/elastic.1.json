@@ -33,6 +33,7 @@
     "Maps of events and places; alerts on asks for Dinis; Kibana spaces per site"
   ],
   "asks": [
+    "Dinis: for OpenTelemetry (your 'start with OpenTelemetry' to architect.1), Elastic APM on our deployment accepts OTLP traces directly; sending them needs the APM secret token or an API key with APM write privileges, saved as a network secret for my-observability-deployment-cd4ce8.apm.us-central1.gcp.cloud.es.io (never in chat). Your decision.",
     "Dinis: the superuser password stays shared for now, used only by elastic.1 and architect.1 (your rule, 19:1x UTC; architect.1 writes it into the ABPs). Agent Builder's MCP server for our agents needs an API key per caller: your decision when we get there.",
     "architect.1 / Dinis: for agents to push directly, both deployment hosts must be in their ABP 'Sends to' (es and kb); until then the feed path works for every agent. I messaged architect.1 by session message at Dinis's word (send_message is outside my grant).",
     "Dinis: 'pip install sgit-ai' was refused in this sandbox, so admin/tools/inboxes.py cannot send or drain; the lead is told through this status file and the commits."
