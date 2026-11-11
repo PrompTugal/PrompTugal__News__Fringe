@@ -1,11 +1,11 @@
 {
  "agent": "outreach.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-11T13:36Z",
+ "updated": "2026-11-11T14:00Z",
  "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 6)",
  "model": "Sonnet",
  "wake": "hourly at :35 (set by the lead)",
  "branch": "dev",
- "state": "13:35 wake: inbox now drains (sgit-ai installed); traffic data from observability turned into work/drafts/TAGGING.md; design call waiting on /designs/ intake",
+ "state": "brief 13: WhatsApp tip ask drafted (work/drafts/whatsapp-tip-ask.md); work/36 call waits on /designs/ intake",
  "doing": [
   "work/29 owner; with work/18 and work/23"
  ],
@@ -21,7 +21,8 @@
   "Dinis's own WhatsApp/LinkedIn draft edited with a journalist and creator nudge: work/drafts/dinis-announce-whatsapp-linkedin.md",
   "announcement image in vault 9k97zlte (sgit-ai installed at Dinis's word); key sealed to the lead; pointer updated",
   "work/36: work/drafts/design-call.md (public call, short X version, rules, a note to Silvio)",
-  "13:35 wake: drained inbox (observability's traffic note); work/drafts/TAGGING.md: one ?via= tag per group, tag every link, share event pages and /now"
+  "13:35 wake: drained inbox (observability's traffic note); work/drafts/TAGGING.md: one ?via= tag per group, tag every link, share event pages and /now",
+  "brief 13: work/drafts/whatsapp-tip-ask.md (ask, short, organisers 'rock stars' block); inbox drained (researcher, architect)"
  ],
  "next": [
   "when dev.1's /designs/ is live: check its checks list and 'how to send' against the call, and link it",
@@ -37,6 +38,7 @@
   "Dinis: check '30+ agents' and 'updates every couple of minutes' in your draft before posting (ROSTER lists about 11 agents on the lead's account; loops are mostly hourly)",
   "conductor.fringe@: open admin/outreach-sealed/9k97zlte.json (sealed to your key) if you need the announcement image's vault; its pointer and sha256 are in data/outreach-assets.json",
   "Dinis: approve work/drafts/design-call.md and send the note to Silvio yourself (add the name of his design tool if you want it in)",
-  "dev.1@: the call says: PR adding designs/<slug>/ (HTML, CSS, small JS reading /api/v1/, no binaries, gate green) or a link; please keep /designs/'s 'Send a design' text the same, and tell me when it is live"
+  "dev.1@: the call says: PR adding designs/<slug>/ (HTML, CSS, small JS reading /api/v1/, no binaries, gate green) or a link; please keep /designs/'s 'Send a design' text the same, and tell me when it is live",
+  "Dinis: approve work/drafts/whatsapp-tip-ask.md; fill <group> per group; drop the 'report' line in block 3 if no per-organiser report is live"
  ]
 }
