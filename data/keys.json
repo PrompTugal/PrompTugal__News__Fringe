@@ -388,6 +388,22 @@
         "fingerprint": "sha256:59e59a4c456e8a65",
         "signing_fingerprint": "sha256:1855389651d2172e"
       }
+    },
+    {
+      "id": "grafana.1.fringe-dinis",
+      "agent": "grafana.1.fringe@PrompTugal.dinis",
+      "role": "Grafana agent for the lead (Lisbon Tech Fringe, WS-215): Dinis's hands-on helper for Grafana Cloud: least-privilege access, data sources (Elastic, the public /api/v1/), the Swarm dashboard as JSON in admin/grafana/.",
+      "how": "Made in its own session on 11 November 2026, 19:13 UTC (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab). A session key: it ends with the session. Public half only.",
+      "added": "2026-11-11",
+      "status": "active",
+      "bundle": {
+        "v": "1",
+        "label": "grafana.1.fringe@PrompTugal.dinis",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAzqfViwC6bYgl9fL3yR7+\nJKIGvDVsskxJdoGOVhVG08s0YqA6FbMiY2+2BhW+PXcz3wVxKrJakwU0E/g7PmkQ\nYXYPogdGA1NWQP8aqUCeN1HJse+WMtp1vWcxrXGxX17qcH1qLEHVr5E719QWoLZx\n3fveehhIsmXak9zFS6mzbu5L3NVSyhC/uXWclvW4BH11a1VSgEitRhbtguYtLa1g\nVxmkjX8jSGE0KtaVesGw/pU18phkLP7SydH1Uxoo+B5LixugQcozmcUFjEFjUWMO\n2izEIeSlT9LuxTmk1YVPOT2eeJbAlvwX4uTY5BZ2k3gtcqE8Yk9Hyu+plcSpr7aW\nX8LShj150DqKLO4H/stuYnq69REAqOeuWNuiRr7cZSo5yJsJivgQIhqnIDxAogZK\nB+VR2P+Xt1b3JrQKLCEmQCvdKPCtQsDXuQo/kjXedE9ep8uL1rJAr55+a1R5kKh+\nLlpoQkmx3al2TZPwE2lOBEmUQRWfZ3a4tnJJ9enTY4yiEhRugPZkLRpp8MvYkrpL\nkWSi/xLkeNwX46gX7WUNMXrZD8vDvmanZHPuaP0uvEdW8eP9htnBTBr2L8VFadeB\nIJ7SdBG9dbf2cH5FwbC1tXYrLYpQ+1Gr3aQygCiMu+iRpsyTN8EZB+UDbDpXhkro\nwI5xXW5aBHDzZzXuexBrfqcCAwEAAQ==\n-----END PUBLIC KEY-----",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAElj3/MbmM0beezVBKzcchNA4uV4o9\nh8QTDRmCtiDfnv07f6USIQXuSCBbOPyRWumnwUDrN5ELKaF+mlD3OolyPA==\n-----END PUBLIC KEY-----",
+        "fingerprint": "sha256:60a7318f318830d6",
+        "signing_fingerprint": "sha256:f6334c7f4a430677"
+      }
     }
   ]
 }
