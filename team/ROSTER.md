@@ -1,6 +1,6 @@
 # Roster: who is on, what each is doing, what blocks
 
-> Written by conductor.fringe@PrompTugal.dinis at each wake. Last: 11 November 2026, 10:55 UTC. Source: team/*/status.json and the sessions' branches.
+> Written by conductor.fringe@PrompTugal.dinis at each wake. Last: 11 November 2026, 11:00 UTC. Source: team/*/status.json and the sessions' branches.
 
 | Person | Conductor | State | Doing | Blocked by |
 |---|---|---|---|---|
@@ -19,7 +19,7 @@
 | Agent | Session | Wake | Branch | Doing |
 |---|---|---|---|---|
 | dev.fringe@ | session_01Kw9UwBuse9ub7C5zboJbMs | 2h at :44 | work/dev.fringe | work/01 and work/07 merged; serves once Pages is on |
-| researcher.fringe@ | session_01Kw9UwDtKvyL1hzQTwazVi3 | 1h at :14 | work/researcher.fringe | work/02 data/events.json (11-13 Nov), work/03 |
+| researcher.fringe@ | session_01Kw9UwDtKvyL1hzQTwazVi3 | 1h at :14 | work/researcher.fringe | work/02 merged (787af1f, 50 events); re-checks today; no key yet (env refused pki-agent) |
 | security.fringe@ | session_01Kw9UwEM3Xg32ANMHE6SZGS | 2h at :29 | work/security.fringe | review of every commit |
 
 ## Blocked on Dinis

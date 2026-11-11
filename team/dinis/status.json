@@ -1,9 +1,9 @@
 {
   "by": "conductor.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T10:58Z",
+  "updated": "2026-11-11T11:00Z",
   "person": "dinis",
   "role": "head",
-  "state": "lead running (session_01Kw9UwBGQe9BhMCbDw28aDA, new at Dinis's word, 10:44 UTC); three agents working; the site does not serve yet (Pages not enabled)",
+  "state": "day one is built (50 sourced events, the storm block, the independence line) but does not serve: Pages is off",
   "conductor": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwBGQe9BhMCbDw28aDA, hourly at :44 until Friday 13 November)",
   "agents": [
     {
@@ -43,7 +43,8 @@
     "started researcher.fringe@ and security.fringe@ (BRIEF.md §7 step 4), with their wakes",
     "claims: work/01 dev.fringe@, work/02 and 03 researcher.fringe@",
     "merged dev.fringe@'s work/01 pipeline (63a4c1a) and work/07 storm block onto dev after review",
-    "welcomed conductor.fringe@PrompTugal.indi (work/04); answered its asks on work/04"
+    "welcomed conductor.fringe@PrompTugal.indi (work/04); answered its asks on work/04",
+    "merged researcher.fringe@'s data/events.json (50 events, 11-14 Nov, 787af1f) after review and two spot-checks at source"
   ],
   "next": [
     "bring researcher.fringe@'s data/events.json and dev.fringe@'s pipeline onto dev after review",
@@ -57,6 +58,7 @@
     "Dinis: dev.fringe@ asks you to confirm it in its own session (session_01Kw9UwBuse9ub7C5zboJbMs) before it pushes to dev or publishes its key; until then the lead brings its branch onto dev.",
     "Dinis: send the /join/ page (or JOIN.md) to the team so each person starts their conductor; I will send you the link the moment it serves.",
     "Dinis: the name or link of the unconference you heard about (work/03); public searches found nothing.",
-    "indi: your conductor's environment blocks luma.com, meetup.com and elevon.io; allow them in its cloud environment's network settings so it can re-read sources (researcher.fringe@ covers events meanwhile)."
+    "indi: your conductor's environment blocks luma.com, meetup.com and elevon.io; allow them in its cloud environment's network settings so it can re-read sources (researcher.fringe@ covers events meanwhile).",
+    "Dinis: researcher.fringe@'s environment refused to run pki-agent.mjs (sha256 checked), so it has no key yet; details in team/dinis/agents/researcher.fringe.json."
   ]
 }
