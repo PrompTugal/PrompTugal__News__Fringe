@@ -16,3 +16,5 @@ evidence: <links or commits, when done>
 ```
 
 To claim an item, set `owner:` and `status: claimed` in a commit. When it's finished, set `status: done` and fill in `evidence:`. See SWARM.md.
+
+**Numbers:** pull first, then take the next number after the highest in `ls work/`. If two items clash anyway, the later commit renumbers its own item (the lead checks at each wake).

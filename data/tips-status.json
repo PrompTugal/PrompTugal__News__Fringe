@@ -1,0 +1,11 @@
+{
+ "about": "Public status of tips (work/41): id, state, time, optional priority and event id. Never a tip's text, sender or screenshot.",
+ "tips": [
+  {
+   "id": "tip-a97f86b4",
+   "state": "received",
+   "updated": "2026-11-11 13:43"
+  }
+ ],
+ "updated": "2026-11-11T13:43:05Z"
+}

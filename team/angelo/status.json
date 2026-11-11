@@ -1,13 +1,13 @@
 {
   "by": "conductor.fringe@PrompTugal.angelo",
-  "updated": "2026-11-11T12:27Z",
+  "updated": "2026-11-11T13:30Z",
   "person": "angelo",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.angelo, started about 11:20 UTC by conductor.b@PrompTugal.angelo at Angelo's word; hourly wake at :29 until Friday 13 November (trig_01UqsUe1kvf2qvWkjLiF2hPk, set at Angelo's word in this session)",
   "lane": "the graph and live views of the fringe (SWARM.md): work/05",
   "doing": [
-    "traces: every human and agent step behind a page, with times (Angelo, 11 Nov); first trace done for /e/2026-11-11-ptw-classroom-deep-work-wexio/",
-    "work/05 the graph"
+    "work/05 the graph and work/32 (graph parts) for Lisbon Fringe",
+    "the flow/trace work is handed over to prod-pipeline.pm@PrompTugal.angelo (Angelo, via conductor.b@, SGit-AI__Website__Web-Summit 94dfabc and 2e01c12): this conductor keeps the traces here as they are and builds no more of them"
   ],
   "done": [
     "read CLAUDE.md, SWARM.md, BRIEF.md, REALITY.md and work/",
@@ -18,14 +18,18 @@
     "times corrected to the commit clock (fable.fringe@'s advice 3, 11:32 UTC): status 11:46Z→11:27, work/05 note 11:45→11:27, runs.md ranges; from now every time comes from date -u",
     "trace of /e/2026-11-11-ptw-classroom-deep-work-wexio/: 77 steps, 15 agents, 38 commits, 17 deploys (team/angelo/traces/), by worker tracer.fringe@PrompTugal.angelo; generator admin/tools/trace-event.mjs",
     "draft visual of the trace at /traces/2026-11-11-ptw-classroom-deep-work-wexio/ (swim lanes, folded quiet time, failed deploys, first live), by worker designer.fringe@PrompTugal.angelo; not linked yet",
-    "one-line 'how this page was made' strip (metro line; 6/9/14 stops by width; first live, failed deploys, live now), admin/build/trace-strip.mjs, shown on top of /traces/2026-11-11-ptw-classroom-deep-work-wexio/; by worker designer.fringe@PrompTugal.angelo"
+    "one-line 'how this page was made' strip (metro line; 6/9/14 stops by width; first live, failed deploys, live now), admin/build/trace-strip.mjs, shown on top of /traces/2026-11-11-ptw-classroom-deep-work-wexio/; by worker designer.fringe@PrompTugal.angelo",
+    "wake 12:29: /graph/ now takes communities from work/04's data/communities.json (73 checked communities; organiser line only as fallback; an unknown or individual organiser makes no node); 171 events, 387 nodes",
+    "work/32 parts 1 and 2 on /graph/: ontology picture with live counts, outreach layer (counts only), by worker graph.fringe@PrompTugal.angelo",
+    "wake 13:29: /graph/ checked live at https://lisbontechfringe.com/graph/ (200, v0.1.171; nav calls it 'Map'); no change by others to graph.mjs/graph.js since af1072f; outreach tracker still has all 72 drafts 'until Dinis approves', so the graph's 0 drafts ready is right"
   ],
   "next": [
-    "Angelo: decide whether the strip goes at the bottom of every event page (needs a trace per event: run admin/tools/trace-event.mjs for each)",
-    "conductor.fringe@PrompTugal.dinis: site-wide assets/obs/obs.js logs console errors (ipapi.co CORS block and 429), seen while testing /traces/",
-    "work/05: graph links to event pages, communities from work/04"
+    "work/32: hand the counts to design (landing paths) and dev.1 (dashboard); outreach.1@ to mark which 6 drafts are ready",
+    "traces: only on prod-pipeline.pm@'s word through Angelo (e.g. the strip on event pages after the MVP)"
   ],
   "asks": [
-    "none for Angelo now"
+    "none for Angelo now",
+    "conductor.fringe@PrompTugal.dinis: obs.js console errors (ipapi.co CORS and 429), noted on work/21 at Angelo's word",
+    "note: Angelo's account is at about 83% of its 5-hour limit; this conductor may pause until it resets"
   ]
 }

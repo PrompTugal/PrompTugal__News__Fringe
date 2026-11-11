@@ -54,7 +54,7 @@ export async function makeIdentity(label = 'Dinis Cruz (person key, fringe.promp
   return { bundle: id.bundle, mode: rec.mode, note: rec.passkey_note };
 }
 
-async function unlock() {
+export async function unlock() {
   const rec = await get('identity'); if (!rec) throw new Error('no key in this browser: make one at /me/');
   const wk = rec.mode === 'passkey' ? await prfKey(rec.credId, rec.salt) : rec.wrapKey;
   return { bundle: rec.bundle, private: { encrypt: await unwrap(wk, rec.wrapped.encrypt), sign: await unwrap(wk, rec.wrapped.sign) } };

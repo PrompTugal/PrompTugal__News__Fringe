@@ -76,12 +76,17 @@ if (!/storm-charles\.promptugal\.news/.test(front) || !/not a warning service/i.
 for (const need of ['join/index.html', 'api/v1/events.json', 'llms.txt', 'version.json', 'sitemap.xml', '404.html', 'CNAME'])
   if (!fs.existsSync(path.join(OUT, need))) fail(`_site/${need} missing`);
 
+const SITE_ORIGIN = JSON.parse(fs.readFileSync(path.join(ROOT, 'admin/site.json'), 'utf8')).origin.replace(/\/+$/, '');
 for (const rel of ['index.html', 'join/index.html', 'graph/index.html']) {   // D2: every page carries the share meta tags (the PNG itself is rendered in CI and not required here)
   const h = fs.readFileSync(path.join(OUT, rel), 'utf8');
-  for (const need of ['og:title', 'og:description', 'og:image" content="https://fringe.promptugal.news/assets/og/share.png', 'twitter:card'])
+  for (const need of ['og:title', 'og:description', `og:image" content="${SITE_ORIGIN}/assets/og/share.png`, 'twitter:card'])
     if (!h.includes(need)) fail(`${rel}: missing ${need}`);
 }
 const ms = Date.now() - t0;
+// 6. ABP (work/39, abp/tools/abp.mjs check): each new commit's paths against its Agent: trailer's grant.
+//    OBSERVE ONLY (Dinis, 11 November 2026, 13:36 UTC): a warning, never a failure.
+try { for (const l of execFileSync(process.execPath, [path.join(ROOT, 'abp/tools/abp.mjs'), 'check'], { cwd: ROOT, encoding: 'utf8', timeout: 3000 }).split('\n')) if (l.startsWith('WARN ')) warns.push(l.slice(5)); }
+catch (e) { warns.push(`abp check did not run (${String(e.message).split('\n')[0]}): logged, not blocking`); }
 if (ms > 5000) warns.push(`the gate took ${ms} ms: over its 5 s budget`);
 for (const w of warns) console.log('WARN ' + w);
 if (errors.length) { for (const e of errors) console.log('FAIL ' + e); console.log(`RED at commit ${(process.env.GITHUB_SHA || 'local').slice(0, 7)} (${process.env.GITHUB_ACTOR || 'local'}): ${errors.length} problem(s), ${ms} ms`); process.exit(1); }

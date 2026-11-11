@@ -1,9 +1,38 @@
 {
  "about": "The capture vaults (work/27): normal sgit vaults (not pack vaults) on dev.send.sgraph.ai. A new vault opens before one reaches 20,000 files (admin/tools/capture.mjs rotates at 15,000). Vault ids only: the keys stay outside git (~/.sg-send/captures/<dir>/.sg_vault/local/, 0600), and a copy is sealed to the lead's key.",
- "updated": "2026-11-11T11:54:37Z",
+ "updated": "2026-11-11T14:00Z",
  "by": "capture.1.fringe@PrompTugal.dinis",
  "host": "https://dev.send.sgraph.ai",
  "vaults": [
-  {"id": "u4f3pl6f", "dir": "cap-001", "status": "active", "kind": "normal", "opened_at": "2026-11-11T11:54:37Z", "read_key_public": false}
+  {
+   "id": "u4f3pl6f",
+   "dir": "cap-001",
+   "status": "private-sealed",
+   "kind": "normal",
+   "opened_at": "2026-11-11T11:54:37Z",
+   "read_key_public": false,
+   "private": true,
+   "closed_at": "2026-11-11T13:26Z",
+   "note": "PRIVATE FOREVER, never publish its read key: its history holds organiser-page captures with guest lists (security finding 21). Event captures deleted from its working tree at 2026-11-11T13:26Z; history remains in the vault, which only the lead can open."
+  },
+  {
+   "id": "b1pw4zrm",
+   "dir": "cap-002",
+   "status": "active",
+   "kind": "normal",
+   "opened_at": "2026-11-11T13:26Z",
+   "read_key_public": false,
+   "note": "Privacy-safe captures only: Luma event headers (images hidden, cropped, text cut before guest markers), once a day; our own pages hourly. Read key not published until the lead says."
+  },
+  {
+   "id": "9cf4rcf3",
+   "dir": "covers-001",
+   "status": "active",
+   "purpose": "covers",
+   "kind": "normal",
+   "opened_at": "2026-11-11T14:00Z",
+   "read_key_public": false,
+   "note": "Event cover images only (work/45). Its read key is to be published (Dinis, brief 7/13: covers only, no guest lists)."
+  }
  ]
 }

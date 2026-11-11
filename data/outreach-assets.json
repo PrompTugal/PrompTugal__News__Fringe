@@ -1,0 +1,22 @@
+{
+ "about": "Pointers to outreach images (work/29). The images are not in git (binaries stay in vaults). Status 'pending_vault' means the file exists only in the maker's container and has not been put in a vault yet; it can be rebuilt from the template.",
+ "updated": "2026-11-11T13:08Z",
+ "by": "outreach.1.fringe@PrompTugal.dinis",
+ "assets": [
+  {
+   "name": "lisbon-tech-fringe-announce.png",
+   "what": "WhatsApp/LinkedIn announcement image, 1080x1350 at 2x (2160x2700); counts as of 12:57 UTC, 11 Nov 2026",
+   "sha256": "01e38219737a5c7546d47cb89f86464a690c9e80f45e875531e0d44c266d5554",
+   "bytes": 270856,
+   "made_at": "2026-11-11T12:58Z",
+   "template": "work/drafts/infographic/announce.html (render: node work/drafts/infographic/shot.js)",
+   "vault": {
+    "id": "9k97zlte",
+    "host": "https://dev.send.sgraph.ai",
+    "path": "2026-11-11/lisbon-tech-fringe-announce.png",
+    "key_sealed_to": "admin/outreach-sealed/9k97zlte.json (the lead's key, signed by outreach.1)"
+   },
+   "status": "in_vault"
+  }
+ ]
+}

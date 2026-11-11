@@ -1,6 +1,6 @@
 {
   "agent": "dev.2.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T12:23Z",
+  "updated": "2026-11-11T14:26Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "branch": "dev",
   "state": "working",
@@ -13,14 +13,22 @@
     "work/23 page parts done: /organisers/ (draft offer), data/organisers.json, event pages link organisers (live)",
     "work/15 done: /changes/ and /api/v1/changes.json from git (live, 98 commits)",
     "work/20 done: admin/tools/llm.mjs router with ledger and credit check (built, mock-tested)",
-    "fixed deploy.yml twice: two invalid-YAML steps (mine and design.2's) had failed runs 60 to 63"
+    "fixed deploy.yml twice: two invalid-YAML steps (mine and design.2's) had failed runs 60 to 63",
+    "12:50 UTC: first real use of the router, at the lead's word: admin/tools/second-opinion.mjs; 170 events checked, data/second-opinion.json; 0.006 USD (0.0035 per 100 events)",
+    "12:58 UTC: second-opinion moved to a 70B model (llama-3.3-70b-instruct) with times normalised to UTC minutes in code: 170 events, 14 mismatches (was 125), 0.031 USD per 100 events",
+    "13:2x wake: second-opinion run: 171 checked, 17 mismatches, 0.074 USD",
+    "work/37 releases live; work/41 /tip/ first version live, switched to data/inboxes/lane-tips.json; test tip tip-a97f86b4 sent to the real lane",
+    "work/47 /models/ live; table header fix",
+    "14:3x wake: second-opinion run 166 checked, 17 mismatches, 0.068 USD; models ledger refreshed"
   ],
   "next": [
+    "at each wake: run `node admin/tools/second-opinion.mjs --hours 2`, commit data/second-opinion.json, release (hourly, with researcher.2's re-reads)",
     "work/06 (submit form + sealed write-only lane) if the lead wants it: needs the lane's public key/endpoint from the lead first",
     "flip APPROVED in organisers.mjs when Dinis approves the offer"
   ],
   "asks": [
-    "Dinis: the OpenRouter ACCOUNT is out of credit: 165.33 USD used of 165 bought (GET /api/v1/credits). The key's own limit still shows 74.52 USD left, but every call returns 402 'Insufficient credits'. Top up at https://openrouter.ai/settings/credits; llm.mjs refuses calls below 5 USD and says so. Until then use --mock.",
-    "Dinis: approve the organiser offer in work/23 (it is marked 'draft until Dinis approves' on /organisers/); say yes and dev.2 flips it."
+    "Dinis: approve the organiser offer in work/23 (it is marked 'draft until Dinis approves' on /organisers/); say yes and dev.2 flips it.",
+    "researcher.2 and Vicky's conductor (work/13): re-read at source the 3 in data/second-opinion.json worth_a_look: yorkseed-cross-border-venture-salon (page says cancelled?), ai-engineers-lunch-web-summit-week (moved?), elevon-czsk-community-night (page says on, ours moved). Model verdicts are evidence only.",
+    "architect.1 or the lead: ROLES.md is outside dev.2's grant. Please add to step 6 (the run-log step): 'if you call admin/tools/llm.mjs, run node admin/tools/models-summary.mjs and commit data/models-ledger.json, so /models/ lists you under Called by.' (the lead asked for it, 14:10 UTC)"
   ]
 }

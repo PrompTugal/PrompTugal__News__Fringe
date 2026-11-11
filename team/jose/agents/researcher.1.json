@@ -1,0 +1,29 @@
+{
+  "agent": "researcher.1.fringe@PrompTugal.jose",
+  "by": "researcher.1.fringe@PrompTugal.jose",
+  "updated": "2026-11-11T14:16Z",
+  "started_by": "conductor.fringe@PrompTugal.jose at Jose's word (prompt R1), 13:36 UTC",
+  "session": "session_01CqQLDA9LBMzBQKGsJmLFUS",
+  "key": "researcher.1.fringe-jose (data/keys.json; signing sha256:225ae79f898ac2da)",
+  "wake": "every 30 minutes until 21:00 UTC today, then off",
+  "state": "working, with no reach to the sources: this session's network refuses luma.com and the three guides, so the list follows data/events.json",
+  "doing": [
+    "work/31-jose-today.md: today's online events still to come, ordered by start, each ready or held, for Jose's organiser notes"
+  ],
+  "done": [
+    "read CLAUDE.md, SWARM.md, REALITY.md, sources.md, briefs 9 to 12, work/18, 23, 24, 31 and work/drafts/organiser-notes-today-jose.md",
+    "session key made (pki-agent.mjs sha256 fcb28a1c...02ab checked); public half only in data/keys.json",
+    "first list: 11 online events still to come at 13:39 UTC, from data/events.json (researcher.2's reads at 13:17 UTC); Jose's five notes checked against it",
+    "wake 14:16: pulled; the four hosts are still refused; list regenerated from researcher.2's 14:15 reads; note 1 (Kuma) is ready now that it names only the 15:00 and 16:00 sessions"
+  ],
+  "next": [
+    "each wake: pull, drop events that have started, pick up researcher.2's new reads, update the list and this file, log the run",
+    "read the guides and the Luma pages as soon as the network allows"
+  ],
+  "asks": [
+    "jose: this session's network refuses luma.com, sideevents.guide, side-events-guide.com and events.portugaltechweek.com (403 at the proxy, 13:37 and again 14:16 UTC); add them to this environment's allowlist if you want me to read them. Until then nothing is re-read at source by me.",
+    "conductor.fringe@PrompTugal.dinis: the 17:30 Cisco session is 'on' in data/events.json but work/24 says it stays 'unknown'; please have researcher.2 fix or re-read it.",
+    "conductor.fringe@PrompTugal.dinis: please have researcher.2 read the host of https://luma.com/tjed8ali (our organiser line is by inference).",
+    "Dinis: my public key is not in PrompTugal__News__Website board/keys.json; that repository is out of reach for this session."
+  ]
+}

@@ -30,7 +30,7 @@
             if (dnt) { s.append(' · Page views: off (Do Not Track or Global Privacy Control is on). ', a); row.appendChild(s); return }
             const b = document.createElement('button'); b.type = 'button'; b.style.cssText = 'font:inherit;background:none;border:0;padding:0;text-decoration:underline;cursor:pointer;color:inherit'
             const t = document.createTextNode('')
-            const draw = () => { t.textContent = paused() ? ' · Page views: paused on this device. ' : ' · Counted, publicly: page views, reading time, the referring site, a link\'s ?via= tag and your town. To find the town your browser asks ipapi.co or ipwho.is, which see your IP address; we keep no IP and set no cookie. '; b.textContent = paused() ? 'Resume' : 'Pause' }
+            const draw = () => { t.textContent = paused() ? ' · Page views: paused on this device. ' : ' · Counted, publicly: page views, reading time, the referring site, links followed to other sites, a link\'s ?via= tag and your town. To find the town your browser asks ipapi.co or ipwho.is, which see your IP address; we keep no IP and set no cookie. '; b.textContent = paused() ? 'Resume' : 'Pause' }
             b.onclick = () => { LS.set('off', paused() ? null : '1'); draw() }
             s.append(t, b, ' · ', a); draw(); row.appendChild(s)
         }
@@ -92,7 +92,8 @@
             if (via) e.via = via
             // an A/B test (Dinis, 6 November 2026, 13:20: "A/B testing when needed ... on the website"): the variant this page
             // was shown, from <html data-variant> or <meta name="variant">, set by whoever runs the test; no new identifier
-            const H = document.documentElement.dataset, vr = H.variant || (document.querySelector('meta[name="variant"]') || {}).content || ''
+            let qd = ''; try { qd = new URLSearchParams(location.search).get('design') || '' } catch { }   // the home page's ?design=<id> (work/35)
+            const H = document.documentElement.dataset, vr = H.variant || (document.querySelector('meta[name="variant"]') || {}).content || qd
             if (/^[A-Za-z0-9._-]{1,40}$/.test(vr)) e.variant = vr
             return e
         }
@@ -124,6 +125,9 @@
                 }
             } catch { }
         }
+        // the design lab's vote (work/35, dev.1.fringe@): "I prefer this one" is one more event, type 'vote' with the design id
+        // (a-z, 0-9, '-'); the same lane, no name, no cookie. Absent while counting is paused or off, so the page says so.
+        window.fringeObs = { vote: d => /^[a-z0-9-]{1,30}$/.test(String(d)) ? send(Object.assign(common(), { type: 'vote', design: String(d) })).catch(() => false) : Promise.resolve(false) }
         const view = () => { resend(); if (done.has('view')) return; done.add('view'); send(Object.assign(common(), { type: 'view' })).catch(() => { }) }
         const finish = () => {
             if (since !== null) { visibleMs += performance.now() - since; since = null }
@@ -134,6 +138,15 @@
             SS.set(key, JSON.stringify(ev))                                   // kept until written: leaving can cut the send short
             send(ev).then(ok => { if (ok) SS.del(key) }).catch(() => { })
         }
+        // a link followed to another site (Dinis, 11 November 2026: "we should be pointing to the storm ... create
+        // connections back to the data sets"): the target's host and path only, never its query or fragment
+        document.addEventListener('click', e => {
+            try {
+                const l = e.target.closest && e.target.closest('a[href]'); if (!l) return
+                const u = new URL(l.href, location.href); if (!/^https?:$/.test(u.protocol) || u.host === location.host) return
+                send(Object.assign(common(), { type: 'out', to: (u.host + u.pathname).slice(0, 120) })).catch(() => { })
+            } catch { }
+        }, true)
         document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') since = performance.now(); else finish() })
         window.addEventListener('pagehide', finish)
         cfg().catch(() => { })

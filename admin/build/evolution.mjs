@@ -44,7 +44,7 @@ export function evolutionBody(ev, esc) {
   }
   const vrows = ev.vaults.map(v => `<li>vault <code>${esc(v.id)}</code> (${esc(v.status)}, a normal vault on dev.send.sgraph.ai${v.read_key_public ? ', public read key' : ', read key kept private'})</li>`).join('');
   return `<h1>Evolution</h1>
-<p>Lisbon Fringe photographs its own pages and every organiser's public event page every hour, and keeps the screenshot, the visible text and the fields we extracted. Here is what that shows over time: each page, each capture, and where the page's text changed between captures. Independent of Web Summit; we never capture websummit.com or anything behind a login.</p>
+<p>Lisbon Tech Fringe photographs its own pages and every organiser's public event page every hour, and keeps the screenshot, the visible text and the fields we extracted. Here is what that shows over time: each page, each capture, and where the page's text changed between captures. Independent of Web Summit; we never capture websummit.com or anything behind a login.</p>
 <p class="muted"><strong>Fact</strong> (from data/capture-index.json): ${nruns} run${nruns > 1 ? 's' : ''}, ${total} captures, ${esc(first.slice(0, 16).replace('T', ' '))} to ${esc(last.slice(0, 16).replace('T', ' '))} UTC · ${changed} page${changed === 1 ? '' : 's'} changed text between runs. Each dot is one capture; a red dot is a page we could not capture.</p>
 ${rows}
 <h2>Where the pictures are</h2>

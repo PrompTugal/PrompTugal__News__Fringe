@@ -11,3 +11,7 @@ evidence:
 Brief 6, Dinis: "I need a section for the outreach. So, for example, I can work now with that agent. If we don't have, we need one." An agent never sends; a person does.
 
 **Progress 11:59 UTC (outreach.1):** 5 drafts in work/drafts/ (WhatsApp group message and reply, LinkedIn, X, organiser note), each with ?via= and the independence line; tracker work/23-tracker.md + data/outreach-tracker.json (70 organisations; regenerate with admin/tools/outreach.py); data/outreach.json counts for work/25. Left: check each organiser's contact route is on its page; Instagram draft; Dinis's approval.
+
+**13:35 UTC wake (outreach.1):** inbox drains now. Observability's note (13:24 UTC: 103 views, 59 visits, ?via=whatsapp 41 views, 35 of 59 visits with no referrer) is turned into work/drafts/TAGGING.md. 13 drafts in work/drafts/ (incl. the lead's and Jose's). 0 sent; a person sends.
+
+**14:0x UTC (outreach.1):** brief 13: work/drafts/whatsapp-tip-ask.md drafted (asks groups to paste today's events and changes at /tip/ with ?via=whatsapp-<group>; an organisers block: their page, their report, a seat). work/46 done-means item: outreach's group message: drafted, not sent.

@@ -1,22 +1,29 @@
 {
   "agent": "design.3.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T12:25:25Z",
+  "updated": "2026-11-11T14:01:40Z",
   "state": "working",
   "doing": [
-    "next wake: D3 follow-up toward the festival-programme feel (browse by day, area, kind) per brief 5"
+    "D26 design C waits for the lab frame; D28: design.1 mounts the map, I fix what its use shows"
   ],
   "done": [
     "D3 event cards: admin/build/cards.mjs; 390/1280 px, light and dark, no overflow or console errors",
     "D4 event page look: showcase organiser block, chip, related as cards; 390/1280 px, light and dark, clean",
     "D11 /how/ (how this is made): page, nav link, home card; 390/1280 px clean. Lead's message of 11:54 read (brief 5).",
-    "session key made 12:24 UTC (design.3.fringe-dinis); public half in data/keys.json"
+    "session key made 12:24 UTC (design.3.fringe-dinis); public half in data/keys.json",
+    "D17 /programme/: whole week by day, where, kind (171 events); nav + home link; 390/1280 px, light and dark, clean",
+    "D18 big and small events: strip of majors + dense community list on / and /programme/ (Size filter)",
+    "D4 calmer pass (brief 8): organiser block 1.2rem on a plain panel, 44 px button, facts two columns on a phone, related events as dense rows with day; 390/1280 px light and dark clean",
+    "D23 swarm-live strip on /, /how/, /dashboard/",
+    "D23 follow-up: one-line live ticker under the header on every page (links to /how/)",
+    "D26 design C 'the city': c.mjs module written and previewed; waits for the lab frame",
+    "D28 map: admin/build/city-map.mjs, a drop-in map (dot per event on a day, by neighbourhood; online, guests-only and outside-Lisbon counted not drawn); shared admin/build/lisbon-areas.mjs (uses researcher.2's neighbourhood and in_lisbon when present)"
   ],
   "next": [
-    "D4 event page look",
-    "session key (the keygen step; see asks)"
+    "after D22 lands: restyle big strip, dense rows, cards, event page; then check 390/1280 px light and dark"
   ],
   "asks": [
     "Dinis: the same public half still has to go into PrompTugal__News__Website board/keys.json (id design.3.fringe-dinis); that repo is not attached to my session. Anyone with it attached may copy the entry from data/keys.json here.",
-    "lead: the inbox for design.3.fringe-dinis needs creating (work/19)."
+    "researcher.2: please add size ('major' or 'community') to data/events.json events; tiers.mjs uses it when present and derives it (conference/festival/tech day, or a 8 to 14 h day) when not.",
+    "Dinis: my inbox exists (data/inboxes/design.3.fringe-dinis.json) but I cannot drain it: `pip install sgit-ai` was refused by the sandbox's classifier (13:34 UTC). I have not worked around it. Allowing `pip install sgit-ai` for this session, or draining it from another session, unblocks me. Anything for me that matters should also go by send_message."
   ]
 }

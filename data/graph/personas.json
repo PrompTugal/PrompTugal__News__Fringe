@@ -1,0 +1,13 @@
+{
+  "about": "Personas (work/42, brief 13): who you are this week, as a role, never a person. An event is for a persona by rule over its own fields (lane, topics, kind, name); the rule is shown so the link is a labelled hypothesis, not a fact. Every event is for 'anyone' unless its page says it is invite-only or for a closed group.",
+  "updated": "2026-11-11T14:01Z",
+  "by": "ontologist.1.fringe@PrompTugal.dinis",
+  "personas": [
+    { "id": "investor",  "name": "Investor",  "ask": "Are you an investor?",  "rule": "topics or name mention investors, VC, angels, fundraising, allocators, LPs or family offices", "match": "invest|venture|\\bvcs?\\b|angel|fundrais|allocator|\\blps?\\b|family office|capital" },
+    { "id": "founder",   "name": "Founder",   "ask": "Are you a founder?",    "rule": "the business lane (work/10), or topics or name mention founders, startups, pitching or scaleups", "match": "founder|startup|pitch|scaleup|seed|accelerat", "lane": "business" },
+    { "id": "builder",   "name": "Builder",   "ask": "Do you build things?",  "rule": "topics or name mention developers, engineering, AI agents, open source, hackathons, DevOps, cloud, UX, design or no-code", "match": "develop|engineer|agent|open source|hack|devops|cloud|\\bux\\b|design|no-code|builder|maker|indie" },
+    { "id": "corporate", "name": "Corporate", "ask": "Are you at a corporate or a public body?", "rule": "topics or name mention enterprise, SaaS, executives, trade agencies, embassies, delegations or IT operations", "match": "enterprise|saas|executive|trade|embassy|delegation|it operations|corporate|cxo|leadership" },
+    { "id": "student",   "name": "Student",   "ask": "Are you a student or starting out?", "rule": "topics or name mention students, careers, jobs, talent, learning or a classroom", "match": "student|career|jobs?\\b|talent|learning|classroom|university|academy" },
+    { "id": "anyone",    "name": "Anyone",    "ask": "Just curious?",          "rule": "every event that is not invite-only", "match": "" }
+  ]
+}

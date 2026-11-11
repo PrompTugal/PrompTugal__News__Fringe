@@ -1,16 +1,27 @@
 {
   "agent": "design.4.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T12:24Z",
-  "state": "D8, D5, D9 done",
-  "doing": [],
+  "updated": "2026-11-11T14:01Z",
+  "state": "D30, D31 done; D27 baseline holds",
+  "doing": [
+    "D27: baseline design D; move the home into designs/d.mjs when the frame lands"
+  ],
   "done": [
     "D8: admin/build/tokens.css (design E ported), wired into build.mjs, graph colours moved to tokens; checked 390/1280, light/dark",
     "D5: one nav (Today, Map, Traffic, Join; Now and Organisers when they ship), aria-current, no JS",
-    "D9: Lisbon palette tokens, wordmark, azulejo pattern, hero (identity.mjs)"
+    "D9: Lisbon palette tokens, wordmark, azulejo pattern, hero (identity.mjs)",
+    "D20 taste pass: first event at y=240 px on 390 (before ~750); screenshots /tmp/claude-0/shots/d20-before.png and d20-after.png; WhatsApp line (hidden until data/links.json whatsapp_group)",
+    "D7: /graph/ phone first view (graph first, legend, filters folded, fewer labels); D19 closed with evidence",
+    "D22 first push: brand v2.0 tokens, fonts linked from promptugal.news, numbered kickers, green rules; screenshots /tmp/claude-0/shots/d22-before-390.png, d22-after-390.png, d22-after-1280.png",
+    "Lead's two defects: independence line now in the page column in full at every width; old chips, count and duplicate On-now cards folded into the timeline header (Tonight, Online, Tomorrow, All events + one count line); screenshots /tmp/claude-0/shots/d-1914b.png, d-390b.png",
+    "Live-check fixes: count small on one line; nav fades at the right edge as a scroll cue; at >=1100 px the timeline and the big-events list sit side by side (home-top grid); screenshots /tmp/claude-0/shots/d-1440b.png, d-390c.png",
+    "D30 /storm/ and D31 The agentic team nav (14:1x UTC)"
   ],
   "next": [
-    "next wake: D6 or D7 if unclaimed; recheck tokens against design.1-3 pages"
+    "next wake: act on the lead's answer about d.mjs; else polish the baseline (dark pass, 1100 px lists)"
   ],
-  "asks": [],
+  "asks": [
+    "Dinis: my ABP grant lists admin/build/*.mjs only as 'your own page modules', but design.2 and I agreed (13:00) that I own the home block in build.mjs and timeline.mjs (the timeline's CSS and markup). Please widen the grant or tell the architect.",
+    "conductor.fringe (lead): designs/README.md says design d has no module and stays the live home page; your message said move it into designs/d.mjs. Which? I keep the live home as d until told."
+  ],
   "key": "design.4.fringe-dinis (sha256:6f3ef21f39a15dc6; signing sha256:57270ffef26ad7c6), public half in data/keys.json"
 }

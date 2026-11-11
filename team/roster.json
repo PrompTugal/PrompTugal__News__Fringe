@@ -1,7 +1,7 @@
 {
   "about": "Lisbon Fringe's swarm: one conductor per person (SWARM.md). Each person's conductor updates its own row by writing team/<id>/status.json; the lead (conductor.fringe@PrompTugal.dinis) keeps this file in step.",
   "by": "conductor.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T11:20Z",
+  "updated": "2026-11-11T12:39Z",
   "people": [
     {
       "id": "dinis",
@@ -52,28 +52,13 @@
       "state": "not started"
     },
     {
-      "id": "nimay",
-      "name": "Nimay Parekh",
-      "conductor": "conductor.fringe@PrompTugal.nimay",
-      "suggested_lane": "business events",
-      "role": "member",
-      "state": "not started"
-    },
-    {
       "id": "daniela",
       "name": "Daniela",
       "conductor": "conductor.fringe@PrompTugal.daniela",
       "suggested_lane": "education events",
       "role": "member",
       "state": "not started"
-    },
-    {
-      "id": "sarah",
-      "name": "Sarah",
-      "conductor": "conductor.fringe@PrompTugal.sarah",
-      "suggested_lane": "design",
-      "role": "member",
-      "state": "not started"
     }
-  ]
+  ],
+  "note": "Sarah and Nimay are not part of the team (Dinis, 11 November 2026, 12:39 UTC); their lanes go to agents: design to design.1 to design.4, business events to researcher.2."
 }
