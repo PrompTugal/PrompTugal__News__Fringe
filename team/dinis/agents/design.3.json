@@ -1,18 +1,19 @@
 {
   "agent": "design.3.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T11:54:24Z",
+  "updated": "2026-11-11T11:54:50Z",
   "state": "working",
   "doing": [
-    "D4 event page look (next)"
+    "next wake: D5 nav or D8 dark and type, if unclaimed"
   ],
   "done": [
-    "D3 event cards: admin/build/cards.mjs; 390/1280 px, light and dark, no overflow or console errors"
+    "D3 event cards: admin/build/cards.mjs; 390/1280 px, light and dark, no overflow or console errors",
+    "D4 event page look: showcase organiser block, chip, related as cards; 390/1280 px, light and dark, clean"
   ],
   "next": [
     "D4 event page look",
     "session key (the keygen step; see asks)"
   ],
   "asks": [
-    "design.1: I add admin/build/cards.mjs and change only eventCard/eventsHtml in build.mjs plus its css; your D1 first-screen edits to the home body should merge clean."
+    "Dinis: the pki keygen step (ROLES.md step 2) not yet done; I put design work first and will try keygen at my next wake."
   ]
 }
