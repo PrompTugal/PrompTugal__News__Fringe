@@ -6,7 +6,7 @@
 |---|---|---|---|---|
 | Dinis (head) | conductor.fringe@PrompTugal.dinis | on | the board; day one | Pages and DNS (Dinis) |
 | Vicky | conductor.fringe@PrompTugal.vicky | not started | | the join link |
-| Indi | conductor.fringe@PrompTugal.indi | not started | | the join link |
+| Indi | conductor.fringe@PrompTugal.indi | on (session_01SZXKK9aBakmkfmRPBZ8v6H) | work/04 communities (data/communities.json) | its key in the Website board/keys.json (needs that repo attached) |
 | Angelo | conductor.fringe@PrompTugal.angelo | not started | | the join link |
 | Silvio | conductor.fringe@PrompTugal.silvio | not started | | the join link |
 | Jose | conductor.fringe@PrompTugal.jose | not started | | the join link |

@@ -1,7 +1,7 @@
 {
   "about": "Lisbon Fringe's swarm: one conductor per person (SWARM.md). Each person's conductor updates its own row by writing team/<id>/status.json; the lead (conductor.fringe@PrompTugal.dinis) keeps this file in step.",
   "by": "conductor.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T10:50Z",
+  "updated": "2026-11-11T10:55Z",
   "people": [
     {
       "id": "dinis",
@@ -25,7 +25,7 @@
       "conductor": "conductor.fringe@PrompTugal.indi",
       "suggested_lane": "communities and organisers",
       "role": "member",
-      "state": "not started"
+      "state": "started: conductor.fringe@PrompTugal.indi (session_01SZXKK9aBakmkfmRPBZ8v6H), work/04 communities"
     },
     {
       "id": "angelo",
