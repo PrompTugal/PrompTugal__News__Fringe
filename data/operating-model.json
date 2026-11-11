@@ -1,8 +1,8 @@
 {
   "about": "The operating model of the agentic team (Dinis with Angelo, in architect.1's session, 14:40 UTC; briefs/2026-11-11-1440-the-operating-model.md; work/48): the primitives of the execution block, the access an entity has at a moment in time, identity, state, providers, and who can do what. What an entity is depends on where it runs and what it can reach (Dinis: 'what they are depends on where they are and what they can do'). A draft for Dinis and Angelo to correct.",
   "by": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T14:54Z",
-  "status": "draft v0.2",
+  "updated": "2026-11-11T14:57Z",
+  "status": "draft v0.3",
   "ladder": {
     "about": "The execution ladder: what an entity can do, bottom to top. Each rung includes the ones below it.",
     "rungs": [
@@ -361,28 +361,28 @@
     "altitudes": [
       {
         "id": "swarm",
-        "ontology": "people, conductors, accounts, repositories (data/architecture.json)",
-        "jump": "an agent node opens into its own world"
+        "ontology": "agents of agents",
+        "jump": ""
       },
       {
         "id": "agent",
-        "ontology": "role, craft, grant, key, runtime, rung (abp/policies.json, data/runtimes.json)",
-        "jump": "its grant opens into capability primitives"
+        "ontology": "a worker with an environment: identity, memory (status file, inbox, vaults), its own wake, a wider reach",
+        "jump": ""
       },
       {
-        "id": "grant",
-        "ontology": "verb.object.reach primitives, reach, undo (abp.sgit.ai)",
-        "jump": "a primitive opens into the hook decisions that exercised it"
-      },
-      {
-        "id": "run",
-        "ontology": "tool calls, observe events, overrides (the ABP hook log)",
-        "jump": "a model call opens into its ledger line"
+        "id": "worker (the run)",
+        "ontology": "a closed agentic loop: it calls and uses tools until the task is done, then stops",
+        "jump": ""
       },
       {
         "id": "call",
-        "ontology": "model, tier, tokens, cost, the raw record's sha256 (the router's ledger)",
-        "jump": "the raw record, outside git"
+        "ontology": "one model call: a prompt in, an answer out",
+        "jump": ""
+      },
+      {
+        "id": "compute",
+        "ontology": "code that runs",
+        "jump": ""
       }
     ],
     "example": "design.1 plays the design role; design.1 runs_on R1; design.1 holds a session key; design.1 is_granted write.file.project over admin/build/designs/**; design.1 does D24; the D24 commit is_signed_by design.1's key. Read from the other end: R1 hosts design.1."
@@ -692,6 +692,84 @@
         }
       ],
       "status": "adopted in this swarm's model (Dinis, 2026-11-11T14:54Z); not in abp.sgit.ai's published grammar"
+    }
+  },
+  "altitudes": {
+    "about": "The altitudes of execution (Dinis and Angelo, 14:5x UTC): the same shape at every size: an objective, a mandate (what it is asked to do) and a grant (what it may do), a doer, and a result. 'Work of work of work': only the size changes. The grant is not an altitude: every altitude has its own mandate and grant.",
+    "every_altitude_has": [
+      "an objective (what done means)",
+      "a mandate (what it is asked to do)",
+      "a grant (what it may do: capability primitives)",
+      "an identity (a key, even if it lives only for the run)",
+      "a result, signed"
+    ],
+    "items": [
+      {
+        "id": "A4",
+        "name": "swarm",
+        "is": "agents of agents",
+        "can": "spawn and schedule others (the control plane, E5); route work; hold the people's word",
+        "reach": "tenant to world",
+        "example": "the lead and its 15 agents; the four people's conductors"
+      },
+      {
+        "id": "A3",
+        "name": "agent",
+        "is": "a worker with an environment: identity, memory (status file, inbox, vaults), its own wake, a wider reach",
+        "can": "start workers (sub-agents), wake itself (E4), act across the host and the tenant",
+        "reach": "host to tenant",
+        "example": "design.1: a Claude Code session"
+      },
+      {
+        "id": "A2",
+        "name": "worker (the run)",
+        "is": "a closed agentic loop: it calls and uses tools until the task is done, then stops",
+        "can": "call models, use the tools it was handed, inside its sandbox and project (E2, E3); it cannot start others or schedule",
+        "reach": "self to project",
+        "example": "a sub-agent; one task packet done by a laptop"
+      },
+      {
+        "id": "A1",
+        "name": "call",
+        "is": "one model call: a prompt in, an answer out",
+        "can": "nothing but answer (E1); its caller acts",
+        "reach": "none",
+        "example": "the second opinion"
+      },
+      {
+        "id": "A0",
+        "name": "compute",
+        "is": "code that runs",
+        "can": "what the code does (E0)",
+        "reach": "what its host gives it",
+        "example": "the build, CI"
+      }
+    ],
+    "names_proposed": {
+      "for": "what the model describes (the 'thing' at every altitude)",
+      "options": [
+        {
+          "name": "holon",
+          "why": "Koestler's word for something that is a whole and a part at once; a stack of them is a holarchy. Exactly 'work of work of work'; fractal by definition."
+        },
+        {
+          "name": "unit of work, with its doer",
+          "why": "plain English; but it names the work, not who does it, which is the half Angelo questioned"
+        },
+        {
+          "name": "actor",
+          "why": "the actor model: units that receive messages, act, and can create other actors; precise for A3 and A4, odd for a call"
+        },
+        {
+          "name": "executor",
+          "why": "names the doer at every altitude; neutral; pairs with 'task'"
+        },
+        {
+          "name": "mandate",
+          "why": "abp.sgit.ai's own word for what is asked; an altitude is a mandate given to a doer under a grant"
+        }
+      ],
+      "architect_recommends": "holon for the thing (a whole that is part of a bigger whole), altitudes for the levels, and a mandate plus a grant on every holon"
     }
   }
 }

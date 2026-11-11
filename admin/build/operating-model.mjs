@@ -46,6 +46,16 @@ width:1920px;height:1080px;background:var(--paper);color:var(--ink);font-family:
 .om .lv0{color:var(--ink3)}.om .lv1{background:var(--csoft)}.om .lv2{background:var(--gsoft)}.om .lv3{background:var(--rsoft)}
 .om .legend{display:flex;gap:18px;margin-top:12px;font-size:15px;color:var(--ink2);align-items:center}
 .om .legend span{display:inline-block;width:18px;height:14px;margin-right:6px;vertical-align:middle;border:1px solid var(--hair)}
+.om .alts{display:grid;grid-template-columns:1fr 470px;gap:24px;margin-top:22px}
+.om .stack{display:flex;flex-direction:column;gap:8px}
+.om .alt2{display:grid;grid-template-columns:230px 1fr 300px;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--hair);border-left:8px solid var(--green);padding:10px 16px;min-height:112px}
+.om .alt2 b.mono{color:var(--green);font-size:20px}.om .alt2 h3{font-family:Newsreader;font-size:34px;font-weight:650;line-height:1.05}
+.om .alt2 .is{font-size:19px;line-height:1.3}.om .alt2 .can{font-size:16px;color:var(--ink2);margin-top:4px;line-height:1.3}
+.om .alt2 .rx{display:flex;flex-direction:column;gap:6px;align-items:flex-start}.om .alt2 .eg{font-family:"IBM Plex Mono";font-size:13px;color:var(--ink3)}
+.om .every{background:var(--ink);color:var(--paper);padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.om .every h3{font-family:Newsreader;font-size:32px;color:#6dbb7e;font-weight:600}.om .every ol{padding-left:22px;font-size:19px;line-height:1.5}
+.om .every p{font-size:16px;color:#e8e4da;line-height:1.35}.om .every .name{margin-top:auto;border-top:1px solid #555;padding-top:12px;font-size:17px}
+.om .every .name .chip{background:transparent;color:var(--paper);border-color:#aaa;margin:3px 2px}.om .every .name .chip.g{border-color:#6dbb7e;color:#6dbb7e}
 .om .fsg{display:grid;grid-template-columns:420px 520px 1fr;gap:28px;margin-top:22px}
 .om .gr ol{list-style:none;counter-reset:g}.om .gr li{counter-increment:g;position:relative;padding:8px 0 8px 44px;border-bottom:1px solid var(--hair);font-size:18px;line-height:1.3}
 .om .gr li::before{content:counter(g);position:absolute;left:0;top:8px;width:30px;height:30px;border-radius:50%;background:var(--green);color:var(--paper);font-weight:700;display:grid;place-items:center;font-size:16px}
@@ -69,7 +79,7 @@ const NARROW = `@media (max-width:760px){
 .om-frame .om{position:static!important;transform:none!important;width:auto!important;height:auto!important;padding:14px!important;overflow:visible!important}
 .om .top{flex-direction:column;gap:4px;font-size:13px}.om .head{flex-direction:column;align-items:flex-start;gap:8px}.om h1{font-size:38px}.om .q{text-align:left;font-size:17px}
 .om .ladwrap,.om .osw{grid-template-columns:1fr;height:auto}.om .rung{grid-template-columns:60px 1fr;gap:4px 10px}.om .rung p,.om .rung .who{grid-column:1/-1;justify-content:flex-start}
-.om .rung h3{font-size:24px}.om .rung b.id{font-size:22px}.om .layer{grid-template-columns:1fr}.om .fsg{grid-template-columns:1fr}.om .rch>div{grid-template-columns:1fr}.om .layer h3{font-size:22px}
+.om .rung h3{font-size:24px}.om .rung b.id{font-size:22px}.om .layer{grid-template-columns:1fr}.om .fsg,.om .alts,.om .alt2{grid-template-columns:1fr}.om .rch>div{grid-template-columns:1fr}.om .layer h3{font-size:22px}
 .om .axw{overflow-x:auto}.om table.ax{min-width:900px;font-size:14px}.om .bar{position:static;flex-direction:column;align-items:flex-start;gap:4px;margin-top:16px}.om .bar b{font-size:20px}.om .legend{flex-wrap:wrap}}`;
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
@@ -108,16 +118,12 @@ ${bar('Processes · kernel · file systems · IPC · permissions · drivers (dat
 
 
 function graph(M) {
-  const C = M.capabilities, G = M.graph;
-  const by = {}; for (const p of C.primitives) (by[p.reach] ||= []).push(p);
-  for (const p of C.proposed.items) (by[p.reach] ||= []).push({ ...p, prop: true });
-  return `${top(4)}<div class="head"><h1>Meaning through <em>connectivity</em></h1><div class="q">"Everything connects to everything, and nobody has to share a schema." Fractal Semantic Graphs, newsroom.sgit.ai</div></div>
-<div class="fsg"><div class="gr"><div class="k">The grammar (five rules)</div><ol>${G.grammar.map((g) => `<li>${esc(g)}</li>`).join('')}</ol>
-<p style="font-size:15px;color:var(--ink2);margin-top:10px">Edges here: ${G.edges.slice(0, 8).map((e) => `<span class="mono" style="font-size:13px">${esc(e[0])}/${esc(e[1])}</span>`).join(' · ')}</p></div>
-<div><div class="k">Zoom: one grammar, five ontologies</div><div class="alt">${G.altitudes.map((a) => `<div><b>${esc(a.id)}</b><p>${esc(a.ontology)}</p><i>&darr; ${esc(a.jump)}</i></div>`).join('')}</div></div>
-<div><div class="k">What it can do: verb.object.reach</div><div class="rch">${C.reaches.map((r) => `<div><b>${esc(r.id)}</b><div class="chips">${(by[r.id] || []).map((p) => `<span class="chip ${p.prop ? 'prop' : 'u-' + p.undo}">${esc(p.id)}</span>`).join('')}</div></div>`).join('')}</div>
-<p style="font-size:14px;color:var(--ink3);margin-top:8px"><span class="chip u-yes">undo: yes</span> <span class="chip">with effort</span> <span class="chip u-no">no undo</span> <span class="chip prop">proposed: the vault axis</span> · 23 primitives from abp.sgit.ai</p></div></div>
-${bar('newsroom.sgit.ai (Fractal Semantic Graphs) · abp.sgit.ai (the capability grammar) · data/operating-model.json')}`;
+  const L = M.altitudes, C = M.capabilities;
+  return `${top(4)}<div class="head"><h1>The <em>altitudes</em> of execution</h1><div class="q">"It's work of work of work of work ... it's just how big it is." Meaning through connectivity: what each one is depends on where it is and what it can do.</div></div>
+<div class="alts"><div class="stack">${L.items.map((a) => `<div class="alt2"><div><b class="mono">${esc(a.id)}</b><h3>${esc(a.name)}</h3></div><div><p class="is">${esc(a.is)}</p><p class="can">${esc(a.can)}</p></div><div class="rx"><span class="chip c">reach: ${esc(a.reach)}</span><span class="eg">${esc(a.example)}</span></div></div>`).join('')}</div>
+<div class="every"><h3>Every altitude has</h3><ol>${L.every_altitude_has.map((x) => `<li>${esc(x)}</li>`).join('')}</ol><p>The grant is not a layer: it is given at every altitude, in one grammar (verb.object.reach, ${C.primitives.length} primitives, abp.sgit.ai).</p>
+<div class="name"><b>A model of what?</b> ${L.names_proposed.options.map((o) => `<span class="chip ${o.name === 'holon' ? 'g' : ''}">${esc(o.name)}</span>`).join(' ')}<p>Proposed: a <b>holon</b>, a whole that is also a part. Altitudes are its levels.</p></div></div></div>
+${bar('Dinis and Angelo, 11 Nov 2026 · data/operating-model.json · a draft: names to decide')}`;
 }
 export const SLIDES = [ladder, access, os, graph];
 export function slidePage(i) {

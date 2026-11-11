@@ -33,3 +33,13 @@ board: work/48
 > "see also newsroom.sgit.ai , namely the fractal semantic graphs"
 
 Read: https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html (the term and the five-rule grammar) and, from it, abp.sgit.ai's capability grammar (verb.object.reach, 23 primitives). The access axes in data/operating-model.json are rebased on those primitives rather than invented; the vault axis is proposed in the same grammar, for Dinis to accept.
+
+## The altitudes (14:57 UTC, Dinis with Angelo)
+
+> "We really like this meaning to connectivity, although you could just rename this to the ... altitudes? Yeah, the altitudes ... make this already about the code execution or the task execution ... or the craft execution."
+
+> "Even at the swarm level, it's still a unit of work ... it's work of work of work of work ... it's just how big it is ... Like, this is a model of what? ... Claude, propose some ideas, architect."
+
+> "I'm not 100% sure that the grant should be there in the middle, because the grant is actually happens at every altitude. Every altitude has fundamentally a mandate and the grant that we give. But I like how you say that the top level is a swarm ... agents of agents. Then you have a specific agent ... the run is like a worker ... something that has an agentic loop ... can make calls until it gets something done ... it's a closed unit of work."
+
+Done: slide 4 is now "The altitudes of execution": A4 swarm, A3 agent, A2 worker (the run: a closed loop that cannot start others or schedule), A1 call, A0 compute; the mandate and the grant on every altitude, not as a layer. Names proposed for what the model describes (data/operating-model.json altitudes.names_proposed): holon (recommended), unit of work with its doer, actor, executor, mandate.
