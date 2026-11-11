@@ -2,7 +2,7 @@
 title: "ABP: researcher.fringe@PrompTugal.dinis"
 agent: researcher.fringe@PrompTugal.dinis
 role: researcher
-policy: abp/policies.json v0.3.2 (sha256:e97dcdef0c31e21e)
+policy: abp/policies.json v0.3.2 (sha256:94cc5383d63a1e85)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -16,7 +16,7 @@ authority: Dinis Cruz, operator
 - **Role:** researcher. **Account:** the old lead's.
 - **Runs on:** R1 (models: M1 Sonnet; M2 for the second opinion); **I/O level:** L4 (a branch; the lead brings it onto dev) (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** events re-read at their public source, hourly; sources.md.
-- **Writes (this repository):** `team/dinis/agents/researcher.json`, `team/dinis/agents/researcher.fringe.json`, `team/dinis/agents/researcher/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `data/events.json`, `seed/**`, `sources.md`, `api/v1/README.md`, `data/places.json`.
+- **Writes (this repository):** `team/dinis/agents/researcher.json`, `team/dinis/agents/researcher.fringe.json`, `team/dinis/agents/researcher/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `data/events.json`, `seed/**`, `sources.md`, `api/v1/README.md`, `data/places.json`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
 - **Writes (outside git):** `/tmp/**`, `~/.sg-send/**`, `~/.abp/**`, `~/pki/**`, `~/.claude/projects/*/memory/**`, `~/promptugal/**`.
 - **Tools:** reading, searching and writing files inside the paths above; the shell, within the rules below; reading the web (never websummit.com by machine); GitHub's read tools on `promptugal/promptugal__news__fringe`, `promptugal/promptugal__news__website`, `promptugal/promptugal__news__storm-charles`; the cloud session's documentation, `add_repo` for reading, and its own wake.

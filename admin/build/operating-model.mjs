@@ -71,6 +71,15 @@ width:1920px;height:1080px;background:var(--paper);color:var(--ink);font-family:
 .om .res .bar2{display:grid;grid-template-columns:50px 1fr 50px;align-items:center;gap:10px;margin:12px 0}.om .res .bar2 span{display:block;height:34px;background:var(--green)}
 .om .res .bar2 b{font-size:22px;color:var(--green)}.om .res .bar2 em{font-style:normal;font-family:Newsreader;font-size:30px;font-weight:650}
 .om .res .note{font-size:17px;color:var(--ink2);line-height:1.4;margin-top:16px}
+.om table.rm{border-collapse:collapse;margin-top:6px;width:100%}
+.om table.rm th.p{height:190px;vertical-align:bottom;padding:0 0 6px;width:40px}.om table.rm th.p div{writing-mode:vertical-rl;transform:rotate(180deg);font-family:"IBM Plex Mono";font-size:13px;color:var(--ink2);white-space:nowrap;margin:0 auto}
+.om table.rm th.u,.om table.rm th.n{font-family:"IBM Plex Mono";font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--green);text-align:left;vertical-align:bottom;padding:4px 8px}
+.om table.rm td{border:1px solid var(--hair);height:62px}.om table.rm td.u{width:400px;padding:4px 10px;font-size:17px;font-weight:600;line-height:1.2}.om table.rm td.u span{font-size:12px;font-weight:400;color:var(--ink3)}
+.om table.rm td.n{width:190px;text-align:center;font-family:"IBM Plex Mono";font-size:17px}.om table.rm td.n em{font-style:normal;font-weight:700}.om table.rm td.n em.hot{color:var(--red)}
+.om table.rm td.need{background:var(--green)}.om table.rm td.exp{background:#e9a3a7}.om table.rm td.miss{background:repeating-linear-gradient(45deg,#fff,#fff 4px,var(--red) 4px,var(--red) 6px)}
+.om .rlegend{display:flex;gap:10px;align-items:center;margin-top:10px;font-size:15px;color:var(--ink2)}.om .rlegend .sw{display:inline-block;width:22px;height:16px;border:1px solid var(--hair);margin-left:14px}
+.om .rlegend .sw.need{background:var(--green)}.om .rlegend .sw.exp{background:#e9a3a7}
+.om .ans{margin-top:12px;font-size:18px;line-height:1.4;max-width:1700px}
 .om .fsg{display:grid;grid-template-columns:420px 520px 1fr;gap:28px;margin-top:22px}
 .om .gr ol{list-style:none;counter-reset:g}.om .gr li{counter-increment:g;position:relative;padding:8px 0 8px 44px;border-bottom:1px solid var(--hair);font-size:18px;line-height:1.3}
 .om .gr li::before{content:counter(g);position:absolute;left:0;top:8px;width:30px;height:30px;border-radius:50%;background:var(--green);color:var(--paper);font-weight:700;display:grid;place-items:center;font-size:16px}
@@ -94,7 +103,7 @@ const NARROW = `@media (max-width:760px){
 .om-frame .om{position:static!important;transform:none!important;width:auto!important;height:auto!important;padding:14px!important;overflow:visible!important}
 .om .top{flex-direction:column;gap:4px;font-size:13px}.om .head{flex-direction:column;align-items:flex-start;gap:8px}.om h1{font-size:38px}.om .q{text-align:left;font-size:17px}
 .om .ladwrap,.om .osw{grid-template-columns:1fr;height:auto}.om .rung{grid-template-columns:60px 1fr;gap:4px 10px}.om .rung p,.om .rung .who{grid-column:1/-1;justify-content:flex-start}
-.om .rung h3{font-size:24px}.om .rung b.id{font-size:22px}.om .layer{grid-template-columns:1fr}.om .fsg,.om .alts,.om .alt2,.om .mix,.om .act{grid-template-columns:1fr}.om .tree .row{flex-direction:column}.om table.mx{font-size:14px}.om .rch>div{grid-template-columns:1fr}.om .layer h3{font-size:22px}
+.om .rung h3{font-size:24px}.om .rung b.id{font-size:22px}.om .layer{grid-template-columns:1fr}.om .fsg,.om .alts,.om .alt2,.om .mix,.om .act{grid-template-columns:1fr}.om .tree .row{flex-direction:column}.om table.rm{display:block;overflow-x:auto;max-width:100%}.om .rlegend{flex-wrap:wrap}.om .chip{white-space:normal}.om .ans{max-width:100%}.om table.mx{font-size:14px}.om .rch>div{grid-template-columns:1fr}.om .layer h3{font-size:22px}
 .om .axw{overflow-x:auto}.om table.ax{min-width:900px;font-size:14px}.om .bar{position:static;flex-direction:column;align-items:flex-start;gap:4px;margin-top:16px}.om .bar b{font-size:20px}.om .legend{flex-wrap:wrap}}`;
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
@@ -166,7 +175,20 @@ ${box(1, T.A1.calls + ' LLM calls', 'open weight (' + T.A1.models.map(esc).join(
 <p class="note">${esc(W.counts.items)} items${by.none ? `, ${by.none} with no valid answer in three calls` : ''}; ${T.A1.retried} of ${T.A1.calls} calls retried. A model's placement is evidence, not a decision. What it teaches: our board items are whole projects, each mixing altitudes; route work after cutting it into loops and calls, not before.</p></div></div>
 ${bar('abp/tools/altitudes.mjs · data/work-altitudes.json · rule R12 observed the loops')}`;
 }
-export const SLIDES = [ladder, access, os, graph, mixing, inAction];
+
+function reach() {
+  let R = null; try { R = JSON.parse(readFileSync(join(root, 'data/run-reach.json'), 'utf8')); } catch { return null; }
+  const short = (p) => p.replace('authenticate-as', 'auth-as').replace('.credential', '.cred').replace('.endpoint', '.endp').replace('.repository', '.repo').replace('.process', '.proc');
+  const cell = (u, p) => { const n = u.needs.includes(p), h = u.held.includes(p); return `<td class="${n && h ? 'need' : h ? 'exp' : n ? 'miss' : ''}"></td>`; };
+  return `${top(7)}<div class="head"><h1>The <em>reach</em> of each unit</h1><div class="q">"Why is A0: compute: plan run with A3 privileges?" Needed (its mandate) against held (its grant in fact), in abp.sgit.ai's ${R.primitives.length} capability primitives.</div></div>
+<table class="rm"><thead><tr><th class="u">unit</th><th class="n">needs · held · exposure</th>${R.primitives.map((p) => `<th class="p"><div>${esc(short(p))}</div></th>`).join('')}</tr></thead><tbody>
+${R.units.map((u) => `<tr><td class="u"><b class="mono">${esc(u.altitude)}</b> ${esc(u.unit)}<br><span>${esc(u.how)}</span></td><td class="n"><b>${u.needs.length}</b> · ${u.held.length} · <em class="${u.exposure.length > 2 ? 'hot' : ''}">${u.exposure.length}</em></td>${R.primitives.map((p) => cell(u, p)).join('')}</tr>`).join('')}
+</tbody></table>
+<div class="rlegend"><span class="sw need"></span>needed and held <span class="sw exp"></span>held, not needed: the exposure <span class="sw"></span>neither</div>
+<p class="ans"><b>The answer:</b> ${esc(R.answer)}</p>
+${bar('data/run-reach.json · abp.sgit.ai capability grammar (+4 vault primitives) · the fix: a packet\'s grant becomes the sandbox')}`;
+}
+export const SLIDES = [ladder, access, os, graph, mixing, inAction, reach];
 export function slidePage(i) {
   const M = loadModel();
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=1920"><title>The operating model ${i + 1}/${SLIDES.length}</title><style>${FONTS}body{margin:0}${CSS}</style></head><body><div class="om">${SLIDES[i](M) || '<p>Not run yet.</p>'}</div><p style="font:16px sans-serif;margin:12px 72px">Lisbon Tech Fringe is independent of Web Summit and not run by its organisers. For anything official, see <a href="https://websummit.com/">the organisers' official site</a>.</p></body></html>`;

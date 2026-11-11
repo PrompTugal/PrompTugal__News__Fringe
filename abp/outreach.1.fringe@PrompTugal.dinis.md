@@ -2,7 +2,7 @@
 title: "ABP: outreach.1.fringe@PrompTugal.dinis"
 agent: outreach.1.fringe@PrompTugal.dinis
 role: outreach
-policy: abp/policies.json v0.3.2 (sha256:e97dcdef0c31e21e)
+policy: abp/policies.json v0.3.2 (sha256:94cc5383d63a1e85)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -16,7 +16,7 @@ authority: Dinis Cruz, operator
 - **Role:** outreach. **Account:** riskmandate-personal (Ultra).
 - **Runs on:** R1 (models: M1 Sonnet); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** drafts to organisers and partners, the tracker; a person sends.
-- **Writes (this repository):** `team/dinis/agents/outreach.1.json`, `team/dinis/agents/outreach.1.fringe.json`, `team/dinis/agents/outreach.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `work/drafts/**`, `data/outreach*.json`, `admin/outreach-sealed/**`, `admin/tools/outreach.py`.
+- **Writes (this repository):** `team/dinis/agents/outreach.1.json`, `team/dinis/agents/outreach.1.fringe.json`, `team/dinis/agents/outreach.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `work/drafts/**`, `data/outreach*.json`, `admin/outreach-sealed/**`, `admin/tools/outreach.py`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
 - **Writes (outside git):** `/tmp/**`, `~/.sg-send/**`, `~/.abp/**`, `~/pki/**`, `~/.claude/projects/*/memory/**`, `~/promptugal/**`.
 - **Tools:** reading, searching and writing files inside the paths above; the shell, within the rules below; reading the web (never websummit.com by machine); GitHub's read tools on `promptugal/promptugal__news__fringe`, `promptugal/promptugal__news__website`, `promptugal/promptugal__news__storm-charles`; the cloud session's documentation, `add_repo` for reading, and its own wake.

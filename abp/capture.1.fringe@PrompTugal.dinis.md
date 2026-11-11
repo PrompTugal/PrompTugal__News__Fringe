@@ -2,7 +2,7 @@
 title: "ABP: capture.1.fringe@PrompTugal.dinis"
 agent: capture.1.fringe@PrompTugal.dinis
 role: capture
-policy: abp/policies.json v0.3.2 (sha256:e97dcdef0c31e21e)
+policy: abp/policies.json v0.3.2 (sha256:94cc5383d63a1e85)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -16,7 +16,7 @@ authority: Dinis Cruz, operator
 - **Role:** capture. **Account:** riskmandate-personal (Ultra).
 - **Runs on:** R1 (models: M1 Sonnet); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** screenshots and data in vaults, /evolution/.
-- **Writes (this repository):** `team/dinis/agents/capture.1.json`, `team/dinis/agents/capture.1.fringe.json`, `team/dinis/agents/capture.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `data/capture-*.json`, `admin/capture-sealed/**`, `admin/tools/capture.mjs`, `admin/build/evolution.mjs`, `admin/tools/covers.mjs`, `data/event-images.json`.
+- **Writes (this repository):** `team/dinis/agents/capture.1.json`, `team/dinis/agents/capture.1.fringe.json`, `team/dinis/agents/capture.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `data/capture-*.json`, `admin/capture-sealed/**`, `admin/tools/capture.mjs`, `admin/build/evolution.mjs`, `admin/tools/covers.mjs`, `data/event-images.json`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
 - **Writes (outside git):** `/tmp/**`, `~/.sg-send/**`, `~/.abp/**`, `~/pki/**`, `~/.claude/projects/*/memory/**`, `~/promptugal/**`.
 - **Tools:** reading, searching and writing files inside the paths above; the shell, within the rules below; reading the web (never websummit.com by machine); GitHub's read tools on `promptugal/promptugal__news__fringe`, `promptugal/promptugal__news__website`, `promptugal/promptugal__news__storm-charles`; the cloud session's documentation, `add_repo` for reading, and its own wake.

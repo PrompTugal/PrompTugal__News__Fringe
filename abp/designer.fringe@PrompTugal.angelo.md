@@ -2,7 +2,7 @@
 title: "ABP: designer.fringe@PrompTugal.angelo"
 agent: designer.fringe@PrompTugal.angelo
 role: design
-policy: abp/policies.json v0.3.2 (sha256:e97dcdef0c31e21e)
+policy: abp/policies.json v0.3.2 (sha256:94cc5383d63a1e85)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -16,7 +16,7 @@ authority: Dinis Cruz, operator
 - **Role:** design, under conductor.fringe@PrompTugal.angelo. **Account:** Angelo's.
 - **Runs on:** R1 (models: M1 Sonnet); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** the look on a phone: page modules, tokens, the brand, the design lab.
-- **Writes (this repository):** `team/angelo/agents/designer.json`, `team/angelo/agents/designer.fringe.json`, `team/angelo/agents/designer/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `team/angelo/**`, `admin/build/graph.mjs`, `admin/build/graph.js`.
+- **Writes (this repository):** `team/angelo/agents/designer.json`, `team/angelo/agents/designer.fringe.json`, `team/angelo/agents/designer/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `team/angelo/**`, `admin/build/graph.mjs`, `admin/build/graph.js`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
 - **Writes (outside git):** `/tmp/**`, `~/.sg-send/**`, `~/.abp/**`, `~/pki/**`, `~/.claude/projects/*/memory/**`, `~/promptugal/**`.
 - **Tools:** reading, searching and writing files inside the paths above; the shell, within the rules below; reading the web (never websummit.com by machine); GitHub's read tools on `promptugal/promptugal__news__fringe`, `promptugal/promptugal__news__website`, `promptugal/promptugal__news__storm-charles`; the cloud session's documentation, `add_repo` for reading, and its own wake.

@@ -274,9 +274,10 @@
       "team/{person}/agents/{name}/**",
       "data/keys.json#own-entry",
       "data/inboxes/{keyid}.json",
-      "work/{claimed}"
+      "work/{claimed}",
+      "tasks/*/result-*.json"
     ],
-    "writes_note": "data/keys.json: append or update your own entry only (the gate cannot tell entries apart yet; the hourly review reads the diff). work/{claimed}: the board file of an item you own or are claiming (owner, status, evidence lines), never another owner's item. data/inboxes/: the inbox tool writes them.",
+    "writes_note": "data/keys.json: append or update your own entry only (the gate cannot tell entries apart yet; the hourly review reads the diff). work/{claimed}: the board file of an item you own or are claiming (owner, status, evidence lines), never another owner's item. data/inboxes/: the inbox tool writes them. tasks/*/result-*.json: any agent may return a signed result to a task packet (work/48, cross-environment runs at Dinis's word, 15:3x UTC).",
     "writes_outside_repo": [
       "/tmp/**",
       "{home}/.sg-send/**",
@@ -412,7 +413,12 @@
         "data/operating-model.json",
         "docs/where-agents-run*",
         "admin/build/operating-model.mjs",
-        "abp/reviews/**"
+        "abp/reviews/**",
+        "tasks/**",
+        "data/run-reach.json",
+        "data/work-altitudes.json",
+        "docs/articles/**",
+        "admin/build/articles.mjs"
       ],
       "touches_shared": [
         "admin/build/build.mjs (one line per page, until the registry lands)",
