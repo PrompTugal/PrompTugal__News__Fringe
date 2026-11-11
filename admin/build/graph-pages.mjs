@@ -79,8 +79,20 @@ ${m.festivals.length ? `<p class="muted">Festivals</p>${chips('festival', m.fest
 <p class="muted">For</p>${chips('persona', neighbours(d.events, 'personas'))}<h2>${d.events.length} events</h2>${evList(d.events)}${api('days')}`, `Every side event in Lisbon on ${d.name}.`);
   for (const p of m.places) write(`${PREFIX.place}/${p.id}`, p.name, `<h1>${esc(p.name)}</h1><p>${p.city === 'online' ? 'Online events.' : p.city === 'Lisbon' ? (p.name === 'Lisbon' ? 'In Lisbon, where the page names no neighbourhood (often: the address goes to guests).' : 'A neighbourhood of Lisbon.') : `<strong>Not in Lisbon:</strong> ${esc(p.city)}.`}</p>
 <p class="muted">Days</p>${chips('day', neighbours(p.events, 'day'))}<p class="muted">Organisers</p>${chips('organiser', orgsOf(p.events))}<h2>${p.events.length} events</h2>${evList(p.events)}${api('places')}`, `Side events this week in ${p.name}.`);
-  for (const p of m.personas) write(`${PREFIX.persona}/${p.id}`, p.name, `<h1>${esc(p.ask)}</h1><p>Events for: <strong>${esc(p.name)}</strong> (a role, never a person). <span class="muted">By rule, a hypothesis: ${esc(p.rule)}.</span></p>
-<p class="muted">Days</p>${chips('day', neighbours(p.events, 'day'))}<p class="muted">Organisers</p>${chips('organiser', orgsOf(p.events).slice(0, 30))}<h2>${p.events.length} events</h2>${evList(p.events)}${api('personas')}`, `This week's Lisbon side events for: ${p.name}.`);
+  // Personas: "who are you?" then today in Lisbon first, still to come before what already ended (brief 13).
+  const day1 = BUILT.slice(0, 10), nowIso = BUILT.slice(0, 16);
+  for (const p of m.personas) {
+    const evs = p.events.map((id) => B.events.get(id)).filter((e) => e.status !== 'cancelled');
+    const today = evs.filter((e) => e.day === day1 && (e.in_lisbon || e.city === 'online'));
+    const ahead = today.filter((e) => !e.end || e.end.slice(0, 16) > nowIso), over = today.filter((e) => !ahead.includes(e));
+    const later = evs.filter((e) => e.day > day1);
+    write(`${PREFIX.persona}/${p.id}`, p.name, `<h1>${esc(p.ask)}</h1><p>Events for: <strong>${esc(p.name)}</strong> (a role, never a person). <span class="muted">By rule, a hypothesis: ${esc(p.rule)}.</span></p>
+<p class="gx-chips">${m.personas.filter((x) => x.id !== p.id).map((x) => a('persona', x.id, x.ask)).join('')}</p>
+<h2>Today in Lisbon: ${ahead.length} still to come</h2><p class="muted">As of ${esc(BUILT.slice(11, 16))} UTC, when this page was built (Lisbon time is UTC in November).</p>${ahead.length ? evList(ahead.map((e) => e.id)) : '<p class="muted">Nothing more today. See tomorrow below.</p>'}
+${over.length ? `<details><summary>Earlier today: ${over.length}</summary>${evList(over.map((e) => e.id))}</details>` : ''}
+${later.length ? `<h2>The rest of the week: ${later.length}</h2>${chips('day', [...new Set(later.map((e) => e.day))])}${evList(later.map((e) => e.id))}` : ''}
+<p class="muted">Organisers</p>${chips('organiser', orgsOf(p.events).slice(0, 30))}${api('personas')}`, `Today's Lisbon side events for: ${p.name}, and the rest of the week.`);
+  }
   for (const t of m.topics) write(`${PREFIX.topic}/${t.id}`, t.name, `<h1>${esc(t.name)}</h1><p class="muted">Organisers</p>${chips('organiser', orgsOf(t.events))}<h2>${t.events.length} events</h2>${evList(t.events)}${api('topics')}`, `Side events in Lisbon this week about ${t.name}.`);
   // --- sessions: each with its event, festival, day and place ---------------------------------------------------
   const hm = (t) => (t ? String(t).slice(11, 16) : '');

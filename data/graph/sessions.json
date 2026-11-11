@@ -1,6 +1,6 @@
 {
  "about": "Sessions inside an event (work/42): the timed agenda its own public page publishes, title and time only. Never a speaker's name: a session is about the talk, not a person. The page notes 'Agenda timings and sessions may be subject to change'. Lisbon is on UTC in November.",
- "updated": "2026-11-11T16:57Z",
+ "updated": "2026-11-11T18:59Z",
  "by": "ontologist.1.fringe@PrompTugal.dinis",
  "events_read": [
   {
@@ -62,6 +62,41 @@
    "event": "2026-11-12-yorkseed-grand-finale-web-summit-2026",
    "url": "https://luma.com/i7llsb2c",
    "read_at": "2026-11-11T16:57:00Z",
+   "sessions": 0,
+   "note": "no timed agenda on the page"
+  },
+  {
+   "event": "2026-11-12-female-founders-breakfast",
+   "url": "https://luma.com/sx67k4x0",
+   "read_at": "2026-11-11T18:59:00Z",
+   "sessions": 0,
+   "note": "no timed agenda on the page"
+  },
+  {
+   "event": "2026-11-12-sales-leaders-breakfast",
+   "url": "https://luma.com/l4098oo8",
+   "read_at": "2026-11-11T18:59:00Z",
+   "sessions": 0,
+   "note": "no timed agenda on the page"
+  },
+  {
+   "event": "2026-11-12-business-lunch-lisbon-fsense-cvortex-web-summi",
+   "url": "https://luma.com/vfsejd2k",
+   "read_at": "2026-11-11T18:59:00Z",
+   "sessions": 0,
+   "note": "no timed agenda on the page"
+  },
+  {
+   "event": "2026-11-12-show-what-you-build",
+   "url": "https://luma.com/rnm96bu0",
+   "read_at": "2026-11-11T18:59:00Z",
+   "sessions": 0,
+   "note": "no timed agenda on the page"
+  },
+  {
+   "event": "2026-11-12-ptw-coworking-by-idea-spaces",
+   "url": "https://luma.com/ho7yw9rv",
+   "read_at": "2026-11-11T18:59:00Z",
    "sessions": 0,
    "note": "no timed agenda on the page"
   }
