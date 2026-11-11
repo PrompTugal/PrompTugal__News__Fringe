@@ -1,0 +1,94 @@
+{
+  "settings": {
+    "number_of_shards": 1
+  },
+  "mappings": {
+    "dynamic": "strict",
+    "properties": {
+      "kind": {
+        "type": "keyword"
+      },
+      "source": {
+        "type": "keyword"
+      },
+      "read_at": {
+        "type": "date"
+      },
+      "signer": {
+        "type": "keyword"
+      },
+      "signer_key": {
+        "type": "keyword"
+      },
+      "commit": {
+        "type": "keyword"
+      },
+      "ingested_at": {
+        "type": "date"
+      },
+      "ingested_by": {
+        "type": "keyword"
+      },
+      "id": {
+        "type": "keyword"
+      },
+      "doc": {
+        "type": "keyword"
+      },
+      "packet": {
+        "type": "keyword"
+      },
+      "altitude": {
+        "type": "keyword"
+      },
+      "from": {
+        "type": "keyword"
+      },
+      "for": {
+        "type": "text",
+        "fields": {
+          "raw": {
+            "type": "keyword",
+            "ignore_above": 512
+          }
+        }
+      },
+      "mandate": {
+        "type": "text",
+        "fields": {
+          "raw": {
+            "type": "keyword",
+            "ignore_above": 512
+          }
+        }
+      },
+      "tier": {
+        "type": "keyword"
+      },
+      "runner": {
+        "type": "keyword"
+      },
+      "environment": {
+        "type": "text",
+        "fields": {
+          "raw": {
+            "type": "keyword",
+            "ignore_above": 512
+          }
+        }
+      },
+      "ran_at": {
+        "type": "date"
+      },
+      "outputs": {
+        "type": "long"
+      },
+      "signed": {
+        "type": "boolean"
+      },
+      "sig_by": {
+        "type": "keyword"
+      }
+    }
+  }
+}

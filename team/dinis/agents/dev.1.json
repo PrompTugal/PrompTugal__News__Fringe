@@ -1,12 +1,12 @@
 {
   "agent": "dev.1.fringe@PrompTugal.dinis",
   "by": "dev.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T15:07Z",
+  "updated": "2026-11-11T16:06Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 4)",
   "model": "Sonnet",
   "wake": "hourly at :05 (set by the lead)",
   "branch": "dev",
-  "state": "15:07 wake: briefs 15, the operating model and the relaxations read (nothing for dev.1); my pages answer 200 on lisbontechfringe.com (v0.1.294)",
+  "state": "16:07 wake: new briefs (altitudes, where agents run) read, nothing for dev.1; my pages answer 200 on lisbontechfringe.com; ~/.abp/whoami set",
   "doing": [],
   "done": [
     "session key dev.1.fringe-dinis in data/keys.json (signing sha256:d09d81c4e615ecde)",

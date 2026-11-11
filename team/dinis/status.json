@@ -1,6 +1,6 @@
 {
   "by": "conductor.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T15:22Z",
+  "updated": "2026-11-11T16:35Z",
   "person": "dinis",
   "role": "head",
   "state": "wake 14:23: live at lisbontechfringe.com; 15 agents on the lead's account; briefs 1 to 14; design lab, graph, SQL, models, tips, ABPs (observe) live",
@@ -127,6 +127,8 @@
     "reviewing what lands on dev; routing Dinis's briefs"
   ],
   "done": [
+    "16:24: Luma hold (work/49): its terms forbid downloading or republishing its images and allow access only through publicly supported interfaces; 67 Luma covers off the site; researchers to its iCal feeds; one rule sent to every team",
+    "since 15:21: architect.1's article, packets P1/P2 to Angelo, the altitudes hand-off (work/50), the policy hooks hardened (finding 28); researcher.fringe@'s spot-check: Thursday's 66 events match",
     "15:22: brought onto dev: security.fringe@'s fourth review (no high; finding 28 hooks to architect.1), fable.fringe@'s third note, researcher.fringe@'s spot-check (46 of Wednesday's events match their pages); brief 14 written down; staaake out of communities (Indi's conductor); /agentic-team/where-agents-run/ live (architect.1)",
     "privacy (fable.fringe@ item 2): researcher.2 told to withhold the 45 street addresses that organisers' own pages withhold",
     "Dinis decided (brief 15): keep the location lookup as on PrompTugal.news; finding 20 accepted",
@@ -168,10 +170,10 @@
     "tell conductor@PrompTugal.dinis the URL so pt.news links it; tell incident.conductor@web-summit.dinis that we read the storm site's /api/v1/"
   ],
   "asks": [
-    "Dinis (1): the old address fringe.promptugal.news answers 404, so every link shared this morning (with its ?via= tag) is broken. An org admin creates a small Pages repository for fringe.promptugal.news holding admin/redirect/ (dev.1 built it). Who?",
-    "Dinis (2): the three agents on the other account still name the old lead (researcher.fringe@, security.fringe@, dev.fringe@); point them at this session. security.fringe@ cannot drain its inbox (no sgit-ai there): may it pip install sgit-ai==0.27.0, as on PrompTugal.news?",
-    "Dinis (3): correct docs/where-agents-run.md v0.2 and the operating model with Angelo (work/48), when you have a moment.",
-    "Dinis (4): protect main (pull requests only) and limit Pages deploys to dev (security findings 1 and 2, open since 10:48).",
-    "security.fringe: your status file is team/dinis/agents/security.fringe.json; brief 15 lets every agent push to dev behind the gate; architect.1 fixes your grant (finding 31)."
+    "Dinis (1, terms): Luma (work/49). Its Terms of Use allow access only 'by ... our publicly supported interfaces' and prohibit downloading or republishing its images. Held until you decide: no Luma images or screenshots (67 removed), no automated page loops (iCal feeds instead), single pages at a person's pace. Confirm, or relax (e.g. ask Luma for permission).",
+    "Dinis (R5 grant): may the lead push dev to its session branch claude/magical-mayer-pxpzed (the harness requires it), exact branch only? R5 is now enforced; architect.1 refused to widen it without your word, and an override would lift all of R5 for the lead, main included.",
+    "Dinis (2): the old address fringe.promptugal.news answers 404; an org admin creates the redirect repository (admin/redirect/). Who?",
+    "Dinis (3): send Silvio the join link (work/36, work/50) and point the 3 agents on the other account at this session.",
+    "Dinis (4): correct the where-agents-run and operating-model drafts with Angelo (work/48), when you can."
   ]
 }

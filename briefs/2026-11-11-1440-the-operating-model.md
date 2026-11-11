@@ -61,3 +61,15 @@ Decided: **the altitudes of execution** (also the holarchy of work; the architec
 > "use loop"
 
 The altitudes of execution: A4 swarm, A3 agent, A2 loop, A1 LLM call, A0 compute.
+
+## In action, then across environments (15:35 UTC)
+
+> "let's now try this in action, to spin up multiple altitudes"
+
+Done: one objective through A3, A0, three A2 loops, 81 A1 calls and A0 again; 85 signatures verified (slide 6, data/work-altitudes.json).
+
+> "ok, can you write an article about this"
+
+> "next let's start running this across multiple environments, for example what about we define here loops and llms calls for angelo team to run and vice versa"
+
+> "also what about if we add other execution enviroments, like AWS agents and Claude Flare workers"

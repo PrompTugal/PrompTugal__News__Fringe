@@ -87,7 +87,7 @@
     } else {
       if (n.what) h += '<div>' + esc(n.what) + '</div>';
       if (n.outreach) h += '<div class="muted">Outreach: ' + esc(n.outreach) + '</div>';
-      var l = [n.home && '<a href="' + esc(n.home) + '">their page</a>', n.verified && '<a href="/api/v1/communities.json">checked community</a>', n.ptnews && '<a href="' + esc(n.ptnews) + '">on pt.news</a>', n.gamma_ray && '<a href="' + esc(n.gamma_ray) + '">GAMMA-Ray card</a>'].filter(Boolean).join(' · ');
+      var l = [n.page && '<a href="' + esc(n.page) + '"><strong>its page here</strong></a>', n.home && '<a href="' + esc(n.home) + '">their page</a>', n.verified && '<a href="/api/v1/communities.json">checked community</a>', n.ptnews && '<a href="' + esc(n.ptnews) + '">on pt.news</a>', n.gamma_ray && '<a href="' + esc(n.gamma_ray) + '">GAMMA-Ray card</a>'].filter(Boolean).join(' · ');
       if (l) h += '<div class="muted">' + l + '</div>';
     }
     var nb = adj[id].map(function (m) { return byId[m]; });

@@ -1,0 +1,282 @@
+{
+ "about": "Sessions inside an event (work/42): the timed agenda its own public page publishes, title and time only. Never a speaker's name: a session is about the talk, not a person. The page notes 'Agenda timings and sessions may be subject to change'. Lisbon is on UTC in November.",
+ "updated": "2026-11-11T15:56Z",
+ "by": "ontologist.1.fringe@PrompTugal.dinis",
+ "events_read": [
+  {
+   "event": "2026-11-13-lisbon-community-week",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "read_at": "2026-11-11T15:56:00Z",
+   "sessions": 23
+  },
+  {
+   "event": "2026-11-11-ai-horizon-conference",
+   "url": "https://luma.com/p6glepvg",
+   "read_at": "2026-11-11T15:56:00Z",
+   "sessions": 0,
+   "note": "no timed agenda on the page"
+  },
+  {
+   "event": "2026-11-13-unblock-ai-conference",
+   "url": "https://luma.com/unblockai-conference",
+   "read_at": "2026-11-11T15:56:00Z",
+   "sessions": 0,
+   "note": "only the day's hours (8:00 to 20:00); no timed agenda"
+  }
+ ],
+ "sessions": [
+  {
+   "id": "2026-11-13-lisbon-community-week--0815",
+   "event": "2026-11-13-lisbon-community-week",
+   "name": "Check-in, breakfast and networking",
+   "kind": "break",
+   "start": "2026-11-13T08:15:00Z",
+   "end": "2026-11-13T09:00:00Z",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "read_at": "2026-11-11T15:56:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-13-lisbon-community-week--0900",
+   "event": "2026-11-13-lisbon-community-week",
+   "name": "Welcome to Lisbon Community Week 2026",
+   "kind": "talk",
+   "start": "2026-11-13T09:00:00Z",
+   "end": "2026-11-13T09:10:00Z",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "read_at": "2026-11-11T15:56:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-13-lisbon-community-week--0910",
+   "event": "2026-11-13-lisbon-community-week",
+   "name": "To be announced (the page says: more details coming soon)",
+   "kind": "talk",
+   "start": "2026-11-13T09:10:00Z",
+   "end": "2026-11-13T09:30:00Z",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "read_at": "2026-11-11T15:56:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-13-lisbon-community-week--0930",
+   "event": "2026-11-13-lisbon-community-week",
+   "name": "Cracking the Code of Human Connection",
+   "kind": "talk",
+   "start": "2026-11-13T09:30:00Z",
+   "end": "2026-11-13T09:45:00Z",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "read_at": "2026-11-11T15:56:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-13-lisbon-community-week--0945",
+   "event": "2026-11-13-lisbon-community-week",
+   "name": "Adapting Community Strategies for the AI Era (While Still Staying Human-Centric)",
+   "kind": "talk",
+   "start": "2026-11-13T09:45:00Z",
+   "end": "2026-11-13T10:25:00Z",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "read_at": "2026-11-11T15:56:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-13-lisbon-community-week--1025",
+   "event": "2026-11-13-lisbon-community-week",
+   "name": "The Do-Everything Community Trap: Why Focus (Not Features) Drives Business Impact",
+   "kind": "talk",
+   "start": "2026-11-13T10:25:00Z",
+   "end": "2026-11-13T10:40:00Z",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "read_at": "2026-11-11T15:56:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-13-lisbon-community-week--1040",
+   "event": "2026-11-13-lisbon-community-week",
+   "name": "Coffee break",
+   "kind": "break",
+   "start": "2026-11-13T10:40:00Z",
+   "end": "2026-11-13T10:50:00Z",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "read_at": "2026-11-11T15:56:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-13-lisbon-community-week--1050",
+   "event": "2026-11-13-lisbon-community-week",
+   "name": "3 Ways to Put AI to Work in Your Community",
+   "kind": "talk",
+   "start": "2026-11-13T10:50:00Z",
+   "end": "2026-11-13T11:10:00Z",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "read_at": "2026-11-11T15:56:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-13-lisbon-community-week--1110",
+   "event": "2026-11-13-lisbon-community-week",
+   "name": "What 1M Community Members Taught Me That AI Can't Learn",
+   "kind": "talk",
+   "start": "2026-11-13T11:10:00Z",
+   "end": "2026-11-13T11:25:00Z",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "read_at": "2026-11-11T15:56:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-13-lisbon-community-week--1125",
+   "event": "2026-11-13-lisbon-community-week",
+   "name": "Communities as Investable Assets",
+   "kind": "talk",
+   "start": "2026-11-13T11:25:00Z",
+   "end": "2026-11-13T11:40:00Z",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "read_at": "2026-11-11T15:56:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-13-lisbon-community-week--1140",
+   "event": "2026-11-13-lisbon-community-week",
+   "name": "Cohorts That Actually Mean Something: A Readiness-Based Approach to Community Personalization",
+   "kind": "talk",
+   "start": "2026-11-13T11:40:00Z",
+   "end": "2026-11-13T11:55:00Z",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "read_at": "2026-11-11T15:56:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-13-lisbon-community-week--1155",
+   "event": "2026-11-13-lisbon-community-week",
+   "name": "Session break",
+   "kind": "break",
+   "start": "2026-11-13T11:55:00Z",
+   "end": "2026-11-13T12:10:00Z",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "read_at": "2026-11-11T15:56:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-13-lisbon-community-week--1210",
+   "event": "2026-11-13-lisbon-community-week",
+   "name": "Nobody Remembers Your Agenda: How to Design Rooms Where Strangers Go Deep, Fast",
+   "kind": "talk",
+   "start": "2026-11-13T12:10:00Z",
+   "end": "2026-11-13T12:25:00Z",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "read_at": "2026-11-11T15:56:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-13-lisbon-community-week--1225",
+   "event": "2026-11-13-lisbon-community-week",
+   "name": "The Table Is a Format: Why Food + Conversation Design Belongs in Your Community Toolkit",
+   "kind": "talk",
+   "start": "2026-11-13T12:25:00Z",
+   "end": "2026-11-13T12:40:00Z",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "read_at": "2026-11-11T15:56:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-13-lisbon-community-week--1240",
+   "event": "2026-11-13-lisbon-community-week",
+   "name": "Rediscovering the Meaning of True Connection",
+   "kind": "talk",
+   "start": "2026-11-13T12:40:00Z",
+   "end": "2026-11-13T12:55:00Z",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "read_at": "2026-11-11T15:56:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-13-lisbon-community-week--1255",
+   "event": "2026-11-13-lisbon-community-week",
+   "name": "The Death of Community Management: Why That's Good News",
+   "kind": "talk",
+   "start": "2026-11-13T12:55:00Z",
+   "end": "2026-11-13T13:10:00Z",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "read_at": "2026-11-11T15:56:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-13-lisbon-community-week--1310",
+   "event": "2026-11-13-lisbon-community-week",
+   "name": "Lunch break",
+   "kind": "break",
+   "start": "2026-11-13T13:10:00Z",
+   "end": "2026-11-13T14:10:00Z",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "read_at": "2026-11-11T15:56:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-13-lisbon-community-week--1410",
+   "event": "2026-11-13-lisbon-community-week",
+   "name": "Panel: Building Community in Portugal: From Gathering People to Creating Belonging",
+   "kind": "panel",
+   "start": "2026-11-13T14:10:00Z",
+   "end": "2026-11-13T14:30:00Z",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "read_at": "2026-11-11T15:56:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-13-lisbon-community-week--1430",
+   "event": "2026-11-13-lisbon-community-week",
+   "name": "Hands-on workshop",
+   "kind": "workshop",
+   "start": "2026-11-13T14:30:00Z",
+   "end": "2026-11-13T15:30:00Z",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "read_at": "2026-11-11T15:56:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-13-lisbon-community-week--1530",
+   "event": "2026-11-13-lisbon-community-week",
+   "name": "Coffee break",
+   "kind": "break",
+   "start": "2026-11-13T15:30:00Z",
+   "end": "2026-11-13T15:45:00Z",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "read_at": "2026-11-11T15:56:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-13-lisbon-community-week--1545",
+   "event": "2026-11-13-lisbon-community-week",
+   "name": "Unconference",
+   "kind": "unconference",
+   "start": "2026-11-13T15:45:00Z",
+   "end": "2026-11-13T17:15:00Z",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "read_at": "2026-11-11T15:56:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-13-lisbon-community-week--1715",
+   "event": "2026-11-13-lisbon-community-week",
+   "name": "Closing remarks",
+   "kind": "talk",
+   "start": "2026-11-13T17:15:00Z",
+   "end": "2026-11-13T17:30:00Z",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "read_at": "2026-11-11T15:56:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-13-lisbon-community-week--1730",
+   "event": "2026-11-13-lisbon-community-week",
+   "name": "After party",
+   "kind": "party",
+   "start": "2026-11-13T17:30:00Z",
+   "end": "2026-11-13T19:30:00Z",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "read_at": "2026-11-11T15:56:00Z",
+   "label": "fact"
+  }
+ ]
+}

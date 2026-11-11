@@ -1,38 +1,60 @@
 {
  "about": "The capture vaults (work/27): normal sgit vaults (not pack vaults) on dev.send.sgraph.ai. A new vault opens before one reaches 20,000 files (admin/tools/capture.mjs rotates at 15,000). Vault ids only: the keys stay outside git (~/.sg-send/captures/<dir>/.sg_vault/local/, 0600), and a copy is sealed to the lead's key.",
- "updated": "2026-11-11T14:00Z",
+ "updated": "2026-11-11T16:26Z",
  "by": "capture.1.fringe@PrompTugal.dinis",
  "host": "https://dev.send.sgraph.ai",
  "vaults": [
   {
    "id": "u4f3pl6f",
    "dir": "cap-001",
-   "status": "private-sealed",
+   "status": "deleted",
    "kind": "normal",
    "opened_at": "2026-11-11T11:54:37Z",
    "read_key_public": false,
    "private": true,
    "closed_at": "2026-11-11T13:26Z",
-   "note": "PRIVATE FOREVER, never publish its read key: its history holds organiser-page captures with guest lists (security finding 21). Event captures deleted from its working tree at 2026-11-11T13:26Z; history remains in the vault, which only the lead can open."
+   "note": "DELETED from dev.send.sgraph.ai and from this machine at 2026-11-11T16:26Z (lead's order, Luma Terms 6 Oct 2026: no Luma image or page screenshot kept). Its own-site captures were copied to cap-003.",
+   "deleted_at": "2026-11-11T16:26Z"
   },
   {
    "id": "b1pw4zrm",
    "dir": "cap-002",
-   "status": "active",
+   "status": "deleted",
    "kind": "normal",
    "opened_at": "2026-11-11T13:26Z",
    "read_key_public": false,
-   "note": "Privacy-safe captures only: Luma event headers (images hidden, cropped, text cut before guest markers), once a day; our own pages hourly. Read key not published until the lead says."
+   "note": "DELETED from dev.send.sgraph.ai and from this machine at 2026-11-11T16:26Z (lead's order, Luma Terms 6 Oct 2026: no Luma image or page screenshot kept). Its own-site captures were copied to cap-003.",
+   "deleted_at": "2026-11-11T16:26Z"
   },
   {
    "id": "9cf4rcf3",
    "dir": "covers-001",
-   "status": "active",
+   "status": "deleted",
    "purpose": "covers",
    "kind": "normal",
    "opened_at": "2026-11-11T14:00Z",
    "read_key_public": false,
-   "note": "Event cover images only (work/45). Its read key is to be published (Dinis, brief 7/13: covers only, no guest lists)."
+   "note": "DELETED from dev.send.sgraph.ai and from this machine at 2026-11-11T16:26Z (lead's order, Luma Terms 6 Oct 2026: no Luma image or page screenshot kept). Its own-site captures were copied to cap-003.",
+   "deleted_at": "2026-11-11T16:26Z"
+  },
+  {
+   "id": "to3xs2w3",
+   "dir": "cap-003",
+   "status": "active",
+   "kind": "normal",
+   "opened_at": "2026-11-11T16:26Z",
+   "read_key_public": false,
+   "note": "Our own pages only (no Luma, no organiser page). Read key not published."
+  },
+  {
+   "id": "mu9y0eqq",
+   "dir": "covers-002",
+   "status": "active",
+   "purpose": "covers",
+   "kind": "normal",
+   "opened_at": "2026-11-11T16:26Z",
+   "read_key_public": false,
+   "note": "Organiser-own images only (Luma, Meetup, Eventbrite, Partiful excluded). Read key not published."
   }
  ]
 }

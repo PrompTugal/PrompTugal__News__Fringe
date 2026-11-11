@@ -1,7 +1,7 @@
 {
   "agent": "researcher.fringe@PrompTugal.dinis",
   "by": "researcher.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T15:18Z",
+  "updated": "2026-11-11T16:18Z",
   "started_by": "session_01Kw9UwBGQe9BhMCbDw28aDA (the lead 10:44 to 11:14 UTC), under BRIEF.md §7 step 4. The lead since 11:14 UTC is conductor.fringe@PrompTugal.dinis = session_01Kw9UwCFpT9ihNBcQFxkomq (BRIEF-CORRECTIONS.md, 033769d).",
   "wake": "hourly until Friday 13 November",
   "branch": "work/researcher.fringe",
@@ -11,6 +11,7 @@
     "work/17 Practical Lisbon: data/places.json (12 places)"
   ],
   "done": [
+    "16:16 wake: no HOLD.md; merged dev. Spot-check: all 66 Thursday 12 Nov Luma events match their pages (16:16 to 16:18 UTC). AltaIR Capital's Sintra evening (18:30 UTC today): its cancellation notice is gone and registration has reopened, while data/events.json still says cancelled",
     "15:16 wake: no HOLD.md; merged dev; read my ABP grant. Spot-check: Wednesday's 46 remaining Luma events re-read at 15:17 to 15:18 UTC all match data/events.json (researcher.2's, 15:14 UTC); only Aubay is still 404, already 'unknown'",
     "14:17 wake: no HOLD.md; merged dev; places.json and sources.md are on dev (13:26). The 6 Eventbrite events have been removed from data/events.json. places.json is now 12 places with lat and lon for 10 (Brief 13's map), adding Parque das Nações near the summit and Beato",
     "13:19 wake: no HOLD.md; merged dev (sources.md conflict kept both: Eventbrite's and Partiful's terms, and researcher.2's Eventbrite reads flagged); claimed work/17; data/places.json first pass: 6 venues read on their own sites at 13:21 UTC, open_today unknown for all (no storm notices); the storm site's sector closures linked, not copied",
@@ -24,10 +25,11 @@
     "sources.md: the source map"
   ],
   "next": [
-    "spot-check Thursday's events on Thursday morning",
-    "work/17: re-read venues on Thursday morning"
+    "Thursday morning: re-read the places (work/17) and spot-check Thursday's events again",
+    "Friday 13's events"
   ],
   "asks": [
+    "researcher.2.fringe@ and conductor.fringe, time-sensitive (event at 18:30 UTC today): AltaIR Capital's Funders & Founders Night (luma.com/h19cccc5). By 16:18 UTC the '[Cancelled]' title and the 'state of alert' update were gone and registration had reopened (52 places). data/events.json still says cancelled (read 16:13). Suggest status unknown with that note (team/dinis/agents/researcher/spot-checks.md). I have not edited your file.",
     "Dinis or the architect: my ABP grant lists my status file as team/dinis/agents/researcher.json, but my start brief (10:47 UTC) named team/dinis/agents/researcher.fringe.json, which I keep writing. Say which one is right and I will move it.",
     "design.3 or dev.1 or dev.2: data/places.json is ready for the map (Brief 13, D28): 12 places, 10 with lat and lon, each listing its events by id.",
     "Dinis or a person: please read Meetup's terms (https://www.meetup.com/terms/; it refuses non-browser clients) and say whether an agent may read single public Meetup event pages. Partiful forbids automated reading.",

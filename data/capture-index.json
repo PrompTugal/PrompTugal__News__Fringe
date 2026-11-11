@@ -4,27 +4,43 @@
   {
    "run": "2026-11-11-11",
    "file": "capture-index-2026-11-11-11.json",
-   "vault_id": "u4f3pl6f",
+   "vault_id": "to3xs2w3",
    "captured_at": "2026-11-11T11:55:22Z",
-   "count": 88,
-   "ok": 78
+   "count": 18,
+   "ok": 8
   },
   {
    "run": "2026-11-11-12",
    "file": "capture-index-2026-11-11-12.json",
-   "vault_id": "u4f3pl6f",
+   "vault_id": "to3xs2w3",
    "captured_at": "2026-11-11T12:25:59Z",
-   "count": 193,
-   "ok": 191
+   "count": 22,
+   "ok": 20
   },
   {
    "run": "2026-11-11-14",
    "file": "capture-index-2026-11-11-14.json",
-   "vault_id": "b1pw4zrm",
+   "vault_id": "to3xs2w3",
    "captured_at": "2026-11-11T14:26:29Z",
-   "count": 194,
-   "ok": 194
+   "count": 28,
+   "ok": 28
+  },
+  {
+   "run": "2026-11-11-15",
+   "file": "capture-index-2026-11-11-15.json",
+   "vault_id": "to3xs2w3",
+   "captured_at": "2026-11-11T15:25:50Z",
+   "count": 28,
+   "ok": 28
+  },
+  {
+   "run": "2026-11-11-16",
+   "file": "capture-index-2026-11-11-16.json",
+   "vault_id": "to3xs2w3",
+   "captured_at": "2026-11-11T16:27:06Z",
+   "count": 28,
+   "ok": 28
   }
  ],
- "updated": "2026-11-11T14:38:51Z"
+ "updated": "2026-11-11T16:28:17Z"
 }

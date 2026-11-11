@@ -1,12 +1,12 @@
 {
   "agent": "researcher.1.fringe@PrompTugal.jose",
   "by": "researcher.1.fringe@PrompTugal.jose",
-  "updated": "2026-11-11T15:18Z",
+  "updated": "2026-11-11T16:49Z",
   "started_by": "conductor.fringe@PrompTugal.jose at Jose's word (prompt R1), 13:36 UTC",
   "session": "session_01CqQLDA9LBMzBQKGsJmLFUS",
   "key": "researcher.1.fringe-jose (data/keys.json; signing sha256:225ae79f898ac2da)",
   "wake": "every 30 minutes until 21:00 UTC today, then off",
-  "state": "working, with my own machine reads of Luma and Side Events Guide on hold since 15:17 UTC (work/49; the guide's terms); the list follows researcher.2's reads",
+  "state": "working; no machine reads of Luma or the guides (the lead's hold, work/49); the list follows data/events.json",
   "doing": [
     "work/31-jose-today.md: today's online events still to come, ordered by start, each ready or held, for Jose's organiser notes"
   ],
@@ -18,16 +18,20 @@
     "14:36: served site checked (v0.1.273, same 173 events as the repository; the Kuma and ALBAN pages load with the independence line); 10 Luma pages read once each; data/events.json corrected for the 18:00 Frontier Founders & VCs Soirée (in person per its page, hosted by Content Gym and Kuma Partners, ends 21:00; was listed online and moved by the storm)",
     "14:39 to 14:41: the three guides read once each; two new online events added from their organisers' own Luma pages (WonderLead in Tech 16:30, ideaic.io 18:00); the guides' online tag on the Diaspora Dinner and Cisco not followed (the organisers' pages do not say so)",
     "wake 14:47: served site v0.1.282 carries the two new event pages and the corrected Soirée page; note 2 (ALBAN) still unchanged on dev",
-    "wake 15:18: Jose's seven notes all match (ALBAN reworded 15:11); Side Events Guide's terms read (section 7 forbids systematic extraction) and recorded in sources.md with a row for side-events-guide.com; no machine reads this wake"
+    "wake 15:18: Jose's seven notes all match (ALBAN reworded 15:11); Side Events Guide's terms read (section 7 forbids systematic extraction) and recorded in sources.md with a row for side-events-guide.com; no machine reads this wake",
+    "15:33: way forward agreed with conductor.fringe@PrompTugal.jose at Jose's word (hold kept; the Luma question sent to the lead for Dinis). Wake 15:49: no decision yet in briefs/, work/49 or sources.md; no reads; six notes to go, all matching; ALBAN's row dropped",
+    "16:06: Jose's send desk at his word: team/jose/agents/researcher.1/send-desk.html (built by send-desk.py from work/drafts/): each note and post is copy, open the organiser's page, mark sent, with a report line for the conductor; it sends nothing itself",
+    "wake 16:19: no decision yet on Luma reads; no reads; five notes to go, all matching, none sent yet; Kuma's row dropped; send desk rebuilt",
+    "16:23: Jose sent five organiser notes himself (WonderLead in Tech, ideaic.io, Canopy Community, FounderLink, Portugal Tech Week); told the conductor; the tracker shows them (16:36). Wake 16:49: 5 online events to come; no visit tagged via=organiser yet (traffic 16:38)"
   ],
   "next": [
+    "each wake: rebuild the send desk when the drafts change",
     "each wake: pull, drop started events, check the notes against data/events.json; no Luma or guide reads until Dinis decides"
   ],
   "asks": [
-    "Dinis: may agents read Luma event pages and Side Events Guide by machine? work/49 questions Luma; the guide's terms (sideevents.guide/legal, section 7) forbid systematic extraction. I read the guide once (11 pages) and 14 Luma pages before seeing either, and hold both from 15:17 UTC until you decide.",
-    "jose: because of that hold I no longer re-read organisers' pages myself; open each Luma page once before sending.",
+    "Dinis: the decision on Luma reads (work/49, the lead's hold of 16:23 UTC) is yours; until then I read no Luma page and no guide.",
     "conductor.fringe@PrompTugal.dinis: the 17:30 Cisco session is still 'on' in data/events.json; its Luma page had no location at 14:36 UTC; work/24 says it stays 'unknown'.",
-    "conductor.fringe@PrompTugal.jose: I cannot send to your inbox (admin/tools/inboxes.py needs the sgit_ai module, not installed here); work/31-jose-today.md carries everything.",
+    "conductor.fringe@PrompTugal.jose: I cannot use the repo inbox (inboxes.py needs the sgit_ai module, not installed here); I message your session instead.",
     "Dinis: my public key is not in PrompTugal__News__Website board/keys.json; that repository is out of reach for this session."
   ]
 }

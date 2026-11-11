@@ -9,3 +9,5 @@ done-means: "admin/build/designs/a.mjs renders the home page as design 'a' from 
 evidence: "design.1 13:5x UTC, first cut: admin/build/designs/a.mjs (design.render({events,esc,eventPath,hasPage,now}) -> {css,body}); previewed at /designs/a/ until the lab frame (work/35) routes ?design=a; week glance strip (days x hours, from data), day tabs, hour rows, anchors marked, a NOW rule and fold of earlier hours so now is inside two phone screens (604 px); 390 and 1280 px: no sideways scroll, no JS errors; works without JS. Done after the frame landed (work/35): meta export, the preview hook removed, built by the frame at /designs/a/ and /?design=a; dark mode checked (390 px), keyboard arrows on the day tabs, legend wording colour-neutral. Left to the frame: phone and desktop pictures (CI)."
 ---
 Brief 11 (briefs/2026-11-11-1329-the-design-lab.md): "ask the designers to submit multiple designs ... experiment ... figure out what is the best design." Four designs in parallel; Dinis picks.
+
+Note, usability.1, 2026-11-11 16:42 UTC, v0.1.376: five phone tasks on ?design=a are in the side-by-side scorecard in work/28. Shared gap: no organiser route within reach (D36).

@@ -1,0 +1,56 @@
+{
+ "body": {
+  "v": 1,
+  "id": "2026-11-11-p2-cut-items-into-loops",
+  "altitude": "A2",
+  "from": "architect.1.fringe@PrompTugal.dinis",
+  "for": "conductor.fringe@PrompTugal.angelo (or any environment)",
+  "mandate": "Cut each board item (a whole project that mixes altitudes) into units of work at single altitudes: the loops and LLM calls it is made of, each with the lowest altitude that suffices and the capability primitives it needs. Loop until the answer is valid JSON, then stop.",
+  "grant": [
+   "read.file.project"
+  ],
+  "tier": "cheap",
+  "max_tokens": 900,
+  "max_tries": 3,
+  "prompt": "The altitudes of execution: A4 swarm: agents of agents; starts and schedules other agents. A3 agent: a loop with an environment: memory across runs, its own wake, reach beyond its sandbox. A2 loop: a closed agentic loop: calls a model and uses tools until one task is done, then stops; cannot start others or schedule. A1 LLM call: one prompt in, one answer out; no tools. A0 compute: code that runs, no model.\nThis board item is a whole project. Cut it into 3 to 8 units of work, each at ONE altitude (the lowest that suffices), with the capability primitives it needs (verb.object.reach, e.g. read.file.project, write.repository.project, send.endpoint.allowed). Answer only JSON: {\"units\":[{\"unit\":\"<what>\",\"altitude\":\"A0|A1|A2|A3\",\"grant\":[\"...\"]}],\"agent_needed\":true|false}\nItem: {{input}}",
+  "inputs": [
+   {
+    "id": "work/42-the-semantic-graph",
+    "title": "The semantic graph: days, festivals, organisers, events, sessions, places, personas; everything linked",
+    "done_means": "data/graph/ holds one small JSON file per entity type (days, festivals, organisers, events, sessions, places, personas, topics) with stable ids and typed links (festival hasEvent, organiser runs, event hasSession, event at place, event forPersona, event about topic); Portugal Tech Week and other umbrellas group their events; organisers deduplicated (one per organisation, never a private person); /"
+   },
+   {
+    "id": "work/05-graph",
+    "title": "Connect the dots: the fringe graph",
+    "done_means": "/graph/ shows events, communities, topics and places with filters"
+   },
+   {
+    "id": "work/46-give-us-the-intel",
+    "title": "Give us the intel: data collection everywhere",
+    "done_means": "a small 'Seen an event? Give us the intel' box on the home page and every event page (posting to /tip/'s lane); a 'Share to WhatsApp' button that sends a ?via=whatsapp-<group> link; outreach.1's group message asks people to paste their events at /tip/; /tip/'s status counts (tips received today, listed) on the dashboard"
+   },
+   {
+    "id": "work/24-the-loop",
+    "title": "The loop: consume every organiser's public feed, on a schedule",
+    "done_means": "sources.md lists every public calendar and events site we read (Luma calendars, events.portugaltechweek.com, Meetup, Eventbrite) with what its terms allow; the researcher re-reads each at least hourly until Friday 13 and records new, changed and cancelled events in data/events.json with read_at; a change shows on /changes/ (work/15)"
+   }
+  ],
+  "output": {
+   "required": [
+    "units",
+    "agent_needed"
+   ]
+  },
+  "return": "commit tasks/<id>/result-<your agent>.json (node abp/tools/packets.mjs run --id <id> --as <your agent> --env <your runtime and account>)",
+  "issued_at": "2026-11-11T15:36:01Z"
+ },
+ "by": {
+  "altitude": "A3",
+  "name": "issuer: architect.1.fringe@PrompTugal.dinis",
+  "fp": "sha256:52d34f9f913e1e05",
+  "pub": "MCowBQYDK2VwAyEAg0LYEwdZhtWfo1mm9PXELIUkxIBPIJ/LlpNeXDA67vw=",
+  "born": "2026-11-11T15:36:01Z",
+  "signed_at": "2026-11-11T15:36:01Z"
+ },
+ "sig": "BsuV3tMS13A1s4cuh2KgFdRbpn6fNuickM3IvVumGRSHp9qhQZcAl86J67iYvQG3VjcVY08JaJVSURJq/JBeBQ=="
+}

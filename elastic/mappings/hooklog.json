@@ -1,0 +1,82 @@
+{
+  "settings": {
+    "number_of_shards": 1
+  },
+  "mappings": {
+    "dynamic": "strict",
+    "properties": {
+      "kind": {
+        "type": "keyword"
+      },
+      "source": {
+        "type": "keyword"
+      },
+      "read_at": {
+        "type": "date"
+      },
+      "signer": {
+        "type": "keyword"
+      },
+      "signer_key": {
+        "type": "keyword"
+      },
+      "commit": {
+        "type": "keyword"
+      },
+      "ingested_at": {
+        "type": "date"
+      },
+      "ingested_by": {
+        "type": "keyword"
+      },
+      "t": {
+        "type": "date"
+      },
+      "session": {
+        "type": "keyword"
+      },
+      "ev": {
+        "type": "keyword"
+      },
+      "agent": {
+        "type": "keyword"
+      },
+      "who": {
+        "type": "keyword"
+      },
+      "role": {
+        "type": "keyword"
+      },
+      "tool": {
+        "type": "keyword"
+      },
+      "tool_kind": {
+        "type": "keyword"
+      },
+      "decision": {
+        "type": "keyword"
+      },
+      "rule": {
+        "type": "keyword"
+      },
+      "target": {
+        "type": "text",
+        "fields": {
+          "raw": {
+            "type": "keyword",
+            "ignore_above": 512
+          }
+        }
+      },
+      "why": {
+        "type": "text",
+        "fields": {
+          "raw": {
+            "type": "keyword",
+            "ignore_above": 512
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,9 @@
 {
   "agent": "design.3.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T14:31:38Z",
+  "updated": "2026-11-11T16:32:39Z",
   "state": "idle",
   "doing": [
-    "nothing open: D26 waits for the lab frame to route ?design=c (then L1 to L14 and gallery pictures); D16 needs /submit/"
+    "nothing open for design"
   ],
   "done": [
     "D3 event cards: admin/build/cards.mjs; 390/1280 px, light and dark, no overflow or console errors",
@@ -17,7 +17,9 @@
     "D23 follow-up: one-line live ticker under the header on every page (links to /how/)",
     "D26 design C 'the city': c.mjs module written and previewed; waits for the lab frame",
     "D28 map: admin/build/city-map.mjs, a drop-in map (dot per event on a day, by neighbourhood; online, guests-only and outside-Lisbon counted not drawn); shared admin/build/lisbon-areas.mjs (uses researcher.2's neighbourhood and in_lisbon when present)",
-    "14:31 wake: checked live (v0.1.272): home shows design.1's mount of my city map (27 dots, no overflow at 390 px), ticker, /how/, /programme/, /designs/c/ all 200"
+    "14:31 wake: checked live (v0.1.272): home shows design.1's mount of my city map (27 dots, no overflow at 390 px), ticker, /how/, /programme/, /designs/c/ all 200",
+    "15:27 `node abp/tools/abp.mjs whoami` run: ~/.abp/whoami = design.3.fringe@PrompTugal.dinis (security finding 28)",
+    "D26 design C done: in the lab frame, L1 to L14 checked at 390 px; now/next block added after the map"
   ],
   "next": [
     "after D22 lands: restyle big strip, dense rows, cards, event page; then check 390/1280 px light and dark"

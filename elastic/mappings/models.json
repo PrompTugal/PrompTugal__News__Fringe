@@ -1,0 +1,65 @@
+{
+  "settings": {
+    "number_of_shards": 1
+  },
+  "mappings": {
+    "dynamic": "strict",
+    "properties": {
+      "kind": {
+        "type": "keyword"
+      },
+      "source": {
+        "type": "keyword"
+      },
+      "read_at": {
+        "type": "date"
+      },
+      "signer": {
+        "type": "keyword"
+      },
+      "signer_key": {
+        "type": "keyword"
+      },
+      "commit": {
+        "type": "keyword"
+      },
+      "ingested_at": {
+        "type": "date"
+      },
+      "ingested_by": {
+        "type": "keyword"
+      },
+      "day": {
+        "type": "date",
+        "format": "yyyy-MM-dd"
+      },
+      "model": {
+        "type": "keyword"
+      },
+      "tier": {
+        "type": "keyword"
+      },
+      "agent": {
+        "type": "keyword"
+      },
+      "group": {
+        "type": "keyword"
+      },
+      "calls": {
+        "type": "long"
+      },
+      "ok": {
+        "type": "long"
+      },
+      "cost_usd": {
+        "type": "double"
+      },
+      "tokens_in": {
+        "type": "long"
+      },
+      "tokens_out": {
+        "type": "long"
+      }
+    }
+  }
+}

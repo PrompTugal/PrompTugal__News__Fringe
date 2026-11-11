@@ -1,6 +1,6 @@
 {
  "about": "Organiser tracker for work/23 and work/29. Organisations only, never private people; no contact details. 'page' is the organiser's public event page where its own 'contact host' route is. State is set by the person who sends: drafted, sent, answered, joined, declined. An agent never sends.",
- "updated": "2026-11-11T14:35Z",
+ "updated": "2026-11-11T16:36Z",
  "by": "outreach.1.fringe@PrompTugal.dinis",
  "organisers": [
   {
@@ -11,10 +11,10 @@
    "channel": "the 'Contact the host' link on the organiser's public Luma event page (check it is there before sending)",
    "draft": "work/drafts/organiser-note.md",
    "draft_status": "approved by Dinis, 14:27 UTC (brief 15)",
-   "state": "drafted",
-   "sent_by": "",
-   "sent_at": "",
-   "note": "Jose's note drafted: before 20:30 UTC"
+   "state": "sent",
+   "sent_by": "jose",
+   "sent_at": "2026-11-11T16:23Z",
+   "note": "Sent by Jose by hand through the organiser's Luma 'Contact the host' (his word, relayed by conductor.fringe@PrompTugal.jose and researcher.1, 16:24 UTC); no answer recorded yet"
   },
   {
    "id": "unicorn-factory-lisboa",
@@ -50,10 +50,10 @@
    "channel": "the 'Contact the host' link on the organiser's public Luma event page (check it is there before sending)",
    "draft": "work/drafts/organiser-note.md",
    "draft_status": "approved by Dinis, 14:27 UTC (brief 15)",
-   "state": "drafted",
-   "sent_by": "",
-   "sent_at": "",
-   "note": "Jose's note drafted: before 18:30 UTC"
+   "state": "sent",
+   "sent_by": "jose",
+   "sent_at": "2026-11-11T16:23Z",
+   "note": "Sent by Jose by hand through the organiser's Luma 'Contact the host' (his word, relayed by conductor.fringe@PrompTugal.jose and researcher.1, 16:24 UTC); no answer recorded yet"
   },
   {
    "id": "founderlink",
@@ -63,23 +63,23 @@
    "channel": "the 'Contact the host' link on the organiser's public Luma event page (check it is there before sending)",
    "draft": "work/drafts/organiser-note.md",
    "draft_status": "approved by Dinis, 14:27 UTC (brief 15)",
-   "state": "drafted",
-   "sent_by": "",
-   "sent_at": "",
-   "note": "Jose's note drafted: before 19:00 UTC"
+   "state": "sent",
+   "sent_by": "jose",
+   "sent_at": "2026-11-11T16:23Z",
+   "note": "Sent by Jose by hand through the organiser's Luma 'Contact the host' (his word, relayed by conductor.fringe@PrompTugal.jose and researcher.1, 16:24 UTC); no answer recorded yet"
   },
   {
-   "id": "kuma-partners",
-   "organiser": "Kuma Partners",
-   "events": 3,
-   "page": "https://luma.com/i91jzozo",
+   "id": "ideaic-io",
+   "organiser": "ideaic.io",
+   "events": 2,
+   "page": "https://luma.com/gasfz3vy",
    "channel": "the 'Contact the host' link on the organiser's public Luma event page (check it is there before sending)",
    "draft": "work/drafts/organiser-note.md",
    "draft_status": "approved by Dinis, 14:27 UTC (brief 15)",
-   "state": "drafted",
-   "sent_by": "",
-   "sent_at": "",
-   "note": "Jose's note drafted (work/drafts/organiser-notes-today-jose.md): send before 15:00 UTC"
+   "state": "sent",
+   "sent_by": "jose",
+   "sent_at": "2026-11-11T16:23Z",
+   "note": "Sent by Jose by hand through the organiser's Luma 'Contact the host' (his word, relayed by conductor.fringe@PrompTugal.jose and researcher.1, 16:24 UTC); no answer recorded yet"
   },
   {
    "id": "indvstry-clvb",
@@ -93,6 +93,19 @@
    "sent_by": "",
    "sent_at": "",
    "note": ""
+  },
+  {
+   "id": "kuma-partners",
+   "organiser": "Kuma Partners",
+   "events": 2,
+   "page": "https://luma.com/i91jzozo",
+   "channel": "the 'Contact the host' link on the organiser's public Luma event page (check it is there before sending)",
+   "draft": "work/drafts/organiser-note.md",
+   "draft_status": "approved by Dinis, 14:27 UTC (brief 15)",
+   "state": "drafted",
+   "sent_by": "",
+   "sent_at": "",
+   "note": "Not sent: its event had started (Jose, 16:24 UTC). A note about a later session would need Dinis's word"
   },
   {
    "id": "lisboaux",
@@ -222,7 +235,7 @@
    "state": "drafted",
    "sent_by": "",
    "sent_at": "",
-   "note": "Jose's note drafted: before 15:30 UTC"
+   "note": "Not sent: its event had started (Jose, 16:24 UTC). A note about a later session would need Dinis's word"
   },
   {
    "id": "altair-capital",
@@ -329,10 +342,36 @@
    "note": ""
   },
   {
+   "id": "content-gym",
+   "organiser": "Content Gym",
+   "events": 1,
+   "page": "https://luma.com/tjed8ali",
+   "channel": "the 'Contact the host' link on the organiser's public Luma event page (check it is there before sending)",
+   "draft": "work/drafts/organiser-note.md",
+   "draft_status": "approved by Dinis, 14:27 UTC (brief 15)",
+   "state": "drafted",
+   "sent_by": "",
+   "sent_at": "",
+   "note": ""
+  },
+  {
    "id": "destilabs",
    "organiser": "DestiLabs",
    "events": 1,
    "page": "https://luma.com/ryva47wc",
+   "channel": "the 'Contact the host' link on the organiser's public Luma event page (check it is there before sending)",
+   "draft": "work/drafts/organiser-note.md",
+   "draft_status": "approved by Dinis, 14:27 UTC (brief 15)",
+   "state": "drafted",
+   "sent_by": "",
+   "sent_at": "",
+   "note": ""
+  },
+  {
+   "id": "devworld-conference-and-bitterbrains-as-the-page-names-them",
+   "organiser": "Devworld Conference and BitterBrains (as the page names them)",
+   "events": 1,
+   "page": "https://luma.com/j5k2jekf",
    "channel": "the 'Contact the host' link on the organiser's public Luma event page (check it is there before sending)",
    "draft": "work/drafts/organiser-note.md",
    "draft_status": "approved by Dinis, 14:27 UTC (brief 15)",
@@ -476,19 +515,6 @@
    "organiser": "Hardal",
    "events": 1,
    "page": "https://luma.com/9c2kspye",
-   "channel": "the 'Contact the host' link on the organiser's public Luma event page (check it is there before sending)",
-   "draft": "work/drafts/organiser-note.md",
-   "draft_status": "approved by Dinis, 14:27 UTC (brief 15)",
-   "state": "drafted",
-   "sent_by": "",
-   "sent_at": "",
-   "note": ""
-  },
-  {
-   "id": "ideaic-io",
-   "organiser": "ideaic.io",
-   "events": 1,
-   "page": "https://luma.com/ucah327r",
    "channel": "the 'Contact the host' link on the organiser's public Luma event page (check it is there before sending)",
    "draft": "work/drafts/organiser-note.md",
    "draft_status": "approved by Dinis, 14:27 UTC (brief 15)",
@@ -938,6 +964,19 @@
    "sent_by": "",
    "sent_at": "",
    "note": ""
+  },
+  {
+   "id": "wonderlead-in-tech",
+   "organiser": "WonderLead in Tech",
+   "events": 1,
+   "page": "https://luma.com/e6xzr89o",
+   "channel": "the 'Contact the host' link on the organiser's public Luma event page (check it is there before sending)",
+   "draft": "work/drafts/organiser-note.md",
+   "draft_status": "approved by Dinis, 14:27 UTC (brief 15)",
+   "state": "sent",
+   "sent_by": "jose",
+   "sent_at": "2026-11-11T16:23Z",
+   "note": "Sent by Jose by hand through the organiser's Luma 'Contact the host' (his word, relayed by conductor.fringe@PrompTugal.jose and researcher.1, 16:24 UTC); no answer recorded yet"
   }
  ]
 }

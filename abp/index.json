@@ -1,7 +1,7 @@
 {
   "about": "Every agent's grant, flattened from abp/policies.json by node abp/tools/abp.mjs build: what /abp/ shows.",
-  "policy": "0.3.2",
-  "sha256": "e97dcdef0c31e21e",
+  "policy": "0.4.0",
+  "sha256": "c616457892b22e84",
   "mode": "observe",
   "agents": [
     {
@@ -17,6 +17,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "work/**",
         "briefs/**",
         "team/**",
@@ -61,6 +62,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "abp/**",
         ".claude/**",
         "data/architecture.json",
@@ -75,6 +77,12 @@
         "docs/where-agents-run*",
         "admin/build/operating-model.mjs",
         "abp/reviews/**",
+        "tasks/**",
+        "data/run-reach.json",
+        "data/work-altitudes.json",
+        "docs/articles/**",
+        "admin/build/articles.mjs",
+        "docs/handoffs/**",
         "briefs/*.md#notes-of-Dinis-in-its-session"
       ],
       "owns": [],
@@ -98,6 +106,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "advice/**"
       ],
       "owns": [],
@@ -120,6 +129,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "data/obs/**",
         "data/geo/**",
         "assets/obs/**",
@@ -153,6 +163,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "admin/build/*.mjs (your own page modules)",
         "admin/build/designs/**",
         "admin/build/og/**",
@@ -185,6 +196,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "admin/build/*.mjs (your own page modules)",
         "admin/build/designs/**",
         "admin/build/og/**",
@@ -218,6 +230,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "admin/build/*.mjs (your own page modules)",
         "admin/build/designs/**",
         "admin/build/og/**",
@@ -253,6 +266,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "admin/build/*.mjs (your own page modules)",
         "admin/build/designs/**",
         "admin/build/og/**",
@@ -287,6 +301,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "admin/build/**",
         "admin/tools/**",
         "admin/redirect/**",
@@ -329,6 +344,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "admin/build/**",
         "admin/tools/**",
         "admin/redirect/**",
@@ -369,11 +385,13 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "data/events.json",
         "seed/**",
         "sources.md",
         "api/v1/README.md",
         "data/places.json",
+        "data/feeds/**",
         "data/tips-status.json"
       ],
       "owns": [
@@ -398,6 +416,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "data/capture-*.json",
         "admin/capture-sealed/**",
         "admin/tools/capture.mjs",
@@ -426,6 +445,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "work/drafts/**",
         "data/outreach*.json",
         "admin/outreach-sealed/**",
@@ -451,6 +471,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "work/design/**",
         "work/28-usability.md"
       ],
@@ -474,11 +495,13 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "data/events.json",
         "seed/**",
         "sources.md",
         "api/v1/README.md",
-        "data/places.json"
+        "data/places.json",
+        "data/feeds/**"
       ],
       "owns": [],
       "sends": [
@@ -500,6 +523,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "security/**",
         "HOLD.md"
       ],
@@ -523,6 +547,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "admin/build/**",
         "admin/tools/**",
         "admin/redirect/**",
@@ -558,6 +583,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "admin/build/**",
         "admin/tools/**",
         "admin/redirect/**",
@@ -593,6 +619,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "team/dinis/**",
         "work/drafts/dinis/**"
       ],
@@ -615,7 +642,8 @@
         "team/?/agents/conductor.b/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
-        "work/NN-<item you own>.md"
+        "work/NN-<item you own>.md",
+        "tasks/*/result-*.json"
       ],
       "owns": [],
       "sends": [
@@ -637,6 +665,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "team/vicky/**",
         "work/drafts/vicky/**",
         "work/13-editorial-check.md"
@@ -661,6 +690,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "team/indi/**",
         "work/drafts/indi/**",
         "data/communities.json",
@@ -689,6 +719,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "team/angelo/**",
         "work/drafts/angelo/**",
         "admin/build/graph.mjs",
@@ -723,6 +754,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "team/angelo/**",
         "admin/build/graph.mjs",
         "admin/build/graph.js"
@@ -747,6 +779,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "team/angelo/**",
         "admin/build/graph.mjs",
         "admin/build/graph.js",
@@ -773,6 +806,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "team/angelo/**",
         "admin/tools/trace-event.mjs"
       ],
@@ -796,6 +830,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "team/jose/**",
         "work/drafts/jose/**",
         "work/drafts/**",
@@ -821,6 +856,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "team/silvio/**",
         "work/drafts/silvio/**"
       ],
@@ -844,6 +880,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "team/daniela/**",
         "work/drafts/daniela/**"
       ],
@@ -867,11 +904,13 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "data/events.json",
         "seed/**",
         "sources.md",
         "api/v1/README.md",
-        "data/places.json"
+        "data/places.json",
+        "data/feeds/**"
       ],
       "owns": [],
       "sends": [
@@ -893,6 +932,7 @@
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
         "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
         "data/graph/**",
         "admin/build/graph-*.mjs"
       ],
@@ -915,7 +955,8 @@
         "team/?/agents/conductor/**",
         "data/keys.json (your own entry)",
         "data/inboxes/<your key id>.json",
-        "work/NN-<item you own>.md"
+        "work/NN-<item you own>.md",
+        "tasks/*/result-*.json"
       ],
       "owns": [],
       "sends": [
@@ -923,6 +964,32 @@
         "pki.sgit.ai"
       ],
       "page": "abp/conductor@web-summit.dinis.md"
+    },
+    {
+      "agent": "elastic.1.fringe@PrompTugal.dinis",
+      "role": "elastic",
+      "person": "dinis",
+      "account": "riskmandate-personal (Ultra)",
+      "branch": "dev",
+      "writes": [
+        "team/dinis/agents/elastic.1.json",
+        "team/dinis/agents/elastic.1.fringe.json",
+        "team/dinis/agents/elastic.1/**",
+        "data/keys.json (your own entry)",
+        "data/inboxes/<your key id>.json",
+        "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
+        "elastic/**",
+        "admin/tools/elastic*",
+        "data/elastic*.json",
+        "docs/elastic*"
+      ],
+      "owns": [],
+      "sends": [
+        "dev.send.sgraph.ai",
+        "pki.sgit.ai"
+      ],
+      "page": "abp/elastic.1.fringe@PrompTugal.dinis.md"
     }
   ]
 }

@@ -54,10 +54,24 @@ const community = (name) => {
   if (!out.has(id)) out.set(id, { id, name, what: null, join: null, links: [], events: [], sources: [] });
   return out.get(id);
 };
+// The Luma rule (the lead, 16:2x UTC, work/49, until Dinis decides): no automated loop over Luma pages and none of
+// Luma's text kept. So by default nothing is fetched: the links and sources found by earlier reads are carried over
+// from data/communities.json (facts with a link). --read-luma re-reads the pages, only once Dinis allows it.
+const READ_LUMA = process.argv.includes('--read-luma');
+const prev = new Map();
+try { for (const c of JSON.parse(fs.readFileSync(path.join(ROOT, 'data/communities.json'), 'utf8')).communities) prev.set(c.id, c); } catch {}
 const unmatched = [];
 for (const e of events) {
   const orgs = organisersOf(e.organiser);
-  for (const o of orgs) { const c = community(o); if (!c.events.includes(e.id)) c.events.push(e.id); }
+  for (const o of orgs) {
+    const c = community(o); if (!c.events.includes(e.id)) c.events.push(e.id);
+    const p = prev.get(c.id);
+    if (!READ_LUMA && p) {
+      for (const l of p.links || []) if (!c.links.some((x) => x.url === l.url)) c.links.push(l);
+      for (const s of p.sources || []) if (!c.sources.some((x) => x.url === s.url)) c.sources.push(s);
+    }
+  }
+  if (!READ_LUMA) continue;
   const got = lumaCalendar(e.url);
   sleep(got ? 1000 : 0);
   if (!got?.calendar) continue;
@@ -67,7 +81,6 @@ for (const e of events) {
   const c = community(o);
   const src = { url: e.url, read_at: got.read_at, what: "the event page's hosting Luma calendar" };
   if (!c.sources.some((s) => s.url === e.url)) c.sources.push(src);
-  if (cal.what && !c.what) c.what = { text: cal.what, quoted_from: e.url, read_at: got.read_at };
   if (cal.page && !c.links.some((l) => l.url === cal.page)) c.links.push({ label: 'Luma calendar', url: cal.page });
   if (cal.website && !c.links.some((l) => l.url === cal.website)) c.links.push({ label: 'website', url: cal.website });
 }
@@ -80,7 +93,7 @@ const list = [...out.values()].sort((a, b) => b.events.length - a.events.length 
 fs.writeFileSync(path.join(ROOT, 'data/communities.json'), JSON.stringify({
   about: "Lisbon Fringe's communities (work/04): the groups behind this week's events, each with its public links and its events (ids in data/events.json; the id here is its /graph/ node id without 'community:'). Organisations only: a personal Luma calendar, a host or an independent organiser is never listed. No contact details. Independent of Web Summit.",
   by: 'conductor.fringe@PrompTugal.indi', updated: now(),
-  how: "admin/tools/communities.mjs: each Luma event page in data/events.json re-read once; only its hosting calendar (name, short description, website, public page) is kept, with the page and the time read. 'what' is quoted from that calendar, not written by us. Communities with no public calendar keep join 'unknown' until their own page is read.",
+  how: "admin/tools/communities.mjs: communities and their events from data/events.json. Each calendar link was found on the event page it cites (sources: url, read_at); since the Luma rule (16:2x UTC) no Luma page is fetched by machine and no Luma text is kept ('what' is null), so links are carried over from earlier reads. Communities with no public calendar keep join 'unknown'.",
   unmatched_calendar_events: unmatched,   // events whose calendar matched none of its organisers (ids only: a calendar held out stays unnamed)
   communities: list,
 }, null, 2) + '\n');

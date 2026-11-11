@@ -62,6 +62,24 @@ width:1920px;height:1080px;background:var(--paper);color:var(--ink);font-family:
 .om table.mx{width:100%;border-collapse:collapse;font-size:18px}.om table.mx th{font-family:"IBM Plex Mono";font-size:14px;letter-spacing:1px;text-transform:uppercase;color:var(--green);text-align:left;padding:6px 8px;border-bottom:3px solid var(--ink)}
 .om table.mx td{padding:10px 8px;border-bottom:1px solid var(--hair);vertical-align:top;line-height:1.3}.om table.mx td.arr{font-size:26px;color:var(--red);width:40px}
 .om .mono.red{color:var(--red)}.om b.mono{color:var(--green)}.om .here{padding-left:22px;font-size:18px;line-height:1.45;color:var(--ink2)}
+.om .act{display:grid;grid-template-columns:1fr 600px;gap:30px;margin-top:20px}
+.om .tree{display:flex;flex-direction:column;gap:8px}.om .tree .row{display:flex;gap:8px}.om .tree .row .node{flex:1}
+.om .node{background:var(--panel);border:1px solid var(--hair);border-left:8px solid var(--green);padding:8px 14px}
+.om .node.a3{border-left-color:var(--ink)}.om .node.a2{border-left-color:var(--cobalt)}.om .node.a1{border-left-color:var(--red)}
+.om .node b.mono{font-size:15px}.om .node h3{font-family:Newsreader;font-size:24px;font-weight:650;line-height:1.1}.om .node p{font-size:15px;color:var(--ink2);line-height:1.3}
+.om .fp{font-size:12px;color:var(--ink3)}
+.om .res .bar2{display:grid;grid-template-columns:50px 1fr 50px;align-items:center;gap:10px;margin:12px 0}.om .res .bar2 span{display:block;height:34px;background:var(--green)}
+.om .res .bar2 b{font-size:22px;color:var(--green)}.om .res .bar2 em{font-style:normal;font-family:Newsreader;font-size:30px;font-weight:650}
+.om .res .note{font-size:17px;color:var(--ink2);line-height:1.4;margin-top:16px}
+.om table.rm{border-collapse:collapse;margin-top:6px;width:100%}
+.om table.rm th.p{height:190px;vertical-align:bottom;padding:0 0 6px;width:40px}.om table.rm th.p div{writing-mode:vertical-rl;transform:rotate(180deg);font-family:"IBM Plex Mono";font-size:13px;color:var(--ink2);white-space:nowrap;margin:0 auto}
+.om table.rm th.u,.om table.rm th.n{font-family:"IBM Plex Mono";font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--green);text-align:left;vertical-align:bottom;padding:4px 8px}
+.om table.rm td{border:1px solid var(--hair);height:62px}.om table.rm td.u{width:400px;padding:4px 10px;font-size:17px;font-weight:600;line-height:1.2}.om table.rm td.u span{font-size:12px;font-weight:400;color:var(--ink3)}
+.om table.rm td.n{width:190px;text-align:center;font-family:"IBM Plex Mono";font-size:17px}.om table.rm td.n em{font-style:normal;font-weight:700}.om table.rm td.n em.hot{color:var(--red)}
+.om table.rm td.need{background:var(--green)}.om table.rm td.exp{background:#e9a3a7}.om table.rm td.miss{background:repeating-linear-gradient(45deg,#fff,#fff 4px,var(--red) 4px,var(--red) 6px)}
+.om .rlegend{display:flex;gap:10px;align-items:center;margin-top:10px;font-size:15px;color:var(--ink2)}.om .rlegend .sw{display:inline-block;width:22px;height:16px;border:1px solid var(--hair);margin-left:14px}
+.om .rlegend .sw.need{background:var(--green)}.om .rlegend .sw.exp{background:#e9a3a7}
+.om .ans{margin-top:12px;font-size:18px;line-height:1.4;max-width:1700px}
 .om .fsg{display:grid;grid-template-columns:420px 520px 1fr;gap:28px;margin-top:22px}
 .om .gr ol{list-style:none;counter-reset:g}.om .gr li{counter-increment:g;position:relative;padding:8px 0 8px 44px;border-bottom:1px solid var(--hair);font-size:18px;line-height:1.3}
 .om .gr li::before{content:counter(g);position:absolute;left:0;top:8px;width:30px;height:30px;border-radius:50%;background:var(--green);color:var(--paper);font-weight:700;display:grid;place-items:center;font-size:16px}
@@ -85,7 +103,7 @@ const NARROW = `@media (max-width:760px){
 .om-frame .om{position:static!important;transform:none!important;width:auto!important;height:auto!important;padding:14px!important;overflow:visible!important}
 .om .top{flex-direction:column;gap:4px;font-size:13px}.om .head{flex-direction:column;align-items:flex-start;gap:8px}.om h1{font-size:38px}.om .q{text-align:left;font-size:17px}
 .om .ladwrap,.om .osw{grid-template-columns:1fr;height:auto}.om .rung{grid-template-columns:60px 1fr;gap:4px 10px}.om .rung p,.om .rung .who{grid-column:1/-1;justify-content:flex-start}
-.om .rung h3{font-size:24px}.om .rung b.id{font-size:22px}.om .layer{grid-template-columns:1fr}.om .fsg,.om .alts,.om .alt2,.om .mix{grid-template-columns:1fr}.om table.mx{font-size:14px}.om .rch>div{grid-template-columns:1fr}.om .layer h3{font-size:22px}
+.om .rung h3{font-size:24px}.om .rung b.id{font-size:22px}.om .layer{grid-template-columns:1fr}.om .fsg,.om .alts,.om .alt2,.om .mix,.om .act{grid-template-columns:1fr}.om .tree .row{flex-direction:column}.om table.rm{display:block;overflow-x:auto;max-width:100%}.om .rlegend{flex-wrap:wrap}.om .chip{white-space:normal}.om .ans{max-width:100%}.om table.mx{font-size:14px}.om .rch>div{grid-template-columns:1fr}.om .layer h3{font-size:22px}
 .om .axw{overflow-x:auto}.om table.ax{min-width:900px;font-size:14px}.om .bar{position:static;flex-direction:column;align-items:flex-start;gap:4px;margin-top:16px}.om .bar b{font-size:20px}.om .legend{flex-wrap:wrap}}`;
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
@@ -140,15 +158,45 @@ function mixing(M) {
 <div class="k" style="margin-top:20px">In this swarm</div><ul class="here">${X.in_this_swarm.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div></div>
 ${bar('The altitudes of execution · data/operating-model.json altitude_mixing · Dinis and Angelo, 11 Nov 2026')}`;
 }
-export const SLIDES = [ladder, access, os, graph, mixing];
+
+function inAction() {
+  let W = null; try { W = JSON.parse(readFileSync(join(root, 'data/work-altitudes.json'), 'utf8')).body; } catch { return null; }
+  const T = W.trace, by = W.counts.by_altitude, fp = (x) => `<span class="mono fp">${esc(x)}</span>`;
+  const box = (alt, title, sub, extra = '') => `<div class="node a${alt}"><b class="mono">${alt === 'X' ? 'A0' : 'A' + alt}</b><h3>${esc(title)}</h3><p>${sub}</p>${extra}</div>`;
+  return `${top(6)}<div class="head"><h1>The altitudes, <em>in action</em></h1><div class="q">"Let's now try this in action, to spin up multiple altitudes." One objective; every unit signed by a key that lived only while it ran.</div></div>
+<div class="act"><div class="tree">
+${box(3, 'agent: architect.1', 'the objective: ' + esc(W.objective) + '; starts the loops; commits the result')}
+<div class="row">${box('X', T.A0[0].name, 'cuts ' + W.counts.items + ' board items into ' + T.A2.length + ' slices', fp(T.A0[0].fp))}</div>
+<div class="row">${T.A2.map((l) => box(2, l.name, l.items + ' items · ' + l.calls + ' LLM calls, until each answer is valid, then stop', fp(l.fp))).join('')}</div>
+${box(1, T.A1.calls + ' LLM calls', 'open weight (' + T.A1.models.map(esc).join(', ') + '), no tools · ' + T.A1.retried + ' retried · ' + T.A1.cost_usd + ' USD · ' + T.A1.keys + ' keys, one per call')}
+<div class="row">${box('X', T.A0[1].name, 'verifies all ' + W.counts.signatures + ' signatures: ' + (W.signatures_verified ? 'all valid' : 'NOT ALL VALID') + '; merges', fp(T.A0[1].fp))}</div>
+</div>
+<div class="res"><div class="k">The result: the lowest altitude each board item needs</div>${['A4', 'A3', 'A2', 'A1', 'A0'].map((a) => `<div class="bar2"><b class="mono">${a}</b><span style="width:${Math.round(((by[a] || 0) / W.counts.items) * 100)}%"></span><em>${by[a] || 0}</em></div>`).join('')}
+<p class="note">${esc(W.counts.items)} items${by.none ? `, ${by.none} with no valid answer in three calls` : ''}; ${T.A1.retried} of ${T.A1.calls} calls retried. A model's placement is evidence, not a decision. What it teaches: our board items are whole projects, each mixing altitudes; route work after cutting it into loops and calls, not before.</p></div></div>
+${bar('abp/tools/altitudes.mjs · data/work-altitudes.json · rule R12 observed the loops')}`;
+}
+
+function reach() {
+  let R = null; try { R = JSON.parse(readFileSync(join(root, 'data/run-reach.json'), 'utf8')); } catch { return null; }
+  const short = (p) => p.replace('authenticate-as', 'auth-as').replace('.credential', '.cred').replace('.endpoint', '.endp').replace('.repository', '.repo').replace('.process', '.proc');
+  const cell = (u, p) => { const n = u.needs.includes(p), h = u.held.includes(p); return `<td class="${n && h ? 'need' : h ? 'exp' : n ? 'miss' : ''}"></td>`; };
+  return `${top(7)}<div class="head"><h1>The <em>reach</em> of each unit</h1><div class="q">"Why is A0: compute: plan run with A3 privileges?" Needed (its mandate) against held (its grant in fact), in abp.sgit.ai's ${R.primitives.length} capability primitives.</div></div>
+<table class="rm"><thead><tr><th class="u">unit</th><th class="n">needs · held · exposure</th>${R.primitives.map((p) => `<th class="p"><div>${esc(short(p))}</div></th>`).join('')}</tr></thead><tbody>
+${R.units.map((u) => `<tr><td class="u"><b class="mono">${esc(u.altitude)}</b> ${esc(u.unit)}<br><span>${esc(u.how)}</span></td><td class="n"><b>${u.needs.length}</b> · ${u.held.length} · <em class="${u.exposure.length > 2 ? 'hot' : ''}">${u.exposure.length}</em></td>${R.primitives.map((p) => cell(u, p)).join('')}</tr>`).join('')}
+</tbody></table>
+<div class="rlegend"><span class="sw need"></span>needed and held <span class="sw exp"></span>held, not needed: the exposure <span class="sw"></span>neither</div>
+<p class="ans"><b>The answer:</b> ${esc(R.answer)}</p>
+${bar('data/run-reach.json · abp.sgit.ai capability grammar (+4 vault primitives) · the fix: a packet\'s grant becomes the sandbox')}`;
+}
+export const SLIDES = [ladder, access, os, graph, mixing, inAction, reach];
 export function slidePage(i) {
   const M = loadModel();
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=1920"><title>The operating model ${i + 1}/${SLIDES.length}</title><style>${FONTS}body{margin:0}${CSS}</style></head><body><div class="om">${SLIDES[i](M)}</div><p style="font:16px sans-serif;margin:12px 72px">Lisbon Tech Fringe is independent of Web Summit and not run by its organisers. For anything official, see <a href="https://websummit.com/">the organisers' official site</a>.</p></body></html>`;
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=1920"><title>The operating model ${i + 1}/${SLIDES.length}</title><style>${FONTS}body{margin:0}${CSS}</style></head><body><div class="om">${SLIDES[i](M) || '<p>Not run yet.</p>'}</div><p style="font:16px sans-serif;margin:12px 72px">Lisbon Tech Fringe is independent of Web Summit and not run by its organisers. For anything official, see <a href="https://websummit.com/">the organisers' official site</a>.</p></body></html>`;
 }
 
 export function operatingModelBody(esc2, REPO) {
   const M = loadModel();
-  const frames = SLIDES.map((f, i) => `<div class="om-frame"><div class="om">${f(M)}</div></div><p class="muted"><a href="/agentic-team/operating-model/slide-${i + 1}.html">Slide ${i + 1} at 1920x1080</a></p>`).join('');
+  const frames = SLIDES.map((f, i) => f(M) && `<div class="om-frame"><div class="om">${f(M)}</div></div><p class="muted"><a href="/agentic-team/operating-model/slide-${i + 1}.html">Slide ${i + 1} at 1920x1080</a></p>`).filter(Boolean).join('');
   return `<style>${FONTS}${CSS}
 .om-frame{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;margin:12px 0 4px;border:1px solid var(--hair,#ccc)}
 .om-frame .om{position:absolute;top:0;left:0;transform-origin:0 0;transform:scale(var(--om-s,.4))}${NARROW}</style>

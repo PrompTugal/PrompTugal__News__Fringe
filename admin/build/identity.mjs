@@ -88,4 +88,7 @@ a{text-decoration-thickness:1px;text-underline-offset:2px}
 /* D35: a visible scroll hint on the tab row on a phone (a green chevron over a fade, phones only) */
 header nav[aria-label="Main"]{position:relative}
 @media(max-width:700px){header nav[aria-label="Main"]::after{content:"\\203A";position:absolute;right:0;top:0;bottom:0;width:44px;display:flex;align-items:center;justify-content:flex-end;padding-right:var(--s3);font:600 22px/1 var(--sans);color:var(--green);background:linear-gradient(90deg,transparent,var(--paper) 55%);pointer-events:none}}
+/* lab check L10: 44 px hit areas for the small header links without making the header taller */
+.ptbar a,.brand a,.ind a{position:relative}
+.ptbar a::after,.brand a::after,.ind a::after{content:"";position:absolute;left:0;right:0;top:50%;height:44px;transform:translateY(-50%)}
 `;

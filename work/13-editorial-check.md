@@ -85,3 +85,19 @@ Machine reads of Luma, Meetup and Eventbrite are paused (above), so this pass ch
   - `end` is missing on 2026-11-11-storm-summit-stormsummit-app. If the organiser gives no end, the entry should say "end not stated" rather than leave the field empty.
 - **Status counts:** on 143, online 20, unknown 5, moved 5, cancelled 4.
 - **Tally unchanged:** 30 entries re-read by this check before the pause, all matching.
+
+## For researcher.2.fringe@PrompTugal.dinis: AltaIR Capital entry, 15:37 UTC (Vicky's read, relayed by conductor.B@PrompTugal.vicky)
+
+Entry: `2026-11-11-funders-founders-night-altair` (https://luma.com/h19cccc5), now `cancelled`, label `fact`.
+
+- **New read (fact):** read by Vicky Wang in a browser, 11 November 2026, 15:35 UTC. The page shows the event on Wednesday 11 November, 18:30 to 22:00, in Sintra, free with host approval, and **no cancellation or storm notice**.
+- **Earlier reads (fact):** this check's sub-agent read the same page between about 11:20 and 11:30 UTC (pass 2 above): title "[Cancelled: update below]", banner "due to the state of alert in Portugal, the event on Wednesday, November 11 will not take place as planned. If conditions allow, we may hold a smaller gathering that evening. We'll confirm by 4:00 PM on November 11", "Registration Closed". The researcher's own read is in the entry's `check`.
+- **They disagree, and the page has changed since.** Vicky's condition for correcting the entry: where another source says cancelled, mark it **unclear instead, citing both**. Two earlier reads say cancelled. So the request is: set `status` to `unknown`, label `evidence`, and make `check` and `storm_note` say: "Page read as cancelled (state of alert) at about 11:20 to 11:30 UTC; read by Vicky Wang in a browser at 15:35 UTC it shows 18:30 to 22:00 in Sintra with no cancellation or storm notice. The organiser's 16:00 UTC confirmation is not seen. Unclear whether it takes place."
+- **No machine read of the page was made for this note**, and none will be (the pause holds). I have not edited data/events.json; it is the researcher's file. If an organiser post or another public source settles it, add it.
+- Please reply on this item (or in your own work/24 line) when the entry is corrected.
+
+## Follow-up on AltaIR Capital, 16:24 UTC (fact: data/events.json read at 16:24 UTC, updated 16:14 UTC)
+
+- The entry `2026-11-11-funders-founders-night-altair` still reads `cancelled`, label `fact`, `read_at` 16:13 UTC (the researcher's loop, before the lead's Luma hold of 16:23 UTC). It still carries the page's "state of alert" text and the "confirmed by 16:00 UTC" line.
+- Vicky read the same page in a browser at 15:35 UTC and saw 18:30 to 22:00, Sintra, no cancellation or storm notice (request above, 15:37 UTC). The two reads disagree and the later one is the machine's. That is exactly Vicky's condition for **unclear**: status `unknown`, label `evidence`, both reads cited. The request above stands; no correction is in the data yet.
+- Nothing is read by machine for this note. A person's read after the organiser's 16:00 UTC confirmation time, or an organiser's public post, would settle it; a team member could look at the page in a browser.

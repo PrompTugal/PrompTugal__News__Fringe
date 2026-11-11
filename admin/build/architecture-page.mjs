@@ -6,6 +6,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { md, guidanceCss } from './guidance.mjs';
+import { readdirSync } from 'node:fs';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const read = (p) => readFileSync(join(root, p), 'utf8');
 
@@ -65,10 +66,22 @@ export function agenticTeamBody(esc) {
   const item = (href, t, d) => `<div class="card"><a href="${href}"><strong>${esc(t)}</strong></a><div class="muted">${esc(d)}</div></div>`;
   return `<h1>The agentic team</h1>
 <p>Lisbon Tech Fringe is built by a swarm: one conductor per person, agents by role, Dinis Cruz as head conductor. These pages describe how the team works.</p>
+${item('/agentic-team/articles/the-altitudes-of-execution/', 'Article: the altitudes of execution', 'What an agent is depends on where it runs and what it can reach: the model, mixing altitudes, the run and what it taught us.')}
 ${item('/agentic-team/operating-model/', 'The operating model', 'The primitives: the execution ladder (compute to spawn), what each entity can reach, identity everywhere, a distributed operating system for agents.')}
 ${item('/agentic-team/where-agents-run/', 'Where agents run', 'An agent versus an LLM call; the runtimes, models and I/O levels; the formula that places a task; the matrix of our tasks.')}
 ${item('/abp/', 'Agent Behaviour Policies', 'Who may edit what, where: every agent\'s grant, in observe mode.')}
 ${item('/how/', 'How this is made', 'From a public page to a published event.')}
 ${item('/dashboard/', 'The swarm, live', 'Who is online and what each agent is doing.')}
 ${item('/guidance/', 'Contributing', 'For people outside the team and their agents.')}`;
+}
+
+// /agentic-team/articles/<slug>/ from docs/articles/*.md (work/48)
+export function articles(esc, REPO) {
+  const dir = join(root, 'docs/articles'); if (!existsSync(dir)) return [];
+  return readdirSync(dir).filter((f) => /\.md$/.test(f)).sort().map((f) => {
+    const src = read('docs/articles/' + f), fm = (k) => ((new RegExp(`^${k}:\\s*"?(.*?)"?$`, 'm')).exec(src) || [, ''])[1];
+    const slug = f.replace(/^\d{4}-\d\d-\d\d-/, '').replace(/\.md$/, '');
+    const body = `<style>${guidanceCss}</style><p class="muted"><a href="/agentic-team/">The agentic team</a> · article</p><p class="muted">${esc(fm('by'))}</p><div class="gd">${md(src, esc)}</div><p class="muted">Source: <a href="${esc(REPO)}/blob/dev/docs/articles/${esc(f)}"><code>docs/articles/${esc(f)}</code></a></p>`;
+    return { slug, title: fm('title'), body };
+  });
 }
