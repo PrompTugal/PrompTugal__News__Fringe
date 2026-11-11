@@ -15,7 +15,7 @@ export const hasPage = (e) => typeof e.id === 'string' && /^[a-z0-9][a-z0-9-]*$/
 const isOnline = (e) => /^online\b/i.test(e.place || '') || e.status === 'online';
 
 // The area: the place's last bracket "(Parque das Nações)", or "online"; null when the page gives none.
-function area(e) {
+export function area(e) {
   if (isOnline(e)) return 'online';
   const m = String(e.place || '').match(/\(([^()]+)\)\s*$/);
   return m ? m[1].split(/[\/,]/)[0].trim().toLowerCase() : null;

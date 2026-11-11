@@ -5,7 +5,8 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildGraph, graphBody, graphCss } from './graph.mjs';   // work/05, conductor.fringe@PrompTugal.angelo
 import { trafficBody, trafficCss } from './traffic.mjs';   // work/21, observability.fringe@PrompTugal.dinis
-import { eventPages, eventPath, hasPage } from './event-pages.mjs';   // work/22, dev.lead.fringe@PrompTugal.dinis
+import { eventPages, eventPath, hasPage } from './event-pages.mjs';
+import { eventCard as card, cardList, sortDay, CARD_CSS } from './cards.mjs';   // D3, design.3.fringe@PrompTugal.dinis   // work/22, dev.lead.fringe@PrompTugal.dinis
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const out = join(root, '_site');
@@ -67,7 +68,7 @@ code{background:var(--code);padding:1px 4px;border-radius:4px}ol li,ul li{margin
 .tag{display:inline-block;font-size:.75rem;padding:1px 8px;border-radius:99px;border:1px solid var(--line);margin-left:6px}
 .tag.lvl-red{border-color:#d33;color:#d33}.tag.lvl-orange{border-color:#e07b00;color:#e07b00}.tag.lvl-yellow{border-color:#c7a100}#storm-live h3{font-size:1rem;margin:.8em 0 .3em}#storm-live ul{padding-left:1.2em;margin:.3em 0}
 .tag.open{border-color:#c7a100}.tag.claimed{border-color:#2f6fd6}.tag.done{border-color:var(--accent)}
-footer{max-width:720px;margin:24px auto;padding:16px;border-top:1px solid var(--line)}`;
+footer{max-width:720px;margin:24px auto;padding:16px;border-top:1px solid var(--line)}${CARD_CSS}`;
 const page = (title, body, desc, head = '') => `<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">${head}<style>${css}</style></head><body>
@@ -87,17 +88,11 @@ function linkify(text) {
   }).join('');
 }
 const STATUS = { on: 'On', moved: 'Moved', cancelled: 'Cancelled', online: 'Online', unknown: 'Unknown' };
-function eventCard(e) {
-  const when = [e.start && e.start.slice(11, 16), e.end && e.end.slice(11, 16)].filter(Boolean).join('–');
-  return `<div class="card"><a href="${esc(hasPage(e) ? eventPath(e) : e.url)}"><strong>${esc(e.name)}</strong></a><span class="tag ${esc(e.status)}">${esc(STATUS[e.status] || 'Unknown')}</span>
-<div class="muted">${linkify([when && when + ' UTC', e.place, e.organiser].filter(Boolean).join(' · '))}</div>
-${e.join ? `<div>How to join: ${linkify(e.join)}</div>` : ''}${e.storm_note ? `<div class="muted">Storm: ${linkify(e.storm_note)}</div>` : ''}
-<div class="muted"><a href="${esc(e.url)}">The organiser's page</a> · source read ${esc(String(e.read_at).slice(0, 16).replace('T', ' '))} UTC</div></div>`;
-}
+const eventCard = (e) => card(e, { esc });
 function eventsHtml() {
   if (!events.length) return `<h2>Events</h2><p class="muted">The event listings arrive here once each one has been checked at its public source.</p>`;
-  const day = (d, label) => { const list = events.filter((e) => e.date === d).sort((a, b) => String(a.start).localeCompare(String(b.start)));
-    return `<h2>${label}, ${d}</h2>` + (list.map(eventCard).join('') || '<p class="muted">Nothing checked yet for this day.</p>'); };
+  const day = (d, label) => { const list = sortDay(events.filter((e) => e.date === d));
+    return `<h2>${label}, ${d}</h2>` + (list.length ? cardList(list.map(eventCard)) : '<p class="muted">Nothing checked yet for this day.</p>'); };
   const later = events.filter((e) => e.date > tomorrow).length;
   return day(today, 'Today') + day(tomorrow, 'Tomorrow') + (later ? `<p class="muted">${later} more later this week in <a href="/api/v1/events.json">the data</a>.</p>` : '');
 }
