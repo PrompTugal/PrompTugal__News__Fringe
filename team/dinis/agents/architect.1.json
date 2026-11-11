@@ -1,6 +1,6 @@
 {
   "agent": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T15:26Z",
+  "updated": "2026-11-11T15:31Z",
   "account": "riskmandate-personal (Ultra) (Dinis, brief 15)",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 12)",
   "branch": "dev",
@@ -29,7 +29,8 @@
     "15:15: the altitudes of execution named (A4 swarm, A3 agent, A2 loop, A1 LLM call, A0 compute; Dinis); slide 5 mixing altitudes; docs/where-agents-run.md section 3 rewritten to the altitudes; R12 mixing altitudes in abp/policies.json v0.3.0, observed by the hook (sub-agents, LLM calls with tools), tested",
     "15:18: two infographics for Dinis from google/gemini-3-pro-image via llm.mjs: the altitudes of execution, and mixing altitudes (first mixing draft garbled the rule and was discarded); 0.42 USD, ledgered; images outside git",
     "15:25: security findings 28 and 31: hook hardened (no key store, no process, no network, five named variables, writes only its log; identity from ~/.abp/whoami), nine tests under Node's permission model; gate warns on .claude/ changes not by architect.1; status-file and branch fixed for the un-numbered agents (abp/reviews/2026-11-11-15-hardening.md)",
-    "15:26: the altitudes in action (Dinis: 'try it in action'): A1, deepseek-v4-flash sorted 8 tasks into altitudes, 8/8, 0.00003 USD; A2, a read-only Explore loop found no unmapped agents (28 mapped); the hook logged R12 for it, which taught that read-only sub-agent types are already A2 (fixed, tested); trials on /agentic-team/operating-model/"
+    "15:26: the altitudes in action (Dinis: 'try it in action'): A1, deepseek-v4-flash sorted 8 tasks into altitudes, 8/8, 0.00003 USD; A2, a read-only Explore loop found no unmapped agents (28 mapped); the hook logged R12 for it, which taught that read-only sub-agent types are already A2 (fixed, tested); trials on /agentic-team/operating-model/",
+    "15:31: the altitudes in action, multi-altitude run: A0 plan, 3 A2 loops (sub-agents), 81 A1 open-weight calls, A0 verify and merge; 85 Ed25519 signatures from keys that lived only during the run, all verified; 0.0034 USD; data/work-altitudes.json, slide 6. Weak placements (41% retries, 3 unanswered): items are projects mixing altitudes"
   ],
   "next": [
     "publish the infographics in a vault with a pointer and sha256, if Dinis wants them on the site",

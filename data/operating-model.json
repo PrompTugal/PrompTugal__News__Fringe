@@ -1,7 +1,7 @@
 {
   "about": "The operating model of the agentic team (Dinis with Angelo, in architect.1's session, 14:40 UTC; briefs/2026-11-11-1440-the-operating-model.md; work/48): the primitives of the execution block, the access an entity has at a moment in time, identity, state, providers, and who can do what. What an entity is depends on where it runs and what it can reach (Dinis: 'what they are depends on where they are and what they can do'). A draft for Dinis and Angelo to correct.",
   "by": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T15:26Z",
+  "updated": "2026-11-11T15:31Z",
   "status": "draft v0.4",
   "ladder": {
     "about": "The execution ladder: what an entity can do, bottom to top. Each rung includes the ones below it.",
@@ -945,6 +945,17 @@
       "result": "none unmapped; 28 agent names mapped",
       "hook": "R12 logged (observe): 'a sub-agent (an A2 loop, Explore) inherits architect.1's A3 grant'",
       "teaches": "the hook saw the loop start but not its tools: Explore is read-only, so its grant was already A2 and no altitudes were mixed. Fixed: read-only sub-agent types are recognised (abp/policies.json altitudes.narrow_subagents); a general-purpose sub-agent still logs R12"
+    },
+    {
+      "at": "2026-11-11T15:31Z",
+      "altitude": "A3 agent -> A0 + 3 A2 loops -> 81 A1 calls -> A0",
+      "what": "one objective through the altitudes (abp/tools/altitudes.mjs): the lowest altitude each of the 51 board items needs; A0 planned, three sub-agent loops ran open-weight calls until valid, A0 verified and merged; every unit signed with a key that lived only while it ran",
+      "model": "deepseek/deepseek-v4-flash",
+      "cost_usd": 0.003394,
+      "latency_ms": "",
+      "result": "85 signatures, all verified; by altitude {'A4': 12, 'A2': 11, 'none': 3, 'A3': 21, 'A1': 3, 'A0': 1}; 33 of 81 calls retried",
+      "hook": "R12 logged each general-purpose loop (they held architect.1's A3 grant to do an A2 task)",
+      "teaches": "the mechanics hold (altitudes, loops, a key per unit, verification); the placements are weak: the board's items are whole projects mixing altitudes, so they must be cut into loops and calls before they are routed; and 41% invalid answers point at the call's own limits (a 120-token cap is the first suspect)"
     }
   ]
 }

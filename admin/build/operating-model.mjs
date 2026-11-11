@@ -163,7 +163,7 @@ ${box(1, T.A1.calls + ' LLM calls', 'open weight (' + T.A1.models.map(esc).join(
 <div class="row">${box('X', T.A0[1].name, 'verifies all ' + W.counts.signatures + ' signatures: ' + (W.signatures_verified ? 'all valid' : 'NOT ALL VALID') + '; merges', fp(T.A0[1].fp))}</div>
 </div>
 <div class="res"><div class="k">The result: the lowest altitude each board item needs</div>${['A4', 'A3', 'A2', 'A1', 'A0'].map((a) => `<div class="bar2"><b class="mono">${a}</b><span style="width:${Math.round(((by[a] || 0) / W.counts.items) * 100)}%"></span><em>${by[a] || 0}</em></div>`).join('')}
-<p class="note">${esc(W.counts.items)} items, data/work-altitudes.json. A model's placement is evidence, not a decision. Most of the board does not need an agent: that is the work open-weight loops and calls can take.</p></div></div>
+<p class="note">${esc(W.counts.items)} items${by.none ? `, ${by.none} with no valid answer in three calls` : ''}; ${T.A1.retried} of ${T.A1.calls} calls retried. A model's placement is evidence, not a decision. What it teaches: our board items are whole projects, each mixing altitudes; route work after cutting it into loops and calls, not before.</p></div></div>
 ${bar('abp/tools/altitudes.mjs · data/work-altitudes.json · rule R12 observed the loops')}`;
 }
 export const SLIDES = [ladder, access, os, graph, mixing, inAction];
