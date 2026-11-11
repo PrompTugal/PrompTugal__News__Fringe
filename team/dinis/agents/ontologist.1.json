@@ -1,7 +1,7 @@
 {
   "agent": "ontologist.1.fringe@PrompTugal.dinis",
   "by": "ontologist.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T14:58Z",
+  "updated": "2026-11-11T15:28Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 13: \"get the ontologist on the case\")",
   "model": "Opus",
   "account": "this (the lead's)",
@@ -20,7 +20,8 @@
     "brief 13 addendum (Dinis, about 14:00): platform as an entity (luma 165, meetup 4, own-site 3; Eventbrite and Partiful appear when an event uses them), /r/<id>/ with today first; every event page gets linked rows (two lines in admin/build/event-pages.mjs: an optional graphLinks hook)",
     "privacy hold (lead's note, security finding 10): staaake withheld from the graph (no organiser node, no page, no link) until researcher.2 confirms it is an organisation; data/graph/organisers.json 'hold'. Its 6 events stay listed, as by an independent organiser. The name still appears in event titles and URLs from data/events.json, which is the researchers' layer",
     "staaake answered by researcher.2 (1b7122c): not clearly an organisation; events.json now names an independent organiser; the graph's hold stays as a second guard",
-    "wake 14:56: inbox empty; /o/ restructured (today in Lisbon 31, stars 11, 89 folded); bracketed asides no longer split into organisers (removed a bogus 'Web Summit)' node, never an organiser here); 'hosted by' = hosts (venue), 'powered by' = supports, not co-organisers; Taiga AI Oy folded"
+    "wake 14:56: inbox empty; /o/ restructured (today in Lisbon 31, stars 11, 89 folded); bracketed asides no longer split into organisers (removed a bogus 'Web Summit)' node, never an organiser here); 'hosted by' = hosts (venue), 'powered by' = supports, not co-organisers; Taiga AI Oy folded",
+    "abp whoami run (ROLES.md step 2, security finding 28): ~/.abp/whoami = ontologist.1.fringe@PrompTugal.dinis"
   ],
   "next": [
     "sessions: a curated data/graph/sessions.json for the major days, from their public pages (agenda), or held until researcher.2 reads them",
