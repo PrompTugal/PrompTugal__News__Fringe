@@ -1,7 +1,7 @@
 {
   "about": "Lisbon Fringe's events: the alternative, community and side events around Web Summit Lisbon, 11 to 13 November 2026 (and a few either side). Each event was re-read at its public source_url at read_at (UTC; Lisbon is on UTC in November). Each says whether Storm Charles moved it. Labels: fact (read on the organiser's page), evidence (read, but the page leaves the status open), hypothesis (not confirmed at source). 'unknown' means we do not know. Organisers are organisations; no private person is named and no contact details are given.",
   "contract": "api/v1/README.md (v1). Required: name, url, read_at, date, start, end, kind, organiser, place, join, status, storm_note, topics. Added by the researcher (v1 allows additions): id, label (fact | evidence | hypothesis), cost (as stated), storm_moved (true | false | null), check (what the page says about the storm, or why status is open), note.",
-  "updated": "2026-11-11T13:27:00Z",
+  "updated": "2026-11-11T13:42:00Z",
   "by": "researcher.2.fringe@PrompTugal.dinis",
   "independence": "Lisbon Fringe is independent of Web Summit and is not run by its organisers. For anything official see the organisers' own pages. Not a warning service: for the storm see IPMA (https://www.ipma.pt), ANEPC (https://www.prociv.gov.pt) and https://storm-charles.promptugal.news.",
   "sources": [
@@ -80,7 +80,8 @@
       "storm_moved": null,
       "check": "The page shows no storm note.",
       "note": "A workout then coffee; in the past at the time read, and whether it ran is not stated.",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Rato / Campo de Ourique"
     },
     {
       "name": "Creator Club @ Web Summit (breakfast)",
@@ -105,7 +106,8 @@
       "storm_moved": null,
       "check": "The page shows no storm note. Billed as breakfast before heading to Web Summit, whose Wednesday was called off.",
       "note": null,
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Parque das Nações"
     },
     {
       "name": "FounderLink Storm Summit: a torrent of intros (morning session, online)",
@@ -390,7 +392,8 @@
       "check": "Read at the organiser's site (11:24 UTC) and its Luma page https://luma.com/oe66d3mh (11:24 UTC).",
       "note": "An unconference: sixty-second topic pitches and a dot vote at 12:45, three rounds of small groups, read-outs at 16:35, party from 18:00. About 70 places. The site's banner says 'We are now full' while Luma still showed places; the Luma text mentions a EUR 20 day ticket, the site EUR 40. Not open to founders. This is the 'Uncon' of work/03.",
       "lane": "business",
-      "size": "major"
+      "size": "major",
+      "neighbourhood": "Saldanha"
     },
     {
       "name": "Завтрак русскоязычных фаундеров",
@@ -567,7 +570,8 @@
       "storm_moved": null,
       "check": "The page shows no storm note, but it starts at MEO Arena, whose Web Summit Day 2 (Wednesday) was called off. Check the page before going.",
       "note": "Informal 'come find us' meetup; the page lists a window from Wed 14:30 to Thu 17:30 UTC.",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Parque das Nações"
     },
     {
       "name": "Ethical AI Initiative: the different lenses of AI (roundtable)",
@@ -692,7 +696,8 @@
       "check": "The page shows no storm note.",
       "note": "For investors, LPs and ecosystem leaders: a debate, not a panel.",
       "lane": "business",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Estoril"
     },
     {
       "name": "Yorkseed Investor Pitch",
@@ -768,7 +773,8 @@
       "storm_moved": null,
       "check": "The Luma page returned 404 at 11:23 and 11:25 UTC (it was live at 10:51 UTC). It may have been cancelled or made private.",
       "note": "A recruitment and networking event.",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Parque das Nações"
     },
     {
       "name": "Enchant Pitch Parties: Fintech, Travel Tech, Applied AI, Healthtech, Gaming & Entertainment",
@@ -799,7 +805,8 @@
       "check": "None of the five pages shows a storm note.",
       "note": "Five tracks share one venue and evening, each with its own Luma page: luma.com/574bmobb (fintech), /9jtn1muw (travel tech), /hz3ma5fl (applied AI), /nuggtawe (healthtech), /wajdwhgx (gaming). Afterparty 21:00 to midnight.",
       "lane": "business",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Parque das Nações"
     },
     {
       "name": "Like minded | Web Summit (Ukrainian founders' community evening)",
@@ -873,7 +880,8 @@
       "storm_moved": false,
       "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
       "lane": "business",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Parque das Nações"
     },
     {
       "name": "Healthtech Pitch Party",
@@ -965,7 +973,8 @@
       "storm_moved": true,
       "check": "The title reads 'Canceled due to the weather'.",
       "note": null,
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Beato"
     },
     {
       "name": "Kick off meeting WebSummit Lisbon",
@@ -990,7 +999,8 @@
       "storm_moved": false,
       "check": "Meetup page read 2026-11-11T12:52:00Z: startDate 2026-11-11T18:30:00+01:00 (= 17:30 UTC) and the event time zone is Europe/Copenhagen, while the venue is in Lisboa. The page shows '6:30 PM' in Copenhagen time. Hypothesis: if the organiser meant Lisbon clock time, it starts at 18:30 UTC; not confirmed. Check the Meetup page.",
       "note": "Start time is uncertain by one hour: 17:30 UTC (as the page's Copenhagen time zone states) or 18:30 UTC (if the organiser meant Lisbon time).",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Cais do Sodré"
     },
     {
       "name": "Cisco: from automation to autonomy, how AI is changing the way we run technology",
@@ -1040,7 +1050,8 @@
       "storm_moved": false,
       "check": "The page shows no storm note; it is a rooftop venue on a storm day, so check before going.",
       "note": null,
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Martim Moniz"
     },
     {
       "name": "AI Horizon Conference 2026: AI talks, startup pitches & afterparty",
@@ -1065,7 +1076,8 @@
       "storm_moved": null,
       "check": "The page shows no storm note.",
       "note": null,
-      "size": "major"
+      "size": "major",
+      "neighbourhood": "Picoas"
     },
     {
       "name": "Innovation Wednesdays @ Web Summit (Azerbaijan's founders and delegation)",
@@ -1092,7 +1104,8 @@
       "check": "The page notes a venue change without giving a reason; that it was the storm is not stated.",
       "note": null,
       "lane": "business",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Parque das Nações"
     },
     {
       "name": "Frontier Founders & VCs Soirée (online)",
@@ -1146,7 +1159,8 @@
       "storm_moved": null,
       "check": "The page shows no storm note.",
       "note": null,
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Santos / São Bento"
     },
     {
       "name": "TTI at Web Summit: What's Next at the AI Frontier?",
@@ -1247,7 +1261,8 @@
       "storm_moved": null,
       "check": "Cancelled on the page (schema.org EventCancelled); no reason given. That it was the storm is a hypothesis.",
       "note": null,
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Moscavide / Oriente"
     },
     {
       "name": "Open Mercato Night: AI agents build a custom CRM, live",
@@ -1274,7 +1289,8 @@
       "storm_moved": true,
       "check": "Postponed: the page says it will not take place on 11 November due to the bad weather forecast; new date not yet given.",
       "note": null,
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Alcântara"
     },
     {
       "name": "Funders & Founders Night by AltaIR Capital: the new shape of early stage",
@@ -1300,7 +1316,8 @@
       "check": "The page says that due to the state of alert in Portugal the event will not take place as planned; a smaller gathering may be held that evening if conditions allow, confirmed to guests by 16:00 UTC.",
       "note": "Re-read after 16:00 UTC.",
       "lane": "business",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Sintra"
     },
     {
       "name": "European Tech Champions: Italy & Portugal",
@@ -1326,7 +1343,8 @@
       "storm_moved": null,
       "check": "The page shows no storm note.",
       "note": null,
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Beato"
     },
     {
       "name": "Romanian Tech Night at WEBSUMMIT",
@@ -1375,7 +1393,8 @@
       "check": "Scheduled on the page; no storm note.",
       "note": "No talks: an open social.",
       "lane": "business",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Bica"
     },
     {
       "name": "FounderLink Storm Summit: a torrent of intros (evening session, online)",
@@ -1456,7 +1475,8 @@
       "check": "The page shows no storm note.",
       "note": null,
       "lane": "business",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Castelo / Mouraria"
     },
     {
       "name": "Agentic Engineering Lisbon",
@@ -1558,7 +1578,8 @@
       "storm_moved": true,
       "check": "The page says the weather moved the demo night online, and the drinks happen only 'if the weather allows and you can arrive safely'; if not, 'stay indoors, stay safe'.",
       "note": null,
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Parque das Nações"
     },
     {
       "name": "Market Expansion Dinner",
@@ -1583,7 +1604,8 @@
       "cost": "free",
       "storm_moved": false,
       "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Parque das Nações"
     },
     {
       "name": "Albanian Founders & Investors Meetup",
@@ -1680,7 +1702,8 @@
       "cost": "free",
       "storm_moved": false,
       "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Príncipe Real"
     },
     {
       "name": "FUTURE-TECH 2026: short films about technology",
@@ -1752,7 +1775,8 @@
       "cost": "free",
       "storm_moved": false,
       "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Cais do Sodré"
     },
     {
       "name": "Web Summit x Tech Talks Run Club & Coffee",
@@ -1846,7 +1870,8 @@
       "storm_moved": false,
       "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
       "lane": "business",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Parque das Nações"
     },
     {
       "name": "Guided Morning Walk in Lisbon Before Web Summit",
@@ -1892,7 +1917,8 @@
       "cost": "free",
       "storm_moved": false,
       "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Parque das Nações"
     },
     {
       "name": "Female Founders Breakfast: Web Summit special",
@@ -1917,7 +1943,8 @@
       "check": "The page shows no storm note.",
       "note": null,
       "lane": "business",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Parque das Nações"
     },
     {
       "name": "Sales Leaders Breakfast · Web Summit 2026",
@@ -1994,7 +2021,8 @@
       "check": "Scheduled; the venue change to Impact Hub is not stated as storm related.",
       "note": null,
       "lane": "business",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Penha de França"
     },
     {
       "name": "Covilhã Tech Day 2026",
@@ -2043,7 +2071,8 @@
       "storm_moved": null,
       "check": "The page shows no storm note.",
       "note": "Drop-in coworking with demos.",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Parque das Nações"
     },
     {
       "name": "Canopy Campfire: how is AI changing your life?",
@@ -2067,7 +2096,8 @@
       "storm_moved": null,
       "check": "The page shows no storm note.",
       "note": null,
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Anjos"
     },
     {
       "name": "Kids Young Founders Pitch at Tech Week Palace 2026",
@@ -2188,7 +2218,8 @@
       "cost": "free",
       "storm_moved": false,
       "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Parque das Nações"
     },
     {
       "name": "AI Engineers' Lunch · Web Summit week",
@@ -2212,7 +2243,8 @@
       "cost": "free",
       "storm_moved": false,
       "check": "Re-read 2026-11-11T12:56:00Z for the second-opinion check: the page still says Thu 12 Nov, 12:30 arrive, back to the conference 14:30; not moved. Luma shows it sold out.",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Parque das Nações"
     },
     {
       "name": "Business Lunch Lisbon | fSense & cVortex | Web Summit 2026 Side Event",
@@ -2237,7 +2269,8 @@
       "storm_moved": false,
       "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
       "lane": "business",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Parque das Nações"
     },
     {
       "name": "AI PROMISES TO GIVE US TIME BACK. WHO GETS TO KEEP IT?",
@@ -2557,7 +2590,8 @@
       "storm_moved": true,
       "check": "The page shows no storm note.",
       "note": null,
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Marquês de Pombal"
     },
     {
       "name": "Next Round's on Us | Web Summit 2026",
@@ -2706,7 +2740,8 @@
       "cost": "free tier; paid tiers up to EUR 1000",
       "storm_moved": false,
       "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Parque das Nações"
     },
     {
       "name": "PTW Classroom -What Can AI Workers Do for Your Business?",
@@ -2856,7 +2891,8 @@
       "storm_moved": null,
       "check": "The page shows no storm note.",
       "note": "Correction to the seed: the page dates it Thursday 12 November, not Wednesday 11.",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Santos"
     },
     {
       "name": "Closing Night of Web Summit Week: founders, drinks and snacks at The Nest",
@@ -2881,7 +2917,8 @@
       "storm_moved": null,
       "check": "The page shows no storm note.",
       "note": null,
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Avenidas Novas"
     },
     {
       "name": "300 oysters and AI · Web Summit Lisbon side event",
@@ -2954,7 +2991,8 @@
       "storm_moved": null,
       "check": "The page shows no storm note.",
       "note": "Phones-away conversations.",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Beato"
     },
     {
       "name": "Lisbon Business Leaders Networking Evening",
@@ -2980,7 +3018,8 @@
       "check": "The page shows no storm note.",
       "note": null,
       "lane": "business",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Baixa"
     },
     {
       "name": "Venture Dinner",
@@ -3271,7 +3310,8 @@
       "cost": "EUR 30",
       "storm_moved": false,
       "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "São João de Brito"
     },
     {
       "name": "Institutional Capital: Tokenized",
@@ -3422,7 +3462,8 @@
       "storm_moved": null,
       "check": "The page shows no storm note.",
       "note": "The page names Web Summit among its partners; it is listed here as Unicorn Factory Lisboa's event.",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Beato"
     },
     {
       "name": "Unblock AI • Conference",
@@ -3471,7 +3512,8 @@
       "storm_moved": null,
       "check": "The page shows no storm note.",
       "note": "The pass includes talks, a workshop, an unconference session and an after party. Correction to the seed: starts 08:30 UTC, not 08:15.",
-      "size": "major"
+      "size": "major",
+      "neighbourhood": "Penha de França"
     },
     {
       "name": "Co-working Day for Designers + Mentoring",
@@ -3496,7 +3538,8 @@
       "cost": "EUR 5",
       "storm_moved": false,
       "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Bairro Alto"
     },
     {
       "name": "Co-working for Developers",
@@ -3520,7 +3563,8 @@
       "cost": "EUR 5",
       "storm_moved": false,
       "check": "Added from the public Luma page read at 2026-11-11T11:55:00Z; first listed in PTW's public feed (10 Nov, 18:13 UTC).",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Bairro Alto"
     },
     {
       "name": "PTW Classroom: Ladies Who Build, Lovable & Grok use cases",
@@ -3546,7 +3590,8 @@
       "storm_moved": null,
       "check": "The page shows no storm note.",
       "note": "18 in-person seats.",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Anjos"
     },
     {
       "name": "Speak Up or Stay Silent? Emotional Intelligence for Leaders Across Cultures",
@@ -3913,7 +3958,8 @@
       "storm_moved": null,
       "check": "The page shows no storm note.",
       "note": null,
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Cais do Sodré"
     },
     {
       "name": "Founders & Pastel de Nata — Reverse Network Meet",
@@ -4110,7 +4156,8 @@
       "storm_moved": null,
       "check": "The page shows no storm note.",
       "note": "Saturday, after the three days this file covers.",
-      "size": "community"
+      "size": "community",
+      "neighbourhood": "Alcântara / Santo Amaro"
     },
     {
       "name": "Web Summit Unwind: A Traditional Banya Experience",
