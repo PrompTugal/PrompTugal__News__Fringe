@@ -25,7 +25,7 @@
   var dots = {}, labels = {};
   data.nodes.forEach(function (n) {
     var r = (n.type === 'event' ? 3.5 : 3.5 + Math.sqrt(n.degree) * 1.6) * u;
-    var c = el('circle', { cx: n.x, cy: n.y, r: r, 'class': 't-' + n.type, tabindex: 0 });
+    var c = el('circle', { cx: n.x, cy: n.y, r: r, 'class': 't-' + n.type + (n.outreach ? ' o-' + n.outreach.replace(/ /g, '-') : ''), tabindex: 0 });
     var t = el('title', {}); t.textContent = n.label + ' (' + n.type + ')'; c.appendChild(t);
     c.addEventListener('click', function (ev) { ev.stopPropagation(); select(n.id); });
     c.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') select(n.id); });
@@ -36,7 +36,7 @@
   });
 
   // filters
-  var state = { q: '', day: {}, kind: {}, cancelled: false, storm: false }, visible = {};
+  var state = { q: '', day: {}, kind: {}, out: {}, cancelled: false, storm: false }, visible = {};
   var any = function (o) { for (var k in o) if (o[k]) return true; return false; };
   function apply() {
     var q = state.q.trim().toLowerCase(), qNodes = {};
@@ -46,10 +46,12 @@
     data.nodes.forEach(function (n) {
       if (n.type !== 'event') return;
       var hay = [n.label, n.organiser, n.place, (n.topics || []).join(' ')].join(' ').toLowerCase();
-      var ok = (!q || hay.indexOf(q) >= 0 || qNodes[n.id]) && (!any(state.day) || state.day[n.date]) && (!any(state.kind) || state.kind[n.kind])
+      var outOk = !any(state.out) || adj[n.id].some(function (m) { return byId[m].outreach && state.out[byId[m].outreach]; });
+      var ok = outOk && (!q || hay.indexOf(q) >= 0 || qNodes[n.id]) && (!any(state.day) || state.day[n.date]) && (!any(state.kind) || state.kind[n.kind])
         && !(state.cancelled && n.status === 'cancelled') && !(state.storm && n.storm_moved !== true);
       if (ok) { visible[n.id] = 1; nEv++; adj[n.id].forEach(function (m) { visible[m] = 1; }); }
     });
+    if (any(state.out)) data.nodes.forEach(function (n) { if (n.type === 'community' && !(n.outreach && state.out[n.outreach])) delete visible[n.id]; });
     data.nodes.forEach(function (n) { var on = !!visible[n.id]; dots[n.id].classList.toggle('off', !on); if (labels[n.id]) labels[n.id].classList.toggle('off', !on); });
     lines.forEach(function (x) { x.l.classList.toggle('off', !(visible[x.a] && visible[x.b])); });
     document.querySelectorAll('li[data-ev]').forEach(function (li) { li.hidden = !visible[li.getAttribute('data-ev')]; });
@@ -84,6 +86,7 @@
         + '<div class="muted">' + esc(n.place || '') + '</div><div><a href="/e/' + esc(encodeURIComponent(n.id.slice(6))) + '/">Its page here</a> · <a href="' + esc(n.url) + '">The organiser\'s page</a></div>';   // work/22
     } else {
       if (n.what) h += '<div>' + esc(n.what) + '</div>';
+      if (n.outreach) h += '<div class="muted">Outreach: ' + esc(n.outreach) + '</div>';
       var l = [n.home && '<a href="' + esc(n.home) + '">their page</a>', n.verified && '<a href="/api/v1/communities.json">checked community</a>', n.ptnews && '<a href="' + esc(n.ptnews) + '">on pt.news</a>', n.gamma_ray && '<a href="' + esc(n.gamma_ray) + '">GAMMA-Ray card</a>'].filter(Boolean).join(' · ');
       if (l) h += '<div class="muted">' + l + '</div>';
     }

@@ -75,12 +75,23 @@ Served at `/api/v1/graph.json` (work/05, conductor.fringe@PrompTugal.angelo). Bu
       "x", "y": number,                     // the layout, computed at build time
       "ptnews":    URL,                     // optional: the same thing on promptugal.news
       "gamma_ray": URL,                     // optional: its GAMMA-Ray card
+      "outreach":  "listed" | "draft ready" | "contacted" | "answered" | "joined",   // communities only, optional (work/32): the state in data/outreach-tracker.json, matched by community id, then normalised name; never a contact, channel or name
       // events only: event, url, read_at, date, start, end, kind, status, storm_moved, place, organiser, topics
     }
   ],
   "edges": [
     { "from": "event:<id>", "to": node id, "verb": "organised by" | "about" | "at", "source": URL, "read_at": ISO 8601 }
-  ]
+  ],
+  "outreach": {                             // work/32: counts only
+    "on_graph": { "listed", "draft ready", "contacted", "answered", "joined": number },   // community nodes in each state
+    "tracker":  { "by", "updated", "organisers_listed", "drafts_ready", "contacted", "answered", "joined" } | null   // data/outreach.json as it is
+  },
+  "ontology": {                             // work/32: the counts behind the picture on /graph/
+    "counts":   { "community", "community_checked", "event", "place", "topic", "channel_links", "source", "agent", "person_by_role": number },
+    "channels": { "Luma", "Meetup", "LinkedIn", "X", "WhatsApp group", "Eventbrite", "website": number },   // link hosts in events' url and communities' links[]
+    "sources_latest_read_at": ISO 8601 | null,
+    "edges":    { "organised by", "about", "at": number }
+  }
 }
 ```
 
