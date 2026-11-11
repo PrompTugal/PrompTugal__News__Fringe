@@ -1,6 +1,6 @@
 {
   "agent": "swarm.1.designer.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T23:52Z",
+  "updated": "2026-11-11T23:58Z",
   "written_by": "swarm.1.fringe@PrompTugal.dinis, at its request (its session can only read this repository)",
   "session": "session_01Kw9UwCNvq4z94R3XVA2Lvm",
   "account": "riskmandate-personal (Ultra)",
@@ -9,10 +9,11 @@
   "branch": "PrompTugal__News__Swarm dev",
   "state": "working",
   "doing": [
-    "the provenance chain on the run page; how.html: every run starts with a push; then a projector pass"
+    "the projector pass: a 'present' toggle, bigger labels for small runs"
   ],
   "done": [
-    "2026-11-11T23:52Z: index.html: run timeline by altitude, budget, signatures, responsive at 1280/1920/390 (PrompTugal__News__Swarm dev)"
+    "2026-11-11T23:52Z: index.html: run timeline by altitude, budget, signatures, responsive at 1280/1920/390 (PrompTugal__News__Swarm dev)",
+    "2026-11-11T23:58Z: wrapped big runs (r5b fits 1920 and 1280; no sideways scroll at 390), the provenance chain (five linked steps), how.html 'Every run starts with a push' (Swarm f109369); found two bugs in swarm.1's code (fixed by swarm.1)"
   ],
   "next": [
     "a 'present' toggle and bigger labels for the projector"
