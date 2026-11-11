@@ -82,7 +82,8 @@ code{background:var(--paper-2);padding:1px var(--s1);border-radius:var(--radius)
 .tag.open{border-color:var(--warn)}.tag.claimed{border-color:var(--brand)}.tag.done{border-color:var(--ok)}
 .ptbar{background:var(--ink);font-size:var(--fs-meta);text-align:center}.ptbar a{display:block;padding:6px var(--gutter);color:var(--paper);text-decoration:none;font-weight:600;letter-spacing:.02em}.ptbar a:hover{text-decoration:underline;color:var(--paper)}
 .hero{padding:var(--s2) 0 var(--s1)}.hero h1{margin:.2em 0 .1em}.hero .tag-line{margin:0 0 .6em;color:var(--ink-3)}.hero .count{font-weight:600;margin:0 0 .6em}.hero .card{margin:6px 0;padding:var(--s2) var(--s3)}.hero .when{font-variant-numeric:tabular-nums;color:var(--brand);font-weight:600;font-size:var(--fs-meta)}.hero .muted{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}.btn{display:block;text-align:center;background:var(--brand);color:var(--paper);font-weight:600;text-decoration:none;padding:var(--s3) var(--s4);border-radius:var(--radius);margin:var(--s3) 0;min-height:44px}.btn:hover{color:var(--paper)}
-footer{max-width:var(--page);margin:var(--s5) auto;padding:var(--gutter);border-top:1px solid var(--rule-2)}${CARD_CSS}${IDENTITY_CSS}`;
+footer{max-width:var(--page);margin:var(--s5) auto;padding:var(--gutter);border-top:1px solid var(--rule-2)}${CARD_CSS}
+.showroom-list{list-style:none;padding:0;margin:.5em 0;font-size:.9rem}.showroom-list li{margin:.25em 0}${IDENTITY_CSS}`;
 // D5: the one navigation. Flip `live` to true when a page ships (Now: work/16, Organisers: work/23); no JavaScript.
 const NAV = [['Today', '/', true], ['Now', '/now/', true], ['Map', '/graph/', true], ['Organisers', '/organisers/', true], ['How', '/how/', true], ['Traffic', '/traffic/', true], ['Join', '/join/', true]];
 const navHtml = (here) => `<header><nav aria-label="Main"><span class="brand"><a href="/">${WORDMARK}</a></span>
@@ -165,6 +166,7 @@ ${nowBlock(events, esc, { eventPath, hasPage }, new Date(BUILT), { limit: 5 })}<
 <div id="events"></div>${eventsHtml()}
 <h2>How this is made</h2>
 <div class="card">Built in the open by a swarm: one conductor per person, agents by role, Dinis as head. <a href="/how/"><strong>See how it is made</strong></a> · <a href="/join/">Bring your conductor in five minutes</a>.</div>
+<!--SHOWROOM-->
 `, 'An independent guide to the side events around Web Summit Lisbon.');
 
 // --- /join/ --------------------------------------------------------------
@@ -209,7 +211,7 @@ const graphPage = page('Connect the dots: Lisbon Fringe', `<style>${graphCss}</s
 
 // --- write ---------------------------------------------------------------
 mkdirSync(join(out, 'join'), { recursive: true });
-writeFileSync(join(out, 'index.html'), home);
+writeFileSync(join(out, 'index.html'), home);   // rewritten with the showroom strip after the swarm is collected (D6)
 writeFileSync(join(out, 'join', 'index.html'), joinPage);
 mkdirSync(join(out, 'how'), { recursive: true });
 const count = (d, re) => { try { return readdirSync(join(root, d)).filter((f) => re.test(f)).length; } catch { return 0; } };
@@ -266,4 +268,14 @@ const swarm = await collectSwarm({ root, roster, status, board, traffic, builtAt
 mkdirSync(join(out, 'dashboard'), { recursive: true });
 writeFileSync(join(out, 'dashboard', 'index.html'), page('The swarm: Lisbon Fringe', `<style>${swarmCss}${meCss}</style>` + swarmBody(swarm, esc, REPO) + swarmScript, 'Who is online in the Lisbon Fringe swarm: conductors, agents, the board and the latest changes.'));
 writeFileSync(join(out, 'api', 'v1', 'swarm.json'), JSON.stringify(swarm, null, 1) + '\n');
+// D6 the showroom strip on the home page: counts from swarm.json, last 5 changes from changes (both built from the repository)
+{
+  const c = swarm.counts, last = (changes.commits || []).slice(0, 5);
+  const hhmm = (t) => String(t).slice(11, 16);
+  const showroom = `<div class="card showroom"><strong>Right now: ${c.agents_online} agents and ${c.conductors_online} conductors online</strong>
+<span class="muted">(of ${c.agents_total} agents and ${c.conductors_started} conductors started; online = status updated in the last ${swarm.online_minutes} minutes)</span>
+<ul class="showroom-list">${last.map((x) => `<li><span class="muted">${esc(hhmm(x.time))} UTC</span> <code>${esc(String(x.agent || '').replace(/\.fringe@.*/, '').replace(/@.*/, ''))}</code> ${esc(x.subject)}</li>`).join('')}</ul>
+<a href="/dashboard/">The swarm dashboard</a> · <a href="/changes/">Every change</a></div>`;
+  writeFileSync(join(out, 'index.html'), home.replace('<!--SHOWROOM-->', showroom));
+}
 console.log(`built _site/ ${VERSION}: /, /join/, /graph/ (${graph.nodes.length} nodes, ${graph.edges.length} edges), ${events.length} events, ${ePages.length} event pages (${roster.people.length} people, ${board.length} board items, ${Object.keys(status).length} status files)`);
