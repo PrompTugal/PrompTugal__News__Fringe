@@ -1,13 +1,13 @@
 {
   "about": "The Agent Behaviour Policies of Lisbon Fringe (lisbontechfringe.com, origin in admin/site.json; WS-215) as data: deny by default, one grant per role and agent, across this repository and the others the swarm touches. Ported from PrompTugal__News__Website board/abp/policies.json (abp@PrompTugal.dinis, v1.7.0, since 6 November 2026), not invented anew; built on RiskMandate's Agent Behaviour Policy and Licence to Operate (https://riskmandate.ai/agent-behaviour-policy.html). Read by the hooks (.claude/settings.json, .claude/hooks/abp.mjs) and by the gate's commit check (abp/tools/abp.mjs check). abp/<agent>.md is generated from this file (node abp/tools/abp.mjs build), never edited by hand. Kept by architect.1.fringe@PrompTugal.dinis (work/39); any relaxation, and any move towards enforcement, is Dinis's decision.",
-  "version": "0.3.2",
-  "updated": "2026-11-11T15:51Z",
+  "version": "0.4.0",
+  "updated": "2026-11-11T16:30Z",
   "operator": "Dinis Cruz",
   "kept_by": "architect.1.fringe@PrompTugal.dinis",
   "status": "DRAFT: grants proposed from the git log (data/architecture.json observed); Dinis and the lead review",
   "mandate_source": "Brief 12 (briefs/2026-11-11-1334-the-architect-and-the-policies.md), Dinis: 'agent behavior policies that literally say who can edit what, who can edit in multiple environments, and for example, what parts of even the GitHub repo an agent can touch, because we can then map it from there.'",
   "mode": "observe",
-  "mode_note": "Dinis's ruling, 11 November 2026, 13:36 UTC (brief 12): 'for now, you should start with observe mode so we can learn. So it should not be blocking ... we take two or three rounds of execution, and only when we know that a particular thing is safe, we start to maybe a bit more enforcement. But for now, you should always have an escape hatch, and conductor should be able to override it for now ... but also we log it, so we learn.' No hook and no gate check blocks anything: a call or a commit outside a grant is logged as 'observe'.",
+  "mode_note": "Dinis's ruling, 11 November 2026, 13:36 UTC (brief 12): 'for now, you should start with observe mode so we can learn. So it should not be blocking ... we take two or three rounds of execution, and only when we know that a particular thing is safe, we start to maybe a bit more enforcement. But for now, you should always have an escape hatch, and conductor should be able to override it for now ... but also we log it, so we learn.' No hook and no gate check blocks anything: a call or a commit outside a grant is logged as 'observe'. From 2026-11-11T16:30Z: R5, R8 and R9 enforce (Dinis); every other rule observes.",
   "enforcement": {
     "about": "Each core rule has its own mode, 'observe' to start. A rule moves to 'warn' or 'enforce' only after two or three rounds (wakes) of logs show it is safe, and only by Dinis's decision, recorded here per rule: {\"mode\", \"since\", \"by\": \"Dinis\", \"words\"}. The hooks read this block; nothing here blocks today.",
     "rounds_before_enforcement": 3,
@@ -29,8 +29,11 @@
         "since": "2026-11-11T13:36Z"
       },
       "R5": {
-        "mode": "observe",
-        "since": "2026-11-11T13:36Z"
+        "mode": "enforce",
+        "since": "2026-11-11T16:30Z",
+        "by": "Dinis",
+        "words": "Dinis, in architect.1's session: 'never force push. Never print or commit ... Those R5, R8, R9 should be ... absolutely and unbreakable rules ... Those conductors, but it has to be override and logging. I agree completely.'",
+        "after": "three rounds of observe with no finding (abp/reviews/2026-11-11-13.md, -14.md, -15.md)"
       },
       "R6": {
         "mode": "observe",
@@ -41,12 +44,18 @@
         "since": "2026-11-11T13:36Z"
       },
       "R8": {
-        "mode": "observe",
-        "since": "2026-11-11T13:36Z"
+        "mode": "enforce",
+        "since": "2026-11-11T16:30Z",
+        "by": "Dinis",
+        "words": "Dinis, in architect.1's session: 'never force push. Never print or commit ... Those R5, R8, R9 should be ... absolutely and unbreakable rules ... Those conductors, but it has to be override and logging. I agree completely.'",
+        "after": "three rounds of observe with no finding (abp/reviews/2026-11-11-13.md, -14.md, -15.md)"
       },
       "R9": {
-        "mode": "observe",
-        "since": "2026-11-11T13:36Z"
+        "mode": "enforce",
+        "since": "2026-11-11T16:30Z",
+        "by": "Dinis",
+        "words": "Dinis, in architect.1's session: 'never force push. Never print or commit ... Those R5, R8, R9 should be ... absolutely and unbreakable rules ... Those conductors, but it has to be override and logging. I agree completely.'",
+        "after": "three rounds of observe with no finding (abp/reviews/2026-11-11-13.md, -14.md, -15.md)"
       },
       "R10": {
         "mode": "observe",
@@ -70,7 +79,8 @@
       "conductor.fringe@PrompTugal.<id> (for its own person's agents)"
     ],
     "file": "abp/overrides.json",
-    "env": "ABP_OVERRIDE"
+    "env": "ABP_OVERRIDE",
+    "note": "An override is honoured only from abp/overrides.json entries whose 'by' is Dinis or a conductor; the gate warns on any change to abp/overrides.json not committed by a conductor or the architect. ABP_OVERRIDE must be set in the session's own environment, not in a command."
   },
   "core": [
     {
@@ -938,7 +948,7 @@
       "for": "Dinis: observe for three rounds; then decide whether design keeps admin/build/** or works through a page registry"
     }
   ],
-  "hook_sha256": "389d2f64a4bb49ca",
+  "hook_sha256": "9977245033317bf6",
   "effective": "2026-11-11T13:36:00Z",
   "effective_note": "Earlier commits are read against the grants as calibration, not counted.",
   "review": {
@@ -1088,6 +1098,11 @@
       "R6": "still measures the grants' freshness",
       "R7": "sends are invisible in commits; hook logs stay on each machine",
       "R12": "fires on normal loops until the sandboxed runner exists"
+    },
+    "decided": {
+      "at": "2026-11-11T16:30Z",
+      "by": "Dinis",
+      "decision": "R5, R8, R9: enforce, with the conductor override and logging"
     }
   }
 }

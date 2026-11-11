@@ -240,10 +240,12 @@ export function checkBash(who, command, cwd, P = loadPolicy()) {
                 if (remote && /:\/\//.test(remote) && !/promptugal__news__fringe/i.test(remote)) return deny('R5', `git push to ${remote}: only this repository's dev`, 'git-push')
                 if (refs.some(r => /(^|[:/])(main|master)$/.test(r))) return deny('R5', 'never push to main: a major release is a pull request from dev that only Dinis merges', 'git-push')
                 const target = g.branch || 'dev'
-                const esc = target.replace(/[.\/]/g, '\\$&')
-                const okRef = r => new RegExp(`^(HEAD:|${esc}:)?(refs/heads/)?${esc}$`).test(r)
+                // dev, or the agent's own work/<name> branch (the lead reviews it): never main, never another's branch
+                const own = who.name ? `work/${who.name}.fringe` : null
+                const targets = [target, 'dev', own, who.name ? `work/${who.name}` : null].filter(Boolean)
+                const okRef = r => targets.some(tg => { const e = tg.replace(/[.\/]/g, '\\$&'); return new RegExp(`^(HEAD:|${e}:)?(refs/heads/)?${e}$`).test(r) })
                 if (refs.length && !refs.every(okRef)) return deny('R5', `git push ${refs.join(' ')}: push to ${target} only${target !== 'dev' ? ' (a branch worker never pushes to dev; the lead reviews and brings its work)' : ''}`, 'git-push')
-                if (!refs.length) { const b = currentBranch(); if (b !== target) return deny('R5', `git push from branch ${b || 'unknown'}: push to ${target} only`, 'git-push') }
+                if (!refs.length) { const b = currentBranch(); if (!targets.includes(b)) return deny('R5', `git push from branch ${b || 'unknown'}: push to ${target} only`, 'git-push') }
             }
             if (sub === 'commit') {
                 if (rest.includes('--allow-empty')) return deny('R5', 'no empty commits', 'git-commit')
@@ -438,7 +440,7 @@ export function overrideFor(rule, who, P = loadPolicy()) {
         const f = JSON.parse(fs.readFileSync(path.join(PROJECT, 'abp', 'overrides.json'), 'utf8'))
         const now = new Date().toISOString()
         const o = (f.items || []).find(x => (x.rule === rule || x.rule === '*') && (x.agent === '*' || x.agent === who.agent) && (!x.until || x.until > now))
-        if (o) return { by: o.by, why: o.why, at: o.at, how: 'abp/overrides.json' }
+        if (o && (/^dinis$/i.test(String(o.by)) || /^conductor\.[a-z0-9.]*@PrompTugal\.[a-z]+$/i.test(String(o.by)))) return { by: o.by, why: o.why, at: o.at, how: 'abp/overrides.json' }
     } catch { /* no overrides */ }
     return null
 }
