@@ -1,15 +1,32 @@
 {
  "about": "Second-opinion checks (work/20): a cheap open model read each event's public page and our entry. EVIDENCE only, never fact: no data changed from it. Verdicts only; no page or model text is kept in git. Mismatches are for work/13 and researcher.2 to re-read at source.",
- "run_at": "2026-11-11T13:29:17Z",
+ "run_at": "2026-11-11T14:26:30Z",
  "by": "dev.2.fringe@PrompTugal.dinis",
  "model": "tier check (see admin/tools/llm-models.json)",
  "hours": 2,
- "checked": 171,
- "errors": 2,
+ "checked": 166,
+ "errors": 3,
  "mismatches": 17,
- "cost_usd_this_run": 0.07355,
+ "cost_usd_this_run": 0.06826,
  "label": "evidence",
  "mismatched": [
+  {
+   "id": "2026-11-11-storm-summit-stormsummit-app",
+   "url": "https://stormsummit.app/",
+   "status": {
+    "v": "mismatch",
+    "says": "moved"
+   },
+   "start": {
+    "v": "match"
+   },
+   "end": {
+    "v": "unclear"
+   },
+   "place": {
+    "v": "match"
+   }
+  },
   {
    "id": "2026-11-11-roast-your-website",
    "url": "https://luma.com/m146luuy",
@@ -58,7 +75,7 @@
    },
    "place": {
     "v": "mismatch",
-    "says": "Room 12"
+    "says": "Room 12, Ground Floor"
    }
   },
   {
@@ -96,24 +113,6 @@
    }
   },
   {
-   "id": "2026-11-11-wet-summit-lisbon",
-   "url": "https://wetsummitlisbon.com/",
-   "status": {
-    "v": "match"
-   },
-   "start": {
-    "v": "mismatch",
-    "says": "2023-11-11T12:00"
-   },
-   "end": {
-    "v": "mismatch",
-    "says": "2023-11-11T18:00"
-   },
-   "place": {
-    "v": "match"
-   }
-  },
-  {
    "id": "2026-11-11-kuma-align-leadership-ai",
    "url": "https://luma.com/az8uos4e",
    "status": {
@@ -128,6 +127,23 @@
    },
    "place": {
     "v": "match"
+   }
+  },
+  {
+   "id": "2026-11-11-yorkseed-investor-pitch",
+   "url": "https://luma.com/bmu7tyec",
+   "status": {
+    "v": "mismatch",
+    "says": "cancelled"
+   },
+   "start": {
+    "v": "match"
+   },
+   "end": {
+    "v": "match"
+   },
+   "place": {
+    "v": "unclear"
    }
   },
   {
@@ -165,6 +181,24 @@
    }
   },
   {
+   "id": "2026-11-11-frontier-founders-vcs-soiree",
+   "url": "https://luma.com/tjed8ali",
+   "status": {
+    "v": "match"
+   },
+   "start": {
+    "v": "match"
+   },
+   "end": {
+    "v": "mismatch",
+    "says": "2026-11-11T21:00"
+   },
+   "place": {
+    "v": "mismatch",
+    "says": "near Web Summit"
+   }
+  },
+  {
    "id": "2026-11-11-demonightlx",
    "url": "https://luma.com/2ofzih7t",
    "status": {
@@ -183,21 +217,21 @@
    }
   },
   {
-   "id": "2026-11-11-degens-hangout",
-   "url": "https://www.eventbrite.pt/e/degens-hangout-tickets-913441898307",
+   "id": "2026-11-11-funders-founders-night-altair",
+   "url": "https://luma.com/h19cccc5",
    "status": {
-    "v": "match"
+    "v": "mismatch",
+    "says": "on"
    },
    "start": {
-    "v": "mismatch",
-    "says": "2023-11-15T19:00"
+    "v": "match"
    },
    "end": {
-    "v": "mismatch",
-    "says": "2023-11-15T00:00"
+    "v": "match"
    },
    "place": {
-    "v": "match"
+    "v": "unclear",
+    "says": "2056 Clubhouse by VNTR"
    }
   },
   {
@@ -215,23 +249,6 @@
    "place": {
     "v": "mismatch",
     "says": "Room 1 Ground Floor"
-   }
-  },
-  {
-   "id": "2026-11-12-padel-encounters-lisbon-thu-12-nov",
-   "url": "https://luma.com/8xqgougf",
-   "status": {
-    "v": "match"
-   },
-   "start": {
-    "v": "match"
-   },
-   "end": {
-    "v": "mismatch",
-    "says": "2026-11-12T10:00"
-   },
-   "place": {
-    "v": "unclear"
    }
   },
   {
@@ -286,23 +303,6 @@
    "place": {
     "v": "unclear"
    }
-  },
-  {
-   "id": "2026-11-13-yorkseed-legal-compliance-clinic",
-   "url": "https://luma.com/tjv48y4k",
-   "status": {
-    "v": "mismatch",
-    "says": "cancelled"
-   },
-   "start": {
-    "v": "match"
-   },
-   "end": {
-    "v": "match"
-   },
-   "place": {
-    "v": "unclear"
-   }
   }
  ],
  "all": [
@@ -332,6 +332,13 @@
    "status": "match",
    "start": "match",
    "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-storm-summit-stormsummit-app",
+   "status": "mismatch",
+   "start": "match",
+   "end": "unclear",
    "place": "match"
   },
   {
@@ -405,13 +412,6 @@
    "place": "unclear"
   },
   {
-   "id": "2026-11-11-wet-summit-lisbon",
-   "status": "match",
-   "start": "mismatch",
-   "end": "mismatch",
-   "place": "match"
-  },
-  {
    "id": "2026-11-11-",
    "status": "match",
    "start": "match",
@@ -420,7 +420,7 @@
   },
   {
    "id": "2026-11-11-yorkseed-allocator-lunch",
-   "status": "match",
+   "status": "unclear",
    "start": "match",
    "end": "match",
    "place": "unclear"
@@ -452,10 +452,7 @@
   },
   {
    "id": "2026-11-11-side-events-guide-irl",
-   "status": "match",
-   "start": "match",
-   "end": "match",
-   "place": "match"
+   "error": "http_404"
   },
   {
    "id": "2026-11-11-ethical-ai-initiative",
@@ -494,7 +491,7 @@
   },
   {
    "id": "2026-11-11-yorkseed-investor-pitch",
-   "status": "unclear",
+   "status": "mismatch",
    "start": "match",
    "end": "match",
    "place": "unclear"
@@ -581,13 +578,6 @@
    "place": "match"
   },
   {
-   "id": "2026-11-11-the-web-summit-soiree",
-   "status": "match",
-   "start": "match",
-   "end": "match",
-   "place": "match"
-  },
-  {
    "id": "2026-11-11-tech-startups-on-the-rooftop",
    "status": "mismatch",
    "start": "match",
@@ -612,8 +602,8 @@
    "id": "2026-11-11-frontier-founders-vcs-soiree",
    "status": "match",
    "start": "match",
-   "end": "match",
-   "place": "match"
+   "end": "mismatch",
+   "place": "mismatch"
   },
   {
    "id": "2026-11-11-lisboaux-web-summit-edition",
@@ -637,13 +627,6 @@
    "place": "unclear"
   },
   {
-   "id": "2026-11-11-web-summit-networking-event-delirium-cafe",
-   "status": "match",
-   "start": "match",
-   "end": "match",
-   "place": "match"
-  },
-  {
    "id": "2026-11-11-demonightlx",
    "status": "mismatch",
    "start": "match",
@@ -659,10 +642,10 @@
   },
   {
    "id": "2026-11-11-funders-founders-night-altair",
-   "status": "match",
+   "status": "mismatch",
    "start": "match",
    "end": "match",
-   "place": "match"
+   "place": "unclear"
   },
   {
    "id": "2026-11-11-european-tech-champions-italy-portugal",
@@ -677,13 +660,6 @@
    "start": "match",
    "end": "match",
    "place": "unclear"
-  },
-  {
-   "id": "2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks",
-   "status": "match",
-   "start": "match",
-   "end": "match",
-   "place": "match"
   },
   {
    "id": "2026-11-11-founderlink-storm-summit-evening",
@@ -728,13 +704,6 @@
    "place": "unclear"
   },
   {
-   "id": "2026-11-11-degens-hangout",
-   "status": "match",
-   "start": "mismatch",
-   "end": "mismatch",
-   "place": "match"
-  },
-  {
    "id": "2026-11-11-canopy-post-demo-night-drinks",
    "status": "match",
    "start": "match",
@@ -760,7 +729,7 @@
    "status": "match",
    "start": "match",
    "end": "match",
-   "place": "match"
+   "place": "unclear"
   },
   {
    "id": "2026-11-11-r-founders-week-websummit-26-r-founders-party-",
@@ -798,6 +767,13 @@
    "place": "match"
   },
   {
+   "id": "2026-11-11-enchant-afterparty-drinks-with-vcs-founders",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "unclear"
+  },
+  {
    "id": "2026-11-12-web-summit-x-tech-talks-run-club-coffee",
    "status": "match",
    "start": "match",
@@ -815,7 +791,7 @@
    "id": "2026-11-12-padel-encounters-lisbon-thu-12-nov",
    "status": "match",
    "start": "match",
-   "end": "mismatch",
+   "end": "match",
    "place": "unclear"
   },
   {
@@ -841,7 +817,7 @@
   },
   {
    "id": "2026-11-12-female-founders-breakfast",
-   "status": "match",
+   "status": "unclear",
    "start": "match",
    "end": "match",
    "place": "match"
@@ -1197,13 +1173,6 @@
    "place": "unclear"
   },
   {
-   "id": "2026-11-12-wave-2026-music-tech-networking-web-summit-sid",
-   "status": "match",
-   "start": "match",
-   "end": "unclear",
-   "place": "match"
-  },
-  {
    "id": "2026-11-12-opus-after-hours",
    "status": "match",
    "start": "match",
@@ -1338,7 +1307,7 @@
   },
   {
    "id": "2026-11-13-yorkseed-legal-compliance-clinic",
-   "status": "mismatch",
+   "status": "unclear",
    "start": "match",
    "end": "match",
    "place": "unclear"
@@ -1449,13 +1418,6 @@
    "place": "match"
   },
   {
-   "id": "2026-11-13-last-man-woman-standing-b-ai-rro-alto-bar-even",
-   "status": "match",
-   "start": "match",
-   "end": "match",
-   "place": "match"
-  },
-  {
    "id": "2026-11-14-primum-next",
    "status": "match",
    "start": "match",
@@ -1464,6 +1426,13 @@
   },
   {
    "id": "2026-11-14-bitcointalks-cripto-ia-summit-santarem",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-14-ai-devs-hoopers-run",
    "status": "match",
    "start": "match",
    "end": "match",

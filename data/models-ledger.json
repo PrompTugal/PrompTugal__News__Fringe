@@ -1,10 +1,10 @@
 {
  "days": {
   "2026-11-11": {
-   "calls": 524,
-   "cost_usd": 0.132718,
+   "calls": 690,
+   "cost_usd": 0.20098,
    "first": "2026-11-11T12:01:19Z",
-   "last": "2026-11-11T13:29:16Z",
+   "last": "2026-11-11T14:26:29Z",
    "by_model": {
     "deepseek/deepseek-v4-flash": {
      "calls": 3,
@@ -21,11 +21,11 @@
      "tokens_out": 5477
     },
     "meta-llama/llama-3.3-70b-instruct": {
-     "calls": 345,
-     "ok": 345,
-     "cost_usd": 0.12668,
-     "tokens_in": 261482,
-     "tokens_out": 13448
+     "calls": 511,
+     "ok": 511,
+     "cost_usd": 0.19494,
+     "tokens_in": 386340,
+     "tokens_out": 19897
     }
    },
    "by_tier": {
@@ -37,20 +37,20 @@
      "tokens_out": 8
     },
     "check": {
-     "calls": 521,
-     "ok": 521,
-     "cost_usd": 0.132715,
-     "tokens_in": 402861,
-     "tokens_out": 18925
+     "calls": 687,
+     "ok": 687,
+     "cost_usd": 0.200975,
+     "tokens_in": 527719,
+     "tokens_out": 25374
     }
    },
    "by_agent": {
     "dev.2.fringe@PrompTugal.dinis": {
-     "calls": 522,
-     "ok": 521,
-     "cost_usd": 0.132715,
-     "tokens_in": 402861,
-     "tokens_out": 18925
+     "calls": 688,
+     "ok": 687,
+     "cost_usd": 0.200975,
+     "tokens_in": 527719,
+     "tokens_out": 25374
     },
     "a": {
      "calls": 2,
@@ -76,11 +76,11 @@
      "tokens_out": 8
     },
     "WS-215/second-opinion": {
-     "calls": 521,
-     "ok": 521,
-     "cost_usd": 0.132715,
-     "tokens_in": 402861,
-     "tokens_out": 18925
+     "calls": 687,
+     "ok": 687,
+     "cost_usd": 0.200975,
+     "tokens_in": 527719,
+     "tokens_out": 25374
     }
    },
    "by_status": {
@@ -92,11 +92,11 @@
      "tokens_out": 0
     },
     "ok": {
-     "calls": 522,
-     "ok": 522,
-     "cost_usd": 0.132715,
-     "tokens_in": 402873,
-     "tokens_out": 18933
+     "calls": 688,
+     "ok": 688,
+     "cost_usd": 0.200975,
+     "tokens_in": 527731,
+     "tokens_out": 25382
     },
     "refused_low_credit": {
      "calls": 1,
@@ -109,9 +109,9 @@
   }
  },
  "about": "Counts only, from the model ledger of the sessions that run admin/tools/llm.mjs (the ledger is per session, outside git). No prompt, page text or model output.",
- "updated": "2026-11-11T14:07:40Z",
+ "updated": "2026-11-11T14:26:38Z",
  "credit_at_update": {
-  "key_remaining_usd": 74.15,
-  "account_remaining_usd": 99.3
+  "key_remaining_usd": 74,
+  "account_remaining_usd": 99.14
  }
 }
