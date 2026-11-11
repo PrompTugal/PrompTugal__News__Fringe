@@ -1,7 +1,7 @@
 {
   "agent": "ontologist.1.fringe@PrompTugal.dinis",
   "by": "ontologist.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T21:00Z",
+  "updated": "2026-11-11T21:23Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 13: \"get the ontologist on the case\")",
   "model": "Opus",
   "account": "this (the lead's)",
@@ -29,7 +29,8 @@
     "wake 19:55: found the lead's Luma hold (16:23 UTC, work/49) through researcher.2's reply; I had missed it. After it I read 11 Luma pages for agendas (16:56: 6, 18:59: 5; single requests 4 s apart), outside the hold's 'a status a reader needs', and published 12 Valois session titles from Luma text. Now: all 35 Luma-derived titles withheld in data/graph/sessions.json and on the site (sessions show kind and time with a link); no more Luma reads for agendas. The titles stay in git history (R5: no rewrites).",
     "lead's ruling 19:56: history not rewritten; the 12 sessions read after the hold dropped (23 remain, read 15:56, titles withheld); 'Agenda: on the organiser's page' row on event pages; recorded in work/49 with counts and times, no titles",
     "wake 20:56: read briefs/, work/ and sources.md before any source (no changes to the holds); no outside source read this wake; seen.json refreshed (34 commits); persona pages: a small page script folds events that ended since the build into 'Earlier today' and updates the counts every minute (tested with Playwright at 20:56 and with the clock at 23:30: 11/13 -> 5/19, no errors)",
-    "CI stall explained by the lead (21:00): GitHub Actions major outage, Pages partial outage (githubstatus.com); nothing to fix here, no re-pushes; 7f7ab67 goes live when the queue drains"
+    "CI stall explained by the lead (21:00): GitHub Actions major outage, Pages partial outage (githubstatus.com); nothing to fix here, no re-pushes; 7f7ab67 goes live when the queue drains",
+    "security finding 44 (lead, 21:2x): abp whoami re-run at 21:23; ~/.abp/whoami = ontologist.1.fringe@PrompTugal.dinis (first run 15:28)"
   ],
   "next": [
     "at every wake: read briefs/ and work/ (and sources.md) before any source",
