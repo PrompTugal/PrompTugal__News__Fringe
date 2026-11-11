@@ -8,6 +8,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { placeShort } from './cards.mjs';
 import { AZULEJO_URI } from './identity.mjs';
+import { loadOrganisers, organiserPath } from './organisers.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DOW = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -38,6 +39,7 @@ export const inLisbon = (e) => !OUTSIDE.test(`${e.place || ''} ${e.neighbourhood
 const isOnline = (e) => /^online\b/i.test(e.place || '') || e.status === 'online' || e.kind === 'online';
 const slug = (s) => String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const hoodOf = (e) => (e.neighbourhood ? String(e.neighbourhood).split(/[\/,]/)[0].trim() : '');   // only a neighbourhood the research named
+const ELSE = 'Elsewhere in Lisbon';
 const hm = (iso) => String(iso).slice(11, 16);
 const orgName = (e) => String(e.organiser || 'Organiser not named').replace(/\s*\((per|from|on|as)\b[^)]*\)\s*/gi, ' ').trim();
 const TILES = ['--tile', '--river', '--terracotta', '--tram', '--ok'];
@@ -78,7 +80,7 @@ export const homeCss = `
 .hm-tile b{font:600 44px/.9 var(--serif);letter-spacing:-.02em;opacity:.95}.hm-tile i{font:500 10.5px/1 var(--mono);font-style:normal;letter-spacing:.08em;text-transform:uppercase}
 .hm-tile::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.14);-webkit-mask:var(--az) 0 0/28px 28px;mask:var(--az) 0 0/28px 28px}
 .hm-body{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px;flex:1}
-.hm-org{font:600 11px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.hm-org a{position:relative;z-index:1;color:inherit;text-decoration:none}.hm-org a:hover{color:var(--brand);text-decoration:underline}.hm-org{font:600 11px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
 .hm-t{font:600 18px/1.25 var(--serif);margin:0}.hm-t a{color:var(--ink);text-decoration:none}.hm-t a::after{content:"";position:absolute;inset:0}.hm-t a:hover{color:var(--brand);text-decoration:underline}
 .hm-m{font:400 12px/1.5 var(--mono);color:var(--ink-3)}
 .hm-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
@@ -101,10 +103,15 @@ export function homeBody({ events, esc, eventPath, hasPage, now = new Date(), st
   const x = new Date(today + 'T00:00:00Z');
   const hoods = new Map();
   inCity.forEach((e) => { const h = hoodOf(e); if (h) hoods.set(h, (hoods.get(h) || 0) + 1); });
-  const goodHoods = [...hoods].sort((a, b) => b[1] - a[1]).slice(0, 8);
+  const big = new Set([...hoods].filter(([, n]) => n >= 3).map(([h]) => h));   // Dinis, 14:00: a chip with fewer than 3 events is folded into 'Elsewhere in Lisbon'
+  const hoodKey = (e) => { const h = hoodOf(e); return h && big.has(h) ? h : h ? ELSE : ''; };
+  const goodHoods = [...hoods].filter(([h]) => big.has(h)).sort((a, b) => b[1] - a[1]).slice(0, 8);
+  const elseN = inCity.filter((e) => hoodKey(e) === ELSE).length;
+  if (elseN >= 3) goodHoods.push([ELSE, elseN]);
+  const O = loadOrganisers(root, events);
 
   const card = (e) => {
-    const price = priceOf(e), big = e.size === 'major', org = orgName(e);
+    const price = priceOf(e), isBig = e.size === 'major', org = orgName(e), lead = (O.of.get(e) || [])[0];
     const s = Date.parse(e.start), en = e.end ? Date.parse(e.end) : s + 36e5;
     const href = hasPage(e) ? eventPath(e) : e.url;
     const c = TILES[hash(org) % TILES.length];
@@ -112,10 +119,10 @@ export function homeBody({ events, esc, eventPath, hasPage, now = new Date(), st
       ? `<span class="hm-img"><img src="${esc(imgs[e.id])}" alt="" loading="lazy" decoding="async"></span>`
       : `<span class="hm-img hm-tile" style="--c:var(${c})"><b>${esc([...org.replace(/[^\p{L}\p{N} ]/gu, '').trim()][0] || '·')}</b><i>${esc(e.kind || 'event')}</i></span>`;
     const roles = roleOf(e).join(' ');
-    return `<li class="hm-c${e.status === 'cancelled' ? ' x' : ''}" data-s="${s}" data-e="${en}" data-r="${roles}" data-h="${esc(hoodOf(e))}">${media}
-<div class="hm-body"><span class="hm-org">${esc(org)}</span><h3 class="hm-t"><a href="${esc(href)}">${esc(e.name)}</a></h3>
+    return `<li class="hm-c${e.status === 'cancelled' ? ' x' : ''}" data-s="${s}" data-e="${en}" data-r="${roles}" data-h="${esc(hoodKey(e))}">${media}
+<div class="hm-body"><span class="hm-org">${lead ? `<a href="${esc(organiserPath(lead.id))}">${esc(org)}</a>` : esc(org)}</span><h3 class="hm-t"><a href="${esc(href)}">${esc(e.name)}</a></h3>
 <span class="hm-m">${hm(e.start)}${e.end ? '–' + hm(e.end) : ''} UTC · ${esc(isOnline(e) ? 'Online' : placeShort(e))}</span>
-<span class="hm-tags"><span class="hm-tag ${price.k}">${esc(price.t)}</span>${big ? '<span class="hm-tag big">Anchor</span>' : ''}${e.status === 'cancelled' ? '<span class="hm-tag x">Cancelled</span>' : e.status === 'moved' ? '<span class="hm-tag x">Moved</span>' : ''}<span class="hm-tag now" hidden>On now</span></span></div></li>`;
+<span class="hm-tags"><span class="hm-tag ${price.k}">${esc(price.t)}</span>${isBig ? '<span class="hm-tag big">Anchor</span>' : ''}${e.status === 'cancelled' ? '<span class="hm-tag x">Cancelled</span>' : e.status === 'moved' ? '<span class="hm-tag x">Moved</span>' : ''}<span class="hm-tag now" hidden>On now</span></span></div></li>`;
   };
   const state = (e) => { const s = Date.parse(e.start), en = e.end ? Date.parse(e.end) : s + 36e5; return t >= en ? 'past' : t >= s ? 'now' : 'next'; };
   const nowN = inCity.filter((e) => state(e) === 'now' && e.status !== 'cancelled').length;
