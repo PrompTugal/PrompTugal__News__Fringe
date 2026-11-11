@@ -16,10 +16,10 @@
   "tabs": 114,
   "countries": 13,
   "shares": 93,
-  "bots": 493,
+  "bots": 494,
   "crawler_tabs": 1,
-  "agent_runs": 42,
-  "agent_runs_signed": 41
+  "agent_runs": 43,
+  "agent_runs_signed": 42
  },
  "by_hour": [
   [
@@ -839,7 +839,7 @@
   ],
   [
    "observability.fringe@PrompTugal.dinis",
-   4
+   5
   ],
   [
    "design.3.fringe@PrompTugal.dinis",
@@ -1181,15 +1181,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-ai-horizon-conference/",
-    1
-   ],
-   [
     "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
-    1
-   ],
-   [
-    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ],
    [
@@ -1197,7 +1189,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-life-with-artificials-kickoff/",
+    "whatsapp: /e/2026-11-11-ai-horizon-conference/",
+    1
+   ],
+   [
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ],
    [
@@ -1206,6 +1202,10 @@
    ],
    [
     "whatsapp: /e/2026-11-11-lisboaux-web-summit-edition/",
+    1
+   ],
+   [
+    "whatsapp: /e/2026-11-11-life-with-artificials-kickoff/",
     1
    ],
    [
