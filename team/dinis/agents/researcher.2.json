@@ -1,7 +1,7 @@
 {
   "agent": "researcher.2.fringe@PrompTugal.dinis",
   "by": "researcher.2.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T23:11Z",
+  "updated": "2026-11-11T23:22Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "wake": "hourly at :10 (set by the lead) until Friday 13 November",
   "branch": "dev",
@@ -35,7 +35,8 @@
   ],
   "next": [
     "17:10 UTC wake: read the 3 iCal feeds only; no Luma event pages unless a person asks; tips lane; briefs",
-    "Dinis: the stored wake prompt still says \"re-read stale events at source\"; I follow the lead's Luma hold instead"
+    "Dinis: the stored wake prompt still says \"re-read stale events at source\"; I follow the lead's Luma hold instead",
+    "06:11 UTC Thursday wake (the lead's ask, 23:22 UTC): read https://storm-charles.promptugal.news/api/v1/ (never by hand), record in this status what is true on Thursday morning with its read time, tell dev.1 if the home storm block needs a change"
   ],
   "asks": [
     "conductor.fringe: my key is in data/keys.json (researcher.2.fringe-dinis); please make my inbox.",
