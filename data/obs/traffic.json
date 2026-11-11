@@ -1,20 +1,20 @@
 {
  "v": 1,
  "site": "fringe.promptugal.news",
- "generated": "2026-11-11T12:24Z",
+ "generated": "2026-11-11T12:39Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 22,
-  "reads": 20,
-  "tabs": 9,
+  "views": 36,
+  "reads": 34,
+  "tabs": 14,
   "countries": 3,
   "shares": 0,
-  "bots": 64,
-  "agent_runs": 2,
-  "agent_runs_signed": 2
+  "bots": 90,
+  "agent_runs": 6,
+  "agent_runs_signed": 6
  },
  "by_hour": [
   [
@@ -207,13 +207,13 @@
   ],
   [
    "2026-11-11 12:00",
-   11
+   25
   ]
  ],
  "by_page": [
   [
    "/",
-   10
+   14
   ],
   [
    "/join/",
@@ -224,32 +224,48 @@
    3
   ],
   [
+   "/graph/",
+   3
+  ],
+  [
+   "/now/",
+   2
+  ],
+  [
+   "/traffic/",
+   2
+  ],
+  [
+   "/organisers/",
+   2
+  ],
+  [
+   "/me/",
+   2
+  ],
+  [
    "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
    1
   ],
   [
-   "/now/",
+   "/e/2026-11-11-human-side-of-ai/",
    1
   ],
   [
-   "/graph/",
+   "/e/2026-11-11-ai-video-blueprint-2027/",
    1
   ],
   [
-   "/traffic/",
-   1
-  ],
-  [
-   "/organisers/",
+   "/e/2026-11-11-startup-legal-roast/",
    1
   ]
  ],
  "reading": [
   [
    "/",
-   9,
-   18,
-   14
+   13,
+   20,
+   11
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
@@ -264,40 +280,64 @@
    43
   ],
   [
+   "/graph/",
+   3,
+   13,
+   17
+  ],
+  [
+   "/organisers/",
+   2,
+   8,
+   13
+  ],
+  [
+   "/traffic/",
+   2,
+   11,
+   78
+  ],
+  [
+   "/now/",
+   2,
+   1,
+   0
+  ],
+  [
+   "/me/",
+   2,
+   18,
+   28
+  ],
+  [
    "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
    1,
    205,
    100
   ],
   [
-   "/organisers/",
+   "/e/2026-11-11-human-side-of-ai/",
    1,
-   13,
-   21
+   19,
+   100
   ],
   [
-   "/traffic/",
+   "/e/2026-11-11-startup-legal-roast/",
    1,
-   5,
-   57
+   16,
+   56
   ],
   [
-   "/now/",
+   "/e/2026-11-11-ai-video-blueprint-2027/",
    1,
-   1,
-   0
-  ],
-  [
-   "/graph/",
-   1,
-   15,
-   6
+   14,
+   56
   ]
  ],
  "by_country": [
   [
    "Portugal",
-   17
+   31
   ],
   [
    "United States",
@@ -314,8 +354,12 @@
    12
   ],
   [
+   "Lisbon, Distrito de Lisboa, Portugal",
+   12
+  ],
+  [
    "Lisbon, Lisbon, Portugal",
-   5
+   7
   ],
   [
    "(places under 5 views, in their country above)",
@@ -328,7 +372,7 @@
  "by_screen": [
   [
    "desktop",
-   16
+   30
   ],
   [
    "phone",
@@ -339,6 +383,18 @@
   [
    "observability.fringe@PrompTugal.dinis",
    2
+  ],
+  [
+   "design.3.fringe@PrompTugal.dinis",
+   2
+  ],
+  [
+   "design.4.fringe@PrompTugal.dinis",
+   1
+  ],
+  [
+   "design.2.fringe@PrompTugal.dinis",
+   1
   ]
  ]
 }
