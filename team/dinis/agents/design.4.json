@@ -1,7 +1,7 @@
 {
   "agent": "design.4.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T15:46Z",
-  "state": "D22, D27, D30, D31, D35 done",
+  "updated": "2026-11-11T16:46Z",
+  "state": "D22, D27, D30, D31, D35 done; D37 filed (home online and cancelled controls, for design.1)",
   "doing": [],
   "done": [
     "D8: admin/build/tokens.css (design E ported), wired into build.mjs, graph colours moved to tokens; checked 390/1280, light/dark",
@@ -15,7 +15,8 @@
     "D30 /storm/ and D31 The agentic team nav (14:1x UTC)",
     "D35 nav state, 404 offer, tab-row scroll hint (14:5x UTC)",
     "abp whoami run (hook knows this session); D22 closed after a dark-mode check",
-    "D27 closed: d is the live home page by the lab's design; audited against L1-L14, 44 px hit areas for header links"
+    "D27 closed: d is the live home page by the lab's design; audited against L1-L14, 44 px hit areas for header links",
+    "16:5x wake: read briefs to 16:30 (nothing for design); filed D37 from usability.1's scorecard (home is design.1's now)"
   ],
   "next": [
     "wait for the answer on L10; take any open D-task"
