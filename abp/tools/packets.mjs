@@ -88,14 +88,14 @@ async function run() {
 // ingest-flows: every signed result's flow_events into swarm-flows (idempotent: _id = flow:seq); run by architect.1
 async function ingestFlows() {
   if (!process.env.ELASTIC_URL) throw new Error('ingest-flows needs ELASTIC_URL (architect.1 or elastic.1, R8e)');
-  const L = await import(path.join(ROOT, 'admin/tools/elastic-lib.mjs')), { INDEX } = await import('./flow.mjs');
+  const L = await import(path.join(ROOT, 'admin/tools/elastic-lib.mjs')), { INDEX, evId } = await import('./flow.mjs');
   const headers = { 'content-type': 'application/json', ...L.auth() };
   let sent = 0, errors = 0, skipped = 0;
   for (const d of fs.readdirSync(TASKS)) for (const f of fs.readdirSync(path.join(TASKS, d)).filter((x) => /^result-.*\.json$/.test(x))) {
     const r = JSON.parse(fs.readFileSync(path.join(TASKS, d, f), 'utf8'));
     if (!r.body.flow_events || !r.body.flow_events.length) continue;
     if (!verify(r)) { skipped++; continue; }   // only events inside a result its runner's key signed
-    const lines = r.body.flow_events.flatMap((ev) => [JSON.stringify({ index: { _index: INDEX, _id: `${ev.flow}:${ev.seq}` } }), JSON.stringify({ ...ev, source: 'packets.mjs ingest-flows (' + d + '/' + f + ')' })]).join('\n') + '\n';
+    const lines = r.body.flow_events.flatMap((ev) => [JSON.stringify({ index: { _index: INDEX, _id: evId(ev) } }), JSON.stringify({ ...ev, source: 'packets.mjs ingest-flows (' + d + '/' + f + ')' })]).join('\n') + '\n';
     const res = await fetch(`${L.base()}/_bulk`, { method: 'POST', headers: { ...headers, 'content-type': 'application/x-ndjson' }, body: lines });
     const j = await res.json(); const bad = (j.items || []).filter((i) => i.index && i.index.error).length;
     errors += bad; sent += r.body.flow_events.length - bad;

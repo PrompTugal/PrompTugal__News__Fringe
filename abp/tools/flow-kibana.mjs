@@ -16,17 +16,17 @@ const COLORS = { A4: '#121317', A3: '#595c64', A2: '#1f4fa8', A1: '#c52830', A0:
 // 21:0x UTC). Labels lead with the runner's short name and the packet. colorBy: 'altitude' (the general view) or 'runner'
 // (the cross-conductor view).
 const RUNNER_COLORS = ['#1f4fa8', '#c52830', '#1f6f3a', '#8a5a00', '#6b3fa0', '#0f7c8c'];
-function ganttSpec({ title, subtitle, colorBy = 'altitude', packetsOnly = false }) {
+function ganttSpec({ title, subtitle, colorBy = 'altitude', packetsOnly = false, query = null }) {
   return {
     $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
     title: { text: title, subtitle },
-    data: { url: { ...(packetsOnly ? {} : { '%context%': true, '%timefield%': 'at' }), index: 'swarm-flows', body: { size: 5000, ...(packetsOnly ? { query: { prefix: { flow: 'packet-' } } } : {}), sort: [{ at: 'asc' }], _source: ['flow', 'unit_id', 'parent_id', 'altitude', 'name', 'phase', 'at', 'model', 'valid', 'note', 'environment', 'runner'] } }, format: { property: 'hits.hits' } },
+    data: { url: { ...(packetsOnly || query ? {} : { '%context%': true, '%timefield%': 'at' }), index: 'swarm-flows', body: { size: 5000, ...(query ? { query } : packetsOnly ? { query: { prefix: { flow: 'packet-' } } } : {}), sort: [{ at: 'asc' }], _source: ['flow', 'unit_id', 'parent_id', 'altitude', 'name', 'phase', 'at', 'model', 'valid', 'note', 'environment', 'runner'] } }, format: { property: 'hits.hits' } },
     transform: [
       { calculate: 'time(toDate(datum._source.at))', as: 't' },
       { calculate: 'datum._source.unit_id', as: 'unit' }, { calculate: 'datum._source.altitude', as: 'altitude' }, { calculate: 'datum._source.phase', as: 'phase' },
       { calculate: 'datum._source.flow', as: 'flow' }, { calculate: 'datum._source.environment', as: 'environment' },
       { calculate: "replace(replace(split(datum._source.runner || '', '@')[0] + '@' + (split(datum._source.runner || '', '@')[1] || ''), 'conductor.fringe@PrompTugal.', ''), '.fringe@PrompTugal.', '@')", as: 'runner' },
-      { calculate: "indexof(datum.flow, 'packet-') == 0 ? replace(substring(datum.flow, 0, lastindexof(substring(datum.flow, 0, lastindexof(datum.flow, '-')), '-')), 'packet-2026-11-11-', '') : datum.flow", as: 'packet' },
+      { calculate: "indexof(datum.flow, '@') > 0 ? replace(substring(datum.flow, 0, indexof(datum.flow, '@')), /^[0-9]{8}-[0-9]{4}-/, '') : indexof(datum.flow, 'packet-') == 0 ? replace(substring(datum.flow, 0, lastindexof(substring(datum.flow, 0, lastindexof(datum.flow, '-')), '-')), 'packet-2026-11-11-', '') : datum.flow", as: 'packet' },
       { calculate: "replace(replace(datum._source.name, / by .*$/, ''), 'LLM call: ', '')", as: 'what' },
       { filter: 'datum.phase != "step"' },
       { aggregate: [{ op: 'min', field: 't', as: 'start' }, { op: 'max', field: 't', as: 'end' }, { op: 'max', field: 'what', as: 'what' }], groupby: ['unit', 'altitude', 'flow', 'packet', 'runner', 'environment'] },
@@ -45,6 +45,7 @@ function ganttSpec({ title, subtitle, colorBy = 'altitude', packetsOnly = false 
   };
 }
 const gantt = ganttSpec({ title: 'Every unit, from its start to its end', subtitle: 'one bar per unit (row = unit); colour = altitude' });
+const ganttRuns = ganttSpec({ title: 'Swarm runs (R8, GitHub Actions): every unit, start to end', subtitle: 'each run starts with a push; one bar per unit; colour = altitude; labels: requester · run · unit', query: { prefix: { environment: 'R8' } } });
 const ganttPackets = ganttSpec({ title: 'Cross-conductor packets: every call, from its start to its end', subtitle: 'one bar per unit (row = unit); colour = runner; labels: runner · packet · unit', colorBy: 'runner', packetsOnly: true });
 const byAlt = {
   $schema: 'https://vega.github.io/schema/vega-lite/v5.json', title: 'Units started, by altitude',
@@ -82,6 +83,8 @@ const objects = [
   vis(ALT, 'Flows: units by altitude', byAlt),
   vis('fringe-flows-cross-conductor', 'Flows: cross-conductor packets, side by side', xc),
   vis('fringe-flows-packets-gantt', 'Flows: cross-conductor packets, start to end', ganttPackets),
+  vis('fringe-flows-swarm-runs-gantt', 'Flows: swarm runs (R8), start to end', ganttRuns),
+  { id: 'fringe-swarm-runs-dashboard', type: 'dashboard', attributes: { title: 'Flows: swarm runs (every run starts with a push)', description: 'By architect.1: the runs of PrompTugal__News__Swarm__Runs (R8, GitHub Actions). Each flow id is <request>@<commit>#<workflow run>.<attempt>.', timeRestore: true, timeFrom: 'now-24h', timeTo: 'now', refreshInterval: { pause: false, value: 10000 }, panelsJSON: JSON.stringify([{ panelIndex: 'r', gridData: { x: 0, y: 0, w: 48, h: 90, i: 'r' }, embeddableConfig: {}, panelRefName: 'panel_r' }]), optionsJSON: JSON.stringify({ useMargins: true, hidePanelTitles: false }), kibanaSavedObjectMeta: { searchSourceJSON: JSON.stringify({ query: { query: '', language: 'kuery' }, filter: [] }) } }, references: [{ name: 'panel_r', type: 'visualization', id: 'fringe-flows-swarm-runs-gantt' }, { name: 'tag-swarm', type: 'tag', id: 'b65d1710-1de3-2a2d-482f-7640090dff54' }, { name: 'tag-fringe', type: 'tag', id: '99c5e151-4199-bf04-aad0-543949689f1f' }] },
   { id: 'fringe-flows-packets-search', type: 'search', attributes: { title: 'Flows: cross-conductor packet calls', description: 'Every A1 call of every packet run, by runner and environment', columns: ['runner', 'environment', 'flow', 'name', 'model', 'valid', 'latency_ms', 'cost_usd'], sort: [['at', 'desc']], kibanaSavedObjectMeta: { searchSourceJSON: JSON.stringify({ query: { query: 'flow : packet-* and name.raw : LLM* and phase : end', language: 'kuery' }, filter: [], indexRefName: 'kibanaSavedObjectMeta.searchSourceJSON.index' }) } }, references: [{ name: 'kibanaSavedObjectMeta.searchSourceJSON.index', type: 'index-pattern', id: DV }] },
   { id: 'fringe-packets-dashboard', type: 'dashboard', attributes: { title: 'Flows: cross-conductor packets', description: 'By architect.1, for Dinis\'s cross-conductor OpenRouter test (11 November 2026, 20:3x UTC): every packet run side by side, by runner, environment and account; every call below.', timeRestore: true, timeFrom: 'now-24h', timeTo: 'now', refreshInterval: { pause: false, value: 10000 }, panelsJSON: JSON.stringify([{ panelIndex: 'x', gridData: { x: 0, y: 0, w: 48, h: 14, i: 'x' }, embeddableConfig: {}, panelRefName: 'panel_x' }, { panelIndex: 'g', gridData: { x: 0, y: 14, w: 48, h: 24, i: 'g' }, embeddableConfig: {}, panelRefName: 'panel_g' }, { panelIndex: 'c', gridData: { x: 0, y: 38, w: 48, h: 16, i: 'c' }, embeddableConfig: {}, panelRefName: 'panel_c' }]), optionsJSON: JSON.stringify({ useMargins: true, hidePanelTitles: false }), kibanaSavedObjectMeta: { searchSourceJSON: JSON.stringify({ query: { query: '', language: 'kuery' }, filter: [] }) } }, references: [{ name: 'panel_x', type: 'visualization', id: 'fringe-flows-cross-conductor' }, { name: 'panel_g', type: 'visualization', id: 'fringe-flows-packets-gantt' }, { name: 'panel_c', type: 'search', id: 'fringe-flows-packets-search' }, { name: 'tag-swarm', type: 'tag', id: 'b65d1710-1de3-2a2d-482f-7640090dff54' }, { name: 'tag-fringe', type: 'tag', id: '99c5e151-4199-bf04-aad0-543949689f1f' }] },
   { id: SEARCH, type: 'search', attributes: { title: 'Flows: the events', description: '', columns: ['flow', 'phase', 'altitude', 'name', 'environment', 'model', 'duration_ms', 'valid', 'note'], sort: [['at', 'desc']], kibanaSavedObjectMeta: { searchSourceJSON: JSON.stringify({ query: { query: '', language: 'kuery' }, filter: [], indexRefName: 'kibanaSavedObjectMeta.searchSourceJSON.index' }) } }, references: [{ name: 'kibanaSavedObjectMeta.searchSourceJSON.index', type: 'index-pattern', id: DV }] },
@@ -104,4 +107,5 @@ if (process.argv[2] === 'import') {
   console.log(`kibana import: HTTP ${r.status}, ${j.successCount ?? 0} objects${j.errors && j.errors.length ? ', errors: ' + JSON.stringify(j.errors).slice(0, 300) : ''}`);
   console.log(`dashboard: ${K}/app/dashboards#/view/${DASH}`);
   console.log(`packets: ${K}/app/dashboards#/view/fringe-packets-dashboard`);
+  console.log(`swarm runs: ${K}/app/dashboards#/view/fringe-swarm-runs-dashboard`);
 } else console.log('usage: KIBANA_URL=... node abp/tools/flow-kibana.mjs import');
