@@ -2,7 +2,7 @@
 title: "ABP: researcher.1.fringe@PrompTugal.jose"
 agent: researcher.1.fringe@PrompTugal.jose
 role: researcher
-policy: abp/policies.json v0.1.0 (sha256:dc582938d4c7e8d7)
+policy: abp/policies.json v0.1.0 (sha256:4773392f85c6326c)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -16,7 +16,7 @@ authority: Dinis Cruz, operator
 - **Role:** researcher. **Account:** Jose's.
 - **Runs on:** R1 (models: M1 Sonnet; M2 for the second opinion); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** events re-read at their public source, hourly; sources.md.
-- **Writes (this repository):** `team/jose/agents/researcher.1.json`, `team/jose/agents/researcher.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `data/events.json`, `seed/**`, `sources.md`, `api/v1/README.md`.
+- **Writes (this repository):** `team/jose/agents/researcher.1.json`, `team/jose/agents/researcher.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `data/events.json`, `seed/**`, `sources.md`, `api/v1/README.md`, `data/places.json`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
 - **Writes (outside git):** `/tmp/**`, `~/.sg-send/**`, `~/.abp/**`, `~/pki/**`, `~/.claude/projects/*/memory/**`, `~/promptugal/**`.
 - **Tools:** reading, searching and writing files inside the paths above; the shell, within the rules below; reading the web (never websummit.com by machine); GitHub's read tools on `promptugal/promptugal__news__fringe`, `promptugal/promptugal__news__website`, `promptugal/promptugal__news__storm-charles`; the cloud session's documentation, `add_repo` for reading, and its own wake.

@@ -2,7 +2,7 @@
 title: "ABP: design.4.fringe@PrompTugal.dinis"
 agent: design.4.fringe@PrompTugal.dinis
 role: design
-policy: abp/policies.json v0.1.0 (sha256:dc582938d4c7e8d7)
+policy: abp/policies.json v0.1.0 (sha256:4773392f85c6326c)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -16,7 +16,7 @@ authority: Dinis Cruz, operator
 - **Role:** design. **Account:** riskmandate-personal (Ultra).
 - **Runs on:** R1 (models: M1 Sonnet); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** the look on a phone: page modules, tokens, the brand, the design lab.
-- **Writes (this repository):** `team/dinis/agents/design.4.json`, `team/dinis/agents/design.4/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `admin/build/*.mjs (your own page modules)`, `admin/build/designs/**`, `admin/build/og/**`, `admin/build/tokens.css`, `assets/brand/**`, `assets/**`, `work/design/**`, `admin/build/tokens.css`, `admin/build/identity.mjs`, `admin/build/tiers.mjs`.
+- **Writes (this repository):** `team/dinis/agents/design.4.json`, `team/dinis/agents/design.4/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `admin/build/*.mjs (your own page modules)`, `admin/build/designs/**`, `admin/build/og/**`, `admin/build/tokens.css`, `assets/brand/**`, `assets/**`, `work/design/**`, `admin/build/*.js (your own page modules)`, `admin/build/tokens.css`, `admin/build/identity.mjs`, `admin/build/tiers.mjs`.
 - **Owns (shared files; others send it their changes):** `admin/build/identity.mjs`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
 - **Writes (outside git):** `/tmp/**`, `~/.sg-send/**`, `~/.abp/**`, `~/pki/**`, `~/.claude/projects/*/memory/**`, `~/promptugal/**`.

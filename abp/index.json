@@ -1,7 +1,7 @@
 {
   "about": "Every agent's grant, flattened from abp/policies.json by node abp/tools/abp.mjs build: what /abp/ shows.",
   "policy": "0.1.0",
-  "sha256": "dc582938d4c7e8d7",
+  "sha256": "4773392f85c6326c",
   "mode": "observe",
   "agents": [
     {
@@ -67,7 +67,12 @@
         "admin/build/abp-page.mjs",
         "admin/build/architecture-page.mjs",
         "CONTRIBUTING.md",
-        "guidance/**"
+        "guidance/**",
+        "data/runtimes.json",
+        "data/operating-model.json",
+        "docs/where-agents-run*",
+        "admin/build/operating-model.mjs",
+        "abp/reviews/**"
       ],
       "owns": [],
       "sends": [
@@ -148,6 +153,7 @@
         "assets/brand/**",
         "assets/**",
         "work/design/**",
+        "admin/build/*.js (your own page modules)",
         "admin/build/identity.mjs",
         "admin/build/programme.mjs",
         "admin/build/designs/a.mjs"
@@ -178,6 +184,7 @@
         "assets/brand/**",
         "assets/**",
         "work/design/**",
+        "admin/build/*.js (your own page modules)",
         "admin/build/og/**",
         "admin/build/timeline.mjs",
         "admin/tools/og-card.mjs",
@@ -209,6 +216,7 @@
         "assets/brand/**",
         "assets/**",
         "work/design/**",
+        "admin/build/*.js (your own page modules)",
         "admin/build/event-pages.mjs",
         "admin/build/cards.mjs",
         "admin/build/how.mjs",
@@ -242,6 +250,7 @@
         "assets/brand/**",
         "assets/**",
         "work/design/**",
+        "admin/build/*.js (your own page modules)",
         "admin/build/tokens.css",
         "admin/build/identity.mjs",
         "admin/build/tiers.mjs"
@@ -279,6 +288,7 @@
         "data/person-keys.json",
         "admin/site.json",
         "CNAME",
+        "data/models-*.json",
         "admin/build/swarm.mjs",
         "admin/build/me.mjs",
         "assets/me/**",
@@ -318,7 +328,8 @@
         "data/organisers.json",
         "data/person-keys.json",
         "admin/site.json",
-        "CNAME"
+        "CNAME",
+        "data/models-*.json"
       ],
       "owns": [
         "admin/build/build.mjs",
@@ -348,7 +359,8 @@
         "data/events.json",
         "seed/**",
         "sources.md",
-        "api/v1/README.md"
+        "api/v1/README.md",
+        "data/places.json"
       ],
       "owns": [
         "data/events.json"
@@ -374,7 +386,9 @@
         "data/capture-*.json",
         "admin/capture-sealed/**",
         "admin/tools/capture.mjs",
-        "admin/build/evolution.mjs"
+        "admin/build/evolution.mjs",
+        "admin/tools/covers.mjs",
+        "data/event-images.json"
       ],
       "owns": [],
       "sends": [
@@ -445,7 +459,8 @@
         "data/events.json",
         "seed/**",
         "sources.md",
-        "api/v1/README.md"
+        "api/v1/README.md",
+        "data/places.json"
       ],
       "owns": [],
       "sends": [
@@ -499,7 +514,8 @@
         "data/organisers.json",
         "data/person-keys.json",
         "admin/site.json",
-        "CNAME"
+        "CNAME",
+        "data/models-*.json"
       ],
       "owns": [],
       "sends": [
@@ -532,7 +548,8 @@
         "data/organisers.json",
         "data/person-keys.json",
         "admin/site.json",
-        "CNAME"
+        "CNAME",
+        "data/models-*.json"
       ],
       "owns": [],
       "sends": [
@@ -820,7 +837,8 @@
         "data/events.json",
         "seed/**",
         "sources.md",
-        "api/v1/README.md"
+        "api/v1/README.md",
+        "data/places.json"
       ],
       "owns": [],
       "sends": [

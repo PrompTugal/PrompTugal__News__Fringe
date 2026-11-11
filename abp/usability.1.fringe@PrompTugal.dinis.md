@@ -2,7 +2,7 @@
 title: "ABP: usability.1.fringe@PrompTugal.dinis"
 agent: usability.1.fringe@PrompTugal.dinis
 role: usability
-policy: abp/policies.json v0.1.0 (sha256:dc582938d4c7e8d7)
+policy: abp/policies.json v0.1.0 (sha256:4773392f85c6326c)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator

@@ -1,7 +1,7 @@
 {
   "about": "The Agent Behaviour Policies of Lisbon Fringe (lisbontechfringe.com, origin in admin/site.json; WS-215) as data: deny by default, one grant per role and agent, across this repository and the others the swarm touches. Ported from PrompTugal__News__Website board/abp/policies.json (abp@PrompTugal.dinis, v1.7.0, since 6 November 2026), not invented anew; built on RiskMandate's Agent Behaviour Policy and Licence to Operate (https://riskmandate.ai/agent-behaviour-policy.html). Read by the hooks (.claude/settings.json, .claude/hooks/abp.mjs) and by the gate's commit check (abp/tools/abp.mjs check). abp/<agent>.md is generated from this file (node abp/tools/abp.mjs build), never edited by hand. Kept by architect.1.fringe@PrompTugal.dinis (work/39); any relaxation, and any move towards enforcement, is Dinis's decision.",
   "version": "0.1.0",
-  "updated": "2026-11-11T14:08Z",
+  "updated": "2026-11-11T14:51Z",
   "operator": "Dinis Cruz",
   "kept_by": "architect.1.fringe@PrompTugal.dinis",
   "status": "DRAFT: grants proposed from the git log (data/architecture.json observed); Dinis and the lead review",
@@ -390,7 +390,12 @@
         "admin/build/abp-page.mjs",
         "admin/build/architecture-page.mjs",
         "CONTRIBUTING.md",
-        "guidance/**"
+        "guidance/**",
+        "data/runtimes.json",
+        "data/operating-model.json",
+        "docs/where-agents-run*",
+        "admin/build/operating-model.mjs",
+        "abp/reviews/**"
       ],
       "touches_shared": [
         "admin/build/build.mjs (one line per page, until the registry lands)",
@@ -414,7 +419,8 @@
         "data/organisers.json",
         "data/person-keys.json",
         "admin/site.json",
-        "CNAME"
+        "CNAME",
+        "data/models-*.json"
       ],
       "send_hosts": [
         "openrouter.ai"
@@ -430,7 +436,8 @@
         "admin/build/tokens.css",
         "assets/brand/**",
         "assets/**",
-        "work/design/**"
+        "work/design/**",
+        "admin/build/*.js#own-modules"
       ],
       "send_hosts": [],
       "never": "changes the gate, CI or the data to make a design fit; the brand's logo without Dinis's yes"
@@ -441,7 +448,8 @@
         "data/events.json",
         "seed/**",
         "sources.md",
-        "api/v1/README.md"
+        "api/v1/README.md",
+        "data/places.json"
       ],
       "send_hosts": [],
       "never": "reads websummit.com by machine; publishes a guess as a fact; names a private person"
@@ -452,7 +460,9 @@
         "data/capture-*.json",
         "admin/capture-sealed/**",
         "admin/tools/capture.mjs",
-        "admin/build/evolution.mjs"
+        "admin/build/evolution.mjs",
+        "admin/tools/covers.mjs",
+        "data/event-images.json"
       ],
       "send_hosts": [
         "dev.send.sgraph.ai"
@@ -893,6 +903,18 @@
         "what": "send_message to the lead's session only",
         "why": "two replies to the lead (13:46, 13:47) observed under R4",
         "since": "2026-11-11T13:51Z"
+      },
+      {
+        "agent": "architect.1.fringe@PrompTugal.dinis",
+        "what": "briefs/<date>-<time>-*.md when Dinis speaks in its own session (a brief note with his words quoted)",
+        "why": "the lead's handover (14:30 UTC) asked it; a477106, 5560113 observed under R6 (briefs/ is the lead's)",
+        "since": "2026-11-11T14:51Z"
+      },
+      {
+        "agent": "architect.1.fringe@PrompTugal.dinis",
+        "what": "send to openrouter.ai, through admin/tools/llm.mjs only (ledger)",
+        "why": "Dinis asked for infographics from OpenRouter's image models in this session (14:37 UTC); two calls, 0.28 USD, ledgered",
+        "since": "2026-11-11T14:51Z"
       }
     ]
   },
@@ -918,6 +940,11 @@
         "round": 1,
         "file": "abp/reviews/2026-11-11-13.md",
         "at": "2026-11-11T13:51Z"
+      },
+      {
+        "round": 2,
+        "file": "abp/reviews/2026-11-11-14.md",
+        "at": "2026-11-11T14:51Z"
       }
     ]
   },
