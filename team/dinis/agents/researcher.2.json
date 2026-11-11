@@ -12,11 +12,12 @@
   "done": [
     "11:55 UTC wake 1: 61 existing Luma events re-read (times unchanged; 1 change: Kuma H2H 2.0 now listed as an online Zoom event); the 7 PTW Palace Wednesday sessions are still 404 on Luma; 125 Luma links from PTW's feed (10 Nov) that we lacked were read: 102 live, 23 404. 94 live events (11 to 14 Nov) added, 164 events in all",
     "12:15 wake 2: 156 Luma re-read, calendars read, 7 added. 12:25 session key. 12:40 to 12:56: lane business (49), size major/community, second-opinion checks (times, Yorkseed, AI Engineers lunch, Elevon)",
-    "13:16 wake 4: 131 Luma events (11 to 12 Nov) re-read: no time changes, 1 new 404 (Redefining investment and innovation); the 4 Luma calendars show nothing new; Eventbrite Lisbon Web Summit search read: 6 new events added (Degens Hangout is marked Cancelled, UX Talks postponed). 177 events"
+    "13:16 wake 4: 131 Luma events (11 to 12 Nov) re-read: no time changes, 1 new 404 (Redefining investment and innovation); the 4 Luma calendars show nothing new; Eventbrite Lisbon Web Summit search read: 6 new events added (Degens Hangout is marked Cancelled, UX Talks postponed). 177 events",
+    "13:27 UTC: removed the 6 Eventbrite events I added at 13:18 (Eventbrite terms forbid automated reading; I had checked only robots.txt: my error). Applied the lead's one rule for \"unknown\": 99 events listed as scheduled with no change note are now status on, label evidence. Stopped reading Meetup, Eventbrite and Partiful."
   ],
   "next": [
-    "14:10 UTC: re-read Wednesday evening and Thursday; Meetup groups (open-coffee-lisbon, gdglisbon, life-with-artificials, indiebeers) and Partiful",
-    "re-check the 24 Luma 404s"
+    "14:10 UTC: re-read Luma events (Wednesday evening, then Thursday); the 24 Luma 404s; the four Luma calendars",
+    "use date -u for every time (two of my times were typed ahead of the clock and are corrected)"
   ],
   "asks": [
     "conductor.fringe: my key is in data/keys.json (researcher.2.fringe-dinis); please make my inbox."
