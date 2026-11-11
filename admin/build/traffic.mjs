@@ -34,6 +34,8 @@ export function trafficBody(t, esc, origin = '') {
     (hours.length ? `<h2>Views by hour (UTC, last 48)</h2><div class="hours" role="img" aria-label="Views per hour">${hours.map(([h, n]) => `<span title="${esc(h)}: ${n}" style="height:${Math.round(100 * n / hmax)}%"></span>`).join('')}</div>` +
     `<p class="muted">${esc(hours[0][0])} to ${esc(hours.at(-1)[0])}</p>` : '<h2>Views by hour</h2><p class="muted">No reader views yet.</p>') +
     (t.map ? `<h2>Where readers are</h2>${worldSvg(GEO, t.by_country, t.map.towns, esc)}<p class="muted">Countries shaded by views; red dots are towns with ${t.city_min ?? 5} or more views. Hover for numbers.</p>` : '') +
+    (t.design_lab?.length ? `<h2>Design lab</h2><p class="muted">Views of each design (its page, or the home page with ?design=) and "I prefer this one" votes, one per visit per design. See <a href="/designs/">the designs</a>.</p><table class="tt"><thead><tr><th>Design</th><th>Votes</th><th>Views</th></tr></thead><tbody>` +
+      t.design_lab.map((d) => `<tr><td>${esc(d.design)}</td><td>${d.votes}</td><td>${d.views}</td></tr>`).join('') + '</tbody></table>' : '') +
     flowsHtml(t.flows, esc) +
     table(esc, 'Shares: views by ?via= tag', t.by_via, 'Tag', 'Each tag is a link someone shared; its views include the pages read after arriving.') +
     table(esc, 'By page', t.by_page, 'Page') +

@@ -5,20 +5,20 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-11T13:26Z",
+ "generated": "2026-11-11T13:34Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 106,
-  "reads": 92,
-  "tabs": 60,
-  "countries": 9,
-  "shares": 44,
-  "bots": 89,
-  "agent_runs": 17,
-  "agent_runs_signed": 17
+  "views": 119,
+  "reads": 100,
+  "tabs": 69,
+  "countries": 10,
+  "shares": 50,
+  "bots": 91,
+  "agent_runs": 18,
+  "agent_runs_signed": 18
  },
  "by_hour": [
   [
@@ -211,13 +211,13 @@
   ],
   [
    "2026-11-11 13:00",
-   60
+   73
   ]
  ],
  "by_page": [
   [
    "/",
-   55
+   63
   ],
   [
    "/now/",
@@ -225,18 +225,18 @@
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
-   5
+   6
   ],
   [
    "/join/",
    4
   ],
   [
-   "/graph/",
-   3
+   "/e/2026-11-11-founderlink-storm-summit-afternoon/",
+   4
   ],
   [
-   "/e/2026-11-11-founderlink-storm-summit-afternoon/",
+   "/graph/",
    3
   ],
   [
@@ -261,6 +261,10 @@
   ],
   [
    "/programme/",
+   2
+  ],
+  [
+   "/e/2026-11-11-aubay-the-next-move/",
    2
   ],
   [
@@ -292,10 +296,6 @@
    1
   ],
   [
-   "/e/2026-11-11-aubay-the-next-move/",
-   1
-  ],
-  [
    "/e/2026-11-11-cisco-automation-to-autonomy/",
    1
   ],
@@ -322,26 +322,40 @@
   [
    "/e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
    1
+  ],
+  [
+   "/e/2026-11-11-frontier-founders-vcs-soiree/",
+   1
+  ],
+  [
+   "/e/2026-11-11-ai-spam-problem/",
+   1
   ]
  ],
  "reading": [
   [
    "/",
-   47,
-   25,
+   52,
+   24,
    11
   ],
   [
    "/now/",
-   5,
-   8,
-   19
+   6,
+   124,
+   29
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
-   4,
    5,
-   35
+   8,
+   43
+  ],
+  [
+   "/e/2026-11-11-founderlink-storm-summit-afternoon/",
+   4,
+   16,
+   37
   ],
   [
    "/join/",
@@ -354,12 +368,6 @@
    3,
    13,
    17
-  ],
-  [
-   "/e/2026-11-11-founderlink-storm-summit-afternoon/",
-   3,
-   16,
-   20
   ],
   [
    "/organisers/",
@@ -479,15 +487,15 @@
  "by_country": [
   [
    "Portugal",
-   71
+   78
+  ],
+  [
+   "United States",
+   12
   ],
   [
    "Estonia",
    10
-  ],
-  [
-   "United States",
-   8
   ],
   [
    "United Kingdom",
@@ -495,7 +503,7 @@
   ],
   [
    "Germany",
-   3
+   4
   ],
   [
    "The Netherlands",
@@ -512,12 +520,16 @@
   [
    "Poland",
    1
+  ],
+  [
+   "Italy",
+   1
   ]
  ],
  "by_city": [
   [
    "Lisbon, Portugal",
-   46
+   52
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -529,42 +541,42 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   31
+   38
   ]
  ],
  "by_referrer": [],
  "by_host": [
   [
    "lisbontechfringe.com",
-   67
+   80
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 35,
+ "other_hosts_views": 53,
  "by_via": [
   [
    "whatsapp",
-   44
+   50
   ]
  ],
  "via_detail": {
   "whatsapp": {
-   "views": 44,
-   "tabs": 25,
+   "views": 50,
+   "tabs": 29,
    "countries": 7
   }
  },
  "by_screen": [
   [
    "desktop",
-   53
+   58
   ],
   [
    "phone",
-   49
+   57
   ],
   [
    "tablet",
@@ -574,7 +586,7 @@
  "agents": [
   [
    "design.4.fringe@PrompTugal.dinis",
-   6
+   7
   ],
   [
    "observability.fringe@PrompTugal.dinis",
@@ -598,21 +610,21 @@
   ]
  ],
  "flows": {
-  "tabs": 60,
+  "tabs": 69,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    35
+    40
    ],
    [
     "shared link (?via=)",
-    25
+    29
    ]
   ],
   "entry_pages": [
    [
     "/",
-    45
+    53
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
@@ -653,12 +665,16 @@
    [
     "/e/2026-11-11-amplify-europe-lisbon/",
     1
+   ],
+   [
+    "/e/2026-11-11-frontier-founders-vcs-soiree/",
+    1
    ]
   ],
   "exit_pages": [
    [
     "/",
-    38
+    44
    ],
    [
     "/now/",
@@ -666,10 +682,14 @@
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
-    2
+    3
    ],
    [
     "/me/",
+    2
+   ],
+   [
+    "/e/2026-11-11-founderlink-storm-summit-afternoon/",
     2
    ],
    [
@@ -678,10 +698,6 @@
    ],
    [
     "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
-    1
-   ],
-   [
-    "/e/2026-11-11-founderlink-storm-summit-afternoon/",
     1
    ],
    [
@@ -727,6 +743,10 @@
     3
    ],
    [
+    "/ → /e/2026-11-11-founderlink-storm-summit-afternoon/",
+    3
+   ],
+   [
     "/e/2026-11-11-wet-summit-lisbon/ → /",
     2
    ],
@@ -739,11 +759,11 @@
     2
    ],
    [
-    "/ → /e/2026-11-11-founderlink-storm-summit-afternoon/",
+    "/ → /programme/",
     2
    ],
    [
-    "/ → /programme/",
+    "/ → /e/2026-11-11-wet-summit-lisbon/",
     2
    ],
    [
@@ -803,10 +823,6 @@
     1
    ],
    [
-    "/ → /e/2026-11-11-wet-summit-lisbon/",
-    1
-   ],
-   [
     "/e/2026-11-11-wet-summit-lisbon/ → /e/2026-11-11-aubay-the-next-move/",
     1
    ],
@@ -822,7 +838,7 @@
   "pages_per_tab": [
    [
     "1",
-    40
+    47
    ],
    [
     "2",
@@ -830,7 +846,7 @@
    ],
    [
     "3",
-    6
+    8
    ],
    [
     "4",
@@ -841,11 +857,11 @@
     3
    ]
   ],
-  "bounce_rate": 67,
+  "bounce_rate": 68,
   "via_reached": [
    [
     "whatsapp: /",
-    25
+    29
    ],
    [
     "whatsapp: /now/",
@@ -853,10 +869,14 @@
    ],
    [
     "whatsapp: /e/2026-11-11-founderlink-storm-summit-afternoon/",
-    2
+    3
    ],
    [
     "whatsapp: /programme/",
+    2
+   ],
+   [
+    "whatsapp: /e/2026-11-11-wet-summit-lisbon/",
     2
    ],
    [
@@ -872,15 +892,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-wet-summit-lisbon/",
-    1
-   ],
-   [
     "whatsapp: /e/2026-11-11-aubay-the-next-move/",
-    1
-   ],
-   [
-    "whatsapp: /e/2026-11-11-roast-your-website/",
     1
    ],
    [
@@ -888,20 +900,25 @@
     1
    ],
    [
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    1
+   ],
+   [
     "whatsapp: /e/2026-11-11-ai-horizon-conference/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    "whatsapp: /e/2026-11-11-roast-your-website/",
     1
    ]
   ]
  },
+ "design_lab": [],
  "map": {
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 46,
+    "views": 52,
     "lat": 38.7,
     "lon": -9.1
    },

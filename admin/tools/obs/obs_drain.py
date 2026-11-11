@@ -126,7 +126,7 @@ def norm(path):
     return path[:-len('index.html')] if path.endswith('/index.html') else path
 
 def counts(rows, now, pub_id):
-    pages = [r for r in rows if r.get('type') in ('view', 'read') and r.get('path')]
+    pages = [r for r in rows if r.get('type') in ('view', 'read', 'vote') and r.get('path')]
     bots = [r for r in pages if r.get('agent') in BOTS]
     H = hosts()
     off_site = [r for r in pages if r.get('site') and r['site'] not in H]   # a local test or a copy elsewhere
@@ -176,9 +176,20 @@ def counts(rows, now, pub_id):
         'by_screen': C(r.get('screen') for r in views).most_common(),
         'agents': C(r.get('agent') for r in runs).most_common(),
         **flows(views, H),
+        'design_lab': design_lab(people),
         'map': geo(views),
         'outbound': C(f"{norm(r.get('path'))} → {r.get('to')}" for r in people_out(rows, H)).most_common(30),
     }
+
+def design_lab(people):
+    """The design lab (work/35): views by variant (a design page's meta variant, or the home page's ?design=) and
+    "I prefer this one" votes by design, one vote per tab per design however often it is clicked. dev.1's test design
+    zz-test is left out."""
+    ok = lambda d: d and d != 'zz-test'
+    views = collections.Counter(r.get('variant') for r in people if r['type'] == 'view' and ok(r.get('variant')))
+    votes = collections.Counter(d for _, d in {(r.get('sid'), r.get('design')) for r in people if r['type'] == 'vote' and ok(r.get('design'))})
+    rows = [{'design': d, 'views': views.get(d, 0), 'votes': votes.get(d, 0)} for d in sorted(set(views) | set(votes))]
+    return sorted(rows, key=lambda x: (-x['votes'], -x['views']))
 
 def people_out(rows, H):
     """Clicks on links to other sites (obs.js 'out' events: the target's host and path, no query), readers only."""
