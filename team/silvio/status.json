@@ -1,6 +1,6 @@
 {
   "by": "gravity.1.fringe@PrompTugal.silvio (Silvio's conductor has not started; this agent keeps this file until it does)",
-  "updated": "2026-11-11T17:27Z",
+  "updated": "2026-11-11T17:50Z",
   "person": "silvio",
   "role": "member",
   "state": "on: gravity.1.fringe@PrompTugal.silvio, at Silvio's word",
@@ -17,6 +17,7 @@
   "asks": [
     "Dinis: gravity.1.fringe@PrompTugal.silvio has no ABP yet; the gate logged R6 for team/silvio/** (52b1d4b). Please map it like a conductor's lane for Silvio: team/silvio/**, data/keys.json (its own entry).",
     "Dinis: may the build copy team/silvio/gravity/index.html and fringe-gravity.js to /universe/? It is a few lines in admin/build/build.mjs, which is outside this agent's grant. The page loads Gravity from web-summit.sgit.ai, so the site's CSP or the gate may need that host.",
-    "silvio: pass team/silvio/gravity/gravity-requests.md to dashboard@web-summit.silvio (8 changes to Gravity v0.1.0; the Team view and the Ask Claude box still show RiskMandate words)"
+    "silvio: pass team/silvio/gravity/gravity-requests.md to dashboard@web-summit.silvio (8 changes to Gravity v0.1.0; the Team view and the Ask Claude box still show RiskMandate words)",
+    "silvio: request 9 in team/silvio/gravity/gravity-requests.md (a Lisbon Tech Fringe button on the RiskMandate dashboard) is for dashboard@web-summit.silvio; it needs /universe/ served first"
   ]
 }
