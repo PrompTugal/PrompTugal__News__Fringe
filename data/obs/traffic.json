@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-11T14:38Z",
+ "generated": "2026-11-11T14:54Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 226,
-  "reads": 202,
-  "tabs": 114,
+  "views": 248,
+  "reads": 222,
+  "tabs": 125,
   "countries": 13,
-  "shares": 93,
-  "bots": 494,
+  "shares": 107,
+  "bots": 562,
   "crawler_tabs": 1,
-  "agent_runs": 43,
-  "agent_runs_signed": 42
+  "agent_runs": 48,
+  "agent_runs_signed": 47
  },
  "by_hour": [
   [
@@ -212,21 +212,21 @@
   ],
   [
    "2026-11-11 14:00",
-   41
+   63
   ]
  ],
  "by_page": [
   [
    "/",
-   103
-  ],
-  [
-   "/e/2026-11-11-wet-summit-lisbon/",
-   16
+   111
   ],
   [
    "/now/",
-   15
+   18
+  ],
+  [
+   "/e/2026-11-11-wet-summit-lisbon/",
+   17
   ],
   [
    "/join/",
@@ -234,6 +234,10 @@
   ],
   [
    "/organisers/",
+   6
+  ],
+  [
+   "/programme/",
    6
   ],
   [
@@ -253,11 +257,11 @@
    4
   ],
   [
-   "/programme/",
+   "/e/2026-11-11-life-with-artificials-kickoff/",
    3
   ],
   [
-   "/e/2026-11-11-life-with-artificials-kickoff/",
+   "/e/2026-11-11-side-events-guide-irl/",
    3
   ],
   [
@@ -301,11 +305,11 @@
    2
   ],
   [
-   "/e/2026-11-11-side-events-guide-irl/",
+   "/e/2026-11-11-gaming-entertainment-pitch-party/",
    2
   ],
   [
-   "/e/2026-11-11-gaming-entertainment-pitch-party/",
+   "/e/2026-11-11-tech-startups-on-the-rooftop/",
    2
   ],
   [
@@ -346,10 +350,6 @@
   ],
   [
    "/e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
-   1
-  ],
-  [
-   "/e/2026-11-11-tech-startups-on-the-rooftop/",
    1
   ],
   [
@@ -415,26 +415,46 @@
   [
    "/e/2026-11-11-demonightlx/",
    1
+  ],
+  [
+   "/e/2026-11-12-lisbon-business-leaders-evening/",
+   1
+  ],
+  [
+   "/e/2026-11-12-female-founders-breakfast/",
+   1
+  ],
+  [
+   "/e/2026-11-12-the-founder-effect/",
+   1
+  ],
+  [
+   "/e/2026-11-12-venture-dinner/",
+   1
+  ],
+  [
+   "/e/2026-11-11-founderlink-storm-summit-evening/",
+   1
   ]
  ],
  "reading": [
   [
    "/",
-   89,
+   97,
    29,
-   12
+   11
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
-   14,
-   14,
+   15,
+   15,
    34
   ],
   [
    "/now/",
-   12,
-   69,
-   41
+   15,
+   57,
+   46
   ],
   [
    "/organisers/",
@@ -455,6 +475,12 @@
    29
   ],
   [
+   "/programme/",
+   5,
+   51,
+   64
+  ],
+  [
    "/traffic/",
    4,
    17,
@@ -473,16 +499,16 @@
    37
   ],
   [
-   "/programme/",
-   3,
-   36,
-   77
-  ],
-  [
    "/e/2026-11-11-life-with-artificials-kickoff/",
    3,
    16,
    50
+  ],
+  [
+   "/e/2026-11-11-side-events-guide-irl/",
+   3,
+   30,
+   59
   ],
   [
    "/how/",
@@ -531,12 +557,6 @@
    2,
    12,
    64
-  ],
-  [
-   "/e/2026-11-11-side-events-guide-irl/",
-   2,
-   27,
-   46
   ],
   [
    "/e/2026-11-12-covilha-tech-day-2026/",
@@ -711,12 +731,42 @@
    1,
    0,
    0
+  ],
+  [
+   "/e/2026-11-12-lisbon-business-leaders-evening/",
+   1,
+   122,
+   52
+  ],
+  [
+   "/e/2026-11-12-female-founders-breakfast/",
+   1,
+   23,
+   100
+  ],
+  [
+   "/e/2026-11-12-the-founder-effect/",
+   1,
+   6,
+   0
+  ],
+  [
+   "/e/2026-11-11-demonightlx/",
+   1,
+   11,
+   0
+  ],
+  [
+   "/e/2026-11-11-founderlink-storm-summit-evening/",
+   1,
+   7,
+   11
   ]
  ],
  "by_country": [
   [
    "Portugal",
-   143
+   157
   ],
   [
    "Estonia",
@@ -724,11 +774,11 @@
   ],
   [
    "Germany",
-   16
+   20
   ],
   [
    "United Kingdom",
-   13
+   14
   ],
   [
    "United States",
@@ -736,7 +786,7 @@
   ],
   [
    "Italy",
-   5
+   8
   ],
   [
    "Thailand",
@@ -770,7 +820,7 @@
  "by_city": [
   [
    "Lisbon, Portugal",
-   86
+   95
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -782,46 +832,50 @@
   ],
   [
    "Frankfurt am Main, Germany",
-   12
+   16
+  ],
+  [
+   "Montijo, Portugal",
+   8
   ],
   [
    "(places under 5 views, in their country above)",
-   61
+   62
   ]
  ],
  "by_referrer": [],
  "by_host": [
   [
    "lisbontechfringe.com",
-   187
+   209
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 506,
+ "other_hosts_views": 588,
  "by_via": [
   [
    "whatsapp",
-   93
+   107
   ]
  ],
  "via_detail": {
   "whatsapp": {
-   "views": 93,
-   "tabs": 48,
+   "views": 107,
+   "tabs": 52,
    "countries": 8
   }
  },
  "by_screen": [
   [
    "phone",
-   123
+   138
   ],
   [
    "desktop",
-   99
+   106
   ],
   [
    "tablet",
@@ -831,7 +885,7 @@
  "agents": [
   [
    "design.4.fringe@PrompTugal.dinis",
-   9
+   10
   ],
   [
    "design.1.fringe@PrompTugal.dinis",
@@ -850,20 +904,20 @@
    4
   ],
   [
+   "researcher.1.fringe@PrompTugal.jose",
+   4
+  ],
+  [
+   "architect.1.fringe@PrompTugal.dinis",
+   4
+  ],
+  [
    "ontologist.1.fringe@PrompTugal.dinis",
    4
   ],
   [
    "conductor.fringe@PrompTugal.jose",
    3
-  ],
-  [
-   "architect.1.fringe@PrompTugal.dinis",
-   3
-  ],
-  [
-   "researcher.1.fringe@PrompTugal.jose",
-   2
   ],
   [
    "conductor.fringe@PrompTugal.indi",
@@ -876,24 +930,28 @@
   [
    "researcher.2@PrompTugal.dinis",
    1
+  ],
+  [
+   "capture.1.fringe@PrompTugal.dinis",
+   1
   ]
  ],
  "flows": {
-  "tabs": 114,
+  "tabs": 125,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    66
+    73
    ],
    [
     "shared link (?via=)",
-    48
+    52
    ]
   ],
   "entry_pages": [
    [
     "/",
-    85
+    92
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
@@ -955,7 +1013,7 @@
   "exit_pages": [
    [
     "/",
-    66
+    69
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
@@ -963,7 +1021,11 @@
    ],
    [
     "/now/",
-    7
+    8
+   ],
+   [
+    "/programme/",
+    5
    ],
    [
     "/e/2026-11-11-founderlink-storm-summit-afternoon/",
@@ -971,10 +1033,6 @@
    ],
    [
     "/me/",
-    2
-   ],
-   [
-    "/programme/",
     2
    ],
    [
@@ -1017,7 +1075,11 @@
   "steps": [
    [
     "/ → /now/",
-    8
+    10
+   ],
+   [
+    "/ → /programme/",
+    4
    ],
    [
     "/ → /e/2026-11-11-wet-summit-lisbon/",
@@ -1053,10 +1115,6 @@
    ],
    [
     "/traffic/ → /",
-    2
-   ],
-   [
-    "/ → /programme/",
     2
    ],
    [
@@ -1119,11 +1177,11 @@
   "pages_per_tab": [
    [
     "1",
-    78
+    85
    ],
    [
     "2",
-    19
+    22
    ],
    [
     "3",
@@ -1135,33 +1193,41 @@
    ],
    [
     "5+",
-    8
+    9
    ]
   ],
   "bounce_rate": 68,
   "via_reached": [
    [
     "whatsapp: /",
-    48
+    52
    ],
    [
     "whatsapp: /now/",
-    5
+    6
+   ],
+   [
+    "whatsapp: /e/2026-11-11-wet-summit-lisbon/",
+    4
    ],
    [
     "whatsapp: /e/2026-11-11-founderlink-storm-summit-afternoon/",
     3
    ],
    [
-    "whatsapp: /e/2026-11-11-wet-summit-lisbon/",
+    "whatsapp: /programme/",
     3
    ],
    [
-    "whatsapp: /programme/",
+    "whatsapp: /e/2026-11-11-kuma-align-leadership-ai/",
     2
    ],
    [
-    "whatsapp: /e/2026-11-11-kuma-align-leadership-ai/",
+    "whatsapp: /e/2026-11-11-tech-startups-on-the-rooftop/",
+    2
+   ],
+   [
+    "whatsapp: /e/2026-11-11-side-events-guide-irl/",
     2
    ],
    [
@@ -1181,7 +1247,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ],
    [
@@ -1189,15 +1255,11 @@
     1
    ],
    [
+    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
+    1
+   ],
+   [
     "whatsapp: /e/2026-11-11-ai-horizon-conference/",
-    1
-   ],
-   [
-    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
-    1
-   ],
-   [
-    "whatsapp: /e/2026-11-11-tech-startups-on-the-rooftop/",
     1
    ],
    [
@@ -1215,10 +1277,6 @@
    [
     "whatsapp: /e/2026-11-11-founders-house-party/",
     1
-   ],
-   [
-    "whatsapp: /e/2026-11-12-open-coffee-lisbon-53/",
-    1
    ]
   ]
  },
@@ -1227,7 +1285,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 86,
+    "views": 95,
     "lat": 38.7,
     "lon": -9.1
    },
@@ -1245,9 +1303,15 @@
    },
    {
     "name": "Frankfurt am Main, Germany",
-    "views": 12,
+    "views": 16,
     "lat": 50.1,
     "lon": 8.7
+   },
+   {
+    "name": "Montijo, Portugal",
+    "views": 8,
+    "lat": 38.7,
+    "lon": -9.0
    }
   ]
  },
@@ -1322,6 +1386,14 @@
   ],
   [
    "/e/2026-11-11-frontier-founders-vcs-soiree/ → luma.com/tjed8ali",
+   1
+  ],
+  [
+   "/e/2026-11-11-founderlink-storm-summit-evening/ → luma.com/stormsummit7pm",
+   1
+  ],
+  [
+   "/e/2026-11-11-tech-startups-on-the-rooftop/ → luma.com/rjh3pf7g",
    1
   ]
  ]
