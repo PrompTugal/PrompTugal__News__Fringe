@@ -99,6 +99,7 @@ export const homeCss = NOWSTRIP_CSS + `
 .hm-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
 .hm-tag{flex:none;font:500 10.5px/1 var(--mono);letter-spacing:.04em;text-transform:uppercase;padding:3px 6px;border:1px solid var(--hair);border-radius:3px;color:var(--ink-2)}
 .hm-tag.free{border-color:var(--ok);color:var(--ok)}.hm-tag.hm-anchor{background:var(--ink);color:var(--paper);border-color:var(--ink)}.hm-tag.now{background:var(--live);color:var(--paper);border-color:var(--live)}.hm-tag.x{border-color:var(--live);color:var(--live)}
+.hm-sig{display:flex;gap:16px;flex-wrap:wrap;margin:0 0 var(--s3);font:500 13px/1.3 var(--mono)}.hm-sig button{min-height:44px;padding:0 2px;background:none;border:0;border-bottom:2px solid var(--ink);color:var(--ink);font:inherit;cursor:pointer}.hm-sig button b{font:600 15px/1 var(--serif);margin-left:4px}.hm-sig button[aria-pressed=true]{background:var(--ink);color:var(--paper);padding:0 8px;border-radius:4px}.hm-c.hm-fold{display:none}
 .hm-empty{padding:var(--s4);border:2px dashed var(--hair);border-radius:8px;color:var(--ink-2)}
 .hm-more{display:block;width:100%;min-height:44px;margin:var(--s3) 0;background:var(--panel);border:1px dashed var(--ink-3);border-radius:6px;color:var(--ink-2);font:500 13px/1 var(--mono);cursor:pointer}
 .hm-foot{margin:var(--s5) 0 var(--s3);font-size:14px;color:var(--ink-2)}.hm-storm{font:400 12.5px/1.5 var(--mono);color:var(--ink-3);border-top:1px solid var(--hair);padding-top:var(--s3);margin-top:var(--s5)}
@@ -134,7 +135,7 @@ export function homeBody({ events, esc, eventPath, hasPage, now = new Date(), st
       ? `<span class="hm-img"><img src="${esc(imgs[e.id])}" alt="" loading="lazy" decoding="async"><small class="hm-cr">image: ${esc(org)}</small></span>`
       : `<span class="hm-img hm-tile" style="--c:var(${c})"><b>${esc(initials(org))}</b><i>${esc(e.kind || 'event')}<br><u>${esc(hm(e.start))} UTC</u></i></span>`;
     const roles = roleOf(e).join(' ');
-    return `<li id="ev-${esc(e.id)}" data-id="${esc(e.id)}" class="hm-c${e.status === 'cancelled' ? ' x' : ''}" data-s="${s}" data-e="${en}" data-r="${roles}" data-h="${esc(hoodKey(e))}">${media}
+    return `<li id="ev-${esc(e.id)}" data-id="${esc(e.id)}" class="hm-c${e.status === 'cancelled' ? ' x' : ''}" data-s="${s}" data-e="${en}" data-r="${roles}" data-x="${e.status === 'cancelled' || e.status === 'moved' ? 1 : 0}" data-h="${esc(hoodKey(e))}">${media}
 <div class="hm-body"><span class="hm-org">${lead ? `<a href="${esc(pathOf('organiser', lead.id))}">${esc(org)}</a>` : esc(org)}</span><h3 class="hm-t"><a href="${esc(href)}">${esc(e.name)}</a></h3>
 <span class="hm-m">${hm(e.start)}${e.end ? '–' + hm(e.end) : ''} UTC · ${pl ? `<a class="hm-pl" href="${esc(pathOf('place', pl))}">${esc(placeTxt)}</a>` : esc(placeTxt)}</span>
 <span class="hm-tags"><span class="hm-tag ${price.k}">${esc(price.t)}</span>${fest ? `<a class="hm-tag" href="${esc(pathOf('festival', fest.id))}">${esc(fest.name)}</a>` : ''}${isBig ? '<span class="hm-tag hm-anchor">Anchor</span>' : ''}${e.status === 'cancelled' ? '<span class="hm-tag x">Cancelled</span>' : e.status === 'moved' ? '<span class="hm-tag x">Moved</span>' : ''}<span class="hm-tag now" hidden>On now</span></span></div></li>`;
@@ -144,6 +145,7 @@ export function homeBody({ events, esc, eventPath, hasPage, now = new Date(), st
   const nextN = inCity.filter((e) => { const s = Date.parse(e.start); return s > t && s <= t + 36e5 && e.status !== 'cancelled'; }).length;
   const tonN = inCity.filter((e) => Date.parse(e.end || e.start) >= Date.parse(today + 'T18:00:00Z') && e.status !== 'cancelled').length;
 
+  const sigN = [...inCity, ...online].filter((e) => e.status === 'cancelled' || e.status === 'moved').length;
   const live = inCity.filter((e) => state(e) !== 'past'), past = inCity.filter((e) => state(e) === 'past');
   const roleChips = ROLES.map(([id, label], i) => `<button type="button" class="hm-chip" data-role="${id}" aria-pressed="${i === 0}">${esc(label)}</button>`).join('');
   const hoodChips = goodHoods.length ? `<div class="hm-where"><div class="hm-hood" role="group" aria-label="Neighbourhood">${goodHoods.map(([h, n]) => `<button type="button" class="hm-h" data-hood="${esc(h)}" aria-pressed="false">${esc(h)} · ${n}</button>`).join('')}</div></div>` : '';
@@ -152,16 +154,18 @@ export function homeBody({ events, esc, eventPath, hasPage, now = new Date(), st
   return `<section class="hm" data-today="${today}"><p class="hm-kick">${DOW[x.getUTCDay()]} ${x.getUTCDate()} ${MON[x.getUTCMonth()]} · Lisbon</p>
 <h1>What are you <em>looking for?</em></h1>
 <div class="hm-roles" role="group" aria-label="What are you looking for?">${roleChips}</div>
+<div class="hm-sig">${online.length ? `<button type="button" data-sig="online">Online today <b>${online.length}</b></button>` : ''}${sigN ? `<button type="button" data-sig="alert" aria-pressed="false">Cancelled or moved <b>${sigN}</b></button>` : ''}</div>
 ${nowStrip(events, esc, { eventPath, hasPage }, now, { isLisbon: (e) => inLisbon(e) && !isOnline(e) })}
 ${hoodChips}
 <style>${cm.css}</style>${cm.html}${cm.js}
 <div class="hm-sec" role="heading" aria-level="2" id="today">In Lisbon today<small id="hm-count">${inCity.length} events</small></div>
 <ul class="hm-grid" id="hm-list">${live.map(card).join('')}${past.length ? `</ul><button type="button" class="hm-more" id="hm-past-b">Earlier today: ${past.length} already over. Show</button><ul class="hm-grid" id="hm-past" hidden>${past.map(card).join('')}` : ''}</ul>
+<button type="button" class="hm-more" id="hm-fold-b" hidden></button>
 <p class="hm-empty" id="hm-none" hidden>Nothing matches that right now. Try Everything, or look at <a href="/programme/">the whole programme</a>.</p>
-${online.length ? `<div class="hm-sec" role="heading" aria-level="2" id="online">Online today<small>${online.length} events, no travel</small></div><ul class="hm-grid" id="hm-online">${online.map(card).join('')}</ul>` : ''}
+${online.length ? `<div id="hm-online-wrap"><div class="hm-sec" role="heading" aria-level="2" id="online">Online today<small>${online.length} events, no travel</small></div><ul class="hm-grid" id="hm-online">${online.map(card).join('')}</ul></div>` : ''}
 <p class="hm-foot">Roles are our reading of each event&rsquo;s topics, not the organiser&rsquo;s claim; nothing is stored about you. Tomorrow and the rest of the week are on <a href="/programme/">the programme</a>.${away ? ` ${away} event${away === 1 ? '' : 's'} today ${away === 1 ? 'is' : 'are'} outside Lisbon and not shown here.` : ''} Missing something? <a href="/join/">Tell us</a>.</p>
 </section>
-<script>(function(){try{var R='all',W='',H='',cards=[].slice.call(document.querySelectorAll('.hm-c'));
+<script>(function(){try{var R='all',W='',H='',A=false,OO=false,EX=false,FOLD=12,cards=[].slice.call(document.querySelectorAll('.hm-c'));
 function st(c,n){var s=+c.dataset.s,e=+c.dataset.e;return n>=e?'past':n>=s?'now':'next'}
 function tick(){var n=Date.now(),N=0,X=0,T=0,eve=new Date(new Date(n).toISOString().slice(0,10)+'T18:00:00Z').getTime();
 cards.forEach(function(c){if(c.classList.contains('x'))return;var s=+c.dataset.s,e=+c.dataset.e,k=st(c,n);if(c.closest('#hm-online'))return;if(k==='now')N++;if(s>n&&s<=n+36e5)X++;if(e>=eve)T++;
@@ -169,14 +173,19 @@ var b=c.querySelector('.hm-tag.now');if(b)b.hidden=k!=='now';c.classList.toggle(
 apply()}
 function apply(){var n=Date.now(),eve=new Date(new Date(n).toISOString().slice(0,10)+'T18:00:00Z').getTime(),shown=0,all=document.querySelectorAll('#hm-list .hm-c,#hm-past .hm-c');
 cards.forEach(function(c){var ok=(R==='all'||c.dataset.r.split(' ').indexOf(R)>-1)&&(!H||c.dataset.h===H);var s=+c.dataset.s,e=+c.dataset.e;
-if(W==='now')ok=ok&&n>=s&&n<e;if(W==='hour')ok=ok&&s>n&&s<=n+36e5;if(W==='tonight')ok=ok&&e>=eve;c.hidden=!ok;if(ok&&!c.closest('#hm-online'))shown++});
-var p=document.getElementById('hm-past'),pb=document.getElementById('hm-past-b');if(p&&(R!=='all'||W||H)){p.hidden=false;if(pb)pb.hidden=true}
-var ids=[];cards.forEach(function(c){if(!c.hidden&&!c.closest('#hm-online'))ids.push(c.dataset.id)});window.dispatchEvent(new CustomEvent('citymap:filter',{detail:{ids:(R==='all'&&!H&&!W)?null:ids}}));
+if(W==='now')ok=ok&&n>=s&&n<e;if(W==='hour')ok=ok&&s>n&&s<=n+36e5;if(W==='tonight')ok=ok&&e>=eve;if(A)ok=ok&&c.dataset.x==='1';c.hidden=!ok;if(ok&&!c.closest('#hm-online'))shown++});
+var fl=R!=='all'||H||W||A,idx=0;cards.forEach(function(c){if(c.hidden||c.closest('#hm-online')||c.closest('#hm-past'))return;idx++;c.classList.toggle('hm-fold',!fl&&!EX&&idx>FOLD)});
+var fb=document.getElementById('hm-fold-b');if(fb){fb.hidden=fl||EX||idx<=FOLD;fb.textContent='Show all '+idx+' events in Lisbon today'}
+var ow=document.getElementById('hm-online-wrap');if(ow)ow.hidden=!(OO||fl);
+var p=document.getElementById('hm-past'),pb=document.getElementById('hm-past-b');if(p&&(R!=='all'||W||H||A)){p.hidden=false;if(pb)pb.hidden=true}
+var ids=[];cards.forEach(function(c){if(!c.hidden&&!c.closest('#hm-online'))ids.push(c.dataset.id)});window.dispatchEvent(new CustomEvent('citymap:filter',{detail:{ids:(R==='all'&&!H&&!W&&!A)?null:ids}}));
 document.getElementById('hm-count').textContent=shown+(shown===1?' event':' events');document.getElementById('hm-none').hidden=shown>0}
 function bind(sel,attr,set){[].slice.call(document.querySelectorAll(sel)).forEach(function(b){b.addEventListener('click',function(){var v=b.dataset[attr],on=b.getAttribute('aria-pressed')==='true';
 [].slice.call(document.querySelectorAll(sel)).forEach(function(o){o.setAttribute('aria-pressed','false')});
 if(attr==='role'){set(v);document.querySelector('[data-role="'+v+'"]').setAttribute('aria-pressed','true')}else{set(on?'':v);if(!on)b.setAttribute('aria-pressed','true')}apply()})})}
 bind('.hm-chip','role',function(v){R=v});bind('.hm-h','hood',function(v){H=v});
+var fb2=document.getElementById('hm-fold-b');if(fb2)fb2.addEventListener('click',function(){EX=true;apply()});
+[].slice.call(document.querySelectorAll('.hm-sig button')).forEach(function(b){b.addEventListener('click',function(){if(b.dataset.sig==='online'){OO=true;apply();var t=document.getElementById('online');if(t)t.scrollIntoView({block:'start'})}else{A=!A;b.setAttribute('aria-pressed',String(A));apply();var l=document.getElementById('today');if(l)l.scrollIntoView({block:'start'})}})});
 var pb=document.getElementById('hm-past-b');if(pb)pb.addEventListener('click',function(){document.getElementById('hm-past').hidden=false;pb.remove()});
 tick();setInterval(tick,60000)}catch(x){}})();</script>`;
 }

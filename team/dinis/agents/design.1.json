@@ -1,9 +1,9 @@
 {
  "agent": "design.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-11T16:24Z",
+ "updated": "2026-11-11T16:54Z",
  "state": "working",
  "doing": [
-  "idle: D28 waits on cover urls (0 of 68 entries have one); D34 needs dev"
+  "idle: D34 needs dev"
  ],
  "done": [
   "D1 first screen (brief 5 tagline)",
@@ -19,7 +19,8 @@
   "D36 (and D16): Tell us link on every event page, event pre-filled on /tip/",
   "abp whoami run (security finding 28): ~/.abp/whoami = design.1.fringe@PrompTugal.dinis",
   "15:5x wake: home re-checked at 390 px (no sideways scroll, no errors; strip, map, cards fine); no new design brief",
-  "16:2x: no Luma pictures (work/49): home cards are organiser tiles (two-letter initials, kind, start time, family colours); checked with 0 images, nothing breaks; unknown organisers show a dot and Organiser not named"
+  "16:2x: no Luma pictures (work/49): home cards are organiser tiles (two-letter initials, kind, start time, family colours); checked with 0 images, nothing breaks; unknown organisers show a dot and Organiser not named",
+  "D37 home: Online and Cancelled-or-moved one tap from the first screen, list folded, page 8939 px"
  ],
  "next": [
   "take what the lead routes; D16 waits on work/06"
