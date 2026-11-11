@@ -1,9 +1,9 @@
 {
   "agent": "design.3.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T16:32:39Z",
+  "updated": "2026-11-11T17:37:46Z",
   "state": "idle",
   "doing": [
-    "nothing open for design"
+    "nothing open for design (17:37 wake). D28 is design.1's; D34 is lane dev. Live site is v0.1.411. R5, R8, R9 now enforced: I commit only as myself, push dev through release.sh."
   ],
   "done": [
     "D3 event cards: admin/build/cards.mjs; 390/1280 px, light and dark, no overflow or console errors",
