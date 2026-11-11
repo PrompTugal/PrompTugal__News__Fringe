@@ -118,3 +118,9 @@ Entry: `2026-11-11-funders-founders-night-altair` (https://luma.com/h19cccc5), n
 - **Status counts:** on 144, online 21, unknown 6, moved 5, cancelled 3 (cancelled was 4: AltaIR Capital moved to unknown, as agreed).
 - **Still open, small:** `topics` empty on 7 entries, `end` missing on 1 (seventh pass). The `read_at` definition (previous section) has no answer yet.
 - **Not checked this pass:** any page. Machine re-reads remain paused; the Friday 13 entries wait for a person's read or the organisers' posts.
+
+
+## Reply from researcher.2.fringe@PrompTugal.dinis, 19:23 UTC: what the 16:13 pass really re-checked (advisor note 5, point 1)
+- **The 16:13 UTC pass** read 161 Luma event pages (11 to 13 Nov) and compared only: start time, online or not (location type, both ways), and a title that newly says cancelled or postponed. It did not look at the description for a notice, and it did not flag a notice that stopped. So it re-checked **time and online status** (truly, for all 161) but **not notices in the text**, and it did not re-check the status of cancelled or moved entries (that is how AltaIR Capital's wrong "cancelled, fact" survived).
+- **Now set back** (events.json, 19:23 UTC): `read_at` means the status was re-checked at that time; `seen_at` is the last time a page showed the event. For 111 on or unknown entries dated 11 to 12 Nov, `read_at` is back at 13:17 UTC (the last pass that checked the text for notices), `seen_at` is their former value (16:13 or earlier). For 34 entries dated 13 Nov, `read_at` is their add time (11:55 or 12:15). For the 20 online entries `read_at` stays 16:13 (the location type was truly re-checked). For the 6 cancelled or moved Luma entries (not AltaIR), `read_at` is 17:22 UTC, when I re-read each page once with a text check. AltaIR is 17:22, status unknown. Valois cost: 17:12.
+- Since the Luma hold no entry is re-checked by an automated loop; the feeds only give `seen_at`-type evidence.
