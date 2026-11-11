@@ -9,7 +9,8 @@ import { fileURLToPath } from 'node:url';
 import { placeShort } from './cards.mjs';
 import { nowStrip, NOWSTRIP_CSS } from './nowstrip.mjs';   // design.2.fringe@PrompTugal.dinis
 import { AZULEJO_URI } from './identity.mjs';
-import { loadOrganisers, organiserPath } from './organisers.mjs';
+import { buildModel, pathOf } from './graph-model.mjs';   // ontologist.1's entity model: /o/ /n/ /f/ pages
+import { cityMap } from './city-map.mjs';   // design.3.fringe@PrompTugal.dinis
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DOW = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -81,12 +82,12 @@ export const homeCss = NOWSTRIP_CSS + `
 .hm-tile b{font:600 44px/.9 var(--serif);letter-spacing:-.02em;opacity:.95}.hm-tile i{font:500 10.5px/1 var(--mono);font-style:normal;letter-spacing:.08em;text-transform:uppercase}
 .hm-tile::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.14);-webkit-mask:var(--az) 0 0/28px 28px;mask:var(--az) 0 0/28px 28px}
 .hm-body{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px;flex:1}
-.hm-org a{position:relative;z-index:1;color:inherit;text-decoration:none}.hm-org a:hover{color:var(--brand);text-decoration:underline}.hm-org{font:600 11px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.hm-pl{position:relative;z-index:1;color:inherit}.hm-tags a.hm-tag{position:relative;z-index:1;text-decoration:none}.hm-org a{position:relative;z-index:1;color:inherit;text-decoration:none}.hm-org a:hover{color:var(--brand);text-decoration:underline}.hm-org{font:600 11px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
 .hm-t{font:600 18px/1.25 var(--serif);margin:0}.hm-t a{color:var(--ink);text-decoration:none}.hm-t a::after{content:"";position:absolute;inset:0}.hm-t a:hover{color:var(--brand);text-decoration:underline}
 .hm-m{font:400 12px/1.5 var(--mono);color:var(--ink-3)}
 .hm-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
 .hm-tag{flex:none;font:500 10.5px/1 var(--mono);letter-spacing:.04em;text-transform:uppercase;padding:3px 6px;border:1px solid var(--hair);border-radius:3px;color:var(--ink-2)}
-.hm-tag.free{border-color:var(--ok);color:var(--ok)}.hm-tag.big{background:var(--ink);color:var(--paper);border-color:var(--ink)}.hm-tag.now{background:var(--live);color:var(--paper);border-color:var(--live)}.hm-tag.x{border-color:var(--live);color:var(--live)}
+.hm-tag.free{border-color:var(--ok);color:var(--ok)}.hm-tag.hm-anchor{background:var(--ink);color:var(--paper);border-color:var(--ink)}.hm-tag.now{background:var(--live);color:var(--paper);border-color:var(--live)}.hm-tag.x{border-color:var(--live);color:var(--live)}
 .hm-empty{padding:var(--s4);border:2px dashed var(--hair);border-radius:8px;color:var(--ink-2)}
 .hm-more{display:block;width:100%;min-height:44px;margin:var(--s3) 0;background:var(--panel);border:1px dashed var(--ink-3);border-radius:6px;color:var(--ink-2);font:500 13px/1 var(--mono);cursor:pointer}
 .hm-foot{margin:var(--s5) 0 var(--s3);font-size:14px;color:var(--ink-2)}.hm-storm{font:400 12.5px/1.5 var(--mono);color:var(--ink-3);border-top:1px solid var(--hair);padding-top:var(--s3);margin-top:var(--s5)}
@@ -109,10 +110,12 @@ export function homeBody({ events, esc, eventPath, hasPage, now = new Date(), st
   const goodHoods = [...hoods].filter(([h]) => big.has(h)).sort((a, b) => b[1] - a[1]).slice(0, 8);
   const elseN = inCity.filter((e) => hoodKey(e) === ELSE).length;
   if (elseN >= 3) goodHoods.push([ELSE, elseN]);
-  const O = loadOrganisers(root, events);
+  const M = buildModel(root, events).byId;
+  const cm = cityMap({ events, esc, eventPath, hasPage, date: today, now });
 
   const card = (e) => {
-    const price = priceOf(e), isBig = e.size === 'major', org = orgName(e), lead = (O.of.get(e) || [])[0];
+    const price = priceOf(e), isBig = e.size === 'major', org = orgName(e), ev = M.events.get(e.id), lead = ev?.organisers?.[0], pl = ev?.place && M.places.has(ev.place) ? ev.place : null, fest = ev?.festival && M.festivals.has(ev.festival) ? M.festivals.get(ev.festival) : null;
+    const placeTxt = isOnline(e) ? 'Online' : placeShort(e);
     const s = Date.parse(e.start), en = e.end ? Date.parse(e.end) : s + 36e5;
     const href = hasPage(e) ? eventPath(e) : e.url;
     const c = TILES[hash(org) % TILES.length];
@@ -120,10 +123,10 @@ export function homeBody({ events, esc, eventPath, hasPage, now = new Date(), st
       ? `<span class="hm-img"><img src="${esc(imgs[e.id])}" alt="" loading="lazy" decoding="async"></span>`
       : `<span class="hm-img hm-tile" style="--c:var(${c})"><b>${esc([...org.replace(/[^\p{L}\p{N} ]/gu, '').trim()][0] || '·')}</b><i>${esc(e.kind || 'event')}</i></span>`;
     const roles = roleOf(e).join(' ');
-    return `<li class="hm-c${e.status === 'cancelled' ? ' x' : ''}" data-s="${s}" data-e="${en}" data-r="${roles}" data-h="${esc(hoodKey(e))}">${media}
-<div class="hm-body"><span class="hm-org">${lead ? `<a href="${esc(organiserPath(lead.id))}">${esc(org)}</a>` : esc(org)}</span><h3 class="hm-t"><a href="${esc(href)}">${esc(e.name)}</a></h3>
-<span class="hm-m">${hm(e.start)}${e.end ? '–' + hm(e.end) : ''} UTC · ${esc(isOnline(e) ? 'Online' : placeShort(e))}</span>
-<span class="hm-tags"><span class="hm-tag ${price.k}">${esc(price.t)}</span>${isBig ? '<span class="hm-tag big">Anchor</span>' : ''}${e.status === 'cancelled' ? '<span class="hm-tag x">Cancelled</span>' : e.status === 'moved' ? '<span class="hm-tag x">Moved</span>' : ''}<span class="hm-tag now" hidden>On now</span></span></div></li>`;
+    return `<li id="ev-${esc(e.id)}" data-id="${esc(e.id)}" class="hm-c${e.status === 'cancelled' ? ' x' : ''}" data-s="${s}" data-e="${en}" data-r="${roles}" data-h="${esc(hoodKey(e))}">${media}
+<div class="hm-body"><span class="hm-org">${lead ? `<a href="${esc(pathOf('organiser', lead.id))}">${esc(org)}</a>` : esc(org)}</span><h3 class="hm-t"><a href="${esc(href)}">${esc(e.name)}</a></h3>
+<span class="hm-m">${hm(e.start)}${e.end ? '–' + hm(e.end) : ''} UTC · ${pl ? `<a class="hm-pl" href="${esc(pathOf('place', pl))}">${esc(placeTxt)}</a>` : esc(placeTxt)}</span>
+<span class="hm-tags"><span class="hm-tag ${price.k}">${esc(price.t)}</span>${fest ? `<a class="hm-tag" href="${esc(pathOf('festival', fest.id))}">${esc(fest.name)}</a>` : ''}${isBig ? '<span class="hm-tag hm-anchor">Anchor</span>' : ''}${e.status === 'cancelled' ? '<span class="hm-tag x">Cancelled</span>' : e.status === 'moved' ? '<span class="hm-tag x">Moved</span>' : ''}<span class="hm-tag now" hidden>On now</span></span></div></li>`;
   };
   const state = (e) => { const s = Date.parse(e.start), en = e.end ? Date.parse(e.end) : s + 36e5; return t >= en ? 'past' : t >= s ? 'now' : 'next'; };
   const nowN = inCity.filter((e) => state(e) === 'now' && e.status !== 'cancelled').length;
@@ -140,7 +143,7 @@ export function homeBody({ events, esc, eventPath, hasPage, now = new Date(), st
 <div class="hm-roles" role="group" aria-label="What are you looking for?">${roleChips}</div>
 ${nowStrip(events, esc, { eventPath, hasPage }, now, { isLisbon: (e) => inLisbon(e) && !isOnline(e) })}
 ${hoodChips}
-<!-- the map of Lisbon with a dot per event goes here (D28, design.3) -->
+<style>${cm.css}</style>${cm.html}${cm.js}
 <div class="hm-sec" role="heading" aria-level="2" id="today">In Lisbon today<small id="hm-count">${inCity.length} events</small></div>
 <ul class="hm-grid" id="hm-list">${live.map(card).join('')}${past.length ? `</ul><button type="button" class="hm-more" id="hm-past-b">Earlier today: ${past.length} already over. Show</button><ul class="hm-grid" id="hm-past" hidden>${past.map(card).join('')}` : ''}</ul>
 <p class="hm-empty" id="hm-none" hidden>Nothing matches that right now. Try Everything, or look at <a href="/programme/">the whole programme</a>.</p>
@@ -157,6 +160,7 @@ function apply(){var n=Date.now(),eve=new Date(new Date(n).toISOString().slice(0
 cards.forEach(function(c){var ok=(R==='all'||c.dataset.r.split(' ').indexOf(R)>-1)&&(!H||c.dataset.h===H);var s=+c.dataset.s,e=+c.dataset.e;
 if(W==='now')ok=ok&&n>=s&&n<e;if(W==='hour')ok=ok&&s>n&&s<=n+36e5;if(W==='tonight')ok=ok&&e>=eve;c.hidden=!ok;if(ok&&!c.closest('#hm-online'))shown++});
 var p=document.getElementById('hm-past'),pb=document.getElementById('hm-past-b');if(p&&(R!=='all'||W||H)){p.hidden=false;if(pb)pb.hidden=true}
+var ids=[];cards.forEach(function(c){if(!c.hidden&&!c.closest('#hm-online'))ids.push(c.dataset.id)});window.dispatchEvent(new CustomEvent('citymap:filter',{detail:{ids:(R==='all'&&!H&&!W)?null:ids}}));
 document.getElementById('hm-count').textContent=shown+(shown===1?' event':' events');document.getElementById('hm-none').hidden=shown>0}
 function bind(sel,attr,set){[].slice.call(document.querySelectorAll(sel)).forEach(function(b){b.addEventListener('click',function(){var v=b.dataset[attr],on=b.getAttribute('aria-pressed')==='true';
 [].slice.call(document.querySelectorAll(sel)).forEach(function(o){o.setAttribute('aria-pressed','false')});
