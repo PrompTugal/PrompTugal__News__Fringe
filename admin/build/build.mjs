@@ -9,6 +9,7 @@ import { collectSwarm, swarmBody, swarmCss, swarmScript } from './swarm.mjs';   
 import { eventPages, eventPath, hasPage } from './event-pages.mjs';
 import { howBody } from './how.mjs';   // D11, design.3.fringe@PrompTugal.dinis
 import { eventCard as card, cardList, sortDay, CARD_CSS } from './cards.mjs';   // D3, design.3.fringe@PrompTugal.dinis   // work/22, dev.lead.fringe@PrompTugal.dinis
+import { WORDMARK, IDENTITY_CSS } from './identity.mjs';   // D9, design.4.fringe@PrompTugal.dinis
 import { nowBlock, nowPageBody, nowJs } from './now.mjs';   // work/16, dev.2.fringe@PrompTugal.dinis
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -77,11 +78,11 @@ code{background:var(--paper-2);padding:1px var(--s1);border-radius:var(--radius)
 .tag.open{border-color:var(--warn)}.tag.claimed{border-color:var(--brand)}.tag.done{border-color:var(--ok)}
 .ptbar{background:var(--ink);font-size:var(--fs-meta);text-align:center}.ptbar a{display:block;padding:6px var(--gutter);color:var(--paper);text-decoration:none;font-weight:600;letter-spacing:.02em}.ptbar a:hover{text-decoration:underline;color:var(--paper)}
 .hero{padding:var(--s2) 0 var(--s1)}.hero h1{margin:.2em 0 .1em}.hero .tag-line{margin:0 0 .6em;color:var(--ink-3)}.hero .count{font-weight:600;margin:0 0 .6em}.hero .card{margin:6px 0;padding:var(--s2) var(--s3)}.hero .when{font-variant-numeric:tabular-nums;color:var(--brand);font-weight:600;font-size:var(--fs-meta)}.hero .muted{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}.btn{display:block;text-align:center;background:var(--brand);color:var(--paper);font-weight:600;text-decoration:none;padding:var(--s3) var(--s4);border-radius:var(--radius);margin:var(--s3) 0;min-height:44px}.btn:hover{color:var(--paper)}
-footer{max-width:var(--page);margin:var(--s5) auto;padding:var(--gutter);border-top:1px solid var(--rule-2)}${CARD_CSS}`;
+footer{max-width:var(--page);margin:var(--s5) auto;padding:var(--gutter);border-top:1px solid var(--rule-2)}${CARD_CSS}${IDENTITY_CSS}`;
 // D5: the one navigation. Flip `live` to true when a page ships (Now: work/16, Organisers: work/23); no JavaScript.
 const NAV = [['Today', '/', true], ['Now', '/now/', false], ['Map', '/graph/', true], ['Organisers', '/organisers/', false], ['How', '/how/', true], ['Traffic', '/traffic/', true], ['Join', '/join/', true]];
-const navHtml = (here) => `<header><nav aria-label="Main"><span class="brand"><a href="/">Lisbon Fringe</a></span>
-<ul class="nav">${NAV.filter((n) => n[2]).map(([label, href]) => `<li><a href="${href}"${href === here ? ' aria-current="page"' : ''}>${label}</a></li>`).join('')}</ul></nav></header>`;
+const navHtml = (here) => `<header><nav aria-label="Main"><span class="brand"><a href="/">${WORDMARK}</a></span>
+<ul class="nav">${NAV.filter((n) => n[2]).map(([label, href]) => `<li><a href="${href}"${href === here ? ' aria-current="page"' : ''}>${label}</a></li>`).join('')}</ul></nav><div class="tiles" aria-hidden="true"></div></header>`;
 const page = (title, body, desc, head = '', here = '/') => `<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">${head}<style>${css}</style></head><body>
@@ -130,7 +131,7 @@ function heroCard([e, label]) {
   return `<div class="card"><span class="when">${label} · ${t(e.start)}${e.end ? '–' + t(e.end) : ''} UTC</span><br><a href="${esc(hasPage(e) ? eventPath(e) : e.url)}"><strong>${esc(e.name)}</strong></a><div class="muted">${esc([e.place, e.organiser].filter(Boolean).join(' · '))}</div></div>`;
 }
 const heroData = JSON.stringify(events.map((e) => ({ id: e.id, name: e.name, url: e.url, date: e.date, start: e.start, end: e.end, status: e.status, place: e.place, organiser: e.organiser })).map((e) => e)).replace(/</g, '\\u003c');
-const hero = `<section class="hero"><h1>Lisbon Fringe</h1>
+const hero = `<section class="hero festival"><span class="kicker">Lisbon · this week</span><h1>Lisbon <em>Fringe</em></h1>
 <p class="tag-line">Lisbon&rsquo;s tech week, every event, live. Independent.</p>
 <p class="count" id="hero-count">${esc(heroCount(events, today))}</p>
 <a class="btn" href="#events">See all events</a>
