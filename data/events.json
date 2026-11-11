@@ -1,7 +1,7 @@
 {
   "about": "Lisbon Fringe's events: the alternative, community and side events around Web Summit Lisbon, 11 to 13 November 2026 (and a few either side). Each event was re-read at its public source_url at read_at (UTC; Lisbon is on UTC in November). Each says whether Storm Charles moved it. Labels: fact (read on the organiser's page), evidence (read, but the page leaves the status open), hypothesis (not confirmed at source). 'unknown' means we do not know. Organisers are organisations; no private person is named and no contact details are given.",
   "contract": "api/v1/README.md (v1). Required: name, url, read_at, date, start, end, kind, organiser, place, join, status, storm_note, topics. Added by the researcher (v1 allows additions): id, label (fact | evidence | hypothesis), cost (as stated), storm_moved (true | false | null), check (what the page says about the storm, or why status is open), note.",
-  "updated": "2026-11-11T13:35:00Z",
+  "updated": "2026-11-11T13:37:00Z",
   "by": "researcher.2.fringe@PrompTugal.dinis",
   "independence": "Lisbon Fringe is independent of Web Summit and is not run by its organisers. For anything official see the organisers' own pages. Not a warning service: for the storm see IPMA (https://www.ipma.pt), ANEPC (https://www.prociv.gov.pt) and https://storm-charles.promptugal.news.",
   "sources": [
@@ -108,6 +108,32 @@
       "note": null,
       "size": "community",
       "neighbourhood": "Parque das Nações"
+    },
+    {
+      "name": "Storm Summit (stormsummit.app): a digital copy of the venue for Wednesday",
+      "url": "https://stormsummit.app/",
+      "read_at": "2026-11-11T13:37:00Z",
+      "date": "2026-11-11",
+      "start": "2026-11-11T08:30:00Z",
+      "end": null,
+      "kind": "online",
+      "organiser": "Taiga AI Oy, Finland (as the page names it: 'an independent project by Taiga AI Oy', not affiliated with Web Summit)",
+      "place": "online (a browser-based multiplayer world: avatars, text chat, a map of the venue's stages and pavilions)",
+      "join": "Request a pass on the organiser's page: https://stormsummit.app/ (the page asks for a work email; we collect nobody's email)",
+      "status": "online",
+      "storm_note": "Built as a replacement for the cancelled Wednesday: the page says 'Wednesday is cancelled. Your meetings are not.' after Storm Charles closed day two, with a red wind warning. Doors open 08:30 Lisbon time. The page gives no end time.",
+      "topics": [
+        "networking",
+        "investors",
+        "founders"
+      ],
+      "id": "2026-11-11-storm-summit-stormsummit-app",
+      "label": "fact",
+      "cost": "unknown (the page does not state a price)",
+      "storm_moved": true,
+      "size": "major",
+      "lane": "business",
+      "check": "Read at the organiser's public page 2026-11-11T13:37:00Z: 'Doors open Wednesday 11 November, 08:30 Lisbon time'. Different from FounderLink's Storm Summit (listed from Luma). The page's own programme list is the original Web Summit schedule, which it says is not what plays in the venue; we do not copy it."
     },
     {
       "name": "FounderLink Storm Summit: a torrent of intros (morning session, online)",
