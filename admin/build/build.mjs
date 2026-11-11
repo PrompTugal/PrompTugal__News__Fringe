@@ -7,6 +7,7 @@ import { buildGraph, graphBody, graphCss } from './graph.mjs';   // work/05, con
 import { trafficBody, trafficCss } from './traffic.mjs';   // work/21, observability.fringe@PrompTugal.dinis
 import { collectSwarm, swarmBody, swarmCss, swarmScript } from './swarm.mjs';   // work/25, dev.1.fringe@PrompTugal.dinis
 import { eventPages, eventPath, hasPage } from './event-pages.mjs';
+import { howBody } from './how.mjs';   // D11, design.3.fringe@PrompTugal.dinis
 import { eventCard as card, cardList, sortDay, CARD_CSS } from './cards.mjs';   // D3, design.3.fringe@PrompTugal.dinis   // work/22, dev.lead.fringe@PrompTugal.dinis
 import { nowBlock, nowPageBody, nowJs } from './now.mjs';   // work/16, dev.2.fringe@PrompTugal.dinis
 
@@ -76,7 +77,7 @@ code{background:var(--paper-2);padding:1px var(--s1);border-radius:var(--radius)
 .tag.open{border-color:var(--warn)}.tag.claimed{border-color:var(--brand)}.tag.done{border-color:var(--ok)}
 footer{max-width:var(--page);margin:var(--s5) auto;padding:var(--gutter);border-top:1px solid var(--rule-2)}${CARD_CSS}`;
 // D5: the one navigation. Flip `live` to true when a page ships (Now: work/16, Organisers: work/23); no JavaScript.
-const NAV = [['Today', '/', true], ['Now', '/now/', false], ['Map', '/graph/', true], ['Organisers', '/organisers/', false], ['Traffic', '/traffic/', true], ['Join', '/join/', true]];
+const NAV = [['Today', '/', true], ['Now', '/now/', false], ['Map', '/graph/', true], ['Organisers', '/organisers/', false], ['How', '/how/', true], ['Traffic', '/traffic/', true], ['Join', '/join/', true]];
 const navHtml = (here) => `<header><nav aria-label="Main"><span class="brand"><a href="/">Lisbon Fringe</a></span>
 <ul class="nav">${NAV.filter((n) => n[2]).map(([label, href]) => `<li><a href="${href}"${href === here ? ' aria-current="page"' : ''}>${label}</a></li>`).join('')}</ul></nav></header>`;
 const page = (title, body, desc, head = '', here = '/') => `<!doctype html><html lang="en"><head><meta charset="utf-8">
@@ -117,8 +118,8 @@ const home = page('Lisbon Fringe', `
 <script src="/storm.js" defer></script>
 ${nowBlock(events, esc, { eventPath, hasPage }, new Date(BUILT), { limit: 5 })}<script src="/now.js" defer></script>
 ${eventsHtml()}
-<h2>Build it with us</h2>
-<p>Lisbon Fringe is built by a team where everyone runs one conductor. <a href="/join/">Bring yours in five minutes</a>.</p>
+<h2>How this is made</h2>
+<div class="card">Built in the open by a swarm: one conductor per person, agents by role, Dinis as head. <a href="/how/"><strong>See how it is made</strong></a> · <a href="/join/">Bring your conductor in five minutes</a>.</div>
 `, 'An independent guide to the side events around Web Summit Lisbon.');
 
 // --- /join/ --------------------------------------------------------------
@@ -165,6 +166,10 @@ const graphPage = page('Connect the dots: Lisbon Fringe', `<style>${graphCss}</s
 mkdirSync(join(out, 'join'), { recursive: true });
 writeFileSync(join(out, 'index.html'), home);
 writeFileSync(join(out, 'join', 'index.html'), joinPage);
+mkdirSync(join(out, 'how'), { recursive: true });
+const count = (d, re) => { try { return readdirSync(join(root, d)).filter((f) => re.test(f)).length; } catch { return 0; } };
+const nAgents = readdirSync(join(root, 'team')).reduce((a, d) => a + count(`team/${d}/agents`, /\.json$/) + (existsSync(join(root, 'team', d, 'status.json')) ? 1 : 0), 0);
+writeFileSync(join(out, 'how', 'index.html'), page('How Lisbon Fringe is made', howBody({ esc, REPO, n: { events: events.length, people: roster.people.length, agents: nAgents, board: board.length, boardDone: board.filter((b) => b.status === 'done').length, briefs: count('briefs', /\.md$/), inboxes: count('data/inboxes', /\.json$/) } }), 'How Lisbon Fringe is made: a swarm of conductors and agents, one conductor per person, Dinis as head.', '', '/how/'));
 mkdirSync(join(out, 'graph'), { recursive: true });
 writeFileSync(join(out, 'graph', 'index.html'), graphPage);
 writeFileSync(join(out, 'graph.js'), read('admin/build/graph.js'));
@@ -177,7 +182,7 @@ writeFileSync(join(out, 'api', 'v1', 'graph.json'), JSON.stringify({ about: 'The
 writeFileSync(join(out, 'llms.txt'), `# Lisbon Fringe\n\n> An independent guide to the alternative, community and side events around Web Summit Lisbon, 9 to 15 November 2026. Independent of Web Summit; for anything official see the organisers' site. Not a warning service: for the storm see https://storm-charles.promptugal.news, IPMA and ANEPC.\n\n- [Events (JSON)](${SITE}api/v1/events.json): each event with its source URL and the time it was read\n- [The graph (JSON)](${SITE}api/v1/graph.json): events, communities, topics and places, each edge with its source\n- [Join the team](${SITE}join/)\n- [Repository](${REPO})\n`);
 const ePages = eventPages(events, { page, esc, linkify, SITE, card, cardList });   // work/22: /e/<id>/
 for (const p of ePages) { mkdirSync(join(out, p.path), { recursive: true }); writeFileSync(join(out, p.path, 'index.html'), p.html); }
-writeFileSync(join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n<url><loc>${SITE}</loc></url>\n<url><loc>${SITE}join/</loc></url>\n<url><loc>${SITE}graph/</loc></url>\n<url><loc>${SITE}traffic/</loc></url>\n${ePages.map((p) => `<url><loc>${esc(p.url)}</loc></url>\n`).join('')}</urlset>\n`);
+writeFileSync(join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n<url><loc>${SITE}</loc></url>\n<url><loc>${SITE}join/</loc></url>\n<url><loc>${SITE}how/</loc></url>\n<url><loc>${SITE}graph/</loc></url>\n<url><loc>${SITE}traffic/</loc></url>\n${ePages.map((p) => `<url><loc>${esc(p.url)}</loc></url>\n`).join('')}</urlset>\n`);
 writeFileSync(join(out, 'version.json'), JSON.stringify({ version: VERSION, commit: process.env.GITHUB_SHA || '', pushed_at: process.env.PUSHED_AT || '', built_at: BUILT }, null, 2) + '\n');
 writeFileSync(join(out, 'version.txt'), VERSION + '\n');
 writeFileSync(join(out, '.nojekyll'), '');
