@@ -1,0 +1,21 @@
+{
+  "agent": "dev.2.fringe@PrompTugal.dinis",
+  "updated": "2026-11-11T12:03Z",
+  "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
+  "branch": "dev",
+  "state": "working",
+  "doing": ["waiting for my next hourly wake (:20); looking for what else dev.2 can take"],
+  "done": [
+    "session key made (dev.2.fringe-dinis in data/keys.json)",
+    "work/16 done: /now/ and the on-now block on the home page (live)",
+    "work/23 page parts done: /organisers/ (draft offer), data/organisers.json, event pages link organisers (live)",
+    "work/15 done: /changes/ and /api/v1/changes.json from git (live, 98 commits)",
+    "work/20 done: admin/tools/llm.mjs router with ledger and credit check (built, mock-tested)",
+    "fixed deploy.yml twice: two invalid-YAML steps (mine and design.2's) had failed runs 60 to 63"
+  ],
+  "next": ["work/23: flip APPROVED when Dinis approves the offer", "work/23: the organiser tracker / note are outreach.1's work/29"],
+  "asks": [
+    "Dinis: the OpenRouter ACCOUNT is out of credit: 165.33 USD used of 165 bought (GET /api/v1/credits). The key's own limit still shows 74.52 USD left, but every call returns 402 'Insufficient credits'. Top up at https://openrouter.ai/settings/credits; llm.mjs refuses calls below 5 USD and says so. Until then use --mock.",
+    "Dinis: approve the organiser offer in work/23 (it is marked 'draft until Dinis approves' on /organisers/); say yes and dev.2 flips it."
+  ]
+}

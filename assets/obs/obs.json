@@ -1,0 +1,27 @@
+{
+  "about": "Lisbon Fringe's observability lanes (observability.fringe@PrompTugal.dinis, 11 November 2026, at Dinis Cruz's word; PrompTugal.news's model, its assets/obs/obs.json). Public on purpose: each append token can only write to its lane, and the key can only encrypt. 'site' is used by assets/obs/obs.js on every page; 'agents' by admin/tools/agent-log.mjs. The data vault is private; its drain is observability.fringe@PrompTugal.dinis's.",
+  "enabled": true,
+  "endpoint": "https://dev.send.sgraph.ai",
+  "vault_id": "x7oumouz",
+  "lanes": {
+    "site": [
+      "668cf30cb2c4feb04587922416c2056233cdaac760cbc5e31affb9a0a11cec14",
+      "5c640c837d92c794fafb3fc69e856122b369235255ee06cde2fc75bd58ef7f4d",
+      "e2bc36a4d9b05a0a204255ce1d439fc8d2232c575a38c45719684072ab6e1942",
+      "bd0f6933c8544b14db1b690313c5c4a18e1246edee950982be5564199cb68136"
+    ],
+    "agents": [
+      "db9303d2b40184831a012a3a96b4c93a010c0cd231f805bdea0b8526e6f977ba",
+      "8514af8ae39a495141335f315d14904c0a4c805d1028e07274433bf29c391dd8"
+    ]
+  },
+  "recipient": {
+    "fingerprint": "sha256:5392c2485f1d8dcf",
+    "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA7HIuZkjQV0DVWQ6qwwdj\nm4nG65tWYrJ2LqaCCEQ5Z8RMQW6TnRQoHzBK3x0f0reNtkv7FxVmfsdJVe6N63Mj\nuzf2IeuVqj70QxQ4d81gK87KPQMAUNtwh8D7DocVC5kZMn8xaVZFg45LHGrzWTh0\nc6xSi4cPs6Ut+IX9RurXkwf8FEp3+FT0Qp8adE/uucdQPZzGbSOSJNYtFxSStyX1\n6lgM7zlUwIooPc516xOFkTqcdKvG/Ov7nvMGO5HinNE7fGrZLc6UBmKD2eo+lDJA\no6mnPZ5m3hwyZarbww/UXhSjQkwEyFnBn4ZBnF4U6+QRx0cdHAhxGBnk/ON0Sphx\n85m0IBEmEmg3xlOcyGVcVaGPH4vHXZIt69CASoHDsrLCk9Be9vDj+AoGF2mEV4jK\nTmzETkFFHfGaMFdmN3wGc6FWsGX2lKUkMl2T98oIgDJeBsMa+dvYraUGpWrgq4rt\nCakPMBDmUwaynCJPdmcVgSB103rIZ+E7A3Fs7h9klZyO8UR4melWtkj29tudzRcF\nYecOUPEoghkUgvNTm3jIxlIT88k7lBZBmenVzsERKcgy5dcfGnuk1S9zym0o2ax4\ns4BQFcvetnbIzg1k9G3lvrYldvwg0bG5FvHTWDLfbaXFN/DMsGAi9nw2NVU6pKIz\n6mgADeEi8DBcmsXlWgInz3UCAwEAAQ==\n-----END PUBLIC KEY-----\n"
+  },
+  "geo": [
+    "https://ipapi.co/json/",
+    "https://ipwho.is/"
+  ],
+  "what": "This site counts page views and reading time, publicly, to learn what is read and how links spread. Each event says: the page, the referring site (host only), the time to the minute, the site version, a random id that ends with the tab, the screen size class, the browser's language and time zone, the country, region and city (and the city's position, rounded to about 10 km), a link's tag (?via=), and an automation class if a bot declares itself. To find the place, the browser asks ipapi.co (or ipwho.is), which see the reader's IP address, as any website it calls would; this site reads only the place from the answer and keeps no IP address, no cookie, no user-agent string and no fingerprint. Do Not Track, Global Privacy Control and Pause in the footer turn it all off, the place lookup included. Published: counts only, at /traffic/."
+}

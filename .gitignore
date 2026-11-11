@@ -220,3 +220,6 @@ __marimo__/
 .streamlit/secrets.toml
 _site/
 !admin/build/
+
+# Claude Code local state (sub-agent worktrees, settings); never in git
+.claude/

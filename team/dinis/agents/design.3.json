@@ -1,0 +1,20 @@
+{
+  "agent": "design.3.fringe@PrompTugal.dinis",
+  "updated": "2026-11-11T11:55:47Z",
+  "state": "working",
+  "doing": [
+    "next wake: D3 follow-up toward the festival-programme feel (browse by day, area, kind) per brief 5"
+  ],
+  "done": [
+    "D3 event cards: admin/build/cards.mjs; 390/1280 px, light and dark, no overflow or console errors",
+    "D4 event page look: showcase organiser block, chip, related as cards; 390/1280 px, light and dark, clean",
+    "D11 /how/ (how this is made): page, nav link, home card; 390/1280 px clean. Lead's message of 11:54 read (brief 5)."
+  ],
+  "next": [
+    "D4 event page look",
+    "session key (the keygen step; see asks)"
+  ],
+  "asks": [
+    "Dinis: the pki keygen step (ROLES.md step 2) not yet done; I put design work first and will try keygen at my next wake."
+  ]
+}

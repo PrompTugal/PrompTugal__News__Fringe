@@ -1,10 +1,10 @@
 {
   "about": "Lisbon's alternative, unconference, community and side events around Web Summit 2026 (9 to 15 November), from public event pages, each with its URL and the time read; status says whether the storm (Wednesday 11 November) moved or cancelled it. For Lisbon Fringe's team (Dinis, 11 November 2026, about 10:00 UTC: board/guidance/2026-11-11-the-site-follows-the-storm-and-lisbon-fringe.md). Organisers as organisations; no private people, no contact details.",
   "by": "social.watch@PrompTugal.dinis",
-  "updated": "2026-11-11T10:30Z",
+  "updated": "2026-11-11T10:53Z",
   "notes": [
-    "No unconference found: searches for unconference, barcamp and open space around Web Summit Lisbon 2026 returned nothing public by 10:30 UTC; the nearest is the IndieSummit Lisboa meetup (a no-agenda social). If Dinis knows the 'Uncon' event's name, the next sweep looks for it.",
-    "iproxy.online's side-events list was read only in part; Thursday to Sunday events are under-counted."
+    "Unconference found (10:53 UTC): Lisbon Community Week (Led by Community) runs an unconference on Friday 13 November, 15:45 to 17:15, at Impact Hub Lisbon (Penha), in its conference pass (page opened 10:53). A separate 'Unconference Plus Lisbon' on Saturday 14 November appears in a search result only; no page opened, so it is recorded unverified. No barcamp or open-space event found.",
+    "iproxy.online's side-events list now read in full (two passes); about 20 of some 80 Thursday-to-Saturday events opened so far."
   ],
   "events": [
     {
@@ -291,6 +291,25 @@
       "note": "Event page returned 404; details only from iproxy side-events list"
     },
     {
+      "name": "Female Founders Breakfast: Websummit Special",
+      "kind": "meetup",
+      "organiser": "Female Founders Breakfast Europe",
+      "date": "2026-11-12",
+      "start": "09:00",
+      "end": "10:30",
+      "place": "Avila Spaces, Av. Dom Joao II",
+      "join": "Sold out; waitlist",
+      "url": "https://luma.com/sx67k4x0",
+      "status": "on",
+      "storm_note": null,
+      "topics": [
+        "women in tech",
+        "founders"
+      ],
+      "read_at": "2026-11-11T10:53:14Z",
+      "verified": true
+    },
+    {
       "name": "Open Coffee Lisbon Web Summit Special #53",
       "kind": "meetup",
       "organiser": "Open Coffee Lisbon",
@@ -311,6 +330,25 @@
       "note": "Venue changed to Impact Hub per page; not storm related"
     },
     {
+      "name": "Founders, Builders & Community Pros Connect Day",
+      "kind": "community",
+      "organiser": "Led by Community, part of Portugal Tech Week",
+      "date": "2026-11-12",
+      "start": "09:30",
+      "end": "20:00",
+      "place": "PTW Palace, Gomes Freire 98",
+      "join": "Tickets on Luma (€8-12); page marked Past Event",
+      "url": "https://luma.com/lbc-lisbon-techweek",
+      "status": "on",
+      "storm_note": null,
+      "topics": [
+        "community"
+      ],
+      "read_at": "2026-11-11T10:53:14Z",
+      "verified": false,
+      "note": "Page marked Past Event and no date shown; date inferred, unverified."
+    },
+    {
       "name": "Cafe and Code: Developer Cafe Takeover",
       "kind": "community",
       "organiser": "Exa Events (Exa x Mastra)",
@@ -328,6 +366,63 @@
       ],
       "read_at": "2026-11-11T10:35:00Z",
       "verified": true
+    },
+    {
+      "name": "staaake Thursday AI/Tech Lunch Dinner Club",
+      "kind": "dinner",
+      "organiser": "staaake",
+      "date": "2026-11-12",
+      "start": "12:30",
+      "end": "14:00",
+      "place": "Lisbon (address shared after registration)",
+      "join": "Tiered tickets; free tier sold out; request to join",
+      "url": "https://luma.com/9ardymp7",
+      "status": "on",
+      "storm_note": null,
+      "topics": [
+        "AI",
+        "dinner"
+      ],
+      "read_at": "2026-11-11T10:53:14Z",
+      "verified": true
+    },
+    {
+      "name": "Breaking into America: US Fundraising Playbook for European Founders",
+      "kind": "talk",
+      "organiser": "Portugal Tech Week",
+      "date": "2026-11-12",
+      "start": "16:00",
+      "end": "17:00",
+      "place": "PTW Palace, Room 2",
+      "join": "Register on Luma, free",
+      "url": "https://luma.com/fdr23mdq",
+      "status": "on",
+      "storm_note": null,
+      "topics": [
+        "startups",
+        "fundraising"
+      ],
+      "read_at": "2026-11-11T10:53:14Z",
+      "verified": true
+    },
+    {
+      "name": "AfterWeb: Music & Connection Over Lisbon",
+      "kind": "party",
+      "organiser": "Afterglow",
+      "date": "2026-11-12",
+      "start": "17:30",
+      "end": "00:00",
+      "place": "Cavo Rooftop, Cruise Terminal",
+      "join": "Free with registration, 200 spots",
+      "url": "https://luma.com/d9usmm3s",
+      "status": "on",
+      "storm_note": null,
+      "topics": [
+        "networking"
+      ],
+      "read_at": "2026-11-11T10:53:14Z",
+      "verified": true,
+      "note": "Also shown as Music & Connection Over Lisbon, after WebSummit."
     },
     {
       "name": "Defense Tech Meetup #9: Sovereignty by Design",
@@ -351,6 +446,25 @@
       "note": "Existing registrations still count"
     },
     {
+      "name": "EIT Jumpstarter 2026 Awards Ceremony",
+      "kind": "other",
+      "organiser": "EIT Jumpstarter",
+      "date": "2026-11-12",
+      "start": "18:00",
+      "end": "21:00",
+      "place": "Unicorn Factory Lisboa, Av. Infante Dom Henrique 143",
+      "join": "Free, registration subject to host approval",
+      "url": "https://luma.com/a2ue9hpo",
+      "status": "on",
+      "storm_note": null,
+      "topics": [
+        "startups",
+        "awards"
+      ],
+      "read_at": "2026-11-11T10:53:14Z",
+      "verified": true
+    },
+    {
       "name": "Disconnect 2 Connect",
       "kind": "meetup",
       "organiser": "Unicorn Factory Lisboa",
@@ -371,6 +485,139 @@
       "note": "Phones-away conversation per iproxy list"
     },
     {
+      "name": "Lisbon Digital Nomads After Hours @ PTW Palace",
+      "kind": "meetup",
+      "organiser": "Lisbon Digital Nomads x Portugal Tech Week",
+      "date": "2026-11-12",
+      "start": "19:00",
+      "end": "22:00",
+      "place": "PTW Palace, Rua Gomes Freire 98",
+      "join": "Register on Luma, free",
+      "url": "https://luma.com/portugal-hku2",
+      "status": "on",
+      "storm_note": null,
+      "topics": [
+        "community",
+        "nomads"
+      ],
+      "read_at": "2026-11-11T10:53:14Z",
+      "verified": true
+    },
+    {
+      "name": "Founders (don't) cry",
+      "kind": "talk",
+      "organiser": "Portugal Tech Week",
+      "date": "2026-11-12",
+      "start": "19:00",
+      "end": "20:00",
+      "place": "PTW Palace, Room 2 Garden",
+      "join": "Register on Luma, free",
+      "url": "https://luma.com/ldiykyt8",
+      "status": "on",
+      "storm_note": null,
+      "topics": [
+        "startups",
+        "founders"
+      ],
+      "read_at": "2026-11-11T10:53:14Z",
+      "verified": true
+    },
+    {
+      "name": "Contracts & Cocktails: A Founder Legal Tech Mixer",
+      "kind": "meetup",
+      "organiser": "Stripe Legal Tech Community x Contractr AI with Portugal Tech Week",
+      "date": "2026-11-12",
+      "start": "19:00",
+      "end": "21:00",
+      "place": "PTW Palace",
+      "join": "Full; waitlist on Luma",
+      "url": "https://luma.com/hihh4mxe",
+      "status": "on",
+      "storm_note": null,
+      "topics": [
+        "legal tech",
+        "startups"
+      ],
+      "read_at": "2026-11-11T10:53:14Z",
+      "verified": true
+    },
+    {
+      "name": "Match Me at Web Summit",
+      "kind": "party",
+      "organiser": "Match Me If You Can",
+      "date": "2026-11-12",
+      "start": "19:30",
+      "end": "22:30",
+      "place": "Saratoga, R. Mal. Saldanha 23",
+      "join": "€35; request to join, short application and call",
+      "url": "https://luma.com/n6czryzo",
+      "status": "on",
+      "storm_note": null,
+      "topics": [
+        "dating",
+        "networking"
+      ],
+      "read_at": "2026-11-11T10:53:14Z",
+      "verified": true
+    },
+    {
+      "name": "MOON SUMMIT | Web Summit Closing Night",
+      "kind": "party",
+      "organiser": "WHAT IS LOVE? (VLADISLOVE)",
+      "date": "2026-11-12",
+      "start": "20:00",
+      "end": "02:00",
+      "place": "Palacio Chiado, R. do Alecrim 70",
+      "join": "Ticket on Luma, from €35, 150 guests",
+      "url": "https://luma.com/1tggnm7t",
+      "status": "on",
+      "storm_note": null,
+      "topics": [
+        "party"
+      ],
+      "read_at": "2026-11-11T10:53:14Z",
+      "verified": true
+    },
+    {
+      "name": "Get Down At The Dev House",
+      "kind": "party",
+      "organiser": "/unsupervised, Bene and noticed",
+      "date": "2026-11-12",
+      "start": "20:30",
+      "end": "02:00",
+      "place": "Lisbon (address after approval)",
+      "join": "Free, host approval required",
+      "url": "https://luma.com/aivsqim4",
+      "status": "on",
+      "storm_note": null,
+      "topics": [
+        "developers",
+        "party"
+      ],
+      "read_at": "2026-11-11T10:53:14Z",
+      "verified": true
+    },
+    {
+      "name": "Web Summit After Party",
+      "kind": "party",
+      "organiser": "Unicorn Factory Lisboa",
+      "date": "2026-11-12",
+      "start": "21:00",
+      "end": "02:00",
+      "place": "Fabrica de Pao, Beato Innovation District",
+      "join": "Register on Luma, free",
+      "url": "https://luma.com/z31f1c0y",
+      "status": "on",
+      "storm_note": null,
+      "topics": [
+        "startups",
+        "Portugal"
+      ],
+      "read_at": "2026-11-11T10:53:14Z",
+      "verified": true,
+      "note": "About 1,000 registered; no storm mention."
+    },
+    {
       "name": "Lisbon Community Week Conference 2026",
       "kind": "talk",
       "organiser": "Led by Community",
@@ -383,11 +630,12 @@
       "status": "on",
       "storm_note": null,
       "topics": [
-        "community management"
+        "community management",
+        "unconference"
       ],
       "read_at": "2026-11-11T10:35:00Z",
       "verified": true,
-      "note": "Community professionals' day with after party"
+      "note": "Community professionals' day with after party | Re-read 10:53: includes an unconference, Friday 13 November 15:45 to 17:15 ('A participant-led session shaped by the community'), in the same pass as the conference, workshop and after party (17:30 to 19:30). No Saturday day on this page."
     },
     {
       "name": "PTW Classroom: Ladies Who Build, Lovable and Grok",
@@ -410,6 +658,119 @@
       "note": "Date and time from iproxy list"
     },
     {
+      "name": "Lisbon 2026 Venture Capital World Summit",
+      "kind": "other",
+      "organiser": "Venture Capital World Summit",
+      "date": "2026-11-13",
+      "start": "10:00",
+      "end": "17:00",
+      "place": "Spaces Oriente",
+      "join": "Full; waitlist",
+      "url": "https://luma.com/s23ft4kf",
+      "status": "on",
+      "storm_note": null,
+      "topics": [
+        "venture capital"
+      ],
+      "read_at": "2026-11-11T10:53:14Z",
+      "verified": true
+    },
+    {
+      "name": "People Pitch: After Summit, Before the Future",
+      "kind": "talk",
+      "organiser": "Portugal Tech Week with APG",
+      "date": "2026-11-13",
+      "start": "16:00",
+      "end": "17:30",
+      "place": "PTW Palace, Room 2",
+      "join": "Request to join, host approval",
+      "url": "https://luma.com/msen6vui",
+      "status": "on",
+      "storm_note": null,
+      "topics": [
+        "people",
+        "startups"
+      ],
+      "read_at": "2026-11-11T10:53:14Z",
+      "verified": true
+    },
+    {
+      "name": "Crypto Padel by WhiteBIT, Play Padel Club and Spredo",
+      "kind": "other",
+      "organiser": "WhiteBIT Events",
+      "date": "2026-11-13",
+      "start": "16:00",
+      "end": "00:00",
+      "place": "NAVE Padel x Pickleball, Rua do Acucar 19",
+      "join": "Invite only, request to join",
+      "url": "https://luma.com/hrem9w27",
+      "status": "on",
+      "storm_note": null,
+      "topics": [
+        "crypto",
+        "sport"
+      ],
+      "read_at": "2026-11-11T10:53:14Z",
+      "verified": true
+    },
+    {
+      "name": "Meetball After Hours @ PTW Palace",
+      "kind": "party",
+      "organiser": "Meetball, 351 Startups, Portugal Tech Week",
+      "date": "2026-11-13",
+      "start": "19:00",
+      "end": "22:00",
+      "place": "PTW Palace",
+      "join": "Register on Luma, free",
+      "url": "https://luma.com/portugal-tw4y",
+      "status": "on",
+      "storm_note": null,
+      "topics": [
+        "community"
+      ],
+      "read_at": "2026-11-11T10:53:14Z",
+      "verified": true
+    },
+    {
+      "name": "Websummit After-party, Casual Socialising Evening, Rooftop DJ Party",
+      "kind": "party",
+      "organiser": "International Friends Lisbon",
+      "date": "2026-11-13",
+      "start": "19:00",
+      "end": "23:59",
+      "place": "TOPO Rooftop Bar, Martim Moniz",
+      "join": "Free, donation-based, in person",
+      "url": "https://www.meetup.com/international-friends-lisbon/events/316455535/",
+      "status": "on",
+      "storm_note": null,
+      "topics": [
+        "social"
+      ],
+      "read_at": "2026-11-11T10:53:14Z",
+      "verified": true,
+      "note": "Repeats every Friday to 19 Nov."
+    },
+    {
+      "name": "Unconference Plus Lisbon (closing day of Lisbon Community Week)",
+      "kind": "unconference",
+      "organiser": "Led by Community",
+      "date": "2026-11-14",
+      "start": null,
+      "end": null,
+      "place": "Central Lisbon (venue not given; week is at Impact Hub Lisbon, Penha)",
+      "join": "Listed on the Lisbon Community Week page, which lists no price or sign-up for this day; see page",
+      "url": "https://luma.com/lisbon-community-week-2026",
+      "status": "unknown",
+      "storm_note": null,
+      "topics": [
+        "community",
+        "unconference"
+      ],
+      "read_at": "2026-11-11T10:53:14Z",
+      "verified": false,
+      "note": "Saturday 14 Nov, attendee-driven day. Listed in search results; the fetched page showed only the Friday 13 Nov conference, no separate page, venue or time found. Treat as unconfirmed."
+    },
+    {
       "name": "AI Devs and Hoopers Morning Run",
       "kind": "run",
       "organiser": "staaake",
@@ -427,6 +788,25 @@
       ],
       "read_at": "2026-11-11T10:35:00Z",
       "verified": true
+    },
+    {
+      "name": "Web Summit Unwind: A Traditional Banya Experience",
+      "kind": "other",
+      "organiser": "Nomad Steam",
+      "date": "2026-11-14",
+      "start": "12:00",
+      "end": "15:00",
+      "place": "R. Barbosa du Bocage 16, Sintra",
+      "join": "Ticket €110 on Luma",
+      "url": "https://luma.com/alft36rf",
+      "status": "on",
+      "storm_note": null,
+      "topics": [
+        "wellbeing"
+      ],
+      "read_at": "2026-11-11T10:53:14Z",
+      "verified": true,
+      "note": "Date and time from iproxy list; page shows none."
     }
   ]
 }

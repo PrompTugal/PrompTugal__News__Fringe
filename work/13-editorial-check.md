@@ -27,3 +27,13 @@ Pages read: luma.com/a2ackpa5, aa65srr3, 574bmobb, yatbt1w6, qd9h2j25, jp6yr213,
 - **Canopy post-demo-night drinks:** the page says the demo night moved online (from 18:30) because of the weather and the in-person drinks (from 19:30) are opt-in and weather-dependent. Status `unknown` with label `fact` is defensible; suggest `moved`, with the note that the drinks are conditional. Researcher's call.
 - **Page gaps, not data errors:** none of the 8 pages shows a timezone or (mostly) a date in its text; the data's times come from the listing and rely on Lisbon being UTC in November. Several pages are "Approval Required", full or waitlisted; the data's `join` field should say so (the Aubay event is full, waitlist only).
 - **Still to check:** the remaining ~15 evening and Thursday events; whether the 16:00 confirmation from AltaIR Capital changed anything (re-read after 16:00 UTC).
+
+## Third pass, 11 November 2026, 11:32 UTC (fact: 8 Thursday 12 November event pages re-read, public Luma pages)
+
+Read: luma.com/sx67k4x0, l4098oo8, 5qsia07c, u0iuhn8i, g87gj7f6, whll1umb, rnm96bu0, z31f1c0y.
+
+- **fact: all 8 match data/events.json** on organiser, venue, times, join terms (sold out and waitlist, host approval, places left) and status. The Defense Tech Meetup #9 move to Thursday (reason on its page: IPMA's red wind warning) is right in the data.
+- **Page gaps, not data errors:** four of the 8 pages show no date in the page text (female-founders-breakfast, canopy-campfire-ai, show-what-you-build, ufl-web-summit-after-party), and most show no timezone. Their dates and times rest on the Luma listing and on Lisbon being UTC in November. A person opening the page sees the date; flag as a note, not a fix.
+- **Still empty:** `storm_note` on 54 of 69 events (suggestion in the second pass stands; researcher's call).
+- **Tally so far:** 16 of 69 entries re-read by this check (8 + 8), 16 match. Remaining: 53, of which the ones on Meetup, Eventbrite and organisers' own sites need a different reader than Luma.
+- **Next:** the other Wednesday evening and Thursday events; the AltaIR Capital re-read after 16:00 UTC; Friday 13 events tomorrow morning.

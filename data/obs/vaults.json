@@ -1,0 +1,16 @@
+{
+  "about": "The observability vaults /traffic/ reads. Only a published read key (sgit_public_read_ + 64 hex), never a vault key: a read key can only read, and this vault holds counts only.",
+  "vaults": [
+    {
+      "id": "fringe",
+      "name": "Who reads fringe.promptugal.news: the published counts",
+      "site": "fringe.promptugal.news",
+      "vault_id": "p6x0mm4m",
+      "read_key": "sgit_public_read_aaa741a9d9535c4b3f560164b249221de45543da9c08bc7eeac0f2fceaf6d757",
+      "by": "observability.fringe@PrompTugal.dinis",
+      "made": "2026-11-11",
+      "private_data_vault": "x7oumouz",
+      "drain": "admin/tools/obs/obs_drain.py"
+    }
+  ]
+}
