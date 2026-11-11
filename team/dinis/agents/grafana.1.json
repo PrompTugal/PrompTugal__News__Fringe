@@ -1,6 +1,6 @@
 {
   "agent": "grafana.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T19:13Z",
+  "updated": "2026-11-11T19:15Z",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (11 Nov 2026, about 19:20 UTC: 'can you spin up a new Grafana agent so I can use it to manage and to help me set up this')",
   "branch": "dev",
@@ -10,7 +10,8 @@
     "work/51: Grafana Cloud for the swarm: least-privilege access, data sources (Elastic, the public /api/v1/), the Swarm dashboard as JSON in admin/grafana/"
   ],
   "done": [
-    "19:13: session key made (sha256:60a7318f318830d6, signing sha256:f6334c7f4a430677); grafana.1.fringe-dinis in data/keys.json (public half only); abp whoami set"
+    "19:13: session key made (sha256:60a7318f318830d6, signing sha256:f6334c7f4a430677); grafana.1.fringe-dinis in data/keys.json (public half only); abp whoami set",
+    "2026-11-11T19:15Z: docs/grafana-openrouter-traces.md: OpenRouter Broadcast to Grafana Cloud (OTLP endpoint, instance id, a traces:write-only access policy on one stack); its docs read: traces carry prompt and completion text unless Privacy Mode is on for the destination, so Privacy Mode ON; llm.mjs sends no user or session id (lead's message, 19:13 UTC)"
   ],
   "next": [
     "Dinis gives the stack host (<stack>.grafana.net); a service account 'swarm-agents' (Viewer at org level, Editor on one folder 'Swarm'); its token saved as a network secret for that host (secure form), never in chat",
