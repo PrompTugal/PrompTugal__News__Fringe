@@ -26,6 +26,8 @@ export const VERBS = {
   lists:      ['festival', 'event'],    // the festival's public feed lists it (weaker than hasEvent)
   runs:       ['organiser', 'event'],   // lead organiser (first named on the page)
   coRuns:     ['organiser', 'event'],   // named with others
+  hosts:      ['organiser', 'event'],   // "hosted by": gives the venue, not a co-organiser
+  supports:   ['organiser', 'event'],   // "powered by": a sponsor or partner
   runsFestival: ['organiser', 'festival'],
   partOf:     ['organiser', 'organiser'],
   onDay:      ['event', 'day'],
@@ -111,14 +113,23 @@ export function buildModel(root, events) {
     }
 
     // organisers, and the festival named among them
-    const names = organisersOf(e.organiser).filter((raw) => !held.has(alias.get(norm(raw)) || slug(raw)));
+    // A long aside in brackets is the researcher's note, not a name ("(as the page names it: ... not affiliated with
+    // Web Summit)" made a node "Web Summit)"); short brackets stay ("(ICE)"). "hosted by" and "powered by" give roles.
+    const line = String(e.organiser || '').replace(/\s*\((?:[^()\s]+\s+){2,}[^()]*\)/g, '');
+    const roleOf = new Map();
+    for (const [re, role] of [[/,?\s+hosted by\s+(.+)$/i, 'hosts'], [/,?\s+powered by\s+(.+)$/i, 'supports']]) {
+      const mm = line.match(re); if (mm) for (const n of organisersOf(mm[1])) roleOf.set(norm(n), role);
+    }
+    const names = organisersOf(line).filter((raw) => !held.has(alias.get(norm(raw)) || slug(raw)) && norm(raw) !== 'web summit');
     names.forEach((raw, i) => {
+      const role = i === 0 ? 'runs' : (roleOf.get(norm(raw)) || 'coRuns');
       const fest = [...E.festivals.values()].find((f) => f._m.organiser && norm(raw) === norm(f._m.organiser));
       const o = organiser(raw);
       if (ev.organisers.some((x) => x.id === o.id)) return;
-      ev.organisers.push({ id: o.id, lead: i === 0 });
+      ev.organisers.push({ id: o.id, lead: i === 0, role });
       o.events.push(id); if (i === 0) o.lead.push(id);
-      link(o.id, i === 0 ? 'runs' : 'coRuns', id, e);
+      if (role !== 'runs' && role !== 'coRuns') o[role] = (o[role] || 0) + 1;
+      link(o.id, role, id, e);
       if (fest && !ev.festival) { ev.festival = fest.id; fest.events.push(id); link(fest.id, 'hasEvent', id, e); }
     });
     // listed in a festival's feed (but not run under it)

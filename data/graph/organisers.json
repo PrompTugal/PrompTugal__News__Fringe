@@ -1,6 +1,6 @@
 {
   "about": "The ontologist's folds for organisers (work/42), on top of data/organisers.json (dev.2's canonical names, work/23): spellings that are the same organisation, and an organisation that is a programme of another (part_of). Organisations only, never a private person; no contact details. An entry with \"hold\" is withheld: its events show as by an independent organiser, with no name and no page, until a researcher confirms at its public page that it is an organisation.",
-  "updated": "2026-11-11T14:01Z",
+  "updated": "2026-11-11T14:57Z",
   "by": "ontologist.1.fringe@PrompTugal.dinis",
   "organisers": [
     {
@@ -43,6 +43,13 @@
       "id": "indvstry-clvb",
       "name": "Indvstry Clvb",
       "aliases": []
+    },
+    {
+      "id": "taiga-ai-oy",
+      "name": "Taiga AI Oy",
+      "aliases": [
+        "Taiga AI Oy, Finland"
+      ]
     },
     {
       "id": "staaake",

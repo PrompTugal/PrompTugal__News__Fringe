@@ -45,11 +45,23 @@ ${parts.length ? `<h2>Its programmes</h2>${chips('organiser', parts.map((x) => x
 <p class="muted">An organisation, as named on its own public event pages. Is this wrong, or is it yours? See <a href="/organisers/">for organisers</a>.</p>${api('organisers')}`,
     `${o.name}: its side events in Lisbon this week, on Lisbon Tech Fringe.`);
   }
-  write(PREFIX.organiser, 'Organisers', `<h1>The organisers</h1><p>The people who make this week are its organisers: ${m.organisers.length} organisations, by events they lead. Each links to its events, places, days and partners. Organisations only, never a private person.</p>
-${m.festivals.length ? `<h2>Festivals</h2>${chips('festival', m.festivals.map((f) => f.id))}` : ''}
-<div class="gx-grid">${m.organisers.map(star).join('')}</div>
+  // /o/: today in Lisbon first (brief 13: "focus 100% ... on today, in Lisbon"), then the week's stars, then the rest
+  // folded (brief 13: "101 organisers ... a lot is noise"). Hosts and sponsors are linked, never counted as stars.
+  const day0 = BUILT.slice(0, 10);
+  const todayIds = (o) => o.lead.filter((id) => { const e = B.events.get(id); return e.day === day0 && e.in_lisbon && e.status !== 'cancelled'; });
+  const nowOrgs = m.organisers.filter((o) => todayIds(o).length)
+    .sort((x, y) => todayIds(y).length - todayIds(x).length || String(B.events.get(todayIds(x)[0]).start).localeCompare(String(B.events.get(todayIds(y)[0]).start)));
+  const todayStar = (o) => { const ids = todayIds(o); const e = B.events.get(ids[0]);
+    return `<a class="gx-star" href="${pathOf('organiser', o.id)}"><span class="n">${ids.length}</span><strong>${esc(o.name)}</strong><span class="muted">today${e.start ? `, from ${esc(e.start.slice(11, 16))}` : ''}${e.place ? ` · ${esc(name('place', e.place))}` : ''}</span></a>`; };
+  const stars = m.organisers.filter((o) => o.lead.length >= 2 || o.festivals.length);
+  const rest = m.organisers.filter((o) => !stars.includes(o));
+  write(PREFIX.organiser, 'Organisers', `<h1>The organisers</h1><p>The people who make this week are its organisers: organisations, never a private person. Each links to its events, places, days and partners.</p>
+${m.festivals.length ? `<p class="muted">Festivals</p>${chips('festival', m.festivals.map((f) => f.id))}` : ''}
+<h2>Today in Lisbon: ${nowOrgs.length} organisers</h2>${nowOrgs.length ? `<div class="gx-grid">${nowOrgs.map(todayStar).join('')}</div>` : '<p class="muted">None leads an event in Lisbon today.</p>'}
+<h2>The week's stars</h2><p class="muted">Leading two or more events this week, or running a festival.</p><div class="gx-grid">${stars.map(star).join('')}</div>
+<details><summary>Everyone else: ${rest.length} organisations with one event, or named as partner, host or sponsor</summary>${chips('organiser', rest.map((o) => o.id))}</details>
 <p class="muted">${events.length - m.events.filter((e) => e.organisers.length).length} events name no organisation (a personal calendar, or an independent organiser) and are not listed here. What we offer organisers: <a href="/organisers/">/organisers/</a>.</p>${api('organisers')}`,
-  'The organisations behind this week\'s side events in Lisbon: who runs what, where and when.');
+  'The organisations behind today\'s side events in Lisbon, and the week\'s: who runs what, where and when.');
 
   // --- festivals ---------------------------------------------------------------------------------------------------
   for (const f of m.festivals) write(`${PREFIX.festival}/${f.id}`, f.name, `<p class="gx-up"><a href="/o/">Organisers</a></p><h1>${esc(f.name)}</h1>
