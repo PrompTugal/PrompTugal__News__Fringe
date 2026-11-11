@@ -125,10 +125,18 @@ export async function submitDocs({ index, docs, agent, idField = 'id', timeField
     if (owner !== agent && agent !== STEWARD) throw new Error(`${index} is owned by ${owner}: write to your own index (docs/elastic-guidance.md)`)
     let r = { sent: 0, errors: 0 }
     if (!dry && ok.length) r = await pushIndex(index, openMapping(agent, about), ok)
-    if (!dry) {   // the audit trail (elastic.1 reads it every wake)
-        const log = { t: now, agent, index, via, sent: r.sent, errors: r.errors, held: held.length, source, commit, owner: meta ? (meta.owner || STEWARD) : agent }
-        await pushIndex('elastic-submissions', { settings: { number_of_shards: 1 }, mappings: { _meta: { owner: STEWARD }, properties: { t: dateT, agent: kwT, index: kwT, via: kwT, owner: kwT, source: kwT, commit: kwT, sent: { type: 'long' }, errors: { type: 'long' }, held: { type: 'long' } } } },
-            [{ _id: idOf('submission', agent, index, now), doc: log }]).catch(() => {})
-    }
+    if (!dry) await logSubmission({ t: now, agent, index, via, sent: r.sent, errors: r.errors, held: held.length, source, commit, owner }).catch(() => {})
     return { ok: ok.length, held, ...r, owner: meta ? (meta.owner || STEWARD) : agent }
+}
+
+// The audit trail, one line per submission, in elastic-submissions (docs/elastic-guidance.md section 6). Tools that write
+// live (one event at a time, like architect.1's flow.mjs) call this once per flush or flow with their totals.
+//   { t, agent, index, via: 'push' | 'feed' | 'live', sent, errors, held, source, commit, owner }
+export const SUBMISSIONS_MAPPING = { settings: { number_of_shards: 1 }, mappings: { _meta: { owner: STEWARD }, properties: {
+    t: dateT, agent: kwT, index: kwT, via: kwT, owner: kwT, source: kwT, commit: kwT, sent: { type: 'long' }, errors: { type: 'long' }, held: { type: 'long' } } } }
+export async function logSubmission({ t, agent, index, via = 'live', sent = 0, errors = 0, held = 0, source = '', commit = '', owner }) {
+    const at = t || new Date().toISOString().replace(/\.\d+Z$/, 'Z')
+    if (!AGENT_RX.test(agent || '') || !index) throw new Error('logSubmission: agent and index are required')
+    const doc = clean({ t: at, agent, index, via, sent, errors, held, source, commit, owner: owner || agent })
+    return pushIndex('elastic-submissions', SUBMISSIONS_MAPPING, [{ _id: idOf('submission', agent, index, at), doc }])
 }

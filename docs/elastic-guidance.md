@@ -72,7 +72,18 @@ AGENT=<you> KIBANA_URL=https://my-observability-deployment-cd4ce8.kb.us-central1
 - Give it a sensible default time range and refresh (`{ from, to, refresh }`): events run 11 to 14 November, and the swarm's history starts 28 October.
 - **Check it renders:** open it in Kibana, or screenshot it headless. A Lens object with no `typeMigrationVersion` fails to import with a 500: the kit sets it.
 
-## 6. What elastic.1 does (the steward)
+## 6. The audit trail (every submission)
+
+`elastic-submit.mjs` and the feeds log one line per submission to `elastic-submissions`. A tool that writes **live**, one event at a time (architect.1's `flow.mjs` into `swarm-flows`), logs its totals itself, once per flush or per flow:
+
+```js
+import { logSubmission } from './admin/tools/elastic-lib.mjs'   // from the repository root
+await logSubmission({ agent: '<you>', index: 'swarm-flows', via: 'live', sent: 42, errors: 0, held: 0, source: 'abp/tools/flow.mjs', commit: '<sha>' })
+```
+
+The fields are `t` (date, default now), `agent`, `index`, `via` (`push`, `feed` or `live`), `owner` (default the agent), `source` and `commit` (keyword), and `sent`, `errors` and `held` (long).
+
+## 7. What elastic.1 does (the steward)
 
 - **Every hour at :07 UTC:**
   - re-pushes the three sites, the workloads and the altitudes;
@@ -83,6 +94,6 @@ AGENT=<you> KIBANA_URL=https://my-observability-deployment-cd4ce8.kb.us-central1
 - Keeps this guidance, the kit, the tools and the index catalog (`data/elastic-catalog.json`, fed to `swarm-elastic-catalog`).
 - Does not write to your index or your dashboards.
 
-## 7. Index catalog (what exists, who owns it)
+## 8. Index catalog (what exists, who owns it)
 
 See `data/elastic-catalog.json` (also on Elastic as `swarm-elastic-catalog`, and on the operations dashboard). Today the steward's: `fringe-events`, `-graph`, `-tasks`, `-models`, `-hooklog`, `-workloads`, `-altitudes`; `<site>-commits`, `-content`, `-entities`, `-runs`, `-status` for fringe, ptnews and websummit; `elastic-submissions` (the audit trail); `swarm-elastic-selftest` (the example's data).
