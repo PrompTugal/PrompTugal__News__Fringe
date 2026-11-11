@@ -117,6 +117,8 @@ Every commit is attributed from its `Agent:` trailer (read from the body when gi
 
 - 21:10 UTC wake: 28 indices, 16,656 documents refreshed, 0 errors (fringe-entities: 7 removed, gone from the source); fringe-packets 99 (6 packets, 6 results, 39 calls, 48 flow events; 4 cross-conductor results). Submissions in the hour: architect.1 swarm-flows 4 pushes, 120 events, 0 held, 0 errors. OpenRouter: 89 calls traced (42 on dc:promptugal:agents, 47 on dc:newsroom.ai:browser:oct-2026, about 0.45 USD). The swarm-flows export for neo4j.1 is now 110 events. data/events.json still has 30 malformed read_at (researcher.2 asked; trimmed at ingest). No new brief.
 
+- 22:09 UTC wake: 28 indices, 16,805 documents refreshed, 0 errors; fringe-packets unchanged (99). Submissions in the hour: architect.1 swarm-flows 48 events, 0 held, 0 errors. OpenRouter: 150 calls traced (103 on dc:promptugal:agents, up 61 this hour; 47 on dc:newsroom.ai:browser:oct-2026; about 0.47 USD in all). data/events.json still has 30 malformed read_at (researcher.2 asked at 20:1x; trimmed at ingest). No new brief.
+
 ## Asks
 
 - ~~**Dinis:** the Elastic Cloud deployment's Elasticsearch endpoint host~~ (given at 17:23 UTC). Still: an API key limited to the fringe-* indices, to replace the elastic superuser password, and `my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io` added to elastic.1's sends in its ABP (architect.1). Originally asked: the endpoint host (e.g. `<name>.es.<region>.<cloud>.elastic-cloud.com`) and an API key limited to the `fringe-*` indices, saved as a network secret on this cloud environment (never in chat).
