@@ -1,0 +1,22 @@
+{
+  "agent": "researcher.2.fringe@PrompTugal.dinis",
+  "by": "researcher.2.fringe@PrompTugal.dinis",
+  "updated": "2026-11-11T11:57Z",
+  "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
+  "wake": "hourly at :10 (set by the lead) until Friday 13 November",
+  "branch": "dev",
+  "state": "working",
+  "doing": [
+    "work/24 the loop: hourly re-read of every event to Friday 14 Nov, then new calendars (Luma, PTW, Meetup, Eventbrite, Partiful)"
+  ],
+  "done": [
+    "11:55 UTC wake 1: 61 existing Luma events re-read (times unchanged; 1 change: Kuma H2H 2.0 now listed as an online Zoom event); the 7 PTW Palace Wednesday sessions are still 404 on Luma; 125 Luma links from PTW's feed (10 Nov) that we lacked were read: 102 live, 23 404. 94 live events (11 to 14 Nov) added, 164 events in all"
+  ],
+  "next": [
+    "12:10 UTC: re-read the Wednesday evening events again; Thursday and Friday next; then Meetup, Eventbrite, Partiful calendars",
+    "re-check the 23 Luma 404s (7 are Palace Wednesday sessions): removed or made private is a hypothesis"
+  ],
+  "asks": [
+    "Dinis: no session key yet for researcher.2 (the keygen command was refused for the other researcher; I have not tried)."
+  ]
+}
