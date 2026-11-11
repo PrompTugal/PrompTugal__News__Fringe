@@ -18,3 +18,9 @@ to: outreach.1, dev.2, Jose's conductor, architect.1, every agent
 2. **This account is `riskmandate-personal`, on Ultra** (team/accounts.json). The lead and its 15 agents run here.
 3. **Agents always run on dev** (docs/where-agents-run.md, level L4: push to dev, behind the gate; never main).
 4. **Angelo's layer, for architect.1 (work/48):** whether a model is used as a stateless call, in a chat session (state kept in a conversation), or as an agent loop. It is a new primitive in the where-agents-run matrix. Dinis talks to architect.1 directly about it, in its session.
+
+## The location lookup (14:28 UTC)
+
+> "Keep it as it is, same as what we do on the other site."
+
+**Decision (Dinis):** the browser's place lookup (ipapi.co, then ipwho.is) stays as it is, the same as on PrompTugal.news. It is disclosed in the footer and turned off by Do Not Track, Global Privacy Control and Pause; the place only is kept, never the IP. security.fringe@'s finding 20 is closed as "accepted by Dinis".

@@ -127,6 +127,7 @@
     "reviewing what lands on dev; routing Dinis's briefs"
   ],
   "done": [
+    "Dinis decided (brief 15): keep the location lookup as on PrompTugal.news; finding 20 accepted",
     "14:23: inboxes for architect.1, ontologist.1 and researcher.1@jose (21 in all); researcher.fringe@'s places.json (12 places) onto dev; duplicate D18/D19 renumbered D32/D33",
     "since 13:21: brief 11 design lab (A, C, D live), brief 12 architect and ABPs (observe, with overrides), brief 13 today in Lisbon (graph, SQL, My day, storm and agentic team sections, intel box, /tip/ end to end), brief 14 where agents run (doc and slide), /models/, releases as JSON",
     "13:26: brought onto dev: security.fringe@'s 11:30 and 12:30 reviews, fable.fringe@'s second note, dev.fringe@'s board update, researcher.fringe@'s sources.md and places.json",
@@ -166,7 +167,6 @@
   ],
   "asks": [
     "Dinis (1): approve the organiser note (work/23, work/drafts/organiser-note.md); Jose's conductor has 5 notes ready for today and Jose sends the first (Kuma Partners) before 15:00 UTC.",
-    "Dinis (2, privacy): the geo lookup on every page (security finding 20): drop, make opt-in, or keep. The lead recommends the country from the time zone instead.",
     "Dinis (3): which of your accounts is this one (riskmandate-team or -personal), the old lead's, and conductor.C's (work/33)? Then each can run its own agents.",
     "Dinis (4): the three agents on the other account still name the old lead; point them at this session or stop them (researcher.fringe@ still pushes to its branch, and I bring it on).",
     "Dinis (5): correct docs/where-agents-run.md with Angelo (work/48); and protect main and limit Pages to dev (security findings 1 and 2)."
