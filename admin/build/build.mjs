@@ -15,6 +15,7 @@ import { howBody } from './how.mjs';   // D11, design.3.fringe@PrompTugal.dinis
 import { eventCard as card, cardList, sortDay, CARD_CSS } from './cards.mjs';   // D3, design.3.fringe@PrompTugal.dinis   // work/22, dev.lead.fringe@PrompTugal.dinis
 import { WORDMARK, IDENTITY_CSS } from './identity.mjs';   // D9, design.4.fringe@PrompTugal.dinis
 import { loadOrganisers, organisersBody } from './organisers.mjs';   // work/23, dev.2.fringe@PrompTugal.dinis
+import { communitiesBody } from './communities-page.mjs';   // work/04, conductor.fringe@PrompTugal.indi
 import { readChanges, changesBody } from './changes.mjs';   // work/15, dev.2.fringe@PrompTugal.dinis
 import { nowBlock, nowPageBody, nowJs, span as evSpan } from './now.mjs';
 import { timelineBlock, TIMELINE_CSS } from './timeline.mjs';   // D19, design.2.fringe@PrompTugal.dinis   // work/16, dev.2.fringe@PrompTugal.dinis
@@ -261,6 +262,8 @@ writeFileSync(join(out, 'api', 'v1', 'graph.json'), JSON.stringify({ about: 'The
 if (existsSync(join(root, 'data/communities.json'))) {
   const cm = JSON.parse(read('data/communities.json'));
   writeFileSync(join(out, 'api', 'v1', 'communities.json'), JSON.stringify({ about: cm.about, site: SITE, version: VERSION, built_at: BUILT, updated: cm.updated, how: cm.how, communities: cm.communities }, null, 2) + '\n');
+  mkdirSync(join(out, 'communities'), { recursive: true });
+  writeFileSync(join(out, 'communities', 'index.html'), page('Communities: Lisbon Tech Week', communitiesBody(cm.communities, events, esc, { eventPath, hasPage }), 'The groups behind this week\'s side events in Lisbon, and how to join them (public links only).', '', '/communities/'));
 }
 writeFileSync(join(out, 'llms.txt'), `# Lisbon Tech Fringe\n\n> An independent guide to the alternative, community and side events around Web Summit Lisbon, 9 to 15 November 2026. Independent of Web Summit; for anything official see the organisers' site. Not a warning service: for the storm see https://storm-charles.promptugal.news, IPMA and ANEPC.\n\n- [Events (JSON)](${SITE}api/v1/events.json): each event with its source URL and the time it was read\n- [The graph (JSON)](${SITE}api/v1/graph.json): events, communities, topics and places, each edge with its source\n- [Join the team](${SITE}join/)\n- [Repository](${REPO})\n`);
 const orgs = loadOrganisers(root, events);

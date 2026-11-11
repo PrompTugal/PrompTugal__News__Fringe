@@ -1,7 +1,7 @@
 {
   "about": "Lisbon Fringe's communities (work/04): the groups behind this week's events, each with its public links and its events (ids in data/events.json; the id here is its /graph/ node id without 'community:'). Organisations only: a personal Luma calendar, a host or an independent organiser is never listed. No contact details. Independent of Web Summit.",
   "by": "conductor.fringe@PrompTugal.indi",
-  "updated": "2026-11-11T11:56:50Z",
+  "updated": "2026-11-11T12:54:46Z",
   "how": "admin/tools/communities.mjs: each Luma event page in data/events.json re-read once; only its hosting calendar (name, short description, website, public page) is kept, with the page and the time read. 'what' is quoted from that calendar, not written by us. Communities with no public calendar keep join 'unknown' until their own page is read.",
   "unmatched_calendars": [],
   "communities": [
@@ -11,7 +11,7 @@
       "what": {
         "text": "The largest decentralized innovation festival in Portugal",
         "quoted_from": "https://luma.com/r1ixujpv",
-        "read_at": "2026-11-11T11:55:29Z"
+        "read_at": "2026-11-11T12:51:08Z"
       },
       "join": "Follow its public Luma calendar: https://luma.com/portugaltechweek",
       "links": [
@@ -36,63 +36,328 @@
         "2026-11-11-cisco-automation-to-autonomy",
         "2026-11-11-demonightlx",
         "2026-11-11-future-tech-2026",
+        "2026-11-12-covilha-tech-day-2026",
         "2026-11-12-canopy-campfire-ai",
-        "2026-11-13-ptw-classroom-ladies-who-build"
+        "2026-11-12-kids-young-founders-pitch-at-tech-week-palace-",
+        "2026-11-12-ptw-coworking-by-idea-spaces",
+        "2026-11-12-it-s-all-about-ai-reimagining-how-we-work-crea",
+        "2026-11-12-ptw-classroom-portuguese-for-tech-life-meet-gr",
+        "2026-11-12-ai-promises-to-give-us-time-back-who-gets-to-k",
+        "2026-11-12-workshop-with-parents-unicorn-school",
+        "2026-11-12-cultural-agility-the-missing-skill-in-the-futu",
+        "2026-11-12-ptw-classroom-storytelling-game-by-pina",
+        "2026-11-12-entrepreneur-community-meet-the-founder-unicor",
+        "2026-11-12-breaking-into-america-us-fundraising-playbook-",
+        "2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-",
+        "2026-11-12-building-better-trading-strategies-with-ai",
+        "2026-11-12-ptw-classroom-what-can-ai-workers-do-for-your-",
+        "2026-11-12-contracts-cocktails-a-founder-legal-tech-mixer",
+        "2026-11-12-leadership-through-dance-presence-posture-non-",
+        "2026-11-12-founders-don-t-cry",
+        "2026-11-12-lisbon-digital-nomads-after-hours-ptw-palace",
+        "2026-11-12-a-reflection-on-art-technology-by-boca-biennia",
+        "2026-11-12-fitness-sports-investor-meetup",
+        "2026-11-13-ptw-classroom-ladies-who-build",
+        "2026-11-13-speak-up-or-stay-silent-emotional-intelligence",
+        "2026-11-13-liberate-talent-for-the-future",
+        "2026-11-13-mertola-tech-day",
+        "2026-11-13-ptw-coworking-by-idea-spaces",
+        "2026-11-13-is-your-ai-startup-ready-for-europe-the-eu-ai-",
+        "2026-11-13-ptw-classroom-ladies-who-build-claude-use-case",
+        "2026-11-13-what-can-your-body-teach-you-about-how-you-run",
+        "2026-11-13-ptw-classroom-ladies-who-build-ai-for-marketin",
+        "2026-11-13-why-users-leave-your-ai-feature-and-how-to-mak",
+        "2026-11-13-supergrowth-how-to-build-an-ai-powered-distrib",
+        "2026-11-13-people-pitch-after-summit-before-the-future",
+        "2026-11-13-how-web-apps-work-for-product-managers-who-wan",
+        "2026-11-13-meetball-after-hours-ptw-palace",
+        "2026-11-14-bitcointalks-cripto-ia-summit-santarem"
       ],
       "sources": [
         {
           "url": "https://luma.com/r1ixujpv",
-          "read_at": "2026-11-11T11:55:29Z",
+          "read_at": "2026-11-11T12:51:08Z",
           "what": "the event page's hosting Luma calendar"
         },
         {
           "url": "https://luma.com/xn30wgrj",
-          "read_at": "2026-11-11T11:55:30Z",
+          "read_at": "2026-11-11T12:51:10Z",
           "what": "the event page's hosting Luma calendar"
         },
         {
           "url": "https://luma.com/e42tit8k",
-          "read_at": "2026-11-11T11:55:33Z",
+          "read_at": "2026-11-11T12:51:13Z",
           "what": "the event page's hosting Luma calendar"
         },
         {
           "url": "https://luma.com/vwwf1kj1",
-          "read_at": "2026-11-11T11:55:34Z",
+          "read_at": "2026-11-11T12:51:14Z",
           "what": "the event page's hosting Luma calendar"
         },
         {
           "url": "https://luma.com/59m82tyo",
-          "read_at": "2026-11-11T11:55:39Z",
+          "read_at": "2026-11-11T12:51:20Z",
           "what": "the event page's hosting Luma calendar"
         },
         {
           "url": "https://luma.com/6wcduo5u",
-          "read_at": "2026-11-11T11:55:42Z",
+          "read_at": "2026-11-11T12:51:22Z",
           "what": "the event page's hosting Luma calendar"
         },
         {
           "url": "https://luma.com/lg2qwq2l",
-          "read_at": "2026-11-11T11:55:44Z",
+          "read_at": "2026-11-11T12:51:26Z",
           "what": "the event page's hosting Luma calendar"
         },
         {
           "url": "https://luma.com/148l175b",
-          "read_at": "2026-11-11T11:55:47Z",
+          "read_at": "2026-11-11T12:51:29Z",
           "what": "the event page's hosting Luma calendar"
         },
         {
           "url": "https://luma.com/portugal-dezg",
-          "read_at": "2026-11-11T11:55:58Z",
+          "read_at": "2026-11-11T12:51:48Z",
           "what": "the event page's hosting Luma calendar"
         },
         {
           "url": "https://luma.com/25z2ph1o",
-          "read_at": "2026-11-11T11:56:19Z",
+          "read_at": "2026-11-11T12:52:23Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/u522v47o",
+          "read_at": "2026-11-11T12:52:40Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/7jgs6qn9",
+          "read_at": "2026-11-11T12:52:44Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/ho7yw9rv",
+          "read_at": "2026-11-11T12:52:45Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/6j1ze0qi",
+          "read_at": "2026-11-11T12:52:47Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/pcnppf6w",
+          "read_at": "2026-11-11T12:52:48Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/nlqmie2v",
+          "read_at": "2026-11-11T12:52:53Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/kjbdyht9",
+          "read_at": "2026-11-11T12:52:56Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/yjh8n2px",
+          "read_at": "2026-11-11T12:52:58Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/gb225ul8",
+          "read_at": "2026-11-11T12:52:59Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/h3nyq6ui",
+          "read_at": "2026-11-11T12:53:00Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/fdr23mdq",
+          "read_at": "2026-11-11T12:53:02Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/5aa4ivy5",
+          "read_at": "2026-11-11T12:53:06Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/dwuofjy8",
+          "read_at": "2026-11-11T12:53:14Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/pq4aiajl",
+          "read_at": "2026-11-11T12:53:18Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/hihh4mxe",
+          "read_at": "2026-11-11T12:53:35Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/9ifnf5ev",
+          "read_at": "2026-11-11T12:53:37Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/ldiykyt8",
+          "read_at": "2026-11-11T12:53:39Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/portugal-hku2",
+          "read_at": "2026-11-11T12:53:41Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/1q1n3mxr",
+          "read_at": "2026-11-11T12:53:52Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/hf6h4k22",
+          "read_at": "2026-11-11T12:53:56Z",
           "what": "the event page's hosting Luma calendar"
         },
         {
           "url": "https://luma.com/zt9ss8co",
-          "read_at": "2026-11-11T11:56:46Z",
+          "read_at": "2026-11-11T12:54:04Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/fjm6iq0g",
+          "read_at": "2026-11-11T12:54:06Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/a4cu32mo",
+          "read_at": "2026-11-11T12:54:07Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/11dxova8",
+          "read_at": "2026-11-11T12:54:08Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/h823t42g",
+          "read_at": "2026-11-11T12:54:10Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/buqma11b",
+          "read_at": "2026-11-11T12:54:17Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/wm81fnxs",
+          "read_at": "2026-11-11T12:54:18Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/3ma78i9f",
+          "read_at": "2026-11-11T12:54:19Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/mqj0fn7q",
+          "read_at": "2026-11-11T12:54:21Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/bcrch66r",
+          "read_at": "2026-11-11T12:54:22Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/n37aqp4s",
+          "read_at": "2026-11-11T12:54:24Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/msen6vui",
+          "read_at": "2026-11-11T12:54:28Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/0hccxsn4",
+          "read_at": "2026-11-11T12:54:31Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/portugal-tw4y",
+          "read_at": "2026-11-11T12:54:32Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/85mtscbz",
+          "read_at": "2026-11-11T12:54:35Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
+    },
+    {
+      "id": "staaake",
+      "name": "staaake",
+      "what": {
+        "text": "Create and join visibility sheets for founders & creators",
+        "quoted_from": "https://luma.com/staaake-m5bj",
+        "read_at": "2026-11-11T12:53:17Z"
+      },
+      "join": "Follow its public Luma calendar: https://luma.com/staaake",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/staaake"
+        },
+        {
+          "label": "website",
+          "url": "https://www.staaake.com"
+        }
+      ],
+      "events": [
+        "2026-11-12-side-event-staaake-closing-ai-tech-power-walk",
+        "2026-11-12-staaake-side-event-hangover-rooftop-ai-tech-ev",
+        "2026-11-13-beach-field-trip-post-tech-ai-conference-rever",
+        "2026-11-13-founders-pastel-de-nata-reverse-network-meet",
+        "2026-11-14-ai-devs-hoopers-run",
+        "2026-11-14-staaake-side-event-saturday-tech-ai-dinner-sta"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/staaake-m5bj",
+          "read_at": "2026-11-11T12:53:17Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/staaake-i8fm",
+          "read_at": "2026-11-11T12:53:30Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/staaake-hg41",
+          "read_at": "2026-11-11T12:54:14Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/staaake-jzbl",
+          "read_at": "2026-11-11T12:54:26Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/staaake-hghb",
+          "read_at": "2026-11-11T12:54:37Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/n117wylo",
+          "read_at": "2026-11-11T12:54:43Z",
           "what": "the event page's hosting Luma calendar"
         }
       ],
@@ -104,7 +369,7 @@
       "what": {
         "text": "Envisioned by the Lisbon City Council with the aim of expanding Lisbon’s entrepreneurial ecosystem, from startups to scaleups, and eventually unicorns, we work as an engine for economic growth and a driving force for innovation, attracting talent, new projects and investment.",
         "quoted_from": "https://luma.com/rp4tgcfu",
-        "read_at": "2026-11-11T11:56:11Z"
+        "read_at": "2026-11-11T12:52:03Z"
       },
       "join": "Follow its public Luma calendar: https://luma.com/ufl-websummit26",
       "links": [
@@ -123,27 +388,27 @@
       "sources": [
         {
           "url": "https://luma.com/rp4tgcfu",
-          "read_at": "2026-11-11T11:56:11Z",
+          "read_at": "2026-11-11T12:52:03Z",
           "what": "the event page's hosting Luma calendar"
         },
         {
           "url": "https://luma.com/5qsia07c",
-          "read_at": "2026-11-11T11:56:23Z",
+          "read_at": "2026-11-11T12:52:38Z",
           "what": "the event page's hosting Luma calendar"
         },
         {
           "url": "https://luma.com/wrz9dilz",
-          "read_at": "2026-11-11T11:56:33Z",
+          "read_at": "2026-11-11T12:53:21Z",
           "what": "the event page's hosting Luma calendar"
         },
         {
           "url": "https://luma.com/f9rois6p",
-          "read_at": "2026-11-11T11:56:37Z",
+          "read_at": "2026-11-11T12:53:31Z",
           "what": "the event page's hosting Luma calendar"
         },
         {
           "url": "https://luma.com/z31f1c0y",
-          "read_at": "2026-11-11T11:56:43Z",
+          "read_at": "2026-11-11T12:53:57Z",
           "what": "the event page's hosting Luma calendar"
         }
       ],
@@ -165,12 +430,61 @@
       "label": "from events.json only"
     },
     {
+      "id": "yorkseed",
+      "name": "Yorkseed ™",
+      "what": {
+        "text": "Global venture network for founders and investors.",
+        "quoted_from": "https://luma.com/bmu7tyec",
+        "read_at": "2026-11-11T12:51:33Z"
+      },
+      "join": "Follow its public Luma calendar: https://luma.com/Yorkseed",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/Yorkseed"
+        },
+        {
+          "label": "website",
+          "url": "https://yorkseed.co"
+        }
+      ],
+      "events": [
+        "2026-11-11-yorkseed-investor-pitch",
+        "2026-11-12-yorkseed-cross-border-venture-salon",
+        "2026-11-12-yorkseed-grand-finale-web-summit-2026",
+        "2026-11-13-yorkseed-legal-compliance-clinic"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/bmu7tyec",
+          "read_at": "2026-11-11T12:51:33Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/ymrb63b7",
+          "read_at": "2026-11-11T12:53:03Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/i7llsb2c",
+          "read_at": "2026-11-11T12:53:38Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/tjv48y4k",
+          "read_at": "2026-11-11T12:54:11Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
+    },
+    {
       "id": "canopy-community",
       "name": "Canopy Community",
       "what": {
         "text": "Home of DemoNightLx",
         "quoted_from": "https://luma.com/2ofzih7t",
-        "read_at": "2026-11-11T11:56:07Z"
+        "read_at": "2026-11-11T12:51:59Z"
       },
       "join": "Follow its public Luma calendar: https://luma.com/Canopy",
       "links": [
@@ -191,17 +505,17 @@
       "sources": [
         {
           "url": "https://luma.com/2ofzih7t",
-          "read_at": "2026-11-11T11:56:07Z",
+          "read_at": "2026-11-11T12:51:59Z",
           "what": "the event page's hosting Luma calendar"
         },
         {
           "url": "https://luma.com/qd9h2j25",
-          "read_at": "2026-11-11T11:56:16Z",
+          "read_at": "2026-11-11T12:52:15Z",
           "what": "the event page's hosting Luma calendar"
         },
         {
           "url": "https://luma.com/g87gj7f6",
-          "read_at": "2026-11-11T11:56:26Z",
+          "read_at": "2026-11-11T12:52:42Z",
           "what": "the event page's hosting Luma calendar"
         }
       ],
@@ -235,12 +549,113 @@
       "label": "from events.json only"
     },
     {
+      "id": "lisboaux",
+      "name": "LisboaUX",
+      "what": {
+        "text": "By the community, for the community — We're the User Experience Meetup in Lisboa.",
+        "quoted_from": "https://luma.com/yvm04djt",
+        "read_at": "2026-11-11T12:51:55Z"
+      },
+      "join": "Follow its public Luma calendar: https://luma.com/lisboaux",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/lisboaux"
+        },
+        {
+          "label": "website",
+          "url": "https://lisboaux.com/"
+        }
+      ],
+      "events": [
+        "2026-11-11-lisboaux-web-summit-edition",
+        "2026-11-13-co-working-day-for-designers-mentoring"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/yvm04djt",
+          "read_at": "2026-11-11T12:51:55Z",
+          "what": "the event page's hosting Luma calendar"
+        },
+        {
+          "url": "https://luma.com/m6nmpwh2",
+          "read_at": "2026-11-11T12:54:01Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
+    },
+    {
+      "id": "lisbon-business-leaders",
+      "name": "Lisbon Business Leaders",
+      "what": {
+        "text": "Access real opportunities, build meaningful partnerships, and step into your next level of leadership through curated networking events, workshops, and immersive experiences",
+        "quoted_from": "https://luma.com/39950i36",
+        "read_at": "2026-11-11T12:53:42Z"
+      },
+      "join": "Follow its public Luma calendar: https://luma.com/lisbonbusinessleaders",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/lisbonbusinessleaders"
+        },
+        {
+          "label": "website",
+          "url": "https://www.lisbonbusinessleaders.com"
+        }
+      ],
+      "events": [
+        "2026-11-12-lisbon-business-leaders-evening",
+        "2026-11-12-web-summit-networking-mixer"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/39950i36",
+          "read_at": "2026-11-11T12:53:42Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
+    },
+    {
+      "id": "teja-house",
+      "name": "teja house",
+      "what": {
+        "text": "A music-led house in a converted warehouse at Cais do Sodré, Lisbon.",
+        "quoted_from": "https://luma.com/tejahouse-ues5",
+        "read_at": "2026-11-11T12:52:55Z"
+      },
+      "join": "Follow its public Luma calendar: https://luma.com/tejahouse",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/tejahouse"
+        },
+        {
+          "label": "website",
+          "url": "https://tejahouse.com"
+        }
+      ],
+      "events": [
+        "2026-11-12-a-family-style-gypsy-lunch-web-summit-wind-dow",
+        "2026-11-13-rise-of-the-expert-creator"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/tejahouse-ues5",
+          "read_at": "2026-11-11T12:52:55Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
+    },
+    {
       "id": "yorkseed-global-capital-network",
       "name": "Yorkseed Global Capital Network",
       "what": {
         "text": "Global venture network for founders and investors.",
         "quoted_from": "https://luma.com/jmjk0qqh",
-        "read_at": "2026-11-11T11:55:37Z"
+        "read_at": "2026-11-11T12:51:18Z"
       },
       "join": "Follow its public Luma calendar: https://luma.com/Yorkseed",
       "links": [
@@ -260,7 +675,7 @@
       "sources": [
         {
           "url": "https://luma.com/jmjk0qqh",
-          "read_at": "2026-11-11T11:55:37Z",
+          "read_at": "2026-11-11T12:51:18Z",
           "what": "the event page's hosting Luma calendar"
         }
       ],
@@ -284,7 +699,7 @@
       "what": {
         "text": "A private founders' club.",
         "quoted_from": "https://luma.com/jp6yr213",
-        "read_at": "2026-11-11T11:56:18Z"
+        "read_at": "2026-11-11T12:52:19Z"
       },
       "join": "Follow its public Luma calendar: https://luma.com/2dayfounders",
       "links": [
@@ -303,7 +718,7 @@
       "sources": [
         {
           "url": "https://luma.com/jp6yr213",
-          "read_at": "2026-11-11T11:56:18Z",
+          "read_at": "2026-11-11T12:52:19Z",
           "what": "the event page's hosting Luma calendar"
         }
       ],
@@ -320,6 +735,60 @@
       ],
       "sources": [],
       "label": "from events.json only"
+    },
+    {
+      "id": "99-lives",
+      "name": "99 Lives 🐆",
+      "what": null,
+      "join": "Follow its public Luma calendar: https://luma.com/99lives",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/99lives"
+        },
+        {
+          "label": "website",
+          "url": "https://airplanemode.99lives.co/"
+        }
+      ],
+      "events": [
+        "2026-11-12-airplane-mode-lisbon-founders-dinner-2-web-sum"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/mykeqz0c",
+          "read_at": "2026-11-11T12:53:46Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
+    },
+    {
+      "id": "agentic-engineering",
+      "name": "Agentic Engineering",
+      "what": null,
+      "join": "Follow its public Luma calendar: https://luma.com/agnteng",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/agnteng"
+        },
+        {
+          "label": "website",
+          "url": "https://agnteng.substack.com/"
+        }
+      ],
+      "events": [
+        "2026-11-11-agentic-engineering-lisbon"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/lisbon-5",
+          "read_at": "2026-11-11T12:52:11Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
     },
     {
       "id": "ai-ethics-and-integrity-international-association-aiei",
@@ -351,7 +820,7 @@
       "what": {
         "text": "AltaIR Capital is a global early-stage venture capital firm with 400+ portfolio companies and more than 10 unicorns backed early, including Miro, Deel, PandaDoc, Turing, Fundamental, Mesh, etc.",
         "quoted_from": "https://luma.com/h19cccc5",
-        "read_at": "2026-11-11T11:56:09Z"
+        "read_at": "2026-11-11T12:52:02Z"
       },
       "join": "unknown: join through its event pages",
       "links": [],
@@ -361,7 +830,7 @@
       "sources": [
         {
           "url": "https://luma.com/h19cccc5",
-          "read_at": "2026-11-11T11:56:09Z",
+          "read_at": "2026-11-11T12:52:02Z",
           "what": "the event page's hosting Luma calendar"
         }
       ],
@@ -397,7 +866,7 @@
       "what": {
         "text": "The best of the best side events happing during the Web Summit 2026",
         "quoted_from": "https://luma.com/m146luuy",
-        "read_at": "2026-11-11T11:55:26Z"
+        "read_at": "2026-11-11T12:51:06Z"
       },
       "join": "Follow its public Luma calendar: https://luma.com/websummit-grauberg",
       "links": [
@@ -416,7 +885,7 @@
       "sources": [
         {
           "url": "https://luma.com/m146luuy",
-          "read_at": "2026-11-11T11:55:26Z",
+          "read_at": "2026-11-11T12:51:06Z",
           "what": "the event page's hosting Luma calendar"
         }
       ],
@@ -428,7 +897,7 @@
       "what": {
         "text": "Handpicked selection of wellness, longevity, and biohacking events happening in Lisbon.",
         "quoted_from": "https://luma.com/uau5nem3",
-        "read_at": "2026-11-11T11:56:27Z"
+        "read_at": "2026-11-11T12:53:07Z"
       },
       "join": "Follow its public Luma calendar: https://luma.com/biohackinglisbon",
       "links": [
@@ -443,7 +912,7 @@
       "sources": [
         {
           "url": "https://luma.com/uau5nem3",
-          "read_at": "2026-11-11T11:56:27Z",
+          "read_at": "2026-11-11T12:53:07Z",
           "what": "the event page's hosting Luma calendar"
         }
       ],
@@ -462,6 +931,60 @@
       "label": "from events.json only"
     },
     {
+      "id": "bvc",
+      "name": "BVC",
+      "what": null,
+      "join": "Follow its public Luma calendar: https://luma.com/banklessvc",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/banklessvc"
+        }
+      ],
+      "events": [
+        "2026-11-12-am-run-workout-w-bvc"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/zaxt5ceb",
+          "read_at": "2026-11-11T12:52:28Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
+    },
+    {
+      "id": "clay-clubs",
+      "name": "Clay Clubs",
+      "what": {
+        "text": "Scale personalized outreach with better data enrichment; help your RevOps & growth teams implement any outreach idea.",
+        "quoted_from": "https://luma.com/ccl-websummit",
+        "read_at": "2026-11-11T12:51:58Z"
+      },
+      "join": "Follow its public Luma calendar: https://luma.com/clayclubs",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/clayclubs"
+        },
+        {
+          "label": "website",
+          "url": "https://www.clay.com/"
+        }
+      ],
+      "events": [
+        "2026-11-11-postponed-clay-in-lisbon-gtm-battlecards"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/ccl-websummit",
+          "read_at": "2026-11-11T12:51:58Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
+    },
+    {
       "id": "cloud-native-lisbon",
       "name": "Cloud Native Lisbon",
       "what": null,
@@ -472,6 +995,37 @@
       ],
       "sources": [],
       "label": "from events.json only"
+    },
+    {
+      "id": "code-n-surf",
+      "name": "Code'n'Surf",
+      "what": {
+        "text": "An exclusive developer conference combining cutting-edge technology discussions with world-class surfing on the Portuguese coast...",
+        "quoted_from": "https://luma.com/5yucusdb",
+        "read_at": "2026-11-11T12:52:21Z"
+      },
+      "join": "Follow its public Luma calendar: https://luma.com/codensurf",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/codensurf"
+        },
+        {
+          "label": "website",
+          "url": "https://www.codensurf.com"
+        }
+      ],
+      "events": [
+        "2026-11-11-between-the-waves"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/5yucusdb",
+          "read_at": "2026-11-11T12:52:21Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
     },
     {
       "id": "destilabs",
@@ -496,6 +1050,28 @@
       ],
       "sources": [],
       "label": "from events.json only"
+    },
+    {
+      "id": "ekiden-x-quants",
+      "name": "Ekiden x Quants",
+      "what": {
+        "text": "Tokenized Capital Markets",
+        "quoted_from": "https://luma.com/f0ah5yl3",
+        "read_at": "2026-11-11T12:53:51Z"
+      },
+      "join": "unknown: join through its event pages",
+      "links": [],
+      "events": [
+        "2026-11-12-institutional-capital-tokenized"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/f0ah5yl3",
+          "read_at": "2026-11-11T12:53:51Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
     },
     {
       "id": "elevon",
@@ -545,7 +1121,7 @@
       "sources": [
         {
           "url": "https://luma.com/u0iuhn8i",
-          "read_at": "2026-11-11T11:56:25Z",
+          "read_at": "2026-11-11T12:52:41Z",
           "what": "the event page's hosting Luma calendar"
         }
       ],
@@ -557,7 +1133,7 @@
       "what": {
         "text": "We are a community of purpose-driven founders connecting and empowering women globally, one breakfast at a time 🌐",
         "quoted_from": "https://luma.com/sx67k4x0",
-        "read_at": "2026-11-11T11:56:20Z"
+        "read_at": "2026-11-11T12:52:35Z"
       },
       "join": "Follow its public Luma calendar: https://luma.com/femalefoundersevents",
       "links": [
@@ -576,7 +1152,7 @@
       "sources": [
         {
           "url": "https://luma.com/sx67k4x0",
-          "read_at": "2026-11-11T11:56:20Z",
+          "read_at": "2026-11-11T12:52:35Z",
           "what": "the event page's hosting Luma calendar"
         }
       ],
@@ -599,7 +1175,38 @@
       "sources": [
         {
           "url": "https://luma.com/wgji1mfy",
-          "read_at": "2026-11-11T11:55:23Z",
+          "read_at": "2026-11-11T12:51:02Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
+    },
+    {
+      "id": "fsense-cvortex-partners",
+      "name": "fSense & cVortex Partners",
+      "what": {
+        "text": "fSense & cVortex Partners brings together business leaders, technology professionals, and strategic partners to foster meaningful connections, share insights, and explore new opportunities for innovation and business collaboration.",
+        "quoted_from": "https://luma.com/vfsejd2k",
+        "read_at": "2026-11-11T12:52:52Z"
+      },
+      "join": "Follow its public Luma calendar: https://luma.com/fsensecvortex",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/fsensecvortex"
+        },
+        {
+          "label": "website",
+          "url": "https://fsense.com/pt/"
+        }
+      ],
+      "events": [
+        "2026-11-12-business-lunch-lisbon-fsense-cvortex-web-summi"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/vfsejd2k",
+          "read_at": "2026-11-11T12:52:52Z",
           "what": "the event page's hosting Luma calendar"
         }
       ],
@@ -611,7 +1218,7 @@
       "what": {
         "text": "Movement, mentoring, networking and masterminds that help founders improve their health and business performance.",
         "quoted_from": "https://luma.com/3z2xjz1p",
-        "read_at": "2026-11-11T11:55:22Z"
+        "read_at": "2026-11-11T12:51:00Z"
       },
       "join": "Follow its public Luma calendar: https://luma.com/functionalfounders",
       "links": [
@@ -630,7 +1237,7 @@
       "sources": [
         {
           "url": "https://luma.com/3z2xjz1p",
-          "read_at": "2026-11-11T11:55:22Z",
+          "read_at": "2026-11-11T12:51:00Z",
           "what": "the event page's hosting Luma calendar"
         }
       ],
@@ -661,6 +1268,118 @@
       "label": "from events.json only"
     },
     {
+      "id": "growth-division",
+      "name": "Growth Division",
+      "what": {
+        "text": "We scale seed-stage startups through our team of world-class growth marketing experts.",
+        "quoted_from": "https://luma.com/f3c6aqvx",
+        "read_at": "2026-11-11T12:51:40Z"
+      },
+      "join": "Follow its public Luma calendar: https://luma.com/GrowthDivision",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/GrowthDivision"
+        },
+        {
+          "label": "website",
+          "url": "https://growth-division.com/"
+        }
+      ],
+      "events": [
+        "2026-11-11-lisbon-tech-side-event"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/f3c6aqvx",
+          "read_at": "2026-11-11T12:51:40Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
+    },
+    {
+      "id": "hardal",
+      "name": "Hardal",
+      "what": {
+        "text": "Join our events and workshops on server-side and first-party analytics.",
+        "quoted_from": "https://luma.com/9c2kspye",
+        "read_at": "2026-11-11T12:52:26Z"
+      },
+      "join": "Follow its public Luma calendar: https://luma.com/hardal",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/hardal"
+        },
+        {
+          "label": "website",
+          "url": "https://usehardal.com/"
+        }
+      ],
+      "events": [
+        "2026-11-11-the-signal-room-by-hardal"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/9c2kspye",
+          "read_at": "2026-11-11T12:52:26Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
+    },
+    {
+      "id": "healthhub-by-unicorn-factory-lisboa",
+      "name": "healthhub by Unicorn Factory Lisboa",
+      "what": null,
+      "join": "Follow its public Luma calendar: https://luma.com/healthhubbyUFL",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/healthhubbyUFL"
+        }
+      ],
+      "events": [
+        "2026-11-12-healthcare-re-imagined-by-ai"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/uomuj3gw",
+          "read_at": "2026-11-11T12:53:12Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
+    },
+    {
+      "id": "ideaic-io",
+      "name": "ideaic.io",
+      "what": null,
+      "join": "Follow its public Luma calendar: https://luma.com/ideaic",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/ideaic"
+        },
+        {
+          "label": "website",
+          "url": "https://dys.bio"
+        }
+      ],
+      "events": [
+        "2026-11-13-portugal-real-estate-web-summit-edition"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/ucah327r",
+          "read_at": "2026-11-11T12:54:29Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
+    },
+    {
       "id": "indiebeers-lisboa",
       "name": "IndieBeers Lisboa",
       "what": null,
@@ -671,6 +1390,37 @@
       ],
       "sources": [],
       "label": "from events.json only"
+    },
+    {
+      "id": "innovate-bay",
+      "name": "Innovate Bay",
+      "what": {
+        "text": "Innovate Bay is a founder-first community helping startups go from idea to growth with mentorship, connections, and real-world support.",
+        "quoted_from": "https://luma.com/ibconnect1",
+        "read_at": "2026-11-11T12:54:15Z"
+      },
+      "join": "Follow its public Luma calendar: https://luma.com/innovatebay",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/innovatebay"
+        },
+        {
+          "label": "website",
+          "url": "https://innovatebay.co"
+        }
+      ],
+      "events": [
+        "2026-11-13-ib-connect-by-the-coast-post-web-summit-meetup"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/ibconnect1",
+          "read_at": "2026-11-11T12:54:15Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
     },
     {
       "id": "innovation-wednesdays-baku-s-innovation-community",
@@ -709,12 +1459,39 @@
       "label": "from events.json only"
     },
     {
+      "id": "lateral",
+      "name": "lateral.",
+      "what": {
+        "text": "Lateral is the horizontal axis of impact VC.",
+        "quoted_from": "https://luma.com/4mflwhj1",
+        "read_at": "2026-11-11T12:53:24Z"
+      },
+      "join": "Follow its public Luma calendar: https://luma.com/lateral_events",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/lateral_events"
+        }
+      ],
+      "events": [
+        "2026-11-12-lateral-web-summit"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/4mflwhj1",
+          "read_at": "2026-11-11T12:53:24Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
+    },
+    {
       "id": "led-by-community",
       "name": "Led by Community",
       "what": {
         "text": "A Global Calendar for the events",
         "quoted_from": "https://luma.com/lisbon-community-week-2026",
-        "read_at": "2026-11-11T11:56:44Z"
+        "read_at": "2026-11-11T12:54:00Z"
       },
       "join": "Follow its public Luma calendar: https://luma.com/ledbycommunity-meetups",
       "links": [
@@ -733,7 +1510,7 @@
       "sources": [
         {
           "url": "https://luma.com/lisbon-community-week-2026",
-          "read_at": "2026-11-11T11:56:44Z",
+          "read_at": "2026-11-11T12:54:00Z",
           "what": "the event page's hosting Luma calendar"
         }
       ],
@@ -775,7 +1552,7 @@
       "sources": [
         {
           "url": "https://luma.com/yatbt1w6",
-          "read_at": "2026-11-11T11:55:55Z",
+          "read_at": "2026-11-11T12:51:39Z",
           "what": "the event page's hosting Luma calendar"
         }
       ],
@@ -794,47 +1571,35 @@
       "label": "from events.json only"
     },
     {
-      "id": "lisboaux",
-      "name": "LisboaUX",
+      "id": "lisboajs",
+      "name": "LisboaJS",
       "what": {
-        "text": "By the community, for the community — We're the User Experience Meetup in Lisboa.",
-        "quoted_from": "https://luma.com/yvm04djt",
-        "read_at": "2026-11-11T11:56:05Z"
+        "text": "The Lisbon JavaScript Community.",
+        "quoted_from": "https://luma.com/ac4odk80",
+        "read_at": "2026-11-11T12:54:03Z"
       },
-      "join": "Follow its public Luma calendar: https://luma.com/lisboaux",
+      "join": "Follow its public Luma calendar: https://luma.com/lisboajs",
       "links": [
         {
           "label": "Luma calendar",
-          "url": "https://luma.com/lisboaux"
+          "url": "https://luma.com/lisboajs"
         },
         {
           "label": "website",
-          "url": "https://lisboaux.com/"
+          "url": "https://lisboajs.org"
         }
       ],
       "events": [
-        "2026-11-11-lisboaux-web-summit-edition"
+        "2026-11-13-co-working-for-developers"
       ],
       "sources": [
         {
-          "url": "https://luma.com/yvm04djt",
-          "read_at": "2026-11-11T11:56:05Z",
+          "url": "https://luma.com/ac4odk80",
+          "read_at": "2026-11-11T12:54:03Z",
           "what": "the event page's hosting Luma calendar"
         }
       ],
       "label": "fact"
-    },
-    {
-      "id": "lisbon-business-leaders",
-      "name": "Lisbon Business Leaders",
-      "what": null,
-      "join": "unknown: join through its event pages",
-      "links": [],
-      "events": [
-        "2026-11-12-lisbon-business-leaders-evening"
-      ],
-      "sources": [],
-      "label": "from events.json only"
     },
     {
       "id": "lunar-strategy",
@@ -842,7 +1607,7 @@
       "what": {
         "text": "Since 2019, we've been helping tech companies grow with strategy, content, and marketing.",
         "quoted_from": "https://luma.com/lunar-ltdv",
-        "read_at": "2026-11-11T11:56:29Z"
+        "read_at": "2026-11-11T12:53:09Z"
       },
       "join": "Follow its public Luma calendar: https://luma.com/lunar_strategy",
       "links": [
@@ -861,7 +1626,7 @@
       "sources": [
         {
           "url": "https://luma.com/lunar-ltdv",
-          "read_at": "2026-11-11T11:56:29Z",
+          "read_at": "2026-11-11T12:53:09Z",
           "what": "the event page's hosting Luma calendar"
         }
       ],
@@ -880,6 +1645,37 @@
       "label": "from events.json only"
     },
     {
+      "id": "mella-supply",
+      "name": "MELLA SUPPLY",
+      "what": {
+        "text": "Sign up for curated conversations and events bringing founders, professionals, capital providers and ecosystem partners together across Europe and the wider Afro-Lusophone economy.",
+        "quoted_from": "https://luma.com/gplr46ot",
+        "read_at": "2026-11-11T12:51:24Z"
+      },
+      "join": "Follow its public Luma calendar: https://luma.com/mellasupply",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/mellasupply"
+        },
+        {
+          "label": "website",
+          "url": "https://www.mellasupply.com"
+        }
+      ],
+      "events": [
+        "2026-11-11-redefining-investment-and-innovation-where-is-"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/gplr46ot",
+          "read_at": "2026-11-11T12:51:24Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
+    },
+    {
       "id": "mota-engil-mext",
       "name": "Mota-Engil/MEXT",
       "what": null,
@@ -890,6 +1686,90 @@
       ],
       "sources": [],
       "label": "from events.json only"
+    },
+    {
+      "id": "non-code-studio",
+      "name": "non code studio",
+      "what": {
+        "text": "💻 Notion consulting for teams ready to scale 🚀 We help growing teams clean up Notion, connect their tools, automate manual work and turn AI into practical workflows (the kind people actually use!)",
+        "quoted_from": "https://luma.com/na45i7k7",
+        "read_at": "2026-11-11T12:54:12Z"
+      },
+      "join": "Follow its public Luma calendar: https://luma.com/noncode.studio",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/noncode.studio"
+        },
+        {
+          "label": "website",
+          "url": "https://noncode.studio/"
+        }
+      ],
+      "events": [
+        "2026-11-13-web-summit-notion-morning-power-walk-friday"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/na45i7k7",
+          "read_at": "2026-11-11T12:54:12Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
+    },
+    {
+      "id": "obriyai",
+      "name": "ObriyAI",
+      "what": {
+        "text": "ObriyAI EVENTS",
+        "quoted_from": "https://luma.com/qnu3jyg0",
+        "read_at": "2026-11-11T12:53:28Z"
+      },
+      "join": "unknown: join through its event pages",
+      "links": [],
+      "events": [
+        "2026-11-12-300-oysters-and-ai-web-summit-lisbon-side-even"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/qnu3jyg0",
+          "read_at": "2026-11-11T12:53:28Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
+    },
+    {
+      "id": "octo-health-web-summit-lisboa-2026",
+      "name": "Octo Health | Web Summit Lisboa 2026",
+      "what": {
+        "text": "Meet Octo Health, a proactive health platform designed to help you test, check and act about your health.",
+        "quoted_from": "https://luma.com/erp6nqvm",
+        "read_at": "2026-11-11T12:53:49Z"
+      },
+      "join": "Follow its public Luma calendar: https://luma.com/octohealth",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/octohealth"
+        },
+        {
+          "label": "website",
+          "url": "https://octohealth.com/"
+        }
+      ],
+      "events": [
+        "2026-11-12-the-100-year-dinner-longevity-served"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/erp6nqvm",
+          "read_at": "2026-11-11T12:53:49Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
     },
     {
       "id": "open-coffee-lisbon",
@@ -920,7 +1800,7 @@
       "sources": [
         {
           "url": "https://luma.com/s73xrx2r",
-          "read_at": "2026-11-11T11:56:40Z",
+          "read_at": "2026-11-11T12:53:45Z",
           "what": "the event page's hosting Luma calendar"
         }
       ],
@@ -939,12 +1819,39 @@
       "label": "from events.json only"
     },
     {
+      "id": "palo-alto-ai-research-lab",
+      "name": "Palo Alto Ai Research Lab",
+      "what": null,
+      "join": "Follow its public Luma calendar: https://luma.com/PaloAltoAi",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/PaloAltoAi"
+        },
+        {
+          "label": "website",
+          "url": "https://palo-alto.ai"
+        }
+      ],
+      "events": [
+        "2026-11-12-ai-engineers-lunch-web-summit-week"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/85k5kz1g",
+          "read_at": "2026-11-11T12:52:51Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
+    },
+    {
       "id": "primal-events-workshops",
       "name": "Primal Events & Workshops",
       "what": {
         "text": "Welcome to Primal Moves Lisbon, a community driven movement studio in the heart of Santos.",
         "quoted_from": "https://luma.com/rnm96bu0",
-        "read_at": "2026-11-11T11:56:34Z"
+        "read_at": "2026-11-11T12:53:25Z"
       },
       "join": "Follow its public Luma calendar: https://luma.com/primalmoveslisbon",
       "links": [
@@ -963,7 +1870,7 @@
       "sources": [
         {
           "url": "https://luma.com/rnm96bu0",
-          "read_at": "2026-11-11T11:56:34Z",
+          "read_at": "2026-11-11T12:53:25Z",
           "what": "the event page's hosting Luma calendar"
         }
       ],
@@ -987,7 +1894,7 @@
       "what": {
         "text": "Events by Productized",
         "quoted_from": "https://luma.com/whll1umb",
-        "read_at": "2026-11-11T11:56:31Z"
+        "read_at": "2026-11-11T12:53:20Z"
       },
       "join": "Follow its public Luma calendar: https://luma.com/productized-calendar",
       "links": [
@@ -1006,7 +1913,7 @@
       "sources": [
         {
           "url": "https://luma.com/whll1umb",
-          "read_at": "2026-11-11T11:56:31Z",
+          "read_at": "2026-11-11T12:53:20Z",
           "what": "the event page's hosting Luma calendar"
         }
       ],
@@ -1037,6 +1944,29 @@
       "label": "from events.json only"
     },
     {
+      "id": "replit",
+      "name": "Replit",
+      "what": null,
+      "join": "Follow its public Luma calendar: https://luma.com/ReplitHQ",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/ReplitHQ"
+        }
+      ],
+      "events": [
+        "2026-11-12-one-night-in-lisbon-with-replit"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/ReplitLisbon",
+          "read_at": "2026-11-11T12:53:13Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
+    },
+    {
       "id": "richemont",
       "name": "Richemont",
       "what": null,
@@ -1054,7 +1984,7 @@
       "what": {
         "text": "Empowering mission driven founders on a global scale.",
         "quoted_from": "https://luma.com/a2ackpa5",
-        "read_at": "2026-11-11T11:55:50Z"
+        "read_at": "2026-11-11T12:51:32Z"
       },
       "join": "Follow its public Luma calendar: https://luma.com/rockstartrocks",
       "links": [
@@ -1069,7 +1999,7 @@
       "sources": [
         {
           "url": "https://luma.com/a2ackpa5",
-          "read_at": "2026-11-11T11:55:50Z",
+          "read_at": "2026-11-11T12:51:32Z",
           "what": "the event page's hosting Luma calendar"
         }
       ],
@@ -1093,7 +2023,7 @@
       "what": {
         "text": "Sessions focused on New Angel Investors and early pre-seed startups to grow more effective Angel Investors and more fundable startups.",
         "quoted_from": "https://luma.com/seattle-1hwz",
-        "read_at": "2026-11-11T11:55:32Z"
+        "read_at": "2026-11-11T12:51:11Z"
       },
       "join": "Follow its public Luma calendar: https://luma.com/Seattle-Angel",
       "links": [
@@ -1112,7 +2042,7 @@
       "sources": [
         {
           "url": "https://luma.com/seattle-1hwz",
-          "read_at": "2026-11-11T11:55:32Z",
+          "read_at": "2026-11-11T12:51:11Z",
           "what": "the event page's hosting Luma calendar"
         }
       ],
@@ -1129,37 +2059,6 @@
       ],
       "sources": [],
       "label": "from events.json only"
-    },
-    {
-      "id": "staaake",
-      "name": "staaake",
-      "what": {
-        "text": "Create and join visibility sheets for founders & creators",
-        "quoted_from": "https://luma.com/staaake-hghb",
-        "read_at": "2026-11-11T11:56:49Z"
-      },
-      "join": "Follow its public Luma calendar: https://luma.com/staaake",
-      "links": [
-        {
-          "label": "Luma calendar",
-          "url": "https://luma.com/staaake"
-        },
-        {
-          "label": "website",
-          "url": "https://www.staaake.com"
-        }
-      ],
-      "events": [
-        "2026-11-14-ai-devs-hoopers-run"
-      ],
-      "sources": [
-        {
-          "url": "https://luma.com/staaake-hghb",
-          "read_at": "2026-11-11T11:56:49Z",
-          "what": "the event page's hosting Luma calendar"
-        }
-      ],
-      "label": "fact"
     },
     {
       "id": "startup-portugal",
@@ -1222,18 +2121,6 @@
       "label": "from events.json only"
     },
     {
-      "id": "teja-house",
-      "name": "Tejá House",
-      "what": null,
-      "join": "unknown: join through its event pages",
-      "links": [],
-      "events": [
-        "2026-11-13-rise-of-the-expert-creator"
-      ],
-      "sources": [],
-      "label": "from events.json only"
-    },
-    {
       "id": "tetrad-vc",
       "name": "Tetrad VC",
       "what": null,
@@ -1282,6 +2169,37 @@
       "label": "from events.json only"
     },
     {
+      "id": "kind-movement",
+      "name": "The Kind Movement",
+      "what": {
+        "text": "🤍 Charity fitness classes in Lisbon",
+        "quoted_from": "https://luma.com/80ixzq5z",
+        "read_at": "2026-11-11T12:54:41Z"
+      },
+      "join": "Follow its public Luma calendar: https://luma.com/Kindmovement",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/Kindmovement"
+        },
+        {
+          "label": "website",
+          "url": "https://whydonate.com/fundraising/kindmovement"
+        }
+      ],
+      "events": [
+        "2026-11-14-kindpilates-donation-based-pilates-class"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/80ixzq5z",
+          "read_at": "2026-11-11T12:54:41Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
+    },
+    {
       "id": "nest-by-near-lisbon",
       "name": "The Nest by NEAR (Lisbon)",
       "what": null,
@@ -1292,6 +2210,33 @@
       ],
       "sources": [],
       "label": "from events.json only"
+    },
+    {
+      "id": "offline-club-lisbon",
+      "name": "The Offline Club | Lisbon",
+      "what": {
+        "text": "Offline community hangouts & events to swap screen time for real time.",
+        "quoted_from": "https://luma.com/Travel-Hangout",
+        "read_at": "2026-11-11T12:54:39Z"
+      },
+      "join": "Follow its public Luma calendar: https://luma.com/theofflineclublisbon",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/theofflineclublisbon"
+        }
+      ],
+      "events": [
+        "2026-11-14-offline-hangout-travel-edition-x-weroad-rossio"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/Travel-Hangout",
+          "read_at": "2026-11-11T12:54:39Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
     },
     {
       "id": "thegoodcode",
@@ -1318,6 +2263,68 @@
       "label": "from events.json only"
     },
     {
+      "id": "top-tier-impact-in-person-events",
+      "name": "Top Tier Impact | In-person Events",
+      "what": {
+        "text": "Top Tier Impact (TTI) is the global ecosystem of investors, entrepreneurs and corporates who are focused on solving the critical issues of our time.",
+        "quoted_from": "https://luma.com/3504dzdm",
+        "read_at": "2026-11-11T12:51:56Z"
+      },
+      "join": "Follow its public Luma calendar: https://luma.com/toptierimpact",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/toptierimpact"
+        },
+        {
+          "label": "website",
+          "url": "https://www.toptierimpact.com/"
+        }
+      ],
+      "events": [
+        "2026-11-11-tti-at-web-summit-what-s-next-at-the-ai-fronti"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/3504dzdm",
+          "read_at": "2026-11-11T12:51:56Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
+    },
+    {
+      "id": "unblockai",
+      "name": "UnblockAI",
+      "what": {
+        "text": "Unblock AI is a monthly meetup in Lisbon bringing together builders, leaders, and curious minds to share tools, ideas, and explore what AI can genuinely do.",
+        "quoted_from": "https://luma.com/unblockai-conference",
+        "read_at": "2026-11-11T12:53:59Z"
+      },
+      "join": "Follow its public Luma calendar: https://luma.com/unblockai",
+      "links": [
+        {
+          "label": "Luma calendar",
+          "url": "https://luma.com/unblockai"
+        },
+        {
+          "label": "website",
+          "url": "https://unblockai.pt/"
+        }
+      ],
+      "events": [
+        "2026-11-13-unblock-ai-conference"
+      ],
+      "sources": [
+        {
+          "url": "https://luma.com/unblockai-conference",
+          "read_at": "2026-11-11T12:53:59Z",
+          "what": "the event page's hosting Luma calendar"
+        }
+      ],
+      "label": "fact"
+    },
+    {
       "id": "valois-by-yorkseed",
       "name": "Valois by Yorkseed",
       "what": null,
@@ -1335,7 +2342,7 @@
       "what": {
         "text": "Global venture network for founders and investors.",
         "quoted_from": "https://luma.com/k0zamjmi",
-        "read_at": "2026-11-11T11:55:36Z"
+        "read_at": "2026-11-11T12:51:15Z"
       },
       "join": "Follow its public Luma calendar: https://luma.com/Yorkseed",
       "links": [
@@ -1354,7 +2361,7 @@
       "sources": [
         {
           "url": "https://luma.com/k0zamjmi",
-          "read_at": "2026-11-11T11:55:36Z",
+          "read_at": "2026-11-11T12:51:15Z",
           "what": "the event page's hosting Luma calendar"
         }
       ],
