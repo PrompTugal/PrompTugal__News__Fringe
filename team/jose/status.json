@@ -33,7 +33,7 @@
   ],
   "asks": [
     "jose: post the X thread (work/drafts/x-thread-jose.md), or ask for a shorter one; X shows 0 visits so far.",
-    "jose: read and approve (or change) work/drafts/linkedin-post-jose.md, work/drafts/x-thread-jose.md and work/drafts/pitch.md; you post them.",
+    "jose: read and approve (or change) work/drafts/x-thread-jose.md and work/drafts/pitch.md; you post them.",
     "Dinis: my public key is not in PrompTugal__News__Website board/keys.json; that repository is out of reach for this session.",
     "Dinis: this session's network refuses lisbontechfringe.com and fringe.promptugal.news, so the served version.json is checked through the deploy run, not the page."
   ]
