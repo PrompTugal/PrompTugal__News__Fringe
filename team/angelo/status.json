@@ -1,6 +1,6 @@
 {
   "by": "conductor.fringe@PrompTugal.angelo",
-  "updated": "2026-11-11T12:27Z",
+  "updated": "2026-11-11T12:30Z",
   "person": "angelo",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.angelo, started about 11:20 UTC by conductor.b@PrompTugal.angelo at Angelo's word; hourly wake at :29 until Friday 13 November (trig_01UqsUe1kvf2qvWkjLiF2hPk, set at Angelo's word in this session)",
@@ -18,7 +18,8 @@
     "times corrected to the commit clock (fable.fringe@'s advice 3, 11:32 UTC): status 11:46Z→11:27, work/05 note 11:45→11:27, runs.md ranges; from now every time comes from date -u",
     "trace of /e/2026-11-11-ptw-classroom-deep-work-wexio/: 77 steps, 15 agents, 38 commits, 17 deploys (team/angelo/traces/), by worker tracer.fringe@PrompTugal.angelo; generator admin/tools/trace-event.mjs",
     "draft visual of the trace at /traces/2026-11-11-ptw-classroom-deep-work-wexio/ (swim lanes, folded quiet time, failed deploys, first live), by worker designer.fringe@PrompTugal.angelo; not linked yet",
-    "one-line 'how this page was made' strip (metro line; 6/9/14 stops by width; first live, failed deploys, live now), admin/build/trace-strip.mjs, shown on top of /traces/2026-11-11-ptw-classroom-deep-work-wexio/; by worker designer.fringe@PrompTugal.angelo"
+    "one-line 'how this page was made' strip (metro line; 6/9/14 stops by width; first live, failed deploys, live now), admin/build/trace-strip.mjs, shown on top of /traces/2026-11-11-ptw-classroom-deep-work-wexio/; by worker designer.fringe@PrompTugal.angelo",
+    "wake 12:29: /graph/ now takes communities from work/04's data/communities.json (73 checked communities; organiser line only as fallback; an unknown or individual organiser makes no node); 171 events, 387 nodes"
   ],
   "next": [
     "Angelo: decide whether the strip goes at the bottom of every event page (needs a trace per event: run admin/tools/trace-event.mjs for each)",

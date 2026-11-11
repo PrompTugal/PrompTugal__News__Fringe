@@ -12,7 +12,7 @@ const slug = (s) => norm(s).replace(/ /g, '-') || 'x';
 
 // --- communities: split joint organisers, drop descriptors -------------------------------------------------------
 const DESCRIPTOR = /\s*\((?:per |a |an |luma |named )[^)]*\)\s*$/i;
-const PRIVATE = /^(an? )?independent organis/i;
+const PRIVATE = /^(an? )?independent organis|^(unknown|not (stated|named))\b/i;   // no node for an individual or an unknown organiser
 export function organisersOf(text) {
   if (!text || PRIVATE.test(text)) return [];
   // "with", "powered by", "hosted by" join organisers only in lower case ("Life With Artificials" is one name);
@@ -41,7 +41,11 @@ export function areaOf(place) {
 }
 
 // --- the model --------------------------------------------------------------------------------------------------
-export function buildGraph(events, ptnews) {
+export function buildGraph(events, ptnews, communities) {
+  // work/04's verified communities (data/communities.json, re-read at their calendars) win over names split from
+  // an event's organiser line; the organiser line is the fallback for events no community lists yet.
+  const byEvent = new Map();
+  for (const c of communities || []) for (const id of c.events || []) { if (!byEvent.has(id)) byEvent.set(id, []); byEvent.get(id).push(c); }
   const nodes = new Map(), edges = [];
   const site = ptnews?.site || 'https://promptugal.news/';
   const byName = (list, kind) => { const m = new Map(); for (const x of list || []) for (const n of [...(x.names || [x.name]), x.id]) m.set(norm(n), { ...x, kind }); return m; };
@@ -60,7 +64,12 @@ export function buildGraph(events, ptnews) {
       place: e.place || null, organiser: e.organiser || null, topics: (e.topics || []).map(topicName) };
     nodes.set(ev.id, ev);
     const link = (to, verb) => edges.push({ from: ev.id, to: to.id, verb, source: e.url, read_at: e.read_at });
-    for (const o of organisersOf(e.organiser)) link(node('community', o, ptLink(orgIdx.get(norm(o)))), 'organised by');
+    const listed = byEvent.get(e.id);
+    if (listed) for (const c of listed) {
+      const home = (c.links || []).find((l) => /^https:\/\//.test(l.url || ''));
+      link(node('community', c.name, { ...ptLink(orgIdx.get(norm(c.name))), verified: true, community: c.id, home: home?.url || null, what: c.what?.text || null }), 'organised by');
+    }
+    else for (const o of organisersOf(e.organiser)) link(node('community', o, ptLink(orgIdx.get(norm(o)))), 'organised by');
     for (const t of new Set((e.topics || []).map(topicName))) link(node('topic', t, ptLink(topicIdx.get(norm(t)))), 'about');
     const a = areaOf(e.place);
     if (a) link(node('place', a, ptLink(placeIdx.get(norm(a)))), 'at');
@@ -132,7 +141,7 @@ ${links(n) ? `<div class="muted">${links(n)}</div>` : ''}<ul>${neighbours(n.id).
 <h2>Topics</h2>${group('topic')}
 <h2>Places</h2>${group('place')}
 <p class="muted">The data: <a href="/api/v1/graph.json">/api/v1/graph.json</a> (nodes and edges, each edge with its source and read time). Communities, places and topics already on <a href="https://promptugal.news/graph/">pt.news's graph</a> link to it. How this page was made: <a href="https://github.com/PrompTugal/PrompTugal__News__Fringe/blob/dev/work/05-graph.md">work/05</a> and <a href="https://github.com/PrompTugal/PrompTugal__News__Fringe/blob/dev/team/angelo/runs.md">every run behind it</a>.</p>
-<script type="application/json" id="gdata">${JSON.stringify({ nodes: graph.nodes.map(({ id, type, label, x, y, degree, url, date, kind, status, storm_moved, topics, organiser, place, ptnews, gamma_ray }) => ({ id, type, label, x, y, degree, url, date, kind, status, storm_moved, topics, organiser, place, ptnews, gamma_ray })), edges: graph.edges.map((e) => [e.from, e.to, e.verb]) }).replace(/</g, '\\u003c')}</script>
+<script type="application/json" id="gdata">${JSON.stringify({ nodes: graph.nodes.map(({ id, type, label, x, y, degree, url, date, kind, status, storm_moved, topics, organiser, place, ptnews, gamma_ray, home, what, verified }) => ({ id, type, label, x, y, degree, url, date, kind, status, storm_moved, topics, organiser, place, ptnews, gamma_ray, home, what, verified })), edges: graph.edges.map((e) => [e.from, e.to, e.verb]) }).replace(/</g, '\\u003c')}</script>
 <script src="/graph.js" defer></script>`;
 }
 

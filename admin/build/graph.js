@@ -83,7 +83,8 @@
       h += '<div class="muted">' + esc(n.date) + (n.start ? ' ' + esc(n.start.slice(11, 16)) + ' UTC' : '') + ' · ' + esc(n.kind) + ' · ' + esc(n.status) + (n.storm_moved ? ' · moved by the storm' : '') + '</div>'
         + '<div class="muted">' + esc(n.place || '') + '</div><div><a href="/e/' + esc(encodeURIComponent(n.id.slice(6))) + '/">Its page here</a> · <a href="' + esc(n.url) + '">The organiser\'s page</a></div>';   // work/22
     } else {
-      var l = [n.ptnews && '<a href="' + esc(n.ptnews) + '">on pt.news</a>', n.gamma_ray && '<a href="' + esc(n.gamma_ray) + '">GAMMA-Ray card</a>'].filter(Boolean).join(' · ');
+      if (n.what) h += '<div>' + esc(n.what) + '</div>';
+      var l = [n.home && '<a href="' + esc(n.home) + '">their page</a>', n.verified && '<a href="/api/v1/communities.json">checked community</a>', n.ptnews && '<a href="' + esc(n.ptnews) + '">on pt.news</a>', n.gamma_ray && '<a href="' + esc(n.gamma_ray) + '">GAMMA-Ray card</a>'].filter(Boolean).join(' · ');
       if (l) h += '<div class="muted">' + l + '</div>';
     }
     var nb = adj[id].map(function (m) { return byId[m]; });

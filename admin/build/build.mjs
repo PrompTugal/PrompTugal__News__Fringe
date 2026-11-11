@@ -226,7 +226,7 @@ const joinPage = page('Join Lisbon Fringe', `
 
 // --- /graph/ (work/05) ----------------------------------------------------
 const ptnews = existsSync(join(root, 'data/ptnews-index.json')) ? JSON.parse(read('data/ptnews-index.json')) : null;
-const graph = buildGraph(events, ptnews);
+const graph = buildGraph(events, ptnews, existsSync(join(root, 'data/communities.json')) ? JSON.parse(read('data/communities.json')).communities : []);   // work/05 uses work/04's communities
 const graphPage = page('Connect the dots: Lisbon Fringe', `<style>${graphCss}</style>` + graphBody(graph, esc), 'The fringe as a graph: events, communities, topics and places, with filters.', '', '/graph/');
 
 // --- write ---------------------------------------------------------------
