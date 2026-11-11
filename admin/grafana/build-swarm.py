@@ -36,11 +36,11 @@ def row(title):
 def add(p, w, h, x):
     p['gridPos'] = {'h': h, 'w': w, 'x': x, 'y': y[0]}; p['id'] = len(panels) + 1; panels.append(p)
 def nl(h): y[0] += h
-def stat(title, q, desc='', unit='none', mappings=None, steps=None):
+def stat(title, q, desc='', unit='none', mappings=None, steps=None, text=False):
     return {'type': 'stat', 'title': title, 'description': desc, 'datasource': INF, 'targets': [q],
             'fieldConfig': {'defaults': {'unit': unit, 'mappings': mappings or [],
                 'thresholds': {'mode': 'absolute', 'steps': steps or [{'color': 'blue', 'value': None}]}}, 'overrides': []},
-            'options': {'reduceOptions': {'calcs': ['lastNotNull'], 'fields': '', 'values': False}, 'colorMode': 'background', 'graphMode': 'none', 'textMode': 'value'}}
+            'options': {'reduceOptions': {'calcs': ['lastNotNull'], 'fields': '/.*/' if text else '', 'values': False}, 'colorMode': 'background', 'graphMode': 'none', 'textMode': 'value'}}
 def bars(title, q, desc='', horiz=True):
     return {'type': 'barchart', 'title': title, 'description': desc, 'datasource': q['datasource'], 'targets': [q],
             'options': {'orientation': 'horizontal' if horiz else 'vertical', 'showValue': 'auto', 'legend': {'showLegend': False}, 'xTickLabelRotation': 0},
@@ -60,7 +60,7 @@ def series(title, q, desc='', stack=True, bars_=True):
 HEALTH = [{'type': 'value', 'options': {'green': {'color': 'green', 'text': 'green'}, 'amber': {'color': 'orange', 'text': 'amber'}, 'red': {'color': 'red', 'text': 'red'}}}]
 
 row('Now (swarm.json, activity.json: the public API, rebuilt at each deploy)')
-add(stat('Swarm health', inf('A', 'swarm.json', 'overall', [col('health')]), 'overall.health of /api/v1/swarm.json', mappings=HEALTH), 4, 4, 0)
+add(stat('Swarm health', inf('A', 'swarm.json', 'overall', [col('health')]), 'overall.health of /api/v1/swarm.json', mappings=HEALTH, text=True), 4, 4, 0)
 add(stat('Agents online', inf('A', 'swarm.json', 'counts', [col('agents_online', typ='number')])), 4, 4, 4)
 add(stat('Commits, last hour', inf('A', 'activity.json', 'totals.last_hour', [col('commits', typ='number')])), 4, 4, 8)
 add(stat('Deploys, last hour', inf('A', 'activity.json', 'totals.last_hour', [col('deploys', typ='number')])), 4, 4, 12)
