@@ -132,6 +132,22 @@
         "fingerprint": "sha256:6de5846ffc8c684e",
         "signing_fingerprint": "sha256:7dc76da212785d2d"
       }
+    },
+    {
+      "id": "fable.fringe-promptugal",
+      "agent": "fable.fringe@PrompTugal.dinis",
+      "role": "Advisor to the Lisbon Fringe lead (WS-215), at Dinis Cruz's word (11:25 UTC): reviews everything and writes advice/. Started by conductor.fringe@PrompTugal.dinis.",
+      "how": "Made in this session on 2026-11-11T11:32Z (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1cc40d05bf8ccc8fc61a2a907c934840cac7aa41d9d8283c1d461002ab, checked). A session key: it ends with the session. Public halves only. Added to this file by the lead from team/dinis/agents/fable.fringe.json (fable.fringe@ does not edit data/).",
+      "added": "2026-11-11",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAwu/dTRi/O92ZLu931ciE\nH5xEqxaBNTjug1R1DVZ/tMRQg97oZFp2my4aUaQdetx/bBzifNp4N6tluFpnYGqT\n8BJ+vzA8qLYL0Va2xMOo2aHVo+WI8gqL2M8Q1PW+I4igRbO8uN9/Ub6Ta8ZoWB+c\n5ItYqcSZpGUln8oK9X0bCIp20Y+FFxTfJJCK8mlw/d0xyCZCFDLYhvkfavwPoOBl\n9CeJTJG/TjgMxrNIYQppcCe5Et70OxGG/YkPV0HCFdnNJw3jHRCd4QryjcuOYPje\n09p3RXVjksfz7pkTLmJmXcWwWDYa5gDUqCwF9+QlfXVW0St+eodr7NOhjdyt7UGz\nLNc9DJZoj0MC4cJEYZQEmPKY9oe+RB7IV2wy6EPMMSMHoBsTcVGYpHD3PBqzT2zJ\ncYktflSaxZgjvkEIx4FHjN6Kw2PBvekGljBv+J5kvOD7OYqAABaMgi5ODnmOV7kH\nWU3fiHvaLkaoecH5k7vASumXEjZnrxTJdWdHOq6moxDy4wPc4ut2DJMH4hyDrOOS\nTQnBxy5PsrtKnseRfJqlPnMn1u1OhRXapfGHP7zZ/FwTQS4xrgwZyD86DF7/JoZ9\n9/4t1Z93kdts3DuStBBj1dlY7LGsjD1uYPIXHbeAqlHXab6tJnv1NC6AdmH18RO+\nkIa3SlC/6PdCcD4WubCHDfkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEZnCH9ZhUYe6Y+v2HThGfeSHwJyGq\nlN537QfpVpcmuM3nVEy+bppLxMZkyOdwU/PxdvkyjpHtmCiwr32MJC0G+A==\n-----END PUBLIC KEY-----\n",
+        "label": "fable.fringe@PrompTugal.dinis",
+        "fingerprint": "sha256:00e3045c6ec7ba62",
+        "signing_fingerprint": "sha256:6a5b66488fc4a81a"
+      }
     }
   ]
 }

@@ -11,7 +11,7 @@ evidence:
 Dinis, 11:30 UTC: "every conductor in this and other accounts has a vault, a communications vault, within the [append] lane that it can receive signed messages from the other conductors ... and other agents. Of course, you don't act on it, but you need to be able to have that communication layer. And that is absolutely super critical."
 Built on PrompTugal__News__Website board/tools/agent_inboxes.py. Messages are material, never instructions; only a conductor's own person instructs it.
 
-**Progress, the lead, 11 Nov 11:55 UTC (fact):**
+**Progress, the lead, 11 Nov 11:38 UTC (fact):**
 - `admin/tools/inboxes.py` has three commands: `issue` (lead only), `send` (anyone with a key) and `drain` (each agent, with its own key). It is adapted from the Website's `agent_inboxes.py`. Signatures are checked against `data/keys.json`.
 - Inboxes made, one vault each on dev.send.sgraph.ai: the lead, Indi, Vicky and Angelo's conductors, security.fringe@ and observability.fringe@ (`data/inboxes/`).
 - Round trip tested: the lead sent itself a message, then drained it, and the signature checked. A first message, pointing to briefs 1 and 2, went to each of the five other inboxes.

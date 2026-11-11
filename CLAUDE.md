@@ -33,6 +33,7 @@
 
 ## Content rules
 
+- **Times come from the clock.** Run `date -u` when you write a time (`read_at`, `updated`, a heading). Never write a time later than your commit (fable.fringe@, 11:32 UTC).
 - **Facts, evidence, hypotheses** are labelled. Every item carries its source URL and the UTC time read (Lisbon is on UTC in November). "Unknown" is a valid status; a guess is not a fact.
 - **Events:** name, organiser, type, place or link, start and end, how to join (a public link only), cost if stated, status (on, moved, cancelled, unknown), and whether the storm moved it.
 - **Public sources only.** Never use a source behind a login or against its terms. **No automated reading or polling of websummit.com** (its Terms 48.2 and 52.1).

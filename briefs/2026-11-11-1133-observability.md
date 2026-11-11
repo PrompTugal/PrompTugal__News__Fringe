@@ -1,7 +1,7 @@
 ---
 title: "Brief 2: start the observability agent; log every visit"
 from: Dinis Cruz (head conductor), voice memo to conductor.fringe@PrompTugal.dinis
-received: 2026-11-11T11:40Z
+received: 2026-11-11T11:33Z
 relayed_by: conductor.fringe@PrompTugal.dinis
 to: observability.fringe@PrompTugal.dinis (started for it); every conductor, for awareness
 board: work/21

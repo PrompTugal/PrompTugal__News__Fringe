@@ -1,6 +1,6 @@
 {
   "by": "conductor.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T11:45Z",
+  "updated": "2026-11-11T11:40Z",
   "person": "dinis",
   "role": "head",
   "state": "the site serves: https://fringe.promptugal.news is v0.1.14 (commit a1f6b3d) with 69 sourced events, /join/ and the independence line; the lead is a new session since 11:14 UTC",
@@ -53,11 +53,14 @@
     }
   ],
   "doing": [
-    "brief 2: observability.fringe@ on work/21 (first)",
-    "brief 1 (briefs/2026-11-11-1130-the-pinnacle.md): routed as work/14 to work/20",
-    "work/19 the comms layer: an append-vault inbox for every conductor and agent"
+    "brief 3 (briefs/2026-11-11-1137-make-them-the-star.md): work/22 event pages, 23 organiser outreach, 24 the loop; a sub-agent checks PTW Palace's move online",
+    "work/19: inboxes for each new key at each wake"
   ],
   "done": [
+    "work/19: seven inbox vaults (the lead, Indi, Vicky, Angelo, security.fringe@, observability.fringe@, fable.fringe@); admin/tools/inboxes.py tested end to end; a first message in each",
+    "brought onto dev after review: researcher.fringe@'s eb07150 (70 events, 61 re-read 11:23 UTC; WET SUMMIT Lisbon, work/03 done; Elevon's catamaran moved to Thursday) and fable.fringe@'s first advice note; fable.fringe@'s key in data/keys.json",
+    "the old lead's handover (work/conductor.fringe.handover 8d6d0ee): its wake is disabled, so one lead runs",
+    "my own times corrected to the clock (brief 2 is 11:33 UTC, not 11:40); CLAUDE.md: times come from date -u",
     "brief 2 (observability) recorded; started observability.fringe@PrompTugal.dinis (session_01Kw9UwDEe3BXvda7DY68R8B) for work/21, at Dinis's word",
     "started fable.fringe@PrompTugal.dinis (Fable, session_01Kw9UwBZiT2qCTLBUQRFzfX), the advisor, at Dinis's word; its wake every two hours at :51",
     "brief 1 recorded with Dinis's words and routed: work/14 showroom, 15 what changed, 16 now, 17 practical Lisbon, 18 outreach, 19 comms vaults, 20 model router; notes on 01, 05, 06, 09; 08 folded into 18",
@@ -76,13 +79,18 @@
     "tell conductor@PrompTugal.dinis the URL so pt.news links it; tell incident.conductor@web-summit.dinis that we read the storm site's /api/v1/"
   ],
   "asks": [
+    "Dinis: three wakes on the OTHER account still report to the old lead; this session cannot change them (trigger not found): researcher.fringe@ trig_015p3eeHQJ3JEXzHdYgHaUb7, security.fringe@ trig_01XhtAq86wTjp2bLqwZMkwez, dev.fringe@ trig_01Wdx83QuHtzcqh48DimkhMj. Change their prompts there to name session_01Kw9UwCFpT9ihNBcQFxkomq, or tell me to start researcher/dev agents on this account (work/22 and 24 need them now).",
+    "Dinis: approve the organiser offer in work/23 (their page, their report, join with one session) before any note is sent.",
+    "Dinis: work/drafts/whatsapp-group-reply.md is ready for you to adapt and send.",
+    "Dinis (from fable.fringe@): may researcher.fringe@ push data/events.json straight to dev behind the gate, with Vicky's check after?",
+    "Dinis (from fable.fringe@): /join/ shows full names of people who have not started (security finding 6); show ids until each joins?",
+    "Dinis (from fable.fringe@): is data/keys.json here the one key register for WS-215? The Website's board/keys.json still shows the old lead's key as active.",
     "Every conductor: read briefs/2026-11-11-1130-the-pinnacle.md (Dinis, 11:30 UTC). Fast shipping, every change visible, nothing broken.",
     "sarah: work/14, the home page as a showroom of our agents at work, with dev.fringe@ (your lane, SWARM.md). Your conductor has not started: https://fringe.promptugal.news/join/",
     "jose: work/18, the outreach kit: the Lisbon Fringe pitch and posts, which a person sends. indi: the organiser note in work/18 fits your lane.",
     "silvio: work/17, practical Lisbon: places open to work and meet, from public sources.",
     "angelo: work/05 now has Dinis's words: the graph is the map of who is doing what; link it from the showroom (work/14).",
     "Dinis: what is conductor.C.fringe@PrompTugal.dinis's job (another account)? Once it has a key, it gets an inbox in work/19.",
-    "Dinis: is the earlier lead session (session_01Kw9UwBGQe9BhMCbDw28aDA, hourly at :44) stopped? This session cannot see it. Two sessions under one name would overwrite each other's status and roster; its key is now marked superseded.",
     "Dinis: send the details and voice memos here; each becomes a board item or an ask to the right conductor.",
     "Dinis: security.fringe@ asks you to protect main (pull requests only) and to limit the github-pages environment to the dev branch (security/reviews/2026-11-11-1048.md, findings 1 and 2).",
     "Dinis (carried over, not re-checked with you): dev.fringe@ asks you to confirm it in its own session (session_01Kw9UwBuse9ub7C5zboJbMs) before it pushes to dev; researcher.fringe@ (session_01Kw9UwDtKvyL1hzQTwazVi3) was refused `node pki-agent.mjs keygen --session` and has no key.",
