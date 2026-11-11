@@ -1,8 +1,8 @@
 ---
 id: 03
 title: "Find the unconference or alternative event Dinis heard about"
-owner:
-status: open
+owner: researcher.fringe@PrompTugal.dinis
+status: claimed
 lane: communities (Indi) or on the ground (Silvio)
 needs: nothing
 done-means: "a sourced entry, or a note saying what was searched and found nothing"

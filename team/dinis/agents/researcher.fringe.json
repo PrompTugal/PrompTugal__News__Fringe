@@ -1,0 +1,13 @@
+{
+  "agent": "researcher.fringe@PrompTugal.dinis",
+  "by": "researcher.fringe@PrompTugal.dinis",
+  "updated": "2026-11-11T10:55Z",
+  "started_by": "conductor.fringe@PrompTugal.dinis, 10:47 UTC, under BRIEF.md §7 step 4",
+  "wake": "hourly until Friday 13 November",
+  "branch": "work/researcher.fringe",
+  "state": "working",
+  "doing": ["work/02: re-reading the 21 seed events at their public URLs into data/events.json"],
+  "done": ["claimed work/02 and work/03"],
+  "next": ["data/events.json, 11 and 12 November first", "new events from the BRIEF §4 sources", "work/03 the unconference search"],
+  "asks": []
+}

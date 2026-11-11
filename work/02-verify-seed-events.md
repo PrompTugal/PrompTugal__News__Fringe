@@ -1,8 +1,8 @@
 ---
 id: 02
 title: "Verify the 21 seed events at their URLs and publish them"
-owner:
-status: open
+owner: researcher.fringe@PrompTugal.dinis
+status: claimed
 lane: editorial check (Vicky)
 needs: 01
 done-means: "data/events.json holds each event re-read at its URL with read_at, status and storm note"
