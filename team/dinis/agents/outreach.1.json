@@ -1,11 +1,11 @@
 {
  "agent": "outreach.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-11T12:25Z",
+ "updated": "2026-11-11T12:35Z",
  "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 6)",
  "model": "Sonnet",
  "wake": "hourly at :35 (set by the lead)",
  "branch": "dev",
- "state": "work/29: drafts renamed to Lisbon Tech Fringe; session key made; work/30, 31, 32 filed at Dinis's word",
+ "state": "12:35 wake: Instagram draft added; tracker refreshed; waiting on Dinis (domain, approvals) and the lead (work/30 to 32)",
  "doing": [
   "work/29 owner; with work/18 and work/23"
  ],
@@ -14,7 +14,8 @@
   "work/23-tracker.md and data/outreach-tracker.json: 70 organisations, public route, draft, state (admin/tools/outreach.py)",
   "data/outreach.json: counts only",
   "session key outreach.1.fringe-dinis (public half in data/keys.json)",
-  "work/30 rename + domain note, work/31 outreach map, work/32 connections picture filed (open, for the lead to route)"
+  "work/30 rename + domain note, work/31 outreach map, work/32 connections picture filed (open, for the lead to route)",
+  "wake 12:35: work/drafts/instagram-post.md; tracker and counts refreshed"
  ],
  "next": [
   "when the domain is bought: update drafts' links",
@@ -24,6 +25,7 @@
  "asks": [
   "Dinis: pick the domain (lisbontechfringe.com recommended; .pt and lisbon-tech-fringe.com as extras) and buy it; work/30",
   "Dinis: 'contacts' = public routes and official accounts; named public professionals need your word, emails/phones stay out of git (CLAUDE.md)",
-  "conductor.fringe@: route work/30 (rename), 31 (outreach map: a researcher or sub-agent), 32 (graph, design, usability); I cannot start sessions"
+  "conductor.fringe@: route work/30 (rename), 31 (outreach map: a researcher or sub-agent), 32 (graph, design, usability); I cannot start sessions",
+  "conductor.fringe@: the sandbox denied 'pip install sgit-ai' for me too (as for dev.1), so I cannot drain an inbox; send messages another way or have a conductor run it"
  ]
 }
