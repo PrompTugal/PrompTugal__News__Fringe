@@ -1,0 +1,96 @@
+{
+ "body": {
+  "v": 1,
+  "id": "2026-11-11-p3-persona-for-6-events",
+  "altitude": "A1",
+  "from": "conductor.fringe@PrompTugal.angelo",
+  "for": "conductor.fringe@PrompTugal.dinis",
+  "mandate": "Say which visitor each event is best for (the home page asks \"What are you looking for?\": investor, founder, builder, curious). A cross-environment test at Dinis and Angelo's word (11 Nov, about 20:3x UTC): an OpenRouter call issued by Angelo's conductor, run in Dinis's environment.",
+  "grant": [],
+  "tier": "cheap",
+  "max_tokens": 300,
+  "prompt": "You classify a public event listing for Lisbon Tech Fringe (an independent guide to side events in Lisbon). Choose the ONE visitor it is best for: investor, founder, builder (developers, designers, makers) or curious (anyone; social, culture, learning). Answer only with JSON: {\"persona\": \"investor|founder|builder|curious\", \"why\": \"one short sentence from the listing\"}. The event: {{input}}",
+  "inputs": [
+   {
+    "id": "2026-11-12-web-summit-x-tech-talks-run-club-coffee",
+    "name": "Web Summit x Tech Talks Run Club & Coffee",
+    "organiser": "unknown (a personal Luma calendar; not named here)",
+    "kind": "side event",
+    "topics": [
+     "health & bio"
+    ]
+   },
+   {
+    "id": "2026-11-12-am-run-workout-w-bvc",
+    "name": "AM Run & Workout w/ BVC",
+    "organiser": "BVC (per the event page)",
+    "kind": "side event",
+    "topics": [
+     "venture & fundraising"
+    ]
+   },
+   {
+    "id": "2026-11-12-padel-encounters-lisbon-thu-12-nov",
+    "name": "Padel Encounters Lisbon · Thu 12 Nov",
+    "organiser": "unknown (a personal Luma calendar; not named here)",
+    "kind": "side event",
+    "topics": [
+     "tech & innovation"
+    ]
+   },
+   {
+    "id": "2026-11-12-the-right-hand-breakfast-chiefs-of-staff-at-we",
+    "name": "The Right Hand Breakfast: Chiefs of Staff at Web Summit",
+    "organiser": "unknown (a personal Luma calendar; not named here)",
+    "kind": "side event",
+    "topics": [
+     "venture & fundraising",
+     "growth & product"
+    ]
+   },
+   {
+    "id": "2026-11-12-guided-morning-walk-in-lisbon-before-web-summi",
+    "name": "Guided Morning Walk in Lisbon Before Web Summit",
+    "organiser": "unknown (a personal Luma calendar; not named here)",
+    "kind": "side event",
+    "topics": [
+     "growth & product"
+    ]
+   },
+   {
+    "id": "2026-11-12-networking-coffee-breakfast-web-summit",
+    "name": "Networking Coffee & Breakfast | Web Summit",
+    "organiser": "unknown (a personal Luma calendar; not named here)",
+    "kind": "side event",
+    "topics": [
+     "tech & innovation"
+    ]
+   }
+  ],
+  "output": {
+   "required": [
+    "persona",
+    "why"
+   ],
+   "enum": {
+    "persona": [
+     "investor",
+     "founder",
+     "builder",
+     "curious"
+    ]
+   }
+  },
+  "return": "commit tasks/<id>/result-<your agent>.json (node abp/tools/packets.mjs run --id <id> --as <your agent> --env <your runtime and account>)",
+  "issued_at": "2026-11-11T20:28:43Z"
+ },
+ "by": {
+  "altitude": "A3",
+  "name": "issuer: conductor.fringe@PrompTugal.angelo",
+  "fp": "sha256:44aa2f8f9f30b6e8",
+  "pub": "MCowBQYDK2VwAyEAJd5k0+FwKHhYNZFDTeoS+0BBQsZUdfRyMCmh/liOtiI=",
+  "born": "2026-11-11T20:28:43Z",
+  "signed_at": "2026-11-11T20:28:43Z"
+ },
+ "sig": "Eh0GgMtcLUvivxdcaq/UdgIVXw/RaKquFCL98A8iB9HhruF2WezQHD7oREQB9uf2OvpcataxOgXFV4YGUpQwCg=="
+}
