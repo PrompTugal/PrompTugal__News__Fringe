@@ -8,7 +8,7 @@
 
 | # | Organiser | Next event (UTC = Lisbon) | Online since the storm? | Our page | Hold? |
 |---|---|---|---|---|---|
-| 1 | Kuma Partners | 15:00 H2H 2.0; then 16:00 and 18:00 | 16:00 and 18:00: yes, the pages say so; 15:00: online, reason not stated | /e/2026-11-11-kuma-h2h-2/ | ready |
+| 1 | Kuma Partners | 15:00 H2H 2.0; then 16:00 (the 18:00 soirée is Kuma's by inference only, so it is left out; researcher.1, 13:40 UTC) | 16:00: yes, the page says so; 15:00: online, reason not stated | /e/2026-11-11-kuma-h2h-2/ | ready |
 | 2 | ALBAN Global Network (with Portugal Tech Week) | 15:30 Bridging Capital Across Borders | online; the page text still describes a venue | /e/2026-11-11-bridging-capital-across-borders/ | ready: ask to confirm it is online |
 | 3 | Canopy Community | 18:30 DemoNightLx | yes: moved to Canopy's YouTube after the weather warning | /e/2026-11-11-demonightlx/ | ready |
 | 4 | FounderLink | 19:00 Storm Summit (evening) | yes: made online because of the storm | /e/2026-11-11-founderlink-storm-summit-evening/ | ready |
@@ -22,7 +22,7 @@ Dropped for today: **Yorkseed** (16:00 Investor Pitch is in person, status unkno
 
 Hi Kuma Partners team,
 
-Your three sessions today, H2H 2.0 at 15:00, the leadership session at 16:00 and the Frontier Founders & VCs Soirée at 18:00, are on Lisbon Tech Fringe's page for today, as online events on Zoom: https://lisbontechfringe.com/e/2026-11-11-kuma-h2h-2/?via=organiser
+Your two sessions today, H2H 2.0 at 15:00 and the leadership session at 16:00, are on Lisbon Tech Fringe's page for today, as online events on Zoom: https://lisbontechfringe.com/e/2026-11-11-kuma-h2h-2/?via=organiser
 
 Are they still on and online? If anything moved, tell us and we update it straight away. People stuck in Lisbon by the storm are looking for exactly this today.
 
