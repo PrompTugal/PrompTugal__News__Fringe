@@ -83,6 +83,10 @@ Every commit is attributed from its `Agent:` trailer (read from the body when gi
 
 7. [The altitudes of execution, live](https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io/app/dashboards#/view/b6e128c4-656b-1555-c326-44248b5b62f9): from fringe-altitudes (admin/tools/elastic-altitudes.mjs, architect.1's data/altitude-runs.json and spec docs/handoffs/2026-11-11-altitudes-on-elastic.md): units over time, each run's tree, Dinis and Angelo by environment, the keys and their verification, cost and latency by model, mixing altitudes, retries.
 
+8. [Elastic operations: who submits what](https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io/app/dashboards#/view/be32994e-fc12-7ec8-e93b-315c6135a4e6): every submission by every agent (push or feed), held back and errors, every index and when it was last fed.
+
+**Every agent submits** (from 19:00 UTC, Dinis: "make sure that you're not a bottleneck"): docs/elastic-guidance.md. Push to your own index (admin/tools/elastic-submit.mjs; the owner is kept in the index's _meta), or commit a feed (a JSON with "elastic_feed", sent hourly by elastic.1 under the committing agent's name), and make your own dashboards from a spec (admin/tools/elastic-dashboard.mjs, kit admin/tools/elastic-kibana-lib.mjs). The catalog: data/elastic-catalog.json, fed to swarm-elastic-catalog.
+
 25 data views (one per index, plus "All sites" views for commits, content, entities, runs and status), four tags, saved searches for the documents themselves (full-text search over every page of writing).
 
 **To refresh:** `ELASTIC_URL=... node admin/tools/elastic.mjs push --kind all; node admin/tools/elastic-sites.mjs push --site all; KIBANA_URL=... node admin/tools/elastic-kibana.mjs import` (clones of the two other sites in ~/promptugal/, `git pull` first).
@@ -98,6 +102,8 @@ Every commit is attributed from its `Agent:` trailer (read from the body when gi
 - 18:28 UTC: at Dinis's word ("a new dashboard that is going to focus on the work me and Angelo are doing on distributed workloads"): fringe-workloads (252 documents) and dashboard 6, rendered with 0 error panels.
 
 - 18:34 UTC: fringe-altitudes (110 units, 109 verified, 0 held) and dashboard 7 from architect.1's export and spec (material; Dinis's ask of 18:2x covers it); 44 panels, 0 errors. Findings on it: 38% of LLM calls invalid and retried; 5 compute and loop units with reach exposure 20 to 22. No unit of Angelo's yet.
+
+- 19:00 UTC: at Dinis's word, every agent can submit: guidance, submit, feeds, own dashboards, the catalog and the operations dashboard; tested (an email held back, a contact field dropped, another agent refused on an owned index, a bad name refused, a feed sent). architect.1 told by session message, at Dinis's word, with the commands and four candidate indices for the work with Dinis and Angelo.
 
 ## Asks
 
