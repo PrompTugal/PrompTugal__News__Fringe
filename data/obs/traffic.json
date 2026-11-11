@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-11T20:25Z",
+ "generated": "2026-11-11T20:38Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 480,
-  "reads": 414,
-  "tabs": 219,
+  "views": 491,
+  "reads": 424,
+  "tabs": 223,
   "countries": 19,
   "shares": 164,
-  "bots": 1472,
+  "bots": 1508,
   "crawler_tabs": 1,
-  "agent_runs": 196,
-  "agent_runs_signed": 180
+  "agent_runs": 200,
+  "agent_runs_signed": 184
  },
  "by_hour": [
   [
@@ -212,7 +212,7 @@
   ],
   [
    "2026-11-11 20:00",
-   20
+   31
   ]
  ],
  "by_page": [
@@ -222,7 +222,7 @@
   ],
   [
    "/now/",
-   35
+   36
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
@@ -230,27 +230,27 @@
   ],
   [
    "/how/",
-   16
+   17
   ],
   [
    "/dashboard/",
-   11
+   12
   ],
   [
    "/programme/",
    11
   ],
   [
-   "/organisers/",
-   9
-  ],
-  [
    "/universe/",
-   9
+   11
   ],
   [
    "/traffic/",
-   8
+   9
+  ],
+  [
+   "/organisers/",
+   9
   ],
   [
    "/join/",
@@ -405,6 +405,18 @@
    2
   ],
   [
+   "/abp/",
+   2
+  ],
+  [
+   "/guidance/",
+   2
+  ],
+  [
+   "/agentic-team/how-it-flows/",
+   2
+  ],
+  [
    "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
    1
   ],
@@ -533,15 +545,11 @@
    1
   ],
   [
-   "/abp/",
-   1
-  ],
-  [
-   "/guidance/",
-   1
-  ],
-  [
    "/data/",
+   1
+  ],
+  [
+   "/designs/",
    1
   ]
  ],
@@ -566,15 +574,21 @@
   ],
   [
    "/how/",
-   15,
+   16,
    12,
    8
   ],
   [
    "/dashboard/",
+   12,
+   6,
+   7
+  ],
+  [
+   "/universe/",
    11,
-   7,
-   8
+   69,
+   43
   ],
   [
    "/organisers/",
@@ -583,22 +597,16 @@
    17
   ],
   [
+   "/traffic/",
+   9,
+   11,
+   31
+  ],
+  [
    "/programme/",
    9,
    43,
    53
-  ],
-  [
-   "/universe/",
-   9,
-   79,
-   42
-  ],
-  [
-   "/traffic/",
-   8,
-   12,
-   35
   ],
   [
    "/join/",
@@ -802,6 +810,24 @@
    "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&ss=tw&rt=PTW+Classroom+-+Who+Flies+When+the+CEO+Ejects",
    2,
    3,
+   0
+  ],
+  [
+   "/abp/",
+   2,
+   1,
+   0
+  ],
+  [
+   "/guidance/",
+   2,
+   0,
+   0
+  ],
+  [
+   "/agentic-team/how-it-flows/",
+   2,
+   9,
    0
   ],
   [
@@ -1027,22 +1053,16 @@
    0
   ],
   [
-   "/abp/",
+   "/designs/",
    1,
-   1,
-   0
-  ],
-  [
-   "/guidance/",
-   1,
-   1,
+   0,
    0
   ]
  ],
  "by_country": [
   [
    "Portugal",
-   300
+   310
   ],
   [
    "United Kingdom",
@@ -1058,7 +1078,7 @@
   ],
   [
    "Germany",
-   20
+   21
   ],
   [
    "Italy",
@@ -1120,7 +1140,7 @@
  "by_city": [
   [
    "Lisbon, Portugal",
-   219
+   228
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -1136,7 +1156,7 @@
   ],
   [
    "Frankfurt am Main, Germany",
-   16
+   17
   ],
   [
    "Harrietsham, United Kingdom",
@@ -1172,7 +1192,7 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   74
+   75
   ]
  ],
  "by_referrer": [
@@ -1188,7 +1208,7 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   441
+   452
   ],
   [
    "fringe.promptugal.news",
@@ -1230,11 +1250,11 @@
  "by_screen": [
   [
    "desktop",
-   265
+   274
   ],
   [
    "phone",
-   211
+   213
   ],
   [
    "tablet",
@@ -1244,18 +1264,18 @@
  "agents": [
   [
    "elastic.1.fringe@PrompTugal.dinis",
-   18
+   19
   ],
   [
    "design.4.fringe@PrompTugal.dinis",
    17
   ],
   [
-   "design.1.fringe@PrompTugal.dinis",
-   16
+   "researcher.1.fringe@PrompTugal.jose",
+   17
   ],
   [
-   "researcher.1.fringe@PrompTugal.jose",
+   "design.1.fringe@PrompTugal.dinis",
    16
   ],
   [
@@ -1271,11 +1291,11 @@
    12
   ],
   [
-   "observability.fringe@PrompTugal.dinis",
-   10
+   "design.3.fringe@PrompTugal.dinis",
+   11
   ],
   [
-   "design.3.fringe@PrompTugal.dinis",
+   "observability.fringe@PrompTugal.dinis",
    10
   ],
   [
@@ -1287,6 +1307,10 @@
    9
   ],
   [
+   "capture.1.fringe@PrompTugal.dinis",
+   8
+  ],
+  [
    "conductor.fringe@PrompTugal.indi",
    7
   ],
@@ -1296,10 +1320,6 @@
   ],
   [
    "researcher.2@PrompTugal.dinis",
-   7
-  ],
-  [
-   "capture.1.fringe@PrompTugal.dinis",
    7
   ],
   [
@@ -1328,11 +1348,11 @@
   ]
  ],
  "flows": {
-  "tabs": 219,
+  "tabs": 223,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    152
+    156
    ],
    [
     "shared link (?via=)",
@@ -1354,11 +1374,11 @@
    ],
    [
     "/now/",
-    7
+    8
    ],
    [
     "/universe/",
-    6
+    7
    ],
    [
     "/dashboard/",
@@ -1397,11 +1417,11 @@
     2
    ],
    [
-    "/join/",
-    1
+    "/agentic-team/how-it-flows/",
+    2
    ],
    [
-    "/e/2026-11-11-ai-horizon-conference/",
+    "/join/",
     1
    ]
   ],
@@ -1412,18 +1432,18 @@
    ],
    [
     "/now/",
-    13
+    14
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
     12
    ],
    [
-    "/programme/",
-    7
+    "/universe/",
+    8
    ],
    [
-    "/universe/",
+    "/programme/",
     7
    ],
    [
@@ -1561,18 +1581,18 @@
     2
    ],
    [
-    "/ → /e/2026-11-11-aubay-the-next-move/",
+    "/how/ → /dashboard/",
     2
    ],
    [
-    "/ → /universe/",
+    "/ → /e/2026-11-11-aubay-the-next-move/",
     2
    ]
   ],
   "pages_per_tab": [
    [
     "1",
-    147
+    150
    ],
    [
     "2",
@@ -1588,7 +1608,7 @@
    ],
    [
     "5+",
-    20
+    21
    ]
   ],
   "bounce_rate": 67,
@@ -1666,11 +1686,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-roast-your-website/",
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    "whatsapp: /e/2026-11-11-roast-your-website/",
     1
    ]
   ]
@@ -1696,7 +1716,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 219,
+    "views": 228,
     "lat": 38.7,
     "lon": -9.1
    },
@@ -1720,7 +1740,7 @@
    },
    {
     "name": "Frankfurt am Main, Germany",
-    "views": 16,
+    "views": 17,
     "lat": 50.1,
     "lon": 8.7
    },
