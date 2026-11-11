@@ -1,9 +1,9 @@
 {
   "by": "conductor.fringe@PrompTugal.jose",
-  "updated": "2026-11-11T15:12Z",
+  "updated": "2026-11-11T16:10Z",
   "person": "jose",
   "role": "member",
-  "state": "on: conductor.fringe@PrompTugal.jose; hourly wake at :07 until Friday 13 November, 23:59 UTC; wake 15:12: briefs 15, the operating model and policies v0.2.0 read; inbox drained (Dinis approved the organiser note at 14:26 UTC)",
+  "state": "on: conductor.fringe@PrompTugal.jose; hourly wake at :07 until Friday 13 November, 23:59 UTC; wake 16:10: no new brief; inbox empty since 15:47; tracker 74 drafted, 0 sent",
   "lane": "channels (SWARM.md): the posts and messages that point people to the site; a person sends, the conductor never posts or messages anyone",
   "doing": [
     "work/18 and work/23 (channels): today's seven organiser notes, approved, ordered by next start (work/drafts/organiser-notes-today-jose.md); Jose sends each before its time"
@@ -17,14 +17,17 @@
     "13:29: today's five organiser notes, ordered by next start, online events first: Kuma Partners 15:00, ALBAN Global Network 15:30, Canopy Community 18:30, FounderLink 19:00, Portugal Tech Week 20:30 (a3e3778); Kuma's note narrowed to its two confirmed sessions after researcher.1's hold (9caf194)",
     "13:5x, at Jose's word: connected to researcher.1's session by a direct session message; asked the lead (inbox) to issue researcher.1's inbox",
     "wake 14:11: all five notes re-checked against data/events.json (re-read at source 14:00 UTC by researcher.2): times and statuses unchanged",
-    "wake 15:12: notes rewritten after Dinis's approval and researcher.1's source reads: ALBAN reworded (its page says online, no venue), Kuma narrowed to its 16:00 session (15:00 started; the 18:00 Soirée is in person), two new organisers added (WonderLead in Tech 16:30, ideaic.io 18:00)"
+    "wake 15:12: notes rewritten after Dinis's approval and researcher.1's source reads: ALBAN reworded (its page says online, no venue), Kuma narrowed to its 16:00 session (15:00 started; the 18:00 Soirée is in person), two new organisers added (WonderLead in Tech 16:30, ideaic.io 18:00)",
+    "15:34: agreed with researcher.1 to hold machine reads of Luma and sideevents.guide until Dinis answers on work/49; asked the lead (inbox) for his call and flagged that researcher.2 still reads Luma hourly",
+    "wake 16:10: researcher.1's send desk (56fc772) noted: copy, open the organiser page, mark sent; a person still sends"
   ],
   "next": [
     "record each note Jose sends and pass it to outreach.1 for work/23's tracker",
     "Jose's changes to the LinkedIn post, X thread and pitch"
   ],
   "asks": [
-    "jose: send the notes in order, each before its time: ALBAN 15:30, Kuma 16:00, WonderLead 16:30, ideaic.io 18:00, Canopy 18:30, FounderLink 19:00, Portugal Tech Week 20:30; tell me each one you send.",
+    "jose: none of today's notes is marked sent (tracker 15:36 UTC). Kuma's and ALBAN's events have started; next: WonderLead before 16:30, ideaic.io 18:00, Canopy 18:30, FounderLink 19:00, Portugal Tech Week 20:30. Tell me each one you send.",
+    "Dinis: work/49: until it is settled, may a researcher read single Luma event pages we already list, one at a time, for today's status only? Jose's researcher holds until you answer; researcher.2 still reads Luma hourly.",
     "jose: read and approve (or change) work/drafts/linkedin-post-jose.md, work/drafts/x-thread-jose.md and work/drafts/pitch.md; you post them.",
     "Dinis: my public key is not in PrompTugal__News__Website board/keys.json; that repository is out of reach for this session.",
     "Dinis: this session's network refuses lisbontechfringe.com and fringe.promptugal.news, so the served version.json is checked through the deploy run, not the page."
