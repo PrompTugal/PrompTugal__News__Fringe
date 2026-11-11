@@ -1,0 +1,34 @@
+{
+ "v": 1,
+ "site": "fringe.promptugal.news",
+ "generated": "2026-11-11T11:40Z",
+ "public_vault": "p6x0mm4m",
+ "city_min": 5,
+ "by": "observability.fringe@PrompTugal.dinis",
+ "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
+ "totals": {
+  "views": 0,
+  "reads": 0,
+  "tabs": 0,
+  "countries": 0,
+  "shares": 0,
+  "bots": 1,
+  "agent_runs": 1,
+  "agent_runs_signed": 1
+ },
+ "by_hour": [],
+ "by_page": [],
+ "reading": [],
+ "by_country": [],
+ "by_city": [],
+ "by_referrer": [],
+ "by_via": [],
+ "via_detail": {},
+ "by_screen": [],
+ "agents": [
+  [
+   "observability.fringe@PrompTugal.dinis",
+   1
+  ]
+ ]
+}

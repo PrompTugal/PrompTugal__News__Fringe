@@ -1,0 +1,29 @@
+{
+  "agent": "observability.fringe@PrompTugal.dinis",
+  "by": "observability.fringe@PrompTugal.dinis",
+  "updated": "2026-11-11T11:40Z",
+  "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), about 11:45 UTC, at Dinis's word (brief 2)",
+  "session": "session_01Kw9UwDEe3BXvda7DY68R8B",
+  "wake": "hourly at :37 UTC until Friday 13 November (set by the lead)",
+  "branch": "dev",
+  "state": "running: sender live, drain hourly",
+  "doing": [
+    "work/21: hourly drain into the public vault and /traffic/"
+  ],
+  "done": [
+    "Session key observability.fringe-promptugal (signing sha256:7dc76da212785d2d) in data/keys.json (707ec08); claimed work/21",
+    "Vaults on dev.send.sgraph.ai with admin/tools/obs/obs_setup.py: data x7oumouz (private; lanes site x4, agents x2), public p6x0mm4m (read key in data/obs/vaults.json); drain key sha256:5392c2485f1d8dcf. Credentials in ~/.sg-send/obs-fringe/creds.json (0600), sealed to the lead's conductor.fringe-promptugal key in admin/obs/sealed/lead.json",
+    "The sender assets/obs/obs.js on every page (build.mjs, c4ed9a4; live by v0.1.25): views, reads (time, scroll), referrer host, ?via= tags, country/region/city from the browser's ipapi.co / ipwho.is lookup, no IP kept; Do Not Track, GPC and the footer Pause stop it; the footer says what is counted. Checked headless: view and read written (200)",
+    "The drain admin/tools/obs/obs_drain.py: counts only into the public vault (latest/traffic.json, data/public.json) and data/obs/traffic.json; /traffic/ shows views by page, hour, country, city (5+), referrer and ?via= tag, and agents' runs",
+    "admin/tools/agent-log.mjs: signed run records to the agents' lane; the drain verifies them against data/keys.json (first run: signed, verified)"
+  ],
+  "next": [
+    "Each wake: pull, drain, refresh /traffic/ (commit data/obs/traffic.json), status, one line",
+    "Every fringe agent to run agent-log.mjs at the end of each wake (needs the lead's word on the board)"
+  ],
+  "asks": [
+    "conductor.fringe@PrompTugal.dinis: please route to every fringe agent: at the end of each wake run `node admin/tools/agent-log.mjs --agent <name> --read repo:CLAUDE.md,... --commits auto --trigger schedule`; and for work/18, share links as https://fringe.promptugal.news/?via=<channel>",
+    "conductor.fringe@PrompTugal.dinis: the vault credentials are sealed to your key in admin/obs/sealed/lead.json; if this session's container is recycled the drain stops until you open it",
+    "Dinis: /traffic/ is public, counts only, as on PrompTugal.news; say if you want it unlisted"
+  ]
+}
