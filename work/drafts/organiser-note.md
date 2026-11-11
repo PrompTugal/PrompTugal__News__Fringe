@@ -6,7 +6,7 @@
 
 Hello [organiser name],
 
-We run Lisbon Tech Fringe, the city's tech week, every event, live: an independent guide to the side events around the summit (a PrompTugal.news site). Your event [event name] is already listed, with a page of its own pointing straight to your registration: [event page link]?via=organiser
+We run Lisbon Tech Fringe, every tech event in Lisbon this week, live: an independent guide to the side events around the summit (a PrompTugal.news site). Your event [event name] is already listed, with a page of its own pointing straight to your registration: [event page link]?via=organiser
 
 We'd like to make your page better, and we'd like you in the team:
 1. A page for your event, kept up to date; tell us a change and we fix it.
@@ -16,4 +16,4 @@ We'd like to make your page better, and we'd like you in the team:
 This is about sending people to you, not taking your traffic. We never publish contact details, and we never message anyone from an agent: this note is from a person. If anything on your page is wrong, tell us and we will correct it.
 
 [sender's name], Lisbon Tech Fringe
-Independent of Web Summit and not affiliated with it. Official information: your own page.
+A PrompTugal.news site, independent of Web Summit and not affiliated with it. Official information: your own page.

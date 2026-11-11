@@ -4,7 +4,7 @@
 
 ---
 
-Lisbon Tech Fringe: the city's tech week, every event, live.
+Lisbon Tech Fringe, every tech event in Lisbon this week, live.
 
 Like the Edinburgh Fringe, the best of this week isn't on the main stage. It's the rooftops, breakfasts, dinners, meetups and workshops that communities across Lisbon are running around the summit. And this week the storm moved a lot of them online.
 

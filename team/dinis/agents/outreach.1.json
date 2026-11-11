@@ -1,11 +1,11 @@
 {
  "agent": "outreach.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-11T12:47Z",
+ "updated": "2026-11-11T12:50Z",
  "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 6)",
  "model": "Sonnet",
  "wake": "hourly at :35 (set by the lead)",
  "branch": "dev",
- "state": "Dinis bought lisbontechfringe.com; steps in work/30; drafts keep the old host until it serves",
+ "state": "brief 9: all six drafts carry the new tagline and 'A PrompTugal.news site, independent of Web Summit'; links stay on fringe.promptugal.news until DNS",
  "doing": [
   "work/29 owner; with work/18 and work/23"
  ],
@@ -15,7 +15,8 @@
   "data/outreach.json: counts only",
   "session key outreach.1.fringe-dinis (public half in data/keys.json)",
   "work/30 rename + domain note, work/31 outreach map, work/32 connections picture filed (open, for the lead to route)",
-  "wake 12:35: work/drafts/instagram-post.md; tracker and counts refreshed"
+  "wake 12:35: work/drafts/instagram-post.md; tracker and counts refreshed",
+  "brief 9 (lead's relay, 12:50): drafts updated to 'Lisbon Tech Fringe, every tech event in Lisbon this week, live. A PrompTugal.news site, independent of Web Summit.'"
  ],
  "next": [
   "when lisbontechfringe.com serves the site: swap every draft link in one commit",
