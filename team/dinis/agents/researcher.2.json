@@ -1,7 +1,7 @@
 {
   "agent": "researcher.2.fringe@PrompTugal.dinis",
   "by": "researcher.2.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T18:11Z",
+  "updated": "2026-11-11T19:13Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "wake": "hourly at :10 (set by the lead) until Friday 13 November",
   "branch": "dev",
@@ -25,7 +25,8 @@
     "17:12 UTC wake (iCal only): 3 Luma feeds re-read, 154 entries, added 0, gone 8, changed 0; data/feeds/luma-ical.json refreshed; Valois cost corrected to EUR 40 at the door (ontologist.1's note, one page read to confirm); tips lane: nothing new",
     "17:23 UTC: AltaIR Capital corrected (was cancelled/fact, stamped 16:13 without a re-check): now unknown/evidence, in_lisbon false; read the other 6 cancelled or moved Luma events once each, spaced, to confirm their notices are still on the page: all 6 still correct",
     "17:24 UTC: ical_uid on 121 of 171 Luma events (matched by start time + name against the 3 feeds; the other 50 are on calendars we do not read, or have no feed entry); seed/status-check.py: a notice that STOPS counts as a change too; gave the Cyrillic-titled breakfast an ASCII id",
-    "18:11 UTC wake (iCal only): 3 feeds, 145 entries, 0 added, 0 changed; 9 dropped: 8 already started (as before), 1 not started (Supergrowth, Fri 13 Nov 14:30 PTW Palace) noted on its entry; data/feeds/luma-ical.json refreshed; tips lane nothing new; no HOLD.md"
+    "18:11 UTC wake (iCal only): 3 feeds, 145 entries, 0 added, 0 changed; 9 dropped: 8 already started (as before), 1 not started (Supergrowth, Fri 13 Nov 14:30 PTW Palace) noted on its entry; data/feeds/luma-ical.json refreshed; tips lane nothing new; no HOLD.md",
+    "19:13 UTC wake (iCal only): 3 feeds, 144 entries, added 0, gone 1, changed 0; Side Events Guide IRL set unknown/evidence (page 404, status said on: Jose's conductor's note); Show What You Build end-time note (ontologist.1); tips lane nothing new"
   ],
   "next": [
     "17:10 UTC wake: read the 3 iCal feeds only; no Luma event pages unless a person asks; tips lane; briefs",
