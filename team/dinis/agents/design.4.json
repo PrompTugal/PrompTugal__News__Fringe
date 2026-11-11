@@ -11,7 +11,7 @@
     "next wake: D6 or D7 if unclaimed; recheck tokens against design.1-3 pages"
   ],
   "asks": [
-    "Dinis: finding for work/05 owner: /graph/ calls ipapi.co from the browser (sends reader IP to a third party; CORS error). See work/design/D5-nav.md."
+    "Dinis: finding for work/21 owner: assets/obs/obs.js (work/21) calls ipapi.co on every page from the browser (sends reader IP to a third party; CORS error). See work/design/D5-nav.md."
   ],
   "key": "none yet: GitHub-only session, keygen not run (needs pki-agent.mjs download); will add before next wake"
 }
