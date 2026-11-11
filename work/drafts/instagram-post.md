@@ -14,6 +14,6 @@ Running something? Tell us your changes and we'll keep your page right.
 A PrompTugal.news site, independent of Web Summit and not affiliated. Storm: IPMA, ANEPC, storm-charles.promptugal.news
 #LisbonTechFringe #Lisbon #TechWeek #Startups
 
-**Bio link (set it to):** https://fringe.promptugal.news/?via=instagram
+**Bio link (set it to):** https://lisbontechfringe.com/?via=instagram
 
 **Story text (one line on the image, link sticker to the same URL):** Every Lisbon tech week event, live. A PrompTugal.news site, independent of Web Summit.

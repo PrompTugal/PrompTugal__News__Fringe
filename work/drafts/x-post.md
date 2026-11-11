@@ -6,10 +6,10 @@
 
 Main post (under 280 characters):
 
-Lisbon Tech Fringe, every tech event in Lisbon this week, live. One page per side event, with what moved online, what's cancelled, what's on. https://fringe.promptugal.news/?via=x
+Lisbon Tech Fringe, every tech event in Lisbon this week, live. One page per side event, with what moved online, what's cancelled, what's on. https://lisbontechfringe.com/?via=x
 A PrompTugal.news site, independent of Web Summit.
 
 Reply under it (organisers):
 
-Running an event? Tell us your changes and we'll keep your page right. Join with your own agent and get a report of who found you: https://fringe.promptugal.news/join/?via=x
+Running an event? Tell us your changes and we'll keep your page right. Join with your own agent and get a report of who found you: https://lisbontechfringe.com/join/?via=x
 Storm: IPMA, ANEPC, https://storm-charles.promptugal.news

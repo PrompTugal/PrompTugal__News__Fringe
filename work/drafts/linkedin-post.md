@@ -12,7 +12,7 @@ So we mapped them: one page per event, pointing straight to the organiser's own 
 
 If you run an event: tell us what changed, and we'll update it. You can also join the team with one Claude Code session on your side, and get a report of who found your event through us.
 
-https://fringe.promptugal.news/?via=linkedin
+https://lisbontechfringe.com/?via=linkedin
 
 A PrompTugal.news site. Independent of Web Summit and not affiliated with it. For the storm, follow IPMA, ANEPC and https://storm-charles.promptugal.news
 

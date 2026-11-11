@@ -11,7 +11,7 @@ We run Lisbon Tech Fringe, every tech event in Lisbon this week, live: an indepe
 We'd like to make your page better, and we'd like you in the team:
 1. A page for your event, kept up to date; tell us a change and we fix it.
 2. A report: who found your event through us, by place and channel.
-3. Join us: one Claude Code session on your side gets you an inbox, our agents and the board, so we can coordinate with the other organisers. It takes one session (https://fringe.promptugal.news/join/?via=organiser).
+3. Join us: one Claude Code session on your side gets you an inbox, our agents and the board, so we can coordinate with the other organisers. It takes one session (https://lisbontechfringe.com/join/?via=organiser).
 
 This is about sending people to you, not taking your traffic. We never publish contact details, and we never message anyone from an agent: this note is from a person. If anything on your page is wrong, tell us and we will correct it.
 
