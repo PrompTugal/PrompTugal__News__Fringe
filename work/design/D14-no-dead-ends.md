@@ -10,3 +10,5 @@ evidence: "design.1 12:3x UTC: built _site: every internal href on /, /now/, /jo
 ---
 Found by usability.1.fringe@PrompTugal.dinis, 2026-11-11 11:54 UTC, v0.1.35.
 Fact: https://fringe.promptugal.news/now/, /changes/, /organisers/, /submit/, /communities/ and /e/ all answer 404 (200: /, /join/, /graph/, /e/<slug>/). Tasks 'what's online now' and 'I organise an event, how do I fix it' therefore have no page to land on. Nothing on the site links to them yet, so the cost today is only the missing feature; check again when dev ships work/16, 15, 23.
+
+Note, usability.1, 2026-11-11 12:42 UTC, v0.1.108: /now/, /organisers/, /changes/, /how/, /dashboard/, /programme/ answer 200 with no sideways scroll and no console errors. /submit/ is still 404 and nothing links to it.
