@@ -5,27 +5,23 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-11T20:54Z",
+ "generated": "2026-11-11T21:09Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 492,
-  "reads": 425,
-  "tabs": 224,
+  "views": 495,
+  "reads": 428,
+  "tabs": 226,
   "countries": 19,
   "shares": 164,
-  "bots": 1518,
+  "bots": 1523,
   "crawler_tabs": 1,
-  "agent_runs": 207,
-  "agent_runs_signed": 190
+  "agent_runs": 211,
+  "agent_runs_signed": 194
  },
  "by_hour": [
-  [
-   "2026-11-09 21:00",
-   0
-  ],
   [
    "2026-11-09 22:00",
    0
@@ -212,17 +208,21 @@
   ],
   [
    "2026-11-11 20:00",
-   32
+   34
+  ],
+  [
+   "2026-11-11 21:00",
+   1
   ]
  ],
  "by_page": [
   [
    "/",
-   202
+   203
   ],
   [
    "/now/",
-   36
+   37
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
@@ -551,20 +551,24 @@
   [
    "/designs/",
    1
+  ],
+  [
+   "/e/2026-11-11-district-909-back-where-it-all-started/",
+   1
   ]
  ],
  "reading": [
   [
    "/",
-   159,
+   160,
    29,
    13
   ],
   [
    "/now/",
-   31,
-   37,
-   46
+   32,
+   38,
+   47
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
@@ -1057,16 +1061,22 @@
    1,
    0,
    0
+  ],
+  [
+   "/e/2026-11-11-district-909-back-where-it-all-started/",
+   1,
+   75,
+   100
   ]
  ],
  "by_country": [
   [
    "Portugal",
-   311
+   313
   ],
   [
    "United Kingdom",
-   64
+   65
   ],
   [
    "United States",
@@ -1140,7 +1150,7 @@
  "by_city": [
   [
    "Lisbon, Portugal",
-   229
+   231
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -1192,7 +1202,7 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   75
+   76
   ]
  ],
  "by_referrer": [
@@ -1203,19 +1213,23 @@
   [
    "promptugal.news",
    1
+  ],
+  [
+   "com.linkedin.android",
+   1
   ]
  ],
  "by_host": [
   [
    "lisbontechfringe.com",
-   453
+   456
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 2259,
+ "other_hosts_views": 2283,
  "by_via": [
   [
    "whatsapp",
@@ -1254,7 +1268,7 @@
   ],
   [
    "phone",
-   213
+   216
   ],
   [
    "tablet",
@@ -1283,12 +1297,12 @@
    15
   ],
   [
-   "conductor.fringe@PrompTugal.jose",
-   13
+   "ontologist.1.fringe@PrompTugal.dinis",
+   15
   ],
   [
-   "ontologist.1.fringe@PrompTugal.dinis",
-   12
+   "conductor.fringe@PrompTugal.jose",
+   13
   ],
   [
    "observability.fringe@PrompTugal.dinis",
@@ -1311,12 +1325,12 @@
    8
   ],
   [
-   "capture.1.fringe@PrompTugal.dinis",
+   "dev.1.fringe@PrompTugal.dinis",
    8
   ],
   [
-   "dev.1.fringe@PrompTugal.dinis",
-   7
+   "capture.1.fringe@PrompTugal.dinis",
+   8
   ],
   [
    "researcher.2@PrompTugal.dinis",
@@ -1348,11 +1362,11 @@
   ]
  ],
  "flows": {
-  "tabs": 224,
+  "tabs": 226,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    157
+    158
    ],
    [
     "shared link (?via=)",
@@ -1360,13 +1374,13 @@
    ],
    [
     "from another site",
-    1
+    2
    ]
   ],
   "entry_pages": [
    [
     "/",
-    148
+    149
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
@@ -1374,7 +1388,7 @@
    ],
    [
     "/now/",
-    8
+    9
    ],
    [
     "/universe/",
@@ -1428,7 +1442,7 @@
   "exit_pages": [
    [
     "/",
-    105
+    106
    ],
    [
     "/now/",
@@ -1592,11 +1606,11 @@
   "pages_per_tab": [
    [
     "1",
-    151
+    152
    ],
    [
     "2",
-    34
+    35
    ],
    [
     "3",
@@ -1670,11 +1684,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
@@ -1682,11 +1696,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-roast-your-website/",
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    "whatsapp: /e/2026-11-11-roast-your-website/",
     1
    ],
    [
@@ -1716,7 +1730,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 229,
+    "views": 231,
     "lat": 38.7,
     "lon": -9.1
    },
