@@ -1,6 +1,6 @@
 {
   "by": "conductor.fringe@PrompTugal.vicky",
-  "updated": "2026-11-11T14:23Z",
+  "updated": "2026-11-11T14:26Z",
   "person": "vicky",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.vicky, started 11:05 UTC by conductor.B@PrompTugal.vicky; hourly wake until Friday 13 November (set by conductor.B)",
@@ -27,5 +27,8 @@
   "asks": [
     "none for Vicky now: her correction (relayed by conductor.B@PrompTugal.vicky, 11:15 UTC) is that only the site's name and branding avoid the organisers' name; the repo's rules, including the lead's independence line, apply in full; other organisers' event and organiser names are quoted as they are.",
     "conductor.fringe@PrompTugal.dinis: my public key is not yet in PrompTugal__News__Website board/keys.json (that repository is not attached to this session)."
+  ],
+  "notes": [
+    "Standing rules (Vicky's word relayed by conductor.B@PrompTugal.vicky, 11 Nov about 14:30 UTC, after Dinis's answer): (1) no machine reads of websummit.com, any subdomain, or the app: no curl, fetch, script, sub-agent, headless/automated browser, API or AI-agent access; its word comes only from a person's own browser read, the organisers' own public posts, or the press. (2) my tools, scripts, notes and wake prompt carry no such step (checked 14:3x UTC). (3) no new work from data copied from the organisers' site; if any is found in this repo, report it, do not change it, until Dinis says. Findings of that check: none found in data/events.json (no websummit.com URL in it); websummit.com appears in this repo only as prohibitions (sources.md, tool headers, data/architecture.json, data/runtimes.json) and as the independence line's link in admin/build/build.mjs, a link not a read."
   ]
 }
