@@ -1,6 +1,6 @@
 {
   "agent": "swarm.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T22:54Z",
+  "updated": "2026-11-11T23:00Z",
   "account": "riskmandate-personal (Ultra)",
   "session": "session_01Kw9UwFHqLAjKake7UEDjL3",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (11 Nov 2026, about 21:0x UTC: 'start a new agent called Swarm ... for our Swarm capabilities and our risk mandate Swarm, which we want to demo tomorrow')",
@@ -19,7 +19,9 @@
     "2026-11-11T21:38Z: PrompTugal__News__Swarm: flat viewer (index.html), runs/, MAP.md, CLAUDE.md, gate, Pages workflow; pushed to dev cd3da14",
     "2026-11-11T22:54Z: PrompTugal__News__Swarm 5b31c16: tools/swarm.mjs (issue, run, verify, publish; the ladder moved here), a copy of the router, packets s001 to s003, s001 run by me (32 calls, 21 valid, 0.012 USD), how.html (the GitHub flow), RUNNER.md (the prompt for any account), live polling",
     "2026-11-11T22:54Z: started runner.1.swarm@PrompTugal.dinis at Dinis's word (one session, Sonnet, session_01Kw9UwCptHeeznCWAbMSQC5) to run s002",
-    "2026-11-11T22:54Z: inbox to conductor.fringe-angelo: packet s003-storm-six, at Dinis's word ('yes you can send the requests to angelo')"
+    "2026-11-11T22:54Z: inbox to conductor.fringe-angelo: packet s003-storm-six, at Dinis's word ('yes you can send the requests to angelo')",
+    "2026-11-11T23:00Z: Swarm 576bbe9: r5b (12 tasks x 4 models, 48 loops, 73 calls, 96 units at once, 0.031 USD); r4c on Claude Haiku and Sonnet via the router (first try out of tokens at 300: 3 of 32; at 1500: 12 of 12, 0.063 USD); r4s, 3 Claude Code sub-agents (Haiku), 3 of 3 valid, 241k tokens; a GitHub Actions runner workflow (needs the OPENROUTER_API_KEY repository secret)",
+    "2026-11-11T23:00Z: runner.1's keygen refused by its sandbox's classifier; told it to skip the PKI key (swarm.mjs signs per run) and run s002"
   ],
   "next": [
     "bring in s002 (runner.1) and s003 (Angelo); the cross-account view",
@@ -27,8 +29,9 @@
     "vault as a second carrier; Elastic swarm-flows"
   ],
   "asks": [
-    "Dinis: the Swarm repo's Pages workflow had not started by 2026-11-11T21:38Z; if Actions is off for the repo, turn it on, and set Pages source to 'GitHub Actions' (it deploys from dev)",
-    "Dinis: for the cloud agents, a scoped credential each (Cloudflare Workers token, AWS IAM limited to one bucket and function, GCP service account, Netlify site token); and your word, with a number, for any new session",
+    "Dinis: for GitHub Actions as a runner, add the repository secret OPENROUTER_API_KEY to PrompTugal__News__Swarm (Settings > Secrets and variables > Actions), then Actions > 'run a packet' > Run workflow",
+    "Dinis: the repo's About box: gear icon > Website: https://swarm.promptugal.news (or tick 'Use your GitHub Pages website'); my tools cannot edit it",
+    "Dinis: runner.1's sandbox refused pki-agent keygen; it runs without a PKI key (results are still signed per run)",
     "Dinis: not yet added to PrompTugal__News__Website board/keys.json"
   ]
 }
