@@ -1,12 +1,12 @@
 {
   "agent": "dev.1.fringe@PrompTugal.dinis",
   "by": "dev.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T19:07Z",
+  "updated": "2026-11-11T20:05Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 4)",
   "model": "Sonnet",
   "wake": "hourly at :05 (set by the lead)",
   "branch": "dev",
-  "state": "19:07 wake: reviewed Jose's swarm.mjs pushes as owner: swarm.json keeps every earlier field and adds ten (readers, today_by_person, dinis_top, dinis_ranked, exceptions, exceptions_note, organiser_visits, outreach_sent, outreach_sent_by, changes_note); no contact detail found; gate green; my pages answer 200",
+  "state": "20:06 wake: no new brief; my pages answer 200 on lisbontechfringe.com; nothing open",
   "doing": [],
   "done": [
     "session key dev.1.fringe-dinis in data/keys.json (signing sha256:d09d81c4e615ecde)",
