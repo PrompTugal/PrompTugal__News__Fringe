@@ -1,0 +1,437 @@
+{
+  "version": 2,
+  "title": "Lisbon Tech Fringe swarm",
+  "description": "The Lisbon Tech Fringe swarm as a graph: agents, lanes, runs, grants, findings, Dinis's words and the fringe events. Loaded by admin/tools/neo4j-load.py (neo4j.1.fringe@PrompTugal.dinis, WS-215).",
+  "pages": [
+    {
+      "id": "0",
+      "version": 1,
+      "title": "Overview",
+      "widgets": [
+        {
+          "version": 1,
+          "title": "Nodes",
+          "w": 3,
+          "h": 1,
+          "x": 0,
+          "y": 0,
+          "meta": {},
+          "settings": {
+            "type": "singleValue",
+            "query": "MATCH (n:Fringe) RETURN count(n)",
+            "databaseName": "neo4j",
+            "version": 1,
+            "fontSize": 56,
+            "align": 1
+          }
+        },
+        {
+          "version": 1,
+          "title": "Relationships",
+          "w": 3,
+          "h": 1,
+          "x": 3,
+          "y": 0,
+          "meta": {},
+          "settings": {
+            "type": "singleValue",
+            "query": "MATCH (:Fringe)-[e]->(:Fringe) RETURN count(e)",
+            "databaseName": "neo4j",
+            "version": 1,
+            "fontSize": 56,
+            "align": 1
+          }
+        },
+        {
+          "version": 1,
+          "title": "Agents",
+          "w": 3,
+          "h": 1,
+          "x": 6,
+          "y": 0,
+          "meta": {},
+          "settings": {
+            "type": "singleValue",
+            "query": "MATCH (a:Agent) RETURN count(a)",
+            "databaseName": "neo4j",
+            "version": 1,
+            "fontSize": 56,
+            "align": 1
+          }
+        },
+        {
+          "version": 1,
+          "title": "Commits on dev",
+          "w": 3,
+          "h": 1,
+          "x": 9,
+          "y": 0,
+          "meta": {},
+          "settings": {
+            "type": "singleValue",
+            "query": "MATCH (c:Commit) WHERE c.subject IS NOT NULL RETURN count(c)",
+            "databaseName": "neo4j",
+            "version": 1,
+            "fontSize": 56,
+            "align": 1
+          }
+        },
+        {
+          "version": 1,
+          "title": "Nodes by label",
+          "w": 6,
+          "h": 3,
+          "x": 0,
+          "y": 1,
+          "meta": {},
+          "settings": {
+            "type": "bar",
+            "query": "MATCH (n:Fringe) UNWIND [l IN labels(n) WHERE l <> 'Fringe'] AS label RETURN label, count(*) AS nodes ORDER BY nodes DESC",
+            "databaseName": "neo4j",
+            "dimensionKey": "label",
+            "valueKeys": [
+              "nodes"
+            ],
+            "orientation": "vertical",
+            "scaleType": "linear",
+            "showLegend": false,
+            "showDataZoom": "auto",
+            "version": 1,
+            "barArrangement": "grouped"
+          }
+        },
+        {
+          "version": 1,
+          "title": "Relationships by verb (with inverse)",
+          "w": 6,
+          "h": 3,
+          "x": 6,
+          "y": 1,
+          "meta": {},
+          "settings": {
+            "type": "table",
+            "query": "MATCH (:Fringe)-[e]->(:Fringe) RETURN type(e) AS verb, e.inverse AS inverse, count(*) AS uses ORDER BY uses DESC",
+            "databaseName": "neo4j",
+            "actions": [],
+            "version": 1,
+            "richRenderCells": false,
+            "compact": false,
+            "dataGridStyleRules": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "version": 1,
+      "title": "Lanes",
+      "widgets": [
+        {
+          "version": 1,
+          "title": "Agents crossing into other roles' lanes",
+          "w": 8,
+          "h": 3,
+          "x": 0,
+          "y": 0,
+          "meta": {},
+          "settings": {
+            "type": "graph",
+            "query": "MATCH (a:Agent)-[:AUTHORED]->(c:Commit)-[x:CROSSES_INTO]->(lane:Role) WITH a, lane, count(DISTINCT c) AS n MATCH p = (a)-[:PLAYS]->(:Role) RETURN p, a, lane, apoc.create.vRelationship(a, 'CROSSES_INTO', {commits: n}, lane) AS crossing",
+            "databaseName": "neo4j",
+            "version": 2,
+            "layout": {
+              "type": "d3Force"
+            },
+            "graphStyleRules": []
+          }
+        },
+        {
+          "version": 1,
+          "title": "Lane crossings",
+          "w": 4,
+          "h": 3,
+          "x": 8,
+          "y": 0,
+          "meta": {},
+          "settings": {
+            "type": "table",
+            "query": "MATCH (a:Agent)-[:AUTHORED]->(c:Commit)-[x:CROSSES_INTO]->(lane:Role) RETURN a.name AS agent, a.role AS own_role, lane.name AS lane, count(DISTINCT c) AS commits ORDER BY commits DESC",
+            "databaseName": "neo4j",
+            "actions": [],
+            "version": 1,
+            "richRenderCells": false,
+            "compact": false,
+            "dataGridStyleRules": []
+          }
+        },
+        {
+          "version": 1,
+          "title": "Shared files changed by others",
+          "w": 6,
+          "h": 2,
+          "x": 0,
+          "y": 3,
+          "meta": {},
+          "settings": {
+            "type": "table",
+            "query": "MATCH (owner:Agent)-[:OWNS]->(f:File)<-[:CHANGES]-(c:Commit)<-[:AUTHORED]-(a:Agent) WHERE a <> owner RETURN f.path AS file, owner.name AS owner, count(DISTINCT c) AS commits_by_others ORDER BY commits_by_others DESC",
+            "databaseName": "neo4j",
+            "actions": [],
+            "version": 1,
+            "richRenderCells": false,
+            "compact": false,
+            "dataGridStyleRules": []
+          }
+        },
+        {
+          "version": 1,
+          "title": "Files with the most writers",
+          "w": 6,
+          "h": 2,
+          "x": 6,
+          "y": 3,
+          "meta": {},
+          "settings": {
+            "type": "bar",
+            "query": "MATCH (a:Agent)-[:AUTHORED]->(:Commit)-[:CHANGES]->(f:File) RETURN f.path AS file, count(DISTINCT a) AS writers ORDER BY writers DESC LIMIT 12",
+            "databaseName": "neo4j",
+            "dimensionKey": "file",
+            "valueKeys": [
+              "writers"
+            ],
+            "orientation": "vertical",
+            "scaleType": "linear",
+            "showLegend": false,
+            "showDataZoom": "auto",
+            "version": 1,
+            "barArrangement": "grouped"
+          }
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "version": 1,
+      "title": "Runs and reach",
+      "widgets": [
+        {
+          "version": 1,
+          "title": "One run, A3 down to A0, with the keys that signed",
+          "w": 8,
+          "h": 3,
+          "x": 0,
+          "y": 0,
+          "meta": {},
+          "settings": {
+            "type": "graph",
+            "query": "MATCH (r:Run) WITH r ORDER BY r.name DESC LIMIT 1 MATCH p = (r)-[:CONTAINS]->(u:Unit) OPTIONAL MATCH q = (u)-[:HANDS_TO]->(:Unit) OPTIONAL MATCH k = (:Key)-[:SIGNED]->(u) RETURN p, q, k",
+            "databaseName": "neo4j",
+            "version": 2,
+            "layout": {
+              "type": "d3Force"
+            },
+            "graphStyleRules": []
+          }
+        },
+        {
+          "version": 1,
+          "title": "Reach held without need, by altitude",
+          "w": 4,
+          "h": 1,
+          "x": 8,
+          "y": 0,
+          "meta": {},
+          "settings": {
+            "type": "table",
+            "query": "MATCH (u:Unit) WHERE u.reach_held > u.reach_needs RETURN u.altitude AS altitude, u.role AS role, count(u) AS units, round(avg(u.reach_needs),1) AS needs, round(avg(u.reach_held),1) AS held ORDER BY altitude",
+            "databaseName": "neo4j",
+            "actions": [],
+            "version": 1,
+            "richRenderCells": false,
+            "compact": false,
+            "dataGridStyleRules": []
+          }
+        },
+        {
+          "version": 1,
+          "title": "Capabilities held without need",
+          "w": 4,
+          "h": 2,
+          "x": 8,
+          "y": 1,
+          "meta": {},
+          "settings": {
+            "type": "bar",
+            "query": "MATCH (u:Unit)-[:EXPOSES]->(x:Reach) RETURN x.name AS reach, count(u) AS units ORDER BY units DESC LIMIT 10",
+            "databaseName": "neo4j",
+            "dimensionKey": "reach",
+            "valueKeys": [
+              "units"
+            ],
+            "orientation": "vertical",
+            "scaleType": "linear",
+            "showLegend": false,
+            "showDataZoom": "auto",
+            "version": 1,
+            "barArrangement": "grouped"
+          }
+        },
+        {
+          "version": 1,
+          "title": "ABP findings by agent and rule",
+          "w": 12,
+          "h": 2,
+          "x": 0,
+          "y": 3,
+          "meta": {},
+          "settings": {
+            "type": "table",
+            "query": "MATCH (f:Finding)-[:FLAGS]->(a:Agent), (f)-[:BREACHES]->(r:Rule) RETURN a.name AS agent, r.id AS rule, r.mode AS mode, count(f) AS findings ORDER BY findings DESC",
+            "databaseName": "neo4j",
+            "actions": [],
+            "version": 1,
+            "richRenderCells": false,
+            "compact": false,
+            "dataGridStyleRules": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "version": 1,
+      "title": "Dinis's words",
+      "widgets": [
+        {
+          "version": 1,
+          "title": "From a word to the commit that acted on it",
+          "w": 7,
+          "h": 3,
+          "x": 0,
+          "y": 0,
+          "meta": {},
+          "settings": {
+            "type": "graph",
+            "query": "MATCH p = (:Person {id:'dinis'})-[:SAID]->(:Word)<-[:ACTS_ON]-(:Commit)<-[:AUTHORED]-(:Agent) RETURN p",
+            "databaseName": "neo4j",
+            "version": 2,
+            "layout": {
+              "type": "d3Force"
+            },
+            "graphStyleRules": []
+          }
+        },
+        {
+          "version": 1,
+          "title": "Words, agents and commits",
+          "w": 5,
+          "h": 3,
+          "x": 7,
+          "y": 0,
+          "meta": {},
+          "settings": {
+            "type": "table",
+            "query": "MATCH (:Person {id:'dinis'})-[:SAID]->(w:Word)<-[:ACTS_ON]-(c:Commit)<-[:AUTHORED]-(a:Agent) RETURN w.said_at AS said_at, w.text AS word, a.name AS agent, c.sha AS commit, c.at AS committed_at ORDER BY c.at DESC",
+            "databaseName": "neo4j",
+            "actions": [],
+            "version": 1,
+            "richRenderCells": false,
+            "compact": false,
+            "dataGridStyleRules": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "version": 1,
+      "title": "Live flows",
+      "widgets": [
+        {
+          "version": 1,
+          "title": "Span trees (Elastic swarm-flows)",
+          "w": 8,
+          "h": 3,
+          "x": 0,
+          "y": 0,
+          "meta": {},
+          "settings": {
+            "type": "graph",
+            "query": "MATCH p = (:Span)-[:IS_CHILD_OF]->(:Span) RETURN p",
+            "databaseName": "neo4j",
+            "version": 2,
+            "layout": {
+              "type": "d3Force"
+            },
+            "graphStyleRules": []
+          }
+        },
+        {
+          "version": 1,
+          "title": "Spans by flow and altitude",
+          "w": 4,
+          "h": 3,
+          "x": 8,
+          "y": 0,
+          "meta": {},
+          "settings": {
+            "type": "table",
+            "query": "MATCH (s:Span) RETURN s.flow AS flow, s.altitude AS altitude, count(s) AS spans, max(s.duration_ms) AS longest_ms, sum(CASE WHEN s.finished THEN 0 ELSE 1 END) AS unfinished ORDER BY flow, altitude",
+            "databaseName": "neo4j",
+            "actions": [],
+            "version": 1,
+            "richRenderCells": false,
+            "compact": false,
+            "dataGridStyleRules": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "version": 1,
+      "title": "Fringe events",
+      "widgets": [
+        {
+          "version": 1,
+          "title": "Communities, their events and topics",
+          "w": 8,
+          "h": 3,
+          "x": 0,
+          "y": 0,
+          "meta": {},
+          "settings": {
+            "type": "graph",
+            "query": "MATCH (c:Community)<-[:IS_ORGANISED_BY]-(e:Event) WITH c, count(e) AS n ORDER BY n DESC LIMIT 8 MATCH p = (c)<-[:IS_ORGANISED_BY]-(:Event)-[:IS_ABOUT]->(:Topic) RETURN p",
+            "databaseName": "neo4j",
+            "version": 2,
+            "layout": {
+              "type": "d3Force"
+            },
+            "graphStyleRules": []
+          }
+        },
+        {
+          "version": 1,
+          "title": "Busiest organisers",
+          "w": 4,
+          "h": 3,
+          "x": 8,
+          "y": 0,
+          "meta": {},
+          "settings": {
+            "type": "table",
+            "query": "MATCH (c:Community)<-[:IS_ORGANISED_BY]-(e:Event) RETURN c.name AS community, count(e) AS events ORDER BY events DESC LIMIT 15",
+            "databaseName": "neo4j",
+            "actions": [],
+            "version": 1,
+            "richRenderCells": false,
+            "compact": false,
+            "dataGridStyleRules": []
+          }
+        }
+      ]
+    }
+  ],
+  "params": []
+}

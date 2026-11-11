@@ -69,6 +69,8 @@ These are facts about the repository as it was read. The lane crossings are comp
 - **Live flows:** the span trees from Elastic swarm-flows.
 - **Fringe events:** the busiest communities, their events and topics.
 
+**The fixed layout, in Aura's own format (20:17 UTC):** `neo4j/dashboard-aura.json`. The first import showed that Aura uses a 12-column grid, with one height unit about 215 px, and that its NeoDash import halves x and w, so cards overlapped and the totals were cut off. This file starts from Dinis's export of the imported dashboard and places every card by title (`python3 admin/tools/neo4j-dashboard.py --aura-layout <exported.json>`). The four totals share one row, each graph takes 7 or 8 columns with its table beside it, and no cards overlap (checked). To use it, import this file and delete the first import.
+
 Every query was run against Aura at 20:12 UTC and returned rows (`python3 admin/tools/neo4j-dashboard.py --check` rebuilds the file and checks it). To use it, open **Dashboards → Import**, then choose the file or paste its JSON into the editor.
 
 ## Bloom

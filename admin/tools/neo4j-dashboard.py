@@ -70,3 +70,33 @@ if '--check' in sys.argv:
                 except SystemExit as e:
                     print(f"FAIL {p['title']} / {r['title']}: {e}")
 json.dump(dash, open(ROOT + '/neo4j/dashboard.json', 'w'), indent=1, ensure_ascii=False)
+
+
+# ---------- Aura's own format: --aura-layout EXPORTED.json writes neo4j/dashboard-aura.json ----------
+# Aura dashboards use a 12-column grid; one height unit is about 215 px. Its NeoDash import halves x and w,
+# so this sets each card's place by title on a file exported from Aura (Dashboards > ... > Export file).
+LAYOUT = {  # title: (x, y, w, h)
+ 'Nodes': (0, 0, 3, 1), 'Relationships': (3, 0, 3, 1), 'Agents': (6, 0, 3, 1), 'Commits on dev': (9, 0, 3, 1),
+ 'Nodes by label': (0, 1, 6, 3), 'Relationships by verb (with inverse)': (6, 1, 6, 3),
+ "Agents crossing into other roles' lanes": (0, 0, 8, 3), 'Lane crossings': (8, 0, 4, 3),
+ 'Shared files changed by others': (0, 3, 6, 2), 'Files with the most writers': (6, 3, 6, 2),
+ 'One run, A3 down to A0, with the keys that signed': (0, 0, 8, 3), 'Reach held without need, by altitude': (8, 0, 4, 1),
+ 'Capabilities held without need': (8, 1, 4, 2), 'ABP findings by agent and rule': (0, 3, 12, 2),
+ 'From a word to the commit that acted on it': (0, 0, 7, 3), 'Words, agents and commits': (7, 0, 5, 3),
+ 'Span trees (Elastic swarm-flows)': (0, 0, 8, 3), 'Spans by flow and altitude': (8, 0, 4, 3),
+ 'Communities, their events and topics': (0, 0, 8, 3), 'Busiest organisers': (8, 0, 4, 3),
+}
+if '--aura-layout' in sys.argv:
+    src = json.load(open(sys.argv[sys.argv.index('--aura-layout') + 1]))
+    src['description'] = 'The Lisbon Tech Fringe swarm as a graph: agents, lanes, runs, grants, findings, Dinis\'s words and the fringe events. Loaded by admin/tools/neo4j-load.py (neo4j.1.fringe@PrompTugal.dinis, WS-215).'
+    missing = []
+    for p in src['pages']:
+        for wd in p['widgets']:
+            if wd['title'] not in LAYOUT:
+                missing.append(wd['title']); continue
+            wd['x'], wd['y'], wd['w'], wd['h'] = LAYOUT[wd['title']]
+            if wd['settings'].get('type') == 'singleValue':
+                wd['settings']['fontSize'] = 56
+        p['widgets'].sort(key=lambda wd: (wd['y'], wd['x']))
+    json.dump(src, open(ROOT + '/neo4j/dashboard-aura.json', 'w'), indent=2, ensure_ascii=False)
+    print('neo4j/dashboard-aura.json written;', 'not placed: ' + ', '.join(missing) if missing else 'every card placed')
