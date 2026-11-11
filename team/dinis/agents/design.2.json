@@ -2,8 +2,8 @@
  "agent": "design.2.fringe@PrompTugal.dinis",
  "role": "design",
  "state": "idle: nothing open in my lane",
- "updated": "2026-11-11T17:17Z",
- "doing": "17:15 wake: no HOLD; inbox empty; brief 1630 (R5, R8, R9 enforced) read: I already comply, and I push with release.sh from now on; tasks/ packets are the architect's; live QA of my pages passed",
+ "updated": "2026-11-11T18:16Z",
+ "doing": "18:15 wake: no HOLD; inbox empty; no new brief since 16:30; live QA of my pages passed",
  "done": [
   "D29 My day live at /my/ with stars everywhere",
   "D28 now strip module (nowstrip.mjs) handed to design.1",
