@@ -111,7 +111,7 @@ export function grantOf(who, P = loadPolicy()) {
 // the owner of a shared file, if someone else owns it (abp/policies.json agents[].owns_shared)
 export function sharedOwner(r, who, P = loadPolicy()) {
     for (const [agent, a] of Object.entries(P.agents || {}))
-        if (agent !== who.agent && (a.owns_shared || []).some(gl => globToRe(fill(gl, who)).test(r))) return agent
+        if (agent !== who.agent && agent !== ((P.agents || {})[who.agent] || {}).under && (a.owns_shared || []).some(gl => globToRe(fill(gl, who)).test(r))) return agent
     return null
 }
 

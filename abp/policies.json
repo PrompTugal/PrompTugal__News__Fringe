@@ -540,7 +540,10 @@
     },
     "observability.fringe@PrompTugal.dinis": {
       "role": "observability",
-      "account": "this (the lead's)"
+      "account": "this (the lead's)",
+      "owns_shared": [
+        "admin/build/traffic.mjs"
+      ]
     },
     "design.1.fringe@PrompTugal.dinis": {
       "role": "design",
@@ -569,7 +572,10 @@
         "admin/build/how.mjs",
         "admin/build/designs/c.mjs"
       ],
-      "account": "this (the lead's)"
+      "account": "this (the lead's)",
+      "owns_shared": [
+        "admin/build/event-pages.mjs"
+      ]
     },
     "design.4.fringe@PrompTugal.dinis": {
       "role": "design",
@@ -578,7 +584,10 @@
         "admin/build/identity.mjs",
         "admin/build/tiers.mjs"
       ],
-      "account": "this (the lead's)"
+      "account": "this (the lead's)",
+      "owns_shared": [
+        "admin/build/identity.mjs"
+      ]
     },
     "dev.1.fringe@PrompTugal.dinis": {
       "role": "dev",
@@ -589,7 +598,10 @@
         "assets/vendor/**",
         "admin/tools/inboxes.py"
       ],
-      "account": "this (the lead's)"
+      "account": "this (the lead's)",
+      "owns_shared": [
+        "admin/build/swarm.mjs"
+      ]
     },
     "dev.2.fringe@PrompTugal.dinis": {
       "role": "dev",
@@ -684,7 +696,11 @@
         "api/v1/graph.json"
       ],
       "lane": "the graph and live views; SWARM.md also names 'the swarm's ABPs' in Angelo's lane: the architect proposes Angelo reviews these",
-      "account": "Angelo's"
+      "account": "Angelo's",
+      "owns_shared": [
+        "admin/build/graph.js",
+        "admin/build/graph.mjs"
+      ]
     },
     "designer.fringe@PrompTugal.angelo": {
       "role": "design",
@@ -892,7 +908,7 @@
       "for": "Dinis: observe for three rounds; then decide whether design keeps admin/build/** or works through a page registry"
     }
   ],
-  "hook_sha256": "822d95d9199339fe",
+  "hook_sha256": "341be5468c890190",
   "effective": "2026-11-11T13:36:00Z",
   "effective_note": "Earlier commits are read against the grants as calibration, not counted.",
   "review": {
