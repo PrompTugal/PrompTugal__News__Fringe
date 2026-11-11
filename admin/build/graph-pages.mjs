@@ -1,6 +1,7 @@
 // work/42 (ontologist.1.fringe@PrompTugal.dinis): the graph's pages and /api/v1/graph/<type>.json.
 // Every entity gets a page that links to all its neighbours; organisers are the stars (brief 13).
-import { writeFileSync, mkdirSync } from 'node:fs';
+import { writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { retired } from './graph-seen.mjs';
 import { join } from 'node:path';
 import { buildModel, TYPES, VERBS, GRAMMAR, PREFIX, pathOf } from './graph-model.mjs';
 
@@ -111,11 +112,29 @@ ${later.length ? `<h2>The rest of the week: ${later.length}</h2>${evList(later)}
 <h2>As data</h2><ul>${TYPES.map((t) => `<li><a href="/api/v1/graph/${t}.json">/api/v1/graph/${t}.json</a></li>`).join('')}<li><a href="/api/v1/graph/links.json">/api/v1/graph/links.json</a> (every typed link)</li></ul>`,
   'Lisbon Tech Fringe as a semantic graph: days, festivals, organisers, events, places, personas and topics.');
 
+  // --- supersede, never delete: an event id that left events.json keeps a page saying where it went --------------
+  const gone = retired(root, events);
+  const REPO = 'https://github.com/PrompTugal/PrompTugal__News__Fringe';
+  for (const r of gone) {
+    if (!/^[a-z0-9][a-z0-9-]*$/.test(r.id)) continue;
+    const dir = join(out, 'e', r.id);
+    if (existsSync(join(dir, 'index.html'))) continue;   // a live event page always wins
+    const nx = r.superseded_by && events.find((e) => e.id === r.superseded_by);
+    mkdirSync(dir, { recursive: true });
+    writeFileSync(join(dir, 'index.html'), page(`${r.name}: no longer at this address: Lisbon Tech Fringe`, `<style>${CSS}</style><h1>${esc(r.name)}</h1>
+${nx ? `<p><strong>This event has a new page:</strong> ${evLink(nx.id)}.</p>` : `<p><strong>No longer listed on Lisbon Tech Fringe.</strong> We keep this page so the link still answers.</p>`}
+<p class="muted">Listed from ${esc(String(r.first_seen).slice(0, 16).replace('T', ' '))} to ${esc(String(r.last_seen).slice(0, 16).replace('T', ' '))} UTC${r.removed_in ? `; taken out in <a href="${REPO}/commit/${esc(r.removed_in)}">${esc(r.removed_in)}</a>${r.removed_by ? `: “${esc(r.removed_by)}”` : ''}` : ''}.</p>
+<p>The organiser's page, which is the one that counts: <a href="${esc(r.url)}">${esc(r.url)}</a>.</p>
+<p class="muted">Supersede, never delete: every id the site has published is kept in <a href="/api/v1/graph/retired.json">/api/v1/graph/retired.json</a>. <a href="/">Today in Lisbon</a> · <a href="/graph/types/">the graph</a></p>`,
+      `${r.name}: no longer at this address on Lisbon Tech Fringe.`, '<meta name="robots" content="noindex">', '/'));
+  }
+
   // --- the API -----------------------------------------------------------------------------------------------------
   mkdirSync(join(out, 'api', 'v1', 'graph'), { recursive: true });
   const head = (t) => ({ about: `Lisbon Tech Fringe semantic graph (work/42): ${t}. Derived from data/events.json at build time; organisations only; no contact details. Independent of Web Summit.`, site: SITE, version: VERSION, built_at: BUILT, type: t });
   const withPage = (x) => ({ ...x, page: SITE + pathOf(x.type, x.id).slice(1) });
   for (const t of TYPES) writeFileSync(join(out, 'api', 'v1', 'graph', `${t}.json`), JSON.stringify({ ...head(t), [t]: m[t].map((x) => (t === 'events' ? { ...x, page: (() => { const s = events.find((e) => e.id === x.id); return s && hasPage(s) ? SITE + eventPath(s).slice(1) : x.url; })() } : withPage(x))) }, null, 1) + '\n');
+  writeFileSync(join(out, 'api', 'v1', 'graph', 'retired.json'), JSON.stringify({ ...head('retired'), retired: gone }, null, 1) + '\n');
   writeFileSync(join(out, 'api', 'v1', 'graph', 'links.json'), JSON.stringify({ ...head('links'), verbs: VERBS, grammar: GRAMMAR, links: m.links }, null, 1) + '\n');
   writeFileSync(join(out, 'api', 'v1', 'graph', 'index.json'), JSON.stringify({ ...head('index'), types: Object.fromEntries([...TYPES, 'links'].map((t) => [t, { url: `${SITE}api/v1/graph/${t}.json`, count: (m[t] || []).length }])), verbs: VERBS, grammar: GRAMMAR, pages: Object.fromEntries(Object.entries(PREFIX).map(([k, p]) => [k, `/${p}/<id>/`])) }, null, 1) + '\n');
   // The event page's row of links to every neighbour (organiser, umbrella, day, place, platform, persona, topic).
