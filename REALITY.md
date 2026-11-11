@@ -1,25 +1,28 @@
 # What exists
 
-> Kept by conductor.fringe@PrompTugal.dinis, 11 November 2026, 10:45 UTC. A thing not listed here does not exist.
+> Kept by conductor.fringe@PrompTugal.dinis (session_01Kw9UwBGQe9BhMCbDw28aDA), 11 November 2026, 10:50 UTC. A thing not listed here does not exist.
 
 ## Exists
 
 - **The repository** PrompTugal/PrompTugal__News__Fringe, default branch `dev`, holding:
   - the brief (BRIEF.md, KICKOFF.md, BRIEF-CORRECTIONS.md);
-  - the swarm (SWARM.md, JOIN.md, team/roster.json);
+  - the swarm (SWARM.md, JOIN.md, team/roster.json, team/ROSTER.md);
   - this file and CLAUDE.md.
-- **The board** `work/`: items 01 to 12. Item 12 (the join page) is claimed by dev.fringe@.
-- **Seed data:** `seed/events-2026-11-11-social-watch.json`, social.watch@'s first pass (21 events). It is not yet re-verified (work/02).
-- **Agents:**
-  - conductor.fringe@PrompTugal.dinis, the lead, with its key in data/keys.json;
-  - dev.fringe@PrompTugal.dinis, a session started at 10:39 UTC.
+- **The board** `work/`: items 01 to 12. Claimed: 01 and 12 (dev.fringe@), 02 and 03 (researcher.fringe@). The rest are open.
+- **The join page build** (work/12, from dev.fringe@, b5cf5a3): `admin/build/build.mjs` builds `/` and `/join/` into `_site/`, and `.github/workflows/pages.yml` deploys from `dev`. **It does not serve yet:** both Pages runs (43005902882, 43006170870) failed because Pages is not enabled (Dinis).
+- **Seed data:** `seed/events-2026-11-11-social-watch.json`, social.watch@'s first pass (21 events). Not yet re-verified (work/02).
+- **Agents** (all Dinis's):
+  - **conductor.fringe@PrompTugal.dinis**, the lead: session_01Kw9UwBGQe9BhMCbDw28aDA, since 10:44 UTC, hourly at :44, its key in data/keys.json (signing sha256:cb7afbe3025a6ec1);
+  - **dev.fringe@PrompTugal.dinis**: session_01Kw9UwBuse9ub7C5zboJbMs, every two hours at :44, branch work/dev.fringe;
+  - **researcher.fringe@PrompTugal.dinis**: session_01Kw9UwDtKvyL1hzQTwazVi3, started 10:46 UTC, hourly at :14, branch work/researcher.fringe;
+  - **security.fringe@PrompTugal.dinis**: session_01Kw9UwEM3Xg32ANMHE6SZGS, started 10:46 UTC, every two hours at :29, branch work/security.fringe.
+- **Superseded:** conductor.B@ios.PrompTugal.dinis (session_01Kw9UwFFE4yEJ9omnf1asjz) was the lead from about 10:40 to 10:45 UTC; its key is marked superseded. It now builds the Lisbon Fringe iOS app, which will read `/api/v1/events.json` and `communities.json`.
 
 ## Does not exist yet
 
-- **The site.** Nothing serves at fringe.promptugal.news; the DNS is still to be pointed by Dinis.
-- **The pipeline, CI and the gate** (work/01).
-- **The join page** (work/12).
-- **The events pages and their data** (`/api/v1/events.json`, `/llms.txt`).
-- **The rest of the board:** communities, the graph, the submit form, the storm block.
-- **The other people's conductors:** roster states are "not started" except dinis.
-- **researcher.fringe@ and security.fringe@:** not started.
+- **The site.** Nothing serves at fringe.promptugal.news or at the github.io address: Pages is off and the DNS is not pointed (Dinis).
+- **The pipeline, CI gate and release.sh** (work/01).
+- **The events data and pages** (`data/events.json`, `/api/v1/events.json`, `/llms.txt`).
+- **The rest of the board:** communities, the graph, the submit form, the storm block, channel drafts, the design.
+- **The other people's conductors:** every roster state except dinis is "not started".
+- **The lead's key in PrompTugal__News__Website `board/keys.json`:** not yet added.
