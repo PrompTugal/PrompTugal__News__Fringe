@@ -12,6 +12,7 @@ import { collectSwarm, swarmBody, swarmCss, swarmScript } from './swarm.mjs';   
 import { eventPages, eventPath, hasPage } from './event-pages.mjs';
 import { liveData, liveStrip, tickHtml, liveCss, liveJs } from './live.mjs';   // D23, design.3.fringe@PrompTugal.dinis
 import { bigStrip, denseRow, denseList, split, sizeOf, TIER_CSS } from './tiers.mjs';   // D18, design.3.fringe@PrompTugal.dinis
+import * as designA from './designs/a.mjs';   // D24, design.1
 import { programmeBody } from './programme.mjs';   // D3 follow-up, design.3.fringe@PrompTugal.dinis
 import { howBody } from './how.mjs';   // D11, design.3.fringe@PrompTugal.dinis
 import { eventCard as card, cardList, sortDay, CARD_CSS } from './cards.mjs';   // D3, design.3.fringe@PrompTugal.dinis   // work/22, dev.lead.fringe@PrompTugal.dinis
@@ -248,6 +249,11 @@ const graphPage = page('Connect the dots: Lisbon Tech Fringe', `<style>${graphCs
 mkdirSync(join(out, 'join'), { recursive: true });
 writeFileSync(join(out, 'index.html'), home);   // rewritten with the showroom strip after the swarm is collected (D6)
 writeFileSync(join(out, 'join', 'index.html'), joinPage);
+{ // design A preview (D24): the lab frame (work/35) will route ?design=a here
+  const A = designA.render({ events, esc, eventPath, hasPage, now: new Date(BUILT) });
+  mkdirSync(join(out, 'designs', 'a'), { recursive: true });
+  writeFileSync(join(out, 'designs', 'a', 'index.html'), page('Design A, the programme: Lisbon Tech Fringe', `<style>${A.css}</style>` + A.body, 'Design A: the week as a festival programme, by day and hour.', '', '/'));
+}
 mkdirSync(join(out, 'programme'), { recursive: true });
 writeFileSync(join(out, 'programme', 'index.html'), page('The programme: Lisbon Tech Fringe', programmeBody({ events, esc }), 'The whole week of Lisbon side events: browse by day, place and kind.', '', '/programme/'));
 mkdirSync(join(out, 'how'), { recursive: true });
