@@ -26,11 +26,11 @@
       if (inc.headline.at) p.appendChild(el('span', ' · ' + inc.headline.at, 'muted'));
       out.appendChild(p);
     }
-    var jobs = [];
+    var jobs = [], wOut = document.createDocumentFragment(), tOut = document.createDocumentFragment();
     if (ds['weather/warnings.json']) jobs.push(get(abs(ds['weather/warnings.json'])).then(function (w) {
       var list = (w.lisbon || []);
-      out.appendChild(el('h3', 'IPMA warnings for Lisbon'));
-      if (!list.length) { out.appendChild(el('p', 'No warning above green for the Lisbon district (read ' + t(w.read_utc) + ').', 'muted')); return; }
+      wOut.appendChild(el('h3', 'IPMA warnings for Lisbon'));
+      if (!list.length) { wOut.appendChild(el('p', 'No warning above green for the Lisbon district (read ' + t(w.read_utc) + ').', 'muted')); return; }
       var rank = { red: 0, orange: 1, yellow: 2 };
       list = list.slice().sort(function (a, b) { return (rank[a.level] ?? 3) - (rank[b.level] ?? 3) || String(a.start_utc).localeCompare(String(b.start_utc)); });
       var ul = el('ul');
@@ -40,20 +40,21 @@
         li.appendChild(link(x.source, '(IPMA)'));
         ul.appendChild(li);
       });
-      out.appendChild(ul);
-      out.appendChild(el('p', 'Read ' + t(w.read_utc) + ' by the storm site.', 'muted'));
+      wOut.appendChild(ul);
+      wOut.appendChild(el('p', 'Read ' + t(w.read_utc) + ' by the storm site.', 'muted'));
     }));
     if (ds['transport/services.json']) jobs.push(get(abs(ds['transport/services.json'])).then(function (s) {
       var ops = s.operators || [];
       if (!ops.length) return;
-      out.appendChild(el('h3', 'What moved: transport'));
+      tOut.appendChild(el('h3', 'What moved: transport'));
       var ul = el('ul');
       ops.forEach(function (o) { var li = el('li'); li.appendChild(el('strong', o.operator || o.id)); li.appendChild(document.createTextNode(': ' + (o.state || 'unknown'))); ul.appendChild(li); });
-      out.appendChild(ul);
+      tOut.appendChild(ul);
       var m = el('p', 'Updated ' + t(s.updated) + '. Details and every operator\'s notices: ', 'muted');
-      m.appendChild(link('https://storm-charles.promptugal.news/', 'the storm site')); out.appendChild(m);
+      m.appendChild(link('https://storm-charles.promptugal.news/', 'the storm site')); tOut.appendChild(m);
     }));
     return Promise.all(jobs.map(function (j) { return j.catch(function () {}); })).then(function () {
+      out.appendChild(wOut); out.appendChild(tOut);   // warnings before transport, whichever arrived first
       if (out.childNodes.length) { box.textContent = ''; box.appendChild(out); }
     });
   }).catch(function () { /* keep the static block */ });
