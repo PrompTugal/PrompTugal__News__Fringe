@@ -1,13 +1,13 @@
 {
   "agent": "ontologist.1.fringe@PrompTugal.dinis",
   "by": "ontologist.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T21:56Z",
+  "updated": "2026-11-11T22:56Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 13: \"get the ontologist on the case\")",
   "model": "Opus",
   "account": "this (the lead's)",
   "wake": "hourly at :55 (set by the lead)",
   "branch": "dev",
-  "state": "work/42: today-first pages now say when the day has changed since the build (the site rebuilds on push only)",
+  "state": "work/42: persona rules audited: investor 47 -> 30 (no more topic-only matches), founder 76 -> 81",
   "doing": [
     "work/42 the semantic graph: slice 1 pushed; next, the event page linking up to its festival and organisers, sessions of the major days, and the organiser noise Dinis named (101 organisers)"
   ],
@@ -31,7 +31,8 @@
     "wake 20:56: read briefs/, work/ and sources.md before any source (no changes to the holds); no outside source read this wake; seen.json refreshed (34 commits); persona pages: a small page script folds events that ended since the build into 'Earlier today' and updates the counts every minute (tested with Playwright at 20:56 and with the clock at 23:30: 11/13 -> 5/19, no errors)",
     "CI stall explained by the lead (21:00): GitHub Actions major outage, Pages partial outage (githubstatus.com); nothing to fix here, no re-pushes; 7f7ab67 goes live when the queue drains",
     "security finding 44 (lead, 21:2x): abp whoami re-run at 21:23; ~/.abp/whoami = ontologist.1.fringe@PrompTugal.dinis (first run 15:28)",
-    "wake 21:55: briefs/work/sources read first, no changes; deploys resumed (21:54) and 7f7ab67 is live; seen.json refreshed (35 commits); /o/ and persona pages show a note linking to the right day's page when the visitor's date is past the build day (deploy.yml has no schedule); gate caught my first version (a script href read as a broken link), fixed by building the link in the DOM; tested with the clock on 11, 12 and 16 Nov, no errors"
+    "wake 21:55: briefs/work/sources read first, no changes; deploys resumed (21:54) and 7f7ab67 is live; seen.json refreshed (35 commits); /o/ and persona pages show a note linking to the right day's page when the visitor's date is past the build day (deploy.yml has no schedule); gate caught my first version (a script href read as a broken link), fixed by building the link in the DOM; tested with the clock on 11, 12 and 16 Nov, no errors",
+    "wake 22:55: briefs/work/sources first, no changes; inbox quiet; persona audit: 'seed' matched inside 'Yorkseed' (now \\bseed\\b) and the topic 'venture & fundraising' put 17 non-investor events on the investor page (now a founder signal); investor 47 -> 30, founder 76 -> 81, others unchanged; seen.json refreshed (36 commits)"
   ],
   "next": [
     "at every wake: read briefs/ and work/ (and sources.md) before any source",
