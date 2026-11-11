@@ -9,6 +9,7 @@ import { trafficBody, trafficCss } from './traffic.mjs';   // work/21, observabi
 import { meBody, meCss } from './me.mjs';   // work/26
 import { collectSwarm, swarmBody, swarmCss, swarmScript } from './swarm.mjs';   // work/25, dev.1.fringe@PrompTugal.dinis
 import { eventPages, eventPath, hasPage } from './event-pages.mjs';
+import { programmeBody } from './programme.mjs';   // D3 follow-up, design.3.fringe@PrompTugal.dinis
 import { howBody } from './how.mjs';   // D11, design.3.fringe@PrompTugal.dinis
 import { eventCard as card, cardList, sortDay, CARD_CSS } from './cards.mjs';   // D3, design.3.fringe@PrompTugal.dinis   // work/22, dev.lead.fringe@PrompTugal.dinis
 import { WORDMARK, IDENTITY_CSS } from './identity.mjs';   // D9, design.4.fringe@PrompTugal.dinis
@@ -91,7 +92,7 @@ footer{max-width:var(--page);margin:var(--s5) auto;padding:var(--gutter);border-
 .earlier{margin:12px 0}.earlier summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:600}
 .showroom-list{list-style:none;padding:0;margin:.5em 0;font-size:.9rem}.showroom-list li{margin:.25em 0}${IDENTITY_CSS}`;
 // D5: the one navigation. Flip `live` to true when a page ships (Now: work/16, Organisers: work/23); no JavaScript.
-const NAV = [['Today', '/', true], ['Now', '/now/', true], ['Map', '/graph/', true], ['Organisers', '/organisers/', true], ['How', '/how/', true], ['Traffic', '/traffic/', true], ['Join', '/join/', true]];
+const NAV = [['Today', '/', true], ['Programme', '/programme/', true], ['Now', '/now/', true], ['Map', '/graph/', true], ['Organisers', '/organisers/', true], ['How', '/how/', true], ['Traffic', '/traffic/', true], ['Join', '/join/', true]];
 const navHtml = (here) => `<header><nav aria-label="Main"><span class="brand"><a href="/">${WORDMARK}</a></span>
 <ul class="nav">${NAV.filter((n) => n[2]).map(([label, href]) => `<li><a href="${href}"${href === here ? ' aria-current="page"' : ''}>${label}</a></li>`).join('')}</ul></nav><div class="tiles" aria-hidden="true"></div></header>`;
 const OG_IMAGE = SITE + 'assets/og/share.png';   // work/design D2: 1200x630, rendered in CI from admin/build/og/share.html (never in git)
@@ -136,7 +137,7 @@ function eventsHtml() {
     + sec('online', 'Online today, any time', online)
     + (earlier.length ? `<details id="earlier" class="earlier"><summary>Earlier today (${earlier.length} already over)</summary>${cardList(earlier.map(eventCard))}</details>` : '')
     + `<h2 id="tomorrow">Tomorrow, ${tomorrow}</h2>` + (tom.length ? cardList(tom.map(eventCard)) : '<p class="muted">Nothing checked yet for this day.</p>')
-    + (later ? `<p class="muted">${later} more later this week in <a href="/api/v1/events.json">the data</a>.</p>` : '');
+    + (later ? `<p class="muted">${later} more later this week: <a href="/programme/">browse the whole programme by day, place and kind</a>.</p>` : '');
 }
 
 
@@ -233,6 +234,8 @@ const graphPage = page('Connect the dots: Lisbon Fringe', `<style>${graphCss}</s
 mkdirSync(join(out, 'join'), { recursive: true });
 writeFileSync(join(out, 'index.html'), home);   // rewritten with the showroom strip after the swarm is collected (D6)
 writeFileSync(join(out, 'join', 'index.html'), joinPage);
+mkdirSync(join(out, 'programme'), { recursive: true });
+writeFileSync(join(out, 'programme', 'index.html'), page('The programme: Lisbon Fringe', programmeBody({ events, esc }), 'The whole week of Lisbon side events: browse by day, place and kind.', '', '/programme/'));
 mkdirSync(join(out, 'how'), { recursive: true });
 const count = (d, re) => { try { return readdirSync(join(root, d)).filter((f) => re.test(f)).length; } catch { return 0; } };
 const nAgents = readdirSync(join(root, 'team')).reduce((a, d) => a + count(`team/${d}/agents`, /\.json$/) + (existsSync(join(root, 'team', d, 'status.json')) ? 1 : 0), 0);
@@ -261,7 +264,7 @@ writeFileSync(join(out, 'changes', 'index.html'), page('What changed: Lisbon Fri
 writeFileSync(join(out, 'api', 'v1', 'changes.json'), JSON.stringify({ about: 'Lisbon Fringe releases from git: version (CI tag), commit, UTC time, agent, subject, files touched by area.', site: SITE, version: VERSION, built_at: BUILT, ...changes }, null, 1) + '\n');
 const ePages = eventPages(events, { page, esc, linkify, SITE, card, cardList, orgs });   // work/22: /e/<id>/
 for (const p of ePages) { mkdirSync(join(out, p.path), { recursive: true }); writeFileSync(join(out, p.path, 'index.html'), p.html); }
-writeFileSync(join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n<url><loc>${SITE}</loc></url>\n<url><loc>${SITE}join/</loc></url>\n<url><loc>${SITE}how/</loc></url>\n<url><loc>${SITE}graph/</loc></url>\n<url><loc>${SITE}traffic/</loc></url>\n<url><loc>${SITE}evolution/</loc></url>\n${ePages.map((p) => `<url><loc>${esc(p.url)}</loc></url>\n`).join('')}</urlset>\n`);
+writeFileSync(join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n<url><loc>${SITE}</loc></url>\n<url><loc>${SITE}join/</loc></url>\n<url><loc>${SITE}how/</loc></url>\n<url><loc>${SITE}programme/</loc></url>\n<url><loc>${SITE}graph/</loc></url>\n<url><loc>${SITE}traffic/</loc></url>\n<url><loc>${SITE}evolution/</loc></url>\n${ePages.map((p) => `<url><loc>${esc(p.url)}</loc></url>\n`).join('')}</urlset>\n`);
 writeFileSync(join(out, 'version.json'), JSON.stringify({ version: VERSION, commit: process.env.GITHUB_SHA || '', pushed_at: process.env.PUSHED_AT || '', built_at: BUILT }, null, 2) + '\n');
 writeFileSync(join(out, 'version.txt'), VERSION + '\n');
 writeFileSync(join(out, '.nojekyll'), '');
