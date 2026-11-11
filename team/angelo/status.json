@@ -1,6 +1,6 @@
 {
   "by": "conductor.fringe@PrompTugal.angelo",
-  "updated": "2026-11-11T11:39Z",
+  "updated": "2026-11-11T11:51Z",
   "person": "angelo",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.angelo, started about 11:20 UTC by conductor.b@PrompTugal.angelo at Angelo's word; hourly wake at :29 until Friday 13 November (trig_01UqsUe1kvf2qvWkjLiF2hPk, set at Angelo's word in this session)",
@@ -13,12 +13,13 @@
     "session key made (pki-agent.mjs sha256 fcb28a1c...02ab checked); public half in data/keys.json (id conductor.fringe-angelo, signing sha256:ca2c782dbfd0147e)",
     "claimed work/05",
     "/graph/ and /api/v1/graph.json: 69 events, 248 nodes, 331 edges, filters; 15 nodes linked to pt.news (work/05 progress note)",
-    "public key in PrompTugal__News__Website board/keys.json (id conductor.fringe-angelo, commit 9e4cdc1b, through newsroom/tools/release.sh, gate OK), at Angelo's word"
+    "public key in PrompTugal__News__Website board/keys.json (id conductor.fringe-angelo, commit 9e4cdc1b, through newsroom/tools/release.sh, gate OK), at Angelo's word",
+    "times corrected to the commit clock (fable.fringe@'s advice 3, 11:32 UTC): status 11:46Z→11:27, work/05 note 11:45→11:27, runs.md ranges; from now every time comes from date -u"
   ],
   "next": [
-    "link communities to work/04's verified communities.json once served",
-    "the workflow layer: the runs behind each deliverable (team/angelo/runs.md, reporter traces format)",
-    "check /graph/ on the served site after CI deploys"
+    "work/05: link graph nodes to the new event pages (/e/<id>/, done by dev.lead.fringe@ in graph.js) and the showroom (work/14)",
+    "communities: a shared derivation with Indi's work/04 (fable.fringe@ advice 7)",
+    "the workflow layer (the runs behind each deliverable)"
   ],
   "asks": [
     "none for Angelo now"
