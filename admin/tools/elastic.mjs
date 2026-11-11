@@ -186,7 +186,11 @@ async function push(kind, docs) {
     const base = (process.env.ELASTIC_URL || '').replace(/\/+$/, '')
     if (!/^https:\/\//.test(base)) throw new Error('ELASTIC_URL (https://<deployment host>) is not set')
     const headers = { 'content-type': 'application/json' }
-    if (process.env.ELASTIC_API_KEY) headers.authorization = `ApiKey ${process.env.ELASTIC_API_KEY}`   // never printed
+    // never printed: an API key first; else the password (Dinis: "see ELASTIC_CLOUD for the elastic password") as basic
+    // auth for ELASTIC_USER (default elastic); else nothing, and the proxy's network secret for the host applies
+    const pw = process.env.ELASTIC_PASSWORD || process.env.ELASTIC_CLOUD
+    if (process.env.ELASTIC_API_KEY) headers.authorization = `ApiKey ${process.env.ELASTIC_API_KEY}`
+    else if (pw) headers.authorization = 'Basic ' + Buffer.from(`${process.env.ELASTIC_USER || 'elastic'}:${pw}`).toString('base64')
     const index = `${PREFIX}-${kind}`
     const head = await fetch(`${base}/${index}`, { method: 'HEAD', headers })
     if (head.status === 404) {
