@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { buildGraph, graphBody, graphCss } from './graph.mjs';   // work/05, conductor.fringe@PrompTugal.angelo
 import { loadEvolution, evolutionBody, evolutionCss } from './evolution.mjs';   // work/27, capture.1.fringe@PrompTugal.dinis
 import { trafficBody, trafficCss } from './traffic.mjs';   // work/21, observability.fringe@PrompTugal.dinis
+import { collectActivity } from './activity.mjs';   // brief 10
 import { meBody, meCss } from './me.mjs';   // work/26
 import { collectSwarm, swarmBody, swarmCss, swarmScript } from './swarm.mjs';   // work/25, dev.1.fringe@PrompTugal.dinis
 import { eventPages, eventPath, hasPage } from './event-pages.mjs';
@@ -293,6 +294,8 @@ const traffic = existsSync(join(root, 'data/obs/traffic.json')) ? JSON.parse(rea
 mkdirSync(join(out, 'traffic'), { recursive: true });
 writeFileSync(join(out, 'traffic', 'index.html'), page('Traffic: Lisbon Tech Fringe', `<style>${trafficCss}</style>` + trafficBody(traffic, esc, ORIGIN), 'Who reads Lisbon Tech Fringe and how its links spread: counts only.', '', '/traffic/'));
 if (traffic) writeFileSync(join(out, 'traffic', 'traffic.json'), JSON.stringify(traffic, null, 1) + '\n');
+const activity = collectActivity({ root, builtAt: BUILT });   // brief 10: /api/v1/activity.json
+writeFileSync(join(out, 'api', 'v1', 'activity.json'), JSON.stringify(activity, null, 1) + '\n');
 // /me/ (work/26), /dashboard/ and /api/v1/swarm.json (work/25)
 for (const d of ['assets/me', 'assets/vendor/pki/2026-11-06']) { mkdirSync(join(out, d), { recursive: true }); for (const f of readdirSync(join(root, d)).filter((x) => /\.js$/.test(x))) writeFileSync(join(out, d, f), read(`${d}/${f}`)); }
 mkdirSync(join(out, 'me'), { recursive: true });
@@ -308,7 +311,7 @@ for (const f of existsSync(join(root, 'team/angelo/traces')) ? readdirSync(join(
 mkdirSync(join(out, 'evolution'), { recursive: true });
 writeFileSync(join(out, 'evolution', 'index.html'), page('Evolution: Lisbon Tech Fringe', `<style>${evolutionCss}</style>` + evolutionBody(loadEvolution(root), esc), 'Screenshots and page text of Lisbon Tech Fringe and every organiser page, hour by hour: what changed.', '', '/evolution/'));
 // /dashboard/ and /api/v1/swarm.json (work/25)
-const swarm = await collectSwarm({ root, roster, status, board, traffic, builtAt: BUILT, repo: REPO });
+const swarm = await collectSwarm({ root, roster, status, board, traffic, activity, builtAt: BUILT, repo: REPO });
 mkdirSync(join(out, 'dashboard'), { recursive: true });
 writeFileSync(join(out, 'dashboard', 'index.html'), page('The swarm: Lisbon Tech Fringe', `<style>${swarmCss}${meCss}</style>` + swarmBody(swarm, esc, REPO) + swarmScript, 'Who is online in the Lisbon Tech Fringe swarm: conductors, agents, the board and the latest changes.'));
 writeFileSync(join(out, 'api', 'v1', 'swarm.json'), JSON.stringify(swarm, null, 1) + '\n');

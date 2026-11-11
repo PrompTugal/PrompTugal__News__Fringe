@@ -1,7 +1,7 @@
 {
   "agent": "dev.1.fringe@PrompTugal.dinis",
   "by": "dev.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T12:51Z",
+  "updated": "2026-11-11T13:07Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 4)",
   "model": "Sonnet",
   "wake": "hourly at :05 (set by the lead)",
@@ -19,7 +19,8 @@
     "brief 6: dashboard gains Health of the ecosystem and Outreach sections (data/outreach.json)",
     "brief 6: /dashboard/ is five ordered sections (where, onboarded, communicating, data flow, outreach), each with a health colour, wide layout for a 1280 px screenshot; 390 px no sideways scroll",
     "lead fixes: overall headline, 5 newest Dinis asks with the rest folded, stopped agents not counted, inbox counts from data/inbox-counts.json, lists folded (page 12,400 px to about 3,600)",
-    "work/30: admin/site.json origin drives every absolute URL and the CNAME; steps and a redirect plan (admin/redirect/) in work/30-the-domain.md"
+    "work/30: admin/site.json origin drives every absolute URL and the CNAME; steps and a redirect plan (admin/redirect/) in work/30-the-domain.md",
+    "brief 10: /api/v1/activity.json (commits and deploys of the last 3 h, totals for 15 min and 1 h; admin/build/activity.mjs) and the live counts in the dashboard"
   ],
   "next": [
     "live check of /me/ and the box",
