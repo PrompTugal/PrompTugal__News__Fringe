@@ -25,7 +25,8 @@ const out = join(root, '_site');
 const read = (p) => readFileSync(join(root, p), 'utf8');
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const REPO = 'https://github.com/PrompTugal/PrompTugal__News__Fringe';
-const SITE = 'https://fringe.promptugal.news/';
+const ORIGIN = JSON.parse(readFileSync(join(root, 'admin/site.json'), 'utf8')).origin.replace(/\/+$/, '');   // work/30: the one setting for the address
+const SITE = ORIGIN + '/';
 const VERSION = process.env.VERSION || 'local';   // CI owns the number: v<admin/series.txt>.<run>; nobody writes it
 const BUILT = new Date().toISOString();
 
@@ -250,7 +251,7 @@ writeFileSync(join(out, 'how', 'index.html'), page('How Lisbon Tech Week is made
 mkdirSync(join(out, 'graph'), { recursive: true });
 writeFileSync(join(out, 'graph', 'index.html'), graphPage);
 writeFileSync(join(out, 'graph.js'), read('admin/build/graph.js'));
-writeFileSync(join(out, 'CNAME'), 'fringe.promptugal.news\n');
+writeFileSync(join(out, 'CNAME'), new URL(ORIGIN).host + '\n');
 writeFileSync(join(out, '404.html'), page('Not found', '<h1>That page is not here</h1><p>It may have moved, or it is not built yet. Try one of these:</p><p><a class="btn" href="/">Today in Lisbon</a></p><ul><li><a href="/#events">All events, today and tomorrow</a></li><li><a href="/api/v1/events.json">Every event as data</a></li><li><a href="/join/">Join the team</a></li></ul>', 'Page not found.'));
 mkdirSync(join(out, 'api', 'v1'), { recursive: true });
 writeFileSync(join(out, 'api', 'v1', 'README.md'), read('api/v1/README.md'));
@@ -286,7 +287,7 @@ mkdirSync(join(out, 'assets', 'obs'), { recursive: true });
 for (const f of ['obs.js', 'obs.json']) writeFileSync(join(out, 'assets', 'obs', f), read(`assets/obs/${f}`));
 const traffic = existsSync(join(root, 'data/obs/traffic.json')) ? JSON.parse(read('data/obs/traffic.json')) : null;
 mkdirSync(join(out, 'traffic'), { recursive: true });
-writeFileSync(join(out, 'traffic', 'index.html'), page('Traffic: Lisbon Tech Week', `<style>${trafficCss}</style>` + trafficBody(traffic, esc), 'Who reads Lisbon Tech Week and how its links spread: counts only.', '', '/traffic/'));
+writeFileSync(join(out, 'traffic', 'index.html'), page('Traffic: Lisbon Tech Week', `<style>${trafficCss}</style>` + trafficBody(traffic, esc, ORIGIN), 'Who reads Lisbon Tech Week and how its links spread: counts only.', '', '/traffic/'));
 if (traffic) writeFileSync(join(out, 'traffic', 'traffic.json'), JSON.stringify(traffic, null, 1) + '\n');
 // /me/ (work/26), /dashboard/ and /api/v1/swarm.json (work/25)
 for (const d of ['assets/me', 'assets/vendor/pki/2026-11-06']) { mkdirSync(join(out, d), { recursive: true }); for (const f of readdirSync(join(root, d)).filter((x) => /\.js$/.test(x))) writeFileSync(join(out, d, f), read(`${d}/${f}`)); }

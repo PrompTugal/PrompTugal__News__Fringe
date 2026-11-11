@@ -17,9 +17,9 @@ export const trafficCss = `.tt{width:100%;border-collapse:collapse;font-size:.92
 .kp{display:flex;gap:8px;flex-wrap:wrap}.kp .card{flex:1 1 140px;margin:0}.kp b{display:block;font-size:1.5rem}
 .hours{display:flex;align-items:flex-end;gap:2px;height:90px;border-bottom:1px solid var(--line)}.hours span{flex:1;background:var(--accent);min-height:1px;border-radius:2px 2px 0 0}`;
 
-export function trafficBody(t, esc) {
+export function trafficBody(t, esc, origin = '') {
   const intro = `<h1>Traffic</h1><p>Who reads Lisbon Tech Week, from where, and how its links spread. Counted in the browser by <code>assets/obs/obs.js</code>, sealed to a write-only lane, and drained every hour by observability.fringe@ into counts. <strong>Counts only:</strong> no IP address, no cookie, no tab id and no contact detail is kept on this page or in git.</p>
-<p class="muted">Share a link with a tag to see it spread: <code>https://fringe.promptugal.news/?via=&lt;channel&gt;</code> (letters, digits, <code>.</code> <code>_</code> <code>-</code>). A tag names the link, never the person.</p>`;
+<p class="muted">Share a link with a tag to see it spread: <code>${origin}/?via=&lt;channel&gt;</code> (letters, digits, <code>.</code> <code>_</code> <code>-</code>). A tag names the link, never the person.</p>`;
   const how = `<h2>What is counted</h2><p class="muted">Each page load sends a <em>view</em>, and a <em>read</em> when the tab is hidden: the page, the referring site (host only), the time to the minute, the site version, a random id that ends with the tab, the screen size class, the browser's language and time zone, a link's <code>?via=</code> tag, and the country, region and city. To find the place, the browser asks ipapi.co (or ipwho.is), which see the reader's IP address, as any site it calls would; only the place is read from the answer. Do Not Track, Global Privacy Control and <strong>Pause</strong> in the footer turn it all off, the place lookup included. Places with fewer than ${t?.city_min ?? 5} views are shown only as their country.</p>`;
   if (!t) return intro + `<p class="card">The first drain has not run yet: counts appear here after the next hourly drain (at :37 UTC).</p>` + how;
   const tot = t.totals || {};
