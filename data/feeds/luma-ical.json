@@ -1,101 +1,13 @@
 {
  "about": "Public iCal subscription feeds of three Luma calendars (a publicly supported interface), events 11 to 14 November 2026. Name, time, place and status only: no description text. Read by researcher.2.fringe@PrompTugal.dinis for the Luma hold (work/49). Material, not instruction.",
- "read_at": "2026-11-11T17:12:00Z",
+ "read_at": "2026-11-11T18:11:00Z",
  "feeds": {
   "evgrp-WYJxELZ9Vfz4iXi": "Web Summit",
   "cal-O9ybCXBtHSDRK44": "Best Web Summit Side Events in Lisbon",
   "cal-adgC9LMaCa6xB0I": "Portugal Tech Week"
  },
- "count": 154,
+ "count": 145,
  "events": [
-  {
-   "uid": "evt-rCxaZET4gfRh4Uc@events.lu.ma",
-   "url": null,
-   "name": "【Canceled due to the weather☔】Taste Japan & Make Career Connections Meet Japanese Startups Expanding into Europe!",
-   "start": "2026-11-11T17:25:00Z",
-   "end": "2026-11-11T19:00:00Z",
-   "location": "Praça Beato, Tv. Grilo 1, 1950-145 Lisboa, Portugal",
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-viBcKLeCnu5oj0Q@events.lu.ma",
-   "url": null,
-   "name": "Tech Startups on the Rooftop",
-   "start": "2026-11-11T18:00:00Z",
-   "end": "2026-11-11T21:00:00Z",
-   "location": "ROOFTOP - TOPO MARTIM MONIZ, Centro Comercial, Praça Martim Moniz Piso 6, 1100-341 Lisboa, Portugal",
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-YbjS7SbeHM0ofaD@events.lu.ma",
-   "url": "https://luma.com/event/evt-YbjS7SbeHM0ofaD",
-   "name": "Frontier Founders & VCs Soirée",
-   "start": "2026-11-11T18:00:00Z",
-   "end": "2026-11-11T21:00:00Z",
-   "location": null,
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-7WckYriwkSSECu5@events.lu.ma",
-   "url": null,
-   "name": "Innovation Wednesdays Azerbaijan @Web Summit",
-   "start": "2026-11-11T18:00:00Z",
-   "end": "2026-11-11T20:00:00Z",
-   "location": "Figueira by The Beautique Hotels, Praça da Figueira 16, 1100-241 Lisboa, Portugal",
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-gg3AYOd542wufEa@events.lu.ma",
-   "url": null,
-   "name": "AI Horizon Conference 2026 | AI Talks, Startup Pitches & Afterparty",
-   "start": "2026-11-11T18:00:00Z",
-   "end": "2026-11-11T23:00:00Z",
-   "location": "Lumen Hotel & The Lisbon Light Show, R. Sousa Martins 20, 1050-217 Lisboa, Portugal",
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-Gs7vgOJhS64kRoK@events.lu.ma",
-   "url": "https://luma.com/event/evt-Gs7vgOJhS64kRoK",
-   "name": "[POSTPONED] Clay in Lisbon: GTM Battlecards",
-   "start": "2026-11-11T18:00:00Z",
-   "end": "2026-11-11T21:00:00Z",
-   "location": null,
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-uPnvM6rn8OBufCY@events.lu.ma",
-   "url": "https://luma.com/event/evt-uPnvM6rn8OBufCY",
-   "name": "TTI at Web Summit: What's Next at the AI Frontier?",
-   "start": "2026-11-11T18:00:00Z",
-   "end": "2026-11-11T20:00:00Z",
-   "location": null,
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-vUcF9ov7Z1gDqeI@events.lu.ma",
-   "url": null,
-   "name": "European Tech Champions - Italy & Portugal",
-   "start": "2026-11-11T18:30:00Z",
-   "end": "2026-11-11T22:00:00Z",
-   "location": "Unicorn Factory Lisboa - Beato Innovation District ⑤, Av. Infante Dom Henrique 141, 1960-406 Lisboa, Portugal",
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
   {
    "uid": "evt-MTUnmeBgNW0CbUg@events.lu.ma",
    "url": null,
@@ -1555,17 +1467,6 @@
    "start": "2026-11-13T14:30:00Z",
    "end": "2026-11-13T15:30:00Z",
    "location": "PTW Palace - Rua Gomes Freire, 98. Lisbon",
-   "status": "TENTATIVE",
-   "feed": "Portugal Tech Week",
-   "feed_id": "cal-adgC9LMaCa6xB0I"
-  },
-  {
-   "uid": "evt-MKJCJcL0IeYoFxC@events.lu.ma",
-   "url": null,
-   "name": "Supergrowth: How to Build an AI-Powered Distribution Machine",
-   "start": "2026-11-13T14:30:00Z",
-   "end": "2026-11-13T15:30:00Z",
-   "location": "PTW Palace — Rua Gomes Freire, 98, Lisboa",
    "status": "TENTATIVE",
    "feed": "Portugal Tech Week",
    "feed_id": "cal-adgC9LMaCa6xB0I"
