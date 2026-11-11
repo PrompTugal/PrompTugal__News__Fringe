@@ -292,6 +292,22 @@
         "fingerprint": "sha256:3a9937fac9f5887b",
         "signing_fingerprint": "sha256:e147c4df7ba85680"
       }
+    },
+    {
+      "id": "conductor.fringe-jose",
+      "agent": "conductor.fringe@PrompTugal.jose",
+      "role": "Jose Bota's conductor for Lisbon Tech Fringe (WS-215); lane channels (SWARM.md): the posts and messages that point people to the site, which a person sends (work/18).",
+      "how": "Made in its own session on 11 November 2026, 13:01 UTC (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab). A session key: it ends with the session. Public half only.",
+      "added": "2026-11-11",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAr8OMX26I/VQYI9elSKAP\n9mdxzmjdQas3C1G//lRRbD9HatW693LZJhrvPfOx3sFDhipLNcIb8RBd81Ci+CA/\naYyDsX014vF2CteF9WRT3i/qHBIawXQtqAlwET8LVNFUi/hD21nM5rVhCX08kJXw\ncCWQAduLSeDb9AW7P4zg1qngpYc5Nyp6oN7ImvLQbm4GFKqjg3Oq3oW7leGGU8dy\nE9ly4JQ2tSBw51BqsAIBZFj2579V7vTwblxEgXS3Tnelc5P26QQPhhaoAX/N9OML\nqYsTrkkuz1dgffqa+OVc3IrX/DU72bYOqAYpUivjeDGHITvM/+56pAWQJS+LOO9t\ndyLgg5bVXxPJ2Rq+EoSLTCiarPELLUCjVKNykWsqrxy439nDVQtiuYd7bkY/X3d6\ny0hApKZ5GvdU3zM4wM1+L4vK9+Dk23smVLomArPctqTlUsffqqHJ0NYptwBRQ0/g\nCrds+mlMxJwyUevpK0Vp8tGACqAjPR/1Pyf7RCSYaa9qFYpwQwWBBIp0FpVoM8zk\n/uHk8yceZl5ol1Xk+Mvvk7bAzAw7rpPEWSKsdOz2VzZV9CjJgxebU3ti2AE/AUM6\nN4XSjvYrqOfp/t8LfZuEDQsLc2aPQuHH2wsTNwp0biQLjj4LNl4sU/vM9F0vO+uu\nAthQSDa8H1raHCbkmkBAnIkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEFFstOwEWcgBUEsIi+AAJj0Qo+NoE\njKi53f7eqhkZcAjn6bkK7SVU/994MeTIheMVohZmObUencrjDHYMoVSXMQ==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor.fringe@PrompTugal.jose",
+        "fingerprint": "sha256:56665ebf42e70ba5",
+        "signing_fingerprint": "sha256:a7f4baa8c316daf3"
+      }
     }
   ]
 }
