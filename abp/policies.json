@@ -1,7 +1,7 @@
 {
   "about": "The Agent Behaviour Policies of Lisbon Fringe (lisbontechfringe.com, origin in admin/site.json; WS-215) as data: deny by default, one grant per role and agent, across this repository and the others the swarm touches. Ported from PrompTugal__News__Website board/abp/policies.json (abp@PrompTugal.dinis, v1.7.0, since 6 November 2026), not invented anew; built on RiskMandate's Agent Behaviour Policy and Licence to Operate (https://riskmandate.ai/agent-behaviour-policy.html). Read by the hooks (.claude/settings.json, .claude/hooks/abp.mjs) and by the gate's commit check (abp/tools/abp.mjs check). abp/<agent>.md is generated from this file (node abp/tools/abp.mjs build), never edited by hand. Kept by architect.1.fringe@PrompTugal.dinis (work/39); any relaxation, and any move towards enforcement, is Dinis's decision.",
   "version": "0.4.0",
-  "updated": "2026-11-11T16:30Z",
+  "updated": "2026-11-11T16:32Z",
   "operator": "Dinis Cruz",
   "kept_by": "architect.1.fringe@PrompTugal.dinis",
   "status": "DRAFT: grants proposed from the git log (data/architecture.json observed); Dinis and the lead review",
@@ -565,6 +565,18 @@
         "admin/build/graph-*.mjs"
       ],
       "never": "hand-edits a derived file; edits data/events.json (researcher.2's: corrections by inbox)"
+    },
+    "elastic": {
+      "focus": "move the swarm onto Elastic Cloud (Dinis, 2026-11-11T16:32Z): what to put there first (the agents' run and hook logs, swarm-wide; the events and the graph for search), the index design, the ingest tools, the dashboards",
+      "writes": [
+        "elastic/**",
+        "admin/tools/elastic*",
+        "data/elastic*.json",
+        "docs/elastic*"
+      ],
+      "send_hosts": [],
+      "send_hosts_note": "the Elastic Cloud deployment's host is added here when Dinis names the deployment; its API key goes through the environment's credentials (request_credential), never in the repository",
+      "never": "prints or commits an Elastic key; sends personal data or contact details to Elastic; changes another agent's files"
     }
   },
   "agents": {
@@ -825,6 +837,11 @@
       "writes_override": [],
       "account": "another account (the Web Summit team's site)",
       "note": "wrote BRIEF.md, KICKOFF.md and the seed at the start (5 commits); no writes here now: its team's line is in data/architecture.json"
+    },
+    "elastic.1.fringe@PrompTugal.dinis": {
+      "role": "elastic",
+      "account": "riskmandate-personal (Ultra)",
+      "note": "started by architect.1 at Dinis's word in its session (2026-11-11T16:32Z: 'can you actually start a new Elastic conductor here? Because I want to move us to Elastic')"
     }
   },
   "external": {

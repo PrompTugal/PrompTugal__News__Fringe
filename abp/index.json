@@ -1,7 +1,7 @@
 {
   "about": "Every agent's grant, flattened from abp/policies.json by node abp/tools/abp.mjs build: what /abp/ shows.",
   "policy": "0.4.0",
-  "sha256": "06faf61545e1fd48",
+  "sha256": "c77ed4e13fb54ced",
   "mode": "observe",
   "agents": [
     {
@@ -961,6 +961,32 @@
         "pki.sgit.ai"
       ],
       "page": "abp/conductor@web-summit.dinis.md"
+    },
+    {
+      "agent": "elastic.1.fringe@PrompTugal.dinis",
+      "role": "elastic",
+      "person": "dinis",
+      "account": "riskmandate-personal (Ultra)",
+      "branch": "dev",
+      "writes": [
+        "team/dinis/agents/elastic.1.json",
+        "team/dinis/agents/elastic.1.fringe.json",
+        "team/dinis/agents/elastic.1/**",
+        "data/keys.json (your own entry)",
+        "data/inboxes/<your key id>.json",
+        "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
+        "elastic/**",
+        "admin/tools/elastic*",
+        "data/elastic*.json",
+        "docs/elastic*"
+      ],
+      "owns": [],
+      "sends": [
+        "dev.send.sgraph.ai",
+        "pki.sgit.ai"
+      ],
+      "page": "abp/elastic.1.fringe@PrompTugal.dinis.md"
     }
   ]
 }
