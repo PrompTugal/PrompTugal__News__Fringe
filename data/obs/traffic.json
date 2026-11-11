@@ -5,17 +5,17 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-11T13:41Z",
+ "generated": "2026-11-11T13:42Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 162,
-  "reads": 117,
-  "tabs": 77,
+  "views": 169,
+  "reads": 120,
+  "tabs": 78,
   "countries": 11,
-  "shares": 55,
+  "shares": 58,
   "bots": 111,
   "agent_runs": 20,
   "agent_runs_signed": 20
@@ -211,7 +211,7 @@
   ],
   [
    "2026-11-11 13:00",
-   116
+   123
   ]
  ],
  "by_page": [
@@ -276,7 +276,15 @@
    2
   ],
   [
+   "/e/2026-11-11-life-with-artificials-kickoff/",
+   2
+  ],
+  [
    "/e/2026-11-11-lisboaux-web-summit-edition/",
+   2
+  ],
+  [
+   "/e/2026-11-11-side-events-guide-irl/",
    2
   ],
   [
@@ -305,10 +313,6 @@
   ],
   [
    "/e/2026-11-11-roast-your-website/",
-   1
-  ],
-  [
-   "/e/2026-11-11-life-with-artificials-kickoff/",
    1
   ],
   [
@@ -392,10 +396,6 @@
    1
   ],
   [
-   "/e/2026-11-11-side-events-guide-irl/",
-   1
-  ],
-  [
    "/e/2026-11-12-yorkseed-grand-finale-web-summit-2026/",
    1
   ],
@@ -418,12 +418,32 @@
   [
    "/e/2026-11-11-valois-allocator-residence/",
    1
+  ],
+  [
+   "/e/2026-11-11-gaming-entertainment-pitch-party/",
+   1
+  ],
+  [
+   "/e/2026-11-11-tech-startups-on-the-rooftop/",
+   1
+  ],
+  [
+   "/e/2026-11-11-ai-for-business-applied-ai-pitch-party/",
+   1
+  ],
+  [
+   "/e/2026-11-11-founderlink-storm-summit-evening/",
+   1
+  ],
+  [
+   "/e/2026-11-12-airplane-mode-lisbon-founders-dinner-2-web-sum/",
+   1
   ]
  ],
  "reading": [
   [
    "/",
-   61,
+   62,
    28,
    12
   ],
@@ -506,6 +526,12 @@
    64
   ],
   [
+   "/e/2026-11-11-life-with-artificials-kickoff/",
+   2,
+   19,
+   74
+  ],
+  [
    "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
    1,
    205,
@@ -566,30 +592,30 @@
    41
   ],
   [
-   "/e/2026-11-11-life-with-artificials-kickoff/",
-   1,
-   23,
-   66
-  ],
-  [
    "/e/2026-11-11-side-events-guide-irl/",
    1,
    28,
    32
+  ],
+  [
+   "/e/2026-11-11-ai-for-business-applied-ai-pitch-party/",
+   1,
+   13,
+   56
   ]
  ],
  "by_country": [
   [
    "Portugal",
-   88
+   89
   ],
   [
    "United States",
-   37
+   40
   ],
   [
    "Estonia",
-   13
+   16
   ],
   [
    "United Kingdom",
@@ -631,7 +657,7 @@
   ],
   [
    "San Jose, United States",
-   22
+   24
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -639,38 +665,38 @@
   ],
   [
    "Tallinn, Estonia",
-   13
+   16
   ],
   [
    "Mountain View, United States",
-   6
+   7
   ],
   [
    "(places under 5 views, in their country above)",
-   40
+   41
   ]
  ],
  "by_referrer": [],
  "by_host": [
   [
    "lisbontechfringe.com",
-   123
+   130
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 104,
+ "other_hosts_views": 107,
  "by_via": [
   [
    "whatsapp",
-   55
+   58
   ]
  ],
  "via_detail": {
   "whatsapp": {
-   "views": 55,
+   "views": 58,
    "tabs": 33,
    "countries": 7
   }
@@ -678,11 +704,11 @@
  "by_screen": [
   [
    "phone",
-   88
+   94
   ],
   [
    "desktop",
-   70
+   71
   ],
   [
    "tablet",
@@ -720,11 +746,11 @@
   ]
  ],
  "flows": {
-  "tabs": 77,
+  "tabs": 78,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    44
+    45
    ],
    [
     "shared link (?via=)",
@@ -779,16 +805,20 @@
    [
     "/e/2026-11-11-frontier-founders-vcs-soiree/",
     1
+   ],
+   [
+    "/e/2026-11-11-gaming-entertainment-pitch-party/",
+    1
    ]
   ],
   "exit_pages": [
    [
     "/",
-    49
+    48
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
-    7
+    5
    ],
    [
     "/now/",
@@ -823,6 +853,10 @@
     1
    ],
    [
+    "/e/2026-11-11-ai-for-business-applied-ai-pitch-party/",
+    1
+   ],
+   [
     "/sitemap.txt",
     1
    ],
@@ -836,10 +870,6 @@
    ],
    [
     "/e/2026-11-11-corporate-academy-of-tomorrow/",
-    1
-   ],
-   [
-    "/e/2026-11-11-life-with-artificials-kickoff/",
     1
    ]
   ],
@@ -941,7 +971,7 @@
     1
    ],
    [
-    "/ → /e/2026-11-11-human-side-of-ai/",
+    "/ → /e/2026-11-11-ai-for-business-applied-ai-pitch-party/",
     1
    ]
   ],
@@ -960,14 +990,14 @@
    ],
    [
     "4",
-    2
+    3
    ],
    [
     "5+",
     5
    ]
   ],
-  "bounce_rate": 66,
+  "bounce_rate": 65,
   "via_reached": [
    [
     "whatsapp: /",
@@ -1006,11 +1036,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-ai-horizon-conference/",
+    "whatsapp: /e/2026-11-11-ai-for-business-applied-ai-pitch-party/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    "whatsapp: /e/2026-11-11-ai-horizon-conference/",
     1
    ],
    [
@@ -1018,7 +1048,19 @@
     1
    ],
    [
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    1
+   ],
+   [
     "whatsapp: /e/2026-11-11-roast-your-website/",
+    1
+   ],
+   [
+    "whatsapp: /e/2026-11-11-tech-startups-on-the-rooftop/",
+    1
+   ],
+   [
+    "whatsapp: /e/2026-11-11-life-with-artificials-kickoff/",
     1
    ]
   ]
@@ -1034,7 +1076,7 @@
    },
    {
     "name": "San Jose, United States",
-    "views": 22,
+    "views": 24,
     "lat": 37.3,
     "lon": -121.9
    },
@@ -1046,13 +1088,13 @@
    },
    {
     "name": "Tallinn, Estonia",
-    "views": 13,
+    "views": 16,
     "lat": 59.4,
     "lon": 24.8
    },
    {
     "name": "Mountain View, United States",
-    "views": 6,
+    "views": 7,
     "lat": 37.4,
     "lon": -122.1
    }
