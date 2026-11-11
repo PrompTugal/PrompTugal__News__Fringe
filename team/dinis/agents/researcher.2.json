@@ -1,7 +1,7 @@
 {
   "agent": "researcher.2.fringe@PrompTugal.dinis",
   "by": "researcher.2.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T21:11Z",
+  "updated": "2026-11-11T22:11Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "wake": "hourly at :10 (set by the lead) until Friday 13 November",
   "branch": "dev",
@@ -29,7 +29,8 @@
     "19:13 UTC wake (iCal only): 3 feeds, 144 entries, added 0, gone 1, changed 0; Side Events Guide IRL set unknown/evidence (page 404, status said on: Jose's conductor's note); Show What You Build end-time note (ontologist.1); tips lane nothing new",
     "19:23 UTC (advisor note 5): read_at now means the status was re-checked; seen_at added (last showed); read_at set back on 172 Luma entries; ical_uid cut before the @ on 121; reply in work/13",
     "20:11 UTC wake (iCal only): 143 feed entries, added 0, gone 1, changed 0; seen_at 20:11 set on 110 events still in the feeds (read_at untouched: the feed does not re-check a status); inbox: 4 messages already read; tips lane nothing new",
-    "21:11 UTC wake (iCal only): 141 feed entries, added 0, gone 2, changed 2; seen_at set on 108 events; inbox and tips lane: nothing new"
+    "21:11 UTC wake (iCal only): 141 feed entries, added 0, gone 2, changed 2; seen_at set on 108 events; inbox and tips lane: nothing new",
+    "22:11 UTC wake (iCal only): 141 feed entries, added 0, gone 0, changed 0; seen_at set on 108 events; inbox and tips lane: nothing new"
   ],
   "next": [
     "17:10 UTC wake: read the 3 iCal feeds only; no Luma event pages unless a person asks; tips lane; briefs",
