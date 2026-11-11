@@ -57,7 +57,7 @@ main{max-width:720px;margin:0 auto;padding:16px}a{color:var(--accent)}
 header{border-bottom:1px solid var(--line)}header nav{max-width:720px;margin:0 auto;padding:12px 16px;display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}
 header strong{font-size:1.1rem}h1{font-size:1.6rem;line-height:1.2;margin:.6em 0 .3em}h2{font-size:1.2rem;margin:1.6em 0 .5em}
 .ind{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);padding:10px 12px;border-radius:6px;font-size:.92rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px;margin:8px 0}
+.card{overflow-wrap:anywhere;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px;margin:8px 0}
 .muted{color:var(--muted);font-size:.9rem}pre{background:var(--code);padding:12px;border-radius:8px;white-space:pre-wrap;word-break:break-word;font-size:.85rem;margin:0}
 .copy{position:relative}.copy button{position:absolute;top:8px;right:8px;font:inherit;font-size:.85rem;padding:4px 10px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
 code{background:var(--code);padding:1px 4px;border-radius:4px}ol li,ul li{margin:.3em 0}
@@ -74,12 +74,20 @@ const page = (title, body, desc) => `<!doctype html><html lang="en"><head><meta 
 </body></html>`;
 
 // --- events -------------------------------------------------------------
+// Text with any https URL in it: escaped, and each URL a link whose text is its host (long URLs broke the phone layout).
+function linkify(text) {
+  return String(text ?? '').split(/(https:\/\/[^\s<>"')]+)/).map((part, i) => {
+    if (i % 2 === 0) return esc(part);
+    let host = 'link'; try { host = new URL(part).hostname.replace(/^www\./, ''); } catch {}
+    return `<a href="${esc(part)}">${esc(host)}</a>`;
+  }).join('');
+}
 const STATUS = { on: 'On', moved: 'Moved', cancelled: 'Cancelled', online: 'Online', unknown: 'Unknown' };
 function eventCard(e) {
   const when = [e.start && e.start.slice(11, 16), e.end && e.end.slice(11, 16)].filter(Boolean).join('–');
   return `<div class="card"><a href="${esc(e.url)}"><strong>${esc(e.name)}</strong></a><span class="tag ${esc(e.status)}">${esc(STATUS[e.status] || 'Unknown')}</span>
-<div class="muted">${esc([when && when + ' UTC', e.place, e.organiser].filter(Boolean).join(' · '))}</div>
-${e.join ? `<div>How to join: ${esc(e.join)}</div>` : ''}${e.storm_note ? `<div class="muted">Storm: ${esc(e.storm_note)}</div>` : ''}
+<div class="muted">${linkify([when && when + ' UTC', e.place, e.organiser].filter(Boolean).join(' · '))}</div>
+${e.join ? `<div>How to join: ${linkify(e.join)}</div>` : ''}${e.storm_note ? `<div class="muted">Storm: ${linkify(e.storm_note)}</div>` : ''}
 <div class="muted">Source read ${esc(String(e.read_at).slice(0, 16).replace('T', ' '))} UTC</div></div>`;
 }
 function eventsHtml() {
