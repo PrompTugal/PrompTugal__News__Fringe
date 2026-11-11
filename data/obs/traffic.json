@@ -5,20 +5,20 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-11T13:18Z",
+ "generated": "2026-11-11T13:26Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 76,
-  "reads": 62,
-  "tabs": 42,
-  "countries": 7,
-  "shares": 25,
-  "bots": 82,
-  "agent_runs": 16,
-  "agent_runs_signed": 16
+  "views": 106,
+  "reads": 92,
+  "tabs": 60,
+  "countries": 9,
+  "shares": 44,
+  "bots": 89,
+  "agent_runs": 17,
+  "agent_runs_signed": 17
  },
  "by_hour": [
   [
@@ -211,13 +211,17 @@
   ],
   [
    "2026-11-11 13:00",
-   30
+   60
   ]
  ],
  "by_page": [
   [
    "/",
-   41
+   55
+  ],
+  [
+   "/now/",
+   7
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
@@ -228,11 +232,11 @@
    4
   ],
   [
-   "/now/",
+   "/graph/",
    3
   ],
   [
-   "/graph/",
+   "/e/2026-11-11-founderlink-storm-summit-afternoon/",
    3
   ],
   [
@@ -244,6 +248,10 @@
    2
   ],
   [
+   "/e/2026-11-11-human-side-of-ai/",
+   2
+  ],
+  [
    "/me/",
    2
   ],
@@ -252,19 +260,19 @@
    2
   ],
   [
-   "/e/2026-11-11-founderlink-storm-summit-afternoon/",
-   2
-  ],
-  [
    "/programme/",
    2
   ],
   [
-   "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
-   1
+   "/e/2026-11-11-corporate-academy-of-tomorrow/",
+   2
   ],
   [
-   "/e/2026-11-11-human-side-of-ai/",
+   "/e/2026-11-11-ai-horizon-conference/",
+   2
+  ],
+  [
+   "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
    1
   ],
   [
@@ -290,14 +298,44 @@
   [
    "/e/2026-11-11-cisco-automation-to-autonomy/",
    1
+  ],
+  [
+   "/e/2026-11-11-roast-your-website/",
+   1
+  ],
+  [
+   "/e/2026-11-11-life-with-artificials-kickoff/",
+   1
+  ],
+  [
+   "/e/2026-11-11-lisboaux-web-summit-edition/",
+   1
+  ],
+  [
+   "/sitemap.txt",
+   1
+  ],
+  [
+   "/e/2026-11-11-amplify-europe-lisbon/",
+   1
+  ],
+  [
+   "/e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
+   1
   ]
  ],
  "reading": [
   [
    "/",
-   31,
-   20,
-   9
+   47,
+   25,
+   11
+  ],
+  [
+   "/now/",
+   5,
+   8,
+   19
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
@@ -312,16 +350,16 @@
    43
   ],
   [
-   "/now/",
-   3,
-   5,
-   13
-  ],
-  [
    "/graph/",
    3,
    13,
    17
+  ],
+  [
+   "/e/2026-11-11-founderlink-storm-summit-afternoon/",
+   3,
+   16,
+   20
   ],
   [
    "/organisers/",
@@ -336,6 +374,12 @@
    78
   ],
   [
+   "/e/2026-11-11-human-side-of-ai/",
+   2,
+   11,
+   50
+  ],
+  [
    "/me/",
    2,
    18,
@@ -348,27 +392,27 @@
    12
   ],
   [
-   "/e/2026-11-11-founderlink-storm-summit-afternoon/",
-   2,
-   23,
-   30
-  ],
-  [
    "/programme/",
    2,
    28,
    66
   ],
   [
+   "/e/2026-11-11-corporate-academy-of-tomorrow/",
+   2,
+   12,
+   53
+  ],
+  [
+   "/e/2026-11-11-ai-horizon-conference/",
+   2,
+   12,
+   64
+  ],
+  [
    "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
    1,
    205,
-   100
-  ],
-  [
-   "/e/2026-11-11-human-side-of-ai/",
-   1,
-   19,
    100
   ],
   [
@@ -394,12 +438,52 @@
    1,
    7,
    26
+  ],
+  [
+   "/sitemap.txt",
+   1,
+   3,
+   0
+  ],
+  [
+   "/e/2026-11-11-roast-your-website/",
+   1,
+   7,
+   33
+  ],
+  [
+   "/e/2026-11-11-lisboaux-web-summit-edition/",
+   1,
+   16,
+   33
+  ],
+  [
+   "/e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
+   1,
+   16,
+   100
+  ],
+  [
+   "/e/2026-11-11-amplify-europe-lisbon/",
+   1,
+   3,
+   41
+  ],
+  [
+   "/e/2026-11-11-life-with-artificials-kickoff/",
+   1,
+   23,
+   66
   ]
  ],
  "by_country": [
   [
    "Portugal",
-   55
+   71
+  ],
+  [
+   "Estonia",
+   10
   ],
   [
    "United States",
@@ -410,69 +494,77 @@
    6
   ],
   [
-   "Tanzania",
-   2
+   "Germany",
+   3
   ],
   [
    "The Netherlands",
-   1
+   2
+  ],
+  [
+   "Tanzania",
+   2
   ],
   [
    "France",
    1
   ],
   [
-   "Estonia",
+   "Poland",
    1
   ]
  ],
  "by_city": [
   [
    "Lisbon, Portugal",
-   36
+   46
   ],
   [
    "Oliveira de Azemeis, Portugal",
-   14
+   17
+  ],
+  [
+   "Tallinn, Estonia",
+   10
   ],
   [
    "(places under 5 views, in their country above)",
-   24
+   31
   ]
  ],
  "by_referrer": [],
  "by_host": [
   [
-   "fringe.promptugal.news",
-   39
+   "lisbontechfringe.com",
+   67
   ],
   [
-   "lisbontechfringe.com",
-   37
+   "fringe.promptugal.news",
+   39
   ]
  ],
  "other_hosts_views": 35,
  "by_via": [
   [
    "whatsapp",
-   25
+   44
   ]
  ],
  "via_detail": {
   "whatsapp": {
-   "views": 25,
-   "tabs": 15,
-   "countries": 4
+   "views": 44,
+   "tabs": 25,
+   "countries": 7
   }
  },
  "by_screen": [
   [
    "desktop",
-   43
+   53
   ],
   [
    "phone",
-   29
+   49
   ],
   [
    "tablet",
@@ -493,16 +585,339 @@
    3
   ],
   [
-   "conductor.fringe@PrompTugal.jose",
+   "design.2.fringe@PrompTugal.dinis",
    2
   ],
   [
-   "design.2.fringe@PrompTugal.dinis",
-   1
+   "conductor.fringe@PrompTugal.jose",
+   2
   ],
   [
    "design.1.fringe@PrompTugal.dinis",
    1
   ]
- ]
+ ],
+ "flows": {
+  "tabs": 60,
+  "arrived": [
+   [
+    "no referrer (an app, typed or bookmarked)",
+    35
+   ],
+   [
+    "shared link (?via=)",
+    25
+   ]
+  ],
+  "entry_pages": [
+   [
+    "/",
+    45
+   ],
+   [
+    "/e/2026-11-11-wet-summit-lisbon/",
+    4
+   ],
+   [
+    "/now/",
+    2
+   ],
+   [
+    "/me/",
+    2
+   ],
+   [
+    "/join/",
+    1
+   ],
+   [
+    "/dashboard/",
+    1
+   ],
+   [
+    "/e/2026-11-11-ai-horizon-conference/",
+    1
+   ],
+   [
+    "/e/2026-11-11-corporate-academy-of-tomorrow/",
+    1
+   ],
+   [
+    "/e/2026-11-11-life-with-artificials-kickoff/",
+    1
+   ],
+   [
+    "/e/2026-11-11-lisboaux-web-summit-edition/",
+    1
+   ],
+   [
+    "/e/2026-11-11-amplify-europe-lisbon/",
+    1
+   ]
+  ],
+  "exit_pages": [
+   [
+    "/",
+    38
+   ],
+   [
+    "/now/",
+    4
+   ],
+   [
+    "/e/2026-11-11-wet-summit-lisbon/",
+    2
+   ],
+   [
+    "/me/",
+    2
+   ],
+   [
+    "/programme/",
+    2
+   ],
+   [
+    "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
+    1
+   ],
+   [
+    "/e/2026-11-11-founderlink-storm-summit-afternoon/",
+    1
+   ],
+   [
+    "/e/2026-11-11-yorkseed-allocator-lunch/",
+    1
+   ],
+   [
+    "/e/2026-11-11-kuma-align-leadership-ai/",
+    1
+   ],
+   [
+    "/e/2026-11-11-cisco-automation-to-autonomy/",
+    1
+   ],
+   [
+    "/sitemap.txt",
+    1
+   ],
+   [
+    "/e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
+    1
+   ],
+   [
+    "/e/2026-11-11-ai-horizon-conference/",
+    1
+   ],
+   [
+    "/e/2026-11-11-corporate-academy-of-tomorrow/",
+    1
+   ],
+   [
+    "/e/2026-11-11-life-with-artificials-kickoff/",
+    1
+   ]
+  ],
+  "steps": [
+   [
+    "/ → /now/",
+    4
+   ],
+   [
+    "/join/ → /",
+    3
+   ],
+   [
+    "/e/2026-11-11-wet-summit-lisbon/ → /",
+    2
+   ],
+   [
+    "/now/ → /graph/",
+    2
+   ],
+   [
+    "/graph/ → /organisers/",
+    2
+   ],
+   [
+    "/ → /e/2026-11-11-founderlink-storm-summit-afternoon/",
+    2
+   ],
+   [
+    "/ → /programme/",
+    2
+   ],
+   [
+    "/ → /e/2026-11-11-ptw-classroom-deep-work-wexio/",
+    1
+   ],
+   [
+    "/ → /join/",
+    1
+   ],
+   [
+    "/organisers/ → /traffic/",
+    1
+   ],
+   [
+    "/traffic/ → /join/",
+    1
+   ],
+   [
+    "/organisers/ → /e/2026-11-11-human-side-of-ai/",
+    1
+   ],
+   [
+    "/e/2026-11-11-human-side-of-ai/ → /e/2026-11-11-ai-video-blueprint-2027/",
+    1
+   ],
+   [
+    "/e/2026-11-11-ai-video-blueprint-2027/ → /graph/",
+    1
+   ],
+   [
+    "/graph/ → /",
+    1
+   ],
+   [
+    "/ → /e/2026-11-11-startup-legal-roast/",
+    1
+   ],
+   [
+    "/e/2026-11-11-startup-legal-roast/ → /traffic/",
+    1
+   ],
+   [
+    "/traffic/ → /",
+    1
+   ],
+   [
+    "/dashboard/ → /",
+    1
+   ],
+   [
+    "/ → /e/2026-11-11-yorkseed-allocator-lunch/",
+    1
+   ],
+   [
+    "/now/ → /e/2026-11-11-kuma-align-leadership-ai/",
+    1
+   ],
+   [
+    "/ → /e/2026-11-11-wet-summit-lisbon/",
+    1
+   ],
+   [
+    "/e/2026-11-11-wet-summit-lisbon/ → /e/2026-11-11-aubay-the-next-move/",
+    1
+   ],
+   [
+    "/e/2026-11-11-aubay-the-next-move/ → /e/2026-11-11-cisco-automation-to-autonomy/",
+    1
+   ],
+   [
+    "/ → /e/2026-11-11-human-side-of-ai/",
+    1
+   ]
+  ],
+  "pages_per_tab": [
+   [
+    "1",
+    40
+   ],
+   [
+    "2",
+    10
+   ],
+   [
+    "3",
+    6
+   ],
+   [
+    "4",
+    1
+   ],
+   [
+    "5+",
+    3
+   ]
+  ],
+  "bounce_rate": 67,
+  "via_reached": [
+   [
+    "whatsapp: /",
+    25
+   ],
+   [
+    "whatsapp: /now/",
+    4
+   ],
+   [
+    "whatsapp: /e/2026-11-11-founderlink-storm-summit-afternoon/",
+    2
+   ],
+   [
+    "whatsapp: /programme/",
+    2
+   ],
+   [
+    "whatsapp: /e/2026-11-11-yorkseed-allocator-lunch/",
+    1
+   ],
+   [
+    "whatsapp: /e/2026-11-11-kuma-align-leadership-ai/",
+    1
+   ],
+   [
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    1
+   ],
+   [
+    "whatsapp: /e/2026-11-11-wet-summit-lisbon/",
+    1
+   ],
+   [
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    1
+   ],
+   [
+    "whatsapp: /e/2026-11-11-roast-your-website/",
+    1
+   ],
+   [
+    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
+    1
+   ],
+   [
+    "whatsapp: /e/2026-11-11-ai-horizon-conference/",
+    1
+   ],
+   [
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    1
+   ]
+  ]
+ },
+ "map": {
+  "towns": [
+   {
+    "name": "Lisbon, Portugal",
+    "views": 46,
+    "lat": 38.7,
+    "lon": -9.1
+   },
+   {
+    "name": "Oliveira de Azemeis, Portugal",
+    "views": 17,
+    "lat": 40.8,
+    "lon": -8.6
+   },
+   {
+    "name": "Tallinn, Estonia",
+    "views": 10,
+    "lat": 59.4,
+    "lon": 24.8
+   }
+  ]
+ },
+ "outbound": []
 }
