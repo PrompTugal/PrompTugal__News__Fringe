@@ -1,0 +1,2107 @@
+{
+ "run": "2026-11-11-11",
+ "captured_at": "2026-11-11T11:55:22Z",
+ "finished_at": "2026-11-11T12:00:49Z",
+ "vault": {
+  "id": "u4f3pl6f",
+  "host": "https://dev.send.sgraph.ai"
+ },
+ "count": 88,
+ "ok": 78,
+ "captures": [
+  {
+   "site": "fringe.promptugal.news",
+   "url": "https://fringe.promptugal.news/",
+   "width": 390,
+   "captured_at": "2026-11-11T11:55:22Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/fringe.promptugal.news/fringe-promptugal-news-390.jpg",
+     "sha256": "eb1a0564ea653fc44913832dd075c41b1ce6e67a6311452d3bfe3c34fadfb820",
+     "bytes": 60035
+    },
+    "text": {
+     "path": "2026-11-11/11/fringe.promptugal.news/fringe-promptugal-news-390.txt",
+     "sha256": "f487863377cce517c181e5e91b5b0dab4602d283633b02714d1526147498a8f8"
+    },
+    "fields": {
+     "path": "2026-11-11/11/fringe.promptugal.news/fringe-promptugal-news-390.json",
+     "sha256": "00af8e51c4789b674058d7c369a399f4fa6986730ecd46c2bad84a74270e140a"
+    }
+   }
+  },
+  {
+   "site": "fringe.promptugal.news",
+   "url": "https://fringe.promptugal.news/",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:55:24Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/fringe.promptugal.news/fringe-promptugal-news-1280.jpg",
+     "sha256": "ce1f1f981bb80708dc3bdb005a537843f8c17fbd3e98389dc80d0b33ecb0eee1",
+     "bytes": 99717
+    },
+    "text": {
+     "path": "2026-11-11/11/fringe.promptugal.news/fringe-promptugal-news-1280.txt",
+     "sha256": "f487863377cce517c181e5e91b5b0dab4602d283633b02714d1526147498a8f8"
+    },
+    "fields": {
+     "path": "2026-11-11/11/fringe.promptugal.news/fringe-promptugal-news-1280.json",
+     "sha256": "f39266e468cdf1223095c7bfdbe50fec354a1cb0d28d1006b2b4b55304005f83"
+    }
+   }
+  },
+  {
+   "site": "fringe.promptugal.news",
+   "url": "https://fringe.promptugal.news/join/",
+   "width": 390,
+   "captured_at": "2026-11-11T11:55:26Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/fringe.promptugal.news/fringe-promptugal-news-join-390.jpg",
+     "sha256": "9d3281a6330df8533abf2427c0cf42a1c78dcb2d9d54cca97a17bbb4228b63e7",
+     "bytes": 51665
+    },
+    "text": {
+     "path": "2026-11-11/11/fringe.promptugal.news/fringe-promptugal-news-join-390.txt",
+     "sha256": "ade9fb2c0ab38d72877a76df2aa421ad458dcf0e159fa3a427298bc6f7be6e3c"
+    },
+    "fields": {
+     "path": "2026-11-11/11/fringe.promptugal.news/fringe-promptugal-news-join-390.json",
+     "sha256": "675f936c456ce698500aedc7e0d8ea8768a753cfff2351ecacefcca9b69ccb5e"
+    }
+   }
+  },
+  {
+   "site": "fringe.promptugal.news",
+   "url": "https://fringe.promptugal.news/join/",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:55:29Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/fringe.promptugal.news/fringe-promptugal-news-join-1280.jpg",
+     "sha256": "1cc9364a43f4e5eee2536d333351d00692b2c8fa0d26912d11811f4611542a7d",
+     "bytes": 83511
+    },
+    "text": {
+     "path": "2026-11-11/11/fringe.promptugal.news/fringe-promptugal-news-join-1280.txt",
+     "sha256": "ade9fb2c0ab38d72877a76df2aa421ad458dcf0e159fa3a427298bc6f7be6e3c"
+    },
+    "fields": {
+     "path": "2026-11-11/11/fringe.promptugal.news/fringe-promptugal-news-join-1280.json",
+     "sha256": "039a46aa4aece254d21ce90ded21d86f56496b8e489663f32772050596b766bd"
+    }
+   }
+  },
+  {
+   "site": "fringe.promptugal.news",
+   "url": "https://fringe.promptugal.news/graph/",
+   "width": 390,
+   "captured_at": "2026-11-11T11:55:31Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/fringe.promptugal.news/fringe-promptugal-news-graph-390.jpg",
+     "sha256": "93e4cdfe662a9c06a8deafaf4294bad62acf3c78289b7d72f0662b63a17cb2a6",
+     "bytes": 49574
+    },
+    "text": {
+     "path": "2026-11-11/11/fringe.promptugal.news/fringe-promptugal-news-graph-390.txt",
+     "sha256": "b51398e4d49328a30c1d60550af4979144185732782d068532d09997977ecfd1"
+    },
+    "fields": {
+     "path": "2026-11-11/11/fringe.promptugal.news/fringe-promptugal-news-graph-390.json",
+     "sha256": "28b3d5a9c44b7b656e08a6ac04dd6744f2b043a1dd696ede53cc70e255025c1c"
+    }
+   }
+  },
+  {
+   "site": "fringe.promptugal.news",
+   "url": "https://fringe.promptugal.news/graph/",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:55:33Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/fringe.promptugal.news/fringe-promptugal-news-graph-1280.jpg",
+     "sha256": "9b78d42ba3ee21dde2a88fc4e8d22f0643a2b1727faf4f1a150523d402f48da3",
+     "bytes": 75080
+    },
+    "text": {
+     "path": "2026-11-11/11/fringe.promptugal.news/fringe-promptugal-news-graph-1280.txt",
+     "sha256": "b51398e4d49328a30c1d60550af4979144185732782d068532d09997977ecfd1"
+    },
+    "fields": {
+     "path": "2026-11-11/11/fringe.promptugal.news/fringe-promptugal-news-graph-1280.json",
+     "sha256": "95a6e134abfdb00c0a48b187da466f2dc19c188fc33d6767cf0a4e5764a6be6b"
+    }
+   }
+  },
+  {
+   "site": "fringe.promptugal.news",
+   "url": "https://fringe.promptugal.news/traffic/",
+   "width": 390,
+   "captured_at": "2026-11-11T11:55:36Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/fringe.promptugal.news/fringe-promptugal-news-traffic-390.jpg",
+     "sha256": "a6a9fb91d39a4a53138e8eabd342754e18a5485e98238e5b7b739b8106d9cbee",
+     "bytes": 47468
+    },
+    "text": {
+     "path": "2026-11-11/11/fringe.promptugal.news/fringe-promptugal-news-traffic-390.txt",
+     "sha256": "014326e6ea262387a3628883905e70c4246f8185ba6bc97f95265ee5279701ac"
+    },
+    "fields": {
+     "path": "2026-11-11/11/fringe.promptugal.news/fringe-promptugal-news-traffic-390.json",
+     "sha256": "d93f3fc66e22e6b3272d4c55780ae162fd04dcef3e7ed9d23713a7ae9b7e6e0a"
+    }
+   }
+  },
+  {
+   "site": "fringe.promptugal.news",
+   "url": "https://fringe.promptugal.news/traffic/",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:55:38Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/fringe.promptugal.news/fringe-promptugal-news-traffic-1280.jpg",
+     "sha256": "f042a8b0c7fde55b261c39b4d28b36d7bb8ebcacae0c0be86382c0ff9563da8c",
+     "bytes": 71484
+    },
+    "text": {
+     "path": "2026-11-11/11/fringe.promptugal.news/fringe-promptugal-news-traffic-1280.txt",
+     "sha256": "014326e6ea262387a3628883905e70c4246f8185ba6bc97f95265ee5279701ac"
+    },
+    "fields": {
+     "path": "2026-11-11/11/fringe.promptugal.news/fringe-promptugal-news-traffic-1280.json",
+     "sha256": "81f6bc695204754842675cd32344b5d974add7947ed7aeb52fd067dfebc60565"
+    }
+   }
+  },
+  {
+   "site": "fringe.promptugal.news",
+   "url": "https://fringe.promptugal.news/evolution/",
+   "width": 390,
+   "captured_at": "2026-11-11T11:55:40Z",
+   "http_status": 404,
+   "error": "http 404: not captured",
+   "files": null
+  },
+  {
+   "site": "fringe.promptugal.news",
+   "url": "https://fringe.promptugal.news/evolution/",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:55:42Z",
+   "http_status": 404,
+   "error": "http 404: not captured",
+   "files": null
+  },
+  {
+   "site": "fringe.promptugal.news",
+   "url": "https://fringe.promptugal.news/storm/",
+   "width": 390,
+   "captured_at": "2026-11-11T11:55:44Z",
+   "http_status": 404,
+   "error": "http 404: not captured",
+   "files": null
+  },
+  {
+   "site": "fringe.promptugal.news",
+   "url": "https://fringe.promptugal.news/storm/",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:55:47Z",
+   "http_status": 404,
+   "error": "http 404: not captured",
+   "files": null
+  },
+  {
+   "site": "fringe.promptugal.news",
+   "url": "https://fringe.promptugal.news/now/",
+   "width": 390,
+   "captured_at": "2026-11-11T11:55:49Z",
+   "http_status": 404,
+   "error": "http 404: not captured",
+   "files": null
+  },
+  {
+   "site": "fringe.promptugal.news",
+   "url": "https://fringe.promptugal.news/now/",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:55:51Z",
+   "http_status": 404,
+   "error": "http 404: not captured",
+   "files": null
+  },
+  {
+   "site": "fringe.promptugal.news",
+   "url": "https://fringe.promptugal.news/changes/",
+   "width": 390,
+   "captured_at": "2026-11-11T11:55:53Z",
+   "http_status": 404,
+   "error": "http 404: not captured",
+   "files": null
+  },
+  {
+   "site": "fringe.promptugal.news",
+   "url": "https://fringe.promptugal.news/changes/",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:55:56Z",
+   "http_status": 404,
+   "error": "http 404: not captured",
+   "files": null
+  },
+  {
+   "site": "fringe.promptugal.news",
+   "url": "https://fringe.promptugal.news/organisers/",
+   "width": 390,
+   "captured_at": "2026-11-11T11:55:58Z",
+   "http_status": 404,
+   "error": "http 404: not captured",
+   "files": null
+  },
+  {
+   "site": "fringe.promptugal.news",
+   "url": "https://fringe.promptugal.news/organisers/",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:56:00Z",
+   "http_status": 404,
+   "error": "http 404: not captured",
+   "files": null
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/ryva47wc",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:56:02Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-ryva47wc-1280.jpg",
+     "sha256": "c4edde7b1a81e4d5faa8c3821bfb9554f8ae175e9f0800ef8ce9f64d4d800319",
+     "bytes": 90740
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-ryva47wc-1280.txt",
+     "sha256": "af1df50aaf8696145ed92e67a804d8727190da3ac079c72e41269a7c1004fd72"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-ryva47wc-1280.json",
+     "sha256": "cd75c7807032742b06c1adf8b8fb404c992bd668df874338a8d5a3d822e1b42c"
+    }
+   },
+   "event_id": "2026-11-11-proof-of-run-rain-edition",
+   "our_status": "cancelled",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/3z2xjz1p",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:56:06Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-3z2xjz1p-1280.jpg",
+     "sha256": "cc68ddd34761e0acb8e2fc3f2bd98223b46c2e718c64a922a798ecbce0fa825c",
+     "bytes": 97892
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-3z2xjz1p-1280.txt",
+     "sha256": "713447adf5bc0d756a3994d4c669d82b0de980e29b3e9a3905ad2a46c3ebe117"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-3z2xjz1p-1280.json",
+     "sha256": "af22f9517e41dcaedb676a09e0ae820d477d16731c67b764fcd9e7fb433a9ecd"
+    }
+   },
+   "event_id": "2026-11-11-strength-and-coffee-founders",
+   "our_status": "unknown",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/wgji1mfy",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:56:10Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-wgji1mfy-1280.jpg",
+     "sha256": "23dfb09a37aab001e183b6c4be31babe6bb69288a3b3d7ae9b0c790260558176",
+     "bytes": 90904
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-wgji1mfy-1280.txt",
+     "sha256": "ea586df2a7fd7f6333752ea3955d8b4c5347ef3dfecef4fcad3a45de10d15d0a"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-wgji1mfy-1280.json",
+     "sha256": "21456a276cc1603c2ddc84e42575502c6e29120ceefe51eaa683b9415de0c5d2"
+    }
+   },
+   "event_id": "2026-11-11-kyra-creator-club",
+   "our_status": "unknown",
+   "name_found_on_page": false
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/stormsummit9am",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:56:14Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-stormsummit9am-1280.jpg",
+     "sha256": "36b21f535c919b25b9ba1b23bff91ceb75ccd39fa149b62debefafc1af771cde",
+     "bytes": 83884
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-stormsummit9am-1280.txt",
+     "sha256": "a1e29c84c3647f252e407c29ae2f4d609ab37caefe6d1b0b9e0f01f46a91d224"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-stormsummit9am-1280.json",
+     "sha256": "4aa57b35525fa152796f319aede8d1eb8f44bc9673774e877cf3f87b12d51107"
+    }
+   },
+   "event_id": "2026-11-11-founderlink-storm-summit-morning",
+   "our_status": "online",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/m146luuy",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:56:18Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-m146luuy-1280.jpg",
+     "sha256": "bfdecf61f219753dbe631ffa9b2abbeacb2816da1c32cfbf36436c1a13456576",
+     "bytes": 97237
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-m146luuy-1280.txt",
+     "sha256": "6d01f4f573f228cce8cd3e643b5309058eb8073160f1f5e667122d3048c18170"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-m146luuy-1280.json",
+     "sha256": "7f4079927a395246496bb1de322aa605b897b9f6ae8ebd476f33c042557d4471"
+    }
+   },
+   "event_id": "2026-11-11-roast-your-website",
+   "our_status": "online",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/o9y5xu0p",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:56:22Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-o9y5xu0p-1280.jpg",
+     "sha256": "082880245a57b17d20d8d309568552a09a2341d39fd818f545d14af8100ed1d9",
+     "bytes": 168578
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-o9y5xu0p-1280.txt",
+     "sha256": "9a25b47d07eb92f452548ae22359a79de11968013d1a6507147d2458fdbe8f3e"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-o9y5xu0p-1280.json",
+     "sha256": "a48da002380e0927a3574bc118a8b6d79624f9561c3ea236771b3a1730ad2a7f"
+    }
+   },
+   "event_id": "2026-11-11-dear-gatekeepers-live",
+   "our_status": "unknown",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/r1ixujpv",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:56:26Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-r1ixujpv-1280.jpg",
+     "sha256": "86f6763d5f14e1ea7d79447935dd356c43b52f915e5d95b82b60af5ab7ec98eb",
+     "bytes": 108329
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-r1ixujpv-1280.txt",
+     "sha256": "fb3e6c745637777da356d0d7706665d52fbf3d6170e1a9330d00071880c95801"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-r1ixujpv-1280.json",
+     "sha256": "25f849f030e8bbc992eedcb8c870b4efea70845e8b44a2adf97a4f4d8554c59d"
+    }
+   },
+   "event_id": "2026-11-11-human-side-of-ai",
+   "our_status": "online",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/xn30wgrj",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:56:29Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-xn30wgrj-1280.jpg",
+     "sha256": "d846f75f76ff6af5d2ef32eda47e99fbbd7fdfbbbbaac0d6d6a29addd344296d",
+     "bytes": 115964
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-xn30wgrj-1280.txt",
+     "sha256": "8f44cc9a430f9473069ed660a5bf59bb1d1c09775968f023738e0cf5ca87d452"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-xn30wgrj-1280.json",
+     "sha256": "d554b83d4a0beb6e4412ea9c3b94d4d1989c16de92b9f19215f21ed6299647ae"
+    }
+   },
+   "event_id": "2026-11-11-human-performance-under-uncertainty",
+   "our_status": "online",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/seattle-1hwz",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:56:33Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-seattle-1hwz-1280.jpg",
+     "sha256": "14e9e392379a42a49443f64a2c81190e63b1cd7040ea680b360b04237f01ac4b",
+     "bytes": 84862
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-seattle-1hwz-1280.txt",
+     "sha256": "5409e8e09f5ad4f55f154929bf48158c14c20dadfda5de46b714592c8a9ef9a9"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-seattle-1hwz-1280.json",
+     "sha256": "e3337dd45f2fb0d1446240590e829862d0cabf8d3580b41bdf48127c3f4ba67e"
+    }
+   },
+   "event_id": "2026-11-11-seattle-angel-connect-collaborate-invest",
+   "our_status": "online",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/e42tit8k",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:56:37Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-e42tit8k-1280.jpg",
+     "sha256": "f0326f3af50998d92d5911516a8c136b091bee93234c14a9b1bb8bd137718290",
+     "bytes": 166671
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-e42tit8k-1280.txt",
+     "sha256": "06dc87d0e9dcb38f0c0a8b223a363bca9c548eeb3a875fcde40244ed18b0ca34"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-e42tit8k-1280.json",
+     "sha256": "b9ffee820df1614d1835edf48780c4ac0fdd9a6f1dc96992151c75a77ca90965"
+    }
+   },
+   "event_id": "2026-11-11-startup-legal-roast",
+   "our_status": "unknown",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/vwwf1kj1",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:56:42Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-vwwf1kj1-1280.jpg",
+     "sha256": "63c0665c50858ae0dec65c29b72fc91e77d9a45db3ed786c6efe6fc00451281a",
+     "bytes": 121850
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-vwwf1kj1-1280.txt",
+     "sha256": "00c1d283c5e38f14dad2b732ebb3fb651bf579f77febbef90a27b831ac263541"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-vwwf1kj1-1280.json",
+     "sha256": "bb77f4b8ec4bc11ff3762a3d37d18d238b14f4424de386273935f5a083fbff8f"
+    }
+   },
+   "event_id": "2026-11-11-ptw-classroom-deep-work-wexio",
+   "our_status": "online",
+   "name_found_on_page": false
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/k0zamjmi",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:56:46Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-k0zamjmi-1280.jpg",
+     "sha256": "9941faa03f208d0434920579f694a7eab3f7656bcbd5e8b785657ad6b62fd3fd",
+     "bytes": 98206
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-k0zamjmi-1280.txt",
+     "sha256": "fa21adf7f146e03e548d9500c406039e7fc73999a71e8f444fa9c21f38e7befe"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-k0zamjmi-1280.json",
+     "sha256": "bf8d39d21bfe5c9ad9d9806b5bb2018dec7a9b8c94bacc06ff2ae962e9a6e311"
+    }
+   },
+   "event_id": "2026-11-11-valois-allocator-residence",
+   "our_status": "on",
+   "name_found_on_page": false
+  },
+  {
+   "site": "wetsummitlisbon.com",
+   "url": "https://wetsummitlisbon.com/",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:56:50Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/wetsummitlisbon.com/wetsummitlisbon-com-1280.jpg",
+     "sha256": "f279c758c66adac0c79f3a9b2c1fc6a5b2082afdb93786d61459dbc7f270018a",
+     "bytes": 104308
+    },
+    "text": {
+     "path": "2026-11-11/11/wetsummitlisbon.com/wetsummitlisbon-com-1280.txt",
+     "sha256": "9a1401dacfdde1b01bfe60a5b2dffd404ffd2ad2eecbe2e72b0866489791db1c"
+    },
+    "fields": {
+     "path": "2026-11-11/11/wetsummitlisbon.com/wetsummitlisbon-com-1280.json",
+     "sha256": "e13d9f8b2a2dd027651f7d008800e3a8cd2d8e32ae56fb171fe49fef1f85e79d"
+    }
+   },
+   "event_id": "2026-11-11-wet-summit-lisbon",
+   "our_status": "on",
+   "name_found_on_page": false
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/jmjk0qqh",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:56:53Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-jmjk0qqh-1280.jpg",
+     "sha256": "3d3a910f5c6272dbb3edf4496ec6f42a81b9366c2e99fb9a6e7378136c87ef37",
+     "bytes": 113126
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-jmjk0qqh-1280.txt",
+     "sha256": "0fa58168d5119443662ded1a8ff70982715bec03d40e427f68c0a5b44181b3aa"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-jmjk0qqh-1280.json",
+     "sha256": "4881260577470720057be2a2552028be17ccdf928e4a45cca0d5dafb514e1177"
+    }
+   },
+   "event_id": "2026-11-11-yorkseed-allocator-lunch",
+   "our_status": "unknown",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/59m82tyo",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:56:58Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-59m82tyo-1280.jpg",
+     "sha256": "5a95c4cb7a4ee523443c32e766c986ae752e7fa50dab60d76aea3ddbab98d4be",
+     "bytes": 193981
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-59m82tyo-1280.txt",
+     "sha256": "fefe5a839bb549038498339bf5b0894141ae753271be521fe10e479c965ef75a"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-59m82tyo-1280.json",
+     "sha256": "64c6579a1aa0cd4dda231a30b3268010d96c1aad216f87cbbbf0f668f4bdc5bc"
+    }
+   },
+   "event_id": "2026-11-11-ai-video-blueprint-2027",
+   "our_status": "online",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/stormsummit2pm",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:57:02Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-stormsummit2pm-1280.jpg",
+     "sha256": "488b1b2765f37393365c800a9a7e6f98c851e2b957d5aa9adb451915c4e9ea39",
+     "bytes": 83998
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-stormsummit2pm-1280.txt",
+     "sha256": "158cd0a4de10d107939e8ab7eab68afda493f1c7b642451b1be399bc41da2ab2"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-stormsummit2pm-1280.json",
+     "sha256": "e309eeeaaf65306486cbe60faa94efc414124602849b16c87b03692da9130e86"
+    }
+   },
+   "event_id": "2026-11-11-founderlink-storm-summit-afternoon",
+   "our_status": "online",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/6wcduo5u",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:57:06Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-6wcduo5u-1280.jpg",
+     "sha256": "7735bb62f23f03ca7ebb6c312268b00f8519902fdd8047acaf855b095fd16bc2",
+     "bytes": 102956
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-6wcduo5u-1280.txt",
+     "sha256": "d014aec7c232e19d82930f3d7c5c4c1844a8e791197f18d152c6ea02c5a2c40a"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-6wcduo5u-1280.json",
+     "sha256": "8f508975ef8f1cf64791d04ea1ae9b543a2408691315cf21e2d86421d6cbc2e8"
+    }
+   },
+   "event_id": "2026-11-11-corporate-academy-of-tomorrow",
+   "our_status": "online",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/4fbc1s24",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:57:09Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-4fbc1s24-1280.jpg",
+     "sha256": "17bba5f904873ff8f39e4ec00a64b5ccf49b3e460ee69b36771a17318bdd1ba7",
+     "bytes": 96832
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-4fbc1s24-1280.txt",
+     "sha256": "d43ccaed6417db8e5f6b0d2d98a08322401341e864395c7a18659a6237c3462a"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-4fbc1s24-1280.json",
+     "sha256": "1476a956f1ce1de416a7eea3f8377fbf198fa29ac8864293f4e16872dce1a7ce"
+    }
+   },
+   "event_id": "2026-11-11-side-events-guide-irl",
+   "our_status": "unknown",
+   "name_found_on_page": false
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/lg2qwq2l",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:57:13Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-lg2qwq2l-1280.jpg",
+     "sha256": "a477886db531b0e928d42385acb0ceda6084d006032a10f8cbe8f63abf1bcf60",
+     "bytes": 100930
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-lg2qwq2l-1280.txt",
+     "sha256": "82c3bde1ee549db0d4cf53b77cf860f8666dd2e2134bcbb64ae5a59e8424f139"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-lg2qwq2l-1280.json",
+     "sha256": "07992d31e74d0d66308b2e59e2f7de166958f729239b69a88076f0cf4c8ea6bf"
+    }
+   },
+   "event_id": "2026-11-11-ethical-ai-initiative",
+   "our_status": "online",
+   "name_found_on_page": false
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/i91jzozo",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:57:17Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-i91jzozo-1280.jpg",
+     "sha256": "fe3794b88672b9e253cf8dae12fad995f1fd70e24fa37d57e53eb57188b68648",
+     "bytes": 105295
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-i91jzozo-1280.txt",
+     "sha256": "c1756d2fc12919a942931ce07e04bfb577228c6ce349c41b33b5dff986f4ba68"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-i91jzozo-1280.json",
+     "sha256": "300aa3e78b1f2a9afb707de6b6befd2081f202ca5baa9a42d412d0459137f47b"
+    }
+   },
+   "event_id": "2026-11-11-kuma-h2h-2",
+   "our_status": "unknown",
+   "name_found_on_page": false
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/148l175b",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:57:23Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-148l175b-1280.jpg",
+     "sha256": "c17da0c42156169b1b1e93e6f9e4585c7ae6efe7b819a839cf09282612f793f9",
+     "bytes": 96385
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-148l175b-1280.txt",
+     "sha256": "371dc66bcb371308e9916c2b70d3fc04edb405e8a2e24375db7d4f4e35c6a14c"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-148l175b-1280.json",
+     "sha256": "4500bc263332e9a77644f0b25eec12b3689e3a11997ee8c7ec2b32df13ce98bc"
+    }
+   },
+   "event_id": "2026-11-11-bridging-capital-across-borders",
+   "our_status": "online",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/az8uos4e",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:57:27Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-az8uos4e-1280.jpg",
+     "sha256": "1ea69d0d1087a07a128fb26de4fea9f3c8f91986f718b0253b48b2f23c32d31d",
+     "bytes": 108738
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-az8uos4e-1280.txt",
+     "sha256": "1e09d0741d805fbe7fc9282e4a384f76a995c7508bd82ce7daf2cc47ff55dbf1"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-az8uos4e-1280.json",
+     "sha256": "9e2a5adadd12690964673c7c9292695ea3adda9a56d465a5108e9d387f6a8bcc"
+    }
+   },
+   "event_id": "2026-11-11-kuma-align-leadership-ai",
+   "our_status": "online",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/a2ackpa5",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:57:34Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-a2ackpa5-1280.jpg",
+     "sha256": "150cc4b05ebae417b71bb1c7919e353342438e7084c353a8e44381d7468993a2",
+     "bytes": 157482
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-a2ackpa5-1280.txt",
+     "sha256": "83796e037292ba319c8f418f58035abd5acffdf432334aa4f844da0452b0e277"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-a2ackpa5-1280.json",
+     "sha256": "6d23f3dca8533391344b23cbc454adf743a6c85435a54250d5fca08b1edcfda4"
+    }
+   },
+   "event_id": "2026-11-11-amplify-europe-lisbon",
+   "our_status": "unknown",
+   "name_found_on_page": false
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/samqquwk",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:57:40Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-samqquwk-1280.jpg",
+     "sha256": "4de09bbadb87ef63a2e05d989d278716bfde31bd7c7e4d572ee2bf30cdc10abc",
+     "bytes": 177554
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-samqquwk-1280.txt",
+     "sha256": "eb51a638009d1cee1d09523cf9c78061c09f27f532ff3a8181b350faf5f0e358"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-samqquwk-1280.json",
+     "sha256": "a02938690c5bfd039a10b73a1bef4abadebcc3ae2146d4f4de090c9a470bdc14"
+    }
+   },
+   "event_id": "2026-11-11-ai-spam-problem",
+   "our_status": "online",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/aa65srr3",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:57:44Z",
+   "http_status": 404,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-aa65srr3-1280.jpg",
+     "sha256": "1eeb49605a057f9789d6a7e9da98b4507a505877f02ff5a5eff8c38f388b851e",
+     "bytes": 17818
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-aa65srr3-1280.txt",
+     "sha256": "587d6e3c8f7897d430d3fedd27291422f2895b8333749557c2ae04e1c02f4e65"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-aa65srr3-1280.json",
+     "sha256": "ae4a61656ec5e79313fb68092abde2ee8b4398e9002d9c05e4edc52d06fe1843"
+    }
+   },
+   "event_id": "2026-11-11-aubay-the-next-move",
+   "our_status": "unknown",
+   "name_found_on_page": false
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/574bmobb",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:57:48Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-574bmobb-1280.jpg",
+     "sha256": "4ba38a6b64b8be5344d490e6bae48698c88ed3db06c97f5e62ee5e2f8b23727c",
+     "bytes": 79237
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-574bmobb-1280.txt",
+     "sha256": "fadd20df41a75db95b46baa60c64aa45869daeb5e68544eaee8cff3ac131f7bb"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-574bmobb-1280.json",
+     "sha256": "4d60054806d3e646cfbb72b3ca96bb7a3d580c6e065427430ff454702679d218"
+    }
+   },
+   "event_id": "2026-11-11-enchant-pitch-parties",
+   "our_status": "unknown",
+   "name_found_on_page": false
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/yatbt1w6",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:57:52Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-yatbt1w6-1280.jpg",
+     "sha256": "272cbc79112e423cf36b283c53c98be2568e63b0da6f3d0dcd8b4926fbb2d3e6",
+     "bytes": 84929
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-yatbt1w6-1280.txt",
+     "sha256": "35e49424f57c684092853dee6f1d048dd04da92a3d4f96ce54544f48aedce893"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-yatbt1w6-1280.json",
+     "sha256": "c201052d14980ce3e3aeba95cdcb3f67c4791e8bdfe60fb70f8564f1ed30e4d0"
+    }
+   },
+   "event_id": "2026-11-11-like-minded",
+   "our_status": "unknown",
+   "name_found_on_page": false
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/f31mqr0v",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:57:56Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-f31mqr0v-1280.jpg",
+     "sha256": "5ab079df6209fcc88c4330a06cf8e08f59233c8dea6e2b05e5a72ebc4fd59040",
+     "bytes": 167121
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-f31mqr0v-1280.txt",
+     "sha256": "4942f079dfa109475d440108b710961a56cf0a19b34adb89317846aa0a5ca69d"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-f31mqr0v-1280.json",
+     "sha256": "29cc6bf61ad8df2cb5886c42c97aee5d243a00ac754bedf94169394c2884a8c1"
+    }
+   },
+   "event_id": "2026-11-11-taste-japan-career-connections",
+   "our_status": "cancelled",
+   "name_found_on_page": true
+  },
+  {
+   "site": "www.meetup.com",
+   "url": "https://www.meetup.com/life-with-artificials/events/317058510/",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:58:00Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/www.meetup.com/www-meetup-com-life-with-artificials-events-317058510-1280.jpg",
+     "sha256": "3fd592630803d5d19f50c64e7dc6a0072f4391e63b323bc531dab8becdbe53d3",
+     "bytes": 99601
+    },
+    "text": {
+     "path": "2026-11-11/11/www.meetup.com/www-meetup-com-life-with-artificials-events-317058510-1280.txt",
+     "sha256": "555294da208c3ab05853fef2946532dcbfd61233a3c3119a819b7bc5ad1d30ff"
+    },
+    "fields": {
+     "path": "2026-11-11/11/www.meetup.com/www-meetup-com-life-with-artificials-events-317058510-1280.json",
+     "sha256": "72e4f6f6e07edc97202e3404733c37277adf3379588a924f851e23ed81393bbe"
+    }
+   },
+   "event_id": "2026-11-11-life-with-artificials-kickoff",
+   "our_status": "on",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/portugal-dezg",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:58:03Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-portugal-dezg-1280.jpg",
+     "sha256": "63159067000ce410742d8ac662e43aa7097811fc1714ebe85cf803ed152660af",
+     "bytes": 114654
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-portugal-dezg-1280.txt",
+     "sha256": "32476390ef073906bdb395c4b5f56a8a0515cf57105e35c445bf5cdf5b8a1b9c"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-portugal-dezg-1280.json",
+     "sha256": "e7b83d52e1bf8be208cc6564a6e041f0f0d6fa2f06e4eb7935a4fb23cbb0ab8e"
+    }
+   },
+   "event_id": "2026-11-11-cisco-automation-to-autonomy",
+   "our_status": "unknown",
+   "name_found_on_page": false
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/rjh3pf7g",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:58:07Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-rjh3pf7g-1280.jpg",
+     "sha256": "07d5225e05eaacde1433c669612153ddd7ebcd7f2700bec1c645eb8fd5f73e7b",
+     "bytes": 96533
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-rjh3pf7g-1280.txt",
+     "sha256": "d2105f913e3f3cf3f807eacdcdecf7ad7a00d6ef6164c8d6029ef8bb7cab3a0e"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-rjh3pf7g-1280.json",
+     "sha256": "552bbb24148e78c5e9fede70ba65d1c3c2eaecaec06a82146080df2e13f9fb8d"
+    }
+   },
+   "event_id": "2026-11-11-tech-startups-on-the-rooftop",
+   "our_status": "on",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/p6glepvg",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:58:11Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-p6glepvg-1280.jpg",
+     "sha256": "819653288bae47fdf111e61a17319cfa4586cdbf62eae4fd98fa636fec9bd274",
+     "bytes": 170287
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-p6glepvg-1280.txt",
+     "sha256": "6ae6ef2432eb79cdd4e80b51b621c6966e05956ad9606fd1e57c4a2f7ed6f293"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-p6glepvg-1280.json",
+     "sha256": "583267632476f6f53de38356c423de6f9f6b3fd576cb5edff2f052b34b9c2769"
+    }
+   },
+   "event_id": "2026-11-11-ai-horizon-conference",
+   "our_status": "unknown",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/pgpdzd1g",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:58:15Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-pgpdzd1g-1280.jpg",
+     "sha256": "e99f98d7cb601b1da34ace9df881eba2739d55ae33b3c395ccb3500deea39bc2",
+     "bytes": 95448
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-pgpdzd1g-1280.txt",
+     "sha256": "a082540dd3e0dd634a0ea8acf2b2d397ff9574466268bf3d2f1d94efd9d03018"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-pgpdzd1g-1280.json",
+     "sha256": "5cc834cec445f32003462301c1761d823fba8ef3a9a93698e3c142dc803b3c38"
+    }
+   },
+   "event_id": "2026-11-11-innovation-wednesdays-azerbaijan",
+   "our_status": "on",
+   "name_found_on_page": false
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/tjed8ali",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:58:19Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-tjed8ali-1280.jpg",
+     "sha256": "48cb72d7353453782f311d5b05ff6ba6f67fe53ad860be7d853fbff715409952",
+     "bytes": 106734
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-tjed8ali-1280.txt",
+     "sha256": "a6a6516e7fc7688b39bcf84d9eb21a99da5d16328f4ea61c381fdb2c438765ae"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-tjed8ali-1280.json",
+     "sha256": "cbb3ef2f8160e376e7b57d502891470eb748bddfd9b9e67df45289b9309c5cbb"
+    }
+   },
+   "event_id": "2026-11-11-frontier-founders-vcs-soiree",
+   "our_status": "online",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/yvm04djt",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:58:25Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-yvm04djt-1280.jpg",
+     "sha256": "bfe24885fbb79c483a5b88b12a99596de5564bd01b61a43be5b93531af727abb",
+     "bytes": 66061
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-yvm04djt-1280.txt",
+     "sha256": "105e27cbda5a6318dd54fed8c65f32dd9a4196ef0f5c2868945036cb18816ae3"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-yvm04djt-1280.json",
+     "sha256": "bfd6aaadc2cd9d5067af29d79a1df0901eaa8854bcac7f44b3eda9f9ddac2857"
+    }
+   },
+   "event_id": "2026-11-11-lisboaux-web-summit-edition",
+   "our_status": "unknown",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/2ofzih7t",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:58:29Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-2ofzih7t-1280.jpg",
+     "sha256": "c0624afae48570fccfe032d305f156e694284d6a38c6f56eb10d20994eb78659",
+     "bytes": 94997
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-2ofzih7t-1280.txt",
+     "sha256": "37ea292e570673324b188bf1d862cab516666929ef8277c4e99fa0452b3a3bfe"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-2ofzih7t-1280.json",
+     "sha256": "05d9406b04d5fabe59fd6484a9ea1c46a6c10de92df5a3e3285801f0834278e2"
+    }
+   },
+   "event_id": "2026-11-11-demonightlx",
+   "our_status": "online",
+   "name_found_on_page": true
+  },
+  {
+   "site": "www.meetup.com",
+   "url": "https://www.meetup.com/gdglisbon/events/317255985/",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:58:32Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/www.meetup.com/www-meetup-com-gdglisbon-events-317255985-1280.jpg",
+     "sha256": "14374b92804acc1b15cb6b1e17df2c201534787efe7929da999b1015d89bd37a",
+     "bytes": 99966
+    },
+    "text": {
+     "path": "2026-11-11/11/www.meetup.com/www-meetup-com-gdglisbon-events-317255985-1280.txt",
+     "sha256": "371f06373bd751a87f635d7ae31af4a8dda16c81a54f640f6e0eb5a11cb6364a"
+    },
+    "fields": {
+     "path": "2026-11-11/11/www.meetup.com/www-meetup-com-gdglisbon-events-317255985-1280.json",
+     "sha256": "d5571e00b709c94afcd7a631a69be43163b408cd0108cf02b20d0bce52bba713"
+    }
+   },
+   "event_id": "2026-11-11-kcd-warmup-29",
+   "our_status": "cancelled",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/mso0mrpr",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:58:36Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-mso0mrpr-1280.jpg",
+     "sha256": "9e941a7e236dcbfa7076bf7bcc1b2751e8de665e6ba416e9834b51e227fc588b",
+     "bytes": 93879
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-mso0mrpr-1280.txt",
+     "sha256": "a7075f4f5842913024e1ff5444b643e0789abeb71e72878d24c935442d431f69"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-mso0mrpr-1280.json",
+     "sha256": "72056b38c34daaba569122d374458a0833b1a3f8e212db9ef28476d51179caa3"
+    }
+   },
+   "event_id": "2026-11-11-open-mercato-night",
+   "our_status": "moved",
+   "name_found_on_page": false
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/h19cccc5",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:58:40Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-h19cccc5-1280.jpg",
+     "sha256": "6bd42cb6f3d4b15b8b020e874bb0a3713b63374407065719150887297345289f",
+     "bytes": 185519
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-h19cccc5-1280.txt",
+     "sha256": "18c6898b7914c7b77bb43c5d9322c6e11aa07170dd46e2ed23edc540cbdd87fa"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-h19cccc5-1280.json",
+     "sha256": "ed51a8a0be2f6ff1d482172f2a85fdf75b75c209ca54253f786762f712bb0ac5"
+    }
+   },
+   "event_id": "2026-11-11-funders-founders-night-altair",
+   "our_status": "cancelled",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/rp4tgcfu",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:58:44Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-rp4tgcfu-1280.jpg",
+     "sha256": "7a496a7b730092cac76999b8e4a72905404ff7ccd9d671eb9bc0197bde2e1efe",
+     "bytes": 158483
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-rp4tgcfu-1280.txt",
+     "sha256": "4086892e00096caa1b1e7132570cb7d6f685cc21ac8934111dd1aaee2cf60ae6"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-rp4tgcfu-1280.json",
+     "sha256": "7892a16a27ea6fab39d6ea2995efc633ab578a8acb8127346ff55a365fc698e9"
+    }
+   },
+   "event_id": "2026-11-11-european-tech-champions-italy-portugal",
+   "our_status": "unknown",
+   "name_found_on_page": false
+  },
+  {
+   "site": "www.meetup.com",
+   "url": "https://www.meetup.com/indiebeers-lisboa/events/317024539/",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:58:48Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/www.meetup.com/www-meetup-com-indiebeers-lisboa-events-317024539-1280.jpg",
+     "sha256": "b0d6de267465e5c60b0e8ecdc09c0b7b8f87908b7726024112dc79cf5cd1ad18",
+     "bytes": 116956
+    },
+    "text": {
+     "path": "2026-11-11/11/www.meetup.com/www-meetup-com-indiebeers-lisboa-events-317024539-1280.txt",
+     "sha256": "34681d6db4a7f81d66134ed59fc98a2e774b361349332321d7c2870761c41b13"
+    },
+    "fields": {
+     "path": "2026-11-11/11/www.meetup.com/www-meetup-com-indiebeers-lisboa-events-317024539-1280.json",
+     "sha256": "90828ac3f1abab0bef3d74eef6593a2a79e1daf5017f6cadea142423500a9741"
+    }
+   },
+   "event_id": "2026-11-11-indiesummit-lisboa",
+   "our_status": "on",
+   "name_found_on_page": false
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/stormsummit7pm",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:58:51Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-stormsummit7pm-1280.jpg",
+     "sha256": "fa2ab8f5fba306f5399322f9602948dd21c34945a22aadabd091d0981a48774a",
+     "bytes": 83719
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-stormsummit7pm-1280.txt",
+     "sha256": "2da533095b8589b2839609bafe922f531ae41df4ef7a7cbeaa2a5cb764674dac"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-stormsummit7pm-1280.json",
+     "sha256": "42ecee0700dbea5b86018ffdb821fc4fc1835145a04aa7174b178b18aad4415c"
+    }
+   },
+   "event_id": "2026-11-11-founderlink-storm-summit-evening",
+   "our_status": "online",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/1hj85rcr",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:58:54Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-1hj85rcr-1280.jpg",
+     "sha256": "83a7786bf0bd9569e5fb2edfde0a17f84d399e7c169073a084115320a0b49379",
+     "bytes": 142537
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-1hj85rcr-1280.txt",
+     "sha256": "ed05bbb61659f924c5093072e4ad7571e1d7e5e796319d60c9bf3c9f0a44207b"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-1hj85rcr-1280.json",
+     "sha256": "ee5213cdffec20ec70375fe142e680120939ef0096deea430b2983260fdf422f"
+    }
+   },
+   "event_id": "2026-11-11-indvstry-diaspora-dinner",
+   "our_status": "unknown",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/lapwcmfu",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:58:59Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-lapwcmfu-1280.jpg",
+     "sha256": "6df5bc02301a982d3361ebc9f428c43f4fd566fa73f2bdf74660611f4d9aa1e6",
+     "bytes": 103606
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-lapwcmfu-1280.txt",
+     "sha256": "2924df6bb7ce09c8bde8ea9eb1f92362bd8cf035f58e2b39557cd849619ca737"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-lapwcmfu-1280.json",
+     "sha256": "d79548c83ff7c8e1a9578b3999458da35186ba1d673180bf40772c3f63526c95"
+    }
+   },
+   "event_id": "2026-11-11-foundacious-lisbon",
+   "our_status": "unknown",
+   "name_found_on_page": false
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/qd9h2j25",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:59:03Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-qd9h2j25-1280.jpg",
+     "sha256": "e6a84df240107ec8c3f263a0f79502a8c91ddf05d15a0ff5ae8e2dad0139415d",
+     "bytes": 87385
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-qd9h2j25-1280.txt",
+     "sha256": "08511014dce3005e0f5e1a14da10142225063736780a8054c75f2f5f76dc42bf"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-qd9h2j25-1280.json",
+     "sha256": "3be63590878ec55f906b84761d1130ef09c81d92ea6c13453f76ce118e87ab62"
+    }
+   },
+   "event_id": "2026-11-11-canopy-post-demo-night-drinks",
+   "our_status": "unknown",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/jp6yr213",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:59:06Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-jp6yr213-1280.jpg",
+     "sha256": "f600cf1ffa880a912177db668691539aa81fd05a445f4b893dcb02e1544d7d4a",
+     "bytes": 95999
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-jp6yr213-1280.txt",
+     "sha256": "205e56b40188c2264ace7ebf1d9eeffab12de65761fe80757742e84410b31895"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-jp6yr213-1280.json",
+     "sha256": "0183c963dffd15bd5b3f2ccfb9a53d32e7bb7f644c1e162adda7b797eb6f704e"
+    }
+   },
+   "event_id": "2026-11-11-founders-house-party",
+   "our_status": "unknown",
+   "name_found_on_page": false
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/25z2ph1o",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:59:10Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-25z2ph1o-1280.jpg",
+     "sha256": "0a2c0f5be16631d95aaed866cf2d5d06917aa7d0a064eb5b24a0d30bb1b6735d",
+     "bytes": 86495
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-25z2ph1o-1280.txt",
+     "sha256": "5862d180128527f5058514f921aa7a80ee8632ff99c2f6c1d461c3a1cbbc23ec"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-25z2ph1o-1280.json",
+     "sha256": "d528f3f89081b4ffbb1eea7a972db6ae1198e3ba07abede16d51277880aa727e"
+    }
+   },
+   "event_id": "2026-11-11-future-tech-2026",
+   "our_status": "online",
+   "name_found_on_page": false
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/sx67k4x0",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:59:14Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-sx67k4x0-1280.jpg",
+     "sha256": "c787ee8eb22dd1ff420d5c4f934cb9c047ade5ed92b48c9f7c65f23b305f393f",
+     "bytes": 95988
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-sx67k4x0-1280.txt",
+     "sha256": "1b3789487559b79134a347b1d6f291b9191b960b53167f008876bba7c9a2ad5c"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-sx67k4x0-1280.json",
+     "sha256": "4c118b336752014f69c0bcb9d9f51d9e42b4938f8db46b26ff0058f18aeec881"
+    }
+   },
+   "event_id": "2026-11-12-female-founders-breakfast",
+   "our_status": "on",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/l4098oo8",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:59:18Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-l4098oo8-1280.jpg",
+     "sha256": "16ad20c98436a5f4f010638da6296229d6e278d03ee7fe4384adde20db7dea8b",
+     "bytes": 143794
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-l4098oo8-1280.txt",
+     "sha256": "04931fb37f5a5b960014762fad3770b92687919152cbd2f1643e71a4a78494c0"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-l4098oo8-1280.json",
+     "sha256": "80cc58859d55eee432aaf80c067e14cd9876a26de63940e3fafa6d5ce33e5bb2"
+    }
+   },
+   "event_id": "2026-11-12-sales-leaders-breakfast",
+   "our_status": "on",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/5qsia07c",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:59:22Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-5qsia07c-1280.jpg",
+     "sha256": "90b1e00f39916b30107456ea8277a0023479354206b3ec6a512fe1b7ad8f4174",
+     "bytes": 147887
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-5qsia07c-1280.txt",
+     "sha256": "7522849743800412becafbc3a84088c4d8a28826f033576ba74e461187fe7abf"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-5qsia07c-1280.json",
+     "sha256": "2d3fe88c41ada6ec183539e91981eb22e513e73b9fc42693921b1108c34abeb3"
+    }
+   },
+   "event_id": "2026-11-12-ovhcloud-breakfast-ufl",
+   "our_status": "on",
+   "name_found_on_page": true
+  },
+  {
+   "site": "www.meetup.com",
+   "url": "https://www.meetup.com/open-coffee-lisbon/events/316495551/",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:59:26Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/www.meetup.com/www-meetup-com-open-coffee-lisbon-events-316495551-1280.jpg",
+     "sha256": "84b5f6ad3839c4946a3b7f14969cc2c986ce6ad4c8b42c1166ca0103ceb69fe1",
+     "bytes": 91504
+    },
+    "text": {
+     "path": "2026-11-11/11/www.meetup.com/www-meetup-com-open-coffee-lisbon-events-316495551-1280.txt",
+     "sha256": "2ce5a8ff9bcc38b02820a3e3f5895335aa62ab35612429baaa82d29d1065559c"
+    },
+    "fields": {
+     "path": "2026-11-11/11/www.meetup.com/www-meetup-com-open-coffee-lisbon-events-316495551-1280.json",
+     "sha256": "2d1077e7f9d46ec52384e6b3bb7ae9fa44582fb77a3d7479587d49900fc486c7"
+    }
+   },
+   "event_id": "2026-11-12-open-coffee-lisbon-53",
+   "our_status": "on",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/u0iuhn8i",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:59:29Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-u0iuhn8i-1280.jpg",
+     "sha256": "b5cef30ad58f0b2e668b144a4f1017f8b50b6b5fb5fb54ccf690d399f8bbf02c",
+     "bytes": 93286
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-u0iuhn8i-1280.txt",
+     "sha256": "ce12b22ff94a569947aefc1080d61270b77f3b53e731f57d864532332c73c62f"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-u0iuhn8i-1280.json",
+     "sha256": "5c19345c1c8e666ee5d05d5835e431ca5c80bfcaff3b499ca3383849b23abe95"
+    }
+   },
+   "event_id": "2026-11-12-cafe-and-code-exa-mastra",
+   "our_status": "on",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/g87gj7f6",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:59:33Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-g87gj7f6-1280.jpg",
+     "sha256": "96a14e838357e48a2b72d3f1387e5abb6a2f2752419192865ae301c36c1d18d0",
+     "bytes": 94617
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-g87gj7f6-1280.txt",
+     "sha256": "297d4fedf86577def955b9e42809c7018122d1b3dc107a207a3a68181ca9cef5"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-g87gj7f6-1280.json",
+     "sha256": "7d54878b685f6a21dfd805258dbab29aac88a0b125bdfc5dd95cd8154f0d6960"
+    }
+   },
+   "event_id": "2026-11-12-canopy-campfire-ai",
+   "our_status": "on",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/uau5nem3",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:59:37Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-uau5nem3-1280.jpg",
+     "sha256": "1b2f9bf2bd4ca305b253710ae1eeaf5609f9da206b21b540886d8086ba6fc2c5",
+     "bytes": 102931
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-uau5nem3-1280.txt",
+     "sha256": "0e8e930952f0d737e9ffb4d118b46ad0337c8799cff6c6124c4ba0931a9e14f3"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-uau5nem3-1280.json",
+     "sha256": "a80263e63b4480fd3a988a3b8ce555b76e773fae008507eb556cdeb8f543c189"
+    }
+   },
+   "event_id": "2026-11-12-post-web-summit-reset-sauna",
+   "our_status": "on",
+   "name_found_on_page": true
+  },
+  {
+   "site": "elevon.io",
+   "url": "https://elevon.io/websummit/night",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:59:41Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/elevon.io/elevon-io-websummit-night-1280.jpg",
+     "sha256": "e1c1f5d4001913ab87ecf6d5876c96069dedf4fe42cec207460e1630ffbb9e8f",
+     "bytes": 133885
+    },
+    "text": {
+     "path": "2026-11-11/11/elevon.io/elevon-io-websummit-night-1280.txt",
+     "sha256": "36057e13f9bd3aa0e5192d34d6f0308f033baea5ff8cabe558d8a902c7846767"
+    },
+    "fields": {
+     "path": "2026-11-11/11/elevon.io/elevon-io-websummit-night-1280.json",
+     "sha256": "5d5ade19b9a3ee3384e6739451e9a58004a9694b443a4e0f798fe0fb7767cb24"
+    }
+   },
+   "event_id": "2026-11-11-elevon-czsk-community-night",
+   "our_status": "moved",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/lunar-ltdv",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:59:46Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-lunar-ltdv-1280.jpg",
+     "sha256": "6b1bcfe980476c87623be36c4f2ed54ce13ed65ec02adc3801c4937222073bb4",
+     "bytes": 121665
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-lunar-ltdv-1280.txt",
+     "sha256": "f9c5dee691bd158b7eb6aa3d471a750d1ba3ebe4297079c61bdc97562c4a16c5"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-lunar-ltdv-1280.json",
+     "sha256": "548a7410347ab5b1754c033b8bf6d1a0dc87afce9c065bee52057b5d09e7ab9e"
+    }
+   },
+   "event_id": "2026-11-12-agents-are-ready-internet-isnt",
+   "our_status": "on",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/j2swdpb0",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:59:50Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-j2swdpb0-1280.jpg",
+     "sha256": "4da1d4338ed9d57c997dedfe213aff95e41edda88e87979bd1ff931c38057917",
+     "bytes": 153671
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-j2swdpb0-1280.txt",
+     "sha256": "e1e5bf48be946e27337665f9639dd8e83f03017876326bf32cf3f3a9e5095057"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-j2swdpb0-1280.json",
+     "sha256": "371284556ede439984c8030fa212bc79cacc983c0e9057da2c610c995332e372"
+    }
+   },
+   "event_id": "2026-11-12-next-rounds-on-us",
+   "our_status": "on",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/whll1umb",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:59:55Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-whll1umb-1280.jpg",
+     "sha256": "f3c425028859a0d077dba18ac4b23e1c6e4f58311914852a5753adfd1b60ea4f",
+     "bytes": 106217
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-whll1umb-1280.txt",
+     "sha256": "3511633bf03f0421fd63b1d6bab3462a9beb5b0465c7eb0c55d3a1305a5eb21f"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-whll1umb-1280.json",
+     "sha256": "417d47e6988a3547c26060dcab35dd0e6a1bab860aee2c98f932d958d7b0a07a"
+    }
+   },
+   "event_id": "2026-11-12-defense-tech-meetup-9",
+   "our_status": "moved",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/wrz9dilz",
+   "width": 1280,
+   "captured_at": "2026-11-11T11:59:59Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-wrz9dilz-1280.jpg",
+     "sha256": "7d604ebcb0cf19d04b5caed7b66370bec77a73be60c492a53ad050bd8b65935c",
+     "bytes": 103390
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-wrz9dilz-1280.txt",
+     "sha256": "dd359a3af00d7e03667449ea35c5eb6cfa57f842fc707829a37bd3ffaa12b94e"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-wrz9dilz-1280.json",
+     "sha256": "1f3ad27d3e2e32f9d21be04966ede17dbe3fabecd7c8a440db30eb2c8a3ec254"
+    }
+   },
+   "event_id": "2026-11-12-the-founder-effect",
+   "our_status": "on",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/rnm96bu0",
+   "width": 1280,
+   "captured_at": "2026-11-11T12:00:03Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-rnm96bu0-1280.jpg",
+     "sha256": "0a016a20b627223a0948bccd526fddb7ae6205780485a610badba1240e25892a",
+     "bytes": 102779
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-rnm96bu0-1280.txt",
+     "sha256": "6c49490378cb96a60f1058466e7119a57151b4968206db5f73f4b72f64afa7b0"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-rnm96bu0-1280.json",
+     "sha256": "d445da4269cee02b66dd1ea95f38f82c732ca7b0af6be1107f7e78435797977a"
+    }
+   },
+   "event_id": "2026-11-12-show-what-you-build",
+   "our_status": "on",
+   "name_found_on_page": false
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/wt5b7nsg",
+   "width": 1280,
+   "captured_at": "2026-11-11T12:00:07Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-wt5b7nsg-1280.jpg",
+     "sha256": "c543a9339a301cfcd51809bca9e598abcb79cb7b929ed64ae4d391d019009d1e",
+     "bytes": 89650
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-wt5b7nsg-1280.txt",
+     "sha256": "e992103249846785978b00824d74cbe3ea9cffd98553a2fc2b136f65089c9b5d"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-wt5b7nsg-1280.json",
+     "sha256": "13bc9072a31f7ab47328f11a89103b0548ac2b0075f4dd11ff239c2c82956045"
+    }
+   },
+   "event_id": "2026-11-12-closing-night-the-nest",
+   "our_status": "on",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/f9rois6p",
+   "width": 1280,
+   "captured_at": "2026-11-11T12:00:11Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-f9rois6p-1280.jpg",
+     "sha256": "7f6548a98a1b221bfd444ce5eccb2b165ddcaef47e3fb9664852c6907e1ce51e",
+     "bytes": 98470
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-f9rois6p-1280.txt",
+     "sha256": "d6f9a8e341deed743af2e0370bc6c35cf40c67b09c8087e6aae2f6f793b7dc6d"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-f9rois6p-1280.json",
+     "sha256": "beef14a0162be109c859f8e177b55ce111c6cfb4c28ce44ceba5eb12f187843d"
+    }
+   },
+   "event_id": "2026-11-12-disconnect-2-connect",
+   "our_status": "on",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/4jmyv55l",
+   "width": 1280,
+   "captured_at": "2026-11-11T12:00:15Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-4jmyv55l-1280.jpg",
+     "sha256": "d54e36130002fb0bbb38893609f0cf29405746e70c428fd2beb2a6811ed92ab3",
+     "bytes": 91922
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-4jmyv55l-1280.txt",
+     "sha256": "063870400e1d0a4d4d3fc16391231186bebe4d9ce2cc5b87917aef5261692b3b"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-4jmyv55l-1280.json",
+     "sha256": "066c69b1d8d032d7739e33519539786a9996b2afeb19f059f096d0523b0d0dde"
+    }
+   },
+   "event_id": "2026-11-12-lisbon-business-leaders-evening",
+   "our_status": "on",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/s73xrx2r",
+   "width": 1280,
+   "captured_at": "2026-11-11T12:00:19Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-s73xrx2r-1280.jpg",
+     "sha256": "944934414f37a12a35751729081502b700b8b9387bc3c529e72ec8190546cecd",
+     "bytes": 87447
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-s73xrx2r-1280.txt",
+     "sha256": "b1596707460fc02f9701c3102845915b37cdc38f5ea1777740546c88d2ca64e2"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-s73xrx2r-1280.json",
+     "sha256": "a3c92ef1cd917ad5f77625d42c84127e114d970d5887425726b97a099d9e08a3"
+    }
+   },
+   "event_id": "2026-11-12-opus-after-hours",
+   "our_status": "on",
+   "name_found_on_page": false
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/aivsqim4",
+   "width": 1280,
+   "captured_at": "2026-11-11T12:00:23Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-aivsqim4-1280.jpg",
+     "sha256": "0fe214c01cb36acb51b0bc8dead35371e4734ec2870eb84da3d5459d1c0650d3",
+     "bytes": 153002
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-aivsqim4-1280.txt",
+     "sha256": "e27d6846f7a2ba5d5a10cc91988b5b32c438b97bc0cd9a86031c5350ccfc915f"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-aivsqim4-1280.json",
+     "sha256": "17c7a55fbd1d84859a2927bfbc8896614e3d08add0a06621f3ce87d75fd71e82"
+    }
+   },
+   "event_id": "2026-11-12-get-down-at-the-dev-house",
+   "our_status": "on",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/z31f1c0y",
+   "width": 1280,
+   "captured_at": "2026-11-11T12:00:27Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-z31f1c0y-1280.jpg",
+     "sha256": "e33ccdf0b14ff50de89229219bc2403da8c4f5e3c5255c7e521a65b1a38a2668",
+     "bytes": 110532
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-z31f1c0y-1280.txt",
+     "sha256": "ac17f60e729b9bece1c7ff0075e7fa1f2a35c1120e6d2ff7c014580bf58a3702"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-z31f1c0y-1280.json",
+     "sha256": "17b05c6f435e1d785abc43b6f1159b41c96dfd1793ce6baa93f3a833acaeea95"
+    }
+   },
+   "event_id": "2026-11-12-ufl-web-summit-after-party",
+   "our_status": "on",
+   "name_found_on_page": false
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/lisbon-community-week-2026",
+   "width": 1280,
+   "captured_at": "2026-11-11T12:00:31Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-lisbon-community-week-2026-1280.jpg",
+     "sha256": "1b3c87047a5c990689b8fb358ad8e5ec71169875f9c5e2685674d7906450f7cf",
+     "bytes": 140029
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-lisbon-community-week-2026-1280.txt",
+     "sha256": "0c7dcaea83ad5847eee97acf7db0e364133d9202ddc12099a275be5f40061142"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-lisbon-community-week-2026-1280.json",
+     "sha256": "5f9a280911c67de005b4ed39c41360a212314923750f92fd5b3e11777fd44c53"
+    }
+   },
+   "event_id": "2026-11-13-lisbon-community-week",
+   "our_status": "on",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/zt9ss8co",
+   "width": 1280,
+   "captured_at": "2026-11-11T12:00:36Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-zt9ss8co-1280.jpg",
+     "sha256": "3900896bc8336615f09f0ab0ff3e1166f053eac0ac99e6466de2e7ccffc1547e",
+     "bytes": 168172
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-zt9ss8co-1280.txt",
+     "sha256": "2143cb9ccb2fd2d4b64ea5eef090164ca2c355a9b81f7b2cbbb3bc710b81983d"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-zt9ss8co-1280.json",
+     "sha256": "95b8dd653dd3299eec6ccb2bf293d861acd92d18d562a5b9a16c4e12a71ed4f5"
+    }
+   },
+   "event_id": "2026-11-13-ptw-classroom-ladies-who-build",
+   "our_status": "on",
+   "name_found_on_page": false
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/0baosk0k",
+   "width": 1280,
+   "captured_at": "2026-11-11T12:00:41Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-0baosk0k-1280.jpg",
+     "sha256": "644b2524b81eecea7dd2b8f662574ff89b96238c548d1003dde292f0d4c908b0",
+     "bytes": 83447
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-0baosk0k-1280.txt",
+     "sha256": "550011db4687b1f0edb8312faa80a29a381fb99ee917843cc653c580928f541c"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-0baosk0k-1280.json",
+     "sha256": "a52518db1c129280586af18e87373ed6c6385de400d93f0402449e2dbef87292"
+    }
+   },
+   "event_id": "2026-11-13-rise-of-the-expert-creator",
+   "our_status": "on",
+   "name_found_on_page": true
+  },
+  {
+   "site": "luma.com",
+   "url": "https://luma.com/staaake-hghb",
+   "width": 1280,
+   "captured_at": "2026-11-11T12:00:45Z",
+   "http_status": 200,
+   "error": null,
+   "files": {
+    "screenshot": {
+     "path": "2026-11-11/11/luma.com/luma-com-staaake-hghb-1280.jpg",
+     "sha256": "5e954eff3c8c67ec39b59340f0533fe6d826fe15bed9f3cecadf3707e03b5c56",
+     "bytes": 107444
+    },
+    "text": {
+     "path": "2026-11-11/11/luma.com/luma-com-staaake-hghb-1280.txt",
+     "sha256": "bd78fe373fb39e7e6be7fbc9370e026483eb513b457a1ec96d77af0232984ee1"
+    },
+    "fields": {
+     "path": "2026-11-11/11/luma.com/luma-com-staaake-hghb-1280.json",
+     "sha256": "c9f0411f1188df91b3b4d2d9c8cbb209fd873f7b6a4e2231d721013b17522c6f"
+    }
+   },
+   "event_id": "2026-11-14-ai-devs-hoopers-run",
+   "our_status": "on",
+   "name_found_on_page": true
+  }
+ ]
+}

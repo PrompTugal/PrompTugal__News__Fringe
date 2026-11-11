@@ -1,0 +1,4 @@
+{
+  "about": "People's public keys for Lisbon Fringe (work/26). A person makes a key pair in their own browser at https://fringe.promptugal.news/me/ (private half never leaves it) and adds the entry it shows here by a commit. A message sealed to the lead and signed by a key listed here is that person's own word (admin/tools/inboxes.py drain checks the signature against this file as well as data/keys.json). Public halves only.",
+  "keys": []
+}

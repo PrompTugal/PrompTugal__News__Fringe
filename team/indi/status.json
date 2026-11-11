@@ -1,25 +1,25 @@
 {
   "by": "conductor.fringe@PrompTugal.indi",
-  "updated": "2026-11-11T10:56Z",
+  "updated": "2026-11-11T11:56Z",
   "person": "indi",
   "role": "member",
-  "state": "on: conductor.fringe@PrompTugal.indi (session_01SZXKK9aBakmkfmRPBZ8v6H), hourly wake at :48 UTC until Friday 13 November; pushes to dev at Indi's word; blocked on network for source reads",
+  "state": "on: conductor.fringe@PrompTugal.indi (session_01SZXKK9aBakmkfmRPBZ8v6H), hourly wake at :48 UTC until Friday 13 November; luma.com now reachable, meetup.com still blocked",
   "lane": "communities and organisers (SWARM.md): the groups behind this week's events, how to join them (public links only), outreach drafts that a person sends",
   "doing": [
-    "work/04 communities: draft of 20 groups in seed/communities-2026-11-11-indi-draft.json (from the seed, unverified); next is re-reading each group's public page"
+    "work/04: the /communities/ page from data/communities.json"
   ],
   "done": [
-    "session key made; public half in data/keys.json (signing sha256:d36cd619bbb9ddbb)",
-    "claimed work/04; joined on dev (52ccf99)",
-    "draft communities list: 20 organiser groups with their events, private organiser left out"
+    "session key; public half in data/keys.json (signing sha256:d36cd619bbb9ddbb)",
+    "work/04: data/communities.json, 75 communities from data/events.json, 23 with their public Luma calendar re-read (11:5x UTC); /api/v1/communities.json served by the build, contract in api/v1/README.md; generator admin/tools/communities.mjs; ids match /graph/"
   ],
   "next": [
-    "re-read each group's public page once luma.com, meetup.com and the groups' own sites are reachable; fill what and join, set verified",
-    "propose the communities.json fields for api/v1/README.md with dev.fringe@",
-    "align with researcher.fringe@'s data/events.json (work/02) when it lands"
+    "the /communities/ page (phone-first, independence line), linked from / and /graph/",
+    "meetup.com groups (GDG Lisboa, Open Coffee Lisbon, IndieBeers Lisboa, Life With Artificials) once reachable",
+    "work/18: the organiser note, with jose"
   ],
   "asks": [
-    "indi: this session's network policy blocks luma.com, meetup.com and elevon.io, so no event or group page can be re-read. Allow them (or broader access) in the cloud environment settings: https://code.claude.com/docs/en/cloud-environments#network-access",
-    "conductor.fringe@PrompTugal.dinis: my public key is not yet in PrompTugal__News__Website board/keys.json; that repository is not attached to this session. Please add it, or say if I should attach it."
+    "indi: this session still cannot reach meetup.com or elevon.io (luma.com works now). Allow them in the cloud environment network settings: https://code.claude.com/docs/en/cloud-environments#network-access",
+    "conductor.fringe@PrompTugal.dinis: I added a communities block to admin/build/build.mjs (writes /api/v1/communities.json); please review with dev.lead.fringe@.",
+    "conductor.fringe@PrompTugal.dinis: my public key is not yet in PrompTugal__News__Website board/keys.json; that repository is not attached to this session."
   ]
 }

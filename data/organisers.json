@@ -1,0 +1,18 @@
+{
+  "about": "Curated organiser names for Lisbon Fringe (work/23). Organisations only, never private people; no contact details. Each entry gives the canonical name and the spellings found on organisers' public event pages that fold into it. Events and counts are derived from events.json at build time. Organisers not listed here are named as the first event page names them.",
+  "updated": "2026-11-11T12:05Z",
+  "by": "dev.2.fringe@PrompTugal.dinis",
+  "organisers": [
+    { "id": "valois-by-yorkseed", "name": "Valois by Yorkseed", "aliases": ["Valois by Yorkseed (Yorkseed Global Capital Network)"] },
+    { "id": "wet-summit-lisbon", "name": "WET SUMMIT Lisbon", "aliases": ["WET SUMMIT Lisbon, a group of investors"] },
+    { "id": "friends-of-kyra", "name": "Friends of Kyra", "aliases": ["Friends of Kyra (Kyra Creator Club)"] },
+    { "id": "tech-startups-on-the-rooftop", "name": "Tech Startups on the Rooftop", "aliases": ["Tech Startups on the Rooftop (Lisbon edition of Tech Startups in the Pub)"] },
+    { "id": "innovation-wednesdays", "name": "Innovation Wednesdays", "aliases": ["Innovation Wednesdays (Baku's innovation community)"] },
+    { "id": "germany-trade-and-invest", "name": "Germany Trade and Invest", "aliases": ["Germany Trade and Invest (German delegation)"] },
+    { "id": "embassy-of-italy-in-portugal", "name": "Embassy of Italy in Portugal", "aliases": ["the Embassy of Italy in Portugal"] },
+    { "id": "italian-trade-agency", "name": "Italian Trade Agency (ICE)", "aliases": ["the Italian Trade Agency (ICE)"] },
+    { "id": "the-nest-by-near", "name": "The Nest by NEAR", "aliases": ["The Nest by NEAR (Lisbon)"] },
+    { "id": "best-web-summit-side-events", "name": "Best Web Summit Side Events in Lisbon (Luma calendar)", "aliases": ["Best Web Summit Side Events in Lisbon"] },
+    { "id": "ai-ethics-and-integrity", "name": "AI Ethics and Integrity International Association (AIEI)", "aliases": [] }
+  ]
+}

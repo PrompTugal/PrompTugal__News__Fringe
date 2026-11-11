@@ -1,9 +1,9 @@
 {
   "by": "conductor.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T11:20Z",
+  "updated": "2026-11-11T12:24Z",
   "person": "dinis",
   "role": "head",
-  "state": "the site serves: https://fringe.promptugal.news is v0.1.14 (commit a1f6b3d) with 69 sourced events, /join/ and the independence line; the lead is a new session since 11:14 UTC",
+  "state": "wake 12:24: 13 agents on the lead's account online; the dashboard (/dashboard/) is the control centre; traffic counted (13 reader views by 12:07); OpenRouter account out of credit",
   "conductor": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq, the lead since 11:14 UTC at Dinis's word; it replaces session_01Kw9UwBGQe9BhMCbDw28aDA)",
   "agents": [
     {
@@ -35,13 +35,112 @@
     {
       "name": "conductor.C.fringe@PrompTugal.dinis",
       "doing": "unknown to the lead: Dinis says it runs on another Claude account; no status file, key or commit from it in this repository yet"
+    },
+    {
+      "name": "fable.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwBZiT2qCTLBUQRFzfX",
+      "model": "Fable",
+      "wake": "every two hours at :51",
+      "branch": "work/fable.fringe",
+      "doing": "advisor to the lead at Dinis's word (11:25 UTC): reviews everything and writes advice/<time>.md; never edits data or the site"
+    },
+    {
+      "name": "observability.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwDEe3BXvda7DY68R8B",
+      "wake": "hourly at :37",
+      "branch": "dev (release.sh)",
+      "doing": "work/21: PrompTugal.news's observability on this site: visits by place, page, referrer and share tag; /traffic/"
+    },
+    {
+      "name": "design.1.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwBGhFtTgsGsavyFUxp",
+      "model": "Sonnet",
+      "wake": "1h at :53",
+      "doing": "D1 the first screen"
+    },
+    {
+      "name": "design.2.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwFEfLVDYsXegWLnJUi",
+      "model": "Sonnet",
+      "wake": "1h at :15",
+      "doing": "D2 the share card, then D10"
+    },
+    {
+      "name": "design.3.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwBH4pkn74Vmah14i8E",
+      "model": "Sonnet",
+      "wake": "1h at :30",
+      "doing": "D3 event cards, D4, then D11 /how/"
+    },
+    {
+      "name": "design.4.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwEW7V3kssqMCCXQdJa",
+      "model": "Sonnet",
+      "wake": "1h at :45",
+      "doing": "D8 tokens, then D9 identity"
+    },
+    {
+      "name": "dev.1.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwFjnHdNHRvLg7iLCpc",
+      "model": "Sonnet",
+      "wake": "1h at :05",
+      "doing": "work/25 dashboard, work/26 Dinis's key"
+    },
+    {
+      "name": "dev.2.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwDemN5VmUG3HdGkqXN",
+      "model": "Sonnet",
+      "wake": "1h at :20",
+      "doing": "work/16 now, 23 organisers, 15 changes, 20 router"
+    },
+    {
+      "name": "researcher.2.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+      "model": "Sonnet",
+      "wake": "1h at :10",
+      "doing": "work/24 the loop; pushes data to dev behind the gate"
+    },
+    {
+      "name": "capture.1.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwBDiRApLwAnCoij2Db",
+      "model": "Sonnet",
+      "wake": "1h at :25",
+      "doing": "work/27 captures in vaults, /evolution/"
+    },
+    {
+      "name": "usability.1.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwDmRCkM64WiDyuGb99",
+      "model": "Sonnet",
+      "wake": "2h at :40",
+      "doing": "work/28 phone tasks"
+    },
+    {
+      "name": "outreach.1.fringe@PrompTugal.dinis",
+      "session": "session_01Kw9UwEzTp9bHq7S5iGummN",
+      "model": "Sonnet",
+      "wake": "hourly at :35",
+      "doing": "work/29 outreach desk: drafts, tracker of 70 organisers, data/outreach.json"
     }
   ],
   "doing": [
-    "taking over the lead: the board, the roster, reviews of the agents' branches onto dev",
-    "waiting for Dinis's details and voice memos, to turn them into board items and route them to the team's conductors"
+    "briefs 4 and 5: the swarm at full throttle; four design agents on the Lisbon identity; dashboard, captures, usability, the loop",
+    "reviewing what lands on dev; routing Dinis's briefs"
   ],
   "done": [
+    "wake 12:24: inboxes issued for dev.1, dev.2 and capture.1 (10 in all); data/inbox-counts.json refreshed; work/27's paths fixed to fit the gate (the gate is unchanged); ROLES.md step 6 gains agent-log.mjs and the three-command keygen tip; each agent messaged",
+    "brief 6: /dashboard/ is the control centre (dev.1, 0d2f299 and 74f21d7); the lead sends Dinis its screenshot hourly; outreach.1 started",
+    "the /me/ test (work/26): a message sealed in the browser was read by the lead's drain; a throwaway key claiming 'Dinis Cruz' showed NOT VERIFIED",
+    "started 9 agents at Dinis's word (brief 4), all on Sonnet: design.1 to design.4 (one every 15 min), dev.1, dev.2, researcher.2, capture.1, usability.1; wakes set; ROLES.md lets anyone start one on any account",
+    "brief 5 (a celebration of Lisbon) relayed to the design agents directly; D9 identity, D10 PrompTugal bar, D11 /how/",
+    "OpenRouter key saved as this environment's network secret (credit about 74.50 of 100 USD at 11:57 UTC); the router is dev.2's work/20",
+    "work/22 done and checked live: 70 event pages at /e/<id>/",
+    "work/19: seven inbox vaults (the lead, Indi, Vicky, Angelo, security.fringe@, observability.fringe@, fable.fringe@); admin/tools/inboxes.py tested end to end; a first message in each",
+    "brought onto dev after review: researcher.fringe@'s eb07150 (70 events, 61 re-read 11:23 UTC; WET SUMMIT Lisbon, work/03 done; Elevon's catamaran moved to Thursday) and fable.fringe@'s first advice note; fable.fringe@'s key in data/keys.json",
+    "the old lead's handover (work/conductor.fringe.handover 8d6d0ee): its wake is disabled, so one lead runs",
+    "my own times corrected to the clock (brief 2 is 11:33 UTC, not 11:40); CLAUDE.md: times come from date -u",
+    "brief 2 (observability) recorded; started observability.fringe@PrompTugal.dinis (session_01Kw9UwDEe3BXvda7DY68R8B) for work/21, at Dinis's word",
+    "started fable.fringe@PrompTugal.dinis (Fable, session_01Kw9UwBZiT2qCTLBUQRFzfX), the advisor, at Dinis's word; its wake every two hours at :51",
+    "brief 1 recorded with Dinis's words and routed: work/14 showroom, 15 what changed, 16 now, 17 practical Lisbon, 18 outreach, 19 comms vaults, 20 model router; notes on 01, 05, 06, 09; 08 folded into 18",
     "11:14 UTC: joined as the lead at Dinis's word; read CLAUDE.md, SWARM.md, JOIN.md, BRIEF.md, BRIEF-CORRECTIONS.md, REALITY.md, the roster, every status file and the board",
     "my session key (pki-agent.mjs sha256 fcb28a1c...02ab checked); public half in data/keys.json (signing sha256:d3c9e8a33293ef55); the earlier lead session's key marked superseded",
     "fact, read 11:18 UTC: https://fringe.promptugal.news/ and /join/ answer 200; /version.json says v0.1.14, commit a1f6b3d; /api/v1/events.json holds 69 events; the home page carries the independence line. Pages and the DNS are on",
@@ -57,15 +156,16 @@
     "tell conductor@PrompTugal.dinis the URL so pt.news links it; tell incident.conductor@web-summit.dinis that we read the storm site's /api/v1/"
   ],
   "asks": [
-    "Dinis: is the earlier lead session (session_01Kw9UwBGQe9BhMCbDw28aDA, hourly at :44) stopped? This session cannot see it. Two sessions under one name would overwrite each other's status and roster; its key is now marked superseded.",
-    "Dinis: conductor.C.fringe@PrompTugal.dinis is on another account. What is its job, and should it have a row on the roster and an item on the board?",
-    "Dinis: send the details and voice memos here; each becomes a board item or an ask to the right conductor.",
-    "Dinis: PrompTugal__News__Website is not attached to this session, so four public keys (the lead's, Indi's, Vicky's, security.fringe@'s) are not yet in its board/keys.json. Say if I should attach it.",
-    "Dinis: security.fringe@ asks you to protect main (pull requests only) and to limit the github-pages environment to the dev branch (security/reviews/2026-11-11-1048.md, findings 1 and 2).",
-    "Dinis (carried over, not re-checked with you): dev.fringe@ asks you to confirm it in its own session (session_01Kw9UwBuse9ub7C5zboJbMs) before it pushes to dev; researcher.fringe@ (session_01Kw9UwDtKvyL1hzQTwazVi3) was refused `node pki-agent.mjs keygen --session` and has no key.",
-    "Dinis (carried over): is the 'Uncon' you heard of FounderLink's Storm Summit (online, today), or something else? A name or link helps work/03.",
-    "Dinis: the site serves, so https://fringe.promptugal.news/join/ can go to the team now. Six people have not started: Angelo, Silvio, Jose, Nimay, Daniela, Sarah.",
-    "vicky: your conductor's work/13 second pass is dated 11:25 UTC and its status 11:20 UTC, but both were pushed at 11:07 UTC. Times read should be the clock's UTC time.",
-    "indi: your conductor's environment blocks luma.com, meetup.com and elevon.io; allow them in its cloud environment's network settings so it can re-read sources."
+    "Dinis: add credit to the OpenRouter account (165.33 of 165 USD used; every call returns 402): https://openrouter.ai/settings/credits. Until then every agent runs on Claude.",
+    "Dinis: approve the organiser offer (work/23, work/drafts/organiser-note.md) and outreach.1's 4 channel drafts in work/drafts/; you send them, no agent does.",
+    "Dinis: make your key at https://fringe.promptugal.news/me/ and commit its public half to data/person-keys.json (or hand it to the lead); then 'Message the lead' on /dashboard/ carries your word.",
+    "Dinis: a PUBLIC read key for the capture vault, so /evolution/ shows thumbnails as pt.news does? Until then it shows the timeline and hashes (capture.1).",
+    "Dinis: 8 agents could not make a session key (their sandboxes refused keygen or pip): design.1 to design.4, researcher.2, outreach.1, usability.1, researcher.fringe@. They work and commit without one, but have no inbox. If you want them signed, allow `node pki-agent.mjs keygen` and `pip install sgit-ai` in those sessions.",
+    "Dinis: one key register? Six agents ask that their keys go into PrompTugal__News__Website board/keys.json, whose rules say each agent commits its own entry. Say 'data/keys.json is the register for WS-215', or that the lead may add them there.",
+    "Dinis: send https://fringe.promptugal.news/join/ to silvio, jose, nimay, daniela and sarah.",
+    "Dinis: the three agents on the other account (researcher.fringe@, security.fringe@, dev.fringe@) still name the old lead in their wakes; point them at session_01Kw9UwCFpT9ihNBcQFxkomq or stop them. security.fringe@ last reviewed at 10:48.",
+    "Dinis (security.fringe@): protect main (pull requests only) and limit the github-pages environment to dev.",
+    "Dinis: what is conductor.C.fringe@PrompTugal.dinis's job? Once it has a key it gets an inbox.",
+    "Dinis: /traffic/ is public (counts only), as on pt.news; say if you want it unlisted."
   ]
 }

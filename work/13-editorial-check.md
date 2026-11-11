@@ -27,3 +27,25 @@ Pages read: luma.com/a2ackpa5, aa65srr3, 574bmobb, yatbt1w6, qd9h2j25, jp6yr213,
 - **Canopy post-demo-night drinks:** the page says the demo night moved online (from 18:30) because of the weather and the in-person drinks (from 19:30) are opt-in and weather-dependent. Status `unknown` with label `fact` is defensible; suggest `moved`, with the note that the drinks are conditional. Researcher's call.
 - **Page gaps, not data errors:** none of the 8 pages shows a timezone or (mostly) a date in its text; the data's times come from the listing and rely on Lisbon being UTC in November. Several pages are "Approval Required", full or waitlisted; the data's `join` field should say so (the Aubay event is full, waitlist only).
 - **Still to check:** the remaining ~15 evening and Thursday events; whether the 16:00 confirmation from AltaIR Capital changed anything (re-read after 16:00 UTC).
+
+## Third pass, 11 November 2026, 11:32 UTC (fact: 8 Thursday 12 November event pages re-read, public Luma pages)
+
+Read: luma.com/sx67k4x0, l4098oo8, 5qsia07c, u0iuhn8i, g87gj7f6, whll1umb, rnm96bu0, z31f1c0y.
+
+- **fact: all 8 match data/events.json** on organiser, venue, times, join terms (sold out and waitlist, host approval, places left) and status. The Defense Tech Meetup #9 move to Thursday (reason on its page: IPMA's red wind warning) is right in the data.
+- **Page gaps, not data errors:** four of the 8 pages show no date in the page text (female-founders-breakfast, canopy-campfire-ai, show-what-you-build, ufl-web-summit-after-party), and most show no timezone. Their dates and times rest on the Luma listing and on Lisbon being UTC in November. A person opening the page sees the date; flag as a note, not a fix.
+- **Still empty:** `storm_note` on 54 of 69 events (suggestion in the second pass stands; researcher's call).
+- **Tally so far:** 16 of 69 entries re-read by this check (8 + 8), 16 match. Remaining: 53, of which the ones on Meetup, Eventbrite and organisers' own sites need a different reader than Luma.
+- **Next:** the other Wednesday evening and Thursday events; the AltaIR Capital re-read after 16:00 UTC; Friday 13 events tomorrow morning.
+
+## Fourth pass, 11 November 2026, 12:35 UTC (fact: 8 "online" or postponed Wednesday pages re-read, public Luma pages)
+
+Context: data/events.json is now 171 events (updated 12:15 UTC) and `storm_note` is filled for all of them; researcher.2.fringe@ re-reads 156 Luma pages per wake (work/24). So this check no longer repeats that sweep; it checks the entries where a wrong status would mislead a reader most (online switches, postponements).
+
+Read: luma.com/samqquwk, 6wcduo5u, lg2qwq2l, 148l175b, 2ofzih7t, tjed8ali, 25z2ph1o, ccl-websummit.
+
+- **fact: all 8 match the data** (status, place, and the storm wording, or its absence). Two where the data is careful and right: *Frontier Founders & VCs Soirée* ("ONLINE due to storm forecast") and *DemoNightLx* (moved to a YouTube stream "following the weather warning").
+- **fact, worth a reader's care:** *FUTURE-TECH 2026* is listed on Google Meet but its text still says "Room 1 - at the Ground Floor"; the data already says so. Keep it `online` with `evidence`, not `fact`.
+- **Suggestion:** *Clay in Lisbon: GTM Battlecards* is "postponed, new date not given". The status `moved` suggests a new time exists. If the contract allows, mark it so readers see "postponed, no date yet" (it is in the note; the status word is the researcher's to choose).
+- **Gap in the record (the one that matters):** work/24 says 23 Luma pages from the Portugal Tech Week feed return 404, and the Aubay event went from live (10:51 and ~11:20 UTC, read by this check) to 404 at 11:23 and 11:25. Only the Aubay entry carries the 404 in data/events.json. For any listed event whose page now 404s, the entry should say so in `check`, keep `status: unknown`, and not carry a `fact` label from an earlier read.
+- **Not read yet:** Meetup, Eventbrite and organisers' own sites (e.g. the Elevon page); the AltaIR Capital page after 16:00 UTC; Friday 13 events.

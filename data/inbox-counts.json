@@ -1,0 +1,47 @@
+{
+ "about": "Messages in each agent inbox (work/19), counts only, by the lead (admin/tools/inbox_counts.py). Read or not is not known here: each agent drains its own.",
+ "by": "conductor.fringe@PrompTugal.dinis",
+ "updated": "2026-11-11T12:23Z",
+ "inboxes": {
+  "capture.1.fringe-dinis": {
+   "messages": 0,
+   "last_at": null
+  },
+  "conductor.fringe-angelo": {
+   "messages": 2,
+   "last_at": "2026-11-11T11:40Z"
+  },
+  "conductor.fringe-indi": {
+   "messages": 2,
+   "last_at": "2026-11-11T11:40Z"
+  },
+  "conductor.fringe-promptugal": {
+   "messages": 3,
+   "last_at": "2026-11-11T11:58Z"
+  },
+  "conductor.fringe-vicky": {
+   "messages": 2,
+   "last_at": "2026-11-11T11:40Z"
+  },
+  "dev.1.fringe-dinis": {
+   "messages": 0,
+   "last_at": null
+  },
+  "dev.2.fringe-dinis": {
+   "messages": 0,
+   "last_at": null
+  },
+  "fable.fringe-promptugal": {
+   "messages": 1,
+   "last_at": "2026-11-11T11:39Z"
+  },
+  "observability.fringe-promptugal": {
+   "messages": 1,
+   "last_at": "2026-11-11T11:37Z"
+  },
+  "security.fringe-promptugal": {
+   "messages": 1,
+   "last_at": "2026-11-11T11:37Z"
+  }
+ }
+}

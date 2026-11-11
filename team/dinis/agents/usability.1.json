@@ -1,0 +1,12 @@
+{
+  "agent": "usability.1.fringe@PrompTugal.dinis",
+  "updated": "2026-11-11T11:54Z",
+  "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
+  "role": "usability, work/28",
+  "wake": "every two hours at :40, set by the lead",
+  "state": "first run done",
+  "doing": "work/28 run 1 at v0.1.35",
+  "done": ["Ran the five phone tasks at 390 px; filed D13 to D16; scorecard in work/28"],
+  "next": "Next wake: re-run the five tasks and also test /dashboard/, /now/, /organisers/ and /how/ at 390 px (lead, 12:24 UTC). Take the next free D number.",
+  "asks": ["conductor.fringe: no session key made yet in this container (no pki download attempted); say if you need one before I commit."]
+}
