@@ -49,3 +49,27 @@ Read: luma.com/samqquwk, 6wcduo5u, lg2qwq2l, 148l175b, 2ofzih7t, tjed8ali, 25z2p
 - **Suggestion:** *Clay in Lisbon: GTM Battlecards* is "postponed, new date not given". The status `moved` suggests a new time exists. If the contract allows, mark it so readers see "postponed, no date yet" (it is in the note; the status word is the researcher's to choose).
 - **Gap in the record (the one that matters):** work/24 says 23 Luma pages from the Portugal Tech Week feed return 404, and the Aubay event went from live (10:51 and ~11:20 UTC, read by this check) to 404 at 11:23 and 11:25. Only the Aubay entry carries the 404 in data/events.json. For any listed event whose page now 404s, the entry should say so in `check`, keep `status: unknown`, and not carry a `fact` label from an earlier read.
 - **Not read yet:** Meetup, Eventbrite and organisers' own sites (e.g. the Elevon page); the AltaIR Capital page after 16:00 UTC; Friday 13 events.
+
+## Fifth pass, 11 November 2026, 13:26 UTC (fact: 6 non-Luma pages re-read: Meetup, Eventbrite and two organisers' own sites; read just before 13:26 UTC)
+
+Read: wetsummitlisbon.com, meetup.com/life-with-artificials/events/317058510, meetup.com/gdglisbon/events/317255985, the Eventbrite pages for the postponed UX Talks and Degens Hangout, elevon.io/websummit/night. Allowed as public pages by sources.md; the first time this check covers sources other than Luma.
+
+- **fact: all 6 match data/events.json** on status (on, on, cancelled, moved, cancelled, moved), organiser, venue and storm wording. Cancelled: the GDG Lisboa Meetup page says "This event was canceled" with no reason; Degens Hangout is "Cancelled" on Eventbrite with no reason (the data rightly says no reason is given). Postponed: UX Talks, "due to rough weather in Lisbon", no new date. Moved: Elevon to Thursday 12 November, 17:00 to 19:00, "due to extreme weather".
+- **Already handled well by the researcher:** the Life With Artificials start time. The Meetup page states 18:30 in Copenhagen time at a Lisbon venue; the data keeps 17:30 UTC and says plainly that 18:30 UTC is possible. No change needed; a reader should check the Meetup page.
+- **Small notes, researcher's call:** (1) the WET SUMMIT page now says "We are now full" and says a final decision will be made in the morning (its text mixes "Wed 11 Nov" with "tomorrow's after-work party", probably stale); the data's join text says "by application", which could add "page says full". (2) Degens Hangout is a weekly Wednesday event ("every Wednesday 7 to 12 p.m."); the data lists only today's, which is right for this week. (3) The UX Talks entry has status moved with no date; same wording point as the Clay entry.
+- **Tally:** 30 of 177 entries independently re-read by this check, all match. The rest carry the researcher's own read_at (hourly Luma sweep, work/24; Eventbrite and Meetup from 13:26 UTC).
+- **Still to do:** the AltaIR Capital page after 16:00 UTC; Friday 13 events.
+
+## Sixth pass, 11 November 2026, 14:23 UTC (fact: data/events.json read at 14:23 UTC; no new page re-reads this wake)
+
+data/events.json is 173 events, updated 14:15 UTC (researcher.2.fringe@ wake, 131 pages re-read).
+
+- **fact: three earlier suggestions are in the data.** (1) `storm_note` is filled on every entry. (2) A page that returns 404 is recorded as such and the status stays `unknown` (Aubay; "Redefining Investment and Innovation", 404 at 13:26 UTC). (3) The Canopy post-demo-night drinks entry is now labelled `evidence`, not `fact`.
+- **Small point left:** "Redefining Investment and Innovation" carries label `fact` with status `unknown`. It is a fact that the page returned 404 at 13:26 UTC; what it means is a hypothesis, and the entry says so. Acceptable as written.
+- **Two moved or cancelled entries have older reads:** the GDG Lisboa Meetup cancellation (read 11:23 UTC) and Elevon's move to Thursday (read 12:56 UTC). This check re-read both just before 13:26 UTC and both still matched. The researcher's next Meetup and Elevon pass will refresh the `read_at`.
+- **Waiting on the clock:** AltaIR Capital's page promised an update by 16:00 UTC; it is re-read after that. The unknown count is down to 5 of 173.
+- **Tally unchanged:** 30 entries independently re-read by this check, all match.
+
+## Paused machine reads, 11 November 2026, 14:37 UTC (Vicky's word, relayed by conductor.B@PrompTugal.vicky)
+
+Until Dinis decides on Luma: this check makes **no machine reads** of luma.com, lu.ma or Luma's API, and, until their terms are checked, of meetup.com or eventbrite.*. It also makes none of websummit.com (a standing rule). So passes 2 to 5 will not be repeated. What this check did before the pause: 30 public event pages read by a sub-agent using the WebFetch tool, one request per page, in four batches during my wakes (passes 2, 3, 4 and 5 above): 24 Luma pages, 2 Meetup, 2 Eventbrite, and 2 organisers' own sites (wetsummitlisbon.com, elevon.io). No curl, script or browser for event pages. Still to do, now only by a person's own read or from the organisers' public posts: the AltaIR Capital update (promised by 16:00 UTC) and the Friday 13 events. The editorial check continues on the data itself (consistency, labels, contact details, private people) and routes mismatches that others send it to the researcher.

@@ -1,25 +1,28 @@
 {
   "by": "conductor.fringe@PrompTugal.indi",
-  "updated": "2026-11-11T11:56Z",
+  "updated": "2026-11-11T13:54Z",
   "person": "indi",
   "role": "member",
-  "state": "on: conductor.fringe@PrompTugal.indi (session_01SZXKK9aBakmkfmRPBZ8v6H), hourly wake at :48 UTC until Friday 13 November; luma.com now reachable, meetup.com still blocked",
+  "state": "on: conductor.fringe@PrompTugal.indi (session_01SZXKK9aBakmkfmRPBZ8v6H), hourly wake at :48 UTC until Friday 13 November; work/04 done; waiting on Indi for the next item",
   "lane": "communities and organisers (SWARM.md): the groups behind this week's events, how to join them (public links only), outreach drafts that a person sends",
   "doing": [
-    "work/04: the /communities/ page from data/communities.json"
+    "keeping /communities/ fresh each wake (102 groups, 49 with their public calendar re-read at 2026-11-11T13:54Z)"
   ],
   "done": [
     "session key; public half in data/keys.json (signing sha256:d36cd619bbb9ddbb)",
-    "work/04: data/communities.json, 75 communities from data/events.json, 23 with their public Luma calendar re-read (11:5x UTC); /api/v1/communities.json served by the build, contract in api/v1/README.md; generator admin/tools/communities.mjs; ids match /graph/"
+    "work/04 done: /communities/ and /api/v1/communities.json",
+    "inbox drained: 4 messages (lead x3, architect.1 x1); replied to the lead on the ABP"
   ],
   "next": [
-    "the /communities/ page (phone-first, independence line), linked from / and /graph/",
-    "meetup.com groups (GDG Lisboa, Open Coffee Lisbon, IndieBeers Lisboa, Life With Artificials) once reachable",
-    "work/18: the organiser note, with jose"
+    "Indi's ABP: push it, or a link, to abp/indi/ once Indi says where it is",
+    "the next item at Indi's word: help work/23 (organisers), work/18 (outreach kit), or communities only",
+    "meetup.com groups once reachable"
   ],
   "asks": [
-    "indi: this session still cannot reach meetup.com or elevon.io (luma.com works now). Allow them in the cloud environment network settings: https://code.claude.com/docs/en/cloud-environments#network-access",
-    "conductor.fringe@PrompTugal.dinis: I added a communities block to admin/build/build.mjs (writes /api/v1/communities.json); please review with dev.lead.fringe@.",
+    "indi: Dinis says you already made an Agent Behaviour Policy (ABP); this conductor did not write one. Where is it (link or file)? The architect wants it in abp/indi/ as the base for every conductor's policy.",
+    "indi: meetup.com and elevon.io are still blocked in this session; allow them in the cloud environment network settings: https://code.claude.com/docs/en/cloud-environments#network-access",
+    "Dinis: /communities/ is not in the main nav; add a Communities entry if you want it there (design.*.fringe@).",
+    "architect.1.fringe@PrompTugal.dinis: my draft grant lacks admin/build/build.mjs (my communities block) and api/v1/README.md (the communities.json section); add them or name their owner.",
     "conductor.fringe@PrompTugal.dinis: my public key is not yet in PrompTugal__News__Website board/keys.json; that repository is not attached to this session."
   ]
 }

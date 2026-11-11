@@ -24,6 +24,7 @@ export function howBody({ esc, n, REPO }) {
 <h1>How this is made</h1>
 <div class="how-hero"><p><strong>Nobody wrote this site alone.</strong> It is built by a swarm: every person on the PrompTugal team runs one <em>conductor</em> (an AI agent in their own account), conductors run specialist agents, and Dinis Cruz is the head conductor who sets the direction. Everything they do is in <a href="${esc(REPO)}">the repository</a>, in the open.</p>
 <p class="muted">The numbers below are counted from the repository when this page was built.</p></div>
+<!--LIVE-->
 <ul class="how-nums">${[
     num(n.events, 'events, each re-read at its public source'),
     num(n.people, 'people, one conductor each'),
@@ -61,8 +62,10 @@ ${role('Reviewers and security', 'Read every change on <code>dev</code>; report 
 <h2>What you can see</h2>
 <ul>
 <li><a href="/traffic/">Traffic</a>: counts only, no personal data.</li>
+<li><a href="/models/">Model experiments</a>: every OpenRouter and open-weight experiment, what it cost and found (counts only).</li>
 <li><a href="/graph/">The graph</a>: events, organisers, topics and places, every edge with its source.</li>
 <li><a href="/api/v1/events.json">The data</a>: the same events, as JSON.</li>
+<li><a href="/data/">Query it with SQL</a>: ask the events and the graph anything, in your browser; nothing leaves it.</li>
 <li><a href="${esc(REPO)}">The repository</a>: every change, who made it and why.</li>
 </ul>
 <a class="how-join" href="/join/">Join the team &rarr;</a>`;

@@ -31,17 +31,20 @@ export const programmeCss = `
 export function programmeBody({ events, esc }) {
   const days = [...new Set(events.map((e) => e.date))].sort();
   const areas = Object.entries(events.reduce((m, e) => { const w = where(e); m[w] = (m[w] || 0) + 1; return m; }, {}))
-    .filter(([w, n]) => w !== 'Online' && w !== 'Area not stated' && n >= 2).sort((a, b) => b[1] - a[1]).map(([w]) => w);
-  const kinds = [...new Set(events.map(kindOf))].filter((k) => k !== 'other' || true);
+    .filter(([w, n]) => w !== 'Online' && w !== 'Area not stated' && n >= 3).sort((a, b) => b[1] - a[1]).map(([w]) => w);
+  const kinds = [...new Set(events.map(kindOf))].filter((k) => events.filter((e) => kindOf(e) === k).length >= 3);   // fewer than 3: no chip (Dinis, 14:00)
+  const areaSet = new Set(areas);
+  const whereKey = (e) => { const w = where(e); return w === 'Online' || w === 'Area not stated' || areaSet.has(w) ? slug(w) : 'elsewhere-in-lisbon'; };
+  const anyElse = events.some((e) => whereKey(e) === 'elsewhere-in-lisbon');
   const chip = (group, val, label, pressed = false) => `<button type="button" class="pg-chip" data-g="${group}" data-v="${esc(val)}" aria-pressed="${pressed}">${esc(label)}</button>`;
-  const attrs = (e) => ` data-day="${esc(e.date)}" data-where="${esc(slug(where(e)))}" data-kind="${esc(kindOf(e))}" data-live="${e.status === 'cancelled' ? 0 : 1}" data-size="${sizeOf(e)}"`;
+  const attrs = (e) => ` data-day="${esc(e.date)}" data-where="${esc(whereKey(e))}" data-kind="${esc(kindOf(e))}" data-live="${e.status === 'cancelled' ? 0 : 1}" data-size="${sizeOf(e)}"`;
   const sections = days.map((d) => {
     const { majors, community } = split(events.filter((e) => e.date === d));
     return `<section class="pg-day" id="d-${d}" data-day="${d}"><h2>${esc(dayName(d))} <span class="muted">(<span class="pg-n">${majors.length + community.length}</span>)</span></h2>
 ${majors.length ? `<ul class="bigs-row">${majors.map((e) => bigCard(e, { esc }, attrs(e))).join('')}</ul>` : ''}
 ${community.length ? `<ul class="dense">${community.map((e) => denseRow(e, { esc }, attrs(e))).join('')}</ul>` : ''}</section>`;
   }).join('');
-  const whereChips = [chip('where', '', 'Anywhere', true), chip('where', 'online', 'Online'), chip('where', 'in-person', 'In person'), ...areas.map((a) => chip('where', slug(a), a))].join('');
+  const whereChips = [chip('where', '', 'Anywhere', true), chip('where', 'online', 'Online'), chip('where', 'in-person', 'In person'), ...areas.map((a) => chip('where', slug(a), a)), ...(anyElse ? [chip('where', 'elsewhere-in-lisbon', 'Elsewhere in Lisbon')] : [])].join('');
   return `<style>${programmeCss}</style>
 <h1>The programme</h1>
 <p>Lisbon's week of side events, community nights and online sessions, all in one list. Choose a day, a place or a kind. Every entry links to the organiser's own page.</p>

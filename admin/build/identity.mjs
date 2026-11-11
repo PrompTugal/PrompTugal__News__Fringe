@@ -71,4 +71,21 @@ time,.when,.ev-time,.nowtime{font-family:var(--mono)}
 code,pre{font-family:var(--mono)}
 .muted{font-family:var(--sans)}footer{font-family:var(--mono);font-size:11px;border-top:2px solid var(--green)}
 a{text-decoration-thickness:1px;text-underline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* defect: the independence line sits in the page column, in full, at every width */
+.ind{padding:4px max(var(--gutter),calc((100% - var(--page)) / 2 + var(--gutter)))!important;white-space:normal;overflow:visible;text-indent:0}
+.tl-jumps .tl-count{font:400 11px/1.4 var(--mono);letter-spacing:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink-3)}
+.nav{-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent);padding-right:var(--s6)!important}
+.ht-side{margin-top:var(--s4)}
+@media(min-width:1100px){main>.home-top{max-width:none;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:var(--s7);align-items:start}.ht-side{margin-top:0}.ht-side>:first-child{margin-top:0}main>.home-top .timeline h2,.ht-side h2{margin-top:var(--s5)}}
+@media(min-width:1100px){.ht-side .bigs-row{flex-direction:column;overflow-y:auto;max-height:min(720px,78vh);gap:var(--s2);padding-right:var(--s1)}.ht-side .big{width:auto}.ht-side .big a{-webkit-line-clamp:2}}
+/* lab check D9: anything that moves stops under reduced motion and pauses on hover and focus */
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.tick:hover .pulse,.tick:focus-within .pulse,.live:hover .pulse,.live:focus-within .pulse{animation-play-state:paused}
+.subnav{max-width:var(--page);margin:0 auto;padding:var(--s2) var(--gutter);display:flex;align-items:center;gap:var(--s3);flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;border-top:1px solid var(--hair);font-size:13px}.subnav::-webkit-scrollbar{display:none}
+.subnav b{flex:none;font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
+.subnav ul{display:flex;gap:var(--s3);list-style:none;margin:0;padding:0}.subnav li{margin:0}.subnav a{white-space:nowrap;color:var(--ink-2);text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}.subnav a:hover{color:var(--brand)}.subnav a[aria-current="page"]{color:var(--ink);font-weight:600;border-bottom-color:var(--green)}
+/* D35: a visible scroll hint on the tab row on a phone (a green chevron over a fade, phones only) */
+header nav[aria-label="Main"]{position:relative}
+@media(max-width:700px){header nav[aria-label="Main"]::after{content:"\\203A";position:absolute;right:0;top:0;bottom:0;width:44px;display:flex;align-items:center;justify-content:flex-end;padding-right:var(--s3);font:600 22px/1 var(--sans);color:var(--green);background:linear-gradient(90deg,transparent,var(--paper) 55%);pointer-events:none}}
 `;

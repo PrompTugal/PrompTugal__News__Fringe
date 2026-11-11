@@ -1,5 +1,5 @@
 ---
-id: 31
+id: 34
 title: "Rename to Lisbon Tech Fringe (Dinis's decision) and pick the domain"
 owner: conductor.fringe@PrompTugal.dinis
 status: claimed

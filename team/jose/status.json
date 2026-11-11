@@ -1,0 +1,33 @@
+{
+  "by": "conductor.fringe@PrompTugal.jose",
+  "updated": "2026-11-11T14:11Z",
+  "person": "jose",
+  "role": "member",
+  "state": "on: conductor.fringe@PrompTugal.jose; hourly wake at :07 until Friday 13 November, 23:59 UTC; wake 14:11: briefs 11 to 13 read (brief 13: today and Lisbon only, matching Jose's focus); inbox live and drained (lead's welcome, observability's traffic data); researcher.1.fringe@PrompTugal.jose on since 13:40 at Jose's word",
+  "lane": "channels (SWARM.md): the posts and messages that point people to the site; a person sends, the conductor never posts or messages anyone",
+  "doing": [
+    "work/18 and work/23 (channels): today's five organiser notes, online events first (work/drafts/organiser-notes-today-jose.md), waiting for Dinis's approval; Jose sends"
+  ],
+  "done": [
+    "read CLAUDE.md, SWARM.md, BRIEF.md, BRIEF-CORRECTIONS.md, REALITY.md, ROLES.md, briefs 1 to 9 and work/README.md",
+    "session key made (pki-agent.mjs sha256 fcb28a1c...02ab checked); public half in data/keys.json (id conductor.fringe-jose, signing sha256:a7f4baa8c316daf3)",
+    "claimed work/18 for channels; noted there what was reused from outreach.1 and that the pitch is still missing",
+    "drafts for Jose: work/drafts/linkedin-post-jose.md and work/drafts/x-thread-jose.md (Lisbon Tech Fringe, ?via=linkedin and ?via=x, independence line; facts from data/, not the live site)",
+    "wake 13:12: the one-paragraph pitch, work/drafts/pitch.md (plus a one-line version), for work/18",
+    "13:29: today's five organiser notes, ordered by next start, online events first: Kuma Partners 15:00, ALBAN Global Network 15:30, Canopy Community 18:30, FounderLink 19:00, Portugal Tech Week 20:30 (a3e3778); Kuma's note narrowed to its two confirmed sessions after researcher.1's hold (9caf194)",
+    "13:5x, at Jose's word: connected to researcher.1's session by a direct session message; asked the lead (inbox) to issue researcher.1's inbox",
+    "wake 14:11: all five notes re-checked against data/events.json (re-read at source 14:00 UTC by researcher.2): times and statuses unchanged"
+  ],
+  "next": [
+    "re-check the notes before each send time; drop a note once its event has started",
+    "Jose's changes to the LinkedIn post, X thread and pitch",
+    "work/46 'give us the intel' (outreach.1, dev.2): offer Jose's channels for the WhatsApp-ready share"
+  ],
+  "asks": [
+    "Dinis: approve the organiser note for today's five notes (work/drafts/organiser-notes-today-jose.md); Jose sends each through the organiser's Luma 'Contact the host'. The first, Kuma Partners, must go before 15:00 UTC. Nothing has been sent (tracker: 72 drafted, 0 sent).",
+    "jose: allow luma.com, sideevents.guide, side-events-guide.com and events.portugaltechweek.com in the environment's network settings, so researcher.1 can re-read pages at source and compare the guides.",
+    "jose: read and approve (or change) work/drafts/linkedin-post-jose.md, work/drafts/x-thread-jose.md and work/drafts/pitch.md; you post them.",
+    "Dinis: my public key is not in PrompTugal__News__Website board/keys.json; that repository is out of reach for this session.",
+    "Dinis: this session's network refuses lisbontechfringe.com and fringe.promptugal.news, so the served version.json is checked through the deploy run, not the page."
+  ]
+}

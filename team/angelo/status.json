@@ -1,13 +1,13 @@
 {
   "by": "conductor.fringe@PrompTugal.angelo",
-  "updated": "2026-11-11T12:49Z",
+  "updated": "2026-11-11T14:45Z",
   "person": "angelo",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.angelo, started about 11:20 UTC by conductor.b@PrompTugal.angelo at Angelo's word; hourly wake at :29 until Friday 13 November (trig_01UqsUe1kvf2qvWkjLiF2hPk, set at Angelo's word in this session)",
   "lane": "the graph and live views of the fringe (SWARM.md): work/05",
   "doing": [
-    "work/32 the connections picture (claimed): the ontology picture and the outreach layer on /graph/",
-    "work/05 the graph"
+    "work/05 the graph and work/32 (graph parts) for Lisbon Fringe",
+    "the flow/trace work is handed over to prod-pipeline.pm@PrompTugal.angelo (Angelo, via conductor.b@, SGit-AI__Website__Web-Summit 94dfabc and 2e01c12): this conductor keeps the traces here as they are and builds no more of them"
   ],
   "done": [
     "read CLAUDE.md, SWARM.md, BRIEF.md, REALITY.md and work/",
@@ -19,12 +19,14 @@
     "trace of /e/2026-11-11-ptw-classroom-deep-work-wexio/: 77 steps, 15 agents, 38 commits, 17 deploys (team/angelo/traces/), by worker tracer.fringe@PrompTugal.angelo; generator admin/tools/trace-event.mjs",
     "draft visual of the trace at /traces/2026-11-11-ptw-classroom-deep-work-wexio/ (swim lanes, folded quiet time, failed deploys, first live), by worker designer.fringe@PrompTugal.angelo; not linked yet",
     "one-line 'how this page was made' strip (metro line; 6/9/14 stops by width; first live, failed deploys, live now), admin/build/trace-strip.mjs, shown on top of /traces/2026-11-11-ptw-classroom-deep-work-wexio/; by worker designer.fringe@PrompTugal.angelo",
-    "wake 12:29: /graph/ now takes communities from work/04's data/communities.json (73 checked communities; organiser line only as fallback; an unknown or individual organiser makes no node); 171 events, 387 nodes"
+    "wake 12:29: /graph/ now takes communities from work/04's data/communities.json (73 checked communities; organiser line only as fallback; an unknown or individual organiser makes no node); 171 events, 387 nodes",
+    "work/32 parts 1 and 2 on /graph/: ontology picture with live counts, outreach layer (counts only), by worker graph.fringe@PrompTugal.angelo",
+    "wake 13:29: /graph/ checked live at https://lisbontechfringe.com/graph/ (200, v0.1.171; nav calls it 'Map'); no change by others to graph.mjs/graph.js since af1072f; outreach tracker still has all 72 drafts 'until Dinis approves', so the graph's 0 drafts ready is right",
+    "wake 14:29 (run 14:44, after a session restart): /graph/ live on lisbontechfringe.com (v0.1.280); outreach layer follows Dinis's approval (66 draft ready); work/05 note proposes /graph/ reads ontologist.1's semantic graph (work/42) once it exists"
   ],
   "next": [
-    "work/32 (1): an ontology picture of organisation, community, event, place, topic, channel, source, agent, person-by-role, each link with its evidence",
-    "work/32 (2): outreach layer on /graph/ from data/outreach.json, counts only",
-    "the trace strip on every event page once Angelo is happy with the first MVP (Angelo, 12:4x: 'yes, but not yet')"
+    "when work/42 has stable ids: point /graph/ at it (agree with ontologist.1 through the lead)",
+    "work/32: counts for design and dev.1 as they ask"
   ],
   "asks": [
     "none for Angelo now",

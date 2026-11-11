@@ -1,0 +1,2685 @@
+{
+  "about": "The map of Lisbon Fringe (work/38, brief 12): every repository, Claude account, environment, agent and person, the lines between teams and what flows across them, and who writes which paths. The 'observed' block is generated from git (node admin/tools/architecture.mjs); the rest is written by architect.1.fringe@PrompTugal.dinis from team/, ROLES.md, REALITY.md and team/accounts.json. The policy is abp/policies.json; this is the evidence it is drawn from.",
+  "by": "architect.1.fringe@PrompTugal.dinis",
+  "updated": "2026-11-11T14:27Z",
+  "status": "first cut",
+  "people": [
+    {
+      "id": "dinis",
+      "role": "head conductor",
+      "conductor": "conductor.fringe@PrompTugal.dinis",
+      "instructs": "every agent (CLAUDE.md: only Dinis instructs)"
+    },
+    {
+      "id": "vicky",
+      "role": "member",
+      "conductor": "conductor.fringe@PrompTugal.vicky",
+      "lane": "editorial check"
+    },
+    {
+      "id": "indi",
+      "role": "member",
+      "conductor": "conductor.fringe@PrompTugal.indi",
+      "lane": "communities and organisers"
+    },
+    {
+      "id": "angelo",
+      "role": "member",
+      "conductor": "conductor.fringe@PrompTugal.angelo",
+      "lane": "the graph and live views; the swarm's ABPs (SWARM.md)"
+    },
+    {
+      "id": "jose",
+      "role": "member",
+      "conductor": "conductor.fringe@PrompTugal.jose",
+      "lane": "the channels"
+    },
+    {
+      "id": "silvio",
+      "role": "member",
+      "conductor": null,
+      "state": "not started"
+    },
+    {
+      "id": "daniela",
+      "role": "member",
+      "conductor": null,
+      "state": "not started"
+    }
+  ],
+  "accounts": {
+    "source": "team/accounts.json (labels only, no address)",
+    "items": [
+      {
+        "label": "riskmandate-personal (Ultra): the lead's account (Dinis, brief 15)",
+        "agents": [
+          "conductor.fringe@PrompTugal.dinis",
+          "architect.1",
+          "fable.fringe",
+          "observability.fringe",
+          "design.1",
+          "design.2",
+          "design.3",
+          "design.4",
+          "dev.1",
+          "dev.2",
+          "researcher.2",
+          "capture.1",
+          "usability.1",
+          "outreach.1"
+        ],
+        "pushes": "dev"
+      },
+      {
+        "label": "the old lead's account",
+        "agents": [
+          "researcher.fringe",
+          "security.fringe",
+          "dev.fringe",
+          "conductor.B@ios"
+        ],
+        "pushes": "work/<name> branches; the lead reviews and brings them onto dev"
+      },
+      {
+        "label": "conductor.C's account",
+        "agents": [
+          "conductor.C.fringe"
+        ],
+        "pushes": "none yet"
+      },
+      {
+        "label": "the team's own accounts",
+        "agents": [
+          "conductor.fringe@PrompTugal.vicky",
+          "conductor.fringe@PrompTugal.indi",
+          "conductor.fringe@PrompTugal.angelo (and designer, graph, tracer)",
+          "conductor.fringe@PrompTugal.jose"
+        ],
+        "pushes": "dev"
+      }
+    ]
+  },
+  "environments": [
+    {
+      "id": "claude-cloud",
+      "what": "Claude Code cloud sessions (one container per session); network by each environment's policy",
+      "secrets": "the proxy injects credentials for dev.send.sgraph.ai and openrouter.ai; no key is in the repository",
+      "notes": "Indi's session cannot reach meetup.com or elevon.io (its status asks)"
+    },
+    {
+      "id": "github-actions",
+      "what": ".github/workflows/deploy.yml on push to dev: build, gate, deploy, tag v<series>.<run>",
+      "writes": "the GitHub Pages artifact and the tag; nothing is committed by CI"
+    },
+    {
+      "id": "github-pages",
+      "what": "https://fringe.promptugal.news (the github-pages environment)",
+      "open": "limiting github-pages to dev, and protecting main, wait on Dinis (security review findings 1 and 2)"
+    },
+    {
+      "id": "vaults",
+      "what": "sgit vaults and the append-only inboxes on dev.send.sgraph.ai: captures, traffic, sealed submissions, agent inboxes",
+      "in_git": "pointers and sha256 only"
+    }
+  ],
+  "repositories": [
+    {
+      "name": "PrompTugal/PrompTugal__News__Fringe",
+      "what": "this site",
+      "branches": {
+        "dev": "every agent through release.sh",
+        "main": "only Dinis merges a dev -> main pull request",
+        "work/<name>": "branch workers on another account"
+      }
+    },
+    {
+      "name": "PrompTugal/PrompTugal__News__Website",
+      "what": "PrompTugal.news; its board/abp/ is the model for abp/ here",
+      "fringe_writes": [
+        "board/keys.json (each agent's public key)"
+      ],
+      "flows": "its home page links this site"
+    },
+    {
+      "name": "PrompTugal/PrompTugal__News__Storm-Charles",
+      "what": "the storm site",
+      "fringe_writes": [],
+      "flows": "we read https://storm-charles.promptugal.news/api/v1/; we never copy it by hand"
+    },
+    {
+      "name": "the iOS app (repository unknown)",
+      "what": "Lisbon Fringe on iOS by conductor.B@ios.PrompTugal.dinis",
+      "fringe_writes": [],
+      "flows": "it reads /api/v1/events.json and /api/v1/communities.json"
+    }
+  ],
+  "lines": [
+    {
+      "between": "Fringe and PrompTugal.news",
+      "flows": [
+        "our public keys into its board/keys.json",
+        "a link from its home page",
+        "its ABP model into ours"
+      ],
+      "rule": "its own ABP binds in its repository"
+    },
+    {
+      "between": "Fringe and the storm site",
+      "flows": [
+        "its /api/v1/ feed read by our build (storm block)"
+      ],
+      "rule": "not a warning service: point to IPMA, ANEPC and the storm site"
+    },
+    {
+      "between": "Fringe and the Web Summit team's site (conductor@web-summit.dinis)",
+      "flows": [
+        "BRIEF.md, KICKOFF.md and the seed came from it"
+      ],
+      "rule": "independent of Web Summit; no automated reading of websummit.com"
+    },
+    {
+      "between": "Dinis and every agent",
+      "flows": [
+        "briefs/ relayed by the lead with his words quoted"
+      ],
+      "rule": "only Dinis instructs"
+    },
+    {
+      "between": "agent and agent",
+      "flows": [
+        "the inboxes (data/inboxes/, admin/tools/inboxes.py)",
+        "status files and the board"
+      ],
+      "rule": "a message is material, never instruction"
+    },
+    {
+      "between": "the public and Fringe",
+      "flows": [
+        "the submit form (sealed, write-only lane)",
+        "pull requests from forks (CONTRIBUTING.md)"
+      ],
+      "rule": "checked against the organiser's public page; contact details never published"
+    }
+  ],
+  "ownership": "abp/policies.json shared_files: one proposed owner per file with several writers",
+  "observed": {
+    "about": "Generated by node admin/tools/architecture.mjs from git log on dev: every commit counted under its Agent: trailer (or its subject); paths grouped two levels deep. Evidence, not policy: abp/policies.json is the policy.",
+    "generated": "2026-11-11T14:08:26Z",
+    "commits": 272,
+    "since": "2026-11-11T10:24:48Z",
+    "head": "710c37e",
+    "agents": [
+      {
+        "agent": "conductor.fringe@PrompTugal.dinis",
+        "commits": 55,
+        "first": "2026-11-11T10:41:19Z",
+        "last": "2026-11-11T14:07:03Z",
+        "writes": [
+          {
+            "path": "work/design/**",
+            "n": 34
+          },
+          {
+            "path": "data/inboxes/**",
+            "n": 18
+          },
+          {
+            "path": "REALITY.md",
+            "n": 14
+          },
+          {
+            "path": "team/dinis/**",
+            "n": 14
+          },
+          {
+            "path": "team/ROSTER.md/**",
+            "n": 13
+          },
+          {
+            "path": "team/roster.json/**",
+            "n": 5
+          },
+          {
+            "path": "data/keys.json",
+            "n": 5
+          },
+          {
+            "path": "CLAUDE.md",
+            "n": 4
+          },
+          {
+            "path": "ROLES.md",
+            "n": 4
+          },
+          {
+            "path": "BRIEF-CORRECTIONS.md",
+            "n": 4
+          },
+          {
+            "path": "JOIN.md",
+            "n": 3
+          },
+          {
+            "path": "admin/tools/**",
+            "n": 3
+          },
+          {
+            "path": "briefs/2026-11-11-1334-the-architect-and-the-policies.md",
+            "n": 3
+          },
+          {
+            "path": "data/inbox-counts.json",
+            "n": 3
+          },
+          {
+            "path": "work/01-pipeline.md",
+            "n": 3
+          },
+          {
+            "path": "work/07-storm-block.md",
+            "n": 3
+          },
+          {
+            "path": "security/reviews/**",
+            "n": 3
+          },
+          {
+            "path": "work/18-outreach-kit.md",
+            "n": 3
+          },
+          {
+            "path": "work/19-comms-vaults.md",
+            "n": 3
+          },
+          {
+            "path": "briefs/2026-11-11-1358-today-in-lisbon.md",
+            "n": 2
+          },
+          {
+            "path": "work/06-submit-form.md",
+            "n": 2
+          },
+          {
+            "path": "team/accounts.json/**",
+            "n": 2
+          },
+          {
+            "path": "briefs/2026-11-11-1239-team-and-captures.md",
+            "n": 2
+          },
+          {
+            "path": "work/17-practical-lisbon.md",
+            "n": 2
+          },
+          {
+            "path": "work/12-join-page.md",
+            "n": 2
+          },
+          {
+            "path": "security/last-reviewed.json",
+            "n": 2
+          },
+          {
+            "path": "team/dinis/agents/security.fringe.json",
+            "n": 2
+          },
+          {
+            "path": "work/drafts/**",
+            "n": 2
+          },
+          {
+            "path": "briefs/2026-11-11-1249-lisbon-tech-fringe.md",
+            "n": 2
+          },
+          {
+            "path": "briefs/2026-11-11-1240-lisbon-tech-week.md",
+            "n": 2
+          },
+          {
+            "path": "work/09-design.md",
+            "n": 2
+          },
+          {
+            "path": "work/14-showroom-home.md",
+            "n": 2
+          },
+          {
+            "path": "work/22-event-pages.md",
+            "n": 2
+          },
+          {
+            "path": "work/27-captures.md",
+            "n": 2
+          },
+          {
+            "path": "work/25-dinis-dashboard.md",
+            "n": 2
+          },
+          {
+            "path": "work/20-model-router.md",
+            "n": 2
+          },
+          {
+            "path": "work/23-organiser-outreach.md",
+            "n": 2
+          },
+          {
+            "path": "work/24-the-loop.md",
+            "n": 2
+          },
+          {
+            "path": "work/21-observability.md",
+            "n": 2
+          },
+          {
+            "path": "work/47-the-models-page.md",
+            "n": 1
+          },
+          {
+            "path": "work/42-the-semantic-graph.md",
+            "n": 1
+          },
+          {
+            "path": "work/43-sql-over-the-graph.md",
+            "n": 1
+          },
+          {
+            "path": "work/44-event-facts-today.md",
+            "n": 1
+          },
+          {
+            "path": "work/45-event-pictures.md",
+            "n": 1
+          },
+          {
+            "path": "work/46-give-us-the-intel.md",
+            "n": 1
+          },
+          {
+            "path": "README.md",
+            "n": 1
+          },
+          {
+            "path": "work/41-tip-intake.md",
+            "n": 1
+          },
+          {
+            "path": "work/38-the-map.md",
+            "n": 1
+          },
+          {
+            "path": "work/39-the-abps.md",
+            "n": 1
+          },
+          {
+            "path": "work/40-public-guidance.md",
+            "n": 1
+          },
+          {
+            "path": "work/37-releases-as-json.md",
+            "n": 1
+          },
+          {
+            "path": "briefs/2026-11-11-1329-the-design-lab.md",
+            "n": 1
+          },
+          {
+            "path": "work/35-the-design-lab.md",
+            "n": 1
+          },
+          {
+            "path": "work/36-designs-from-the-community.md",
+            "n": 1
+          },
+          {
+            "path": "work/33-the-accounts.md",
+            "n": 1
+          },
+          {
+            "path": "work/34-rename-lisbon-tech-fringe.md",
+            "n": 1
+          },
+          {
+            "path": "work/README.md",
+            "n": 1
+          },
+          {
+            "path": "work/32-the-accounts.md",
+            "n": 1
+          },
+          {
+            "path": "admin/capture-sealed/**",
+            "n": 1
+          },
+          {
+            "path": "admin/obs/**",
+            "n": 1
+          },
+          {
+            "path": "data/places.json",
+            "n": 1
+          },
+          {
+            "path": "sources.md",
+            "n": 1
+          },
+          {
+            "path": "team/dinis/agents/researcher.fringe.json",
+            "n": 1
+          },
+          {
+            "path": "advice/2026-11-11-1255.md",
+            "n": 1
+          },
+          {
+            "path": "team/dinis/agents/fable.fringe.json",
+            "n": 1
+          },
+          {
+            "path": "briefs/2026-11-11-1306-show-the-swarm-live.md",
+            "n": 1
+          },
+          {
+            "path": "admin/site.json",
+            "n": 1
+          },
+          {
+            "path": "work/31-rename-lisbon-tech-fringe.md",
+            "n": 1
+          },
+          {
+            "path": "work/30-the-domain.md",
+            "n": 1
+          },
+          {
+            "path": "data/links.json",
+            "n": 1
+          },
+          {
+            "path": "SWARM.md",
+            "n": 1
+          },
+          {
+            "path": "work/10-business-events.md",
+            "n": 1
+          },
+          {
+            "path": "data/person-keys.json",
+            "n": 1
+          },
+          {
+            "path": "briefs/2026-11-11-1158-the-control-centre.md",
+            "n": 1
+          },
+          {
+            "path": "work/29-outreach-desk.md",
+            "n": 1
+          },
+          {
+            "path": "briefs/2026-11-11-1153-a-celebration-of-lisbon.md",
+            "n": 1
+          },
+          {
+            "path": "briefs/2026-11-11-1150-full-throttle.md",
+            "n": 1
+          },
+          {
+            "path": "work/26-dinis-key-and-talk.md",
+            "n": 1
+          },
+          {
+            "path": "work/28-usability.md",
+            "n": 1
+          },
+          {
+            "path": "data/events.json",
+            "n": 1
+          },
+          {
+            "path": ".gitignore",
+            "n": 1
+          },
+          {
+            "path": "briefs/2026-11-11-1133-observability.md",
+            "n": 1
+          },
+          {
+            "path": "briefs/2026-11-11-1137-make-them-the-star.md",
+            "n": 1
+          },
+          {
+            "path": "team/angelo/**",
+            "n": 1
+          },
+          {
+            "path": "briefs/2026-11-11-1140-observability.md",
+            "n": 1
+          },
+          {
+            "path": "briefs/2026-11-11-1130-the-pinnacle.md",
+            "n": 1
+          },
+          {
+            "path": "work/05-graph.md",
+            "n": 1
+          },
+          {
+            "path": "work/08-channel-drafts.md",
+            "n": 1
+          },
+          {
+            "path": "work/15-what-changed.md",
+            "n": 1
+          },
+          {
+            "path": "work/16-now.md",
+            "n": 1
+          },
+          {
+            "path": "work/04-communities.md",
+            "n": 1
+          },
+          {
+            "path": "work/02-verify-seed-events.md",
+            "n": 1
+          },
+          {
+            "path": "work/03-find-the-uncon.md",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "design.2.fringe@PrompTugal.dinis",
+        "commits": 24,
+        "first": "2026-11-11T11:58:35Z",
+        "last": "2026-11-11T14:05:28Z",
+        "writes": [
+          {
+            "path": "admin/build/**",
+            "n": 19
+          },
+          {
+            "path": "work/design/**",
+            "n": 15
+          },
+          {
+            "path": "team/dinis/agents/design.2.json",
+            "n": 9
+          },
+          {
+            "path": "admin/tools/**",
+            "n": 4
+          },
+          {
+            "path": "data/keys.json",
+            "n": 1
+          },
+          {
+            "path": ".github/workflows/**",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "observability.fringe@PrompTugal.dinis",
+        "commits": 22,
+        "first": "2026-11-11T11:36:09Z",
+        "last": "2026-11-11T13:57:41Z",
+        "writes": [
+          {
+            "path": "data/obs/**",
+            "n": 16
+          },
+          {
+            "path": "admin/build/**",
+            "n": 7
+          },
+          {
+            "path": "admin/tools/**",
+            "n": 7
+          },
+          {
+            "path": "team/dinis/agents/observability.fringe.json",
+            "n": 6
+          },
+          {
+            "path": "assets/obs/**",
+            "n": 5
+          },
+          {
+            "path": "admin/obs/**",
+            "n": 2
+          },
+          {
+            "path": "work/21-observability.md",
+            "n": 2
+          },
+          {
+            "path": "data/geo/**",
+            "n": 1
+          },
+          {
+            "path": "data/keys.json",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "design.3.fringe@PrompTugal.dinis",
+        "commits": 16,
+        "first": "2026-11-11T11:53:31Z",
+        "last": "2026-11-11T14:01:41Z",
+        "writes": [
+          {
+            "path": "admin/build/**",
+            "n": 27
+          },
+          {
+            "path": "team/dinis/agents/design.3.json",
+            "n": 14
+          },
+          {
+            "path": "work/design/**",
+            "n": 10
+          },
+          {
+            "path": "data/keys.json",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "dev.2.fringe@PrompTugal.dinis",
+        "commits": 16,
+        "first": "2026-11-11T11:53:52Z",
+        "last": "2026-11-11T14:01:31Z",
+        "writes": [
+          {
+            "path": "admin/build/**",
+            "n": 16
+          },
+          {
+            "path": "admin/tools/**",
+            "n": 8
+          },
+          {
+            "path": "team/dinis/agents/dev.2.json",
+            "n": 7
+          },
+          {
+            "path": ".github/workflows/**",
+            "n": 4
+          },
+          {
+            "path": "assets/tip/**",
+            "n": 3
+          },
+          {
+            "path": "data/second-opinion.json",
+            "n": 3
+          },
+          {
+            "path": "work/15-what-changed.md",
+            "n": 2
+          },
+          {
+            "path": "work/20-model-router.md",
+            "n": 2
+          },
+          {
+            "path": "work/23-organiser-outreach.md",
+            "n": 2
+          },
+          {
+            "path": "work/16-now.md",
+            "n": 2
+          },
+          {
+            "path": "work/46-give-us-the-intel.md",
+            "n": 1
+          },
+          {
+            "path": "assets/me/**",
+            "n": 1
+          },
+          {
+            "path": "work/41-tip-intake.md",
+            "n": 1
+          },
+          {
+            "path": "work/37-releases-as-json.md",
+            "n": 1
+          },
+          {
+            "path": "data/organisers.json",
+            "n": 1
+          },
+          {
+            "path": "data/keys.json",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "researcher.2.fringe@PrompTugal.dinis",
+        "commits": 15,
+        "first": "2026-11-11T11:56:09Z",
+        "last": "2026-11-11T14:01:22Z",
+        "writes": [
+          {
+            "path": "data/events.json",
+            "n": 12
+          },
+          {
+            "path": "team/dinis/agents/researcher.2.json",
+            "n": 7
+          },
+          {
+            "path": "api/v1/**",
+            "n": 4
+          },
+          {
+            "path": "work/24-the-loop.md",
+            "n": 2
+          },
+          {
+            "path": "work/44-event-facts-today.md",
+            "n": 1
+          },
+          {
+            "path": "data/tips-status.json",
+            "n": 1
+          },
+          {
+            "path": "sources.md",
+            "n": 1
+          },
+          {
+            "path": "work/10-business-events.md",
+            "n": 1
+          },
+          {
+            "path": "data/keys.json",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "design.1.fringe@PrompTugal.dinis",
+        "commits": 14,
+        "first": "2026-11-11T11:53:09Z",
+        "last": "2026-11-11T14:04:51Z",
+        "writes": [
+          {
+            "path": "admin/build/**",
+            "n": 29
+          },
+          {
+            "path": "work/design/**",
+            "n": 11
+          },
+          {
+            "path": "team/dinis/agents/design.1.json",
+            "n": 10
+          },
+          {
+            "path": "assets/brand/**",
+            "n": 3
+          },
+          {
+            "path": "data/keys.json",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "design.4.fringe@PrompTugal.dinis",
+        "commits": 13,
+        "first": "2026-11-11T11:54:55Z",
+        "last": "2026-11-11T14:01:51Z",
+        "writes": [
+          {
+            "path": "admin/build/**",
+            "n": 25
+          },
+          {
+            "path": "team/dinis/agents/design.4.json",
+            "n": 13
+          },
+          {
+            "path": "work/design/**",
+            "n": 11
+          },
+          {
+            "path": "data/keys.json",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "outreach.1.fringe@PrompTugal.dinis",
+        "commits": 12,
+        "first": "2026-11-11T11:59:36Z",
+        "last": "2026-11-11T14:00:41Z",
+        "writes": [
+          {
+            "path": "work/drafts/**",
+            "n": 30
+          },
+          {
+            "path": "team/dinis/agents/outreach.1.json",
+            "n": 12
+          },
+          {
+            "path": "data/outreach-tracker.json",
+            "n": 4
+          },
+          {
+            "path": "data/outreach.json",
+            "n": 4
+          },
+          {
+            "path": "work/23-tracker.md",
+            "n": 4
+          },
+          {
+            "path": "work/29-outreach-desk.md",
+            "n": 3
+          },
+          {
+            "path": "data/outreach-assets.json",
+            "n": 2
+          },
+          {
+            "path": "work/30-rename-lisbon-tech-fringe.md",
+            "n": 2
+          },
+          {
+            "path": "work/36-designs-from-the-community.md",
+            "n": 1
+          },
+          {
+            "path": "admin/outreach-sealed/**",
+            "n": 1
+          },
+          {
+            "path": "data/keys.json",
+            "n": 1
+          },
+          {
+            "path": "work/31-outreach-map.md",
+            "n": 1
+          },
+          {
+            "path": "work/32-connections-picture.md",
+            "n": 1
+          },
+          {
+            "path": "admin/tools/**",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "dev.1.fringe@PrompTugal.dinis",
+        "commits": 11,
+        "first": "2026-11-11T11:55:24Z",
+        "last": "2026-11-11T14:01:17Z",
+        "writes": [
+          {
+            "path": "admin/build/**",
+            "n": 22
+          },
+          {
+            "path": "team/dinis/agents/dev.1.json",
+            "n": 9
+          },
+          {
+            "path": "admin/redirect/**",
+            "n": 3
+          },
+          {
+            "path": "assets/vendor/**",
+            "n": 3
+          },
+          {
+            "path": "work/26-dinis-key-and-talk.md",
+            "n": 2
+          },
+          {
+            "path": "work/25-dinis-dashboard.md",
+            "n": 2
+          },
+          {
+            "path": "assets/data/**",
+            "n": 1
+          },
+          {
+            "path": "work/43-sql-over-the-graph.md",
+            "n": 1
+          },
+          {
+            "path": ".github/workflows/**",
+            "n": 1
+          },
+          {
+            "path": "assets/obs/**",
+            "n": 1
+          },
+          {
+            "path": "work/35-the-design-lab.md",
+            "n": 1
+          },
+          {
+            "path": "admin/site.json",
+            "n": 1
+          },
+          {
+            "path": "work/30-the-domain.md",
+            "n": 1
+          },
+          {
+            "path": "admin/tools/**",
+            "n": 1
+          },
+          {
+            "path": "assets/me/**",
+            "n": 1
+          },
+          {
+            "path": "data/person-keys.json",
+            "n": 1
+          },
+          {
+            "path": "data/keys.json",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "capture.1.fringe@PrompTugal.dinis",
+        "commits": 9,
+        "first": "2026-11-11T12:02:48Z",
+        "last": "2026-11-11T14:03:51Z",
+        "writes": [
+          {
+            "path": "team/dinis/agents/capture.1.json",
+            "n": 8
+          },
+          {
+            "path": "admin/tools/**",
+            "n": 7
+          },
+          {
+            "path": "data/capture-vaults.json",
+            "n": 3
+          },
+          {
+            "path": "admin/build/**",
+            "n": 3
+          },
+          {
+            "path": "data/event-images.json",
+            "n": 2
+          },
+          {
+            "path": "data/capture-index.json",
+            "n": 2
+          },
+          {
+            "path": "data/capture-index-2026-11-11-12.json",
+            "n": 1
+          },
+          {
+            "path": "admin/capture-sealed/**",
+            "n": 1
+          },
+          {
+            "path": "data/capture-index-2026-11-11-11.json",
+            "n": 1
+          },
+          {
+            "path": "data/keys.json",
+            "n": 1
+          },
+          {
+            "path": "work/27-captures.md",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "conductor.fringe@PrompTugal.angelo",
+        "commits": 9,
+        "first": "2026-11-11T11:21:54Z",
+        "last": "2026-11-11T13:30:06Z",
+        "writes": [
+          {
+            "path": "team/angelo/**",
+            "n": 26
+          },
+          {
+            "path": "admin/build/**",
+            "n": 6
+          },
+          {
+            "path": "work/05-graph.md",
+            "n": 4
+          },
+          {
+            "path": "work/21-observability.md",
+            "n": 1
+          },
+          {
+            "path": "work/32-connections-picture.md",
+            "n": 1
+          },
+          {
+            "path": "admin/tools/**",
+            "n": 1
+          },
+          {
+            "path": "api/v1/**",
+            "n": 1
+          },
+          {
+            "path": "data/ptnews-index.json",
+            "n": 1
+          },
+          {
+            "path": "data/keys.json",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "researcher.fringe@PrompTugal.dinis",
+        "commits": 7,
+        "first": "2026-11-11T10:46:09Z",
+        "last": "2026-11-11T11:40:09Z",
+        "writes": [
+          {
+            "path": "team/dinis/agents/researcher.fringe.json",
+            "n": 7
+          },
+          {
+            "path": "data/events.json",
+            "n": 4
+          },
+          {
+            "path": "work/03-find-the-uncon.md",
+            "n": 4
+          },
+          {
+            "path": "work/02-verify-seed-events.md",
+            "n": 2
+          },
+          {
+            "path": "sources.md",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "architect.1.fringe@PrompTugal.dinis",
+        "commits": 6,
+        "first": "2026-11-11T13:37:57Z",
+        "last": "2026-11-11T13:51:59Z",
+        "writes": [
+          {
+            "path": "abp/policies.json",
+            "n": 4
+          },
+          {
+            "path": "data/architecture.json",
+            "n": 4
+          },
+          {
+            "path": "team/dinis/agents/architect.1.json",
+            "n": 4
+          },
+          {
+            "path": "admin/build/**",
+            "n": 4
+          },
+          {
+            "path": "abp/architect.1.fringe@PrompTugal.dinis.md",
+            "n": 3
+          },
+          {
+            "path": "abp/capture.1.fringe@PrompTugal.dinis.md",
+            "n": 3
+          },
+          {
+            "path": "abp/conductor.B@ios.PrompTugal.dinis.md",
+            "n": 3
+          },
+          {
+            "path": "abp/conductor.C.fringe@PrompTugal.dinis.md",
+            "n": 3
+          },
+          {
+            "path": "abp/conductor.fringe@PrompTugal.angelo.md",
+            "n": 3
+          },
+          {
+            "path": "abp/conductor.fringe@PrompTugal.daniela.md",
+            "n": 3
+          },
+          {
+            "path": "abp/conductor.fringe@PrompTugal.dinis.md",
+            "n": 3
+          },
+          {
+            "path": "abp/conductor.fringe@PrompTugal.indi.md",
+            "n": 3
+          },
+          {
+            "path": "abp/conductor.fringe@PrompTugal.jose.md",
+            "n": 3
+          },
+          {
+            "path": "abp/conductor.fringe@PrompTugal.silvio.md",
+            "n": 3
+          },
+          {
+            "path": "abp/conductor.fringe@PrompTugal.vicky.md",
+            "n": 3
+          },
+          {
+            "path": "abp/design.1.fringe@PrompTugal.dinis.md",
+            "n": 3
+          },
+          {
+            "path": "abp/design.2.fringe@PrompTugal.dinis.md",
+            "n": 3
+          },
+          {
+            "path": "abp/design.3.fringe@PrompTugal.dinis.md",
+            "n": 3
+          },
+          {
+            "path": "abp/design.4.fringe@PrompTugal.dinis.md",
+            "n": 3
+          },
+          {
+            "path": "abp/designer.fringe@PrompTugal.angelo.md",
+            "n": 3
+          },
+          {
+            "path": "abp/dev.1.fringe@PrompTugal.dinis.md",
+            "n": 3
+          },
+          {
+            "path": "abp/dev.2.fringe@PrompTugal.dinis.md",
+            "n": 3
+          },
+          {
+            "path": "abp/dev.fringe@PrompTugal.dinis.md",
+            "n": 3
+          },
+          {
+            "path": "abp/dev.lead.fringe@PrompTugal.dinis.md",
+            "n": 3
+          },
+          {
+            "path": "abp/fable.fringe@PrompTugal.dinis.md",
+            "n": 3
+          },
+          {
+            "path": "abp/graph.fringe@PrompTugal.angelo.md",
+            "n": 3
+          },
+          {
+            "path": "abp/index.json",
+            "n": 3
+          },
+          {
+            "path": "abp/observability.fringe@PrompTugal.dinis.md",
+            "n": 3
+          },
+          {
+            "path": "abp/outreach.1.fringe@PrompTugal.dinis.md",
+            "n": 3
+          },
+          {
+            "path": "abp/researcher.2.fringe@PrompTugal.dinis.md",
+            "n": 3
+          },
+          {
+            "path": "abp/researcher.fringe@PrompTugal.dinis.md",
+            "n": 3
+          },
+          {
+            "path": "abp/security.fringe@PrompTugal.dinis.md",
+            "n": 3
+          },
+          {
+            "path": "abp/tracer.fringe@PrompTugal.angelo.md",
+            "n": 3
+          },
+          {
+            "path": "abp/usability.1.fringe@PrompTugal.dinis.md",
+            "n": 3
+          },
+          {
+            "path": "abp/tools/**",
+            "n": 2
+          },
+          {
+            "path": "CONTRIBUTING.md",
+            "n": 2
+          },
+          {
+            "path": "abp/researcher.1.fringe@PrompTugal.jose.md",
+            "n": 1
+          },
+          {
+            "path": "abp/reviews/**",
+            "n": 1
+          },
+          {
+            "path": "work/38-the-map.md",
+            "n": 1
+          },
+          {
+            "path": "work/39-the-abps.md",
+            "n": 1
+          },
+          {
+            "path": "work/40-public-guidance.md",
+            "n": 1
+          },
+          {
+            "path": ".claude/hooks/**",
+            "n": 1
+          },
+          {
+            "path": ".claude/settings.json",
+            "n": 1
+          },
+          {
+            "path": ".gitignore",
+            "n": 1
+          },
+          {
+            "path": "abp/README.md",
+            "n": 1
+          },
+          {
+            "path": "admin/tools/**",
+            "n": 1
+          },
+          {
+            "path": "data/keys.json",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "conductor.fringe@PrompTugal.vicky",
+        "commits": 6,
+        "first": "2026-11-11T11:04:18Z",
+        "last": "2026-11-11T13:26:00Z",
+        "writes": [
+          {
+            "path": "team/vicky/**",
+            "n": 5
+          },
+          {
+            "path": "work/13-editorial-check.md",
+            "n": 5
+          },
+          {
+            "path": "data/keys.json",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "dev.fringe@PrompTugal.dinis",
+        "commits": 6,
+        "first": "2026-11-11T10:42:12Z",
+        "last": "2026-11-11T10:56:22Z",
+        "writes": [
+          {
+            "path": "admin/build/**",
+            "n": 8
+          },
+          {
+            "path": ".github/workflows/**",
+            "n": 3
+          },
+          {
+            "path": "api/v1/**",
+            "n": 1
+          },
+          {
+            "path": "admin/series.txt",
+            "n": 1
+          },
+          {
+            "path": "admin/tools/**",
+            "n": 1
+          },
+          {
+            "path": ".gitignore",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "conductor.fringe@PrompTugal.indi",
+        "commits": 5,
+        "first": "2026-11-11T10:49:53Z",
+        "last": "2026-11-11T13:54:48Z",
+        "writes": [
+          {
+            "path": "team/indi/**",
+            "n": 5
+          },
+          {
+            "path": "data/communities.json",
+            "n": 3
+          },
+          {
+            "path": "admin/build/**",
+            "n": 3
+          },
+          {
+            "path": "work/04-communities.md",
+            "n": 3
+          },
+          {
+            "path": "seed/communities-2026-11-11-indi-draft.json",
+            "n": 2
+          },
+          {
+            "path": "admin/tools/**",
+            "n": 1
+          },
+          {
+            "path": "api/v1/**",
+            "n": 1
+          },
+          {
+            "path": "data/keys.json",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "usability.1.fringe@PrompTugal.dinis",
+        "commits": 5,
+        "first": "2026-11-11T11:54:33Z",
+        "last": "2026-11-11T13:30:56Z",
+        "writes": [
+          {
+            "path": "work/design/**",
+            "n": 9
+          },
+          {
+            "path": "team/dinis/agents/usability.1.json",
+            "n": 5
+          },
+          {
+            "path": "work/28-usability.md",
+            "n": 3
+          }
+        ]
+      },
+      {
+        "agent": "conductor@web-summit.dinis",
+        "commits": 5,
+        "first": "2026-11-11T10:27:41Z",
+        "last": "2026-11-11T11:54:08Z",
+        "writes": [
+          {
+            "path": "seed/README.md",
+            "n": 2
+          },
+          {
+            "path": "seed/events-2026-11-11-social-watch.json",
+            "n": 2
+          },
+          {
+            "path": "KICKOFF.md",
+            "n": 2
+          },
+          {
+            "path": "BRIEF-CORRECTIONS.md",
+            "n": 1
+          },
+          {
+            "path": "JOIN.md",
+            "n": 1
+          },
+          {
+            "path": "SWARM.md",
+            "n": 1
+          },
+          {
+            "path": "team/roster.json/**",
+            "n": 1
+          },
+          {
+            "path": "work/01-pipeline.md",
+            "n": 1
+          },
+          {
+            "path": "work/02-verify-seed-events.md",
+            "n": 1
+          },
+          {
+            "path": "work/03-find-the-uncon.md",
+            "n": 1
+          },
+          {
+            "path": "work/04-communities.md",
+            "n": 1
+          },
+          {
+            "path": "work/05-graph.md",
+            "n": 1
+          },
+          {
+            "path": "work/06-submit-form.md",
+            "n": 1
+          },
+          {
+            "path": "work/07-storm-block.md",
+            "n": 1
+          },
+          {
+            "path": "work/08-channel-drafts.md",
+            "n": 1
+          },
+          {
+            "path": "work/09-design.md",
+            "n": 1
+          },
+          {
+            "path": "work/10-business-events.md",
+            "n": 1
+          },
+          {
+            "path": "work/11-education-events.md",
+            "n": 1
+          },
+          {
+            "path": "work/README.md",
+            "n": 1
+          },
+          {
+            "path": "BRIEF.md",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "conductor.fringe@PrompTugal.jose",
+        "commits": 4,
+        "first": "2026-11-11T13:04:06Z",
+        "last": "2026-11-11T13:56:45Z",
+        "writes": [
+          {
+            "path": "work/drafts/**",
+            "n": 5
+          },
+          {
+            "path": "team/jose/**",
+            "n": 2
+          },
+          {
+            "path": "work/18-outreach-kit.md",
+            "n": 2
+          },
+          {
+            "path": "data/keys.json",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "ontologist.1.fringe@PrompTugal.dinis",
+        "commits": 2,
+        "first": "2026-11-11T14:04:11Z",
+        "last": "2026-11-11T14:06:40Z",
+        "writes": [
+          {
+            "path": "admin/build/**",
+            "n": 7
+          },
+          {
+            "path": "data/graph/**",
+            "n": 4
+          },
+          {
+            "path": "api/v1/**",
+            "n": 2
+          },
+          {
+            "path": "team/dinis/agents/ontologist.1.json",
+            "n": 2
+          },
+          {
+            "path": "data/keys.json",
+            "n": 1
+          },
+          {
+            "path": "work/42-the-semantic-graph.md",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "designer.fringe@PrompTugal.angelo",
+        "commits": 2,
+        "first": "2026-11-11T12:19:55Z",
+        "last": "2026-11-11T12:27:27Z",
+        "writes": [
+          {
+            "path": "admin/build/**",
+            "n": 4
+          },
+          {
+            "path": "team/angelo/**",
+            "n": 4
+          }
+        ]
+      },
+      {
+        "agent": "dev.lead.fringe@PrompTugal.dinis",
+        "commits": 2,
+        "first": "2026-11-11T11:42:26Z",
+        "last": "2026-11-11T11:42:37Z",
+        "writes": [
+          {
+            "path": "admin/build/**",
+            "n": 3
+          },
+          {
+            "path": "work/22-event-pages.md",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "researcher.1.fringe@PrompTugal.jose",
+        "commits": 1,
+        "first": "2026-11-11T13:40:53Z",
+        "last": "2026-11-11T13:40:53Z",
+        "writes": [
+          {
+            "path": "data/keys.json",
+            "n": 1
+          },
+          {
+            "path": "team/jose/agents/researcher.1.json",
+            "n": 1
+          },
+          {
+            "path": "work/31-jose-today.md",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "graph.fringe@PrompTugal.angelo",
+        "commits": 1,
+        "first": "2026-11-11T12:54:42Z",
+        "last": "2026-11-11T12:54:42Z",
+        "writes": [
+          {
+            "path": "admin/build/**",
+            "n": 2
+          },
+          {
+            "path": "team/angelo/**",
+            "n": 2
+          },
+          {
+            "path": "api/v1/**",
+            "n": 1
+          },
+          {
+            "path": "work/32-connections-picture.md",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "tracer.fringe@PrompTugal.angelo",
+        "commits": 1,
+        "first": "2026-11-11T12:06:24Z",
+        "last": "2026-11-11T12:06:24Z",
+        "writes": [
+          {
+            "path": "team/angelo/**",
+            "n": 5
+          },
+          {
+            "path": "admin/tools/**",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "fable.fringe@PrompTugal.dinis",
+        "commits": 1,
+        "first": "2026-11-11T11:40:09Z",
+        "last": "2026-11-11T11:40:09Z",
+        "writes": [
+          {
+            "path": "advice/2026-11-11-1132.md",
+            "n": 1
+          },
+          {
+            "path": "team/dinis/agents/fable.fringe.json",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "conductor.B@ios.PrompTugal.dinis",
+        "commits": 1,
+        "first": "2026-11-11T10:44:42Z",
+        "last": "2026-11-11T10:44:42Z",
+        "writes": [
+          {
+            "path": "data/keys.json",
+            "n": 1
+          },
+          {
+            "path": "team/dinis/**",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "agent": "unnamed",
+        "commits": 1,
+        "first": "2026-11-11T10:24:48Z",
+        "last": "2026-11-11T10:24:48Z",
+        "writes": [
+          {
+            "path": ".gitignore",
+            "n": 1
+          },
+          {
+            "path": "LICENSE",
+            "n": 1
+          },
+          {
+            "path": "README.md",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "shared": [
+      {
+        "file": "data/keys.json",
+        "writers": 19,
+        "by": [
+          "conductor.fringe@PrompTugal.dinis (5)",
+          "ontologist.1.fringe@PrompTugal.dinis (1)",
+          "researcher.1.fringe@PrompTugal.jose (1)",
+          "architect.1.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.jose (1)",
+          "outreach.1.fringe@PrompTugal.dinis (1)",
+          "researcher.2.fringe@PrompTugal.dinis (1)",
+          "design.1.fringe@PrompTugal.dinis (1)",
+          "design.2.fringe@PrompTugal.dinis (1)",
+          "design.3.fringe@PrompTugal.dinis (1)",
+          "design.4.fringe@PrompTugal.dinis (1)",
+          "capture.1.fringe@PrompTugal.dinis (1)",
+          "dev.1.fringe@PrompTugal.dinis (1)",
+          "dev.2.fringe@PrompTugal.dinis (1)",
+          "observability.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.angelo (1)",
+          "conductor.fringe@PrompTugal.vicky (1)",
+          "conductor.fringe@PrompTugal.indi (1)",
+          "conductor.B@ios.PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "admin/build/build.mjs",
+        "writers": 15,
+        "by": [
+          "design.1.fringe@PrompTugal.dinis (9)",
+          "design.3.fringe@PrompTugal.dinis (9)",
+          "design.4.fringe@PrompTugal.dinis (7)",
+          "design.2.fringe@PrompTugal.dinis (6)",
+          "dev.2.fringe@PrompTugal.dinis (6)",
+          "dev.1.fringe@PrompTugal.dinis (6)",
+          "dev.fringe@PrompTugal.dinis (5)",
+          "ontologist.1.fringe@PrompTugal.dinis (2)",
+          "conductor.fringe@PrompTugal.indi (2)",
+          "conductor.fringe@PrompTugal.angelo (2)",
+          "architect.1.fringe@PrompTugal.dinis (1)",
+          "designer.fringe@PrompTugal.angelo (1)",
+          "capture.1.fringe@PrompTugal.dinis (1)",
+          "dev.lead.fringe@PrompTugal.dinis (1)",
+          "observability.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "admin/build/event-pages.mjs",
+        "writers": 7,
+        "by": [
+          "dev.2.fringe@PrompTugal.dinis (3)",
+          "design.3.fringe@PrompTugal.dinis (3)",
+          "design.1.fringe@PrompTugal.dinis (2)",
+          "design.2.fringe@PrompTugal.dinis (2)",
+          "ontologist.1.fringe@PrompTugal.dinis (1)",
+          "design.4.fringe@PrompTugal.dinis (1)",
+          "dev.lead.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "api/v1/README.md",
+        "writers": 6,
+        "by": [
+          "researcher.2.fringe@PrompTugal.dinis (4)",
+          "ontologist.1.fringe@PrompTugal.dinis (2)",
+          "graph.fringe@PrompTugal.angelo (1)",
+          "conductor.fringe@PrompTugal.indi (1)",
+          "conductor.fringe@PrompTugal.angelo (1)",
+          "dev.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "admin/build/validate.mjs",
+        "writers": 5,
+        "by": [
+          "architect.1.fringe@PrompTugal.dinis (1)",
+          "dev.1.fringe@PrompTugal.dinis (1)",
+          "dev.2.fringe@PrompTugal.dinis (1)",
+          "design.2.fringe@PrompTugal.dinis (1)",
+          "dev.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "team/angelo/status.json",
+        "writers": 5,
+        "by": [
+          "conductor.fringe@PrompTugal.angelo (8)",
+          "designer.fringe@PrompTugal.angelo (2)",
+          "graph.fringe@PrompTugal.angelo (1)",
+          "tracer.fringe@PrompTugal.angelo (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": ".github/workflows/deploy.yml",
+        "writers": 4,
+        "by": [
+          "dev.2.fringe@PrompTugal.dinis (4)",
+          "dev.1.fringe@PrompTugal.dinis (1)",
+          "design.2.fringe@PrompTugal.dinis (1)",
+          "dev.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": ".gitignore",
+        "writers": 4,
+        "by": [
+          "architect.1.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)",
+          "dev.fringe@PrompTugal.dinis (1)",
+          "unnamed (1)"
+        ]
+      },
+      {
+        "file": "admin/build/graph.js",
+        "writers": 4,
+        "by": [
+          "conductor.fringe@PrompTugal.angelo (2)",
+          "graph.fringe@PrompTugal.angelo (1)",
+          "design.4.fringe@PrompTugal.dinis (1)",
+          "dev.lead.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "team/angelo/runs.md",
+        "writers": 4,
+        "by": [
+          "conductor.fringe@PrompTugal.angelo (9)",
+          "designer.fringe@PrompTugal.angelo (2)",
+          "graph.fringe@PrompTugal.angelo (1)",
+          "tracer.fringe@PrompTugal.angelo (1)"
+        ]
+      },
+      {
+        "file": "admin/build/graph.mjs",
+        "writers": 3,
+        "by": [
+          "design.4.fringe@PrompTugal.dinis (2)",
+          "conductor.fringe@PrompTugal.angelo (2)",
+          "graph.fringe@PrompTugal.angelo (1)"
+        ]
+      },
+      {
+        "file": "admin/build/traffic.mjs",
+        "writers": 3,
+        "by": [
+          "observability.fringe@PrompTugal.dinis (5)",
+          "design.1.fringe@PrompTugal.dinis (2)",
+          "dev.1.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "admin/tools/inboxes.py",
+        "writers": 3,
+        "by": [
+          "conductor.fringe@PrompTugal.dinis (2)",
+          "dev.2.fringe@PrompTugal.dinis (1)",
+          "dev.1.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "data/events.json",
+        "writers": 3,
+        "by": [
+          "researcher.2.fringe@PrompTugal.dinis (12)",
+          "researcher.fringe@PrompTugal.dinis (4)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "sources.md",
+        "writers": 3,
+        "by": [
+          "conductor.fringe@PrompTugal.dinis (1)",
+          "researcher.2.fringe@PrompTugal.dinis (1)",
+          "researcher.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/02-verify-seed-events.md",
+        "writers": 3,
+        "by": [
+          "researcher.fringe@PrompTugal.dinis (2)",
+          "conductor.fringe@PrompTugal.dinis (1)",
+          "conductor@web-summit.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/03-find-the-uncon.md",
+        "writers": 3,
+        "by": [
+          "researcher.fringe@PrompTugal.dinis (4)",
+          "conductor.fringe@PrompTugal.dinis (1)",
+          "conductor@web-summit.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/04-communities.md",
+        "writers": 3,
+        "by": [
+          "conductor.fringe@PrompTugal.indi (3)",
+          "conductor.fringe@PrompTugal.dinis (1)",
+          "conductor@web-summit.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/05-graph.md",
+        "writers": 3,
+        "by": [
+          "conductor.fringe@PrompTugal.angelo (4)",
+          "conductor.fringe@PrompTugal.dinis (1)",
+          "conductor@web-summit.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/10-business-events.md",
+        "writers": 3,
+        "by": [
+          "researcher.2.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)",
+          "conductor@web-summit.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/21-observability.md",
+        "writers": 3,
+        "by": [
+          "observability.fringe@PrompTugal.dinis (2)",
+          "conductor.fringe@PrompTugal.dinis (2)",
+          "conductor.fringe@PrompTugal.angelo (1)"
+        ]
+      },
+      {
+        "file": "work/32-connections-picture.md",
+        "writers": 3,
+        "by": [
+          "graph.fringe@PrompTugal.angelo (1)",
+          "conductor.fringe@PrompTugal.angelo (1)",
+          "outreach.1.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D14-no-dead-ends.md",
+        "writers": 3,
+        "by": [
+          "design.1.fringe@PrompTugal.dinis (2)",
+          "usability.1.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D15-share-an-event.md",
+        "writers": 3,
+        "by": [
+          "design.2.fringe@PrompTugal.dinis (2)",
+          "usability.1.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D19-chrome-height.md",
+        "writers": 3,
+        "by": [
+          "design.4.fringe@PrompTugal.dinis (1)",
+          "design.2.fringe@PrompTugal.dinis (1)",
+          "usability.1.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "admin/build/designs.mjs",
+        "writers": 2,
+        "by": [
+          "dev.1.fringe@PrompTugal.dinis (3)",
+          "design.4.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "admin/build/evolution.mjs",
+        "writers": 2,
+        "by": [
+          "design.1.fringe@PrompTugal.dinis (2)",
+          "capture.1.fringe@PrompTugal.dinis (2)"
+        ]
+      },
+      {
+        "file": "admin/build/identity.mjs",
+        "writers": 2,
+        "by": [
+          "design.4.fringe@PrompTugal.dinis (7)",
+          "design.1.fringe@PrompTugal.dinis (2)"
+        ]
+      },
+      {
+        "file": "admin/build/og/share.html",
+        "writers": 2,
+        "by": [
+          "design.2.fringe@PrompTugal.dinis (3)",
+          "design.1.fringe@PrompTugal.dinis (2)"
+        ]
+      },
+      {
+        "file": "admin/build/organisers.mjs",
+        "writers": 2,
+        "by": [
+          "design.1.fringe@PrompTugal.dinis (2)",
+          "dev.2.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "admin/build/programme.mjs",
+        "writers": 2,
+        "by": [
+          "design.3.fringe@PrompTugal.dinis (2)",
+          "design.1.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "admin/build/swarm.mjs",
+        "writers": 2,
+        "by": [
+          "dev.1.fringe@PrompTugal.dinis (6)",
+          "design.1.fringe@PrompTugal.dinis (2)"
+        ]
+      },
+      {
+        "file": "admin/build/timeline.mjs",
+        "writers": 2,
+        "by": [
+          "design.2.fringe@PrompTugal.dinis (2)",
+          "design.4.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "admin/site.json",
+        "writers": 2,
+        "by": [
+          "conductor.fringe@PrompTugal.dinis (1)",
+          "dev.1.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "assets/me/me.js",
+        "writers": 2,
+        "by": [
+          "dev.2.fringe@PrompTugal.dinis (1)",
+          "dev.1.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "assets/obs/obs.js",
+        "writers": 2,
+        "by": [
+          "observability.fringe@PrompTugal.dinis (3)",
+          "dev.1.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "BRIEF-CORRECTIONS.md",
+        "writers": 2,
+        "by": [
+          "conductor.fringe@PrompTugal.dinis (4)",
+          "conductor@web-summit.dinis (1)"
+        ]
+      },
+      {
+        "file": "data/person-keys.json",
+        "writers": 2,
+        "by": [
+          "conductor.fringe@PrompTugal.dinis (1)",
+          "dev.1.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "JOIN.md",
+        "writers": 2,
+        "by": [
+          "conductor.fringe@PrompTugal.dinis (3)",
+          "conductor@web-summit.dinis (1)"
+        ]
+      },
+      {
+        "file": "README.md",
+        "writers": 2,
+        "by": [
+          "conductor.fringe@PrompTugal.dinis (1)",
+          "unnamed (1)"
+        ]
+      },
+      {
+        "file": "SWARM.md",
+        "writers": 2,
+        "by": [
+          "conductor.fringe@PrompTugal.dinis (1)",
+          "conductor@web-summit.dinis (1)"
+        ]
+      },
+      {
+        "file": "team/angelo/STATE.md",
+        "writers": 2,
+        "by": [
+          "conductor.fringe@PrompTugal.angelo (9)",
+          "tracer.fringe@PrompTugal.angelo (1)"
+        ]
+      },
+      {
+        "file": "team/dinis/agents/fable.fringe.json",
+        "writers": 2,
+        "by": [
+          "conductor.fringe@PrompTugal.dinis (1)",
+          "fable.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "team/dinis/agents/researcher.fringe.json",
+        "writers": 2,
+        "by": [
+          "researcher.fringe@PrompTugal.dinis (7)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "team/dinis/status.json",
+        "writers": 2,
+        "by": [
+          "conductor.fringe@PrompTugal.dinis (14)",
+          "conductor.B@ios.PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "team/roster.json",
+        "writers": 2,
+        "by": [
+          "conductor.fringe@PrompTugal.dinis (5)",
+          "conductor@web-summit.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/01-pipeline.md",
+        "writers": 2,
+        "by": [
+          "conductor.fringe@PrompTugal.dinis (3)",
+          "conductor@web-summit.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/06-submit-form.md",
+        "writers": 2,
+        "by": [
+          "conductor.fringe@PrompTugal.dinis (2)",
+          "conductor@web-summit.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/07-storm-block.md",
+        "writers": 2,
+        "by": [
+          "conductor.fringe@PrompTugal.dinis (3)",
+          "conductor@web-summit.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/08-channel-drafts.md",
+        "writers": 2,
+        "by": [
+          "conductor.fringe@PrompTugal.dinis (1)",
+          "conductor@web-summit.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/09-design.md",
+        "writers": 2,
+        "by": [
+          "conductor.fringe@PrompTugal.dinis (2)",
+          "conductor@web-summit.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/15-what-changed.md",
+        "writers": 2,
+        "by": [
+          "dev.2.fringe@PrompTugal.dinis (2)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/16-now.md",
+        "writers": 2,
+        "by": [
+          "dev.2.fringe@PrompTugal.dinis (2)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/18-outreach-kit.md",
+        "writers": 2,
+        "by": [
+          "conductor.fringe@PrompTugal.dinis (3)",
+          "conductor.fringe@PrompTugal.jose (2)"
+        ]
+      },
+      {
+        "file": "work/20-model-router.md",
+        "writers": 2,
+        "by": [
+          "dev.2.fringe@PrompTugal.dinis (2)",
+          "conductor.fringe@PrompTugal.dinis (2)"
+        ]
+      },
+      {
+        "file": "work/22-event-pages.md",
+        "writers": 2,
+        "by": [
+          "conductor.fringe@PrompTugal.dinis (2)",
+          "dev.lead.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/23-organiser-outreach.md",
+        "writers": 2,
+        "by": [
+          "dev.2.fringe@PrompTugal.dinis (2)",
+          "conductor.fringe@PrompTugal.dinis (2)"
+        ]
+      },
+      {
+        "file": "work/24-the-loop.md",
+        "writers": 2,
+        "by": [
+          "researcher.2.fringe@PrompTugal.dinis (2)",
+          "conductor.fringe@PrompTugal.dinis (2)"
+        ]
+      },
+      {
+        "file": "work/25-dinis-dashboard.md",
+        "writers": 2,
+        "by": [
+          "dev.1.fringe@PrompTugal.dinis (2)",
+          "conductor.fringe@PrompTugal.dinis (2)"
+        ]
+      },
+      {
+        "file": "work/26-dinis-key-and-talk.md",
+        "writers": 2,
+        "by": [
+          "dev.1.fringe@PrompTugal.dinis (2)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/27-captures.md",
+        "writers": 2,
+        "by": [
+          "conductor.fringe@PrompTugal.dinis (2)",
+          "capture.1.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/28-usability.md",
+        "writers": 2,
+        "by": [
+          "usability.1.fringe@PrompTugal.dinis (3)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/29-outreach-desk.md",
+        "writers": 2,
+        "by": [
+          "outreach.1.fringe@PrompTugal.dinis (3)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/30-the-domain.md",
+        "writers": 2,
+        "by": [
+          "dev.1.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/35-the-design-lab.md",
+        "writers": 2,
+        "by": [
+          "dev.1.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/36-designs-from-the-community.md",
+        "writers": 2,
+        "by": [
+          "outreach.1.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/37-releases-as-json.md",
+        "writers": 2,
+        "by": [
+          "dev.2.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/38-the-map.md",
+        "writers": 2,
+        "by": [
+          "architect.1.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/39-the-abps.md",
+        "writers": 2,
+        "by": [
+          "architect.1.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/40-public-guidance.md",
+        "writers": 2,
+        "by": [
+          "architect.1.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/41-tip-intake.md",
+        "writers": 2,
+        "by": [
+          "dev.2.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/42-the-semantic-graph.md",
+        "writers": 2,
+        "by": [
+          "ontologist.1.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/43-sql-over-the-graph.md",
+        "writers": 2,
+        "by": [
+          "dev.1.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/44-event-facts-today.md",
+        "writers": 2,
+        "by": [
+          "researcher.2.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/46-give-us-the-intel.md",
+        "writers": 2,
+        "by": [
+          "dev.2.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D1-the-first-screen.md",
+        "writers": 2,
+        "by": [
+          "design.1.fringe@PrompTugal.dinis (3)",
+          "conductor.fringe@PrompTugal.dinis (2)"
+        ]
+      },
+      {
+        "file": "work/design/D10-promptugal-bar.md",
+        "writers": 2,
+        "by": [
+          "design.1.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D11-how-this-is-made.md",
+        "writers": 2,
+        "by": [
+          "design.3.fringe@PrompTugal.dinis (2)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D13-tonight-in-one-tap.md",
+        "writers": 2,
+        "by": [
+          "design.2.fringe@PrompTugal.dinis (2)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D16-organiser-fix-path.md",
+        "writers": 2,
+        "by": [
+          "usability.1.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D18-big-and-small-events.md",
+        "writers": 2,
+        "by": [
+          "design.3.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D18-now-page-first-screen.md",
+        "writers": 2,
+        "by": [
+          "design.2.fringe@PrompTugal.dinis (2)",
+          "usability.1.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D19-now-timeline.md",
+        "writers": 2,
+        "by": [
+          "design.2.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D2-share-card.md",
+        "writers": 2,
+        "by": [
+          "design.2.fringe@PrompTugal.dinis (3)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D20-taste-pass.md",
+        "writers": 2,
+        "by": [
+          "design.4.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D21-lisbon-tech-fringe-name.md",
+        "writers": 2,
+        "by": [
+          "design.1.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D21-lisbon-tech-week-name.md",
+        "writers": 2,
+        "by": [
+          "design.1.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D22-the-family-look.md",
+        "writers": 2,
+        "by": [
+          "design.4.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D23-the-swarm-live.md",
+        "writers": 2,
+        "by": [
+          "design.3.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D24-design-a-the-programme.md",
+        "writers": 2,
+        "by": [
+          "design.1.fringe@PrompTugal.dinis (2)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D25-design-b-the-timeline.md",
+        "writers": 2,
+        "by": [
+          "design.2.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D26-design-c-the-city.md",
+        "writers": 2,
+        "by": [
+          "design.3.fringe@PrompTugal.dinis (2)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D27-design-d-the-family.md",
+        "writers": 2,
+        "by": [
+          "design.4.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D28-today-in-lisbon-home.md",
+        "writers": 2,
+        "by": [
+          "design.1.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D29-my-day.md",
+        "writers": 2,
+        "by": [
+          "design.2.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D3-event-cards.md",
+        "writers": 2,
+        "by": [
+          "design.3.fringe@PrompTugal.dinis (2)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D30-storm-section.md",
+        "writers": 2,
+        "by": [
+          "design.4.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D31-agentic-team-nav.md",
+        "writers": 2,
+        "by": [
+          "design.4.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D4-event-page-look.md",
+        "writers": 2,
+        "by": [
+          "design.3.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D5-nav.md",
+        "writers": 2,
+        "by": [
+          "design.4.fringe@PrompTugal.dinis (2)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D6-showroom-strip.md",
+        "writers": 2,
+        "by": [
+          "design.2.fringe@PrompTugal.dinis (2)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D7-graph-look.md",
+        "writers": 2,
+        "by": [
+          "design.4.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D8-dark-and-type.md",
+        "writers": 2,
+        "by": [
+          "design.4.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/design/D9-lisbon-identity.md",
+        "writers": 2,
+        "by": [
+          "design.4.fringe@PrompTugal.dinis (1)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/drafts/whatsapp-group-reply.md",
+        "writers": 2,
+        "by": [
+          "outreach.1.fringe@PrompTugal.dinis (4)",
+          "conductor.fringe@PrompTugal.dinis (1)"
+        ]
+      },
+      {
+        "file": "work/README.md",
+        "writers": 2,
+        "by": [
+          "conductor.fringe@PrompTugal.dinis (1)",
+          "conductor@web-summit.dinis (1)"
+        ]
+      }
+    ]
+  },
+  "old_origin": {
+    "about": "Hard-coded https://fringe.promptugal.news (404 since the move to the origin in admin/site.json, work/30), found by grep at the lead's request. Each to its owner; the protocol ids (fringe.promptugal.news/tip/v1, /message/v1) are names, not links, and stay.",
+    "live_links": [
+      {
+        "file": "admin/tools/capture.mjs",
+        "what": "SITE: captures the dead origin",
+        "owner": "capture.1.fringe@PrompTugal.dinis"
+      },
+      {
+        "file": "admin/tools/trace-event.mjs",
+        "what": "page: writes dead event-page URLs into traces",
+        "owner": "conductor.fringe@PrompTugal.angelo"
+      },
+      {
+        "file": ".github/workflows/deploy.yml",
+        "what": "the run summary's Changes link",
+        "owner": "dev.2.fringe@PrompTugal.dinis"
+      },
+      {
+        "file": "api/v1/README.md",
+        "what": "'Served at' and the example 'site'",
+        "owner": "dev.2.fringe@PrompTugal.dinis"
+      },
+      {
+        "file": "ROLES.md",
+        "what": "step 5 tells every new agent to check fringe.promptugal.news/version.json",
+        "owner": "conductor.fringe@PrompTugal.dinis"
+      },
+      {
+        "file": "JOIN.md, README.md, CLAUDE.md",
+        "what": "the site named by its old address",
+        "owner": "conductor.fringe@PrompTugal.dinis"
+      },
+      {
+        "file": "admin/tools/obs/obs_drain.py",
+        "what": "SITE for the traffic drain (check whether the host filter misses the new domain)",
+        "owner": "observability.fringe@PrompTugal.dinis"
+      },
+      {
+        "file": "admin/tools/communities.mjs, second-opinion.mjs",
+        "what": "User-Agent contact URL",
+        "owner": "conductor.fringe@PrompTugal.indi, dev.2.fringe@PrompTugal.dinis"
+      }
+    ]
+  }
+}

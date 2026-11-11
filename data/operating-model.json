@@ -1,0 +1,697 @@
+{
+  "about": "The operating model of the agentic team (Dinis with Angelo, in architect.1's session, 14:40 UTC; briefs/2026-11-11-1440-the-operating-model.md; work/48): the primitives of the execution block, the access an entity has at a moment in time, identity, state, providers, and who can do what. What an entity is depends on where it runs and what it can reach (Dinis: 'what they are depends on where they are and what they can do'). A draft for Dinis and Angelo to correct.",
+  "by": "architect.1.fringe@PrompTugal.dinis",
+  "updated": "2026-11-11T14:47Z",
+  "status": "draft v0.2",
+  "ladder": {
+    "about": "The execution ladder: what an entity can do, bottom to top. Each rung includes the ones below it.",
+    "rungs": [
+      {
+        "id": "E0",
+        "name": "compute",
+        "what": "raw code execution: a script, a build, a CI job",
+        "example": "admin/build/build.mjs in GitHub Actions"
+      },
+      {
+        "id": "E1",
+        "name": "model call",
+        "what": "a prompt in, an answer out (the first chatbots)",
+        "example": "the second opinion via the router"
+      },
+      {
+        "id": "E2",
+        "name": "loop",
+        "what": "a simple agentic workflow: the model's output feeds its next step, without tools",
+        "example": "a chain of calls in one script"
+      },
+      {
+        "id": "E3",
+        "name": "loop with tools",
+        "what": "the loop can act: shell, files, web, git",
+        "example": "a Claude Code session; a ChatGPT agent"
+      },
+      {
+        "id": "E4",
+        "name": "schedules",
+        "what": "it can wake itself later (create and keep schedules)",
+        "example": "every agent's hourly wake"
+      },
+      {
+        "id": "E5",
+        "name": "spawn",
+        "what": "it can start new agents, sessions and environments: the control plane",
+        "example": "the lead starting architect.1"
+      }
+    ],
+    "across": [
+      "tools (what the loop can touch: tools appear at E3 but a call can also be given tools)",
+      "storage (what it can mount: a file system, git, vaults)"
+    ]
+  },
+  "access": {
+    "about": "The capabilities an entity has at a moment in time: what it can reach and change. Each axis has levels; 'who' below gives each runtime's level today.",
+    "axes": [
+      {
+        "id": "git",
+        "levels": [
+          "none",
+          "read",
+          "write a branch",
+          "write dev (behind the gate)"
+        ]
+      },
+      {
+        "id": "vault",
+        "levels": [
+          "none",
+          "read-only (given a read key)",
+          "write-only (an append lane: our inboxes, /tip/)",
+          "read-write",
+          "create (make its own vaults: its own record)"
+        ]
+      },
+      {
+        "id": "internet",
+        "levels": [
+          "none",
+          "our services only",
+          "allow-listed hosts (the environment's policy)",
+          "open"
+        ]
+      },
+      {
+        "id": "filesystem",
+        "levels": [
+          "none",
+          "ephemeral (the container's)",
+          "persistent (a laptop's)"
+        ]
+      },
+      {
+        "id": "install",
+        "levels": [
+          "no",
+          "packages (npm, pip)",
+          "system (apt, root)"
+        ]
+      },
+      {
+        "id": "control_plane",
+        "levels": [
+          "none",
+          "own wake",
+          "sessions, schedules, environments, credentials (Claude's control plane)"
+        ]
+      },
+      {
+        "id": "secrets",
+        "levels": [
+          "none",
+          "injected by the proxy (never seen)",
+          "held"
+        ]
+      }
+    ]
+  },
+  "identity": {
+    "rule": "Every entity has an identity: a PKI key, even a chat session where it can carry one (Dinis: 'our identities have to flow to everything here').",
+    "ephemeral": "A session key's private half lives only as long as its session. That is a feature: a signature by it proves the agent existed at that moment (Dinis: 'that tells you that that agent exists at that moment in time').",
+    "how": [
+      "pki-agent.mjs keygen --session in each session; the public half in data/keys.json",
+      "every output signed: commits (the Agent: trailer and the key), inbox messages, agent-log runs, vault records",
+      "a chat (S1) can be given a key by the person who runs it, and sign what it returns through that person's tool"
+    ]
+  },
+  "state": {
+    "about": "How state reaches a model and leaves it.",
+    "carriers": [
+      {
+        "id": "git",
+        "holds": "code, decisions, small data",
+        "provenance": "commit, trailer, key"
+      },
+      {
+        "id": "vault",
+        "holds": "evidence, captures, any state; easy to distribute, even as a zip",
+        "provenance": "made by one session: that session's record"
+      },
+      {
+        "id": "chat context",
+        "holds": "a conversation",
+        "provenance": "the provider's; never the only copy"
+      },
+      {
+        "id": "task packet",
+        "holds": "a task, its inputs and where the output goes, signed",
+        "provenance": "the lead's signature; the doer signs its output"
+      }
+    ]
+  },
+  "providers": [
+    {
+      "id": "anthropic",
+      "via": [
+        "Claude Code (cloud, laptop)",
+        "Claude chat",
+        "API"
+      ],
+      "models": "Opus, Sonnet, Haiku"
+    },
+    {
+      "id": "openrouter",
+      "via": [
+        "API, through admin/tools/llm.mjs"
+      ],
+      "models": "open weight (DeepSeek, Llama, Qwen) and others, image models included"
+    },
+    {
+      "id": "openai",
+      "via": [
+        "ChatGPT (chat, agent)",
+        "API"
+      ],
+      "models": "GPT"
+    },
+    {
+      "id": "ollama",
+      "via": [
+        "a laptop's own agent (R2)"
+      ],
+      "models": "open weight, local"
+    }
+  ],
+  "os": {
+    "about": "Read as a distributed operating system (Dinis: 'almost like ... a distributed operating system ... we decouple ... who's actually doing the task').",
+    "map": [
+      {
+        "os": "processes",
+        "here": "agents (S2 loops) and model calls (S0)"
+      },
+      {
+        "os": "kernel and scheduler",
+        "here": "the control plane: sessions, schedules, wakes, spawn (E4, E5)"
+      },
+      {
+        "os": "file systems",
+        "here": "git and vaults (zips to move them)"
+      },
+      {
+        "os": "inter-process communication",
+        "here": "signed inboxes and append lanes; task packets"
+      },
+      {
+        "os": "users and permissions",
+        "here": "PKI keys and the ABPs (abp/policies.json)"
+      },
+      {
+        "os": "drivers",
+        "here": "the model providers and endpoints"
+      },
+      {
+        "os": "package manager",
+        "here": "install: npm, pip, apt where allowed"
+      },
+      {
+        "os": "system log",
+        "here": "the ABP hook log, the router's ledger, agent-log runs"
+      }
+    ]
+  },
+  "who": {
+    "about": "Each runtime or entity with its rung and its access today (from data/runtimes.json and the environments as seen in this swarm).",
+    "items": [
+      {
+        "entity": "GitHub Actions (CI)",
+        "rung": "E0",
+        "git": "write tags; deploys",
+        "vault": "none",
+        "internet": "open",
+        "filesystem": "ephemeral",
+        "install": "system",
+        "control_plane": "none",
+        "identity": "the repository's token (no agent key)"
+      },
+      {
+        "entity": "A model call via OpenRouter (S0)",
+        "rung": "E1",
+        "git": "none",
+        "vault": "none",
+        "internet": "none",
+        "filesystem": "none",
+        "install": "no",
+        "control_plane": "none",
+        "identity": "none; the calling agent signs the result"
+      },
+      {
+        "entity": "A chat session (Claude chat, ChatGPT) (S1)",
+        "rung": "E1 to E3",
+        "git": "none",
+        "vault": "through a person (L0) or a link",
+        "internet": "the provider's tools",
+        "filesystem": "none of ours",
+        "install": "no",
+        "control_plane": "none",
+        "identity": "none today; proposed: the person's tool signs"
+      },
+      {
+        "entity": "A ChatGPT agent (R3)",
+        "rung": "E3",
+        "git": "none",
+        "vault": "read-write by link (L2)",
+        "internet": "open (its browser)",
+        "filesystem": "its own, ephemeral",
+        "install": "its sandbox",
+        "control_plane": "none of ours",
+        "identity": "a key given to it, or the person's"
+      },
+      {
+        "entity": "A Claude Code cloud agent (R1), e.g. design.1",
+        "rung": "E4",
+        "git": "write dev",
+        "vault": "read-write, create",
+        "internet": "allow-listed",
+        "filesystem": "ephemeral",
+        "install": "packages and system",
+        "control_plane": "own wake",
+        "identity": "session key (ephemeral)"
+      },
+      {
+        "entity": "The lead (R1)",
+        "rung": "E5",
+        "git": "write dev",
+        "vault": "read-write, create; issues inboxes",
+        "internet": "allow-listed",
+        "filesystem": "ephemeral",
+        "install": "packages and system",
+        "control_plane": "sessions, schedules (at Dinis's word)",
+        "identity": "session key (ephemeral)"
+      },
+      {
+        "entity": "A laptop agent (R2) with Ollama",
+        "rung": "E4 to E5",
+        "git": "write dev",
+        "vault": "read-write, create",
+        "internet": "the laptop's",
+        "filesystem": "persistent",
+        "install": "the person's choice",
+        "control_plane": "own wake (local)",
+        "identity": "its key (can persist)"
+      }
+    ]
+  },
+  "graph": {
+    "about": "The model as a fractal semantic graph (Dinis, newsroom.sgit.ai, 2026-09-20): no privileged level and no single schema; each altitude has its own ontology; the grammar never changes. What an entity is comes from its edges (meaning through connectivity).",
+    "grammar": [
+      "every edge is a verb, stated in both directions, with an inverse a person would say",
+      "relates_to is banned",
+      "properties carry data, never meaning",
+      "supersede, never delete",
+      "never render the whole graph: render the answer to a question"
+    ],
+    "edges": [
+      [
+        "runs_on",
+        "hosts"
+      ],
+      [
+        "calls",
+        "is_called_by"
+      ],
+      [
+        "holds",
+        "is_held_by"
+      ],
+      [
+        "is_granted",
+        "is_granted_to"
+      ],
+      [
+        "reaches",
+        "is_reached_by"
+      ],
+      [
+        "spawns",
+        "is_spawned_by"
+      ],
+      [
+        "schedules",
+        "is_scheduled_by"
+      ],
+      [
+        "signs",
+        "is_signed_by"
+      ],
+      [
+        "does",
+        "is_done_by"
+      ],
+      [
+        "writes",
+        "is_written_by"
+      ],
+      [
+        "reads",
+        "is_read_by"
+      ],
+      [
+        "plays",
+        "is_played_by"
+      ]
+    ],
+    "altitudes": [
+      {
+        "id": "swarm",
+        "ontology": "people, conductors, accounts, repositories (data/architecture.json)",
+        "jump": "an agent node opens into its own world"
+      },
+      {
+        "id": "agent",
+        "ontology": "role, craft, grant, key, runtime, rung (abp/policies.json, data/runtimes.json)",
+        "jump": "its grant opens into capability primitives"
+      },
+      {
+        "id": "grant",
+        "ontology": "verb.object.reach primitives, reach, undo (abp.sgit.ai)",
+        "jump": "a primitive opens into the hook decisions that exercised it"
+      },
+      {
+        "id": "run",
+        "ontology": "tool calls, observe events, overrides (the ABP hook log)",
+        "jump": "a model call opens into its ledger line"
+      },
+      {
+        "id": "call",
+        "ontology": "model, tier, tokens, cost, the raw record's sha256 (the router's ledger)",
+        "jump": "the raw record, outside git"
+      }
+    ],
+    "example": "design.1 plays the design role; design.1 runs_on R1; design.1 holds a session key; design.1 is_granted write.file.project over admin/build/designs/**; design.1 does D24; the D24 commit is_signed_by design.1's key. Read from the other end: R1 hosts design.1."
+  },
+  "open": [
+    "whether tools are a rung (E3) or an axis across rungs (Dinis: 'maybe tools is transversal')",
+    "the name of the unit: entity, craft or role",
+    "the vault primitives proposed in capabilities.proposed (read.vault, send.message to an append lane, write.vault, create.vault): adopt into abp.sgit.ai's grammar or not",
+    "each agent's grant written as capability primitives, so /abp/ and abp.sgit.ai speak one language"
+  ],
+  "sources": [
+    {
+      "what": "Fractal Semantic Graphs (the term, the five-rule grammar)",
+      "url": "https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html",
+      "by": "Dinis Cruz, 2026-09-20",
+      "read_at": "2026-11-11T14:47Z"
+    },
+    {
+      "what": "The capability grammar: verb.object.reach, 23 primitives, reach and undo",
+      "url": "https://abp.sgit.ai/model/capabilities/index.md",
+      "read_at": "2026-11-11T14:47Z"
+    },
+    {
+      "what": "The grammar for drawing a graph, for agents",
+      "url": "https://graphs.sgit.ai/llms.txt",
+      "read_at": "2026-11-11T14:47Z"
+    }
+  ],
+  "capabilities": {
+    "about": "The access axes, rebased on the published capability grammar (abp.sgit.ai): each capability is verb.object.reach, with the reach it touches (self < project < host < tenant < world) and the undo class of its effect. Not invented here: the 23 primitives are abp.sgit.ai's, read at the time above.",
+    "reaches": [
+      {
+        "id": "self",
+        "means": "the agent's own process, sandbox or turn"
+      },
+      {
+        "id": "project",
+        "means": "the working tree or workspace it was pointed at"
+      },
+      {
+        "id": "host",
+        "means": "the machine, container or account it runs as"
+      },
+      {
+        "id": "tenant",
+        "means": "the organisation's accounts, repositories and services"
+      },
+      {
+        "id": "world",
+        "means": "anything on the internet"
+      }
+    ],
+    "primitives": [
+      {
+        "id": "read.file.project",
+        "gloss": "Read the project it is working on",
+        "reach": "project",
+        "undo": "yes",
+        "shapes": 7
+      },
+      {
+        "id": "write.file.project",
+        "gloss": "Change the project it is working on",
+        "reach": "project",
+        "undo": "with-effort",
+        "shapes": 6
+      },
+      {
+        "id": "read.file.host",
+        "gloss": "Read any file the account can reach",
+        "reach": "host",
+        "undo": "no",
+        "shapes": 11
+      },
+      {
+        "id": "write.file.host",
+        "gloss": "Change any file the account can reach",
+        "reach": "host",
+        "undo": "with-effort",
+        "shapes": 8
+      },
+      {
+        "id": "delete.file.host",
+        "gloss": "Delete files anywhere the account can reach",
+        "reach": "host",
+        "undo": "no",
+        "shapes": 5
+      },
+      {
+        "id": "read.record.history",
+        "gloss": "Read a retained record: shell history, past sessions",
+        "reach": "host",
+        "undo": "no",
+        "shapes": 8
+      },
+      {
+        "id": "execute.process.host",
+        "gloss": "Run programs as the account",
+        "reach": "host",
+        "undo": "with-effort",
+        "shapes": 7
+      },
+      {
+        "id": "execute.process.self",
+        "gloss": "Run programs inside its own sandbox only",
+        "reach": "self",
+        "undo": "yes",
+        "shapes": 0
+      },
+      {
+        "id": "send.endpoint.allowed",
+        "gloss": "Reach a permitted list of hosts",
+        "reach": "tenant",
+        "undo": "no",
+        "shapes": 1
+      },
+      {
+        "id": "send.endpoint.world",
+        "gloss": "Reach any host on the internet",
+        "reach": "world",
+        "undo": "no",
+        "shapes": 7
+      },
+      {
+        "id": "read.credential.host",
+        "gloss": "Read credentials stored where it runs",
+        "reach": "host",
+        "undo": "no",
+        "shapes": 11
+      },
+      {
+        "id": "authenticate-as.credential.tenant",
+        "gloss": "Act in accounts with the credentials it holds",
+        "reach": "tenant",
+        "undo": "no",
+        "shapes": 15
+      },
+      {
+        "id": "grant.credential.self",
+        "gloss": "Change its own permission settings",
+        "reach": "self",
+        "undo": "yes",
+        "shapes": 3
+      },
+      {
+        "id": "send.message.world",
+        "gloss": "Send a message to anyone",
+        "reach": "world",
+        "undo": "no",
+        "shapes": 4
+      },
+      {
+        "id": "read.message.tenant",
+        "gloss": "Read mail or chat it is connected to",
+        "reach": "tenant",
+        "undo": "no",
+        "shapes": 6
+      },
+      {
+        "id": "write.repository.project",
+        "gloss": "Commit to the repository it was pointed at",
+        "reach": "project",
+        "undo": "with-effort",
+        "shapes": 4
+      },
+      {
+        "id": "write.repository.tenant",
+        "gloss": "Push to a code host (any branch it can reach)",
+        "reach": "tenant",
+        "undo": "with-effort",
+        "shapes": 4
+      },
+      {
+        "id": "authenticate-as.credential.signing",
+        "gloss": "Sign commits with the key it holds",
+        "reach": "tenant",
+        "undo": "no",
+        "shapes": 3
+      },
+      {
+        "id": "create.record.world",
+        "gloss": "Publish packages, images or pages under the name it holds",
+        "reach": "world",
+        "undo": "no",
+        "shapes": 3
+      },
+      {
+        "id": "write.budget.tenant",
+        "gloss": "Spend money or tokens against an account it holds",
+        "reach": "tenant",
+        "undo": "no",
+        "shapes": 2
+      },
+      {
+        "id": "create.schedule.host",
+        "gloss": "Create something that outlives the turn where it runs (a cron, a service)",
+        "reach": "host",
+        "undo": "yes",
+        "shapes": 4
+      },
+      {
+        "id": "create.schedule.tenant",
+        "gloss": "Create something that outlives the session, on the platform (a routine, a scheduled trigger, a new session)",
+        "reach": "tenant",
+        "undo": "yes",
+        "shapes": 3
+      },
+      {
+        "id": "read.record.browsing",
+        "gloss": "Read every page you visit",
+        "reach": "host",
+        "undo": "no",
+        "shapes": 1
+      }
+    ],
+    "axes_to_primitives": {
+      "git": [
+        "read.file.project",
+        "write.repository.project",
+        "write.repository.tenant",
+        "authenticate-as.credential.signing"
+      ],
+      "internet": [
+        "send.endpoint.allowed",
+        "send.endpoint.world",
+        "read.record.browsing"
+      ],
+      "filesystem": [
+        "read.file.project",
+        "write.file.project",
+        "read.file.host",
+        "write.file.host",
+        "delete.file.host"
+      ],
+      "install": [
+        "execute.process.host",
+        "write.file.host"
+      ],
+      "control_plane": [
+        "create.schedule.host",
+        "create.schedule.tenant",
+        "grant.credential.self"
+      ],
+      "secrets": [
+        "read.credential.host",
+        "authenticate-as.credential.tenant"
+      ],
+      "money": [
+        "write.budget.tenant"
+      ],
+      "messages": [
+        "send.message.world",
+        "read.message.tenant"
+      ]
+    },
+    "ladder_to_primitives": {
+      "E0": [
+        "execute.process.self",
+        "execute.process.host"
+      ],
+      "E1": [
+        "write.budget.tenant (every call spends)"
+      ],
+      "E2": [
+        "execute.process.self"
+      ],
+      "E3": [
+        "read.file.project",
+        "write.file.project",
+        "execute.process.host",
+        "send.endpoint.allowed"
+      ],
+      "E4": [
+        "create.schedule.host",
+        "create.schedule.tenant (its own wake)"
+      ],
+      "E5": [
+        "create.schedule.tenant (a new session)",
+        "grant.credential.self"
+      ]
+    },
+    "proposed": {
+      "about": "Proposed for the grammar, NOT in abp.sgit.ai today: the vault axis Dinis named (read-only, write-only, create), in the same verb.object.reach form. For Dinis to accept, rename or drop.",
+      "items": [
+        {
+          "id": "read.vault.tenant",
+          "gloss": "read a vault it was given a read key for",
+          "reach": "tenant",
+          "undo": "yes"
+        },
+        {
+          "id": "send.message.tenant",
+          "gloss": "append to a write-only lane it holds the write token for (our inboxes, /tip/)",
+          "reach": "tenant",
+          "undo": "no"
+        },
+        {
+          "id": "write.vault.tenant",
+          "gloss": "change a vault it holds the write key for",
+          "reach": "tenant",
+          "undo": "with-effort"
+        },
+        {
+          "id": "create.vault.world",
+          "gloss": "make its own vault and publish its read key (its own record)",
+          "reach": "world",
+          "undo": "no"
+        }
+      ]
+    }
+  }
+}

@@ -25,7 +25,15 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(HERE)))
 AGENT = 'observability.fringe@PrompTugal.dinis'
 RUN_TYPE = 'web-summit.agent-run/v1'                                      # the team's record type, kept so all sources read alike
 SITE = 'fringe.promptugal.news'
+
+def hosts():
+    """The site's hosts, counted together (work/30: the move to lisbontechfringe.com): admin/site.json's origin, the
+    first address, and the new domain with and without www. Events from any other host (a local test) are not readers."""
+    try: origin = json.load(open(os.path.join(ROOT, 'admin', 'site.json')))['origin'].split('//', 1)[-1].strip('/')
+    except Exception: origin = SITE
+    return {origin, SITE, 'lisbontechfringe.com', 'www.lisbontechfringe.com'}
 CITY_MIN = 5
+CRAWL_VIEWS = 40
 BOTS = {'googlebot', 'bingbot', 'bot', 'webdriver', 'headless'}
 
 def post(c, op, body):
@@ -119,9 +127,19 @@ def norm(path):
     return path[:-len('index.html')] if path.endswith('/index.html') else path
 
 def counts(rows, now, pub_id):
-    pages = [r for r in rows if r.get('type') in ('view', 'read') and r.get('path')]
+    pages = [r for r in rows if r.get('type') in ('view', 'read', 'vote') and r.get('path')]
     bots = [r for r in pages if r.get('agent') in BOTS]
-    people = [r for r in pages if r.get('agent') not in BOTS]
+    H = hosts()
+    off_site = [r for r in pages if r.get('site') and r['site'] not in H]   # a local test or a copy elsewhere
+    pages = [r for r in pages if not r.get('site') or r['site'] in H]
+    # a tab with more than CRAWL_VIEWS views is an undeclared crawler (PrompTugal.news's obs_lets.update_sessions rule;
+    # 11 November 14:00 UTC: one phone-sized tab read 171 pages in an hour)
+    per_tab = collections.Counter(r.get('sid') for r in pages if r['type'] == 'view' and r.get('sid'))
+    crawl = {sid for sid, n in per_tab.items() if n > CRAWL_VIEWS}
+    for r in pages:
+        if r.get('sid') in crawl and r.get('agent') not in BOTS: r['agent'] = 'crawler'
+    bots = [r for r in pages if r.get('agent') in BOTS | {'crawler'}]
+    people = [r for r in pages if r.get('agent') not in BOTS | {'crawler'}]
     seen, reads = set(), []
     for r in people:                                                     # a read re-sent from the next page can arrive twice
         if r['type'] != 'read': continue
@@ -130,7 +148,8 @@ def counts(rows, now, pub_id):
     views = [r for r in people if r['type'] == 'view']
     C = lambda it: collections.Counter(x for x in it if x)
     by_country = C(r.get('country') for r in views)
-    city_raw = C(', '.join(x for x in (r.get('city'), r.get('region'), r.get('country')) if x) if r.get('city') else '' for r in views)
+    # a town is its city and country: ipapi.co and ipwho.is name the same region differently ("Lisbon", "Distrito de Lisboa")
+    city_raw = C(', '.join(x for x in (r.get('city'), r.get('country')) if x) if r.get('city') else '' for r in views)
     by_city = [[k, n] for k, n in city_raw.most_common() if n >= CITY_MIN]
     other = sum(n for k, n in city_raw.items() if n < CITY_MIN)
     if other: by_city.append([f'(places under {CITY_MIN} views, in their country above)', other])
@@ -144,24 +163,83 @@ def counts(rows, now, pub_id):
     for r in reads: x = rd[norm(r['path'])]; x[0] += 1; x[1] += r.get('visible_s', 0) or 0; x[2] += r.get('scroll', 0) or 0
     runs = [r for r in rows if r.get('type') == RUN_TYPE]
     return {
-        'v': 1, 'site': SITE, 'generated': now, 'public_vault': pub_id, 'city_min': CITY_MIN, 'by': AGENT,
+        'v': 1, 'site': sorted(H), 'generated': now, 'public_vault': pub_id, 'city_min': CITY_MIN, 'by': AGENT,
         'about': 'Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).',
         'totals': {'views': len(views), 'reads': len(reads), 'tabs': len({r.get('sid') for r in people if r.get('sid')}),
                    'countries': len(by_country), 'shares': sum(1 for r in views if r.get('via')), 'bots': sum(1 for r in bots if r['type'] == 'view'),
-                   'agent_runs': len(runs), 'agent_runs_signed': sum(1 for r in runs if r.get('signed'))},
+                   'crawler_tabs': len(crawl), 'agent_runs': len(runs), 'agent_runs_signed': sum(1 for r in runs if r.get('signed'))},
         'by_hour': by_hour,
         'by_page': C(norm(r['path']) for r in views).most_common(),
         'reading': sorted([[p, n, round(s / n), round(sc / n)] for p, (n, s, sc) in rd.items()], key=lambda x: -x[1]),
         'by_country': by_country.most_common(),
         'by_city': by_city,
-        'by_referrer': C(r.get('ref') for r in views if r.get('ref') != SITE).most_common(30),
+        'by_referrer': C(r.get('ref') for r in views if r.get('ref') not in H).most_common(30),
+        'by_host': C(r.get('site') or SITE for r in views).most_common(),
+        'other_hosts_views': sum(1 for r in off_site if r['type'] == 'view'),
         'by_via': C(r.get('via') for r in views).most_common(),
         'via_detail': {v: {'views': n, 'tabs': len({r.get('sid') for r in views if r.get('via') == v}),
                            'countries': len({r.get('country') for r in views if r.get('via') == v and r.get('country')})}
                        for v, n in C(r.get('via') for r in views).items()},
         'by_screen': C(r.get('screen') for r in views).most_common(),
         'agents': C(r.get('agent') for r in runs).most_common(),
+        **flows(views, H),
+        'design_lab': design_lab(people),
+        'map': geo(views),
+        'outbound': C(f"{norm(r.get('path'))} → {r.get('to')}" for r in people_out(rows, H)).most_common(30),
     }
+
+def design_lab(people):
+    """The design lab (work/35): views by variant (a design page's meta variant, or the home page's ?design=) and
+    "I prefer this one" votes by design, one vote per tab per design however often it is clicked. dev.1's test design
+    zz-test is left out."""
+    ok = lambda d: d and d != 'zz-test'
+    views = collections.Counter(r.get('variant') for r in people if r['type'] == 'view' and ok(r.get('variant')))
+    votes = collections.Counter(d for _, d in {(r.get('sid'), r.get('design')) for r in people if r['type'] == 'vote' and ok(r.get('design'))})
+    rows = [{'design': d, 'views': views.get(d, 0), 'votes': votes.get(d, 0)} for d in sorted(set(views) | set(votes))]
+    return sorted(rows, key=lambda x: (-x['votes'], -x['views']))
+
+def people_out(rows, H):
+    """Clicks on links to other sites (obs.js 'out' events: the target's host and path, no query), readers only."""
+    return [r for r in rows if r.get('type') == 'out' and r.get('to') and (not r.get('site') or r['site'] in H) and r.get('agent') not in BOTS]
+
+def flows(views, H):
+    """The paths readers take (Dinis, 11 November 2026: "understand the paths that people are going ... the flows and
+    the most popular"): each tab's views in order, folded into counts. No tab id leaves this function."""
+    tabs = collections.defaultdict(list)
+    for r in views:
+        if r.get('sid'): tabs[r['sid']].append(r)
+    entries, exits, steps, depth, how, via_pages = (collections.Counter() for _ in range(6))
+    for rs in tabs.values():
+        rs.sort(key=lambda r: (r.get('ts') or '', r.get('_received') or 0))
+        ps = [norm(r['path']) for r in rs]
+        entries[ps[0]] += 1; exits[ps[-1]] += 1; depth[min(len(ps), 5)] += 1
+        for a, b in zip(ps, ps[1:]):
+            if a != b: steps[f'{a} → {b}'] += 1
+        first = rs[0]
+        how['shared link (?via=)' if first.get('via') else 'from another site' if first.get('ref') and first['ref'] not in H
+            else 'no referrer (an app, typed or bookmarked)'] += 1
+        if first.get('via'):
+            for p in set(ps): via_pages[f"{first['via']}: {p}"] += 1
+    n = len(tabs) or 1
+    return {'flows': {
+        'tabs': len(tabs),
+        'arrived': how.most_common(),
+        'entry_pages': entries.most_common(15),
+        'exit_pages': exits.most_common(15),
+        'steps': steps.most_common(25),
+        'pages_per_tab': [[('5+' if k == 5 else str(k)), depth[k]] for k in sorted(depth)],
+        'bounce_rate': round(100 * depth.get(1, 0) / n),
+        'via_reached': via_pages.most_common(20)}}
+
+def geo(views):
+    """For the map: countries (all), and towns with CITY_MIN views or more at their position (already rounded to 0.1
+    degree in the browser; averaged here). Smaller places are in their country only."""
+    towns = collections.defaultdict(list)
+    for r in views:
+        if r.get('city') and 'lat' in r: towns[(r['city'], r.get('country', ''))].append((r['lat'], r['lon']))
+    pts = [{'name': f'{c}, {k}', 'views': len(p), 'lat': round(sum(x for x, _ in p) / len(p), 1), 'lon': round(sum(y for _, y in p) / len(p), 1)}
+           for (c, k), p in towns.items() if len(p) >= CITY_MIN]
+    return {'towns': sorted(pts, key=lambda x: -x['views'])}
 
 def main():
     ap = argparse.ArgumentParser()

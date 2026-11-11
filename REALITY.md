@@ -1,6 +1,6 @@
 # What exists
 
-> Kept by conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), 11 November 2026, 12:24 UTC. A thing not listed here does not exist.
+> Kept by conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), 11 November 2026, 14:23 UTC. A thing not listed here does not exist.
 
 ## Exists
 
@@ -8,8 +8,8 @@
   - the brief (BRIEF.md, KICKOFF.md, BRIEF-CORRECTIONS.md);
   - the swarm (SWARM.md, JOIN.md, team/roster.json, team/ROSTER.md);
   - this file and CLAUDE.md.
-- **The site.** https://fringe.promptugal.news serves (fact, read 11:18 UTC): `/` and `/join/` answer 200, `/version.json` says v0.1.14 at commit a1f6b3d, `/api/v1/events.json` holds 69 events, and the home page carries the independence line. Deploy runs 12 to 14 succeeded.
-- **The board** `work/`: items 01 to 13. Done: 02 (researcher.fringe@). Claimed: 01, 07 and 12 (dev.fringe@), 04 (conductor.fringe@PrompTugal.indi), 03 (researcher.fringe@), 13 (conductor.fringe@PrompTugal.vicky). The rest are open.
+- **The site:** https://lisbontechfringe.com (Lisbon Tech Fringe) serves since about 12:57 UTC. The old address fringe.promptugal.news answers 404. Events, version and the swarm's activity are live: /version.json, /api/v1/events.json, /api/v1/activity.json.
+- **The board** `work/` (items 01 to 31) and `work/design/` (D1 to D23). Done: 02 (researcher.fringe@). Claimed: 01, 07 and 12 (dev.fringe@), 04 (conductor.fringe@PrompTugal.indi), 03 (researcher.fringe@), 13 (conductor.fringe@PrompTugal.vicky). The rest are open.
 - **The join page build** (work/12, from dev.fringe@, b5cf5a3): `admin/build/build.mjs` builds `/` and `/join/` into `_site/`, and `.github/workflows/pages.yml` deploys from `dev`.
 - **The pipeline** (work/01, dev.fringe@, on dev as 63a4c1a): `.github/workflows/deploy.yml` (replaces pages.yml), the gate `admin/build/validate.mjs` (OK locally), `admin/tools/release.sh`, series 0.1; the build makes `/api/v1/events.json`, `/llms.txt`, `version.json`, sitemap and 404. Events are published only from `data/events.json`, never the seed. The contract is `api/v1/README.md`.
 - **Events data** `data/events.json` (work/02, researcher.fringe@, on dev as 787af1f): 69 events, 11 to 14 November, each re-read at its public URL between 10:47 and 10:57 UTC; the home page builds Today and Tomorrow from it. Phone width checked at 390 px: no sideways scroll.
@@ -32,9 +32,12 @@
 - **The model router** (admin/tools/llm.mjs, OpenRouter): funded again at about 12:30 UTC; first use is a second-model check of events, capped at 5 USD a day.
 - **Dinis's person key** is in data/person-keys.json (work/26).
 
-## Does not exist yet
+- **Live since 13:21** (read 14:23 UTC): /designs/ (designs A, C, D), /abp/ and /guidance/ (observe mode), /data/ (SQL in the browser), /models/, /changes/<version>/ and /api/v1/releases.json, /o/ /f/ /r/ (the graph), /tip/ end to end (lane-tips), My day (☆), /storm/, The agentic team nav.
+- **Agents on the lead's account:** 15 (architect.1 and ontologist.1 on Opus added). 21 inboxes.
 
-- **The storm block on the live site** (work/07): built (`/storm.js`); not checked on the served page by this session. **The rest of the board:** communities, the graph, the submit form, channel drafts, the design.
-- **Six people's conductors:** Indi's (10:50 UTC, work/04) and Vicky's (11:05 UTC, work/13) have joined; Angelo, Silvio, Jose, Nimay, Daniela and Sarah are "not started".
-- **conductor.C.fringe@PrompTugal.dinis** in this repository: Dinis says it runs on another Claude account; it has no status, key or commit here.
-- **Keys in PrompTugal__News__Website board/keys.json** for the current lead, Indi's and Vicky's conductors and security.fringe@.
+## Does not exist yet (read 13:26 UTC)
+
+- **A public read key for the capture vault:** held until the captures leave out guest lists (security finding 21).
+- **The submit form** (work/06), `/api/v1/index.json`, and the redirect from fringe.promptugal.news.
+- **Three people's conductors:** Silvio and Daniela have not started. Jose's conductor joined at about 13:15 UTC.
+- **The swarm animation** (after D23's live numbers).

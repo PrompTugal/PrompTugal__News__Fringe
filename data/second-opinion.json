@@ -1,15 +1,32 @@
 {
  "about": "Second-opinion checks (work/20): a cheap open model read each event's public page and our entry. EVIDENCE only, never fact: no data changed from it. Verdicts only; no page or model text is kept in git. Mismatches are for work/13 and researcher.2 to re-read at source.",
- "run_at": "2026-11-11T12:54:13Z",
+ "run_at": "2026-11-11T14:26:30Z",
  "by": "dev.2.fringe@PrompTugal.dinis",
  "model": "tier check (see admin/tools/llm-models.json)",
- "hours": 4,
- "checked": 170,
- "errors": 1,
- "mismatches": 14,
- "cost_usd_this_run": 0.05215,
+ "hours": 2,
+ "checked": 166,
+ "errors": 3,
+ "mismatches": 17,
+ "cost_usd_this_run": 0.06826,
  "label": "evidence",
  "mismatched": [
+  {
+   "id": "2026-11-11-storm-summit-stormsummit-app",
+   "url": "https://stormsummit.app/",
+   "status": {
+    "v": "mismatch",
+    "says": "moved"
+   },
+   "start": {
+    "v": "match"
+   },
+   "end": {
+    "v": "unclear"
+   },
+   "place": {
+    "v": "match"
+   }
+  },
   {
    "id": "2026-11-11-roast-your-website",
    "url": "https://luma.com/m146luuy",
@@ -45,23 +62,6 @@
    }
   },
   {
-   "id": "2026-11-11-human-side-of-ai",
-   "url": "https://luma.com/r1ixujpv",
-   "status": {
-    "v": "match"
-   },
-   "start": {
-    "v": "match"
-   },
-   "end": {
-    "v": "match"
-   },
-   "place": {
-    "v": "mismatch",
-    "says": "Zoom"
-   }
-  },
-  {
    "id": "2026-11-11-human-performance-under-uncertainty",
    "url": "https://luma.com/xn30wgrj",
    "status": {
@@ -75,7 +75,7 @@
    },
    "place": {
     "v": "mismatch",
-    "says": "Room 12"
+    "says": "Room 12, Ground Floor"
    }
   },
   {
@@ -113,24 +113,6 @@
    }
   },
   {
-   "id": "2026-11-11-wet-summit-lisbon",
-   "url": "https://wetsummitlisbon.com/",
-   "status": {
-    "v": "match"
-   },
-   "start": {
-    "v": "mismatch",
-    "says": "2023-11-11T12:00"
-   },
-   "end": {
-    "v": "mismatch",
-    "says": "2023-11-11T18:00"
-   },
-   "place": {
-    "v": "match"
-   }
-  },
-  {
    "id": "2026-11-11-kuma-align-leadership-ai",
    "url": "https://luma.com/az8uos4e",
    "status": {
@@ -145,6 +127,23 @@
    },
    "place": {
     "v": "match"
+   }
+  },
+  {
+   "id": "2026-11-11-yorkseed-investor-pitch",
+   "url": "https://luma.com/bmu7tyec",
+   "status": {
+    "v": "mismatch",
+    "says": "cancelled"
+   },
+   "start": {
+    "v": "match"
+   },
+   "end": {
+    "v": "match"
+   },
+   "place": {
+    "v": "unclear"
    }
   },
   {
@@ -165,6 +164,41 @@
    }
   },
   {
+   "id": "2026-11-11-tech-startups-on-the-rooftop",
+   "url": "https://luma.com/rjh3pf7g",
+   "status": {
+    "v": "mismatch",
+    "says": "cancelled"
+   },
+   "start": {
+    "v": "match"
+   },
+   "end": {
+    "v": "match"
+   },
+   "place": {
+    "v": "match"
+   }
+  },
+  {
+   "id": "2026-11-11-frontier-founders-vcs-soiree",
+   "url": "https://luma.com/tjed8ali",
+   "status": {
+    "v": "match"
+   },
+   "start": {
+    "v": "match"
+   },
+   "end": {
+    "v": "mismatch",
+    "says": "2026-11-11T21:00"
+   },
+   "place": {
+    "v": "mismatch",
+    "says": "near Web Summit"
+   }
+  },
+  {
    "id": "2026-11-11-demonightlx",
    "url": "https://luma.com/2ofzih7t",
    "status": {
@@ -180,6 +214,24 @@
    "place": {
     "v": "mismatch",
     "says": "canopycommunity617"
+   }
+  },
+  {
+   "id": "2026-11-11-funders-founders-night-altair",
+   "url": "https://luma.com/h19cccc5",
+   "status": {
+    "v": "mismatch",
+    "says": "on"
+   },
+   "start": {
+    "v": "match"
+   },
+   "end": {
+    "v": "match"
+   },
+   "place": {
+    "v": "unclear",
+    "says": "2056 Clubhouse by VNTR"
    }
   },
   {
@@ -283,6 +335,13 @@
    "place": "match"
   },
   {
+   "id": "2026-11-11-storm-summit-stormsummit-app",
+   "status": "mismatch",
+   "start": "match",
+   "end": "unclear",
+   "place": "match"
+  },
+  {
    "id": "2026-11-11-founderlink-storm-summit-morning",
    "status": "match",
    "start": "match",
@@ -315,7 +374,7 @@
    "status": "match",
    "start": "match",
    "end": "match",
-   "place": "mismatch"
+   "place": "match"
   },
   {
    "id": "2026-11-11-human-performance-under-uncertainty",
@@ -353,13 +412,6 @@
    "place": "unclear"
   },
   {
-   "id": "2026-11-11-wet-summit-lisbon",
-   "status": "match",
-   "start": "mismatch",
-   "end": "mismatch",
-   "place": "match"
-  },
-  {
    "id": "2026-11-11-",
    "status": "match",
    "start": "match",
@@ -368,7 +420,7 @@
   },
   {
    "id": "2026-11-11-yorkseed-allocator-lunch",
-   "status": "match",
+   "status": "unclear",
    "start": "match",
    "end": "match",
    "place": "unclear"
@@ -396,17 +448,11 @@
   },
   {
    "id": "2026-11-11-redefining-investment-and-innovation-where-is-",
-   "status": "match",
-   "start": "match",
-   "end": "match",
-   "place": "unclear"
+   "error": "http_404"
   },
   {
    "id": "2026-11-11-side-events-guide-irl",
-   "status": "match",
-   "start": "match",
-   "end": "match",
-   "place": "match"
+   "error": "http_404"
   },
   {
    "id": "2026-11-11-ethical-ai-initiative",
@@ -445,7 +491,7 @@
   },
   {
    "id": "2026-11-11-yorkseed-investor-pitch",
-   "status": "unclear",
+   "status": "mismatch",
    "start": "match",
    "end": "match",
    "place": "unclear"
@@ -533,7 +579,7 @@
   },
   {
    "id": "2026-11-11-tech-startups-on-the-rooftop",
-   "status": "match",
+   "status": "mismatch",
    "start": "match",
    "end": "match",
    "place": "match"
@@ -556,8 +602,8 @@
    "id": "2026-11-11-frontier-founders-vcs-soiree",
    "status": "match",
    "start": "match",
-   "end": "match",
-   "place": "match"
+   "end": "mismatch",
+   "place": "mismatch"
   },
   {
    "id": "2026-11-11-lisboaux-web-summit-edition",
@@ -588,13 +634,6 @@
    "place": "mismatch"
   },
   {
-   "id": "2026-11-11-kcd-warmup-29",
-   "status": "match",
-   "start": "match",
-   "end": "match",
-   "place": "match"
-  },
-  {
    "id": "2026-11-11-open-mercato-night",
    "status": "match",
    "start": "match",
@@ -603,10 +642,10 @@
   },
   {
    "id": "2026-11-11-funders-founders-night-altair",
-   "status": "match",
+   "status": "mismatch",
    "start": "match",
    "end": "match",
-   "place": "match"
+   "place": "unclear"
   },
   {
    "id": "2026-11-11-european-tech-champions-italy-portugal",
@@ -621,13 +660,6 @@
    "start": "match",
    "end": "match",
    "place": "unclear"
-  },
-  {
-   "id": "2026-11-11-indiesummit-lisboa",
-   "status": "match",
-   "start": "match",
-   "end": "match",
-   "place": "match"
   },
   {
    "id": "2026-11-11-founderlink-storm-summit-evening",
@@ -735,6 +767,13 @@
    "place": "match"
   },
   {
+   "id": "2026-11-11-enchant-afterparty-drinks-with-vcs-founders",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "unclear"
+  },
+  {
    "id": "2026-11-12-web-summit-x-tech-talks-run-club-coffee",
    "status": "match",
    "start": "match",
@@ -778,7 +817,7 @@
   },
   {
    "id": "2026-11-12-female-founders-breakfast",
-   "status": "match",
+   "status": "unclear",
    "start": "match",
    "end": "match",
    "place": "match"
@@ -792,13 +831,6 @@
   },
   {
    "id": "2026-11-12-ovhcloud-breakfast-ufl",
-   "status": "match",
-   "start": "match",
-   "end": "match",
-   "place": "unclear"
-  },
-  {
-   "id": "2026-11-12-open-coffee-lisbon-53",
    "status": "match",
    "start": "match",
    "end": "match",
@@ -935,7 +967,7 @@
    "status": "match",
    "start": "match",
    "end": "match",
-   "place": "unclear"
+   "place": "match"
   },
   {
    "id": "2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-",
@@ -1275,7 +1307,7 @@
   },
   {
    "id": "2026-11-13-yorkseed-legal-compliance-clinic",
-   "status": "match",
+   "status": "unclear",
    "start": "match",
    "end": "match",
    "place": "unclear"
@@ -1448,14 +1480,5 @@
    "end": "match",
    "place": "match"
   }
- ],
- "worth_a_look": {
-  "label": "hypothesis (dev.2's reading of the model's verdicts; the model is evidence only)",
-  "ids": [
-   "2026-11-12-ai-engineers-lunch-web-summit-week",
-   "2026-11-12-yorkseed-cross-border-venture-salon",
-   "2026-11-11-elevon-czsk-community-night"
-  ],
-  "why": "page status differs from ours (cancelled / moved / on). The other 11 are likely model slips (wrong year, room names read as places, online events read as moved)."
- }
+ ]
 }

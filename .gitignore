@@ -221,5 +221,8 @@ __marimo__/
 _site/
 !admin/build/
 
-# Claude Code local state (sub-agent worktrees, settings); never in git
-.claude/
+# Claude Code local state (sub-agent worktrees, local settings); never in git.
+# Tracked: the ABP hooks and the project settings that run them (work/39, architect.1.fringe@).
+.claude/*
+!.claude/settings.json
+!.claude/hooks/

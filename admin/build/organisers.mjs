@@ -36,7 +36,7 @@ export function loadOrganisers(root, events) {
 export const organiserPath = (id) => `/organisers/#${encodeURIComponent(id)}`;
 
 // The offer is exactly work/23's draft. It stays marked a draft until Dinis approves it (set APPROVED to true then).
-const APPROVED = false;
+const APPROVED = true;   // Dinis approved the offer at 14:27 UTC (brief 15)
 export function organisersBody({ orgs }, esc, { eventPath, hasPage }) {
   const rows = orgs.map((o) => {
     const evs = [...o.events].sort((a, b) => String(a.start || a.date).localeCompare(String(b.start || b.date)));
