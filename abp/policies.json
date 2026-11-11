@@ -1,7 +1,7 @@
 {
   "about": "The Agent Behaviour Policies of Lisbon Fringe (lisbontechfringe.com, origin in admin/site.json; WS-215) as data: deny by default, one grant per role and agent, across this repository and the others the swarm touches. Ported from PrompTugal__News__Website board/abp/policies.json (abp@PrompTugal.dinis, v1.7.0, since 6 November 2026), not invented anew; built on RiskMandate's Agent Behaviour Policy and Licence to Operate (https://riskmandate.ai/agent-behaviour-policy.html). Read by the hooks (.claude/settings.json, .claude/hooks/abp.mjs) and by the gate's commit check (abp/tools/abp.mjs check). abp/<agent>.md is generated from this file (node abp/tools/abp.mjs build), never edited by hand. Kept by architect.1.fringe@PrompTugal.dinis (work/39); any relaxation, and any move towards enforcement, is Dinis's decision.",
   "version": "0.4.1",
-  "updated": "2026-11-11T23:42Z",
+  "updated": "2026-11-11T23:57Z",
   "operator": "Dinis Cruz",
   "kept_by": "architect.1.fringe@PrompTugal.dinis",
   "status": "DRAFT: grants proposed from the git log (data/architecture.json observed); Dinis and the lead review",
@@ -869,14 +869,19 @@
         "admin/tools/ptnews-index.mjs",
         "admin/tools/trace-event.mjs",
         "data/ptnews-index.json",
-        "api/v1/graph.json"
+        "api/v1/graph.json",
+        "admin/build/storm-trace-page.mjs",
+        "admin/build/storm-trace.js",
+        "admin/tools/storm-trace.mjs",
+        "data/storm-trace.json"
       ],
       "lane": "the graph and live views; SWARM.md also names 'the swarm's ABPs' in Angelo's lane: the architect proposes Angelo reviews these",
       "account": "Angelo's",
       "owns_shared": [
         "admin/build/graph.js",
         "admin/build/graph.mjs"
-      ]
+      ],
+      "note": "Storm-trace files mapped 2026-11-11T23:57Z: new files it created in its own lane (the traces), the mapping rule."
     },
     "designer.fringe@PrompTugal.angelo": {
       "role": "design",
@@ -1225,6 +1230,11 @@
         "round": 10,
         "file": "abp/reviews/2026-11-11-22.md",
         "at": "2026-11-11T22:52Z"
+      },
+      {
+        "round": 11,
+        "file": "abp/reviews/2026-11-11-23.md",
+        "at": "2026-11-11T23:57Z"
       }
     ]
   },

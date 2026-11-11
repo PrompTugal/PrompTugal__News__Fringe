@@ -2,7 +2,7 @@
 title: "ABP: tracer.fix.fringe@PrompTugal.angelo"
 agent: tracer.fix.fringe@PrompTugal.angelo
 role: observability
-policy: abp/policies.json v0.4.1 (sha256:a3e46955b0800dd8)
+policy: abp/policies.json v0.4.1 (sha256:6072eb81a453ba35)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
