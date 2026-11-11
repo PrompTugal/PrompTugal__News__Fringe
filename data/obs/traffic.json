@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-11T14:29Z",
+ "generated": "2026-11-11T14:38Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 216,
-  "reads": 193,
-  "tabs": 109,
+  "views": 226,
+  "reads": 202,
+  "tabs": 114,
   "countries": 13,
-  "shares": 85,
-  "bots": 445,
+  "shares": 93,
+  "bots": 493,
   "crawler_tabs": 1,
-  "agent_runs": 41,
-  "agent_runs_signed": 40
+  "agent_runs": 42,
+  "agent_runs_signed": 41
  },
  "by_hour": [
   [
@@ -212,13 +212,13 @@
   ],
   [
    "2026-11-11 14:00",
-   31
+   41
   ]
  ],
  "by_page": [
   [
    "/",
-   99
+   103
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
@@ -226,7 +226,7 @@
   ],
   [
    "/now/",
-   13
+   15
   ],
   [
    "/join/",
@@ -281,6 +281,10 @@
    2
   ],
   [
+   "/e/2026-11-11-kuma-align-leadership-ai/",
+   2
+  ],
+  [
    "/e/2026-11-11-cisco-automation-to-autonomy/",
    2
   ],
@@ -326,10 +330,6 @@
   ],
   [
    "/e/2026-11-11-startup-legal-roast/",
-   1
-  ],
-  [
-   "/e/2026-11-11-kuma-align-leadership-ai/",
    1
   ],
   [
@@ -403,13 +403,25 @@
   [
    "/e/2026-11-11-bridging-capital-across-borders/",
    1
+  ],
+  [
+   "/e/2026-11-11-ai-spam-problem/",
+   1
+  ],
+  [
+   "/e/2026-11-11-frontier-founders-vcs-soiree/",
+   1
+  ],
+  [
+   "/e/2026-11-11-demonightlx/",
+   1
   ]
  ],
  "reading": [
   [
    "/",
-   86,
-   30,
+   89,
+   29,
    12
   ],
   [
@@ -420,9 +432,9 @@
   ],
   [
    "/now/",
-   10,
-   82,
-   40
+   12,
+   69,
+   41
   ],
   [
    "/organisers/",
@@ -675,24 +687,48 @@
    1,
    25,
    55
+  ],
+  [
+   "/e/2026-11-11-kuma-align-leadership-ai/",
+   1,
+   11,
+   0
+  ],
+  [
+   "/e/2026-11-11-frontier-founders-vcs-soiree/",
+   1,
+   8,
+   82
+  ],
+  [
+   "/e/2026-11-11-ai-spam-problem/",
+   1,
+   13,
+   100
+  ],
+  [
+   "/e/2026-11-11-canopy-post-demo-night-drinks/",
+   1,
+   0,
+   0
   ]
  ],
  "by_country": [
   [
    "Portugal",
-   139
+   143
   ],
   [
    "Estonia",
    21
   ],
   [
-   "United Kingdom",
-   12
+   "Germany",
+   16
   ],
   [
-   "Germany",
-   11
+   "United Kingdom",
+   13
   ],
   [
    "United States",
@@ -734,7 +770,7 @@
  "by_city": [
   [
    "Lisbon, Portugal",
-   84
+   86
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -746,46 +782,46 @@
   ],
   [
    "Frankfurt am Main, Germany",
-   7
+   12
   ],
   [
    "(places under 5 views, in their country above)",
-   58
+   61
   ]
  ],
  "by_referrer": [],
  "by_host": [
   [
    "lisbontechfringe.com",
-   177
+   187
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 465,
+ "other_hosts_views": 506,
  "by_via": [
   [
    "whatsapp",
-   85
+   93
   ]
  ],
  "via_detail": {
   "whatsapp": {
-   "views": 85,
-   "tabs": 45,
+   "views": 93,
+   "tabs": 48,
    "countries": 8
   }
  },
  "by_screen": [
   [
    "phone",
-   115
+   123
   ],
   [
    "desktop",
-   97
+   99
   ],
   [
    "tablet",
@@ -806,16 +842,16 @@
    4
   ],
   [
+   "design.3.fringe@PrompTugal.dinis",
+   4
+  ],
+  [
    "design.2.fringe@PrompTugal.dinis",
    4
   ],
   [
    "ontologist.1.fringe@PrompTugal.dinis",
    4
-  ],
-  [
-   "design.3.fringe@PrompTugal.dinis",
-   3
   ],
   [
    "conductor.fringe@PrompTugal.jose",
@@ -843,21 +879,21 @@
   ]
  ],
  "flows": {
-  "tabs": 109,
+  "tabs": 114,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    64
+    66
    ],
    [
     "shared link (?via=)",
-    45
+    48
    ]
   ],
   "entry_pages": [
    [
     "/",
-    81
+    85
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
@@ -865,7 +901,7 @@
    ],
    [
     "/now/",
-    3
+    4
    ],
    [
     "/me/",
@@ -919,7 +955,7 @@
   "exit_pages": [
    [
     "/",
-    62
+    66
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
@@ -1024,6 +1060,10 @@
     2
    ],
    [
+    "/now/ → /e/2026-11-11-kuma-align-leadership-ai/",
+    2
+   ],
+   [
     "/join/ → /traffic/",
     2
    ],
@@ -1068,10 +1108,6 @@
     1
    ],
    [
-    "/now/ → /e/2026-11-11-kuma-align-leadership-ai/",
-    1
-   ],
-   [
     "/e/2026-11-11-wet-summit-lisbon/ → /e/2026-11-11-aubay-the-next-move/",
     1
    ],
@@ -1083,7 +1119,7 @@
   "pages_per_tab": [
    [
     "1",
-    73
+    78
    ],
    [
     "2",
@@ -1102,11 +1138,11 @@
     8
    ]
   ],
-  "bounce_rate": 67,
+  "bounce_rate": 68,
   "via_reached": [
    [
     "whatsapp: /",
-    45
+    48
    ],
    [
     "whatsapp: /now/",
@@ -1125,11 +1161,11 @@
     2
    ],
    [
-    "whatsapp: /e/2026-11-11-yorkseed-allocator-lunch/",
-    1
+    "whatsapp: /e/2026-11-11-kuma-align-leadership-ai/",
+    2
    ],
    [
-    "whatsapp: /e/2026-11-11-kuma-align-leadership-ai/",
+    "whatsapp: /e/2026-11-11-yorkseed-allocator-lunch/",
     1
    ],
    [
@@ -1145,7 +1181,15 @@
     1
    ],
    [
+    "whatsapp: /e/2026-11-11-ai-horizon-conference/",
+    1
+   ],
+   [
     "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
+    1
+   ],
+   [
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ],
    [
@@ -1153,11 +1197,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-ai-horizon-conference/",
-    1
-   ],
-   [
-    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    "whatsapp: /e/2026-11-11-life-with-artificials-kickoff/",
     1
    ],
    [
@@ -1166,10 +1206,6 @@
    ],
    [
     "whatsapp: /e/2026-11-11-lisboaux-web-summit-edition/",
-    1
-   ],
-   [
-    "whatsapp: /e/2026-11-11-life-with-artificials-kickoff/",
     1
    ],
    [
@@ -1191,7 +1227,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 84,
+    "views": 86,
     "lat": 38.7,
     "lon": -9.1
    },
@@ -1209,7 +1245,7 @@
    },
    {
     "name": "Frankfurt am Main, Germany",
-    "views": 7,
+    "views": 12,
     "lat": 50.1,
     "lon": 8.7
    }
@@ -1270,6 +1306,22 @@
   ],
   [
    "/e/2026-11-11-bridging-capital-across-borders/ → luma.com/148l175b",
+   1
+  ],
+  [
+   "/e/2026-11-11-ai-spam-problem/ → luma.com/samqquwk",
+   1
+  ],
+  [
+   "/e/2026-11-11-kuma-align-leadership-ai/ → luma.com/az8uos4e",
+   1
+  ],
+  [
+   "/e/2026-11-11-demonightlx/ → luma.com/2ofzih7t",
+   1
+  ],
+  [
+   "/e/2026-11-11-frontier-founders-vcs-soiree/ → luma.com/tjed8ali",
    1
   ]
  ]
