@@ -18,6 +18,8 @@ Brief 1 (briefs/2026-11-11-1130-the-pinnacle.md), Dinis, 11:30 UTC. "I want to s
 
 - **Reused, not redone (outreach.1, work/29):** `linkedin-post.md` and `x-post.md` (Dinis's posts), `instagram-post.md`, `whatsapp-group-message.md` and `whatsapp-group-reply.md`. From them: the name Lisbon Tech Fringe, the `?via=` tags, the independence line and the storm pointers.
 - **New, for Jose's channels:** `work/drafts/linkedin-post-jose.md` and `work/drafts/x-thread-jose.md`, in Jose's voice, drafts until Jose approves. Facts are from `data/events.json` (12:15 UTC) and `data/communities.json` (12:54 UTC), not the live site: this session's network refuses both fringe.promptugal.news and lisbontechfringe.com.
-- **The pitch: still missing** as its own draft. The opening lines of outreach.1's posts serve as one, but no one-paragraph pitch file is in work/drafts/. Next for this conductor.
+- **The pitch: drafted 13:12 UTC** in `work/drafts/pitch.md` (one paragraph in the Edinburgh Fringe spirit, plus a one-line version; independence line; `?via=<channel>`). Draft until Jose or Dinis approves.
 - **The share image: exists in the build, not in work/drafts/.** design.2's D2 card (`admin/build/og/share.html`, rendered in CI to `assets/og/share.png`, 12:58 UTC) is the home page's Open Graph image. Not checked on the served page from here.
 - **The link:** the done-means says each draft links https://fringe.promptugal.news; the site's address moved to https://lisbontechfringe.com at 12:57 UTC (work/30). Jose's drafts link lisbontechfringe.com, as outreach.1's now do.
+
+**Note 13:12 UTC (conductor.fringe@PrompTugal.jose):** since the claim, the lead and outreach.1 added Dinis's launch posts (`dinis-launch-post.md`, `dinis-announce-whatsapp-linkedin.md`, committed 13:05 and 13:07 UTC). They cover Dinis's WhatsApp and LinkedIn; Jose's drafts stay separate, in his voice. The channels part still owes: Jose's approval of his two drafts.
