@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-11T23:38Z",
+ "generated": "2026-11-11T23:54Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 527,
-  "reads": 455,
-  "tabs": 237,
+  "views": 529,
+  "reads": 457,
+  "tabs": 238,
   "countries": 19,
   "shares": 188,
-  "bots": 1734,
+  "bots": 1736,
   "crawler_tabs": 1,
-  "agent_runs": 262,
-  "agent_runs_signed": 238
+  "agent_runs": 265,
+  "agent_runs_signed": 241
  },
  "by_hour": [
   [
@@ -212,13 +212,13 @@
   ],
   [
    "2026-11-11 23:00",
-   21
+   23
   ]
  ],
  "by_page": [
   [
    "/",
-   210
+   211
   ],
   [
    "/now/",
@@ -425,6 +425,10 @@
    2
   ],
   [
+   "/e/2026-11-12-healthcare-re-imagined-by-ai/",
+   2
+  ],
+  [
    "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
    1
   ],
@@ -557,10 +561,6 @@
    1
   ],
   [
-   "/e/2026-11-12-healthcare-re-imagined-by-ai/",
-   1
-  ],
-  [
    "/e/2026-11-12-ptw-classroom-portuguese-for-tech-life-meet-gr/",
    1
   ]
@@ -568,7 +568,7 @@
  "reading": [
   [
    "/",
-   165,
+   166,
    28,
    13
   ],
@@ -849,6 +849,12 @@
    0
   ],
   [
+   "/e/2026-11-12-healthcare-re-imagined-by-ai/",
+   2,
+   52,
+   27
+  ],
+  [
    "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
    1,
    205,
@@ -1077,12 +1083,6 @@
    100
   ],
   [
-   "/e/2026-11-12-healthcare-re-imagined-by-ai/",
-   1,
-   97,
-   54
-  ],
-  [
    "/e/2026-11-12-ptw-classroom-portuguese-for-tech-life-meet-gr/",
    1,
    11,
@@ -1092,7 +1092,7 @@
  "by_country": [
   [
    "Portugal",
-   339
+   341
   ],
   [
    "United Kingdom",
@@ -1170,7 +1170,7 @@
  "by_city": [
   [
    "Lisbon, Portugal",
-   256
+   257
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -1222,20 +1222,20 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   80
+   81
   ]
  ],
  "by_referrer": [
   [
    "lnkd.in",
-   6
-  ],
-  [
-   "promptugal.news",
-   2
+   7
   ],
   [
    "www.google.com",
+   3
+  ],
+  [
+   "promptugal.news",
    2
   ],
   [
@@ -1250,14 +1250,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   488
+   490
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 2800,
+ "other_hosts_views": 2888,
  "by_via": [
   [
    "whatsapp",
@@ -1296,7 +1296,7 @@
   ],
   [
    "phone",
-   244
+   246
   ],
   [
    "tablet",
@@ -1305,12 +1305,12 @@
  ],
  "agents": [
   [
-   "elastic.1.fringe@PrompTugal.dinis",
+   "design.4.fringe@PrompTugal.dinis",
    23
   ],
   [
-   "design.4.fringe@PrompTugal.dinis",
-   22
+   "elastic.1.fringe@PrompTugal.dinis",
+   23
   ],
   [
    "design.1.fringe@PrompTugal.dinis",
@@ -1345,12 +1345,12 @@
    13
   ],
   [
-   "capture.1.fringe@PrompTugal.dinis",
+   "conductor.fringe@PrompTugal.indi",
    11
   ],
   [
-   "conductor.fringe@PrompTugal.indi",
-   10
+   "capture.1.fringe@PrompTugal.dinis",
+   11
   ],
   [
    "dev.1.fringe@PrompTugal.dinis",
@@ -1373,6 +1373,10 @@
    8
   ],
   [
+   "swarm.1.fringe@PrompTugal.dinis",
+   5
+  ],
+  [
    "usability.1.fringe@PrompTugal.dinis",
    4
   ],
@@ -1387,14 +1391,10 @@
   [
    "grafana.1.fringe@PrompTugal.dinis",
    4
-  ],
-  [
-   "swarm.1.fringe@PrompTugal.dinis",
-   4
   ]
  ],
  "flows": {
-  "tabs": 237,
+  "tabs": 238,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
@@ -1406,13 +1406,13 @@
    ],
    [
     "from another site",
-    4
+    5
    ]
   ],
   "entry_pages": [
    [
     "/",
-    153
+    154
    ],
    [
     "/now/",
@@ -1474,7 +1474,7 @@
   "exit_pages": [
    [
     "/",
-    110
+    111
    ],
    [
     "/now/",
@@ -1642,7 +1642,7 @@
    ],
    [
     "2",
-    34
+    35
    ],
    [
     "3",
@@ -1762,7 +1762,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 256,
+    "views": 257,
     "lat": 38.7,
     "lon": -9.1
    },
