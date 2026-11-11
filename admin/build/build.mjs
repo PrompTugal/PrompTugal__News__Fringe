@@ -9,6 +9,9 @@ const out = join(root, '_site');
 const read = (p) => readFileSync(join(root, p), 'utf8');
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const REPO = 'https://github.com/PrompTugal/PrompTugal__News__Fringe';
+const SITE = 'https://fringe.promptugal.news/';
+const VERSION = process.env.VERSION || 'local';   // CI owns the number: v<admin/series.txt>.<run>; nobody writes it
+const BUILT = new Date().toISOString();
 
 // --- inputs --------------------------------------------------------------
 const roster = JSON.parse(read('team/roster.json'));
@@ -33,6 +36,12 @@ function frontMatter(text) {
 const board = readdirSync(join(root, 'work'))
   .filter((f) => /^\d+.*\.md$/.test(f)).sort()
   .map((f) => ({ file: f, ...frontMatter(read(`work/${f}`)) }));
+
+// Events: only data/events.json, which holds events re-read at their URL (work/02). The seed is never published as is.
+const eventsFile = existsSync(join(root, 'data/events.json')) ? JSON.parse(read('data/events.json')) : null;
+const events = (eventsFile?.events || []).filter((e) => e.name && /^https:\/\//.test(e.url || '') && e.read_at);
+const today = BUILT.slice(0, 10);
+const tomorrow = new Date(Date.parse(today) + 86400000).toISOString().slice(0, 10);
 
 const join_md = read('JOIN.md');
 const prompt = (join_md.split(/\n---\n/)[1] || '').trim();
@@ -60,8 +69,25 @@ const page = (title, body, desc) => `<!doctype html><html lang="en"><head><meta 
 <meta name="description" content="${esc(desc)}"><style>${css}</style></head><body>
 <header><nav><strong><a href="/">Lisbon Fringe</a></strong><a href="/join/">Join the team</a><a href="https://storm-charles.promptugal.news">Storm Charles</a></nav></header>
 <main><p class="ind">${INDEPENDENCE}</p>${body}</main>
-<footer class="muted">${INDEPENDENCE}<br>Built from <a href="${REPO}">the repository</a> on ${new Date().toISOString().slice(0, 16)}Z.</footer>
+<footer class="muted">${INDEPENDENCE}<br>Built from <a href="${REPO}">the repository</a> at ${BUILT.slice(0, 16).replace('T', ' ')} UTC · <a href="/version.json">${esc(VERSION)}</a>.</footer>
 </body></html>`;
+
+// --- events -------------------------------------------------------------
+const STATUS = { on: 'On', moved: 'Moved', cancelled: 'Cancelled', online: 'Online', unknown: 'Unknown' };
+function eventCard(e) {
+  const when = [e.start && e.start.slice(11, 16), e.end && e.end.slice(11, 16)].filter(Boolean).join('–');
+  return `<div class="card"><a href="${esc(e.url)}"><strong>${esc(e.name)}</strong></a><span class="tag ${esc(e.status)}">${esc(STATUS[e.status] || 'Unknown')}</span>
+<div class="muted">${esc([when && when + ' UTC', e.place, e.organiser].filter(Boolean).join(' · '))}</div>
+${e.join ? `<div>How to join: ${esc(e.join)}</div>` : ''}${e.storm_note ? `<div class="muted">Storm: ${esc(e.storm_note)}</div>` : ''}
+<div class="muted">Source read ${esc(String(e.read_at).slice(0, 16).replace('T', ' '))} UTC</div></div>`;
+}
+function eventsHtml() {
+  if (!events.length) return `<h2>Events</h2><p class="muted">The event listings arrive here once each one has been checked at its public source.</p>`;
+  const day = (d, label) => { const list = events.filter((e) => e.date === d).sort((a, b) => String(a.start).localeCompare(String(b.start)));
+    return `<h2>${label}, ${d}</h2>` + (list.map(eventCard).join('') || '<p class="muted">Nothing checked yet for this day.</p>'); };
+  const later = events.filter((e) => e.date > tomorrow).length;
+  return day(today, 'Today') + day(tomorrow, 'Tomorrow') + (later ? `<p class="muted">${later} more later this week in <a href="/api/v1/events.json">the data</a>.</p>` : '');
+}
 
 // --- / -------------------------------------------------------------------
 const home = page('Lisbon Fringe', `
@@ -69,8 +95,7 @@ const home = page('Lisbon Fringe', `
 <p>An independent guide to the alternative, community and side events around Web Summit Lisbon this week: what is on, where, when and how to join.</p>
 <div class="card"><strong>The storm.</strong> For weather warnings and what moved because of Storm Charles, see
 <a href="https://storm-charles.promptugal.news">storm-charles.promptugal.news</a>, <a href="https://www.ipma.pt/">IPMA</a> and <a href="https://www.prociv.gov.pt/">ANEPC</a>. This site is not a warning service.</div>
-<h2>Events</h2>
-<p class="muted">The event listings arrive here once each one has been checked at its public source.</p>
+${eventsHtml()}
 <h2>Build it with us</h2>
 <p>Lisbon Fringe is built by a team where everyone runs one conductor. <a href="/join/">Bring yours in five minutes</a>.</p>
 `, 'An independent guide to the side events around Web Summit Lisbon.');
@@ -115,5 +140,12 @@ mkdirSync(join(out, 'join'), { recursive: true });
 writeFileSync(join(out, 'index.html'), home);
 writeFileSync(join(out, 'join', 'index.html'), joinPage);
 writeFileSync(join(out, 'CNAME'), 'fringe.promptugal.news\n');
+writeFileSync(join(out, '404.html'), page('Not found', '<h1>Not found</h1><p><a href="/">Lisbon Fringe</a> · <a href="/join/">Join</a></p>', 'Page not found.'));
+mkdirSync(join(out, 'api', 'v1'), { recursive: true });
+writeFileSync(join(out, 'api', 'v1', 'events.json'), JSON.stringify({ about: 'Lisbon Fringe events, each re-read at its public URL (read_at, UTC). Independent of Web Summit.', site: SITE, version: VERSION, built_at: BUILT, events }, null, 2) + '\n');
+writeFileSync(join(out, 'llms.txt'), `# Lisbon Fringe\n\n> An independent guide to the alternative, community and side events around Web Summit Lisbon, 9 to 15 November 2026. Independent of Web Summit; for anything official see the organisers' site. Not a warning service: for the storm see https://storm-charles.promptugal.news, IPMA and ANEPC.\n\n- [Events (JSON)](${SITE}api/v1/events.json): each event with its source URL and the time it was read\n- [Join the team](${SITE}join/)\n- [Repository](${REPO})\n`);
+writeFileSync(join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n<url><loc>${SITE}</loc></url>\n<url><loc>${SITE}join/</loc></url>\n</urlset>\n`);
+writeFileSync(join(out, 'version.json'), JSON.stringify({ version: VERSION, commit: process.env.GITHUB_SHA || '', pushed_at: process.env.PUSHED_AT || '', built_at: BUILT }, null, 2) + '\n');
+writeFileSync(join(out, 'version.txt'), VERSION + '\n');
 writeFileSync(join(out, '.nojekyll'), '');
-console.log(`built _site/: /, /join/ (${roster.people.length} people, ${board.length} board items, ${Object.keys(status).length} status files)`);
+console.log(`built _site/ ${VERSION}: /, /join/, ${events.length} events (${roster.people.length} people, ${board.length} board items, ${Object.keys(status).length} status files)`);
