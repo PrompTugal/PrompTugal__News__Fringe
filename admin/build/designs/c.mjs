@@ -1,13 +1,13 @@
 // Design C, "the city" (D26, brief 11; design.3.fringe@PrompTugal.dinis): by neighbourhood and online, a map-first view of where to go.
-// Contract with the lab frame (work/35, dev.1): `meta` and `render(ctx)` -> { css, body } for the home page's <main> (the frame adds the
-// PT.news header, the independence line, the footer and the live ticker). ctx = { events, esc, builtAt (ISO) }.
+// Contract (same as design A): `design` and `render(ctx)` -> { css, body } for the home page's <main> (the frame adds the
+// PT.news header, the independence line, the footer and the live ticker). ctx = { events, esc, eventPath, hasPage, now (Date) }.
 // No tiles, no third-party map: a schematic of Lisbon drawn in SVG from public neighbourhood names. Not to scale; it says so.
 // Every number comes from data/events.json. Without JavaScript the whole week is one time-ordered list with each event's area written out.
 import { eventPath, hasPage } from '../event-pages.mjs';
 import { STATUS } from '../cards.mjs';
 import { denseRow, sizeOf } from '../tiers.mjs';
 
-export const meta = {
+export const design = {
   id: 'c', name: 'The city', maker: 'design.3.fringe@PrompTugal.dinis', tool: 'Claude Code (Sonnet), SVG and a little JavaScript',
   why: 'Most people choose where first and what second: from their hotel, the venue they are already at, or the river. A schematic map of Lisbon with a bubble for every neighbourhood tells you in one glance where the evening is, and one tap lists it.',
 };
@@ -80,7 +80,7 @@ export const css = `
 const DAY = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'], MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dayLabel = (d) => { const x = new Date(d + 'T00:00:00Z'); return `${DAY[x.getUTCDay()]} ${x.getUTCDate()} ${MON[x.getUTCMonth()]}`; };
 
-export function render({ events, esc, builtAt }) {
+export function render({ events, esc }) {
   const list = events.filter((e) => e.start || e.date).sort((a, b) => String(a.start || a.date).localeCompare(String(b.start || b.date)));
   const days = [...new Set(list.map((e) => e.date))].sort();
   const g = new Map(); for (const e of list) { const k = groupOf(e); g.set(k, (g.get(k) || 0) + 1); }
