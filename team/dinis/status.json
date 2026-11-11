@@ -1,9 +1,9 @@
 {
   "by": "conductor.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T12:39Z",
+  "updated": "2026-11-11T13:26Z",
   "person": "dinis",
   "role": "head",
-  "state": "wake 12:24: 13 agents on the lead's account online; the dashboard (/dashboard/) is the control centre; traffic counted (13 reader views by 12:07); OpenRouter account out of credit",
+  "state": "wake 13:26: live at lisbontechfringe.com; ~18 agents active in the last hour (78 commits, 55 pushes); 17 inboxes; captures held back for privacy",
   "conductor": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq, the lead since 11:14 UTC at Dinis's word; it replaces session_01Kw9UwBGQe9BhMCbDw28aDA)",
   "agents": [
     {
@@ -127,6 +127,11 @@
     "reviewing what lands on dev; routing Dinis's briefs"
   ],
   "done": [
+    "13:26: brought onto dev: security.fringe@'s 11:30 and 12:30 reviews, fable.fringe@'s second note, dev.fringe@'s board update, researcher.fringe@'s sources.md and places.json",
+    "13:26: the capture vault's read key is held back (finding 21: guest lists); capture.1 told to crop them, allow-list hosts, delete, and set a retention; brief 7 corrected",
+    "13:26: vault credentials re-sealed to Dinis's person key (admin/obs/sealed/lead.dinis.json, admin/capture-sealed/u4f3pl6f.dinis.json; finding 24)",
+    "13:26: inboxes for design.1 to design.4, researcher.2, outreach.1 and Jose's conductor (17 in all)",
+    "the site's address switched to https://lisbontechfringe.com (admin/site.json); the live swarm numbers are on every page (D23)",
     "12:39: OpenRouter funded by Dinis (265 bought, 165.33 used; a test call returned 200); dev.2 runs the router's first use: a second-model check of re-read events, 5 USD/day cap",
     "Dinis's person key (person.dinis, signing sha256:9795c17dbd5ba02a) in data/person-keys.json, checked; a signed message from /dashboard/ is his word",
     "wake 12:24: inboxes issued for dev.1, dev.2 and capture.1 (10 in all); data/inbox-counts.json refreshed; work/27's paths fixed to fit the gate (the gate is unchanged); ROLES.md step 6 gains agent-log.mjs and the three-command keygen tip; each agent messaged",
@@ -158,13 +163,10 @@
     "tell conductor@PrompTugal.dinis the URL so pt.news links it; tell incident.conductor@web-summit.dinis that we read the storm site's /api/v1/"
   ],
   "asks": [
-    "Dinis: approve the organiser offer (work/23, work/drafts/organiser-note.md) and outreach.1's 4 channel drafts in work/drafts/; you send them, no agent does.",
-    "Dinis: 8 agents could not make a session key (their sandboxes refused keygen or pip): design.1 to design.4, researcher.2, outreach.1, usability.1, researcher.fringe@. They work and commit without one, but have no inbox. If you want them signed, allow `node pki-agent.mjs keygen` and `pip install sgit-ai` in those sessions.",
-    "Dinis: one key register? Six agents ask that their keys go into PrompTugal__News__Website board/keys.json, whose rules say each agent commits its own entry. Say 'data/keys.json is the register for WS-215', or that the lead may add them there.",
-    "Dinis: send https://fringe.promptugal.news/join/ to silvio, jose and daniela.",
-    "Dinis: the three agents on the other account (researcher.fringe@, security.fringe@, dev.fringe@) still name the old lead in their wakes; point them at session_01Kw9UwCFpT9ihNBcQFxkomq or stop them. security.fringe@ last reviewed at 10:48.",
-    "Dinis (security.fringe@): protect main (pull requests only) and limit the github-pages environment to dev.",
-    "Dinis: what is conductor.C.fringe@PrompTugal.dinis's job? Once it has a key it gets an inbox.",
-    "Dinis: /traffic/ is public (counts only), as on pt.news; say if you want it unlisted."
+    "Dinis (1, privacy): the geo lookup. Every page sends each reader's IP address to ipapi.co or ipwho.is unless they opt out (security finding 20; GDPR wants consent in Lisbon). The lead recommends dropping it and taking the country from the browser's time zone. pt.news runs the same counter, so it is your call: drop, make it opt-in, or keep.",
+    "Dinis (2): approve and send the launch post (work/drafts/dinis-launch-post.md) and outreach.1's drafts. Tonight's events start at 17:00 UTC.",
+    "Dinis (3): the redirect from fringe.promptugal.news. Links already shared there answer 404. An org admin creates a small Pages repository for that address with dev.1's admin/redirect/. Yes, and who?",
+    "Dinis (4): the three agents on the other account still name the old lead in their wakes (researcher.fringe@ trig_015p3eeHQJ3JEXzHdYgHaUb7, security.fringe@ trig_01XhtAq86wTjp2bLqwZMkwez, dev.fringe@ trig_01Wdx83QuHtzcqh48DimkhMj). Point them at session_01Kw9UwCFpT9ihNBcQFxkomq; security's reviews are the ones that matter.",
+    "Dinis (5): protect main (pull requests only) and limit the github-pages environment to dev (security findings 1 and 2, open since 10:48)."
   ]
 }

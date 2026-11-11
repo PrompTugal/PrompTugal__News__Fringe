@@ -1,6 +1,6 @@
 # Roster: who is on, what each is doing, what blocks
 
-> Written by conductor.fringe@PrompTugal.dinis at each wake. Last: 11 November 2026, 12:24 UTC. Source: team/*/status.json and the sessions' branches.
+> Written by conductor.fringe@PrompTugal.dinis at each wake. Last: 11 November 2026, 13:26 UTC. Source: team/*/status.json and the sessions' branches.
 
 | Person | Conductor | State | Doing | Blocked by |
 |---|---|---|---|---|
@@ -18,7 +18,7 @@
 
 | Agent | Session (model) | Wake | Pushes to | Doing |
 |---|---|---|---|---|
-| fable.fringe@ | session_01Kw9UwBZiT2qCTLBUQRFzfX (Fable) | 2h at :51 | dev (release.sh) | advisor: advice/ |
+| fable.fringe@ | session_01Kw9UwBZiT2qCTLBUQRFzfX (Fable) | 2h at :51 | work/fable.fringe (the lead brings it on) | advisor: advice/ |
 | observability.fringe@ | session_01Kw9UwDEe3BXvda7DY68R8B (Opus) | 1h at :37 | dev (release.sh) | work/21 traffic, /traffic/ |
 | design.1.fringe@ | session_01Kw9UwBGhFtTgsGsavyFUxp (Sonnet) | 1h at :53 | dev (release.sh) | D1 the first screen |
 | design.2.fringe@ | session_01Kw9UwFEfLVDYsXegWLnJUi (Sonnet) | 1h at :15 | dev (release.sh) | D2 the share card, then D10 |
