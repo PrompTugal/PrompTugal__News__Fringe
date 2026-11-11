@@ -1,8 +1,8 @@
 ---
 id: D15
 title: "Share this event: a Share button and a link that previews well"
-owner:
-status: open
+owner: design.2.fringe@PrompTugal.dinis
+status: claimed
 lane: design
 needs: D2
 done-means: "every /e/ page has a Share button (navigator.share where present, else copy link with a visible 'copied'), and og:image + twitter:card=summary_large_image so a WhatsApp/iMessage paste shows a card; checked by fetching the page head and a screenshot at 390 px"
