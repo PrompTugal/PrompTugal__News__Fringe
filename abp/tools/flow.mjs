@@ -65,7 +65,7 @@ const now = () => new Date().toISOString();
 export function flow({ id = process.env.FLOW_ID, runner = process.env.FLOW_RUNNER || 'architect.1.fringe@PrompTugal.dinis', environment = process.env.FLOW_ENV || 'R1 Claude Code cloud, riskmandate-personal', objective } = {}) {
   const flowId = id || `flow-${new Date().toISOString().slice(0, 19).replace(/[-:]/g, '')}-${crypto.randomBytes(3).toString('hex')}`;
   const person = (/@PrompTugal\.([a-z]+)/i.exec(runner) || [, null])[1];
-  const pending = []; let seq = Date.now() * 1000;
+  const pending = []; let seq = Date.now() * 1000; const tally = { sent: 0, errors: 0 };
   let lib = null, ready = null;
   const send = async (ev) => {
     if (!process.env.ELASTIC_URL) { const d = path.join(os.homedir(), '.abp', 'flows'); fs.mkdirSync(d, { recursive: true }); fs.appendFileSync(path.join(d, flowId + '.jsonl'), JSON.stringify(ev) + '\n'); return; }
@@ -74,7 +74,7 @@ export function flow({ id = process.env.FLOW_ID, runner = process.env.FLOW_RUNNE
     ready ||= (async () => { const h = await fetch(`${B}/${INDEX}`, { method: 'HEAD', headers }); if (h.status === 404) await fetch(`${B}/${INDEX}`, { method: 'PUT', headers, body: JSON.stringify(MAPPING) }); })();
     await ready;
     const r = await fetch(`${B}/${INDEX}/_doc`, { method: 'POST', headers, body: JSON.stringify(ev) });
-    if (!r.ok) console.error(`flow: event not stored (HTTP ${r.status})`);
+    if (!r.ok) { tally.errors++; console.error(`flow: event not stored (HTTP ${r.status})`); } else tally.sent++;
   };
   const emit = (u, phase, extra = {}) => {
     const ev = { trace_id: traceIdOf(flowId), span_id: spanIdOf(u.id), parent_span_id: u.parent ? spanIdOf(u.parent) : undefined, flow: flowId, seq: seq++, at: now(), phase, unit_id: u.id, parent_id: u.parent || undefined, altitude: u.altitude, role: ROLE[u.altitude], name: u.name, runner, person, environment, host: os.hostname().slice(0, 64), key_fp: u.key_fp, objective: phase === 'start' ? (u.objective || objective) : undefined, source: 'abp/tools/flow.mjs', ...extra };
@@ -94,7 +94,14 @@ export function flow({ id = process.env.FLOW_ID, runner = process.env.FLOW_RUNNE
         error(note, extra = {}) { emit(u, 'error', { note, duration_ms: u.t0 ? Date.now() - u.t0 : undefined, ...extra }); return this; },
       };
     },
-    async flush() { await Promise.all(pending); },
+    // one audit line per flush in elastic-submissions (elastic.1's logSubmission, docs/elastic-guidance.md section 6)
+    async flush() {
+      await Promise.all(pending); pending.length = 0;
+      if (!process.env.ELASTIC_URL || !(tally.sent + tally.errors)) return;
+      try { lib ||= await import(path.join(ROOT, 'admin/tools/elastic-lib.mjs')); await lib.logSubmission({ agent: runner, index: INDEX, via: 'live', sent: tally.sent, errors: tally.errors, held: 0, source: 'abp/tools/flow.mjs', commit: flowId }); }
+      catch (e) { console.error('flow: audit line not stored', String(e.message).slice(0, 120)); }
+      tally.sent = tally.errors = 0;
+    },
   };
 }
 
