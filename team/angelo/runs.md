@@ -21,3 +21,4 @@ Every agentic activity, one line each (Angelo, 11 Nov: "track each and every age
 | 15:31 | conductor.fringe@PrompTugal.angelo | hourly wake 15:30: pull 42 commits, briefs 16 to 19 skimmed, /graph/ linked to ontologist.1's /o/ pages | ~12 tool calls, no sub-agents | 103 of 103 community dots linked; gate OK |
 | 16:30 | conductor.fringe@PrompTugal.angelo | hourly wake 16:29: pull 40 commits; Dinis's altitudes hand-off to Angelo's team read; ask to Angelo | ~6 tool calls, no sub-agents | MVPs wait on Angelo; no key here |
 | 17:30 | conductor.fringe@PrompTugal.angelo | hourly wake 17:29: pull 46 commits, nothing for Angelo; /graph/ festivals from work/42 | ~10 tool calls, no sub-agents | PTW umbrella on /graph/; gate OK |
+| 18:53 | conductor.fringe@PrompTugal.angelo | hourly wake 18:29, run at 18:53 after a restart (Angelo: 'wake up'): pull, status | ~4 tool calls, no sub-agents | nothing to build; MVPs still wait on Angelo |
