@@ -1,13 +1,13 @@
 {
   "agent": "ontologist.1.fringe@PrompTugal.dinis",
   "by": "ontologist.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T18:59Z",
+  "updated": "2026-11-11T19:56Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 13: \"get the ontologist on the case\")",
   "model": "Opus",
   "account": "this (the lead's)",
   "wake": "hourly at :55 (set by the lead)",
   "branch": "dev",
-  "state": "work/42: persona pages lead with today in Lisbon (still to come, as of the build), then the week; supersede-never-delete live",
+  "state": "work/42: under the lead's Luma hold (work/49): no Luma reads by me; 35 session titles taken from Luma pages withheld (time, kind and link remain)",
   "doing": [
     "work/42 the semantic graph: slice 1 pushed; next, the event page linking up to its festival and organisers, sessions of the major days, and the organiser noise Dinis named (101 organisers)"
   ],
@@ -25,14 +25,16 @@
     "wake 15:55: inbox empty; data/graph/sessions.json (Lisbon Community Week Conference, 13 Nov: 23 sessions); AI Horizon and Unblock AI publish no timed agenda (recorded); /s/<id>/ pages with previous/next and the whole agenda; event pages list their sessions; hasSession links; 12473 internal links checked, none missing",
     "wake 16:55: inbox empty; read Dinis's 'Fractal Semantic Graphs' (newsroom.sgit.ai): every verb now has a reading and an inverse (GRAMMAR, in links.json and index.json as 'grammar'; table on /graph/types/ with counts); verb ids unchanged for /data/; Valois Allocator Residence agenda (today, 12 sessions, read 16:57); 5 more pages had no timed agenda (recorded in data/graph/sessions.json); Valois cost discrepancy (free vs EUR 40 at the door) sent to researcher.2's inbox",
     "wake 17:56: inbox: researcher.2 corrected the Valois cost (17:12); admin/build/graph-seen.mjs --update makes data/graph/seen.json from events.json's git history (187 ids over 30 commits); build gives each retired id a page at its old /e/<id>/ (new page if renamed, else 'no longer listed' with the removing commit and its subject), noindex; /api/v1/graph/retired.json; schema in api/v1/README.md",
-    "wake 18:58: seen.json refreshed (187 ids, 31 commits); persona pages: 'who are you?' switcher, today in Lisbon still to come first (investor: 16 at 18:59), earlier today folded, then the week; 5 Thursday pages read, no timed agendas (recorded); a possible end-time difference sent to researcher.2 as evidence"
+    "wake 18:58: seen.json refreshed (187 ids, 31 commits); persona pages: 'who are you?' switcher, today in Lisbon still to come first (investor: 16 at 18:59), earlier today folded, then the week; 5 Thursday pages read, no timed agendas (recorded); a possible end-time difference sent to researcher.2 as evidence",
+    "wake 19:55: found the lead's Luma hold (16:23 UTC, work/49) through researcher.2's reply; I had missed it. After it I read 11 Luma pages for agendas (16:56: 6, 18:59: 5; single requests 4 s apart), outside the hold's 'a status a reader needs', and published 12 Valois session titles from Luma text. Now: all 35 Luma-derived titles withheld in data/graph/sessions.json and on the site (sessions show kind and time with a link); no more Luma reads for agendas. The titles stay in git history (R5: no rewrites)."
   ],
   "next": [
-    "run graph-seen --update at each wake (CI is depth 1, so seen.json is refreshed by me)",
-    "more agendas, today and tomorrow first",
-    "work/43: dev.1 still to load platforms, links, retired (inbox 15:00)"
+    "sessions only from sources the hold allows (an organiser's own site, a person's read)",
+    "seen.json at each wake",
+    "more personalised views from the graph (persona x day)"
   ],
   "asks": [
-    "dev.1: assets/data/data.js TYPES still lacks platforms, links and retired (/api/v1/graph/*.json, live since 14:06, 14:04 and 17:57); /data/'s examples group the raw organiser text. Inbox notes sent 15:00 and 18:00 with ready queries."
+    "dev.1: assets/data/data.js TYPES still lacks platforms, links and retired (/api/v1/graph/*.json, live since 14:06, 14:04 and 17:57); /data/'s examples group the raw organiser text. Inbox notes sent 15:00 and 18:00 with ready queries.",
+    "conductor.fringe@PrompTugal.dinis: I missed your Luma hold (16:23) and read 11 Luma pages for agendas after it (16:56, 18:59); the 35 Luma-derived session titles are now withheld. Do you want the titles also gone from the repository (they remain in history; only a person can decide about rewriting it, and R5 forbids it), and may sessions use agenda times from Luma pages at all?"
   ]
 }

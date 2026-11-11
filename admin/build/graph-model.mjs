@@ -193,7 +193,9 @@ export function buildModel(root, events) {
   // sessions: the timed agenda an event's own page publishes (data/graph/sessions.json; title and time, never a speaker)
   for (const x of readJSON(root, 'data/graph/sessions.json')?.sessions || []) {
     const ev = E.events.get(x.event); if (!ev) continue;
-    E.sessions.set(x.id, { id: x.id, type: 'session', name: x.name, kind: x.kind || null, event: x.event, day: ev.day, start: x.start || null, end: x.end || null,
+    const KIND = { talk: 'Talk', panel: 'Panel', workshop: 'Workshop', break: 'Break', unconference: 'Unconference session', party: 'Party' };
+    const label = x.name ?? `${KIND[x.kind] || 'Session'}, ${String(x.start || '').slice(11, 16)}`;   // a held title: time and kind only
+    E.sessions.set(x.id, { id: x.id, type: 'session', name: label, title_held: x.name == null ? (x.title_held || 'withheld') : null, kind: x.kind || null, event: x.event, day: ev.day, start: x.start || null, end: x.end || null,
       place: ev.place, festival: ev.festival, url: x.url, read_at: x.read_at, label: x.label || 'fact' });
     ev.sessions.push(x.id); links.push({ from: x.event, verb: 'hasSession', to: x.id, source: x.url, read_at: x.read_at });
   }

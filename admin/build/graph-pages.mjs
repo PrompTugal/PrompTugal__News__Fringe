@@ -101,7 +101,7 @@ ${later.length ? `<h2>The rest of the week: ${later.length}</h2>${chips('day', [
     const sib = B.events.get(x.event).sessions; const i = sib.indexOf(x.id);
     write(`${PREFIX.session}/${x.id}`, x.name, `<p class="gx-up">A session of ${evLink(x.event)}</p><h1>${esc(x.name)}</h1>
 <p><strong>${esc(hm(x.start))}–${esc(hm(x.end))} UTC</strong> (Lisbon time) on ${a('day', x.day)}${x.place ? ` · ${a('place', x.place)}` : ''}${x.festival ? ` · part of ${a('festival', x.festival)}` : ''}</p>
-<p class="muted">From the agenda on <a href="${esc(x.url)}">the event's own page</a>, read ${esc(String(x.read_at).slice(0, 16).replace('T', ' '))} UTC. Timings may change: their page is the one that counts.</p>
+${x.title_held ? `<p><strong>The title is on <a href="${esc(x.url)}">the organiser's page</a>.</strong> <span class="muted">We publish the time with a link, never the platform's text (work/49).</span></p>` : ''}<p class="muted">From the agenda on <a href="${esc(x.url)}">the event's own page</a>, read ${esc(String(x.read_at).slice(0, 16).replace('T', ' '))} UTC. Timings may change: their page is the one that counts.</p>
 <p>${i > 0 ? `&larr; ${a('session', sib[i - 1])}` : ''}${i > 0 && i < sib.length - 1 ? ' · ' : ''}${i < sib.length - 1 ? `${a('session', sib[i + 1])} &rarr;` : ''}</p>
 <h2>The whole agenda</h2>${sessList(sib)}${api('sessions')}`, `${x.name}: a session at ${B.events.get(x.event).name}, ${hm(x.start)} UTC.`);
   }
