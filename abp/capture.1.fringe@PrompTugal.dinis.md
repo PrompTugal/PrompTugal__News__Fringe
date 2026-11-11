@@ -2,7 +2,7 @@
 title: "ABP: capture.1.fringe@PrompTugal.dinis"
 agent: capture.1.fringe@PrompTugal.dinis
 role: capture
-policy: abp/policies.json v0.3.2 (sha256:f113758276e47fab)
+policy: abp/policies.json v0.3.2 (sha256:72d72c891d2740e8)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator

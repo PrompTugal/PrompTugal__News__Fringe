@@ -1,6 +1,6 @@
 {
   "agent": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T15:46Z",
+  "updated": "2026-11-11T15:51Z",
   "account": "riskmandate-personal (Ultra) (Dinis, brief 15)",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 12)",
   "branch": "dev",
@@ -32,7 +32,8 @@
     "15:26: the altitudes in action (Dinis: 'try it in action'): A1, deepseek-v4-flash sorted 8 tasks into altitudes, 8/8, 0.00003 USD; A2, a read-only Explore loop found no unmapped agents (28 mapped); the hook logged R12 for it, which taught that read-only sub-agent types are already A2 (fixed, tested); trials on /agentic-team/operating-model/",
     "15:31: the altitudes in action, multi-altitude run: A0 plan, 3 A2 loops (sub-agents), 81 A1 open-weight calls, A0 verify and merge; 85 Ed25519 signatures from keys that lived only during the run, all verified; 0.0034 USD; data/work-altitudes.json, slide 6. Weak placements (41% retries, 3 unanswered): items are projects mixing altitudes",
     "15:43: article 'The altitudes of execution' (docs/articles/, /agentic-team/articles/the-altitudes-of-execution/); slide 7 the reach of each unit (plan needed 3, held 25; narrowed, 4); task packets P1 (A1) and P2 (A2) for Angelo's team, baseline run here; AWS and Cloudflare mapped (not yet run)",
-    "15:46: Dinis: send the altitudes to Angelo's conductor (run the MVPs) and Silvio's (the visualisations), then apply to our teams: brief note and docs/handoffs/2026-11-11-altitudes-of-execution.md; Angelo's conductor by inbox; Silvio's conductor not started (no key, no inbox): it reads briefs/ when it starts"
+    "15:46: Dinis: send the altitudes to Angelo's conductor (run the MVPs) and Silvio's (the visualisations), then apply to our teams: brief note and docs/handoffs/2026-11-11-altitudes-of-execution.md; Angelo's conductor by inbox; Silvio's conductor not started (no key, no inbox): it reads briefs/ when it starts",
+    "15:51: review round 3 (abp/reviews/2026-11-11-15.md): 54 commits, 4 findings (from 38): grants caught up; a regex bug in the owner check fixed; R12 fired only on my own loops; three rounds clean for R5, R8, R9"
   ],
   "next": [
     "publish the infographics in a vault with a pointer and sha256, if Dinis wants them on the site",
@@ -41,6 +42,7 @@
     "Indi's ABP merged once found"
   ],
   "asks": [
+    "Dinis: after three rounds with no finding, I propose R5 (dev only, no force-push), R8 (no secrets) and R9 (own name only) move to 'enforce', with the conductor override always open and logged (abp/policies.json proposed_enforcement). Yes or no, rule by rule. R6, R7 and R12 stay observe.",
     "Dinis: Silvio's conductor has not started (no key, no inbox), so the hand-off waits in briefs/ for it. Silvio needs the join link (https://lisbontechfringe.com/join/) from a person; outreach.1 drafted a note to him in work/drafts/ (work/36).",
     "Dinis: to run packets in Cloudflare (a Worker with Workers AI) and AWS (AgentCore, Lambda with KMS), the swarm needs an account and a scoped deploy credential on each; yours to give, and a new environment's network to allow.",
     "Dinis: security finding 28: should the gate FAIL (not warn) on a .claude/ change not by architect.1, and will you protect .claude/** and abp/policies.json with code owners and branch protection? Both block, so both are yours.",
@@ -53,10 +55,10 @@
   ],
   "breaches_last_hour": {
     "counted": 0,
-    "observed": 38,
+    "observed": 4,
     "by_rule": {
-      "R6": 38
+      "R6": 4
     },
-    "note": "round 2 of 3; mostly grants that lagged new files; see abp/reviews/2026-11-11-14.md"
+    "note": "round 3 of 3; R12 4 (my own loops); see abp/reviews/2026-11-11-15.md"
   }
 }

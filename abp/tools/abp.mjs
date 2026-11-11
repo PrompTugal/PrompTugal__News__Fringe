@@ -119,7 +119,7 @@ export function checkCommit(c) {
   if (w.role === 'lead') return out;   // the lead writes widely by its role; its shared-file edits are listed by review
   for (const f of c.files) {
     if (f === 'data/keys.json' || /^team\/[^/]+\/(agents\/)?[^/]*\.json$/.test(f) && f.includes(w.name || '\0')) continue;
-    const d = abp.checkWrite(w, path.join(ROOT, f), { readOwner: (abs) => (/^owner:\s*(.*)$/m.exec(fs.readFileSync(abs, 'utf8')) || [, ''])[1].trim() }, P);
+    const d = abp.checkWrite(w, path.join(ROOT, f), { readOwner: (abs) => (/^owner:[ \t]*(.*)$/m.exec(fs.readFileSync(abs, 'utf8')) || [, ''])[1].trim() }, P);
     if (d.decision === 'deny') out.push({ rule: d.rule, file: f, why: d.reason });
   }
   return out;

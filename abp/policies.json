@@ -1,7 +1,7 @@
 {
   "about": "The Agent Behaviour Policies of Lisbon Fringe (lisbontechfringe.com, origin in admin/site.json; WS-215) as data: deny by default, one grant per role and agent, across this repository and the others the swarm touches. Ported from PrompTugal__News__Website board/abp/policies.json (abp@PrompTugal.dinis, v1.7.0, since 6 November 2026), not invented anew; built on RiskMandate's Agent Behaviour Policy and Licence to Operate (https://riskmandate.ai/agent-behaviour-policy.html). Read by the hooks (.claude/settings.json, .claude/hooks/abp.mjs) and by the gate's commit check (abp/tools/abp.mjs check). abp/<agent>.md is generated from this file (node abp/tools/abp.mjs build), never edited by hand. Kept by architect.1.fringe@PrompTugal.dinis (work/39); any relaxation, and any move towards enforcement, is Dinis's decision.",
   "version": "0.3.2",
-  "updated": "2026-11-11T15:26Z",
+  "updated": "2026-11-11T15:51Z",
   "operator": "Dinis Cruz",
   "kept_by": "architect.1.fringe@PrompTugal.dinis",
   "status": "DRAFT: grants proposed from the git log (data/architecture.json observed); Dinis and the lead review",
@@ -953,6 +953,11 @@
         "round": 2,
         "file": "abp/reviews/2026-11-11-14.md",
         "at": "2026-11-11T14:51Z"
+      },
+      {
+        "round": 3,
+        "file": "abp/reviews/2026-11-11-15.md",
+        "at": "2026-11-11T15:51Z"
       }
     ]
   },
@@ -1069,5 +1074,20 @@
       "~/.abp/log/<session>.jsonl only"
     ],
     "identity": "node abp/tools/abp.mjs whoami writes ~/.abp/whoami from the key's label (metadata.json only), once per session, after keygen"
+  },
+  "proposed_enforcement": {
+    "about": "After three rounds (Dinis, 13:36 UTC: 'two or three rounds ... only when we know that a particular thing is safe'). Proposed by the architect, not applied: Dinis decides, rule by rule.",
+    "at": "2026-11-11T15:51Z",
+    "rules": {
+      "R5": "no finding in three rounds: push to dev only, no force-push, no tags, no empty commits",
+      "R8": "no finding in three rounds: no key or token printed or committed",
+      "R9": "no finding in three rounds: commit and release only under your own name"
+    },
+    "override": "stays open to any conductor and Dinis, logged (abp/overrides.json, ABP_OVERRIDE)",
+    "not_proposed": {
+      "R6": "still measures the grants' freshness",
+      "R7": "sends are invisible in commits; hook logs stay on each machine",
+      "R12": "fires on normal loops until the sandboxed runner exists"
+    }
   }
 }
