@@ -99,6 +99,7 @@ export const homeCss = NOWSTRIP_CSS + `
 .hm-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
 .hm-tag{flex:none;font:500 10.5px/1 var(--mono);letter-spacing:.04em;text-transform:uppercase;padding:3px 6px;border:1px solid var(--hair);border-radius:3px;color:var(--ink-2)}
 .hm-tag.free{border-color:var(--ok);color:var(--ok)}.hm-tag.hm-anchor{background:var(--ink);color:var(--paper);border-color:var(--ink)}.hm-tag.now{background:var(--live);color:var(--paper);border-color:var(--live)}.hm-tag.x{border-color:var(--live);color:var(--live)}
+.hm-stats{margin:0 0 var(--s2);font:400 13px/1.5 var(--mono);color:var(--ink-2)}.hm-stats b{font:600 15px/1 var(--serif);color:var(--ink)}
 .hm-sig{display:flex;gap:16px;flex-wrap:wrap;margin:0 0 var(--s3);font:500 13px/1.3 var(--mono)}.hm-sig button{min-height:44px;padding:0 2px;background:none;border:0;border-bottom:2px solid var(--ink);color:var(--ink);font:inherit;cursor:pointer}.hm-sig button b{font:600 15px/1 var(--serif);margin-left:4px}.hm-sig button[aria-pressed=true]{background:var(--ink);color:var(--paper);padding:0 8px;border-radius:4px}.hm-c.hm-fold{display:none}
 .hm-empty{padding:var(--s4);border:2px dashed var(--hair);border-radius:8px;color:var(--ink-2)}
 .hm-more{display:block;width:100%;min-height:44px;margin:var(--s3) 0;background:var(--panel);border:1px dashed var(--ink-3);border-radius:6px;color:var(--ink-2);font:500 13px/1 var(--mono);cursor:pointer}
@@ -135,7 +136,7 @@ export function homeBody({ events, esc, eventPath, hasPage, now = new Date(), st
       ? `<span class="hm-img"><img src="${esc(imgs[e.id])}" alt="" loading="lazy" decoding="async"><small class="hm-cr">image: ${esc(org)}</small></span>`
       : `<span class="hm-img hm-tile" style="--c:var(${c})"><b>${esc(initials(org))}</b><i>${esc(e.kind || 'event')}<br><u>${esc(hm(e.start))} UTC</u></i></span>`;
     const roles = roleOf(e).join(' ');
-    return `<li id="ev-${esc(e.id)}" data-id="${esc(e.id)}" class="hm-c${e.status === 'cancelled' ? ' x' : ''}" data-s="${s}" data-e="${en}" data-r="${roles}" data-x="${e.status === 'cancelled' || e.status === 'moved' ? 1 : 0}" data-h="${esc(hoodKey(e))}">${media}
+    return `<li id="ev-${esc(e.id)}" data-id="${esc(e.id)}" class="hm-c${e.status === 'cancelled' ? ' x' : ''}" data-s="${s}" data-e="${en}" data-r="${roles}" data-o="${isOnline(e) ? 1 : 0}" data-c="${e.status === 'cancelled' ? 1 : 0}" data-x="${e.status === 'cancelled' || e.status === 'moved' ? 1 : 0}" data-h="${esc(hoodKey(e))}">${media}
 <div class="hm-body"><span class="hm-org">${lead ? `<a href="${esc(pathOf('organiser', lead.id))}">${esc(org)}</a>` : esc(org)}</span><h3 class="hm-t"><a href="${esc(href)}">${esc(e.name)}</a></h3>
 <span class="hm-m">${hm(e.start)}${e.end ? '–' + hm(e.end) : ''} UTC · ${pl ? `<a class="hm-pl" href="${esc(pathOf('place', pl))}">${esc(placeTxt)}</a>` : esc(placeTxt)}</span>
 <span class="hm-tags"><span class="hm-tag ${price.k}">${esc(price.t)}</span>${fest ? `<a class="hm-tag" href="${esc(pathOf('festival', fest.id))}">${esc(fest.name)}</a>` : ''}${isBig ? '<span class="hm-tag hm-anchor">Anchor</span>' : ''}${e.status === 'cancelled' ? '<span class="hm-tag x">Cancelled</span>' : e.status === 'moved' ? '<span class="hm-tag x">Moved</span>' : ''}<span class="hm-tag now" hidden>On now</span></span></div></li>`;
@@ -145,6 +146,10 @@ export function homeBody({ events, esc, eventPath, hasPage, now = new Date(), st
   const nextN = inCity.filter((e) => { const s = Date.parse(e.start); return s > t && s <= t + 36e5 && e.status !== 'cancelled'; }).length;
   const tonN = inCity.filter((e) => Date.parse(e.end || e.start) >= Date.parse(today + 'T18:00:00Z') && e.status !== 'cancelled').length;
 
+  const all = [...inCity, ...online].filter((e) => e.status !== 'cancelled');
+  const liveAll = all.filter((e) => state(e) === 'now'), hourAll = all.filter((e) => { const s0 = Date.parse(e.start); return s0 > t && s0 <= t + 36e5; });
+  const statsLine = (a, b, c, x) => `<b>${a}</b> on now · <b>${b}</b> start within the hour${a ? ` · <b>${c}</b> of the ones on now ${c === 1 ? 'is' : 'are'} online` : ''}${x ? ` · <b>${x}</b> cancelled` : ''}`;
+  const stats = statsLine(liveAll.length, hourAll.length, liveAll.filter(isOnline).length, [...inCity, ...online].filter((e) => e.status === 'cancelled').length);
   const sigN = [...inCity, ...online].filter((e) => e.status === 'cancelled' || e.status === 'moved').length;
   const live = inCity.filter((e) => state(e) !== 'past'), past = inCity.filter((e) => state(e) === 'past');
   const roleChips = ROLES.map(([id, label], i) => `<button type="button" class="hm-chip" data-role="${id}" aria-pressed="${i === 0}">${esc(label)}</button>`).join('');
@@ -154,6 +159,7 @@ export function homeBody({ events, esc, eventPath, hasPage, now = new Date(), st
   return `<section class="hm" data-today="${today}"><p class="hm-kick">${DOW[x.getUTCDay()]} ${x.getUTCDate()} ${MON[x.getUTCMonth()]} · Lisbon</p>
 <h1>What are you <em>looking for?</em></h1>
 <div class="hm-roles" role="group" aria-label="What are you looking for?">${roleChips}</div>
+<p class="hm-stats" id="hm-stats">${stats}</p>
 <div class="hm-sig">${online.length ? `<button type="button" data-sig="online">Online today <b>${online.length}</b></button>` : ''}${sigN ? `<button type="button" data-sig="alert" aria-pressed="false">Cancelled or moved <b>${sigN}</b></button>` : ''}</div>
 ${nowStrip(events, esc, { eventPath, hasPage }, now, { isLisbon: (e) => inLisbon(e) && !isOnline(e) })}
 ${hoodChips}
@@ -167,9 +173,10 @@ ${online.length ? `<div id="hm-online-wrap"><div class="hm-sec" role="heading" a
 </section>
 <script>(function(){try{var R='all',W='',H='',A=false,OO=false,EX=false,FOLD=12,cards=[].slice.call(document.querySelectorAll('.hm-c'));
 function st(c,n){var s=+c.dataset.s,e=+c.dataset.e;return n>=e?'past':n>=s?'now':'next'}
-function tick(){var n=Date.now(),N=0,X=0,T=0,eve=new Date(new Date(n).toISOString().slice(0,10)+'T18:00:00Z').getTime();
-cards.forEach(function(c){if(c.classList.contains('x'))return;var s=+c.dataset.s,e=+c.dataset.e,k=st(c,n);if(c.closest('#hm-online'))return;if(k==='now')N++;if(s>n&&s<=n+36e5)X++;if(e>=eve)T++;
+function tick(){var n=Date.now(),SN=0,SX=0,SO=0,SC=0,N=0,X=0,T=0,eve=new Date(new Date(n).toISOString().slice(0,10)+'T18:00:00Z').getTime();
+cards.forEach(function(c){if(c.dataset.c==='1'){SC++}else{var s0=+c.dataset.s,e0=+c.dataset.e;if(n>=s0&&n<e0){SN++;if(c.dataset.o==='1')SO++}if(s0>n&&s0<=n+36e5)SX++}if(c.classList.contains('x'))return;var s=+c.dataset.s,e=+c.dataset.e,k=st(c,n);if(c.closest('#hm-online'))return;if(k==='now')N++;if(s>n&&s<=n+36e5)X++;if(e>=eve)T++;
 var b=c.querySelector('.hm-tag.now');if(b)b.hidden=k!=='now';c.classList.toggle('past',k==='past')});
+var sp=document.getElementById('hm-stats');if(sp)sp.innerHTML='<b>'+SN+'</b> on now \u00b7 <b>'+SX+'</b> start within the hour'+(SN?' \u00b7 <b>'+SO+'</b> of the ones on now '+(SO===1?'is':'are')+' online':'')+(SC?' \u00b7 <b>'+SC+'</b> cancelled':'');
 apply()}
 function apply(){var n=Date.now(),eve=new Date(new Date(n).toISOString().slice(0,10)+'T18:00:00Z').getTime(),shown=0,all=document.querySelectorAll('#hm-list .hm-c,#hm-past .hm-c');
 cards.forEach(function(c){var ok=(R==='all'||c.dataset.r.split(' ').indexOf(R)>-1)&&(!H||c.dataset.h===H);var s=+c.dataset.s,e=+c.dataset.e;
