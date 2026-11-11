@@ -1,0 +1,69 @@
+# The swarm in Neo4j
+
+> By neo4j.1.fringe@PrompTugal.dinis, 11 November 2026, 19:41 UTC. WS-215. Started by architect.1 at Dinis's word (19:33 UTC: "also can you spin up an neo4j agent?").
+
+The Lisbon Tech Fringe swarm loaded into Neo4j as a property graph. It covers the fringe graph, the agentic runs, the grants, the hourly findings, the commits on dev and Dinis's words. It can be queried in Cypher and drawn in Neo4j Browser or Bloom.
+
+## What is in it (fact, read 2026-11-11T19:40Z, repo head 23442b9)
+
+2,164 nodes and 6,649 relationships. The counts by label and by verb are in `data/neo4j-stats.json`.
+
+| Source | Becomes |
+|---|---|
+| `/api/v1/graph.json` (built by `admin/build/build.mjs`; the loader reads `_site/` if it is built, else the live site) | `:Event`, `:Community`, `:Topic`, `:Place` and `:Festival`. Their edges are `IS_ABOUT`, `HAPPENS_IN`, `IS_ORGANISED_BY` and `IS_PART_OF`, and each carries `source` and `read_at`. |
+| `data/altitude-runs.json` | `:Run` `CONTAINS` `:Unit`, and a unit `HANDS_TO` its child units, from parent to child. Each unit `IS_AT` an `:Altitude` (A4 to A0). The key that signed a unit appears as `(:Key)-[:SIGNED {verified}]->(:Unit)`. A unit that holds reach it does not need gets `EXPOSES` edges to `:Reach`. The unit also `CALLS` a `:Model` and `WORKS_ON` an `:Item` of the board. |
+| `abp/policies.json` | `:Role` and `:Agent`, linked by `PLAYS` and `WORKS_AT`. Grants become `MAY_WRITE` a `:Path` (a glob) and `MAY_SEND_TO` a `:Host`. Shared files become `(:Agent)-[:OWNS]->(:File)`, and each core rule a `:Rule` with its mode. |
+| `abp/reviews/`, through `node abp/tools/abp.mjs review-export` | `:Review` `RECORDS` `:Finding`. Each finding `BREACHES` a `:Rule`, `FLAGS` an `:Agent`, `CONCERNS` a `:File` and `CITES` a `:Commit`. |
+| `git log` on dev since 9 November | `:Agent` `AUTHORED` `:Commit`, which `CHANGES` a `:File` or a `:Brief`, `IS_FOR` (from the `For:` trailer) and `FOLLOWS` its parent. A commit that changes a file only another role may write `CROSSES_INTO` that `:Role`. `:Person` `SAID` a `:Word`, and the commit that quotes it `ACTS_ON` it. |
+| `data/keys.json` | `(:Agent)-[:HOLDS_KEY]->(:Key)`, by fingerprint only. No key material is ever read or stored. |
+| Elastic swarm-flows (`--flows FILE`) | `:Span` `IS_CHILD_OF` `:Span` (OTel `parent_span_id`), `BELONGS_TO` a `:Trace`, and `(:Agent)-[:EMITTED]->(:Span)`. This is waiting on an export from elastic.1, which I asked for through its inbox at 19:40 UTC. |
+
+Every node also has the label `:Fringe`, so `--wipe` removes only what the loader made.
+
+## The grammar
+
+`neo4j/grammar.json` follows the fractal semantic graph grammar (Dinis Cruz, newsroom.sgit.ai, also in `admin/build/graph-model.mjs` GRAMMAR). Every relationship type is a verb with a subject, an object and an inverse a person would say. For example, `AUTHORED` reads backwards as "was authored by", and `EXPOSES` as "is held without need by". There is no `relates_to`: the loader refuses any type that is not in the grammar. Neo4j stores one direction, so the inverse is kept on every relationship (`e.inverse`) and on a `:Verb` node for each verb.
+
+## How to run it
+
+```sh
+pip install neo4j
+python3 admin/tools/neo4j-load.py --emit /tmp/fringe.cypher                    # Cypher only, no database (about 1.2 MB)
+python3 admin/tools/neo4j-load.py --load --wipe                                # into NEO4J_CLOUD (Aura)
+python3 admin/tools/neo4j-load.py --load --wipe --uri bolt://127.0.0.1:7687 --password-file ~/promptugal/.neo4j-local-pw
+python3 admin/tools/neo4j-query.py [--only lanes-crossed] [--out data/neo4j-answers.json]
+```
+
+`NEO4J_CLOUD` can hold either JSON (`uri`, `username`, `password`, `database`) or the `NEO4J_URI=` / `NEO4J_PASSWORD=` text that Aura gives on download. Neither tool prints a password or the credentials in a URI.
+
+## Where Neo4j runs (Dinis's decision)
+
+- **Now:** Neo4j Community 5.26 runs in this session's container, on 127.0.0.1 only, with a random password in a 0600 file that is never printed. It works, but it is ephemeral and ends with the session.
+- **Aura:** Dinis made an instance (console project 26b9db59…) and put its credentials in the environment as `NEO4J_CLOUD`. The variable reaches a session only when the session starts, so this session cannot see it yet. After a restart, `--load --wipe` puts the same graph in Aura.
+
+## The questions and what they answer
+
+`neo4j/queries.cypher` holds 12 named questions. The rows below are from the local load (`data/neo4j-answers.json`, read 2026-11-11T19:40:52Z).
+
+- **Which units held more reach than they needed** (`reach-beyond-need`): all 4 A0 compute units needed 3 capabilities and held 25. All 6 A2 loops needed 5 and held 25. Every one of them held `execute.process.host`, `read.credential.host`, `delete.file.host` and `create.schedule.*` without needing them (`reach-most-exposed`). This is the "why is A0:Compute:Plan run with A3 privileges" question, as a number.
+- **Which agents cross which lanes** (`lanes-crossed`): there are 29 agent-to-lane pairs. The top three are architect.1 into dev's and design's lanes (7 commits: `admin/build/build.mjs`, `validate.mjs` and `universe.mjs`), ontologist.1 into dev's and researcher's lanes (5 commits: `api/v1/README.md`), and conductor.fringe@…jose into dev's lane (4 commits: `admin/build/swarm.mjs`). A file in two lanes (such as build.mjs, in both dev and design) counts in each.
+- **Shared files changed by others** (`shared-files-touched-by-others`): `admin/build/build.mjs` (owner dev.2) has 59 commits by other agents, `api/v1/README.md` has 14 and `admin/build/event-pages.mjs` has 12.
+- **The path from Dinis's word to a commit** (`word-to-commit`): 23 quoted words, each linked to the commit that acted on it. For example, "can you spin up an neo4j agent?" (19:33) leads to architect.1 and commit 23442b9 at 19:34:10Z. As a path: `(:Person {id:'dinis'})-[:SAID]->(:Word)<-[:ACTS_ON]-(:Commit)<-[:AUTHORED]-(:Agent)`.
+- Also: the findings by agent and rule, each run's tree by altitude with its cost, the units with no verified signature (the 2 A3 roots), the agents that commit with no grant (grafana.1, 4 commits), the files with the most writers (`data/keys.json` 22, `build.mjs` 15), the busiest organisers in the fringe graph, and the grammar with how often each verb is used.
+
+These are facts about the repository as it was read. The lane crossings are computed from the role globs in `abp/policies.json`, so they are a hypothesis about intent: a crossing may have been agreed in an inbox.
+
+## To see it (Neo4j Browser)
+
+```cypher
+// one run, from the agent down to its calls, with the keys that signed each unit
+MATCH p = (:Agent)-[:RAN]->(:Run {name:'altitudes-2026-11-11T18:57'})-[:CONTAINS]->(:Unit)<-[:SIGNED]-(:Key) RETURN p LIMIT 150;
+// Dinis's words, the agents that acted on them, and the files they changed
+MATCH p = (:Person {id:'dinis'})-[:SAID]->(:Word)<-[:ACTS_ON]-(c:Commit)<-[:AUTHORED]-(:Agent), q = (c)-[:CHANGES]->(:File) RETURN p, q;
+// the lanes: agents, their roles and the lanes their commits cross into
+MATCH p = (a:Agent)-[:PLAYS]->(:Role), q = (a)-[:AUTHORED]->(:Commit)-[:CROSSES_INTO]->(:Role) RETURN p, q;
+```
+
+## Rules kept
+
+The loader reads public material only: the repository and our own site. It stores no contact details and no private people. Persons appear only as the person ids in agent names (the conductors). Keys appear as fingerprints, never key material. The loader never uses ELASTIC_CLOUD (R8e).

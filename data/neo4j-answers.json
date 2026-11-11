@@ -1,0 +1,1573 @@
+{
+ "about": "Answers to neo4j/queries.cypher over the swarm graph (admin/tools/neo4j-load.py), by neo4j.1.fringe@PrompTugal.dinis. Facts read from the repository and its public site at the time below; fingerprints only, never key material.",
+ "read_at": "2026-11-11T19:40:52Z",
+ "repo_head": "23442b9",
+ "answers": [
+  {
+   "name": "reach-beyond-need",
+   "asks": "Which units held more reach than they needed, and by how much (A0 compute and A1 calls holding an agent's grant)?",
+   "cypher": "MATCH (r:Run)-[:CONTAINS]->(u:Unit)\nWHERE u.reach_held > u.reach_needs\nRETURN u.altitude AS altitude, u.role AS role, count(u) AS units,\n       round(avg(u.reach_needs), 1) AS avg_needs, round(avg(u.reach_held), 1) AS avg_held,\n       round(avg(u.reach_exposure), 1) AS avg_excess, collect(DISTINCT r.name)[0..3] AS runs\nORDER BY avg_excess DESC",
+   "rows": [
+    {
+     "altitude": "A0",
+     "role": "compute",
+     "units": 4,
+     "avg_needs": 3.0,
+     "avg_held": 25.0,
+     "avg_excess": 22.0,
+     "runs": [
+      "altitudes-2026-11-11T18:57",
+      "altitudes-2026-11-11T15:31"
+     ]
+    },
+    {
+     "altitude": "A2",
+     "role": "loop",
+     "units": 6,
+     "avg_needs": 5.0,
+     "avg_held": 25.0,
+     "avg_excess": 20.0,
+     "runs": [
+      "altitudes-2026-11-11T18:57",
+      "altitudes-2026-11-11T15:31"
+     ]
+    }
+   ],
+   "row_count": 2
+  },
+  {
+   "name": "reach-most-exposed",
+   "asks": "Which capabilities are held without need by the most units?",
+   "cypher": "MATCH (u:Unit)-[:EXPOSES]->(x:Reach)\nRETURN x.name AS reach, x.verb AS verb, x.scope AS scope, count(u) AS units_holding_without_need\nORDER BY units_holding_without_need DESC LIMIT 15",
+   "rows": [
+    {
+     "reach": "create.schedule.tenant",
+     "verb": "create",
+     "scope": "tenant",
+     "units_holding_without_need": 10
+    },
+    {
+     "reach": "create.schedule.host",
+     "verb": "create",
+     "scope": "host",
+     "units_holding_without_need": 10
+    },
+    {
+     "reach": "read.record.history",
+     "verb": "read",
+     "scope": "history",
+     "units_holding_without_need": 10
+    },
+    {
+     "reach": "execute.process.host",
+     "verb": "execute",
+     "scope": "host",
+     "units_holding_without_need": 10
+    },
+    {
+     "reach": "delete.file.host",
+     "verb": "delete",
+     "scope": "host",
+     "units_holding_without_need": 10
+    },
+    {
+     "reach": "read.credential.host",
+     "verb": "read",
+     "scope": "host",
+     "units_holding_without_need": 10
+    },
+    {
+     "reach": "authenticate-as.credential.tenant",
+     "verb": "authenticate-as",
+     "scope": "tenant",
+     "units_holding_without_need": 10
+    },
+    {
+     "reach": "grant.credential.self",
+     "verb": "grant",
+     "scope": "self",
+     "units_holding_without_need": 10
+    },
+    {
+     "reach": "send.message.world",
+     "verb": "send",
+     "scope": "world",
+     "units_holding_without_need": 10
+    },
+    {
+     "reach": "read.message.tenant",
+     "verb": "read",
+     "scope": "tenant",
+     "units_holding_without_need": 10
+    },
+    {
+     "reach": "write.repository.project",
+     "verb": "write",
+     "scope": "project",
+     "units_holding_without_need": 10
+    },
+    {
+     "reach": "write.repository.tenant",
+     "verb": "write",
+     "scope": "tenant",
+     "units_holding_without_need": 10
+    },
+    {
+     "reach": "authenticate-as.credential.signing",
+     "verb": "authenticate-as",
+     "scope": "signing",
+     "units_holding_without_need": 10
+    },
+    {
+     "reach": "create.record.world",
+     "verb": "create",
+     "scope": "world",
+     "units_holding_without_need": 10
+    },
+    {
+     "reach": "read.vault.tenant",
+     "verb": "read",
+     "scope": "tenant",
+     "units_holding_without_need": 10
+    }
+   ],
+   "row_count": 15
+  },
+  {
+   "name": "lanes-crossed",
+   "asks": "Which agents cross into which other roles' lanes (commits that change files only another role may write)?",
+   "cypher": "MATCH (a:Agent)-[:AUTHORED]->(c:Commit)-[x:CROSSES_INTO]->(lane:Role)\nRETURN a.name AS agent, a.role AS own_role, lane.name AS lane, count(DISTINCT c) AS commits, collect(DISTINCT x.file)[0..4] AS files\nORDER BY commits DESC",
+   "rows": [
+    {
+     "agent": "architect.1.fringe@PrompTugal.dinis",
+     "own_role": "architect",
+     "lane": "dev",
+     "commits": 7,
+     "files": [
+      "admin/build/build.mjs",
+      "admin/build/validate.mjs",
+      "admin/build/universe.mjs"
+     ]
+    },
+    {
+     "agent": "architect.1.fringe@PrompTugal.dinis",
+     "own_role": "architect",
+     "lane": "design",
+     "commits": 7,
+     "files": [
+      "admin/build/build.mjs",
+      "admin/build/validate.mjs",
+      "admin/build/universe.mjs"
+     ]
+    },
+    {
+     "agent": "ontologist.1.fringe@PrompTugal.dinis",
+     "own_role": "ontologist",
+     "lane": "dev",
+     "commits": 5,
+     "files": [
+      "api/v1/README.md"
+     ]
+    },
+    {
+     "agent": "ontologist.1.fringe@PrompTugal.dinis",
+     "own_role": "ontologist",
+     "lane": "researcher",
+     "commits": 5,
+     "files": [
+      "api/v1/README.md"
+     ]
+    },
+    {
+     "agent": "conductor.fringe@PrompTugal.jose",
+     "own_role": "conductor",
+     "lane": "dev",
+     "commits": 4,
+     "files": [
+      "admin/build/swarm.mjs"
+     ]
+    },
+    {
+     "agent": "conductor.fringe@PrompTugal.jose",
+     "own_role": "conductor",
+     "lane": "design",
+     "commits": 4,
+     "files": [
+      "admin/build/swarm.mjs"
+     ]
+    },
+    {
+     "agent": "conductor@web-summit.dinis",
+     "own_role": "reviewer",
+     "lane": "lead",
+     "commits": 3,
+     "files": [
+      "KICKOFF.md",
+      "team/roster.json"
+     ]
+    },
+    {
+     "agent": "conductor.fringe@PrompTugal.angelo",
+     "own_role": "conductor",
+     "lane": "dev",
+     "commits": 3,
+     "files": [
+      "api/v1/README.md",
+      "admin/build/build.mjs",
+      "admin/build/tokens.css"
+     ]
+    },
+    {
+     "agent": "conductor.fringe@PrompTugal.angelo",
+     "own_role": "conductor",
+     "lane": "design",
+     "commits": 3,
+     "files": [
+      "admin/build/build.mjs",
+      "admin/build/tokens.css"
+     ]
+    },
+    {
+     "agent": "designer.fringe@PrompTugal.angelo",
+     "own_role": "design",
+     "lane": "lead",
+     "commits": 2,
+     "files": [
+      "team/angelo/status.json"
+     ]
+    },
+    {
+     "agent": "designer.fringe@PrompTugal.angelo",
+     "own_role": "design",
+     "lane": "conductor",
+     "commits": 2,
+     "files": [
+      "team/angelo/status.json"
+     ]
+    },
+    {
+     "agent": "conductor.fringe@PrompTugal.indi",
+     "own_role": "conductor",
+     "lane": "dev",
+     "commits": 2,
+     "files": [
+      "api/v1/README.md",
+      "admin/build/build.mjs"
+     ]
+    },
+    {
+     "agent": "conductor.fringe@PrompTugal.indi",
+     "own_role": "conductor",
+     "lane": "design",
+     "commits": 2,
+     "files": [
+      "admin/build/build.mjs"
+     ]
+    },
+    {
+     "agent": "ontologist.1.fringe@PrompTugal.dinis",
+     "own_role": "ontologist",
+     "lane": "design",
+     "commits": 2,
+     "files": [
+      "admin/build/event-pages.mjs",
+      "admin/build/build.mjs"
+     ]
+    },
+    {
+     "agent": "conductor@web-summit.dinis",
+     "own_role": "reviewer",
+     "lane": "researcher",
+     "commits": 2,
+     "files": [
+      "seed/events-2026-11-11-social-watch.json"
+     ]
+    },
+    {
+     "agent": "architect.1.fringe@PrompTugal.dinis",
+     "own_role": "architect",
+     "lane": "lead",
+     "commits": 1,
+     "files": [
+      ".gitignore"
+     ]
+    },
+    {
+     "agent": "tracer.fringe@PrompTugal.angelo",
+     "own_role": "observability",
+     "lane": "lead",
+     "commits": 1,
+     "files": [
+      "team/angelo/traces/README.md"
+     ]
+    },
+    {
+     "agent": "graph.fringe@PrompTugal.angelo",
+     "own_role": "dev",
+     "lane": "lead",
+     "commits": 1,
+     "files": [
+      "team/angelo/status.json"
+     ]
+    },
+    {
+     "agent": "dev.fringe@PrompTugal.dinis",
+     "own_role": "dev",
+     "lane": "lead",
+     "commits": 1,
+     "files": [
+      ".gitignore"
+     ]
+    },
+    {
+     "agent": "graph.fringe@PrompTugal.angelo",
+     "own_role": "dev",
+     "lane": "conductor",
+     "commits": 1,
+     "files": [
+      "team/angelo/status.json"
+     ]
+    },
+    {
+     "agent": "tracer.fringe@PrompTugal.angelo",
+     "own_role": "observability",
+     "lane": "conductor",
+     "commits": 1,
+     "files": [
+      "team/angelo/traces/README.md"
+     ]
+    },
+    {
+     "agent": "capture.1.fringe@PrompTugal.dinis",
+     "own_role": "capture",
+     "lane": "dev",
+     "commits": 1,
+     "files": [
+      "admin/build/build.mjs"
+     ]
+    },
+    {
+     "agent": "design.2.fringe@PrompTugal.dinis",
+     "own_role": "design",
+     "lane": "dev",
+     "commits": 1,
+     "files": [
+      ".github/workflows/deploy.yml"
+     ]
+    },
+    {
+     "agent": "elastic.1.fringe@PrompTugal.dinis",
+     "own_role": "elastic",
+     "lane": "dev",
+     "commits": 1,
+     "files": [
+      "data/models-ledger.json"
+     ]
+    },
+    {
+     "agent": "observability.fringe@PrompTugal.dinis",
+     "own_role": "observability",
+     "lane": "dev",
+     "commits": 1,
+     "files": [
+      "admin/build/build.mjs"
+     ]
+    }
+   ],
+   "row_count": 29
+  },
+  {
+   "name": "findings-by-agent-and-rule",
+   "asks": "Which agents does the hourly ABP review flag, under which rules, over which rounds?",
+   "cypher": "MATCH (rv:Review)-[:RECORDS]->(f:Finding)-[:FLAGS]->(a:Agent), (f)-[:BREACHES]->(r:Rule)\nRETURN a.name AS agent, r.id AS rule, r.mode AS mode, count(f) AS findings, collect(DISTINCT rv.round) AS rounds\nORDER BY findings DESC",
+   "rows": [
+    {
+     "agent": "design.1.fringe@PrompTugal.dinis",
+     "rule": "R6",
+     "mode": "observe",
+     "findings": 9,
+     "rounds": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "agent": "dev.1.fringe@PrompTugal.dinis",
+     "rule": "R6",
+     "mode": "observe",
+     "findings": 8,
+     "rounds": [
+      1,
+      2
+     ]
+    },
+    {
+     "agent": "ontologist.1.fringe@PrompTugal.dinis",
+     "rule": "R6",
+     "mode": "observe",
+     "findings": 8,
+     "rounds": [
+      2,
+      3,
+      4,
+      6
+     ]
+    },
+    {
+     "agent": "architect.1.fringe@PrompTugal.dinis",
+     "rule": "R6",
+     "mode": "observe",
+     "findings": 7,
+     "rounds": [
+      1,
+      2,
+      3,
+      6
+     ]
+    },
+    {
+     "agent": "design.4.fringe@PrompTugal.dinis",
+     "rule": "R6",
+     "mode": "observe",
+     "findings": 4,
+     "rounds": [
+      1,
+      2
+     ]
+    },
+    {
+     "agent": "researcher.1.fringe@PrompTugal.jose",
+     "rule": "R6",
+     "mode": "observe",
+     "findings": 4,
+     "rounds": [
+      2,
+      5
+     ]
+    },
+    {
+     "agent": "conductor.fringe@PrompTugal.jose",
+     "rule": "R6",
+     "mode": "observe",
+     "findings": 4,
+     "rounds": [
+      6
+     ]
+    },
+    {
+     "agent": "design.3.fringe@PrompTugal.dinis",
+     "rule": "R6",
+     "mode": "observe",
+     "findings": 3,
+     "rounds": [
+      1
+     ]
+    },
+    {
+     "agent": "researcher.2.fringe@PrompTugal.dinis",
+     "rule": "R6",
+     "mode": "observe",
+     "findings": 2,
+     "rounds": [
+      1,
+      2
+     ]
+    },
+    {
+     "agent": "design.2.fringe@PrompTugal.dinis",
+     "rule": "R6",
+     "mode": "observe",
+     "findings": 2,
+     "rounds": [
+      1,
+      2
+     ]
+    },
+    {
+     "agent": "dev.2.fringe@PrompTugal.dinis",
+     "rule": "R6",
+     "mode": "observe",
+     "findings": 2,
+     "rounds": [
+      2,
+      5
+     ]
+    },
+    {
+     "agent": "conductor.fringe@PrompTugal.indi",
+     "rule": "R6",
+     "mode": "observe",
+     "findings": 1,
+     "rounds": [
+      1
+     ]
+    },
+    {
+     "agent": "graph.fringe@PrompTugal.angelo",
+     "rule": "R6",
+     "mode": "observe",
+     "findings": 1,
+     "rounds": [
+      1
+     ]
+    },
+    {
+     "agent": "conductor@web-summit.dinis",
+     "rule": "R6",
+     "mode": "observe",
+     "findings": 1,
+     "rounds": [
+      3
+     ]
+    },
+    {
+     "agent": "conductor.fringe@PrompTugal.angelo",
+     "rule": "R6",
+     "mode": "observe",
+     "findings": 1,
+     "rounds": [
+      5
+     ]
+    }
+   ],
+   "row_count": 15
+  },
+  {
+   "name": "shared-files-touched-by-others",
+   "asks": "Which shared files are changed by agents other than their owner?",
+   "cypher": "MATCH (owner:Agent)-[:OWNS]->(f:File)<-[:CHANGES]-(c:Commit)<-[:AUTHORED]-(a:Agent)\nWHERE a <> owner\nRETURN f.path AS file, owner.name AS owner, count(DISTINCT c) AS commits_by_others, collect(DISTINCT a.name)[0..5] AS others\nORDER BY commits_by_others DESC",
+   "rows": [
+    {
+     "file": "admin/build/build.mjs",
+     "owner": "dev.2.fringe@PrompTugal.dinis",
+     "commits_by_others": 59,
+     "others": [
+      "design.3.fringe@PrompTugal.dinis",
+      "designer.fringe@PrompTugal.angelo",
+      "capture.1.fringe@PrompTugal.dinis",
+      "dev.fringe@PrompTugal.dinis",
+      "dev.1.fringe@PrompTugal.dinis"
+     ]
+    },
+    {
+     "file": "api/v1/README.md",
+     "owner": "dev.2.fringe@PrompTugal.dinis",
+     "commits_by_others": 14,
+     "others": [
+      "dev.fringe@PrompTugal.dinis",
+      "conductor.fringe@PrompTugal.angelo",
+      "conductor.fringe@PrompTugal.indi",
+      "researcher.2.fringe@PrompTugal.dinis",
+      "ontologist.1.fringe@PrompTugal.dinis"
+     ]
+    },
+    {
+     "file": "admin/build/event-pages.mjs",
+     "owner": "design.3.fringe@PrompTugal.dinis",
+     "commits_by_others": 12,
+     "others": [
+      "dev.lead.fringe@PrompTugal.dinis",
+      "dev.2.fringe@PrompTugal.dinis",
+      "design.2.fringe@PrompTugal.dinis",
+      "design.4.fringe@PrompTugal.dinis",
+      "ontologist.1.fringe@PrompTugal.dinis"
+     ]
+    },
+    {
+     "file": "data/events.json",
+     "owner": "researcher.2.fringe@PrompTugal.dinis",
+     "commits_by_others": 9,
+     "others": [
+      "researcher.fringe@PrompTugal.dinis",
+      "conductor.fringe@PrompTugal.dinis",
+      "researcher.1.fringe@PrompTugal.jose"
+     ]
+    },
+    {
+     "file": "admin/build/swarm.mjs",
+     "owner": "dev.1.fringe@PrompTugal.dinis",
+     "commits_by_others": 6,
+     "others": [
+      "design.1.fringe@PrompTugal.dinis",
+      "conductor.fringe@PrompTugal.jose"
+     ]
+    },
+    {
+     "file": "team/angelo/status.json",
+     "owner": "conductor.fringe@PrompTugal.angelo",
+     "commits_by_others": 5,
+     "others": [
+      "designer.fringe@PrompTugal.angelo",
+      "conductor.fringe@PrompTugal.dinis",
+      "tracer.fringe@PrompTugal.angelo",
+      "graph.fringe@PrompTugal.angelo"
+     ]
+    },
+    {
+     "file": "admin/build/validate.mjs",
+     "owner": "dev.2.fringe@PrompTugal.dinis",
+     "commits_by_others": 4,
+     "others": [
+      "design.2.fringe@PrompTugal.dinis",
+      "dev.fringe@PrompTugal.dinis",
+      "dev.1.fringe@PrompTugal.dinis",
+      "architect.1.fringe@PrompTugal.dinis"
+     ]
+    },
+    {
+     "file": "admin/build/traffic.mjs",
+     "owner": "observability.fringe@PrompTugal.dinis",
+     "commits_by_others": 3,
+     "others": [
+      "design.1.fringe@PrompTugal.dinis",
+      "dev.1.fringe@PrompTugal.dinis"
+     ]
+    },
+    {
+     "file": "admin/build/graph.js",
+     "owner": "conductor.fringe@PrompTugal.angelo",
+     "commits_by_others": 3,
+     "others": [
+      "dev.lead.fringe@PrompTugal.dinis",
+      "graph.fringe@PrompTugal.angelo",
+      "design.4.fringe@PrompTugal.dinis"
+     ]
+    },
+    {
+     "file": "admin/build/graph.mjs",
+     "owner": "conductor.fringe@PrompTugal.angelo",
+     "commits_by_others": 3,
+     "others": [
+      "design.4.fringe@PrompTugal.dinis",
+      "graph.fringe@PrompTugal.angelo"
+     ]
+    },
+    {
+     "file": ".github/workflows/deploy.yml",
+     "owner": "dev.2.fringe@PrompTugal.dinis",
+     "commits_by_others": 3,
+     "others": [
+      "dev.fringe@PrompTugal.dinis",
+      "design.2.fringe@PrompTugal.dinis",
+      "dev.1.fringe@PrompTugal.dinis"
+     ]
+    },
+    {
+     "file": "admin/build/identity.mjs",
+     "owner": "design.4.fringe@PrompTugal.dinis",
+     "commits_by_others": 2,
+     "others": [
+      "design.1.fringe@PrompTugal.dinis"
+     ]
+    }
+   ],
+   "row_count": 12
+  },
+  {
+   "name": "word-to-commit",
+   "asks": "The path from Dinis's word to a commit: what he said, which agent acted on it, in which commit, changing what.",
+   "cypher": "MATCH p = (d:Person {id: 'dinis'})-[:SAID]->(w:Word)<-[:ACTS_ON]-(c:Commit)<-[:AUTHORED]-(a:Agent)\nOPTIONAL MATCH (c)-[:CHANGES]->(f)\nWITH w, c, a, collect(f.id)[0..4] AS files\nRETURN w.said_at AS said_at, w.text AS word, a.name AS agent, c.sha AS commit, c.at AS committed_at, files\nORDER BY committed_at DESC",
+   "rows": [
+    {
+     "said_at": "19:33",
+     "word": "can you spin up an neo4j agent?",
+     "agent": "architect.1.fringe@PrompTugal.dinis",
+     "commit": "23442b9",
+     "committed_at": "2026-11-11T19:34:10Z",
+     "files": [
+      "abp/design.3.fringe@PrompTugal.dinis.md",
+      "abp/conductor.fringe@PrompTugal.daniela.md",
+      "abp/design.2.fringe@PrompTugal.dinis.md",
+      "abp/conductor.fringe@PrompTugal.indi.md"
+     ]
+    },
+    {
+     "said_at": "19:3x",
+     "word": "can you make it take the full width?",
+     "agent": "architect.1.fringe@PrompTugal.dinis",
+     "commit": "90432e1",
+     "committed_at": "2026-11-11T19:33:53Z",
+     "files": [
+      "admin/build/universe.mjs"
+     ]
+    },
+    {
+     "said_at": "19:08",
+     "word": "yes start with open telemetry",
+     "agent": "architect.1.fringe@PrompTugal.dinis",
+     "commit": "8b0e66b",
+     "committed_at": "2026-11-11T19:09:14Z",
+     "files": [
+      "abp/capture.1.fringe@PrompTugal.dinis.md",
+      "abp/conductor.B@ios.PrompTugal.dinis.md",
+      "abp/observability.fringe@PrompTugal.dinis.md",
+      "abp/policies.json"
+     ]
+    },
+    {
+     "said_at": "19:1x",
+     "word": "control that using ABPs so that only the elastic and architect agent can use that environment variable",
+     "agent": "architect.1.fringe@PrompTugal.dinis",
+     "commit": "7f80c20",
+     "committed_at": "2026-11-11T19:07:33Z",
+     "files": [
+      "abp/design.4.fringe@PrompTugal.dinis.md",
+      "abp/dev.1.fringe@PrompTugal.dinis.md",
+      ".claude/hooks/abp.mjs",
+      "abp/observability.fringe@PrompTugal.dinis.md"
+     ]
+    },
+    {
+     "said_at": null,
+     "word": "see the gravity api that we have published and have already used here in the fringe",
+     "agent": "architect.1.fringe@PrompTugal.dinis",
+     "commit": "b6303b1",
+     "committed_at": "2026-11-11T19:03:20Z",
+     "files": [
+      "data/altitude-runs.json",
+      "admin/build/build.mjs",
+      "admin/build/architecture-page.mjs",
+      "abp/tools/runs-export.mjs"
+     ]
+    },
+    {
+     "said_at": null,
+     "word": "I want to start to see the execution. I want to see the beginning, the middle, and ending ... in Elastic",
+     "agent": "architect.1.fringe@PrompTugal.dinis",
+     "commit": "c04915b",
+     "committed_at": "2026-11-11T18:59:59Z",
+     "files": [
+      "data/altitude-runs.json",
+      "abp/design.3.fringe@PrompTugal.dinis.md",
+      "abp/security.fringe@PrompTugal.dinis.md",
+      "abp/design.1.fringe@PrompTugal.dinis.md"
+     ]
+    },
+    {
+     "said_at": "18:4x",
+     "word": "make sure that you're not a bottleneck ... allow all the other agents to submit, and then you can keep an eye and manage it",
+     "agent": "elastic.1.fringe@PrompTugal.dinis",
+     "commit": "6c38a4a",
+     "committed_at": "2026-11-11T18:59:23Z",
+     "files": [
+      "elastic/examples/dashboard-spec.example.mjs",
+      "admin/tools/elastic-dashboard.mjs",
+      "admin/tools/elastic-kibana.mjs",
+      "docs/elastic-guidance.md"
+     ]
+    },
+    {
+     "said_at": null,
+     "word": "I want to use elastic to visualise the agentic runs that me and Angelo are doing",
+     "agent": "architect.1.fringe@PrompTugal.dinis",
+     "commit": "02e1394",
+     "committed_at": "2026-11-11T18:32:25Z",
+     "files": [
+      "abp/tools/runs-export.mjs",
+      "data/altitude-runs.json",
+      "docs/handoffs/2026-11-11-altitudes-on-elastic.md"
+     ]
+    },
+    {
+     "said_at": null,
+     "word": "can you actually start a new Elastic conductor here? Because I want to move us to Elastic, because we're going to use the Elastic Cloud here to do a bunch of stuff.",
+     "agent": "architect.1.fringe@PrompTugal.dinis",
+     "commit": "db01ee9",
+     "committed_at": "2026-11-11T16:32:53Z",
+     "files": [
+      "abp/conductor.C.fringe@PrompTugal.dinis.md",
+      "abp/design.1.fringe@PrompTugal.dinis.md",
+      "abp/elastic.1.fringe@PrompTugal.dinis.md",
+      "abp/conductor.fringe@PrompTugal.indi.md"
+     ]
+    },
+    {
+     "said_at": null,
+     "word": "Those R5, R8, R9 should be ... absolutely and unbreakable rules ... Those conductors, but it has to be override and logging.",
+     "agent": "architect.1.fringe@PrompTugal.dinis",
+     "commit": "e9ddc18",
+     "committed_at": "2026-11-11T16:31:45Z",
+     "files": [
+      "abp/conductor.fringe@PrompTugal.dinis.md",
+      "abp/conductor.fringe@PrompTugal.daniela.md",
+      "abp/conductor@web-summit.dinis.md",
+      "abp/design.3.fringe@PrompTugal.dinis.md"
+     ]
+    },
+    {
+     "said_at": null,
+     "word": "send all this to angelo conductor and to silvio conductor; angelo so that we can run these MVPs; silvio so that we use this amazing visualisations ... then start applying this to our multiple teams",
+     "agent": "architect.1.fringe@PrompTugal.dinis",
+     "commit": "9be95a5",
+     "committed_at": "2026-11-11T15:46:51Z",
+     "files": [
+      "abp/dev.fringe@PrompTugal.dinis.md",
+      "abp/conductor.fringe@PrompTugal.silvio.md",
+      "abp/conductor.fringe@PrompTugal.indi.md",
+      "abp/index.json"
+     ]
+    },
+    {
+     "said_at": null,
+     "word": "ok, can you write an article about this",
+     "agent": "architect.1.fringe@PrompTugal.dinis",
+     "commit": "4a122c3",
+     "committed_at": "2026-11-11T15:43:00Z",
+     "files": [
+      "team/dinis/agents/architect.1.json",
+      "admin/build/architecture-page.mjs",
+      "docs/articles/2026-11-11-the-altitudes-of-execution.md",
+      "admin/build/build.mjs"
+     ]
+    },
+    {
+     "said_at": null,
+     "word": "why is A0:Compute:Plan run A3 privs",
+     "agent": "architect.1.fringe@PrompTugal.dinis",
+     "commit": "0d150db",
+     "committed_at": "2026-11-11T15:41:46Z",
+     "files": [
+      "abp/index.json",
+      "abp/conductor.fringe@PrompTugal.angelo.md",
+      "tasks/2026-11-11-p1-place-12-items/packet.json",
+      "abp/architect.1.fringe@PrompTugal.dinis.md"
+     ]
+    },
+    {
+     "said_at": null,
+     "word": "let's now try this in action, to spin up multiple altitudes",
+     "agent": "architect.1.fringe@PrompTugal.dinis",
+     "commit": "5732f72",
+     "committed_at": "2026-11-11T15:32:04Z",
+     "files": [
+      "team/dinis/agents/architect.1.json",
+      "data/work-altitudes.json",
+      "data/operating-model.json",
+      "admin/build/operating-model.mjs"
+     ]
+    },
+    {
+     "said_at": null,
+     "word": "let's publish this and try it in action",
+     "agent": "architect.1.fringe@PrompTugal.dinis",
+     "commit": "57d1f72",
+     "committed_at": "2026-11-11T15:26:55Z",
+     "files": [
+      "abp/usability.1.fringe@PrompTugal.dinis.md",
+      "abp/conductor.fringe@PrompTugal.daniela.md",
+      "abp/researcher.2.fringe@PrompTugal.dinis.md",
+      "abp/design.2.fringe@PrompTugal.dinis.md"
+     ]
+    },
+    {
+     "said_at": null,
+     "word": "the altitudes of execution",
+     "agent": "architect.1.fringe@PrompTugal.dinis",
+     "commit": "07267a9",
+     "committed_at": "2026-11-11T15:06:32Z",
+     "files": [
+      "data/operating-model.json",
+      "admin/build/operating-model.mjs",
+      "briefs/2026-11-11-1440-the-operating-model.md"
+     ]
+    },
+    {
+     "said_at": null,
+     "word": "you can widen those permissions for now ... yes, you can write briefs and notes in brief ... all those are good",
+     "agent": "architect.1.fringe@PrompTugal.dinis",
+     "commit": "2e5249b",
+     "committed_at": "2026-11-11T14:54:35Z",
+     "files": [
+      "abp/researcher.fringe@PrompTugal.dinis.md",
+      "abp/conductor.fringe@PrompTugal.jose.md",
+      "abp/design.2.fringe@PrompTugal.dinis.md",
+      "abp/researcher.1.fringe@PrompTugal.jose.md"
+     ]
+    },
+    {
+     "said_at": "14:00",
+     "word": "everything should be a link ... everything you register using Meetup, that's a section in itself",
+     "agent": "ontologist.1.fringe@PrompTugal.dinis",
+     "commit": "c62ab00",
+     "committed_at": "2026-11-11T14:06:40Z",
+     "files": [
+      "admin/build/event-pages.mjs",
+      "admin/build/graph-model.mjs",
+      "admin/build/graph-pages.mjs",
+      "api/v1/README.md"
+     ]
+    },
+    {
+     "said_at": "13:29",
+     "word": "take a leaf from what we've done in the main PrompTugal environment where we create multiple designs ... experiment ... ask the community ... figure out what is the best design.",
+     "agent": "conductor.fringe@PrompTugal.dinis",
+     "commit": "2822792",
+     "committed_at": "2026-11-11T13:30:15Z",
+     "files": [
+      "work/design/D26-design-c-the-city.md",
+      "work/36-designs-from-the-community.md",
+      "work/design/D25-design-b-the-timeline.md",
+      "work/design/D24-design-a-the-programme.md"
+     ]
+    },
+    {
+     "said_at": "13:20",
+     "word": "can you do the map? ... understand the paths that people are going ... the flows and the most popular ... we should be pointing to the storm",
+     "agent": "observability.fringe@PrompTugal.dinis",
+     "commit": "56ea713",
+     "committed_at": "2026-11-11T13:26:57Z",
+     "files": [
+      "assets/obs/obs.js",
+      "assets/obs/obs.json",
+      "admin/tools/obs/obs_drain.py",
+      "data/geo/countries-110m.json"
+     ]
+    },
+    {
+     "said_at": "12:40",
+     "word": "we're going to go with Lisbon Tech Week ... push that new design so I can share it ... bigger events and smaller events ... a timeline of what happens now ... don't make it super big ... with taste.",
+     "agent": "conductor.fringe@PrompTugal.dinis",
+     "commit": "257c39d",
+     "committed_at": "2026-11-11T12:41:34Z",
+     "files": [
+      "work/design/D20-taste-pass.md",
+      "work/design/D19-now-timeline.md",
+      "work/design/D18-big-and-small-events.md",
+      "data/links.json"
+     ]
+    },
+    {
+     "said_at": "11:30",
+     "word": "that is absolutely super critical.",
+     "agent": "conductor.fringe@PrompTugal.dinis",
+     "commit": "73cb424",
+     "committed_at": "2026-11-11T11:37:32Z",
+     "files": [
+      "data/inboxes/conductor.fringe-vicky.json",
+      "data/inboxes/conductor.fringe-angelo.json",
+      "JOIN.md",
+      "admin/tools/inboxes.py"
+     ]
+    },
+    {
+     "said_at": "11:14",
+     "word": "you are conductor.fringe@PrompTugal.dinis which is the main one (for this fringe site)",
+     "agent": "conductor.fringe@PrompTugal.dinis",
+     "commit": "033769d",
+     "committed_at": "2026-11-11T11:20:32Z",
+     "files": [
+      "data/keys.json",
+      "team/ROSTER.md",
+      "team/dinis/status.json",
+      "BRIEF-CORRECTIONS.md"
+     ]
+    }
+   ],
+   "row_count": 23
+  },
+  {
+   "name": "run-tree",
+   "asks": "How does each run hand work down the altitudes (A3 agent to A2 loops to A1 calls), and what did it cost?",
+   "cypher": "MATCH (agent:Agent)-[:RAN]->(r:Run)-[:CONTAINS]->(u:Unit)\nRETURN r.name AS run, agent.name AS runner, u.altitude AS altitude, count(u) AS units,\n       round(sum(coalesce(u.cost_usd, 0)) * 1e6) / 1e6 AS cost_usd, sum(CASE WHEN u.verified THEN 1 ELSE 0 END) AS signed_and_verified\nORDER BY run, altitude DESC",
+   "rows": [
+    {
+     "run": "altitudes-2026-11-11T15:31",
+     "runner": "architect.1.fringe@PrompTugal.dinis",
+     "altitude": "A3",
+     "units": 1,
+     "cost_usd": 0.0,
+     "signed_and_verified": 0
+    },
+    {
+     "run": "altitudes-2026-11-11T15:31",
+     "runner": "architect.1.fringe@PrompTugal.dinis",
+     "altitude": "A2",
+     "units": 3,
+     "cost_usd": 0.0,
+     "signed_and_verified": 3
+    },
+    {
+     "run": "altitudes-2026-11-11T15:31",
+     "runner": "architect.1.fringe@PrompTugal.dinis",
+     "altitude": "A1",
+     "units": 81,
+     "cost_usd": 0.003394,
+     "signed_and_verified": 81
+    },
+    {
+     "run": "altitudes-2026-11-11T15:31",
+     "runner": "architect.1.fringe@PrompTugal.dinis",
+     "altitude": "A0",
+     "units": 2,
+     "cost_usd": 0.0,
+     "signed_and_verified": 2
+    },
+    {
+     "run": "altitudes-2026-11-11T18:57",
+     "runner": "architect.1.fringe@PrompTugal.dinis",
+     "altitude": "A3",
+     "units": 1,
+     "cost_usd": 0.0,
+     "signed_and_verified": 0
+    },
+    {
+     "run": "altitudes-2026-11-11T18:57",
+     "runner": "architect.1.fringe@PrompTugal.dinis",
+     "altitude": "A2",
+     "units": 3,
+     "cost_usd": 0.0,
+     "signed_and_verified": 3
+    },
+    {
+     "run": "altitudes-2026-11-11T18:57",
+     "runner": "architect.1.fringe@PrompTugal.dinis",
+     "altitude": "A1",
+     "units": 16,
+     "cost_usd": 0.001286,
+     "signed_and_verified": 16
+    },
+    {
+     "run": "altitudes-2026-11-11T18:57",
+     "runner": "architect.1.fringe@PrompTugal.dinis",
+     "altitude": "A0",
+     "units": 2,
+     "cost_usd": 0.0,
+     "signed_and_verified": 2
+    },
+    {
+     "run": "packet:2026-11-11-p1-place-12-items:architect.1.fringe@PrompTugal.dinis:2026-11-11T15:38:38Z",
+     "runner": "architect.1.fringe@PrompTugal.dinis",
+     "altitude": "A1",
+     "units": 13,
+     "cost_usd": 0.004698,
+     "signed_and_verified": 13
+    },
+    {
+     "run": "packet:2026-11-11-p2-cut-items-into-loops:architect.1.fringe@PrompTugal.dinis:2026-11-11T15:37:18Z",
+     "runner": "architect.1.fringe@PrompTugal.dinis",
+     "altitude": "A2",
+     "units": 1,
+     "cost_usd": 0.001425,
+     "signed_and_verified": 1
+    },
+    {
+     "run": "packet:2026-11-11-p2-cut-items-into-loops:architect.1.fringe@PrompTugal.dinis:2026-11-11T15:37:18Z",
+     "runner": "architect.1.fringe@PrompTugal.dinis",
+     "altitude": "A1",
+     "units": 7,
+     "cost_usd": 0.001425,
+     "signed_and_verified": 7
+    }
+   ],
+   "row_count": 11
+  },
+  {
+   "name": "unverified-or-unsigned",
+   "asks": "Which units have no verified signature (no key, or a key that did not verify)?",
+   "cypher": "MATCH (u:Unit) WHERE NOT (u)<-[:SIGNED {verified: true}]-(:Key)\nRETURN u.id AS unit, u.altitude AS altitude, u.role AS role, u.runner AS runner",
+   "rows": [
+    {
+     "unit": "altitudes-2026-11-11T18:57:A3",
+     "altitude": "A3",
+     "role": "agent",
+     "runner": "architect.1.fringe@PrompTugal.dinis"
+    },
+    {
+     "unit": "altitudes-2026-11-11T15:31:A3",
+     "altitude": "A3",
+     "role": "agent",
+     "runner": "architect.1.fringe@PrompTugal.dinis"
+    }
+   ],
+   "row_count": 2
+  },
+  {
+   "name": "agents-without-grant",
+   "asks": "Which agents commit on dev but have no grant in abp/policies.json?",
+   "cypher": "MATCH (a:Agent)-[:AUTHORED]->(c:Commit) WHERE a.has_grant IS NULL\nRETURN a.name AS agent, count(c) AS commits ORDER BY commits DESC",
+   "rows": [
+    {
+     "agent": "grafana.1.fringe@PrompTugal.dinis",
+     "commits": 4
+    }
+   ],
+   "row_count": 1
+  },
+  {
+   "name": "busiest-files",
+   "asks": "Which files have the most writers (where the swarm collides)?",
+   "cypher": "MATCH (a:Agent)-[:AUTHORED]->(:Commit)-[:CHANGES]->(f:File)\nRETURN f.path AS file, count(DISTINCT a) AS writers, collect(DISTINCT a.name)[0..6] AS who\nORDER BY writers DESC LIMIT 12",
+   "rows": [
+    {
+     "file": "data/keys.json",
+     "writers": 22,
+     "who": [
+      "conductor.fringe@PrompTugal.dinis",
+      "architect.1.fringe@PrompTugal.dinis",
+      "observability.fringe@PrompTugal.dinis",
+      "design.1.fringe@PrompTugal.dinis",
+      "design.2.fringe@PrompTugal.dinis",
+      "design.3.fringe@PrompTugal.dinis"
+     ]
+    },
+    {
+     "file": "admin/build/build.mjs",
+     "writers": 15,
+     "who": [
+      "architect.1.fringe@PrompTugal.dinis",
+      "observability.fringe@PrompTugal.dinis",
+      "design.1.fringe@PrompTugal.dinis",
+      "design.2.fringe@PrompTugal.dinis",
+      "design.3.fringe@PrompTugal.dinis",
+      "design.4.fringe@PrompTugal.dinis"
+     ]
+    },
+    {
+     "file": "api/v1/README.md",
+     "writers": 7,
+     "who": [
+      "dev.2.fringe@PrompTugal.dinis",
+      "researcher.2.fringe@PrompTugal.dinis",
+      "dev.fringe@PrompTugal.dinis",
+      "conductor.fringe@PrompTugal.indi",
+      "conductor.fringe@PrompTugal.angelo",
+      "graph.fringe@PrompTugal.angelo"
+     ]
+    },
+    {
+     "file": "admin/build/event-pages.mjs",
+     "writers": 7,
+     "who": [
+      "design.1.fringe@PrompTugal.dinis",
+      "design.2.fringe@PrompTugal.dinis",
+      "design.3.fringe@PrompTugal.dinis",
+      "design.4.fringe@PrompTugal.dinis",
+      "dev.2.fringe@PrompTugal.dinis",
+      "dev.lead.fringe@PrompTugal.dinis"
+     ]
+    },
+    {
+     "file": "admin/build/validate.mjs",
+     "writers": 5,
+     "who": [
+      "architect.1.fringe@PrompTugal.dinis",
+      "design.2.fringe@PrompTugal.dinis",
+      "dev.1.fringe@PrompTugal.dinis",
+      "dev.2.fringe@PrompTugal.dinis",
+      "dev.fringe@PrompTugal.dinis"
+     ]
+    },
+    {
+     "file": "team/angelo/status.json",
+     "writers": 5,
+     "who": [
+      "conductor.fringe@PrompTugal.dinis",
+      "conductor.fringe@PrompTugal.angelo",
+      "designer.fringe@PrompTugal.angelo",
+      "graph.fringe@PrompTugal.angelo",
+      "tracer.fringe@PrompTugal.angelo"
+     ]
+    },
+    {
+     "file": "admin/build/graph.js",
+     "writers": 4,
+     "who": [
+      "design.4.fringe@PrompTugal.dinis",
+      "dev.lead.fringe@PrompTugal.dinis",
+      "conductor.fringe@PrompTugal.angelo",
+      "graph.fringe@PrompTugal.angelo"
+     ]
+    },
+    {
+     "file": "team/angelo/runs.md",
+     "writers": 4,
+     "who": [
+      "conductor.fringe@PrompTugal.angelo",
+      "designer.fringe@PrompTugal.angelo",
+      "graph.fringe@PrompTugal.angelo",
+      "tracer.fringe@PrompTugal.angelo"
+     ]
+    },
+    {
+     "file": "sources.md",
+     "writers": 4,
+     "who": [
+      "conductor.fringe@PrompTugal.dinis",
+      "researcher.2.fringe@PrompTugal.dinis",
+      "researcher.fringe@PrompTugal.dinis",
+      "researcher.1.fringe@PrompTugal.jose"
+     ]
+    },
+    {
+     "file": "data/events.json",
+     "writers": 4,
+     "who": [
+      "conductor.fringe@PrompTugal.dinis",
+      "researcher.2.fringe@PrompTugal.dinis",
+      "researcher.fringe@PrompTugal.dinis",
+      "researcher.1.fringe@PrompTugal.jose"
+     ]
+    },
+    {
+     "file": ".github/workflows/deploy.yml",
+     "writers": 4,
+     "who": [
+      "design.2.fringe@PrompTugal.dinis",
+      "dev.1.fringe@PrompTugal.dinis",
+      "dev.2.fringe@PrompTugal.dinis",
+      "dev.fringe@PrompTugal.dinis"
+     ]
+    },
+    {
+     "file": "work/13-editorial-check.md",
+     "writers": 3,
+     "who": [
+      "conductor.fringe@PrompTugal.dinis",
+      "researcher.2.fringe@PrompTugal.dinis",
+      "conductor.fringe@PrompTugal.vicky"
+     ]
+    }
+   ],
+   "row_count": 12
+  },
+  {
+   "name": "fringe-organisers",
+   "asks": "In the fringe graph, which communities organise the most events, and on which topics?",
+   "cypher": "MATCH (c:Community)<-[:IS_ORGANISED_BY]-(e:Event)\nOPTIONAL MATCH (e)-[:IS_ABOUT]->(t:Topic)\nRETURN c.name AS community, count(DISTINCT e) AS events, collect(DISTINCT t.name)[0..5] AS topics\nORDER BY events DESC LIMIT 12",
+   "rows": [
+    {
+     "community": "Portugal Tech Week",
+     "events": 47,
+     "topics": [
+      "growth & product",
+      "saas & enterprise",
+      "AI",
+      "international expansion",
+      "tech & innovation"
+     ]
+    },
+    {
+     "community": "Unicorn Factory Lisboa",
+     "events": 5,
+     "topics": [
+      "Portugal",
+      "networking",
+      "digital wellbeing",
+      "Italy",
+      "scaleups"
+     ]
+    },
+    {
+     "community": "Yorkseed ™",
+     "events": 4,
+     "topics": [
+      "venture & fundraising",
+      "growth & product",
+      "tech & innovation",
+      "international expansion"
+     ]
+    },
+    {
+     "community": "Kuma Partners",
+     "events": 4,
+     "topics": [
+      "investors",
+      "deep tech",
+      "founders",
+      "AI",
+      "future of work"
+     ]
+    },
+    {
+     "community": "Canopy Community",
+     "events": 3,
+     "topics": [
+      "startups",
+      "networking",
+      "AI",
+      "demos"
+     ]
+    },
+    {
+     "community": "FounderLink",
+     "events": 3,
+     "topics": [
+      "alternative event",
+      "investors",
+      "founders"
+     ]
+    },
+    {
+     "community": "teja house",
+     "events": 2,
+     "topics": [
+      "creator economy",
+      "deeptech & hardware"
+     ]
+    },
+    {
+     "community": "LisboaUX",
+     "events": 2,
+     "topics": [
+      "growth & product",
+      "international expansion",
+      "climate & impact",
+      "design",
+      "UX"
+     ]
+    },
+    {
+     "community": "Indvstry Clvb",
+     "events": 2,
+     "topics": [
+      "founders",
+      "diaspora",
+      "dinner",
+      "culture",
+      "AI"
+     ]
+    },
+    {
+     "community": "Yorkseed Global Capital Network",
+     "events": 2,
+     "topics": [
+      "demos",
+      "makers",
+      "investors"
+     ]
+    },
+    {
+     "community": "ideaic.io",
+     "events": 2,
+     "topics": [
+      "alternative event",
+      "proptech",
+      "real estate",
+      "international expansion",
+      "venture & fundraising"
+     ]
+    },
+    {
+     "community": "Lisbon Business Leaders",
+     "events": 2,
+     "topics": [
+      "networking",
+      "executives",
+      "growth & product",
+      "climate & impact"
+     ]
+    }
+   ],
+   "row_count": 12
+  },
+  {
+   "name": "grammar",
+   "asks": "Every verb in the graph, with its inverse and how often it is used (no relates_to).",
+   "cypher": "MATCH (v:Verb)\nOPTIONAL MATCH ()-[e]->() WHERE type(e) = v.id\nRETURN v.id AS verb, v.says AS says, v.inverse AS inverse, v.subject AS subject, v.object AS object, count(e) AS uses\nORDER BY uses DESC",
+   "rows": [
+    {
+     "verb": "CHANGES",
+     "says": "changes",
+     "inverse": "is changed by",
+     "subject": "Commit",
+     "object": "File",
+     "uses": 2519
+    },
+    {
+     "verb": "AUTHORED",
+     "says": "authored",
+     "inverse": "was authored by",
+     "subject": "Agent",
+     "object": "Commit",
+     "uses": 563
+    },
+    {
+     "verb": "FOLLOWS",
+     "says": "follows",
+     "inverse": "is followed by",
+     "subject": "Commit",
+     "object": "Commit",
+     "uses": 563
+    },
+    {
+     "verb": "IS_FOR",
+     "says": "is for",
+     "inverse": "receives",
+     "subject": "Commit",
+     "object": "Agent|Person",
+     "uses": 540
+    },
+    {
+     "verb": "IS_ABOUT",
+     "says": "is about",
+     "inverse": "is the topic of",
+     "subject": "Event",
+     "object": "Topic",
+     "uses": 389
+    },
+    {
+     "verb": "EXPOSES",
+     "says": "holds, without needing,",
+     "inverse": "is held without need by",
+     "subject": "Unit",
+     "object": "Reach",
+     "uses": 208
+    },
+    {
+     "verb": "HAPPENS_IN",
+     "says": "happens in",
+     "inverse": "is where it happens:",
+     "subject": "Event",
+     "object": "Place",
+     "uses": 174
+    },
+    {
+     "verb": "IS_ORGANISED_BY",
+     "says": "is organised by",
+     "inverse": "organises",
+     "subject": "Event",
+     "object": "Community",
+     "uses": 172
+    },
+    {
+     "verb": "MAY_WRITE",
+     "says": "may write",
+     "inverse": "may be written by",
+     "subject": "Role|Agent",
+     "object": "Path",
+     "uses": 144
+    },
+    {
+     "verb": "CONTAINS",
+     "says": "contains the unit",
+     "inverse": "is a unit of",
+     "subject": "Run",
+     "object": "Unit",
+     "uses": 132
+    },
+    {
+     "verb": "IS_AT",
+     "says": "runs at the altitude",
+     "inverse": "is the altitude of the unit",
+     "subject": "Unit",
+     "object": "Altitude",
+     "uses": 132
+    },
+    {
+     "verb": "SIGNED",
+     "says": "signed",
+     "inverse": "was signed by",
+     "subject": "Key",
+     "object": "Unit",
+     "uses": 130
+    },
+    {
+     "verb": "HANDS_TO",
+     "says": "hands work to",
+     "inverse": "takes work from",
+     "subject": "Unit",
+     "object": "Unit",
+     "uses": 128
+    },
+    {
+     "verb": "CALLS",
+     "says": "calls the model",
+     "inverse": "is called by",
+     "subject": "Unit",
+     "object": "Model",
+     "uses": 116
+    },
+    {
+     "verb": "WORKS_ON",
+     "says": "works on the board item",
+     "inverse": "is worked on by",
+     "subject": "Unit",
+     "object": "Item",
+     "uses": 116
+    },
+    {
+     "verb": "CROSSES_INTO",
+     "says": "crosses into the lane of",
+     "inverse": "has its lane crossed by",
+     "subject": "Commit",
+     "object": "Role",
+     "uses": 67
+    },
+    {
+     "verb": "RECORDS",
+     "says": "records",
+     "inverse": "is recorded in",
+     "subject": "Review",
+     "object": "Finding",
+     "uses": 57
+    },
+    {
+     "verb": "BREACHES",
+     "says": "breaches",
+     "inverse": "is breached by",
+     "subject": "Finding",
+     "object": "Rule",
+     "uses": 57
+    },
+    {
+     "verb": "FLAGS",
+     "says": "flags",
+     "inverse": "is flagged by",
+     "subject": "Finding",
+     "object": "Agent",
+     "uses": 57
+    },
+    {
+     "verb": "CONCERNS",
+     "says": "concerns the file",
+     "inverse": "is the file of",
+     "subject": "Finding",
+     "object": "File",
+     "uses": 57
+    },
+    {
+     "verb": "CITES",
+     "says": "cites the commit",
+     "inverse": "is cited by",
+     "subject": "Finding",
+     "object": "Commit",
+     "uses": 57
+    },
+    {
+     "verb": "IS_PART_OF",
+     "says": "is part of",
+     "inverse": "has in its programme",
+     "subject": "Event",
+     "object": "Festival",
+     "uses": 47
+    },
+    {
+     "verb": "OPERATES",
+     "says": "operates",
+     "inverse": "is operated by",
+     "subject": "Person",
+     "object": "Agent",
+     "uses": 36
+    },
+    {
+     "verb": "PLAYS",
+     "says": "plays the role",
+     "inverse": "is played by",
+     "subject": "Agent",
+     "object": "Role",
+     "uses": 35
+    },
+    {
+     "verb": "WORKS_AT",
+     "says": "works at the altitude",
+     "inverse": "is the altitude of",
+     "subject": "Agent",
+     "object": "Altitude",
+     "uses": 35
+    }
+   ],
+   "row_count": 35
+  }
+ ]
+}
