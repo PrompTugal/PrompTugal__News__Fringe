@@ -76,6 +76,11 @@ if (!/storm-charles\.promptugal\.news/.test(front) || !/not a warning service/i.
 for (const need of ['join/index.html', 'api/v1/events.json', 'llms.txt', 'version.json', 'sitemap.xml', '404.html', 'CNAME'])
   if (!fs.existsSync(path.join(OUT, need))) fail(`_site/${need} missing`);
 
+for (const rel of ['index.html', 'join/index.html', 'graph/index.html']) {   // D2: every page carries the share meta tags (the PNG itself is rendered in CI and not required here)
+  const h = fs.readFileSync(path.join(OUT, rel), 'utf8');
+  for (const need of ['og:title', 'og:description', 'og:image" content="https://fringe.promptugal.news/assets/og/share.png', 'twitter:card'])
+    if (!h.includes(need)) fail(`${rel}: missing ${need}`);
+}
 const ms = Date.now() - t0;
 if (ms > 5000) warns.push(`the gate took ${ms} ms: over its 5 s budget`);
 for (const w of warns) console.log('WARN ' + w);

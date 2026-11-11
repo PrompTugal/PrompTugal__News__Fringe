@@ -84,9 +84,12 @@ footer{max-width:var(--page);margin:var(--s5) auto;padding:var(--gutter);border-
 const NAV = [['Today', '/', true], ['Now', '/now/', true], ['Map', '/graph/', true], ['Organisers', '/organisers/', true], ['How', '/how/', true], ['Traffic', '/traffic/', true], ['Join', '/join/', true]];
 const navHtml = (here) => `<header><nav aria-label="Main"><span class="brand"><a href="/">${WORDMARK}</a></span>
 <ul class="nav">${NAV.filter((n) => n[2]).map(([label, href]) => `<li><a href="${href}"${href === here ? ' aria-current="page"' : ''}>${label}</a></li>`).join('')}</ul></nav><div class="tiles" aria-hidden="true"></div></header>`;
+const OG_IMAGE = SITE + 'assets/og/share.png';   // work/design D2: 1200x630, rendered in CI from admin/build/og/share.html (never in git)
+const ogDefault = (title, desc) => [['og:type', 'website'], ['og:site_name', 'Lisbon Fringe'], ['og:title', title], ['og:description', desc], ['og:image', OG_IMAGE], ['og:image:width', '1200'], ['og:image:height', '630']]
+  .map(([p, v]) => `<meta property="${p}" content="${esc(v)}">`).join('') + `<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${OG_IMAGE}">`;
 const page = (title, body, desc, head = '', here = '/') => `<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title>
-<meta name="description" content="${esc(desc)}">${head}<style>${css}</style></head><body>
+<meta name="description" content="${esc(desc)}">${/og:title/.test(head) ? head : ogDefault(title, desc) + head}<style>${css}</style></head><body>
 <div class="ptbar"><a href="https://promptugal.news">Lisbon Fringe · a PrompTugal.news site <span aria-hidden="true">↗</span></a></div>
 ${navHtml(here)}
 <main><p class="ind">${INDEPENDENCE}</p>${body}</main>

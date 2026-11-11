@@ -36,6 +36,11 @@ jobs:
           echo "PUSHED_AT=${{ github.event.head_commit.timestamp }}" >> "$GITHUB_ENV"
       - name: Build and gate (the gate builds once; must print OK)
         run: node admin/build/validate.mjs
+      - name: Render the share card (soft: a failure never blocks a deploy)
+        run: |
+          mkdir -p _site/assets/og
+          google-chrome --headless=new --no-sandbox --hide-scrollbars --window-size=1200,630 --screenshot="$PWD/_site/assets/og/share.png" "file://$PWD/admin/build/og/share.html" || echo "share card not rendered"
+          ls -l _site/assets/og/ || true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

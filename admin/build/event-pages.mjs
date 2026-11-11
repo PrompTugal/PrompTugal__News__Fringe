@@ -71,9 +71,9 @@ export function eventPages(events, { page, esc, linkify, SITE, card, cardList, o
     const desc = `${e.name}, by ${org}. ${when(e)} (Lisbon time = UTC). ${isOnline(e) ? 'Online' : e.place || ''}. Status: ${STATUS[e.status] || 'Unknown'}. Register on the organiser's page.`.slice(0, 300);
     const title = `${e.name}: ${org} · Lisbon Fringe`;
     const head = [
-      ['og:type', 'article'], ['og:site_name', 'Lisbon Fringe'], ['og:title', `${e.name}, by ${org}`], ['og:description', desc], ['og:url', url],
+      ['og:type', 'article'], ['og:site_name', 'Lisbon Fringe'], ['og:title', `${e.name}, by ${org}`], ['og:description', desc], ['og:url', url], ['og:image', SITE + 'assets/og/share.png'], ['og:image:width', '1200'], ['og:image:height', '630'],
     ].map(([p, v]) => `<meta property="${p}" content="${esc(v)}">`).join('')
-      + `<meta name="twitter:card" content="summary"><link rel="canonical" href="${esc(url)}">`;
+      + `<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${SITE}assets/og/share.png"><link rel="canonical" href="${esc(url)}">`;
     const st = STATUS[e.status] ? e.status : 'unknown';
     const facts = [
       ['Status', `<span class="chip ${esc(st)}">${esc(STATUS[st])}</span> ${esc(STATUS_SAY[st])}`
