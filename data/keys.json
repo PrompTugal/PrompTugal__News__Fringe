@@ -324,6 +324,22 @@
         "fingerprint": "sha256:ed5e2c22bed5f595",
         "signing_fingerprint": "sha256:f72a0804da0343b4"
       }
+    },
+    {
+      "id": "researcher.1.fringe-jose",
+      "agent": "researcher.1.fringe@PrompTugal.jose",
+      "role": "Researcher for Jose Bota's conductor (Lisbon Tech Fringe, WS-215; lane channels): today's online events, checked against data/events.json and, where the network allows, the organisers' public pages, for the organiser notes Jose sends (work/31-jose-today.md).",
+      "how": "Made in its own session on 11 November 2026, 13:37 UTC (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab). A session key: it ends with the session. Public half only.",
+      "added": "2026-11-11",
+      "status": "active",
+      "bundle": {
+        "v": "1",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA1opevFMU70XVFUhvEo8R\nzqAygmYF50E7w5hy+NJHulwBH65fZULYtapO2RyX2mR1KJn6dRUKhWbOoK4g4IGN\n5qGPhl31DQi0Lbcd2zh2seVeC6gYpscgNQYqu8Vsmfx5cSK7NgsFZ+mEXhLLmNNC\njihvy3U0XH10QG9S6AXtOFQ47hTl1RlXecPbQPTG7xInYnZl9aByUkAB7UtYnUVA\nVnZsgaQdxMH/L2o5Ey9NplUf17dPTJ8gDDnxoLkoT4fb/27aBzuGL7sTY/PKhHR+\njSn+F3Glav0exxxj9QWWGe1UsCDd7Xlh7Fb+3u9zF1fQCvv4lJTIi/jih7cIlkcv\nch7Qqrp7CN4tbuv8k/8+tyvyrSGcDAllLZjqtBRb6YQ3NYvnDWk5wMhJDJluwM9q\nPLlHJ3l+vC0DpnJoV9SPILo8Ih+OYh7EFbc9FGkWYqhGvgF11mtNfRSTUOaY2Ww3\nMU7iLMVr4TFi7pApyigfd3XDlOovMLLy+gbSzWA0KmscpC7TAoyYBVlxb5YmACIV\nwc6s8zgJBsAjuRSvBHqHsi7+uDw2D/j3unQyEeaocHZuY5/ixkNby1jIKSLAIXOs\neFVvvaqjtv1ETK7y7PngMqxFx0WSITC6EK12aLy6VZ00yL2UcJ+Chvm10q1SqDxt\nzaV6ZZO6a1I5niNn+DEDUV0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEd3ci/cm1v3Ru/Gw12ItLfmMFm7o1\n/esqw2gOZMseVxVhzPO7dAS+OW4yFhEBixqHawMGdNVMNHiS1S3TztFY7w==\n-----END PUBLIC KEY-----\n",
+        "label": "researcher.1.fringe@PrompTugal.jose",
+        "fingerprint": "sha256:9213505208a3abd3",
+        "signing_fingerprint": "sha256:225ae79f898ac2da"
+      }
     }
   ]
 }
