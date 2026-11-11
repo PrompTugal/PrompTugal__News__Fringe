@@ -27,7 +27,8 @@ import { communitiesBody } from './communities-page.mjs';   // work/04, conducto
 import { readChanges, changesBody } from './changes.mjs';
 import { buildReleases, releasesIndexBody, releaseBody, releaseJson, releasePath } from './releases.mjs';   // work/37, dev.2.fringe@PrompTugal.dinis   // work/15, dev.2.fringe@PrompTugal.dinis
 import { nowBlock, nowPageBody, nowJs, span as evSpan } from './now.mjs';
-import { timelineBlock, TIMELINE_CSS } from './timeline.mjs';   // D19, design.2.fringe@PrompTugal.dinis   // work/16, dev.2.fringe@PrompTugal.dinis
+import { timelineBlock, TIMELINE_CSS } from './timeline.mjs';
+import { MYDAY_CSS, myDayBody } from './myday.mjs';   // D29, design.2.fringe@PrompTugal.dinis   // D19, design.2.fringe@PrompTugal.dinis   // work/16, dev.2.fringe@PrompTugal.dinis
 import { guidanceBody, abpBody } from './guidance.mjs';   // work/40, work/39, architect.1.fringe@PrompTugal.dinis
 import { traceBody } from './trace-page.mjs';   // Angelo's traces, designer.fringe@PrompTugal.angelo
 
@@ -100,7 +101,7 @@ code{background:var(--paper-2);padding:1px var(--s1);border-radius:var(--radius)
 .tag.open{border-color:var(--warn)}.tag.claimed{border-color:var(--brand)}.tag.done{border-color:var(--ok)}
 .ptbar{background:var(--ink);font-size:var(--fs-meta);text-align:center}.ptbar a{display:block;padding:6px var(--gutter);color:var(--paper);text-decoration:none;font-weight:600;letter-spacing:.02em}.ptbar a:hover{text-decoration:underline;color:var(--paper)}
 .hero{padding:var(--s2) 0 var(--s1)}.hero h1{margin:.2em 0 .1em}.hero .tag-line{margin:0 0 .6em;color:var(--ink-3)}.hero .count{font-weight:600;margin:0 0 .6em}.hero .card{margin:6px 0;padding:var(--s2) var(--s3)}.hero .when{font-variant-numeric:tabular-nums;color:var(--brand);font-weight:600;font-size:var(--fs-meta)}.hero .muted{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}.btn{display:block;text-align:center;background:var(--brand);color:var(--paper);font-weight:600;text-decoration:none;padding:var(--s3) var(--s4);border-radius:var(--radius);margin:var(--s3) 0;min-height:44px}.btn:hover{color:var(--paper)}
-footer{max-width:var(--page);margin:var(--s5) auto;padding:var(--gutter);border-top:1px solid var(--rule-2)}${CARD_CSS}${TIER_CSS}${liveCss}${TIMELINE_CSS}
+footer{max-width:var(--page);margin:var(--s5) auto;padding:var(--gutter);border-top:1px solid var(--rule-2)}${CARD_CSS}${TIER_CSS}${liveCss}${TIMELINE_CSS}${MYDAY_CSS}
 .jumps{position:sticky;top:0;z-index:20;display:flex;gap:6px;padding:8px 0;margin:8px 0;background:var(--bg);overflow-x:auto}
 .jumps a{flex:0 0 auto;display:inline-flex;align-items:center;min-height:44px;padding:0 12px;font-size:.95rem;border-radius:99px;border:2px solid var(--accent);color:var(--accent);font-weight:700;text-decoration:none;background:var(--bg)}
 .jumps a:hover,.jumps a:focus-visible{background:var(--accent);color:var(--bg)}
@@ -126,6 +127,7 @@ ${navHtml(here)}<!--TICK-->
 <main>${WHATSAPP}${body}</main>
 <footer class="muted">${INDEPENDENCE}<br>Built from <a href="${REPO}">the repository</a> at ${BUILT.slice(0, 16).replace('T', ' ')} UTC · <a href="/changes/${esc(VERSION)}/">${esc(VERSION)}</a>. <a href="/traffic/">Traffic</a> · <a href="/changes/">Changes</a> · <a href="/tip/">Send a tip</a> · <a href="/evolution/">Evolution</a> · <a href="/dashboard/">Swarm</a> · <a href="/guidance/">Contribute</a> · <a href="/abp/">Policies</a>.</footer>
 <script src="/assets/obs/obs.js" defer></script>
+<script src="/myday.js" defer></script>
 </body></html>`;
 
 // --- events -------------------------------------------------------------
@@ -316,6 +318,9 @@ writeFileSync(join(out, 'now.js'), nowJs);
 writeFileSync(join(out, 'storm.js'), read('admin/build/storm.js'));
 mkdirSync(join(out, 'storm'), { recursive: true });
 writeFileSync(join(out, 'storm', 'index.html'), page('The storm: Lisbon Tech Fringe', `<style>${STORM_CSS}</style>` + stormBody(esc), 'Storm Charles in Lisbon: warnings, what moved and transport, read live from the storm site; official sources first. Not a warning service.', '', '/storm/'));
+writeFileSync(join(out, 'myday.js'), read('admin/build/myday.js'));   // D29
+mkdirSync(join(out, 'my'), { recursive: true });
+writeFileSync(join(out, 'my', 'index.html'), page('My day: Lisbon Tech Fringe', myDayBody(), 'The events you starred, as a personal timeline of your day in Lisbon. Kept in your browser; nothing is sent to us.', '<meta name="robots" content="noindex">', '/my/'));
 // observability (work/21): the sender and its public config on every page, and /traffic/ from the drain's counts
 mkdirSync(join(out, 'assets', 'brand'), { recursive: true });
 for (const f of ['pt-news-stamp-light.svg', 'pt-news-stamp-dark.svg', 'favicon.svg']) writeFileSync(join(out, 'assets', 'brand', f), read(`assets/brand/${f}`));
