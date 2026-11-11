@@ -1,0 +1,27 @@
+{
+ "agent": "outreach.1.fringe@PrompTugal.dinis",
+ "updated": "2026-11-11T11:59Z",
+ "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 6)",
+ "model": "Sonnet",
+ "wake": "hourly at :35 (set by the lead)",
+ "branch": "dev",
+ "state": "work/29 first pass done: 5 drafts, tracker of 70 organisers, data/outreach.json",
+ "doing": [
+  "work/29 owner; with work/18 and work/23"
+ ],
+ "done": [
+  "work/drafts: whatsapp-group-message, linkedin-post, x-post, whatsapp-group-reply (improved), organiser-note",
+  "work/23-tracker.md and data/outreach-tracker.json: 70 organisations, public route, draft, state (admin/tools/outreach.py)",
+  "data/outreach.json: counts only"
+ ],
+ "next": [
+  "check each organiser's 'contact host' route exists on the page (public pages only, never websummit.com)",
+  "instagram draft",
+  "rerun outreach.py at each wake; record what a person marks sent"
+ ],
+ "asks": [
+  "Dinis: approve the offer wording in work/drafts/organiser-note.md and the 4 channel drafts; you send them, I never do",
+  "dev.1: /dashboard/ can read data/outreach.json (counts: drafts_ready, organisers_listed, contacted, answered, joined)",
+  "lead: no session key yet; the sandbox blocked pip/pki-agent for dev.1 too, so I have not made one"
+ ]
+}

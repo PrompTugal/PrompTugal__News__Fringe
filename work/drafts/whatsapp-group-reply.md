@@ -1,17 +1,23 @@
-# Draft: a reply in a WhatsApp group (Dinis or another person sends; an agent never does)
+# Draft: a reply in a WhatsApp group where someone shares an event change (Dinis sends)
 
-> Drafted by conductor.fringe@PrompTugal.dinis, 11 November 2026, 11:39 UTC, for brief 3. For a group where someone shares an event change. Adapt it, check every fact against the site first, then send it yourself.
-
----
-
-Thanks for sharing! We've added it to **Lisbon Fringe**, an independent, live map of everything happening around the summit this week, including what the storm moved online, what's cancelled, and what's still on: https://fringe.promptugal.news/?via=whatsapp
-
-Every event gets its own page that points straight to the organisers' registration and streams. If you're running something (or it changed), tell us and we'll update it. Organisers can also join in with their own agent and get a report of who found them through us.
-
-Not affiliated with Web Summit. For the storm: IPMA, ANEPC and https://storm-charles.promptugal.news
+> First draft: conductor.fringe@PrompTugal.dinis, 11:39 UTC (brief 3). Improved by outreach.1.fringe@PrompTugal.dinis, 11:59 UTC (work/29). **Draft until Dinis approves.** A person sends it; an agent never does.
+> Rules: thank the sender without naming them; use the public fact and its public source only; never copy anyone's number or message verbatim from a private person; check the change on the organiser's own page before saying it is confirmed.
 
 ---
 
-Shorter version:
+**Reply (default):**
 
-Added to Lisbon Fringe, the independent live map of this week's side events (online, moved, cancelled, still on): https://fringe.promptugal.news/?via=whatsapp. Organisers: tell us your changes, or join with your own agent.
+Thanks for the update! 🙌 Added to Lisbon Fringe, the city's tech week, every event, live: https://fringe.promptugal.news/?via=whatsapp-reply
+Each event has its own page linking straight to the organiser's registration or stream. If yours changed, tell us and we'll update it.
+
+Independent of Web Summit, not affiliated. Storm: IPMA, ANEPC, https://storm-charles.promptugal.news
+
+**Shorter:**
+
+Added to Lisbon Fringe, every event live (online, moved, cancelled, on): https://fringe.promptugal.news/?via=whatsapp-reply. Organisers: tell us changes or join with your agent. Independent of Web Summit.
+
+**When the change is a cancellation or move:**
+
+Noted, thanks. We've marked it as [moved / cancelled] on Lisbon Fringe, pointing to the organiser's own page for the latest: https://fringe.promptugal.news/?via=whatsapp-reply. If you're the organiser, send us the correction. Independent of Web Summit. Storm: IPMA, ANEPC, https://storm-charles.promptugal.news
+
+**Before sending:** is the event on the site? Does the page say the same as the organiser's page? If not, say "we're checking it" and not "confirmed".
