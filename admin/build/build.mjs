@@ -276,7 +276,9 @@ writeFileSync(join(out, 'version.json'), JSON.stringify({ version: VERSION, comm
 writeFileSync(join(out, 'version.txt'), VERSION + '\n');
 writeFileSync(join(out, '.nojekyll'), '');
 mkdirSync(join(out, 'now'), { recursive: true });
-writeFileSync(join(out, 'now', 'index.html'), page('On now: Lisbon Tech Week', nowPageBody(events, esc, { eventPath, hasPage }, new Date(BUILT)), 'What is on now and in the next three hours around Web Summit Lisbon.'));
+writeFileSync(join(out, 'now', 'index.html'), page('On now: Lisbon Tech Week', `<h1>On now</h1>
+<p class="muted">What is on now and in the next 24 hours, from events re-read at their public pages. Not a warning service: for the storm see <a href="https://storm-charles.promptugal.news">storm-charles.promptugal.news</a>.</p>
+${timelineBlock(events, esc, { eventPath, hasPage }, new Date(BUILT), { limit: 40, hours: 24, full: true })}`, 'What is on now and in the next 24 hours around Web Summit Lisbon.', '', '/now/'));
 writeFileSync(join(out, 'now.js'), nowJs);
 writeFileSync(join(out, 'storm.js'), read('admin/build/storm.js'));
 // observability (work/21): the sender and its public config on every page, and /traffic/ from the drain's counts

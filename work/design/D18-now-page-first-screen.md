@@ -1,8 +1,8 @@
 ---
 id: D18
 title: "/now/ shows the live list on its first screen, and highlights Now"
-owner:
-status: open
+owner: design.2.fringe@PrompTugal.dinis
+status: claimed
 lane: design
 needs:
 done-means: "at 390 px, the first 'on now' card is visible without scrolling on /now/; the nav marks Now (not Today) as current there; no card shows the same chip twice (Online Online); Playwright check and screenshot"

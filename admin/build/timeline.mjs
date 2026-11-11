@@ -10,9 +10,9 @@ const H = 3600000;
 
 // ---- shared: these two functions run on the server and in the browser, so they use no imports ----------------
 // items: [{h: href, n: name, p: place, s: start ms, e: end ms, st: status, x: 1 if the end is not stated}]
-function pick(items, now, limit) {
+function pick(items, now, limit, hrs) {
   const live = items.filter((i) => i.st !== 'cancelled' && i.s <= now && i.e > now).sort((a, b) => a.s - b.s);
-  const next = items.filter((i) => i.st !== 'cancelled' && i.s > now && i.s <= now + 12 * H).sort((a, b) => a.s - b.s);
+  const next = items.filter((i) => i.st !== 'cancelled' && i.s > now && i.s <= now + hrs * H).sort((a, b) => a.s - b.s);
   const maxLive = Math.min(live.length, Math.max(2, limit - Math.min(next.length, 3)));   // always leave room for what is next
   const nowRows = live.slice(0, maxLive);
   const nextRows = next.slice(0, Math.max(0, limit - nowRows.length));
@@ -27,12 +27,12 @@ function rowHtml(i, esc, now) {
   return `<li class="tl-row ${on ? 'tl-live' : 'tl-next'}"><span class="tl-t">${hm(i.s)}</span><span class="tl-dot" aria-hidden="true"></span>`
     + `<div class="tl-c"><a class="tl-n" href='${esc(i.h)}'>${esc(i.n)}</a><div class="tl-m"><span class="chip ${st}">${label}</span> <span>${esc(st === 'online' || i.p === 'Online' ? '' : i.p + ' · ')}${until} UTC</span></div></div></li>`;
 }
-function render(items, now, limit, esc) {
-  const r = pick(items, now, limit);
+function render(items, now, limit, esc, hrs) {
+  const r = pick(items, now, limit, hrs);
   const hm = new Date(now).toISOString().slice(11, 16);
   const nowLine = `<li class="tl-nowline" aria-label="Now, ${hm} UTC"><span class="tl-t">NOW</span><span class="tl-dot" aria-hidden="true"></span><span class="tl-c">${hm} UTC</span></li>`;
   const rows = r.nowRows.map((i) => rowHtml(i, esc, now)).join('') + nowLine + r.nextRows.map((i) => rowHtml(i, esc, now)).join('');
-  const empty = !r.nowRows.length && !r.nextRows.length ? '<li class="tl-empty muted">Nothing checked is on now or in the next 12 hours.</li>' : '';
+  const empty = !r.nowRows.length && !r.nextRows.length ? `<li class="tl-empty muted">Nothing checked is on now or in the next ${hrs} hours.</li>` : '';
   const more = [r.liveMore > 0 ? `${r.liveMore} more on now` : '', r.nextMore > 0 ? `${r.nextMore} more coming up` : ''].filter(Boolean).join(' · ');
   return { html: rows + empty, more, hm, liveTotal: r.liveTotal };
 }
@@ -62,27 +62,29 @@ export const TIMELINE_CSS = `
 @media (min-width:640px){.tl::before{left:63px}.tl li{grid-template-columns:54px 20px 1fr}.tl-nowline .tl-dot{margin-left:3px}}`;
 
 // events: the published events; esc; helpers: { eventPath, hasPage }; at: Date (the build time); limit: rows (6)
-export function timelineBlock(events, esc, { eventPath, hasPage }, at, { limit = 6 } = {}) {
+export function timelineBlock(events, esc, { eventPath, hasPage }, at, { limit = 6, hours = 12, full = false } = {}) {
   const now = at.getTime();
   const items = [];
   for (const e of events) {
     const sp = span(e);
     if (!sp || e.status === 'cancelled') continue;
-    if (sp.e <= now - H || sp.s > now + 36 * H) continue;   // only what can matter within the next day and a half
+    if (sp.e <= now - H || sp.s > now + Math.max(36, hours + 2) * H) continue;   // only what can matter within the next day and a half
     items.push({ h: hasPage(e) ? eventPath(e) : e.url, n: e.name, p: placeShort(e), s: sp.s, e: sp.e, st: e.status || 'unknown', x: sp.endStated ? 0 : 1 });
   }
-  const r = render(items, now, limit, esc);
+  const r = render(items, now, limit, esc, hours);
   const data = JSON.stringify(items).replace(/</g, '\\u003c');
   const moreText = r.more ? `${r.more}. ` : '';
   const client = `(function(){try{var esc=${esc.toString()},pick=${pick.toString()},rowHtml=${rowHtml.toString()},render=${render.toString()},H=${H};
-var b=document.getElementById('timeline');if(!b)return;var D=JSON.parse(document.getElementById('tl-data').textContent),L=${limit};
-function run(){var now=Date.now(),r=render(D,now,L,esc);b.querySelector('.tl').innerHTML=r.html;
+var b=document.getElementById('timeline');if(!b)return;var D=JSON.parse(document.getElementById('tl-data').textContent),L=${limit},HR=${hours};
+function run(){var now=Date.now(),r=render(D,now,L,esc,HR);b.querySelector('.tl').innerHTML=r.html;
 var m=b.querySelector('.tl-more-text');if(m)m.textContent=r.more?r.more+'. ':'';
 var a=b.querySelector('.tl-asof');if(a)a.textContent='Following your clock, '+r.hm+' UTC. Lisbon time is UTC in November.'}
 run();setInterval(run,60000)}catch(e){}})();`;
-  return `<section class="timeline" id="timeline" aria-labelledby="tl-h"><h2 id="tl-h">Right now in Lisbon</h2>
+  const head = full ? '' : '<h2 id="tl-h">Right now in Lisbon</h2>';
+  const link = full ? '' : '<a href="/now/">See the full timeline &rarr;</a>';
+  return `<section class="timeline${full ? ' tl-full' : ''}" id="timeline"${full ? '' : ' aria-labelledby="tl-h"'}>${head}
 <p class="tl-sub muted tl-asof">As of ${r.hm} UTC when this page was built; with JavaScript it follows your clock. Lisbon time is UTC in November.</p>
 <ol class="tl">${r.html}</ol>
-<p class="tl-more"><span class="tl-more-text">${esc(moreText)}</span><a href="/now/">See the full timeline &rarr;</a></p>
+<p class="tl-more"><span class="tl-more-text">${esc(moreText)}</span>${link}</p>
 <script type="application/json" id="tl-data">${data}</script><script>${client}</script></section>`;
 }
