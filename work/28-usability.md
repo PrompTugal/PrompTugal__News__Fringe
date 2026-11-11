@@ -44,3 +44,6 @@ Run 5 notes (2026-11-11 18:42 UTC): page height of the home is 9663 px (was 2267
 | 2026-11-11 20:41 UTC | v0.1.551 | PASS: Tonight 4, 1 tap, in place | PASS: 'Cancelled or moved 5', 1 tap, list at 1.4 screens | PASS: Online today 22, 1 tap, list starts with on now/next (D39 fixed) | PASS | PASS: tip link at the top of the event page, pre-filled | none | 1 on every page: ipapi.co CORS (D41) |
 
 Run 6 notes (2026-11-11 20:41 UTC): all five tasks pass on the live home at 390 px. D39 and D40 verified fixed. Home page 11323 px (9663 at 18:41). Old address still 404 (D34). New: D41.
+| 2026-11-11 22:46 UTC | v0.1.642 | PASS (empty state): Tonight 0 says 'Nothing checked for tonight yet' (wording, D42); no Tomorrow control | PASS: 'Cancelled or moved 5', 1 tap | PASS: Online list says nothing is on now/next, earlier ones folded | PASS | PASS | none | none (D41 gone) |
+
+Run 7 notes (2026-11-11 22:46 UTC): the D41 console error is gone (no console errors on /, /e/). Home page 16404 px. Old address still 404 (D34, 11 hours). New: D42 (tomorrow, at night).
