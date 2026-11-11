@@ -14,7 +14,7 @@ import { eventCard as card, cardList, sortDay, CARD_CSS } from './cards.mjs';   
 import { WORDMARK, IDENTITY_CSS } from './identity.mjs';   // D9, design.4.fringe@PrompTugal.dinis
 import { loadOrganisers, organisersBody } from './organisers.mjs';   // work/23, dev.2.fringe@PrompTugal.dinis
 import { readChanges, changesBody } from './changes.mjs';   // work/15, dev.2.fringe@PrompTugal.dinis
-import { nowBlock, nowPageBody, nowJs } from './now.mjs';   // work/16, dev.2.fringe@PrompTugal.dinis
+import { nowBlock, nowPageBody, nowJs, span as evSpan } from './now.mjs';   // work/16, dev.2.fringe@PrompTugal.dinis
 import { traceBody } from './trace-page.mjs';   // Angelo's traces, designer.fringe@PrompTugal.angelo
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -84,6 +84,11 @@ code{background:var(--paper-2);padding:1px var(--s1);border-radius:var(--radius)
 .ptbar{background:var(--ink);font-size:var(--fs-meta);text-align:center}.ptbar a{display:block;padding:6px var(--gutter);color:var(--paper);text-decoration:none;font-weight:600;letter-spacing:.02em}.ptbar a:hover{text-decoration:underline;color:var(--paper)}
 .hero{padding:var(--s2) 0 var(--s1)}.hero h1{margin:.2em 0 .1em}.hero .tag-line{margin:0 0 .6em;color:var(--ink-3)}.hero .count{font-weight:600;margin:0 0 .6em}.hero .card{margin:6px 0;padding:var(--s2) var(--s3)}.hero .when{font-variant-numeric:tabular-nums;color:var(--brand);font-weight:600;font-size:var(--fs-meta)}.hero .muted{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}.btn{display:block;text-align:center;background:var(--brand);color:var(--paper);font-weight:600;text-decoration:none;padding:var(--s3) var(--s4);border-radius:var(--radius);margin:var(--s3) 0;min-height:44px}.btn:hover{color:var(--paper)}
 footer{max-width:var(--page);margin:var(--s5) auto;padding:var(--gutter);border-top:1px solid var(--rule-2)}${CARD_CSS}
+.jumps{position:sticky;top:0;z-index:20;display:flex;gap:6px;padding:8px 0;margin:8px 0;background:var(--bg);overflow-x:auto}
+.jumps a{flex:0 0 auto;display:inline-flex;align-items:center;min-height:44px;padding:0 12px;font-size:.95rem;border-radius:99px;border:2px solid var(--accent);color:var(--accent);font-weight:700;text-decoration:none;background:var(--bg)}
+.jumps a:hover,.jumps a:focus-visible{background:var(--accent);color:var(--bg)}
+.jump{scroll-margin-top:64px}#now,#tomorrow,#events{scroll-margin-top:64px}
+.earlier{margin:12px 0}.earlier summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:600}
 .showroom-list{list-style:none;padding:0;margin:.5em 0;font-size:.9rem}.showroom-list li{margin:.25em 0}${IDENTITY_CSS}`;
 // D5: the one navigation. Flip `live` to true when a page ships (Now: work/16, Organisers: work/23); no JavaScript.
 const NAV = [['Today', '/', true], ['Now', '/now/', true], ['Map', '/graph/', true], ['Organisers', '/organisers/', true], ['How', '/how/', true], ['Traffic', '/traffic/', true], ['Join', '/join/', true]];
@@ -115,10 +120,23 @@ const STATUS = { on: 'On', moved: 'Moved', cancelled: 'Cancelled', online: 'Onli
 const eventCard = (e) => card(e, { esc });
 function eventsHtml() {
   if (!events.length) return `<h2>Events</h2><p class="muted">The event listings arrive here once each one has been checked at its public source.</p>`;
-  const day = (d, label) => { const list = sortDay(events.filter((e) => e.date === d));
-    return `<h2>${label}, ${d}</h2>` + (list.length ? cardList(list.map(eventCard)) : '<p class="muted">Nothing checked yet for this day.</p>'); };
+  // D13 (design.2): today in jump-able parts. In person by time of day (past ones folded), online in its own part, so each event appears once.
+  const t0 = Date.parse(BUILT), isOnl = (e) => /^online\b/i.test(e.place || '') || e.status === 'online';
+  const over = (e) => { const sp = evSpan(e); return sp && sp.e <= t0; };
+  const todayAll = sortDay(events.filter((e) => e.date === today));
+  const online = todayAll.filter(isOnl), inPerson = todayAll.filter((e) => !isOnl(e));
+  const earlier = inPerson.filter(over), rest = inPerson.filter((e) => !over(e));
+  const evening = rest.filter((e) => String(e.start).slice(11, 16) >= '18:00'), daytime = rest.filter((e) => String(e.start).slice(11, 16) < '18:00');
+  const sec = (id, title, list, note = '') => `<h3 id="${id}" class="jump">${title} <span class="muted">(${list.length})</span></h3>${note}` + (list.length ? cardList(list.map(eventCard)) : '<p class="muted">Nothing checked in this part.</p>');
+  const tom = sortDay(events.filter((e) => e.date === tomorrow));
   const later = events.filter((e) => e.date > tomorrow).length;
-  return day(today, 'Today') + day(tomorrow, 'Tomorrow') + (later ? `<p class="muted">${later} more later this week in <a href="/api/v1/events.json">the data</a>.</p>` : '');
+  return `<h2>Today, ${today}</h2>`
+    + (daytime.length ? sec('later-today', 'Later today, before 18:00', daytime) : '')
+    + sec('tonight', 'Tonight, 18:00 on', evening)
+    + sec('online', 'Online today, any time', online)
+    + (earlier.length ? `<details id="earlier" class="earlier"><summary>Earlier today (${earlier.length} already over)</summary>${cardList(earlier.map(eventCard))}</details>` : '')
+    + `<h2 id="tomorrow">Tomorrow, ${tomorrow}</h2>` + (tom.length ? cardList(tom.map(eventCard)) : '<p class="muted">Nothing checked yet for this day.</p>')
+    + (later ? `<p class="muted">${later} more later this week in <a href="/api/v1/events.json">the data</a>.</p>` : '');
 }
 
 
@@ -157,13 +175,14 @@ var box=document.getElementById('hero-list');box.textContent='';r.forEach(functi
 
 // --- / -------------------------------------------------------------------
 const home = page('Lisbon Fringe', `
+<nav class="jumps" aria-label="Jump to"><a href="#now">Now</a><a href="#tonight">Tonight</a><a href="#online">Online</a><a href="#tomorrow">Tomorrow</a></nav>
 ${hero}
 <p class="muted">An independent guide to the alternative, community and side events around Web Summit Lisbon this week: what is on, where, when and how to join.</p>
 <div class="card"><strong>The storm.</strong> For weather warnings and what moved because of Storm Charles, see
 <a href="https://storm-charles.promptugal.news">storm-charles.promptugal.news</a>, <a href="https://www.ipma.pt/">IPMA</a> and <a href="https://www.prociv.gov.pt/">ANEPC</a>. This site is not a warning service.
 <div id="storm-live"><p class="muted">The storm site's latest is loading…</p></div></div>
 <script src="/storm.js" defer></script>
-${nowBlock(events, esc, { eventPath, hasPage }, new Date(BUILT), { limit: 5 })}<script src="/now.js" defer></script>
+<div id="now">${nowBlock(events, esc, { eventPath, hasPage }, new Date(BUILT), { limit: 5 })}</div><script src="/now.js" defer></script>
 <div id="events"></div>${eventsHtml()}
 <h2>How this is made</h2>
 <div class="card">Built in the open by a swarm: one conductor per person, agents by role, Dinis as head. <a href="/how/"><strong>See how it is made</strong></a> · <a href="/join/">Bring your conductor in five minutes</a>.</div>
