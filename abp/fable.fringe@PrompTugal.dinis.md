@@ -2,7 +2,7 @@
 title: "ABP: fable.fringe@PrompTugal.dinis"
 agent: fable.fringe@PrompTugal.dinis
 role: advisor
-policy: abp/policies.json v0.4.0 (sha256:751e97bd6c687649)
+policy: abp/policies.json v0.4.0 (sha256:4b0d1d302579f325)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator

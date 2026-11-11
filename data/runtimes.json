@@ -1,7 +1,7 @@
 {
   "about": "Where agents run, as data (work/48, brief 14: Dinis with Angelo, 11 November 2026, 14:12 UTC): runtimes, model endpoints, I/O levels, the other requirements of a task, the placement formula, the matrix of our tasks, and each agent's runtime and I/O level today. From docs/where-agents-run.md (the lead's draft v0.1), corrected by architect.1.fringe@PrompTugal.dinis. A draft for Dinis and Angelo to correct.",
   "by": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T15:39Z",
+  "updated": "2026-11-11T18:26Z",
   "status": "draft",
   "doc": "docs/where-agents-run.md",
   "page": "/agentic-team/where-agents-run/",
@@ -708,5 +708,15 @@
       "Dinis's word in an agent's own session is a chat-session input to that agent (S1 into S2): the agent records it in a file so it outlives the session (briefs/, its status)."
     ]
   },
-  "account_note": "This account (the lead and its agents) is riskmandate-personal, on Ultra (Dinis, brief 15; team/accounts.json)."
+  "account_note": "This account (the lead and its agents) is riskmandate-personal, on Ultra (Dinis, brief 15; team/accounts.json).",
+  "stores": [
+    {
+      "id": "E1",
+      "name": "Elastic Cloud (my-observability-deployment-cd4ce8, GCP us-central1, Elasticsearch 9.5.6)",
+      "what": "the three sites' commits, content, entities, runs and status, the Fringe's events, graph, tasks, model ledger summaries and hook log; five Kibana dashboards",
+      "kept_by": "elastic.1.fringe@PrompTugal.dinis",
+      "since": "2026-11-11T17:23Z",
+      "plan": "docs/elastic-plan.md"
+    }
+  ]
 }

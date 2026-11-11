@@ -1,7 +1,7 @@
 {
   "about": "Every agent's grant, flattened from abp/policies.json by node abp/tools/abp.mjs build: what /abp/ shows.",
   "policy": "0.4.0",
-  "sha256": "751e97bd6c687649",
+  "sha256": "4b0d1d302579f325",
   "mode": "observe",
   "agents": [
     {
@@ -987,7 +987,9 @@
       "owns": [],
       "sends": [
         "dev.send.sgraph.ai",
-        "pki.sgit.ai"
+        "pki.sgit.ai",
+        "my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io",
+        "my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io"
       ],
       "page": "abp/elastic.1.fringe@PrompTugal.dinis.md"
     },
