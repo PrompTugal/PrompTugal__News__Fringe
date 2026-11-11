@@ -53,25 +53,55 @@ async function run() {
   if (!verify(p)) throw new Error('packet signature does not verify: not run');
   const P = p.body, { call } = await import(path.join(ROOT, 'admin/tools/llm.mjs'));
   const me = identity(P.altitude, `${P.altitude === 'A1' ? 'calls' : 'loop'}: ${id} by ${as}`);
+  // live flow events (the lead, 20:3x UTC, for Dinis's cross-conductor test): one unit for the packet run, one A1 unit
+  // per call under it. To swarm-flows when ELASTIC_URL is set (elastic.1, architect.1); otherwise to ~/.abp/flows/, and
+  // carried in the signed result (flow_events) so `packets.mjs ingest-flows` puts them in swarm-flows from git.
+  const { flow } = await import('./flow.mjs');
+  const F = flow({ id: process.env.FLOW_ID || `packet-${id}-${as.split('@')[0]}-${now().replace(/[-:]/g, '').slice(0, 15)}`, runner: as, environment: envName, objective: P.objective || P.title || id });
+  const PU = F.unit({ altitude: P.altitude, name: `packet ${id} by ${as}`, key_fp: me.fp }).start({ note: `${P.inputs.length} inputs` });
   const tries = P.altitude === 'A2' ? (P.max_tries || 3) : 1;          // A1: one call per input; A2: loop until valid
   const outputs = [], calls = [];
   for (const input of P.inputs) {
     let out = null;
     for (let t = 1; t <= tries && !out; t++) {
       const c = identity('A1', `LLM call: ${id} ${input.id} #${t}`);
+      const CU = F.unit({ altitude: 'A1', name: `LLM call: ${input.id} #${t}`, key_fp: c.fp, parent: PU.id }).start({ item: String(input.id), attempt: t });
       const prompt = P.prompt.replace('{{input}}', JSON.stringify(input));
       const { text, line } = await call({ task: `WS-215/packet/${id}`, agent: as, tier: arg('--tier', P.tier || 'cheap'), model: arg('--model'), messages: [{ role: 'user', content: prompt }], max_tokens: +arg('--max-tokens', P.max_tokens || 400) });
       let parsed = null; try { parsed = JSON.parse((/\{[\s\S]*\}/.exec(text || '') || ['null'])[0]); } catch {}
       const ok = !!parsed && P.output.required.every((k) => k in parsed) && (!P.output.enum || Object.entries(P.output.enum).every(([k, vs]) => vs.includes(parsed[k])));
       calls.push(c.sign({ input: input.id, try: t, ok, model: line.model_served, ledger_id: line.id, cost_usd: line.cost_usd, latency_ms: line.latency_ms, prompt_sha256: crypto.createHash('sha256').update(prompt).digest('hex') }));
+      CU.end({ item: String(input.id), attempt: t, model: line.model_served, cost_usd: line.cost_usd, latency_ms: line.latency_ms, valid: ok, note: ok ? 'valid' : 'invalid' });
       if (ok) out = { input: input.id, ...parsed, tries: t, call_fp: c.fp };
+      else if (t < tries) PU.step(`retry ${input.id}`, { item: String(input.id), attempt: t });
     }
     outputs.push(out || { input: input.id, error: `no valid output in ${tries} tr${tries > 1 ? 'ies' : 'y'}` });
   }
-  const res = me.sign({ packet: id, packet_fp: p.by.fp, runner: as, environment: envName, ran_at: now(), runner_choices: { tier: arg('--tier', P.tier || 'cheap'), model: arg('--model') || null, max_tokens: +arg('--max-tokens', P.max_tokens || 400) }, outputs, calls, cost_usd: +calls.reduce((s, c) => s + (c.body.cost_usd || 0), 0).toFixed(6) });
+  PU.end({ note: `${outputs.filter((o) => !o.error).length}/${outputs.length} valid, ${calls.length} calls`, cost_usd: +calls.reduce((s2, c2) => s2 + (c2.body.cost_usd || 0), 0).toFixed(6), valid: outputs.every((o) => !o.error) });
+  await F.flush();
+  const res = me.sign({ packet: id, packet_fp: p.by.fp, runner: as, environment: envName, ran_at: now(), flow: F.id, flow_events: F.events, runner_choices: { tier: arg('--tier', P.tier || 'cheap'), model: arg('--model') || null, max_tokens: +arg('--max-tokens', P.max_tokens || 400) }, outputs, calls, cost_usd: +calls.reduce((s, c) => s + (c.body.cost_usd || 0), 0).toFixed(6) });
   const safe = as.replace(/[^A-Za-z0-9.@-]/g, '_');
   fs.writeFileSync(path.join(TASKS, id, `result-${safe}.json`), JSON.stringify(res, null, 1) + '\n');
   console.log(`ran ${id} as ${as} in ${envName}: ${outputs.filter((o) => !o.error).length}/${outputs.length} valid, ${calls.length} calls, ${res.body.cost_usd} USD, signed ${me.fp}`);
+}
+
+// ingest-flows: every signed result's flow_events into swarm-flows (idempotent: _id = flow:seq); run by architect.1
+async function ingestFlows() {
+  if (!process.env.ELASTIC_URL) throw new Error('ingest-flows needs ELASTIC_URL (architect.1 or elastic.1, R8e)');
+  const L = await import(path.join(ROOT, 'admin/tools/elastic-lib.mjs')), { INDEX } = await import('./flow.mjs');
+  const headers = { 'content-type': 'application/json', ...L.auth() };
+  let sent = 0, errors = 0, skipped = 0;
+  for (const d of fs.readdirSync(TASKS)) for (const f of fs.readdirSync(path.join(TASKS, d)).filter((x) => /^result-.*\.json$/.test(x))) {
+    const r = JSON.parse(fs.readFileSync(path.join(TASKS, d, f), 'utf8'));
+    if (!r.body.flow_events || !r.body.flow_events.length) continue;
+    if (!verify(r)) { skipped++; continue; }   // only events inside a result its runner's key signed
+    const lines = r.body.flow_events.flatMap((ev) => [JSON.stringify({ index: { _index: INDEX, _id: `${ev.flow}:${ev.seq}` } }), JSON.stringify({ ...ev, source: 'packets.mjs ingest-flows (' + d + '/' + f + ')' })]).join('\n') + '\n';
+    const res = await fetch(`${L.base()}/_bulk`, { method: 'POST', headers: { ...headers, 'content-type': 'application/x-ndjson' }, body: lines });
+    const j = await res.json(); const bad = (j.items || []).filter((i) => i.index && i.index.error).length;
+    errors += bad; sent += r.body.flow_events.length - bad;
+  }
+  if (sent + errors) await L.logSubmission({ agent: 'architect.1.fringe@PrompTugal.dinis', index: INDEX, via: 'push', sent, errors, held: skipped, source: 'abp/tools/packets.mjs ingest-flows' });
+  console.log(`ingest-flows: ${sent} events to swarm-flows, ${errors} errors, ${skipped} results not verified (skipped)`);
 }
 
 function check() {
@@ -88,5 +118,5 @@ function check() {
 }
 
 const cmd = process.argv[2];
-if (cmd === 'new') create(); else if (cmd === 'run') await run(); else if (cmd === 'verify' || cmd === 'list') check();
+if (cmd === 'new') create(); else if (cmd === 'run') await run(); else if (cmd === 'ingest-flows') await ingestFlows(); else if (cmd === 'verify' || cmd === 'list') check();
 else console.log('usage: node abp/tools/packets.mjs new --spec FILE | run --id ID --as AGENT --env ENV | verify [--id ID] | list');
