@@ -91,6 +91,18 @@ export async function collectSwarm({ root, roster, status, board, traffic, built
   const byAcc = {};
   for (const x of [...people.filter((p) => p.updated), ...agents]) { const a = (byAcc[x.account] ||= { account: x.account, online: 0, total: 0 }); a.total++; if (x.online) a.online++; }
   const t = traffic?.totals || null;
+  // health of the ecosystem (brief 6): who is onboarded, who can be reached, how the data flows
+  const ev = jread(join(root, 'data/events.json'))?.events || [];
+  const reads = ev.map((e) => e.read_at).filter(Boolean).sort();
+  const keys = (jread(join(root, 'data/keys.json'))?.keys || []).filter((k) => !k.status || k.status === 'active').length;
+  const pk = (jread(join(root, 'data/person-keys.json'))?.keys || []).filter((k) => !k.status || k.status === 'active').length;
+  const outreach = jread(join(root, 'data/outreach.json'));
+  const health = {
+    onboarded: people.filter((p) => p.updated).map((p) => p.id), not_onboarded: people.filter((p) => !p.updated).map((p) => p.id),
+    keys_active: keys, person_keys: pk, inboxes: inboxes.length,
+    events: { count: ev.length, oldest_read: reads[0] || null, newest_read: reads.at(-1) || null, stale_over_3h: reads.filter((r) => now - parseT(r) > 3 * 3600000).length },
+    traffic_drained: traffic?.generated || null,
+  };
 
   return {
     about: `Lisbon Fringe's swarm, built from the repository's team/, work/ and data/ files. "online" means the status file was updated in the last ${ONLINE_MIN} minutes (UTC). Counts only; no key, contact detail or private person. Independent of Web Summit.`,
@@ -105,6 +117,7 @@ export async function collectSwarm({ root, roster, status, board, traffic, built
     board: { work: tally(work), design: tally(design), items: work.map(slim), design_items: design.map(slim) },
     asks_for_dinis: asks.filter((a) => a.to_dinis), asks_other: asks.filter((a) => !a.to_dinis).length,
     changes: ch.list, changes_note: ch.shallow ? 'The build checkout is shallow, so fewer than 20 changes are shown; the full list is at ' + repo + '/commits/dev.' : null,
+    health, outreach: outreach ? { updated: outreach.updated, by: outreach.by, drafts_ready: outreach.drafts_ready, organisers_listed: outreach.organisers_listed, contacted: outreach.contacted, answered: outreach.answered, joined: outreach.joined } : null,
     traffic: t ? { generated: traffic.generated, views: t.views, reads: t.reads, tabs: t.tabs, countries: t.countries, shares: t.shares } : null,
   };
 }
@@ -125,6 +138,11 @@ export function swarmBody(s, esc, repo) {
   return `<div class="sw"><h1>The swarm</h1>
 <p>Who is on, across accounts, now. Built ${esc(s.built_at.slice(0, 16).replace('T', ' '))} UTC from the repository; <span id="live">re-reading <a href="/api/v1/swarm.json">swarm.json</a> in your browser…</span> “Online” means a status file updated in the last ${s.online_minutes} minutes.</p>
 <div class="sg" id="counts"><div class="card"><b id="n-c">${c.conductors_online}</b>conductors online (of ${c.conductors_started} started, ${c.conductors_total} people)</div><div class="card"><b id="n-a">${c.agents_online}</b>agents online (of ${c.agents_total})</div><div class="card"><b>${c.inboxes}</b>inboxes</div>${s.traffic ? `<div class="card"><b>${s.traffic.views}</b>views (<a href="/traffic/">traffic</a>)</div>` : ''}</div>
+<h2>Health of the ecosystem</h2><ul>
+<li class="card"><strong>Onboarded:</strong> ${s.health.onboarded.length} of ${s.people.length} people have a conductor with a status file${s.health.not_onboarded.length ? `. <span class="muted">Not yet: ${esc(s.health.not_onboarded.join(', '))}.</span>` : '.'}</li>
+<li class="card"><strong>Can be reached:</strong> ${s.health.keys_active} active agent keys, ${s.health.inboxes} inboxes, ${s.health.person_keys} person key${s.health.person_keys === 1 ? '' : 's'} on the site${s.health.person_keys ? '' : ' (Dinis: make yours at <a href="/me/">/me/</a>)'}.</li>
+<li class="card"><strong>Data flow:</strong> ${s.health.events.count} events, read at their sources between ${esc((s.health.events.oldest_read || '?').slice(11, 16))} and ${esc((s.health.events.newest_read || '?').slice(11, 16))} UTC; ${s.health.events.stale_over_3h} read more than 3 h before this build. Traffic ${s.health.traffic_drained ? 'last drained ' + esc(s.health.traffic_drained) + ' UTC' : 'not drained yet'}.</li></ul>
+<h2>Outreach</h2>${s.outreach ? `<div class="sg"><div class="card"><b>${s.outreach.drafts_ready}</b>drafts ready</div><div class="card"><b>${s.outreach.organisers_listed}</b>organisers listed</div><div class="card"><b>${s.outreach.contacted}</b>contacted</div><div class="card"><b>${s.outreach.answered}</b>answered</div><div class="card"><b>${s.outreach.joined}</b>joined</div></div><p class="muted">From data/outreach.json, kept by ${esc(s.outreach.by || '')} at ${esc(s.outreach.updated || '')}. An agent never sends: a person does. Work with the desk: <a href="${repo}/blob/dev/work/29-outreach-desk.md">work/29</a>, drafts in <a href="${repo}/tree/dev/work/drafts">work/drafts</a>.</p>` : '<p class="muted">No outreach counts yet (work/29).</p>'}
 <h2>By account</h2><p class="muted">The account is the person whose team/ folder the status file is in, unless the file says otherwise.</p><ul>${c.by_account.map((a) => `<li class="card"><strong>${esc(a.account)}</strong>: ${a.online} online of ${a.total}</li>`).join('')}</ul>
 <h2>Dinis: asks waiting for you</h2>${asks}
 ${talkBox()}

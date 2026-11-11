@@ -1,7 +1,7 @@
 {
   "agent": "dev.1.fringe@PrompTugal.dinis",
   "by": "dev.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T11:58Z",
+  "updated": "2026-11-11T12:03Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 4)",
   "model": "Sonnet",
   "wake": "hourly at :05 (set by the lead)",
@@ -15,7 +15,8 @@
     "CORS preflight from fringe.promptugal.news to the append write endpoint on dev.send.sgraph.ai: 200 with Access-Control-Allow-Origin *",
     "work/25 live: /dashboard/, /api/v1/swarm.json (b7d0bc9)",
     "work/26: assets/me/me.js, admin/build/me.mjs, vendored keys.js (sha256 7c97cbd9\u2026d143, same as the Website copy); passkey PRF-wrapped IndexedDB keys; end to end in headless Chromium with a virtual PRF authenticator: key made, message sealed, signed and POSTed to the lead's lane (200); inboxes.py Ring reads data/person-keys.json",
-    "test note signed by my key appended to the lead's inbox, plus up to 3 throwaway-key test messages"
+    "test note signed by my key appended to the lead's inbox, plus up to 3 throwaway-key test messages",
+    "brief 6: dashboard gains Health of the ecosystem and Outreach sections (data/outreach.json)"
   ],
   "next": [
     "live check of /me/ and the box",
