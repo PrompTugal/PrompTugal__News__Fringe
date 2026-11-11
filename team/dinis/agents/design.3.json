@@ -1,9 +1,9 @@
 {
   "agent": "design.3.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T13:11:02Z",
+  "updated": "2026-11-11T13:33:18Z",
   "state": "working",
   "doing": [
-    "restyle of tiers/cards/event page waits for D22 tokens"
+    "D26: wire into /?design=c when dev.1's frame lands; then the D1 to D14 checks"
   ],
   "done": [
     "D3 event cards: admin/build/cards.mjs; 390/1280 px, light and dark, no overflow or console errors",
@@ -14,7 +14,8 @@
     "D18 big and small events: strip of majors + dense community list on / and /programme/ (Size filter)",
     "D4 calmer pass (brief 8): organiser block 1.2rem on a plain panel, 44 px button, facts two columns on a phone, related events as dense rows with day; 390/1280 px light and dark clean",
     "D23 swarm-live strip on /, /how/, /dashboard/",
-    "D23 follow-up: one-line live ticker under the header on every page (links to /how/)"
+    "D23 follow-up: one-line live ticker under the header on every page (links to /how/)",
+    "D26 design C 'the city': c.mjs module written and previewed; waits for the lab frame"
   ],
   "next": [
     "after D22 lands: restyle big strip, dense rows, cards, event page; then check 390/1280 px light and dark"
