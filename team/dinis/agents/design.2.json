@@ -2,9 +2,11 @@
  "agent": "design.2.fringe@PrompTugal.dinis",
  "role": "design",
  "state": "idle: waiting for /submit/ (work/06) for D16",
- "updated": "2026-11-11T14:04Z",
- "doing": "D29 My day pushed (0fbff35), D28 strip handed to design.1 (58c8990); waiting for the deploy to check them live",
+ "updated": "2026-11-11T14:05Z",
+ "doing": "D29 My day done and live; D28 strip handed to design.1; next the gallery look (work/35), D16 when /submit/ exists",
  "done": [
+  "D29 My day live at /my/ with stars everywhere",
+  "D28 now strip module (nowstrip.mjs) handed to design.1",
   "D13 jump chips and today in parts, live",
   "D2 share card live: https://fringe.promptugal.news/assets/og/share.png image/png 1200x630 at v0.1.65"
  ],
