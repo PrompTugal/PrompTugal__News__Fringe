@@ -31,7 +31,7 @@ import { nowBlock, nowPageBody, nowJs, span as evSpan } from './now.mjs';
 import { timelineBlock, TIMELINE_CSS } from './timeline.mjs';
 import { MYDAY_CSS, myDayBody } from './myday.mjs';   // D29, design.2.fringe@PrompTugal.dinis   // D19, design.2.fringe@PrompTugal.dinis   // work/16, dev.2.fringe@PrompTugal.dinis
 import { guidanceBody, abpBody } from './guidance.mjs';
-import { whereAgentsRunBody, agenticTeamBody } from './architecture-page.mjs';
+import { whereAgentsRunBody, agenticTeamBody, articles } from './architecture-page.mjs';
 import { operatingModelBody, slidePage, SLIDES as OM_SLIDES } from './operating-model.mjs';   // work/48, Dinis 14:40 UTC, architect.1   // work/48, architect.1.fringe@PrompTugal.dinis   // work/40, work/39, architect.1.fringe@PrompTugal.dinis
 import { traceBody } from './trace-page.mjs';   // Angelo's traces, designer.fringe@PrompTugal.angelo
 import { writeGraph } from './graph-pages.mjs';   // work/42, ontologist.1.fringe@PrompTugal.dinis
@@ -297,6 +297,7 @@ writeFileSync(join(out, 'abp', 'index.html'), page('Agent Behaviour Policies: Li
 mkdirSync(join(out, 'agentic-team', 'where-agents-run'), { recursive: true });
 writeFileSync(join(out, 'agentic-team', 'index.html'), page('The agentic team: Lisbon Tech Fringe', agenticTeamBody(esc), 'How the swarm that builds Lisbon Tech Fringe works: where agents run, who may edit what, how it is made.', '', '/agentic-team/'));
 writeFileSync(join(out, 'agentic-team', 'where-agents-run', 'index.html'), page('Where agents run: Lisbon Tech Fringe', whereAgentsRunBody(esc, REPO), 'An agent versus an LLM call; runtimes, models and I/O levels; the formula that places a task; the matrix of our tasks (brief 14).', '', '/agentic-team/where-agents-run/'));
+for (const ar of articles(esc, REPO)) { mkdirSync(join(out, 'agentic-team', 'articles', ar.slug), { recursive: true }); writeFileSync(join(out, 'agentic-team', 'articles', ar.slug, 'index.html'), page(ar.title + ': Lisbon Tech Fringe', ar.body, ar.title, '', `/agentic-team/articles/${ar.slug}/`)); }
 mkdirSync(join(out, 'agentic-team', 'operating-model'), { recursive: true });
 writeFileSync(join(out, 'agentic-team', 'operating-model', 'index.html'), page('The operating model: Lisbon Tech Fringe', operatingModelBody(esc, REPO), 'The primitives of the agentic team: the execution ladder, what each entity can reach, identity, and a distributed operating system for agents.', '', '/agentic-team/operating-model/'));
 OM_SLIDES.forEach((_, i) => writeFileSync(join(out, 'agentic-team', 'operating-model', `slide-${i + 1}.html`), slidePage(i)));
