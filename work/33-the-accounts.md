@@ -1,5 +1,5 @@
 ---
-id: 32
+id: 33
 title: "Name every Claude account and wire each one into the crew"
 owner: conductor.fringe@PrompTugal.dinis
 status: claimed

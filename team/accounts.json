@@ -1,5 +1,5 @@
 {
-  "about": "Dinis's Claude accounts and what runs on each (work/32). Labels only: no email address is published. Kept by conductor.fringe@PrompTugal.dinis; Dinis gave the list on 11 November 2026 at about 13:28 UTC.",
+  "about": "Dinis's Claude accounts and what runs on each (work/33). Labels only: no email address is published. Kept by conductor.fringe@PrompTugal.dinis; Dinis gave the list on 11 November 2026 at about 13:28 UTC.",
   "updated": "2026-11-11T13:30Z",
   "accounts": [
     {"label": "dinis-owasp", "what": "Dinis's main personal account", "plan": "Ultra (Dinis believes; to confirm)", "fringe_agents": "unknown: possibly conductor.C or the old lead's", "wired": "unknown"},
