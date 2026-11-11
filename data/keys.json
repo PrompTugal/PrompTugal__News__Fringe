@@ -100,6 +100,22 @@
         "fingerprint": "sha256:39e17b40cc303eb9",
         "signing_fingerprint": "sha256:d3c9e8a33293ef55"
       }
+    },
+    {
+      "id": "conductor.fringe-angelo",
+      "agent": "conductor.fringe@PrompTugal.angelo",
+      "role": "Angelo's conductor for Lisbon Fringe (WS-215): the graph and live views (work/05). Started by conductor.b@PrompTugal.angelo at Angelo's word, 11 November 2026, about 11:30 UTC.",
+      "how": "Made in its own session on 11 November 2026, 11:21 UTC (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab, checked). A session key: it ends with the session. Public halves only.",
+      "added": "2026-11-11",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAyI0CNJxY8tw9Lx7mlnqc\n4D96iVZPJ+4YY63nTk0iHymmAiQcWpi0PLzunDXeY7W9jgU2uJdnNND35ckefbY8\nINvqXtLe7ZrvF4JhUMGiQMiJTDDzjlkppCThm/twlFv6FGUx+mjFVBj7OXVnVkJ9\nPbW/HUXUCa8kEBXCdaZ7v4BUSZHyWlj12MvKNuN1n85zRrbTm5EaG31oh9gq8l4Y\nVpPKVIgs2Dq9DiNui89aHuW5mS0Zwr4kyMdh0uheJmnM+9rbbfmPPx5DFiiJ4RwC\nNmVQbA0RwjyM2yir+I00Z9PX/WxUJUEkK+G+Olkg6d9LtYAm7B2KnNB0I2PUV/kK\n7CB2nyi08AtAZP8DDeC8flg91J96Xzlw2L2TW2yCaAphaN5/vjAGv3ZnNfsrIpF7\nU+IXd4zTa8A44xSY+seeLDibyoA86ecAGdmGrwdyHjegS2NkM7SrfUZLlS74aPh8\ne/yIoV3nF60zUY71TTGoJWI2hg0pqn4YEFka+MsV3+TKHZgxbeXl6Ge3RYf6mQXX\nSiG+pervZONHLbHwrw4CKYuCZDZfhnzwAxCx2OBDge72Gi8U7UulcxbH+x6foA1C\nULVZgz8u+HlTZKBmpLaHYhsdWx0PokKeqB0+Rg1smSqsY6G21Mgv7ywnZUR0vthQ\ntUmLltxiw2F+67GZJUAsxDMCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEf8Bfl3gBIKf0Pzu/FF12itVx5lzt\nYW0oCk7FnfRI2XqJ5lp8xe5Rqk0CK50I+bE81xNBTrhQ1ZNZAnDJEvJ9UA==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor.fringe@PrompTugal.angelo",
+        "fingerprint": "sha256:7a7ca4db914c8fc2",
+        "signing_fingerprint": "sha256:ca2c782dbfd0147e"
+      }
     }
   ]
 }
