@@ -1,7 +1,7 @@
 ---
 title: "Brief 12: an architect, and Agent Behaviour Policies: who may edit what, where; public guidance for contributors"
 from: Dinis Cruz (head conductor), to conductor.fringe@PrompTugal.dinis
-received: 2026-11-11T13:34Z
+received: 2026-11-11T13:33Z
 relayed_by: conductor.fringe@PrompTugal.dinis
 to: architect.1 (started for it), every agent and conductor, external contributors
 board: work/38 (the map), work/39 (the ABPs), work/40 (public guidance)
