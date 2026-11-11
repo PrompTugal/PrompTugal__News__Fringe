@@ -1,7 +1,7 @@
 {
   "about": "The Agent Behaviour Policies of Lisbon Fringe (lisbontechfringe.com, origin in admin/site.json; WS-215) as data: deny by default, one grant per role and agent, across this repository and the others the swarm touches. Ported from PrompTugal__News__Website board/abp/policies.json (abp@PrompTugal.dinis, v1.7.0, since 6 November 2026), not invented anew; built on RiskMandate's Agent Behaviour Policy and Licence to Operate (https://riskmandate.ai/agent-behaviour-policy.html). Read by the hooks (.claude/settings.json, .claude/hooks/abp.mjs) and by the gate's commit check (abp/tools/abp.mjs check). abp/<agent>.md is generated from this file (node abp/tools/abp.mjs build), never edited by hand. Kept by architect.1.fringe@PrompTugal.dinis (work/39); any relaxation, and any move towards enforcement, is Dinis's decision.",
   "version": "0.4.1",
-  "updated": "2026-11-11T20:51Z",
+  "updated": "2026-11-11T21:51Z",
   "operator": "Dinis Cruz",
   "kept_by": "architect.1.fringe@PrompTugal.dinis",
   "status": "DRAFT: grants proposed from the git log (data/architecture.json observed); Dinis and the lead review",
@@ -615,6 +615,19 @@
       ],
       "send_hosts_note": "its own stack, from its status file (mapped 2026-11-11T19:52Z); started by the lead at Dinis's word, about 19:20 UTC: 'can you spin up a new Grafana agent so I can use it to manage and to help me set up this'",
       "never": "prints or commits a Grafana or Elastic key; uses ELASTIC_CLOUD (R8e: it reads Elastic through a read-only key Dinis makes); changes another agent's files"
+    },
+    "swarm": {
+      "focus": "the swarm demo (work/52): many A1 and A2 units at once, visible, measured, inside a written budget; the swarm ladder's runner",
+      "writes": [
+        "swarm/**",
+        "docs/swarm*",
+        "work/52-*.md"
+      ],
+      "send_hosts": [
+        "openrouter.ai"
+      ],
+      "send_hosts_note": "the model router only, through admin/tools/llm.mjs; cloud runtimes (Cloudflare, AWS, GCP, Netlify) wait on Dinis's scoped credentials and his word (its own asks)",
+      "never": "starts sessions or cloud resources without Dinis's word and a number; uses ELASTIC_CLOUD (R8e: flows travel in signed results or the feed); prints or commits a key"
     }
   },
   "agents": {
@@ -960,6 +973,11 @@
       ],
       "account": "Angelo's",
       "note": "mapped 2026-11-11T20:51Z: a fixer under Angelo's conductor, the same files as graph.fringe@PrompTugal.angelo (the mapping rule)"
+    },
+    "swarm.1.fringe@PrompTugal.dinis": {
+      "role": "swarm",
+      "account": "riskmandate-personal (Ultra)",
+      "note": "started by the lead at Dinis's word (about 21:0x UTC); mapped 2026-11-11T21:51Z to its own lane (swarm/, work/52), the mapping rule"
     }
   },
   "external": {
@@ -1134,6 +1152,11 @@
         "round": 8,
         "file": "abp/reviews/2026-11-11-20.md",
         "at": "2026-11-11T20:51Z"
+      },
+      {
+        "round": 9,
+        "file": "abp/reviews/2026-11-11-21.md",
+        "at": "2026-11-11T21:51Z"
       }
     ]
   },

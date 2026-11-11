@@ -1,7 +1,7 @@
 {
   "about": "Every agent's grant, flattened from abp/policies.json by node abp/tools/abp.mjs build: what /abp/ shows.",
   "policy": "0.4.1",
-  "sha256": "ccb6364a72004e5a",
+  "sha256": "f893030d6e325c91",
   "mode": "observe",
   "agents": [
     {
@@ -1244,6 +1244,33 @@
         "openrouter.ai"
       ],
       "page": "abp/graph.fix.fringe@PrompTugal.angelo.md"
+    },
+    {
+      "agent": "swarm.1.fringe@PrompTugal.dinis",
+      "role": "swarm",
+      "person": "dinis",
+      "account": "riskmandate-personal (Ultra)",
+      "branch": "dev",
+      "writes": [
+        "team/dinis/agents/swarm.1.json",
+        "team/dinis/agents/swarm.1.fringe.json",
+        "team/dinis/agents/swarm.1/**",
+        "data/keys.json (your own entry)",
+        "data/inboxes/<your key id>.json",
+        "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
+        "data/models-ledger.json",
+        "swarm/**",
+        "docs/swarm*",
+        "work/52-*.md"
+      ],
+      "owns": [],
+      "sends": [
+        "dev.send.sgraph.ai",
+        "pki.sgit.ai",
+        "openrouter.ai"
+      ],
+      "page": "abp/swarm.1.fringe@PrompTugal.dinis.md"
     }
   ]
 }
