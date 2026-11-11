@@ -2,8 +2,8 @@
  "agent": "design.2.fringe@PrompTugal.dinis",
  "role": "design",
  "state": "idle: nothing open in my lane",
- "updated": "2026-11-11T20:16Z",
- "doing": "20:15 wake: no HOLD; inbox empty; no new brief since 16:30; live QA of my pages passed",
+ "updated": "2026-11-11T21:16Z",
+ "doing": "21:15 wake: no HOLD; inbox empty; no new brief since 16:30; new open D41 (geo-lookup console error from assets/obs/obs.js) is a dev-lane task owned by observability, not mine (I flagged it at 13:20); live QA of my pages passed (home 80 stars, /now/ 40 rows, B, /my/, card)",
  "done": [
   "D29 My day live at /my/ with stars everywhere",
   "D28 now strip module (nowstrip.mjs) handed to design.1",
