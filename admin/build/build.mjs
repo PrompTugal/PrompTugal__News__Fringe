@@ -5,6 +5,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildGraph, graphBody, graphCss } from './graph.mjs';   // work/05, conductor.fringe@PrompTugal.angelo
 import { trafficBody, trafficCss } from './traffic.mjs';   // work/21, observability.fringe@PrompTugal.dinis
+import { eventPages, eventPath, hasPage } from './event-pages.mjs';   // work/22, dev.lead.fringe@PrompTugal.dinis
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const out = join(root, '_site');
@@ -67,9 +68,9 @@ code{background:var(--code);padding:1px 4px;border-radius:4px}ol li,ul li{margin
 .tag.lvl-red{border-color:#d33;color:#d33}.tag.lvl-orange{border-color:#e07b00;color:#e07b00}.tag.lvl-yellow{border-color:#c7a100}#storm-live h3{font-size:1rem;margin:.8em 0 .3em}#storm-live ul{padding-left:1.2em;margin:.3em 0}
 .tag.open{border-color:#c7a100}.tag.claimed{border-color:#2f6fd6}.tag.done{border-color:var(--accent)}
 footer{max-width:720px;margin:24px auto;padding:16px;border-top:1px solid var(--line)}`;
-const page = (title, body, desc) => `<!doctype html><html lang="en"><head><meta charset="utf-8">
+const page = (title, body, desc, head = '') => `<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title>
-<meta name="description" content="${esc(desc)}"><style>${css}</style></head><body>
+<meta name="description" content="${esc(desc)}">${head}<style>${css}</style></head><body>
 <header><nav><strong><a href="/">Lisbon Fringe</a></strong><a href="/graph/">Graph</a><a href="/join/">Join the team</a><a href="https://storm-charles.promptugal.news">Storm Charles</a></nav></header>
 <main><p class="ind">${INDEPENDENCE}</p>${body}</main>
 <footer class="muted">${INDEPENDENCE}<br>Built from <a href="${REPO}">the repository</a> at ${BUILT.slice(0, 16).replace('T', ' ')} UTC · <a href="/version.json">${esc(VERSION)}</a>. <a href="/traffic/">Traffic</a>.</footer>
@@ -88,10 +89,10 @@ function linkify(text) {
 const STATUS = { on: 'On', moved: 'Moved', cancelled: 'Cancelled', online: 'Online', unknown: 'Unknown' };
 function eventCard(e) {
   const when = [e.start && e.start.slice(11, 16), e.end && e.end.slice(11, 16)].filter(Boolean).join('–');
-  return `<div class="card"><a href="${esc(e.url)}"><strong>${esc(e.name)}</strong></a><span class="tag ${esc(e.status)}">${esc(STATUS[e.status] || 'Unknown')}</span>
+  return `<div class="card"><a href="${esc(hasPage(e) ? eventPath(e) : e.url)}"><strong>${esc(e.name)}</strong></a><span class="tag ${esc(e.status)}">${esc(STATUS[e.status] || 'Unknown')}</span>
 <div class="muted">${linkify([when && when + ' UTC', e.place, e.organiser].filter(Boolean).join(' · '))}</div>
 ${e.join ? `<div>How to join: ${linkify(e.join)}</div>` : ''}${e.storm_note ? `<div class="muted">Storm: ${linkify(e.storm_note)}</div>` : ''}
-<div class="muted">Source read ${esc(String(e.read_at).slice(0, 16).replace('T', ' '))} UTC</div></div>`;
+<div class="muted"><a href="${esc(e.url)}">The organiser's page</a> · source read ${esc(String(e.read_at).slice(0, 16).replace('T', ' '))} UTC</div></div>`;
 }
 function eventsHtml() {
   if (!events.length) return `<h2>Events</h2><p class="muted">The event listings arrive here once each one has been checked at its public source.</p>`;
@@ -168,7 +169,9 @@ writeFileSync(join(out, 'api', 'v1', 'README.md'), read('api/v1/README.md'));
 writeFileSync(join(out, 'api', 'v1', 'events.json'), JSON.stringify({ about: 'Lisbon Fringe events, each re-read at its public URL (read_at, UTC). Independent of Web Summit.', site: SITE, version: VERSION, built_at: BUILT, events }, null, 2) + '\n');
 writeFileSync(join(out, 'api', 'v1', 'graph.json'), JSON.stringify({ about: 'The Lisbon Fringe graph: events, communities (organisers, as organisations), topics and places. Every edge comes from one event and carries its source URL and read_at. Independent of Web Summit.', site: SITE, version: VERSION, built_at: BUILT, ptnews_from: ptnews?.from || null, ...graph }, null, 1) + '\n');
 writeFileSync(join(out, 'llms.txt'), `# Lisbon Fringe\n\n> An independent guide to the alternative, community and side events around Web Summit Lisbon, 9 to 15 November 2026. Independent of Web Summit; for anything official see the organisers' site. Not a warning service: for the storm see https://storm-charles.promptugal.news, IPMA and ANEPC.\n\n- [Events (JSON)](${SITE}api/v1/events.json): each event with its source URL and the time it was read\n- [The graph (JSON)](${SITE}api/v1/graph.json): events, communities, topics and places, each edge with its source\n- [Join the team](${SITE}join/)\n- [Repository](${REPO})\n`);
-writeFileSync(join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n<url><loc>${SITE}</loc></url>\n<url><loc>${SITE}join/</loc></url>\n<url><loc>${SITE}graph/</loc></url>\n<url><loc>${SITE}traffic/</loc></url>\n</urlset>\n`);
+const ePages = eventPages(events, { page, esc, linkify, SITE });   // work/22: /e/<id>/
+for (const p of ePages) { mkdirSync(join(out, p.path), { recursive: true }); writeFileSync(join(out, p.path, 'index.html'), p.html); }
+writeFileSync(join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n<url><loc>${SITE}</loc></url>\n<url><loc>${SITE}join/</loc></url>\n<url><loc>${SITE}graph/</loc></url>\n<url><loc>${SITE}traffic/</loc></url>\n${ePages.map((p) => `<url><loc>${esc(p.url)}</loc></url>\n`).join('')}</urlset>\n`);
 writeFileSync(join(out, 'version.json'), JSON.stringify({ version: VERSION, commit: process.env.GITHUB_SHA || '', pushed_at: process.env.PUSHED_AT || '', built_at: BUILT }, null, 2) + '\n');
 writeFileSync(join(out, 'version.txt'), VERSION + '\n');
 writeFileSync(join(out, '.nojekyll'), '');
@@ -180,4 +183,4 @@ const traffic = existsSync(join(root, 'data/obs/traffic.json')) ? JSON.parse(rea
 mkdirSync(join(out, 'traffic'), { recursive: true });
 writeFileSync(join(out, 'traffic', 'index.html'), page('Traffic: Lisbon Fringe', `<style>${trafficCss}</style>` + trafficBody(traffic, esc), 'Who reads Lisbon Fringe and how its links spread: counts only.'));
 if (traffic) writeFileSync(join(out, 'traffic', 'traffic.json'), JSON.stringify(traffic, null, 1) + '\n');
-console.log(`built _site/ ${VERSION}: /, /join/, /graph/ (${graph.nodes.length} nodes, ${graph.edges.length} edges), ${events.length} events (${roster.people.length} people, ${board.length} board items, ${Object.keys(status).length} status files)`);
+console.log(`built _site/ ${VERSION}: /, /join/, /graph/ (${graph.nodes.length} nodes, ${graph.edges.length} edges), ${events.length} events, ${ePages.length} event pages (${roster.people.length} people, ${board.length} board items, ${Object.keys(status).length} status files)`);

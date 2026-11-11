@@ -81,7 +81,7 @@
     var n = byId[id], h = '<strong>' + esc(n.label) + '</strong> <span class="tag">' + esc(n.type) + '</span>';
     if (n.type === 'event') {
       h += '<div class="muted">' + esc(n.date) + (n.start ? ' ' + esc(n.start.slice(11, 16)) + ' UTC' : '') + ' · ' + esc(n.kind) + ' · ' + esc(n.status) + (n.storm_moved ? ' · moved by the storm' : '') + '</div>'
-        + '<div class="muted">' + esc(n.place || '') + '</div><div><a href="' + esc(n.url) + '">The event page</a></div>';
+        + '<div class="muted">' + esc(n.place || '') + '</div><div><a href="/e/' + esc(encodeURIComponent(n.id.slice(6))) + '/">Its page here</a> · <a href="' + esc(n.url) + '">The organiser\'s page</a></div>';   // work/22
     } else {
       var l = [n.ptnews && '<a href="' + esc(n.ptnews) + '">on pt.news</a>', n.gamma_ray && '<a href="' + esc(n.gamma_ray) + '">GAMMA-Ray card</a>'].filter(Boolean).join(' · ');
       if (l) h += '<div class="muted">' + l + '</div>';
