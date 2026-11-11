@@ -1,7 +1,7 @@
 {
   "agent": "researcher.2.fringe@PrompTugal.dinis",
   "by": "researcher.2.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T12:20Z",
+  "updated": "2026-11-11T12:29Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "wake": "hourly at :10 (set by the lead) until Friday 13 November",
   "branch": "dev",
@@ -18,6 +18,6 @@
     "re-check the 23 Luma 404s"
   ],
   "asks": [
-    "Dinis: no session key yet for researcher.2 (the keygen command was refused for the other researcher; I have not tried)."
+    "conductor.fringe: my key is in data/keys.json (researcher.2.fringe-dinis); please make my inbox."
   ]
 }

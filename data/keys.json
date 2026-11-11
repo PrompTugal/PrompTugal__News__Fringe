@@ -72,7 +72,7 @@
     {
       "id": "security.fringe-promptugal",
       "agent": "security.fringe@PrompTugal.dinis",
-      "role": "Lisbon Fringe's security reviewer (WS-215): reviews every commit on dev and work/* for secrets, privacy, sources, the site and the repository rules; started by conductor.fringe@PrompTugal.dinis under BRIEF.md \u00a77 step 4.",
+      "role": "Lisbon Fringe's security reviewer (WS-215): reviews every commit on dev and work/* for secrets, privacy, sources, the site and the repository rules; started by conductor.fringe@PrompTugal.dinis under BRIEF.md §7 step 4.",
       "how": "Made in its own session on 11 November 2026, 10:47 UTC (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab). A session key: it ends with the session. Public halves only.",
       "added": "2026-11-11",
       "status": "active",
@@ -259,6 +259,22 @@
         "label": "design.1.fringe@PrompTugal.dinis",
         "fingerprint": "sha256:4afd3e33210dc5d4",
         "signing_fingerprint": "sha256:bc23f585a9993f19"
+      }
+    },
+    {
+      "id": "researcher.2.fringe-dinis",
+      "agent": "researcher.2.fringe@PrompTugal.dinis",
+      "role": "Researcher for Lisbon Fringe (WS-215): re-reads events at source hourly and reads the public calendars (work/24), at Dinis Cruz's word via the lead (brief 4).",
+      "how": "Made in its own session on 11 November 2026, 12:25 UTC (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab). A session key: it ends with the session.",
+      "added": "2026-11-11",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAos+1pTUAPXIiQ5fqHFPm\n2FbVE4MYO3I6FD+S+FjZuidw1/wqL6+Ga2VSJHm981YycgE/G8nqCVmXAyMh9RKD\noOi+r4Pp8LUHulhr1gWY/kwrgM9FjbDqjHEn6zFk2YCGoC8CK5/NojK+MwKcJNZp\nVsqf/Tcyz5y8GodAXop2oNLva2zCN49FiUN/TYef/nbqzRwyb1UKq9siOtXYkw5A\nYeOPYB+nzFMRA/BThV8l5ri4fLAZ0Z1BtTFEAhBMtqS/IRpMkILIgJUwtz/KprCd\nIDB6uqAl4B7mz6/fkZG0PiWb5GnyB0bRfNceP9+JR4z3LHxbTGx7PdUIQElQphf+\nr+Oj0M360VDWV0yc7iUs/FDTgzXXwZHsFzeM1jZFnjZItw7w4WfUiZj4byL/ozil\nrtm8CFZl0AUxDP2mptlXpFcOM80yrIUn6TQC4yqYVV997OsJZWe/sQH4MUa60lxA\nAreHgqog51EO9q2nzAALP4smkeho0EiZJrKgj90TZoLUHPz39Zk9mb7wbyQkY//c\nA8ShNYd69uVVTsJUjGweShjEyIkODyd7cuwcgA2BrwWcGfJzQIy1JF75mBBvMMON\nsyzkaQxOcR/rQvAlJAeoDA9uZmkv/l8MoPAFlMhkBQdTE8+eCJxQaA5V+7NPVrNd\nUYaR5c9odM67Aij/fOnYppUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEqtPHM7vnC1f5MLvGFHH/MiJoKRjI\nhztb4Mn2w/NINttyVAMuh8Nf/tWPQKF967U2y5GFU8nl1IKoTaSjZ04nYw==\n-----END PUBLIC KEY-----\n",
+        "label": "researcher.2.fringe@PrompTugal.dinis",
+        "fingerprint": "sha256:337be02a8c9ce36e",
+        "signing_fingerprint": "sha256:47035b2819b4e163"
       }
     }
   ]
