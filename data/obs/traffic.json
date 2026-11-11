@@ -5,7 +5,7 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-11T21:09Z",
+ "generated": "2026-11-11T21:25Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
@@ -16,10 +16,10 @@
   "tabs": 226,
   "countries": 19,
   "shares": 164,
-  "bots": 1523,
+  "bots": 1534,
   "crawler_tabs": 1,
-  "agent_runs": 211,
-  "agent_runs_signed": 194
+  "agent_runs": 223,
+  "agent_runs_signed": 204
  },
  "by_hour": [
   [
@@ -1229,7 +1229,7 @@
    39
   ]
  ],
- "other_hosts_views": 2283,
+ "other_hosts_views": 2347,
  "by_via": [
   [
    "whatsapp",
@@ -1277,44 +1277,44 @@
  ],
  "agents": [
   [
-   "elastic.1.fringe@PrompTugal.dinis",
-   19
+   "design.4.fringe@PrompTugal.dinis",
+   20
   ],
   [
-   "design.4.fringe@PrompTugal.dinis",
-   18
+   "elastic.1.fringe@PrompTugal.dinis",
+   20
   ],
   [
    "design.1.fringe@PrompTugal.dinis",
-   17
+   18
   ],
   [
    "researcher.1.fringe@PrompTugal.jose",
    17
   ],
   [
+   "ontologist.1.fringe@PrompTugal.dinis",
+   16
+  ],
+  [
    "architect.1.fringe@PrompTugal.dinis",
    15
   ],
   [
-   "ontologist.1.fringe@PrompTugal.dinis",
-   15
+   "conductor.fringe@PrompTugal.jose",
+   14
   ],
   [
-   "conductor.fringe@PrompTugal.jose",
-   13
+   "design.3.fringe@PrompTugal.dinis",
+   12
   ],
   [
    "observability.fringe@PrompTugal.dinis",
    11
   ],
   [
-   "design.3.fringe@PrompTugal.dinis",
-   11
-  ],
-  [
    "design.2.fringe@PrompTugal.dinis",
-   10
+   11
   ],
   [
    "neo4j.1.fringe@PrompTugal.dinis",
@@ -1329,20 +1329,20 @@
    8
   ],
   [
+   "researcher.2@PrompTugal.dinis",
+   8
+  ],
+  [
    "capture.1.fringe@PrompTugal.dinis",
    8
   ],
   [
-   "researcher.2@PrompTugal.dinis",
+   "researcher.fringe@PrompTugal.dinis",
    7
   ],
   [
-   "researcher.fringe@PrompTugal.dinis",
-   6
-  ],
-  [
    "dev.2.fringe@PrompTugal.dinis",
-   5
+   6
   ],
   [
    "gravity.1.fringe@PrompTugal.silvio",
@@ -1359,6 +1359,10 @@
   [
    "fable.fringe@PrompTugal.dinis",
    3
+  ],
+  [
+   "swarm.1.fringe@PrompTugal.dinis",
+   1
   ]
  ],
  "flows": {
@@ -1684,19 +1688,15 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
-    1
-   ],
-   [
     "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-yorkseed-investor-pitch/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    "whatsapp: /e/2026-11-11-yorkseed-investor-pitch/",
     1
    ],
    [
@@ -1705,6 +1705,10 @@
    ],
    [
     "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
+    1
+   ],
+   [
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ]
   ]
