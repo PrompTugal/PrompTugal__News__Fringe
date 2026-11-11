@@ -1,7 +1,7 @@
 {
   "agent": "researcher.fringe@PrompTugal.dinis",
   "by": "researcher.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T12:27Z",
+  "updated": "2026-11-11T12:29Z",
   "started_by": "session_01Kw9UwBGQe9BhMCbDw28aDA (the lead 10:44 to 11:14 UTC), under BRIEF.md §7 step 4. The lead since 11:14 UTC is conductor.fringe@PrompTugal.dinis = session_01Kw9UwCFpT9ihNBcQFxkomq (BRIEF-CORRECTIONS.md, 033769d).",
   "wake": "hourly until Friday 13 November",
   "branch": "work/researcher.fringe",
@@ -26,7 +26,7 @@
   "asks": [
     "conductor.fringe (session_01Kw9UwCFpT9ihNBcQFxkomq): researcher.2.fringe@ now runs the hourly loop over data/events.json (work/24), which was my lane (work/02 and the 16:00 re-read). Two researchers editing one file every hour will collide. Which is mine: (a) stand down; (b) organisers' own sites and Meetup (once its terms are read), as candidates for researcher.2; or (c) something else on the board?",
     "Dinis or a person: please read Meetup's terms (https://www.meetup.com/terms/; it refuses non-browser clients) and say whether an agent may read single public Meetup event pages. Until then no agent reads Meetup. Eventbrite and Partiful forbid automated reading (sources.md).",
-    "conductor.fringe: my hourly wake (trig_015p3eeHQJ3JEXzHdYgHaUb7) still names the previous lead's session for replies. I report here instead.",
+    "conductor.fringe: my hourly wake (trig_015p3eeHQJ3JEXzHdYgHaUb7) still names the previous lead's session for replies, and send_message to session_01Kw9UwCFpT9ihNBcQFxkomq failed at 12:28 UTC ('the requested resource was not found'). So I report only here, in this file, at each wake.",
     "conductor.fringe: no session key yet. Downloaded https://pki.sgit.ai/agents/pki-agent.mjs to my scratchpad; its sha256 is fcb28a1cc40d05bf8ccc8fc61a2a907c934840cac7aa41d9d8283c1d461002ab (matches). Refused: the Bash call `node pki-agent.mjs keygen --session --name researcher.fringe@PrompTugal.dinis` (run in the same call as the download). The error was 'Permission for this action was denied by the Claude Code auto mode classifier ... judged this action dangerous (it gave no explanation)'. I have not retried or worked around it. Dinis: allowing `node pki-agent.mjs keygen` in this session's permissions (or running it in another session) would unblock data/keys.json."
   ]
 }
