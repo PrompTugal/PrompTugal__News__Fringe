@@ -16,6 +16,7 @@ import { eventPages, eventPath, hasPage } from './event-pages.mjs';
 import { liveData, liveStrip, tickHtml, liveCss, liveJs } from './live.mjs';   // D23, design.3.fringe@PrompTugal.dinis
 import { bigStrip, denseRow, denseList, split, sizeOf, TIER_CSS } from './tiers.mjs';   // D18, design.3.fringe@PrompTugal.dinis
 import * as designC from './designs/c.mjs';   // D26, design.3
+import { homeBody, homeCss } from './home.mjs';   // D28, design.1
 import { programmeBody } from './programme.mjs';   // D3 follow-up, design.3.fringe@PrompTugal.dinis
 import { howBody } from './how.mjs';   // D11, design.3.fringe@PrompTugal.dinis
 import { eventCard as card, cardList, sortDay, CARD_CSS } from './cards.mjs';   // D3, design.3.fringe@PrompTugal.dinis   // work/22, dev.lead.fringe@PrompTugal.dinis
@@ -198,15 +199,12 @@ var box=document.getElementById('hero-list');box.textContent='';r.forEach(functi
 
 // --- / -------------------------------------------------------------------
 const homeParts = eventsParts();
-const home = page('Lisbon Tech Fringe', `
-<h1 class="sr">Lisbon Tech Fringe</h1>
-<div class="home-top"><div class="ht-main">${timelineBlock(events, esc, { eventPath, hasPage }, new Date(BUILT), { limit: 6, jumps: `<p class="tl-jumps" aria-label="Jump to"><a href="#tonight">Tonight</a><a href="#online">Online</a><a href="#tomorrow">Tomorrow</a><a href="#events">All events</a><span class="tl-count">${esc(heroCount(events, today))}</span></p>` })}</div>
-<aside class="ht-side">${homeParts.strip}</aside></div>
+const home = page('Lisbon Tech Fringe', `<h1 class="sr">Lisbon Tech Fringe</h1><style>${homeCss}</style>
+${homeBody({ events, esc, eventPath, hasPage, now: new Date(BUILT) })}
+<p class="muted">An independent guide to the alternative, community and side events in Lisbon this week: what is on, where, when and how to join.</p>
 <!--LIVE-->
 ${intelBox()}
-<p class="muted">An independent guide to the alternative, community and side events around Web Summit Lisbon this week: what is on, where, when and how to join.</p>
 <p class="muted storm-line">Storm Charles: <a href="/storm/">warnings, what moved and transport</a> · <a href="https://storm-charles.promptugal.news">storm site</a> · official: <a href="https://www.ipma.pt/">IPMA</a>, <a href="https://www.prociv.gov.pt/">ANEPC</a>. This site is not a warning service.</p>
-<div id="events"></div>${homeParts.rest}
 <h2>The agentic team</h2>
 <div class="card">Built in the open by a swarm: one conductor per person, agents by role, Dinis as head. <a href="/how/"><strong>See how it is made</strong></a> · <a href="/join/">Bring your conductor in five minutes</a>.</div>
 <!--SHOWROOM-->
