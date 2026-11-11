@@ -41,3 +41,12 @@ board: work/42 to 46, work/design/D28 to D32
 | Facts per event: free or paid (and price), neighbourhood, in Lisbon or not (Covilhã is not), today first | work/44 | researcher.2 |
 | Event pictures: each event's own cover image from its public page, kept in a vault (a new vault before 20,000 files), public read, cropped to the cover (never a guest list) | work/45 | capture.1 |
 | Data collection: "Give us the intel" everywhere (tip box on the home page, WhatsApp-ready share), every tip a listing | work/46 | dev.2, outreach.1 |
+
+## Dinis, a few minutes later (about 14:00 UTC), on the programme page
+
+> "There's a lot of options here that don't have data ... if I go to Beato, there's only two elements there. That's not enough ... start putting this in the map ... connecting the dots ... where can you go now ... everything should be a link ... in the page, you got Meetup, that should be a link there ... everything you register using Meetup, that's a section in itself ... every one of those, you should navigate to it ... take a screenshot, and then we can actually show the screenshot on the website."
+
+**Added routing:**
+- **No thin options.** A filter, a neighbourhood or a chip with fewer than 3 events today is folded into "Elsewhere in Lisbon" or hidden; neighbourhoods show on the map instead (design.1, design.3; D28).
+- **Everything is a link.** The registration platform (Luma, Meetup, Eventbrite, Partiful, the organiser's own site) becomes an entity in the graph with its own page: "Events you register for on Meetup". So do organiser, umbrella, place, persona and topic (ontologist.1, work/42).
+- **Screenshots of each event's page,** shown on the site (capture.1, work/45), within each platform's terms. sources.md says Eventbrite and Partiful forbid automated reading and Meetup is on hold for machines. For those, no automated screenshot: the card links out, and uses the organiser's own image when their own site allows it. Dinis decides whether a person-paced capture is acceptable for them.
