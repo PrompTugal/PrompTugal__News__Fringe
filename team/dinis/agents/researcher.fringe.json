@@ -1,26 +1,31 @@
 {
   "agent": "researcher.fringe@PrompTugal.dinis",
   "by": "researcher.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T10:52Z",
+  "updated": "2026-11-11T10:56Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, 10:47 UTC, under BRIEF.md §7 step 4",
   "wake": "hourly until Friday 13 November",
   "branch": "work/researcher.fringe",
   "state": "working",
   "doing": [
-    "work/02: data/events.json first pass pushed; now searching the BRIEF §4 sources for new events on 11 to 13 November",
-    "work/03: the unconference search"
+    "work/02: adding events for 12 and 13 November (the Luma calendars show only their next ~20 events, so Thursday and Friday are under-counted)",
+    "work/03: notes written; watching for the 'Uncon'"
   ],
   "done": [
     "claimed work/02 and work/03",
-    "data/events.json: the 21 seed events re-read at their public pages at 10:47 UTC (20 read; Tech Art Lisboa's page is 404, kept as a hypothesis)",
-    "two corrections to the seed: Show What You Build is Thu 12 Nov 18:30 UTC (not Wed); Lisbon Community Week starts 08:30 UTC (not 08:15)"
+    "data/events.json: 51 events (32 on Wed 11, 15 on Thu 12, 3 on Fri 13, 1 on Sat 14), each re-read at its public page at 10:47 or 10:51 UTC; 21 from the seed and 30 new from Luma's public calendars",
+    "storm: 9 events moved online, 2 moved, 3 cancelled (2 for the weather), 15 unknown",
+    "work/03: found FounderLink's 'Storm Summit' (an online alternative event made because Day 2 was cancelled) and the unconference session inside Lisbon Community Week (13 Nov); no standalone public unconference found",
+    "sources.md: the source map (BRIEF §5), with what a machine may read under each site's terms",
+    "seed corrections: Show What You Build is Thu 12 Nov; Lisbon Community Week starts 08:30 UTC; Open Mercato Night was 18:30 UTC"
   ],
   "next": [
-    "new events from Luma, Meetup, Eventbrite and organisers' pages",
-    "work/03 notes",
-    "my session key once the environment allows it"
+    "more events for 12 and 13 Nov: Meetup searches, Eventbrite, Partiful, organisers' pages",
+    "re-read Wednesday evening's 'unknown' events for storm notes before 16:00 UTC",
+    "my session key"
   ],
   "asks": [
-    "conductor.fringe: my environment refused to run pki-agent.mjs (the copy downloaded matches sha256 fcb28a1c...02ab), so I have no session key yet and data/keys.json has no researcher.fringe-promptugal entry. I will retry at each wake; if it stays blocked, Dinis may need to allow running it in this session's permissions."
+    "conductor.fringe: my environment refused to run pki-agent.mjs (the copy downloaded matches sha256 fcb28a1c...02ab), so I have no session key yet and data/keys.json has no researcher.fringe-promptugal entry. I will retry at each wake; if it stays blocked, Dinis may need to allow running it in this session's permissions.",
+    "conductor.fringe: data/events.json uses type values beyond BRIEF §3's list ('conference', 'other'); field names are documented in its 'schema' line for dev.fringe@ and the iOS app.",
+    "Dinis: is the 'Uncon' you heard of FounderLink's Storm Summit (online, today) or something else? A name or link would let me find it."
   ]
 }
