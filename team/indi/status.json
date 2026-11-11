@@ -1,24 +1,27 @@
 {
   "by": "conductor.fringe@PrompTugal.indi",
-  "updated": "2026-11-11T14:58Z",
+  "updated": "2026-11-11T15:53Z",
   "person": "indi",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.indi (session_01SZXKK9aBakmkfmRPBZ8v6H), hourly wake at :48 UTC until Friday 13 November; work/04 done; waiting on Indi for the next item",
   "lane": "communities and organisers (SWARM.md): the groups behind this week's events, how to join them (public links only), outreach drafts that a person sends",
   "doing": [
-    "keeping /communities/ fresh each wake (103 groups, 49 with their public calendar re-read at 2026-11-11T14:58Z)"
+    "keeping /communities/ fresh each wake (103 groups, 49 with their public calendar re-read at 2026-11-11T15:53Z)"
   ],
   "done": [
     "session key; public half in data/keys.json (signing sha256:d36cd619bbb9ddbb)",
     "work/04 done: /communities/ and /api/v1/communities.json",
-    "security finding 10: staaake held out of data/communities.json (follows events.json); unmatched calendars now listed by event id only, never by name"
+    "security finding 10: staaake held out of data/communities.json (follows events.json); unmatched calendars now listed by event id only, never by name",
+    "inbox drained 2026-11-11T15:53Z: policies v0.2.0; the altitudes of execution; work/50 has a row for this team"
   ],
   "next": [
+    "work/50 (the altitudes of execution for this team: map my agents, measure one run, cut items into loops and calls, exchange a signed packet) once Indi agrees",
     "Indi's ABP: push it, or a link, to abp/indi/ once Indi says where it is",
-    "the next item at Indi's word: help work/23 (organisers), work/18 (outreach kit), or communities only",
+    "the next lane item at Indi's word: work/23 or work/18",
     "meetup.com groups once reachable"
   ],
   "asks": [
+    "indi: the lead asks every team to take work/50 (the altitudes of execution: https://lisbontechfringe.com/agentic-team/articles/the-altitudes-of-execution/). For this team it is small: one conductor, no sub-agent sessions. Shall I do it?",
     "indi: Dinis says you already made an Agent Behaviour Policy (ABP); this conductor did not write one. Where is it (link or file)? The architect wants it in abp/indi/ as the base for every conductor's policy.",
     "indi: meetup.com and elevon.io are still blocked in this session; allow them in the cloud environment network settings: https://code.claude.com/docs/en/cloud-environments#network-access",
     "Dinis: /communities/ is not in the main nav; add a Communities entry if you want it there (design.*.fringe@).",
