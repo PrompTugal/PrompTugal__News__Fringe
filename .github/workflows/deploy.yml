@@ -36,7 +36,8 @@ jobs:
           echo "VERSION=v$(cat admin/series.txt).${{ github.run_number }}" >> "$GITHUB_ENV"
           echo "PUSHED_AT=${{ github.event.head_commit.timestamp }}" >> "$GITHUB_ENV"
       - name: Summary links the changes
-        run: echo "Changes: https://fringe.promptugal.news/changes/ (commit ${GITHUB_SHA::7})" >> "$GITHUB_STEP_SUMMARY"
+        run: |
+          echo "Changes https://fringe.promptugal.news/changes/ (commit ${GITHUB_SHA::7})" >> "$GITHUB_STEP_SUMMARY"
       - name: Build and gate (the gate builds once; must print OK)
         run: node admin/build/validate.mjs
       - name: Render the share card (soft: a failure never blocks a deploy)
