@@ -57,12 +57,13 @@ export const TIMELINE_CSS = `
 .tl-nowline .tl-t{font-size:.8rem;letter-spacing:.06em}
 .tl-nowline .tl-dot{width:14px;height:14px;margin:0 0 0 3px;background:var(--live,#b42318);border-color:var(--live,#b42318);box-shadow:0 0 0 4px var(--live-soft,#f8e4df)}
 .tl-nowline .tl-c{font-size:.85rem;border-top:2px solid var(--live,#b42318);padding-top:2px;margin-top:2px}
+.tl-jumps{margin:2px 0 var(--s2);font:500 12px/1.4 var(--mono);letter-spacing:.04em;color:var(--ink-3)}.tl-jumps a{margin-right:var(--s3);color:var(--ink)}.tl-jumps .tl-count{display:block;margin-top:2px}
 .tl-more{margin:6px 0 0;font-size:.92rem}
 .tl-more a{font-weight:600}
 @media (min-width:640px){.tl::before{left:63px}.tl li{grid-template-columns:54px 20px 1fr}.tl-nowline .tl-dot{margin-left:3px}}`;
 
 // events: the published events; esc; helpers: { eventPath, hasPage }; at: Date (the build time); limit: rows (6)
-export function timelineBlock(events, esc, { eventPath, hasPage }, at, { limit = 6, hours = 12, full = false } = {}) {
+export function timelineBlock(events, esc, { eventPath, hasPage }, at, { limit = 6, hours = 12, full = false, jumps = '' } = {}) {
   const now = at.getTime();
   const items = [];
   for (const e of events) {
@@ -84,7 +85,7 @@ run();setInterval(run,60000)}catch(e){}})();`;
   const link = full ? '' : '<a href="/now/">See the full timeline &rarr;</a>';
   return `<section class="timeline${full ? ' tl-full' : ''}" id="timeline"${full ? '' : ' aria-labelledby="tl-h"'}>${head}
 <p class="tl-sub muted tl-asof">As of ${r.hm} UTC when this page was built; with JavaScript it follows your clock. Lisbon time is UTC in November.</p>
-<ol class="tl">${r.html}</ol>
+${jumps}<ol class="tl">${r.html}</ol>
 <p class="tl-more"><span class="tl-more-text">${esc(moreText)}</span>${link}</p>
 <script type="application/json" id="tl-data">${data}</script><script>${client}</script></section>`;
 }

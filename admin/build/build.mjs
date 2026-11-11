@@ -185,9 +185,8 @@ var box=document.getElementById('hero-list');box.textContent='';r.forEach(functi
 
 // --- / -------------------------------------------------------------------
 const home = page('Lisbon Tech Fringe', `
-${timelineBlock(events, esc, { eventPath, hasPage }, new Date(BUILT), { limit: 6 })}
-<nav class="jumps" aria-label="Jump to"><a href="#timeline">Now</a><a href="#tonight">Tonight</a><a href="#online">Online</a><a href="#tomorrow">Tomorrow</a></nav>
-${hero}
+<h1 class="sr">Lisbon Tech Fringe</h1>
+${timelineBlock(events, esc, { eventPath, hasPage }, new Date(BUILT), { limit: 6, jumps: `<p class="tl-jumps" aria-label="Jump to"><a href="#tonight">Tonight</a><a href="#online">Online</a><a href="#tomorrow">Tomorrow</a><a href="#events">All events</a><span class="tl-count">${esc(heroCount(events, today))}</span></p>` })}
 <p class="muted">An independent guide to the alternative, community and side events around Web Summit Lisbon this week: what is on, where, when and how to join.</p>
 <div class="card"><strong>The storm.</strong> For weather warnings and what moved because of Storm Charles, see
 <a href="https://storm-charles.promptugal.news">storm-charles.promptugal.news</a>, <a href="https://www.ipma.pt/">IPMA</a> and <a href="https://www.prociv.gov.pt/">ANEPC</a>. This site is not a warning service.

@@ -71,4 +71,7 @@ time,.when,.ev-time,.nowtime{font-family:var(--mono)}
 code,pre{font-family:var(--mono)}
 .muted{font-family:var(--sans)}footer{font-family:var(--mono);font-size:11px;border-top:2px solid var(--green)}
 a{text-decoration-thickness:1px;text-underline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* defect: the independence line sits in the page column, in full, at every width */
+.ind{padding:4px max(var(--gutter),calc((100% - var(--page)) / 2 + var(--gutter)))!important;white-space:normal;overflow:visible;text-indent:0}
 `;
