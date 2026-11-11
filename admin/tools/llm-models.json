@@ -27,10 +27,10 @@
       "for": "a whole page set or repository in one prompt (1M context)"
     },
     "check": {
-      "model": "meta-llama/llama-3.1-8b-instruct",
-      "fallback": "deepseek/deepseek-v4-flash",
-      "usd_per_m": "0.02/0.04",
-      "for": "second-opinion checks: a page's text against our entry; answers match/mismatch only; its word is evidence, never fact"
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "fallback": "meta-llama/llama-3.1-8b-instruct",
+      "usd_per_m": "0.71/0.71",
+      "for": "second-opinion checks: extracts what a public page says; the comparison is done in code; its word is evidence, never fact (the 8B model was too noisy, the lead 12:49 UTC)"
     }
   },
   "min_credit_usd": 5,

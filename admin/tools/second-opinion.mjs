@@ -28,19 +28,36 @@ async function pageText(url) {
   const t = html.replace(/<(script|style)[\s\S]*?<\/\1>/g, ' ').replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
   return { text: facts + t.slice(0, 4500) };
 }
-const PROMPT = (e, t) => `Compare a web page with a record of the event. The page's own words win. Times are UTC (Lisbon is UTC in November).
-RECORD: status=${e.status} start=${e.start || 'unknown'} end=${e.end || 'unknown'} place=${e.place || 'unknown'}
-(status values: on, online, moved, cancelled, unknown)
+// The model EXTRACTS what the page says (status, start, end, place); the comparison is done here, on times normalised to UTC minutes,
+// so format differences (6:30 PM, 18:30, 2026-11-11T18:30:00.000Z) cannot make a false mismatch.
+const PROMPT = (e, t) => `Read this web page text about an event and report what it says. Times in the page are Lisbon time, which equals UTC in November; write them in 24-hour UTC.
 PAGE TEXT:
 ${t}
 
 Answer with exactly four lines and nothing else:
-status: match | mismatch | unclear
-start: match | mismatch | unclear
-end: match | mismatch | unclear
-place: match | mismatch | unclear
-For a mismatch add " - " and what the page says in at most 12 words.`;
-const parse = (txt) => { const out = {}; for (const k of ['status', 'start', 'end', 'place']) { const m = new RegExp('^\\s*' + k + '\\s*:\\s*(match|mismatch|unclear)\\b\\s*(?:[-–]\\s*(.*))?$', 'im').exec(txt || ''); out[k] = m ? { v: m[1].toLowerCase(), says: (m[2] || '').trim().slice(0, 100) || undefined } : { v: 'unparsed' }; } return out; };
+status: on | cancelled | postponed | moved | unclear
+start: YYYY-MM-DDTHH:MM (UTC) | unclear
+end: YYYY-MM-DDTHH:MM (UTC) | unclear
+place: the venue or area named on the page in at most 8 words | online | unclear`;
+const line = (txt, k) => ((new RegExp('^\\s*' + k + '\\s*:\\s*(.+)$', 'im').exec(txt || '')) || [])[1]?.trim();
+const minutes = (v) => { const m = /(\d{4})-(\d\d)-(\d\d)[T ](\d\d):(\d\d)/.exec(v || ''); return m ? Date.UTC(+m[1], +m[2] - 1, +m[3], +m[4], +m[5]) / 60000 : null; };
+const words = (x) => new Set(String(x || '').toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').split(/[^a-z0-9]+/).filter((w) => w.length > 3 && !['lisboa', 'lisbon', 'portugal', 'online', 'address', 'given', 'guests', 'venue', 'event', 'page'].includes(w)));
+const cmpTime = (page, rec) => { const a = minutes(page), b = minutes(rec); return a == null || b == null ? { v: 'unclear' } : a === b ? { v: 'match' } : { v: 'mismatch', says: String(page).slice(0, 16) }; };
+function cmpStatus(page, rec) {
+  const p = (page || 'unclear').toLowerCase();
+  if (!/^(on|cancelled|postponed|moved|unclear)/.test(p) || p.startsWith('unclear')) return { v: 'unclear' };
+  const pg = p.startsWith('on') ? 'on' : p.startsWith('cancel') ? 'cancelled' : 'moved';   // postponed counts as moved
+  const r = rec === 'online' || rec === 'unknown' ? 'on' : rec;
+  return pg === r ? { v: 'match' } : rec === 'unknown' ? { v: 'unclear', says: pg } : { v: 'mismatch', says: pg };
+}
+function cmpPlace(page, rec) {
+  if (!page || /^unclear/i.test(page)) return { v: 'unclear' };
+  const recOnline = /^online\b/i.test(rec || ''), pgOnline = /^online\b/i.test(page);
+  if (recOnline || pgOnline) return recOnline && pgOnline ? { v: 'match' } : { v: 'mismatch', says: page.slice(0, 60) };
+  const a = words(page), b = words(rec); if (!a.size || !b.size) return { v: 'unclear' };
+  return [...a].some((w) => b.has(w)) ? { v: 'match' } : { v: 'unclear', says: page.slice(0, 60) };   // a different name is not proof of a different place
+}
+const parse = (txt, e) => ({ status: cmpStatus(line(txt, 'status'), e.status), start: cmpTime(line(txt, 'start'), e.start), end: cmpTime(line(txt, 'end'), e.end), place: cmpPlace(line(txt, 'place'), e.place) });
 
 const c0 = await credit(); console.log('credit before:', JSON.stringify(c0));
 const results = []; let spent0 = summary().cost_usd;
@@ -49,15 +66,15 @@ for (const e of todo) {
   if (p.err) { results.push({ id: e.id, url: e.url, error: p.err }); await sleep(600); continue; }
   const r = await call({ task: 'WS-215/second-opinion', agent: AGENT, tier: 'check', mock: MOCK, max_tokens: 120, messages: [{ role: 'user', content: PROMPT(e, p.text) }] });
   if (!r.text) { results.push({ id: e.id, url: e.url, error: r.line.status }); if (/refused|credit/.test(r.line.status)) { console.log('stopping:', r.line.status); break; } continue; }
-  results.push({ id: e.id, url: e.url, read_at: e.read_at, ...parse(r.text) });
+  results.push({ id: e.id, url: e.url, read_at: e.read_at, ...parse(r.text, e) });
   if (!MOCK) await sleep(600);
 }
-// end and place from an 8B model are mostly noise (time formats, "Address given to guests"): they are counted, not listed
-const bad = results.filter((r) => !r.error && ['status', 'start'].some((k) => r[k]?.v === 'mismatch'));
+// comparison is in code, on times normalised to UTC minutes
+const bad = results.filter((r) => !r.error && ['status', 'start', 'end', 'place'].some((k) => r[k]?.v === 'mismatch'));
 const noisy = (k) => results.filter((r) => !r.error && r[k]?.v === 'mismatch').length;
 const s = summary();
 const doc = { about: 'Second-opinion checks (work/20): a cheap open model read each event\'s public page and our entry. EVIDENCE only, never fact: no data changed from it. Verdicts only; no page or model text is kept in git. Mismatches are for work/13 and researcher.2 to re-read at source.',
-  run_at: new Date().toISOString().slice(0, 19) + 'Z', by: AGENT, model: 'tier check (see admin/tools/llm-models.json)', hours: HOURS, checked: results.filter((r) => !r.error).length, errors: results.filter((r) => r.error).length, mismatches_status_or_start: bad.length, end_mismatches_not_listed: noisy('end'), place_mismatches_not_listed: noisy('place'),
-  cost_usd_this_run: +(s.cost_usd - spent0).toFixed(5), label: 'evidence', mismatched: bad.map((r) => ({ id: r.id, url: r.url, status: r.status, start: r.start })), all: results.map((r) => r.error ? { id: r.id, error: r.error } : { id: r.id, status: r.status.v, start: r.start.v, end: r.end.v, place: r.place.v }) };
+  run_at: new Date().toISOString().slice(0, 19) + 'Z', by: AGENT, model: 'tier check (see admin/tools/llm-models.json)', hours: HOURS, checked: results.filter((r) => !r.error).length, errors: results.filter((r) => r.error).length, mismatches: bad.length,
+  cost_usd_this_run: +(s.cost_usd - spent0).toFixed(5), label: 'evidence', mismatched: bad.map((r) => ({ id: r.id, url: r.url, status: r.status, start: r.start, end: r.end, place: r.place })), all: results.map((r) => r.error ? { id: r.id, error: r.error } : { id: r.id, status: r.status.v, start: r.start.v, end: r.end.v, place: r.place.v }) };
 if (!MOCK) fs.writeFileSync(OUT, JSON.stringify(doc, null, 1) + '\n');
-console.log(JSON.stringify({ checked: doc.checked, errors: doc.errors, mismatches: doc.mismatches_status_or_start, cost_usd: doc.cost_usd_this_run, per_100_usd: doc.checked ? +(doc.cost_usd_this_run / doc.checked * 100).toFixed(5) : null }));
+console.log(JSON.stringify({ checked: doc.checked, errors: doc.errors, mismatches: doc.mismatches, cost_usd: doc.cost_usd_this_run, per_100_usd: doc.checked ? +(doc.cost_usd_this_run / doc.checked * 100).toFixed(5) : null }));
