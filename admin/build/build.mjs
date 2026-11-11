@@ -216,6 +216,11 @@ mkdirSync(join(out, 'api', 'v1'), { recursive: true });
 writeFileSync(join(out, 'api', 'v1', 'README.md'), read('api/v1/README.md'));
 writeFileSync(join(out, 'api', 'v1', 'events.json'), JSON.stringify({ about: 'Lisbon Fringe events, each re-read at its public URL (read_at, UTC). Independent of Web Summit.', site: SITE, version: VERSION, built_at: BUILT, events }, null, 2) + '\n');
 writeFileSync(join(out, 'api', 'v1', 'graph.json'), JSON.stringify({ about: 'The Lisbon Fringe graph: events, communities (organisers, as organisations), topics and places. Every edge comes from one event and carries its source URL and read_at. Independent of Web Summit.', site: SITE, version: VERSION, built_at: BUILT, ptnews_from: ptnews?.from || null, ...graph }, null, 1) + '\n');
+// Communities (work/04, conductor.fringe@PrompTugal.indi): data/communities.json, made by admin/tools/communities.mjs.
+if (existsSync(join(root, 'data/communities.json'))) {
+  const cm = JSON.parse(read('data/communities.json'));
+  writeFileSync(join(out, 'api', 'v1', 'communities.json'), JSON.stringify({ about: cm.about, site: SITE, version: VERSION, built_at: BUILT, updated: cm.updated, how: cm.how, communities: cm.communities }, null, 2) + '\n');
+}
 writeFileSync(join(out, 'llms.txt'), `# Lisbon Fringe\n\n> An independent guide to the alternative, community and side events around Web Summit Lisbon, 9 to 15 November 2026. Independent of Web Summit; for anything official see the organisers' site. Not a warning service: for the storm see https://storm-charles.promptugal.news, IPMA and ANEPC.\n\n- [Events (JSON)](${SITE}api/v1/events.json): each event with its source URL and the time it was read\n- [The graph (JSON)](${SITE}api/v1/graph.json): events, communities, topics and places, each edge with its source\n- [Join the team](${SITE}join/)\n- [Repository](${REPO})\n`);
 const ePages = eventPages(events, { page, esc, linkify, SITE, card, cardList });   // work/22: /e/<id>/
 for (const p of ePages) { mkdirSync(join(out, p.path), { recursive: true }); writeFileSync(join(out, p.path, 'index.html'), p.html); }

@@ -34,7 +34,27 @@ Only events re-read at their URL (data/events.json, work/02) are published. No c
 
 ## `communities.json`
 
-Not served yet (work/04). Its fields will be documented here before it is.
+Served at `/api/v1/communities.json` (work/04, conductor.fringe@PrompTugal.indi). Made by `admin/tools/communities.mjs` from `data/events.json`: the organisers, split as the graph splits them, and for each Luma event its hosting calendar re-read once. Organisations only: a personal calendar, a host or an independent organiser is never listed. No contact details.
+
+```
+{
+  "about", "site", "version", "built_at",
+  "updated":  ISO 8601 UTC,           // when data/communities.json was made
+  "how":      string,
+  "communities": [
+    {
+      "id":      string,                  // slug; the /graph/ node is "community:<id>"
+      "name":    string,
+      "what":    { "text", "quoted_from": URL, "read_at": ISO 8601 } | null,   // its calendar's own words, first sentence
+      "join":    string,                  // a public way in, or "unknown: join through its event pages"
+      "links":   [ { "label": "Luma calendar" | "website", "url": "https://..." } ],
+      "events":  [ event id ],            // ids in events.json
+      "sources": [ { "url", "read_at", "what" } ],   // the pages its facts were read from
+      "label":   "fact" | "from events.json only"
+    }
+  ]
+}
+```
 
 ## `graph.json`
 
