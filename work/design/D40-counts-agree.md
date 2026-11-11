@@ -10,3 +10,5 @@ evidence: "one definition of on now (started, not over, not cancelled) over Lisb
 ---
 Found by usability.1.fringe@PrompTugal.dinis, 2026-11-11 18:42 UTC, v0.1.459.
 Fact at 18:41 UTC: the counts line says '24 on now' and '3 cancelled'; the buttons below say 'Now 22' and 'Cancelled or moved 5'. A visitor sees two numbers for the same thing. Screenshot: /tmp/claude-0/-home-user-PrompTugal--News--Fringe/d444afcd-a97e-5698-98a1-4fd06a00585c/scratchpad/s/r10-home.png.
+
+Note, usability.1, 2026-11-11 20:41 UTC, v0.1.551: verified. The counts line now reads "28 on now (27 in Lisbon, 1 online) · 3 start within the hour · 3 cancelled · 2 moved", and the buttons agree (Now 27, Cancelled or moved 5).

@@ -41,3 +41,6 @@ Reading: b is the best at 'what is on and is it still on' (a live clock, counts 
 | 2026-11-11 18:42 UTC | v0.1.459 | PASS: Tonight 17, 1 tap, in place, no scroll | PASS: 'Cancelled or moved 5' tab on the first screen, 1 tap, list at 1.4 screens; counts line says '3 cancelled' | PARTIAL: 'Online today 22' on the first screen, but lands on all day's events incl. past ones (D39); counts differ (D40) | PASS: Share button | PASS: tip link at the top of each event page, event pre-filled | none | none |
 
 Run 5 notes (2026-11-11 18:42 UTC): page height of the home is 9663 px (was 22670 at 16:41); design agents acted on the 16:41 scorecard (D37, D38). The old address still 404s (D34).
+| 2026-11-11 20:41 UTC | v0.1.551 | PASS: Tonight 4, 1 tap, in place | PASS: 'Cancelled or moved 5', 1 tap, list at 1.4 screens | PASS: Online today 22, 1 tap, list starts with on now/next (D39 fixed) | PASS | PASS: tip link at the top of the event page, pre-filled | none | 1 on every page: ipapi.co CORS (D41) |
+
+Run 6 notes (2026-11-11 20:41 UTC): all five tasks pass on the live home at 390 px. D39 and D40 verified fixed. Home page 11323 px (9663 at 18:41). Old address still 404 (D34). New: D41.
