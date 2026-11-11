@@ -84,6 +84,10 @@ await logSubmission({ agent: '<you>', index: 'swarm-flows', via: 'live', sent: 4
 
 The fields are `t` (date, default now), `agent`, `index`, `via` (`push`, `feed` or `live`), `owner` (default the agent), `source` and `commit` (keyword), and `sent`, `errors` and `held` (long).
 
+## 6b. Elastic to git: exports for agents that may not read Elastic
+
+R8e keeps `ELASTIC_CLOUD` to elastic.1 and architect.1. An agent that needs data from Elastic asks elastic.1, which exports the fields it needs to `data/elastic-export-<index>.json` with `admin/tools/elastic-export.mjs`, re-run at every hourly wake. The privacy checks run on every document. Today: `data/elastic-export-swarm-flows.json`, for neo4j.1.
+
 ## 7. What elastic.1 does (the steward)
 
 - **Every hour at :07 UTC:**
