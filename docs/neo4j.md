@@ -6,7 +6,7 @@ The Lisbon Tech Fringe swarm loaded into Neo4j as a property graph. It covers th
 
 ## What is in it (fact, read 2026-11-11T19:40Z, repo head 23442b9)
 
-2,164 nodes and 6,649 relationships. The counts by label and by verb are in `data/neo4j-stats.json`.
+2,236 nodes and 6,886 relationships (19:47 UTC, with the live flows). The counts by label and by verb are in `data/neo4j-stats.json`.
 
 | Source | Becomes |
 |---|---|
@@ -16,7 +16,7 @@ The Lisbon Tech Fringe swarm loaded into Neo4j as a property graph. It covers th
 | `abp/reviews/`, through `node abp/tools/abp.mjs review-export` | `:Review` `RECORDS` `:Finding`. Each finding `BREACHES` a `:Rule`, `FLAGS` an `:Agent`, `CONCERNS` a `:File` and `CITES` a `:Commit`. |
 | `git log` on dev since 9 November | `:Agent` `AUTHORED` `:Commit`, which `CHANGES` a `:File` or a `:Brief`, `IS_FOR` (from the `For:` trailer) and `FOLLOWS` its parent. A commit that changes a file only another role may write `CROSSES_INTO` that `:Role`. `:Person` `SAID` a `:Word`, and the commit that quotes it `ACTS_ON` it. |
 | `data/keys.json` | `(:Agent)-[:HOLDS_KEY]->(:Key)`, by fingerprint only. No key material is ever read or stored. |
-| Elastic swarm-flows (`--flows FILE`) | `:Span` `IS_CHILD_OF` `:Span` (OTel `parent_span_id`), `BELONGS_TO` a `:Trace`, and `(:Agent)-[:EMITTED]->(:Span)`. This is waiting on an export from elastic.1, which I asked for through its inbox at 19:40 UTC. |
+| Elastic swarm-flows: `data/elastic-export-swarm-flows.json` (exported by architect.1 and elastic.1, 62 events, read 2026-11-11T19:35:13Z; `--flows FILE` reads another) | Each unit's start, step and end events become one `:Span`, with its start time, end time and duration. A span `BELONGS_TO` its `:Flow` and, where it has one, its OTel `:Trace`. It `IS_CHILD_OF` its parent span: through `unit_id` and `parent_id` first, then `parent_span_id`, because only the newest events carry the OTel ids. The span is linked as `(:Key)-[:SIGNED]->(:Span)` and `(:Agent)-[:EMITTED]->(:Span)`. Where its key matches a recorded unit, the span `IS_LIVE_VIEW_OF` that `:Unit`. |
 
 Every node also has the label `:Fringe`, so `--wipe` removes only what the loader made.
 
@@ -43,12 +43,13 @@ python3 admin/tools/neo4j-query.py [--only lanes-crossed] [--out data/neo4j-answ
 
 ## The questions and what they answer
 
-`neo4j/queries.cypher` holds 12 named questions. The rows below are from the local load (`data/neo4j-answers.json`, read 2026-11-11T19:40:52Z).
+`neo4j/queries.cypher` holds 14 named questions. The rows below are from the local load (`data/neo4j-answers.json`, read 2026-11-11T19:40:52Z).
 
 - **Which units held more reach than they needed** (`reach-beyond-need`): all 4 A0 compute units needed 3 capabilities and held 25. All 6 A2 loops needed 5 and held 25. Every one of them held `execute.process.host`, `read.credential.host`, `delete.file.host` and `create.schedule.*` without needing them (`reach-most-exposed`). This is the "why is A0:Compute:Plan run with A3 privileges" question, as a number.
 - **Which agents cross which lanes** (`lanes-crossed`): there are 29 agent-to-lane pairs. The top three are architect.1 into dev's and design's lanes (7 commits: `admin/build/build.mjs`, `validate.mjs` and `universe.mjs`), ontologist.1 into dev's and researcher's lanes (5 commits: `api/v1/README.md`), and conductor.fringe@…jose into dev's lane (4 commits: `admin/build/swarm.mjs`). A file in two lanes (such as build.mjs, in both dev and design) counts in each.
 - **Shared files changed by others** (`shared-files-touched-by-others`): `admin/build/build.mjs` (owner dev.2) has 59 commits by other agents, `api/v1/README.md` has 14 and `admin/build/event-pages.mjs` has 12.
 - **The path from Dinis's word to a commit** (`word-to-commit`): 23 quoted words, each linked to the commit that acted on it. For example, "can you spin up an neo4j agent?" (19:33) leads to architect.1 and commit 23442b9 at 19:34:10Z. As a path: `(:Person {id:'dinis'})-[:SAID]->(:Word)<-[:ACTS_ON]-(:Commit)<-[:AUTHORED]-(:Agent)`.
+- **The live flows** (`flow-trees`, `live-matches-signed`): in `flow-20261111T185613-run2`, one A4 span hands work to an A3, which hands it to 3 A2 loops, 16 A1 calls and 2 A0 compute units. All 23 spans finished, and the longest took 56.9 s. All 21 spans below A3 match a signed unit in `data/altitude-runs.json` by key. The A4 and A3 spans have no recorded twin, and neither do the test flows.
 - Also: the findings by agent and rule, each run's tree by altitude with its cost, the units with no verified signature (the 2 A3 roots), the agents that commit with no grant (grafana.1, 4 commits), the files with the most writers (`data/keys.json` 22, `build.mjs` 15), the busiest organisers in the fringe graph, and the grammar with how often each verb is used.
 
 These are facts about the repository as it was read. The lane crossings are computed from the role globs in `abp/policies.json`, so they are a hypothesis about intent: a crossing may have been agreed in an inbox.

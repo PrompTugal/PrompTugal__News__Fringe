@@ -79,3 +79,19 @@ MATCH (v:Verb)
 OPTIONAL MATCH ()-[e]->() WHERE type(e) = v.id
 RETURN v.id AS verb, v.says AS says, v.inverse AS inverse, v.subject AS subject, v.object AS object, count(e) AS uses
 ORDER BY uses DESC;
+
+// name: flow-trees
+// asks: In the live flows (Elastic swarm-flows), how does each flow hand work down, and which spans never finished?
+MATCH (s:Span)-[:BELONGS_TO]->(f:Flow)
+OPTIONAL MATCH (s)-[:IS_CHILD_OF]->(p:Span)
+RETURN f.name AS flow, s.altitude AS altitude, count(s) AS spans, count(p) AS with_parent,
+       sum(CASE WHEN s.finished THEN 0 ELSE 1 END) AS unfinished, max(s.duration_ms) AS longest_ms
+ORDER BY flow, altitude DESC;
+
+// name: live-matches-signed
+// asks: Which live spans match a signed unit in the recorded runs (same key), and which have no recorded twin?
+MATCH (s:Span)
+OPTIONAL MATCH (s)-[:IS_LIVE_VIEW_OF]->(u:Unit)
+RETURN s.flow AS flow, s.altitude AS altitude, count(s) AS spans, count(u) AS matched_to_recorded_unit,
+       count(s) - count(u) AS live_only
+ORDER BY flow, altitude DESC;

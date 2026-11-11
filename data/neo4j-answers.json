@@ -1,7 +1,7 @@
 {
  "about": "Answers to neo4j/queries.cypher over the swarm graph (admin/tools/neo4j-load.py), by neo4j.1.fringe@PrompTugal.dinis. Facts read from the repository and its public site at the time below; fingerprints only, never key material.",
- "read_at": "2026-11-11T19:40:52Z",
- "repo_head": "23442b9",
+ "read_at": "2026-11-11T19:43:17Z",
+ "repo_head": "b4d20ef",
  "answers": [
   {
    "name": "reach-beyond-need",
@@ -142,18 +142,18 @@
      "agent": "architect.1.fringe@PrompTugal.dinis",
      "own_role": "architect",
      "lane": "dev",
-     "commits": 7,
+     "commits": 8,
      "files": [
       "admin/build/build.mjs",
-      "admin/build/validate.mjs",
-      "admin/build/universe.mjs"
+      "admin/build/universe.mjs",
+      "admin/build/validate.mjs"
      ]
     },
     {
      "agent": "architect.1.fringe@PrompTugal.dinis",
      "own_role": "architect",
      "lane": "design",
-     "commits": 7,
+     "commits": 8,
      "files": [
       "admin/build/build.mjs",
       "admin/build/validate.mjs",
@@ -202,8 +202,8 @@
      "lane": "lead",
      "commits": 3,
      "files": [
-      "KICKOFF.md",
-      "team/roster.json"
+      "team/roster.json",
+      "KICKOFF.md"
      ]
     },
     {
@@ -212,9 +212,9 @@
      "lane": "dev",
      "commits": 3,
      "files": [
-      "api/v1/README.md",
+      "admin/build/tokens.css",
       "admin/build/build.mjs",
-      "admin/build/tokens.css"
+      "api/v1/README.md"
      ]
     },
     {
@@ -256,15 +256,6 @@
      ]
     },
     {
-     "agent": "conductor.fringe@PrompTugal.indi",
-     "own_role": "conductor",
-     "lane": "design",
-     "commits": 2,
-     "files": [
-      "admin/build/build.mjs"
-     ]
-    },
-    {
      "agent": "ontologist.1.fringe@PrompTugal.dinis",
      "own_role": "ontologist",
      "lane": "design",
@@ -275,30 +266,21 @@
      ]
     },
     {
+     "agent": "conductor.fringe@PrompTugal.indi",
+     "own_role": "conductor",
+     "lane": "design",
+     "commits": 2,
+     "files": [
+      "admin/build/build.mjs"
+     ]
+    },
+    {
      "agent": "conductor@web-summit.dinis",
      "own_role": "reviewer",
      "lane": "researcher",
      "commits": 2,
      "files": [
       "seed/events-2026-11-11-social-watch.json"
-     ]
-    },
-    {
-     "agent": "architect.1.fringe@PrompTugal.dinis",
-     "own_role": "architect",
-     "lane": "lead",
-     "commits": 1,
-     "files": [
-      ".gitignore"
-     ]
-    },
-    {
-     "agent": "tracer.fringe@PrompTugal.angelo",
-     "own_role": "observability",
-     "lane": "lead",
-     "commits": 1,
-     "files": [
-      "team/angelo/traces/README.md"
      ]
     },
     {
@@ -320,12 +302,21 @@
      ]
     },
     {
-     "agent": "graph.fringe@PrompTugal.angelo",
-     "own_role": "dev",
-     "lane": "conductor",
+     "agent": "tracer.fringe@PrompTugal.angelo",
+     "own_role": "observability",
+     "lane": "lead",
      "commits": 1,
      "files": [
-      "team/angelo/status.json"
+      "team/angelo/traces/README.md"
+     ]
+    },
+    {
+     "agent": "architect.1.fringe@PrompTugal.dinis",
+     "own_role": "architect",
+     "lane": "lead",
+     "commits": 1,
+     "files": [
+      ".gitignore"
      ]
     },
     {
@@ -335,6 +326,15 @@
      "commits": 1,
      "files": [
       "team/angelo/traces/README.md"
+     ]
+    },
+    {
+     "agent": "graph.fringe@PrompTugal.angelo",
+     "own_role": "dev",
+     "lane": "conductor",
+     "commits": 1,
+     "files": [
+      "team/angelo/status.json"
      ]
     },
     {
@@ -356,21 +356,21 @@
      ]
     },
     {
-     "agent": "elastic.1.fringe@PrompTugal.dinis",
-     "own_role": "elastic",
-     "lane": "dev",
-     "commits": 1,
-     "files": [
-      "data/models-ledger.json"
-     ]
-    },
-    {
      "agent": "observability.fringe@PrompTugal.dinis",
      "own_role": "observability",
      "lane": "dev",
      "commits": 1,
      "files": [
       "admin/build/build.mjs"
+     ]
+    },
+    {
+     "agent": "elastic.1.fringe@PrompTugal.dinis",
+     "own_role": "elastic",
+     "lane": "dev",
+     "commits": 1,
+     "files": [
+      "data/models-ledger.json"
      ]
     }
    ],
@@ -465,7 +465,7 @@
      ]
     },
     {
-     "agent": "researcher.2.fringe@PrompTugal.dinis",
+     "agent": "design.2.fringe@PrompTugal.dinis",
      "rule": "R6",
      "mode": "observe",
      "findings": 2,
@@ -475,7 +475,7 @@
      ]
     },
     {
-     "agent": "design.2.fringe@PrompTugal.dinis",
+     "agent": "researcher.2.fringe@PrompTugal.dinis",
      "rule": "R6",
      "mode": "observe",
      "findings": 2,
@@ -495,7 +495,7 @@
      ]
     },
     {
-     "agent": "conductor.fringe@PrompTugal.indi",
+     "agent": "graph.fringe@PrompTugal.angelo",
      "rule": "R6",
      "mode": "observe",
      "findings": 1,
@@ -504,7 +504,7 @@
      ]
     },
     {
-     "agent": "graph.fringe@PrompTugal.angelo",
+     "agent": "conductor.fringe@PrompTugal.indi",
      "rule": "R6",
      "mode": "observe",
      "findings": 1,
@@ -541,13 +541,13 @@
     {
      "file": "admin/build/build.mjs",
      "owner": "dev.2.fringe@PrompTugal.dinis",
-     "commits_by_others": 59,
+     "commits_by_others": 60,
      "others": [
       "design.3.fringe@PrompTugal.dinis",
-      "designer.fringe@PrompTugal.angelo",
-      "capture.1.fringe@PrompTugal.dinis",
+      "conductor.fringe@PrompTugal.indi",
+      "design.1.fringe@PrompTugal.dinis",
       "dev.fringe@PrompTugal.dinis",
-      "dev.1.fringe@PrompTugal.dinis"
+      "design.2.fringe@PrompTugal.dinis"
      ]
     },
     {
@@ -555,10 +555,10 @@
      "owner": "dev.2.fringe@PrompTugal.dinis",
      "commits_by_others": 14,
      "others": [
+      "researcher.2.fringe@PrompTugal.dinis",
       "dev.fringe@PrompTugal.dinis",
       "conductor.fringe@PrompTugal.angelo",
       "conductor.fringe@PrompTugal.indi",
-      "researcher.2.fringe@PrompTugal.dinis",
       "ontologist.1.fringe@PrompTugal.dinis"
      ]
     },
@@ -567,9 +567,9 @@
      "owner": "design.3.fringe@PrompTugal.dinis",
      "commits_by_others": 12,
      "others": [
-      "dev.lead.fringe@PrompTugal.dinis",
       "dev.2.fringe@PrompTugal.dinis",
       "design.2.fringe@PrompTugal.dinis",
+      "dev.lead.fringe@PrompTugal.dinis",
       "design.4.fringe@PrompTugal.dinis",
       "ontologist.1.fringe@PrompTugal.dinis"
      ]
@@ -598,9 +598,9 @@
      "owner": "conductor.fringe@PrompTugal.angelo",
      "commits_by_others": 5,
      "others": [
+      "tracer.fringe@PrompTugal.angelo",
       "designer.fringe@PrompTugal.angelo",
       "conductor.fringe@PrompTugal.dinis",
-      "tracer.fringe@PrompTugal.angelo",
       "graph.fringe@PrompTugal.angelo"
      ]
     },
@@ -609,10 +609,10 @@
      "owner": "dev.2.fringe@PrompTugal.dinis",
      "commits_by_others": 4,
      "others": [
-      "design.2.fringe@PrompTugal.dinis",
       "dev.fringe@PrompTugal.dinis",
-      "dev.1.fringe@PrompTugal.dinis",
-      "architect.1.fringe@PrompTugal.dinis"
+      "design.2.fringe@PrompTugal.dinis",
+      "architect.1.fringe@PrompTugal.dinis",
+      "dev.1.fringe@PrompTugal.dinis"
      ]
     },
     {
@@ -630,8 +630,8 @@
      "commits_by_others": 3,
      "others": [
       "dev.lead.fringe@PrompTugal.dinis",
-      "graph.fringe@PrompTugal.angelo",
-      "design.4.fringe@PrompTugal.dinis"
+      "design.4.fringe@PrompTugal.dinis",
+      "graph.fringe@PrompTugal.angelo"
      ]
     },
     {
@@ -671,15 +671,28 @@
    "rows": [
     {
      "said_at": "19:33",
+     "word": "also can you spin up an neo4j agent?",
+     "agent": "neo4j.1.fringe@PrompTugal.dinis",
+     "commit": "bb2929f",
+     "committed_at": "2026-11-11T19:42:00Z",
+     "files": [
+      "data/neo4j-answers.json",
+      "admin/tools/neo4j-load.py",
+      "team/dinis/agents/neo4j.1.json",
+      "data/neo4j-stats.json"
+     ]
+    },
+    {
+     "said_at": "19:33",
      "word": "can you spin up an neo4j agent?",
      "agent": "architect.1.fringe@PrompTugal.dinis",
      "commit": "23442b9",
      "committed_at": "2026-11-11T19:34:10Z",
      "files": [
-      "abp/design.3.fringe@PrompTugal.dinis.md",
-      "abp/conductor.fringe@PrompTugal.daniela.md",
-      "abp/design.2.fringe@PrompTugal.dinis.md",
-      "abp/conductor.fringe@PrompTugal.indi.md"
+      "abp/graph.fringe@PrompTugal.angelo.md",
+      "abp/outreach.1.fringe@PrompTugal.dinis.md",
+      "abp/gravity.1.fringe@PrompTugal.silvio.md",
+      "abp/policies.json"
      ]
     },
     {
@@ -699,10 +712,10 @@
      "commit": "8b0e66b",
      "committed_at": "2026-11-11T19:09:14Z",
      "files": [
-      "abp/capture.1.fringe@PrompTugal.dinis.md",
-      "abp/conductor.B@ios.PrompTugal.dinis.md",
-      "abp/observability.fringe@PrompTugal.dinis.md",
-      "abp/policies.json"
+      "abp/tracer.fringe@PrompTugal.angelo.md",
+      "abp/security.fringe@PrompTugal.dinis.md",
+      "abp/dev.fringe@PrompTugal.dinis.md",
+      "abp/dev.1.fringe@PrompTugal.dinis.md"
      ]
     },
     {
@@ -712,10 +725,10 @@
      "commit": "7f80c20",
      "committed_at": "2026-11-11T19:07:33Z",
      "files": [
-      "abp/design.4.fringe@PrompTugal.dinis.md",
       "abp/dev.1.fringe@PrompTugal.dinis.md",
-      ".claude/hooks/abp.mjs",
-      "abp/observability.fringe@PrompTugal.dinis.md"
+      "abp/conductor@web-summit.dinis.md",
+      "abp/graph.fringe@PrompTugal.angelo.md",
+      "abp/dev.2.fringe@PrompTugal.dinis.md"
      ]
     },
     {
@@ -727,7 +740,7 @@
      "files": [
       "data/altitude-runs.json",
       "admin/build/build.mjs",
-      "admin/build/architecture-page.mjs",
+      "team/dinis/agents/architect.1.json",
       "abp/tools/runs-export.mjs"
      ]
     },
@@ -738,10 +751,10 @@
      "commit": "c04915b",
      "committed_at": "2026-11-11T18:59:59Z",
      "files": [
-      "data/altitude-runs.json",
-      "abp/design.3.fringe@PrompTugal.dinis.md",
-      "abp/security.fringe@PrompTugal.dinis.md",
-      "abp/design.1.fringe@PrompTugal.dinis.md"
+      "abp/tracer.fringe@PrompTugal.angelo.md",
+      "abp/usability.1.fringe@PrompTugal.dinis.md",
+      "abp/conductor.fringe@PrompTugal.dinis.md",
+      "abp/conductor@web-summit.dinis.md"
      ]
     },
     {
@@ -751,10 +764,10 @@
      "commit": "6c38a4a",
      "committed_at": "2026-11-11T18:59:23Z",
      "files": [
-      "elastic/examples/dashboard-spec.example.mjs",
-      "admin/tools/elastic-dashboard.mjs",
+      "docs/elastic-guidance.md",
+      "admin/tools/elastic-catalog.mjs",
       "admin/tools/elastic-kibana.mjs",
-      "docs/elastic-guidance.md"
+      "elastic/examples/dashboard-spec.example.mjs"
      ]
     },
     {
@@ -764,9 +777,9 @@
      "commit": "02e1394",
      "committed_at": "2026-11-11T18:32:25Z",
      "files": [
-      "abp/tools/runs-export.mjs",
+      "docs/handoffs/2026-11-11-altitudes-on-elastic.md",
       "data/altitude-runs.json",
-      "docs/handoffs/2026-11-11-altitudes-on-elastic.md"
+      "abp/tools/runs-export.mjs"
      ]
     },
     {
@@ -776,10 +789,10 @@
      "commit": "db01ee9",
      "committed_at": "2026-11-11T16:32:53Z",
      "files": [
-      "abp/conductor.C.fringe@PrompTugal.dinis.md",
-      "abp/design.1.fringe@PrompTugal.dinis.md",
-      "abp/elastic.1.fringe@PrompTugal.dinis.md",
-      "abp/conductor.fringe@PrompTugal.indi.md"
+      "abp/conductor.fringe@PrompTugal.silvio.md",
+      "abp/conductor.fringe@PrompTugal.indi.md",
+      "abp/design.2.fringe@PrompTugal.dinis.md",
+      "abp/design.4.fringe@PrompTugal.dinis.md"
      ]
     },
     {
@@ -789,10 +802,10 @@
      "commit": "e9ddc18",
      "committed_at": "2026-11-11T16:31:45Z",
      "files": [
-      "abp/conductor.fringe@PrompTugal.dinis.md",
-      "abp/conductor.fringe@PrompTugal.daniela.md",
-      "abp/conductor@web-summit.dinis.md",
-      "abp/design.3.fringe@PrompTugal.dinis.md"
+      "abp/designer.fringe@PrompTugal.angelo.md",
+      "abp/tools/abp.mjs",
+      "abp/observability.fringe@PrompTugal.dinis.md",
+      "abp/dev.fringe@PrompTugal.dinis.md"
      ]
     },
     {
@@ -802,10 +815,10 @@
      "commit": "9be95a5",
      "committed_at": "2026-11-11T15:46:51Z",
      "files": [
-      "abp/dev.fringe@PrompTugal.dinis.md",
-      "abp/conductor.fringe@PrompTugal.silvio.md",
-      "abp/conductor.fringe@PrompTugal.indi.md",
-      "abp/index.json"
+      "abp/conductor.C.fringe@PrompTugal.dinis.md",
+      "abp/researcher.fringe@PrompTugal.dinis.md",
+      "abp/usability.1.fringe@PrompTugal.dinis.md",
+      "team/dinis/agents/architect.1.json"
      ]
     },
     {
@@ -828,10 +841,10 @@
      "commit": "0d150db",
      "committed_at": "2026-11-11T15:41:46Z",
      "files": [
-      "abp/index.json",
-      "abp/conductor.fringe@PrompTugal.angelo.md",
-      "tasks/2026-11-11-p1-place-12-items/packet.json",
-      "abp/architect.1.fringe@PrompTugal.dinis.md"
+      "tasks/2026-11-11-p1-place-12-items/result-architect.1.fringe@PrompTugal.dinis.json",
+      "abp/conductor@web-summit.dinis.md",
+      "admin/build/operating-model.mjs",
+      "abp/dev.fringe@PrompTugal.dinis.md"
      ]
     },
     {
@@ -842,9 +855,9 @@
      "committed_at": "2026-11-11T15:32:04Z",
      "files": [
       "team/dinis/agents/architect.1.json",
-      "data/work-altitudes.json",
+      "admin/build/operating-model.mjs",
       "data/operating-model.json",
-      "admin/build/operating-model.mjs"
+      "data/work-altitudes.json"
      ]
     },
     {
@@ -854,10 +867,10 @@
      "commit": "57d1f72",
      "committed_at": "2026-11-11T15:26:55Z",
      "files": [
+      "abp/researcher.fringe@PrompTugal.dinis.md",
       "abp/usability.1.fringe@PrompTugal.dinis.md",
-      "abp/conductor.fringe@PrompTugal.daniela.md",
-      "abp/researcher.2.fringe@PrompTugal.dinis.md",
-      "abp/design.2.fringe@PrompTugal.dinis.md"
+      "abp/policies.json",
+      "abp/researcher.1.fringe@PrompTugal.jose.md"
      ]
     },
     {
@@ -867,8 +880,8 @@
      "commit": "07267a9",
      "committed_at": "2026-11-11T15:06:32Z",
      "files": [
-      "data/operating-model.json",
       "admin/build/operating-model.mjs",
+      "data/operating-model.json",
       "briefs/2026-11-11-1440-the-operating-model.md"
      ]
     },
@@ -879,10 +892,10 @@
      "commit": "2e5249b",
      "committed_at": "2026-11-11T14:54:35Z",
      "files": [
-      "abp/researcher.fringe@PrompTugal.dinis.md",
+      "abp/architect.1.fringe@PrompTugal.dinis.md",
       "abp/conductor.fringe@PrompTugal.jose.md",
-      "abp/design.2.fringe@PrompTugal.dinis.md",
-      "abp/researcher.1.fringe@PrompTugal.jose.md"
+      "abp/design.3.fringe@PrompTugal.dinis.md",
+      "abp/design.2.fringe@PrompTugal.dinis.md"
      ]
     },
     {
@@ -892,9 +905,9 @@
      "commit": "c62ab00",
      "committed_at": "2026-11-11T14:06:40Z",
      "files": [
-      "admin/build/event-pages.mjs",
-      "admin/build/graph-model.mjs",
+      "team/dinis/agents/ontologist.1.json",
       "admin/build/graph-pages.mjs",
+      "admin/build/event-pages.mjs",
       "api/v1/README.md"
      ]
     },
@@ -905,10 +918,10 @@
      "commit": "2822792",
      "committed_at": "2026-11-11T13:30:15Z",
      "files": [
+      "work/design/D24-design-a-the-programme.md",
       "work/design/D26-design-c-the-city.md",
       "work/36-designs-from-the-community.md",
-      "work/design/D25-design-b-the-timeline.md",
-      "work/design/D24-design-a-the-programme.md"
+      "work/design/D25-design-b-the-timeline.md"
      ]
     },
     {
@@ -919,9 +932,9 @@
      "committed_at": "2026-11-11T13:26:57Z",
      "files": [
       "assets/obs/obs.js",
+      "data/geo/countries-110m.json",
       "assets/obs/obs.json",
-      "admin/tools/obs/obs_drain.py",
-      "data/geo/countries-110m.json"
+      "admin/build/traffic.mjs"
      ]
     },
     {
@@ -931,10 +944,10 @@
      "commit": "257c39d",
      "committed_at": "2026-11-11T12:41:34Z",
      "files": [
-      "work/design/D20-taste-pass.md",
-      "work/design/D19-now-timeline.md",
       "work/design/D18-big-and-small-events.md",
-      "data/links.json"
+      "data/links.json",
+      "work/design/D19-now-timeline.md",
+      "work/design/D20-taste-pass.md"
      ]
     },
     {
@@ -944,10 +957,10 @@
      "commit": "73cb424",
      "committed_at": "2026-11-11T11:37:32Z",
      "files": [
-      "data/inboxes/conductor.fringe-vicky.json",
-      "data/inboxes/conductor.fringe-angelo.json",
       "JOIN.md",
-      "admin/tools/inboxes.py"
+      "work/19-comms-vaults.md",
+      "data/inboxes/conductor.fringe-indi.json",
+      "data/inboxes/conductor.fringe-angelo.json"
      ]
     },
     {
@@ -957,14 +970,14 @@
      "commit": "033769d",
      "committed_at": "2026-11-11T11:20:32Z",
      "files": [
-      "data/keys.json",
-      "team/ROSTER.md",
       "team/dinis/status.json",
-      "BRIEF-CORRECTIONS.md"
+      "BRIEF-CORRECTIONS.md",
+      "REALITY.md",
+      "data/keys.json"
      ]
     }
    ],
-   "row_count": 23
+   "row_count": 24
   },
   {
    "name": "run-tree",
@@ -1090,9 +1103,17 @@
     {
      "agent": "grafana.1.fringe@PrompTugal.dinis",
      "commits": 4
+    },
+    {
+     "agent": "design.reach-a.fringe@PrompTugal.angelo",
+     "commits": 1
+    },
+    {
+     "agent": "design.reach-b.fringe@PrompTugal.angelo",
+     "commits": 1
     }
    ],
-   "row_count": 1
+   "row_count": 3
   },
   {
    "name": "busiest-files",
@@ -1101,7 +1122,7 @@
    "rows": [
     {
      "file": "data/keys.json",
-     "writers": 22,
+     "writers": 23,
      "who": [
       "conductor.fringe@PrompTugal.dinis",
       "architect.1.fringe@PrompTugal.dinis",
@@ -1124,18 +1145,6 @@
      ]
     },
     {
-     "file": "api/v1/README.md",
-     "writers": 7,
-     "who": [
-      "dev.2.fringe@PrompTugal.dinis",
-      "researcher.2.fringe@PrompTugal.dinis",
-      "dev.fringe@PrompTugal.dinis",
-      "conductor.fringe@PrompTugal.indi",
-      "conductor.fringe@PrompTugal.angelo",
-      "graph.fringe@PrompTugal.angelo"
-     ]
-    },
-    {
      "file": "admin/build/event-pages.mjs",
      "writers": 7,
      "who": [
@@ -1148,14 +1157,27 @@
      ]
     },
     {
-     "file": "admin/build/validate.mjs",
-     "writers": 5,
+     "file": "api/v1/README.md",
+     "writers": 7,
      "who": [
-      "architect.1.fringe@PrompTugal.dinis",
-      "design.2.fringe@PrompTugal.dinis",
-      "dev.1.fringe@PrompTugal.dinis",
       "dev.2.fringe@PrompTugal.dinis",
-      "dev.fringe@PrompTugal.dinis"
+      "researcher.2.fringe@PrompTugal.dinis",
+      "dev.fringe@PrompTugal.dinis",
+      "conductor.fringe@PrompTugal.indi",
+      "conductor.fringe@PrompTugal.angelo",
+      "graph.fringe@PrompTugal.angelo"
+     ]
+    },
+    {
+     "file": "team/angelo/runs.md",
+     "writers": 6,
+     "who": [
+      "conductor.fringe@PrompTugal.angelo",
+      "designer.fringe@PrompTugal.angelo",
+      "graph.fringe@PrompTugal.angelo",
+      "tracer.fringe@PrompTugal.angelo",
+      "design.reach-a.fringe@PrompTugal.angelo",
+      "design.reach-b.fringe@PrompTugal.angelo"
      ]
     },
     {
@@ -1170,43 +1192,14 @@
      ]
     },
     {
-     "file": "admin/build/graph.js",
-     "writers": 4,
+     "file": "admin/build/validate.mjs",
+     "writers": 5,
      "who": [
-      "design.4.fringe@PrompTugal.dinis",
-      "dev.lead.fringe@PrompTugal.dinis",
-      "conductor.fringe@PrompTugal.angelo",
-      "graph.fringe@PrompTugal.angelo"
-     ]
-    },
-    {
-     "file": "team/angelo/runs.md",
-     "writers": 4,
-     "who": [
-      "conductor.fringe@PrompTugal.angelo",
-      "designer.fringe@PrompTugal.angelo",
-      "graph.fringe@PrompTugal.angelo",
-      "tracer.fringe@PrompTugal.angelo"
-     ]
-    },
-    {
-     "file": "sources.md",
-     "writers": 4,
-     "who": [
-      "conductor.fringe@PrompTugal.dinis",
-      "researcher.2.fringe@PrompTugal.dinis",
-      "researcher.fringe@PrompTugal.dinis",
-      "researcher.1.fringe@PrompTugal.jose"
-     ]
-    },
-    {
-     "file": "data/events.json",
-     "writers": 4,
-     "who": [
-      "conductor.fringe@PrompTugal.dinis",
-      "researcher.2.fringe@PrompTugal.dinis",
-      "researcher.fringe@PrompTugal.dinis",
-      "researcher.1.fringe@PrompTugal.jose"
+      "architect.1.fringe@PrompTugal.dinis",
+      "design.2.fringe@PrompTugal.dinis",
+      "dev.1.fringe@PrompTugal.dinis",
+      "dev.2.fringe@PrompTugal.dinis",
+      "dev.fringe@PrompTugal.dinis"
      ]
     },
     {
@@ -1220,12 +1213,42 @@
      ]
     },
     {
-     "file": "work/13-editorial-check.md",
-     "writers": 3,
+     "file": "admin/build/graph.js",
+     "writers": 4,
+     "who": [
+      "design.4.fringe@PrompTugal.dinis",
+      "dev.lead.fringe@PrompTugal.dinis",
+      "conductor.fringe@PrompTugal.angelo",
+      "graph.fringe@PrompTugal.angelo"
+     ]
+    },
+    {
+     "file": "data/events.json",
+     "writers": 4,
      "who": [
       "conductor.fringe@PrompTugal.dinis",
       "researcher.2.fringe@PrompTugal.dinis",
-      "conductor.fringe@PrompTugal.vicky"
+      "researcher.fringe@PrompTugal.dinis",
+      "researcher.1.fringe@PrompTugal.jose"
+     ]
+    },
+    {
+     "file": "sources.md",
+     "writers": 4,
+     "who": [
+      "conductor.fringe@PrompTugal.dinis",
+      "researcher.2.fringe@PrompTugal.dinis",
+      "researcher.fringe@PrompTugal.dinis",
+      "researcher.1.fringe@PrompTugal.jose"
+     ]
+    },
+    {
+     "file": "work/05-graph.md",
+     "writers": 3,
+     "who": [
+      "conductor.fringe@PrompTugal.dinis",
+      "conductor.fringe@PrompTugal.angelo",
+      "conductor@web-summit.dinis"
      ]
     }
    ],
@@ -1241,21 +1264,21 @@
      "events": 47,
      "topics": [
       "growth & product",
-      "saas & enterprise",
       "AI",
-      "international expansion",
-      "tech & innovation"
+      "venture & fundraising",
+      "saas & enterprise",
+      "international expansion"
      ]
     },
     {
      "community": "Unicorn Factory Lisboa",
      "events": 5,
      "topics": [
-      "Portugal",
+      "ecosystem",
+      "party",
       "networking",
-      "digital wellbeing",
-      "Italy",
-      "scaleups"
+      "Portugal",
+      "digital wellbeing"
      ]
     },
     {
@@ -1264,18 +1287,18 @@
      "topics": [
       "venture & fundraising",
       "growth & product",
-      "tech & innovation",
-      "international expansion"
+      "international expansion",
+      "tech & innovation"
      ]
     },
     {
      "community": "Kuma Partners",
      "events": 4,
      "topics": [
-      "investors",
       "deep tech",
-      "founders",
       "AI",
+      "investors",
+      "founders",
       "future of work"
      ]
     },
@@ -1283,10 +1306,10 @@
      "community": "Canopy Community",
      "events": 3,
      "topics": [
+      "demos",
       "startups",
       "networking",
-      "AI",
-      "demos"
+      "AI"
      ]
     },
     {
@@ -1302,30 +1325,30 @@
      "community": "teja house",
      "events": 2,
      "topics": [
-      "creator economy",
-      "deeptech & hardware"
+      "deeptech & hardware",
+      "creator economy"
      ]
     },
     {
      "community": "LisboaUX",
      "events": 2,
      "topics": [
-      "growth & product",
-      "international expansion",
-      "climate & impact",
       "design",
-      "UX"
+      "UX",
+      "AI",
+      "international expansion",
+      "growth & product"
      ]
     },
     {
      "community": "Indvstry Clvb",
      "events": 2,
      "topics": [
-      "founders",
-      "diaspora",
       "dinner",
-      "culture",
-      "AI"
+      "diaspora",
+      "founders",
+      "entertainment",
+      "culture"
      ]
     },
     {
@@ -1341,11 +1364,11 @@
      "community": "ideaic.io",
      "events": 2,
      "topics": [
+      "real estate",
       "alternative event",
       "proptech",
-      "real estate",
-      "international expansion",
-      "venture & fundraising"
+      "venture & fundraising",
+      "international expansion"
      ]
     },
     {
@@ -1354,8 +1377,8 @@
      "topics": [
       "networking",
       "executives",
-      "growth & product",
-      "climate & impact"
+      "climate & impact",
+      "growth & product"
      ]
     }
    ],
@@ -1372,7 +1395,7 @@
      "inverse": "is changed by",
      "subject": "Commit",
      "object": "File",
-     "uses": 2519
+     "uses": 2551
     },
     {
      "verb": "AUTHORED",
@@ -1380,7 +1403,7 @@
      "inverse": "was authored by",
      "subject": "Agent",
      "object": "Commit",
-     "uses": 563
+     "uses": 574
     },
     {
      "verb": "FOLLOWS",
@@ -1388,7 +1411,7 @@
      "inverse": "is followed by",
      "subject": "Commit",
      "object": "Commit",
-     "uses": 563
+     "uses": 574
     },
     {
      "verb": "IS_FOR",
@@ -1396,7 +1419,7 @@
      "inverse": "receives",
      "subject": "Commit",
      "object": "Agent|Person",
-     "uses": 540
+     "uses": 549
     },
     {
      "verb": "IS_ABOUT",
@@ -1431,6 +1454,22 @@
      "uses": 172
     },
     {
+     "verb": "IS_AT",
+     "says": "runs at the altitude",
+     "inverse": "is the altitude of the unit",
+     "subject": "Unit|Span",
+     "object": "Altitude",
+     "uses": 163
+    },
+    {
+     "verb": "SIGNED",
+     "says": "signed",
+     "inverse": "was signed by",
+     "subject": "Key",
+     "object": "Unit|Span",
+     "uses": 157
+    },
+    {
      "verb": "MAY_WRITE",
      "says": "may write",
      "inverse": "may be written by",
@@ -1445,22 +1484,6 @@
      "subject": "Run",
      "object": "Unit",
      "uses": 132
-    },
-    {
-     "verb": "IS_AT",
-     "says": "runs at the altitude",
-     "inverse": "is the altitude of the unit",
-     "subject": "Unit",
-     "object": "Altitude",
-     "uses": 132
-    },
-    {
-     "verb": "SIGNED",
-     "says": "signed",
-     "inverse": "was signed by",
-     "subject": "Key",
-     "object": "Unit",
-     "uses": 130
     },
     {
      "verb": "HANDS_TO",
@@ -1492,7 +1515,7 @@
      "inverse": "has its lane crossed by",
      "subject": "Commit",
      "object": "Role",
-     "uses": 67
+     "uses": 69
     },
     {
      "verb": "RECORDS",
@@ -1548,7 +1571,7 @@
      "inverse": "is operated by",
      "subject": "Person",
      "object": "Agent",
-     "uses": 36
+     "uses": 38
     },
     {
      "verb": "PLAYS",
@@ -1567,7 +1590,173 @@
      "uses": 35
     }
    ],
-   "row_count": 35
+   "row_count": 36
+  },
+  {
+   "name": "flow-trees",
+   "asks": "In the live flows (Elastic swarm-flows), how does each flow hand work down, and which spans never finished?",
+   "cypher": "MATCH (s:Span)-[:BELONGS_TO]->(f:Flow)\nOPTIONAL MATCH (s)-[:IS_CHILD_OF]->(p:Span)\nRETURN f.name AS flow, s.altitude AS altitude, count(s) AS spans, count(p) AS with_parent,\n       sum(CASE WHEN s.finished THEN 0 ELSE 1 END) AS unfinished, max(s.duration_ms) AS longest_ms\nORDER BY flow, altitude DESC",
+   "rows": [
+    {
+     "flow": "audit-check-1912",
+     "altitude": "A0",
+     "spans": 1,
+     "with_parent": 0,
+     "unfinished": 0,
+     "longest_ms": 0
+    },
+    {
+     "flow": "flow-20261111T185613-run2",
+     "altitude": "A4",
+     "spans": 1,
+     "with_parent": 0,
+     "unfinished": 0,
+     "longest_ms": 56908
+    },
+    {
+     "flow": "flow-20261111T185613-run2",
+     "altitude": "A3",
+     "spans": 1,
+     "with_parent": 1,
+     "unfinished": 0,
+     "longest_ms": 56602
+    },
+    {
+     "flow": "flow-20261111T185613-run2",
+     "altitude": "A2",
+     "spans": 3,
+     "with_parent": 3,
+     "unfinished": 0,
+     "longest_ms": 16953
+    },
+    {
+     "flow": "flow-20261111T185613-run2",
+     "altitude": "A1",
+     "spans": 16,
+     "with_parent": 16,
+     "unfinished": 0,
+     "longest_ms": 9297
+    },
+    {
+     "flow": "flow-20261111T185613-run2",
+     "altitude": "A0",
+     "spans": 2,
+     "with_parent": 2,
+     "unfinished": 0,
+     "longest_ms": 13
+    },
+    {
+     "flow": "flow-test-1794423345",
+     "altitude": "A2",
+     "spans": 1,
+     "with_parent": 0,
+     "unfinished": 0,
+     "longest_ms": 9435
+    },
+    {
+     "flow": "flow-test-1794423345",
+     "altitude": "A1",
+     "spans": 3,
+     "with_parent": 3,
+     "unfinished": 0,
+     "longest_ms": 8122
+    },
+    {
+     "flow": "flow-test-1794423345",
+     "altitude": "A0",
+     "spans": 2,
+     "with_parent": 0,
+     "unfinished": 0,
+     "longest_ms": 18
+    },
+    {
+     "flow": "otel-check-1908",
+     "altitude": "A0",
+     "spans": 1,
+     "with_parent": 0,
+     "unfinished": 0,
+     "longest_ms": 0
+    }
+   ],
+   "row_count": 10
+  },
+  {
+   "name": "live-matches-signed",
+   "asks": "Which live spans match a signed unit in the recorded runs (same key), and which have no recorded twin?",
+   "cypher": "MATCH (s:Span)\nOPTIONAL MATCH (s)-[:IS_LIVE_VIEW_OF]->(u:Unit)\nRETURN s.flow AS flow, s.altitude AS altitude, count(s) AS spans, count(u) AS matched_to_recorded_unit,\n       count(s) - count(u) AS live_only\nORDER BY flow, altitude DESC",
+   "rows": [
+    {
+     "flow": "audit-check-1912",
+     "altitude": "A0",
+     "spans": 1,
+     "matched_to_recorded_unit": 0,
+     "live_only": 1
+    },
+    {
+     "flow": "flow-20261111T185613-run2",
+     "altitude": "A4",
+     "spans": 1,
+     "matched_to_recorded_unit": 0,
+     "live_only": 1
+    },
+    {
+     "flow": "flow-20261111T185613-run2",
+     "altitude": "A3",
+     "spans": 1,
+     "matched_to_recorded_unit": 0,
+     "live_only": 1
+    },
+    {
+     "flow": "flow-20261111T185613-run2",
+     "altitude": "A2",
+     "spans": 3,
+     "matched_to_recorded_unit": 3,
+     "live_only": 0
+    },
+    {
+     "flow": "flow-20261111T185613-run2",
+     "altitude": "A1",
+     "spans": 16,
+     "matched_to_recorded_unit": 16,
+     "live_only": 0
+    },
+    {
+     "flow": "flow-20261111T185613-run2",
+     "altitude": "A0",
+     "spans": 2,
+     "matched_to_recorded_unit": 2,
+     "live_only": 0
+    },
+    {
+     "flow": "flow-test-1794423345",
+     "altitude": "A2",
+     "spans": 1,
+     "matched_to_recorded_unit": 0,
+     "live_only": 1
+    },
+    {
+     "flow": "flow-test-1794423345",
+     "altitude": "A1",
+     "spans": 3,
+     "matched_to_recorded_unit": 0,
+     "live_only": 3
+    },
+    {
+     "flow": "flow-test-1794423345",
+     "altitude": "A0",
+     "spans": 2,
+     "matched_to_recorded_unit": 0,
+     "live_only": 2
+    },
+    {
+     "flow": "otel-check-1908",
+     "altitude": "A0",
+     "spans": 1,
+     "matched_to_recorded_unit": 0,
+     "live_only": 1
+    }
+   ],
+   "row_count": 10
   }
  ]
 }

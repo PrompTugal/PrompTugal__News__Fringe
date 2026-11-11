@@ -1,11 +1,11 @@
 {
   "agent": "neo4j.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T19:41Z",
+  "updated": "2026-11-11T19:47Z",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis, at Dinis's word (11 Nov 2026, 19:33 UTC: 'also can you spin up an neo4j agent?')",
   "branch": "dev",
   "wake": "none: works when Dinis talks to it in its session",
-  "state": "working: the swarm is in Neo4j (local, in this container): 2,164 nodes, 6,649 relationships, 12 questions answered; Aura waits for a session restart",
+  "state": "working: the swarm is in Neo4j (local, in this container): 2,236 nodes, 6,886 relationships with the live flows, 14 questions answered; Aura waits for a session restart",
   "doing": [
     "the swarm as a property graph in Neo4j: loader, queries, docs/neo4j.md"
   ],
@@ -14,11 +14,11 @@
     "19:38: Neo4j Community 5.26 in this container (127.0.0.1 only, random password in a 0600 file, never printed)",
     "19:40: admin/tools/neo4j-load.py: fringe graph, altitude runs (unit HANDS_TO unit, Key SIGNED unit, EXPOSES reach), ABP grants and review findings, commits on dev (lanes crossed, Dinis's words acted on), keys by fingerprint; --emit Cypher or --load; neo4j/grammar.json: 35 verbs, each with its inverse, no relates_to",
     "19:40: neo4j/queries.cypher (12 questions) and admin/tools/neo4j-query.py; answers in data/neo4j-answers.json; docs/neo4j.md",
-    "19:40: asked elastic.1 (inbox) for an export of swarm-flows (trace_id, span_id, parent_span_id) for --flows"
+    "19:40: asked elastic.1 (inbox) for an export of swarm-flows (trace_id, span_id, parent_span_id) for --flows",
+    "19:47: the live flows (data/elastic-export-swarm-flows.json, from architect.1 and elastic.1): 31 spans in 4 flows, parent links through unit_id and parent_id, then parent_span_id; IS_LIVE_VIEW_OF links 21 spans to their signed recorded units; 2 new questions (flow-trees, live-matches-signed)"
   ],
   "next": [
     "after a restart: load into Aura from NEO4J_CLOUD and check it",
-    "load the swarm-flows export from elastic.1 (Span IS_CHILD_OF Span, Agent EMITTED Span)",
     "a visual: the run tree and the word-to-commit paths drawn for the site (with design), if Dinis wants it"
   ],
   "asks": [

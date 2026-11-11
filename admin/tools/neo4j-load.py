@@ -7,7 +7,7 @@ Sources (all in this repository or on our own public site):
   - the grants: abp/policies.json; the hourly findings: `node abp/tools/abp.mjs review-export` (abp/reviews/)
   - the commits on dev (git log): who authored what, for whom, which file, and which of Dinis's words they act on
   - the keys: data/keys.json (public fingerprints only)
-  - optional: --flows FILE, an export of Elastic swarm-flows (OTel trace_id, span_id, parent_span_id), from elastic.1
+  - the live flows: data/elastic-export-swarm-flows.json (Elastic swarm-flows, re-exported hourly; --flows FILE for another)
 
 The grammar is neo4j/grammar.json: every relationship type is a verb with an inverse; anything else is refused.
 Every node carries the label :Fringe as well as its own, so --wipe removes only what this loader made.
@@ -289,31 +289,59 @@ def load_fringe(g, path):
     return data.get('version'), len(by_id), len(data['edges'])
 
 
-# ---------- optional: Elastic swarm-flows (OTel spans) ----------
+# ---------- Elastic swarm-flows (data/elastic-export-swarm-flows.json, exported by elastic.1 / architect.1) ----------
+# One document per phase (start, step, end) of a unit. Only the newest carry OTel trace_id/span_id/parent_span_id,
+# so a span's parent is found through unit_id -> parent_id first, then parent_span_id.
 def load_flows(g, path):
     txt = Path(path).read_text()
     try:
         docs = json.loads(txt)
-        docs = docs.get('hits', {}).get('hits', docs) if isinstance(docs, dict) else docs
+        if isinstance(docs, dict):
+            docs = docs.get('docs') or docs.get('hits', {}).get('hits', [])
     except json.JSONDecodeError:
         docs = [json.loads(l) for l in txt.splitlines() if l.strip()]
-    n = 0
-    for d in docs:
-        d = d.get('_source', d)
-        tid, sid = d.get('trace_id') or (d.get('trace') or {}).get('id'), d.get('span_id') or (d.get('span') or {}).get('id')
-        if not (tid and sid):
+    docs = [d.get('_source', d) for d in docs]
+    units, by_span = {}, {}
+    for d in sorted(docs, key=lambda d: (d.get('seq') or 0, d.get('at') or '')):
+        uid = d.get('unit_id') or d.get('span_id') or (d.get('span') or {}).get('id')
+        if not uid:
             continue
-        psid = d.get('parent_span_id') or (d.get('parent') or {}).get('id')
-        agent = d.get('agent') or (d.get('service') or {}).get('name')
-        s = g.node('Span', sid, trace_id=tid, span_id=sid, parent_span_id=psid, name=d.get('name') or d.get('event') or d.get('kind'),
-                   at=d.get('@timestamp') or d.get('start') or d.get('at'), agent=agent)
-        g.rel(s, 'BELONGS_TO', g.node('Trace', tid, trace_id=tid))
-        if psid:
-            g.rel(s, 'IS_CHILD_OF', g.node('Span', psid, span_id=psid, trace_id=tid))
-        if agent and '@' in agent:
-            g.rel(agent_node(g, agent), 'EMITTED', s)
-        n += 1
-    return n
+        u = units.setdefault(uid, {'phases': []})
+        u['phases'].append(d.get('phase'))
+        for k in ('flow', 'altitude', 'role', 'runner', 'person', 'environment', 'model', 'key_fp', 'trace_id', 'span_id', 'parent_span_id', 'parent_id', 'valid'):
+            if d.get(k) is not None:
+                u[k] = d[k]
+        if d.get('phase') == 'start' or 'started' not in u:
+            u.setdefault('started', d.get('at'))
+        if d.get('phase') == 'end':
+            u['ended'] = d.get('at')
+        if d.get('span_id'):
+            by_span[d['span_id']] = uid
+    from datetime import datetime
+    ts = lambda x: datetime.fromisoformat(x.replace('Z', '+00:00'))
+    run_keys = {props.get('key_fp'): key for key, props in g.nodes.items() if key[0] == 'Unit' and props.get('key_fp')}
+    for uid, u in units.items():
+        dur = int((ts(u['ended']) - ts(u['started'])).total_seconds() * 1000) if u.get('ended') and u.get('started') else None
+        s = g.node('Span', uid, unit_id=uid, name=f"{u.get('altitude', '')} {u.get('role', '')} {uid[-8:]}".strip(), flow=u.get('flow'),
+                   altitude=u.get('altitude'), role=u.get('role'), runner=u.get('runner'), model=u.get('model'), valid=u.get('valid'),
+                   key_fp=u.get('key_fp'), trace_id=u.get('trace_id'), span_id=u.get('span_id'), started=u.get('started'), ended=u.get('ended'),
+                   duration_ms=dur, phases=[p for p in u['phases'] if p], finished=bool(u.get('ended')))
+        if u.get('flow'):
+            g.rel(s, 'BELONGS_TO', g.node('Flow', u['flow'], name=u['flow']))
+        if u.get('trace_id'):
+            g.rel(s, 'BELONGS_TO', g.node('Trace', u['trace_id'], trace_id=u['trace_id']))
+        parent = u.get('parent_id') if u.get('parent_id') in units else by_span.get(u.get('parent_span_id'))
+        if parent:
+            g.rel(s, 'IS_CHILD_OF', g.node('Span', parent))
+        if u.get('altitude'):
+            g.rel(s, 'IS_AT', g.node('Altitude', u['altitude']))
+        if u.get('key_fp'):
+            g.rel(g.node('Key', u['key_fp'], fingerprint=u['key_fp']), 'SIGNED', s)
+            if u['key_fp'] in run_keys:
+                g.rel(s, 'IS_LIVE_VIEW_OF', run_keys[u['key_fp']])
+        if u.get('runner') and '@' in u['runner']:
+            g.rel(agent_node(g, u['runner']), 'EMITTED', s)
+    return len(units)
 
 
 def build(args):
@@ -324,8 +352,9 @@ def build(args):
     stats['findings'] = load_findings(g, P, lanes)
     stats['commits'], stats['words'] = load_commits(g, lanes, args.since)
     stats['fringe_version'], stats['fringe_nodes'], stats['fringe_edges'] = load_fringe(g, args.graph)
-    if args.flows:
-        stats['spans'] = load_flows(g, args.flows)
+    flows = args.flows or (ROOT / 'data/elastic-export-swarm-flows.json')
+    if Path(flows).exists():
+        stats['spans'] = load_flows(g, flows)
     for v, s in GRAMMAR.items():
         g.node('Verb', v, name=v, says=s['says'], inverse=s['inverse'], subject=s['from'], object=s['to'])
     return g, stats
@@ -428,7 +457,7 @@ def main():
     ap.add_argument('--wipe', action='store_true', help='first remove every :Fringe node')
     ap.add_argument('--uri'); ap.add_argument('--user', default='neo4j'); ap.add_argument('--password-file'); ap.add_argument('--database')
     ap.add_argument('--graph', help='a local graph.json (default: _site/ or the live site)')
-    ap.add_argument('--flows', help='an Elastic swarm-flows export (JSON, hits or NDJSON)')
+    ap.add_argument('--flows', help='an Elastic swarm-flows export (default data/elastic-export-swarm-flows.json)')
     ap.add_argument('--since', default='2026-11-09T00:00Z', help='commits since (git log --since)')
     ap.add_argument('--stats', help='write a summary JSON (e.g. data/neo4j-stats.json)')
     args = ap.parse_args()
@@ -440,7 +469,7 @@ def main():
     for k in g.rels:
         verbs[k[0]] += 1
     stats.update(nodes=len(g.nodes), relationships=len(g.rels), by_label=dict(sorted(labels.items())), by_verb=dict(sorted(verbs.items())))
-    print('neo4j-load:', json.dumps({k: stats[k] for k in ('nodes', 'relationships', 'units', 'findings', 'commits', 'words', 'fringe_nodes')}))
+    print('neo4j-load:', json.dumps({k: stats.get(k) for k in ('nodes', 'relationships', 'units', 'findings', 'commits', 'words', 'fringe_nodes', 'spans')}))
     if args.stats:
         Path(args.stats).write_text(json.dumps(stats, indent=1) + '\n')
     if args.emit:
