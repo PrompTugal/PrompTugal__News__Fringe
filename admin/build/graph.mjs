@@ -124,18 +124,19 @@ ${links(n) ? `<div class="muted">${links(n)}</div>` : ''}<ul>${neighbours(n.id).
   const chip = (name, value, label) => `<button type="button" class="chip" data-f="${name}" data-v="${esc(value)}" aria-pressed="false">${esc(label)}</button>`;
   return `
 <h1>Connect the dots</h1>
-<p>The fringe as a graph: ${ev.length} events, ${count('community')} communities, ${count('topic')} topics and ${count('place')} places. Every line comes from one event's own page, read at the time it shows. Tap a dot to see what it joins.</p>
+<p class="muted">Each dot is an event, a community, a topic or a place; a line means one event's own page names it. Tap a dot to see what it joins.</p>
+<p class="legend"><span class="dot t-event"></span>event (${ev.length}) <span class="dot t-community"></span>community (${count('community')}) <span class="dot t-topic"></span>topic (${count('topic')}) <span class="dot t-place"></span>place (${count('place')})</p>
+<p class="muted" id="gcount" aria-live="polite"></p>
+<div class="gwrap"><svg id="graph" role="img" aria-label="Graph of events, communities, topics and places" viewBox="-500 -500 1000 1000"></svg>
+<div class="gzoom"><button type="button" data-z="0.8" aria-label="Zoom in">+</button><button type="button" data-z="1.25" aria-label="Zoom out">−</button><button type="button" data-z="0" aria-label="Reset">⟲</button></div></div>
+<details class="gfilters"><summary>Filter by topic, day or kind</summary>
 <div class="filters" id="filters">
 <div><strong>Find</strong> ${['AI agents', 'security', 'Portugal', 'founders', 'investors', 'developers'].map((q) => chip('q', q, q)).join('')}
 <input id="gq" type="search" placeholder="topic, community, place…" aria-label="Filter the graph"></div>
 <div><strong>Day</strong> ${days.map((d) => chip('day', d, new Date(d + 'T12:00:00Z').toUTCString().slice(0, 11))).join('')}</div>
 <div><strong>Type</strong> ${kinds.map((k) => chip('kind', k, k)).join('')}</div>
 <div><label><input type="checkbox" id="gcan"> hide cancelled</label> · <label><input type="checkbox" id="gstorm"> only what the storm moved</label></div>
-</div>
-<p class="muted" id="gcount" aria-live="polite"></p>
-<div class="gwrap"><svg id="graph" role="img" aria-label="Graph of events, communities, topics and places" viewBox="-500 -500 1000 1000"></svg>
-<div class="gzoom"><button type="button" data-z="0.8" aria-label="Zoom in">+</button><button type="button" data-z="1.25" aria-label="Zoom out">−</button><button type="button" data-z="0" aria-label="Reset">⟲</button></div></div>
-<p class="legend"><span class="dot t-event"></span>event <span class="dot t-community"></span>community <span class="dot t-topic"></span>topic <span class="dot t-place"></span>place</p>
+</div></details>
 <div id="gpanel" class="card" hidden></div>
 <h2>Communities</h2>${group('community')}
 <h2>Topics</h2>${group('topic')}
@@ -146,9 +147,9 @@ ${links(n) ? `<div class="muted">${links(n)}</div>` : ''}<ul>${neighbours(n.id).
 }
 
 export const graphCss = `
-.filters>div{margin:6px 0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}.chip{font:inherit;font-size:.85rem;padding:3px 10px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
+.filters>div{margin:6px 0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}.chip{font:inherit;font-size:13px;min-height:var(--chip-h);padding:0 var(--s3);text-transform:none;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
 .chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--bg)}#gq{font:inherit;padding:4px 8px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--fg);min-width:0;flex:1 1 160px}
-.gwrap{position:relative;border:1px solid var(--line);border-radius:8px;background:var(--card);touch-action:none}#graph{display:block;width:100%;height:auto;aspect-ratio:1/1;max-height:80vh}
+.gwrap{position:relative;border:1px solid var(--line);border-radius:8px;background:var(--card);touch-action:none}#graph{display:block;width:100%;height:auto;aspect-ratio:1/1;max-height:70vh}.gfilters{margin:var(--s2) 0}.gfilters>summary{cursor:pointer;font-weight:600;font-size:var(--fs-ui);padding:var(--s2) 0;color:var(--brand)}
 .gzoom{position:absolute;top:8px;right:8px;display:flex;gap:4px}.gzoom button{font:inherit;width:32px;height:32px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
 .t-event{fill:var(--t-event);background:var(--t-event)}.t-community{fill:var(--t-community);background:var(--t-community)}.t-topic{fill:var(--t-topic);background:var(--t-topic)}.t-place{fill:var(--t-place);background:var(--t-place)}
 .legend .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin:0 4px 0 10px}.legend{font-size:.85rem}

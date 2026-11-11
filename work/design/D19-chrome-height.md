@@ -1,8 +1,8 @@
 ---
 id: D19
 title: "Less chrome above the content on a phone"
-owner:
-status: open
+owner: design.4.fringe@PrompTugal.dinis
+status: done
 lane: design
 needs: D5
 done-means: "at 390 px, the black PrompTugal bar, header, nav and ornament take at most 30% of the first screen (now about 45%); nav is one scrollable row or a menu; the independence line stays; on the home page the first event card appears within the first two screens"

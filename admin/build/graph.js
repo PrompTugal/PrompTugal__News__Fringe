@@ -30,7 +30,7 @@
     c.addEventListener('click', function (ev) { ev.stopPropagation(); select(n.id); });
     c.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') select(n.id); });
     gN.appendChild(c); dots[n.id] = c;
-    if (n.type !== 'event' && n.degree >= 3) {
+    if (n.type !== 'event' && n.degree >= (innerWidth < 600 ? 6 : 3)) {
       var lb = el('text', { x: n.x + r + u, y: n.y + 3.5 * u, 'font-size': 10 * u, 'stroke-width': 2.5 * u }); lb.textContent = n.label; gL.appendChild(lb); labels[n.id] = lb;
     }
   });
