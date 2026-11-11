@@ -1,9 +1,9 @@
 {
   "agent": "design.3.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T19:31:15Z",
+  "updated": "2026-11-11T20:31:34Z",
   "state": "idle",
   "doing": [
-    "nothing open for design (19:31 wake): no new briefs or design tasks."
+    "nothing open for design (20:31 wake): no new briefs or design tasks; the new tasks/ packets (p4, p5) are between the lead and Angelo's conductor, not for me."
   ],
   "done": [
     "D3 event cards: admin/build/cards.mjs; 390/1280 px, light and dark, no overflow or console errors",
