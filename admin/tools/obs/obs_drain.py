@@ -33,6 +33,7 @@ def hosts():
     except Exception: origin = SITE
     return {origin, SITE, 'lisbontechfringe.com', 'www.lisbontechfringe.com'}
 CITY_MIN = 5
+CRAWL_VIEWS = 40
 BOTS = {'googlebot', 'bingbot', 'bot', 'webdriver', 'headless'}
 
 def post(c, op, body):
@@ -131,8 +132,14 @@ def counts(rows, now, pub_id):
     H = hosts()
     off_site = [r for r in pages if r.get('site') and r['site'] not in H]   # a local test or a copy elsewhere
     pages = [r for r in pages if not r.get('site') or r['site'] in H]
-    bots = [r for r in pages if r.get('agent') in BOTS]
-    people = [r for r in pages if r.get('agent') not in BOTS]
+    # a tab with more than CRAWL_VIEWS views is an undeclared crawler (PrompTugal.news's obs_lets.update_sessions rule;
+    # 11 November 14:00 UTC: one phone-sized tab read 171 pages in an hour)
+    per_tab = collections.Counter(r.get('sid') for r in pages if r['type'] == 'view' and r.get('sid'))
+    crawl = {sid for sid, n in per_tab.items() if n > CRAWL_VIEWS}
+    for r in pages:
+        if r.get('sid') in crawl and r.get('agent') not in BOTS: r['agent'] = 'crawler'
+    bots = [r for r in pages if r.get('agent') in BOTS | {'crawler'}]
+    people = [r for r in pages if r.get('agent') not in BOTS | {'crawler'}]
     seen, reads = set(), []
     for r in people:                                                     # a read re-sent from the next page can arrive twice
         if r['type'] != 'read': continue
@@ -160,7 +167,7 @@ def counts(rows, now, pub_id):
         'about': 'Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).',
         'totals': {'views': len(views), 'reads': len(reads), 'tabs': len({r.get('sid') for r in people if r.get('sid')}),
                    'countries': len(by_country), 'shares': sum(1 for r in views if r.get('via')), 'bots': sum(1 for r in bots if r['type'] == 'view'),
-                   'agent_runs': len(runs), 'agent_runs_signed': sum(1 for r in runs if r.get('signed'))},
+                   'crawler_tabs': len(crawl), 'agent_runs': len(runs), 'agent_runs_signed': sum(1 for r in runs if r.get('signed'))},
         'by_hour': by_hour,
         'by_page': C(norm(r['path']) for r in views).most_common(),
         'reading': sorted([[p, n, round(s / n), round(sc / n)] for p, (n, s, sc) in rd.items()], key=lambda x: -x[1]),

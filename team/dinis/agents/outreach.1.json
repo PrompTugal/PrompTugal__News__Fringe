@@ -1,11 +1,11 @@
 {
  "agent": "outreach.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-11T14:08Z",
+ "updated": "2026-11-11T14:35Z",
  "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 6)",
  "model": "Sonnet",
  "wake": "hourly at :35 (set by the lead)",
  "branch": "dev",
- "state": "per-group tip links: work/drafts/whatsapp-groups-links.md and 'outreach.py links'",
+ "state": "14:35 wake: nothing new from Dinis; Jose's request to approve his 5 notes shown to Dinis (brief 15 already says Jose sends them)",
  "doing": [
   "work/29 owner; with work/18 and work/23"
  ],
@@ -23,7 +23,9 @@
   "work/36: work/drafts/design-call.md (public call, short X version, rules, a note to Silvio)",
   "13:35 wake: drained inbox (observability's traffic note); work/drafts/TAGGING.md: one ?via= tag per group, tag every link, share event pages and /now",
   "brief 13: work/drafts/whatsapp-tip-ask.md (ask, short, organisers 'rock stars' block); inbox drained (researcher, architect)",
-  "work/drafts/whatsapp-groups-links.md: one ?via=whatsapp-<tag> per group, message per group, 'python3 admin/tools/outreach.py links \"<group>\"' makes the links; group names stay out of git"
+  "work/drafts/whatsapp-groups-links.md: one ?via=whatsapp-<tag> per group, message per group, 'python3 admin/tools/outreach.py links \"<group>\"' makes the links; group names stay out of git",
+  "brief 15: organiser-note.md and the tracker marked approved by Dinis (14:27 UTC); Jose's five (Kuma, ALBAN, Canopy, FounderLink, PTW) noted as drafted with send-by times",
+  "14:35 wake: inbox drained (Jose's request relayed to Dinis); tracker unchanged: 72 drafted, 0 sent"
  ],
  "next": [
   "when dev.1's /designs/ is live: check its checks list and 'how to send' against the call, and link it",
@@ -40,6 +42,8 @@
   "conductor.fringe@: open admin/outreach-sealed/9k97zlte.json (sealed to your key) if you need the announcement image's vault; its pointer and sha256 are in data/outreach-assets.json",
   "Dinis: approve work/drafts/design-call.md and send the note to Silvio yourself (add the name of his design tool if you want it in)",
   "dev.1@: the call says: PR adding designs/<slug>/ (HTML, CSS, small JS reading /api/v1/, no binaries, gate green) or a link; please keep /designs/'s 'Send a design' text the same, and tell me when it is live",
-  "Dinis: approve work/drafts/whatsapp-tip-ask.md; fill <group> per group; drop the 'report' line in block 3 if no per-organiser report is live"
+  "Dinis: approve work/drafts/whatsapp-tip-ask.md; fill <group> per group; drop the 'report' line in block 3 if no per-organiser report is live",
+  "Jose: after you send each note, set that organiser's state to 'sent' in data/outreach-tracker.json (sent_by, sent_at), or tell me, and I rerun outreach.py; no agent marks a send",
+  "Dinis: Jose asks you to confirm his 5 organiser notes (work/drafts/organiser-notes-today-jose.md); Kuma goes before 15:00 UTC. Brief 15 says Jose sends them today; a one-line 'yes' from you in this session or to the lead settles it"
  ]
 }

@@ -1,7 +1,7 @@
 {
   "about": "Lisbon Fringe's events: the alternative, community and side events around Web Summit Lisbon, 11 to 13 November 2026 (and a few either side). Each event was re-read at its public source_url at read_at (UTC; Lisbon is on UTC in November). Each says whether Storm Charles moved it. Labels: fact (read on the organiser's page), evidence (read, but the page leaves the status open), hypothesis (not confirmed at source). 'unknown' means we do not know. Organisers are organisations; no private person is named and no contact details are given.",
   "contract": "api/v1/README.md (v1). Required: name, url, read_at, date, start, end, kind, organiser, place, join, status, storm_note, topics. Added by the researcher (v1 allows additions): id, label (fact | evidence | hypothesis), cost (as stated), storm_moved (true | false | null), check (what the page says about the storm, or why status is open), note.",
-  "updated": "2026-11-11T14:15:00Z",
+  "updated": "2026-11-11T15:14:00Z",
   "by": "researcher.2.fringe@PrompTugal.dinis",
   "independence": "Lisbon Fringe is independent of Web Summit and is not run by its organisers. For anything official see the organisers' own pages. Not a warning service: for the storm see IPMA (https://www.ipma.pt), ANEPC (https://www.prociv.gov.pt) and https://storm-charles.promptugal.news.",
   "sources": [
@@ -12,7 +12,7 @@
     {
       "name": "Padel Encounters Lisbon · Wed 11 Nov",
       "url": "https://luma.com/zzup6tmo",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T08:00:00Z",
       "end": "2026-11-11T10:30:00Z",
@@ -39,7 +39,7 @@
     {
       "name": "Proof of Run: rain edition (coffee, no run)",
       "url": "https://luma.com/ryva47wc",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T08:30:00Z",
       "end": "2026-11-11T10:00:00Z",
@@ -69,7 +69,7 @@
     {
       "name": "Strength & Coffee for Founders & Builders",
       "url": "https://luma.com/3z2xjz1p",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T08:30:00Z",
       "end": "2026-11-11T10:00:00Z",
@@ -100,7 +100,7 @@
     {
       "name": "Creator Club @ Web Summit (breakfast)",
       "url": "https://luma.com/wgji1mfy",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T08:30:00Z",
       "end": "2026-11-11T11:00:00Z",
@@ -159,7 +159,7 @@
     {
       "name": "FounderLink Storm Summit: a torrent of intros (morning session, online)",
       "url": "https://luma.com/stormsummit9am",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T09:00:00Z",
       "end": "2026-11-11T10:00:00Z",
@@ -188,7 +188,7 @@
     {
       "name": "Founders Break-fast @the Websummit",
       "url": "https://luma.com/9nzzd63p",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T09:30:00Z",
       "end": "2026-11-11T11:00:00Z",
@@ -218,7 +218,7 @@
     {
       "name": "Roast your website, or win a coffee (live on YouTube)",
       "url": "https://luma.com/m146luuy",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T10:00:00Z",
       "end": "2026-11-11T14:00:00Z",
@@ -248,7 +248,7 @@
     {
       "name": "Dear Gatekeepers podcast: creating new business models (live recording)",
       "url": "https://luma.com/o9y5xu0p",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T10:00:00Z",
       "end": "2026-11-11T11:00:00Z",
@@ -276,7 +276,7 @@
     {
       "name": "The Human Side of AI: emotional intelligence and the future of work",
       "url": "https://luma.com/r1ixujpv",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T10:00:00Z",
       "end": "2026-11-11T11:00:00Z",
@@ -308,7 +308,7 @@
     {
       "name": "Human Performance Under Uncertainty: how the brain responds when we don't know what comes next",
       "url": "https://luma.com/xn30wgrj",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T10:00:00Z",
       "end": "2026-11-11T11:00:00Z",
@@ -336,7 +336,7 @@
     {
       "name": "Connect, Collaborate, Invest: a purpose-driven experience",
       "url": "https://luma.com/seattle-1hwz",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T11:00:00Z",
       "end": "2026-11-11T13:00:00Z",
@@ -367,7 +367,7 @@
     {
       "name": "The Startup Legal Roast: top mistakes that kill your startup",
       "url": "https://luma.com/e42tit8k",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T11:30:00Z",
       "end": "2026-11-11T12:30:00Z",
@@ -398,7 +398,7 @@
     {
       "name": "PTW Classroom: Deep Work x Wexio, an hour to get your inbox back",
       "url": "https://luma.com/vwwf1kj1",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T11:30:00Z",
       "end": "2026-11-11T12:30:00Z",
@@ -429,7 +429,7 @@
     {
       "name": "Valois Lisbon: The Allocator Residence (day coworking and evening Allocator Table)",
       "url": "https://luma.com/k0zamjmi",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T12:00:00Z",
       "end": "2026-11-11T20:00:00Z",
@@ -498,7 +498,7 @@
     {
       "name": "Завтрак русскоязычных фаундеров",
       "url": "https://luma.com/pxwl1esg",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T12:00:00Z",
       "end": "2026-11-11T13:00:00Z",
@@ -523,7 +523,7 @@
     {
       "name": "Yorkseed Allocator Lunch",
       "url": "https://luma.com/jmjk0qqh",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T12:30:00Z",
       "end": "2026-11-11T14:30:00Z",
@@ -556,7 +556,7 @@
     {
       "name": "AI Video Blueprint 2027",
       "url": "https://luma.com/59m82tyo",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T13:00:00Z",
       "end": "2026-11-11T14:00:00Z",
@@ -584,7 +584,7 @@
     {
       "name": "FounderLink Storm Summit: a torrent of intros (afternoon session, online)",
       "url": "https://luma.com/stormsummit2pm",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T14:00:00Z",
       "end": "2026-11-11T15:00:00Z",
@@ -613,7 +613,7 @@
     {
       "name": "The Corporate Academy of Tomorrow",
       "url": "https://luma.com/6wcduo5u",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T14:00:00Z",
       "end": "2026-11-11T15:00:00Z",
@@ -700,7 +700,7 @@
     {
       "name": "Ethical AI Initiative: the different lenses of AI (roundtable)",
       "url": "https://luma.com/lg2qwq2l",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T14:30:00Z",
       "end": "2026-11-11T15:30:00Z",
@@ -732,7 +732,7 @@
     {
       "name": "H2H 2.0: how AI's biggest threat isn't what you think",
       "url": "https://luma.com/i91jzozo",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T15:00:00Z",
       "end": "2026-11-11T15:45:00Z",
@@ -760,9 +760,38 @@
       ]
     },
     {
+      "read_at": "2026-11-11T15:14:00Z",
+      "date": "2026-11-11",
+      "kind": "meetup",
+      "organiser": "unknown (a personal Luma calendar; not named here)",
+      "place": "Delta Coffee House Experience, Cais do Sodré, Lisboa (venue as the page names it)",
+      "neighbourhood": "Cais do Sodré",
+      "status": "on",
+      "label": "evidence",
+      "cost": "free",
+      "storm_moved": false,
+      "size": "community",
+      "in_lisbon": true,
+      "name": "Women in Tech @ Web Summit",
+      "url": "https://luma.com/vvsqs244",
+      "start": "2026-11-11T15:00:00Z",
+      "end": "2026-11-11T16:00:00Z",
+      "join": "Register on Luma: https://luma.com/vvsqs244",
+      "storm_note": "listed as on; no storm update on the page, read 15:14",
+      "topics": [
+        "women in tech",
+        "networking"
+      ],
+      "personas": [
+        "anyone"
+      ],
+      "id": "2026-11-11-women-in-tech-web-summit",
+      "check": "Added from the public Luma calendar listing and event page read 2026-11-11T15:14:00Z. The page text says 3 to 4 PM, matching Luma's 15:00 to 16:00 UTC."
+    },
+    {
       "name": "Bridging Capital Across Borders: investors, founders & ecosystems (online)",
       "url": "https://luma.com/148l175b",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T15:30:00Z",
       "end": "2026-11-11T17:00:00Z",
@@ -792,9 +821,40 @@
       "umbrella": "Portugal Tech Week"
     },
     {
+      "read_at": "2026-11-11T15:14:00Z",
+      "date": "2026-11-11",
+      "kind": "meetup",
+      "organiser": "unknown (a personal Luma calendar; not named here)",
+      "place": "Delta Coffee House Experience, Cais do Sodré, Lisboa (venue as the page names it)",
+      "neighbourhood": "Cais do Sodré",
+      "status": "on",
+      "label": "evidence",
+      "cost": "free",
+      "storm_moved": false,
+      "size": "community",
+      "in_lisbon": true,
+      "name": "Coffee & Connect @ Web Summit 2026",
+      "url": "https://luma.com/55lqvyex",
+      "start": "2026-11-11T15:30:00Z",
+      "end": "2026-11-11T17:00:00Z",
+      "join": "Register on Luma: https://luma.com/55lqvyex",
+      "storm_note": "The page says 'Web Summit might be cancelled today, but that won't stop us!' and does not say it moved; it is listed as on (read 15:14).",
+      "topics": [
+        "networking",
+        "founders",
+        "investors"
+      ],
+      "personas": [
+        "founder",
+        "investor"
+      ],
+      "id": "2026-11-11-coffee-and-connect-web-summit-2026",
+      "check": "Added from the public Luma calendar listing and event page read 2026-11-11T15:14:00Z. Time is uncertain: Luma's start is 15:30 UTC but the page text says 4 to 5.30 PM; the Luma time is used."
+    },
+    {
       "name": "How to align your leadership team when AI moves faster than people",
       "url": "https://luma.com/az8uos4e",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T16:00:00Z",
       "end": "2026-11-11T16:45:00Z",
@@ -825,7 +885,7 @@
     {
       "name": "Amplify Europe aperitivo (Lisbon)",
       "url": "https://luma.com/a2ackpa5",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T16:00:00Z",
       "end": "2026-11-11T19:00:00Z",
@@ -857,7 +917,7 @@
     {
       "name": "Yorkseed Investor Pitch",
       "url": "https://luma.com/bmu7tyec",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T16:00:00Z",
       "end": "2026-11-11T20:00:00Z",
@@ -886,9 +946,39 @@
       "umbrella": "Yorkseed Passport Series"
     },
     {
+      "name": "Not Left Out from Web Summit: how to transform your role and become AI-native (online)",
+      "url": "https://luma.com/e6xzr89o",
+      "read_at": "2026-11-11T15:14:00Z",
+      "date": "2026-11-11",
+      "start": "2026-11-11T16:30:00Z",
+      "end": "2026-11-11T17:30:00Z",
+      "kind": "online",
+      "organiser": "WonderLead in Tech",
+      "place": "online (Zoom (link given to registered guests on Luma))",
+      "join": "Luma; open registration: https://luma.com/e6xzr89o",
+      "status": "online",
+      "storm_note": "Made because of the storm: the page says Web Summit's day 2 is cancelled, so the organisers run a talk, live demos and speed networking online.",
+      "topics": [
+        "AI",
+        "product teams",
+        "alternative event"
+      ],
+      "id": "2026-11-11-not-left-out-ai-native",
+      "label": "fact",
+      "cost": "free",
+      "storm_moved": true,
+      "check": "Read by researcher.1.fringe@PrompTugal.jose at 14:41 UTC on the organiser's Luma page (WonderLead in Tech's calendar): Zoom, 16:30 to 17:30, open registration, made because Wednesday was cancelled. First seen in Side Events Guide's Storm Summit Special (https://sideevents.guide/web-summit/2026/?date=2026-11-11, read 14:39 UTC).",
+      "note": "An alternative event born of the storm (see work/03).",
+      "size": "community",
+      "in_lisbon": false,
+      "personas": [
+        "builder"
+      ]
+    },
+    {
       "name": "The AI spam problem: how founders win clients in 2027",
       "url": "https://luma.com/samqquwk",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:00:00Z",
       "end": "2026-11-11T18:00:00Z",
@@ -946,7 +1036,7 @@
     {
       "name": "Enchant Pitch Parties: Fintech, Travel Tech, Applied AI, Healthtech, Gaming & Entertainment",
       "url": "https://luma.com/574bmobb",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:00:00Z",
       "end": "2026-11-11T21:00:00Z",
@@ -980,7 +1070,7 @@
     {
       "name": "Like minded | Web Summit (Ukrainian founders' community evening)",
       "url": "https://luma.com/yatbt1w6",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:00:00Z",
       "end": "2026-11-11T22:00:00Z",
@@ -1008,7 +1098,7 @@
     {
       "name": "Lisbon Tech Side Event",
       "url": "https://luma.com/f3c6aqvx",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:00:00Z",
       "end": "2026-11-11T19:30:00Z",
@@ -1035,7 +1125,7 @@
     {
       "name": "Gaming & Entertainment Pitch Party.",
       "url": "https://luma.com/wajdwhgx",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:00:00Z",
       "end": "2026-11-11T21:00:00Z",
@@ -1067,7 +1157,7 @@
     {
       "name": "Healthtech Pitch Party",
       "url": "https://luma.com/nuggtawe",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:00:00Z",
       "end": "2026-11-11T21:00:00Z",
@@ -1094,7 +1184,7 @@
     {
       "name": "AI for Business / Applied AI Pitch Party",
       "url": "https://luma.com/hz3ma5fl",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:00:00Z",
       "end": "2026-11-11T21:00:00Z",
@@ -1118,7 +1208,7 @@
     {
       "name": "Travel Tech Pitch Party",
       "url": "https://luma.com/9jtn1muw",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:00:00Z",
       "end": "2026-11-11T21:00:00Z",
@@ -1142,7 +1232,7 @@
     {
       "name": "Taste Japan & make career connections: meet Japanese startups expanding into Europe",
       "url": "https://luma.com/f31mqr0v",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:25:00Z",
       "end": "2026-11-11T19:00:00Z",
@@ -1201,7 +1291,7 @@
     {
       "name": "Cisco: from automation to autonomy, how AI is changing the way we run technology",
       "url": "https://luma.com/portugal-dezg",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:30:00Z",
       "end": "2026-11-11T18:30:00Z",
@@ -1229,7 +1319,7 @@
     {
       "name": "Tech Startups on the Rooftop (Web Summit week edition)",
       "url": "https://luma.com/rjh3pf7g",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:00:00Z",
       "end": "2026-11-11T21:00:00Z",
@@ -1259,7 +1349,7 @@
     {
       "name": "AI Horizon Conference 2026: AI talks, startup pitches & afterparty",
       "url": "https://luma.com/p6glepvg",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:00:00Z",
       "end": "2026-11-11T23:00:00Z",
@@ -1289,7 +1379,7 @@
     {
       "name": "Innovation Wednesdays @ Web Summit (Azerbaijan's founders and delegation)",
       "url": "https://luma.com/pgpdzd1g",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:00:00Z",
       "end": "2026-11-11T20:00:00Z",
@@ -1322,18 +1412,18 @@
       ]
     },
     {
-      "name": "Frontier Founders & VCs Soirée (online)",
+      "name": "Frontier Founders & VCs Soirée",
       "url": "https://luma.com/tjed8ali",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:00:00Z",
-      "end": "2026-11-11T20:00:00Z",
-      "kind": "online",
-      "organiser": "Kuma Partners (per the organisers' linked sessions)",
-      "place": "online (Zoom (link given to approved guests))",
+      "end": "2026-11-11T21:00:00Z",
+      "kind": "side event",
+      "organiser": "Content Gym with Kuma Partners",
+      "place": "Address given to approved guests, Lisboa (the page says 'a venue near Web Summit')",
       "join": "Luma; host approval: https://luma.com/tjed8ali",
-      "status": "online",
-      "storm_note": "The page says: location online due to storm forecast.",
+      "status": "on",
+      "storm_note": "Listed in person, 18:00 to 21:00, with no storm note on the page (read 14:36 UTC). Before 14:36 UTC we listed this as online, moved by the storm ('location online due to storm forecast'); the page does not say that now. Check the page before going.",
       "topics": [
         "deep tech",
         "AI",
@@ -1341,14 +1431,14 @@
         "investors"
       ],
       "id": "2026-11-11-frontier-founders-vcs-soiree",
-      "label": "fact",
+      "label": "evidence",
       "cost": "free",
-      "storm_moved": true,
-      "check": "The page says: location online due to storm forecast.",
+      "storm_moved": null,
+      "check": "Read by researcher.1.fringe@PrompTugal.jose at 14:36 UTC: the Luma page shows an in-person location in Lisboa (address to approved guests), '6PM - 9PM at a venue near Web Summit', hosted by Content Gym and Kuma Partners; no online link and no storm wording. Whether it was online earlier and moved back is unknown.",
       "note": null,
       "lane": "business",
       "size": "community",
-      "in_lisbon": false,
+      "in_lisbon": true,
       "personas": [
         "investor",
         "founder"
@@ -1357,7 +1447,7 @@
     {
       "name": "LisboaUX: Web Summit Edition (second anniversary)",
       "url": "https://luma.com/yvm04djt",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:00:00Z",
       "end": "2026-11-11T21:00:00Z",
@@ -1386,7 +1476,7 @@
     {
       "name": "TTI at Web Summit: What's Next at the AI Frontier?",
       "url": "https://luma.com/3504dzdm",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:00:00Z",
       "end": "2026-11-11T20:00:00Z",
@@ -1412,7 +1502,7 @@
     {
       "name": "[POSTPONED] Clay in Lisbon: GTM Battlecards",
       "url": "https://luma.com/ccl-websummit",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:00:00Z",
       "end": "2026-11-11T21:00:00Z",
@@ -1439,9 +1529,41 @@
       ]
     },
     {
+      "name": "PropTech C-Level Board: Storm Edition (online)",
+      "url": "https://luma.com/gasfz3vy",
+      "read_at": "2026-11-11T15:14:00Z",
+      "date": "2026-11-11",
+      "start": "2026-11-11T18:00:00Z",
+      "end": "2026-11-11T19:30:00Z",
+      "kind": "online",
+      "organiser": "ideaic.io",
+      "place": "online (Google Meet (link given to approved guests))",
+      "join": "Luma; host approval; paid: https://luma.com/gasfz3vy",
+      "status": "online",
+      "storm_note": "Made because of the storm: the page says Storm Charles took Web Summit's day 2 away, so ten PropTech and real-estate leaders meet online on Google Meet for 90 minutes.",
+      "topics": [
+        "proptech",
+        "real estate",
+        "alternative event"
+      ],
+      "id": "2026-11-11-proptech-c-level-board-storm-edition",
+      "label": "fact",
+      "cost": "EUR 19.90 (as stated; ten seats)",
+      "storm_moved": true,
+      "check": "Read by researcher.1.fringe@PrompTugal.jose at 14:41 UTC on the organiser's Luma page (ideaic.io's calendar): Google Meet, 18:00 to 19:30, EUR 19.90, ten seats, host approval, made because of the storm. First seen in Side Events Guide's Storm Summit Special (https://sideevents.guide/web-summit/2026/?date=2026-11-11, read 14:39 UTC).",
+      "note": "An alternative event born of the storm (see work/03). The same organisers list an in-person event on Friday 13.",
+      "lane": "business",
+      "size": "community",
+      "in_lisbon": false,
+      "personas": [
+        "corporate",
+        "founder"
+      ]
+    },
+    {
       "name": "DemoNightLx Web Summit Week Edition (Canopy Demo Night)",
       "url": "https://luma.com/2ofzih7t",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:30:00Z",
       "end": "2026-11-11T19:30:00Z",
@@ -1505,7 +1627,7 @@
     {
       "name": "Open Mercato Night: AI agents build a custom CRM, live",
       "url": "https://luma.com/mso0mrpr",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:30:00Z",
       "end": "2026-11-11T23:00:00Z",
@@ -1539,7 +1661,7 @@
     {
       "name": "Funders & Founders Night by AltaIR Capital: the new shape of early stage",
       "url": "https://luma.com/h19cccc5",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:30:00Z",
       "end": "2026-11-11T22:00:00Z",
@@ -1571,7 +1693,7 @@
     {
       "name": "European Tech Champions: Italy & Portugal",
       "url": "https://luma.com/rp4tgcfu",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:30:00Z",
       "end": "2026-11-11T22:00:00Z",
@@ -1604,7 +1726,7 @@
     {
       "name": "Romanian Tech Night at WEBSUMMIT",
       "url": "https://luma.com/4vu5ru1h",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:30:00Z",
       "end": "2026-11-11T21:30:00Z",
@@ -1663,7 +1785,7 @@
     {
       "name": "FounderLink Storm Summit: a torrent of intros (evening session, online)",
       "url": "https://luma.com/stormsummit7pm",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T19:00:00Z",
       "end": "2026-11-11T20:00:00Z",
@@ -1692,7 +1814,7 @@
     {
       "name": "Indvstry Power House: Diaspora Dinner Lisbon",
       "url": "https://luma.com/1hj85rcr",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T19:00:00Z",
       "end": "2026-11-11T22:30:00Z",
@@ -1721,7 +1843,7 @@
     {
       "name": "Foundacious Lisbon: meet Germany's angel investors and startups",
       "url": "https://luma.com/lapwcmfu",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T19:00:00Z",
       "end": "2026-11-11T23:00:00Z",
@@ -1754,7 +1876,7 @@
     {
       "name": "Agentic Engineering Lisbon",
       "url": "https://luma.com/lisbon-5",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T19:00:00Z",
       "end": "2026-11-11T22:00:00Z",
@@ -1781,7 +1903,7 @@
     {
       "name": "Polymorphic Capital Soirée: Founders and Partners (Invite Only)",
       "url": "https://luma.com/z0vkl3ds",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T19:00:00Z",
       "end": "2026-11-11T23:00:00Z",
@@ -1811,7 +1933,7 @@
     {
       "name": "Private Dinner for 30 defence leaders funding peace through power",
       "url": "https://luma.com/edm55r5w",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T19:00:00Z",
       "end": "2026-11-11T22:00:00Z",
@@ -1842,7 +1964,7 @@
     {
       "name": "Post demo night happy hour (if the weather allows)",
       "url": "https://luma.com/qd9h2j25",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T19:30:00Z",
       "end": "2026-11-11T20:30:00Z",
@@ -1870,7 +1992,7 @@
     {
       "name": "Market Expansion Dinner",
       "url": "https://luma.com/6l83ko1d",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T19:30:00Z",
       "end": "2026-11-11T23:30:00Z",
@@ -1898,7 +2020,7 @@
     {
       "name": "Albanian Founders & Investors Meetup",
       "url": "https://luma.com/5wp4rmi9",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T19:30:00Z",
       "end": "2026-11-11T22:00:00Z",
@@ -1927,7 +2049,7 @@
     {
       "name": "Founders' House Party | Web Summit '26",
       "url": "https://luma.com/jp6yr213",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T20:00:00Z",
       "end": "2026-11-12T02:00:00Z",
@@ -1958,7 +2080,7 @@
     {
       "name": "R-Founders Week WebSummit'26 | R-Founders Party 11.11",
       "url": "https://luma.com/wft7z9qj",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T20:00:00Z",
       "end": "2026-11-12T00:30:00Z",
@@ -1985,7 +2107,7 @@
     {
       "name": "Between the Waves",
       "url": "https://luma.com/5yucusdb",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T20:00:00Z",
       "end": "2026-11-11T23:00:00Z",
@@ -2011,7 +2133,7 @@
     {
       "name": "FUTURE-TECH 2026: short films about technology",
       "url": "https://luma.com/25z2ph1o",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T20:30:00Z",
       "end": "2026-11-11T22:00:00Z",
@@ -2039,7 +2161,7 @@
     {
       "name": "Karumi AI Lands in Lisbon",
       "url": "https://luma.com/bsjzwei2",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T21:00:00Z",
       "end": "2026-11-11T23:00:00Z",
@@ -2065,7 +2187,7 @@
     {
       "name": "The Signal Room by Hardal",
       "url": "https://luma.com/9c2kspye",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T21:00:00Z",
       "end": "2026-11-11T23:00:00Z",
@@ -2091,7 +2213,7 @@
     {
       "name": "Enchant Afterparty: Drinks with VCs & Founders",
       "url": "https://luma.com/m7z4xi8a",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T21:00:00Z",
       "end": "2026-11-12T00:00:00Z",
@@ -2121,7 +2243,7 @@
     {
       "name": "Web Summit x Tech Talks Run Club & Coffee",
       "url": "https://luma.com/mpv6bmso",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T07:00:00Z",
       "end": "2026-11-12T08:00:00Z",
@@ -2146,7 +2268,7 @@
     {
       "name": "AM Run & Workout w/ BVC",
       "url": "https://luma.com/zaxt5ceb",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T08:00:00Z",
       "end": "2026-11-12T09:30:00Z",
@@ -2171,7 +2293,7 @@
     {
       "name": "Padel Encounters Lisbon · Thu 12 Nov",
       "url": "https://luma.com/8xqgougf",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T08:00:00Z",
       "end": "2026-11-12T10:30:00Z",
@@ -2198,7 +2320,7 @@
     {
       "name": "The Right Hand Breakfast: Chiefs of Staff at Web Summit",
       "url": "https://luma.com/ci5jzmbs",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T08:30:00Z",
       "end": "2026-11-12T09:30:00Z",
@@ -2228,7 +2350,7 @@
     {
       "name": "Guided Morning Walk in Lisbon Before Web Summit",
       "url": "https://luma.com/ugpauofi",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T08:30:00Z",
       "end": "2026-11-12T09:30:00Z",
@@ -2253,7 +2375,7 @@
     {
       "name": "Networking Coffee & Breakfast | Web Summit",
       "url": "https://luma.com/52zu3v0i",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T08:30:00Z",
       "end": "2026-11-12T09:30:00Z",
@@ -2279,7 +2401,7 @@
     {
       "name": "Female Founders Breakfast: Web Summit special",
       "url": "https://luma.com/sx67k4x0",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T09:00:00Z",
       "end": "2026-11-12T10:30:00Z",
@@ -2310,7 +2432,7 @@
     {
       "name": "Sales Leaders Breakfast · Web Summit 2026",
       "url": "https://luma.com/l4098oo8",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T09:00:00Z",
       "end": "2026-11-12T11:00:00Z",
@@ -2338,7 +2460,7 @@
     {
       "name": "OVHcloud Exclusive Breakfast by Unicorn Factory Lisboa",
       "url": "https://luma.com/5qsia07c",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T09:00:00Z",
       "end": "2026-11-12T11:00:00Z",
@@ -2396,7 +2518,7 @@
     {
       "name": "Covilhã Tech Day 2026",
       "url": "https://luma.com/u522v47o",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T09:30:00Z",
       "end": "2026-11-12T17:30:00Z",
@@ -2423,7 +2545,7 @@
     {
       "name": "Café & Code: a developer café takeover by Exa x Mastra",
       "url": "https://luma.com/u0iuhn8i",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T10:00:00Z",
       "end": "2026-11-12T16:00:00Z",
@@ -2453,7 +2575,7 @@
     {
       "name": "Canopy Campfire: how is AI changing your life?",
       "url": "https://luma.com/g87gj7f6",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T10:00:00Z",
       "end": "2026-11-12T11:00:00Z",
@@ -2483,7 +2605,7 @@
     {
       "name": "Kids Young Founders Pitch at Tech Week Palace 2026",
       "url": "https://luma.com/7jgs6qn9",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T10:00:00Z",
       "end": "2026-11-12T18:30:00Z",
@@ -2512,7 +2634,7 @@
     {
       "name": "PTW COWORKING BY IDEA SPACES",
       "url": "https://luma.com/ho7yw9rv",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T10:00:00Z",
       "end": "2026-11-12T18:00:00Z",
@@ -2540,7 +2662,7 @@
     {
       "name": "It's all about AI. Reimagining how we work, create, and think",
       "url": "https://luma.com/6j1ze0qi",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T11:30:00Z",
       "end": "2026-11-12T12:30:00Z",
@@ -2568,7 +2690,7 @@
     {
       "name": "PTW Classroom - Portuguese for Tech Life: Meet, Greet, Connect.",
       "url": "https://luma.com/pcnppf6w",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T11:30:00Z",
       "end": "2026-11-12T12:30:00Z",
@@ -2595,7 +2717,7 @@
     {
       "name": "AI Networking Lunch @ Web Summit 2026",
       "url": "https://luma.com/jcizfqc8",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T12:00:00Z",
       "end": "2026-11-12T13:00:00Z",
@@ -2623,7 +2745,7 @@
     {
       "name": "AI Engineers' Lunch · Web Summit week",
       "url": "https://luma.com/85k5kz1g",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T12:30:00Z",
       "end": "2026-11-12T14:30:00Z",
@@ -2652,7 +2774,7 @@
     {
       "name": "Business Lunch Lisbon | fSense & cVortex | Web Summit 2026 Side Event",
       "url": "https://luma.com/vfsejd2k",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T13:00:00Z",
       "end": "2026-11-12T15:00:00Z",
@@ -2680,7 +2802,7 @@
     {
       "name": "AI PROMISES TO GIVE US TIME BACK. WHO GETS TO KEEP IT?",
       "url": "https://luma.com/nlqmie2v",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T13:00:00Z",
       "end": "2026-11-12T14:00:00Z",
@@ -2708,7 +2830,7 @@
     {
       "name": "A Family-Style Gypsy Lunch | Web Summit Wind Down",
       "url": "https://luma.com/tejahouse-ues5",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T13:00:00Z",
       "end": "2026-11-12T15:30:00Z",
@@ -2733,7 +2855,7 @@
     {
       "name": "WorkShop with Parents | Unicorn School",
       "url": "https://luma.com/kjbdyht9",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T13:00:00Z",
       "end": "2026-11-12T15:00:00Z",
@@ -2761,7 +2883,7 @@
     {
       "name": "Cultural Agility: The Missing Skill in the Future of Work",
       "url": "https://luma.com/yjh8n2px",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T14:30:00Z",
       "end": "2026-11-12T15:30:00Z",
@@ -2787,7 +2909,7 @@
     {
       "name": "PTW Classroom - Storytelling Game by Pina",
       "url": "https://luma.com/gb225ul8",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T14:30:00Z",
       "end": "2026-11-12T15:30:00Z",
@@ -2815,7 +2937,7 @@
     {
       "name": "Entrepreneur Community Meet the Founder | Unicorn School",
       "url": "https://luma.com/h3nyq6ui",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T15:30:00Z",
       "end": "2026-11-12T18:00:00Z",
@@ -2844,7 +2966,7 @@
     {
       "name": "Breaking into America: US Fundraising Playbook for European Founders",
       "url": "https://luma.com/fdr23mdq",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T16:00:00Z",
       "end": "2026-11-12T17:00:00Z",
@@ -2875,7 +2997,7 @@
     {
       "name": "Yorkseed Cross-Border Venture Salon",
       "url": "https://luma.com/ymrb63b7",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T16:00:00Z",
       "end": "2026-11-12T20:00:00Z",
@@ -2907,7 +3029,7 @@
     {
       "name": "Founder Decompression",
       "url": "https://luma.com/khjuq5zp",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T16:00:00Z",
       "end": "2026-11-12T18:30:00Z",
@@ -2936,7 +3058,7 @@
     {
       "name": "PTW Classroom - Who Flies When the CEO Ejects? A TOPGUN Pilot's Leadership Challenge",
       "url": "https://luma.com/5aa4ivy5",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T16:00:00Z",
       "end": "2026-11-12T17:00:00Z",
@@ -2963,7 +3085,7 @@
     {
       "name": "Post Web Summit Reset: sauna & cold plunge",
       "url": "https://luma.com/uau5nem3",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T16:30:00Z",
       "end": "2026-11-12T18:00:00Z",
@@ -3017,7 +3139,7 @@
     {
       "name": "Agents Are Ready. The Internet Isn't.",
       "url": "https://luma.com/lunar-ltdv",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T17:00:00Z",
       "end": "2026-11-12T19:30:00Z",
@@ -3050,7 +3172,7 @@
     {
       "name": "Next Round's on Us | Web Summit 2026",
       "url": "https://luma.com/j2swdpb0",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T17:00:00Z",
       "end": "2026-11-12T19:00:00Z",
@@ -3079,7 +3201,7 @@
     {
       "name": "Healthcare [Re]imagined by AI",
       "url": "https://luma.com/uomuj3gw",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T17:00:00Z",
       "end": "2026-11-12T20:00:00Z",
@@ -3107,7 +3229,7 @@
     {
       "name": "One Night in Lisbon with Replit",
       "url": "https://luma.com/ReplitLisbon",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T17:30:00Z",
       "end": "2026-11-12T20:30:00Z",
@@ -3132,7 +3254,7 @@
     {
       "name": "Building Better Trading Strategies with AI",
       "url": "https://luma.com/dwuofjy8",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T17:30:00Z",
       "end": "2026-11-12T18:30:00Z",
@@ -3164,7 +3286,7 @@
     {
       "name": "EIT Jumpstarter 2026 Awards Ceremony | Web Summit Side event",
       "url": "https://luma.com/a2ue9hpo",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T17:30:00Z",
       "end": "2026-11-12T21:00:00Z",
@@ -3191,7 +3313,7 @@
     {
       "name": "Side Event: staaake Closing AI/Tech — Power Walk",
       "url": "https://luma.com/staaake-m5bj",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T17:30:00Z",
       "end": "2026-11-12T18:30:00Z",
@@ -3219,7 +3341,7 @@
     {
       "name": "PTW Classroom -What Can AI Workers Do for Your Business?",
       "url": "https://luma.com/pq4aiajl",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T17:30:00Z",
       "end": "2026-11-12T18:30:00Z",
@@ -3247,7 +3369,7 @@
     {
       "name": "Defense Tech Meetup #9: Sovereignty by Design",
       "url": "https://luma.com/whll1umb",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T17:45:00Z",
       "end": "2026-11-12T21:15:00Z",
@@ -3279,7 +3401,7 @@
     {
       "name": "The Founder Effect: what you choose to build once you've already won",
       "url": "https://luma.com/wrz9dilz",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T18:00:00Z",
       "end": "2026-11-12T22:30:00Z",
@@ -3310,7 +3432,7 @@
     {
       "name": "Rize - The Reset 11:11 | A Web Summit Wellness Experience",
       "url": "https://luma.com/8xh639r3",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T18:00:00Z",
       "end": "2026-11-12T20:30:00Z",
@@ -3339,7 +3461,7 @@
     {
       "name": "lateral. /Web Summit",
       "url": "https://luma.com/4mflwhj1",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T18:00:00Z",
       "end": "2026-11-12T20:30:00Z",
@@ -3367,7 +3489,7 @@
     {
       "name": "Show What You Build: Makers & Doers (Web Summit special)",
       "url": "https://luma.com/rnm96bu0",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T18:30:00Z",
       "end": "2026-11-12T21:00:00Z",
@@ -3399,7 +3521,7 @@
     {
       "name": "Closing Night of Web Summit Week: founders, drinks and snacks at The Nest",
       "url": "https://luma.com/wt5b7nsg",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T18:30:00Z",
       "end": "2026-11-12T21:00:00Z",
@@ -3431,7 +3553,7 @@
     {
       "name": "300 oysters and AI · Web Summit Lisbon side event",
       "url": "https://luma.com/qnu3jyg0",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T18:30:00Z",
       "end": "2026-11-12T22:00:00Z",
@@ -3456,7 +3578,7 @@
     {
       "name": "staaake Side Event. Hangover Rooftop AI/Tech Event — Reverse Network Meet",
       "url": "https://luma.com/staaake-i8fm",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T18:30:00Z",
       "end": "2026-11-12T20:30:00Z",
@@ -3482,7 +3604,7 @@
     {
       "name": "Disconnect 2 Connect",
       "url": "https://luma.com/f9rois6p",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:00:00Z",
       "end": "2026-11-12T21:00:00Z",
@@ -3511,7 +3633,7 @@
     {
       "name": "Lisbon Business Leaders Networking Evening",
       "url": "https://luma.com/4jmyv55l",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:00:00Z",
       "end": "2026-11-12T21:00:00Z",
@@ -3544,7 +3666,7 @@
     {
       "name": "Venture Dinner",
       "url": "https://luma.com/0bx40d1c",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:00:00Z",
       "end": "2026-11-12T23:00:00Z",
@@ -3575,7 +3697,7 @@
     {
       "name": "Contracts & Cocktails: A Founder Legal Tech Mixer",
       "url": "https://luma.com/hihh4mxe",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:00:00Z",
       "end": "2026-11-12T21:00:00Z",
@@ -3606,7 +3728,7 @@
     {
       "name": "Leadership Through Dance: Presence, Posture & Non-Verbal Communication",
       "url": "https://luma.com/9ifnf5ev",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:00:00Z",
       "end": "2026-11-12T20:00:00Z",
@@ -3634,7 +3756,7 @@
     {
       "name": "Yorkseed Grand Finale | Web Summit 2026",
       "url": "https://luma.com/i7llsb2c",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:00:00Z",
       "end": "2026-11-12T23:00:00Z",
@@ -3665,7 +3787,7 @@
     {
       "name": "Founders (don't) cry",
       "url": "https://luma.com/ldiykyt8",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:00:00Z",
       "end": "2026-11-12T20:00:00Z",
@@ -3695,7 +3817,7 @@
     {
       "name": "Lisbon Digital Nomads After Hours @ PTW Palace",
       "url": "https://luma.com/portugal-hku2",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:00:00Z",
       "end": "2026-11-12T22:00:00Z",
@@ -3721,7 +3843,7 @@
     {
       "name": "Web Summit Networking Mixer",
       "url": "https://luma.com/39950i36",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:00:00Z",
       "end": "2026-11-12T21:00:00Z",
@@ -3747,7 +3869,7 @@
     {
       "name": "Conjugação Terra | Preview & Performance-Concerto",
       "url": "https://luma.com/bzfah6m5",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:00:00Z",
       "end": "2026-11-12T21:00:00Z",
@@ -3770,7 +3892,7 @@
     {
       "name": "OPUS After Hours: Web Summit edition",
       "url": "https://luma.com/s73xrx2r",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:30:00Z",
       "end": "2026-11-12T22:30:00Z",
@@ -3797,7 +3919,7 @@
     {
       "name": "Airplane Mode Lisbon: Founders Dinner #2 (Web Summit Edition)",
       "url": "https://luma.com/mykeqz0c",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:30:00Z",
       "end": "2026-11-12T22:30:00Z",
@@ -3825,7 +3947,7 @@
     {
       "name": "Match Me at Web Summit",
       "url": "https://luma.com/n6czryzo",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:30:00Z",
       "end": "2026-11-12T22:30:00Z",
@@ -3853,7 +3975,7 @@
     {
       "name": "The 100-Year Dinner: Longevity Served",
       "url": "https://luma.com/erp6nqvm",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:45:00Z",
       "end": "2026-11-12T23:00:00Z",
@@ -3880,7 +4002,7 @@
     {
       "name": "Institutional Capital: Tokenized",
       "url": "https://luma.com/f0ah5yl3",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T20:00:00Z",
       "end": "2026-11-12T22:00:00Z",
@@ -3908,7 +4030,7 @@
     {
       "name": "A reflection on Art & Technology by BoCA - Biennial of Contemporary Arts",
       "url": "https://luma.com/1q1n3mxr",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T20:00:00Z",
       "end": "2026-11-12T22:00:00Z",
@@ -3936,7 +4058,7 @@
     {
       "name": "MOON SUMMIT | Web Summit Closing Night",
       "url": "https://luma.com/1tggnm7t",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T20:00:00Z",
       "end": "2026-11-13T02:00:00Z",
@@ -3961,7 +4083,7 @@
     {
       "name": "Get Down At The Dev House",
       "url": "https://luma.com/aivsqim4",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T20:30:00Z",
       "end": "2026-11-13T02:00:00Z",
@@ -3989,7 +4111,7 @@
     {
       "name": "Fitness & Sports: Investor Meetup",
       "url": "https://luma.com/hf6h4k22",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T20:30:00Z",
       "end": "2026-11-12T22:30:00Z",
@@ -4021,7 +4143,7 @@
     {
       "name": "Web Summit After Party (Unicorn Factory Lisboa)",
       "url": "https://luma.com/z31f1c0y",
-      "read_at": "2026-11-11T14:15:00Z",
+      "read_at": "2026-11-11T15:14:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T21:00:00Z",
       "end": "2026-11-13T02:00:00Z",

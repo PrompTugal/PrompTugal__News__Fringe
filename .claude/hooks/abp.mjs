@@ -138,6 +138,7 @@ export function checkWrite(who, abs, { creating = false } = {}, P = loadPolicy()
         let owner = ''
         try { owner = (/^owner:\s*(.*)$/m.exec(fs.readFileSync(abs, 'utf8')) || [, ''])[1].trim() } catch { owner = '' }
         if (!owner || owner.toLowerCase().includes(String(who.agent).toLowerCase())) return allow('write', `board item ${r} (owner: ${owner || 'none'})`)
+        if (P.common.person_conductor_items && who.person && owner.toLowerCase().includes(`conductor.fringe@promptugal.${who.person}`)) return allow('write', `board item ${r}, owned by its own person's conductor`)
         return deny('R6', `${r} is owned by ${owner}: ask the lead before taking a claimed item`)
     }
     return deny('R6', `${r} is not in ${who.agent}'s grant (abp/${who.agent}.md); if you need it, say so in your status asks ('Dinis:')`)
@@ -208,7 +209,7 @@ export function checkProtected(who, abs, P = loadPolicy()) {
     for (const pr of P.common.protected) {
         const re = globToRe(fill(pr.glob, who))
         if (re.test(target) || re.test(target + '/x')) {   // a folder (rm -rf .claude) counts as its contents
-            if (pr.owner && who.kind === 'team' && (who.role === pr.owner || (pr.owner === 'conductor' && who.role === 'lead'))) return null
+            if (who.kind === 'team' && ((pr.owner && (who.role === pr.owner || (pr.owner === 'conductor' && who.role === 'lead'))) || (pr.also || []).includes(who.role))) return null
             return deny('R6', `${target} is protected: ${pr.why}${pr.owner ? ` (the ${pr.owner}'s)` : ''}`)
         }
     }
@@ -364,6 +365,18 @@ export function decide(input, who = whoAmI(), P = loadPolicy()) {
     return allow('other')
 }
 
+
+// ---------- R12: mixing altitudes (observe only) ----------
+// A lower-altitude unit of work handed a higher altitude's grant: a sub-agent (an A2 loop) inherits its parent's whole
+// grant; an LLM call (A1) made with tools. Logged as its own event; never blocks (Dinis, 13:36 UTC; R12 observe).
+export function altitudeCheck(input, who, P = loadPolicy()) {
+    const tool = input.tool_name || '', ti = input.tool_input || {}
+    const A = P.altitudes || {}, mine = (A.by_role || {})[who.role] || A.default || 'A3'
+    if (['Agent', 'Task'].includes(tool)) return { rule: 'R12', mandate: 'A2', grant: mine, reason: `a sub-agent (an A2 loop${ti.subagent_type ? ', ' + ti.subagent_type : ''}) inherits ${who.agent || 'its parent'}'s ${mine} grant` }
+    if (tool === 'Bash' && /(llm\.mjs|openrouter\.ai\/api\/v1\/chat)/.test(String(ti.command || '')) && /["']?tools["']?\s*[:=]|tool_choice/.test(String(ti.command || ''))) return { rule: 'R12', mandate: 'A1', grant: 'A2', reason: 'an LLM call (A1) made with tools (an A2 grant)' }
+    return null
+}
+
 // ---------- logging (no secrets) ----------
 // the hook loads no other code (security@'s S15): the secret shapes are its own, a copy of PrompTugal.news's newsroom/build/secrets.cjs
 const SECRET_SHAPES = [/-----BEGIN [A-Z ]*PRIVATE KEY-----[\s\S]*?(-----END [A-Z ]*PRIVATE KEY-----|$)/g, /sgit_private_(vault|read)_[A-Za-z0-9]+/g,
@@ -475,6 +488,7 @@ async function main() {
                 decision = m === 'enforce' && !override ? 'deny' : override ? 'override' : 'observe'
             }
             logEvent(sid, { ev: 'tool', agent: who.agent, who: who.kind, role: who.role, tool: input.tool_name, kind: d.kind, decision, would: d.decision === 'deny' ? 'deny' : undefined, rule: d.rule, reason: d.reason ? redact(d.reason) : undefined, override, target: targetOf(input), note: d.note })
+            try { const alt = altitudeCheck(input, who, P); if (alt) { const ov = overrideFor('R12', who, P); logEvent(sid, { ev: 'altitude', agent: who.agent, role: who.role, tool: input.tool_name, decision: ov ? 'override' : 'observe', rule: 'R12', mandate: alt.mandate, grant: alt.grant, reason: redact(alt.reason), override: ov || undefined }) } } catch { /* the altitude check never stops a call */ }
             if (decision === 'deny')
                 process.stdout.write(JSON.stringify({ hookSpecificOutput: { hookEventName: 'PreToolUse', permissionDecision: 'deny', permissionDecisionReason: `ABP ${d.rule} (abp/policies.json v${P.version}, enforced at Dinis's word): ${d.reason}. Logged. The escape hatch: a conductor or Dinis may override (abp/overrides.json or ABP_OVERRIDE); otherwise say so in your status asks for Dinis.` } }))
         }

@@ -1,29 +1,34 @@
 {
   "agent": "researcher.1.fringe@PrompTugal.jose",
   "by": "researcher.1.fringe@PrompTugal.jose",
-  "updated": "2026-11-11T13:39Z",
+  "updated": "2026-11-11T14:47Z",
   "started_by": "conductor.fringe@PrompTugal.jose at Jose's word (prompt R1), 13:36 UTC",
   "session": "session_01CqQLDA9LBMzBQKGsJmLFUS",
   "key": "researcher.1.fringe-jose (data/keys.json; signing sha256:225ae79f898ac2da)",
   "wake": "every 30 minutes until 21:00 UTC today, then off",
-  "state": "working, with no reach to the sources: this session's network refuses luma.com and the three guides, so the list follows data/events.json",
+  "state": "working; the network was opened by Jose at about 14:35 UTC: lisbontechfringe.com, luma.com and the three guides now answer",
   "doing": [
     "work/31-jose-today.md: today's online events still to come, ordered by start, each ready or held, for Jose's organiser notes"
   ],
   "done": [
     "read CLAUDE.md, SWARM.md, REALITY.md, sources.md, briefs 9 to 12, work/18, 23, 24, 31 and work/drafts/organiser-notes-today-jose.md",
     "session key made (pki-agent.mjs sha256 fcb28a1c...02ab checked); public half only in data/keys.json",
-    "first list: 11 online events still to come at 13:39 UTC, from data/events.json (researcher.2's reads at 13:17 UTC); Jose's five notes checked against it"
+    "first list: 11 online events still to come at 13:39 UTC, from data/events.json (researcher.2's reads at 13:17 UTC); Jose's five notes checked against it",
+    "wake 14:16: pulled; the four hosts are still refused; list regenerated from researcher.2's 14:15 reads; note 1 (Kuma) is ready now that it names only the 15:00 and 16:00 sessions",
+    "14:36: served site checked (v0.1.273, same 173 events as the repository; the Kuma and ALBAN pages load with the independence line); 10 Luma pages read once each; data/events.json corrected for the 18:00 Frontier Founders & VCs Soirée (in person per its page, hosted by Content Gym and Kuma Partners, ends 21:00; was listed online and moved by the storm)",
+    "14:39 to 14:41: the three guides read once each; two new online events added from their organisers' own Luma pages (WonderLead in Tech 16:30, ideaic.io 18:00); the guides' online tag on the Diaspora Dinner and Cisco not followed (the organisers' pages do not say so)",
+    "wake 14:47: served site v0.1.282 carries the two new event pages and the corrected Soirée page; note 2 (ALBAN) still unchanged on dev"
   ],
   "next": [
-    "each wake: pull, drop events that have started, pick up researcher.2's new reads, update the list and this file, log the run",
-    "read the guides and the Luma pages as soon as the network allows"
+    "each wake: pull, drop started events, re-read the remaining Luma pages and the first guide, update the list"
   ],
   "asks": [
-    "jose: this session's network refuses luma.com, sideevents.guide, side-events-guide.com and events.portugaltechweek.com (403 at the proxy, 13:37 UTC); add them to this environment's allowlist if you want me to read them. Until then nothing is re-read at source by me.",
-    "jose: note 1 says 'your three sessions'; the 18:00 Soirée is Kuma's by inference only. Check the host on https://luma.com/tjed8ali before sending, or name only the 15:00 and 16:00 sessions.",
-    "conductor.fringe@PrompTugal.dinis: the 17:30 Cisco session is 'on' in data/events.json but work/24 says it stays 'unknown'; please have researcher.2 fix or re-read it.",
-    "conductor.fringe@PrompTugal.dinis: please have researcher.2 read the host of https://luma.com/tjed8ali (our organiser line is by inference).",
+    "jose: reword note 2 (ALBAN) before 15:30: their page says ONLINE in the title and in the text; drop 'its text still describes a venue'.",
+    "jose: two new organisers with online events today, if you want notes for them: WonderLead in Tech (16:30) and ideaic.io (18:00); see work/31-jose-today.md.",
+    "conductor.fringe@PrompTugal.dinis: the 17:30 Cisco session is 'on' in data/events.json; its Luma page (14:36 UTC) has no location and names PTW Palace Room 2; work/24 says it stays 'unknown'. Not changed by me.",
+    "conductor.fringe@PrompTugal.dinis: I corrected the 18:00 Soirée (2026-11-11-frontier-founders-vcs-soiree) from its page at 14:36 UTC; please have researcher.2 keep that unless its next read differs.",
+    "conductor.fringe@PrompTugal.dinis: sources.md has no rows for sideevents.guide and side-events-guide.com (both allow reading in robots.txt); researcher.fringe@ owns the file.",
+    "conductor.fringe@PrompTugal.jose: I could not send to your inbox (admin/tools/inboxes.py needs the sgit_ai module, not installed here); work/31-jose-today.md carries everything.",
     "Dinis: my public key is not in PrompTugal__News__Website board/keys.json; that repository is out of reach for this session."
   ]
 }

@@ -1,31 +1,35 @@
 {
  "about": "Messages in each agent inbox (work/19), counts only, by the lead (admin/tools/inbox_counts.py). Read or not is not known here: each agent drains its own.",
  "by": "conductor.fringe@PrompTugal.dinis",
- "updated": "2026-11-11T13:26Z",
+ "updated": "2026-11-11T14:23Z",
  "inboxes": {
-  "capture.1.fringe-dinis": {
+  "architect.1.fringe-dinis": {
    "messages": 0,
    "last_at": null
+  },
+  "capture.1.fringe-dinis": {
+   "messages": 1,
+   "last_at": "2026-11-11T13:47Z"
   },
   "conductor.fringe-angelo": {
-   "messages": 2,
-   "last_at": "2026-11-11T11:40Z"
+   "messages": 3,
+   "last_at": "2026-11-11T13:47Z"
   },
   "conductor.fringe-indi": {
-   "messages": 2,
-   "last_at": "2026-11-11T11:40Z"
+   "messages": 5,
+   "last_at": "2026-11-11T14:09Z"
   },
   "conductor.fringe-jose": {
-   "messages": 0,
-   "last_at": null
+   "messages": 2,
+   "last_at": "2026-11-11T13:27Z"
   },
   "conductor.fringe-promptugal": {
-   "messages": 3,
-   "last_at": "2026-11-11T11:58Z"
+   "messages": 8,
+   "last_at": "2026-11-11T14:08Z"
   },
   "conductor.fringe-vicky": {
-   "messages": 2,
-   "last_at": "2026-11-11T11:40Z"
+   "messages": 3,
+   "last_at": "2026-11-11T13:26Z"
   },
   "design.1.fringe-dinis": {
    "messages": 0,
@@ -48,18 +52,30 @@
    "last_at": null
   },
   "dev.2.fringe-dinis": {
-   "messages": 0,
-   "last_at": null
+   "messages": 2,
+   "last_at": "2026-11-11T13:47Z"
   },
   "fable.fringe-promptugal": {
    "messages": 1,
    "last_at": "2026-11-11T11:39Z"
   },
-  "observability.fringe-promptugal": {
+  "lane-tips": {
    "messages": 1,
-   "last_at": "2026-11-11T11:37Z"
+   "last_at": "2026-11-11T13:42Z"
+  },
+  "observability.fringe-promptugal": {
+   "messages": 2,
+   "last_at": "2026-11-11T13:47Z"
+  },
+  "ontologist.1.fringe-dinis": {
+   "messages": 0,
+   "last_at": null
   },
   "outreach.1.fringe-dinis": {
+   "messages": 3,
+   "last_at": "2026-11-11T13:44Z"
+  },
+  "researcher.1.fringe-jose": {
    "messages": 0,
    "last_at": null
   },

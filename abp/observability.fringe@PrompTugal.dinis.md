@@ -2,7 +2,7 @@
 title: "ABP: observability.fringe@PrompTugal.dinis"
 agent: observability.fringe@PrompTugal.dinis
 role: observability
-policy: abp/policies.json v0.1.0 (sha256:0d0cc1ca1077e886)
+policy: abp/policies.json v0.3.0 (sha256:0083618bc31457b4)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -13,7 +13,8 @@ authority: Dinis Cruz, operator
 
 ## Mandate (the grant)
 
-- **Role:** observability. **Account:** this (the lead's).
+- **Role:** observability. **Account:** riskmandate-personal (Ultra).
+- **Runs on:** R1 (models: M1 Opus); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** traffic and the agents' runs: /traffic/, the drain, the dashboard.
 - **Writes (this repository):** `team/dinis/agents/observability.json`, `team/dinis/agents/observability/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `data/obs/**`, `data/geo/**`, `assets/obs/**`, `admin/obs/**`, `admin/tools/obs/**`, `admin/tools/agent-log.mjs`, `admin/tools/trace-event.mjs`, `admin/build/traffic.mjs`, `admin/build/activity.mjs`, `admin/build/worldmap.mjs`.
 - **Owns (shared files; others send it their changes):** `admin/build/traffic.mjs`.
@@ -47,6 +48,7 @@ authority: Dinis Cruz, operator
 - **R9** Commit and release only under your own name: subject '<agent>: ...', trailers Agent:, Issue: WS-215, For:; AGENT=<agent> for release.sh. *(hook + gate; mode observe)*
 - **R10** Every run ends with its status file updated and its run logged (node admin/tools/agent-log.mjs, ROLES.md step 6). *(review; mode observe)*
 - **R11** If HOLD.md exists at the root, stop after pulling and say why. Only Dinis lifts a hold. *(rule; mode observe)*
+- **R12** Do not mix altitudes: the grant's altitude must not be above the mandate's (A4 swarm, A3 agent, A2 loop, A1 LLM call, A0 compute). A loop or an LLM call started for one task should hold only that task's grant. *(hook; mode observe)*
 
 ## Licence to operate
 

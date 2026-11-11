@@ -36,6 +36,7 @@ function finishWho(w) {
 function build() {
   const dir = path.join(ROOT, 'abp');
   const index = [];
+  const RT = (() => { try { return Object.fromEntries(JSON.parse(fs.readFileSync(path.join(ROOT, 'data/runtimes.json'), 'utf8')).agents.map((x) => [x.agent, x])); } catch { return {}; } })();
   for (const [agent, a] of Object.entries(P.agents).filter(([k]) => k !== 'about')) {
     const w = who(agent), g = abp.grantOf(w, P), r = P.roles[w.role] || {};
     const fill = s => s.replace(/\{person\}/g, w.person || '?').replace(/\{name\}/g, w.name || '?').replace(/\{claimed\}/g, 'NN-<item you own>.md').replace(/\{keyid\}/g, '<your key id>').replace(/#own-entry/, ' (your own entry)').replace(/#own-modules/, ' (your own page modules)');
@@ -56,7 +57,7 @@ authority: Dinis Cruz, operator
 
 ## Mandate (the grant)
 
-- **Role:** ${w.role}${a.under ? `, under ${a.under}` : ''}. **Account:** ${a.account || 'unknown'}.
+- **Role:** ${w.role}${a.under ? `, under ${a.under}` : ''}. **Account:** ${a.account || 'unknown'}.${RT[agent] ? `\n- **Runs on:** ${RT[agent].runtime} (models: ${RT[agent].models}); **I/O level:** ${RT[agent].io_level} (data/runtimes.json, /agentic-team/where-agents-run/).` : ''}
 - **Focus:** ${r.focus || a.lane || 'its status file only, until its grant is written'}.${a.lane ? `\n- **Lane:** ${a.lane}.` : ''}
 - **Writes (this repository):** ${g.writes.map(x => '`' + fill(x) + '`').join(', ')}.${shared.length ? `\n- **Owns (shared files; others send it their changes):** ${shared.map(x => '`' + x + '`').join(', ')}.` : ''}
 - **Writes (other repositories):** \`PrompTugal__News__Website board/keys.json\` (its own public key) only.
@@ -141,7 +142,7 @@ function review() {
   // the hook log of this machine (each session logs its own: other sessions' logs reach the review only through their run logs)
   const LOG = process.env.ABP_LOG_DIR || path.join(os.homedir(), '.abp', 'log');
   const events = [];
-  try { for (const f of fs.readdirSync(LOG)) for (const l of fs.readFileSync(path.join(LOG, f), 'utf8').split('\n')) { try { const e = JSON.parse(l); if (e.t >= since && (e.decision === 'observe' || e.decision === 'override' || e.ev === 'hook-error')) events.push(e); } catch {} } } catch {}
+  try { for (const f of fs.readdirSync(LOG)) for (const l of fs.readFileSync(path.join(LOG, f), 'utf8').split('\n')) { try { const e = JSON.parse(l); if (e.t >= since && (e.decision === 'observe' || e.decision === 'override' || e.ev === 'hook-error' || e.ev === 'altitude')) events.push(e); } catch {} } } catch {}
   const lines = [
     `# ABP review, ${now()}`, '',
     `Policy abp/policies.json v${P.version} (sha256:${P._sha}), mode ${P.mode}: nothing blocked. Since ${since}: ${rows.length} commits, ${rows.filter(c => c.findings.length).length} with paths outside their grant.`, '',
@@ -196,6 +197,9 @@ function test() {
   const last = fs.readFileSync(logf, 'utf8').trim().split('\n').slice(-2).map(l => JSON.parse(l));
   t('hook: logged observe', last[0].decision, 'observe');
   t('hook: logged override with who', last[1].decision === 'override' && last[1].override.by, 'conductor.fringe@PrompTugal.dinis');
+  const r6 = run({ session_id: 'test', tool_name: 'Agent', tool_input: { subagent_type: 'Explore', prompt: 'x' }, cwd: ROOT }, { ABP_AGENT: 'design.1.fringe@PrompTugal.dinis' });
+  const alt = fs.readFileSync(logf, 'utf8').trim().split('\n').map((l) => JSON.parse(l)).filter((e) => e.ev === 'altitude').pop();
+  t('hook: a sub-agent logs R12 mixing altitudes (A2 mandate, A3 grant), not blocked', `${r6.status}:${r6.stdout.trim() === '' ? 'empty' : r6.stdout}:${alt && alt.rule}:${alt && alt.mandate}<${alt && alt.grant}`, '0:empty:R12:A2<A3');
   const r4 = spawnSync(process.execPath, [HOOK, 'pre-tool'], { input: 'garbage{', encoding: 'utf8', env: { ...process.env, ABP_LOG_DIR: path.join(os.tmpdir(), 'abp-test-log') } });
   t('hook: garbage input exits 0', r4.status, 0);
   const r5 = spawnSync(process.execPath, [HOOK, 'session-start'], { input: '{"session_id":"test","source":"compact"}', encoding: 'utf8', env: { ...process.env, ABP_LOG_DIR: path.join(os.tmpdir(), 'abp-test-log'), ABP_AGENT: 'design.1.fringe@PrompTugal.dinis' } });

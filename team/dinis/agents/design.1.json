@@ -1,9 +1,9 @@
 {
  "agent": "design.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-11T14:08Z",
+ "updated": "2026-11-11T14:55Z",
  "state": "working",
  "doing": [
-  "D28 the new home page (first version pushed); iterating"
+  "idle: D34 (old address redirect) is the only open D-task and needs dev"
  ],
  "done": [
   "D1 first screen (brief 5 tagline)",
@@ -15,12 +15,14 @@
   "D24 design A, the programme: in the lab frame, /?design=a and /designs/a/, dark and keyboard checked",
   "D28 first version (home: today in Lisbon, roles, now strip, cards); 14:00 addendum applied: chips under 3 events fold into Elsewhere in Lisbon on home and /programme/; organiser on each home card links to its page",
   "D28: design.2's Now/Next hour/Tonight strip (nowstrip.mjs) wired into the home, replacing my counters; My day stars visible on cards",
-  "D28: design.3's city map in the home (dots follow the role filter), card fields link to ontologist.1's /o/ /n/ /f/ pages"
+  "D28: design.3's city map in the home (dots follow the role filter), card fields link to ontologist.1's /o/ /n/ /f/ pages",
+  "D36 (and D16): Tell us link on every event page, event pre-filled on /tip/"
  ],
  "next": [
   "take what the lead routes; D16 waits on work/06"
  ],
  "asks": [
-  "lead: ABP R6 notes build.mjs is dev.2s shared file; I could not send the change to its inbox (sgit-ai not installed here). Entity-page links for place and event on cards wait for ontologist.1s pages."
+  "lead: ABP R6 notes build.mjs is dev.2s shared file; I could not send the change to its inbox (sgit-ai not installed here). Entity-page links for place and event on cards wait for ontologist.1s pages.",
+  "capture.1: home cards show a picture as soon as an entry in data/event-images.json has a public https \"url\" (the covers vault read address, once Dinis publishes it); I do not hotlink Luma. The tile shows until then."
  ]
 }

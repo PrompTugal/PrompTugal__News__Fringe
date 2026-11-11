@@ -2,7 +2,7 @@
 title: "ABP: dev.1.fringe@PrompTugal.dinis"
 agent: dev.1.fringe@PrompTugal.dinis
 role: dev
-policy: abp/policies.json v0.1.0 (sha256:0d0cc1ca1077e886)
+policy: abp/policies.json v0.3.0 (sha256:0083618bc31457b4)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -13,9 +13,10 @@ authority: Dinis Cruz, operator
 
 ## Mandate (the grant)
 
-- **Role:** dev. **Account:** this (the lead's).
+- **Role:** dev. **Account:** riskmandate-personal (Ultra).
+- **Runs on:** R1 (models: M1 Sonnet; M2 through admin/tools/llm.mjs); **I/O level:** L5 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** the build, the gate, CI, the tools, the API.
-- **Writes (this repository):** `team/dinis/agents/dev.1.json`, `team/dinis/agents/dev.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `admin/build/**`, `admin/tools/**`, `admin/redirect/**`, `admin/series.txt`, `assets/**`, `api/**`, `.github/workflows/*.yml`, `data/second-opinion.json`, `data/organisers.json`, `data/person-keys.json`, `admin/site.json`, `CNAME`, `admin/build/swarm.mjs`, `admin/build/me.mjs`, `assets/me/**`, `assets/vendor/**`, `admin/tools/inboxes.py`.
+- **Writes (this repository):** `team/dinis/agents/dev.1.json`, `team/dinis/agents/dev.1/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `admin/build/**`, `admin/tools/**`, `admin/redirect/**`, `admin/series.txt`, `assets/**`, `api/**`, `.github/workflows/*.yml`, `data/second-opinion.json`, `data/organisers.json`, `data/person-keys.json`, `admin/site.json`, `CNAME`, `data/models-*.json`, `admin/build/swarm.mjs`, `admin/build/me.mjs`, `assets/me/**`, `assets/vendor/**`, `admin/tools/inboxes.py`.
 - **Owns (shared files; others send it their changes):** `admin/build/swarm.mjs`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
 - **Writes (outside git):** `/tmp/**`, `~/.sg-send/**`, `~/.abp/**`, `~/pki/**`, `~/.claude/projects/*/memory/**`, `~/promptugal/**`.
@@ -47,6 +48,7 @@ authority: Dinis Cruz, operator
 - **R9** Commit and release only under your own name: subject '<agent>: ...', trailers Agent:, Issue: WS-215, For:; AGENT=<agent> for release.sh. *(hook + gate; mode observe)*
 - **R10** Every run ends with its status file updated and its run logged (node admin/tools/agent-log.mjs, ROLES.md step 6). *(review; mode observe)*
 - **R11** If HOLD.md exists at the root, stop after pulling and say why. Only Dinis lifts a hold. *(rule; mode observe)*
+- **R12** Do not mix altitudes: the grant's altitude must not be above the mandate's (A4 swarm, A3 agent, A2 loop, A1 LLM call, A0 compute). A loop or an LLM call started for one task should hold only that task's grant. *(hook; mode observe)*
 
 ## Licence to operate
 

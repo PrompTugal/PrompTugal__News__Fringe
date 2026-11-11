@@ -10,7 +10,7 @@ const KNOWN = [/https:\/\/fringe\.promptugal\.news/g, /https:\/\/lisbontechfring
 const here = (s) => KNOWN.reduce((t, re) => t.replace(re, ORIGIN), s);
 
 export const guidanceCss = `.gd table{border-collapse:collapse;width:100%;font-size:.9rem;margin:.6em 0}.gd th,.gd td{border:1px solid var(--hair,#ccc);padding:6px 8px;text-align:left;vertical-align:top}
-.gd .tw{overflow-x:auto}.gd a,.gd td{overflow-wrap:anywhere}.gd blockquote{margin:.6em 0;padding:.4em .8em;border-left:3px solid var(--brand,#333);color:var(--ink-3,#555)}.gd code{overflow-wrap:anywhere}
+.gd .tw{overflow-x:auto}.gd a,.gd td{overflow-wrap:anywhere}.gd pre{overflow-x:auto;background:var(--panel,#fff);border:1px solid var(--hair,#ccc);padding:10px;font-size:.8rem}.gd blockquote{margin:.6em 0;padding:.4em .8em;border-left:3px solid var(--brand,#333);color:var(--ink-3,#555)}.gd code{overflow-wrap:anywhere}
 .abp-list{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.abp-list .card{margin:0}.abp-list ul{margin:.3em 0;padding-left:1.1em;font-size:.85rem}`;
 
 // a small markdown renderer: headings, paragraphs, lists, tables, quotes, **bold**, `code`, links
@@ -20,7 +20,7 @@ export function md(src, esc) {
     .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
     .replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+|\/[^)\s]*)\)/g, '<a href="$2">$1</a>')
     .replace(/(^|[\s(])(https:\/\/[^\s<)]+[^\s<).,;:])/g, '$1<a href="$2">$2</a>');
-  const out = []; let list = null, table = null, para = [];
+  const out = []; let list = null, table = null, para = []; let code = null;
   const flush = () => {
     if (para.length) { out.push(`<p>${inline(para.join(' '))}</p>`); para = []; }
     if (list) { out.push(`<${list.t}>${list.items.map((i) => `<li>${inline(i)}</li>`).join('')}</${list.t}>`); list = null; }
@@ -28,6 +28,8 @@ export function md(src, esc) {
   };
   for (const line of src.replace(/^---[\s\S]*?\n---\n/, '').split('\n')) {
     let m;
+    if (/^```/.test(line)) { if (code) { out.push(`<pre><code>${esc(code.join('\n'))}</code></pre>`); code = null; } else { flush(); code = []; } continue; }
+    if (code) { code.push(line); continue; }
     if (!line.trim()) { flush(); continue; }
     if ((m = /^(#{1,4})\s+(.*)$/.exec(line))) { flush(); const n = Math.min(m[1].length + (m[1].length === 1 ? 0 : 0), 4); out.push(`<h${n}>${inline(m[2])}</h${n}>`); continue; }
     if (/^\|/.test(line)) { if (list || para.length) flush(); const cells = line.replace(/^\||\|$/g, '').split('|').map((c) => c.trim()); if (cells.every((c) => /^:?-+:?$/.test(c) || c === '')) continue; (table ||= []).push(cells); continue; }
@@ -58,7 +60,7 @@ export function abpBody(esc, REPO) {
 <h1>Agent Behaviour Policies</h1>
 <p><strong>Who may edit what, where.</strong> Every agent that builds this site has a grant: the paths it writes, the hosts it sends to, the tools it uses. Deny by default. Policy <code>abp/policies.json</code> v${esc(ix.policy)} (sha256:${esc(ix.sha256)}).</p>
 <div class="card"><strong>Mode: ${esc(ix.mode)}.</strong> Nothing is blocked. The hooks and the gate log every action outside a grant, so the team can learn which lines are right; a rule moves towards enforcement only after two or three rounds of logs, and only by Dinis's decision, rule by rule. A conductor or Dinis can always override, and the override is logged.</div>
-<p>External contributors and their agents: read <a href="/guidance/">the guidance</a>.</p>
+<p>External contributors and their agents: read <a href="/guidance/">the guidance</a>. Where each agent runs, and at what I/O level: <a href="/agentic-team/where-agents-run/">where agents run</a>.</p>
 <h2>${ix.agents.length} agents</h2>
 <div class="abp-list">${ix.agents.map(card).join('')}</div>
 <p class="muted">Built from <code>abp/index.json</code> (<code>node abp/tools/abp.mjs build</code>). The map of who actually writes where, from git: <a href="/api/v1/architecture.json">/api/v1/architecture.json</a>.</p>`;

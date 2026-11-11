@@ -1,6 +1,6 @@
 # What exists
 
-> Kept by conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), 11 November 2026, 12:24 UTC. A thing not listed here does not exist.
+> Kept by conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), 11 November 2026, 14:23 UTC. A thing not listed here does not exist.
 
 ## Exists
 
@@ -31,6 +31,9 @@
 - **Pages:** /now/, /organisers/ (offer marked draft), /changes/, /how/, /graph/, /e/<id>/ (164 events).
 - **The model router** (admin/tools/llm.mjs, OpenRouter): funded again at about 12:30 UTC; first use is a second-model check of events, capped at 5 USD a day.
 - **Dinis's person key** is in data/person-keys.json (work/26).
+
+- **Live since 13:21** (read 14:23 UTC): /designs/ (designs A, C, D), /abp/ and /guidance/ (observe mode), /data/ (SQL in the browser), /models/, /changes/<version>/ and /api/v1/releases.json, /o/ /f/ /r/ (the graph), /tip/ end to end (lane-tips), My day (☆), /storm/, The agentic team nav.
+- **Agents on the lead's account:** 15 (architect.1 and ontologist.1 on Opus added). 21 inboxes.
 
 ## Does not exist yet (read 13:26 UTC)
 

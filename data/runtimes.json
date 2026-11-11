@@ -1,0 +1,666 @@
+{
+  "about": "Where agents run, as data (work/48, brief 14: Dinis with Angelo, 11 November 2026, 14:12 UTC): runtimes, model endpoints, I/O levels, the other requirements of a task, the placement formula, the matrix of our tasks, and each agent's runtime and I/O level today. From docs/where-agents-run.md (the lead's draft v0.1), corrected by architect.1.fringe@PrompTugal.dinis. A draft for Dinis and Angelo to correct.",
+  "by": "architect.1.fringe@PrompTugal.dinis",
+  "updated": "2026-11-11T14:27Z",
+  "status": "draft",
+  "doc": "docs/where-agents-run.md",
+  "page": "/agentic-team/where-agents-run/",
+  "quote": "Dinis: \"Try to use as much frontier models, so much open weight models as we can, because ... we are already maxing out a lot of our accounts ... the point here is not to slow down.\"",
+  "runtimes": [
+    {
+      "id": "R1",
+      "name": "Claude Code, cloud",
+      "loop": "full: shell, git, browser, network, scheduled wakes",
+      "hooks": true,
+      "io_max": "L5",
+      "notes": "what runs today; quota is the bottleneck; the ABP hooks run here"
+    },
+    {
+      "id": "R2",
+      "name": "Claude Code, local on our laptops",
+      "loop": "full, plus the laptop's own models",
+      "hooks": true,
+      "io_max": "L5",
+      "notes": "the bridge to Ollama: the laptop agent pulls task packets and calls its own Ollama; nothing on the laptop is exposed"
+    },
+    {
+      "id": "R3",
+      "name": "ChatGPT (an agent mode)",
+      "loop": "its own tools; no git of ours",
+      "hooks": false,
+      "io_max": "L2",
+      "notes": "vaults, files or chat; our hooks do not run there, so its output is checked at the vault and by the gate"
+    },
+    {
+      "id": "R4",
+      "name": "Other agent providers",
+      "loop": "varies",
+      "hooks": false,
+      "io_max": "varies",
+      "notes": "to add as we find them"
+    },
+    {
+      "id": "R5",
+      "name": "A person with a chat window",
+      "loop": "the person is the loop",
+      "hooks": false,
+      "io_max": "L0",
+      "notes": "paste in, paste out"
+    }
+  ],
+  "endpoints": [
+    {
+      "id": "M1",
+      "name": "Anthropic, through Claude",
+      "models": [
+        "Opus",
+        "Sonnet",
+        "Haiku"
+      ],
+      "cost": "quota (subscription); metered on the API",
+      "notes": "the agents' own brains"
+    },
+    {
+      "id": "M2",
+      "name": "OpenRouter",
+      "models": [
+        "open-weight: Llama, Qwen, DeepSeek",
+        "others"
+      ],
+      "cost": "metered, cheap",
+      "notes": "live: admin/tools/llm.mjs (ledger, credit check), /models/"
+    },
+    {
+      "id": "M3",
+      "name": "Ollama on our laptops",
+      "models": [
+        "open-weight, local"
+      ],
+      "cost": "free at the margin",
+      "notes": "private data never leaves; reached only by an agent on the same laptop (R2)"
+    },
+    {
+      "id": "M4",
+      "name": "OpenAI",
+      "models": [
+        "GPT"
+      ],
+      "cost": "metered",
+      "notes": "through ChatGPT (R3) or its API"
+    }
+  ],
+  "io_levels": [
+    {
+      "id": "L0",
+      "name": "chat",
+      "by": "a person pastes in and copies out",
+      "provenance": "none: the person vouches"
+    },
+    {
+      "id": "L1",
+      "name": "files",
+      "by": "a markdown file or a zip to download",
+      "provenance": "the file's sha256, noted by whoever uploads it"
+    },
+    {
+      "id": "L2",
+      "name": "vault",
+      "by": "an sgit vault, given to the agent or made by it",
+      "provenance": "strong: a vault made by one session is that session's record"
+    },
+    {
+      "id": "L3",
+      "name": "signed lanes",
+      "by": "sealed, signed messages on append lanes (our inboxes, /tip/)",
+      "provenance": "signature checked against data/keys.json"
+    },
+    {
+      "id": "L4",
+      "name": "git",
+      "by": "pushes to dev only (Dinis, brief 15: 'The agents run always on dev'), behind the gate; never main; CI deploys",
+      "provenance": "the commit, its Agent: trailer, its key; the gate's ABP check"
+    },
+    {
+      "id": "L5",
+      "name": "full",
+      "by": "git, vaults, lanes, network, wakes",
+      "provenance": "all of the above"
+    }
+  ],
+  "requirements": {
+    "loop": [
+      "none (one LLM call)",
+      "tools in a loop (an agent)"
+    ],
+    "identity": [
+      "none",
+      "a session key",
+      "a key in data/keys.json"
+    ],
+    "judgement": [
+      "low (extract, classify)",
+      "medium (summarise, check)",
+      "high (design, code, decide, write for people)"
+    ],
+    "data": [
+      "public",
+      "internal",
+      "private (people, keys): our runtimes or local models only"
+    ],
+    "network": [
+      "none",
+      "public web (within sources.md; never websummit.com by machine)",
+      "our services only"
+    ],
+    "time": [
+      "interactive",
+      "within the hour",
+      "batch"
+    ],
+    "oversight": [
+      "none",
+      "reviewed output (the gate, a vault check)",
+      "ABP hooks in the loop (R1, R2)"
+    ],
+    "state": [
+      "none (S0)",
+      "a conversation (S1)",
+      "memory across runs (S2)"
+    ]
+  },
+  "agent_rule": "Anything acting as an agent has a PKI key and either write access to git (L4) or the ability to create and consume vaults (L2). A chat-only helper (L0) is a tool used by a person, not an agent.",
+  "formula": {
+    "place": "the cheapest (r, m) such that io(r) >= io(t), loop(r) contains loop(t), identity(r) >= identity(t), trust(r, m) >= data(t), capability(m) >= judgement(t), reach(r) contains network(t), latency(r, m) <= time(t), oversight(r) >= oversight(t), modes(r, m) contains state(t)",
+    "cost": "quota_pressure(r) x tokens(t) x price(m)",
+    "calls": "inside an agent, model(c) = the cheapest tier whose capability >= difficulty(c), through admin/tools/llm.mjs; M3 when the data is private or the volume large and latency does not matter"
+  },
+  "matrix": [
+    {
+      "task": "Extract an event's facts from its page",
+      "who": "researcher.2",
+      "loop": "call",
+      "io": "L1",
+      "judgement": "low",
+      "data": "public",
+      "now": "R1 + Sonnet",
+      "could": "M2/M3 open-weight 70B",
+      "mode": "S0"
+    },
+    {
+      "task": "Second opinion on an event",
+      "who": "dev.2",
+      "loop": "call",
+      "io": "L1",
+      "judgement": "low",
+      "data": "public",
+      "now": "M2 Llama 3.3 70B",
+      "could": "M3 local, same model",
+      "mode": "S0"
+    },
+    {
+      "task": "Classify persona, topic, size, free or paid",
+      "who": "researcher.2, ontologist.1",
+      "loop": "call",
+      "io": "L1",
+      "judgement": "low",
+      "data": "public",
+      "now": "R1 + Sonnet",
+      "could": "M2/M3",
+      "mode": "S0"
+    },
+    {
+      "task": "Summarise a tip into fields",
+      "who": "the tips lane",
+      "loop": "call",
+      "io": "L3",
+      "judgement": "low to medium",
+      "data": "private (a sender)",
+      "now": "R1",
+      "could": "M3 local (private)",
+      "mode": "S0"
+    },
+    {
+      "task": "Translate pages to Portuguese",
+      "who": "none yet",
+      "loop": "call",
+      "io": "L1",
+      "judgement": "medium",
+      "data": "public",
+      "now": "none",
+      "could": "M2 open-weight",
+      "mode": "S0"
+    },
+    {
+      "task": "Re-read events hourly",
+      "who": "researcher.2",
+      "loop": "agent",
+      "io": "L4",
+      "judgement": "medium",
+      "data": "public",
+      "now": "R1 Sonnet",
+      "could": "R2 laptop agent + M3 for the extraction",
+      "mode": "S2"
+    },
+    {
+      "task": "Screenshots and covers",
+      "who": "capture.1",
+      "loop": "agent",
+      "io": "L2",
+      "judgement": "low",
+      "data": "public",
+      "now": "R1 Sonnet",
+      "could": "R2 laptop (a browser and a vault)",
+      "mode": "S2"
+    },
+    {
+      "task": "Usability runs",
+      "who": "usability.1",
+      "loop": "agent",
+      "io": "L4",
+      "judgement": "medium",
+      "data": "public",
+      "now": "R1 Sonnet",
+      "could": "R2 laptop",
+      "mode": "S2"
+    },
+    {
+      "task": "Drafts for people to send",
+      "who": "outreach.1",
+      "loop": "agent",
+      "io": "L4",
+      "judgement": "high",
+      "data": "internal",
+      "now": "R1 Sonnet",
+      "could": "R1, or R3 ChatGPT through a vault",
+      "mode": "S2"
+    },
+    {
+      "task": "Designs",
+      "who": "design.1 to 4",
+      "loop": "agent",
+      "io": "L4",
+      "judgement": "high",
+      "data": "public",
+      "now": "R1 Sonnet",
+      "could": "R1; community designers on any runtime (L1, a folder)",
+      "mode": "S2"
+    },
+    {
+      "task": "Code, build, CI",
+      "who": "dev.1, dev.2",
+      "loop": "agent",
+      "io": "L5",
+      "judgement": "high",
+      "data": "internal",
+      "now": "R1 Sonnet",
+      "could": "R1",
+      "mode": "S2"
+    },
+    {
+      "task": "Policies, architecture, security review",
+      "who": "architect.1, security",
+      "loop": "agent",
+      "io": "L5",
+      "judgement": "high",
+      "data": "internal",
+      "now": "R1 Opus",
+      "could": "R1 (frontier)",
+      "mode": "S2"
+    },
+    {
+      "task": "Routing, briefs from Dinis",
+      "who": "the lead",
+      "loop": "agent",
+      "io": "L5",
+      "judgement": "high",
+      "data": "internal",
+      "now": "R1 Opus",
+      "could": "R1 (frontier)",
+      "mode": "S2"
+    }
+  ],
+  "agents": [
+    {
+      "agent": "conductor.fringe@PrompTugal.dinis",
+      "role": "lead",
+      "runtime": "R1",
+      "models": "M1 Opus",
+      "io_level": "L5",
+      "account": "riskmandate-personal (Ultra)",
+      "mode": "S2"
+    },
+    {
+      "agent": "architect.1.fringe@PrompTugal.dinis",
+      "role": "architect",
+      "runtime": "R1",
+      "models": "M1 Opus",
+      "io_level": "L5",
+      "account": "riskmandate-personal (Ultra)",
+      "mode": "S2"
+    },
+    {
+      "agent": "fable.fringe@PrompTugal.dinis",
+      "role": "advisor",
+      "runtime": "R1",
+      "models": "M1 Fable",
+      "io_level": "L4 (a branch; the lead brings it onto dev)",
+      "account": "riskmandate-personal (Ultra)",
+      "mode": "S2"
+    },
+    {
+      "agent": "observability.fringe@PrompTugal.dinis",
+      "role": "observability",
+      "runtime": "R1",
+      "models": "M1 Opus",
+      "io_level": "L4",
+      "account": "riskmandate-personal (Ultra)",
+      "mode": "S2"
+    },
+    {
+      "agent": "design.1.fringe@PrompTugal.dinis",
+      "role": "design",
+      "runtime": "R1",
+      "models": "M1 Sonnet",
+      "io_level": "L4",
+      "account": "riskmandate-personal (Ultra)",
+      "mode": "S2"
+    },
+    {
+      "agent": "design.2.fringe@PrompTugal.dinis",
+      "role": "design",
+      "runtime": "R1",
+      "models": "M1 Sonnet",
+      "io_level": "L4",
+      "account": "riskmandate-personal (Ultra)",
+      "mode": "S2"
+    },
+    {
+      "agent": "design.3.fringe@PrompTugal.dinis",
+      "role": "design",
+      "runtime": "R1",
+      "models": "M1 Sonnet",
+      "io_level": "L4",
+      "account": "riskmandate-personal (Ultra)",
+      "mode": "S2"
+    },
+    {
+      "agent": "design.4.fringe@PrompTugal.dinis",
+      "role": "design",
+      "runtime": "R1",
+      "models": "M1 Sonnet",
+      "io_level": "L4",
+      "account": "riskmandate-personal (Ultra)",
+      "mode": "S2"
+    },
+    {
+      "agent": "dev.1.fringe@PrompTugal.dinis",
+      "role": "dev",
+      "runtime": "R1",
+      "models": "M1 Sonnet; M2 through admin/tools/llm.mjs",
+      "io_level": "L5",
+      "account": "riskmandate-personal (Ultra)",
+      "mode": "S2"
+    },
+    {
+      "agent": "dev.2.fringe@PrompTugal.dinis",
+      "role": "dev",
+      "runtime": "R1",
+      "models": "M1 Sonnet; M2 through admin/tools/llm.mjs",
+      "io_level": "L5",
+      "account": "riskmandate-personal (Ultra)",
+      "mode": "S2"
+    },
+    {
+      "agent": "researcher.2.fringe@PrompTugal.dinis",
+      "role": "researcher",
+      "runtime": "R1",
+      "models": "M1 Sonnet; M2 for the second opinion",
+      "io_level": "L4",
+      "account": "riskmandate-personal (Ultra)",
+      "mode": "S2"
+    },
+    {
+      "agent": "capture.1.fringe@PrompTugal.dinis",
+      "role": "capture",
+      "runtime": "R1",
+      "models": "M1 Sonnet",
+      "io_level": "L4",
+      "account": "riskmandate-personal (Ultra)",
+      "mode": "S2"
+    },
+    {
+      "agent": "outreach.1.fringe@PrompTugal.dinis",
+      "role": "outreach",
+      "runtime": "R1",
+      "models": "M1 Sonnet",
+      "io_level": "L4",
+      "account": "riskmandate-personal (Ultra)",
+      "mode": "S2"
+    },
+    {
+      "agent": "usability.1.fringe@PrompTugal.dinis",
+      "role": "usability",
+      "runtime": "R1",
+      "models": "M1 Sonnet",
+      "io_level": "L4",
+      "account": "riskmandate-personal (Ultra)",
+      "mode": "S2"
+    },
+    {
+      "agent": "researcher.fringe@PrompTugal.dinis",
+      "role": "researcher",
+      "runtime": "R1",
+      "models": "M1 Sonnet; M2 for the second opinion",
+      "io_level": "L4 (a branch; the lead brings it onto dev)",
+      "account": "the old lead's",
+      "mode": "S2"
+    },
+    {
+      "agent": "security.fringe@PrompTugal.dinis",
+      "role": "security",
+      "runtime": "R1",
+      "models": "M1",
+      "io_level": "L4 (a branch; the lead brings it onto dev)",
+      "account": "the old lead's",
+      "mode": "S2"
+    },
+    {
+      "agent": "dev.fringe@PrompTugal.dinis",
+      "role": "dev",
+      "runtime": "R1",
+      "models": "M1 Sonnet; M2 through admin/tools/llm.mjs",
+      "io_level": "L4 (a branch; the lead brings it onto dev)",
+      "account": "the old lead's",
+      "mode": "S2"
+    },
+    {
+      "agent": "dev.lead.fringe@PrompTugal.dinis",
+      "role": "dev",
+      "runtime": "R1",
+      "models": "M1 Sonnet; M2 through admin/tools/llm.mjs",
+      "io_level": "L5",
+      "account": "unknown",
+      "mode": "S2"
+    },
+    {
+      "agent": "conductor.C.fringe@PrompTugal.dinis",
+      "role": "conductor",
+      "runtime": "R1",
+      "models": "M1 (its person's account)",
+      "io_level": "L4",
+      "account": "conductor.C's",
+      "mode": "S2"
+    },
+    {
+      "agent": "conductor.B@ios.PrompTugal.dinis",
+      "role": "conductor",
+      "runtime": "R1",
+      "models": "M1 (its person's account)",
+      "io_level": "L4",
+      "account": "the old lead's",
+      "mode": "S2"
+    },
+    {
+      "agent": "conductor.fringe@PrompTugal.vicky",
+      "role": "conductor",
+      "runtime": "R1",
+      "models": "M1 (its person's account)",
+      "io_level": "L4",
+      "account": "Vicky's",
+      "mode": "S2"
+    },
+    {
+      "agent": "conductor.fringe@PrompTugal.indi",
+      "role": "conductor",
+      "runtime": "R1",
+      "models": "M1 (its person's account)",
+      "io_level": "L4",
+      "account": "Indi's",
+      "mode": "S2"
+    },
+    {
+      "agent": "conductor.fringe@PrompTugal.angelo",
+      "role": "conductor",
+      "runtime": "R1",
+      "models": "M1 (its person's account)",
+      "io_level": "L4",
+      "account": "Angelo's",
+      "mode": "S2"
+    },
+    {
+      "agent": "designer.fringe@PrompTugal.angelo",
+      "role": "design",
+      "runtime": "R1",
+      "models": "M1 Sonnet",
+      "io_level": "L4",
+      "account": "Angelo's",
+      "mode": "S2"
+    },
+    {
+      "agent": "graph.fringe@PrompTugal.angelo",
+      "role": "dev",
+      "runtime": "R1",
+      "models": "M1 Sonnet; M2 through admin/tools/llm.mjs",
+      "io_level": "L5",
+      "account": "Angelo's",
+      "mode": "S2"
+    },
+    {
+      "agent": "tracer.fringe@PrompTugal.angelo",
+      "role": "observability",
+      "runtime": "R1",
+      "models": "M1 Opus",
+      "io_level": "L4",
+      "account": "Angelo's",
+      "mode": "S2"
+    },
+    {
+      "agent": "conductor.fringe@PrompTugal.jose",
+      "role": "conductor",
+      "runtime": "R1",
+      "models": "M1 (its person's account)",
+      "io_level": "L4",
+      "account": "Jose's",
+      "mode": "S2"
+    },
+    {
+      "agent": "conductor.fringe@PrompTugal.silvio",
+      "role": "conductor",
+      "runtime": "R1",
+      "models": "M1 (its person's account)",
+      "io_level": "L4",
+      "account": "Silvio's",
+      "mode": "S2"
+    },
+    {
+      "agent": "conductor.fringe@PrompTugal.daniela",
+      "role": "conductor",
+      "runtime": "R1",
+      "models": "M1 (its person's account)",
+      "io_level": "L4",
+      "account": "Daniela's",
+      "mode": "S2"
+    },
+    {
+      "agent": "researcher.1.fringe@PrompTugal.jose",
+      "role": "researcher",
+      "runtime": "R1",
+      "models": "M1 Sonnet; M2 for the second opinion",
+      "io_level": "L4",
+      "account": "Jose's",
+      "mode": "S2"
+    },
+    {
+      "agent": "ontologist.1.fringe@PrompTugal.dinis",
+      "role": "ontologist",
+      "runtime": "R1",
+      "models": "M1 Sonnet",
+      "io_level": "L4",
+      "account": "riskmandate-personal (Ultra)",
+      "mode": "S2"
+    },
+    {
+      "agent": "conductor@web-summit.dinis",
+      "role": "reviewer",
+      "runtime": "R1",
+      "models": "M1",
+      "io_level": "L4",
+      "account": "another account (the Web Summit team's site)",
+      "mode": "S2"
+    }
+  ],
+  "agents_note": "Runtime and I/O level per agent today, drawn from team/ROSTER.md and abp/policies.json; models as the roster states them. Every agent runs on R1 today.",
+  "modes": {
+    "about": "Angelo's layer (brief 15, Dinis 14:27 UTC): how a model is used. The same model can serve all three; what changes is who holds the state, for how long, and whether we can see it.",
+    "items": [
+      {
+        "id": "S0",
+        "name": "stateless call",
+        "state": "none: one input, one output",
+        "held_by": "nobody",
+        "record": "ours: the router's ledger (admin/tools/llm.mjs) keeps the prompt hash, model and cost",
+        "abp": "the calling agent's grant covers it; the call itself cannot act",
+        "endpoints": [
+          "M1 (API)",
+          "M2",
+          "M3",
+          "M4 (API)"
+        ],
+        "example": "the second opinion"
+      },
+      {
+        "id": "S1",
+        "name": "chat session",
+        "state": "a conversation's context",
+        "held_by": "the provider (Claude chat, ChatGPT, an API conversation)",
+        "record": "the provider's, not ours: what was said is outside git and the vaults unless a person or an agent exports it",
+        "abp": "no hooks: a person is the loop (L0), or the output is checked where it lands; private data only with a provider we trust for it",
+        "endpoints": [
+          "M1 (Claude chat)",
+          "M4 (ChatGPT)"
+        ],
+        "example": "a person with ChatGPT; Dinis talking to an agent in its session"
+      },
+      {
+        "id": "S2",
+        "name": "agent loop",
+        "state": "its context, files, vaults, status file, inbox, wakes",
+        "held_by": "us: the runtime's container, git and the vaults",
+        "record": "ours: commits, status files, inboxes, the hook log",
+        "abp": "its grant and the hooks (R1, R2), the gate",
+        "endpoints": [
+          "M1 through R1/R2",
+          "M2/M3 through an agent's router"
+        ],
+        "example": "researcher.2, the lead"
+      }
+    ],
+    "rules": [
+      "A task's state(t) is the longest-lived state it needs: none (S0), a conversation (S1), or memory across runs (S2).",
+      "State we must keep (decisions, evidence, anything the swarm reads later) lives in our record: git, a vault, a status file. A chat session (S1) is never the only copy.",
+      "A chat session is the cheapest way to use a frontier model with a person in the loop; an agent loop is the only one that can act on our repository.",
+      "Dinis's word in an agent's own session is a chat-session input to that agent (S1 into S2): the agent records it in a file so it outlives the session (briefs/, its status)."
+    ]
+  },
+  "account_note": "This account (the lead and its agents) is riskmandate-personal, on Ultra (Dinis, brief 15; team/accounts.json)."
+}

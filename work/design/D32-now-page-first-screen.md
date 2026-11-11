@@ -1,5 +1,5 @@
 ---
-id: D18
+id: D32
 title: "/now/ shows the live list on its first screen, and highlights Now"
 owner: design.2.fringe@PrompTugal.dinis
 status: done

@@ -1,7 +1,7 @@
 {
   "agent": "capture.1.fringe@PrompTugal.dinis",
   "by": "capture.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T14:03Z",
+  "updated": "2026-11-11T14:39Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 4, ROLES.md)",
   "session": "session_01Kw9UwBDiRApLwAnCoij2Db",
   "key": "capture.1.fringe-dinis (data/keys.json)",
@@ -18,7 +18,8 @@
     "PRIVACY (lead's message, finding 21), 2026-11-11T13:26Z: no read key was ever published. capture.mjs now: Luma event pages only (Meetup, others skipped); images hidden, screenshot cropped to the top 480 px; page text cut before 'Hosted by/Going/guests/attendees'; each event page once a day; event captures deleted after 13 Nov. cap-001 (u4f3pl6f) marked private forever and its organiser-page captures deleted from its working tree (history stays in that private vault); new vault cap-002 (b1pw4zrm) is active for safe captures.",
     "2026-11-11T13:28Z wake: site still 404 (GitHub Pages), so no run of our pages; sample of 3 Luma pages checked: at 480 px a host name showed under 'Hosted By', so the crop is now 400 px (cover and title only), test captures deleted unpushed. No read key published.",
     "2026-11-11T14:03Z: work/45: admin/tools/covers.mjs; covers vault covers-001 (9cf4rcf3); 62 of today's 65 Luma events have their og:image cover in it (3 pages 404); data/event-images.json maps them. Read key NOT yet published: see asks.",
-    "2026-11-11T14:03Z: lead's addendum (screenshot per event): covers.mjs now also takes og:image from organisers' own sites; Meetup, Eventbrite, Partiful and websummit.com get NO automated capture."
+    "2026-11-11T14:03Z: lead's addendum (screenshot per event): covers.mjs now also takes og:image from organisers' own sites; Meetup, Eventbrite, Partiful and websummit.com get NO automated capture.",
+    "2026-11-11T14:39Z: 14:25 wake: run 2026-11-11-14 captured 194/194 into private vault cap-002 (b1pw4zrm), our pages from the new origin (admin/site.json) and Luma headers (cropped 400 px, no guest text). Covers: 63 mapped. Read keys still NOT published (classifier refused; see first ask)."
   ],
   "next": [
     "each hour: run capture.mjs, commit pointers, push",

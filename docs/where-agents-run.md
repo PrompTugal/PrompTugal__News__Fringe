@@ -1,7 +1,7 @@
 ---
 title: "Where agents run: the primitives, the matrix and the formula"
 by: conductor.fringe@PrompTugal.dinis (the lead), from Dinis Cruz's brief 14 (talking with Angelo), 11 November 2026, 14:12 UTC
-status: draft v0.1, for Dinis, Angelo and architect.1 to correct
+status: draft v0.2 (architect.1's corrections, §8), for Dinis and Angelo to correct
 board: work/48
 ---
 # Where agents run
@@ -27,8 +27,8 @@ board: work/48
 | id | Runtime | Loop and tools | Notes |
 |---|---|---|---|
 | R1 | **Claude Code, cloud** (this account and the team's) | full: shell, git, browser, network, scheduled wakes | what runs today; quota is the bottleneck |
-| R2 | **Claude Code, local** on our laptops | full, plus the laptop's own models | the bridge to the laptops' Ollama models |
-| R3 | **ChatGPT** (an agent mode) | its own tools; no git of ours | talks to us through vaults, files or chat |
+| R2 | **Claude Code, local** on our laptops | full, plus the laptop's own models | the bridge to the laptops' Ollama models: the laptop's agent **pulls** task packets and calls its own Ollama; nothing on the laptop is exposed |
+| R3 | **ChatGPT** (an agent mode) | its own tools; no git of ours | talks to us through vaults, files or chat; our ABP hooks do not run there, so its output is checked where it lands |
 | R4 | **Other agent providers** | varies | to add as we find them |
 | R5 | **A person** with a chat window | the person is the loop | level 0: paste in, paste out |
 
@@ -38,7 +38,7 @@ board: work/48
 |---|---|---|---|---|
 | M1 | Anthropic, through Claude | Opus, Sonnet, Haiku | quota | the agents' own brains |
 | M2 | **OpenRouter** | open-weight (Llama, Qwen, DeepSeek) and others | metered, cheap | live: admin/tools/llm.mjs, /models/ |
-| M3 | **Ollama on our laptops** | open-weight, local | free at the margin | private data never leaves; needs a bridge (R2) |
+| M3 | **Ollama on our laptops** | open-weight, local | free at the margin | private data never leaves; reached only by an agent on the same laptop (R2) |
 | M4 | OpenAI | GPT models | metered | through ChatGPT (R3) or its API |
 
 ### 2.3 The I/O level: how data gets in and out of an agent
@@ -49,8 +49,28 @@ board: work/48
 | **L1** | files | the agent returns a markdown file or a zip to download | the file's sha256, noted by whoever uploads it |
 | **L2** | vault | the agent reads and writes an sgit vault, given to it or **made by it** | strong: a vault made by one session is that session's record (as on ruv.sgit) |
 | **L3** | signed lanes | sealed, signed messages on append lanes (our inboxes, /tip/) | signature checked against data/keys.json |
-| **L4** | git | the agent pushes to dev (or a branch) behind the gate; CI deploys | the commit, its Agent: trailer, its key |
+| **L4** | git | the agent pushes to **dev** behind the gate (Dinis, 14:26 UTC: "the agents run always on dev"; never main); CI deploys | the commit, its Agent: trailer, its key |
 | **L5** | full | git, vaults, lanes, network, wakes | all of the above |
+
+### 2.3b The session layer (Angelo, 14:26 UTC)
+
+| Mode | State | Example |
+|---|---|---|
+| stateless call | none: one input, one output | the second opinion via the router |
+| chat session | a conversation's context, kept by the provider | a person with ChatGPT or Claude chat (L0); an API conversation |
+| agent loop | its context, files, vaults, status, inbox, wakes | researcher.2, the lead |
+
+The same model can serve all three; what changes is who holds the state and for how long.
+
+**Mapped by architect.1 (brief 15).** Each mode, with whose state it is and what that means for the record and the ABP:
+
+| id | Mode | State held by | Our record | ABP | Endpoints |
+|---|---|---|---|---|---|
+| S0 | stateless call | nobody | the router's ledger (prompt hash, model, cost) | the calling agent's grant; the call cannot act | M1 (API), M2, M3, M4 (API) |
+| S1 | chat session | the provider | none unless exported: outside git and the vaults | no hooks: a person is the loop (L0), or the output is checked where it lands | M1 (Claude chat), M4 (ChatGPT) |
+| S2 | agent loop | us: container, git, vaults | commits, status files, inboxes, the hook log | its grant, the hooks (R1, R2), the gate | M1 via R1/R2; M2/M3 via the router |
+
+Rules: a task's **state(t)** is the longest-lived state it needs (none, a conversation, memory across runs), and the formula adds `modes(r, m) ⊇ state(t)`. State the swarm must keep (decisions, evidence) lives in our record; **a chat session is never the only copy**. Dinis talking to an agent in its own session is an S1 input into an S2 agent: the agent writes it down (briefs/, its status) so it outlives the session.
 
 ### 2.4 The other requirements of a task
 
@@ -62,10 +82,26 @@ board: work/48
 | **Data** | public / internal / private (people, keys): private stays on our runtimes or on local models (M3) |
 | **Network** | none / public web (within sources.md) / our services only |
 | **Time** | interactive / within the hour / batch |
+| **Oversight** | none / reviewed output (the gate, a vault check) / ABP hooks in the loop (R1, R2): what a task that writes our repository or speaks for us needs |
 
-## 3. Dinis's rule for "an agent"
+## 3. What an agent is: the altitudes of execution
 
-**Anything acting as an agent has a PKI key and either write access to git (L4) or the ability to create and consume vaults (L2).** An agent with only vaults (a ChatGPT agent, say) is a full member: it receives its task in a vault and returns its work in a vault, signed. A chat-only helper (L0) is a tool used by a person, not an agent.
+*Revised 11 November 2026, 15:1x UTC, by Dinis with Angelo (briefs/2026-11-11-1440-the-operating-model.md); the page: [/agentic-team/operating-model/](/agentic-team/operating-model/).*
+
+The rule was "an agent has a PKI key and either git (L4) or vaults (L2)". It is replaced by **the altitudes of execution** (also *the holarchy of work*): the same shape at every size, only bigger or smaller.
+
+| | Altitude | What it is |
+|---|---|---|
+| A4 | **swarm** | agents of agents: can spawn and schedule others (the control plane) |
+| A3 | **agent** | a loop with an environment: memory (status file, inbox, vaults), its own wake, a reach beyond its sandbox |
+| A2 | **loop** | a closed agentic loop: calls models and uses the tools it was handed until the task is done, then stops; cannot start others or schedule |
+| A1 | **LLM call** | a prompt in, an answer out |
+| A0 | **compute** | code that runs |
+
+- **Every altitude holds a key pair.** An identity is a key pair: from the moment something holds a private key it can identify itself, down to signed compute (Dinis: a deployment given a private key that exists only in its environment). So a key is not what makes an agent; **an agent is a loop with an environment.**
+- **Every altitude has** an objective, a mandate (what it is asked to do), a grant (what it may do), a key and a signed result.
+- **Mixing altitudes** is a class of vulnerability: a mandate at one altitude with a grant at a higher one (asking a chat for research while it holds an agent's connectors and schedules). The rule: *the grant's altitude must not be above the mandate's.* Observed by the ABP as R12.
+- A vault-only agent (a ChatGPT agent, say) is still a full member at A3 when it has memory and reach through vaults; a chat-only helper (L0) is an A1 or A2 used by a person.
 
 ## 4. The formula
 
@@ -79,6 +115,9 @@ place(t) = the cheapest (r, m) such that
     trust(r, m)  ≥ data(t)                      # private data only on our runtimes or local models
     capability(m) ≥ judgement(t)                # the model is good enough for the judgement
     reach(r)     ⊇ network(t)                   # it can reach what the task must read
+    latency(r,m) ≤ time(t)                      # it answers in time
+    oversight(r) ≥ oversight(t)                 # its actions can be observed against the ABP
+    modes(r,m)   ⊇ state(t)                     # stateless, chat session or agent loop (§2.3b)
 cost(r, m) = quota_pressure(r) × tokens(t) × price(m)      # quota is the scarce thing, so it weighs most
 ```
 
@@ -121,6 +160,15 @@ The runtime that takes it signs a claim, does the work, and writes the output, s
 
 1. Dinis and Angelo correct this draft (the runtimes, the levels, the rule in §3).
 2. architect.1: put the matrix into data/runtimes.json and a page under "The agentic team", and add `runtime` and `io_level` to each agent's ABP.
-3. dev.2: add an Ollama tier to the router behind a bridge (a laptop exposing its Ollama to one of our agents, never to the internet), and move one task to it (the tips lane's parsing, which is private).
+3. dev.2: add an Ollama tier to the router for an agent running on the same laptop (R2), which pulls its work as task packets; no laptop exposes its Ollama to a cloud agent or to the internet. Move one task to it (the tips lane's parsing, which is private).
 4. researcher.2 and ontologist.1: move extraction and classification calls to the router's open-weight tier; log them on /models/.
 5. The lead: the task-packet format (task.json) and a first packet (translate today's event pages) for any runtime to pick up.
+
+## 8. Changes in v0.2 (architect.1.fringe@PrompTugal.dinis, 14:23 UTC)
+
+1. **The laptop bridge runs the other way.** v0.1 had a laptop expose its Ollama to one of our cloud agents. A cloud container cannot reach a laptop without opening the laptop to the network. So the laptop's own agent (R2) **pulls** task packets (§6) and calls its local Ollama (M3), and nothing is exposed. M3 is reached only from R2. (§2.1, §2.2, §7.3)
+2. **Two constraints were missing from the formula.** `time(t)` was listed as a need but never checked: added `latency(r,m) ≤ time(t)`. And the ABP: our hooks run only on R1 and R2, so added **oversight** (§2.4) and `oversight(r) ≥ oversight(t)`. A task that writes our repository or speaks for us needs a runtime we can observe, or output that is reviewed where it lands (the gate, a vault check).
+3. **R3 (ChatGPT) is not observed by our hooks.** It can be an agent under §3 (key plus vaults), but its work is checked when it lands, not while it runs. (§2.1)
+4. **The data is in `data/runtimes.json`**: runtimes, endpoints, levels, requirements, the formula, the matrix, and each agent's runtime and I/O level today (every agent is on R1). Each agent's ABP page names them (abp/<agent>.md).
+
+Not changed, for Dinis and Angelo: the rule in §3 (key plus git or vaults); whether L3 (signed lanes) alone makes an agent (our lanes are vaults underneath, so it already counts as L2); the matrix's "could run on" column, which is a proposal until a task actually moves.
