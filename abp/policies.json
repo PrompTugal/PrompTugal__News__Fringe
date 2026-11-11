@@ -1,7 +1,7 @@
 {
   "about": "The Agent Behaviour Policies of Lisbon Fringe (lisbontechfringe.com, origin in admin/site.json; WS-215) as data: deny by default, one grant per role and agent, across this repository and the others the swarm touches. Ported from PrompTugal__News__Website board/abp/policies.json (abp@PrompTugal.dinis, v1.7.0, since 6 November 2026), not invented anew; built on RiskMandate's Agent Behaviour Policy and Licence to Operate (https://riskmandate.ai/agent-behaviour-policy.html). Read by the hooks (.claude/settings.json, .claude/hooks/abp.mjs) and by the gate's commit check (abp/tools/abp.mjs check). abp/<agent>.md is generated from this file (node abp/tools/abp.mjs build), never edited by hand. Kept by architect.1.fringe@PrompTugal.dinis (work/39); any relaxation, and any move towards enforcement, is Dinis's decision.",
-  "version": "0.2.0",
-  "updated": "2026-11-11T14:54Z",
+  "version": "0.3.0",
+  "updated": "2026-11-11T15:15Z",
   "operator": "Dinis Cruz",
   "kept_by": "architect.1.fringe@PrompTugal.dinis",
   "status": "DRAFT: grants proposed from the git log (data/architecture.json observed); Dinis and the lead review",
@@ -55,6 +55,10 @@
       "R11": {
         "mode": "observe",
         "since": "2026-11-11T13:36Z"
+      },
+      "R12": {
+        "mode": "observe",
+        "since": "2026-11-11T15:15Z"
       }
     }
   },
@@ -134,6 +138,13 @@
       "rule": "If HOLD.md exists at the root, stop after pulling and say why. Only Dinis lifts a hold.",
       "barrier": "rule",
       "hook": "anchor"
+    },
+    {
+      "id": "R12",
+      "rule": "Do not mix altitudes: the grant's altitude must not be above the mandate's (A4 swarm, A3 agent, A2 loop, A1 LLM call, A0 compute). A loop or an LLM call started for one task should hold only that task's grant.",
+      "barrier": "hook",
+      "hook": "pre-tool (an 'altitude' event)",
+      "source": "Dinis with Angelo, 15:0x UTC (briefs/2026-11-11-1440-the-operating-model.md); routed by the lead at 15:14 UTC as an observe-mode check"
     }
   ],
   "tools": {
@@ -915,7 +926,7 @@
       "for": "Dinis: observe for three rounds; then decide whether design keeps admin/build/** or works through a page registry"
     }
   ],
-  "hook_sha256": "40e576e520a845ea",
+  "hook_sha256": "38972f73cfb848c7",
   "effective": "2026-11-11T13:36:00Z",
   "effective_note": "Earlier commits are read against the grants as calibration, not counted.",
   "review": {
@@ -1005,5 +1016,17 @@
       "create.vault.world"
     ],
     "note": "not in abp.sgit.ai's published grammar"
+  },
+  "altitudes": {
+    "about": "The altitude each agent works at (data/operating-model.json). Its sub-agents are A2 loops; its router calls are A1.",
+    "default": "A3",
+    "by_role": {
+      "lead": "A4",
+      "conductor": "A4"
+    },
+    "observed": [
+      "Agent/Task (a sub-agent): an A2 loop that inherits its parent's A3 (or A4) grant",
+      "an LLM call (llm.mjs or a direct API call) carrying tools: an A1 mandate given an A2 grant"
+    ]
   }
 }

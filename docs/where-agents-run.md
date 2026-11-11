@@ -84,9 +84,24 @@ Rules: a task's **state(t)** is the longest-lived state it needs (none, a conver
 | **Time** | interactive / within the hour / batch |
 | **Oversight** | none / reviewed output (the gate, a vault check) / ABP hooks in the loop (R1, R2): what a task that writes our repository or speaks for us needs |
 
-## 3. Dinis's rule for "an agent"
+## 3. What an agent is: the altitudes of execution
 
-**Anything acting as an agent has a PKI key and either write access to git (L4) or the ability to create and consume vaults (L2).** An agent with only vaults (a ChatGPT agent, say) is a full member: it receives its task in a vault and returns its work in a vault, signed. A chat-only helper (L0) is a tool used by a person, not an agent.
+*Revised 11 November 2026, 15:1x UTC, by Dinis with Angelo (briefs/2026-11-11-1440-the-operating-model.md); the page: [/agentic-team/operating-model/](/agentic-team/operating-model/).*
+
+The rule was "an agent has a PKI key and either git (L4) or vaults (L2)". It is replaced by **the altitudes of execution** (also *the holarchy of work*): the same shape at every size, only bigger or smaller.
+
+| | Altitude | What it is |
+|---|---|---|
+| A4 | **swarm** | agents of agents: can spawn and schedule others (the control plane) |
+| A3 | **agent** | a loop with an environment: memory (status file, inbox, vaults), its own wake, a reach beyond its sandbox |
+| A2 | **loop** | a closed agentic loop: calls models and uses the tools it was handed until the task is done, then stops; cannot start others or schedule |
+| A1 | **LLM call** | a prompt in, an answer out |
+| A0 | **compute** | code that runs |
+
+- **Every altitude holds a key pair.** An identity is a key pair: from the moment something holds a private key it can identify itself, down to signed compute (Dinis: a deployment given a private key that exists only in its environment). So a key is not what makes an agent; **an agent is a loop with an environment.**
+- **Every altitude has** an objective, a mandate (what it is asked to do), a grant (what it may do), a key and a signed result.
+- **Mixing altitudes** is a class of vulnerability: a mandate at one altitude with a grant at a higher one (asking a chat for research while it holds an agent's connectors and schedules). The rule: *the grant's altitude must not be above the mandate's.* Observed by the ABP as R12.
+- A vault-only agent (a ChatGPT agent, say) is still a full member at A3 when it has memory and reach through vaults; a chat-only helper (L0) is an A1 or A2 used by a person.
 
 ## 4. The formula
 
