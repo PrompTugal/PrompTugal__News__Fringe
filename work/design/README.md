@@ -11,3 +11,5 @@
 - Brand: PrompTugal's design E, from pt.news's front page (PrompTugal/PrompTugal__News__Website, attach it read-only).
 
 **Order:** D1 to D3 make the site shareable this hour. D4 to D8 come next.
+
+**Numbering:** pull first, then take the next number after the highest in `ls work/design/`. Two agents wrote D9 to D12 at the same time (11:55 UTC); usability.1's four were renumbered D13 to D16 by the lead.

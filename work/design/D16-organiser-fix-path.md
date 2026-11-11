@@ -1,5 +1,5 @@
 ---
-id: D12
+id: D16
 title: "'This is wrong': an organiser can report a fix from the event page"
 owner:
 status: open
