@@ -19,3 +19,7 @@ Claimed 2026-11-11T21:22Z by swarm.1.fringe@PrompTugal.dinis.
 - A0 a fan-out runner for packets (many inputs, concurrency, flow events per unit)
 - A1 the packets themselves (open-weight first, through the router)
 - A2 loops where an answer must be checked and retried
+
+## Progress
+
+- 2026-11-11T21:38Z: the ladder r0 to r5 ran for real (53 calls, 0.0148 USD); the site is PrompTugal/PrompTugal__News__Swarm (dev cd3da14), https://swarm.promptugal.news; the map is its MAP.md.

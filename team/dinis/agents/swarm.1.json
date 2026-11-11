@@ -1,25 +1,31 @@
 {
   "agent": "swarm.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T21:22Z",
+  "updated": "2026-11-11T21:38Z",
   "account": "riskmandate-personal (Ultra)",
   "session": "session_01Kw9UwFHqLAjKake7UEDjL3",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (11 Nov 2026, about 21:0x UTC: 'start a new agent called Swarm ... for our Swarm capabilities and our risk mandate Swarm, which we want to demo tomorrow')",
   "branch": "dev",
   "wake": "none: works when Dinis talks to it in its session",
-  "state": "onboarded: waiting for Dinis's brief on the swarm demo (Thursday 12 November)",
+  "state": "building the swarm demo: the ladder r0 to r5 ran for real; swarm.promptugal.news first version pushed (PrompTugal__News__Swarm dev cd3da14)",
   "doing": [
     "work/52: the swarm demo: many A1 and A2 units at once, visible, measured, inside a written budget"
   ],
   "done": [
     "2026-11-11T21:22Z: read CLAUDE.md, ROLES.md, SWARM.md, REALITY.md, briefs/ (19), work/README.md, docs/where-agents-run.md, abp/tools/packets.mjs and flow.mjs",
     "21:20: session key made (encryption sha256:34b41ce385701d90, signing sha256:ff58f6f0f4de27c1); swarm.1.fringe-dinis in data/keys.json (public half only); abp whoami set",
-    "2026-11-11T21:22Z: baseline read: 6 packets (tasks/), 6 signed results, 3 runners on 2 accounts, all verified; router credit 72.42 USD on the key (cap 5 USD a day); 16 model calls today for 0.0006 USD (DeepSeek V4 Flash)"
+    "2026-11-11T21:22Z: baseline read: 6 packets (tasks/), 6 signed results, 3 runners on 2 accounts, all verified; router credit 72.42 USD on the key (cap 5 USD a day); 16 model calls today for 0.0006 USD (DeepSeek V4 Flash)",
+    "2026-11-11T21:38Z: Dinis's brief (21:3x UTC): the ladder, the storm workload, cloud agents, GitHub and vault, per-run metrics; mapped in PrompTugal__News__Swarm MAP.md",
+    "2026-11-11T21:38Z: runs r0 to r5 (swarm/tools/run.mjs): 53 calls on 4 open-weight models, 0.0148 USD (budget 1 USD, 120 calls, 0 sessions); r5: 24 loops, 48 units at once, same tokens on Sonnet 0.33 USD",
+    "2026-11-11T21:38Z: PrompTugal__News__Swarm: flat viewer (index.html), runs/, MAP.md, CLAUDE.md, gate, Pages workflow; pushed to dev cd3da14"
   ],
   "next": [
-    "Dinis's brief: peak units, environments and accounts, what the audience sees",
-    "a written budget per run, checked against the router's credit, before anything runs"
+    "r6: sessions across accounts (Dinis 3, Angelo 2) running the same packets, at Dinis's word with a number",
+    "r7: swarm.cloudflare, swarm.aws, swarm.gcp, swarm.netlify, each with a credential from Dinis",
+    "results in a vault as well as GitHub; flows into Elastic swarm-flows"
   ],
   "asks": [
-    "Dinis: not yet added to PrompTugal__News__Website board/keys.json (that repository is not attached to this session)"
+    "Dinis: the Swarm repo's Pages workflow had not started by 2026-11-11T21:38Z; if Actions is off for the repo, turn it on, and set Pages source to 'GitHub Actions' (it deploys from dev)",
+    "Dinis: for the cloud agents, a scoped credential each (Cloudflare Workers token, AWS IAM limited to one bucket and function, GCP service account, Netlify site token); and your word, with a number, for any new session",
+    "Dinis: not yet added to PrompTugal__News__Website board/keys.json"
   ]
 }
