@@ -8,6 +8,7 @@ import { loadEvolution, evolutionBody, evolutionCss } from './evolution.mjs';   
 import { trafficBody, trafficCss } from './traffic.mjs';   // work/21, observability.fringe@PrompTugal.dinis
 import { loadDesigns, buildDesigns } from './designs.mjs';   // work/35
 import { collectActivity } from './activity.mjs';   // brief 10
+import { tipBody, tipCss, tipStatus } from './tip.mjs';   // work/41, dev.2.fringe@PrompTugal.dinis
 import { meBody, meCss } from './me.mjs';   // work/26
 import { collectSwarm, swarmBody, swarmCss, swarmScript } from './swarm.mjs';   // work/25, dev.1.fringe@PrompTugal.dinis
 import { eventPages, eventPath, hasPage } from './event-pages.mjs';
@@ -117,7 +118,7 @@ const page = (title, body, desc, head = '', here = '/') => `<!doctype html><html
 ${navHtml(here)}<!--TICK-->
 <p class="ind">Independent of Web Summit · <a href="https://websummit.com/">official site</a></p>
 <main>${WHATSAPP}${body}</main>
-<footer class="muted">${INDEPENDENCE}<br>Built from <a href="${REPO}">the repository</a> at ${BUILT.slice(0, 16).replace('T', ' ')} UTC · <a href="/changes/${esc(VERSION)}/">${esc(VERSION)}</a>. <a href="/traffic/">Traffic</a> · <a href="/changes/">Changes</a> · <a href="/evolution/">Evolution</a> · <a href="/dashboard/">Swarm</a>.</footer>
+<footer class="muted">${INDEPENDENCE}<br>Built from <a href="${REPO}">the repository</a> at ${BUILT.slice(0, 16).replace('T', ' ')} UTC · <a href="/changes/${esc(VERSION)}/">${esc(VERSION)}</a>. <a href="/traffic/">Traffic</a> · <a href="/changes/">Changes</a> · <a href="/tip/">Send a tip</a> · <a href="/evolution/">Evolution</a> · <a href="/dashboard/">Swarm</a>.</footer>
 <script src="/assets/obs/obs.js" defer></script>
 </body></html>`;
 
@@ -324,8 +325,11 @@ if (traffic) writeFileSync(join(out, 'traffic', 'traffic.json'), JSON.stringify(
 const activity = collectActivity({ root, builtAt: BUILT });   // brief 10: /api/v1/activity.json
 writeFileSync(join(out, 'api', 'v1', 'activity.json'), JSON.stringify(activity, null, 1) + '\n');
 // /me/ (work/26), /dashboard/ and /api/v1/swarm.json (work/25)
-for (const d of ['assets/me', 'assets/vendor/pki/2026-11-06']) { mkdirSync(join(out, d), { recursive: true }); for (const f of readdirSync(join(root, d)).filter((x) => /\.js$/.test(x))) writeFileSync(join(out, d, f), read(`${d}/${f}`)); }
+for (const d of ['assets/me', 'assets/tip', 'assets/vendor/pki/2026-11-06']) { mkdirSync(join(out, d), { recursive: true }); for (const f of readdirSync(join(root, d)).filter((x) => /\.js$/.test(x))) writeFileSync(join(out, d, f), read(`${d}/${f}`)); }
 mkdirSync(join(out, 'me'), { recursive: true });
+mkdirSync(join(out, 'tip'), { recursive: true });
+writeFileSync(join(out, 'tip', 'index.html'), page('Send a tip: Lisbon Tech Fringe', `<style>${tipCss}</style>` + tipBody(), 'Paste a message, a link or a screenshot about an event: we research it and list it.'));
+writeFileSync(join(out, 'api', 'v1', 'tips.json'), JSON.stringify({ about: 'Public status of tips: id, state, time. Never a tip\'s text, sender or screenshot.', site: SITE, built_at: BUILT, tips: tipStatus() }, null, 1) + '\n');
 writeFileSync(join(out, 'me', 'index.html'), page('Your key: Lisbon Tech Fringe', `<style>${meCss}</style>` + meBody(), 'Make your key and passkey in the browser, and message the lead.'));
 // /traces/<event_id>/ (a draft, not linked yet): how one page was made, drawn from team/angelo/traces/*.json
 for (const f of existsSync(join(root, 'team/angelo/traces')) ? readdirSync(join(root, 'team/angelo/traces')).filter((x) => x.endsWith('.json')) : []) {
