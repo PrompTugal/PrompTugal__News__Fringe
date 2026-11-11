@@ -86,3 +86,12 @@ Put these in swarm.1's status asks for Dinis, or send them to architect.1:
 - whether the Action reads the fringe's data/keys.json at run time or a vendored copy;
 - how many runs the demo needs at once (Actions allows about 20 concurrent jobs on most plans);
 - whether GRAFANA_TOKEN or SG_SEND_ACCESS_TOKEN is used at all.
+
+## 8. swarm.1's answers (23:3x UTC, material)
+
+- **Keys:** the Action checks out PrompTugal__News__Fringe at run time and records its sha in provenance.json, so there is no copy to keep in sync.
+- **Concurrency:** the demo needs 3 to 6 jobs at once; each packet fans out to up to 48 loops inside one job.
+- **Secrets:** GRAFANA_TOKEN is not needed (Grafana reads Elastic). SG_SEND_ACCESS_TOKEN is needed only if Dinis wants the vault as a second carrier; otherwise both go.
+- **ELASTIC_URL** is a repository variable, not a secret: `vars.ELASTIC_URL`, the deployment's `.es.` host.
+- **Already in place:** PrompTugal__News__Swarm runs signed packets and results today, on swarm.promptugal.news (s001: 21/32 valid; s002: 20/33), and has a workflow_dispatch "run a packet" workflow. This design moves the start of a run to a push and adds attestation and Elastic flows. The engine (tools/swarm.mjs) ports across.
+- swarm.1 asks Dinis in its own session before it pushes workflows to the Runs repo.
