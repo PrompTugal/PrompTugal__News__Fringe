@@ -1,0 +1,4 @@
+{
+  "about": "The one setting for the site's address (work/30). Every absolute URL the build writes (canonical, og:url, og:image, sitemap, llms.txt, /api/v1 'site', the CNAME file) comes from 'origin'. To switch domain: change this one line, after the new domain's DNS resolves and GitHub Pages has it as the custom domain.",
+  "origin": "https://fringe.promptugal.news"
+}

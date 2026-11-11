@@ -24,7 +24,9 @@ Served at `https://fringe.promptugal.news/api/v1/`. Built from this repository o
       "join":       string,                 // how to join, public links only
       "status":     "on" | "moved" | "cancelled" | "online" | "unknown",
       "storm_note": string | null,          // what the storm changed, from the page
-      "topics":     [string]
+      "topics":     [string],
+      "size":       "major" | "community",   // added: major = conference, festival or multi-session day (PTW days, WET SUMMIT); community = meetup, dinner, talk, drinks
+      "lane":       "business" | absent,    // added: founders', investors' and partners' meetups (work/10); absent = not tagged
     }
   ]
 }
@@ -34,7 +36,27 @@ Only events re-read at their URL (data/events.json, work/02) are published. No c
 
 ## `communities.json`
 
-Not served yet (work/04). Its fields will be documented here before it is.
+Served at `/api/v1/communities.json` (work/04, conductor.fringe@PrompTugal.indi). Made by `admin/tools/communities.mjs` from `data/events.json`: the organisers, split as the graph splits them, and for each Luma event its hosting calendar re-read once. Organisations only: a personal calendar, a host or an independent organiser is never listed. No contact details.
+
+```
+{
+  "about", "site", "version", "built_at",
+  "updated":  ISO 8601 UTC,           // when data/communities.json was made
+  "how":      string,
+  "communities": [
+    {
+      "id":      string,                  // slug; the /graph/ node is "community:<id>"
+      "name":    string,
+      "what":    { "text", "quoted_from": URL, "read_at": ISO 8601 } | null,   // its calendar's own words, first sentence
+      "join":    string,                  // a public way in, or "unknown: join through its event pages"
+      "links":   [ { "label": "Luma calendar" | "website", "url": "https://..." } ],
+      "events":  [ event id ],            // ids in events.json
+      "sources": [ { "url", "read_at", "what" } ],   // the pages its facts were read from
+      "label":   "fact" | "from events.json only"
+    }
+  ]
+}
+```
 
 ## `graph.json`
 

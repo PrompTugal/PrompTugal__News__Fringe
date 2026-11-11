@@ -1,0 +1,21 @@
+{
+  "about": "People's public keys for Lisbon Fringe (work/26). A person makes a key pair in their own browser at https://fringe.promptugal.news/me/ (private half never leaves it) and adds the entry it shows here by a commit. A message sealed to the lead and signed by a key listed here is that person's own word (admin/tools/inboxes.py drain checks the signature against this file as well as data/keys.json). Public halves only.",
+  "keys": [
+    {
+      "id": "person.dinis",
+      "person": "dinis",
+      "name": "Dinis Cruz",
+      "status": "active",
+      "added": "2026-11-11",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA86nGKHaJQmiXjJ74Ei28\nBztTq2FBrHM8uzDohESbmC5QLT60ctNoaMWLXxvioQIoQrL8Q68a6lOED54Wv0AZ\nI88vCDS4H7TLvSwQKd4HXfDOYMBVu9RAv0SpVTW1ByBUX67JexwmT20OsdzbSNSk\nWweLwOcOU3YYMmknG6t7nVuIE6i8yE0psxlNoRRYUwGkqwoT3MJ9UpDoEY5OC59g\nsCpu16zSsSpEDKdXC0O4SteKwApUUn333B6KqBwjRaU1Fj4Zt0lzAIvRwRzETi7T\nK1ymJ0ahRYD1S9+kYMrgK32xmhipfoKiHVGAncv0sfcj/xIOak5103OR3cqBMaFP\nnxM2owPQDTMtIE1pVLTksZQxl5TU3OTuSStGDjyzTRH1m/HbFjYgsWt3EOD+54xr\no4+bvEe4eH/XCsTpTLFLN+hA9n0N5siFuNKCVF0t5+8HYFgudtvhmP4FqurjluGE\nOQnWueSq5kNDg9Dzzpe0rUAezfEC00lNzhu3DZr0WDWDCegWT8KhTTBIjjQoyf8z\n5mr9eSdprQuA2LabHE86xgHDVeZDhtkYhy+Jppck+FwKG7GqWWlIILROVtzgniS6\nX8I7lNECG5U/JXd9dy92tuCh6jobmsUWzlYU5Op/5MdXXkkq52q3Y1+9uLSGzTmu\nBkGtE++FxF0+h2sLIw3HHmsCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/19I/U1m/qevRSNiwCt4BVnJv6fx\n6aA9niV2GIjnZanHgClTS6I60cwAkZ2Nn4DYtmyc8O5RgRpINkhlCj0m/g==\n-----END PUBLIC KEY-----\n",
+        "label": "Dinis Cruz (person key, fringe.promptugal.news)",
+        "fingerprint": "sha256:5d814503682ea786",
+        "signing_fingerprint": "sha256:9795c17dbd5ba02a"
+      },
+      "how": "Made by Dinis Cruz in his own browser at https://fringe.promptugal.news/me/ (work/26), protected by his passkey; he handed the public half to the lead in the lead's session (session_01Kw9UwCFpT9ihNBcQFxkomq) on 11 November 2026, about 12:27 UTC. The lead checked both keys parse and both fingerprints match their SPKI sha256."
+    }
+  ]
+}

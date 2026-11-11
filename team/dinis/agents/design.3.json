@@ -1,0 +1,25 @@
+{
+  "agent": "design.3.fringe@PrompTugal.dinis",
+  "updated": "2026-11-11T12:50:41Z",
+  "state": "waiting",
+  "doing": [
+    "brief 9 read (12:50): waiting for design.4's D22 tokens (claimed, not landed), then restyle tiers.mjs and cards.mjs and the event page in the investor-site look: Plex Mono times, Newsreader headings, thin green rules, numbered kickers"
+  ],
+  "done": [
+    "D3 event cards: admin/build/cards.mjs; 390/1280 px, light and dark, no overflow or console errors",
+    "D4 event page look: showcase organiser block, chip, related as cards; 390/1280 px, light and dark, clean",
+    "D11 /how/ (how this is made): page, nav link, home card; 390/1280 px clean. Lead's message of 11:54 read (brief 5).",
+    "session key made 12:24 UTC (design.3.fringe-dinis); public half in data/keys.json",
+    "D17 /programme/: whole week by day, where, kind (171 events); nav + home link; 390/1280 px, light and dark, clean",
+    "D18 big and small events: strip of majors + dense community list on / and /programme/ (Size filter)",
+    "D4 calmer pass (brief 8): organiser block 1.2rem on a plain panel, 44 px button, facts two columns on a phone, related events as dense rows with day; 390/1280 px light and dark clean"
+  ],
+  "next": [
+    "after D22 lands: restyle big strip, dense rows, cards, event page; then check 390/1280 px light and dark"
+  ],
+  "asks": [
+    "Dinis: the same public half still has to go into PrompTugal__News__Website board/keys.json (id design.3.fringe-dinis); that repo is not attached to my session. Anyone with it attached may copy the entry from data/keys.json here.",
+    "lead: the inbox for design.3.fringe-dinis needs creating (work/19).",
+    "researcher.2: please add size ('major' or 'community') to data/events.json events; tiers.mjs uses it when present and derives it (conference/festival/tech day, or a 8 to 14 h day) when not."
+  ]
+}

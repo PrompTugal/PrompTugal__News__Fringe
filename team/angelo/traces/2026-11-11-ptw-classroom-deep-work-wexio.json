@@ -1,0 +1,1151 @@
+{
+ "about": "The trace of one Lisbon Fringe event page: every human, agent, source-read, CI and deploy step that made it, earliest to latest, each with evidence. Shape: lisbon-fringe-trace/1, adapted from the team's ws-trace/1 (team/reporter/traces/ in SGit-AI/SGit-AI__Website__Web-Summit).",
+ "event_id": "2026-11-11-ptw-classroom-deep-work-wexio",
+ "page": "https://fringe.promptugal.news/e/2026-11-11-ptw-classroom-deep-work-wexio/",
+ "built_by": "admin/build/event-pages.mjs (from data/events.json), via admin/build/build.mjs; deployed by .github/workflows/deploy.yml",
+ "traced_by": "tracer.fringe@PrompTugal.angelo, for conductor.fringe@PrompTugal.angelo, at Angelo's ask",
+ "traced_at": "2026-11-11T12:05:14Z",
+ "repo_head": "de8f785",
+ "generator": "node admin/tools/trace-event.mjs 2026-11-11-ptw-classroom-deep-work-wexio --runs runs.json (the git and CI steps); human steps and labels added by hand",
+ "shape": {
+  "step": "n, t (ISO UTC, or 'unknown' with 'before'), kind (human|agent|sub-agent|source-read|ci|deploy), who, session, model, what, evidence[] (commit sha, file, URL), work_item, label (fact|hypothesis), committed (committer time when it differs), on_dev (the first-parent commit on dev that holds it), published_by (the first successful deploy run that contains it)"
+ },
+ "privacy": "The WhatsApp sender is a private person: not named, not linked. No contact details. Session ids are the Claude-Session trailers already public in the commits.",
+ "steps": [
+  {
+   "n": 1,
+   "t": "2026-11-11T10:24:48Z",
+   "kind": "human",
+   "who": "Dinis Cruz",
+   "what": "creates the repository PrompTugal/PrompTugal__News__Fringe (the initial commit is authored by him)",
+   "evidence": [
+    "83af18c"
+   ],
+   "label": "fact"
+  },
+  {
+   "n": 2,
+   "t": "unknown",
+   "before": "2026-11-11T10:27:41Z",
+   "kind": "human",
+   "who": "Dinis Cruz",
+   "what": "asks for Lisbon Fringe, an independent guide to the side events around Web Summit Lisbon ('at Dinis's word'); the words themselves are not in the record",
+   "evidence": [
+    "7b0683c",
+    "BRIEF.md"
+   ],
+   "label": "fact",
+   "note": "time unknown: only the commit that records it is timed"
+  },
+  {
+   "n": 3,
+   "t": "2026-11-11T10:27:41Z",
+   "kind": "agent",
+   "who": "conductor@web-summit.dinis",
+   "session": "session_018yvwtMPVc6R9iMzkBcVpE2",
+   "model": "Claude Opus 5.5",
+   "what": "writes BRIEF.md and KICKOFF.md, at Dinis's word (public sources only, no automated reading of websummit.com)",
+   "evidence": [
+    "7b0683c"
+   ],
+   "label": "fact"
+  },
+  {
+   "n": 4,
+   "t": "2026-11-11T10:37:31Z",
+   "kind": "agent",
+   "who": "conductor@web-summit.dinis",
+   "session": "session_018yvwtMPVc6R9iMzkBcVpE2",
+   "model": "Claude Opus 5.5",
+   "what": "the swarm: SWARM.md, JOIN.md, the roster and the first board (11 items, among them work/03 for the researcher), at Dinis's word; KICKOFF.md names the lead at 10:37:58 (fc1d087)",
+   "evidence": [
+    "1e618d7",
+    "fc1d087"
+   ],
+   "label": "fact"
+  },
+  {
+   "n": 5,
+   "t": "unknown",
+   "before": "2026-11-11T10:41:19Z",
+   "kind": "human",
+   "who": "Dinis Cruz",
+   "what": "pastes KICKOFF.md into the lead's session (KICKOFF.md: 'the prompt Dinis pastes'); the lead's first commit is 8e53e96 at 10:41:19",
+   "evidence": [
+    "7b0683c",
+    "8e53e96"
+   ],
+   "label": "hypothesis",
+   "note": "the paste itself has no timestamp in the record"
+  },
+  {
+   "n": 6,
+   "t": "unknown",
+   "before": "2026-11-11T10:57:00Z",
+   "kind": "human",
+   "who": "the organiser (Portugal Tech Week with Wexio AI), on its public Luma page",
+   "what": "changes the event from in person to online: 'due to the incoming storm this event has been changed from in-person to online'",
+   "evidence": [
+    "https://luma.com/vwwf1kj1",
+    "66ab1f3"
+   ],
+   "label": "fact",
+   "note": "the organiser's edit time is not public; we only know it was there when read at 10:57"
+  },
+  {
+   "n": 7,
+   "t": "2026-11-11T10:57:00Z",
+   "kind": "source-read",
+   "who": "researcher.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwDtKvyL1hzQTwazVi3",
+   "model": "Claude Opus 5.5",
+   "what": "read the organiser's public page (https://luma.com/vwwf1kj1) as recorded in read_at",
+   "evidence": [
+    "66ab1f3",
+    "https://luma.com/vwwf1kj1"
+   ],
+   "work_item": "work/03",
+   "label": "fact"
+  },
+  {
+   "n": 8,
+   "t": "2026-11-11T10:58:29Z",
+   "committed": "2026-11-11T10:58:29Z",
+   "kind": "agent",
+   "who": "researcher.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwDtKvyL1hzQTwazVi3",
+   "model": "Claude Opus 5.5",
+   "what": "created the entry in data/events.json (created): researcher.fringe@PrompTugal.dinis: 19 more events (69), from the PTW, Unicorn Factory and Canopy calendars",
+   "evidence": [
+    "66ab1f3"
+   ],
+   "work_item": "work/03",
+   "label": "fact",
+   "on_dev": "2459506",
+   "published_by": "run 43008129182"
+  },
+  {
+   "n": 9,
+   "t": "2026-11-11T10:58:59Z",
+   "kind": "agent",
+   "who": "conductor.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwBGQe9BhMCbDw28aDA",
+   "model": "Claude Opus 5.5",
+   "what": "brought 66ab1f3 onto dev: conductor.fringe@PrompTugal.dinis: bring researcher.fringe@'s 69 events and work/02 done onto dev (reviewed)",
+   "evidence": [
+    "2459506",
+    "66ab1f3"
+   ],
+   "work_item": "work/02",
+   "label": "fact"
+  },
+  {
+   "n": 10,
+   "t": "2026-11-11T10:59:02Z",
+   "kind": "ci",
+   "who": "GitHub Actions",
+   "what": "workflow 'deploy' run 11 started on e39823e (build, gate, version v0.1.11)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43008129182",
+    "e39823e"
+   ],
+   "label": "fact",
+   "version": "v0.1.11"
+  },
+  {
+   "n": 11,
+   "t": "2026-11-11T10:59:22Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "deployed to GitHub Pages as v0.1.11 (run 11, success; the run's last update time)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43008129182"
+   ],
+   "label": "fact",
+   "version": "v0.1.11"
+  },
+  {
+   "n": 12,
+   "t": "2026-11-11T11:23:00Z",
+   "kind": "source-read",
+   "who": "researcher.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwDtKvyL1hzQTwazVi3",
+   "model": "Claude Opus 5.5",
+   "what": "read the organiser's public page (https://luma.com/vwwf1kj1) as recorded in read_at",
+   "evidence": [
+    "cb97fa3",
+    "https://luma.com/vwwf1kj1"
+   ],
+   "work_item": "work/03",
+   "label": "fact"
+  },
+  {
+   "n": 13,
+   "t": "2026-11-11T11:25:31Z",
+   "committed": "2026-11-11T11:40:09Z",
+   "kind": "agent",
+   "who": "researcher.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwDtKvyL1hzQTwazVi3",
+   "model": "Claude Opus 5.5",
+   "what": "changed the entry in data/events.json (read_at): researcher.fringe@PrompTugal.dinis: the Uncon is WET SUMMIT Lisbon (work/03 done); 61 events re-read; 70 events",
+   "evidence": [
+    "cb97fa3"
+   ],
+   "work_item": "work/03",
+   "label": "fact",
+   "on_dev": "cb97fa3",
+   "published_by": "run 43013847874"
+  },
+  {
+   "n": 14,
+   "t": "2026-11-11T11:27:29Z",
+   "kind": "agent",
+   "who": "conductor.fringe@PrompTugal.angelo",
+   "what": "builds /graph/ and admin/build/graph.mjs (work/05). The event page uses graph.mjs through organisers.mjs (from 749df75), and the graph's event panel links the page (3aa8d6c)",
+   "evidence": [
+    "d2ae4ca"
+   ],
+   "work_item": "work/05",
+   "label": "fact"
+  },
+  {
+   "n": 15,
+   "t": "unknown",
+   "before": "2026-11-11T11:37:00Z",
+   "kind": "human",
+   "who": "a private person (never named or linked)",
+   "what": "posts in a public-interest WhatsApp group that 'Portugal Tech Week palace went fully online today', with the day's online agenda (eleven sessions)",
+   "evidence": [
+    "briefs/2026-11-11-1137-make-them-the-star.md"
+   ],
+   "label": "fact",
+   "note": "the post time is not in the record"
+  },
+  {
+   "n": 16,
+   "t": "2026-11-11T11:37:00Z",
+   "kind": "human",
+   "who": "Dinis Cruz",
+   "what": "brief 3, a voice memo with the WhatsApp screenshot, to the lead: 'every single event that exists, we need to have the page on our site ... this is about making them the star' (received: 2026-11-11T11:37Z, the brief's front matter)",
+   "evidence": [
+    "briefs/2026-11-11-1137-make-them-the-star.md",
+    "89d258a"
+   ],
+   "label": "fact"
+  },
+  {
+   "n": 17,
+   "t": "2026-11-11T11:40:00Z",
+   "kind": "source-read",
+   "who": "a sub-agent of conductor.fringe@PrompTugal.dinis (the lead), committed as the lead",
+   "session": "session_01Kw9UwCFpT9ihNBcQFxkomq",
+   "model": "Claude Opus 5.5",
+   "what": "read the organiser's public page (https://luma.com/vwwf1kj1) as recorded in read_at; the commit says the 11 Palace sessions were read 11:39 to 11:41 UTC and read_at set to 11:40 for all",
+   "evidence": [
+    "e97903d",
+    "https://luma.com/vwwf1kj1"
+   ],
+   "work_item": "work/24",
+   "label": "fact"
+  },
+  {
+   "n": 18,
+   "t": "2026-11-11T11:40:08Z",
+   "kind": "agent",
+   "who": "conductor.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwCFpT9ihNBcQFxkomq",
+   "model": "Claude Opus 5.5",
+   "what": "commits brief 3 with Dinis's words and routes it: work/22 (a page for every event), work/23 (organisers), work/24 (the loop)",
+   "evidence": [
+    "89d258a"
+   ],
+   "work_item": "work/22",
+   "label": "fact"
+  },
+  {
+   "n": 19,
+   "t": "2026-11-11T11:40:13Z",
+   "kind": "ci",
+   "who": "GitHub Actions",
+   "what": "workflow 'deploy' run 25 started on 89d258a (build, gate, version v0.1.25)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43013847874",
+    "89d258a"
+   ],
+   "label": "fact",
+   "version": "v0.1.25"
+  },
+  {
+   "n": 20,
+   "t": "2026-11-11T11:40:35Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "deployed to GitHub Pages as v0.1.25 (run 25, success; the run's last update time)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43013847874"
+   ],
+   "label": "fact",
+   "version": "v0.1.25"
+  },
+  {
+   "n": 21,
+   "t": "2026-11-11T11:41:56Z",
+   "committed": "2026-11-11T11:41:56Z",
+   "kind": "sub-agent",
+   "who": "a sub-agent of conductor.fringe@PrompTugal.dinis (the lead), committed as the lead",
+   "session": "session_01Kw9UwCFpT9ihNBcQFxkomq",
+   "model": "Claude Opus 5.5",
+   "what": "changed the entry in data/events.json (read_at, place): conductor.fringe@PrompTugal.dinis: PTW Palace sessions re-read at source (work/24 first case)",
+   "evidence": [
+    "e97903d"
+   ],
+   "work_item": "work/24",
+   "label": "fact",
+   "on_dev": "e97903d",
+   "published_by": "run 43014093404"
+  },
+  {
+   "n": 22,
+   "t": "2026-11-11T11:42:01Z",
+   "kind": "ci",
+   "who": "GitHub Actions",
+   "what": "workflow 'deploy' run 28 started on e97903d (build, gate, version v0.1.28)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43014093404",
+    "e97903d"
+   ],
+   "label": "fact",
+   "version": "v0.1.28"
+  },
+  {
+   "n": 23,
+   "t": "2026-11-11T11:42:19Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "deployed to GitHub Pages as v0.1.28 (run 28, success; the run's last update time)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43014093404"
+   ],
+   "label": "fact",
+   "version": "v0.1.28"
+  },
+  {
+   "n": 24,
+   "t": "2026-11-11T11:42:24Z",
+   "committed": "2026-11-11T11:42:26Z",
+   "kind": "agent",
+   "who": "dev.lead.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwCFpT9ihNBcQFxkomq",
+   "model": "Claude Opus 5.5",
+   "what": "created the page builder (admin/build/build.mjs, admin/build/event-pages.mjs): dev.lead.fringe@PrompTugal.dinis: work/22: a page for every event at /e/<id>/",
+   "evidence": [
+    "3aa8d6c"
+   ],
+   "work_item": "work/22",
+   "label": "fact",
+   "on_dev": "3aa8d6c",
+   "published_by": "run 43014160174",
+   "label_session": "hypothesis"
+  },
+  {
+   "n": 25,
+   "t": "2026-11-11T11:42:30Z",
+   "kind": "ci",
+   "who": "GitHub Actions",
+   "what": "workflow 'deploy' run 29 started on 3aa8d6c (build, gate, version v0.1.29)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43014160174",
+    "3aa8d6c"
+   ],
+   "label": "fact",
+   "version": "v0.1.29"
+  },
+  {
+   "n": 26,
+   "t": "2026-11-11T11:42:37Z",
+   "kind": "agent",
+   "who": "dev.lead.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwCFpT9ihNBcQFxkomq",
+   "model": "Claude Opus 5.5",
+   "what": "work/22 done, with evidence (70 pages at /e/<id>/, checked at 390 px)",
+   "evidence": [
+    "0fd5052",
+    "work/22-event-pages.md"
+   ],
+   "work_item": "work/22",
+   "label": "fact"
+  },
+  {
+   "n": 27,
+   "t": "2026-11-11T11:42:50Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "deployed to GitHub Pages as v0.1.29 (run 29, success; the run's last update time)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43014160174"
+   ],
+   "label": "fact",
+   "version": "v0.1.29"
+  },
+  {
+   "n": 28,
+   "t": "2026-11-11T11:43:27Z",
+   "kind": "agent",
+   "who": "conductor.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwCFpT9ihNBcQFxkomq",
+   "model": "Claude Opus 5.5",
+   "what": "reviews work/22 live (70 event pages); follow-ups to work/23. Time is the commit's, 11:43:27 authored; deployed by run 32 (v0.1.32) at 11:43:46",
+   "evidence": [
+    "400a1f0",
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43014289642"
+   ],
+   "work_item": "work/22",
+   "label": "fact"
+  },
+  {
+   "n": 29,
+   "t": "2026-11-11T11:54:24Z",
+   "committed": "2026-11-11T11:54:25Z",
+   "kind": "agent",
+   "who": "design.3.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwBH4pkn74Vmah14i8E",
+   "model": "Claude Sonnet 5.5",
+   "what": "changed the page builder (admin/build/build.mjs, admin/build/cards.mjs, admin/build/event-pages.mjs): design.3.fringe@PrompTugal.dinis: D3 event cards (status chip, time, area, organiser) on the home page",
+   "evidence": [
+    "57f9442"
+   ],
+   "label": "fact",
+   "on_dev": "57f9442",
+   "published_by": "run 43015808123"
+  },
+  {
+   "n": 30,
+   "t": "2026-11-11T11:54:29Z",
+   "kind": "ci",
+   "who": "GitHub Actions",
+   "what": "workflow 'deploy' run 40 started on 57f9442 (build, gate, version v0.1.40)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43015808123",
+    "57f9442"
+   ],
+   "label": "fact",
+   "version": "v0.1.40"
+  },
+  {
+   "n": 31,
+   "t": "2026-11-11T11:54:30Z",
+   "committed": "2026-11-11T11:54:55Z",
+   "kind": "agent",
+   "who": "design.4.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwEW7V3kssqMCCXQdJa",
+   "model": "Claude Sonnet 5.5",
+   "what": "changed the page builder (admin/build/build.mjs, admin/build/event-pages.mjs, admin/build/graph.mjs, admin/build/tokens.css): design.4.fringe@PrompTugal.dinis: D8: one set of design-E tokens (tokens.css), dark mode, type scale",
+   "evidence": [
+    "373b650"
+   ],
+   "label": "fact",
+   "on_dev": "373b650",
+   "published_by": "run 43015874697"
+  },
+  {
+   "n": 32,
+   "t": "2026-11-11T11:54:37Z",
+   "committed": "2026-11-11T11:55:32Z",
+   "kind": "agent",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwDemN5VmUG3HdGkqXN",
+   "model": "Claude Sonnet 5.5",
+   "what": "changed the page builder (admin/build/build.mjs): dev.2.fringe@PrompTugal.dinis: work/16 /now/ and the on-now block on the home page Agent: dev.2.fringe@PrompTugal.dinis Issue: WS-215 For: conductor.fringe@PrompTugal.dinis",
+   "evidence": [
+    "7aadada"
+   ],
+   "work_item": "work/16",
+   "label": "fact",
+   "on_dev": "7aadada",
+   "published_by": "run 43015989790"
+  },
+  {
+   "n": 33,
+   "t": "2026-11-11T11:54:50Z",
+   "committed": "2026-11-11T11:54:50Z",
+   "kind": "agent",
+   "who": "design.3.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwBH4pkn74Vmah14i8E",
+   "model": "Claude Sonnet 5.5",
+   "what": "changed the page builder (admin/build/build.mjs, admin/build/event-pages.mjs): design.3.fringe@PrompTugal.dinis: D4 event page look: organiser showcase, chips, related as cards",
+   "evidence": [
+    "85f6e97"
+   ],
+   "label": "fact",
+   "on_dev": "85f6e97",
+   "published_by": "run 43015866066"
+  },
+  {
+   "n": 34,
+   "t": "2026-11-11T11:54:54Z",
+   "kind": "ci",
+   "who": "GitHub Actions",
+   "what": "workflow 'deploy' run 42 started on 85f6e97 (build, gate, version v0.1.42)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43015866066",
+    "85f6e97"
+   ],
+   "label": "fact",
+   "version": "v0.1.42"
+  },
+  {
+   "n": 35,
+   "t": "2026-11-11T11:54:56Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "deployed to GitHub Pages as v0.1.40 (run 40, success; the run's last update time)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43015808123"
+   ],
+   "label": "fact",
+   "version": "v0.1.40"
+  },
+  {
+   "n": 36,
+   "t": "2026-11-11T11:54:58Z",
+   "kind": "ci",
+   "who": "GitHub Actions",
+   "what": "workflow 'deploy' run 43 started on 373b650 (build, gate, version v0.1.43)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43015874697",
+    "373b650"
+   ],
+   "label": "fact",
+   "version": "v0.1.43"
+  },
+  {
+   "n": 37,
+   "t": "2026-11-11T11:55:00Z",
+   "kind": "source-read",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Claude Sonnet 5.5",
+   "what": "read the organiser's public page (https://luma.com/vwwf1kj1) as recorded in read_at",
+   "evidence": [
+    "ac6b57a",
+    "https://luma.com/vwwf1kj1"
+   ],
+   "work_item": "work/24",
+   "label": "fact"
+  },
+  {
+   "n": 38,
+   "t": "2026-11-11T11:55:08Z",
+   "committed": "2026-11-11T11:55:24Z",
+   "kind": "agent",
+   "who": "dev.1.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwFjnHdNHRvLg7iLCpc",
+   "model": "Claude Sonnet 5.5",
+   "what": "changed the page builder (admin/build/build.mjs): dev.1.fringe@PrompTugal.dinis: work/25 the swarm dashboard (/dashboard/, /api/v1/swarm.json), key and status",
+   "evidence": [
+    "b7d0bc9"
+   ],
+   "work_item": "work/25",
+   "label": "fact",
+   "on_dev": "b7d0bc9",
+   "published_by": "run 43015945270"
+  },
+  {
+   "n": 39,
+   "t": "2026-11-11T11:55:14Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "deployed to GitHub Pages as v0.1.42 (run 42, success; the run's last update time)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43015866066"
+   ],
+   "label": "fact",
+   "version": "v0.1.42"
+  },
+  {
+   "n": 40,
+   "t": "2026-11-11T11:55:28Z",
+   "kind": "ci",
+   "who": "GitHub Actions",
+   "what": "workflow 'deploy' run 45 started on b7d0bc9 (build, gate, version v0.1.45)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43015945270",
+    "b7d0bc9"
+   ],
+   "label": "fact",
+   "version": "v0.1.45"
+  },
+  {
+   "n": 41,
+   "t": "2026-11-11T11:55:33Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "deployed to GitHub Pages as v0.1.43 (run 43, success; the run's last update time)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43015874697"
+   ],
+   "label": "fact",
+   "version": "v0.1.43"
+  },
+  {
+   "n": 42,
+   "t": "2026-11-11T11:55:45Z",
+   "committed": "2026-11-11T11:55:45Z",
+   "kind": "agent",
+   "who": "design.4.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwEW7V3kssqMCCXQdJa",
+   "model": "Claude Sonnet 5.5",
+   "what": "changed the page builder (admin/build/build.mjs): design.4.fringe@PrompTugal.dinis: D5: one navigation on every page, current page marked, no JS",
+   "evidence": [
+    "36f7df6"
+   ],
+   "label": "fact",
+   "on_dev": "36f7df6",
+   "published_by": "run 43015989790"
+  },
+  {
+   "n": 43,
+   "t": "2026-11-11T11:55:47Z",
+   "committed": "2026-11-11T11:56:02Z",
+   "kind": "agent",
+   "who": "design.3.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwBH4pkn74Vmah14i8E",
+   "model": "Claude Sonnet 5.5",
+   "what": "changed the page builder (admin/build/build.mjs): design.3.fringe@PrompTugal.dinis: D11 /how/ (how this is made), in the nav and on the home page",
+   "evidence": [
+    "596428c"
+   ],
+   "label": "fact",
+   "on_dev": "596428c",
+   "published_by": "run 43016026946"
+  },
+  {
+   "n": 44,
+   "t": "2026-11-11T11:55:48Z",
+   "kind": "ci",
+   "who": "GitHub Actions",
+   "what": "workflow 'deploy' run 47 started on 36f7df6 (build, gate, version v0.1.47)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43015989790",
+    "36f7df6"
+   ],
+   "label": "fact",
+   "version": "v0.1.47"
+  },
+  {
+   "n": 45,
+   "t": "2026-11-11T11:55:55Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "deployed to GitHub Pages as v0.1.45 (run 45, success; the run's last update time)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43015945270"
+   ],
+   "label": "fact",
+   "version": "v0.1.45"
+  },
+  {
+   "n": 46,
+   "t": "2026-11-11T11:56:05Z",
+   "kind": "ci",
+   "who": "GitHub Actions",
+   "what": "workflow 'deploy' run 49 started on 596428c (build, gate, version v0.1.49)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43016026946",
+    "596428c"
+   ],
+   "label": "fact",
+   "version": "v0.1.49"
+  },
+  {
+   "n": 47,
+   "t": "2026-11-11T11:56:09Z",
+   "committed": "2026-11-11T11:56:09Z",
+   "kind": "agent",
+   "who": "researcher.2.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwCy7tcG1KeCSbgf3Za",
+   "model": "Claude Sonnet 5.5",
+   "what": "changed the entry in data/events.json (read_at): researcher.2.fringe@PrompTugal.dinis: work/24 wake 1: 61 events re-read, 94 added (164), Kuma H2H online",
+   "evidence": [
+    "ac6b57a"
+   ],
+   "work_item": "work/24",
+   "label": "fact",
+   "on_dev": "ac6b57a",
+   "published_by": "run 43016046640"
+  },
+  {
+   "n": 48,
+   "t": "2026-11-11T11:56:13Z",
+   "kind": "ci",
+   "who": "GitHub Actions",
+   "what": "workflow 'deploy' run 50 started on ac6b57a (build, gate, version v0.1.50)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43016046640",
+    "ac6b57a"
+   ],
+   "label": "fact",
+   "version": "v0.1.50"
+  },
+  {
+   "n": 49,
+   "t": "2026-11-11T11:56:14Z",
+   "committed": "2026-11-11T11:56:31Z",
+   "kind": "agent",
+   "who": "design.1.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwBGhFtTgsGsavyFUxp",
+   "model": "Claude Sonnet 5.5",
+   "what": "changed the page builder (admin/build/build.mjs): design.1.fringe@PrompTugal.dinis: D1 the first screen (hero, count, on now or next)",
+   "evidence": [
+    "b03a8c0"
+   ],
+   "label": "fact",
+   "on_dev": "b03a8c0",
+   "published_by": "run 43016124525"
+  },
+  {
+   "n": 50,
+   "t": "2026-11-11T11:56:14Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "deployed to GitHub Pages as v0.1.47 (run 47, success; the run's last update time)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43015989790"
+   ],
+   "label": "fact",
+   "version": "v0.1.47"
+  },
+  {
+   "n": 51,
+   "t": "2026-11-11T11:56:35Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "deployed to GitHub Pages as v0.1.49 (run 49, success; the run's last update time)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43016026946"
+   ],
+   "label": "fact",
+   "version": "v0.1.49"
+  },
+  {
+   "n": 52,
+   "t": "2026-11-11T11:56:41Z",
+   "committed": "2026-11-11T11:56:41Z",
+   "kind": "agent",
+   "who": "design.1.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwBGhFtTgsGsavyFUxp",
+   "model": "Claude Sonnet 5.5",
+   "what": "changed the page builder (admin/build/build.mjs): design.1.fringe@PrompTugal.dinis: D1 button anchor after rebase",
+   "evidence": [
+    "724e802"
+   ],
+   "label": "fact",
+   "on_dev": "724e802",
+   "published_by": "run 43016124525"
+  },
+  {
+   "n": 53,
+   "t": "2026-11-11T11:56:49Z",
+   "kind": "ci",
+   "who": "GitHub Actions",
+   "what": "workflow 'deploy' run 52 started on cf6aa23 (build, gate, version v0.1.52)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43016124525",
+    "cf6aa23"
+   ],
+   "label": "fact",
+   "version": "v0.1.52"
+  },
+  {
+   "n": 54,
+   "t": "2026-11-11T11:56:52Z",
+   "committed": "2026-11-11T11:57:33Z",
+   "kind": "agent",
+   "who": "design.4.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwEW7V3kssqMCCXQdJa",
+   "model": "Claude Sonnet 5.5",
+   "what": "changed the page builder (admin/build/build.mjs, admin/build/identity.mjs, admin/build/tokens.css): design.4.fringe@PrompTugal.dinis: D9: Lisbon identity: palette tokens, wordmark, azulejo pattern, hero",
+   "evidence": [
+    "4b978ab"
+   ],
+   "label": "fact",
+   "on_dev": "4b978ab",
+   "published_by": "run 43016231150"
+  },
+  {
+   "n": 55,
+   "t": "2026-11-11T11:56:56Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "deployed to GitHub Pages as v0.1.50 (run 50, success; the run's last update time)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43016046640"
+   ],
+   "label": "fact",
+   "version": "v0.1.50"
+  },
+  {
+   "n": 56,
+   "t": "2026-11-11T11:57:12Z",
+   "committed": "2026-11-11T11:57:12Z",
+   "kind": "agent",
+   "who": "design.1.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwBGhFtTgsGsavyFUxp",
+   "model": "Claude Sonnet 5.5",
+   "what": "changed the page builder (admin/build/build.mjs): design.1.fringe@PrompTugal.dinis: D10 PrompTugal bar on every page; D1 tagline per brief 5",
+   "evidence": [
+    "365d844"
+   ],
+   "label": "fact",
+   "on_dev": "365d844",
+   "published_by": "run 43016189105"
+  },
+  {
+   "n": 57,
+   "t": "2026-11-11T11:57:12Z",
+   "committed": "2026-11-11T11:57:18Z",
+   "kind": "agent",
+   "who": "conductor.fringe@PrompTugal.indi",
+   "session": "session_01SZXKK9aBakmkfmRPBZ8v6H",
+   "model": "Claude Opus 5.5",
+   "what": "changed the page builder (admin/build/build.mjs): conductor.fringe@PrompTugal.indi: work/04: data/communities.json (75, 23 calendars re-read) and /api/v1/communities.json, with its contract and generator (also names this event in data/communities.json, as one of the community calendar's events)",
+   "evidence": [
+    "9e7d263"
+   ],
+   "work_item": "work/04",
+   "label": "fact",
+   "on_dev": "9e7d263",
+   "published_by": "run 43016231150"
+  },
+  {
+   "n": 58,
+   "t": "2026-11-11T11:57:13Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "deployed to GitHub Pages as v0.1.52 (run 52, success; the run's last update time)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43016124525"
+   ],
+   "label": "fact",
+   "version": "v0.1.52"
+  },
+  {
+   "n": 59,
+   "t": "2026-11-11T11:57:17Z",
+   "kind": "ci",
+   "who": "GitHub Actions",
+   "what": "workflow 'deploy' run 53 started on 365d844 (build, gate, version v0.1.53)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43016189105",
+    "365d844"
+   ],
+   "label": "fact",
+   "version": "v0.1.53"
+  },
+  {
+   "n": 60,
+   "t": "2026-11-11T11:57:30Z",
+   "committed": "2026-11-11T11:57:59Z",
+   "kind": "agent",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwDemN5VmUG3HdGkqXN",
+   "model": "Claude Sonnet 5.5",
+   "what": "changed the page builder (admin/build/build.mjs, admin/build/event-pages.mjs, admin/build/organisers.mjs, data/organisers.json): dev.2.fringe@PrompTugal.dinis: work/23 /organisers/ (draft offer), data/organisers.json, event pages link organisers; work/16 done Agent: dev.2.fringe@PrompTugal.dinis Issue: WS-215 For: conductor.fringe@PrompTugal.dinis",
+   "evidence": [
+    "749df75"
+   ],
+   "work_item": "work/23",
+   "label": "fact",
+   "on_dev": "749df75",
+   "published_by": "run 43016289259"
+  },
+  {
+   "n": 61,
+   "t": "2026-11-11T11:57:36Z",
+   "kind": "ci",
+   "who": "GitHub Actions",
+   "what": "workflow 'deploy' run 56 started on 4b978ab (build, gate, version v0.1.56)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43016231150",
+    "4b978ab"
+   ],
+   "label": "fact",
+   "version": "v0.1.56"
+  },
+  {
+   "n": 62,
+   "t": "2026-11-11T11:57:41Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "deployed to GitHub Pages as v0.1.53 (run 53, success; the run's last update time)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43016189105"
+   ],
+   "label": "fact",
+   "version": "v0.1.53"
+  },
+  {
+   "n": 63,
+   "t": "2026-11-11T11:57:58Z",
+   "committed": "2026-11-11T11:57:59Z",
+   "kind": "agent",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwDemN5VmUG3HdGkqXN",
+   "model": "Claude Sonnet 5.5",
+   "what": "changed the page builder (admin/build/event-pages.mjs): dev.2.fringe@PrompTugal.dinis: event pages: set the organisers table (fix)",
+   "evidence": [
+    "00148b8"
+   ],
+   "label": "fact",
+   "on_dev": "00148b8",
+   "published_by": "run 43016289259"
+  },
+  {
+   "n": 64,
+   "t": "2026-11-11T11:58:03Z",
+   "kind": "ci",
+   "who": "GitHub Actions",
+   "what": "workflow 'deploy' run 58 started on 00148b8 (build, gate, version v0.1.58)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43016289259",
+    "00148b8"
+   ],
+   "label": "fact",
+   "version": "v0.1.58"
+  },
+  {
+   "n": 65,
+   "t": "2026-11-11T11:58:09Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "deployed to GitHub Pages as v0.1.56 (run 56, success; the run's last update time)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43016231150"
+   ],
+   "label": "fact",
+   "version": "v0.1.56"
+  },
+  {
+   "n": 66,
+   "t": "2026-11-11T11:58:29Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "deployed to GitHub Pages as v0.1.58 (run 58, success; the run's last update time)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43016289259"
+   ],
+   "label": "fact",
+   "version": "v0.1.58"
+  },
+  {
+   "n": 67,
+   "t": "2026-11-11T11:58:35Z",
+   "committed": "2026-11-11T11:58:35Z",
+   "kind": "agent",
+   "who": "design.2.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwFEfLVDYsXegWLnJUi",
+   "model": "Claude Sonnet 5.5",
+   "what": "changed the page builder (.github/workflows/deploy.yml, admin/build/build.mjs, admin/build/event-pages.mjs, admin/build/og/share.html, admin/build/validate.mjs): design.2.fringe@PrompTugal.dinis: D2 share card: og tags on every page, card rendered in CI from a template",
+   "evidence": [
+    "c129f8d"
+   ],
+   "label": "fact",
+   "on_dev": "c129f8d",
+   "published_by": "run 43016908017"
+  },
+  {
+   "n": 68,
+   "t": "2026-11-11T11:58:38Z",
+   "committed": "2026-11-11T11:58:39Z",
+   "kind": "agent",
+   "who": "dev.1.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwFjnHdNHRvLg7iLCpc",
+   "model": "Claude Sonnet 5.5",
+   "what": "changed the page builder (admin/build/build.mjs): dev.1.fringe@PrompTugal.dinis: work/26 /me/ (key and passkey in the browser) and the message-the-lead box",
+   "evidence": [
+    "88d0003"
+   ],
+   "work_item": "work/26",
+   "label": "fact",
+   "on_dev": "88d0003",
+   "published_by": "run 43016908017"
+  },
+  {
+   "n": 69,
+   "t": "2026-11-11T11:58:38Z",
+   "committed": "2026-11-11T11:58:46Z",
+   "kind": "agent",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwDemN5VmUG3HdGkqXN",
+   "model": "Claude Sonnet 5.5",
+   "what": "changed the page builder (.github/workflows/deploy.yml, admin/build/build.mjs, admin/build/validate.mjs): dev.2.fringe@PrompTugal.dinis: work/15 /changes/ and /api/v1/changes.json from git",
+   "evidence": [
+    "132fccf"
+   ],
+   "work_item": "work/15",
+   "label": "fact",
+   "on_dev": "132fccf",
+   "published_by": "run 43016908017"
+  },
+  {
+   "n": 70,
+   "t": "2026-11-11T12:02:06Z",
+   "committed": "2026-11-11T12:02:06Z",
+   "kind": "agent",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwDemN5VmUG3HdGkqXN",
+   "model": "Claude Sonnet 5.5",
+   "what": "changed the page builder (.github/workflows/deploy.yml): dev.2.fringe@PrompTugal.dinis: FIX deploy.yml (my summary step was invalid YAML and failed runs 60 to 63); work/20 llm.mjs",
+   "evidence": [
+    "537d766"
+   ],
+   "work_item": "work/20",
+   "label": "fact",
+   "on_dev": "537d766",
+   "published_by": "run 43016908017"
+  },
+  {
+   "n": 71,
+   "t": "2026-11-11T12:02:25Z",
+   "kind": "agent",
+   "who": "dev.2.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwDemN5VmUG3HdGkqXN",
+   "model": "Claude Sonnet 5.5",
+   "what": "(context) runs 60 to 64 failed at 0 s: a colon in a step name made deploy.yml invalid YAML, so the site stayed at v0.1.59 from 11:58:49 to 12:02:59; fixed in 2f42a7a, deployed as v0.1.65",
+   "evidence": [
+    "2f42a7a",
+    "537d766",
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43016908017"
+   ],
+   "label": "fact"
+  },
+  {
+   "n": 72,
+   "t": "2026-11-11T12:02:30Z",
+   "kind": "ci",
+   "who": "GitHub Actions",
+   "what": "workflow 'deploy' run 65 started on 2f42a7a (build, gate, version v0.1.65)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43016908017",
+    "2f42a7a"
+   ],
+   "label": "fact",
+   "version": "v0.1.65"
+  },
+  {
+   "n": 73,
+   "t": "2026-11-11T12:02:47Z",
+   "committed": "2026-11-11T12:02:48Z",
+   "kind": "agent",
+   "who": "capture.1.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwBDiRApLwAnCoij2Db",
+   "model": "Claude Sonnet 5.5",
+   "what": "changed the page builder (admin/build/build.mjs): capture.1.fringe@PrompTugal.dinis: work/27 claimed: capture tool, /evolution/ page, key (pointers wait on the gate)",
+   "evidence": [
+    "43e929d"
+   ],
+   "work_item": "work/27",
+   "label": "fact",
+   "on_dev": "43e929d",
+   "published_by": "run 43016957999"
+  },
+  {
+   "n": 74,
+   "t": "2026-11-11T12:02:52Z",
+   "kind": "ci",
+   "who": "GitHub Actions",
+   "what": "workflow 'deploy' run 66 started on 43e929d (build, gate, version v0.1.66)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43016957999",
+    "43e929d"
+   ],
+   "label": "fact",
+   "version": "v0.1.66"
+  },
+  {
+   "n": 75,
+   "t": "2026-11-11T12:02:59Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "deployed to GitHub Pages as v0.1.65 (run 65, success; the run's last update time)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43016908017"
+   ],
+   "label": "fact",
+   "version": "v0.1.65"
+  },
+  {
+   "n": 76,
+   "t": "2026-11-11T12:03:21Z",
+   "kind": "deploy",
+   "who": "GitHub Actions",
+   "what": "deployed to GitHub Pages as v0.1.66 (run 66, success; the run's last update time)",
+   "evidence": [
+    "https://github.com/PrompTugal/PrompTugal__News__Fringe/actions/runs/43016957999"
+   ],
+   "label": "fact",
+   "version": "v0.1.66"
+  },
+  {
+   "n": 77,
+   "t": "2026-11-11T12:03:41Z",
+   "committed": "2026-11-11T12:03:41Z",
+   "kind": "agent",
+   "who": "design.2.fringe@PrompTugal.dinis",
+   "session": "session_01Kw9UwFEfLVDYsXegWLnJUi",
+   "model": "Claude Sonnet 5.5",
+   "what": "changed the page builder (admin/build/event-pages.mjs): design.2.fringe@PrompTugal.dinis: D15 Share button on every event page (navigator.share, else copy link)",
+   "evidence": [
+    "e0c72fb"
+   ],
+   "label": "fact",
+   "on_dev": "e0c72fb",
+   "published_by": "unknown"
+  }
+ ],
+ "gaps": [
+  "Dinis's own words that started the site (before 10:27:41) and the paste of KICKOFF.md into the lead's session have no timestamp; only the commits that record them are timed.",
+  "The organiser's change to online (the storm) has no public time; we only know it was on the page at 10:57.",
+  "The WhatsApp post's time is not in the record, and its sender stays anonymous by rule.",
+  "Corrected by conductor.fringe@PrompTugal.angelo on review: 3aa8d6c (dev.lead.fringe@) does carry a Claude-Session trailer, session_01Kw9UwCFpT9ihNBcQFxkomq, the lead's own session: dev.lead.fringe@ ran inside the lead's session (fact, from the trailer). Its model is not recorded.",
+  "2459506 (the lead bringing 66ab1f3 onto dev) carries session_01Kw9UwBGQe9BhMCbDw28aDA, not the lead's later session_01Kw9UwCFpT9ihNBcQFxkomq: two sessions committed as the lead; the record does not say why.",
+  "The model of a sub-agent is not recorded: e97903d's sub-agent is labelled with the lead's model (the trailer), which may not be the sub-agent's.",
+  "No person checked this event: work/13 (Vicky's editorial check) re-read evening and Thursday events and does not name it; Angelo, Vicky and Indi took no human step on it in the record.",
+  "Read times are rounded to the minute (read_at); the reads themselves leave no log beyond the commit.",
+  "Deploy 'live' time is the run's updated_at, not a measured served time; the workflow measures push-to-served in its own log, not read here.",
+  "Builder commits after 3aa8d6c are counted because the page is built from those files; most of them changed other pages through the same files (build.mjs).",
+  "Tokens and cost per step are not recorded anywhere public."
+ ],
+ "totals": {
+  "first_step": "2026-11-11T10:24:48Z",
+  "first_step_note": "earliest timed step; Dinis's ask is earlier but untimed",
+  "first_entry": "2026-11-11T10:58:29Z",
+  "page_first_live": "2026-11-11T11:42:50Z (v0.1.29, run 29 on 3aa8d6c)",
+  "live_at": "2026-11-11T12:03:48Z (v0.1.69, run 69 on 4c360a2, read from /version.json at 2026-11-11T12:05:14Z; the entry's last change, ac6b57a, went live in v0.1.50 at 11:56:56)",
+  "steps": 77,
+  "humans": 3,
+  "humans_note": "Dinis Cruz; the organiser (public page); one private person (anonymous)",
+  "agents": 15,
+  "agent_names": [
+   "a sub-agent of conductor.fringe@PrompTugal.dinis (the lead), committed as the lead",
+   "capture.1.fringe@PrompTugal.dinis",
+   "conductor.fringe@PrompTugal.angelo",
+   "conductor.fringe@PrompTugal.dinis",
+   "conductor.fringe@PrompTugal.indi",
+   "conductor@web-summit.dinis",
+   "design.1.fringe@PrompTugal.dinis",
+   "design.2.fringe@PrompTugal.dinis",
+   "design.3.fringe@PrompTugal.dinis",
+   "design.4.fringe@PrompTugal.dinis",
+   "dev.1.fringe@PrompTugal.dinis",
+   "dev.2.fringe@PrompTugal.dinis",
+   "dev.lead.fringe@PrompTugal.dinis",
+   "researcher.2.fringe@PrompTugal.dinis",
+   "researcher.fringe@PrompTugal.dinis"
+  ],
+  "commits": 38,
+  "deploys": 17,
+  "entry_changes": 4,
+  "source_reads": 4
+ }
+}

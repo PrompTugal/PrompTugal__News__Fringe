@@ -1,26 +1,34 @@
 {
   "by": "conductor.fringe@PrompTugal.angelo",
-  "updated": "2026-11-11T11:46Z",
+  "updated": "2026-11-11T12:49Z",
   "person": "angelo",
   "role": "member",
-  "state": "on: conductor.fringe@PrompTugal.angelo, started about 11:20 UTC by conductor.b@PrompTugal.angelo at Angelo's word",
+  "state": "on: conductor.fringe@PrompTugal.angelo, started about 11:20 UTC by conductor.b@PrompTugal.angelo at Angelo's word; hourly wake at :29 until Friday 13 November (trig_01UqsUe1kvf2qvWkjLiF2hPk, set at Angelo's word in this session)",
   "lane": "the graph and live views of the fringe (SWARM.md): work/05",
   "doing": [
-    "work/05 the fringe graph: first version of /graph/ on dev; next, communities from work/04 and the workflow layer"
+    "work/32 the connections picture (claimed): the ontology picture and the outreach layer on /graph/",
+    "work/05 the graph"
   ],
   "done": [
     "read CLAUDE.md, SWARM.md, BRIEF.md, REALITY.md and work/",
     "session key made (pki-agent.mjs sha256 fcb28a1c...02ab checked); public half in data/keys.json (id conductor.fringe-angelo, signing sha256:ca2c782dbfd0147e)",
     "claimed work/05",
-    "/graph/ and /api/v1/graph.json: 69 events, 248 nodes, 331 edges, filters; 15 nodes linked to pt.news (work/05 progress note)"
+    "/graph/ and /api/v1/graph.json: 69 events, 248 nodes, 331 edges, filters; 15 nodes linked to pt.news (work/05 progress note)",
+    "public key in PrompTugal__News__Website board/keys.json (id conductor.fringe-angelo, commit 9e4cdc1b, through newsroom/tools/release.sh, gate OK), at Angelo's word",
+    "times corrected to the commit clock (fable.fringe@'s advice 3, 11:32 UTC): status 11:46Z→11:27, work/05 note 11:45→11:27, runs.md ranges; from now every time comes from date -u",
+    "trace of /e/2026-11-11-ptw-classroom-deep-work-wexio/: 77 steps, 15 agents, 38 commits, 17 deploys (team/angelo/traces/), by worker tracer.fringe@PrompTugal.angelo; generator admin/tools/trace-event.mjs",
+    "draft visual of the trace at /traces/2026-11-11-ptw-classroom-deep-work-wexio/ (swim lanes, folded quiet time, failed deploys, first live), by worker designer.fringe@PrompTugal.angelo; not linked yet",
+    "one-line 'how this page was made' strip (metro line; 6/9/14 stops by width; first live, failed deploys, live now), admin/build/trace-strip.mjs, shown on top of /traces/2026-11-11-ptw-classroom-deep-work-wexio/; by worker designer.fringe@PrompTugal.angelo",
+    "wake 12:29: /graph/ now takes communities from work/04's data/communities.json (73 checked communities; organiser line only as fallback; an unknown or individual organiser makes no node); 171 events, 387 nodes"
   ],
   "next": [
-    "link communities to work/04's verified communities.json once served",
-    "the workflow layer: the runs behind each deliverable (team/angelo/runs.md, reporter traces format)",
-    "check /graph/ on the served site after CI deploys"
+    "work/32 (1): an ontology picture of organisation, community, event, place, topic, channel, source, agent, person-by-role, each link with its evidence",
+    "work/32 (2): outreach layer on /graph/ from data/outreach.json, counts only",
+    "the trace strip on every event page once Angelo is happy with the first MVP (Angelo, 12:4x: 'yes, but not yet')"
   ],
   "asks": [
-    "angelo: confirm in this session the hourly wake until Friday 13 (a scheduled task into this session); the start message came relayed through conductor.b@, so it is not set yet.",
-    "angelo: my public key is not yet in PrompTugal__News__Website board/keys.json; that repository is not attached to this session. Confirm and I attach it (push) and add my entry through its release.sh."
+    "none for Angelo now",
+    "conductor.fringe@PrompTugal.dinis: obs.js console errors (ipapi.co CORS and 429), noted on work/21 at Angelo's word",
+    "note: Angelo's account is at about 83% of its 5-hour limit; this conductor may pause until it resets"
   ]
 }

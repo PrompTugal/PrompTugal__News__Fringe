@@ -12,7 +12,7 @@ const slug = (s) => norm(s).replace(/ /g, '-') || 'x';
 
 // --- communities: split joint organisers, drop descriptors -------------------------------------------------------
 const DESCRIPTOR = /\s*\((?:per |a |an |luma |named )[^)]*\)\s*$/i;
-const PRIVATE = /^(an? )?independent organis/i;
+const PRIVATE = /^(an? )?independent organis|^(unknown|not (stated|named))\b/i;   // no node for an individual or an unknown organiser
 export function organisersOf(text) {
   if (!text || PRIVATE.test(text)) return [];
   // "with", "powered by", "hosted by" join organisers only in lower case ("Life With Artificials" is one name);
@@ -41,7 +41,11 @@ export function areaOf(place) {
 }
 
 // --- the model --------------------------------------------------------------------------------------------------
-export function buildGraph(events, ptnews) {
+export function buildGraph(events, ptnews, communities) {
+  // work/04's verified communities (data/communities.json, re-read at their calendars) win over names split from
+  // an event's organiser line; the organiser line is the fallback for events no community lists yet.
+  const byEvent = new Map();
+  for (const c of communities || []) for (const id of c.events || []) { if (!byEvent.has(id)) byEvent.set(id, []); byEvent.get(id).push(c); }
   const nodes = new Map(), edges = [];
   const site = ptnews?.site || 'https://promptugal.news/';
   const byName = (list, kind) => { const m = new Map(); for (const x of list || []) for (const n of [...(x.names || [x.name]), x.id]) m.set(norm(n), { ...x, kind }); return m; };
@@ -60,7 +64,12 @@ export function buildGraph(events, ptnews) {
       place: e.place || null, organiser: e.organiser || null, topics: (e.topics || []).map(topicName) };
     nodes.set(ev.id, ev);
     const link = (to, verb) => edges.push({ from: ev.id, to: to.id, verb, source: e.url, read_at: e.read_at });
-    for (const o of organisersOf(e.organiser)) link(node('community', o, ptLink(orgIdx.get(norm(o)))), 'organised by');
+    const listed = byEvent.get(e.id);
+    if (listed) for (const c of listed) {
+      const home = (c.links || []).find((l) => /^https:\/\//.test(l.url || ''));
+      link(node('community', c.name, { ...ptLink(orgIdx.get(norm(c.name))), verified: true, community: c.id, home: home?.url || null, what: c.what?.text || null }), 'organised by');
+    }
+    else for (const o of organisersOf(e.organiser)) link(node('community', o, ptLink(orgIdx.get(norm(o)))), 'organised by');
     for (const t of new Set((e.topics || []).map(topicName))) link(node('topic', t, ptLink(topicIdx.get(norm(t)))), 'about');
     const a = areaOf(e.place);
     if (a) link(node('place', a, ptLink(placeIdx.get(norm(a)))), 'at');
@@ -115,34 +124,33 @@ ${links(n) ? `<div class="muted">${links(n)}</div>` : ''}<ul>${neighbours(n.id).
   const chip = (name, value, label) => `<button type="button" class="chip" data-f="${name}" data-v="${esc(value)}" aria-pressed="false">${esc(label)}</button>`;
   return `
 <h1>Connect the dots</h1>
-<p>The fringe as a graph: ${ev.length} events, ${count('community')} communities, ${count('topic')} topics and ${count('place')} places. Every line comes from one event's own page, read at the time it shows. Tap a dot to see what it joins.</p>
+<p class="muted">Each dot is an event, a community, a topic or a place; a line means one event's own page names it. Tap a dot to see what it joins.</p>
+<p class="legend"><span class="dot t-event"></span>event (${ev.length}) <span class="dot t-community"></span>community (${count('community')}) <span class="dot t-topic"></span>topic (${count('topic')}) <span class="dot t-place"></span>place (${count('place')})</p>
+<p class="muted" id="gcount" aria-live="polite"></p>
+<div class="gwrap"><svg id="graph" role="img" aria-label="Graph of events, communities, topics and places" viewBox="-500 -500 1000 1000"></svg>
+<div class="gzoom"><button type="button" data-z="0.8" aria-label="Zoom in">+</button><button type="button" data-z="1.25" aria-label="Zoom out">−</button><button type="button" data-z="0" aria-label="Reset">⟲</button></div></div>
+<details class="gfilters"><summary>Filter by topic, day or kind</summary>
 <div class="filters" id="filters">
 <div><strong>Find</strong> ${['AI agents', 'security', 'Portugal', 'founders', 'investors', 'developers'].map((q) => chip('q', q, q)).join('')}
 <input id="gq" type="search" placeholder="topic, community, place…" aria-label="Filter the graph"></div>
 <div><strong>Day</strong> ${days.map((d) => chip('day', d, new Date(d + 'T12:00:00Z').toUTCString().slice(0, 11))).join('')}</div>
 <div><strong>Type</strong> ${kinds.map((k) => chip('kind', k, k)).join('')}</div>
 <div><label><input type="checkbox" id="gcan"> hide cancelled</label> · <label><input type="checkbox" id="gstorm"> only what the storm moved</label></div>
-</div>
-<p class="muted" id="gcount" aria-live="polite"></p>
-<div class="gwrap"><svg id="graph" role="img" aria-label="Graph of events, communities, topics and places" viewBox="-500 -500 1000 1000"></svg>
-<div class="gzoom"><button type="button" data-z="0.8" aria-label="Zoom in">+</button><button type="button" data-z="1.25" aria-label="Zoom out">−</button><button type="button" data-z="0" aria-label="Reset">⟲</button></div></div>
-<p class="legend"><span class="dot t-event"></span>event <span class="dot t-community"></span>community <span class="dot t-topic"></span>topic <span class="dot t-place"></span>place</p>
+</div></details>
 <div id="gpanel" class="card" hidden></div>
 <h2>Communities</h2>${group('community')}
 <h2>Topics</h2>${group('topic')}
 <h2>Places</h2>${group('place')}
 <p class="muted">The data: <a href="/api/v1/graph.json">/api/v1/graph.json</a> (nodes and edges, each edge with its source and read time). Communities, places and topics already on <a href="https://promptugal.news/graph/">pt.news's graph</a> link to it. How this page was made: <a href="https://github.com/PrompTugal/PrompTugal__News__Fringe/blob/dev/work/05-graph.md">work/05</a> and <a href="https://github.com/PrompTugal/PrompTugal__News__Fringe/blob/dev/team/angelo/runs.md">every run behind it</a>.</p>
-<script type="application/json" id="gdata">${JSON.stringify({ nodes: graph.nodes.map(({ id, type, label, x, y, degree, url, date, kind, status, storm_moved, topics, organiser, place, ptnews, gamma_ray }) => ({ id, type, label, x, y, degree, url, date, kind, status, storm_moved, topics, organiser, place, ptnews, gamma_ray })), edges: graph.edges.map((e) => [e.from, e.to, e.verb]) }).replace(/</g, '\\u003c')}</script>
+<script type="application/json" id="gdata">${JSON.stringify({ nodes: graph.nodes.map(({ id, type, label, x, y, degree, url, date, kind, status, storm_moved, topics, organiser, place, ptnews, gamma_ray, home, what, verified }) => ({ id, type, label, x, y, degree, url, date, kind, status, storm_moved, topics, organiser, place, ptnews, gamma_ray, home, what, verified })), edges: graph.edges.map((e) => [e.from, e.to, e.verb]) }).replace(/</g, '\\u003c')}</script>
 <script src="/graph.js" defer></script>`;
 }
 
 export const graphCss = `
-.filters>div{margin:6px 0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}.chip{font:inherit;font-size:.85rem;padding:3px 10px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
+.filters>div{margin:6px 0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}.chip{font:inherit;font-size:13px;min-height:var(--chip-h);padding:0 var(--s3);text-transform:none;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
 .chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--bg)}#gq{font:inherit;padding:4px 8px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--fg);min-width:0;flex:1 1 160px}
-.gwrap{position:relative;border:1px solid var(--line);border-radius:8px;background:var(--card);touch-action:none}#graph{display:block;width:100%;height:auto;aspect-ratio:1/1;max-height:80vh}
+.gwrap{position:relative;border:1px solid var(--line);border-radius:8px;background:var(--card);touch-action:none}#graph{display:block;width:100%;height:auto;aspect-ratio:1/1;max-height:70vh}.gfilters{margin:var(--s2) 0}.gfilters>summary{cursor:pointer;font-weight:600;font-size:var(--fs-ui);padding:var(--s2) 0;color:var(--brand)}
 .gzoom{position:absolute;top:8px;right:8px;display:flex;gap:4px}.gzoom button{font:inherit;width:32px;height:32px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
-:root{--t-event:#2f6fd6;--t-community:#0b6e4f;--t-topic:#b35c00;--t-place:#8a3ab9}
-@media (prefers-color-scheme:dark){:root{--t-event:#7aa7ff;--t-community:#5fd3a6;--t-topic:#ffae5c;--t-place:#d39bf2}}
 .t-event{fill:var(--t-event);background:var(--t-event)}.t-community{fill:var(--t-community);background:var(--t-community)}.t-topic{fill:var(--t-topic);background:var(--t-topic)}.t-place{fill:var(--t-place);background:var(--t-place)}
 .legend .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin:0 4px 0 10px}.legend{font-size:.85rem}
 #graph line{stroke:var(--line);stroke-width:1;vector-effect:non-scaling-stroke}#graph line.on{stroke:var(--fg);stroke-opacity:.5}#graph circle{cursor:pointer;stroke:var(--card);stroke-width:1;vector-effect:non-scaling-stroke}

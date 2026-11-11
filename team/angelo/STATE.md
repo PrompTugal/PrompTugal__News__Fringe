@@ -2,8 +2,12 @@
 
 Memory between wakes. Read this and `status.json`, then only what changed on dev since `last-seen` below.
 
-- **Item:** work/05 the fringe graph (claimed 11:22 UTC).
-- **Key:** session key, signing sha256:ca2c782dbfd0147e, in data/keys.json. Not yet in Website board/keys.json.
-- **Wake:** hourly until Fri 13 Nov: not set (waiting for Angelo's own word in this session).
-- **last-seen:** origin/dev at release of the graph (11:46 UTC)
+- **Item:** work/05 the fringe graph (claimed 11:21 UTC).
+- **Key:** session key, signing sha256:ca2c782dbfd0147e, in data/keys.json and Website board/keys.json (9e4cdc1b).
+- **Wake:** hourly at :29 until Fri 13 Nov 23:59 UTC (trig_01UqsUe1kvf2qvWkjLiF2hPk); after that the wake disables itself.
+- **last-seen:** origin/dev at 438f9f5 (12:30 UTC)
+- **Traces:** team/angelo/traces/ (first: the Wexio event page); generator admin/tools/trace-event.mjs (needs a runs.json from the Actions runs list).
 - **Graph:** admin/build/graph.mjs + graph.js; pt.news snapshot data/ptnews-index.json (regenerate: node admin/tools/ptnews-index.mjs <Website clone>).
+- **last-digest:** 5568140 (12:45 UTC); interim format until conductor.b@'s definition reaches me from Angelo.
+- **Angelo's decisions (12:49 UTC):** trace strip on event pages only after the first MVP is approved; work/32 claimed; obs.js errors passed to the lead on work/21.
+- **If paused (usage limit):** resume from status.json "next"; work/32 not started beyond the claim; nothing half-written on disk.

@@ -1,0 +1,1432 @@
+{
+ "about": "Second-opinion checks (work/20): a cheap open model read each event's public page and our entry. EVIDENCE only, never fact: no data changed from it. Verdicts only; no page or model text is kept in git. Mismatches are for work/13 and researcher.2 to re-read at source.",
+ "run_at": "2026-11-11T12:47:52Z",
+ "by": "dev.2.fringe@PrompTugal.dinis",
+ "model": "tier check (see admin/tools/llm-models.json)",
+ "hours": 2,
+ "checked": 170,
+ "errors": 1,
+ "cost_usd_this_run": 0.00598,
+ "label": "evidence",
+ "mismatched": [
+  {
+   "id": "2026-11-11-wet-summit-lisbon",
+   "url": "https://wetsummitlisbon.com/",
+   "status": {
+    "v": "match"
+   },
+   "start": {
+    "v": "mismatch",
+    "says": "New start time: 12:00"
+   }
+  },
+  {
+   "id": "2026-11-11-travel-tech-pitch-party",
+   "url": "https://luma.com/9jtn1muw",
+   "status": {
+    "v": "match"
+   },
+   "start": {
+    "v": "mismatch",
+    "says": "6:30PM - Networking"
+   }
+  },
+  {
+   "id": "2026-11-11-taste-japan-career-connections",
+   "url": "https://luma.com/f31mqr0v",
+   "status": {
+    "v": "mismatch",
+    "says": "Tokyo Startup Talent in Asia/Tokyo not mentioned anywhere else"
+   },
+   "start": {
+    "v": "mismatch",
+    "says": "at 17:25:00Z not 17:25:00.000Z as page says"
+   }
+  },
+  {
+   "id": "2026-11-11-life-with-artificials-kickoff",
+   "url": "https://www.meetup.com/life-with-artificials/events/317058510/",
+   "status": {
+    "v": "match"
+   },
+   "start": {
+    "v": "mismatch",
+    "says": "Wed, Nov 11, 2026, 6:30 PM"
+   }
+  },
+  {
+   "id": "2026-11-11-innovation-wednesdays-azerbaijan",
+   "url": "https://luma.com/pgpdzd1g",
+   "status": {
+    "v": "match"
+   },
+   "start": {
+    "v": "mismatch",
+    "says": "Wednesday 11 November, 18:00"
+   }
+  },
+  {
+   "id": "2026-11-11-postponed-clay-in-lisbon-gtm-battlecards",
+   "url": "https://luma.com/ccl-websummit",
+   "status": {
+    "v": "mismatch",
+    "says": "POSTPONED: This event will not take place on 11 November due to weather"
+   },
+   "start": {
+    "v": "mismatch",
+    "says": "due to the bad weather forecast, new date will be shared"
+   }
+  },
+  {
+   "id": "2026-11-11-funders-founders-night-altair",
+   "url": "https://luma.com/h19cccc5",
+   "status": {
+    "v": "match"
+   },
+   "start": {
+    "v": "mismatch",
+    "says": "America/Los_Angeles"
+   }
+  },
+  {
+   "id": "2026-11-11-indiesummit-lisboa",
+   "url": "https://www.meetup.com/indiebeers-lisboa/events/317024539/",
+   "status": {
+    "v": "match"
+   },
+   "start": {
+    "v": "mismatch",
+    "says": "Wednesday, Nov 11 \u00b7 7:00 PM"
+   }
+  },
+  {
+   "id": "2026-11-11-between-the-waves",
+   "url": "https://luma.com/5yucusdb",
+   "status": {
+    "v": "match"
+   },
+   "start": {
+    "v": "mismatch",
+    "says": "start_at=2026-11-11T20:00:00.000Z"
+   }
+  },
+  {
+   "id": "2026-11-12-ai-engineers-lunch-web-summit-week",
+   "url": "https://luma.com/85k5kz1g",
+   "status": {
+    "v": "mismatch",
+    "says": "America/Los_Angeles"
+   },
+   "start": {
+    "v": "match"
+   }
+  },
+  {
+   "id": "2026-11-12-next-rounds-on-us",
+   "url": "https://luma.com/j2swdpb0",
+   "status": {
+    "v": "match"
+   },
+   "start": {
+    "v": "mismatch",
+    "says": "2026-11-12T17:00:00.000Z"
+   }
+  },
+  {
+   "id": "2026-11-12-eit-jumpstarter-2026-awards-ceremony-web-summi",
+   "url": "https://luma.com/a2ue9hpo",
+   "status": {
+    "v": "match"
+   },
+   "start": {
+    "v": "mismatch",
+    "says": "18:00\u201321:00 (registration starts at 17:30)"
+   }
+  },
+  {
+   "id": "2026-11-12-lisbon-digital-nomads-after-hours-ptw-palace",
+   "url": "https://luma.com/portugal-hku2",
+   "status": {
+    "v": "match"
+   },
+   "start": {
+    "v": "mismatch",
+    "says": "start_at=2026-11-12T19:00:00.000Z"
+   }
+  },
+  {
+   "id": "2026-11-12-opus-after-hours",
+   "url": "https://luma.com/s73xrx2r",
+   "status": {
+    "v": "match"
+   },
+   "start": {
+    "v": "mismatch",
+    "says": "2026-11-12T19:30:00.000Z"
+   }
+  },
+  {
+   "id": "2026-11-12-moon-summit-web-summit-closing-night",
+   "url": "https://luma.com/1tggnm7t",
+   "status": {
+    "v": "match"
+   },
+   "start": {
+    "v": "mismatch",
+    "says": "Thursday, November 12, 2026"
+   }
+  },
+  {
+   "id": "2026-11-13-liberate-talent-for-the-future",
+   "url": "https://luma.com/a4cu32mo",
+   "status": {
+    "v": "match"
+   },
+   "start": {
+    "v": "mismatch",
+    "says": "2026-11-13T10:00:00.000Z"
+   }
+  },
+  {
+   "id": "2026-11-13-ib-connect-by-the-coast-post-web-summit-meetup",
+   "url": "https://luma.com/ibconnect1",
+   "status": {
+    "v": "match"
+   },
+   "start": {
+    "v": "mismatch",
+    "says": "11:00 to 12:00, but the kitchen opens at 12:00"
+   }
+  },
+  {
+   "id": "2026-11-13-is-your-ai-startup-ready-for-europe-the-eu-ai-",
+   "url": "https://luma.com/buqma11b",
+   "status": {
+    "v": "match"
+   },
+   "start": {
+    "v": "mismatch",
+    "says": "start_at=2026-11-13T11:30:00.000Z (different format)"
+   }
+  },
+  {
+   "id": "2026-11-13-meetball-after-hours-ptw-palace",
+   "url": "https://luma.com/portugal-tw4y",
+   "status": {
+    "v": "match"
+   },
+   "start": {
+    "v": "mismatch",
+    "says": "2026-11-13T19:00:00.000Z"
+   }
+  }
+ ],
+ "all": [
+  {
+   "id": "2026-11-11-padel-encounters-lisbon-wed-11-nov",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-proof-of-run-rain-edition",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-strength-and-coffee-founders",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-kyra-creator-club",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-founderlink-storm-summit-morning",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-founders-break-fast-the-websummit",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-roast-your-website",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-dear-gatekeepers-live",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "unclear"
+  },
+  {
+   "id": "2026-11-11-human-side-of-ai",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-human-performance-under-uncertainty",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-seattle-angel-connect-collaborate-invest",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-startup-legal-roast",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-ptw-classroom-deep-work-wexio",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-valois-allocator-residence",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-wet-summit-lisbon",
+   "status": "match",
+   "start": "mismatch",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-yorkseed-allocator-lunch",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-ai-video-blueprint-2027",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-founderlink-storm-summit-afternoon",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-corporate-academy-of-tomorrow",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-redefining-investment-and-innovation-where-is-",
+   "status": "unparsed",
+   "start": "unparsed",
+   "end": "unparsed",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-side-events-guide-irl",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-ethical-ai-initiative",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-kuma-h2h-2",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-bridging-capital-across-borders",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-kuma-align-leadership-ai",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-amplify-europe-lisbon",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-yorkseed-investor-pitch",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-ai-spam-problem",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-aubay-the-next-move",
+   "error": "http_404"
+  },
+  {
+   "id": "2026-11-11-enchant-pitch-parties",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-like-minded",
+   "status": "match",
+   "start": "match",
+   "end": "unclear",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-lisbon-tech-side-event",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-gaming-entertainment-pitch-party",
+   "status": "match",
+   "start": "match",
+   "end": "unclear",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-healthtech-pitch-party",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-ai-for-business-applied-ai-pitch-party",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-travel-tech-pitch-party",
+   "status": "match",
+   "start": "mismatch",
+   "end": "mismatch",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-taste-japan-career-connections",
+   "status": "mismatch",
+   "start": "mismatch",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-life-with-artificials-kickoff",
+   "status": "match",
+   "start": "mismatch",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-cisco-automation-to-autonomy",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-tech-startups-on-the-rooftop",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-ai-horizon-conference",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-innovation-wednesdays-azerbaijan",
+   "status": "match",
+   "start": "mismatch",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-frontier-founders-vcs-soiree",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-lisboaux-web-summit-edition",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-tti-at-web-summit-what-s-next-at-the-ai-fronti",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-postponed-clay-in-lisbon-gtm-battlecards",
+   "status": "mismatch",
+   "start": "mismatch",
+   "end": "mismatch",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-demonightlx",
+   "status": "match",
+   "start": "unparsed",
+   "end": "unparsed",
+   "place": "unparsed"
+  },
+  {
+   "id": "2026-11-11-kcd-warmup-29",
+   "status": "unparsed",
+   "start": "unparsed",
+   "end": "unparsed",
+   "place": "unparsed"
+  },
+  {
+   "id": "2026-11-11-open-mercato-night",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-funders-founders-night-altair",
+   "status": "match",
+   "start": "mismatch",
+   "end": "mismatch",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-european-tech-champions-italy-portugal",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-romanian-tech-night-at-websummit",
+   "status": "unparsed",
+   "start": "unparsed",
+   "end": "unparsed",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-indiesummit-lisboa",
+   "status": "match",
+   "start": "mismatch",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-founderlink-storm-summit-evening",
+   "status": "match",
+   "start": "match",
+   "end": "unclear",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-indvstry-diaspora-dinner",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-foundacious-lisbon",
+   "status": "match",
+   "start": "unparsed",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-agentic-engineering-lisbon",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-polymorphic-capital-soiree-founders-and-partne",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-private-dinner-for-30-defence-leaders-funding-",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-canopy-post-demo-night-drinks",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-market-expansion-dinner",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-albanian-founders-investors-meetup",
+   "status": "match",
+   "start": "match",
+   "end": "unclear",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-founders-house-party",
+   "status": "unparsed",
+   "start": "unparsed",
+   "end": "unparsed",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-r-founders-week-websummit-26-r-founders-party-",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-between-the-waves",
+   "status": "match",
+   "start": "mismatch",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-future-tech-2026",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-karumi-ai-lands-in-lisbon",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-the-signal-room-by-hardal",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-web-summit-x-tech-talks-run-club-coffee",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-am-run-workout-w-bvc",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-padel-encounters-lisbon-thu-12-nov",
+   "status": "match",
+   "start": "match",
+   "end": "unclear",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-the-right-hand-breakfast-chiefs-of-staff-at-we",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-guided-morning-walk-in-lisbon-before-web-summi",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-networking-coffee-breakfast-web-summit",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-female-founders-breakfast",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-sales-leaders-breakfast",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-ovhcloud-breakfast-ufl",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-open-coffee-lisbon-53",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-covilha-tech-day-2026",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-cafe-and-code-exa-mastra",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-canopy-campfire-ai",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-kids-young-founders-pitch-at-tech-week-palace-",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-ptw-coworking-by-idea-spaces",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-it-s-all-about-ai-reimagining-how-we-work-crea",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-ptw-classroom-portuguese-for-tech-life-meet-gr",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-ai-networking-lunch-web-summit-2026",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-ai-engineers-lunch-web-summit-week",
+   "status": "mismatch",
+   "start": "match",
+   "end": "mismatch",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-business-lunch-lisbon-fsense-cvortex-web-summi",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-ai-promises-to-give-us-time-back-who-gets-to-k",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-a-family-style-gypsy-lunch-web-summit-wind-dow",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-workshop-with-parents-unicorn-school",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-cultural-agility-the-missing-skill-in-the-futu",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-ptw-classroom-storytelling-game-by-pina",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-entrepreneur-community-meet-the-founder-unicor",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-breaking-into-america-us-fundraising-playbook-",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-yorkseed-cross-border-venture-salon",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-founder-decompression",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-post-web-summit-reset-sauna",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-11-elevon-czsk-community-night",
+   "status": "match",
+   "start": "unparsed",
+   "end": "mismatch",
+   "place": "unparsed"
+  },
+  {
+   "id": "2026-11-12-agents-are-ready-internet-isnt",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-next-rounds-on-us",
+   "status": "match",
+   "start": "mismatch",
+   "end": "mismatch",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-healthcare-re-imagined-by-ai",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-one-night-in-lisbon-with-replit",
+   "status": "match",
+   "start": "match",
+   "end": "unclear",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-building-better-trading-strategies-with-ai",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-eit-jumpstarter-2026-awards-ceremony-web-summi",
+   "status": "match",
+   "start": "mismatch",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-side-event-staaake-closing-ai-tech-power-walk",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-ptw-classroom-what-can-ai-workers-do-for-your-",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-defense-tech-meetup-9",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-the-founder-effect",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-rize-the-reset-11-11-a-web-summit-wellness-exp",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-lateral-web-summit",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-show-what-you-build",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-closing-night-the-nest",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-300-oysters-and-ai-web-summit-lisbon-side-even",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-staaake-side-event-hangover-rooftop-ai-tech-ev",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-disconnect-2-connect",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-lisbon-business-leaders-evening",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-venture-dinner",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-contracts-cocktails-a-founder-legal-tech-mixer",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-leadership-through-dance-presence-posture-non-",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-yorkseed-grand-finale-web-summit-2026",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-founders-don-t-cry",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-lisbon-digital-nomads-after-hours-ptw-palace",
+   "status": "match",
+   "start": "mismatch",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-web-summit-networking-mixer",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-conjugacao-terra-preview-performance-concerto",
+   "status": "match",
+   "start": "unparsed",
+   "end": "mismatch",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-opus-after-hours",
+   "status": "match",
+   "start": "mismatch",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-airplane-mode-lisbon-founders-dinner-2-web-sum",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-match-me-at-web-summit",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-the-100-year-dinner-longevity-served",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-institutional-capital-tokenized",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-a-reflection-on-art-technology-by-boca-biennia",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-moon-summit-web-summit-closing-night",
+   "status": "match",
+   "start": "mismatch",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-12-get-down-at-the-dev-house",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-fitness-sports-investor-meetup",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-12-ufl-web-summit-after-party",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "unclear"
+  },
+  {
+   "id": "2026-11-13-unblock-ai-conference",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-13-lisbon-community-week",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-13-co-working-day-for-designers-mentoring",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-13-co-working-for-developers",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-13-ptw-classroom-ladies-who-build",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "unclear"
+  },
+  {
+   "id": "2026-11-13-speak-up-or-stay-silent-emotional-intelligence",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-13-liberate-talent-for-the-future",
+   "status": "match",
+   "start": "mismatch",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-13-mertola-tech-day",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-13-ptw-coworking-by-idea-spaces",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-13-yorkseed-legal-compliance-clinic",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-13-web-summit-notion-morning-power-walk-friday",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-13-beach-field-trip-post-tech-ai-conference-rever",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-13-ib-connect-by-the-coast-post-web-summit-meetup",
+   "status": "match",
+   "start": "mismatch",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-13-is-your-ai-startup-ready-for-europe-the-eu-ai-",
+   "status": "match",
+   "start": "mismatch",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-13-ptw-classroom-ladies-who-build-claude-use-case",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-13-what-can-your-body-teach-you-about-how-you-run",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-13-ptw-classroom-ladies-who-build-ai-for-marketin",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-13-why-users-leave-your-ai-feature-and-how-to-mak",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-13-supergrowth-how-to-build-an-ai-powered-distrib",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-13-rise-of-the-expert-creator",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-13-founders-pastel-de-nata-reverse-network-meet",
+   "status": "match",
+   "start": "unparsed",
+   "end": "unparsed",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-13-people-pitch-after-summit-before-the-future",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-13-portugal-real-estate-web-summit-edition",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-13-how-web-apps-work-for-product-managers-who-wan",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-13-meetball-after-hours-ptw-palace",
+   "status": "match",
+   "start": "mismatch",
+   "end": "mismatch",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-14-primum-next",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-14-bitcointalks-cripto-ia-summit-santarem",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-14-ai-devs-hoopers-run",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-14-web-summit-unwind-a-traditional-banya-experien",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-14-offline-hangout-travel-edition-x-weroad-rossio",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-14-kindpilates-donation-based-pilates-class",
+   "status": "match",
+   "start": "match",
+   "end": "mismatch",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-14-speaktiger-speed-friending-lisbon-14-nov",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-14-staaake-side-event-saturday-tech-ai-dinner-sta",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "mismatch"
+  },
+  {
+   "id": "2026-11-14-life-in-lisboa-a-cultural-comedy-show-in-engli",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  }
+ ],
+ "mismatches_status_or_start": 19,
+ "end_mismatches_not_listed": 63,
+ "place_mismatches_not_listed": 82,
+ "worth_a_look": {
+  "label": "hypothesis (dev.2's reading of the model's verdicts; most start mismatches are time-format noise)",
+  "ids": [
+   "2026-11-11-life-with-artificials-kickoff",
+   "2026-11-11-travel-tech-pitch-party"
+  ],
+  "why": "the page shows 6:30 PM; our start is 17:30 / 17:00 UTC (Lisbon = UTC in November). Re-read at source."
+ },
+ "quality": "status: 163 match, 3 mismatch, 4 unparsed (2 of the 3 are already moved/known). start: 143 match, 18 mismatch (about 16 are format noise). end and place: too noisy to list."
+}
