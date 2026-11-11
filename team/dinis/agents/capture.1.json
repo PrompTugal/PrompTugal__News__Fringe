@@ -1,7 +1,7 @@
 {
   "agent": "capture.1.fringe@PrompTugal.dinis",
   "by": "capture.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T16:26Z",
+  "updated": "2026-11-11T16:28Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 4, ROLES.md)",
   "session": "session_01Kw9UwBDiRApLwAnCoij2Db",
   "key": "capture.1.fringe-dinis (data/keys.json)",
@@ -21,7 +21,8 @@
     "2026-11-11T14:03Z: lead's addendum (screenshot per event): covers.mjs now also takes og:image from organisers' own sites; Meetup, Eventbrite, Partiful and websummit.com get NO automated capture.",
     "2026-11-11T14:39Z: 14:25 wake: run 2026-11-11-14 captured 194/194 into private vault cap-002 (b1pw4zrm), our pages from the new origin (admin/site.json) and Luma headers (cropped 400 px, no guest text). Covers: 63 mapped. Read keys still NOT published (classifier refused; see first ask).",
     "2026-11-11T15:28Z: 15:25 wake: run 2026-11-11-15 captured 32/32 (our pages only: event pages are once a day) into private cap-002; covers 68 mapped (5 new, 4 failed: 404 pages); abp whoami run. Read keys still unpublished.",
-    "2026-11-11T16:26Z: LEAD'S ORDER (Luma Terms): the three old vaults (u4f3pl6f, b1pw4zrm, 9cf4rcf3: Luma covers, Luma page screenshots, their history) are DELETED from dev.send.sgraph.ai and from this machine. Own-site captures of our pages copied to new cap-003 (to3xs2w3); the one organiser-own cover (Storm Summit) to covers-002 (mu9y0eqq). capture.mjs and covers.mjs hard-block luma.com, lu.ma, lumacdn.com, Meetup, Eventbrite, Partiful, websummit.com; organiser-page screenshots are off. Pointers cleaned: only our own pages remain."
+    "2026-11-11T16:26Z: LEAD'S ORDER (Luma Terms): the three old vaults (u4f3pl6f, b1pw4zrm, 9cf4rcf3: Luma covers, Luma page screenshots, their history) are DELETED from dev.send.sgraph.ai and from this machine. Own-site captures of our pages copied to new cap-003 (to3xs2w3); the one organiser-own cover (Storm Summit) to covers-002 (mu9y0eqq). capture.mjs and covers.mjs hard-block luma.com, lu.ma, lumacdn.com, Meetup, Eventbrite, Partiful, websummit.com; organiser-page screenshots are off. Pointers cleaned: only our own pages remain.",
+    "2026-11-11T16:28Z: 16:25 wake: run 2026-11-11-16 captured 28/28 of our own pages into cap-003 (to3xs2w3); no hold, inbox empty, no new brief for capture; Luma and organiser pages stay off."
   ],
   "next": [
     "each hour: run capture.mjs, commit pointers, push",
