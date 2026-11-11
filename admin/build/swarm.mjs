@@ -131,7 +131,7 @@ export async function collectSwarm({ root, roster, status, board, traffic, built
 
   return {
     overall, sections, flow, asks_by_addressee: Object.entries(ask_groups).sort(([a], [b]) => (a === 'Dinis' ? -1 : b === 'Dinis' ? 1 : a.localeCompare(b))).map(([to, list]) => ({ to, count: list.length, asks: list.sort((x, y) => String(y.at).localeCompare(String(x.at))).map((a) => clip(a.text, 300)) })),
-    about: `Lisbon Fringe's swarm, built from the repository's team/, work/ and data/ files. "online" means the status file was updated in the last ${ONLINE_MIN} minutes (UTC). Counts only; no key, contact detail or private person. Independent of Web Summit.`,
+    about: `Lisbon Tech Week's swarm, built from the repository's team/, work/ and data/ files. "online" means the status file was updated in the last ${ONLINE_MIN} minutes (UTC). Counts only; no key, contact detail or private person. Independent of Web Summit.`,
     built_at: builtAt, online_minutes: ONLINE_MIN,
     counts: {
       conductors_online: online(people), conductors_started: people.filter((p) => p.updated).length, conductors_total: people.length,

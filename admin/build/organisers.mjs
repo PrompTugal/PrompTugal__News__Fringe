@@ -45,9 +45,9 @@ export function organisersBody({ orgs }, esc, { eventPath, hasPage }) {
   }).join('');
   return `<h1>For organisers</h1>
 ${APPROVED ? '' : `<p class="ind yours"><strong>Draft until Dinis approves.</strong> This is the offer as drafted (work/23). Nobody has been contacted, and no agent messages an organiser.</p>`}
-<p>Lisbon Fringe is an independent guide to the side events around Web Summit Lisbon. It points people to <em>your</em> page; yours is the one that counts. If you run an event, here is what we offer.</p>
+<p>Lisbon Tech Week is an independent guide to the side events around Web Summit Lisbon. It points people to <em>your</em> page; yours is the one that counts. If you run an event, here is what we offer.</p>
 <ol>
-<li><strong>A page for your event</strong> on Lisbon Fringe, kept up to date.</li>
+<li><strong>A page for your event</strong> on Lisbon Tech Week, kept up to date.</li>
 <li><strong>A report:</strong> who found your event through us, by place and channel (counts only, per event; see <a href="/traffic/">/traffic/</a> for the site as a whole).</li>
 <li><strong>Join the team:</strong> one Claude Code session on your side, with the prompt on <a href="/join/">/join/</a>, as <code>conductor.fringe@PrompTugal.&lt;your id&gt;</code>. You get an inbox, our agents and the board, and you coordinate with the other organisers.</li>
 </ol>

@@ -62,7 +62,7 @@ const prompt = (join_md.split(/\n---\n/)[1] || '').trim();
 const ids = roster.people.map((p) => p.id);
 
 // --- layout --------------------------------------------------------------
-const INDEPENDENCE = `Lisbon Fringe is independent of Web Summit and not run by its organisers. For anything official, see <a href="https://websummit.com/">the organisers' official site</a>.`;
+const INDEPENDENCE = `Lisbon Tech Week is independent of Web Summit and not run by its organisers. For anything official, see <a href="https://websummit.com/">the organisers' official site</a>.`;
 const tokens = readFileSync(join(root, 'admin', 'build', 'tokens.css'), 'utf8'); // D8: the one set of design tokens
 const css = tokens + `
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;background:var(--paper);color:var(--ink);font:var(--fs-body)/var(--lh-body) var(--sans)}
@@ -96,14 +96,15 @@ const NAV = [['Today', '/', true], ['Programme', '/programme/', true], ['Now', '
 const navHtml = (here) => `<header><nav aria-label="Main"><span class="brand"><a href="/">${WORDMARK}</a></span>
 <ul class="nav">${NAV.filter((n) => n[2]).map(([label, href]) => `<li><a href="${href}"${href === here ? ' aria-current="page"' : ''}>${label}</a></li>`).join('')}</ul></nav><div class="tiles" aria-hidden="true"></div></header>`;
 const OG_IMAGE = SITE + 'assets/og/share.png';   // work/design D2: 1200x630, rendered in CI from admin/build/og/share.html (never in git)
-const ogDefault = (title, desc) => [['og:type', 'website'], ['og:site_name', 'Lisbon Fringe'], ['og:title', title], ['og:description', desc], ['og:image', OG_IMAGE], ['og:image:width', '1200'], ['og:image:height', '630']]
+const ogDefault = (title, desc) => [['og:type', 'website'], ['og:site_name', 'Lisbon Tech Week'], ['og:title', title], ['og:description', desc], ['og:image', OG_IMAGE], ['og:image:width', '1200'], ['og:image:height', '630']]
   .map(([p, v]) => `<meta property="${p}" content="${esc(v)}">`).join('') + `<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${OG_IMAGE}">`;
 const page = (title, body, desc, head = '', here = '/') => `<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">${/og:title/.test(head) ? head : ogDefault(title, desc) + head}<style>${css}</style></head><body>
-<div class="ptbar"><a href="https://promptugal.news">Lisbon Fringe · a PrompTugal.news site <span aria-hidden="true">↗</span></a></div>
+<div class="ptbar"><a href="https://promptugal.news">Lisbon Tech Week · a PrompTugal.news site <span aria-hidden="true">↗</span></a></div>
 ${navHtml(here)}
-<main><p class="ind">${INDEPENDENCE}</p>${body}</main>
+<p class="ind">Independent of Web Summit · <a href="https://websummit.com/">official site</a></p>
+<main>${body}</main>
 <footer class="muted">${INDEPENDENCE}<br>Built from <a href="${REPO}">the repository</a> at ${BUILT.slice(0, 16).replace('T', ' ')} UTC · <a href="/version.json">${esc(VERSION)}</a>. <a href="/traffic/">Traffic</a> · <a href="/changes/">Changes</a> · <a href="/evolution/">Evolution</a> · <a href="/dashboard/">Swarm</a>.</footer>
 <script src="/assets/obs/obs.js" defer></script>
 </body></html>`;
@@ -159,7 +160,7 @@ function heroCard([e, label]) {
   return `<div class="card"><span class="when">${label} · ${t(e.start)}${e.end ? '–' + t(e.end) : ''} UTC</span><br><a href="${esc(hasPage(e) ? eventPath(e) : e.url)}"><strong>${esc(e.name)}</strong></a><div class="muted">${esc([e.place, e.organiser].filter(Boolean).join(' · '))}</div></div>`;
 }
 const heroData = JSON.stringify(events.map((e) => ({ id: e.id, name: e.name, url: e.url, date: e.date, start: e.start, end: e.end, status: e.status, place: e.place, organiser: e.organiser })).map((e) => e)).replace(/</g, '\\u003c');
-const hero = `<section class="hero festival"><span class="kicker">Lisbon · this week</span><h1>Lisbon <em>Fringe</em></h1>
+const hero = `<section class="hero festival"><span class="kicker">Lisbon · this week</span><h1>Lisbon <em>Tech Week</em></h1>
 <p class="tag-line">Lisbon&rsquo;s tech week, every event, live. Independent.</p>
 <p class="count" id="hero-count">${esc(heroCount(events, today))}</p>
 <a class="btn" href="#events">See all events</a>
@@ -175,7 +176,7 @@ r=live.concat(nx).slice(0,3);if(!r.length)return;
 var box=document.getElementById('hero-list');box.textContent='';r.forEach(function(x){var e=x[0],c=document.createElement('div');c.className='card';var w=document.createElement('span');w.className='when';w.textContent=x[1]+' · '+e.start.slice(11,16)+(e.end?'–'+e.end.slice(11,16):'')+' UTC';var l=document.createElement('a');l.setAttribute('href',/^[a-z0-9][a-z0-9-]*$/.test(e.id||'')?'/e/'+encodeURIComponent(e.id)+'/':e.url);var st=document.createElement('strong');st.textContent=e.name;l.appendChild(st);var m=document.createElement('div');m.className='muted';m.textContent=[e.place,e.organiser].filter(Boolean).join(' · ');c.appendChild(w);c.appendChild(document.createElement('br'));c.appendChild(l);c.appendChild(m);box.appendChild(c)})}catch(x){}})();</script>`;
 
 // --- / -------------------------------------------------------------------
-const home = page('Lisbon Fringe', `
+const home = page('Lisbon Tech Week', `
 <nav class="jumps" aria-label="Jump to"><a href="#now">Now</a><a href="#tonight">Tonight</a><a href="#online">Online</a><a href="#tomorrow">Tomorrow</a></nav>
 ${hero}
 <p class="muted">An independent guide to the alternative, community and side events around Web Summit Lisbon this week: what is on, where, when and how to join.</p>
@@ -213,9 +214,9 @@ const boardRows = ['open', 'claimed', 'done'].map((st) => {
 <a href="${REPO}/blob/dev/work/${esc(b.file)}"><strong>${esc(b.id)}. ${esc(b.title)}</strong></a><span class="tag ${esc(st)}">${esc(st)}</span>
 <div class="muted">Owner: ${esc(b.owner || 'nobody yet')} · lane: ${esc(b.lane)}</div></div>`).join('') || '<p class="muted">None.</p>');
 }).join('');
-const joinPage = page('Join Lisbon Fringe', `
+const joinPage = page('Join Lisbon Tech Week', `
 <h1>Bring your conductor in five minutes</h1>
-<p>Each person on the team runs one conductor for Lisbon Fringe in their own Claude account. Dinis is the head conductor. The work lives on <a href="${REPO}/tree/dev/work">the board</a>. How it works: <a href="${REPO}/blob/dev/SWARM.md">SWARM.md</a>.</p>
+<p>Each person on the team runs one conductor for Lisbon Tech Week in their own Claude account. Dinis is the head conductor. The work lives on <a href="${REPO}/tree/dev/work">the board</a>. How it works: <a href="${REPO}/blob/dev/SWARM.md">SWARM.md</a>.</p>
 <h2>Steps</h2><ol>${steps}</ol>
 <h2>Your id</h2><p>${ids.map((i) => `<code>${esc(i)}</code>`).join(' ')}</p>
 <h2>The prompt</h2>
@@ -223,23 +224,23 @@ const joinPage = page('Join Lisbon Fringe', `
 <h2>The team</h2>${rosterRows}
 <h2>The board</h2>${boardRows}
 <script>document.getElementById('copy').onclick=async function(){var t=document.getElementById('prompt').innerText;try{await navigator.clipboard.writeText(t);this.textContent='Copied'}catch(e){var r=document.createRange();r.selectNodeContents(document.getElementById('prompt'));var s=getSelection();s.removeAllRanges();s.addRange(r);this.textContent='Selected: copy it'}};</script>
-`, 'How a team member brings their own conductor to Lisbon Fringe.', '', '/join/');
+`, 'How a team member brings their own conductor to Lisbon Tech Week.', '', '/join/');
 
 // --- /graph/ (work/05) ----------------------------------------------------
 const ptnews = existsSync(join(root, 'data/ptnews-index.json')) ? JSON.parse(read('data/ptnews-index.json')) : null;
 const graph = buildGraph(events, ptnews, existsSync(join(root, 'data/communities.json')) ? JSON.parse(read('data/communities.json')).communities : []);   // work/05 uses work/04's communities
-const graphPage = page('Connect the dots: Lisbon Fringe', `<style>${graphCss}</style>` + graphBody(graph, esc), 'The fringe as a graph: events, communities, topics and places, with filters.', '', '/graph/');
+const graphPage = page('Connect the dots: Lisbon Tech Week', `<style>${graphCss}</style>` + graphBody(graph, esc), 'The fringe as a graph: events, communities, topics and places, with filters.', '', '/graph/');
 
 // --- write ---------------------------------------------------------------
 mkdirSync(join(out, 'join'), { recursive: true });
 writeFileSync(join(out, 'index.html'), home);   // rewritten with the showroom strip after the swarm is collected (D6)
 writeFileSync(join(out, 'join', 'index.html'), joinPage);
 mkdirSync(join(out, 'programme'), { recursive: true });
-writeFileSync(join(out, 'programme', 'index.html'), page('The programme: Lisbon Fringe', programmeBody({ events, esc }), 'The whole week of Lisbon side events: browse by day, place and kind.', '', '/programme/'));
+writeFileSync(join(out, 'programme', 'index.html'), page('The programme: Lisbon Tech Week', programmeBody({ events, esc }), 'The whole week of Lisbon side events: browse by day, place and kind.', '', '/programme/'));
 mkdirSync(join(out, 'how'), { recursive: true });
 const count = (d, re) => { try { return readdirSync(join(root, d)).filter((f) => re.test(f)).length; } catch { return 0; } };
 const nAgents = readdirSync(join(root, 'team')).reduce((a, d) => a + count(`team/${d}/agents`, /\.json$/) + (existsSync(join(root, 'team', d, 'status.json')) ? 1 : 0), 0);
-writeFileSync(join(out, 'how', 'index.html'), page('How Lisbon Fringe is made', howBody({ esc, REPO, n: { events: events.length, people: roster.people.length, agents: nAgents, board: board.length, boardDone: board.filter((b) => b.status === 'done').length, briefs: count('briefs', /\.md$/), inboxes: count('data/inboxes', /\.json$/) } }), 'How Lisbon Fringe is made: a swarm of conductors and agents, one conductor per person, Dinis as head.', '', '/how/'));
+writeFileSync(join(out, 'how', 'index.html'), page('How Lisbon Tech Week is made', howBody({ esc, REPO, n: { events: events.length, people: roster.people.length, agents: nAgents, board: board.length, boardDone: board.filter((b) => b.status === 'done').length, briefs: count('briefs', /\.md$/), inboxes: count('data/inboxes', /\.json$/) } }), 'How Lisbon Tech Week is made: a swarm of conductors and agents, one conductor per person, Dinis as head.', '', '/how/'));
 mkdirSync(join(out, 'graph'), { recursive: true });
 writeFileSync(join(out, 'graph', 'index.html'), graphPage);
 writeFileSync(join(out, 'graph.js'), read('admin/build/graph.js'));
@@ -247,21 +248,21 @@ writeFileSync(join(out, 'CNAME'), 'fringe.promptugal.news\n');
 writeFileSync(join(out, '404.html'), page('Not found', '<h1>That page is not here</h1><p>It may have moved, or it is not built yet. Try one of these:</p><p><a class="btn" href="/">Today in Lisbon</a></p><ul><li><a href="/#events">All events, today and tomorrow</a></li><li><a href="/api/v1/events.json">Every event as data</a></li><li><a href="/join/">Join the team</a></li></ul>', 'Page not found.'));
 mkdirSync(join(out, 'api', 'v1'), { recursive: true });
 writeFileSync(join(out, 'api', 'v1', 'README.md'), read('api/v1/README.md'));
-writeFileSync(join(out, 'api', 'v1', 'events.json'), JSON.stringify({ about: 'Lisbon Fringe events, each re-read at its public URL (read_at, UTC). Independent of Web Summit.', site: SITE, version: VERSION, built_at: BUILT, events }, null, 2) + '\n');
-writeFileSync(join(out, 'api', 'v1', 'graph.json'), JSON.stringify({ about: 'The Lisbon Fringe graph: events, communities (organisers, as organisations), topics and places. Every edge comes from one event and carries its source URL and read_at. Independent of Web Summit.', site: SITE, version: VERSION, built_at: BUILT, ptnews_from: ptnews?.from || null, ...graph }, null, 1) + '\n');
+writeFileSync(join(out, 'api', 'v1', 'events.json'), JSON.stringify({ about: 'Lisbon Tech Week events, each re-read at its public URL (read_at, UTC). Independent of Web Summit.', site: SITE, version: VERSION, built_at: BUILT, events }, null, 2) + '\n');
+writeFileSync(join(out, 'api', 'v1', 'graph.json'), JSON.stringify({ about: 'The Lisbon Tech Week graph: events, communities (organisers, as organisations), topics and places. Every edge comes from one event and carries its source URL and read_at. Independent of Web Summit.', site: SITE, version: VERSION, built_at: BUILT, ptnews_from: ptnews?.from || null, ...graph }, null, 1) + '\n');
 // Communities (work/04, conductor.fringe@PrompTugal.indi): data/communities.json, made by admin/tools/communities.mjs.
 if (existsSync(join(root, 'data/communities.json'))) {
   const cm = JSON.parse(read('data/communities.json'));
   writeFileSync(join(out, 'api', 'v1', 'communities.json'), JSON.stringify({ about: cm.about, site: SITE, version: VERSION, built_at: BUILT, updated: cm.updated, how: cm.how, communities: cm.communities }, null, 2) + '\n');
 }
-writeFileSync(join(out, 'llms.txt'), `# Lisbon Fringe\n\n> An independent guide to the alternative, community and side events around Web Summit Lisbon, 9 to 15 November 2026. Independent of Web Summit; for anything official see the organisers' site. Not a warning service: for the storm see https://storm-charles.promptugal.news, IPMA and ANEPC.\n\n- [Events (JSON)](${SITE}api/v1/events.json): each event with its source URL and the time it was read\n- [The graph (JSON)](${SITE}api/v1/graph.json): events, communities, topics and places, each edge with its source\n- [Join the team](${SITE}join/)\n- [Repository](${REPO})\n`);
+writeFileSync(join(out, 'llms.txt'), `# Lisbon Tech Week\n\n> An independent guide to the alternative, community and side events around Web Summit Lisbon, 9 to 15 November 2026. Independent of Web Summit; for anything official see the organisers' site. Not a warning service: for the storm see https://storm-charles.promptugal.news, IPMA and ANEPC.\n\n- [Events (JSON)](${SITE}api/v1/events.json): each event with its source URL and the time it was read\n- [The graph (JSON)](${SITE}api/v1/graph.json): events, communities, topics and places, each edge with its source\n- [Join the team](${SITE}join/)\n- [Repository](${REPO})\n`);
 const orgs = loadOrganisers(root, events);
 mkdirSync(join(out, 'organisers'), { recursive: true });
-writeFileSync(join(out, 'organisers', 'index.html'), page('For organisers: Lisbon Fringe', organisersBody(orgs, esc, { eventPath, hasPage }), 'What Lisbon Fringe offers organisers of side events, and who is listed.'));
+writeFileSync(join(out, 'organisers', 'index.html'), page('For organisers: Lisbon Tech Week', organisersBody(orgs, esc, { eventPath, hasPage }), 'What Lisbon Tech Week offers organisers of side events, and who is listed.'));
 const changes = readChanges(root);
 mkdirSync(join(out, 'changes'), { recursive: true });
-writeFileSync(join(out, 'changes', 'index.html'), page('What changed: Lisbon Fringe', changesBody(changes, esc, REPO), 'Every release of Lisbon Fringe: version, commit, time, agent and files touched.'));
-writeFileSync(join(out, 'api', 'v1', 'changes.json'), JSON.stringify({ about: 'Lisbon Fringe releases from git: version (CI tag), commit, UTC time, agent, subject, files touched by area.', site: SITE, version: VERSION, built_at: BUILT, ...changes }, null, 1) + '\n');
+writeFileSync(join(out, 'changes', 'index.html'), page('What changed: Lisbon Tech Week', changesBody(changes, esc, REPO), 'Every release of Lisbon Tech Week: version, commit, time, agent and files touched.'));
+writeFileSync(join(out, 'api', 'v1', 'changes.json'), JSON.stringify({ about: 'Lisbon Tech Week releases from git: version (CI tag), commit, UTC time, agent, subject, files touched by area.', site: SITE, version: VERSION, built_at: BUILT, ...changes }, null, 1) + '\n');
 const ePages = eventPages(events, { page, esc, linkify, SITE, card, cardList, orgs });   // work/22: /e/<id>/
 for (const p of ePages) { mkdirSync(join(out, p.path), { recursive: true }); writeFileSync(join(out, p.path, 'index.html'), p.html); }
 writeFileSync(join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n<url><loc>${SITE}</loc></url>\n<url><loc>${SITE}join/</loc></url>\n<url><loc>${SITE}how/</loc></url>\n<url><loc>${SITE}programme/</loc></url>\n<url><loc>${SITE}graph/</loc></url>\n<url><loc>${SITE}traffic/</loc></url>\n<url><loc>${SITE}evolution/</loc></url>\n${ePages.map((p) => `<url><loc>${esc(p.url)}</loc></url>\n`).join('')}</urlset>\n`);
@@ -269,7 +270,7 @@ writeFileSync(join(out, 'version.json'), JSON.stringify({ version: VERSION, comm
 writeFileSync(join(out, 'version.txt'), VERSION + '\n');
 writeFileSync(join(out, '.nojekyll'), '');
 mkdirSync(join(out, 'now'), { recursive: true });
-writeFileSync(join(out, 'now', 'index.html'), page('On now: Lisbon Fringe', nowPageBody(events, esc, { eventPath, hasPage }, new Date(BUILT)), 'What is on now and in the next three hours around Web Summit Lisbon.'));
+writeFileSync(join(out, 'now', 'index.html'), page('On now: Lisbon Tech Week', nowPageBody(events, esc, { eventPath, hasPage }, new Date(BUILT)), 'What is on now and in the next three hours around Web Summit Lisbon.'));
 writeFileSync(join(out, 'now.js'), nowJs);
 writeFileSync(join(out, 'storm.js'), read('admin/build/storm.js'));
 // observability (work/21): the sender and its public config on every page, and /traffic/ from the drain's counts
@@ -277,26 +278,26 @@ mkdirSync(join(out, 'assets', 'obs'), { recursive: true });
 for (const f of ['obs.js', 'obs.json']) writeFileSync(join(out, 'assets', 'obs', f), read(`assets/obs/${f}`));
 const traffic = existsSync(join(root, 'data/obs/traffic.json')) ? JSON.parse(read('data/obs/traffic.json')) : null;
 mkdirSync(join(out, 'traffic'), { recursive: true });
-writeFileSync(join(out, 'traffic', 'index.html'), page('Traffic: Lisbon Fringe', `<style>${trafficCss}</style>` + trafficBody(traffic, esc), 'Who reads Lisbon Fringe and how its links spread: counts only.', '', '/traffic/'));
+writeFileSync(join(out, 'traffic', 'index.html'), page('Traffic: Lisbon Tech Week', `<style>${trafficCss}</style>` + trafficBody(traffic, esc), 'Who reads Lisbon Tech Week and how its links spread: counts only.', '', '/traffic/'));
 if (traffic) writeFileSync(join(out, 'traffic', 'traffic.json'), JSON.stringify(traffic, null, 1) + '\n');
 // /me/ (work/26), /dashboard/ and /api/v1/swarm.json (work/25)
 for (const d of ['assets/me', 'assets/vendor/pki/2026-11-06']) { mkdirSync(join(out, d), { recursive: true }); for (const f of readdirSync(join(root, d)).filter((x) => /\.js$/.test(x))) writeFileSync(join(out, d, f), read(`${d}/${f}`)); }
 mkdirSync(join(out, 'me'), { recursive: true });
-writeFileSync(join(out, 'me', 'index.html'), page('Your key: Lisbon Fringe', `<style>${meCss}</style>` + meBody(), 'Make your key and passkey in the browser, and message the lead.'));
+writeFileSync(join(out, 'me', 'index.html'), page('Your key: Lisbon Tech Week', `<style>${meCss}</style>` + meBody(), 'Make your key and passkey in the browser, and message the lead.'));
 // /traces/<event_id>/ (a draft, not linked yet): how one page was made, drawn from team/angelo/traces/*.json
 for (const f of existsSync(join(root, 'team/angelo/traces')) ? readdirSync(join(root, 'team/angelo/traces')).filter((x) => x.endsWith('.json')) : []) {
   const tr = JSON.parse(read(`team/angelo/traces/${f}`)), ev = events.find((e) => e.id === tr.event_id);
   if (!/^[a-z0-9-]+$/.test(tr.event_id || '')) continue;
   mkdirSync(join(out, 'traces', tr.event_id), { recursive: true });
-  writeFileSync(join(out, 'traces', tr.event_id, 'index.html'), page(`How this page was made: ${ev?.name || tr.event_id}`, traceBody(tr, esc, { eventName: ev?.name, repo: REPO }), 'Every human, agent, source-read, CI and deploy step that made one Lisbon Fringe page, with its evidence.', '', ''));
+  writeFileSync(join(out, 'traces', tr.event_id, 'index.html'), page(`How this page was made: ${ev?.name || tr.event_id}`, traceBody(tr, esc, { eventName: ev?.name, repo: REPO }), 'Every human, agent, source-read, CI and deploy step that made one Lisbon Tech Week page, with its evidence.', '', ''));
 }
 // /evolution/ (work/27): each site's captures over time, from the pointers in data/captures/
 mkdirSync(join(out, 'evolution'), { recursive: true });
-writeFileSync(join(out, 'evolution', 'index.html'), page('Evolution: Lisbon Fringe', `<style>${evolutionCss}</style>` + evolutionBody(loadEvolution(root), esc), 'Screenshots and page text of Lisbon Fringe and every organiser page, hour by hour: what changed.', '', '/evolution/'));
+writeFileSync(join(out, 'evolution', 'index.html'), page('Evolution: Lisbon Tech Week', `<style>${evolutionCss}</style>` + evolutionBody(loadEvolution(root), esc), 'Screenshots and page text of Lisbon Tech Week and every organiser page, hour by hour: what changed.', '', '/evolution/'));
 // /dashboard/ and /api/v1/swarm.json (work/25)
 const swarm = await collectSwarm({ root, roster, status, board, traffic, builtAt: BUILT, repo: REPO });
 mkdirSync(join(out, 'dashboard'), { recursive: true });
-writeFileSync(join(out, 'dashboard', 'index.html'), page('The swarm: Lisbon Fringe', `<style>${swarmCss}${meCss}</style>` + swarmBody(swarm, esc, REPO) + swarmScript, 'Who is online in the Lisbon Fringe swarm: conductors, agents, the board and the latest changes.'));
+writeFileSync(join(out, 'dashboard', 'index.html'), page('The swarm: Lisbon Tech Week', `<style>${swarmCss}${meCss}</style>` + swarmBody(swarm, esc, REPO) + swarmScript, 'Who is online in the Lisbon Tech Week swarm: conductors, agents, the board and the latest changes.'));
 writeFileSync(join(out, 'api', 'v1', 'swarm.json'), JSON.stringify(swarm, null, 1) + '\n');
 // D6 the showroom strip on the home page: counts from swarm.json, last 5 changes from changes (both built from the repository)
 {

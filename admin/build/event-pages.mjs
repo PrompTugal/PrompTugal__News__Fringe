@@ -70,9 +70,9 @@ export function eventPages(events, { page, esc, linkify, SITE, card, cardList, o
     const url = SITE.replace(/\/$/, '') + eventPath(e);
     const org = e.organiser || 'The organiser (not named on the page)';
     const desc = `${e.name}, by ${org}. ${when(e)} (Lisbon time = UTC). ${isOnline(e) ? 'Online' : e.place || ''}. Status: ${STATUS[e.status] || 'Unknown'}. Register on the organiser's page.`.slice(0, 300);
-    const title = `${e.name}: ${org} · Lisbon Fringe`;
+    const title = `${e.name}: ${org} · Lisbon Tech Week`;
     const head = [
-      ['og:type', 'article'], ['og:site_name', 'Lisbon Fringe'], ['og:title', `${e.name}, by ${org}`], ['og:description', desc], ['og:url', url], ['og:image', SITE + 'assets/og/share.png'], ['og:image:width', '1200'], ['og:image:height', '630'],
+      ['og:type', 'article'], ['og:site_name', 'Lisbon Tech Week'], ['og:title', `${e.name}, by ${org}`], ['og:description', desc], ['og:url', url], ['og:image', SITE + 'assets/og/share.png'], ['og:image:width', '1200'], ['og:image:height', '630'],
     ].map(([p, v]) => `<meta property="${p}" content="${esc(v)}">`).join('')
       + `<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${SITE}assets/og/share.png"><link rel="canonical" href="${esc(url)}">`;
     const st = STATUS[e.status] ? e.status : 'unknown';
@@ -96,7 +96,7 @@ export function eventPages(events, { page, esc, linkify, SITE, card, cardList, o
 <h1>${esc(e.name)}</h1>
 <p class="sharerow" hidden><button type="button" class="share" id="share" data-url="${esc(url)}" data-title="${esc(e.name)}">Share this event</button><span class="muted share-note" id="share-note" role="status" aria-live="polite"></span></p>
 <script>(function(){var b=document.getElementById('share'),n=document.getElementById('share-note');if(!b)return;b.parentNode.hidden=false;b.onclick=function(){var u=b.dataset.url,t=b.dataset.title;function done(m){n.textContent=m;setTimeout(function(){n.textContent=''},3000)}
-if(navigator.share){navigator.share({title:t,text:t+' · Lisbon Fringe',url:u}).catch(function(){})}
+if(navigator.share){navigator.share({title:t,text:t+' · Lisbon Tech Week',url:u}).catch(function(){})}
 else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(function(){done('Link copied')},function(){done('Copy this address: '+u)})}
 else{done('Copy this address: '+u)}}})();</script>
 <dl class="facts">${facts}</dl>
