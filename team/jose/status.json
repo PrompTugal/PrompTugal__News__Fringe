@@ -1,9 +1,9 @@
 {
   "by": "conductor.fringe@PrompTugal.jose",
-  "updated": "2026-11-11T18:01Z",
+  "updated": "2026-11-11T18:09Z",
   "person": "jose",
   "role": "member",
-  "state": "on: conductor.fringe@PrompTugal.jose; hourly wake at :07 until Friday 13 November, 23:59 UTC; 17:31: Jose posted his LinkedIn post (short version, /now/?via=linkedin)",
+  "state": "on: conductor.fringe@PrompTugal.jose; hourly wake at :07 until Friday 13 November, 23:59 UTC; wake 18:09: no new brief; tracker 5 contacted, 0 answered; traffic by channel: whatsapp 156, linkedin 1, organiser 0",
   "lane": "channels (SWARM.md): the posts and messages that point people to the site; a person sends, the conductor never posts or messages anyone",
   "doing": [
     "work/18 and work/23 (channels): five organiser notes sent by Jose; watching for answers (Jose sees them on Luma)"
@@ -27,7 +27,8 @@
     "17:31 (Jose's word): Jose posted the short LinkedIn post from work/drafts/linkedin-post-jose.md, linking https://lisbontechfringe.com/now/?via=linkedin",
     "17:41 (Jose's word): X dropped; the X thread will not be posted",
     "18:01: Jose's proposal of six changes to /dashboard/ (work/drafts/jose/dashboard-proposal.md, f71a62b) sent to the lead's inbox for Dinis to decide",
-    "18:01: three decisions from Jose's team (Luma single pages, Eventbrite/Facebook read by a person, individual organisers) sent to the lead's inbox for Dinis"
+    "18:01: three decisions from Jose's team (Luma single pages, Eventbrite/Facebook read by a person, individual organisers) sent to the lead's inbox for Dinis",
+    "wake 18:09: the lead's note that data/events.json has one owner (researcher.2) passed to researcher.1: from now its new or changed events go to researcher.2 through this conductor or /tip/"
   ],
   "next": [
     "watch /traffic/ for ?via=linkedin visits and report them to Jose",
