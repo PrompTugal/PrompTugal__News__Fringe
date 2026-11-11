@@ -1,7 +1,7 @@
 {
  "about": "Answers to neo4j/queries.cypher over the swarm graph (admin/tools/neo4j-load.py), by neo4j.1.fringe@PrompTugal.dinis. Facts read from the repository and its public site at the time below; fingerprints only, never key material.",
- "read_at": "2026-11-11T19:43:17Z",
- "repo_head": "b4d20ef",
+ "read_at": "2026-11-11T20:09:27Z",
+ "repo_head": "550ee00",
  "answers": [
   {
    "name": "reach-beyond-need",
@@ -145,8 +145,8 @@
      "commits": 8,
      "files": [
       "admin/build/build.mjs",
-      "admin/build/universe.mjs",
-      "admin/build/validate.mjs"
+      "admin/build/validate.mjs",
+      "admin/build/universe.mjs"
      ]
     },
     {
@@ -202,8 +202,8 @@
      "lane": "lead",
      "commits": 3,
      "files": [
-      "team/roster.json",
-      "KICKOFF.md"
+      "KICKOFF.md",
+      "team/roster.json"
      ]
     },
     {
@@ -223,8 +223,8 @@
      "lane": "design",
      "commits": 3,
      "files": [
-      "admin/build/build.mjs",
-      "admin/build/tokens.css"
+      "admin/build/tokens.css",
+      "admin/build/build.mjs"
      ]
     },
     {
@@ -251,7 +251,16 @@
      "lane": "dev",
      "commits": 2,
      "files": [
-      "api/v1/README.md",
+      "admin/build/build.mjs",
+      "api/v1/README.md"
+     ]
+    },
+    {
+     "agent": "conductor.fringe@PrompTugal.indi",
+     "own_role": "conductor",
+     "lane": "design",
+     "commits": 2,
+     "files": [
       "admin/build/build.mjs"
      ]
     },
@@ -266,48 +275,12 @@
      ]
     },
     {
-     "agent": "conductor.fringe@PrompTugal.indi",
-     "own_role": "conductor",
-     "lane": "design",
-     "commits": 2,
-     "files": [
-      "admin/build/build.mjs"
-     ]
-    },
-    {
      "agent": "conductor@web-summit.dinis",
      "own_role": "reviewer",
      "lane": "researcher",
      "commits": 2,
      "files": [
       "seed/events-2026-11-11-social-watch.json"
-     ]
-    },
-    {
-     "agent": "graph.fringe@PrompTugal.angelo",
-     "own_role": "dev",
-     "lane": "lead",
-     "commits": 1,
-     "files": [
-      "team/angelo/status.json"
-     ]
-    },
-    {
-     "agent": "dev.fringe@PrompTugal.dinis",
-     "own_role": "dev",
-     "lane": "lead",
-     "commits": 1,
-     "files": [
-      ".gitignore"
-     ]
-    },
-    {
-     "agent": "tracer.fringe@PrompTugal.angelo",
-     "own_role": "observability",
-     "lane": "lead",
-     "commits": 1,
-     "files": [
-      "team/angelo/traces/README.md"
      ]
     },
     {
@@ -320,12 +293,57 @@
      ]
     },
     {
+     "agent": "graph.fringe@PrompTugal.angelo",
+     "own_role": "dev",
+     "lane": "lead",
+     "commits": 1,
+     "files": [
+      "team/angelo/status.json"
+     ]
+    },
+    {
+     "agent": "research.reach.fringe@PrompTugal.angelo",
+     "own_role": "researcher",
+     "lane": "lead",
+     "commits": 1,
+     "files": [
+      "team/angelo/runs.md"
+     ]
+    },
+    {
+     "agent": "design.reach-a.fringe@PrompTugal.angelo",
+     "own_role": "design",
+     "lane": "lead",
+     "commits": 1,
+     "files": [
+      "team/angelo/runs.md"
+     ]
+    },
+    {
+     "agent": "design.reach-b.fringe@PrompTugal.angelo",
+     "own_role": "design",
+     "lane": "lead",
+     "commits": 1,
+     "files": [
+      "team/angelo/runs.md"
+     ]
+    },
+    {
      "agent": "tracer.fringe@PrompTugal.angelo",
      "own_role": "observability",
-     "lane": "conductor",
+     "lane": "lead",
      "commits": 1,
      "files": [
       "team/angelo/traces/README.md"
+     ]
+    },
+    {
+     "agent": "dev.fringe@PrompTugal.dinis",
+     "own_role": "dev",
+     "lane": "lead",
+     "commits": 1,
+     "files": [
+      ".gitignore"
      ]
     },
     {
@@ -338,49 +356,44 @@
      ]
     },
     {
-     "agent": "capture.1.fringe@PrompTugal.dinis",
-     "own_role": "capture",
-     "lane": "dev",
+     "agent": "research.reach.fringe@PrompTugal.angelo",
+     "own_role": "researcher",
+     "lane": "conductor",
      "commits": 1,
      "files": [
-      "admin/build/build.mjs"
+      "team/angelo/runs.md"
      ]
     },
     {
-     "agent": "design.2.fringe@PrompTugal.dinis",
+     "agent": "design.reach-a.fringe@PrompTugal.angelo",
      "own_role": "design",
-     "lane": "dev",
+     "lane": "conductor",
      "commits": 1,
      "files": [
-      ".github/workflows/deploy.yml"
-     ]
-    },
-    {
-     "agent": "observability.fringe@PrompTugal.dinis",
-     "own_role": "observability",
-     "lane": "dev",
-     "commits": 1,
-     "files": [
-      "admin/build/build.mjs"
-     ]
-    },
-    {
-     "agent": "elastic.1.fringe@PrompTugal.dinis",
-     "own_role": "elastic",
-     "lane": "dev",
-     "commits": 1,
-     "files": [
-      "data/models-ledger.json"
+      "team/angelo/runs.md"
      ]
     }
    ],
-   "row_count": 29
+   "row_count": 34
   },
   {
    "name": "findings-by-agent-and-rule",
    "asks": "Which agents does the hourly ABP review flag, under which rules, over which rounds?",
    "cypher": "MATCH (rv:Review)-[:RECORDS]->(f:Finding)-[:FLAGS]->(a:Agent), (f)-[:BREACHES]->(r:Rule)\nRETURN a.name AS agent, r.id AS rule, r.mode AS mode, count(f) AS findings, collect(DISTINCT rv.round) AS rounds\nORDER BY findings DESC",
    "rows": [
+    {
+     "agent": "architect.1.fringe@PrompTugal.dinis",
+     "rule": "R6",
+     "mode": "observe",
+     "findings": 9,
+     "rounds": [
+      1,
+      2,
+      3,
+      6,
+      7
+     ]
+    },
     {
      "agent": "design.1.fringe@PrompTugal.dinis",
      "rule": "R6",
@@ -415,15 +428,14 @@
      ]
     },
     {
-     "agent": "architect.1.fringe@PrompTugal.dinis",
+     "agent": "researcher.2.fringe@PrompTugal.dinis",
      "rule": "R6",
      "mode": "observe",
-     "findings": 7,
+     "findings": 4,
      "rounds": [
       1,
       2,
-      3,
-      6
+      7
      ]
     },
     {
@@ -475,16 +487,6 @@
      ]
     },
     {
-     "agent": "researcher.2.fringe@PrompTugal.dinis",
-     "rule": "R6",
-     "mode": "observe",
-     "findings": 2,
-     "rounds": [
-      1,
-      2
-     ]
-    },
-    {
      "agent": "dev.2.fringe@PrompTugal.dinis",
      "rule": "R6",
      "mode": "observe",
@@ -495,7 +497,7 @@
      ]
     },
     {
-     "agent": "graph.fringe@PrompTugal.angelo",
+     "agent": "conductor.fringe@PrompTugal.indi",
      "rule": "R6",
      "mode": "observe",
      "findings": 1,
@@ -504,7 +506,7 @@
      ]
     },
     {
-     "agent": "conductor.fringe@PrompTugal.indi",
+     "agent": "graph.fringe@PrompTugal.angelo",
      "rule": "R6",
      "mode": "observe",
      "findings": 1,
@@ -543,11 +545,11 @@
      "owner": "dev.2.fringe@PrompTugal.dinis",
      "commits_by_others": 60,
      "others": [
+      "architect.1.fringe@PrompTugal.dinis",
+      "dev.1.fringe@PrompTugal.dinis",
       "design.3.fringe@PrompTugal.dinis",
-      "conductor.fringe@PrompTugal.indi",
       "design.1.fringe@PrompTugal.dinis",
-      "dev.fringe@PrompTugal.dinis",
-      "design.2.fringe@PrompTugal.dinis"
+      "design.4.fringe@PrompTugal.dinis"
      ]
     },
     {
@@ -556,10 +558,10 @@
      "commits_by_others": 14,
      "others": [
       "researcher.2.fringe@PrompTugal.dinis",
-      "dev.fringe@PrompTugal.dinis",
-      "conductor.fringe@PrompTugal.angelo",
+      "graph.fringe@PrompTugal.angelo",
+      "ontologist.1.fringe@PrompTugal.dinis",
       "conductor.fringe@PrompTugal.indi",
-      "ontologist.1.fringe@PrompTugal.dinis"
+      "conductor.fringe@PrompTugal.angelo"
      ]
     },
     {
@@ -567,11 +569,11 @@
      "owner": "design.3.fringe@PrompTugal.dinis",
      "commits_by_others": 12,
      "others": [
+      "design.1.fringe@PrompTugal.dinis",
+      "ontologist.1.fringe@PrompTugal.dinis",
       "dev.2.fringe@PrompTugal.dinis",
       "design.2.fringe@PrompTugal.dinis",
-      "dev.lead.fringe@PrompTugal.dinis",
-      "design.4.fringe@PrompTugal.dinis",
-      "ontologist.1.fringe@PrompTugal.dinis"
+      "design.4.fringe@PrompTugal.dinis"
      ]
     },
     {
@@ -579,9 +581,9 @@
      "owner": "researcher.2.fringe@PrompTugal.dinis",
      "commits_by_others": 9,
      "others": [
-      "researcher.fringe@PrompTugal.dinis",
+      "researcher.1.fringe@PrompTugal.jose",
       "conductor.fringe@PrompTugal.dinis",
-      "researcher.1.fringe@PrompTugal.jose"
+      "researcher.fringe@PrompTugal.dinis"
      ]
     },
     {
@@ -598,10 +600,10 @@
      "owner": "conductor.fringe@PrompTugal.angelo",
      "commits_by_others": 5,
      "others": [
-      "tracer.fringe@PrompTugal.angelo",
+      "graph.fringe@PrompTugal.angelo",
       "designer.fringe@PrompTugal.angelo",
-      "conductor.fringe@PrompTugal.dinis",
-      "graph.fringe@PrompTugal.angelo"
+      "tracer.fringe@PrompTugal.angelo",
+      "conductor.fringe@PrompTugal.dinis"
      ]
     },
     {
@@ -609,10 +611,10 @@
      "owner": "dev.2.fringe@PrompTugal.dinis",
      "commits_by_others": 4,
      "others": [
-      "dev.fringe@PrompTugal.dinis",
-      "design.2.fringe@PrompTugal.dinis",
       "architect.1.fringe@PrompTugal.dinis",
-      "dev.1.fringe@PrompTugal.dinis"
+      "dev.1.fringe@PrompTugal.dinis",
+      "design.2.fringe@PrompTugal.dinis",
+      "dev.fringe@PrompTugal.dinis"
      ]
     },
     {
@@ -625,13 +627,23 @@
      ]
     },
     {
+     "file": ".github/workflows/deploy.yml",
+     "owner": "dev.2.fringe@PrompTugal.dinis",
+     "commits_by_others": 3,
+     "others": [
+      "dev.1.fringe@PrompTugal.dinis",
+      "design.2.fringe@PrompTugal.dinis",
+      "dev.fringe@PrompTugal.dinis"
+     ]
+    },
+    {
      "file": "admin/build/graph.js",
      "owner": "conductor.fringe@PrompTugal.angelo",
      "commits_by_others": 3,
      "others": [
-      "dev.lead.fringe@PrompTugal.dinis",
+      "graph.fringe@PrompTugal.angelo",
       "design.4.fringe@PrompTugal.dinis",
-      "graph.fringe@PrompTugal.angelo"
+      "dev.lead.fringe@PrompTugal.dinis"
      ]
     },
     {
@@ -639,18 +651,8 @@
      "owner": "conductor.fringe@PrompTugal.angelo",
      "commits_by_others": 3,
      "others": [
-      "design.4.fringe@PrompTugal.dinis",
-      "graph.fringe@PrompTugal.angelo"
-     ]
-    },
-    {
-     "file": ".github/workflows/deploy.yml",
-     "owner": "dev.2.fringe@PrompTugal.dinis",
-     "commits_by_others": 3,
-     "others": [
-      "dev.fringe@PrompTugal.dinis",
-      "design.2.fringe@PrompTugal.dinis",
-      "dev.1.fringe@PrompTugal.dinis"
+      "graph.fringe@PrompTugal.angelo",
+      "design.4.fringe@PrompTugal.dinis"
      ]
     },
     {
@@ -670,16 +672,26 @@
    "cypher": "MATCH p = (d:Person {id: 'dinis'})-[:SAID]->(w:Word)<-[:ACTS_ON]-(c:Commit)<-[:AUTHORED]-(a:Agent)\nOPTIONAL MATCH (c)-[:CHANGES]->(f)\nWITH w, c, a, collect(f.id)[0..4] AS files\nRETURN w.said_at AS said_at, w.text AS word, a.name AS agent, c.sha AS commit, c.at AS committed_at, files\nORDER BY committed_at DESC",
    "rows": [
     {
+     "said_at": "19:59",
+     "word": "Ok can you start a new session and I'll archive this one",
+     "agent": "neo4j.1.fringe@PrompTugal.dinis",
+     "commit": "e6d496d",
+     "committed_at": "2026-11-11T19:59:41Z",
+     "files": [
+      "team/dinis/agents/neo4j.1.json"
+     ]
+    },
+    {
      "said_at": "19:33",
      "word": "also can you spin up an neo4j agent?",
      "agent": "neo4j.1.fringe@PrompTugal.dinis",
      "commit": "bb2929f",
      "committed_at": "2026-11-11T19:42:00Z",
      "files": [
-      "data/neo4j-answers.json",
       "admin/tools/neo4j-load.py",
-      "team/dinis/agents/neo4j.1.json",
-      "data/neo4j-stats.json"
+      "admin/tools/neo4j-query.py",
+      "docs/neo4j.md",
+      "team/dinis/agents/neo4j.1.json"
      ]
     },
     {
@@ -689,10 +701,10 @@
      "commit": "23442b9",
      "committed_at": "2026-11-11T19:34:10Z",
      "files": [
-      "abp/graph.fringe@PrompTugal.angelo.md",
-      "abp/outreach.1.fringe@PrompTugal.dinis.md",
-      "abp/gravity.1.fringe@PrompTugal.silvio.md",
-      "abp/policies.json"
+      "abp/architect.1.fringe@PrompTugal.dinis.md",
+      "abp/capture.1.fringe@PrompTugal.dinis.md",
+      "abp/conductor.B@ios.PrompTugal.dinis.md",
+      "abp/conductor.C.fringe@PrompTugal.dinis.md"
      ]
     },
     {
@@ -712,10 +724,10 @@
      "commit": "8b0e66b",
      "committed_at": "2026-11-11T19:09:14Z",
      "files": [
-      "abp/tracer.fringe@PrompTugal.angelo.md",
-      "abp/security.fringe@PrompTugal.dinis.md",
-      "abp/dev.fringe@PrompTugal.dinis.md",
-      "abp/dev.1.fringe@PrompTugal.dinis.md"
+      "abp/architect.1.fringe@PrompTugal.dinis.md",
+      "abp/capture.1.fringe@PrompTugal.dinis.md",
+      "abp/conductor.B@ios.PrompTugal.dinis.md",
+      "abp/conductor.C.fringe@PrompTugal.dinis.md"
      ]
     },
     {
@@ -725,10 +737,10 @@
      "commit": "7f80c20",
      "committed_at": "2026-11-11T19:07:33Z",
      "files": [
-      "abp/dev.1.fringe@PrompTugal.dinis.md",
-      "abp/conductor@web-summit.dinis.md",
-      "abp/graph.fringe@PrompTugal.angelo.md",
-      "abp/dev.2.fringe@PrompTugal.dinis.md"
+      "abp/architect.1.fringe@PrompTugal.dinis.md",
+      "abp/capture.1.fringe@PrompTugal.dinis.md",
+      "abp/conductor.B@ios.PrompTugal.dinis.md",
+      "abp/conductor.C.fringe@PrompTugal.dinis.md"
      ]
     },
     {
@@ -738,9 +750,9 @@
      "commit": "b6303b1",
      "committed_at": "2026-11-11T19:03:20Z",
      "files": [
-      "data/altitude-runs.json",
       "admin/build/build.mjs",
       "team/dinis/agents/architect.1.json",
+      "admin/build/architecture-page.mjs",
       "abp/tools/runs-export.mjs"
      ]
     },
@@ -751,10 +763,10 @@
      "commit": "c04915b",
      "committed_at": "2026-11-11T18:59:59Z",
      "files": [
-      "abp/tracer.fringe@PrompTugal.angelo.md",
-      "abp/usability.1.fringe@PrompTugal.dinis.md",
-      "abp/conductor.fringe@PrompTugal.dinis.md",
-      "abp/conductor@web-summit.dinis.md"
+      "briefs/2026-11-11-1630-r5-r8-r9-enforced-and-elastic.md",
+      "abp/architect.1.fringe@PrompTugal.dinis.md",
+      "abp/capture.1.fringe@PrompTugal.dinis.md",
+      "abp/conductor.B@ios.PrompTugal.dinis.md"
      ]
     },
     {
@@ -765,9 +777,9 @@
      "committed_at": "2026-11-11T18:59:23Z",
      "files": [
       "docs/elastic-guidance.md",
-      "admin/tools/elastic-catalog.mjs",
       "admin/tools/elastic-kibana.mjs",
-      "elastic/examples/dashboard-spec.example.mjs"
+      "elastic/kibana/objects.ndjson",
+      "admin/tools/elastic-lib.mjs"
      ]
     },
     {
@@ -777,9 +789,9 @@
      "commit": "02e1394",
      "committed_at": "2026-11-11T18:32:25Z",
      "files": [
-      "docs/handoffs/2026-11-11-altitudes-on-elastic.md",
+      "abp/tools/runs-export.mjs",
       "data/altitude-runs.json",
-      "abp/tools/runs-export.mjs"
+      "docs/handoffs/2026-11-11-altitudes-on-elastic.md"
      ]
     },
     {
@@ -789,10 +801,10 @@
      "commit": "db01ee9",
      "committed_at": "2026-11-11T16:32:53Z",
      "files": [
-      "abp/conductor.fringe@PrompTugal.silvio.md",
-      "abp/conductor.fringe@PrompTugal.indi.md",
-      "abp/design.2.fringe@PrompTugal.dinis.md",
-      "abp/design.4.fringe@PrompTugal.dinis.md"
+      "abp/architect.1.fringe@PrompTugal.dinis.md",
+      "abp/capture.1.fringe@PrompTugal.dinis.md",
+      "abp/conductor.B@ios.PrompTugal.dinis.md",
+      "abp/conductor.C.fringe@PrompTugal.dinis.md"
      ]
     },
     {
@@ -802,10 +814,10 @@
      "commit": "e9ddc18",
      "committed_at": "2026-11-11T16:31:45Z",
      "files": [
-      "abp/designer.fringe@PrompTugal.angelo.md",
-      "abp/tools/abp.mjs",
-      "abp/observability.fringe@PrompTugal.dinis.md",
-      "abp/dev.fringe@PrompTugal.dinis.md"
+      "briefs/2026-11-11-1630-r5-r8-r9-enforced-and-elastic.md",
+      "abp/architect.1.fringe@PrompTugal.dinis.md",
+      "abp/capture.1.fringe@PrompTugal.dinis.md",
+      "abp/conductor.B@ios.PrompTugal.dinis.md"
      ]
     },
     {
@@ -815,10 +827,10 @@
      "commit": "9be95a5",
      "committed_at": "2026-11-11T15:46:51Z",
      "files": [
-      "abp/conductor.C.fringe@PrompTugal.dinis.md",
-      "abp/researcher.fringe@PrompTugal.dinis.md",
-      "abp/usability.1.fringe@PrompTugal.dinis.md",
-      "team/dinis/agents/architect.1.json"
+      "briefs/2026-11-11-1546-altitudes-to-angelo-and-silvio.md",
+      "abp/architect.1.fringe@PrompTugal.dinis.md",
+      "abp/capture.1.fringe@PrompTugal.dinis.md",
+      "abp/conductor.B@ios.PrompTugal.dinis.md"
      ]
     },
     {
@@ -828,10 +840,10 @@
      "commit": "4a122c3",
      "committed_at": "2026-11-11T15:43:00Z",
      "files": [
+      "admin/build/build.mjs",
       "team/dinis/agents/architect.1.json",
       "admin/build/architecture-page.mjs",
-      "docs/articles/2026-11-11-the-altitudes-of-execution.md",
-      "admin/build/build.mjs"
+      "docs/articles/2026-11-11-the-altitudes-of-execution.md"
      ]
     },
     {
@@ -841,10 +853,10 @@
      "commit": "0d150db",
      "committed_at": "2026-11-11T15:41:46Z",
      "files": [
-      "tasks/2026-11-11-p1-place-12-items/result-architect.1.fringe@PrompTugal.dinis.json",
-      "abp/conductor@web-summit.dinis.md",
-      "admin/build/operating-model.mjs",
-      "abp/dev.fringe@PrompTugal.dinis.md"
+      "briefs/2026-11-11-1440-the-operating-model.md",
+      "abp/architect.1.fringe@PrompTugal.dinis.md",
+      "abp/capture.1.fringe@PrompTugal.dinis.md",
+      "abp/conductor.B@ios.PrompTugal.dinis.md"
      ]
     },
     {
@@ -867,10 +879,10 @@
      "commit": "57d1f72",
      "committed_at": "2026-11-11T15:26:55Z",
      "files": [
-      "abp/researcher.fringe@PrompTugal.dinis.md",
-      "abp/usability.1.fringe@PrompTugal.dinis.md",
-      "abp/policies.json",
-      "abp/researcher.1.fringe@PrompTugal.jose.md"
+      "abp/architect.1.fringe@PrompTugal.dinis.md",
+      "abp/capture.1.fringe@PrompTugal.dinis.md",
+      "abp/conductor.B@ios.PrompTugal.dinis.md",
+      "abp/conductor.C.fringe@PrompTugal.dinis.md"
      ]
     },
     {
@@ -880,9 +892,9 @@
      "commit": "07267a9",
      "committed_at": "2026-11-11T15:06:32Z",
      "files": [
+      "briefs/2026-11-11-1440-the-operating-model.md",
       "admin/build/operating-model.mjs",
-      "data/operating-model.json",
-      "briefs/2026-11-11-1440-the-operating-model.md"
+      "data/operating-model.json"
      ]
     },
     {
@@ -892,10 +904,10 @@
      "commit": "2e5249b",
      "committed_at": "2026-11-11T14:54:35Z",
      "files": [
+      "briefs/2026-11-11-1454-relaxations-approved.md",
       "abp/architect.1.fringe@PrompTugal.dinis.md",
-      "abp/conductor.fringe@PrompTugal.jose.md",
-      "abp/design.3.fringe@PrompTugal.dinis.md",
-      "abp/design.2.fringe@PrompTugal.dinis.md"
+      "abp/capture.1.fringe@PrompTugal.dinis.md",
+      "abp/conductor.B@ios.PrompTugal.dinis.md"
      ]
     },
     {
@@ -905,10 +917,10 @@
      "commit": "c62ab00",
      "committed_at": "2026-11-11T14:06:40Z",
      "files": [
-      "team/dinis/agents/ontologist.1.json",
-      "admin/build/graph-pages.mjs",
       "admin/build/event-pages.mjs",
-      "api/v1/README.md"
+      "admin/build/build.mjs",
+      "api/v1/README.md",
+      "admin/build/graph-model.mjs"
      ]
     },
     {
@@ -918,10 +930,10 @@
      "commit": "2822792",
      "committed_at": "2026-11-11T13:30:15Z",
      "files": [
+      "briefs/2026-11-11-1329-the-design-lab.md",
       "work/design/D24-design-a-the-programme.md",
-      "work/design/D26-design-c-the-city.md",
-      "work/36-designs-from-the-community.md",
-      "work/design/D25-design-b-the-timeline.md"
+      "work/design/D25-design-b-the-timeline.md",
+      "work/design/D26-design-c-the-city.md"
      ]
     },
     {
@@ -931,10 +943,10 @@
      "commit": "56ea713",
      "committed_at": "2026-11-11T13:26:57Z",
      "files": [
+      "admin/build/traffic.mjs",
+      "admin/tools/obs/obs_drain.py",
       "assets/obs/obs.js",
-      "data/geo/countries-110m.json",
-      "assets/obs/obs.json",
-      "admin/build/traffic.mjs"
+      "admin/build/worldmap.mjs"
      ]
     },
     {
@@ -944,10 +956,10 @@
      "commit": "257c39d",
      "committed_at": "2026-11-11T12:41:34Z",
      "files": [
-      "work/design/D18-big-and-small-events.md",
-      "data/links.json",
+      "briefs/2026-11-11-1240-lisbon-tech-week.md",
       "work/design/D19-now-timeline.md",
-      "work/design/D20-taste-pass.md"
+      "work/design/D20-taste-pass.md",
+      "work/design/D18-big-and-small-events.md"
      ]
     },
     {
@@ -957,10 +969,10 @@
      "commit": "73cb424",
      "committed_at": "2026-11-11T11:37:32Z",
      "files": [
+      "CLAUDE.md",
       "JOIN.md",
-      "work/19-comms-vaults.md",
-      "data/inboxes/conductor.fringe-indi.json",
-      "data/inboxes/conductor.fringe-angelo.json"
+      "admin/tools/inboxes.py",
+      "work/19-comms-vaults.md"
      ]
     },
     {
@@ -970,14 +982,14 @@
      "commit": "033769d",
      "committed_at": "2026-11-11T11:20:32Z",
      "files": [
+      "data/keys.json",
       "team/dinis/status.json",
-      "BRIEF-CORRECTIONS.md",
       "REALITY.md",
-      "data/keys.json"
+      "team/ROSTER.md"
      ]
     }
    ],
-   "row_count": 24
+   "row_count": 25
   },
   {
    "name": "run-tree",
@@ -1099,21 +1111,8 @@
    "name": "agents-without-grant",
    "asks": "Which agents commit on dev but have no grant in abp/policies.json?",
    "cypher": "MATCH (a:Agent)-[:AUTHORED]->(c:Commit) WHERE a.has_grant IS NULL\nRETURN a.name AS agent, count(c) AS commits ORDER BY commits DESC",
-   "rows": [
-    {
-     "agent": "grafana.1.fringe@PrompTugal.dinis",
-     "commits": 4
-    },
-    {
-     "agent": "design.reach-a.fringe@PrompTugal.angelo",
-     "commits": 1
-    },
-    {
-     "agent": "design.reach-b.fringe@PrompTugal.angelo",
-     "commits": 1
-    }
-   ],
-   "row_count": 3
+   "rows": [],
+   "row_count": 0
   },
   {
    "name": "busiest-files",
@@ -1145,6 +1144,18 @@
      ]
     },
     {
+     "file": "team/angelo/runs.md",
+     "writers": 7,
+     "who": [
+      "conductor.fringe@PrompTugal.angelo",
+      "designer.fringe@PrompTugal.angelo",
+      "graph.fringe@PrompTugal.angelo",
+      "tracer.fringe@PrompTugal.angelo",
+      "research.reach.fringe@PrompTugal.angelo",
+      "design.reach-a.fringe@PrompTugal.angelo"
+     ]
+    },
+    {
      "file": "admin/build/event-pages.mjs",
      "writers": 7,
      "who": [
@@ -1169,15 +1180,14 @@
      ]
     },
     {
-     "file": "team/angelo/runs.md",
-     "writers": 6,
+     "file": "admin/build/validate.mjs",
+     "writers": 5,
      "who": [
-      "conductor.fringe@PrompTugal.angelo",
-      "designer.fringe@PrompTugal.angelo",
-      "graph.fringe@PrompTugal.angelo",
-      "tracer.fringe@PrompTugal.angelo",
-      "design.reach-a.fringe@PrompTugal.angelo",
-      "design.reach-b.fringe@PrompTugal.angelo"
+      "architect.1.fringe@PrompTugal.dinis",
+      "design.2.fringe@PrompTugal.dinis",
+      "dev.1.fringe@PrompTugal.dinis",
+      "dev.2.fringe@PrompTugal.dinis",
+      "dev.fringe@PrompTugal.dinis"
      ]
     },
     {
@@ -1192,24 +1202,13 @@
      ]
     },
     {
-     "file": "admin/build/validate.mjs",
-     "writers": 5,
-     "who": [
-      "architect.1.fringe@PrompTugal.dinis",
-      "design.2.fringe@PrompTugal.dinis",
-      "dev.1.fringe@PrompTugal.dinis",
-      "dev.2.fringe@PrompTugal.dinis",
-      "dev.fringe@PrompTugal.dinis"
-     ]
-    },
-    {
-     "file": ".github/workflows/deploy.yml",
+     "file": "sources.md",
      "writers": 4,
      "who": [
-      "design.2.fringe@PrompTugal.dinis",
-      "dev.1.fringe@PrompTugal.dinis",
-      "dev.2.fringe@PrompTugal.dinis",
-      "dev.fringe@PrompTugal.dinis"
+      "conductor.fringe@PrompTugal.dinis",
+      "researcher.2.fringe@PrompTugal.dinis",
+      "researcher.fringe@PrompTugal.dinis",
+      "researcher.1.fringe@PrompTugal.jose"
      ]
     },
     {
@@ -1233,22 +1232,22 @@
      ]
     },
     {
-     "file": "sources.md",
+     "file": ".github/workflows/deploy.yml",
      "writers": 4,
      "who": [
-      "conductor.fringe@PrompTugal.dinis",
-      "researcher.2.fringe@PrompTugal.dinis",
-      "researcher.fringe@PrompTugal.dinis",
-      "researcher.1.fringe@PrompTugal.jose"
+      "design.2.fringe@PrompTugal.dinis",
+      "dev.1.fringe@PrompTugal.dinis",
+      "dev.2.fringe@PrompTugal.dinis",
+      "dev.fringe@PrompTugal.dinis"
      ]
     },
     {
-     "file": "work/05-graph.md",
+     "file": "work/design/D16-organiser-fix-path.md",
      "writers": 3,
      "who": [
       "conductor.fringe@PrompTugal.dinis",
-      "conductor.fringe@PrompTugal.angelo",
-      "conductor@web-summit.dinis"
+      "design.1.fringe@PrompTugal.dinis",
+      "usability.1.fringe@PrompTugal.dinis"
      ]
     }
    ],
@@ -1263,30 +1262,30 @@
      "community": "Portugal Tech Week",
      "events": 47,
      "topics": [
-      "growth & product",
       "AI",
-      "venture & fundraising",
-      "saas & enterprise",
-      "international expansion"
+      "future of work",
+      "neuroscience",
+      "work",
+      "startups"
      ]
     },
     {
      "community": "Unicorn Factory Lisboa",
      "events": 5,
      "topics": [
-      "ecosystem",
-      "party",
-      "networking",
+      "Italy",
       "Portugal",
-      "digital wellbeing"
+      "scaleups",
+      "cloud",
+      "founders"
      ]
     },
     {
      "community": "Yorkseed ™",
      "events": 4,
      "topics": [
-      "venture & fundraising",
       "growth & product",
+      "venture & fundraising",
       "international expansion",
       "tech & innovation"
      ]
@@ -1295,19 +1294,19 @@
      "community": "Kuma Partners",
      "events": 4,
      "topics": [
-      "deep tech",
       "AI",
-      "investors",
+      "future of work",
+      "leadership",
       "founders",
-      "future of work"
+      "investors"
      ]
     },
     {
      "community": "Canopy Community",
      "events": 3,
      "topics": [
-      "demos",
       "startups",
+      "demos",
       "networking",
       "AI"
      ]
@@ -1316,9 +1315,9 @@
      "community": "FounderLink",
      "events": 3,
      "topics": [
-      "alternative event",
+      "founders",
       "investors",
-      "founders"
+      "alternative event"
      ]
     },
     {
@@ -1333,40 +1332,40 @@
      "community": "LisboaUX",
      "events": 2,
      "topics": [
-      "design",
-      "UX",
       "AI",
-      "international expansion",
-      "growth & product"
+      "UX",
+      "design",
+      "growth & product",
+      "climate & impact"
      ]
     },
     {
      "community": "Indvstry Clvb",
      "events": 2,
      "topics": [
-      "dinner",
-      "diaspora",
-      "founders",
+      "AI",
       "entertainment",
-      "culture"
+      "culture",
+      "founders",
+      "diaspora"
      ]
     },
     {
      "community": "Yorkseed Global Capital Network",
      "events": 2,
      "topics": [
+      "investors",
       "demos",
-      "makers",
-      "investors"
+      "makers"
      ]
     },
     {
      "community": "ideaic.io",
      "events": 2,
      "topics": [
-      "real estate",
       "alternative event",
       "proptech",
+      "real estate",
       "venture & fundraising",
       "international expansion"
      ]
@@ -1377,8 +1376,8 @@
      "topics": [
       "networking",
       "executives",
-      "climate & impact",
-      "growth & product"
+      "growth & product",
+      "climate & impact"
      ]
     }
    ],
@@ -1395,7 +1394,7 @@
      "inverse": "is changed by",
      "subject": "Commit",
      "object": "File",
-     "uses": 2551
+     "uses": 2633
     },
     {
      "verb": "AUTHORED",
@@ -1403,7 +1402,7 @@
      "inverse": "was authored by",
      "subject": "Agent",
      "object": "Commit",
-     "uses": 574
+     "uses": 589
     },
     {
      "verb": "FOLLOWS",
@@ -1411,7 +1410,7 @@
      "inverse": "is followed by",
      "subject": "Commit",
      "object": "Commit",
-     "uses": 574
+     "uses": 589
     },
     {
      "verb": "IS_FOR",
@@ -1419,7 +1418,7 @@
      "inverse": "receives",
      "subject": "Commit",
      "object": "Agent|Person",
-     "uses": 549
+     "uses": 563
     },
     {
      "verb": "IS_ABOUT",
@@ -1475,7 +1474,7 @@
      "inverse": "may be written by",
      "subject": "Role|Agent",
      "object": "Path",
-     "uses": 144
+     "uses": 147
     },
     {
      "verb": "CONTAINS",
@@ -1515,7 +1514,7 @@
      "inverse": "has its lane crossed by",
      "subject": "Commit",
      "object": "Role",
-     "uses": 69
+     "uses": 74
     },
     {
      "verb": "RECORDS",
@@ -1523,7 +1522,7 @@
      "inverse": "is recorded in",
      "subject": "Review",
      "object": "Finding",
-     "uses": 57
+     "uses": 61
     },
     {
      "verb": "BREACHES",
@@ -1531,7 +1530,7 @@
      "inverse": "is breached by",
      "subject": "Finding",
      "object": "Rule",
-     "uses": 57
+     "uses": 61
     },
     {
      "verb": "FLAGS",
@@ -1539,7 +1538,7 @@
      "inverse": "is flagged by",
      "subject": "Finding",
      "object": "Agent",
-     "uses": 57
+     "uses": 61
     },
     {
      "verb": "CONCERNS",
@@ -1547,7 +1546,7 @@
      "inverse": "is the file of",
      "subject": "Finding",
      "object": "File",
-     "uses": 57
+     "uses": 61
     },
     {
      "verb": "CITES",
@@ -1555,7 +1554,7 @@
      "inverse": "is cited by",
      "subject": "Finding",
      "object": "Commit",
-     "uses": 57
+     "uses": 61
     },
     {
      "verb": "IS_PART_OF",
@@ -1571,7 +1570,7 @@
      "inverse": "is operated by",
      "subject": "Person",
      "object": "Agent",
-     "uses": 38
+     "uses": 39
     },
     {
      "verb": "PLAYS",
@@ -1579,7 +1578,7 @@
      "inverse": "is played by",
      "subject": "Agent",
      "object": "Role",
-     "uses": 35
+     "uses": 39
     },
     {
      "verb": "WORKS_AT",
@@ -1587,7 +1586,7 @@
      "inverse": "is the altitude of",
      "subject": "Agent",
      "object": "Altitude",
-     "uses": 35
+     "uses": 39
     }
    ],
    "row_count": 36

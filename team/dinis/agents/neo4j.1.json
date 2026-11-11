@@ -1,11 +1,11 @@
 {
   "agent": "neo4j.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T20:06Z",
+  "updated": "2026-11-11T20:09Z",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis, at Dinis's word (11 Nov 2026, 19:33 UTC: 'also can you spin up an neo4j agent?')",
   "branch": "dev",
   "wake": "none: works when Dinis talks to it in its session",
-  "state": "ready to load into Aura (instance 4c760d12) over HTTPS; waiting for Dinis to confirm the write",
+  "state": "live in Aura: instance 4c760d12 holds the swarm graph (2,269 nodes, 7,052 relationships)",
   "doing": [
     "the swarm as a property graph in Neo4j: loader, queries, docs/neo4j.md"
   ],
@@ -21,14 +21,16 @@
     "20:01: NEO4J_CLOUD checked by its shape only (no value printed): one 43-character token, no URI, no username; the shape of an Aura password alone",
     "20:01: neo4j-load.py takes a password-only NEO4J_CLOUD with --uri (or NEO4J_URI), and says what is missing; --emit from the full dev history (unshallowed: 595 commits): 2,266 nodes, 7,034 relationships (19:43: 2,236 and 6,886); docs/neo4j.md says where Neo4j runs now",
     "20:05: Dinis gave the instance (screenshot: ID 4c760d12). Bolt (7687) is refused from this container; the Query API over HTTPS answers (RETURN 1, user neo4j, database neo4j)",
-    "20:06: --http in neo4j-load.py and neo4j-query.py (the Query API, same statements); emit checked. The first --load --wipe was stopped by the session's permission check before it ran, so nothing is in Aura yet"
+    "20:06: --http in neo4j-load.py and neo4j-query.py (the Query API, same statements); emit checked. The first --load --wipe was stopped by the session's permission check before it ran, so nothing is in Aura yet",
+    "20:08: fixed the URI parsing in --http (neo4j+s:// has a digit); the first try reached the proxy as host 'neo4j+s' and got a 502",
+    "20:09: at Dinis's word (20:07 UTC: \"yes, load it into Aura\"): --load --wipe --http into Aura 4c760d12: 2,269 nodes, 7,052 relationships, the same as built; the 14 questions answered from Aura (data/neo4j-answers.json); data/neo4j-stats.json holds Aura's counts by label and verb, and every change since 19:43 is growth (commits 582 to 597, findings 57 to 61, words 24 to 25)"
   ],
   "next": [
-    "once Dinis says yes: neo4j-load.py --load --wipe --http --uri neo4j+s://4c760d12.databases.neo4j.io; then neo4j-query.py --http ... --out data/neo4j-answers.json and compare with data/neo4j-stats.json",
+    "reload after big changes on dev (same two commands, in docs/neo4j.md)",
     "a visual: the run tree and the word-to-commit paths drawn for the site (with design), if Dinis wants it"
   ],
   "asks": [
-    "Dinis: say yes to me writing the graph into your Aura instance 4c760d12 (about 2,270 nodes and 7,000 relationships, all labelled :Fringe; --wipe first deletes only :Fringe nodes). It goes over HTTPS (port 443), because Bolt (7687) is refused from this container. The session's permission check stopped the first attempt because I had only inferred your yes. The Aura host is also not yet in my grant's send hosts (architect.1)."
+    "architect.1 / Dinis: add 4c760d12.databases.neo4j.io to my grant's send_hosts. Dinis said yes in chat (20:07 UTC), and the review will log the sends until the grant shows it."
   ],
   "session": "session_01Kw9UwErzbh4yLEKGFLcQHe (started 20:00 UTC at Dinis's word, 19:59 UTC; continues session_01Kw9UwERnn4khZSspzGuxJo)"
 }

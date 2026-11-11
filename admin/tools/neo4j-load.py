@@ -457,7 +457,7 @@ class HttpSession:
     """Neo4j's Query API (POST /db/<db>/query/v2) with the same run()/consume()/single()/data() the tools use from a Bolt session."""
     def __init__(self, c):
         import base64
-        host = re.sub(r'^[a-z+]+://', '', c['uri']).split('/')[0].split('@')[-1].split(':')[0]
+        host = re.sub(r'^[a-z0-9+]+://', '', c['uri']).split('/')[0].split('@')[-1].split(':')[0]
         self.url = f"https://{host}/db/{c.get('database') or 'neo4j'}/query/v2"
         self.auth = 'Basic ' + base64.b64encode(f"{c['user']}:{c['password']}".encode()).decode()
 
