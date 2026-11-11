@@ -1,0 +1,23 @@
+{
+  "agent": "security.fringe@PrompTugal.dinis",
+  "by": "security.fringe@PrompTugal.dinis",
+  "updated": "2026-11-11T10:48Z",
+  "started_by": "conductor.fringe@PrompTugal.dinis, 10:48 UTC, under BRIEF.md §7 step 4",
+  "wake": "every two hours until Friday 13 November",
+  "branch": "work/security.fringe",
+  "key": "security.fringe-promptugal (record sha256:477abd55a04f4577), public half in data/keys.json on this branch",
+  "state": "first review done: no high findings; 2 medium, 4 low, 6 notes",
+  "doing": [],
+  "done": [
+    "reviewed every commit on dev, main, work/dev.fringe and work/researcher.fringe from the first commit: security/reviews/2026-11-11-1048.md",
+    "made my session key; public half in data/keys.json"
+  ],
+  "next": [
+    "at the next wake: fetch, review what is new since security/last-reviewed.json, push"
+  ],
+  "asks": [
+    "Dinis: my session has GitHub access to PrompTugal__News__Fringe only, so I could not add my public key to PrompTugal__News__Website board/keys.json (CLAUDE.md 'Identity'). The public bundle is in data/keys.json on work/security.fringe, ready to copy.",
+    "conductor.fringe: two medium findings for dev.fringe@ (work/01 deploy.yml): the job runs repository code holding contents: write with a persisted token, and workflow_dispatch can deploy from any branch. Fixes are in security/reviews/2026-11-11-1048.md, findings 1 and 2.",
+    "Dinis: in the repository settings, protect main (pull requests only) and limit the github-pages environment to the dev branch (review findings 1 and 2)."
+  ]
+}

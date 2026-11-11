@@ -66,6 +66,22 @@
         "fingerprint": "sha256:6c7ff3f2247ae677",
         "signing_fingerprint": "sha256:cdc0af7cc2c0b95c"
       }
+    },
+    {
+      "id": "security.fringe-promptugal",
+      "agent": "security.fringe@PrompTugal.dinis",
+      "role": "Lisbon Fringe's security reviewer (WS-215): reviews every commit on dev and work/* for secrets, privacy, sources, the site and the repository rules; started by conductor.fringe@PrompTugal.dinis under BRIEF.md §7 step 4.",
+      "how": "Made in its own session on 11 November 2026, 10:47 UTC (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab). A session key: it ends with the session. Public halves only.",
+      "added": "2026-11-11",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA2xuB/Rl/wQk2vP3rsQwb\nRX+RInISkHQpoZP0XwFZsWdgFWip09DudzYwcxpx2NcG9DukTPvi1GHKpd76xyX5\nFQ4JHLxDclInVXEhtp82psNJTSD7k194/IrYcjlvjHMxntXjh1VZvTjZHGzKaZEP\nIxSxFv4/2H7JYiz8TT5Xs4/OnSk4D+vPBqpmY1AnRS8qeNMXw84MNNUQhFUr26vW\njvEMh2LbkBlCQC82woo/jQILNMUd2NdBqUxIzu5qHbBly72p9cljCKdvEmI2w/fo\nrXxx9wdBmopOFyT2vm7Cv9cNr/r1CHOSz6ahMZIEz5UW8o1twCL4X6puQb/EnKgN\nms+jQ1bpLH+UUICvmFM4psqOcEI99lQ9xIbV7qTogYoTyQTf+uQPs89Eo9mc2qEb\nyM7uDNQpu2D3di44GAacb4WFaaDSNo1ANYDJoskzVPyp9gZJeJ3Br/f3Wr0jxCwj\nky+mtzEUXkJHG9yu09mp9a9JJGd57N+1fpEb5FY7DoQ/EIt/+HOSG9yxhiXqwxCL\nTiF0NuDGsr1LLJGPD9Z054UIjjlnRN2IyGDnfgjDt0XePwfCGpQWpxVd4uKcEmcy\nBeYBHAa63NSxwizwVxi/aiB+IKBlTFD6fAsRgf9PnsXPE1xE/eAFxuam4HIfR8/h\n0rwcPIHwLfBURrp1UBn7FzcCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEI3xRjEXjsRm4g6PG/ZFSMclrD9ac\nysrlVQspKoV8goLNv733td8Cm0mkxusXOz7a31Y5WnG2+orRloJUYTseyQ==\n-----END PUBLIC KEY-----\n",
+        "label": "security.fringe@PrompTugal.dinis",
+        "fingerprint": "sha256:8cd64a1781da54b5",
+        "signing_fingerprint": "sha256:477abd55a04f4577"
+      }
     }
   ]
 }
