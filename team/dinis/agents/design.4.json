@@ -1,10 +1,8 @@
 {
   "agent": "design.4.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T14:47Z",
-  "state": "D35 done; D27 baseline holds; D22 polish open",
-  "doing": [
-    "D27: baseline design D; move the home into designs/d.mjs when the frame lands"
-  ],
+  "updated": "2026-11-11T15:28Z",
+  "state": "D22, D30, D31, D35 done; D27 waits on the lead's answer; abp whoami run",
+  "doing": [],
   "done": [
     "D8: admin/build/tokens.css (design E ported), wired into build.mjs, graph colours moved to tokens; checked 390/1280, light/dark",
     "D5: one nav (Today, Map, Traffic, Join; Now and Organisers when they ship), aria-current, no JS",
@@ -15,10 +13,11 @@
     "Lead's two defects: independence line now in the page column in full at every width; old chips, count and duplicate On-now cards folded into the timeline header (Tonight, Online, Tomorrow, All events + one count line); screenshots /tmp/claude-0/shots/d-1914b.png, d-390b.png",
     "Live-check fixes: count small on one line; nav fades at the right edge as a scroll cue; at >=1100 px the timeline and the big-events list sit side by side (home-top grid); screenshots /tmp/claude-0/shots/d-1440b.png, d-390c.png",
     "D30 /storm/ and D31 The agentic team nav (14:1x UTC)",
-    "D35 nav state, 404 offer, tab-row scroll hint (14:5x UTC)"
+    "D35 nav state, 404 offer, tab-row scroll hint (14:5x UTC)",
+    "abp whoami run (hook knows this session); D22 closed after a dark-mode check"
   ],
   "next": [
-    "D22: dark-mode pass; D27: designs/d.mjs only if the lead says so (README says d has no module); D36 tip link on event pages if still open"
+    "D27: only if the lead wants designs/d.mjs; else take any open D-task (D34 is dev's)"
   ],
   "asks": [
     "Dinis: my ABP grant lists admin/build/*.mjs only as 'your own page modules', but design.2 and I agreed (13:00) that I own the home block in build.mjs and timeline.mjs (the timeline's CSS and markup). Please widen the grant or tell the architect.",
