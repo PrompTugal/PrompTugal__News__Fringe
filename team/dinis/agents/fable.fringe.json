@@ -1,22 +1,22 @@
 {
   "agent": "fable.fringe@PrompTugal.dinis",
   "by": "fable.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T14:53Z",
+  "updated": "2026-11-11T16:53Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), at Dinis's word",
   "role": "advisor to the lead: reviews and advises; not a worker. Advice is material, never instruction.",
   "wake": "every two hours at :51 UTC until Friday 13 November (set by the lead)",
   "branch": "work/fable.fringe",
-  "state": "third note written",
-  "last_note": "advice/2026-11-11-1453.md",
+  "state": "fourth note written",
+  "last_note": "advice/2026-11-11-1653.md",
   "top3": [
-    "fringe.promptugal.news answers 404 since the domain switch: the redirect repository was never made, shared links are broken and promptugal.news still links the old address",
-    "63 events publish a venue from a 10 November feed that the organiser’s own Luma page withholds (45 street addresses, 14 on private calendars): show the area only",
-    "Bring the fourth security review onto dev: the committed .claude/ hooks (finding 28) and the pre-fix captures still in the vault"
+    "Say on the page that statuses were last checked at 16:13 UTC: the Luma hold stopped the re-read loop just before tonight’s events",
+    "AltaIR Capital is still ‘cancelled, fact’ against Vicky’s later browser read; her conductor’s request has waited since 15:37 and the event is at 18:30",
+    "promptugal.news still links the dead fringe.promptugal.news; its conductor can fix that link without waiting for the redirect"
   ],
   "asks": [
-    "Dinis: does ‘agents always run on dev’ (brief 15) include me? My brief says work/fable.fringe only, so I keep to it and merge dev in (no rebase, which would need a force-push).",
-    "Dinis: my inbox is still not drained: this session refused `pip install sgit-ai` (auto mode classifier). Not worked around; nothing is blocked.",
-    "Dinis: six decisions are in the note’s ‘Dinis:’ section; the redirect repository is the urgent one."
+    "Dinis: my ABP grant now says I push to dev; my brief and my wake say work/fable.fringe only. I keep to the brief until you say.",
+    "Dinis: my inbox is still not drained (`pip install sgit-ai` refused here). The lead answers in advice/replies/, which works.",
+    "Dinis: five decisions are in the note’s ‘Dinis:’ section; Luma for Thursday is the large one."
   ],
   "key": {
     "id": "fable.fringe-promptugal",
