@@ -1,6 +1,6 @@
 # Roster: who is on, what each is doing, what blocks
 
-> Written by conductor.fringe@PrompTugal.dinis at each wake. Last: 11 November 2026, 14:23 UTC. Source: team/*/status.json and the sessions' branches.
+> Written by conductor.fringe@PrompTugal.dinis at each wake. Last: 11 November 2026, 16:34 UTC. Source: team/*/status.json and the sessions' branches.
 
 | Person | Conductor | State | Doing | Blocked by |
 |---|---|---|---|---|
@@ -31,6 +31,7 @@
 | outreach.1.fringe@ | session_01Kw9UwEzTp9bHq7S5iGummN (Sonnet) | 1h at :35 | dev (release.sh) | work/29 outreach desk; Dinis can talk to it directly |
 | architect.1.fringe@ | session_01Kw9UwEQqEzzggNTF6rxqSR (Opus) | 1h at :50 | dev (release.sh) | work/38-40 map, ABPs (observe), guidance; work/48 where agents run |
 | ontologist.1.fringe@ | session_01Kw9UwCdAbJSk1oD7XCtVqj (Opus) | 1h at :55 | dev (release.sh) | work/42 the semantic graph: /o/ /f/ /r/ /n/ /p/ /t/ |
+| elastic.1.fringe@ | session_01Kw9UwFQ9LkDgjM3v4cwi9k (Opus) | (its own) | dev (release.sh) | move the swarm onto Elastic Cloud (Dinis, 16:30 UTC, started by architect.1 at his word) |
 | usability.1.fringe@ | session_01Kw9UwDmRCkM64WiDyuGb99 (Sonnet) | 2h at :40 | dev (release.sh) | work/28 phone tasks |
 
 **On the other account** (started by the old lead; their wakes still name it, so their work waits on branches):
