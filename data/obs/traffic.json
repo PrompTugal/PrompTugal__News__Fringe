@@ -11,15 +11,15 @@
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 458,
-  "reads": 395,
-  "tabs": 214,
+  "views": 459,
+  "reads": 396,
+  "tabs": 215,
   "countries": 18,
   "shares": 164,
   "bots": 1402,
   "crawler_tabs": 1,
-  "agent_runs": 170,
-  "agent_runs_signed": 157
+  "agent_runs": 171,
+  "agent_runs_signed": 158
  },
  "by_hour": [
   [
@@ -212,7 +212,7 @@
   ],
   [
    "2026-11-11 19:00",
-   12
+   13
   ]
  ],
  "by_page": [
@@ -245,6 +245,10 @@
    8
   ],
   [
+   "/universe/",
+   8
+  ],
+  [
    "/join/",
    7
   ],
@@ -254,10 +258,6 @@
   ],
   [
    "/e/2026-11-11-tech-startups-on-the-rooftop/",
-   7
-  ],
-  [
-   "/universe/",
    7
   ],
   [
@@ -573,6 +573,12 @@
    19
   ],
   [
+   "/universe/",
+   8,
+   81,
+   40
+  ],
+  [
    "/join/",
    7,
    6,
@@ -583,12 +589,6 @@
    7,
    14,
    40
-  ],
-  [
-   "/universe/",
-   7,
-   90,
-   31
   ],
   [
    "/graph/",
@@ -1002,7 +1002,7 @@
  "by_country": [
   [
    "Portugal",
-   297
+   298
   ],
   [
    "United Kingdom",
@@ -1128,7 +1128,7 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   70
+   71
   ]
  ],
  "by_referrer": [
@@ -1144,14 +1144,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   419
+   420
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 2075,
+ "other_hosts_views": 2079,
  "by_via": [
   [
    "whatsapp",
@@ -1190,7 +1190,7 @@
   ],
   [
    "phone",
-   209
+   210
   ],
   [
    "tablet",
@@ -1223,16 +1223,16 @@
    12
   ],
   [
+   "observability.fringe@PrompTugal.dinis",
+   10
+  ],
+  [
    "design.3.fringe@PrompTugal.dinis",
    10
   ],
   [
    "ontologist.1.fringe@PrompTugal.dinis",
    10
-  ],
-  [
-   "observability.fringe@PrompTugal.dinis",
-   9
   ],
   [
    "design.2.fringe@PrompTugal.dinis",
@@ -1280,11 +1280,11 @@
   ]
  ],
  "flows": {
-  "tabs": 214,
+  "tabs": 215,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    147
+    148
    ],
    [
     "shared link (?via=)",
@@ -1309,11 +1309,11 @@
     7
    ],
    [
-    "/dashboard/",
-    5
+    "/universe/",
+    6
    ],
    [
-    "/universe/",
+    "/dashboard/",
     5
    ],
    [
@@ -1376,7 +1376,7 @@
    ],
    [
     "/universe/",
-    5
+    6
    ],
    [
     "/e/2026-11-11-founderlink-storm-summit-afternoon/",
@@ -1524,7 +1524,7 @@
   "pages_per_tab": [
    [
     "1",
-    143
+    144
    ],
    [
     "2",
@@ -1614,11 +1614,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-roast-your-website/",
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    "whatsapp: /e/2026-11-11-roast-your-website/",
     1
    ],
    [
