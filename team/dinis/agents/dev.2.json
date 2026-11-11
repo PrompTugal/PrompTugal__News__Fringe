@@ -1,6 +1,6 @@
 {
   "agent": "dev.2.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T18:21Z",
+  "updated": "2026-11-11T19:21Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "branch": "dev",
   "state": "working",
@@ -26,7 +26,8 @@
     "17:3x: second-opinion wired to data/feeds/luma-ical.json (no Luma page fetched, no model call for Luma): 100 Luma events compared, 1 status mismatch (funders-founders-night-altair)",
     "/universe/ served (gravity.1's adapter), linked from the agentic-team nav and /graph/; one constant (admin/build/universe.mjs) picks vendored vs cross-site gravity.js",
     "18:1x: Dinis decided /universe/ keeps loading gravity.js live from web-summit.sgit.ai (a domain he controls); constant left as is, ask closed",
-    "18:2x wake: second-opinion from the iCal feed (93 Luma events, 0 mismatches, $0); models ledger refreshed"
+    "18:2x wake: second-opinion from the iCal feed (93 Luma events, 0 mismatches, $0); models ledger refreshed",
+    "19:2x wake: second-opinion run (iCal feed), models ledger refreshed"
   ],
   "next": [
     "refresh /models/ ledger at each wake",

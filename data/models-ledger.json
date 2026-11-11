@@ -109,9 +109,9 @@
   }
  },
  "about": "Counts only, from the model ledger of the sessions that run admin/tools/llm.mjs (the ledger is per session, outside git). No prompt, page text or model output.",
- "updated": "2026-11-11T18:21:00Z",
+ "updated": "2026-11-11T19:21:13Z",
  "credit_at_update": {
-  "key_remaining_usd": 72.55,
-  "account_remaining_usd": 97.61
+  "key_remaining_usd": 72.43,
+  "account_remaining_usd": 97.23
  }
 }
