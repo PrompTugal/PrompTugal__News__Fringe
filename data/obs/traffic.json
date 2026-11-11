@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-11T22:39Z",
+ "generated": "2026-11-11T22:54Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 503,
-  "reads": 432,
-  "tabs": 232,
+  "views": 505,
+  "reads": 433,
+  "tabs": 234,
   "countries": 19,
   "shares": 167,
-  "bots": 1675,
+  "bots": 1689,
   "crawler_tabs": 1,
-  "agent_runs": 242,
-  "agent_runs_signed": 221
+  "agent_runs": 248,
+  "agent_runs_signed": 226
  },
  "by_hour": [
   [
@@ -212,7 +212,7 @@
   ],
   [
    "2026-11-11 22:00",
-   6
+   8
   ]
  ],
  "by_page": [
@@ -222,7 +222,7 @@
   ],
   [
    "/now/",
-   37
+   38
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
@@ -554,6 +554,10 @@
   ],
   [
    "/e/2026-11-11-district-909-back-where-it-all-started/",
+   1
+  ],
+  [
+   "/e/2026-11-12-healthcare-re-imagined-by-ai/",
    1
   ]
  ],
@@ -1067,12 +1071,18 @@
    1,
    75,
    100
+  ],
+  [
+   "/e/2026-11-12-healthcare-re-imagined-by-ai/",
+   1,
+   97,
+   54
   ]
  ],
  "by_country": [
   [
    "Portugal",
-   317
+   318
   ],
   [
    "United Kingdom",
@@ -1083,11 +1093,11 @@
    31
   ],
   [
-   "Estonia",
-   21
+   "Germany",
+   22
   ],
   [
-   "Germany",
+   "Estonia",
    21
   ],
   [
@@ -1166,7 +1176,7 @@
   ],
   [
    "Frankfurt am Main, Germany",
-   17
+   18
   ],
   [
    "Harrietsham, United Kingdom",
@@ -1202,7 +1212,7 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   79
+   80
   ]
  ],
  "by_referrer": [
@@ -1217,19 +1227,23 @@
   [
    "com.linkedin.android",
    1
+  ],
+  [
+   "www.google.com",
+   1
   ]
  ],
  "by_host": [
   [
    "lisbontechfringe.com",
-   464
+   466
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 2566,
+ "other_hosts_views": 2607,
  "by_via": [
   [
    "whatsapp",
@@ -1268,7 +1282,7 @@
   ],
   [
    "phone",
-   220
+   222
   ],
   [
    "tablet",
@@ -1278,7 +1292,7 @@
  "agents": [
   [
    "design.4.fringe@PrompTugal.dinis",
-   21
+   22
   ],
   [
    "elastic.1.fringe@PrompTugal.dinis",
@@ -1286,19 +1300,19 @@
   ],
   [
    "design.1.fringe@PrompTugal.dinis",
-   19
+   20
   ],
   [
    "researcher.1.fringe@PrompTugal.jose",
    17
   ],
   [
-   "ontologist.1.fringe@PrompTugal.dinis",
+   "architect.1.fringe@PrompTugal.dinis",
    17
   ],
   [
-   "architect.1.fringe@PrompTugal.dinis",
-   16
+   "ontologist.1.fringe@PrompTugal.dinis",
+   17
   ],
   [
    "conductor.fringe@PrompTugal.jose",
@@ -1317,12 +1331,12 @@
    12
   ],
   [
-   "capture.1.fringe@PrompTugal.dinis",
+   "conductor.fringe@PrompTugal.indi",
    10
   ],
   [
-   "conductor.fringe@PrompTugal.indi",
-   9
+   "capture.1.fringe@PrompTugal.dinis",
+   10
   ],
   [
    "dev.1.fringe@PrompTugal.dinis",
@@ -1345,6 +1359,14 @@
    7
   ],
   [
+   "usability.1.fringe@PrompTugal.dinis",
+   4
+  ],
+  [
+   "fable.fringe@PrompTugal.dinis",
+   4
+  ],
+  [
    "gravity.1.fringe@PrompTugal.silvio",
    4
   ],
@@ -1353,24 +1375,16 @@
    4
   ],
   [
-   "usability.1.fringe@PrompTugal.dinis",
-   3
-  ],
-  [
-   "fable.fringe@PrompTugal.dinis",
-   3
-  ],
-  [
    "swarm.1.fringe@PrompTugal.dinis",
    2
   ]
  ],
  "flows": {
-  "tabs": 232,
+  "tabs": 234,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    161
+    162
    ],
    [
     "shared link (?via=)",
@@ -1378,7 +1392,7 @@
    ],
    [
     "from another site",
-    2
+    3
    ]
   ],
   "entry_pages": [
@@ -1392,7 +1406,7 @@
    ],
    [
     "/now/",
-    9
+    10
    ],
    [
     "/universe/",
@@ -1450,7 +1464,7 @@
    ],
    [
     "/now/",
-    14
+    15
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
@@ -1610,7 +1624,7 @@
   "pages_per_tab": [
    [
     "1",
-    158
+    160
    ],
    [
     "2",
@@ -1692,11 +1706,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
@@ -1704,11 +1718,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-roast-your-website/",
+    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
     1
    ]
   ]
@@ -1758,7 +1772,7 @@
    },
    {
     "name": "Frankfurt am Main, Germany",
-    "views": 17,
+    "views": 18,
     "lat": 50.1,
     "lon": 8.7
    },
