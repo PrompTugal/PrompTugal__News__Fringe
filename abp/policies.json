@@ -986,9 +986,14 @@
       "since": "2026-11-11T13:37Z",
       "what": "Commits that will show as outside their grant from the start: the lead's own code (admin/tools/**) and the design agents' edits to dev-owned build files",
       "for": "Dinis: observe for three rounds; then decide whether design keeps admin/build/** or works through a page registry"
+    },
+    {
+      "at": "2026-11-11T19:09Z",
+      "for": "Dinis",
+      "q": "OpenTelemetry to Elastic APM: the deployment's APM server (0475c85f….apm.us-central1.gcp.cloud.es.io) takes OTLP/HTTP natively, but it needs its own credential (an APM agent key or a scoped API key with apm event:write). Creating one was refused in my session as a credential I may not create. Either Dinis creates an APM agent key in Kibana (Observability > APM > Settings > Agent keys) and puts OTEL_EXPORTER_OTLP_ENDPOINT/OTEL_EXPORTER_OTLP_HEADERS in the environment, or says the word for architect.1 to create a 7-day key with event:write only. Until then spans go to ~/.abp/otlp/ as OTLP JSON and swarm-flows carries the OTel ids."
     }
   ],
-  "hook_sha256": "005475ea2edf6e58",
+  "hook_sha256": "9bbd992ed9fcc230",
   "effective": "2026-11-11T13:36:00Z",
   "effective_note": "Earlier commits are read against the grants as calibration, not counted.",
   "review": {
@@ -1175,7 +1180,7 @@
       ],
       "instead": "docs/elastic-guidance.md section 3: commit a JSON with \"elastic_feed\"; elastic.1 sends it hourly under the committing agent's name",
       "rule": "R8e",
-      "source": "Dinis in elastic.1's session, 19:1x UTC, relayed by elastic.1: \"for now we will share that super user pwd but control that using ABPs so that only the elastic and architect agent can use that environment variable\"",
+      "source": "Dinis in elastic.1's session, before 19:06 UTC, relayed by elastic.1: \"for now we will share that super user pwd but control that using ABPs so that only the elastic and architect agent can use that environment variable\"",
       "added": "2026-11-11T19:06Z"
     }
   ]

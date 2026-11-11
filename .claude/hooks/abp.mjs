@@ -290,7 +290,7 @@ export function checkBash(who, command, cwd, P = loadPolicy()) {
         if (verb === 'printenv' || (verb === 'env' && !args.length) || (verb === 'export' && (args[0] === '-p' || !args.length)) || (verb === 'declare' && /^-[a-z]*[px]/.test(args[0] || '')) || (verb === 'set' && !args.length))
             return deny('R8', `${verb} prints the environment, which holds keys and tokens`, 'secret')
         if (['echo', 'printf'].includes(verb) && SECRET_VAR.test(seg)) return deny('R8', `${verb} of a secret variable`, 'secret')
-        // R8e: a shared credential only its listed agents may use (abp/policies.json restricted_secrets; Dinis, 19:1x UTC)
+        // R8e: a shared credential only its listed agents may use (abp/policies.json restricted_secrets; Dinis, before 19:06 UTC)
         for (const rs of (P.restricted_secrets || [])) {
             if (who.kind === 'team' && (rs.agents || []).some(a => a.toLowerCase() === (who.agent || '').toLowerCase())) continue
             const v = new RegExp(`\\b${rs.var}\\b`).test(seg), h = (rs.hosts || []).find(x => seg.toLowerCase().includes(x))
