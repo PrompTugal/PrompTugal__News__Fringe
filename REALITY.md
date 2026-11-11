@@ -12,7 +12,7 @@
 - **The join page build** (work/12, from dev.fringe@, b5cf5a3): `admin/build/build.mjs` builds `/` and `/join/` into `_site/`, and `.github/workflows/pages.yml` deploys from `dev`. **It does not serve yet:** both Pages runs (43005902882, 43006170870) failed because Pages is not enabled (Dinis).
 - **Seed data:** `seed/events-2026-11-11-social-watch.json`, social.watch@'s first pass (21 events). Not yet re-verified (work/02).
 - **Agents** (all Dinis's):
-  - **conductor.fringe@PrompTugal.dinis**, the lead: session_01Kw9UwBGQe9BhMCbDw28aDA, since 10:44 UTC, hourly at :44, its key in data/keys.json (signing sha256:cb7afbe3025a6ec1);
+  - **conductor.fringe@PrompTugal.dinis**, the lead: session_01Kw9UwBGQe9BhMCbDw28aDA, since 10:44 UTC, hourly at :44, its key in data/keys.json and in PrompTugal__News__Website board/keys.json (c96f661), signing sha256:cb7afbe3025a6ec1;
   - **dev.fringe@PrompTugal.dinis**: session_01Kw9UwBuse9ub7C5zboJbMs, every two hours at :44, branch work/dev.fringe;
   - **researcher.fringe@PrompTugal.dinis**: session_01Kw9UwDtKvyL1hzQTwazVi3, started 10:46 UTC, hourly at :14, branch work/researcher.fringe;
   - **security.fringe@PrompTugal.dinis**: session_01Kw9UwEM3Xg32ANMHE6SZGS, started 10:46 UTC, every two hours at :29, branch work/security.fringe.
@@ -25,4 +25,3 @@
 - **The events data and pages** (`data/events.json`, `/api/v1/events.json`, `/llms.txt`).
 - **The rest of the board:** communities, the graph, the submit form, the storm block, channel drafts, the design.
 - **The other people's conductors:** every roster state except dinis is "not started".
-- **The lead's key in PrompTugal__News__Website `board/keys.json`:** not yet added.
