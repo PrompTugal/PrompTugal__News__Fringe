@@ -28,8 +28,8 @@ export function trafficBody(t, esc) {
   return intro +
     `<p class="muted">Drained ${esc(t.generated)} UTC from public vault <code>${esc(t.public_vault || '')}</code>. Readers only (declared bots and automation are counted apart: ${tot.bots ?? 0} views).</p>` +
     `<div class="kp"><div class="card"><b>${tot.views ?? 0}</b>views</div><div class="card"><b>${tot.reads ?? 0}</b>reads</div><div class="card"><b>${tot.tabs ?? 0}</b>tabs</div><div class="card"><b>${tot.countries ?? 0}</b>countries</div><div class="card"><b>${tot.shares ?? 0}</b>views from a shared link</div></div>` +
-    `<h2>Views by hour (UTC, last 48)</h2><div class="hours" role="img" aria-label="Views per hour">${hours.map(([h, n]) => `<span title="${esc(h)}: ${n}" style="height:${Math.round(100 * n / hmax)}%"></span>`).join('')}</div>` +
-    `<p class="muted">${esc(hours[0]?.[0] || '')} to ${esc(hours.at(-1)?.[0] || '')}</p>` +
+    (hours.length ? `<h2>Views by hour (UTC, last 48)</h2><div class="hours" role="img" aria-label="Views per hour">${hours.map(([h, n]) => `<span title="${esc(h)}: ${n}" style="height:${Math.round(100 * n / hmax)}%"></span>`).join('')}</div>` +
+    `<p class="muted">${esc(hours[0][0])} to ${esc(hours.at(-1)[0])}</p>` : '<h2>Views by hour</h2><p class="muted">No reader views yet.</p>') +
     table(esc, 'Shares: views by ?via= tag', t.by_via, 'Tag', 'Each tag is a link someone shared; its views include the pages read after arriving.') +
     table(esc, 'By page', t.by_page, 'Page') +
     table(esc, 'By country', t.by_country, 'Country') +
