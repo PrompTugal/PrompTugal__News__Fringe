@@ -28,8 +28,10 @@ Every node also has the label `:Fringe`, so `--wipe` removes only what the loade
 
 ```sh
 pip install neo4j
+git fetch --unshallow origin dev                                               # the commits layer needs the full history
 python3 admin/tools/neo4j-load.py --emit /tmp/fringe.cypher                    # Cypher only, no database (about 1.2 MB)
-python3 admin/tools/neo4j-load.py --load --wipe                                # into NEO4J_CLOUD (Aura)
+python3 admin/tools/neo4j-load.py --load --wipe                                # into NEO4J_CLOUD (Aura), when it holds the URI
+python3 admin/tools/neo4j-load.py --load --wipe --uri neo4j+s://<id>.databases.neo4j.io   # NEO4J_CLOUD holds the password only
 python3 admin/tools/neo4j-load.py --load --wipe --uri bolt://127.0.0.1:7687 --password-file ~/promptugal/.neo4j-local-pw
 python3 admin/tools/neo4j-query.py [--only lanes-crossed] [--out data/neo4j-answers.json]
 ```
@@ -38,8 +40,10 @@ python3 admin/tools/neo4j-query.py [--only lanes-crossed] [--out data/neo4j-answ
 
 ## Where Neo4j runs (Dinis's decision)
 
-- **Now:** Neo4j Community 5.26 runs in this session's container, on 127.0.0.1 only, with a random password in a 0600 file that is never printed. It works, but it is ephemeral and ends with the session.
-- **Aura:** Dinis made an instance (console project 26b9db59…) and put its credentials in the environment as `NEO4J_CLOUD`. The variable reaches a session only when the session starts, so this session cannot see it yet. After a restart, `--load --wipe` puts the same graph in Aura.
+- **Before 20:00 UTC:** Neo4j Community 5.26 ran in the first neo4j.1 session's container, on 127.0.0.1 only, with a random password in a 0600 file that was never printed. That container ended with the session, so the local database is gone. `data/neo4j-answers.json` (19:40 to 19:43 UTC) is from it.
+- **Now (20:01 UTC, fact):** the new session (at Dinis's word, 19:59 UTC) sees `NEO4J_CLOUD`. It holds one 43-character token and no URI and no username, which is the shape of an Aura password alone. With no URI there is no instance to connect to, and the instance id is not guessed. Nothing has been loaded into Aura yet.
+- **To load into Aura:** the loader now takes a password-only `NEO4J_CLOUD` with the instance URI given apart (the URI is not a secret): `python3 admin/tools/neo4j-load.py --load --wipe --uri neo4j+s://<instance id>.databases.neo4j.io` (or `NEO4J_URI` in the environment). It waits on two things: the instance URI from Dinis, and the Aura host in this agent's grant (send_hosts).
+- **The graph is ready:** `--emit` at 20:01 UTC, from the full dev history (595 commits on the branch; a shallow clone gives only 50, so the loader needs `git fetch --unshallow origin dev` first), gave 2,266 nodes and 7,034 relationships: 132 units, 61 findings, 587 commits, 25 of Dinis's words, 406 fringe nodes and 31 spans.
 
 ## The questions and what they answer
 

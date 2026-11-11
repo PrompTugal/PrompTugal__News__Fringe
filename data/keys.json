@@ -409,16 +409,16 @@
       "id": "neo4j.1.fringe-dinis",
       "agent": "neo4j.1.fringe@PrompTugal.dinis",
       "role": "Neo4j agent for the lead (Lisbon Tech Fringe, WS-215): the swarm as a property graph in Neo4j (fringe graph, altitude runs, ABP grants and findings), Cypher queries and docs/neo4j.md.",
-      "how": "Made in its own session on 11 November 2026, 19:34 UTC (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab). A session key: it ends with the session. Public half only.",
+      "how": "Made in its own session on 11 November 2026, 20:00 UTC (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab), in the new session Dinis asked for at 19:59 UTC. It replaces the previous session's key, sha256:7fa79f7adcf7dc77. A session key: it ends with the session. Public half only.",
       "added": "2026-11-11",
       "status": "active",
       "bundle": {
         "v": "1",
         "label": "neo4j.1.fringe@PrompTugal.dinis",
-        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAs0CoBxE7+zn9g1hCnc3O\ncRbWisv5wqekUE8Ue1ic1P8q6V+NecJJs/WneQamh5mwxlWICNRnNwLdKl3ZUPET\nxFG4bFvQWrPz2XQLJexwb+HXRgx+ckgfAxCyZoddS3IuzG45YDJ8Fu5ip3o5zbQM\niwrbEi69tR9B8GtHMHBTM5Wt5TRd5FV+YTw98aNcMovvXmieFAQk7tooLlxZZTya\nhVJxXlpqaeWtqZV9aigCdotoavgsVdFFCpjW2rB52EYIThumpgizz35WBkKus8bL\np2CUoKLf1C+n6/TnuXZiD4S1vWUqi/qVOkpeMgX4wNkZ2gPWb35LLObgIhd3SHq6\njDPvESTYibV+6K4GMBsMxdPWv2EgRj72IXxgWYQoWGirFoB9P8HUJGDgVMjnMUll\nCIHSOx7YAYq8nTZDRGIR8/6mhwSSCNTq/EYsDhZYcI6ysIlDsAHmfrHkTLNN6m3O\nOCgLfxdHMcgOZFiDsSIhsBXKfvw4dXbKHMAoEIlntV+MHijnwJ918EANJ1IDKdE7\nhrRy4glZoPTdXfuyjyvrDk9R55N63jwyk3XsrD5gNj1SDg1P97J/s1nJ1J8XapTZ\nEA878D6cJXL9n4CGeuHN664eAcg3CI5IMcZ3pqm+C/j8rkiCP+OI2T1TuEGMdbtr\naOO37vt0a175shRXpT4RawECAwEAAQ==\n-----END PUBLIC KEY-----\n",
-        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEnu8PeJavzdAY3xLqOshULrAl/ZBa\ncYSgF94+4fgtRP3rPRpbAJVim/FxZNlFMnZTpJlgm7/xjxL4HXTVZ8dHIA==\n-----END PUBLIC KEY-----\n",
-        "fingerprint": "sha256:7fa79f7adcf7dc77",
-        "signing_fingerprint": "sha256:f25207f3f6bd2a36"
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAob5b5FGVv1AgDKiZVLQQ\n6sANVXYd7FR1wzrHbobMMN5Hkc2tiZ8FTlX4++ZH+taMBLVxx80woMz6WYh7WAzP\nqq5oAXqKZAazS9v0MyAtJ29D39A7hSKsOMSDJAIKl6Etij5n5EFImjClV8f7imdi\n/9EXMqU8FhDUhguiCb58LCAR1fg70wv3GmddjAPucLlc4sIjeQ4rpGUwfiUs/XnX\nALm2TmbqBdQoUEz04f/6GiHn/Zcb3g5B13C4UGfcUGxBC2slfcEdWhRpgz5U00j1\nrhCtrm3nHrQqN+HxfX/iKuCw3wDBO5SzKGhrPgNObBnWWyK5CHLTbgomzDSMBZNa\n9nEDE6AABZoS3ADoVF5DqC3e9IhtJ4Wq9NQ1gnP8mUGqeWn36IBUnyyNwlBKb0eJ\njoDKmzQBptz+d45uEPxITxaLv3Vyu3IlDAcUVpom+GhIHm4NZ2k19C/0zkTym3MU\nL+qvpXjgyOlPLeUVIK4OOt7YY9CGaA68We7mczn8lEb0ONQ44F5j/MHjOUAfbGha\n6unnwfaphQyDrfNNQos5ApWJLutxiCfyPhTiswUGSA7n1L9F1R8WoCHUIG4Ly20t\nPD3sNyoua1oLCesw81dQspOR37eBes4rK99aRV8i5V7nzNY5X17o2NhBIlb48dmZ\nyDzSFxuNMqIfxT/+KgspEU8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/5zJMlN+kf/GCvo/WGXDzSlp2ZCy\nmY48q7znZa908cH7n3jXeEIRbq01WZg8uLWLbKix+PabMwNQuS5pIpM/iw==\n-----END PUBLIC KEY-----\n",
+        "fingerprint": "sha256:f56c29b6998f17aa",
+        "signing_fingerprint": "sha256:032c85326da4334e"
       }
     }
   ]

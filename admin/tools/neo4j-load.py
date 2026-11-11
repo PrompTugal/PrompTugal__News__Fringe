@@ -406,10 +406,20 @@ def emit(g, path):
 
 
 def creds(args):
-    if args.uri:
-        pw = Path(os.path.expanduser(args.password_file)).read_text().strip() if args.password_file else ''
-        return {'uri': args.uri, 'user': args.user, 'password': pw, 'database': args.database}
     raw = os.environ.get('NEO4J_CLOUD') or os.environ.get('NEO4J__CLOULD')
+    bare = bool(raw) and re.fullmatch(r'[A-Za-z0-9_\-]{16,}', raw.strip()) is not None  # a password alone, as in Aura's console
+    uri = args.uri or os.environ.get('NEO4J_URI')
+    if uri:
+        if args.password_file:
+            pw = Path(os.path.expanduser(args.password_file)).read_text().strip()
+        elif bare:
+            pw = raw.strip()
+        else:
+            pw = ''
+        return {'uri': uri, 'user': args.user, 'password': pw, 'database': args.database}
+    if bare:
+        raise SystemExit('neo4j-load: NEO4J_CLOUD holds a password only, with no URI. Give the instance URI with '
+                         '--uri neo4j+s://<instance id>.databases.neo4j.io (or NEO4J_URI); the URI is not a secret')
     if not raw:
         raise SystemExit('neo4j-load: no NEO4J_CLOUD in this session (environment variables reach a session at its start) and no --uri')
     try:
