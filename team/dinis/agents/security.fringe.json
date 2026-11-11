@@ -1,30 +1,32 @@
 {
   "agent": "security.fringe@PrompTugal.dinis",
   "by": "security.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T12:31Z",
+  "updated": "2026-11-11T14:31Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwBGQe9BhMCbDw28aDA, the lead until 11:14 UTC), 10:48 UTC, under BRIEF.md §7 step 4",
   "wake": "every two hours until Friday 13 November (scheduled task named in the outgoing lead's handover; its prompt still names the old lead)",
   "branch": "work/security.fringe",
   "key": "security.fringe-promptugal (record sha256:477abd55a04f4577), in data/keys.json on dev",
-  "state": "third review done (12:30 UTC, 94 new commits): no high; 2 new medium (the geo-IP lookup on every page; hourly captures of organiser pages, incl. meetup.com and guest names), 2 new low",
+  "state": "fourth review done (14:30 UTC, 191 new commits): no high; 1 new medium (the committed .claude hooks run in every agent session); finding 21 fixed in capture.mjs; finding 20 closed as accepted by Dinis",
   "doing": [],
   "done": [
     "review 1 (10:48 UTC): security/reviews/2026-11-11-1048.md",
     "review 2 (11:30 UTC, 35 new commits on every branch): security/reviews/2026-11-11-1130.md",
-    "review 3 (12:30 UTC, 94 new commits): security/reviews/2026-11-11-1230.md"
+    "review 3 (12:30 UTC, 94 new commits): security/reviews/2026-11-11-1230.md",
+    "review 4 (14:30 UTC, 191 new commits): security/reviews/2026-11-11-1430.md"
   ],
   "next": [
     "at the next wake: fetch, review what is new since security/last-reviewed.json, push",
     "read my inbox (data/inboxes/security.fringe-promptugal.json) once I can do so without running other agents' code with my key"
   ],
   "asks": [
-    "conductor.fringe: finding 21 (medium). capture.mjs captures every organiser page hourly, including 4 meetup.com pages that researcher.fringe@ has put on hold for machines (9665eba), and keeps hosts' and guests' names and photos in the vault. Please have capture.1@ switch to an allow-list from sources.md, space captures out, mask guest lists and set a retention. Details: security/reviews/2026-11-11-1230.md.",
-    "Dinis: finding 20 (medium). assets/obs/obs.js sends every reader's IP to ipapi.co or ipwho.is by default (opt-out) to find their town. For EU readers this needs consent. Make the geo lookup opt-in or drop it. The same counter runs on PrompTugal.news.",
-    "conductor.fringe: findings 1 and 2 are still live: deploy.yml holds contents: write while running repository code (now including headless Chrome), and workflow_dispatch can deploy from any branch. Fixes: security/reviews/2026-11-11-1048.md.",
-    "conductor.fringe: the wake that runs me (trig_01XhtAq86wTjp2bLqwZMkwez) still names session_01Kw9UwBGQe9BhMCbDw28aDA as the lead and asks me to send_message it. That session asked not to be messaged, so I report here only. Please update the wake's prompt, or ask Dinis to.",
-    "conductor.fringe: low findings 22 (trace-page innerHTML), 23 (fetch-depth 150 vs CLAUDE.md depth 1), 14 (duplicate key ids), 15 (superseded lead key active in the Website repo).",
-    "Dinis: finding 13. Please confirm in your own words that session_01Kw9UwCFpT9ihNBcQFxkomq (signing sha256:d3c9e8a33293ef55) is conductor.fringe@PrompTugal.dinis.",
-    "Dinis: my session has GitHub access to PrompTugal__News__Fringe only, so my public key is not in PrompTugal__News__Website board/keys.json.",
-    "Dinis: protect main (pull requests only) and limit the github-pages environment to dev."
+    "Dinis: finding 28 (medium). .claude/settings.json and .claude/hooks/abp.mjs now run in every agent session on every tool call, next to that session's private keys. Today the hook is observe-only and network-free. But one push to dev could change it to read keys or allow what the policy denies. Please protect .claude/** and abp/policies.json with a CODEOWNERS file and a branch rule, so they change only through a pull request you approve.",
+    "conductor.fringe: finding 21 is fixed in capture.mjs. Please have capture.1@ delete the pre-fix runs (11:00 and 12:00 UTC) from vault u4f3pl6f now: they hold uncropped pages with guests' names and photos.",
+    "conductor.fringe: findings 1, 2 and 29. The deploy job holds contents: write while it runs repository code, now including a local http.server and headless Chrome for each design, and 500 commits of history. workflow_dispatch can still deploy from any branch. Fixes: security/reviews/2026-11-11-1048.md.",
+    "conductor.fringe: finding 31. My ABP grant says team/dinis/agents/security.json and brief 15 says agents run on dev, but I was started on work/security.fringe with security.fringe.json. Which applies? I keep the original until told.",
+    "conductor.fringe: the wake that runs me (trig_01XhtAq86wTjp2bLqwZMkwez) still names session_01Kw9UwBGQe9BhMCbDw28aDA as the lead and asks me to send_message it. I report here only. Please update the wake's prompt.",
+    "Dinis: finding 32. inboxes.py needs pip install sgit-ai and my private key. Shall a reviewer session install it? Until then I do not drain my inbox.",
+    "Dinis: finding 13. Please confirm in your own words that session_01Kw9UwCFpT9ihNBcQFxkomq is conductor.fringe@PrompTugal.dinis.",
+    "Dinis: protect main (pull requests only) and limit the github-pages environment to dev.",
+    "Dinis: my session has GitHub access to PrompTugal__News__Fringe only, so my public key is not yet in PrompTugal__News__Website board/keys.json."
   ]
 }

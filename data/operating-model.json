@@ -1,7 +1,7 @@
 {
   "about": "The operating model of the agentic team (Dinis with Angelo, in architect.1's session, 14:40 UTC; briefs/2026-11-11-1440-the-operating-model.md; work/48): the primitives of the execution block, the access an entity has at a moment in time, identity, state, providers, and who can do what. What an entity is depends on where it runs and what it can reach (Dinis: 'what they are depends on where they are and what they can do'). A draft for Dinis and Angelo to correct.",
   "by": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T15:13Z",
+  "updated": "2026-11-11T15:39Z",
   "status": "draft v0.4",
   "ladder": {
     "about": "The execution ladder: what an entity can do, bottom to top. Each rung includes the ones below it.",
@@ -298,6 +298,54 @@
         "install": "the person's choice",
         "control_plane": "own wake (local)",
         "identity": "its key (can persist)"
+      },
+      {
+        "entity": "A Cloudflare Worker with Workers AI (R6)",
+        "rung": "E1 (A0 code, A1 call)",
+        "git": "none",
+        "vault": "read-write over HTTPS (L2), if given keys",
+        "internet": "open (fetch)",
+        "filesystem": "none",
+        "install": "no (bundled at deploy)",
+        "control_plane": "none",
+        "identity": "an Ed25519 key made per invocation (Web Crypto): proof of that run; or a secret key bound at deploy",
+        "status": "from provider pages read at 2026-11-11T15:39Z; not yet run by this swarm (hypothesis until a packet runs there)"
+      },
+      {
+        "entity": "A Cloudflare Agents SDK agent (Durable Object) (R6)",
+        "rung": "E4 (own schedule, SQLite memory)",
+        "git": "none",
+        "vault": "read-write over HTTPS",
+        "internet": "open",
+        "filesystem": "its SQLite state",
+        "install": "no",
+        "control_plane": "own schedule; can address other Durable Objects",
+        "identity": "a key held in its own storage: an identity that lives as long as the object",
+        "status": "from provider pages read at 2026-11-11T15:39Z; not yet run by this swarm (hypothesis until a packet runs there)"
+      },
+      {
+        "entity": "An AWS Lambda with a KMS signing key (R7)",
+        "rung": "E0 (A0 compute)",
+        "git": "none",
+        "vault": "read-write over HTTPS",
+        "internet": "its VPC's egress",
+        "filesystem": "ephemeral /tmp",
+        "install": "no (packaged)",
+        "control_plane": "none",
+        "identity": "a KMS asymmetric key that never leaves AWS: signed compute",
+        "status": "from provider pages read at 2026-11-11T15:39Z; not yet run by this swarm (hypothesis until a packet runs there)"
+      },
+      {
+        "entity": "An AWS Bedrock AgentCore agent (R7)",
+        "rung": "E3 to E4 (loop with tools; scheduled by EventBridge)",
+        "git": "through Gateway tools, if granted",
+        "vault": "read-write over HTTPS",
+        "internet": "through Gateway or VPC egress",
+        "filesystem": "S3 Files or EFS (bring your own)",
+        "install": "its container",
+        "control_plane": "none of ours; AWS's own",
+        "identity": "AgentCore Identity (credential providers); plus a signing key we give it",
+        "status": "from provider pages read at 2026-11-11T15:39Z; not yet run by this swarm (hypothesis until a packet runs there)"
       }
     ]
   },
@@ -883,6 +931,106 @@
     "in_this_swarm": [
       "the ABP hooks observe each agent's grant (A3); the loops and calls inside an agent inherit it today, with no narrower grant of their own",
       "proposal: a task packet carries its own altitude and a narrower grant; the router's calls (A1) carry no tools"
+    ]
+  },
+  "trials": [
+    {
+      "at": "2026-11-11T15:26Z",
+      "altitude": "A1 LLM call",
+      "what": "an open-weight model sorts eight tasks into altitudes (the lowest that suffices), no tools",
+      "model": "deepseek/deepseek-v4-flash",
+      "cost_usd": 3.3858e-05,
+      "latency_ms": 778,
+      "result": "8 of 8 right",
+      "rows": [
+        {
+          "id": "t1",
+          "want": "A3",
+          "got": "A3"
+        },
+        {
+          "id": "t2",
+          "want": "A1",
+          "got": "A1"
+        },
+        {
+          "id": "t3",
+          "want": "A4",
+          "got": "A4"
+        },
+        {
+          "id": "t4",
+          "want": "A2",
+          "got": "A2"
+        },
+        {
+          "id": "t5",
+          "want": "A0",
+          "got": "A0"
+        },
+        {
+          "id": "t6",
+          "want": "A1",
+          "got": "A1"
+        },
+        {
+          "id": "t7",
+          "want": "A2",
+          "got": "A2"
+        },
+        {
+          "id": "t8",
+          "want": "A4",
+          "got": "A4"
+        }
+      ],
+      "teaches": "the altitudes are simple enough that a cheap open-weight call can route work by them"
+    },
+    {
+      "at": "2026-11-11T15:26Z",
+      "altitude": "A2 loop",
+      "what": "a read-only Explore sub-agent: find agents with no grant (one closed task, then stop)",
+      "result": "none unmapped; 28 agent names mapped",
+      "hook": "R12 logged (observe): 'a sub-agent (an A2 loop, Explore) inherits architect.1's A3 grant'",
+      "teaches": "the hook saw the loop start but not its tools: Explore is read-only, so its grant was already A2 and no altitudes were mixed. Fixed: read-only sub-agent types are recognised (abp/policies.json altitudes.narrow_subagents); a general-purpose sub-agent still logs R12"
+    },
+    {
+      "at": "2026-11-11T15:31Z",
+      "altitude": "A3 agent -> A0 + 3 A2 loops -> 81 A1 calls -> A0",
+      "what": "one objective through the altitudes (abp/tools/altitudes.mjs): the lowest altitude each of the 51 board items needs; A0 planned, three sub-agent loops ran open-weight calls until valid, A0 verified and merged; every unit signed with a key that lived only while it ran",
+      "model": "deepseek/deepseek-v4-flash",
+      "cost_usd": 0.003394,
+      "latency_ms": "",
+      "result": "85 signatures, all verified; by altitude {'A4': 12, 'A2': 11, 'none': 3, 'A3': 21, 'A1': 3, 'A0': 1}; 33 of 81 calls retried",
+      "hook": "R12 logged each general-purpose loop (they held architect.1's A3 grant to do an A2 task)",
+      "teaches": "the mechanics hold (altitudes, loops, a key per unit, verification); the placements are weak: the board's items are whole projects mixing altitudes, so they must be cut into loops and calls before they are routed; and 41% invalid answers point at the call's own limits (a 120-token cap is the first suspect)"
+    }
+  ],
+  "environments_plan": {
+    "about": "Running the altitudes across environments (Dinis, 2026-11-11T15:39Z): the same signed task packets (tasks/<id>/packet.json, abp/tools/packets.mjs) run anywhere; each result is signed by its runner's own key and verified where it lands (our hooks do not run outside R1 and R2).",
+    "next": [
+      {
+        "env": "Angelo's team (his account's Claude Code)",
+        "packets": [
+          "tasks/2026-11-11-p1-place-12-items (A1)",
+          "tasks/2026-11-11-p2-cut-items-into-loops (A2)"
+        ],
+        "needs": "Angelo's conductor runs them at its wake (sent by inbox)"
+      },
+      {
+        "env": "Cloudflare (R6)",
+        "packets": [
+          "A1 packets in a Worker with Workers AI"
+        ],
+        "needs": "a Cloudflare account and a deploy token (Dinis); a runner port of packets.mjs to a Worker (Web Crypto Ed25519)"
+      },
+      {
+        "env": "AWS (R7)",
+        "packets": [
+          "A2 loops in AgentCore; signed compute in Lambda with KMS"
+        ],
+        "needs": "an AWS account and credentials (Dinis); the runner as an AgentCore agent"
+      }
     ]
   }
 }

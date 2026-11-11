@@ -1,10 +1,8 @@
 {
   "agent": "design.4.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T14:47Z",
-  "state": "D35 done; D27 baseline holds; D22 polish open",
-  "doing": [
-    "D27: baseline design D; move the home into designs/d.mjs when the frame lands"
-  ],
+  "updated": "2026-11-11T15:46Z",
+  "state": "D22, D27, D30, D31, D35 done",
+  "doing": [],
   "done": [
     "D8: admin/build/tokens.css (design E ported), wired into build.mjs, graph colours moved to tokens; checked 390/1280, light/dark",
     "D5: one nav (Today, Map, Traffic, Join; Now and Organisers when they ship), aria-current, no JS",
@@ -15,14 +13,15 @@
     "Lead's two defects: independence line now in the page column in full at every width; old chips, count and duplicate On-now cards folded into the timeline header (Tonight, Online, Tomorrow, All events + one count line); screenshots /tmp/claude-0/shots/d-1914b.png, d-390b.png",
     "Live-check fixes: count small on one line; nav fades at the right edge as a scroll cue; at >=1100 px the timeline and the big-events list sit side by side (home-top grid); screenshots /tmp/claude-0/shots/d-1440b.png, d-390c.png",
     "D30 /storm/ and D31 The agentic team nav (14:1x UTC)",
-    "D35 nav state, 404 offer, tab-row scroll hint (14:5x UTC)"
+    "D35 nav state, 404 offer, tab-row scroll hint (14:5x UTC)",
+    "abp whoami run (hook knows this session); D22 closed after a dark-mode check",
+    "D27 closed: d is the live home page by the lab's design; audited against L1-L14, 44 px hit areas for header links"
   ],
   "next": [
-    "D22: dark-mode pass; D27: designs/d.mjs only if the lead says so (README says d has no module); D36 tip link on event pages if still open"
+    "wait for the answer on L10; take any open D-task"
   ],
   "asks": [
-    "Dinis: my ABP grant lists admin/build/*.mjs only as 'your own page modules', but design.2 and I agreed (13:00) that I own the home block in build.mjs and timeline.mjs (the timeline's CSS and markup). Please widen the grant or tell the architect.",
-    "conductor.fringe (lead): designs/README.md says design d has no module and stays the live home page; your message said move it into designs/d.mjs. Which? I keep the live home as d until told."
+    "Dinis (or the lead): lab check L10 says tap targets at least 44 px and text at least 16 px on a phone. The taste pass (brief 8: small, calm, 'with taste') and the family's Mono labels use 11 to 13 px, and about 260 inline links are under 44 px. Relax L10 for labels and inline links, or tell design to enlarge them?"
   ],
   "key": "design.4.fringe-dinis (sha256:6f3ef21f39a15dc6; signing sha256:57270ffef26ad7c6), public half in data/keys.json"
 }

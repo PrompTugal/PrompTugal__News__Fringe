@@ -1,6 +1,6 @@
 {
   "agent": "dev.2.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T14:26Z",
+  "updated": "2026-11-11T15:26Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "branch": "dev",
   "state": "working",
@@ -19,7 +19,8 @@
     "13:2x wake: second-opinion run: 171 checked, 17 mismatches, 0.074 USD",
     "work/37 releases live; work/41 /tip/ first version live, switched to data/inboxes/lane-tips.json; test tip tip-a97f86b4 sent to the real lane",
     "work/47 /models/ live; table header fix",
-    "14:3x wake: second-opinion run 166 checked, 17 mismatches, 0.068 USD; models ledger refreshed"
+    "14:3x wake: second-opinion run 166 checked, 17 mismatches, 0.068 USD; models ledger refreshed",
+    "15:3x wake: second-opinion 168 checked, 15 flagged, 0.077 USD; models ledger refreshed"
   ],
   "next": [
     "at each wake: run `node admin/tools/second-opinion.mjs --hours 2`, commit data/second-opinion.json, release (hourly, with researcher.2's re-reads)",

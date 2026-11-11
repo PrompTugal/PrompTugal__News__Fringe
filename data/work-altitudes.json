@@ -1,0 +1,537 @@
+{
+ "body": {
+  "about": "Every board item placed at the lowest altitude that can do it, by the altitudes of execution in action (abp/tools/altitudes.mjs): A0 planned, three A2 loops each ran A1 calls on an open-weight model until valid, A0 verified every signature and merged; architect.1 (A3) started the loops. Each unit signed with a key that existed only while it ran. A model's placement is evidence, not a decision.",
+  "objective": "For every board item, the lowest altitude that can do it (the least power that suffices)",
+  "generated": "2026-11-11T15:31:20Z",
+  "signatures_verified": true,
+  "counts": {
+   "items": 51,
+   "by_altitude": {
+    "A4": 12,
+    "A2": 11,
+    "none": 3,
+    "A3": 21,
+    "A1": 3,
+    "A0": 1
+   },
+   "signatures": 85
+  },
+  "trace": {
+   "A3": {
+    "name": "architect.1.fringe@PrompTugal.dinis",
+    "note": "started the loops as sub-agents; commits the result under its session key"
+   },
+   "A0": [
+    {
+     "name": "compute: plan",
+     "fp": "sha256:e94c2ec3533ba2f0",
+     "born": "2026-11-11T15:30:08Z"
+    },
+    {
+     "name": "compute: merge",
+     "fp": "sha256:cc31d3b2529f341b",
+     "born": "2026-11-11T15:31:20Z"
+    }
+   ],
+   "A2": [
+    {
+     "name": "loop: slice 0",
+     "fp": "sha256:91d86c813cdf7ab9",
+     "born": "2026-11-11T15:30:21Z",
+     "signed_at": "2026-11-11T15:30:58Z",
+     "items": 17,
+     "calls": 24
+    },
+    {
+     "name": "loop: slice 1",
+     "fp": "sha256:c9cc52812d792d12",
+     "born": "2026-11-11T15:30:21Z",
+     "signed_at": "2026-11-11T15:30:56Z",
+     "items": 17,
+     "calls": 28
+    },
+    {
+     "name": "loop: slice 2",
+     "fp": "sha256:f45602b48a8abc9b",
+     "born": "2026-11-11T15:30:22Z",
+     "signed_at": "2026-11-11T15:31:11Z",
+     "items": 17,
+     "calls": 29
+    }
+   ],
+   "A1": {
+    "calls": 81,
+    "retried": 33,
+    "models": [
+     "deepseek/deepseek-v4-flash"
+    ],
+    "cost_usd": 0.003394,
+    "keys": 81
+   }
+  },
+  "items": [
+   {
+    "id": "work/01-pipeline",
+    "title": "The site's pipeline and a first page at fringe.promptugal.news",
+    "status": "done",
+    "altitude": "A4",
+    "why": "Requires scheduling, routing, and coordination across agents and services.",
+    "attempts": 3,
+    "call_fp": "sha256:3b6021e88763509d"
+   },
+   {
+    "id": "work/02-verify-seed-events",
+    "title": "Verify the 21 seed events at their URLs and publish them",
+    "status": "done",
+    "altitude": "A2",
+    "why": "Requires tool use, looped model calls, and environment interaction.",
+    "attempts": 2,
+    "call_fp": "sha256:10086e44f7941368"
+   },
+   {
+    "id": "work/03-find-the-uncon",
+    "title": "Find the unconference or alternative event Dinis heard about",
+    "status": "done",
+    "altitude": null,
+    "why": "no valid answer in 3 calls"
+   },
+   {
+    "id": "work/04-communities",
+    "title": "Communities page: who runs this week's events, how to join",
+    "status": "done",
+    "altitude": null,
+    "why": "no valid answer in 3 calls"
+   },
+   {
+    "id": "work/05-graph",
+    "title": "Connect the dots: the fringe graph",
+    "status": "claimed",
+    "altitude": "A3",
+    "why": "Needs memory across runs and external reach for graph API.",
+    "attempts": 2,
+    "call_fp": "sha256:ce77c6316f34a1c2"
+   },
+   {
+    "id": "work/06-submit-form",
+    "title": "Submit an event: the form and its sealed lane",
+    "status": "claimed",
+    "altitude": "A3",
+    "why": "Needs environmental memory, inbox monitoring, and persistent agent loop.",
+    "attempts": 1,
+    "call_fp": "sha256:758e1c36972155f8"
+   },
+   {
+    "id": "work/07-storm-block",
+    "title": "The storm block, read live from the storm site",
+    "status": "done",
+    "altitude": "A3",
+    "why": "Needs memory, internet access, and periodic wake to fetch live data.",
+    "attempts": 1,
+    "call_fp": "sha256:3b69e94e4a7a16d1"
+   },
+   {
+    "id": "work/08-channel-drafts",
+    "title": "Posts that point people to the site (drafts; a person sends)",
+    "status": "done",
+    "altitude": "A2",
+    "why": "Needs drafts creation, tool use, and task completion without scheduling.",
+    "attempts": 2,
+    "call_fp": "sha256:77eff68816d2572a"
+   },
+   {
+    "id": "work/09-design",
+    "title": "The look: mobile-first design from pt.news's Front Page",
+    "status": "open",
+    "altitude": "A3",
+    "why": "Needs memory, environment, and mobile CSS inspection across runs.",
+    "attempts": 1,
+    "call_fp": "sha256:202eb1921d3c7e34"
+   },
+   {
+    "id": "work/10-business-events",
+    "title": "Business meetups this week: founders, investors, partners",
+    "status": "claimed",
+    "altitude": "A2",
+    "why": "Needs loop to search, extract, and store meetup data.",
+    "attempts": 1,
+    "call_fp": "sha256:69f05a03ae2fdf39"
+   },
+   {
+    "id": "work/11-education-events",
+    "title": "Education and learning events this week",
+    "status": "open",
+    "altitude": "A2",
+    "why": "Needs tool use to fetch and curate event data.",
+    "attempts": 3,
+    "call_fp": "sha256:189250f7cab3b195"
+   },
+   {
+    "id": "work/12-join-page",
+    "title": "The join page: /join/, so every person's conductor can join in five minutes",
+    "status": "done",
+    "altitude": "A4",
+    "why": "Needs to schedule agents, rebuild on push, serve multiple dynamic files.",
+    "attempts": 1,
+    "call_fp": "sha256:3a7a61cd2c41678b"
+   },
+   {
+    "id": "work/13-editorial-check",
+    "title": "The editorial check: every event verified before it goes up",
+    "status": "claimed",
+    "altitude": "A3",
+    "why": "Need persistent memory across runs to verify and report on events.json.",
+    "attempts": 1,
+    "call_fp": "sha256:020bf57e0d64fd1b"
+   },
+   {
+    "id": "work/14-showroom-home",
+    "title": "The home page as a showroom: our agents in action",
+    "status": "open",
+    "altitude": "A4",
+    "why": "Needs agents to read statuses, schedule builds, and render dynamic home page.",
+    "attempts": 1,
+    "call_fp": "sha256:6dfe56713449a8a0"
+   },
+   {
+    "id": "work/15-what-changed",
+    "title": "What changed: every push visible to the whole team",
+    "status": "done",
+    "altitude": "A4",
+    "why": "Orchestrates CI, agents, and team-wide visibility across pushes.",
+    "attempts": 1,
+    "call_fp": "sha256:49e9662c21c6a369"
+   },
+   {
+    "id": "work/16-now",
+    "title": "Now: what is on right now and in the next three hours",
+    "status": "done",
+    "altitude": "A2",
+    "why": "A closed loop reads events, calls LLM to format, and writes HTML.",
+    "attempts": 1,
+    "call_fp": "sha256:cddfb782f3de1379"
+   },
+   {
+    "id": "work/17-practical-lisbon",
+    "title": "Practical Lisbon this week: places open to work and meet",
+    "status": "claimed",
+    "altitude": "A4",
+    "why": "Needs scheduled data collection, multi-source routing, and structured file output.",
+    "attempts": 1,
+    "call_fp": "sha256:3775afd3c299e670"
+   },
+   {
+    "id": "work/18-outreach-kit",
+    "title": "Outreach: the Lisbon Fringe pitch, share card and posts (a person sends)",
+    "status": "claimed",
+    "altitude": "A2",
+    "why": "Needs memory, tools, and model per task but not multi-agent orchestration.",
+    "attempts": 1,
+    "call_fp": "sha256:fa848348b96e35d3"
+   },
+   {
+    "id": "work/19-comms-vaults",
+    "title": "The comms layer: an append-vault inbox for every conductor and agent",
+    "status": "claimed",
+    "altitude": "A4",
+    "why": "A4 orchestrates agents, routes work, and manages distributed inboxes across multiple services.",
+    "attempts": 1,
+    "call_fp": "sha256:230e97ca0a5fc4d9"
+   },
+   {
+    "id": "work/20-model-router",
+    "title": "The model router: one wrapper with a ledger",
+    "status": "done",
+    "altitude": "A3",
+    "why": "Needs persistence, model routing, credit checks, and file system access.",
+    "attempts": 3,
+    "call_fp": "sha256:90abeedd387b02de"
+   },
+   {
+    "id": "work/21-observability",
+    "title": "Observability: every visit counted, by place, page, referrer and share tag",
+    "status": "claimed",
+    "altitude": "A3",
+    "why": "Needs persistent memory, network access, and scheduled task execution across environments.",
+    "attempts": 1,
+    "call_fp": "sha256:d2b35094c6a2a526"
+   },
+   {
+    "id": "work/22-event-pages",
+    "title": "A page for every event: the organiser is the star",
+    "status": "done",
+    "altitude": "A3",
+    "why": "Needs a loop with memory, file access, and external tool calls to generate pages.",
+    "attempts": 1,
+    "call_fp": "sha256:6b60abdce59745d2"
+   },
+   {
+    "id": "work/23-organiser-outreach",
+    "title": "Reach every organiser: their page, their report, join with one session",
+    "status": "claimed",
+    "altitude": "A3",
+    "why": "Needs to run A1/A2 loops, schedule tasks, maintain state across runs via memory.",
+    "attempts": 1,
+    "call_fp": "sha256:fa1949c279c8500d"
+   },
+   {
+    "id": "work/23-tracker",
+    "title": "",
+    "status": "",
+    "altitude": "A1",
+    "why": "Requires understanding and responding to 'Done means' which needs an LLM.",
+    "attempts": 3,
+    "call_fp": "sha256:3497703950b51099"
+   },
+   {
+    "id": "work/24-the-loop",
+    "title": "The loop: consume every organiser's public feed, on a schedule",
+    "status": "claimed",
+    "altitude": "A3",
+    "why": "Requires scheduled repeated reads, persistent memory, and external tool use.",
+    "attempts": 1,
+    "call_fp": "sha256:678280da8054c6c2"
+   },
+   {
+    "id": "work/25-dinis-dashboard",
+    "title": "Dinis's dashboard: the whole swarm on one page",
+    "status": "done",
+    "altitude": "A3",
+    "why": "Schedules agent runs, reads status files, writes dashboard via push.",
+    "attempts": 2,
+    "call_fp": "sha256:c3fa9955199dc2b3"
+   },
+   {
+    "id": "work/26-dinis-key-and-talk",
+    "title": "Dinis's key and passkey on the site; talk to the lead from the site",
+    "status": "done",
+    "altitude": "A3",
+    "why": "Requires browser interaction, memory across runs, and agent orchestration beyond a single loop.",
+    "attempts": 2,
+    "call_fp": "sha256:113a8260f560f7f7"
+   },
+   {
+    "id": "work/27-captures",
+    "title": "Captures: screenshots and data of our site and every organiser's page, in vaults; /evolution/",
+    "status": "claimed",
+    "altitude": "A3",
+    "why": "Needs persistent state, scheduling, and sandbox escape across multiple vault runs",
+    "attempts": 1,
+    "call_fp": "sha256:e4ceb6a4bdf8d5b7"
+   },
+   {
+    "id": "work/28-usability",
+    "title": "Usability: real tasks on a phone, every hour",
+    "status": "claimed",
+    "altitude": "A3",
+    "why": "Needs scheduled runs, file i/o, and external browser automation beyond single task.",
+    "attempts": 1,
+    "call_fp": "sha256:31ab6c4d8f796176"
+   },
+   {
+    "id": "work/29-outreach-desk",
+    "title": "The outreach desk: Dinis's partner for posts, groups and organisers",
+    "status": "claimed",
+    "altitude": "A1",
+    "why": "Ensures drafts and data exist via structured prompts, no tools needed.",
+    "attempts": 2,
+    "call_fp": "sha256:d344fd6e1f5242fb"
+   },
+   {
+    "id": "work/30-the-domain",
+    "title": "lisbontechfringe.com: the site's address",
+    "status": "claimed",
+    "altitude": "A1",
+    "why": "One LLM call suffices to parse item and output JSON.",
+    "attempts": 1,
+    "call_fp": "sha256:d39a1dba1ac3116e"
+   },
+   {
+    "id": "work/31-jose-today",
+    "title": "",
+    "status": "",
+    "altitude": "A0",
+    "why": "It only requires compute code execution with no model.",
+    "attempts": 3,
+    "call_fp": "sha256:4c0206e7adddfc09"
+   },
+   {
+    "id": "work/31-outreach-map",
+    "title": "The outreach map: who to reach and where, from public sources",
+    "status": "open",
+    "altitude": "A3",
+    "why": "Needs memory, tool use, and ability to schedule web scraping across runs.",
+    "attempts": 3,
+    "call_fp": "sha256:f0dd76faca2c45a4"
+   },
+   {
+    "id": "work/32-connections-picture",
+    "title": "The connections picture: graph and ontology of organisers, channels and outreach, and the landing",
+    "status": "claimed",
+    "altitude": "A3",
+    "why": "Requires persistent state, routing, and scheduling across runs for outreach tracking.",
+    "attempts": 1,
+    "call_fp": "sha256:d8bfb5fe459f45e7"
+   },
+   {
+    "id": "work/33-the-accounts",
+    "title": "Name every Claude account and wire each one into the crew",
+    "status": "claimed",
+    "altitude": "A4",
+    "why": "Requires orchestrating multiple accounts, agents, scheduling, and cross-agent coordination.",
+    "attempts": 1,
+    "call_fp": "sha256:247ebe80e914b16a"
+   },
+   {
+    "id": "work/34-rename-lisbon-tech-fringe",
+    "title": "Rename to Lisbon Tech Fringe (Dinis's decision) and pick the domain",
+    "status": "claimed",
+    "altitude": "A3",
+    "why": "Requires memory across runs, environment updates, and DNS/system interaction.",
+    "attempts": 1,
+    "call_fp": "sha256:ca17f3b5f06a055c"
+   },
+   {
+    "id": "work/35-the-design-lab",
+    "title": "The design lab: /designs/ with the brief, the gallery, the switcher, a vote and how to send a design",
+    "status": "claimed",
+    "altitude": "A2",
+    "why": "Requires model, tools, and multi-step loop to build design system.",
+    "attempts": 2,
+    "call_fp": "sha256:40b6be1234f456ed"
+   },
+   {
+    "id": "work/36-designs-from-the-community",
+    "title": "Designs from the community, Silvio's design agent first",
+    "status": "claimed",
+    "altitude": "A4",
+    "why": "Coordinates multi-agent workflows, handles intake, builds, deploys, and updates gallery securely.",
+    "attempts": 2,
+    "call_fp": "sha256:2f156eb29a58a9c4"
+   },
+   {
+    "id": "work/37-releases-as-json",
+    "title": "Every release, as JSON and as a page: /changes/<version>/ lists exactly what shipped in it",
+    "status": "done",
+    "altitude": null,
+    "why": "no valid answer in 3 calls"
+   },
+   {
+    "id": "work/38-the-map",
+    "title": "The map: repositories, accounts, environments, agents and people, and who edits where",
+    "status": "claimed",
+    "altitude": "A4",
+    "why": "Requires multi-agent coordination, scheduling, and cross-repository file ownership routing.",
+    "attempts": 1,
+    "call_fp": "sha256:947c6973c29aee64"
+   },
+   {
+    "id": "work/39-the-abps",
+    "title": "Agent Behaviour Policies: who may edit what, in which repository and environment",
+    "status": "claimed",
+    "altitude": "A2",
+    "why": "Requires tools and model loop to edit files and gate.",
+    "attempts": 1,
+    "call_fp": "sha256:35e9ba6ecde8cc68"
+   },
+   {
+    "id": "work/40-public-guidance",
+    "title": "Public guidance for contributors and their agents: /guidance/ and CONTRIBUTING.md",
+    "status": "claimed",
+    "altitude": "A3",
+    "why": "Agent loop with memory, tools, and persistence needed to update site and repo.",
+    "attempts": 1,
+    "call_fp": "sha256:c4898ff4730a592e"
+   },
+   {
+    "id": "work/41-tip-intake",
+    "title": "Paste a tip: /tip/ starts research, a listing, and a note for the organiser",
+    "status": "claimed",
+    "altitude": "A2",
+    "why": "A closed agentic loop can read and drain the tip box.",
+    "attempts": 2,
+    "call_fp": "sha256:3518a10c8fd25ac5"
+   },
+   {
+    "id": "work/42-the-semantic-graph",
+    "title": "The semantic graph: days, festivals, organisers, events, sessions, places, personas; everything linked",
+    "status": "claimed",
+    "altitude": "A4",
+    "why": "Requires multi-agent orchestration and scheduling for deduplication and typed-link graph generation.",
+    "attempts": 1,
+    "call_fp": "sha256:f4f20601f5e8ea8c"
+   },
+   {
+    "id": "work/43-sql-over-the-graph",
+    "title": "Query the graph with SQL in the browser",
+    "status": "claimed",
+    "altitude": "A2",
+    "why": "Requires tool use (SQL execution) but not scheduling or multi-agent orchestration.",
+    "attempts": 1,
+    "call_fp": "sha256:cceca75a5288c693"
+   },
+   {
+    "id": "work/44-event-facts-today",
+    "title": "Event facts for today: free or paid, neighbourhood, in Lisbon or not, for whom",
+    "status": "done",
+    "altitude": "A3",
+    "why": "Requires persistent memory, tool use, and starting scheduled agents for each event source.",
+    "attempts": 1,
+    "call_fp": "sha256:61d80899d9818380"
+   },
+   {
+    "id": "work/45-event-pictures",
+    "title": "Each event's own picture, from its public page, in a public vault",
+    "status": "claimed",
+    "altitude": "A3",
+    "why": "Needs memory across runs, sandbox access, and scheduling for multi-event processing daily.",
+    "attempts": 1,
+    "call_fp": "sha256:ded189de6be64159"
+   },
+   {
+    "id": "work/46-give-us-the-intel",
+    "title": "Give us the intel: data collection everywhere",
+    "status": "claimed",
+    "altitude": "A4",
+    "why": "Requires scheduling, routing, and multi-agent orchestration across pages and channels.",
+    "attempts": 3,
+    "call_fp": "sha256:308eee556189be20"
+   },
+   {
+    "id": "work/47-the-models-page",
+    "title": "/models/: what we have tried with OpenRouter and open-weight models, and what it cost",
+    "status": "done",
+    "altitude": "A2",
+    "why": "Closed loop with model calls and tools, no agent spawning needed.",
+    "attempts": 2,
+    "call_fp": "sha256:cd77fcca4ae57ddf"
+   },
+   {
+    "id": "work/48-where-agents-run",
+    "title": "Where agents run: primitives, matrix, formula; move high-volume LLM calls to open-weight models",
+    "status": "claimed",
+    "altitude": "A4",
+    "why": "Delegates tasks, schedules agents, routes high-volume calls across runtimes.",
+    "attempts": 1,
+    "call_fp": "sha256:9f925d5bfa8a09ff"
+   },
+   {
+    "id": "work/49-platform-terms",
+    "title": "Check the event platforms' terms before any machine reads: Luma, Meetup, Eventbrite",
+    "status": "open",
+    "altitude": "A3",
+    "why": "Agent needs persistent memory, sandbox escape, and tool orchestration across multiple sites.",
+    "attempts": 1,
+    "call_fp": "sha256:343de632ca0a5a15"
+   }
+  ]
+ },
+ "by": {
+  "altitude": "A0",
+  "name": "compute: merge",
+  "fp": "sha256:cc31d3b2529f341b",
+  "pub": "MCowBQYDK2VwAyEAvHC1rcUZSrLfUWntG+JkaYoqNsnzA3TzHQ+wk1laiSw=",
+  "born": "2026-11-11T15:31:20Z",
+  "signed_at": "2026-11-11T15:31:20Z"
+ },
+ "sig": "2WotOIe73hULXzmodKlaWPhgQqXWUkmi6+ybfO0pLWMG+kZfqQlGyecunm2ovDDe4HhynfT2IU2DY+8Otd7dAg=="
+}

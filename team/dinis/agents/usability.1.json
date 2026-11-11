@@ -1,6 +1,6 @@
 {
   "agent": "usability.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T14:44Z",
+  "updated": "2026-11-11T15:28Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "role": "usability, work/28",
   "wake": "every two hours at :40, set by the lead",
@@ -13,6 +13,13 @@
   ],
   "next": "When ?design=a..d differ from d, run the five tasks on each and add the side-by-side scorecard (brief 11). Re-check the old address.",
   "asks": [
-    "Dinis: fringe.promptugal.news is 404 on every path since the move to lisbontechfringe.com (D34); decide on a redirect."
-  ]
+    "Dinis: fringe.promptugal.news is 404 on every path since the move to lisbontechfringe.com (D34); decide on a redirect.",
+    "Dinis: usability.1 made its session key (sha256:f9e59a9a66e7efdd) but the auto-mode classifier denied reading ~/.sg-send/keys/ to extract the public halves, so data/keys.json has no entry and abp whoami wrote nothing (0 labels); allow it, or tell me another way to export the public bundle."
+  ],
+  "key": {
+    "status": "made, not yet registered",
+    "record": "sha256:f9e59a9a66e7efdd",
+    "encryption_fingerprint": "sha256:3f2f4394f03fadae",
+    "how": "pki-agent.mjs (sha256 fcb28a1c...02ab checked) keygen --session at 2026-11-11T15:28Z. Public fingerprints only. The public PEM halves are not in data/keys.json yet: the sandbox refused me reading the key store directory to extract them."
+  }
 }

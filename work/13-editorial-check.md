@@ -73,3 +73,25 @@ data/events.json is 173 events, updated 14:15 UTC (researcher.2.fringe@ wake, 13
 ## Paused machine reads, 11 November 2026, 14:37 UTC (Vicky's word, relayed by conductor.B@PrompTugal.vicky)
 
 Until Dinis decides on Luma: this check makes **no machine reads** of luma.com, lu.ma or Luma's API, and, until their terms are checked, of meetup.com or eventbrite.*. It also makes none of websummit.com (a standing rule). So passes 2 to 5 will not be repeated. What this check did before the pause: 30 public event pages read by a sub-agent using the WebFetch tool, one request per page, in four batches during my wakes (passes 2, 3, 4 and 5 above): 24 Luma pages, 2 Meetup, 2 Eventbrite, and 2 organisers' own sites (wetsummitlisbon.com, elevon.io). No curl, script or browser for event pages. Still to do, now only by a person's own read or from the organisers' public posts: the AltaIR Capital update (promised by 16:00 UTC) and the Friday 13 events. The editorial check continues on the data itself (consistency, labels, contact details, private people) and routes mismatches that others send it to the researcher.
+
+## Seventh pass, 11 November 2026, 15:24 UTC (fact: a script over data/events.json updated 15:14 UTC, 177 events; no pages read)
+
+Machine reads of Luma, Meetup and Eventbrite are paused (above), so this pass checks the data only.
+
+- **fact: no contact details.** The script's email pattern matched three entries, but each match is an agent's name in a `check` field ("researcher.1.fringe@PrompTugal.jose"), not an address for a person. No phone numbers, no links to personal profiles (LinkedIn profiles, WhatsApp or Telegram, personal Instagram).
+- **fact: no duplicate ids or urls; every entry has name, url, read_at, date, start, kind, organiser, place, join, status and storm_note.**
+- **To fix (researcher's call), small:**
+  - `topics` is empty on 7 entries: healthtech-pitch-party, ai-for-business-applied-ai-pitch-party, travel-tech-pitch-party, conjugacao-terra-preview-performance-concert, offline-hangout-travel-edition-x-weroad-ross, kindpilates-donation-based-pilates-class, speaktiger-speed-friending-lisbon-14-nov. The contract lists `topics` as required, and the filters on the site use it.
+  - `end` is missing on 2026-11-11-storm-summit-stormsummit-app. If the organiser gives no end, the entry should say "end not stated" rather than leave the field empty.
+- **Status counts:** on 143, online 20, unknown 5, moved 5, cancelled 4.
+- **Tally unchanged:** 30 entries re-read by this check before the pause, all matching.
+
+## For researcher.2.fringe@PrompTugal.dinis: AltaIR Capital entry, 15:37 UTC (Vicky's read, relayed by conductor.B@PrompTugal.vicky)
+
+Entry: `2026-11-11-funders-founders-night-altair` (https://luma.com/h19cccc5), now `cancelled`, label `fact`.
+
+- **New read (fact):** read by Vicky Wang in a browser, 11 November 2026, 15:35 UTC. The page shows the event on Wednesday 11 November, 18:30 to 22:00, in Sintra, free with host approval, and **no cancellation or storm notice**.
+- **Earlier reads (fact):** this check's sub-agent read the same page between about 11:20 and 11:30 UTC (pass 2 above): title "[Cancelled: update below]", banner "due to the state of alert in Portugal, the event on Wednesday, November 11 will not take place as planned. If conditions allow, we may hold a smaller gathering that evening. We'll confirm by 4:00 PM on November 11", "Registration Closed". The researcher's own read is in the entry's `check`.
+- **They disagree, and the page has changed since.** Vicky's condition for correcting the entry: where another source says cancelled, mark it **unclear instead, citing both**. Two earlier reads say cancelled. So the request is: set `status` to `unknown`, label `evidence`, and make `check` and `storm_note` say: "Page read as cancelled (state of alert) at about 11:20 to 11:30 UTC; read by Vicky Wang in a browser at 15:35 UTC it shows 18:30 to 22:00 in Sintra with no cancellation or storm notice. The organiser's 16:00 UTC confirmation is not seen. Unclear whether it takes place."
+- **No machine read of the page was made for this note**, and none will be (the pause holds). I have not edited data/events.json; it is the researcher's file. If an organiser post or another public source settles it, add it.
+- Please reply on this item (or in your own work/24 line) when the entry is corrected.

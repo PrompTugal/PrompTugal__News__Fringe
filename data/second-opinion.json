@@ -1,13 +1,13 @@
 {
  "about": "Second-opinion checks (work/20): a cheap open model read each event's public page and our entry. EVIDENCE only, never fact: no data changed from it. Verdicts only; no page or model text is kept in git. Mismatches are for work/13 and researcher.2 to re-read at source.",
- "run_at": "2026-11-11T14:26:30Z",
+ "run_at": "2026-11-11T15:26:32Z",
  "by": "dev.2.fringe@PrompTugal.dinis",
  "model": "tier check (see admin/tools/llm-models.json)",
  "hours": 2,
- "checked": 166,
- "errors": 3,
- "mismatches": 17,
- "cost_usd_this_run": 0.06826,
+ "checked": 168,
+ "errors": 2,
+ "mismatches": 15,
+ "cost_usd_this_run": 0.07704,
  "label": "evidence",
  "mismatched": [
   {
@@ -75,7 +75,7 @@
    },
    "place": {
     "v": "mismatch",
-    "says": "Room 12, Ground Floor"
+    "says": "Room 12"
    }
   },
   {
@@ -107,6 +107,24 @@
    },
    "end": {
     "v": "match"
+   },
+   "place": {
+    "v": "match"
+   }
+  },
+  {
+   "id": "2026-11-11-coffee-and-connect-web-summit-2026",
+   "url": "https://luma.com/55lqvyex",
+   "status": {
+    "v": "match"
+   },
+   "start": {
+    "v": "mismatch",
+    "says": "2026-11-11T16:00"
+   },
+   "end": {
+    "v": "mismatch",
+    "says": "2026-11-11T17:30"
    },
    "place": {
     "v": "match"
@@ -161,41 +179,6 @@
    },
    "place": {
     "v": "match"
-   }
-  },
-  {
-   "id": "2026-11-11-tech-startups-on-the-rooftop",
-   "url": "https://luma.com/rjh3pf7g",
-   "status": {
-    "v": "mismatch",
-    "says": "cancelled"
-   },
-   "start": {
-    "v": "match"
-   },
-   "end": {
-    "v": "match"
-   },
-   "place": {
-    "v": "match"
-   }
-  },
-  {
-   "id": "2026-11-11-frontier-founders-vcs-soiree",
-   "url": "https://luma.com/tjed8ali",
-   "status": {
-    "v": "match"
-   },
-   "start": {
-    "v": "match"
-   },
-   "end": {
-    "v": "mismatch",
-    "says": "2026-11-11T21:00"
-   },
-   "place": {
-    "v": "mismatch",
-    "says": "near Web Summit"
    }
   },
   {
@@ -280,25 +263,6 @@
    },
    "end": {
     "v": "match"
-   },
-   "place": {
-    "v": "unclear"
-   }
-  },
-  {
-   "id": "2026-11-11-elevon-czsk-community-night",
-   "url": "https://elevon.io/websummit/night",
-   "status": {
-    "v": "mismatch",
-    "says": "on"
-   },
-   "start": {
-    "v": "mismatch",
-    "says": "2026-11-09T00:00"
-   },
-   "end": {
-    "v": "mismatch",
-    "says": "2026-11-12T23:59"
    },
    "place": {
     "v": "unclear"
@@ -420,7 +384,7 @@
   },
   {
    "id": "2026-11-11-yorkseed-allocator-lunch",
-   "status": "unclear",
+   "status": "match",
    "start": "match",
    "end": "match",
    "place": "unclear"
@@ -469,10 +433,24 @@
    "place": "match"
   },
   {
+   "id": "2026-11-11-women-in-tech-web-summit",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
+  },
+  {
    "id": "2026-11-11-bridging-capital-across-borders",
    "status": "match",
    "start": "match",
    "end": "match",
+   "place": "match"
+  },
+  {
+   "id": "2026-11-11-coffee-and-connect-web-summit-2026",
+   "status": "match",
+   "start": "mismatch",
+   "end": "mismatch",
    "place": "match"
   },
   {
@@ -497,15 +475,18 @@
    "place": "unclear"
   },
   {
-   "id": "2026-11-11-ai-spam-problem",
-   "status": "mismatch",
+   "id": "2026-11-11-not-left-out-ai-native",
+   "status": "match",
    "start": "match",
    "end": "match",
    "place": "match"
   },
   {
-   "id": "2026-11-11-aubay-the-next-move",
-   "error": "http_404"
+   "id": "2026-11-11-ai-spam-problem",
+   "status": "mismatch",
+   "start": "match",
+   "end": "match",
+   "place": "match"
   },
   {
    "id": "2026-11-11-enchant-pitch-parties",
@@ -564,13 +545,6 @@
    "place": "match"
   },
   {
-   "id": "2026-11-11-life-with-artificials-kickoff",
-   "status": "match",
-   "start": "match",
-   "end": "match",
-   "place": "match"
-  },
-  {
    "id": "2026-11-11-cisco-automation-to-autonomy",
    "status": "match",
    "start": "match",
@@ -579,7 +553,7 @@
   },
   {
    "id": "2026-11-11-tech-startups-on-the-rooftop",
-   "status": "mismatch",
+   "status": "match",
    "start": "match",
    "end": "match",
    "place": "match"
@@ -593,7 +567,7 @@
   },
   {
    "id": "2026-11-11-innovation-wednesdays-azerbaijan",
-   "status": "unclear",
+   "status": "match",
    "start": "match",
    "end": "match",
    "place": "unclear"
@@ -602,8 +576,8 @@
    "id": "2026-11-11-frontier-founders-vcs-soiree",
    "status": "match",
    "start": "match",
-   "end": "mismatch",
-   "place": "mismatch"
+   "end": "match",
+   "place": "match"
   },
   {
    "id": "2026-11-11-lisboaux-web-summit-edition",
@@ -625,6 +599,13 @@
    "start": "match",
    "end": "match",
    "place": "unclear"
+  },
+  {
+   "id": "2026-11-11-proptech-c-level-board-storm-edition",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "match"
   },
   {
    "id": "2026-11-11-demonightlx",
@@ -729,7 +710,7 @@
    "status": "match",
    "start": "match",
    "end": "match",
-   "place": "unclear"
+   "place": "match"
   },
   {
    "id": "2026-11-11-r-founders-week-websummit-26-r-founders-party-",
@@ -981,13 +962,6 @@
    "status": "match",
    "start": "match",
    "end": "match",
-   "place": "unclear"
-  },
-  {
-   "id": "2026-11-11-elevon-czsk-community-night",
-   "status": "mismatch",
-   "start": "mismatch",
-   "end": "mismatch",
    "place": "unclear"
   },
   {
@@ -1307,7 +1281,7 @@
   },
   {
    "id": "2026-11-13-yorkseed-legal-compliance-clinic",
-   "status": "unclear",
+   "status": "match",
    "start": "match",
    "end": "match",
    "place": "unclear"

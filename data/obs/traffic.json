@@ -5,27 +5,23 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-11T15:09Z",
+ "generated": "2026-11-11T16:09Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 266,
-  "reads": 237,
-  "tabs": 129,
+  "views": 326,
+  "reads": 280,
+  "tabs": 155,
   "countries": 14,
-  "shares": 121,
-  "bots": 728,
+  "shares": 140,
+  "bots": 969,
   "crawler_tabs": 1,
-  "agent_runs": 53,
-  "agent_runs_signed": 52
+  "agent_runs": 77,
+  "agent_runs_signed": 74
  },
  "by_hour": [
-  [
-   "2026-11-09 16:00",
-   0
-  ],
   [
    "2026-11-09 17:00",
    0
@@ -212,68 +208,80 @@
   ],
   [
    "2026-11-11 15:00",
-   18
+   67
+  ],
+  [
+   "2026-11-11 16:00",
+   11
   ]
  ],
  "by_page": [
   [
    "/",
-   122
+   149
+  ],
+  [
+   "/now/",
+   22
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
    19
   ],
   [
-   "/now/",
-   18
+   "/programme/",
+   8
+  ],
+  [
+   "/how/",
+   8
   ],
   [
    "/join/",
-   6
+   7
   ],
   [
    "/organisers/",
-   6
-  ],
-  [
-   "/programme/",
-   6
+   7
   ],
   [
    "/e/2026-11-11-corporate-academy-of-tomorrow/",
    6
   ],
   [
+   "/graph/",
+   5
+  ],
+  [
+   "/traffic/",
+   5
+  ],
+  [
    "/e/2026-11-11-founderlink-storm-summit-afternoon/",
    5
   ],
   [
-   "/graph/",
+   "/e/2026-11-11-life-with-artificials-kickoff/",
    4
   ],
   [
-   "/traffic/",
+   "/e/2026-11-11-side-events-guide-irl/",
    4
   ],
   [
-   "/how/",
+   "/e/2026-11-11-tech-startups-on-the-rooftop/",
    4
+  ],
+  [
+   "/e/2026-11-11-yorkseed-allocator-lunch/",
+   3
   ],
   [
    "/e/2026-11-11-ai-horizon-conference/",
    3
   ],
   [
-   "/e/2026-11-11-life-with-artificials-kickoff/",
-   3
-  ],
-  [
-   "/e/2026-11-11-side-events-guide-irl/",
-   3
-  ],
-  [
-   "/e/2026-11-11-tech-startups-on-the-rooftop/",
+   "/e/2026-11-11-valois-allocator-residence/",
    3
   ],
   [
@@ -286,10 +294,6 @@
   ],
   [
    "/dashboard/",
-   2
-  ],
-  [
-   "/e/2026-11-11-yorkseed-allocator-lunch/",
    2
   ],
   [
@@ -309,7 +313,15 @@
    2
   ],
   [
+   "/e/2026-11-11-amplify-europe-lisbon/",
+   2
+  ],
+  [
    "/e/2026-11-11-gaming-entertainment-pitch-party/",
+   2
+  ],
+  [
+   "/e/2026-11-11-ai-for-business-applied-ai-pitch-party/",
    2
   ],
   [
@@ -321,6 +333,10 @@
    2
   ],
   [
+   "/e/2026-11-11-enchant-pitch-parties/",
+   2
+  ],
+  [
    "/e/2026-11-11-founders-house-party/",
    2
   ],
@@ -329,7 +345,19 @@
    2
   ],
   [
+   "/e/2026-11-11-foundacious-lisbon/",
+   2
+  ],
+  [
+   "/e/2026-11-11-indiesummit-lisboa/",
+   2
+  ],
+  [
    "/e/2026-11-11-kuma-h2h-2/",
+   2
+  ],
+  [
+   "/e/2026-11-11-like-minded/",
    2
   ],
   [
@@ -353,15 +381,7 @@
    1
   ],
   [
-   "/e/2026-11-11-amplify-europe-lisbon/",
-   1
-  ],
-  [
    "/e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
-   1
-  ],
-  [
-   "/e/2026-11-11-ai-for-business-applied-ai-pitch-party/",
    1
   ],
   [
@@ -373,19 +393,7 @@
    1
   ],
   [
-   "/e/2026-11-11-enchant-pitch-parties/",
-   1
-  ],
-  [
-   "/e/2026-11-11-foundacious-lisbon/",
-   1
-  ],
-  [
    "/e/2026-11-11-between-the-waves/",
-   1
-  ],
-  [
-   "/e/2026-11-11-indiesummit-lisboa/",
    1
   ],
   [
@@ -435,14 +443,40 @@
   [
    "/e/2026-11-11-founderlink-storm-summit-evening/",
    1
+  ],
+  [
+   "/e/2026-11-11-lisbon-tech-side-event/",
+   1
+  ],
+  [
+   "/storm/",
+   1
+  ],
+  [
+   "/stats",
+   1
+  ],
+  [
+   "/e/2026-11-11-not-left-out-ai-native/",
+   1
+  ],
+  [
+   "/e/2026-11-12-ptw-coworking-by-idea-spaces/",
+   1
   ]
  ],
  "reading": [
   [
    "/",
-   104,
-   30,
-   13
+   118,
+   29,
+   12
+  ],
+  [
+   "/now/",
+   18,
+   51,
+   47
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
@@ -451,16 +485,28 @@
    30
   ],
   [
-   "/now/",
-   15,
-   57,
-   46
+   "/how/",
+   8,
+   12,
+   2
   ],
   [
    "/organisers/",
+   7,
+   9,
+   21
+  ],
+  [
+   "/join/",
    6,
-   10,
-   25
+   6,
+   24
+  ],
+  [
+   "/programme/",
+   6,
+   44,
+   55
   ],
   [
    "/e/2026-11-11-corporate-academy-of-tomorrow/",
@@ -469,28 +515,16 @@
    44
   ],
   [
-   "/join/",
-   5,
-   7,
-   29
-  ],
-  [
-   "/programme/",
-   5,
-   51,
-   64
-  ],
-  [
    "/traffic/",
-   4,
+   5,
    17,
-   64
+   53
   ],
   [
    "/graph/",
-   4,
-   17,
-   25
+   5,
+   13,
+   20
   ],
   [
    "/e/2026-11-11-founderlink-storm-summit-afternoon/",
@@ -499,10 +533,16 @@
    37
   ],
   [
-   "/how/",
+   "/e/2026-11-11-life-with-artificials-kickoff/",
    4,
-   15,
-   5
+   12,
+   39
+  ],
+  [
+   "/e/2026-11-11-side-events-guide-irl/",
+   4,
+   26,
+   49
   ],
   [
    "/e/2026-11-11-ai-horizon-conference/",
@@ -511,16 +551,16 @@
    42
   ],
   [
-   "/e/2026-11-11-life-with-artificials-kickoff/",
+   "/e/2026-11-11-tech-startups-on-the-rooftop/",
    3,
    16,
-   50
+   30
   ],
   [
-   "/e/2026-11-11-side-events-guide-irl/",
+   "/e/2026-11-11-valois-allocator-residence/",
    3,
-   30,
-   59
+   4,
+   18
   ],
   [
    "/e/2026-11-11-human-side-of-ai/",
@@ -559,10 +599,16 @@
    62
   ],
   [
-   "/e/2026-11-11-tech-startups-on-the-rooftop/",
+   "/e/2026-11-11-amplify-europe-lisbon/",
    2,
-   10,
+   6,
    32
+  ],
+  [
+   "/e/2026-11-11-ai-for-business-applied-ai-pitch-party/",
+   2,
+   13,
+   48
   ],
   [
    "/e/2026-11-12-covilha-tech-day-2026/",
@@ -583,6 +629,12 @@
    0
   ],
   [
+   "/e/2026-11-11-foundacious-lisbon/",
+   2,
+   7,
+   10
+  ],
+  [
    "/e/2026-11-11-founders-house-party/",
    2,
    11,
@@ -595,10 +647,22 @@
    38
   ],
   [
+   "/e/2026-11-11-indiesummit-lisboa/",
+   2,
+   16,
+   20
+  ],
+  [
    "/e/2026-11-11-kuma-h2h-2/",
    2,
    14,
    32
+  ],
+  [
+   "/e/2026-11-11-like-minded/",
+   2,
+   2,
+   0
   ],
   [
    "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
@@ -637,27 +701,9 @@
    100
   ],
   [
-   "/e/2026-11-11-amplify-europe-lisbon/",
-   1,
-   3,
-   41
-  ],
-  [
-   "/e/2026-11-11-ai-for-business-applied-ai-pitch-party/",
-   1,
-   13,
-   56
-  ],
-  [
    "/e/2026-11-11-storm-summit-stormsummit-app/",
    1,
    1,
-   0
-  ],
-  [
-   "/e/2026-11-11-foundacious-lisbon/",
-   1,
-   7,
    0
   ],
   [
@@ -677,12 +723,6 @@
    1,
    9,
    0
-  ],
-  [
-   "/e/2026-11-11-indiesummit-lisboa/",
-   1,
-   24,
-   2
   ],
   [
    "/e/2026-11-12-open-coffee-lisbon-53/",
@@ -767,28 +807,58 @@
    1,
    17,
    25
+  ],
+  [
+   "/e/2026-11-11-lisbon-tech-side-event/",
+   1,
+   42,
+   89
+  ],
+  [
+   "/stats",
+   1,
+   5,
+   0
+  ],
+  [
+   "/storm/",
+   1,
+   1,
+   0
+  ],
+  [
+   "/e/2026-11-12-ptw-coworking-by-idea-spaces/",
+   1,
+   5,
+   45
+  ],
+  [
+   "/e/2026-11-11-not-left-out-ai-native/",
+   1,
+   4,
+   16
   ]
  ],
  "by_country": [
   [
    "Portugal",
-   171
+   188
+  ],
+  [
+   "United Kingdom",
+   45
   ],
   [
    "Estonia",
    21
   ],
   [
-   "Germany",
+   "United States",
    20
   ],
   [
-   "United Kingdom",
-   14
-  ],
-  [
-   "United States",
-   10
+   "Germany",
+   20
   ],
   [
    "Italy",
@@ -799,12 +869,12 @@
    5
   ],
   [
-   "Ireland",
-   3
+   "The Netherlands",
+   4
   ],
   [
-   "The Netherlands",
-   2
+   "Ireland",
+   3
   ],
   [
    "Tanzania",
@@ -830,7 +900,7 @@
  "by_city": [
   [
    "Lisbon, Portugal",
-   109
+   123
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -841,12 +911,28 @@
    21
   ],
   [
+   "Woking, United Kingdom",
+   16
+  ],
+  [
    "Frankfurt am Main, Germany",
    16
   ],
   [
+   "Harrietsham, United Kingdom",
+   13
+  ],
+  [
+   "London, United Kingdom",
+   11
+  ],
+  [
    "Montijo, Portugal",
-   8
+   9
+  ],
+  [
+   "Boardman, United States",
+   7
   ],
   [
    "Bangkok, Thailand",
@@ -854,7 +940,7 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   61
+   59
   ]
  ],
  "by_referrer": [
@@ -866,35 +952,35 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   227
+   287
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 639,
+ "other_hosts_views": 941,
  "by_via": [
   [
    "whatsapp",
-   121
+   140
   ]
  ],
  "via_detail": {
   "whatsapp": {
-   "views": 121,
-   "tabs": 52,
-   "countries": 8
+   "views": 140,
+   "tabs": 60,
+   "countries": 9
   }
  },
  "by_screen": [
   [
    "phone",
-   139
+   167
   ],
   [
    "desktop",
-   123
+   155
   ],
   [
    "tablet",
@@ -904,67 +990,75 @@
  "agents": [
   [
    "design.4.fringe@PrompTugal.dinis",
-   10
+   12
   ],
   [
    "design.1.fringe@PrompTugal.dinis",
-   8
-  ],
-  [
-   "observability.fringe@PrompTugal.dinis",
-   5
-  ],
-  [
-   "ontologist.1.fringe@PrompTugal.dinis",
-   5
-  ],
-  [
-   "design.3.fringe@PrompTugal.dinis",
-   4
-  ],
-  [
-   "design.2.fringe@PrompTugal.dinis",
-   4
-  ],
-  [
-   "researcher.1.fringe@PrompTugal.jose",
-   4
+   10
   ],
   [
    "architect.1.fringe@PrompTugal.dinis",
-   4
+   8
+  ],
+  [
+   "researcher.1.fringe@PrompTugal.jose",
+   7
+  ],
+  [
+   "ontologist.1.fringe@PrompTugal.dinis",
+   7
+  ],
+  [
+   "observability.fringe@PrompTugal.dinis",
+   6
+  ],
+  [
+   "design.3.fringe@PrompTugal.dinis",
+   6
+  ],
+  [
+   "design.2.fringe@PrompTugal.dinis",
+   5
   ],
   [
    "conductor.fringe@PrompTugal.jose",
-   3
+   4
   ],
   [
    "conductor.fringe@PrompTugal.indi",
-   2
+   3
   ],
   [
    "dev.1.fringe@PrompTugal.dinis",
-   2
+   3
   ],
   [
    "researcher.2@PrompTugal.dinis",
-   1
+   2
   ],
   [
    "capture.1.fringe@PrompTugal.dinis",
+   2
+  ],
+  [
+   "researcher.fringe@PrompTugal.dinis",
+   1
+  ],
+  [
+   "dev.2.fringe@PrompTugal.dinis",
    1
   ]
  ],
  "flows": {
-  "tabs": 129,
+  "tabs": 155,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    76
+    94
    ],
    [
     "shared link (?via=)",
-    52
+    60
    ],
    [
     "from another site",
@@ -974,7 +1068,7 @@
   "entry_pages": [
    [
     "/",
-    94
+    115
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
@@ -982,7 +1076,11 @@
    ],
    [
     "/now/",
-    4
+    5
+   ],
+   [
+    "/how/",
+    3
    ],
    [
     "/me/",
@@ -993,7 +1091,7 @@
     2
    ],
    [
-    "/how/",
+    "/programme/",
     2
    ],
    [
@@ -1027,16 +1125,12 @@
    [
     "/e/2026-11-11-canopy-post-demo-night-drinks/",
     1
-   ],
-   [
-    "/e/2026-11-11-innovation-wednesdays-azerbaijan/",
-    1
    ]
   ],
   "exit_pages": [
    [
     "/",
-    70
+    88
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
@@ -1044,14 +1138,22 @@
    ],
    [
     "/now/",
-    8
+    9
    ],
    [
     "/programme/",
-    5
+    6
    ],
    [
     "/e/2026-11-11-founderlink-storm-summit-afternoon/",
+    3
+   ],
+   [
+    "/e/2026-11-11-life-with-artificials-kickoff/",
+    3
+   ],
+   [
+    "/how/",
     3
    ],
    [
@@ -1059,7 +1161,7 @@
     2
    ],
    [
-    "/e/2026-11-11-life-with-artificials-kickoff/",
+    "/e/2026-11-11-yorkseed-allocator-lunch/",
     2
    ],
    [
@@ -1067,19 +1169,15 @@
     2
    ],
    [
+    "/e/2026-11-11-enchant-pitch-parties/",
+    2
+   ],
+   [
     "/e/2026-11-11-founders-house-party/",
     2
    ],
    [
-    "/how/",
-    2
-   ],
-   [
     "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
-    1
-   ],
-   [
-    "/e/2026-11-11-yorkseed-allocator-lunch/",
     1
    ],
    [
@@ -1089,27 +1187,27 @@
    [
     "/e/2026-11-11-cisco-automation-to-autonomy/",
     1
-   ],
-   [
-    "/e/2026-11-11-ai-for-business-applied-ai-pitch-party/",
-    1
    ]
   ],
   "steps": [
    [
     "/ → /now/",
-    10
+    12
+   ],
+   [
+    "/ → /programme/",
+    5
    ],
    [
     "/ → /e/2026-11-11-wet-summit-lisbon/",
     5
    ],
    [
-    "/ → /programme/",
-    4
+    "/join/ → /",
+    3
    ],
    [
-    "/join/ → /",
+    "/traffic/ → /",
     3
    ],
    [
@@ -1137,15 +1235,15 @@
     2
    ],
    [
-    "/traffic/ → /",
-    2
-   ],
-   [
     "/now/ → /e/2026-11-11-kuma-align-leadership-ai/",
     2
    ],
    [
     "/join/ → /traffic/",
+    2
+   ],
+   [
+    "/ → /e/2026-11-11-valois-allocator-residence/",
     2
    ],
    [
@@ -1191,16 +1289,12 @@
    [
     "/e/2026-11-11-wet-summit-lisbon/ → /e/2026-11-11-aubay-the-next-move/",
     1
-   ],
-   [
-    "/e/2026-11-11-aubay-the-next-move/ → /e/2026-11-11-cisco-automation-to-autonomy/",
-    1
    ]
   ],
   "pages_per_tab": [
    [
     "1",
-    88
+    109
    ],
    [
     "2",
@@ -1208,7 +1302,7 @@
    ],
    [
     "3",
-    7
+    8
    ],
    [
     "4",
@@ -1216,29 +1310,29 @@
    ],
    [
     "5+",
-    10
+    14
    ]
   ],
-  "bounce_rate": 68,
+  "bounce_rate": 70,
   "via_reached": [
    [
     "whatsapp: /",
-    52
+    60
    ],
    [
     "whatsapp: /now/",
-    6
+    7
    ],
    [
     "whatsapp: /e/2026-11-11-wet-summit-lisbon/",
     5
    ],
    [
-    "whatsapp: /e/2026-11-11-founderlink-storm-summit-afternoon/",
-    3
+    "whatsapp: /programme/",
+    4
    ],
    [
-    "whatsapp: /programme/",
+    "whatsapp: /e/2026-11-11-founderlink-storm-summit-afternoon/",
     3
    ],
    [
@@ -1254,6 +1348,10 @@
     2
    ],
    [
+    "whatsapp: /e/2026-11-11-ai-for-business-applied-ai-pitch-party/",
+    2
+   ],
+   [
     "whatsapp: /e/2026-11-11-side-events-guide-irl/",
     2
    ],
@@ -1262,11 +1360,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
@@ -1278,11 +1376,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-ai-for-business-applied-ai-pitch-party/",
-    1
-   ],
-   [
-    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
     1
    ],
    [
@@ -1290,15 +1384,15 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
-    1
-   ],
-   [
-    "whatsapp: /e/2026-11-11-life-with-artificials-kickoff/",
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ],
    [
     "whatsapp: /e/2026-11-11-lisboaux-web-summit-edition/",
+    1
+   ],
+   [
+    "whatsapp: /e/2026-11-11-life-with-artificials-kickoff/",
     1
    ]
   ]
@@ -1306,7 +1400,7 @@
  "design_lab": [
   {
    "design": "b",
-   "views": 4,
+   "views": 6,
    "votes": 1
   },
   {
@@ -1324,7 +1418,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 109,
+    "views": 123,
     "lat": 38.7,
     "lon": -9.1
    },
@@ -1341,16 +1435,40 @@
     "lon": 24.8
    },
    {
+    "name": "Woking, United Kingdom",
+    "views": 16,
+    "lat": 51.3,
+    "lon": -0.6
+   },
+   {
     "name": "Frankfurt am Main, Germany",
     "views": 16,
     "lat": 50.1,
     "lon": 8.7
    },
    {
+    "name": "Harrietsham, United Kingdom",
+    "views": 13,
+    "lat": 51.2,
+    "lon": 0.6
+   },
+   {
+    "name": "London, United Kingdom",
+    "views": 11,
+    "lat": 51.5,
+    "lon": -0.1
+   },
+   {
     "name": "Montijo, Portugal",
-    "views": 8,
+    "views": 9,
     "lat": 38.7,
     "lon": -9.0
+   },
+   {
+    "name": "Boardman, United States",
+    "views": 7,
+    "lat": 45.8,
+    "lon": -119.7
    },
    {
     "name": "Bangkok, Thailand",
@@ -1363,6 +1481,10 @@
  "outbound": [
   [
    "/e/2026-11-11-side-events-guide-irl/ → luma.com/4fbc1s24",
+   3
+  ],
+  [
+   "/e/2026-11-11-tech-startups-on-the-rooftop/ → luma.com/rjh3pf7g",
    3
   ],
   [
@@ -1382,11 +1504,11 @@
    2
   ],
   [
-   "/e/2026-11-11-tech-startups-on-the-rooftop/ → luma.com/rjh3pf7g",
+   "/e/2026-11-11-wet-summit-lisbon/ → wetsummitlisbon.com/",
    2
   ],
   [
-   "/e/2026-11-11-wet-summit-lisbon/ → wetsummitlisbon.com/",
+   "/e/2026-11-11-valois-allocator-residence/ → luma.com/k0zamjmi",
    2
   ],
   [
@@ -1451,6 +1573,10 @@
   ],
   [
    "/e/2026-11-11-ai-horizon-conference/ → luma.com/p6glepvg",
+   1
+  ],
+  [
+   "/e/2026-11-11-lisbon-tech-side-event/ → luma.com/f3c6aqvx",
    1
   ]
  ]

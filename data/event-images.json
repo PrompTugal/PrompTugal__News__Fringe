@@ -146,6 +146,18 @@
    "captured_at": "2026-11-11T14:01:42Z"
   },
   {
+   "event_id": "2026-11-11-coffee-and-connect-web-summit-2026",
+   "vault_id": "9cf4rcf3",
+   "path": "2026-11-11-coffee-and-connect-web-summit-2026.jpg",
+   "sha256": "c7bc2c1effa8f5334fc7e4f1468ecba40fee1abe1c17fedec673ba44fb782a7e",
+   "bytes": 22185,
+   "content_type": "image/jpeg",
+   "source_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/pq/fcdb4773-ee36-4e9f-95cf-cc9541b73dde.png",
+   "page_url": "https://luma.com/55lqvyex",
+   "organiser": "unknown (a personal Luma calendar; not named here)",
+   "captured_at": "2026-11-11T15:27:57Z"
+  },
+  {
    "event_id": "2026-11-11-corporate-academy-of-tomorrow",
    "vault_id": "9cf4rcf3",
    "path": "2026-11-11-corporate-academy-of-tomorrow.jpg",
@@ -180,6 +192,18 @@
    "page_url": "https://luma.com/2ofzih7t",
    "organiser": "Canopy Community with Portugal Tech Week",
    "captured_at": "2026-11-11T14:01:54Z"
+  },
+  {
+   "event_id": "2026-11-11-enchant-afterparty-drinks-with-vcs-founders",
+   "vault_id": "9cf4rcf3",
+   "path": "2026-11-11-enchant-afterparty-drinks-with-vcs-founders.jpg",
+   "sha256": "54abb72211a51b64065790f9214f7c2f9b6da1b760bb8056c848e7e870c6521d",
+   "bytes": 32322,
+   "content_type": "image/jpeg",
+   "source_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/om/f40a2d07-c3b6-4364-8144-17786a93a54d.png",
+   "page_url": "https://luma.com/m7z4xi8a",
+   "organiser": "unknown (a personal Luma calendar; not named here)",
+   "captured_at": "2026-11-11T15:28:02Z"
   },
   {
    "event_id": "2026-11-11-enchant-pitch-parties",
@@ -494,6 +518,18 @@
    "captured_at": "2026-11-11T14:02:12Z"
   },
   {
+   "event_id": "2026-11-11-not-left-out-ai-native",
+   "vault_id": "9cf4rcf3",
+   "path": "2026-11-11-not-left-out-ai-native.jpg",
+   "sha256": "d2791091d8f051f79b7f799729be85b9c7dfd9ce932531a87079827145f93cd2",
+   "bytes": 30353,
+   "content_type": "image/jpeg",
+   "source_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/nr/413f285d-0173-47eb-932f-6e84fda6f415.png",
+   "page_url": "https://luma.com/e6xzr89o",
+   "organiser": "WonderLead in Tech",
+   "captured_at": "2026-11-11T15:27:58Z"
+  },
+  {
    "event_id": "2026-11-11-open-mercato-night",
    "vault_id": "9cf4rcf3",
    "path": "2026-11-11-open-mercato-night.jpg",
@@ -564,6 +600,18 @@
    "page_url": "https://luma.com/ryva47wc",
    "organiser": "DestiLabs (per the event page)",
    "captured_at": "2026-11-11T14:00:38Z"
+  },
+  {
+   "event_id": "2026-11-11-proptech-c-level-board-storm-edition",
+   "vault_id": "9cf4rcf3",
+   "path": "2026-11-11-proptech-c-level-board-storm-edition.jpg",
+   "sha256": "915982fec04ece0c36a805cb5b0cb3d39507a6b658a6e3177ed63d4520c0b985",
+   "bytes": 35301,
+   "content_type": "image/jpeg",
+   "source_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/hi/7ed19cb2-366e-4a41-8564-cf3ec57b2c42.png",
+   "page_url": "https://luma.com/gasfz3vy",
+   "organiser": "ideaic.io",
+   "captured_at": "2026-11-11T15:28:01Z"
   },
   {
    "event_id": "2026-11-11-ptw-classroom-deep-work-wexio",
@@ -734,6 +782,18 @@
    "captured_at": "2026-11-11T14:01:05Z"
   },
   {
+   "event_id": "2026-11-11-women-in-tech-web-summit",
+   "vault_id": "9cf4rcf3",
+   "path": "2026-11-11-women-in-tech-web-summit.jpg",
+   "sha256": "d6b3e2f7efb5db718e7d431f34930a962a11d51006bc810473788dbc5ebfc5e9",
+   "bytes": 21468,
+   "content_type": "image/jpeg",
+   "source_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/7c/17b86c0a-e2ab-45c4-9395-aabd197b13b1.png",
+   "page_url": "https://luma.com/vvsqs244",
+   "organiser": "unknown (a personal Luma calendar; not named here)",
+   "captured_at": "2026-11-11T15:27:55Z"
+  },
+  {
    "event_id": "2026-11-11-yorkseed-allocator-lunch",
    "vault_id": "9cf4rcf3",
    "path": "2026-11-11-yorkseed-allocator-lunch.jpg",
@@ -758,7 +818,7 @@
    "captured_at": "2026-11-11T14:01:26Z"
   }
  ],
- "updated": "2026-11-11T14:03:45Z",
+ "updated": "2026-11-11T15:28:03Z",
  "vaults": [
   "9cf4rcf3"
  ]
