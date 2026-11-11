@@ -1,7 +1,7 @@
 {
   "about": "Lisbon Fringe's events: the alternative, community and side events around Web Summit Lisbon, 11 to 13 November 2026 (and a few either side). Each event was re-read at its public source_url at read_at (UTC; Lisbon is on UTC in November). Each says whether Storm Charles moved it. Labels: fact (read on the organiser's page), evidence (read, but the page leaves the status open), hypothesis (not confirmed at source). 'unknown' means we do not know. Organisers are organisations; no private person is named and no contact details are given.",
   "contract": "api/v1/README.md (v1). Required: name, url, read_at, date, start, end, kind, organiser, place, join, status, storm_note, topics. Added by the researcher (v1 allows additions): id, label (fact | evidence | hypothesis), cost (as stated), storm_moved (true | false | null), check (what the page says about the storm, or why status is open), note.",
-  "updated": "2026-11-11T11:10:00Z",
+  "updated": "2026-11-11T11:30:00Z",
   "by": "researcher.fringe@PrompTugal.dinis",
   "independence": "Lisbon Fringe is independent of Web Summit and is not run by its organisers. For anything official see the organisers' own pages. Not a warning service: for the storm see IPMA (https://www.ipma.pt), ANEPC (https://www.prociv.gov.pt) and https://storm-charles.promptugal.news.",
   "sources": [
@@ -45,7 +45,7 @@
       "place": "The Collective Fitness, R. Prof. Sousa da Câmara 128 Loja C, 1070-217 Lisboa (Rato / Campo de Ourique)",
       "join": "Luma; open: https://luma.com/3z2xjz1p",
       "status": "unknown",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "founders",
         "fitness"
@@ -69,7 +69,7 @@
       "place": "Nina Brunch & Speciality Coffee, R. Cais das Naus 2 B, 1990-304 Lisboa (Parque das Nações)",
       "join": "Luma; host approval: https://luma.com/wgji1mfy",
       "status": "unknown",
-      "storm_note": null,
+      "storm_note": "Not stated on the page. Billed as breakfast before heading to Web Summit, whose Wednesday was called off.",
       "topics": [
         "creators",
         "marketing"
@@ -109,7 +109,7 @@
     {
       "name": "Roast your website, or win a coffee (live on YouTube)",
       "url": "https://luma.com/m146luuy",
-      "read_at": "2026-11-11T10:47:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T10:00:00Z",
       "end": "2026-11-11T14:00:00Z",
@@ -142,7 +142,7 @@
       "place": "online (online stream (link to approved guests); the page also names a recording space inside MEO Arena)",
       "join": "Luma; host approval: https://luma.com/o9y5xu0p",
       "status": "unknown",
-      "storm_note": null,
+      "storm_note": "Not stated on the page as a storm change. The page offers an in-person seat inside MEO Arena, where Web Summit's Day 2 was called off, and an online stream; it shows no storm note.",
       "topics": [
         "AI",
         "entertainment",
@@ -167,7 +167,7 @@
       "place": "online (Zoom (link to registered guests))",
       "join": "Luma; open: https://luma.com/r1ixujpv",
       "status": "online",
-      "storm_note": null,
+      "storm_note": "Not stated on the page as a storm change. Listed on Zoom; no storm note.",
       "topics": [
         "AI",
         "future of work"
@@ -191,7 +191,7 @@
       "place": "online (Google Meet (per the Luma page))",
       "join": "Luma; open: https://luma.com/xn30wgrj",
       "status": "online",
-      "storm_note": null,
+      "storm_note": "Not stated on the page as a storm change. The page now lists it on Google Meet with a room at PTW Palace still in its text; it gives no reason. That the storm moved it online is a hypothesis.",
       "topics": [
         "neuroscience",
         "work"
@@ -206,7 +206,7 @@
     {
       "name": "Connect, Collaborate, Invest: a purpose-driven experience",
       "url": "https://luma.com/seattle-1hwz",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T11:00:00Z",
       "end": "2026-11-11T13:00:00Z",
@@ -230,7 +230,7 @@
     {
       "name": "The Startup Legal Roast: top mistakes that kill your startup",
       "url": "https://luma.com/e42tit8k",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T11:30:00Z",
       "end": "2026-11-11T12:30:00Z",
@@ -239,7 +239,7 @@
       "place": "'Room 2' (venue not named on the page)",
       "join": "Luma; open: https://luma.com/e42tit8k",
       "status": "unknown",
-      "storm_note": null,
+      "storm_note": "Not stated on the page. The venue is not named, so whether it is affected by the storm or the Day 2 cancellation is unknown.",
       "topics": [
         "startups",
         "legal"
@@ -254,7 +254,7 @@
     {
       "name": "PTW Classroom: Deep Work x Wexio, an hour to get your inbox back",
       "url": "https://luma.com/vwwf1kj1",
-      "read_at": "2026-11-11T10:57:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T11:30:00Z",
       "end": "2026-11-11T12:30:00Z",
@@ -278,7 +278,7 @@
     {
       "name": "Valois Lisbon: The Allocator Residence (day coworking and evening Allocator Table)",
       "url": "https://luma.com/k0zamjmi",
-      "read_at": "2026-11-11T10:57:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T12:00:00Z",
       "end": "2026-11-11T20:00:00Z",
@@ -287,7 +287,7 @@
       "place": "An indoor venue (address to approved guests), Lisboa",
       "join": "Luma; host approval; for capital allocators: https://luma.com/k0zamjmi",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Made because of the storm: Valois by Yorkseed now co-organises WET SUMMIT Lisbon, 'a one-day, investors-only gathering' held 'with severe weather disrupting Lisbon and Web Summit suspending its programming'; its evening gathering is 'weather permitting'.",
       "topics": [
         "investors",
         "family offices",
@@ -295,15 +295,42 @@
       ],
       "id": "2026-11-11-valois-allocator-residence",
       "label": "fact",
-      "cost": "daytime free; evening EUR 40",
+      "cost": "EUR 40 at the door for approved guests",
       "storm_moved": false,
-      "check": "Shaped by the storm: the page says that with severe weather disrupting Lisbon and Web Summit suspending its programming, 'Valois will still convene', opening an indoor setting for allocators 10:00 to 18:00 and an evening table from 18:00.",
-      "note": "Billed as 'a special Web Summit edition inside Wet Summit'."
+      "check": "Re-read 11:23 UTC: the page now describes Valois's part in WET SUMMIT Lisbon (coworking and an investor-led unconference, 12:00 to 18:00); evening EUR 40 at the door.",
+      "note": "Valois's own listing for WET SUMMIT Lisbon (see 2026-11-11-wet-summit-lisbon)."
+    },
+    {
+      "name": "WET SUMMIT Lisbon: an investors' unconference and pop-up club for the storm day",
+      "url": "https://wetsummitlisbon.com/",
+      "read_at": "2026-11-11T11:24:00Z",
+      "date": "2026-11-11",
+      "start": "2026-11-11T12:00:00Z",
+      "end": "2026-11-11T18:00:00Z",
+      "kind": "unconference",
+      "organiser": "WET SUMMIT Lisbon, a group of investors, with Valois by Yorkseed and STRUC Ventures (per the Luma page)",
+      "place": "Garagem da Vizinha by WOTELS, Rua Pedro Nunes 10, Lisboa (Saldanha)",
+      "join": "Investors only, by application on Luma: https://luma.com/oe66d3mh ; a Web Summit investor badge and bracelet are required at the door",
+      "status": "on",
+      "storm_note": "Made because of the storm: 'WebSummit cancelled? Welcome to WET SUMMIT. The storm may have closed the venue. It hasn't closed the conversation.' The start was moved to 12:00 'to see how the weather situation develops'.",
+      "topics": [
+        "investors",
+        "unconference",
+        "alternative event",
+        "AI",
+        "venture capital"
+      ],
+      "id": "2026-11-11-wet-summit-lisbon",
+      "label": "fact",
+      "cost": "EUR 40 via Luma, EUR 50 at the door (the organiser's site)",
+      "storm_moved": true,
+      "check": "Read at the organiser's site (11:24 UTC) and its Luma page https://luma.com/oe66d3mh (11:24 UTC).",
+      "note": "An unconference: sixty-second topic pitches and a dot vote at 12:45, three rounds of small groups, read-outs at 16:35, party from 18:00. About 70 places. The site's banner says 'We are now full' while Luma still showed places; the Luma text mentions a EUR 20 day ticket, the site EUR 40. Not open to founders. This is the 'Uncon' of work/03."
     },
     {
       "name": "Yorkseed Allocator Lunch",
       "url": "https://luma.com/jmjk0qqh",
-      "read_at": "2026-11-11T10:57:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T12:30:00Z",
       "end": "2026-11-11T14:30:00Z",
@@ -312,7 +339,7 @@
       "place": "Address given to approved guests, Lisboa",
       "join": "Luma tickets: https://luma.com/jmjk0qqh",
       "status": "unknown",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "investors"
       ],
@@ -326,7 +353,7 @@
     {
       "name": "AI Video Blueprint 2027",
       "url": "https://luma.com/59m82tyo",
-      "read_at": "2026-11-11T10:57:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T13:00:00Z",
       "end": "2026-11-11T14:00:00Z",
@@ -335,7 +362,7 @@
       "place": "online (Google Meet (link on the Luma page))",
       "join": "Luma; 2 places then waitlist: https://luma.com/59m82tyo",
       "status": "online",
-      "storm_note": null,
+      "storm_note": "Not stated on the page as a storm change. The page says the event will be held online, same time; it gives no reason.",
       "topics": [
         "AI video",
         "marketing"
@@ -350,7 +377,7 @@
     {
       "name": "FounderLink Storm Summit: a torrent of intros (afternoon session, online)",
       "url": "https://luma.com/stormsummit2pm",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T14:00:00Z",
       "end": "2026-11-11T15:00:00Z",
@@ -375,7 +402,7 @@
     {
       "name": "The Corporate Academy of Tomorrow",
       "url": "https://luma.com/6wcduo5u",
-      "read_at": "2026-11-11T10:57:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T14:00:00Z",
       "end": "2026-11-11T15:00:00Z",
@@ -384,7 +411,7 @@
       "place": "online (Google Meet (per the Luma page))",
       "join": "Luma; open: https://luma.com/6wcduo5u",
       "status": "online",
-      "storm_note": null,
+      "storm_note": "Not stated on the page as a storm change. Listed on Google Meet; no storm note.",
       "topics": [
         "AI",
         "learning",
@@ -400,7 +427,7 @@
     {
       "name": "Side Events Guide IRL: meet us during Web Summit (Wednesday)",
       "url": "https://luma.com/4fbc1s24",
-      "read_at": "2026-11-11T10:47:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T14:30:00Z",
       "end": "2026-11-12T17:30:00Z",
@@ -409,7 +436,7 @@
       "place": "MEO Arena, Rossio dos Olivais 2.13.01, 1990-231 Lisboa (Parque das Nações)",
       "join": "Luma registration shows sold out: https://luma.com/4fbc1s24",
       "status": "unknown",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "side events",
         "networking"
@@ -424,7 +451,7 @@
     {
       "name": "Ethical AI Initiative: the different lenses of AI (roundtable)",
       "url": "https://luma.com/lg2qwq2l",
-      "read_at": "2026-11-11T10:57:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T14:30:00Z",
       "end": "2026-11-11T15:30:00Z",
@@ -433,7 +460,7 @@
       "place": "online (Zoom (per the Luma page))",
       "join": "Luma; open: https://luma.com/lg2qwq2l",
       "status": "online",
-      "storm_note": null,
+      "storm_note": "Not stated on the page as a storm change. Listed on Zoom; no storm note.",
       "topics": [
         "AI ethics"
       ],
@@ -447,7 +474,7 @@
     {
       "name": "H2H 2.0: how AI's biggest threat isn't what you think",
       "url": "https://luma.com/i91jzozo",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T15:00:00Z",
       "end": "2026-11-11T15:45:00Z",
@@ -456,7 +483,7 @@
       "place": "Address given to guests, Lisboa",
       "join": "Luma; host approval; no Web Summit ticket needed: https://luma.com/i91jzozo",
       "status": "unknown",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "AI",
         "leadership"
@@ -471,7 +498,7 @@
     {
       "name": "Bridging Capital Across Borders: investors, founders & ecosystems (online)",
       "url": "https://luma.com/148l175b",
-      "read_at": "2026-11-11T10:57:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T15:30:00Z",
       "end": "2026-11-11T17:00:00Z",
@@ -480,7 +507,7 @@
       "place": "online (Zoom (link to approved guests))",
       "join": "Luma; host approval: https://luma.com/148l175b",
       "status": "online",
-      "storm_note": null,
+      "storm_note": "Not stated on the page as a storm change. Titled 'ONLINE Event' while its text describes a delegation meeting in Lisbon; no reason given. That the storm moved it is a hypothesis.",
       "topics": [
         "investors",
         "cross-border"
@@ -495,7 +522,7 @@
     {
       "name": "How to align your leadership team when AI moves faster than people",
       "url": "https://luma.com/az8uos4e",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T16:00:00Z",
       "end": "2026-11-11T16:45:00Z",
@@ -519,7 +546,7 @@
     {
       "name": "Amplify Europe aperitivo (Lisbon)",
       "url": "https://luma.com/a2ackpa5",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T16:00:00Z",
       "end": "2026-11-11T19:00:00Z",
@@ -528,7 +555,7 @@
       "place": "Address given to guests, Estoril (Estoril)",
       "join": "Luma; host approval: https://luma.com/a2ackpa5",
       "status": "unknown",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "investors",
         "Europe"
@@ -541,34 +568,9 @@
       "note": "For investors, LPs and ecosystem leaders: a debate, not a panel."
     },
     {
-      "name": "Elevon CZ/SK Community Night (catamaran on the Tagus)",
-      "url": "https://elevon.io/websummit/night",
-      "read_at": "2026-11-11T10:47:00Z",
-      "date": "2026-11-11",
-      "start": "2026-11-11T17:00:00Z",
-      "end": "2026-11-11T19:00:00Z",
-      "kind": "party",
-      "organiser": "Elevon",
-      "place": "Catamaran on the Tagus (boarding point sent to confirmed guests) (Tagus river)",
-      "join": "Register on the page; places limited, each guest confirmed: https://elevon.io/websummit/night",
-      "status": "unknown",
-      "storm_note": null,
-      "topics": [
-        "Czech",
-        "Slovak",
-        "community"
-      ],
-      "id": "2026-11-11-elevon-czsk-community-night",
-      "label": "evidence",
-      "cost": "welcome drink included; cost not stated",
-      "storm_moved": null,
-      "check": "The page shows no change, on a day of storm warnings, for a boat trip. Unconfirmed: check with the organiser's page before going.",
-      "note": null
-    },
-    {
       "name": "The AI spam problem: how founders win clients in 2027",
       "url": "https://luma.com/samqquwk",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:00:00Z",
       "end": "2026-11-11T18:00:00Z",
@@ -577,7 +579,7 @@
       "place": "online (Google Meet (link given to approved guests))",
       "join": "Luma; host approval: https://luma.com/samqquwk",
       "status": "online",
-      "storm_note": null,
+      "storm_note": "Not stated on the page as a storm change. The page says the event will now take place online; it gives no reason. That the storm moved it is a hypothesis.",
       "topics": [
         "founders",
         "sales",
@@ -593,16 +595,16 @@
     {
       "name": "The Next Move (careers networking)",
       "url": "https://luma.com/aa65srr3",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:00:00Z",
       "end": "2026-11-11T19:00:00Z",
       "kind": "side event",
       "organiser": "Aubay Portugal",
       "place": "Avila Spaces Trabalho, Av. Dom João II 52, piso 0, 1990-096 Lisboa (Parque das Nações)",
-      "join": "Luma; sold out, waitlist: https://luma.com/aa65srr3",
+      "join": "Page no longer public: https://luma.com/aa65srr3",
       "status": "unknown",
-      "storm_note": null,
+      "storm_note": "Not stated: the page was removed.",
       "topics": [
         "careers",
         "tech jobs"
@@ -611,13 +613,13 @@
       "label": "evidence",
       "cost": "free",
       "storm_moved": null,
-      "check": "The page shows no storm note.",
+      "check": "The Luma page returned 404 at 11:23 and 11:25 UTC (it was live at 10:51 UTC). It may have been cancelled or made private.",
       "note": "A recruitment and networking event."
     },
     {
       "name": "Enchant Pitch Parties: Fintech, Travel Tech, Applied AI, Healthtech, Gaming & Entertainment",
       "url": "https://luma.com/574bmobb",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:00:00Z",
       "end": "2026-11-11T21:00:00Z",
@@ -626,7 +628,7 @@
       "place": "Casica Italian Trattoria, Alameda dos Oceanos, Ed. Lisboa lote 2.11.01, 1990-223 Lisboa (Parque das Nações)",
       "join": "Luma (one page per track); host approval: https://luma.com/574bmobb",
       "status": "unknown",
-      "storm_note": null,
+      "storm_note": "Not stated on the page as a storm change. None of the five pages shows a storm note.",
       "topics": [
         "startups",
         "pitching",
@@ -646,7 +648,7 @@
     {
       "name": "Like minded | Web Summit (Ukrainian founders' community evening)",
       "url": "https://luma.com/yatbt1w6",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:00:00Z",
       "end": "2026-11-11T22:00:00Z",
@@ -655,7 +657,7 @@
       "place": "Address given to guests, Lisboa",
       "join": "Luma; host approval: https://luma.com/yatbt1w6",
       "status": "unknown",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "Ukraine",
         "founders",
@@ -671,7 +673,7 @@
     {
       "name": "Taste Japan & make career connections: meet Japanese startups expanding into Europe",
       "url": "https://luma.com/f31mqr0v",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:25:00Z",
       "end": "2026-11-11T19:00:00Z",
@@ -696,7 +698,7 @@
     {
       "name": "Kick off meeting WebSummit Lisbon",
       "url": "https://www.meetup.com/life-with-artificials/events/317058510/",
-      "read_at": "2026-11-11T10:47:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:30:00Z",
       "end": "2026-11-11T20:30:00Z",
@@ -705,7 +707,7 @@
       "place": "Javá, Praça Dom Luís I 30, 1200-152 Lisboa (Cais do Sodré)",
       "join": "Meetup RSVP; drinks on the host: https://www.meetup.com/life-with-artificials/events/317058510/",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page as a storm change. Scheduled on the page (schema.org EventScheduled); no storm note.",
       "topics": [
         "AI",
         "society"
@@ -720,7 +722,7 @@
     {
       "name": "Cisco: from automation to autonomy, how AI is changing the way we run technology",
       "url": "https://luma.com/portugal-dezg",
-      "read_at": "2026-11-11T10:57:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T17:30:00Z",
       "end": "2026-11-11T18:30:00Z",
@@ -729,7 +731,7 @@
       "place": "not stated on the page (Portugal Tech Week calendar)",
       "join": "Luma; open: https://luma.com/portugal-dezg",
       "status": "unknown",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "AI",
         "IT operations"
@@ -744,7 +746,7 @@
     {
       "name": "Tech Startups on the Rooftop (Web Summit week edition)",
       "url": "https://luma.com/rjh3pf7g",
-      "read_at": "2026-11-11T10:47:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:00:00Z",
       "end": "2026-11-11T21:00:00Z",
@@ -753,7 +755,7 @@
       "place": "TOPO Martim Moniz rooftop, Centro Comercial Martim Moniz, piso 6, 1100-341 Lisboa (Martim Moniz)",
       "join": "Luma; 1 place left then waitlist: https://luma.com/rjh3pf7g",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "startups",
         "networking"
@@ -768,7 +770,7 @@
     {
       "name": "AI Horizon Conference 2026: AI talks, startup pitches & afterparty",
       "url": "https://luma.com/p6glepvg",
-      "read_at": "2026-11-11T10:47:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:00:00Z",
       "end": "2026-11-11T23:00:00Z",
@@ -777,7 +779,7 @@
       "place": "Lumen Hotel, R. Sousa Martins 20, 1050-217 Lisboa (Picoas)",
       "join": "Luma; host approval: https://luma.com/p6glepvg",
       "status": "unknown",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "AI ethics",
         "startups"
@@ -792,7 +794,7 @@
     {
       "name": "Innovation Wednesdays @ Web Summit (Azerbaijan's founders and delegation)",
       "url": "https://luma.com/pgpdzd1g",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:00:00Z",
       "end": "2026-11-11T20:00:00Z",
@@ -801,7 +803,7 @@
       "place": "Honest Greens Parque das Nações, Alameda dos Oceanos 21101F, 1990-225 Lisboa (Parque das Nações)",
       "join": "Luma; open: https://luma.com/pgpdzd1g",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page as a storm change. The page notes a venue change without giving a reason; that it was the storm is not stated.",
       "topics": [
         "Azerbaijan",
         "founders",
@@ -817,7 +819,7 @@
     {
       "name": "Frontier Founders & VCs Soirée (online)",
       "url": "https://luma.com/tjed8ali",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:00:00Z",
       "end": "2026-11-11T20:00:00Z",
@@ -843,7 +845,7 @@
     {
       "name": "LisboaUX: Web Summit Edition (second anniversary)",
       "url": "https://luma.com/yvm04djt",
-      "read_at": "2026-11-11T10:57:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:00:00Z",
       "end": "2026-11-11T21:00:00Z",
@@ -852,7 +854,7 @@
       "place": "Casa do Impacto, Tv. de São Pedro 8, 1200-432 Lisboa (Santos / São Bento)",
       "join": "Luma tickets: https://luma.com/yvm04djt",
       "status": "unknown",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "UX",
         "design",
@@ -868,7 +870,7 @@
     {
       "name": "DemoNightLx Web Summit Week Edition (Canopy Demo Night)",
       "url": "https://luma.com/2ofzih7t",
-      "read_at": "2026-11-11T10:47:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:30:00Z",
       "end": "2026-11-11T19:30:00Z",
@@ -892,7 +894,7 @@
     {
       "name": "KCD Warmup & Web Summit Side Event #29 (Cloud Native Lisbon x DevOps Lisbon x GDG Lisbon)",
       "url": "https://www.meetup.com/gdglisbon/events/317255985/",
-      "read_at": "2026-11-11T10:47:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:30:00Z",
       "end": "2026-11-11T21:30:00Z",
@@ -901,7 +903,7 @@
       "place": "Richemont Tech Hub Lisbon, Rua Adão Manuel Ramos Barata 3, Oriente Green Campus, 1885-100 Moscavide (Moscavide / Oriente)",
       "join": "Meetup (cancelled): https://www.meetup.com/gdglisbon/events/317255985/",
       "status": "cancelled",
-      "storm_note": null,
+      "storm_note": "Not stated on the page as a storm change. Cancelled on the page (schema.org EventCancelled); no reason given. That it was the storm is a hypothesis.",
       "topics": [
         "cloud native",
         "DevOps",
@@ -918,7 +920,7 @@
     {
       "name": "Open Mercato Night: AI agents build a custom CRM, live",
       "url": "https://luma.com/mso0mrpr",
-      "read_at": "2026-11-11T10:47:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:30:00Z",
       "end": "2026-11-11T23:00:00Z",
@@ -944,7 +946,7 @@
     {
       "name": "Funders & Founders Night by AltaIR Capital: the new shape of early stage",
       "url": "https://luma.com/h19cccc5",
-      "read_at": "2026-11-11T10:57:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:30:00Z",
       "end": "2026-11-11T22:00:00Z",
@@ -968,7 +970,7 @@
     {
       "name": "European Tech Champions: Italy & Portugal",
       "url": "https://luma.com/rp4tgcfu",
-      "read_at": "2026-11-11T10:57:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T18:30:00Z",
       "end": "2026-11-11T22:00:00Z",
@@ -977,7 +979,7 @@
       "place": "Unicorn Factory Lisboa, Unicorn Stage, Beato Innovation District, Av. Infante Dom Henrique 141, 1960-406 Lisboa (Beato)",
       "join": "Luma; sold out, waitlist: https://luma.com/rp4tgcfu",
       "status": "unknown",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "Italy",
         "Portugal",
@@ -993,7 +995,7 @@
     {
       "name": "IndieSummit Lisboa Meetup: Entrepreneur Social",
       "url": "https://www.meetup.com/indiebeers-lisboa/events/317024539/",
-      "read_at": "2026-11-11T10:47:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T19:00:00Z",
       "end": "2026-11-11T23:00:00Z",
@@ -1002,7 +1004,7 @@
       "place": "Musa da Bica, Calçada de Salvador Correia de Sá 2A, Lisboa (Bica)",
       "join": "Meetup RSVP: https://www.meetup.com/indiebeers-lisboa/events/317024539/",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page as a storm change. Scheduled on the page; no storm note.",
       "topics": [
         "indie hackers",
         "founders"
@@ -1017,7 +1019,7 @@
     {
       "name": "FounderLink Storm Summit: a torrent of intros (evening session, online)",
       "url": "https://luma.com/stormsummit7pm",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T19:00:00Z",
       "end": "2026-11-11T20:00:00Z",
@@ -1042,7 +1044,7 @@
     {
       "name": "Indvstry Power House: Diaspora Dinner Lisbon",
       "url": "https://luma.com/1hj85rcr",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T19:00:00Z",
       "end": "2026-11-11T22:30:00Z",
@@ -1051,7 +1053,7 @@
       "place": "Address given to guests, Lisbon",
       "join": "Luma tickets: https://luma.com/1hj85rcr",
       "status": "unknown",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "diaspora",
         "founders",
@@ -1067,7 +1069,7 @@
     {
       "name": "Foundacious Lisbon: meet Germany's angel investors and startups",
       "url": "https://luma.com/lapwcmfu",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T19:00:00Z",
       "end": "2026-11-11T23:00:00Z",
@@ -1076,7 +1078,7 @@
       "place": "Palácio de Tancos, Calçada do Marquês de Tancos 2, 1100-340 Lisboa (Castelo / Mouraria)",
       "join": "Luma; sold out, waitlist; host approval: https://luma.com/lapwcmfu",
       "status": "unknown",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "Germany",
         "angel investors",
@@ -1092,7 +1094,7 @@
     {
       "name": "Post demo night happy hour (if the weather allows)",
       "url": "https://luma.com/qd9h2j25",
-      "read_at": "2026-11-11T10:57:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T19:30:00Z",
       "end": "2026-11-11T20:30:00Z",
@@ -1107,7 +1109,7 @@
         "networking"
       ],
       "id": "2026-11-11-canopy-post-demo-night-drinks",
-      "label": "fact",
+      "label": "evidence",
       "cost": "free (a few drinks on the hosts)",
       "storm_moved": true,
       "check": "The page says the weather moved the demo night online, and the drinks happen only 'if the weather allows and you can arrive safely'; if not, 'stay indoors, stay safe'.",
@@ -1116,7 +1118,7 @@
     {
       "name": "Founders' House Party | Web Summit '26",
       "url": "https://luma.com/jp6yr213",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T20:00:00Z",
       "end": "2026-11-12T02:00:00Z",
@@ -1125,7 +1127,7 @@
       "place": "Casa do Presidente (per the page; address to approved guests), Lisboa",
       "join": "Luma; every guest approved: https://luma.com/jp6yr213",
       "status": "unknown",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "founders",
         "VCs",
@@ -1141,7 +1143,7 @@
     {
       "name": "FUTURE-TECH 2026: short films about technology",
       "url": "https://luma.com/25z2ph1o",
-      "read_at": "2026-11-11T10:57:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-11",
       "start": "2026-11-11T20:30:00Z",
       "end": "2026-11-11T22:00:00Z",
@@ -1150,7 +1152,7 @@
       "place": "online (Google Meet (per the Luma page))",
       "join": "Luma; open: https://luma.com/25z2ph1o",
       "status": "online",
-      "storm_note": null,
+      "storm_note": "Not stated on the page as a storm change. The page now lists it on Google Meet with a room at PTW Palace still in its text; it gives no reason. That the storm moved it online is a hypothesis.",
       "topics": [
         "film",
         "technology"
@@ -1165,7 +1167,7 @@
     {
       "name": "Female Founders Breakfast: Web Summit special",
       "url": "https://luma.com/sx67k4x0",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T09:00:00Z",
       "end": "2026-11-12T10:30:00Z",
@@ -1174,7 +1176,7 @@
       "place": "Avila Spaces, Av. Dom João II 1.7.2.1, piso 0, 1990-096 Lisboa (Parque das Nações)",
       "join": "Luma; sold out, waitlist: https://luma.com/sx67k4x0",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "women founders"
       ],
@@ -1188,7 +1190,7 @@
     {
       "name": "Sales Leaders Breakfast · Web Summit 2026",
       "url": "https://luma.com/l4098oo8",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T09:00:00Z",
       "end": "2026-11-12T11:00:00Z",
@@ -1197,7 +1199,7 @@
       "place": "Address given to guests, Central Lisbon",
       "join": "Luma; host approval; about 20 places: https://luma.com/l4098oo8",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "sales",
         "founders"
@@ -1212,7 +1214,7 @@
     {
       "name": "OVHcloud Exclusive Breakfast by Unicorn Factory Lisboa",
       "url": "https://luma.com/5qsia07c",
-      "read_at": "2026-11-11T10:57:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T09:00:00Z",
       "end": "2026-11-12T11:00:00Z",
@@ -1221,7 +1223,7 @@
       "place": "Address given to approved guests, Lisboa",
       "join": "Luma; host approval; for scaleups: https://luma.com/5qsia07c",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "cloud",
         "scaleups"
@@ -1236,7 +1238,7 @@
     {
       "name": "Open Coffee Lisbon Web Summit Special #53",
       "url": "https://www.meetup.com/open-coffee-lisbon/events/316495551/",
-      "read_at": "2026-11-11T10:47:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T09:30:00Z",
       "end": "2026-11-12T11:30:00Z",
@@ -1245,7 +1247,7 @@
       "place": "Impact Hub Lisbon, 3rd floor, R. Neves Ferreira 13, 1170-273 Lisboa (Penha de França)",
       "join": "Meetup RSVP: https://www.meetup.com/open-coffee-lisbon/events/316495551/",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page as a storm change. Scheduled; the venue change to Impact Hub is not stated as storm related.",
       "topics": [
         "startups",
         "networking"
@@ -1260,7 +1262,7 @@
     {
       "name": "Café & Code: a developer café takeover by Exa x Mastra",
       "url": "https://luma.com/u0iuhn8i",
-      "read_at": "2026-11-11T10:47:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T10:00:00Z",
       "end": "2026-11-12T16:00:00Z",
@@ -1269,7 +1271,7 @@
       "place": "Nina Brunch & Speciality Coffee, R. Cais das Naus 2 B, 1990-304 Lisboa (Parque das Nações)",
       "join": "Luma; host approval: https://luma.com/u0iuhn8i",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "developers",
         "AI"
@@ -1284,7 +1286,7 @@
     {
       "name": "Canopy Campfire: how is AI changing your life?",
       "url": "https://luma.com/g87gj7f6",
-      "read_at": "2026-11-11T10:57:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T10:00:00Z",
       "end": "2026-11-12T11:00:00Z",
@@ -1293,7 +1295,7 @@
       "place": "PTW Palace, Rua Gomes Freire 98, Lisboa (Anjos)",
       "join": "Luma; sold out, waitlist: https://luma.com/g87gj7f6",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "AI"
       ],
@@ -1307,7 +1309,7 @@
     {
       "name": "Post Web Summit Reset: sauna & cold plunge",
       "url": "https://luma.com/uau5nem3",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T16:30:00Z",
       "end": "2026-11-12T18:00:00Z",
@@ -1316,7 +1318,7 @@
       "place": "A studio (address to guests), Lisboa",
       "join": "Luma; sold out, waitlist; booking with the studio: https://luma.com/uau5nem3",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "wellbeing"
       ],
@@ -1328,9 +1330,34 @@
       "note": null
     },
     {
+      "name": "Elevon CZ/SK Community Night (catamaran on the Tagus)",
+      "url": "https://elevon.io/websummit/night",
+      "read_at": "2026-11-11T11:23:00Z",
+      "date": "2026-11-12",
+      "start": "2026-11-12T17:00:00Z",
+      "end": "2026-11-12T19:00:00Z",
+      "kind": "party",
+      "organiser": "Elevon",
+      "place": "Catamaran on the Tagus (boarding point sent to confirmed guests) (Tagus river)",
+      "join": "Register on the page; places limited, each guest confirmed: https://elevon.io/websummit/night",
+      "status": "moved",
+      "storm_note": "Moved from Wednesday 11 to Thursday 12 November, same time (17:00 to 19:00), 'due to extreme weather', per the organiser's page.",
+      "topics": [
+        "Czech",
+        "Slovak",
+        "community"
+      ],
+      "id": "2026-11-11-elevon-czsk-community-night",
+      "label": "fact",
+      "cost": "welcome drink included; cost not stated",
+      "storm_moved": true,
+      "check": "The page now reads 'Thursday, 12 November 2026 · 17:00–19:00 (moved from Wednesday due to extreme weather)'.",
+      "note": "The id keeps its first date so that apps can follow it."
+    },
+    {
       "name": "Agents Are Ready. The Internet Isn't.",
       "url": "https://luma.com/lunar-ltdv",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T17:00:00Z",
       "end": "2026-11-12T19:30:00Z",
@@ -1339,7 +1366,7 @@
       "place": "Av. Duque de Loulé 24, Av. Duque de Loulé 24, 1050-085 Lisboa (Marquês de Pombal)",
       "join": "Luma; sold out: https://luma.com/lunar-ltdv",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "AI agents",
         "payments",
@@ -1355,7 +1382,7 @@
     {
       "name": "Next Round's on Us | Web Summit 2026",
       "url": "https://luma.com/j2swdpb0",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T17:00:00Z",
       "end": "2026-11-12T19:00:00Z",
@@ -1364,7 +1391,7 @@
       "place": "A bar (address to approved guests), Lisboa",
       "join": "Luma; application, host approval: https://luma.com/j2swdpb0",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "founders",
         "VC",
@@ -1380,7 +1407,7 @@
     {
       "name": "Defense Tech Meetup #9: Sovereignty by Design",
       "url": "https://luma.com/whll1umb",
-      "read_at": "2026-11-11T10:47:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T17:45:00Z",
       "end": "2026-11-12T21:15:00Z",
@@ -1405,7 +1432,7 @@
     {
       "name": "The Founder Effect: what you choose to build once you've already won",
       "url": "https://luma.com/wrz9dilz",
-      "read_at": "2026-11-11T10:57:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T18:00:00Z",
       "end": "2026-11-12T22:30:00Z",
@@ -1414,7 +1441,7 @@
       "place": "Address given to approved guests, Lisboa",
       "join": "Luma; host approval: https://luma.com/wrz9dilz",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "founders",
         "exits",
@@ -1430,7 +1457,7 @@
     {
       "name": "Show What You Build: Makers & Doers (Web Summit special)",
       "url": "https://luma.com/rnm96bu0",
-      "read_at": "2026-11-11T10:47:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T18:30:00Z",
       "end": "2026-11-12T21:00:00Z",
@@ -1439,7 +1466,7 @@
       "place": "Primal Moves Lisbon, CC do Marquês de Abrantes 54, 1200-656 Lisboa (Santos)",
       "join": "Luma; open, 9 places left: https://luma.com/rnm96bu0",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "makers",
         "demos"
@@ -1454,7 +1481,7 @@
     {
       "name": "Closing Night of Web Summit Week: founders, drinks and snacks at The Nest",
       "url": "https://luma.com/wt5b7nsg",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T18:30:00Z",
       "end": "2026-11-12T21:00:00Z",
@@ -1463,7 +1490,7 @@
       "place": "The Nest by NEAR, 4th floor, Avenida 5 de Outubro 146, 1050-061 Lisboa (Avenidas Novas)",
       "join": "Luma; sold out, waitlist; last entry 19:15: https://luma.com/wt5b7nsg",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "founders",
         "builders"
@@ -1478,7 +1505,7 @@
     {
       "name": "Disconnect 2 Connect",
       "url": "https://luma.com/f9rois6p",
-      "read_at": "2026-11-11T10:47:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:00:00Z",
       "end": "2026-11-12T21:00:00Z",
@@ -1487,7 +1514,7 @@
       "place": "The Browers Beato, Tv. Grilo 1, 1950-145 Lisboa (Beato)",
       "join": "Luma; host approval: https://luma.com/f9rois6p",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "Portugal",
         "networking",
@@ -1503,7 +1530,7 @@
     {
       "name": "Lisbon Business Leaders Networking Evening",
       "url": "https://luma.com/4jmyv55l",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:00:00Z",
       "end": "2026-11-12T21:00:00Z",
@@ -1512,7 +1539,7 @@
       "place": "Andaz Lisbon, R. do Comércio 132, 1100-150 Lisboa (Baixa)",
       "join": "Luma; host approval: https://luma.com/4jmyv55l",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "executives",
         "networking"
@@ -1527,7 +1554,7 @@
     {
       "name": "OPUS After Hours: Web Summit edition",
       "url": "https://luma.com/s73xrx2r",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T19:30:00Z",
       "end": "2026-11-12T22:30:00Z",
@@ -1536,7 +1563,7 @@
       "place": "Venue given on acceptance, Lisboa",
       "join": "Luma; host approval: https://luma.com/s73xrx2r",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "ecosystem",
         "party"
@@ -1551,7 +1578,7 @@
     {
       "name": "Get Down At The Dev House",
       "url": "https://luma.com/aivsqim4",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T20:30:00Z",
       "end": "2026-11-13T02:00:00Z",
@@ -1560,7 +1587,7 @@
       "place": "Address given to approved guests, Lisboa",
       "join": "Luma; host approval: https://luma.com/aivsqim4",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "developers",
         "AI agents",
@@ -1576,7 +1603,7 @@
     {
       "name": "Web Summit After Party (Unicorn Factory Lisboa)",
       "url": "https://luma.com/z31f1c0y",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-12",
       "start": "2026-11-12T21:00:00Z",
       "end": "2026-11-13T02:00:00Z",
@@ -1585,7 +1612,7 @@
       "place": "Fábrica de Pão, Beato Innovation District, Rua da Manutenção 71, 1900-500 Lisboa (Beato)",
       "join": "Luma; open, no guest list: https://luma.com/z31f1c0y",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "ecosystem",
         "party"
@@ -1600,7 +1627,7 @@
     {
       "name": "Lisbon Community Week Conference 2026",
       "url": "https://luma.com/lisbon-community-week-2026",
-      "read_at": "2026-11-11T10:47:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-13",
       "start": "2026-11-13T08:30:00Z",
       "end": "2026-11-13T19:30:00Z",
@@ -1609,7 +1636,7 @@
       "place": "Impact Hub Lisbon - Penha, R. Neves Ferreira 13, 1170-273 Lisboa (Penha de França)",
       "join": "Luma tickets: https://luma.com/lisbon-community-week-2026",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "community management",
         "unconference"
@@ -1624,7 +1651,7 @@
     {
       "name": "PTW Classroom: Ladies Who Build, Lovable & Grok use cases",
       "url": "https://luma.com/zt9ss8co",
-      "read_at": "2026-11-11T10:47:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-13",
       "start": "2026-11-13T10:00:00Z",
       "end": "2026-11-13T11:00:00Z",
@@ -1633,7 +1660,7 @@
       "place": "PTW Palace, Rua Gomes Freire 98, Lisboa (Anjos)",
       "join": "Luma; 2 places left then waitlist; bring a laptop: https://luma.com/zt9ss8co",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "women in tech",
         "AI",
@@ -1649,7 +1676,7 @@
     {
       "name": "The rise of the expert creator: how to turn what you know into opportunity",
       "url": "https://luma.com/0baosk0k",
-      "read_at": "2026-11-11T10:51:00Z",
+      "read_at": "2026-11-11T11:23:00Z",
       "date": "2026-11-13",
       "start": "2026-11-13T15:00:00Z",
       "end": "2026-11-13T18:00:00Z",
@@ -1658,7 +1685,7 @@
       "place": "Tejá House, Cais do Sodré 5, 1200-450 Lisboa (Cais do Sodré)",
       "join": "Luma tickets: https://luma.com/0baosk0k",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "creator economy"
       ],
@@ -1681,7 +1708,7 @@
       "place": "Parque Docas, Ponte Telpark, Docas, Santo Amaro, 1300-353 Lisboa (Alcântara / Santo Amaro)",
       "join": "Luma; open: https://luma.com/staaake-hghb",
       "status": "on",
-      "storm_note": null,
+      "storm_note": "Not stated on the page.",
       "topics": [
         "AI",
         "basketball",

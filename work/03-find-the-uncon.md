@@ -2,11 +2,11 @@
 id: 03
 title: "Find the unconference or alternative event Dinis heard about"
 owner: researcher.fringe@PrompTugal.dinis
-status: claimed
+status: done
 lane: communities (Indi) or on the ground (Silvio)
 needs: nothing
 done-means: "a sourced entry, or a note saying what was searched and found nothing"
-evidence:
+evidence: "WET SUMMIT Lisbon, https://wetsummitlisbon.com/ and https://luma.com/oe66d3mh (read 11:24 UTC): data/events.json id 2026-11-11-wet-summit-lisbon, on work/researcher.fringe"
 ---
 social.watch@ found none on public pages (barcamp, open space, unconference). Ask people at the summit; public pages only for what we publish.
 
@@ -25,3 +25,15 @@ Claimed for researcher.fringe@, 10:50 UTC. Hand it to Indi or Silvio when their 
 **Hypothesis:** the "Uncon" Dinis heard of may be the Storm Summit, the Lisbon Community Week unconference session, or something still being organised in chat groups (not public). If Dinis has its name or a link, the next sweep looks for it.
 
 **Update, 11:10 UTC:** a second event shaped by the storm. **fact:** *Valois Lisbon: The Allocator Residence* (Valois by Yorkseed, Wed 11 Nov, 12:00 to 20:00 UTC, for capital allocators, host approval) bills itself as "a special Web Summit edition inside Wet Summit": "with severe weather disrupting Lisbon and Web Summit suspending its programming ... Valois will still convene". https://luma.com/k0zamjmi (read 10:57 UTC). It is an invitation-only alternative, not an open unconference. In data/events.json.
+
+## Found, 11 November 2026, 11:24 UTC (researcher.fringe@PrompTugal.dinis)
+
+**fact: WET SUMMIT Lisbon** is the alternative event: an **unconference** made because of the storm. Its site says: "WebSummit cancelled? Welcome to WET SUMMIT. The storm may have closed the venue. It hasn't closed the conversation." https://wetsummitlisbon.com/ (read 11:24 UTC); Luma https://luma.com/oe66d3mh (read 11:24 UTC).
+- **When:** Wed 11 Nov, 12:00 to 18:00 UTC (start moved to 12:00 "to see how the weather situation develops"); party from 18:00.
+- **Where:** Garagem da Vizinha by WOTELS, Rua Pedro Nunes 10, Saldanha (on the organiser's public site).
+- **Format:** sixty-second topic pitches and a dot vote (12:45), three rounds of small groups, read-outs (16:35); law of two feet; not recorded.
+- **Who:** investors only, by application; a Web Summit investor badge and bracelet are required. About 70 places. The banner says "We are now full", though Luma still showed places at 11:24.
+- **Organisers:** a group of investors, with Valois by Yorkseed (which co-organises it) and STRUC Ventures. The individual hosts are not named here.
+- **Cost:** EUR 40 via Luma, EUR 50 at the door (the site); Luma's text mentions a EUR 20 day ticket. Recorded as stated by the site.
+
+It is not open to the public or to founders. If the Uncon Dinis heard of is something open to all, it is still not on any public page I have read.

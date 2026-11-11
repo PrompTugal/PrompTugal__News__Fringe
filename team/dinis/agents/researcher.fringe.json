@@ -1,30 +1,27 @@
 {
   "agent": "researcher.fringe@PrompTugal.dinis",
   "by": "researcher.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T11:10Z",
+  "updated": "2026-11-11T11:32Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, 10:47 UTC, under BRIEF.md §7 step 4",
   "wake": "hourly until Friday 13 November",
   "branch": "work/researcher.fringe",
   "state": "working",
   "doing": [
-    "re-reading today's 'unknown' and evening events by about 16:00 UTC (the storm is still moving things)",
-    "adding Thursday 12 and Friday 13 events",
-    "work/03: watching for the 'Uncon'"
+    "re-reading Wednesday-evening events again after 16:00 UTC (AltaIR's 16:00 confirmation, Canopy's drinks, the rooftop, every 'unknown')",
+    "adding Thursday 12 and Friday 13: Meetup, Eventbrite, Partiful, organisers' pages"
   ],
   "done": [
-    "claimed work/02 and work/03",
-    "work/02 done: data/events.json merged onto dev by the lead as 787af1f",
-    "data/events.json: 69 events (+19 from the Portugal Tech Week, Unicorn Factory Lisboa and Canopy calendars, read 10:57 UTC): Wexio moved online for the storm; AltaIR's Sintra evening cancelled (a smaller gathering to be confirmed by 16:00 UTC); Canopy's drinks only if the weather allows; Valois 'inside Wet Summit'",
-    "data/events.json in the v1 contract (api/v1/README.md, the lead's correction at 10:48 UTC): 50 events, each re-read at its public page at 10:47 or 10:51 UTC; node admin/build/validate.mjs is OK; Tech Art Lisboa left out (page 404)",
-    "storm: 9 events moved online, 2 moved, 3 cancelled (2 for the weather), 15 unknown",
-    "work/03: found FounderLink's 'Storm Summit' (an online alternative event made because Day 2 was cancelled) and the unconference session inside Lisbon Community Week (13 Nov); no standalone public unconference found",
-    "sources.md: the source map (BRIEF §5), with what a machine may read under each site's terms",
-    "seed corrections: Show What You Build is Thu 12 Nov; Lisbon Community Week starts 08:30 UTC; Open Mercato Night was 18:30 UTC"
+    "work/02 done: data/events.json merged onto dev by the lead as 787af1f, then 69 events (2459506)",
+    "work/03 done: the Uncon is WET SUMMIT Lisbon, an investors-only unconference made because of the storm (Wed 11 Nov, 12:00 to 18:00 UTC, Saldanha), https://wetsummitlisbon.com/",
+    "11:23 UTC wake: 61 Wednesday-afternoon, evening, Thursday and Friday event pages re-read. Changes: Elevon's catamaran night moved to Thu 12 Nov 17:00 'due to extreme weather'; Valois now part of WET SUMMIT; Aubay's page is gone (404); the others match",
+    "work/13 (Vicky's check): storm_note now always filled ('Not stated on the page.' where the page is silent); Canopy drinks relabelled evidence",
+    "data/events.json: 70 events (47 on Wed 11, 19 on Thu 12, 3 on Fri 13, 1 on Sat 14); validate.mjs OK",
+    "sources.md: the source map"
   ],
   "next": [
-    "16:00 UTC: re-read AltaIR (h19cccc5), Canopy drinks, the catamaran, rooftop and every 'unknown' Wednesday-evening event",
-    "more for Thu 12 and Fri 13: Meetup, Eventbrite, Partiful, deeploy.me UX Talks",
-    "my session key (waiting on Dinis)"
+    "16:00 to 16:30 UTC: re-read every event still to come today",
+    "Thursday and Friday are under-counted: next sources Meetup, Eventbrite, Partiful",
+    "my session key (with Dinis)"
   ],
   "asks": [
     "conductor.fringe: no session key yet. Downloaded https://pki.sgit.ai/agents/pki-agent.mjs to my scratchpad; its sha256 is fcb28a1cc40d05bf8ccc8fc61a2a907c934840cac7aa41d9d8283c1d461002ab (matches). Refused: the Bash call `node pki-agent.mjs keygen --session --name researcher.fringe@PrompTugal.dinis` (run in the same call as the download). The error was 'Permission for this action was denied by the Claude Code auto mode classifier ... judged this action dangerous (it gave no explanation)'. I have not retried or worked around it. Dinis: allowing `node pki-agent.mjs keygen` in this session's permissions (or running it in another session) would unblock data/keys.json.",
