@@ -46,6 +46,14 @@ width:1920px;height:1080px;background:var(--paper);color:var(--ink);font-family:
 .om .lv0{color:var(--ink3)}.om .lv1{background:var(--csoft)}.om .lv2{background:var(--gsoft)}.om .lv3{background:var(--rsoft)}
 .om .legend{display:flex;gap:18px;margin-top:12px;font-size:15px;color:var(--ink2);align-items:center}
 .om .legend span{display:inline-block;width:18px;height:14px;margin-right:6px;vertical-align:middle;border:1px solid var(--hair)}
+.om .fsg{display:grid;grid-template-columns:420px 520px 1fr;gap:28px;margin-top:22px}
+.om .gr ol{list-style:none;counter-reset:g}.om .gr li{counter-increment:g;position:relative;padding:8px 0 8px 44px;border-bottom:1px solid var(--hair);font-size:18px;line-height:1.3}
+.om .gr li::before{content:counter(g);position:absolute;left:0;top:8px;width:30px;height:30px;border-radius:50%;background:var(--green);color:var(--paper);font-weight:700;display:grid;place-items:center;font-size:16px}
+.om .alt{display:flex;flex-direction:column;gap:6px}.om .alt div{background:var(--panel);border:1px solid var(--hair);border-left:8px solid var(--cobalt);padding:8px 12px}
+.om .alt b{font-family:Newsreader;font-size:24px}.om .alt p{font-size:15px;color:var(--ink2)}.om .alt i{display:block;font-style:normal;font-family:"IBM Plex Mono";font-size:13px;color:var(--green);margin-top:3px}
+.om .rch{display:flex;flex-direction:column;gap:6px}.om .rch>div{display:grid;grid-template-columns:96px 1fr;gap:8px;align-items:start;padding:6px 0;border-bottom:1px solid var(--hair)}
+.om .rch>div>b{font-family:"IBM Plex Mono";color:var(--green);font-size:17px}.om .rch .chips{display:flex;flex-wrap:wrap;gap:5px}.om .rch .chip{font-size:12.5px;padding:2px 6px}
+.om .chip.u-no{border-color:var(--red);color:var(--red)}.om .chip.u-yes{border-color:var(--green);color:var(--green)}.om .chip.prop{border-style:dashed;border-color:var(--cobalt);color:var(--cobalt)}
 /* 3: OS */
 .om .osw{display:grid;grid-template-columns:250px 1fr 250px;gap:18px;margin-top:22px;height:700px}
 .om .band{background:var(--ink);color:var(--paper);padding:18px;display:flex;flex-direction:column;gap:10px}
@@ -61,11 +69,11 @@ const NARROW = `@media (max-width:760px){
 .om-frame .om{position:static!important;transform:none!important;width:auto!important;height:auto!important;padding:14px!important;overflow:visible!important}
 .om .top{flex-direction:column;gap:4px;font-size:13px}.om .head{flex-direction:column;align-items:flex-start;gap:8px}.om h1{font-size:38px}.om .q{text-align:left;font-size:17px}
 .om .ladwrap,.om .osw{grid-template-columns:1fr;height:auto}.om .rung{grid-template-columns:60px 1fr;gap:4px 10px}.om .rung p,.om .rung .who{grid-column:1/-1;justify-content:flex-start}
-.om .rung h3{font-size:24px}.om .rung b.id{font-size:22px}.om .layer{grid-template-columns:1fr}.om .layer h3{font-size:22px}
+.om .rung h3{font-size:24px}.om .rung b.id{font-size:22px}.om .layer{grid-template-columns:1fr}.om .fsg{grid-template-columns:1fr}.om .rch>div{grid-template-columns:1fr}.om .layer h3{font-size:22px}
 .om .axw{overflow-x:auto}.om table.ax{min-width:900px;font-size:14px}.om .bar{position:static;flex-direction:column;align-items:flex-start;gap:4px;margin-top:16px}.om .bar b{font-size:20px}.om .legend{flex-wrap:wrap}}`;
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
-const top = (n) => `<div class="top"><div>a PrompTugal.news site · the agentic team · the operating model ${n}/3</div><div>Lisbon Tech Fringe · Dinis Cruz with Angelo · 11 Nov 2026</div></div><div class="rule"></div>`;
+const top = (n) => `<div class="top"><div>a PrompTugal.news site · the agentic team · the operating model ${n}/${SLIDES.length}</div><div>Lisbon Tech Fringe · Dinis Cruz with Angelo · 11 Nov 2026</div></div><div class="rule"></div>`;
 const bar = (t) => `<div class="bar"><b>lisbontechfringe.com · the agentic team</b><span>${esc(t)}</span></div>`;
 
 export function loadModel() { return JSON.parse(readFileSync(join(root, 'data/operating-model.json'), 'utf8')); }
@@ -98,10 +106,23 @@ function os(M) {
 ${bar('Processes · kernel · file systems · IPC · permissions · drivers (data/operating-model.json)')}`;
 }
 
-export const SLIDES = [ladder, access, os];
+
+function graph(M) {
+  const C = M.capabilities, G = M.graph;
+  const by = {}; for (const p of C.primitives) (by[p.reach] ||= []).push(p);
+  for (const p of C.proposed.items) (by[p.reach] ||= []).push({ ...p, prop: true });
+  return `${top(4)}<div class="head"><h1>Meaning through <em>connectivity</em></h1><div class="q">"Everything connects to everything, and nobody has to share a schema." Fractal Semantic Graphs, newsroom.sgit.ai</div></div>
+<div class="fsg"><div class="gr"><div class="k">The grammar (five rules)</div><ol>${G.grammar.map((g) => `<li>${esc(g)}</li>`).join('')}</ol>
+<p style="font-size:15px;color:var(--ink2);margin-top:10px">Edges here: ${G.edges.slice(0, 8).map((e) => `<span class="mono" style="font-size:13px">${esc(e[0])}/${esc(e[1])}</span>`).join(' · ')}</p></div>
+<div><div class="k">Zoom: one grammar, five ontologies</div><div class="alt">${G.altitudes.map((a) => `<div><b>${esc(a.id)}</b><p>${esc(a.ontology)}</p><i>&darr; ${esc(a.jump)}</i></div>`).join('')}</div></div>
+<div><div class="k">What it can do: verb.object.reach</div><div class="rch">${C.reaches.map((r) => `<div><b>${esc(r.id)}</b><div class="chips">${(by[r.id] || []).map((p) => `<span class="chip ${p.prop ? 'prop' : 'u-' + p.undo}">${esc(p.id)}</span>`).join('')}</div></div>`).join('')}</div>
+<p style="font-size:14px;color:var(--ink3);margin-top:8px"><span class="chip u-yes">undo: yes</span> <span class="chip">with effort</span> <span class="chip u-no">no undo</span> <span class="chip prop">proposed: the vault axis</span> · 23 primitives from abp.sgit.ai</p></div></div>
+${bar('newsroom.sgit.ai (Fractal Semantic Graphs) · abp.sgit.ai (the capability grammar) · data/operating-model.json')}`;
+}
+export const SLIDES = [ladder, access, os, graph];
 export function slidePage(i) {
   const M = loadModel();
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=1920"><title>The operating model ${i + 1}/3</title><style>${FONTS}body{margin:0}${CSS}</style></head><body><div class="om">${SLIDES[i](M)}</div><p style="font:16px sans-serif;margin:12px 72px">Lisbon Tech Fringe is independent of Web Summit and not run by its organisers. For anything official, see <a href="https://websummit.com/">the organisers' official site</a>.</p></body></html>`;
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=1920"><title>The operating model ${i + 1}/${SLIDES.length}</title><style>${FONTS}body{margin:0}${CSS}</style></head><body><div class="om">${SLIDES[i](M)}</div><p style="font:16px sans-serif;margin:12px 72px">Lisbon Tech Fringe is independent of Web Summit and not run by its organisers. For anything official, see <a href="https://websummit.com/">the organisers' official site</a>.</p></body></html>`;
 }
 
 export function operatingModelBody(esc2, REPO) {

@@ -27,3 +27,9 @@ board: work/48
 2. **Infographics:** hand-made 1920x1080 slides in the family look, plus images from OpenRouter's image models through admin/tools/llm.mjs (ledger; images kept outside git, in a vault when published).
 3. **A page** under The agentic team: /agentic-team/operating-model/.
 4. **To read:** Dinis's "thinking in graphs" text on fractal semantic graphs and meaning through connectivity. Not found by search (the 2018 Open Security Summit deck "Thinking in graphs" is); Dinis to give the link.
+
+## Follow-up (14:47 UTC)
+
+> "see also newsroom.sgit.ai , namely the fractal semantic graphs"
+
+Read: https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html (the term and the five-rule grammar) and, from it, abp.sgit.ai's capability grammar (verb.object.reach, 23 primitives). The access axes in data/operating-model.json are rebased on those primitives rather than invented; the vault axis is proposed in the same grammar, for Dinis to accept.
