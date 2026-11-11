@@ -1,0 +1,225 @@
+{
+ "about": "The verbs of the swarm graph in Neo4j (neo4j.1.fringe@PrompTugal.dinis, WS-215). The grammar is the fractal semantic graph grammar (Dinis Cruz, newsroom.sgit.ai; admin/build/graph-model.mjs GRAMMAR): every edge is a verb with a subject and an object, and it has an inverse a person would say. There is no relates_to. The loader refuses any relationship type that is not listed here. Neo4j stores one direction; the inverse is a property of every relationship ('inverse') and of the :Verb catalogue node.",
+ "verbs": {
+  "OPERATES": {
+   "from": "Person",
+   "to": "Agent",
+   "says": "operates",
+   "inverse": "is operated by"
+  },
+  "SAID": {
+   "from": "Person",
+   "to": "Word",
+   "says": "said",
+   "inverse": "was said by"
+  },
+  "GAVE": {
+   "from": "Person",
+   "to": "Brief",
+   "says": "gave the brief",
+   "inverse": "was given by"
+  },
+  "PLAYS": {
+   "from": "Agent",
+   "to": "Role",
+   "says": "plays the role",
+   "inverse": "is played by"
+  },
+  "WORKS_AT": {
+   "from": "Agent",
+   "to": "Altitude",
+   "says": "works at the altitude",
+   "inverse": "is the altitude of"
+  },
+  "HOLDS_KEY": {
+   "from": "Agent",
+   "to": "Key",
+   "says": "holds the key",
+   "inverse": "is held by"
+  },
+  "MAY_WRITE": {
+   "from": "Role|Agent",
+   "to": "Path",
+   "says": "may write",
+   "inverse": "may be written by"
+  },
+  "MAY_SEND_TO": {
+   "from": "Role|Agent",
+   "to": "Host",
+   "says": "may send to",
+   "inverse": "may receive from"
+  },
+  "OWNS": {
+   "from": "Agent",
+   "to": "File",
+   "says": "owns the shared file",
+   "inverse": "is owned by"
+  },
+  "AUTHORED": {
+   "from": "Agent",
+   "to": "Commit",
+   "says": "authored",
+   "inverse": "was authored by"
+  },
+  "IS_FOR": {
+   "from": "Commit",
+   "to": "Agent|Person",
+   "says": "is for",
+   "inverse": "receives"
+  },
+  "CHANGES": {
+   "from": "Commit",
+   "to": "File",
+   "says": "changes",
+   "inverse": "is changed by"
+  },
+  "ACTS_ON": {
+   "from": "Commit",
+   "to": "Word",
+   "says": "acts on the word",
+   "inverse": "is acted on by"
+  },
+  "FOLLOWS": {
+   "from": "Commit",
+   "to": "Commit",
+   "says": "follows",
+   "inverse": "is followed by"
+  },
+  "CROSSES_INTO": {
+   "from": "Commit",
+   "to": "Role",
+   "says": "crosses into the lane of",
+   "inverse": "has its lane crossed by"
+  },
+  "RAN": {
+   "from": "Agent",
+   "to": "Run",
+   "says": "ran",
+   "inverse": "was run by"
+  },
+  "CONTAINS": {
+   "from": "Run",
+   "to": "Unit",
+   "says": "contains the unit",
+   "inverse": "is a unit of"
+  },
+  "HANDS_TO": {
+   "from": "Unit",
+   "to": "Unit",
+   "says": "hands work to",
+   "inverse": "takes work from"
+  },
+  "SIGNED": {
+   "from": "Key",
+   "to": "Unit|Span",
+   "says": "signed",
+   "inverse": "was signed by"
+  },
+  "IS_AT": {
+   "from": "Unit|Span",
+   "to": "Altitude",
+   "says": "runs at the altitude",
+   "inverse": "is the altitude of the unit"
+  },
+  "EXPOSES": {
+   "from": "Unit",
+   "to": "Reach",
+   "says": "holds, without needing,",
+   "inverse": "is held without need by"
+  },
+  "CALLS": {
+   "from": "Unit",
+   "to": "Model",
+   "says": "calls the model",
+   "inverse": "is called by"
+  },
+  "WORKS_ON": {
+   "from": "Unit",
+   "to": "Item",
+   "says": "works on the board item",
+   "inverse": "is worked on by"
+  },
+  "RECORDS": {
+   "from": "Review",
+   "to": "Finding",
+   "says": "records",
+   "inverse": "is recorded in"
+  },
+  "BREACHES": {
+   "from": "Finding",
+   "to": "Rule",
+   "says": "breaches",
+   "inverse": "is breached by"
+  },
+  "FLAGS": {
+   "from": "Finding",
+   "to": "Agent",
+   "says": "flags",
+   "inverse": "is flagged by"
+  },
+  "CONCERNS": {
+   "from": "Finding",
+   "to": "File",
+   "says": "concerns the file",
+   "inverse": "is the file of"
+  },
+  "CITES": {
+   "from": "Finding",
+   "to": "Commit",
+   "says": "cites the commit",
+   "inverse": "is cited by"
+  },
+  "EMITTED": {
+   "from": "Agent",
+   "to": "Span",
+   "says": "emitted the span",
+   "inverse": "was emitted by"
+  },
+  "IS_CHILD_OF": {
+   "from": "Span",
+   "to": "Span",
+   "says": "is a child span of",
+   "inverse": "is the parent span of"
+  },
+  "BELONGS_TO": {
+   "from": "Span",
+   "to": "Trace|Flow",
+   "says": "belongs to",
+   "inverse": "has the span"
+  },
+  "IS_ABOUT": {
+   "from": "Event",
+   "to": "Topic",
+   "says": "is about",
+   "inverse": "is the topic of",
+   "fringe_verb": "about"
+  },
+  "HAPPENS_IN": {
+   "from": "Event",
+   "to": "Place",
+   "says": "happens in",
+   "inverse": "is where it happens:",
+   "fringe_verb": "at"
+  },
+  "IS_ORGANISED_BY": {
+   "from": "Event",
+   "to": "Community",
+   "says": "is organised by",
+   "inverse": "organises",
+   "fringe_verb": "organised by"
+  },
+  "IS_PART_OF": {
+   "from": "Event",
+   "to": "Festival",
+   "says": "is part of",
+   "inverse": "has in its programme",
+   "fringe_verb": "part of"
+  },
+  "IS_LIVE_VIEW_OF": {
+   "from": "Span",
+   "to": "Unit",
+   "says": "is the live flow of",
+   "inverse": "is seen live as"
+  }
+ }
+}

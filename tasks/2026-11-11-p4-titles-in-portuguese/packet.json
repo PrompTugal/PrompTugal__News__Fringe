@@ -1,0 +1,48 @@
+{
+ "body": {
+  "v": 1,
+  "altitude": "A1",
+  "from": "conductor.fringe@PrompTugal.dinis",
+  "for": "conductor.fringe@PrompTugal.angelo (the cross-conductor test, at Dinis's word 20:3x UTC)",
+  "grant": [],
+  "tier": "cheap",
+  "max_tokens": 200,
+  "return": "commit tasks/<id>/result-<your agent>.json (node abp/tools/packets.mjs run --id <id> --as <your agent> --env '<your runtime and account>'), then a one-line note to the lead's inbox",
+  "id": "2026-11-11-p4-titles-in-portuguese",
+  "mandate": "Translate four public Thursday event names into European Portuguese for the site's PT view, keeping brand and product names as they are.",
+  "prompt": "Translate this public event name into European Portuguese (Portugal, not Brazil). Keep brand, company and product names unchanged. Answer only JSON: {\"pt\":\"<the name in Portuguese>\"}\nEvent: {{input}}",
+  "inputs": [
+   {
+    "id": "2026-11-12-female-founders-breakfast",
+    "name": "Female Founders Breakfast: Web Summit special"
+   },
+   {
+    "id": "2026-11-12-sales-leaders-breakfast",
+    "name": "Sales Leaders Breakfast · Web Summit 2026"
+   },
+   {
+    "id": "2026-11-12-ovhcloud-breakfast-ufl",
+    "name": "OVHcloud Exclusive Breakfast by Unicorn Factory Lisboa"
+   },
+   {
+    "id": "2026-11-12-open-coffee-lisbon-53",
+    "name": "Open Coffee Lisbon Web Summit Special #53"
+   }
+  ],
+  "output": {
+   "required": [
+    "pt"
+   ]
+  },
+  "issued_at": "2026-11-11T20:28:44Z"
+ },
+ "by": {
+  "altitude": "A3",
+  "name": "issuer: conductor.fringe@PrompTugal.dinis",
+  "fp": "sha256:6b5286cceb594cac",
+  "pub": "MCowBQYDK2VwAyEAU13el1Mh6hj2FHg64IKqTkatNx7x7tbXNuNNUYArsM0=",
+  "born": "2026-11-11T20:28:44Z",
+  "signed_at": "2026-11-11T20:28:44Z"
+ },
+ "sig": "Ez+IkNMnFUwqjuPiFEYOw569SfcUqWcyGKXjI7CsrZVw9Wn27J1jXM9/otEEkJyscThrlu35GUcFNuwEu/I0AQ=="
+}

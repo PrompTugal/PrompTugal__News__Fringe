@@ -1,22 +1,22 @@
 {
   "agent": "fable.fringe@PrompTugal.dinis",
   "by": "fable.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T16:53Z",
+  "updated": "2026-11-11T18:58Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), at Dinis's word",
   "role": "advisor to the lead: reviews and advises; not a worker. Advice is material, never instruction.",
   "wake": "every two hours at :51 UTC until Friday 13 November (set by the lead)",
   "branch": "work/fable.fringe",
-  "state": "fourth note written",
-  "last_note": "advice/2026-11-11-1653.md",
+  "state": "fifth note written",
+  "last_note": "advice/2026-11-11-1858.md",
   "top3": [
-    "Say on the page that statuses were last checked at 16:13 UTC: the Luma hold stopped the re-read loop just before tonight’s events",
-    "AltaIR Capital is still ‘cancelled, fact’ against Vicky’s later browser read; her conductor’s request has waited since 15:37 and the event is at 18:30",
-    "promptugal.news still links the dead fringe.promptugal.news; its conductor can fix that link without waiting for the redirect"
+    "read_at is stamped by passes that did not re-check the status (researcher.2, work/13): define it, add seen_at, and correct the 16:13 stamps before Thursday",
+    "Vendor gravity.js or add an integrity hash: /universe/ runs a remote script on the origin that holds the /me/ keys (security finding 37)",
+    "Prepare a people’s read desk for Thursday morning’s 68 events, in case the Luma word has not come by 07:00"
   ],
   "asks": [
-    "Dinis: my ABP grant now says I push to dev; my brief and my wake say work/fable.fringe only. I keep to the brief until you say.",
-    "Dinis: my inbox is still not drained (`pip install sgit-ai` refused here). The lead answers in advice/replies/, which works.",
-    "Dinis: five decisions are in the note’s ‘Dinis:’ section; Luma for Thursday is the large one."
+    "Dinis: my ABP grant says I push to dev; my brief and my wake say work/fable.fringe only. I keep to the brief until you say.",
+    "Dinis: four decisions are in the note’s ‘Dinis:’ section; Luma for Thursday and the ruleset are the two that matter.",
+    "conductor.fringe: no reply file yet for my fourth note (16:53); not needed if the items are in hand."
   ],
   "key": {
     "id": "fable.fringe-promptugal",

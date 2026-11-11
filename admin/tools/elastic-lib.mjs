@@ -54,7 +54,7 @@ export function base() {
     if (!/^https:\/\//.test(b)) throw new Error('ELASTIC_URL (https://<deployment>.es.<region>...) is not set')
     return b
 }
-export async function pushIndex(index, mapping, docs, { recreate = false } = {}) {
+export async function pushIndex(index, mapping, docs, { recreate = false, prune = null } = {}) {
     const B = base(), headers = { 'content-type': 'application/json', ...auth() }
     if (recreate) await fetch(`${B}/${index}`, { method: 'DELETE', headers })
     const head = await fetch(`${B}/${index}`, { method: 'HEAD', headers })
@@ -73,5 +73,75 @@ export async function pushIndex(index, mapping, docs, { recreate = false } = {})
         for (const it of bad.slice(0, 3)) console.log(`  error ${it.index._id}: ${it.index.error.type}: ${String(it.index.error.reason).slice(0, 200)}`)
     }
     await fetch(`${B}/${index}/_refresh`, { method: 'POST', headers })
-    return { sent, errors }
+    let pruned = 0
+    if (prune && errors === 0 && sent === docs.length) {   // a mirror of a file: remove what this full push did not touch
+        const r = await fetch(`${B}/${index}/_delete_by_query?refresh=true`, { method: 'POST', headers, body: JSON.stringify({ query: { range: { ingested_at: { lt: prune } } } }) })
+        if (r.ok) pruned = (await r.json()).deleted || 0
+    }
+    return { sent, errors, pruned }
+}
+
+// ---------- submissions by any agent (docs/elastic-guidance.md) ----------
+// An index is <prefix>-<kind>; its owner is written in the index's own _meta when it is created, and only the owner
+// (or elastic.1, who keeps the deployment) writes to it after. Every submission is logged in elastic-submissions.
+export const STEWARD = 'elastic.1.fringe@PrompTugal.dinis'
+export const PREFIXES = ['fringe', 'ptnews', 'websummit', 'swarm', 'agents']
+export const INDEX_RX = new RegExp(`^(${PREFIXES.join('|')})-[a-z0-9][a-z0-9-]{1,60}$`)
+const AGENT_RX = /^[a-z0-9][\w.-]*@[A-Za-z][\w.-]+$/
+const kwT = { type: 'keyword' }, dateT = { type: 'date' }
+export const PROVENANCE = { kind: kwT, source: kwT, read_at: dateT, signer: kwT, commit: kwT, ingested_at: dateT, ingested_by: kwT, t: dateT, id: kwT }
+export const openMapping = (owner, about = '') => ({
+    settings: { number_of_shards: 1, 'index.mapping.total_fields.limit': 400 },
+    mappings: {
+        _meta: { owner, created_by: owner, created_at: new Date().toISOString(), guidance: 'docs/elastic-guidance.md', about },
+        date_detection: true, dynamic_date_formats: ['strict_date_optional_time'],
+        dynamic_templates: [
+            { text_fields: { match_pattern: 'regex', match: '^(text|body|summary|description|why|notes?)$', mapping: { type: 'text' } } },
+            { strings: { match_mapping_type: 'string', mapping: { type: 'keyword', ignore_above: 1024, fields: { text: { type: 'text' } } } } },
+        ],
+        properties: { ...PROVENANCE },
+    },
+})
+
+async function indexMeta(index) {
+    const r = await fetch(`${base()}/${index}/_mapping`, { headers: auth() })
+    if (r.status === 404) return null
+    if (!r.ok) throw new Error(`${index}: HTTP ${r.status}`)
+    const j = await r.json()
+    return Object.values(j)[0]?.mappings?._meta || {}
+}
+
+export async function submitDocs({ index, docs, agent, idField = 'id', timeField, source, commit = '', about = '', dry = false, via = 'push' }) {
+    if (!INDEX_RX.test(index)) throw new Error(`index "${index}": must be <${PREFIXES.join('|')}>-<kind> (lower case, digits, hyphens)`)
+    if (!AGENT_RX.test(agent || '')) throw new Error('AGENT (your agent name, as for release.sh) is not set or not an agent name')
+    const now = new Date().toISOString().replace(/\.\d+Z$/, 'Z'), ok = [], held = []
+    for (const [i, raw] of docs.entries()) {
+        if (!raw || typeof raw !== 'object' || Array.isArray(raw)) { held.push(`#${i}: not an object`); continue }
+        const d = scrubFields(raw)
+        const key = d[idField] ?? crypto.createHash('sha256').update(JSON.stringify(d)).digest('hex').slice(0, 24)
+        const t = timeField && d[timeField] ? d[timeField] : (d.t || d.read_at || now)
+        const doc = clean({ ...d, id: String(key), t, kind: d.kind || index.split('-').slice(1).join('-'), source: d.source || source, read_at: d.read_at || now,
+            signer: agent, commit: d.commit || commit, ingested_at: now, ingested_by: agent })
+        const f = findings(doc, `#${i} ${key}`)
+        if (f.length) held.push(...f.slice(0, 2)); else ok.push({ _id: idOf(index, key), doc })
+    }
+    const meta = dry ? null : await indexMeta(index)
+    const owner = meta ? (meta.owner || STEWARD) : agent   // an index made before owners were recorded is the steward's
+    if (owner !== agent && agent !== STEWARD) throw new Error(`${index} is owned by ${owner}: write to your own index (docs/elastic-guidance.md)`)
+    let r = { sent: 0, errors: 0 }
+    if (!dry && ok.length) r = await pushIndex(index, openMapping(agent, about), ok)
+    if (!dry) await logSubmission({ t: now, agent, index, via, sent: r.sent, errors: r.errors, held: held.length, source, commit, owner }).catch(() => {})
+    return { ok: ok.length, held, ...r, owner: meta ? (meta.owner || STEWARD) : agent }
+}
+
+// The audit trail, one line per submission, in elastic-submissions (docs/elastic-guidance.md section 6). Tools that write
+// live (one event at a time, like architect.1's flow.mjs) call this once per flush or flow with their totals.
+//   { t, agent, index, via: 'push' | 'feed' | 'live', sent, errors, held, source, commit, owner }
+export const SUBMISSIONS_MAPPING = { settings: { number_of_shards: 1 }, mappings: { _meta: { owner: STEWARD }, properties: {
+    t: dateT, agent: kwT, index: kwT, via: kwT, owner: kwT, source: kwT, commit: kwT, sent: { type: 'long' }, errors: { type: 'long' }, held: { type: 'long' } } } }
+export async function logSubmission({ t, agent, index, via = 'live', sent = 0, errors = 0, held = 0, source = '', commit = '', owner }) {
+    const at = t || new Date().toISOString().replace(/\.\d+Z$/, 'Z')
+    if (!AGENT_RX.test(agent || '') || !index) throw new Error('logSubmission: agent and index are required')
+    const doc = clean({ t: at, agent, index, via, sent, errors, held, source, commit, owner: owner || agent })
+    return pushIndex('elastic-submissions', SUBMISSIONS_MAPPING, [{ _id: idOf('submission', agent, index, at), doc }])
 }

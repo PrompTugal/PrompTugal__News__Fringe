@@ -11,10 +11,10 @@
 
 import fs from 'node:fs'
 import path from 'node:path'
-import crypto from 'node:crypto'
 import { spawnSync } from 'node:child_process'
-import { fileURLToPath } from 'node:url'
-import { auth } from './elastic-lib.mjs'
+import { fileURLToPath, pathToFileURL } from 'node:url'
+import * as K from './elastic-kibana-lib.mjs'
+const { uid, add, objects, INDEPENDENT, DV, dataView, C, lens, metric, overTime, top, donut, table, heat, search, md, dashboard, L, S, V } = K
 
 if (process.env.HTTPS_PROXY && !process.env.NODE_USE_ENV_PROXY && process.argv[2] === 'import') {
     const r = spawnSync(process.execPath, ['--no-warnings', ...process.argv.slice(1)], { stdio: 'inherit', env: { ...process.env, NODE_USE_ENV_PROXY: '1' } })
@@ -22,10 +22,6 @@ if (process.env.HTTPS_PROXY && !process.env.NODE_USE_ENV_PROXY && process.argv[2
 }
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..')
 const OUT = path.join(ROOT, 'elastic', 'kibana', 'objects.ndjson')
-const uid = (...p) => crypto.createHash('sha256').update(p.join(':')).digest('hex').replace(/^(.{8})(.{4})(.{4})(.{4})(.{12}).*/, '$1-$2-$3-$4-$5')
-const objects = []
-const add = o => { objects.push(o); return o.id }
-const INDEPENDENT = 'Independent of Web Summit; built by the PrompTugal agentic team from public sources. Not a warning service.'
 
 // ---------- tags ----------
 const TAGS = {
@@ -36,103 +32,20 @@ const TAGS = {
 }
 
 // ---------- data views ----------
-const DV = {}
-function dataView(pattern, name, timeField) {
-    DV[pattern] = add({ type: 'index-pattern', id: uid('dv', pattern), attributes: { title: pattern, name, timeFieldName: timeField, allowNoIndex: true }, references: [] })
-    return DV[pattern]
-}
 dataView('fringe-events', 'Fringe: events', 'start')
 dataView('fringe-graph', 'Fringe: semantic graph', 'read_at')
 dataView('fringe-tasks', 'Fringe: task packets and results', 'read_at')
 dataView('fringe-models', 'Fringe: model router ledger', 'day')
 dataView('fringe-hooklog', 'Fringe: ABP hook decisions', 't')
+dataView('fringe-altitudes', 'The agentic runs: one unit per altitude (signed)', 't')
+dataView('elastic-submissions', 'Elastic operations: every submission', 't')
+dataView('fringe-*,ptnews-*,websummit-*,swarm-*,agents-*', 'Everything on Elastic (by ingest time)', 'ingested_at')
+dataView('traces-generic.otel-default', 'OpenRouter traces (OTel): the A1 calls from the provider side', '@timestamp')
 dataView('fringe-workloads', 'Distributed workloads: altitudes, runtimes, placements, traces', 't')
 for (const s of ['fringe', 'ptnews', 'websummit']) for (const k of ['commits', 'content', 'entities', 'runs', 'status']) dataView(`${s}-${k}`, `${{ fringe: 'Fringe', ptnews: 'PrompTugal.news', websummit: 'Web Summit' }[s]}: ${k}`, 't')
 for (const k of ['commits', 'content', 'entities', 'runs', 'status']) dataView(`fringe-${k},ptnews-${k},websummit-${k}`, `All sites: ${k}`, 't')
 const ALL = k => DV[`fringe-${k},ptnews-${k},websummit-${k}`]
 
-// ---------- Lens columns ----------
-const C = {
-    count: (label = 'Count') => ({ label, customLabel: true, dataType: 'number', operationType: 'count', isBucketed: false, scale: 'ratio', sourceField: '___records___', params: { emptyAsNull: true } }),
-    unique: (f, label) => ({ label, customLabel: true, dataType: 'number', operationType: 'unique_count', isBucketed: false, scale: 'ratio', sourceField: f, params: { emptyAsNull: true } }),
-    sum: (f, label) => ({ label, customLabel: true, dataType: 'number', operationType: 'sum', isBucketed: false, scale: 'ratio', sourceField: f, params: { emptyAsNull: true } }),
-    date: (f, label = 'Time', interval = 'auto') => ({ label, customLabel: true, dataType: 'date', operationType: 'date_histogram', isBucketed: true, scale: 'interval', sourceField: f, params: { interval, includeEmptyRows: true, dropPartials: false } }),
-    terms: (f, label, size = 10, orderBy = 'm', other = true) => ({ label, customLabel: true, dataType: 'string', operationType: 'terms', isBucketed: true, scale: 'ordinal', sourceField: f, params: { size, orderBy: { type: 'column', columnId: orderBy }, orderDirection: 'desc', otherBucket: other, missingBucket: false, parentFormat: { id: 'terms' } } }),
-}
-
-function lens(key, title, dv, visType, visualization, columns, columnOrder, query = '') {
-    const id = uid('lens', key)
-    return add({ type: 'lens', id, typeMigrationVersion: '10.1.0', coreMigrationVersion: '8.8.0', attributes: { title, description: '', visualizationType: visType, state: {
-        visualization, query: { query, language: 'kuery' }, filters: [], internalReferences: [], adHocDataViews: {},
-        datasourceStates: { formBased: { layers: { L: { columns, columnOrder, incompleteColumns: {}, sampling: 1 } } } } } },
-        references: [{ type: 'index-pattern', id: dv, name: 'indexpattern-datasource-layer-L' }] })
-}
-// a metric tile
-const METRICS = new Set()
-const metric = (key, title, dv, col, query) => { col.label = title; const id = lens(key, title, dv, 'lnsMetric', { layerId: 'L', layerType: 'data', metricAccessor: 'm' }, { m: col }, ['m'], query); METRICS.add(id); return id }
-// bars over time, split by a field
-const overTime = (key, title, dv, timeField, split, query, { series = 'bar_stacked', interval = 'auto', metricCol } = {}) => {
-    const cols = { x: C.date(timeField, 'Time', interval), m: metricCol || C.count() }, order = ['x']
-    if (split) { cols.s = C.terms(split, split, 10); order.push('s') }
-    order.push('m')
-    return lens(key, title, dv, 'lnsXY', { legend: { isVisible: true, position: 'right' }, valueLabels: 'hide', preferredSeriesType: series, fittingFunction: 'None',
-        layers: [{ layerId: 'L', layerType: 'data', seriesType: series, xAccessor: 'x', accessors: ['m'], ...(split ? { splitAccessor: 's' } : {}), position: 'top', showGridlines: false }] }, cols, order, query)
-}
-// top values as horizontal bars
-const top = (key, title, dv, field, query, { size = 12, metricCol, label } = {}) =>
-    lens(key, title, dv, 'lnsXY', { legend: { isVisible: false, position: 'right' }, valueLabels: 'show', preferredSeriesType: 'bar_horizontal', fittingFunction: 'None',
-        layers: [{ layerId: 'L', layerType: 'data', seriesType: 'bar_horizontal', xAccessor: 'x', accessors: ['m'], position: 'top', showGridlines: false }] },
-        { x: C.terms(field, label || field, size, 'm', false), m: metricCol || C.count() }, ['x', 'm'], query)
-// a donut
-const donut = (key, title, dv, field, query, { size = 8, metricCol } = {}) =>
-    lens(key, title, dv, 'lnsPie', { shape: 'donut', layers: [{ layerId: 'L', layerType: 'data', primaryGroups: ['g'], metrics: ['m'], numberDisplay: 'percent', categoryDisplay: 'default', legendDisplay: 'default', nestedLegend: false }] },
-        { g: C.terms(field, field, size), m: metricCol || C.count() }, ['g', 'm'], query)
-// a table: rows by fields, then metrics
-const table = (key, title, dv, rows, metrics, query) => {
-    const cols = {}, order = []
-    metrics.forEach((m, i) => { cols[`m${i}`] = m })
-    rows.forEach(([f, label, size], i) => { cols[`r${i}`] = C.terms(f, label, size || 20, 'm0', false); order.push(`r${i}`) })
-    metrics.forEach((_, i) => order.push(`m${i}`))
-    return lens(key, title, dv, 'lnsDatatable', { layerId: 'L', layerType: 'data', columns: order.map(c => ({ columnId: c, isTransposed: false })) }, cols, order, query)
-}
-// a heatmap: x by y
-const heat = (key, title, dv, xField, yField, query, { xDate = false } = {}) =>
-    lens(key, title, dv, 'lnsHeatmap', { layerId: 'L', layerType: 'data', shape: 'heatmap', xAccessor: 'x', yAccessor: 'y', valueAccessor: 'm',
-        legend: { isVisible: true, position: 'right', type: 'heatmap_legend' }, gridConfig: { type: 'heatmap_grid', isCellLabelVisible: false, isYAxisLabelVisible: true, isXAxisLabelVisible: true, isYAxisTitleVisible: false, isXAxisTitleVisible: false } },
-        { x: xDate ? C.date(xField, 'Time', '1h') : C.terms(xField, xField, 12), y: C.terms(yField, yField, 15), m: C.count() }, ['x', 'y', 'm'], query)
-
-// saved searches (the documents themselves, newest first)
-const search = (key, title, dv, columns, query = '', sortField = 't', dir = 'desc') => add({ type: 'search', id: uid('search', key), attributes: {
-    title, description: '', columns, sort: [[sortField, dir]], grid: {}, hideChart: true, isTextBasedQuery: false,
-    kibanaSavedObjectMeta: { searchSourceJSON: JSON.stringify({ query: { query, language: 'kuery' }, filter: [], indexRefName: 'kibanaSavedObjectMeta.searchSourceJSON.index' }) } },
-    references: [{ name: 'kibanaSavedObjectMeta.searchSourceJSON.index', type: 'index-pattern', id: dv }] })
-
-// a markdown panel
-const md = (key, text) => add({ type: 'visualization', id: uid('md', key), attributes: { title: '', description: '', uiStateJSON: '{}', version: 1,
-    visState: JSON.stringify({ title: '', type: 'markdown', aggs: [], params: { fontSize: 12, openLinksInNewTab: true, markdown: text } }),
-    kibanaSavedObjectMeta: { searchSourceJSON: JSON.stringify({ query: { query: '', language: 'kuery' }, filter: [] }) } }, references: [] })
-
-// a dashboard: rows of [id, type, width, height]
-function dashboard(key, title, description, tag, rows, { from = 'now-30d', to = 'now', refresh = 300000 } = {}) {
-    const panels = [], refs = []
-    let y = 0, n = 0
-    for (const row of rows) {
-        let x = 0, h = 0
-        for (const [id, type, w, ph] of row) {
-            const i = `p${++n}`
-            panels.push({ type, gridData: { x, y, w, h: ph, i }, panelIndex: i, embeddableConfig: { enhancements: {}, ...(type === 'visualization' || METRICS.has(id) ? { hidePanelTitles: true } : {}) }, panelRefName: `panel_${i}` })
-            refs.push({ name: `${i}:panel_${i}`, type, id })
-            x += w; h = Math.max(h, ph)
-        }
-        y += h
-    }
-    refs.push({ type: 'tag', id: tag, name: `tag-ref-${tag}` })
-    return add({ type: 'dashboard', id: uid('dash', key), attributes: { title, description, panelsJSON: JSON.stringify(panels),
-        optionsJSON: JSON.stringify({ useMargins: true, syncColors: true, syncCursor: true, syncTooltips: true, hidePanelTitles: false }),
-        timeRestore: true, timeFrom: from, timeTo: to, refreshInterval: { pause: false, value: refresh },
-        kibanaSavedObjectMeta: { searchSourceJSON: JSON.stringify({ query: { query: '', language: 'kuery' }, filter: [] }) } }, references: refs })
-}
-const L = 'lens', S = 'search', V = 'visualization'
 
 // =====================================================================================================
 // 1. The swarm: all three sites
@@ -241,21 +154,78 @@ D.workloads = dashboard('workloads', 'Distributed workloads: the altitudes of ex
     [[search('wl-vocab', 'The vocabulary: altitudes, runtimes, endpoints, I/O levels, modes', wl, ['facet', 'id', 'name', 'text'], 'facet:(altitude or runtime or endpoint or io_level or mode)', 'id', 'asc'), S, 48, 16]],
 ], { from: '2026-11-11T00:00:00.000Z', to: 'now+1h', refresh: 300000 })
 
+// =====================================================================================================
+// 7. The altitudes of execution, live (architect.1's spec: docs/handoffs/2026-11-11-altitudes-on-elastic.md)
+// =====================================================================================================
+const al = DV['fringe-altitudes']
+D.altitudes = dashboard('altitudes', 'The altitudes of execution, live', 'Every unit of every agentic run Dinis and Angelo make: the A3 agent, its A2 loops, A1 LLM calls and A0 compute, task packets and each environment\'s results; each signed by its own key, born and signed, with its model, cost, verification and reach.', TAGS.swarm, [
+    [[md('al-head', `## The altitudes of execution, live\nEvery **unit of work** in the agentic runs Dinis and Angelo make, one document each, from signed sources only (\`data/altitude-runs.json\`, written by architect.1's \`abp/tools/runs-export.mjs\`). A run is a tree: **A3** agent → **A2** loops → **A1** LLM calls and **A0** compute; or a **task packet** → each environment's **result** → its calls. Every unit has its own key (\`key_fp\`), born when it starts and signing its result; \`verified\` is that signature checked. **Reach** counts capability primitives: needed, held, and **exposure** (held but not needed): above 2 is the *mixing altitudes* finding.\n\nCompanion: [Distributed workloads](#/view/${uid('dash', 'workloads')}) (placements, matrix, Angelo's run log and traces). Fingerprints only, never key material; prompts only as their sha256.`), V, 48, 8]],
+    [[metric('al-m1', 'Units', al, C.count('Units')), L, 8, 6], [metric('al-m2', 'Runs', al, C.unique('run', 'Runs')), L, 8, 6], [metric('al-m3', 'Signatures verified', al, C.count('Verified'), 'verified:true'), L, 8, 6],
+     [metric('al-m4', 'Unverified signatures (should be 0)', al, { ...C.sum('unverified', 'Unverified'), params: { emptyAsNull: false } }), L, 8, 6], [metric('al-m5', 'Model spend (USD)', al, C.sum('cost_usd', 'USD')), L, 8, 6],
+     [metric('al-m6', 'Units mixing altitudes (exposure > 2)', al, C.count('Mixing'), 'mixing:true'), L, 8, 6]],
+    // 1. units over time by altitude
+    [[overTime('al-time', '1. Units by altitude over time (when each key was born)', al, 't', 'altitude', '', { interval: 'auto' }), L, 48, 13]],
+    // 2. the tree of one run
+    [[table('al-tree', '2. The tree of each run: depth, altitude and role', al, [['run', 'Run', 10], ['depth', 'Depth', 5], ['altitude', 'Altitude', 5], ['role', 'Role', 6]], [C.count('Units'), C.sum('cost_usd', 'USD'), C.sum('invalid', 'Invalid answers')]), L, 24, 18],
+     [search('al-tree-units', '2. Units, in the order they were born (filter on a run)', al, ['run', 'depth', 'altitude', 'role', 'unit', 'parent', 'verified'], '', 't', 'asc'), S, 24, 18]],
+    // 3. Dinis and Angelo side by side
+    [[table('al-people', "3. Dinis's runs and Angelo's, by environment", al, [['person', 'Person', 5], ['environment', 'Environment', 8], ['altitude', 'Altitude', 5]], [C.count('Units'), C.avg('valid_share', 'Valid share (results)'), C.sum('cost_usd', 'USD'), C.avg('latency_ms', 'Latency ms (avg)')]), L, 32, 14],
+     [donut('al-people-donut', '3. Units by person', al, 'person'), L, 16, 14]],
+    // 4. the keys
+    [[table('al-keys', '4. The keys: one per unit, born to signed, verified', al, [['key_fp', 'Key fingerprint', 120], ['altitude', 'Altitude', 5]], [C.count('Units'), C.sum('unverified', 'Unverified'), C.max('duration_ms', 'Life ms (born to signed)')]), L, 24, 16],
+     [donut('al-verified', '4. Signatures: verified or not', al, 'verified'), L, 12, 16], [top('al-life', '4. Key life by altitude (avg ms, born to signed)', al, 'altitude', '', { metricCol: C.avg('duration_ms', 'ms') }), L, 12, 16]],
+    // 5. cost and latency by model and altitude
+    [[table('al-models', '5. Cost and latency by model and altitude', al, [['model', 'Model', 10], ['altitude', 'Altitude', 5]], [C.count('Calls'), C.sum('cost_usd', 'USD'), C.avg('latency_ms', 'Avg latency ms'), C.max('latency_ms', 'Max latency ms')], 'model:*'), L, 24, 13],
+     [overTime('al-latency', '5. Latency of each LLM call over time (avg ms)', al, 't', 'model', 'role:"llm call"', { interval: '1m', series: 'line', metricCol: C.avg('latency_ms', 'ms') }), L, 24, 13]],
+    // 6. mixing altitudes
+    [[top('al-mixing', '6. Mixing altitudes: reach exposure by unit (held, not needed)', al, 'unit.raw', 'reach_exposure:*', { size: 15, metricCol: C.max('reach_exposure', 'Exposure'), label: 'Unit' }), L, 24, 16],
+     [table('al-mixing-alt', '6. Reach by altitude: needed, held, exposed (avg)', al, [['altitude', 'Altitude', 5]], [C.avg('reach_needs', 'Needed'), C.avg('reach_held', 'Held'), C.avg('reach_exposure', 'Exposed'), C.count('Units')], 'reach_exposure:*'), L, 24, 16]],
+    // 7. retries
+    [[table('al-retries', '7. Retries: LLM calls by model, attempt and validity', al, [['model', 'Model', 6], ['attempt', 'Attempt', 5], ['valid', 'Valid', 3]], [C.count('Calls'), C.avg('latency_ms', 'Avg latency ms')], 'role:"llm call"'), L, 24, 14],
+     [donut('al-valid', '7. LLM calls: valid answers (false = retried)', al, 'valid', 'role:"llm call"'), L, 12, 14], [top('al-items', '7. Items that needed most attempts', al, 'item', 'role:"llm call"', { metricCol: C.max('attempt', 'Attempts'), size: 10 }), L, 12, 14]],
+], { from: '2026-11-11T00:00:00.000Z', to: 'now+1h', refresh: 60000 })
+
+// =====================================================================================================
+// 8. Elastic operations: who submits what (elastic.1 keeps the deployment)
+// =====================================================================================================
+const subs = DV['elastic-submissions'], every = DV['fringe-*,ptnews-*,websummit-*,swarm-*,agents-*']
+D.ops = dashboard('ops', 'Elastic operations: who submits what', 'For elastic.1 and Dinis: every submission by every agent (push or feed), what was held back by the privacy checks, which indices exist, who owns them and when each was last fed.', TAGS.swarm, [
+    [[md('ops-head', `## Elastic operations: who submits what\nAny agent submits to its own index with \`admin/tools/elastic-submit.mjs\` (push) or commits a JSON file with an \`elastic_feed\` header that elastic.1 sends each hour (feed); dashboards come from a spec in the agent's own path (\`admin/tools/elastic-dashboard.mjs\`). The rules: **docs/elastic-guidance.md**. A **held** document failed the privacy checks (an email, a phone, a key) and was not sent; **errors** are mapping rejections. Indices are \`<fringe|ptnews|websummit|swarm|agents>-<kind>\`, owned by the agent that created them.`), V, 48, 6]],
+    [[metric('ops-m1', 'Submissions', subs, C.count('Submissions')), L, 8, 6], [metric('ops-m2', 'Agents submitting', subs, C.unique('agent', 'Agents')), L, 8, 6], [metric('ops-m3', 'Documents sent', subs, C.sum('sent', 'Sent')), L, 8, 6],
+     [metric('ops-m4', 'Held back by the checks', subs, { ...C.sum('held', 'Held'), params: { emptyAsNull: false } }), L, 8, 6], [metric('ops-m5', 'Mapping errors', subs, { ...C.sum('errors', 'Errors'), params: { emptyAsNull: false } }), L, 8, 6],
+     [metric('ops-m6', 'Documents on Elastic', every, C.count('Documents')), L, 8, 6]],
+    [[overTime('ops-time', 'Submissions over time, by agent', subs, 't', 'agent', '', { interval: '1h' }), L, 32, 13], [donut('ops-via', 'Push or feed', subs, 'via'), L, 16, 13]],
+    [[table('ops-indices', 'Indices: documents, ingested by, last fed', every, [['_index', 'Index', 60], ['ingested_by', 'Ingested by', 3]], [C.count('Documents'), { ...C.max('ingested_at', 'Last fed'), dataType: 'date' }]), L, 32, 18],
+     [table('ops-owners', 'Submissions by agent and index', subs, [['agent', 'Agent', 20], ['index', 'Index', 30]], [C.count('Submissions'), C.sum('sent', 'Sent'), C.sum('held', 'Held'), C.sum('errors', 'Errors')]), L, 16, 18]],
+    [[search('ops-held', 'Submissions with documents held back or errors (look at these)', subs, ['agent', 'index', 'via', 'sent', 'held', 'errors', 'source'], 'held > 0 or errors > 0'), S, 48, 12]],
+    [[search('ops-all', 'Every submission, newest first', subs, ['agent', 'index', 'via', 'sent', 'held', 'errors', 'owner', 'source']), S, 48, 14]],
+], { from: 'now-7d', to: 'now', refresh: 60000 })
+
+// =====================================================================================================
+// 9. A1 calls, from OpenRouter (OTel traces via OpenRouter Broadcast; prompts kept out of every panel)
+// =====================================================================================================
+const otr = DV['traces-generic.otel-default'], GEN = 'name:"LLM Generation"', A = 'attributes.', OR = 'attributes.trace.metadata.openrouter.'
+D.openrouter = dashboard('openrouter', 'A1 calls, from OpenRouter', 'Every model call the swarm makes through the router (admin/tools/llm.mjs), as OpenRouter sees it: model, provider, tokens, cost, time to first token and latency. OpenTelemetry traces sent by OpenRouter Broadcast to Elastic. Prompts are in the traces by Dinis\'s decision, and on no panel here: read them in Discover by drill-down.', TAGS.swarm, [
+    [[md('or-head', `## A1 calls, from OpenRouter\nEvery model call the swarm makes through the router (\`admin/tools/llm.mjs\`) is an **A1 unit** in the altitudes. Here it is from the **provider's side**: OpenRouter sends one OpenTelemetry trace per call to Elastic (Broadcast, \`service.name: openrouter\`): the model asked and served, the provider that answered, tokens, cost, time to first token and the router's own latency. The same calls are in our ledger and, when they are part of a run, in [The altitudes of execution, live](#/view/${uid('dash', 'altitudes')}).\n\nPrompts and completions are kept in the traces by Dinis's decision, and on **no panel here**: open a trace in Discover to read one.`), V, 48, 7]],
+    [[metric('or-m1', 'Model calls', otr, C.count('Calls'), GEN), L, 8, 6], [metric('or-m2', 'Cost (USD)', otr, C.sum(A + 'gen_ai.usage.total_cost', 'USD'), GEN), L, 8, 6],
+     [metric('or-m3', 'Tokens in', otr, C.sum(A + 'gen_ai.usage.input_tokens', 'Tokens in'), GEN), L, 8, 6], [metric('or-m4', 'Tokens out', otr, C.sum(A + 'gen_ai.usage.output_tokens', 'Tokens out'), GEN), L, 8, 6],
+     [metric('or-m5', 'Time to first token (avg ms)', otr, C.avg(OR + 'provider_time_to_first_token_ms', 'ms'), GEN), L, 8, 6], [metric('or-m6', "Router's own latency (avg ms)", otr, C.avg(OR + 'router_latency_ms', 'ms'), GEN), L, 8, 6]],
+    [[overTime('or-time', 'Calls over time, by model', otr, '@timestamp', A + 'gen_ai.request.model', GEN, { interval: 'auto' }), L, 32, 13], [donut('or-provider', 'Who served them (provider)', otr, OR + 'provider_name', GEN), L, 16, 13]],
+    [[top('or-cost', 'Cost by model (USD)', otr, A + 'gen_ai.request.model', GEN, { metricCol: C.sum(A + 'gen_ai.usage.total_cost', 'USD'), label: 'Model' }), L, 16, 13],
+     [top('or-ttft', 'Time to first token by model (avg ms)', otr, A + 'gen_ai.request.model', GEN, { metricCol: C.avg(OR + 'provider_time_to_first_token_ms', 'ms'), label: 'Model' }), L, 16, 13],
+     [donut('or-finish', 'How calls ended (finish reason)', otr, A + 'gen_ai.response.finish_reasons', GEN), L, 16, 13]],
+    [[table('or-table', 'Open-weight and frontier side by side: per model and provider', otr, [[A + 'gen_ai.request.model', 'Model', 15], [OR + 'provider_name', 'Provider', 10]],
+        [C.count('Calls'), C.sum(A + 'gen_ai.usage.total_cost', 'USD'), C.avg(A + 'gen_ai.usage.input_tokens', 'Avg tokens in'), C.avg(A + 'gen_ai.usage.output_tokens', 'Avg tokens out'), C.avg(OR + 'provider_time_to_first_token_ms', 'Avg TTFT ms'), C.avg(OR + 'router_latency_ms', 'Avg router ms')], GEN), L, 48, 13]],
+    [[search('or-calls', 'Each call, newest first (no prompt text: open one to read it)', otr, [A + 'gen_ai.request.model', OR + 'provider_name', A + 'gen_ai.usage.input_tokens', A + 'gen_ai.usage.output_tokens', A + 'gen_ai.usage.total_cost', OR + 'provider_time_to_first_token_ms', A + 'gen_ai.response.finish_reasons', 'trace_id'], GEN, '@timestamp'), S, 48, 16]],
+], { from: 'now-24h', to: 'now', refresh: 60000 })
+
 // ---------- build / import ----------
 const cmd = process.argv[2]
 fs.mkdirSync(path.dirname(OUT), { recursive: true })
 fs.writeFileSync(OUT, objects.map(o => JSON.stringify(o)).join('\n') + '\n')
 console.log(`${objects.length} saved objects (${Object.keys(D).length} dashboards) -> elastic/kibana/objects.ndjson`)
 if (cmd === 'import') {
-    const K = (process.env.KIBANA_URL || '').replace(/\/+$/, '')
-    if (!/^https:\/\//.test(K)) { console.error('KIBANA_URL is not set'); process.exit(1) }
-    const form = new FormData()
-    form.append('file', new Blob([fs.readFileSync(OUT)], { type: 'application/ndjson' }), 'objects.ndjson')
-    const r = await fetch(`${K}/api/saved_objects/_import?overwrite=true`, { method: 'POST', headers: { 'kbn-xsrf': 'true', ...auth() }, body: form })
-    const raw = await r.text(); let j = {}; try { j = JSON.parse(raw) } catch {}
-    if (!r.ok) console.log(raw.slice(0, 600))
-    console.log(`import: HTTP ${r.status}, success ${j.success}, ${j.successCount ?? 0} objects`)
-    for (const e of (j.errors || []).slice(0, 10)) console.log(`  ${e.type} ${e.id}: ${JSON.stringify(e.error).slice(0, 200)}`)
-    for (const [k, id] of Object.entries(D)) console.log(`  ${k}: ${K}/app/dashboards#/view/${id}`)
+    const j = await K.importObjects(process.env.KIBANA_URL)
+    for (const [k, id] of Object.entries(D)) console.log(`  ${k}: ${String(process.env.KIBANA_URL).replace(/\/+$/, '')}/app/dashboards#/view/${id}`)
     if (!j.success) process.exit(1)
 }
