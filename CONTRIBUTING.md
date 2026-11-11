@@ -1,24 +1,24 @@
 # Contributing to Lisbon Tech Fringe
 
-> The public CLAUDE.md: for people outside the team, and for their agents. Kept by architect.1.fringe@PrompTugal.dinis (work/40, brief 12), with outreach.1.fringe@PrompTugal.dinis. On the site at https://fringe.promptugal.news/guidance/. Written 11 November 2026.
+> The public CLAUDE.md: for people outside the team, and for their agents. Kept by architect.1.fringe@PrompTugal.dinis (work/40, brief 12), with outreach.1.fringe@PrompTugal.dinis. On the site at https://lisbontechfringe.com/guidance/. Written 11 November 2026.
 
-**Lisbon Tech Fringe** (https://fringe.promptugal.news) is an independent guide to the alternative, community and side events around Web Summit Lisbon this week. It is **independent of Web Summit** and not run by its organisers; for anything official, see the organisers' own site. It is built in the open by a swarm of AI agents, one conductor per person, with Dinis Cruz as head conductor.
+**Lisbon Tech Fringe** (https://lisbontechfringe.com) is an independent guide to the alternative, community and side events around Web Summit Lisbon this week. It is **independent of Web Summit** and not run by its organisers; for anything official, see the organisers' own site. It is built in the open by a swarm of AI agents, one conductor per person, with Dinis Cruz as head conductor.
 
 You can help in four ways, from easiest to most involved.
 
 ## 1. Send an event or a correction
 
-Use the form at https://fringe.promptugal.news/tip/. What you send is sealed in your browser to a write-only lane: only the team's agents can open it. Before anything is published, it is checked against the organiser's own public page. **Your contact details are never published.**
+Use the form at https://lisbontechfringe.com/tip/. What you send is sealed in your browser to a write-only lane: only the team's agents can open it. Before anything is published, it is checked against the organiser's own public page. **Your contact details are never published.**
 
 ## 2. Send a design
 
 Design the site your way. Two routes:
-- **A folder:** a pull request adding `designs/<your-slug>/` with `design.json` and `index.html` (HTML and CSS only; it reads the public data at `/api/v1/`). The build puts it at `/designs/<your-slug>/`. The rules and checks are on https://fringe.promptugal.news/designs/.
+- **A folder:** a pull request adding `designs/<your-slug>/` with `design.json` and `index.html` (HTML and CSS only; it reads the public data at `/api/v1/`). The build puts it at `/designs/<your-slug>/`. The rules and checks are on https://lisbontechfringe.com/designs/.
 - **A link:** a hosted mock, sent through the tip form. It is listed with your name only if you agree.
 
 ## 3. Join the team with your own agent
 
-Read https://fringe.promptugal.news/join/ and `JOIN.md`. Your conductor (an AI agent in your own Claude account) reads `CLAUDE.md`, `SWARM.md` and the board (`work/`), makes its own session key, writes its own status file in `team/<you>/`, and picks an item. Ask Dinis for push access first; until then, use a pull request.
+Read https://lisbontechfringe.com/join/ and `JOIN.md`. Your conductor (an AI agent in your own Claude account) reads `CLAUDE.md`, `SWARM.md` and the board (`work/`), makes its own session key, writes its own status file in `team/<you>/`, and picks an item. Ask Dinis for push access first; until then, use a pull request.
 
 ## 4. A pull request
 
@@ -57,7 +57,7 @@ If you run an agent on this repository, it holds this licence:
 - **Identity:** name your agent `<role>@<your-handle>` and say it in your commits' `Agent:` trailer.
 - **Accountable owner:** you. The lead reviews; Dinis decides.
 
-Every team agent's own ABP is in `abp/` and on https://fringe.promptugal.news/abp/.
+Every team agent's own ABP is in `abp/` and on https://lisbontechfringe.com/abp/.
 
 ## Talking to the team
 
