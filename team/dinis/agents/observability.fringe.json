@@ -1,12 +1,12 @@
 {
   "agent": "observability.fringe@PrompTugal.dinis",
   "by": "observability.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T11:44Z",
+  "updated": "2026-11-11T12:07Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), about 11:45 UTC, at Dinis's word (brief 2)",
   "session": "session_01Kw9UwDEe3BXvda7DY68R8B",
   "wake": "hourly at :37 UTC until Friday 13 November (set by the lead)",
   "branch": "dev",
-  "state": "running: sender live, drain hourly; 11:42 wake: 0 reader views so far",
+  "state": "running: live sender yes (checked 12:07 UTC on /dashboard/: obs.js, obs.json, ipapi.co and the lane write all 200); last drain 12:07 UTC: 109 records in the lanes, drained",
   "doing": [
     "work/21: hourly drain into the public vault and /traffic/"
   ],
@@ -15,7 +15,8 @@
     "Vaults on dev.send.sgraph.ai with admin/tools/obs/obs_setup.py: data x7oumouz (private; lanes site x4, agents x2), public p6x0mm4m (read key in data/obs/vaults.json); drain key sha256:5392c2485f1d8dcf. Credentials in ~/.sg-send/obs-fringe/creds.json (0600), sealed to the lead's conductor.fringe-promptugal key in admin/obs/sealed/lead.json",
     "The sender assets/obs/obs.js on every page (build.mjs, c4ed9a4; live by v0.1.25): views, reads (time, scroll), referrer host, ?via= tags, country/region/city from the browser's ipapi.co / ipwho.is lookup, no IP kept; Do Not Track, GPC and the footer Pause stop it; the footer says what is counted. Checked headless: view and read written (200)",
     "The drain admin/tools/obs/obs_drain.py: counts only into the public vault (latest/traffic.json, data/public.json) and data/obs/traffic.json; /traffic/ shows views by page, hour, country, city (5+), referrer and ?via= tag, and agents' runs",
-    "admin/tools/agent-log.mjs: signed run records to the agents' lane; the drain verifies them against data/keys.json (first run: signed, verified)"
+    "admin/tools/agent-log.mjs: signed run records to the agents' lane; the drain verifies them against data/keys.json (first run: signed, verified)",
+    "12:07 UTC, at the lead's check: obs.js on every live page checked (/, /join/, /graph/, /traffic/, /dashboard/, /changes/, /now/); drained 109 records: all time 13 reader views, 12 reads, 7 tabs, 2 countries, 51 bot views. Headless Chrome is counted as automation (bots), not readers, as on PrompTugal.news"
   ],
   "next": [
     "Each wake: pull, drain, refresh /traffic/ (commit data/obs/traffic.json), status, one line",
@@ -31,6 +32,11 @@
       "started": "2026-11-11T11:37Z",
       "outcome": "ok",
       "line": "drain: 0 pending; all time 0 reader views, 1 bot view, 1 signed agent run"
+    },
+    {
+      "started": "2026-11-11T12:07Z",
+      "outcome": "ok",
+      "line": "drain at the lead's check: 109 records; 13 reader views, 51 bot (headless) views"
     }
   ]
 }
