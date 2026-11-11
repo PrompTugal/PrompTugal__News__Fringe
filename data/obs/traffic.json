@@ -5,18 +5,18 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-11T14:28Z",
+ "generated": "2026-11-11T14:29Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 425,
-  "reads": 191,
-  "tabs": 109,
+  "views": 432,
+  "reads": 192,
+  "tabs": 110,
   "countries": 13,
-  "shares": 83,
-  "bots": 224,
+  "shares": 84,
+  "bots": 226,
   "agent_runs": 41,
   "agent_runs_signed": 40
  },
@@ -211,13 +211,13 @@
   ],
   [
    "2026-11-11 14:00",
-   200
+   207
   ]
  ],
  "by_page": [
   [
    "/",
-   98
+   99
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
@@ -244,12 +244,12 @@
    6
   ],
   [
-   "/e/2026-11-11-founderlink-storm-summit-afternoon/",
+   "/traffic/",
    6
   ],
   [
-   "/traffic/",
-   5
+   "/e/2026-11-11-founderlink-storm-summit-afternoon/",
+   6
   ],
   [
    "/how/",
@@ -1078,12 +1078,32 @@
   [
    "/o/side-events-guide/",
    1
+  ],
+  [
+   "/t/growth-product/",
+   1
+  ],
+  [
+   "/changes/v0.1.149/",
+   1
+  ],
+  [
+   "/changes/v0.1.197/",
+   1
+  ],
+  [
+   "/changes/v0.1.142/",
+   1
+  ],
+  [
+   "/tip/",
+   1
   ]
  ],
  "reading": [
   [
    "/",
-   85,
+   86,
    30,
    12
   ],
@@ -1349,7 +1369,7 @@
  "by_country": [
   [
    "United States",
-   221
+   227
   ],
   [
    "Portugal",
@@ -1361,7 +1381,7 @@
   ],
   [
    "United Kingdom",
-   11
+   12
   ],
   [
    "Germany",
@@ -1403,7 +1423,7 @@
  "by_city": [
   [
    "San Jose, United States",
-   174
+   180
   ],
   [
    "Lisbon, Portugal",
@@ -1427,42 +1447,42 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   57
+   58
   ]
  ],
  "by_referrer": [],
  "by_host": [
   [
    "lisbontechfringe.com",
-   386
+   393
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 450,
+ "other_hosts_views": 459,
  "by_via": [
   [
    "whatsapp",
-   83
+   84
   ]
  ],
  "via_detail": {
   "whatsapp": {
-   "views": 83,
-   "tabs": 44,
+   "views": 84,
+   "tabs": 45,
    "countries": 8
   }
  },
  "by_screen": [
   [
    "phone",
-   216
+   218
   ],
   [
    "desktop",
-   205
+   210
   ],
   [
    "tablet",
@@ -1520,7 +1540,7 @@
   ]
  ],
  "flows": {
-  "tabs": 109,
+  "tabs": 110,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
@@ -1528,13 +1548,13 @@
    ],
    [
     "shared link (?via=)",
-    44
+    45
    ]
   ],
   "entry_pages": [
    [
     "/",
-    80
+    81
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
@@ -1596,7 +1616,7 @@
   "exit_pages": [
    [
     "/",
-    61
+    62
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
@@ -1760,7 +1780,7 @@
   "pages_per_tab": [
    [
     "1",
-    72
+    73
    ],
    [
     "2",
@@ -1783,7 +1803,7 @@
   "via_reached": [
    [
     "whatsapp: /",
-    44
+    45
    ],
    [
     "whatsapp: /now/",
@@ -1822,15 +1842,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
-    1
-   ],
-   [
-    "whatsapp: /e/2026-11-11-ai-horizon-conference/",
-    1
-   ],
-   [
     "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    1
+   ],
+   [
+    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
     1
    ],
    [
@@ -1838,7 +1854,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-tech-startups-on-the-rooftop/",
+    "whatsapp: /e/2026-11-11-ai-horizon-conference/",
     1
    ],
    [
@@ -1847,6 +1863,10 @@
    ],
    [
     "whatsapp: /e/2026-11-11-lisboaux-web-summit-edition/",
+    1
+   ],
+   [
+    "whatsapp: /e/2026-11-11-tech-startups-on-the-rooftop/",
     1
    ],
    [
@@ -1868,7 +1888,7 @@
   "towns": [
    {
     "name": "San Jose, United States",
-    "views": 174,
+    "views": 180,
     "lat": 37.3,
     "lon": -121.9
    },
