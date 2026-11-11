@@ -38,6 +38,27 @@ export const VERBS = {
   registerOn: ['event', 'platform'],  // where you register: the host of the event's own URL (brief 13 addendum)
 };
 
+// The grammar (Fractal Semantic Graphs, Dinis Cruz, newsroom.sgit.ai, read 2026-11-11 16:56 UTC): every edge is a verb,
+// stated in both directions, with an inverse a person would say; no relates_to. The verb ids above stay as they are
+// (the API and /data/'s queries use them); this adds how each reads forwards and back.
+export const GRAMMAR = {
+  hasEvent:     { says: 'holds',                   inverse: 'is held under' },
+  lists:        { says: 'lists in its feed',       inverse: 'is listed in the feed of' },
+  runs:         { says: 'runs',                    inverse: 'is run by' },
+  coRuns:       { says: 'co-runs',                 inverse: 'is co-run by' },
+  hosts:        { says: 'hosts the venue of',      inverse: 'is hosted by' },
+  supports:     { says: 'supports',                inverse: 'is supported by' },
+  runsFestival: { says: 'runs the festival',       inverse: 'is a festival run by' },
+  partOf:       { says: 'is a programme of',       inverse: 'has the programme' },
+  onDay:        { says: 'happens on',              inverse: 'has on it' },
+  at:           { says: 'happens in',              inverse: 'is where it happens:' },
+  forPersona:   { says: 'is for',                  inverse: 'can go to' },
+  about:        { says: 'is about',                inverse: 'is the topic of' },
+  hasSession:   { says: 'has on its agenda',       inverse: 'is a session of' },
+  registerOn:   { says: 'takes registrations on',  inverse: 'is where you register for' },
+};
+for (const [v, [from, to]] of Object.entries(VERBS)) Object.assign(GRAMMAR[v], { from, to });
+
 // The registration platform, from the host of the event's url. Anything else is the organiser's own site.
 const PLATFORMS = [['luma', 'Luma', /(^|\.)(lu\.ma|luma\.com)$/], ['meetup', 'Meetup', /(^|\.)meetup\.com$/], ['eventbrite', 'Eventbrite', /(^|\.)eventbrite\./],
   ['partiful', 'Partiful', /(^|\.)partiful\.com$/]];

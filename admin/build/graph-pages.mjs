@@ -2,13 +2,13 @@
 // Every entity gets a page that links to all its neighbours; organisers are the stars (brief 13).
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { buildModel, TYPES, VERBS, PREFIX, pathOf } from './graph-model.mjs';
+import { buildModel, TYPES, VERBS, GRAMMAR, PREFIX, pathOf } from './graph-model.mjs';
 
 const CSS = `.gx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:.6rem;margin:.6rem 0}
 .gx-star{border:1px solid var(--line,#ddd);border-radius:10px;padding:.7rem .8rem;display:block;text-decoration:none;color:inherit}
 .gx-star strong{display:block;font-size:1.05em}.gx-star .n{font-size:1.6em;font-weight:700;line-height:1}
 .gx-chips a{display:inline-block;margin:.15rem .25rem .15rem 0;padding:.1rem .55rem;border:1px solid var(--line,#ddd);border-radius:99px;text-decoration:none;font-size:.9em}
-.gx-ev li{margin:.25rem 0}.gx-up{font-size:.9em}`;
+.gx-ev li{margin:.25rem 0}.gx-gram{border-collapse:collapse;font-size:.9em;display:block;overflow-x:auto}.gx-gram td,.gx-gram th{padding:.25rem .5rem;border-bottom:1px solid var(--line,#ddd);text-align:left;vertical-align:top}.gx-up{font-size:.9em}`;
 
 export function writeGraph({ root, out, events, page, esc, eventPath, hasPage, SITE, VERSION, BUILT }) {
   const m = buildModel(root, events);
@@ -106,6 +106,8 @@ ${later.length ? `<h2>The rest of the week: ${later.length}</h2>${evList(later)}
   write('graph/types', 'The graph, by type', `<h1>The graph, by type</h1><p>Every thing on the site is linked to everything it touches. Who are you? ${chips('persona', m.personas.map((p) => p.id))}</p>
 <h2>Days</h2>${chips('day', m.days.map((d) => d.id))}${m.sessions.length ? `<h2>Events with an agenda</h2>${chips('event', [...new Set(m.sessions.map((x) => x.event))])}` : ''}<h2>Festivals</h2>${chips('festival', m.festivals.map((f) => f.id))}<h2>Organisers</h2><p><a href="/o/">All ${m.organisers.length}</a></p>
 <h2>Places</h2>${chips('place', m.places.map((p) => p.id))}<h2>Where you register</h2>${chips('platform', m.platforms.map((r) => r.id))}<h2>Topics</h2>${chips('topic', m.topics.map((t) => t.id))}
+<h2>The grammar</h2><p class="muted">Every link is a verb, read both ways; nothing merely "relates to" anything (the five rules of <a href="https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html">fractal semantic graphs</a>). Every link that comes from an event carries that event's page and the time it was read.</p>
+<table class="gx-gram"><thead><tr><th>A …</th><th>verb</th><th>a …</th><th>read back</th><th>links</th></tr></thead><tbody>${Object.entries(GRAMMAR).map(([v, g]) => `<tr><td>${esc(g.from)}</td><td><strong>${esc(g.says)}</strong> <code>${esc(v)}</code></td><td>${esc(g.to)}</td><td>${esc(g.to)} <em>${esc(g.inverse)}</em> ${esc(g.from)}</td><td>${m.links.filter((l) => l.verb === v).length}</td></tr>`).join('')}</tbody></table>
 <h2>As data</h2><ul>${TYPES.map((t) => `<li><a href="/api/v1/graph/${t}.json">/api/v1/graph/${t}.json</a></li>`).join('')}<li><a href="/api/v1/graph/links.json">/api/v1/graph/links.json</a> (every typed link)</li></ul>`,
   'Lisbon Tech Fringe as a semantic graph: days, festivals, organisers, events, places, personas and topics.');
 
@@ -114,8 +116,8 @@ ${later.length ? `<h2>The rest of the week: ${later.length}</h2>${evList(later)}
   const head = (t) => ({ about: `Lisbon Tech Fringe semantic graph (work/42): ${t}. Derived from data/events.json at build time; organisations only; no contact details. Independent of Web Summit.`, site: SITE, version: VERSION, built_at: BUILT, type: t });
   const withPage = (x) => ({ ...x, page: SITE + pathOf(x.type, x.id).slice(1) });
   for (const t of TYPES) writeFileSync(join(out, 'api', 'v1', 'graph', `${t}.json`), JSON.stringify({ ...head(t), [t]: m[t].map((x) => (t === 'events' ? { ...x, page: (() => { const s = events.find((e) => e.id === x.id); return s && hasPage(s) ? SITE + eventPath(s).slice(1) : x.url; })() } : withPage(x))) }, null, 1) + '\n');
-  writeFileSync(join(out, 'api', 'v1', 'graph', 'links.json'), JSON.stringify({ ...head('links'), verbs: VERBS, links: m.links }, null, 1) + '\n');
-  writeFileSync(join(out, 'api', 'v1', 'graph', 'index.json'), JSON.stringify({ ...head('index'), types: Object.fromEntries([...TYPES, 'links'].map((t) => [t, { url: `${SITE}api/v1/graph/${t}.json`, count: (m[t] || []).length }])), verbs: VERBS, pages: Object.fromEntries(Object.entries(PREFIX).map(([k, p]) => [k, `/${p}/<id>/`])) }, null, 1) + '\n');
+  writeFileSync(join(out, 'api', 'v1', 'graph', 'links.json'), JSON.stringify({ ...head('links'), verbs: VERBS, grammar: GRAMMAR, links: m.links }, null, 1) + '\n');
+  writeFileSync(join(out, 'api', 'v1', 'graph', 'index.json'), JSON.stringify({ ...head('index'), types: Object.fromEntries([...TYPES, 'links'].map((t) => [t, { url: `${SITE}api/v1/graph/${t}.json`, count: (m[t] || []).length }])), verbs: VERBS, grammar: GRAMMAR, pages: Object.fromEntries(Object.entries(PREFIX).map(([k, p]) => [k, `/${p}/<id>/`])) }, null, 1) + '\n');
   // The event page's row of links to every neighbour (organiser, umbrella, day, place, platform, persona, topic).
   const eventLinks = (id) => {
     const e = B.events.get(id); if (!e) return '';

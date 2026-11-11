@@ -1,6 +1,6 @@
 {
  "about": "Sessions inside an event (work/42): the timed agenda its own public page publishes, title and time only. Never a speaker's name: a session is about the talk, not a person. The page notes 'Agenda timings and sessions may be subject to change'. Lisbon is on UTC in November.",
- "updated": "2026-11-11T15:56Z",
+ "updated": "2026-11-11T16:57Z",
  "by": "ontologist.1.fringe@PrompTugal.dinis",
  "events_read": [
   {
@@ -22,6 +22,48 @@
    "read_at": "2026-11-11T15:56:00Z",
    "sessions": 0,
    "note": "only the day's hours (8:00 to 20:00); no timed agenda"
+  },
+  {
+   "event": "2026-11-11-valois-allocator-residence",
+   "url": "https://luma.com/k0zamjmi",
+   "read_at": "2026-11-11T16:57:00Z",
+   "sessions": 12,
+   "note": "the page gives start times only: each session ends when the next begins; the last ends at the event's listed end (20:00). Read-outs run from 16:35 to the party at 18:00 (label evidence: the page leaves the end open)."
+  },
+  {
+   "event": "2026-11-11-side-events-guide-irl",
+   "url": "https://luma.com/4fbc1s24",
+   "read_at": "2026-11-11T16:57:00Z",
+   "sessions": 0,
+   "note": "no timed agenda on the page"
+  },
+  {
+   "event": "2026-11-12-eit-jumpstarter-2026-awards-ceremony-web-summi",
+   "url": "https://luma.com/a2ue9hpo",
+   "read_at": "2026-11-11T16:57:00Z",
+   "sessions": 0,
+   "note": "no timed agenda on the page"
+  },
+  {
+   "event": "2026-11-12-moon-summit-web-summit-closing-night",
+   "url": "https://luma.com/1tggnm7t",
+   "read_at": "2026-11-11T16:57:00Z",
+   "sessions": 0,
+   "note": "no timed agenda on the page"
+  },
+  {
+   "event": "2026-11-11-tti-at-web-summit-what-s-next-at-the-ai-fronti",
+   "url": "https://luma.com/3504dzdm",
+   "read_at": "2026-11-11T16:57:00Z",
+   "sessions": 0,
+   "note": "no timed agenda on the page"
+  },
+  {
+   "event": "2026-11-12-yorkseed-grand-finale-web-summit-2026",
+   "url": "https://luma.com/i7llsb2c",
+   "read_at": "2026-11-11T16:57:00Z",
+   "sessions": 0,
+   "note": "no timed agenda on the page"
   }
  ],
  "sessions": [
@@ -276,6 +318,138 @@
    "end": "2026-11-13T19:30:00Z",
    "url": "https://luma.com/lisbon-community-week-2026",
    "read_at": "2026-11-11T15:56:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-11-valois-allocator-residence--1200",
+   "event": "2026-11-11-valois-allocator-residence",
+   "name": "Doors, coffee and food",
+   "kind": "break",
+   "start": "2026-11-11T12:00:00Z",
+   "end": "2026-11-11T12:30:00Z",
+   "url": "https://luma.com/k0zamjmi",
+   "read_at": "2026-11-11T16:57:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-11-valois-allocator-residence--1230",
+   "event": "2026-11-11-valois-allocator-residence",
+   "name": "Welcome",
+   "kind": "talk",
+   "start": "2026-11-11T12:30:00Z",
+   "end": "2026-11-11T12:45:00Z",
+   "url": "https://luma.com/k0zamjmi",
+   "read_at": "2026-11-11T16:57:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-11-valois-allocator-residence--1245",
+   "event": "2026-11-11-valois-allocator-residence",
+   "name": "Topic market",
+   "kind": "unconference",
+   "start": "2026-11-11T12:45:00Z",
+   "end": "2026-11-11T13:15:00Z",
+   "url": "https://luma.com/k0zamjmi",
+   "read_at": "2026-11-11T16:57:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-11-valois-allocator-residence--1315",
+   "event": "2026-11-11-valois-allocator-residence",
+   "name": "The board goes up",
+   "kind": "unconference",
+   "start": "2026-11-11T13:15:00Z",
+   "end": "2026-11-11T13:30:00Z",
+   "url": "https://luma.com/k0zamjmi",
+   "read_at": "2026-11-11T16:57:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-11-valois-allocator-residence--1330",
+   "event": "2026-11-11-valois-allocator-residence",
+   "name": "Round 1",
+   "kind": "unconference",
+   "start": "2026-11-11T13:30:00Z",
+   "end": "2026-11-11T14:15:00Z",
+   "url": "https://luma.com/k0zamjmi",
+   "read_at": "2026-11-11T16:57:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-11-valois-allocator-residence--1415",
+   "event": "2026-11-11-valois-allocator-residence",
+   "name": "Break",
+   "kind": "break",
+   "start": "2026-11-11T14:15:00Z",
+   "end": "2026-11-11T14:30:00Z",
+   "url": "https://luma.com/k0zamjmi",
+   "read_at": "2026-11-11T16:57:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-11-valois-allocator-residence--1430",
+   "event": "2026-11-11-valois-allocator-residence",
+   "name": "Round 2",
+   "kind": "unconference",
+   "start": "2026-11-11T14:30:00Z",
+   "end": "2026-11-11T15:15:00Z",
+   "url": "https://luma.com/k0zamjmi",
+   "read_at": "2026-11-11T16:57:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-11-valois-allocator-residence--1515",
+   "event": "2026-11-11-valois-allocator-residence",
+   "name": "Break",
+   "kind": "break",
+   "start": "2026-11-11T15:15:00Z",
+   "end": "2026-11-11T15:30:00Z",
+   "url": "https://luma.com/k0zamjmi",
+   "read_at": "2026-11-11T16:57:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-11-valois-allocator-residence--1530",
+   "event": "2026-11-11-valois-allocator-residence",
+   "name": "Round 3",
+   "kind": "unconference",
+   "start": "2026-11-11T15:30:00Z",
+   "end": "2026-11-11T16:15:00Z",
+   "url": "https://luma.com/k0zamjmi",
+   "read_at": "2026-11-11T16:57:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-11-valois-allocator-residence--1615",
+   "event": "2026-11-11-valois-allocator-residence",
+   "name": "Prepare the read-outs",
+   "kind": "unconference",
+   "start": "2026-11-11T16:15:00Z",
+   "end": "2026-11-11T16:35:00Z",
+   "url": "https://luma.com/k0zamjmi",
+   "read_at": "2026-11-11T16:57:00Z",
+   "label": "fact"
+  },
+  {
+   "id": "2026-11-11-valois-allocator-residence--1635",
+   "event": "2026-11-11-valois-allocator-residence",
+   "name": "Read-outs",
+   "kind": "talk",
+   "start": "2026-11-11T16:35:00Z",
+   "end": "2026-11-11T18:00:00Z",
+   "url": "https://luma.com/k0zamjmi",
+   "read_at": "2026-11-11T16:57:00Z",
+   "label": "evidence"
+  },
+  {
+   "id": "2026-11-11-valois-allocator-residence--1800",
+   "event": "2026-11-11-valois-allocator-residence",
+   "name": "After-work party",
+   "kind": "party",
+   "start": "2026-11-11T18:00:00Z",
+   "end": "2026-11-11T20:00:00Z",
+   "url": "https://luma.com/k0zamjmi",
+   "read_at": "2026-11-11T16:57:00Z",
    "label": "fact"
   }
  ]
