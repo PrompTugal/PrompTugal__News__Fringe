@@ -1,0 +1,59 @@
+{
+  "about": "The sites whose public repositories go to Elastic Cloud, and what of each (Dinis, 11 November 2026, 17:3x UTC: 'create a dashboard and data set for the main PrompTugal website, and also one for the Web Summit site'). Read by admin/tools/elastic-sites.mjs. Kept by elastic.1.fringe@PrompTugal.dinis.",
+  "never": "people profiles (data/people, people/), mail (comms/), meetings, sealed data, inboxes, CRM, cast and team rosters, outreach desks, keys files: excluded by path; contact-named fields dropped; a value that looks like an email, a phone or a key is redacted in text and fails a document elsewhere.",
+  "exclude_always": ["^people/", "^data/people/", "^comms/", "^data/meetings/", "^data/sealed/", "^data/inbox", "inbox", "^desks/outreach/", "crm", "^data/cast\\.json$", "^data/team\\.json$", "keys\\.json$", "^team/mentors/", "^node_modules/", "^_site/", "^assets/"],
+  "sites": {
+    "fringe": {
+      "name": "Lisbon Tech Fringe",
+      "url": "https://lisbontechfringe.com",
+      "repo": "PrompTugal/PrompTugal__News__Fringe",
+      "dir": "~/promptugal/PrompTugal__News__Fringe",
+      "content": ["^briefs/.*\\.md$", "^docs/.*\\.md$", "^work/.*\\.md$", "^security/.*\\.md$", "^abp/reviews/.*\\.md$", "^advice/.*\\.md$", "^[A-Z][A-Z-]+\\.md$", "^api/.*\\.md$"],
+      "entities": [
+        { "file": "data/places.json", "list": "places", "type": "place" },
+        { "file": "data/organisers.json", "list": "organisers", "type": "organiser" },
+        { "file": "data/communities.json", "list": "communities", "type": "community" },
+        { "file": "data/runtimes.json", "list": "*", "type": "runtime" },
+        { "file": "data/work-altitudes.json", "list": "*", "type": "work-altitude" }
+      ],
+      "status": ["^team/[^/]+/status\\.json$", "^team/[^/]+/agents/[^/]+\\.json$"],
+      "runs": []
+    },
+    "ptnews": {
+      "name": "PrompTugal.news",
+      "url": "https://promptugal.news",
+      "repo": "PrompTugal/PrompTugal__News__Website",
+      "dir": "~/promptugal/PrompTugal__News__Website",
+      "content": ["^content/.*\\.md$", "^articles/.*\\.md$", "^newsroom/.*\\.md$", "^desks/.*\\.md$", "^board/guidance/.*\\.md$", "^board/abp/.*\\.md$", "^[A-Z][A-Z-]+\\.md$"],
+      "entities": [
+        { "glob": "^data/stories/[^/]+/story\\.json$", "type": "story" },
+        { "glob": "^data/companies/[^/]+/company\\.json$", "type": "company" },
+        { "glob": "^data/organisations/[^/]+/organisation\\.json$", "type": "organisation" },
+        { "glob": "^data/events/[^/]+/event\\.json$", "type": "event" },
+        { "glob": "^data/places/[^/]+/place\\.json$", "type": "place" },
+        { "glob": "^data/evidence/[^/]+/[^/]+\\.json$", "type": "evidence" }
+      ],
+      "status": ["^board/team/[^/]+/status\\.json$"],
+      "runs": ["^board/runs/[^/]+/[^/]+\\.json$"]
+    },
+    "websummit": {
+      "name": "Web Summit (web-summit.sgit.ai)",
+      "url": "https://web-summit.sgit.ai",
+      "repo": "SGit-AI/SGit-AI__Website__Web-Summit",
+      "dir": "~/promptugal/SGit-AI__Website__Web-Summit",
+      "content": ["^content/.*\\.md$", "^articles/.*\\.md$", "^team/.*\\.md$", "^board/.*\\.md$", "^agent/.*\\.md$", "^admin/.*\\.md$", "^[A-Z][A-Z-]+\\.md$"],
+      "entities": [
+        { "file": "data/events.json", "list": "sessions", "type": "session" },
+        { "file": "data/events.json", "list": "side_events", "type": "side-event" },
+        { "file": "data/events.json", "list": "news", "type": "news" },
+        { "file": "data/companies.json", "list": "companies", "type": "company" },
+        { "file": "data/channels.json", "list": "channels", "type": "channel" },
+        { "file": "data/plan.json", "list": "phases", "type": "plan-phase" },
+        { "file": "data/plan.json", "list": "decisions", "type": "decision" },
+        { "glob": "^data/xray/[^/]+/[^/]+/[^/]+\\.json$", "type": "xray", "only": ["subject", "kind", "slug", "run_at", "cost_usd", "note"] }
+      ],
+      "status": ["^team/[^/]+/status\\.json$"],
+      "runs": ["^team/[^/]+/wakes/[^/]+\\.json$", "@data/log.json#entries"]
+    }
+  }
+}
