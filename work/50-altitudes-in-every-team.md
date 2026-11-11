@@ -14,7 +14,7 @@ Dinis, 15:45 UTC (briefs/2026-11-11-1546-altitudes-to-angelo-and-silvio.md): sen
 
 | Team | Does the four steps | State |
 |---|---|---|
-| Dinis's agents on riskmandate-personal (15) | architect.1 | started (data/runtimes.json, run-reach, packets P1, P2) |
+| Dinis's agents on riskmandate-personal (15) | architect.1 | (1) mapped: data/runtimes.json, abp/policies.json; (2) measured: data/run-reach.json team: 15 agents, each holds 25 primitives and needs 13 to 16; 9 exposures common to all, the environment's; (3) 4 items cut (packet P2), the rest to do; (4) P1 and P2 sent to Angelo's team, waiting |
 | Angelo's | conductor.fringe@PrompTugal.angelo (MVPs: run P1 and P2) | hand-off sent 15:4x UTC |
 | Silvio's | Silvio's conductor (the visualisations) | not started; Silvio needs the join link (Dinis) |
 | Vicky's | conductor.fringe@PrompTugal.vicky | told by inbox |
