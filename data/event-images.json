@@ -3,7 +3,7 @@
  "images": [
   {
    "event_id": "2026-11-11-storm-summit-stormsummit-app",
-   "vault_id": "9cf4rcf3",
+   "vault_id": "mu9y0eqq",
    "path": "2026-11-11-storm-summit-stormsummit-app.png",
    "sha256": "197bd3839b671803c90e9dd124ba21edc7243e681f32aafb7b25386775c7c240",
    "bytes": 113776,
@@ -14,8 +14,8 @@
    "captured_at": "2026-11-11T14:03:39Z"
   }
  ],
- "updated": "2026-11-11T16:23Z",
+ "updated": "2026-11-11T16:26Z",
  "vaults": [
-  "9cf4rcf3"
+  "mu9y0eqq"
  ]
 }

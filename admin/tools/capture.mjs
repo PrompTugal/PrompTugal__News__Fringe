@@ -19,11 +19,13 @@ const HOST = 'https://dev.send.sgraph.ai', SITE = JSON.parse(fs.readFileSync(pat
 const SITE_HOST = new URL(SITE).hostname;   // the origin comes from admin/site.json (architect's note, 13:47 UTC)
 const sha = b => crypto.createHash('sha256').update(b).digest('hex');
 const iso = () => new Date().toISOString().replace(/\.\d+Z$/, 'Z');
-const blocked = u => /(^|\.)websummit\.com$/i.test(new URL(u).hostname);
+// HARD BLOCK (lead, 16:2x UTC, work/49): Luma's Terms (6 Oct 2026) forbid the republication or reproduction of its images and content.
+// Nothing is captured from luma.com, lu.ma or lumacdn.com, nor from Meetup, Eventbrite, Partiful or websummit.com.
+const blocked = u => /(^|\.)(websummit\.com|luma\.com|lu\.ma|lumacdn\.com|meetup\.com|eventbrite\.[a-z.]+|partiful\.com)$/i.test(new URL(u).hostname);
 // PRIVACY (lead, 12:4x UTC, security finding 21): organiser pages show guest lists (private people's names and faces).
 // Only hosts that sources.md marks as machine-readable ("Yes"): Luma event pages. Meetup is on hold. Every event
 // screenshot hides images and is cropped to the header; page text stops at the first guest/host marker.
-const ALLOW_EVENT_HOSTS = new Set(['luma.com', 'lu.ma']);
+const ALLOW_EVENT_HOSTS = new Set([]);   // organiser-page screenshots are off until Dinis decides (terms of each organiser's site unchecked)
 const MARKERS = /(hosted by|hosts?\b\s*$|\bgoing\b|attendees|guests|who'?s going|\d+\s+(going|guests)|see all|featured in)/i;
 const cutText = t => { const m = MARKERS.exec(t); return m ? t.slice(0, m.index).trimEnd() : t; };
 const RETAIN_UNTIL = Date.parse('2026-11-14T00:00:00Z');   // events' captures are deleted after 13 November

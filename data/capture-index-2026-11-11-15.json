@@ -3,11 +3,11 @@
  "captured_at": "2026-11-11T15:25:50Z",
  "finished_at": "2026-11-11T15:27:41Z",
  "vault": {
-  "id": "b1pw4zrm",
+  "id": "to3xs2w3",
   "host": "https://dev.send.sgraph.ai"
  },
- "count": 32,
- "ok": 32,
+ "count": 28,
+ "ok": 28,
  "captures": [
   {
    "site": "lisbontechfringe.com",
@@ -652,110 +652,6 @@
      "sha256": "857a4112c9793c9b99d24a3a1ee7acb644bb62cd4fff2743c4ef003198aafbf0"
     }
    }
-  },
-  {
-   "site": "luma.com",
-   "url": "https://luma.com/vvsqs244",
-   "width": 1280,
-   "captured_at": "2026-11-11T15:27:01Z",
-   "http_status": 200,
-   "error": null,
-   "files": {
-    "screenshot": {
-     "path": "2026-11-11/15/luma.com/luma-com-vvsqs244-1280.jpg",
-     "sha256": "065c87c23f5be790741be67e941b56723e9c0ee32da0b13696f67c2a5f3969d4",
-     "bytes": 24751
-    },
-    "text": {
-     "path": "2026-11-11/15/luma.com/luma-com-vvsqs244-1280.txt",
-     "sha256": "1176c8283495693dc1ef5722369479b384fe2f16a46a570e58e0a43facb7711e"
-    },
-    "fields": {
-     "path": "2026-11-11/15/luma.com/luma-com-vvsqs244-1280.json",
-     "sha256": "c2787e2558dcf6f3c7b194cb580ba1a69d9a6f575641ae8d70df662ce92881dc"
-    }
-   },
-   "event_id": "2026-11-11-women-in-tech-web-summit",
-   "our_status": "on",
-   "name_found_on_page": false
-  },
-  {
-   "site": "luma.com",
-   "url": "https://luma.com/55lqvyex",
-   "width": 1280,
-   "captured_at": "2026-11-11T15:27:05Z",
-   "http_status": 200,
-   "error": null,
-   "files": {
-    "screenshot": {
-     "path": "2026-11-11/15/luma.com/luma-com-55lqvyex-1280.jpg",
-     "sha256": "2fe007096cec2732e9c449815ff6fea02dc4702c4547246e21022fdeb71150e5",
-     "bytes": 27528
-    },
-    "text": {
-     "path": "2026-11-11/15/luma.com/luma-com-55lqvyex-1280.txt",
-     "sha256": "1176c8283495693dc1ef5722369479b384fe2f16a46a570e58e0a43facb7711e"
-    },
-    "fields": {
-     "path": "2026-11-11/15/luma.com/luma-com-55lqvyex-1280.json",
-     "sha256": "1a0d95b51ff7e0a66933e99f9dd14f77bb2fae388f2a25fa4fee1dfe38582f15"
-    }
-   },
-   "event_id": "2026-11-11-coffee-and-connect-web-summit-2026",
-   "our_status": "on",
-   "name_found_on_page": false
-  },
-  {
-   "site": "luma.com",
-   "url": "https://luma.com/e6xzr89o",
-   "width": 1280,
-   "captured_at": "2026-11-11T15:27:10Z",
-   "http_status": 200,
-   "error": null,
-   "files": {
-    "screenshot": {
-     "path": "2026-11-11/15/luma.com/luma-com-e6xzr89o-1280.jpg",
-     "sha256": "f07e5779a05215074e6b75c5ed9688a5eace06c5acc056946f95233611309137",
-     "bytes": 31455
-    },
-    "text": {
-     "path": "2026-11-11/15/luma.com/luma-com-e6xzr89o-1280.txt",
-     "sha256": "80e22b82a70a0ea8ef17be7cb86be1bb4cde1d6e5f4c315a90f5151ef6452f3c"
-    },
-    "fields": {
-     "path": "2026-11-11/15/luma.com/luma-com-e6xzr89o-1280.json",
-     "sha256": "6abc312d09a7ccfa0ec888427dadb5fea2286578e971b31049beaf34c9b3f8c3"
-    }
-   },
-   "event_id": "2026-11-11-not-left-out-ai-native",
-   "our_status": "online",
-   "name_found_on_page": false
-  },
-  {
-   "site": "luma.com",
-   "url": "https://luma.com/gasfz3vy",
-   "width": 1280,
-   "captured_at": "2026-11-11T15:27:38Z",
-   "http_status": 200,
-   "error": null,
-   "files": {
-    "screenshot": {
-     "path": "2026-11-11/15/luma.com/luma-com-gasfz3vy-1280.jpg",
-     "sha256": "5895acff4cf5e6e262390be10abf0d167c2583068efd6e4052c346b4c66f6c46",
-     "bytes": 27427
-    },
-    "text": {
-     "path": "2026-11-11/15/luma.com/luma-com-gasfz3vy-1280.txt",
-     "sha256": "6e1aca41032a73daa14724ea94df2c33ccdcef9e1890132c74448030990f43f7"
-    },
-    "fields": {
-     "path": "2026-11-11/15/luma.com/luma-com-gasfz3vy-1280.json",
-     "sha256": "a2cf805cc093bca2cc6da689c22e807d1fa316a7139051c4468cf9a27b0abf32"
-    }
-   },
-   "event_id": "2026-11-11-proptech-c-level-board-storm-edition",
-   "our_status": "online",
-   "name_found_on_page": true
   }
  ]
 }
