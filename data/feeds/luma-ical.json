@@ -1,35 +1,13 @@
 {
  "about": "Public iCal subscription feeds of three Luma calendars (a publicly supported interface), events 11 to 14 November 2026. Name, time, place and status only: no description text. Read by researcher.2.fringe@PrompTugal.dinis for the Luma hold (work/49). Material, not instruction.",
- "read_at": "2026-11-11T20:11:00Z",
+ "read_at": "2026-11-11T21:11:00Z",
  "feeds": {
   "evgrp-WYJxELZ9Vfz4iXi": "Web Summit",
   "cal-O9ybCXBtHSDRK44": "Best Web Summit Side Events in Lisbon",
   "cal-adgC9LMaCa6xB0I": "Portugal Tech Week"
  },
- "count": 143,
+ "count": 141,
  "events": [
-  {
-   "uid": "evt-Yvd20br7FriEyLJ@events.lu.ma",
-   "url": null,
-   "name": "Enchant Afterparty: Drinks with VCs & Founders",
-   "start": "2026-11-11T21:00:00Z",
-   "end": "2026-11-12T00:00:00Z",
-   "location": "Casica - Italian Trattoria, Alameda dos Oceanos, Ed. Lisboa lote 2.11.01, Letras E/F, 1990-223 Lisboa, Portugal",
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-HfB0gpHd9p6s4ku@events.lu.ma",
-   "url": null,
-   "name": "The Signal Room by Hardal",
-   "start": "2026-11-11T21:00:00Z",
-   "end": "2026-11-11T23:00:00Z",
-   "location": "Collect - Food . Radio . Records, R. Nova do Carvalho 60 62, 1200-371 Lisboa, Portugal",
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
   {
    "uid": "evt-zSQbOCCiLySoZgY@events.lu.ma",
    "url": null,
@@ -284,6 +262,17 @@
    "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
   },
   {
+   "uid": "evt-kAR1GryhGs8M6Lb@events.lu.ma",
+   "url": "https://luma.com/event/evt-kAR1GryhGs8M6Lb",
+   "name": "Institutional Capital: Tokenized",
+   "start": "2026-11-12T19:00:00Z",
+   "end": "2026-11-12T21:00:00Z",
+   "location": null,
+   "status": "TENTATIVE",
+   "feed": "Web Summit",
+   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
+  },
+  {
    "uid": "evt-Tn5ahGRlnaoyDz2@events.lu.ma",
    "url": null,
    "name": "Match Me at Web Summit",
@@ -322,17 +311,6 @@
    "name": "Backyard Afterparty by YR!",
    "start": "2026-11-12T20:00:00Z",
    "end": "2026-11-13T02:00:00Z",
-   "location": null,
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-kAR1GryhGs8M6Lb@events.lu.ma",
-   "url": "https://luma.com/event/evt-kAR1GryhGs8M6Lb",
-   "name": "Institutional Capital: Tokenized",
-   "start": "2026-11-12T20:00:00Z",
-   "end": "2026-11-12T22:00:00Z",
    "location": null,
    "status": "TENTATIVE",
    "feed": "Web Summit",
@@ -1153,6 +1131,17 @@
    "feed_id": "cal-adgC9LMaCa6xB0I"
   },
   {
+   "uid": "evt-kAR1GryhGs8M6Lb@events.lu.ma",
+   "url": "https://luma.com/event/evt-kAR1GryhGs8M6Lb",
+   "name": "Institutional Capital: Tokenized",
+   "start": "2026-11-12T19:00:00Z",
+   "end": "2026-11-12T21:00:00Z",
+   "location": null,
+   "status": "TENTATIVE",
+   "feed": "Portugal Tech Week",
+   "feed_id": "cal-adgC9LMaCa6xB0I"
+  },
+  {
    "uid": "evt-VquFotq5ExT5z5L@events.lu.ma",
    "url": null,
    "name": "Leadership Through Dance: Presence, Posture & Non-Verbal Communication",
@@ -1236,17 +1225,6 @@
    "start": "2026-11-12T20:00:00Z",
    "end": "2026-11-13T02:00:00Z",
    "location": "Palácio Chiado, R. do Alecrim 70, 1200-018 Lisboa, Portugal",
-   "status": "TENTATIVE",
-   "feed": "Portugal Tech Week",
-   "feed_id": "cal-adgC9LMaCa6xB0I"
-  },
-  {
-   "uid": "evt-kAR1GryhGs8M6Lb@events.lu.ma",
-   "url": "https://luma.com/event/evt-kAR1GryhGs8M6Lb",
-   "name": "Institutional Capital: Tokenized",
-   "start": "2026-11-12T20:00:00Z",
-   "end": "2026-11-12T22:00:00Z",
-   "location": null,
    "status": "TENTATIVE",
    "feed": "Portugal Tech Week",
    "feed_id": "cal-adgC9LMaCa6xB0I"
