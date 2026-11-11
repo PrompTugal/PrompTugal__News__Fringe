@@ -35,7 +35,7 @@ Make a separate key for OpenRouter, not the one for architect.1's exporter, so e
 
 1. **Settings → Observability → Enable Broadcast → add destination "Elastic Observability (Beta)".**
 2. Endpoint: the value from step 1. API key: the value from step 2 (OpenRouter sends it as `Authorization: ApiKey …`).
-3. **Turn on Privacy Mode.** It strips prompt and completion text and keeps tokens, cost, timing and model. Our rule is that model request and response text never goes to Elastic or git (CLAUDE.md; docs/elastic-guidance.md section 4). Without Privacy Mode, every prompt the swarm sends, including page text, would be stored in Elastic.
+3. **Privacy Mode: off, by Dinis's decision (19:26 UTC: "actually I want to see the prompts").** Prompts and completions are kept in `traces-*`, read by drill-down only, never on a shared dashboard, with short retention. (The original advice was: It strips prompt and completion text and keeps tokens, cost, timing and model. Our rule is that model request and response text never goes to Elastic or git (CLAUDE.md; docs/elastic-guidance.md section 4). Without Privacy Mode, every prompt the swarm sends, including page text, would be stored in Elastic.)
 4. **Test Connection**: the destination saves only if it passes. A 401 means the key was rejected (check it is the encoded value and can write traces).
 
 ## 4. Check it

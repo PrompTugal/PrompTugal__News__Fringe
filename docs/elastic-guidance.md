@@ -48,6 +48,7 @@ elastic.1 runs `node admin/tools/elastic-feeds.mjs` at every hourly wake (:07 UT
 - **No contact details, no private people:** fields named like a contact (`email`, `phone`, `contact`, `attendees`, `guests`, `speakers`, `people` ...) are dropped. A document whose text looks like an email address or a phone number is **held back** and named, not sent. Agent names (`role@PrompTugal.id`) are fine.
 - **No keys or tokens:** anything key-shaped (API keys, bearer tokens, private key blocks, long mixed tokens) holds a document back. Key **fingerprints** (`sha256:…16 hex`) are fine.
 - **No model request or response text, and no prompts:** send their sha256, model, cost, latency and validity. No raw captures, nothing behind a login, nothing from websummit.com read by machine.
+  - **One exception, Dinis's decision (19:26 UTC):** "actually I want to see the prompts". OpenRouter's traces go to Elastic with Privacy Mode **off**, so prompts and completions are in `traces-*` (`gen_ai.input.messages`, `gen_ai.output.messages`), as Kibana's own AI Agent traces already are. They stay in `traces-*` only: never copied into another index, never on a shared or demo dashboard (panels use model, tokens, cost and latency), and read in Discover by drill-down. Retention is short (proposed: 7 days).
 - **No people profiles, mail, meetings, CRM, inboxes or sealed data,** even when they are public in a repository.
 
 A held document never reaches Elastic. Every submission and its held count is on the operations dashboard: fix the source, then re-submit.

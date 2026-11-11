@@ -1,6 +1,6 @@
 {
   "agent": "elastic.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T19:21Z",
+  "updated": "2026-11-11T19:26Z",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis, at Dinis's word (briefs/2026-11-11-1630-r5-r8-r9-enforced-and-elastic.md)",
   "branch": "dev",
@@ -26,10 +26,11 @@
     "19:08: checked architect.1's report: ABP 0.4.1 (7f80c20) restricts ELASTIC_CLOUD and both hosts to elastic.1 and architect.1 (R8e, observe); swarm-abp-reviews (63, its push through elastic-submit.mjs, 0 held, 0 errors) and swarm-flows (60) owned by architect.1; catalog now 27 indices, 15,750 documents. swarm-flows was not pushed through elastic-submit.mjs, so it is missing from elastic-submissions",
     "19:10 UTC wake: 27 indices, 16,019 documents refreshed, 0 errors; fringe-altitudes 132 units (a second run at 18:57: A3 2, A2 8, A1 118, A0 4), 130 verified; the 2 without are the A3 agent units, which sign with the session key, not a per-unit key (not a failure); no unit of Angelo's yet; submissions in the hour: architect.1 swarm-abp-reviews 0 held 0 errors; nothing to write back. No new brief.",
     "19:14: the lead's note (material): Dinis looking at OpenRouter > Observability > Traces > Elastic Observability (Beta). The exact steps are in docs/elastic-openrouter-traces.md: the endpoint (the managed OTLP one from the Cloud console, else the APM endpoint, which answers /v1/traces), a least-privilege key (traces-* create_doc, or an APM agent key), Privacy Mode on, and how to check. Proposal for grafana.1: Elastic is the main trace store and Grafana reads it, no second copy unless Dinis wants one",
-    "19:21: OpenRouter > Observability > Traces > Elastic Observability saved by Dinis ('Connection check passed', 100% sampling). The APM endpoint refused OpenRouter's OTLP JSON (APM takes protobuf only: 'failed to unmarshal ... proto'); the working path is the managed OTLP endpoint. No openrouter trace yet: they arrive with the next model call through the router. Kibana's own Agent Builder traces are in traces-agent_builder.otel-default (5, 17:50 UTC) and carry gen_ai.input.messages (prompt text)"
+    "19:21: OpenRouter > Observability > Traces > Elastic Observability saved by Dinis ('Connection check passed', 100% sampling). The APM endpoint refused OpenRouter's OTLP JSON (APM takes protobuf only: 'failed to unmarshal ... proto'); the working path is the managed OTLP endpoint. No openrouter trace yet: they arrive with the next model call through the router. Kibana's own Agent Builder traces are in traces-agent_builder.otel-default (5, 17:50 UTC) and carry gen_ai.input.messages (prompt text)",
+    "19:26: Dinis decided that Privacy Mode stays off ('actually I want to see the prompts'). Recorded in docs/elastic-guidance.md section 4 as the one exception: prompts stay in traces-*, are read by drill-down, are never on shared dashboards, with short retention proposed"
   ],
   "next": [
-    "each wake: check traces-* for service.name openrouter; if gen_ai.input.messages or output text appear in them, tell Dinis (Privacy Mode off) and keep them out of the dashboards; then add an 'A1 calls, from OpenRouter' section to 'The altitudes of execution, live'",
+    "each wake: check traces-* for service.name openrouter; prompts are expected (Privacy Mode off by Dinis's decision); keep them out of every dashboard panel; then add an 'A1 calls, from OpenRouter' section to 'The altitudes of execution, live'",
     "check the APM integration's agent authorization: an empty OTLP protobuf request without credentials was accepted (200) at 19:3x UTC, so anonymous intake may be on",
     "OpenTelemetry (Dinis to architect.1, 19:0x UTC: 'start with OpenTelemetry'): the deployment's APM endpoint answers (my-observability-deployment-cd4ce8.apm.us-central1.gcp.cloud.es.io, HTTP 200 at 19:08 UTC); Elastic APM takes OTLP/HTTP, so architect.1's flow.mjs exporter can send spans there and Kibana shows each run as a distributed trace (A3 > A2 > A1 spans). Needs the APM secret token or an API key with APM write: Dinis's decision",
     "build, in order: five SLOs and five alert rules; the run-tree Vega and key-lifelines Vega-Lite panels; a Graph workspace; then the Altitudes analyst agent (Agent Builder) and the steward workflow (docs/elastic-kibana-features.md section 4)",
@@ -38,7 +39,7 @@
     "Maps of events and places; alerts on asks for Dinis; Kibana spaces per site"
   ],
   "asks": [
-    "Dinis: please confirm Privacy Mode is on for the OpenRouter > Elastic destination (the ⋮ menu > edit). Without it, every prompt and completion sent through the router lands in Elastic (as Kibana's own AI Agent traces already do, in gen_ai.input.messages).",
+    "Dinis: OK to set 7-day retention on the OpenRouter traces data stream (traces-generic.otel-default), now that it holds prompts by your decision?",
     "Dinis: the APM key for OpenTelemetry traces. In Kibana: Observability > Applications > Service inventory > Settings > Agent keys > Create APM agent key (event:write only), or Fleet > Agent policies > Elastic Cloud agent policy > Elastic APM > Agent authorization > Secret token. Save it as a Network secret on the 'PrompTugal Fringe' environment (title bar > environment > Edit): host my-observability-deployment-cd4ce8.apm.us-central1.gcp.cloud.es.io, header Authorization, value 'ApiKey <key>' (or 'Bearer <token>'). The secure form cannot take it (the host name is over 64 characters). Never in chat. Then elastic.1 sends one test span.",
     "Dinis: the superuser password stays shared for now, used only by elastic.1 and architect.1 (your rule, 19:1x UTC; architect.1 writes it into the ABPs). Agent Builder's MCP server for our agents needs an API key per caller: your decision when we get there.",
     "architect.1 / Dinis: for agents to push directly, both deployment hosts must be in their ABP 'Sends to' (es and kb); until then the feed path works for every agent. I messaged architect.1 by session message at Dinis's word (send_message is outside my grant).",
