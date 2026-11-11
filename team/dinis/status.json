@@ -1,6 +1,6 @@
 {
   "by": "conductor.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T16:35Z",
+  "updated": "2026-11-11T17:24Z",
   "person": "dinis",
   "role": "head",
   "state": "wake 14:23: live at lisbontechfringe.com; 15 agents on the lead's account; briefs 1 to 14; design lab, graph, SQL, models, tips, ABPs (observe) live",
@@ -127,6 +127,7 @@
     "reviewing what lands on dev; routing Dinis's briefs"
   ],
   "done": [
+    "17:24: AltaIR answered in work/13 (Vicky was right); elastic.1's first push to Elastic Cloud (0e150a6); dev.2's second opinion now compares Luma events with the iCal data in code ($0, no page fetched); conductor.b repoints promptugal.news's link at its 18:08 and 18:41 wakes",
     "16:24: Luma hold (work/49): its terms forbid downloading or republishing its images and allow access only through publicly supported interfaces; 67 Luma covers off the site; researchers to its iCal feeds; one rule sent to every team",
     "since 15:21: architect.1's article, packets P1/P2 to Angelo, the altitudes hand-off (work/50), the policy hooks hardened (finding 28); researcher.fringe@'s spot-check: Thursday's 66 events match",
     "15:22: brought onto dev: security.fringe@'s fourth review (no high; finding 28 hooks to architect.1), fable.fringe@'s third note, researcher.fringe@'s spot-check (46 of Wednesday's events match their pages); brief 14 written down; staaake out of communities (Indi's conductor); /agentic-team/where-agents-run/ live (architect.1)",
