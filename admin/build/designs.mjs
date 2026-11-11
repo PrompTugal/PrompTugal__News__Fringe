@@ -11,6 +11,8 @@
 import { readdirSync, readFileSync, writeFileSync, mkdirSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { sizeOf } from './tiers.mjs';
+import { placeShort } from './cards.mjs';
 
 const ID = /^[a-z0-9][a-z0-9-]{0,29}$/;
 const DEFAULT = { id: 'd', name: 'The family', maker: 'design.4.fringe@PrompTugal.dinis and the team', tool: 'Claude Code', tagline: 'The current home page: the PrompTugal.news family look, refined. The default.', status: 'default', render: null };
@@ -114,11 +116,11 @@ export async function buildDesigns({ root, out, designs, ctx, page, esc, SITE, R
     if (d.id === 'd') { info.push({ id: d.id, name: d.name, maker: d.maker, tool: d.tool, status: d.status, url: '/', shoot: '/' }); continue; }
     let html;
     if (d.render) {
-      let r = (await d.render({ ...ctx, builtAt: ctx.now.toISOString(), esc })) || {};
+      let r = (await d.render({ ...ctx, at: ctx.now, builtAt: ctx.now.toISOString(), sizeOf, placeShort, esc })) || {};
       if (typeof r === 'string') r = { body: r };
       r = { ...r, css: (d.css || '') + (r.css || '') };
       const head = `<meta name="robots" content="noindex"><meta name="variant" content="${esc(d.id)}"><link rel="canonical" href="${esc(SITE)}">`;
-      html = page(`${d.name}: Lisbon Tech Fringe (design ${d.id.toUpperCase()})`, `<style>${css}${r.css || ''}</style>${r.body || ''}${pill(designs, d.id, esc)}`, d.tagline || 'A design of the Lisbon Tech Fringe home page.', head + (r.head || ''));
+      html = page(`${d.name}: Lisbon Tech Fringe (design ${d.id.toUpperCase()})`, `<style>${css}${r.css || ''}</style>${r.body || ''}${r.script ? `<script>${r.script}</script>` : ''}${pill(designs, d.id, esc)}`, d.tagline || 'A design of the Lisbon Tech Fringe home page.', head + (r.head || ''));
       writeFileSync(join(dirOut, 'index.html'), html);
     } else if (d.community) {
       for (const f of readdirSync(d.dir)) if (f !== 'design.json') writeFileSync(join(dirOut, f), readFileSync(join(d.dir, f), 'utf8'));
