@@ -1,11 +1,11 @@
 {
  "agent": "outreach.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-11T13:31Z",
+ "updated": "2026-11-11T13:36Z",
  "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 6)",
  "model": "Sonnet",
  "wake": "hourly at :35 (set by the lead)",
  "branch": "dev",
- "state": "work/36 (brief 11): design-call and the note to Silvio drafted; waiting on /designs/ (work/35) and Dinis's approval",
+ "state": "13:35 wake: inbox now drains (sgit-ai installed); traffic data from observability turned into work/drafts/TAGGING.md; design call waiting on /designs/ intake",
  "doing": [
   "work/29 owner; with work/18 and work/23"
  ],
@@ -20,7 +20,8 @@
   "announcement image for WhatsApp (not in git; template and caption in work/drafts/infographic/); every draft's links swapped to lisbontechfringe.com",
   "Dinis's own WhatsApp/LinkedIn draft edited with a journalist and creator nudge: work/drafts/dinis-announce-whatsapp-linkedin.md",
   "announcement image in vault 9k97zlte (sgit-ai installed at Dinis's word); key sealed to the lead; pointer updated",
-  "work/36: work/drafts/design-call.md (public call, short X version, rules, a note to Silvio)"
+  "work/36: work/drafts/design-call.md (public call, short X version, rules, a note to Silvio)",
+  "13:35 wake: drained inbox (observability's traffic note); work/drafts/TAGGING.md: one ?via= tag per group, tag every link, share event pages and /now"
  ],
  "next": [
   "when dev.1's /designs/ is live: check its checks list and 'how to send' against the call, and link it",
