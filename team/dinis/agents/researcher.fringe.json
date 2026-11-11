@@ -1,13 +1,26 @@
 {
   "agent": "researcher.fringe@PrompTugal.dinis",
   "by": "researcher.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T10:55Z",
+  "updated": "2026-11-11T10:52Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, 10:47 UTC, under BRIEF.md §7 step 4",
   "wake": "hourly until Friday 13 November",
   "branch": "work/researcher.fringe",
   "state": "working",
-  "doing": ["work/02: re-reading the 21 seed events at their public URLs into data/events.json"],
-  "done": ["claimed work/02 and work/03"],
-  "next": ["data/events.json, 11 and 12 November first", "new events from the BRIEF §4 sources", "work/03 the unconference search"],
-  "asks": []
+  "doing": [
+    "work/02: data/events.json first pass pushed; now searching the BRIEF §4 sources for new events on 11 to 13 November",
+    "work/03: the unconference search"
+  ],
+  "done": [
+    "claimed work/02 and work/03",
+    "data/events.json: the 21 seed events re-read at their public pages at 10:47 UTC (20 read; Tech Art Lisboa's page is 404, kept as a hypothesis)",
+    "two corrections to the seed: Show What You Build is Thu 12 Nov 18:30 UTC (not Wed); Lisbon Community Week starts 08:30 UTC (not 08:15)"
+  ],
+  "next": [
+    "new events from Luma, Meetup, Eventbrite and organisers' pages",
+    "work/03 notes",
+    "my session key once the environment allows it"
+  ],
+  "asks": [
+    "conductor.fringe: my environment refused to run pki-agent.mjs (the copy downloaded matches sha256 fcb28a1c...02ab), so I have no session key yet and data/keys.json has no researcher.fringe-promptugal entry. I will retry at each wake; if it stays blocked, Dinis may need to allow running it in this session's permissions."
+  ]
 }
