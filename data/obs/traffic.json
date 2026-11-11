@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-11T19:38Z",
+ "generated": "2026-11-11T19:54Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 459,
-  "reads": 396,
-  "tabs": 215,
+  "views": 460,
+  "reads": 397,
+  "tabs": 216,
   "countries": 18,
   "shares": 164,
-  "bots": 1402,
+  "bots": 1410,
   "crawler_tabs": 1,
-  "agent_runs": 171,
-  "agent_runs_signed": 158
+  "agent_runs": 178,
+  "agent_runs_signed": 165
  },
  "by_hour": [
   [
@@ -212,13 +212,13 @@
   ],
   [
    "2026-11-11 19:00",
-   13
+   14
   ]
  ],
  "by_page": [
   [
    "/",
-   198
+   199
   ],
   [
    "/now/",
@@ -532,8 +532,8 @@
  "reading": [
   [
    "/",
-   156,
-   30,
+   157,
+   29,
    13
   ],
   [
@@ -1026,7 +1026,7 @@
   ],
   [
    "The Netherlands",
-   5
+   6
   ],
   [
    "Tanzania",
@@ -1128,7 +1128,7 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   71
+   72
   ]
  ],
  "by_referrer": [
@@ -1144,14 +1144,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   420
+   421
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 2079,
+ "other_hosts_views": 2156,
  "by_via": [
   [
    "whatsapp",
@@ -1190,7 +1190,7 @@
   ],
   [
    "phone",
-   210
+   211
   ],
   [
    "tablet",
@@ -1200,6 +1200,10 @@
  "agents": [
   [
    "design.4.fringe@PrompTugal.dinis",
+   17
+  ],
+  [
+   "design.1.fringe@PrompTugal.dinis",
    16
   ],
   [
@@ -1207,19 +1211,15 @@
    16
   ],
   [
-   "design.1.fringe@PrompTugal.dinis",
-   15
-  ],
-  [
    "researcher.1.fringe@PrompTugal.jose",
    15
   ],
   [
-   "conductor.fringe@PrompTugal.jose",
-   12
+   "architect.1.fringe@PrompTugal.dinis",
+   14
   ],
   [
-   "architect.1.fringe@PrompTugal.dinis",
+   "conductor.fringe@PrompTugal.jose",
    12
   ],
   [
@@ -1239,12 +1239,12 @@
    9
   ],
   [
-   "capture.1.fringe@PrompTugal.dinis",
+   "conductor.fringe@PrompTugal.indi",
    7
   ],
   [
-   "conductor.fringe@PrompTugal.indi",
-   6
+   "capture.1.fringe@PrompTugal.dinis",
+   7
   ],
   [
    "dev.1.fringe@PrompTugal.dinis",
@@ -1277,14 +1277,18 @@
   [
    "fable.fringe@PrompTugal.dinis",
    2
+  ],
+  [
+   "neo4j.1.fringe@PrompTugal.dinis",
+   2
   ]
  ],
  "flows": {
-  "tabs": 215,
+  "tabs": 216,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    148
+    149
    ],
    [
     "shared link (?via=)",
@@ -1298,7 +1302,7 @@
   "entry_pages": [
    [
     "/",
-    146
+    147
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
@@ -1360,7 +1364,7 @@
   "exit_pages": [
    [
     "/",
-    105
+    106
    ],
    [
     "/now/",
@@ -1524,7 +1528,7 @@
   "pages_per_tab": [
    [
     "1",
-    144
+    145
    ],
    [
     "2",
@@ -1614,7 +1618,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
     1
    ],
    [
@@ -1622,7 +1626,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ]
   ]
