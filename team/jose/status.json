@@ -1,9 +1,9 @@
 {
   "by": "conductor.fringe@PrompTugal.jose",
-  "updated": "2026-11-11T16:24Z",
+  "updated": "2026-11-11T17:09Z",
   "person": "jose",
   "role": "member",
-  "state": "on: conductor.fringe@PrompTugal.jose; hourly wake at :07 until Friday 13 November, 23:59 UTC; 16:24: Jose sent five organiser notes by hand at about 16:23 UTC",
+  "state": "on: conductor.fringe@PrompTugal.jose; hourly wake at :07 until Friday 13 November, 23:59 UTC; wake 17:09: brief 16:30 read (R5, R8, R9 enforced); the lead's interim Luma rule received and passed to researcher.1; tracker shows 5 contacted, 0 answered",
   "lane": "channels (SWARM.md): the posts and messages that point people to the site; a person sends, the conductor never posts or messages anyone",
   "doing": [
     "work/18 and work/23 (channels): five organiser notes sent by Jose; watching for answers (Jose sees them on Luma)"
@@ -21,7 +21,9 @@
     "15:34: agreed with researcher.1 to hold machine reads of Luma and sideevents.guide until Dinis answers on work/49; asked the lead (inbox) for his call and flagged that researcher.2 still reads Luma hourly",
     "wake 16:10: researcher.1's send desk (56fc772) noted: copy, open the organiser page, mark sent; a person still sends",
     "16:23 (Jose's word, relayed by researcher.1): Jose sent five organiser notes himself through each organiser's Luma 'Contact the host': WonderLead in Tech, ideaic.io, Canopy Community, FounderLink, Portugal Tech Week. Not sent: ALBAN Global Network and Kuma Partners (their events had started)",
-    "16:24: asked outreach.1 (inbox) to mark the five sent in work/23's tracker, which it keeps"
+    "16:24: asked outreach.1 (inbox) to mark the five sent in work/23's tracker, which it keeps",
+    "16:36 (outreach.1): the five notes marked sent in work/23's tracker; the dashboard counts 5 contacted",
+    "wake 17:09: the lead's interim Luma rule (single event page at a person's pace, iCal feeds for researchers, no images) passed to researcher.1"
   ],
   "next": [
     "any organiser answer: a change goes to data/events.json only once the organiser's own page shows it (researcher.2 or researcher.1)",
@@ -29,8 +31,7 @@
     "work/50: map Jose's agents at their altitudes"
   ],
   "asks": [
-    "outreach.1.fringe@PrompTugal.dinis: mark the five notes sent in work/23's tracker (sent_by jose, about 16:23 UTC); asked by inbox at 16:24 UTC.",
-    "Dinis: work/49: until it is settled, may a researcher read single Luma event pages we already list, one at a time, for today's status only? Jose's researcher holds until you answer; researcher.2 still reads Luma hourly.",
+    "jose: post your LinkedIn post and X thread (work/drafts/linkedin-post-jose.md, x-thread-jose.md); LinkedIn and X show 0 visits so far, every tagged visit is from WhatsApp. Tell me when they are up.",
     "jose: read and approve (or change) work/drafts/linkedin-post-jose.md, work/drafts/x-thread-jose.md and work/drafts/pitch.md; you post them.",
     "Dinis: my public key is not in PrompTugal__News__Website board/keys.json; that repository is out of reach for this session.",
     "Dinis: this session's network refuses lisbontechfringe.com and fringe.promptugal.news, so the served version.json is checked through the deploy run, not the page."
