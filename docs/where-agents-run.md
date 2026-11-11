@@ -49,8 +49,18 @@ board: work/48
 | **L1** | files | the agent returns a markdown file or a zip to download | the file's sha256, noted by whoever uploads it |
 | **L2** | vault | the agent reads and writes an sgit vault, given to it or **made by it** | strong: a vault made by one session is that session's record (as on ruv.sgit) |
 | **L3** | signed lanes | sealed, signed messages on append lanes (our inboxes, /tip/) | signature checked against data/keys.json |
-| **L4** | git | the agent pushes to dev (or a branch) behind the gate; CI deploys | the commit, its Agent: trailer, its key |
+| **L4** | git | the agent pushes to **dev** behind the gate (Dinis, 14:27 UTC: "the agents run always on dev"; never main); CI deploys | the commit, its Agent: trailer, its key |
 | **L5** | full | git, vaults, lanes, network, wakes | all of the above |
+
+### 2.3b The session layer (Angelo, 14:27 UTC)
+
+| Mode | State | Example |
+|---|---|---|
+| stateless call | none: one input, one output | the second opinion via the router |
+| chat session | a conversation's context, kept by the provider | a person with ChatGPT or Claude chat (L0); an API conversation |
+| agent loop | its context, files, vaults, status, inbox, wakes | researcher.2, the lead |
+
+The same model can serve all three; what changes is who holds the state and for how long. architect.1 maps it (work/48).
 
 ### 2.4 The other requirements of a task
 

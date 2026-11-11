@@ -1,6 +1,6 @@
 {
   "about": "Dinis's Claude accounts and what runs on each (work/33). Labels only: no email address is published. Kept by conductor.fringe@PrompTugal.dinis; Dinis gave the list on 11 November 2026 at about 13:28 UTC.",
-  "updated": "2026-11-11T14:23Z",
+  "updated": "2026-11-11T14:27Z",
   "accounts": [
     {
       "label": "dinis-owasp",
@@ -19,9 +19,9 @@
     {
       "label": "riskmandate-personal",
       "what": "Dinis's personal account at RiskMandate",
-      "plan": "Ultra (Dinis believes; to confirm)",
-      "fringe_agents": "unknown",
-      "wired": "unknown"
+      "plan": "Ultra (Dinis, 14:27 UTC)",
+      "fringe_agents": "the lead (conductor.fringe@PrompTugal.dinis) and its 15 agents: this account",
+      "wired": "yes"
     },
     {
       "label": "diniscruz-ai",
@@ -32,23 +32,6 @@
     }
   ],
   "sessions_by_account": {
-    "this account (the lead's; called 'account B' by pt.news's agents; one of the two riskmandate accounts, Dinis to confirm which)": [
-      "conductor.fringe (lead, Opus)",
-      "fable.fringe",
-      "observability.fringe",
-      "design.1",
-      "design.2",
-      "design.3",
-      "design.4",
-      "dev.1",
-      "dev.2",
-      "researcher.2",
-      "capture.1",
-      "usability.1",
-      "outreach.1",
-      "architect.1",
-      "ontologist.1"
-    ],
     "the old lead's account (not reachable from the lead's account)": [
       "researcher.fringe",
       "security.fringe",
@@ -64,6 +47,23 @@
       "conductor.fringe@angelo",
       "conductor.fringe@jose",
       "researcher.1@jose"
+    ],
+    "riskmandate-personal (Ultra; the lead's account; pt.news calls it account B)": [
+      "conductor.fringe (lead, Opus)",
+      "fable.fringe",
+      "observability.fringe",
+      "design.1",
+      "design.2",
+      "design.3",
+      "design.4",
+      "dev.1",
+      "dev.2",
+      "researcher.2",
+      "capture.1",
+      "usability.1",
+      "outreach.1",
+      "architect.1",
+      "ontologist.1"
     ]
   }
 }
