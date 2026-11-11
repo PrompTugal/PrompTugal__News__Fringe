@@ -1,35 +1,35 @@
 {
  "days": {
   "2026-11-11": {
-   "calls": 12,
-   "cost_usd": 0.000358,
+   "calls": 16,
+   "cost_usd": 0.000622,
    "first": "2026-11-11T20:30:48Z",
-   "last": "2026-11-11T20:31:13Z",
+   "last": "2026-11-11T20:32:32Z",
    "by_model": {
     "deepseek/deepseek-v4-flash": {
-     "calls": 12,
-     "ok": 6,
-     "cost_usd": 0.000358,
-     "tokens_in": 1114,
-     "tokens_out": 795
+     "calls": 16,
+     "ok": 10,
+     "cost_usd": 0.000623,
+     "tokens_in": 1806,
+     "tokens_out": 1446
     }
    },
    "by_tier": {
     "cheap": {
-     "calls": 12,
-     "ok": 6,
-     "cost_usd": 0.000358,
-     "tokens_in": 1114,
-     "tokens_out": 795
+     "calls": 16,
+     "ok": 10,
+     "cost_usd": 0.000623,
+     "tokens_in": 1806,
+     "tokens_out": 1446
     }
    },
    "by_agent": {
     "conductor.fringe@PrompTugal.dinis": {
-     "calls": 12,
-     "ok": 6,
-     "cost_usd": 0.000358,
-     "tokens_in": 1114,
-     "tokens_out": 795
+     "calls": 16,
+     "ok": 10,
+     "cost_usd": 0.000623,
+     "tokens_in": 1806,
+     "tokens_out": 1446
     }
    },
    "by_task": {
@@ -39,6 +39,13 @@
      "cost_usd": 0.000358,
      "tokens_in": 1114,
      "tokens_out": 795
+    },
+    "WS-215/packet/2026-11-11-p5-one-liners-for-4-events": {
+     "calls": 4,
+     "ok": 4,
+     "cost_usd": 0.000265,
+     "tokens_in": 692,
+     "tokens_out": 651
     }
    },
    "by_status": {
@@ -50,19 +57,19 @@
      "tokens_out": 0
     },
     "ok": {
-     "calls": 6,
-     "ok": 6,
-     "cost_usd": 0.000358,
-     "tokens_in": 1114,
-     "tokens_out": 795
+     "calls": 10,
+     "ok": 10,
+     "cost_usd": 0.000623,
+     "tokens_in": 1806,
+     "tokens_out": 1446
     }
    }
   }
  },
  "about": "Counts only, from the model ledger of the sessions that run admin/tools/llm.mjs (the ledger is per session, outside git). No prompt, page text or model output.",
- "updated": "2026-11-11T20:31:24Z",
+ "updated": "2026-11-11T20:32:33Z",
  "credit_at_update": {
   "key_remaining_usd": 72.42,
-  "account_remaining_usd": 96.78
+  "account_remaining_usd": 96.77
  }
 }
