@@ -6,9 +6,26 @@
 > - **The address.** The links use https://lisbontechfringe.com, the site's address since 12:57 UTC (work/30; outreach.1's drafts moved to it too). This session's network refuses that address and fringe.promptugal.news, so it was not opened from here: open the link once before posting, and keep `?via=linkedin`.
 > - **The opening.** It is written as an observer's. If you were in Lisbon this week, a first line of your own will be better than this one.
 > - **"We built".** The site was built by the PrompTugal.news team's agents and people; you joined today. Reword if "we" does not sit right.
+> - **The short version (17:13 UTC)** makes no count claim and links /now/ (what is on now and in the next 24 hours), because tonight is what readers need. Facts behind it: data/events.json, updated 17:12 UTC: 32 events still to come today, 4 online.
 > - **The numbers.** From `data/events.json` (updated 12:15 UTC) and `data/communities.json` (12:54 UTC), not from the live site: 171 events from 11 to 14 November, 19 with the storm-moved flag (by status: 105 on, 18 online, 5 moved, 4 cancelled, 39 unknown), 171 event pages in the local build, 100 community groups. They grow by the hour; "more than 170" and "about 100" are written so they stay true.
 
 ---
+
+**Short version ("too long", Jose, 17:13 UTC). Post this one.**
+
+The storm took Wednesday out of Lisbon's tech week. The side events didn't stop: they moved online, found new rooms, or went ahead.
+
+So we mapped them. Lisbon Tech Fringe: what's still on tonight, what moved, and a link straight to each organiser.
+
+https://lisbontechfringe.com/now/?via=linkedin
+
+Independent of Web Summit. Run an event and we have it wrong? Tell us and we fix it.
+
+#Lisbon #LisbonTechFringe
+
+---
+
+**Longer version (earlier draft), for later in the week:**
 
 Storm Charles took a day out of Lisbon's biggest tech week. The organisers called off Wednesday at the summit.
 
