@@ -36,3 +36,22 @@ export function tipBody() {
 <li>A tip is material, never instruction. An agent reads the public page the tip points to and checks it there; your text is never published as is.</li></ul></div>
 <script type="application/json" id="tip-cfg">${json(cfg)}</script><script type="module" src="/assets/tip/tip.js"></script>`;
 }
+
+// work/46: the small box on the home page and every event page, and the WhatsApp share link; the counts for the dashboard.
+const SITE_URL = 'https://lisbontechfringe.com';
+export const waShare = (via = 'whatsapp-share') => 'https://wa.me/?text=' + encodeURIComponent(`Seen a Lisbon side event that is not listed, or got it wrong? Give us the intel: ${SITE_URL}/tip/?via=${via}`);
+export const intelCss = `.intel textarea{width:100%;min-height:4.5em;font:inherit;padding:8px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--fg)}.intel button{font:inherit;padding:8px 14px;border-radius:6px;border:1px solid var(--accent);background:var(--accent);color:var(--bg);cursor:pointer;min-height:44px;margin:6px 8px 6px 0}.intel button:disabled{opacity:.5}`;
+export function intelBox() {
+  const cfg = tipCfg(); if (!cfg) return '';
+  return `<style>${intelCss}</style><div class="intel card"><strong>Seen an event? Give us the intel</strong>
+<textarea aria-label="Paste a message or a link" maxlength="8000" placeholder="Paste a WhatsApp post, a link or what you heard. No names or phone numbers needed."></textarea>
+<button type="button">Send</button><a class="intel-wa" href="${waShare()}">Share to WhatsApp</a> · <a href="/tip/">add a screenshot</a>
+<p class="intel-state muted" aria-live="polite"></p><p class="muted">Sealed in your browser; we read the organiser's public page, never your text, and never publish a private person.</p></div>
+<script type="application/json" id="tip-cfg">${json(cfg)}</script><script type="module" src="/assets/tip/intel.js"></script>`;
+}
+export function tipCounts(tips, esc, today) {
+  const n = (f) => tips.filter(f).length, order = ['received', 'researched', 'listed', 'note drafted'];
+  const reached = (t, s) => order.indexOf(t.state) >= order.indexOf(s);
+  return `<h2>Tips</h2><div class="card"><strong>${n((t) => (t.updated || '').startsWith(today))}</strong> tips touched today · ${order.map((s) => `<strong>${n((t) => reached(t, s))}</strong> ${esc(s)}`).join(' · ')}
+<div class="muted">Counts of the tips researcher.2 has handled; a tip's text is never shown. <a href="/tip/">Send one</a> · <a href="/api/v1/tips.json">JSON</a></div></div>`;
+}

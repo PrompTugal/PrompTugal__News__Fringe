@@ -9,7 +9,7 @@ import { trafficBody, trafficCss } from './traffic.mjs';   // work/21, observabi
 import { dataBody, dataCss } from './data-page.mjs';   // work/43
 import { loadDesigns, buildDesigns } from './designs.mjs';   // work/35
 import { collectActivity } from './activity.mjs';   // brief 10
-import { tipBody, tipCss, tipStatus } from './tip.mjs';   // work/41, dev.2.fringe@PrompTugal.dinis
+import { tipBody, tipCss, tipStatus, intelBox, tipCounts } from './tip.mjs';   // work/41, dev.2.fringe@PrompTugal.dinis
 import { meBody, meCss } from './me.mjs';   // work/26
 import { collectSwarm, swarmBody, swarmCss, swarmScript } from './swarm.mjs';   // work/25, dev.1.fringe@PrompTugal.dinis
 import { eventPages, eventPath, hasPage } from './event-pages.mjs';
@@ -199,6 +199,7 @@ const home = page('Lisbon Tech Fringe', `
 <div class="home-top"><div class="ht-main">${timelineBlock(events, esc, { eventPath, hasPage }, new Date(BUILT), { limit: 6, jumps: `<p class="tl-jumps" aria-label="Jump to"><a href="#tonight">Tonight</a><a href="#online">Online</a><a href="#tomorrow">Tomorrow</a><a href="#events">All events</a><span class="tl-count">${esc(heroCount(events, today))}</span></p>` })}</div>
 <aside class="ht-side">${homeParts.strip}</aside></div>
 <!--LIVE-->
+${intelBox()}
 <p class="muted">An independent guide to the alternative, community and side events around Web Summit Lisbon this week: what is on, where, when and how to join.</p>
 <div class="card"><strong>The storm.</strong> For weather warnings and what moved because of Storm Charles, see
 <a href="https://storm-charles.promptugal.news">storm-charles.promptugal.news</a>, <a href="https://www.ipma.pt/">IPMA</a> and <a href="https://www.prociv.gov.pt/">ANEPC</a>. This site is not a warning service.
@@ -302,7 +303,7 @@ releases.forEach((r, i) => {
 mkdirSync(join(out, 'changes'), { recursive: true });
 writeFileSync(join(out, 'changes', 'index.html'), page('What changed: Lisbon Tech Fringe', releasesIndexBody(releases, esc), 'Every release of Lisbon Tech Fringe: version, commit, time, agent and files touched.'));
 writeFileSync(join(out, 'api', 'v1', 'changes.json'), JSON.stringify({ about: 'Lisbon Tech Fringe releases from git: version (CI tag), commit, UTC time, agent, subject, files touched by area.', site: SITE, version: VERSION, built_at: BUILT, ...changes }, null, 1) + '\n');
-const ePages = eventPages(events, { page, esc, linkify, SITE, card, cardList, orgs, dense: (o, why) => denseRow(o, { esc }, '', why, true) });   // work/22: /e/<id>/
+const ePages = eventPages(events, { page, esc, linkify, SITE, card, cardList, orgs, intel: intelBox(), dense: (o, why) => denseRow(o, { esc }, '', why, true) });   // work/22: /e/<id>/
 for (const p of ePages) { mkdirSync(join(out, p.path), { recursive: true }); writeFileSync(join(out, p.path, 'index.html'), p.html); }
 writeFileSync(join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n<url><loc>${SITE}</loc></url>\n<url><loc>${SITE}join/</loc></url>\n<url><loc>${SITE}how/</loc></url>\n<url><loc>${SITE}programme/</loc></url>\n<url><loc>${SITE}graph/</loc></url>\n<url><loc>${SITE}traffic/</loc></url>\n<url><loc>${SITE}designs/</loc></url>\n<url><loc>${SITE}data/</loc></url>\n<url><loc>${SITE}evolution/</loc></url>\n${ePages.map((p) => `<url><loc>${esc(p.url)}</loc></url>\n`).join('')}</urlset>\n`);
 writeFileSync(join(out, 'version.json'), JSON.stringify({ version: VERSION, commit: process.env.GITHUB_SHA || '', pushed_at: process.env.PUSHED_AT || '', built_at: BUILT }, null, 2) + '\n');
@@ -345,7 +346,7 @@ writeFileSync(join(out, 'evolution', 'index.html'), page('Evolution: Lisbon Tech
 // /dashboard/ and /api/v1/swarm.json (work/25)
 const swarm = await collectSwarm({ root, roster, status, board, traffic, activity, builtAt: BUILT, repo: REPO });
 mkdirSync(join(out, 'dashboard'), { recursive: true });
-writeFileSync(join(out, 'dashboard', 'index.html'), page('The swarm: Lisbon Tech Fringe', `<style>${swarmCss}${meCss}</style><!--LIVE-->` + swarmBody(swarm, esc, REPO) + swarmScript, 'Who is online in the Lisbon Tech Fringe swarm: conductors, agents, the board and the latest changes.'));
+writeFileSync(join(out, 'dashboard', 'index.html'), page('The swarm: Lisbon Tech Fringe', `<style>${swarmCss}${meCss}</style><!--LIVE-->` + swarmBody(swarm, esc, REPO) + tipCounts(tipStatus(), esc, BUILT.slice(0, 10)) + swarmScript, 'Who is online in the Lisbon Tech Fringe swarm: conductors, agents, the board and the latest changes.'));
 writeFileSync(join(out, 'api', 'v1', 'swarm.json'), JSON.stringify(swarm, null, 1) + '\n');
 // D6 the showroom strip on the home page: counts from swarm.json, last 5 changes from changes (both built from the repository)
 {

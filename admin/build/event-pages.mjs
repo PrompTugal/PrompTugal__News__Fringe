@@ -63,7 +63,7 @@ const CSS = `.star{background:var(--card);border:1px solid var(--line);border-le
 blockquote{margin:.4em 0;padding:.3em .8em;border-left:3px solid var(--line);color:var(--fg)}.yours{border-left:4px solid var(--warn)}`;
 
 // page(title, body, desc, head) and linkify come from build.mjs, so the layout, independence line and footer are the site's own.
-export function eventPages(events, { page, esc, linkify, SITE, card, cardList, orgs, dense }) {
+export function eventPages(events, { page, esc, linkify, SITE, card, cardList, orgs, dense, intel = "" }) {
   ORGS = orgs || null;
   const list = events.filter(hasPage);
   return list.map((e) => {
@@ -102,6 +102,7 @@ else{done('Copy this address: '+u)}}})();</script>
 <dl class="facts">${facts}</dl>
 <p class="muted">Source: <a href="${esc(e.url)}">${esc(e.url)}</a>, read ${esc(String(e.read_at).slice(0, 16).replace('T', ' '))} UTC.</p>
 ${rel.length ? `<h2>Related events</h2>` + `<ul class="dense">${rel.map(({ o, why }) => dense(o, why)).join('')}</ul>` : ''}
+${intel}
 <p class="ind yours">Organisers: is this right? This page is yours to improve. See <a href="/join/">/join/</a>.</p>
 <p class="muted"><a href="/">All events</a> · <a href="/graph/">The graph</a> · <a href="/api/v1/events.json">The data</a></p>`;
     return { id: e.id, path: eventPath(e), url, html: page(title, body, desc, head) };

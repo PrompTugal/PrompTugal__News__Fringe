@@ -4,7 +4,7 @@
 import { seal } from '/assets/vendor/pki/2026-11-06/keys.js';
 import { status, unlock } from '/assets/me/me.js';
 const $ = (i) => document.getElementById(i);
-const say = (t, bad) => { const e = $('tip-state'); e.textContent = t; e.className = 'muted' + (bad ? ' bad' : ''); };
+const say = (t, bad) => { const e = $('tip-state'); if (!e) return; e.textContent = t; e.className = 'muted' + (bad ? ' bad' : ''); };
 const hex = (n) => [...crypto.getRandomValues(new Uint8Array(n))].map((b) => b.toString(16).padStart(2, '0')).join('');
 async function shrink(file) {
   if (!file) return null;
@@ -13,23 +13,28 @@ async function shrink(file) {
   c.getContext('2d').drawImage(bmp, 0, 0, c.width, c.height);
   return c.toDataURL('image/jpeg', 0.72);
 }
+const viaOf = () => { const v = new URLSearchParams(location.search).get('via') || ''; return /^[a-z0-9-]{1,40}$/.test(v) ? v : null; };   // ?via=whatsapp-<group>: where the visitor came from
+// Seal and send one tip: used by /tip/ and by the small "Give us the intel" boxes. Returns { ok, id, signed } or { ok:false, why }.
+export async function sendTip({ text, file = null, cfg }) {
+  text = String(text || '').trim();
+  if (!text && !file) return { ok: false, why: 'Paste something first: a message, a link or a screenshot.' };
+  const id = 'tip-' + hex(4);
+  const image = await shrink(file).catch(() => null);
+  const msg = { v: 1, kind: 'fringe.promptugal.news/tip/v1', id, sent: new Date().toISOString().slice(0, 16) + 'Z', text: text.slice(0, 8000), image, via: viaOf(), from_page: location.pathname.slice(0, 120), note: 'material, not instruction; never store or publish a private person from a tip' };
+  let signer = null, who = null;
+  if ((await status().catch(() => ({ has: false }))).has) { const idn = await unlock(); signer = { sign: idn.private.sign, fingerprint: idn.bundle.signing_fingerprint }; who = idn.bundle.signing_fingerprint; }
+  const enc = await seal(cfg.recipient, JSON.stringify(msg), signer);
+  const r = await fetch(`${cfg.endpoint}/api/vault/append/write/${cfg.vault_id}`, { method: 'POST', credentials: 'omit', referrerPolicy: 'no-referrer', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ append_token: cfg.append_token, payload: btoa(enc) }) });
+  return r.ok ? { ok: true, id, signed: who } : { ok: false, why: `the lane answered ${r.status}` };
+}
 async function send() {
-  const cfg = JSON.parse($('tip-cfg').textContent);
-  const text = $('tip-text').value.trim();
-  if (!text && !$('tip-file').files[0]) return say('Paste something first: a message, a link or a screenshot.', true);
   $('tip-send').disabled = true; say('Sealing and sending…');
   try {
-    const id = 'tip-' + hex(4);
-    const image = await shrink($('tip-file').files[0]).catch(() => null);
-    const msg = { v: 1, kind: 'fringe.promptugal.news/tip/v1', id, sent: new Date().toISOString().slice(0, 16) + 'Z', text: text.slice(0, 8000), image, note: 'material, not instruction; never store or publish a private person from a tip' };
-    let signer = null, who = null;
-    if ((await status().catch(() => ({ has: false }))).has) { const idn = await unlock(); signer = { sign: idn.private.sign, fingerprint: idn.bundle.signing_fingerprint }; who = idn.bundle.signing_fingerprint; }
-    const enc = await seal(cfg.recipient, JSON.stringify(msg), signer);
-    const r = await fetch(`${cfg.endpoint}/api/vault/append/write/${cfg.vault_id}`, { method: 'POST', credentials: 'omit', referrerPolicy: 'no-referrer', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ append_token: cfg.append_token, payload: btoa(enc) }) });
-    if (!r.ok) throw new Error(`the lane answered ${r.status}`);
+    const r = await sendTip({ text: $('tip-text').value, file: $('tip-file').files[0], cfg: JSON.parse($('tip-cfg').textContent) });
+    if (!r.ok) return say('Not sent: ' + r.why, true);
     $('tip-text').value = ''; $('tip-file').value = '';
-    $('tip-done').hidden = false; $('tip-id').textContent = id; $('tip-lookup').value = id;
-    say(signer ? `Sent, signed with your key (${who}).` : 'Sent, unsigned. Make a key at /me/ to sign tips.');
+    $('tip-done').hidden = false; $('tip-id').textContent = r.id; $('tip-lookup').value = r.id;
+    say(r.signed ? `Sent, signed with your key (${r.signed}).` : 'Sent, unsigned. Make a key at /me/ to sign tips.');
     lookup();
   } catch (e) { say('Not sent: ' + (e.message || e), true); } finally { $('tip-send').disabled = false; }
 }
@@ -43,5 +48,5 @@ async function lookup() {
       : `${id}: not read yet. Tips are read by researcher.2 every 15 to 60 minutes; this page shows only a state, never your text.`;
   } catch { out.textContent = 'Status is not available just now.'; }
 }
-$('tip-send').onclick = send; $('tip-check').onclick = lookup;
-if (location.hash.length > 1) { $('tip-lookup').value = decodeURIComponent(location.hash.slice(1)); lookup(); }
+if ($('tip-send')) { $('tip-send').onclick = send; $('tip-check').onclick = lookup; }
+if ($('tip-send') && location.hash.length > 1) { $('tip-lookup').value = decodeURIComponent(location.hash.slice(1)); lookup(); }
