@@ -90,6 +90,8 @@ export function buildModel(root, events) {
   const personaSeed = readJSON(root, 'data/graph/personas.json')?.personas || [];
   const orgSeed = [...(readJSON(root, 'data/organisers.json')?.organisers || []), ...(readJSON(root, 'data/graph/organisers.json')?.organisers || [])];
   const communities = readJSON(root, 'data/communities.json')?.communities || [];
+  const FOLD = readJSON(root, 'data/graph/topics.json')?.folds || {};   // curated: a tag shown under a broader topic
+  const topicOf = (t) => { const n = topicName(t); return FOLD[n] || FOLD[String(t)] || n; };
   const commById = new Map(communities.map((c) => [c.id, c]));
   const commByName = new Map(communities.map((c) => [norm(c.name), c]));
 
@@ -182,11 +184,13 @@ export function buildModel(root, events) {
     ev.platform = pf.id; link(id, 'registerOn', pf.id, e);
 
     // topics
-    for (const t of new Set((e.topics || []).map(topicName))) {
+    for (const t of new Set((e.topics || []).map(topicOf))) {
       const tid = slug(t);
-      if (!E.topics.has(tid)) E.topics.set(tid, { id: tid, type: 'topic', name: t, events: [] });
-      E.topics.get(tid).events.push(id); ev.topics.push(tid); link(id, 'about', tid, e);
+      if (!E.topics.has(tid)) E.topics.set(tid, { id: tid, type: 'topic', name: t, tags: [], events: [] });
+      const T = E.topics.get(tid); T.events.push(id); ev.topics.push(tid); link(id, 'about', tid, e);
+      for (const raw of e.topics || []) if (topicOf(raw) === t && !T.tags.includes(String(raw))) T.tags.push(String(raw));
     }
+
 
     // personas, by rule
     const text = `${e.name} ${(e.topics || []).join(' ')} ${e.kind || ''}`;

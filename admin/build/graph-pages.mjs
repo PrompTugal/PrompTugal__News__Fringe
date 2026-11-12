@@ -110,7 +110,7 @@ ${m.festivals.length ? `<p class="muted">Festivals</p>${chips('festival', m.fest
 ${later.length ? `<h2>The rest of the week: ${later.length}</h2>${chips('day', [...new Set(later.map((e) => e.day))])}${evList(later.map((e) => e.id))}` : ''}
 <p class="muted">Organisers</p>${chips('organiser', orgsOf(p.events).slice(0, 30))}${api('personas')}`, `Today's Lisbon side events for: ${p.name}, and the rest of the week.`);
   }
-  for (const t of m.topics) write(`${PREFIX.topic}/${t.id}`, t.name, `<h1>${esc(t.name)}</h1><p class="muted">Organisers</p>${chips('organiser', orgsOf(t.events))}<h2>${t.events.length} events</h2>${evList(t.events)}${api('topics')}`, `Side events in Lisbon this week about ${t.name}.`);
+  for (const t of m.topics) write(`${PREFIX.topic}/${t.id}`, t.name, `<h1>${esc(t.name)}</h1>${(t.tags || []).filter((x) => x !== t.name).length ? `<p class="muted">Gathers the tags: ${t.tags.map(esc).join(', ')} (as the event pages are tagged; folds in data/graph/topics.json).</p>` : ''}<p class="muted">Organisers</p>${chips('organiser', orgsOf(t.events))}<h2>${t.events.length} events</h2>${evList(t.events)}${api('topics')}`, `Side events in Lisbon this week about ${t.name}.`);
   // --- sessions: each with its event, festival, day and place ---------------------------------------------------
   const hm = (t) => (t ? String(t).slice(11, 16) : '');
   const sessList = (ids) => `<ol class="gx-ev">${ids.map((id) => B.sessions.get(id)).map((x) => `<li><span class="muted">${esc(hm(x.start))}–${esc(hm(x.end))}</span> ${a('session', x.id)}${x.kind && x.kind !== 'talk' ? ` <span class="muted">· ${esc(x.kind)}</span>` : ''}</li>`).join('')}</ol>`;
