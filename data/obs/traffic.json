@@ -16,10 +16,10 @@
   "tabs": 268,
   "countries": 20,
   "shares": 190,
-  "bots": 2010,
+  "bots": 2011,
   "crawler_tabs": 1,
-  "agent_runs": 356,
-  "agent_runs_signed": 315
+  "agent_runs": 357,
+  "agent_runs_signed": 316
  },
  "by_hour": [
   [
@@ -1404,7 +1404,7 @@
   ],
   [
    "observability.fringe@PrompTugal.dinis",
-   17
+   18
   ],
   [
    "design.2.fringe@PrompTugal.dinis",
@@ -1798,7 +1798,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
     1
    ]
   ]
