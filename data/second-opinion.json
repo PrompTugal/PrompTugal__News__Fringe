@@ -1,10 +1,10 @@
 {
  "about": "Second-opinion checks (work/20): a cheap open model read each event's public page and our entry. EVIDENCE only, never fact: no data changed from it. Verdicts only; no page or model text is kept in git. Mismatches are for work/13 and researcher.2 to re-read at source.",
- "run_at": "2026-11-12T16:21:16Z",
+ "run_at": "2026-11-12T17:21:04Z",
  "by": "dev.2.fringe@PrompTugal.dinis",
  "model": "tier check (see admin/tools/llm-models.json) for non-Luma pages; Luma events from the calendars' public iCal data (data/feeds/luma-ical.json), no page fetched",
  "hours": 2,
- "checked": 82,
+ "checked": 80,
  "errors": 0,
  "mismatches": 0,
  "cost_usd_this_run": 0,
@@ -236,20 +236,6 @@
    "place": "unclear"
   },
   {
-   "id": "2026-11-12-next-rounds-on-us",
-   "status": "match",
-   "start": "match",
-   "end": "match",
-   "place": "unclear"
-  },
-  {
-   "id": "2026-11-12-healthcare-re-imagined-by-ai",
-   "status": "match",
-   "start": "match",
-   "end": "match",
-   "place": "match"
-  },
-  {
    "id": "2026-11-12-one-night-in-lisbon-with-replit",
    "status": "match",
    "start": "match",
@@ -355,6 +341,13 @@
    "place": "match"
   },
   {
+   "id": "2026-11-12-institutional-capital-tokenized",
+   "status": "match",
+   "start": "match",
+   "end": "match",
+   "place": "unclear"
+  },
+  {
    "id": "2026-11-12-opus-after-hours",
    "status": "match",
    "start": "match",
@@ -381,13 +374,6 @@
    "start": "match",
    "end": "match",
    "place": "match"
-  },
-  {
-   "id": "2026-11-12-institutional-capital-tokenized",
-   "status": "match",
-   "start": "match",
-   "end": "match",
-   "place": "unclear"
   },
   {
    "id": "2026-11-12-a-reflection-on-art-technology-by-boca-biennia",
