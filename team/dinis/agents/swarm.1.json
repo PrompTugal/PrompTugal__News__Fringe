@@ -1,6 +1,6 @@
 {
   "agent": "swarm.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T01:40Z",
+  "updated": "2026-11-12T01:43Z",
   "account": "riskmandate-personal (Ultra)",
   "session": "session_01Kw9UwFHqLAjKake7UEDjL3",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (11 Nov 2026, about 21:0x UTC: 'start a new agent called Swarm ... for our Swarm capabilities and our risk mandate Swarm, which we want to demo tomorrow')",
@@ -34,7 +34,8 @@
     "2026-11-12T01:29Z: at Dinis's word ('make sure they're running on a schedule ... working in collaboration'), hourly wakes at :28 until 07:00 UTC for swarm.1.dev (trig_01Lp8B73E73u3Cy8PnvUun1w), swarm.1.designer (trig_01D7N8FkBZ2xT4L7AkaM7wCx) and storytelling.1 (trig_01QFsRdf6w5xwn66xT6fkh4r); a reminder at 07:05 to disable them (trig_01T5xkh8YNUDuy3psoga8fa3); his guidance (hide, fade in, clean; slides and animated infographics welcome) passed to them and to the lead",
     "2026-11-12T01:40Z: SHarness measured here (sharness-ai 0.2.0): before, root with all capabilities and the internet; under one policy, 6 of 6 probes held (Swarm harness/, 52360a9)",
     "2026-11-12T01:40Z: at Dinis's word, started harness.1 (session_01Kw9UwEJ6ftqZvGuZ71MoFz), audience.1 the synthetic audience (session_01Kw9UwEqnB3nx2WMmjWDoye), and relay.1, relay.2, relay.3 for the Git and vault handover (session_01Kw9UwFh848oDoySQUW2thv, session_01Kw9UwBvW6QLYPMDxmiacxW, session_01Kw9UwBCB9ibNPNCC92HQC4); hourly wakes at :39 until 07:00 UTC; my own hourly review with screenshots at :45; all wakes disabled at 07:05 (trig_01T5xkh8YNUDuy3psoga8fa3)",
-    "2026-11-12T01:40Z: the new mandate (click to zoom, the policy box and checks, SHarness before and after, PKI on everything, vaults colour-coded, mandate/reach/gap, demo packs) sent to swarm.1.dev, swarm.1.designer and storytelling.1"
+    "2026-11-12T01:40Z: the new mandate (click to zoom, the policy box and checks, SHarness before and after, PKI on everything, vaults colour-coded, mandate/reach/gap, demo packs) sent to swarm.1.dev, swarm.1.designer and storytelling.1",
+    "2026-11-12T01:43Z: Swarm site publishes every tracked folder (602a6a8); data/agents.json, the session tree building the demo (cd8b4fc); pack 0 'the five questions' (a founder's identity/communication/governance/audit/why-allowed questions) with its evidence sent to storytelling.1; fast replay, size controls and the live agents view sent to swarm.1.dev and the designer; the storm newsroom's runner design noted as a case study"
   ],
   "next": [
     "Dinis's brief on more experiments",
@@ -45,8 +46,8 @@
     "Dinis: not yet added to PrompTugal__News__Website board/keys.json",
     "Dinis: GRAFANA_TOKEN and SG_SEND_ACCESS_TOKEN in the Runs repo are unused: delete them unless you want the vault carrier tomorrow",
     "Dinis: after the demo, replace ELASTIC_CLOUD with a key limited to swarm-* (architect.1)",
-    "Dinis: if swarm.1.dev, swarm.1.designer or runner.1 shows a permission prompt (add_repo push, abp whoami, keygen), it waits for you in that session",
-    "Dinis: for runner.2 on your other account: a Claude Code session there with PrompTugal/PrompTugal__News__Swarm attached and an OpenRouter key on its environment; paste RUNNER.md's prompt with <n>=2, <id>=dinis; its packet is s004-storm-six"
+    "Dinis: for runner.2 on your other account: a Claude Code session there with PrompTugal/PrompTugal__News__Swarm attached and an OpenRouter key on its environment; paste RUNNER.md's prompt with <n>=2, <id>=dinis; its packet is s004-storm-six",
+    "Dinis: four agents are blocked by their sandboxes on code from outside, and wait for you in their own sessions: harness.1 (session_01Kw9UwEJ6ftqZvGuZ71MoFz: pip install sharness-ai==0.2.0 in a venv), relay.1 (session_01Kw9UwFh848oDoySQUW2thv: node pki-agent.mjs), relay.2 (session_01Kw9UwBvW6QLYPMDxmiacxW: node pki-agent.mjs), relay.3 (session_01Kw9UwBCB9ibNPNCC92HQC4: pip install sgit-ai==0.27.0 and node pki-agent.mjs)"
   ],
   "team": {
     "swarm.1.dev.fringe@PrompTugal.dinis": {
