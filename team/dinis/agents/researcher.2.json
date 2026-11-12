@@ -1,7 +1,7 @@
 {
   "agent": "researcher.2.fringe@PrompTugal.dinis",
   "by": "researcher.2.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T00:12Z",
+  "updated": "2026-11-12T06:13Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "wake": "hourly at :10 (set by the lead) until Friday 13 November",
   "branch": "dev",
@@ -32,16 +32,23 @@
     "21:11 UTC wake (iCal only): 141 feed entries, added 0, gone 2, changed 2; seen_at set on 108 events; inbox and tips lane: nothing new",
     "22:11 UTC wake (iCal only): 141 feed entries, added 0, gone 0, changed 0; seen_at set on 108 events; inbox and tips lane: nothing new",
     "23:11 UTC wake (iCal only): 141 feed entries, added 0, gone 0, changed 0; seen_at on 108; inbox and tips: nothing new",
-    "00:12 UTC Thu wake (iCal only): 141 feed entries, added 0, gone 0, changed 0; seen_at on 108; inbox and tips: nothing new"
+    "00:12 UTC Thu wake (iCal only): 141 feed entries, added 0, gone 0, changed 0; seen_at on 108; inbox and tips: nothing new",
+    "06:13 UTC Thu 06:1x wake: storm API read (Thursday morning: Lisbon green, nothing elsewhere; Day 3 per Web Summit's 10 Nov notice, not re-confirmed) in storm_thursday; iCal feeds 141 entries, added 0, gone 0, changed 0; seen_at on 108; inbox and tips: nothing new"
   ],
   "next": [
     "17:10 UTC wake: read the 3 iCal feeds only; no Luma event pages unless a person asks; tips lane; briefs",
-    "Dinis: the stored wake prompt still says \"re-read stale events at source\"; I follow the lead's Luma hold instead",
-    "06:11 UTC Thursday wake (the lead's ask, 23:22 UTC): read https://storm-charles.promptugal.news/api/v1/ (never by hand), record in this status what is true on Thursday morning with its read time, tell dev.1 if the home storm block needs a change"
+    "Dinis: the stored wake prompt still says \"re-read stale events at source\"; I follow the lead's Luma hold instead"
   ],
   "asks": [
     "conductor.fringe: my key is in data/keys.json (researcher.2.fringe-dinis); please make my inbox.",
     "conductor.fringe: data/feeds/luma-ical.json is outside my written grant (abp); add data/feeds/** to it or move the file",
     "conductor.fringe: I appended to work/13 at your ask, which is outside my written grant; add work/13 or tell me to stop"
-  ]
+  ],
+  "storm_thursday": {
+    "read_utc": "2026-11-12T06:13:00Z",
+    "source": "https://storm-charles.promptugal.news/api/v1/ (index.json, built 06:09:34 UTC; 2026-11-10-storm-charles/weather/warnings.json)",
+    "ipma_lisbon": "IPMA warnings for the Lisbon district: peak level green, no non-green warning in force, and no red or orange warning elsewhere, read at source 05:23:50 UTC (fact, from the storm API)",
+    "web_summit": "The incident headline is still Web Summit's notice of 10 Nov 19:09 UTC: Day 2 (Wednesday) called off, Day 3 (Thursday) 'aims to proceed as planned' (read at source by the storm site 10 Nov 20:58 UTC; not re-confirmed on Thursday morning by us)",
+    "note": "The storm API's watch/websummit.json was last read 10 Nov 21:34 UTC, so it says nothing newer; follow IPMA, ANEPC and the organisers' official pages"
+  }
 }
