@@ -1,14 +1,14 @@
 {
   "agent": "swarm.1.dev.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T02:14Z",
+  "updated": "2026-11-12T02:20Z",
   "written_by": "swarm.1.dev.fringe@PrompTugal.dinis (its own session)",
   "session": "session_01Kw9UwFCZKpkLq9iapcyzSt",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis at Dinis's word (23:4x UTC)",
   "reports_to": "swarm.1.fringe@PrompTugal.dinis",
-  "state": "the stage (PrompTugal__News__Swarm stage.html, d0049f4): 38 scenes in 14 acts, 15 packs, 6 views; every step walked (140), no errors; working on past 07:00 UTC at Dinis's word (relayed by swarm.1)",
+  "state": "the stage (swarm.promptugal.news/stage.html, Swarm 5db6d57): 38 scenes in 14 acts plus 1 held back (F1), 15 packs, 6 views; every step walked (140), no errors; working on past 07:00 UTC at Dinis's word (relayed by swarm.1)",
   "doing": [
-    "the stage: new evidence becomes scenes as it lands (harness.1, relays, storytelling.1's sims)"
+    "the stage: new evidence becomes scenes as it lands"
   ],
   "done": [
     "orientation",
@@ -17,13 +17,16 @@
     "2026-11-12T01:25Z: session key made (signing sha256:7436510cadaff6ef, encryption sha256:8c1dd6910f8e2498); swarm.1.dev.fringe-dinis in data/keys.json (public half only); abp whoami set; add_repo push to Swarm__Runs and Fringe approved by Dinis in this session",
     "2026-11-12T01:46Z: PrompTugal__News__Swarm stage.html (9ec7bd3, 095713b, 468d3e9): the talk player's clock (back lands on the end of the previous step); top-down, tree, radial, force with anchors, 3D universe (three.js 0.147.0 + bloom); overlays (same privileges, policy, isolated); simulated assets labelled; counters from runs and the Runs summary.json; cost bars; cards (slide, mandate-reach-gap, harness probe lights); the session tree. Tested in Chromium with no console errors",
     "2026-11-12T02:01Z: stage: packs as entry points (#pack=questions, harness, pki, vaults...); click any unit for its box (mandate, grant, budget, keys, hashes); REAL / SIMULATED / ILLUSTRATION on every scene; storytelling.1's fact-check fixed; Gmail and Calendar with riskmandate.ai's findings; the gap measured (Fringe data/run-reach.json); pack 0, the five questions; harness.1's E1-E6 as scenes; the policy check inside vs outside; the vault handover (relay flows); swarm.1.designer's SwarmViews as view 6 (Swarm ccb2299, c1673db, 6a85009, 3c706ee)",
-    "2026-11-12T02:14Z: stage: audience.1's review 2 fixed; red only for real harm; the database run (sims/db-mandate) and the licence to operate (sims/licence) as scenes; the vault handover (h001, 21 steps) as a timeline; harness.1's E1-E6; swarm.1.designer's animated packs embedded; tools/agent-activity.mjs (commits per agent per hour) with the team scene sized by commits and live every minute (Swarm 6ed642d, fa28969, 8ac79ec, d0049f4)"
+    "2026-11-12T02:14Z: stage: audience.1's review 2 fixed; red only for real harm; the database run (sims/db-mandate) and the licence to operate (sims/licence) as scenes; the vault handover (h001, 21 steps) as a timeline; harness.1's E1-E6; swarm.1.designer's animated packs embedded; tools/agent-activity.mjs (commits per agent per hour) with the team scene sized by commits and live every minute (Swarm 6ed642d, fa28969, 8ac79ec, d0049f4)",
+    "2026-11-12T02:20Z: stage: double-click zooms to a unit and everything it started; the Runs summary live every minute; 'Every run' includes the Runs repo's 15 runs; F1 built and held back; the designer's orbit mode (Swarm 8d14251, 1ae5ae0, 5db6d57)"
   ],
   "next": [
-    "zoom into a subtree on double-click; live counters",
     "refresh data/agent-activity.json at each wake",
-    "a projector-size pass on every scene"
+    "F1 joins act 8 if Dinis says yes (storytelling.1 asked him)",
+    "harness.1's refused attempt by a real swarm unit, as a scene, when it lands"
   ],
-  "asks": [],
+  "asks": [
+    "Dinis: finding F1 (a 'contain --profile' sentence still let root read /etc/shadow) is built as a scene but OFF (stage.html#pack=findings only), because it is drafted, not filed; say if it may be shown"
+  ],
   "wake": "none: works through the night at Dinis's word (01:2x UTC: not on a schedule; ready by 06:00-07:00 UTC)"
 }
