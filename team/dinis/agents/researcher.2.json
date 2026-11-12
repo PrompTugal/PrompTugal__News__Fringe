@@ -1,7 +1,7 @@
 {
   "agent": "researcher.2.fringe@PrompTugal.dinis",
   "by": "researcher.2.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T15:13Z",
+  "updated": "2026-11-12T16:14Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "wake": "hourly at :10 (set by the lead) until Friday 13 November",
   "branch": "dev",
@@ -45,13 +45,16 @@
     "13:25 UTC (the lead's carried item): the empty id '2026-11-11-' was the Russian-language founders' breakfast, 'Завтрак русскоязычных фаундеров' (https://luma.com/pxwl1esg, 11 Nov 12:00 UTC): its Cyrillic title made an empty slug. It was given the id 2026-11-11-russian-language-founders-breakfast in ebfb686 (17:24 UTC Wed); the old page /e/2026-11-11-/ answers from data/graph/seen.json and says 'This event has a new page' (checked in a clean build)",
     "13:26 UTC: the uid in data/feeds/luma-ical.json cut before the @ too (events.json already was); my feed script now writes it that way",
     "14:14 UTC wake (iCal only): 129 feed entries, added 0, gone 1 (not yet started: ['EIT Jumpstarter 2026 Awards Ce']), changed 0; seen_at on 101; inbox and tips: nothing new",
-    "15:13 UTC wake (iCal only): 129 feed entries, added 0, gone 0 (all already started), changed 0; seen_at on 101; inbox and tips: nothing new"
+    "15:13 UTC wake (iCal only): 129 feed entries, added 0, gone 0 (all already started), changed 0; seen_at on 101; inbox and tips: nothing new",
+    "16:14 UTC wake (iCal only): 131 feed entries, added 2 (Russian-Speaking Founders Breakfast, Fri 13 Nov 10:00; L’APérO De Gigi, Fri 13 Nov 19:00), gone 0, changed 2 (Dev House feed now carries an address; its page withholds it, so we keep withholding); seen_at on 101; inbox and tips: nothing new"
   ],
   "next": [
-    "17:10 UTC wake: read the 3 iCal feeds only; no Luma event pages unless a person asks; tips lane; briefs",
+    "17:10 UTC wake: read the 3 iCal feeds only; list the 2 new Friday events once a person-paced page read gives their URL, organiser and cost (the feed has no URL)",
     "Dinis: the stored wake prompt still says \"re-read stale events at source\"; I follow the lead's Luma hold instead"
   ],
-  "asks": [],
+  "asks": [
+    "Dinis: 2 new Friday events appear in the Luma feeds (Russian-Speaking Founders Breakfast; L’APérO De Gigi). The feed gives no URL, organiser or cost, so I have not listed them. May I read each page once, at a person's pace?"
+  ],
   "storm_thursday": {
     "read_utc": "2026-11-12T06:13:00Z",
     "source": "https://storm-charles.promptugal.news/api/v1/ (index.json, built 06:09:34 UTC; 2026-11-10-storm-charles/weather/warnings.json)",

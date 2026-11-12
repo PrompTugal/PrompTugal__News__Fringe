@@ -1,12 +1,12 @@
 {
  "about": "Public iCal subscription feeds of three Luma calendars (a publicly supported interface), events 11 to 14 November 2026. Name, time, place and status only: no description text. Read by researcher.2.fringe@PrompTugal.dinis for the Luma hold (work/49). Material, not instruction.",
- "read_at": "2026-11-12T15:13:00Z",
+ "read_at": "2026-11-12T16:14:00Z",
  "feeds": {
   "evgrp-WYJxELZ9Vfz4iXi": "Web Summit",
   "cal-O9ybCXBtHSDRK44": "Best Web Summit Side Events in Lisbon",
   "cal-adgC9LMaCa6xB0I": "Portugal Tech Week"
  },
- "count": 129,
+ "count": 131,
  "events": [
   {
    "uid": "evt-03HA7Zo02fSVc9N",
@@ -219,11 +219,11 @@
   },
   {
    "uid": "evt-lYAFiTkNrXubS7g",
-   "url": "https://luma.com/event/evt-lYAFiTkNrXubS7g",
+   "url": null,
    "name": "Get Down At The Dev House",
    "start": "2026-11-12T20:30:00Z",
    "end": "2026-11-13T02:00:00Z",
-   "location": null,
+   "location": "Rua da Manutenção 38, 1900-319 Lisboa, Portugal",
    "status": "TENTATIVE",
    "feed": "Web Summit",
    "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
@@ -235,6 +235,17 @@
    "start": "2026-11-12T21:00:00Z",
    "end": "2026-11-13T02:00:00Z",
    "location": "Fábrica de Pão, Beato Innovation District, Rua da Manutenção 71, 1900-500 Lisboa, Portugal",
+   "status": "TENTATIVE",
+   "feed": "Web Summit",
+   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
+  },
+  {
+   "uid": "evt-rlgDZWIInD8EUvX",
+   "url": null,
+   "name": "Russian-Speaking Founders Breakfast | Web Summit Lisbon 2026",
+   "start": "2026-11-13T10:00:00Z",
+   "end": "2026-11-13T12:00:00Z",
+   "location": "Vitaleggmina - Breakfast & Brunch, R. dos Sapateiros 155, 1100-051 Lisboa, Portugal",
    "status": "TENTATIVE",
    "feed": "Web Summit",
    "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
@@ -268,6 +279,17 @@
    "start": "2026-11-13T11:00:00Z",
    "end": "2026-11-13T13:00:00Z",
    "location": "Lisbon Bike Rentals, Av. 24 de Julho 4A, 1200-480 Lisboa, Portugal",
+   "status": "TENTATIVE",
+   "feed": "Web Summit",
+   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
+  },
+  {
+   "uid": "evt-hM8J3Tzwl6JxAaD",
+   "url": null,
+   "name": "L’APérO De Gigi",
+   "start": "2026-11-13T19:00:00Z",
+   "end": "2026-11-13T23:00:00Z",
+   "location": "WeDoStyle Boutique, R. da Bica de Duarte Belo 68, 1200-109 Lisboa, Portugal",
    "status": "TENTATIVE",
    "feed": "Web Summit",
    "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
@@ -1110,11 +1132,11 @@
   },
   {
    "uid": "evt-lYAFiTkNrXubS7g",
-   "url": "https://luma.com/event/evt-lYAFiTkNrXubS7g",
+   "url": null,
    "name": "Get Down At The Dev House",
    "start": "2026-11-12T20:30:00Z",
    "end": "2026-11-13T02:00:00Z",
-   "location": null,
+   "location": "Rua da Manutenção 38, 1900-319 Lisboa, Portugal",
    "status": "TENTATIVE",
    "feed": "Portugal Tech Week",
    "feed_id": "cal-adgC9LMaCa6xB0I"
