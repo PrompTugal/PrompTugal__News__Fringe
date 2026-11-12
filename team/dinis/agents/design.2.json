@@ -2,8 +2,8 @@
  "agent": "design.2.fringe@PrompTugal.dinis",
  "role": "design",
  "state": "idle: nothing open in my lane",
- "updated": "2026-11-11T23:16Z",
- "doing": "23:15 wake: no HOLD; inbox empty; no new brief since 16:30; live QA of my pages passed (home 81 stars, /now/ 40 rows, B, /my/, card); open D28, D34, D41 are not mine",
+ "updated": "2026-11-12T00:16Z",
+ "doing": "00:15 wake (12 Nov): no HOLD; inbox empty; no new brief since 16:30; live QA of my pages passed, including a check across midnight (design B and /now/ follow the reader clock: 4 on now at 00:16); open D28, D34, D41 are not mine",
  "done": [
   "D29 My day live at /my/ with stars everywhere",
   "D28 now strip module (nowstrip.mjs) handed to design.1",
