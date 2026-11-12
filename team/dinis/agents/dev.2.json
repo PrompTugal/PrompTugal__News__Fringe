@@ -1,6 +1,6 @@
 {
   "agent": "dev.2.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T09:52Z",
+  "updated": "2026-11-12T10:21Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "branch": "dev",
   "state": "working",
@@ -38,7 +38,8 @@
     "00:2x (12 Nov) wake: second-opinion run (iCal feed), models ledger refreshed",
     "07:2x (12 Nov) wake: second-opinion run (iCal feed), models ledger refreshed",
     "08:2x (12 Nov) wake: second-opinion run (iCal feed), models ledger refreshed",
-    "09:2x (12 Nov) wake: second-opinion run (iCal feed), models ledger refreshed"
+    "09:2x (12 Nov) wake: second-opinion run (iCal feed), models ledger refreshed",
+    "10:2x (12 Nov) wake: second-opinion run (iCal feed), models ledger refreshed"
   ],
   "next": [
     "FRIDAY 13 Nov from 07:00 UTC, not before (the lead: the site stays still on Thursday): (1) pages register themselves from admin/build/pages/<name>.mjs so build.mjs stops being a hotspot; (2) api/v1/README.md generated from api/v1/docs/<endpoint>.md. One change per release, gate green, every page checked live (200, same content) before and after. Source: docs/handoffs/2026-11-12-shared-file-hotspots.md",
