@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T15:38Z",
+ "generated": "2026-11-12T15:39Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 587,
+  "views": 588,
   "reads": 498,
-  "tabs": 286,
+  "tabs": 287,
   "countries": 22,
   "shares": 193,
   "bots": 2290,
   "crawler_tabs": 1,
-  "agent_runs": 455,
-  "agent_runs_signed": 399
+  "agent_runs": 456,
+  "agent_runs_signed": 400
  },
  "by_hour": [
   [
@@ -212,7 +212,7 @@
   ],
   [
    "2026-11-12 15:00",
-   1
+   2
   ]
  ],
  "by_page": [
@@ -301,6 +301,10 @@
    4
   ],
   [
+   "/e/2026-11-12-disconnect-2-connect/",
+   4
+  ],
+  [
    "/e/2026-11-11-yorkseed-allocator-lunch/",
    3
   ],
@@ -330,10 +334,6 @@
   ],
   [
    "/e/2026-11-11-open-mercato-night/",
-   3
-  ],
-  [
-   "/e/2026-11-12-disconnect-2-connect/",
    3
   ],
   [
@@ -1172,7 +1172,7 @@
  "by_country": [
   [
    "Portugal",
-   371
+   372
   ],
   [
    "United Kingdom",
@@ -1326,13 +1326,13 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   91
+   92
   ]
  ],
  "by_referrer": [
   [
    "www.google.com",
-   7
+   8
   ],
   [
    "lnkd.in",
@@ -1354,7 +1354,7 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   548
+   549
   ],
   [
    "fringe.promptugal.news",
@@ -1400,7 +1400,7 @@
   ],
   [
    "phone",
-   260
+   261
   ],
   [
    "tablet",
@@ -1446,7 +1446,7 @@
   ],
   [
    "observability.fringe@PrompTugal.dinis",
-   23
+   24
   ],
   [
    "design.2.fringe@PrompTugal.dinis",
@@ -1498,7 +1498,7 @@
   ]
  ],
  "flows": {
-  "tabs": 284,
+  "tabs": 285,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
@@ -1510,7 +1510,7 @@
    ],
    [
     "from another site",
-    9
+    10
    ]
   ],
   "entry_pages": [
@@ -1543,6 +1543,10 @@
     3
    ],
    [
+    "/e/2026-11-12-disconnect-2-connect/",
+    3
+   ],
+   [
     "/me/",
     2
    ],
@@ -1568,10 +1572,6 @@
    ],
    [
     "/agentic-team/how-it-flows/",
-    2
-   ],
-   [
-    "/e/2026-11-12-healthcare-re-imagined-by-ai/",
     2
    ]
   ],
@@ -1605,6 +1605,10 @@
     4
    ],
    [
+    "/e/2026-11-12-disconnect-2-connect/",
+    4
+   ],
+   [
     "/e/2026-11-11-ai-for-business-applied-ai-pitch-party/",
     3
    ],
@@ -1618,10 +1622,6 @@
    ],
    [
     "/e/2026-11-11-enchant-pitch-parties/",
-    3
-   ],
-   [
-    "/e/2026-11-12-disconnect-2-connect/",
     3
    ],
    [
@@ -1742,7 +1742,7 @@
   "pages_per_tab": [
    [
     "1",
-    198
+    199
    ],
    [
     "2",
@@ -1828,11 +1828,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
@@ -1840,7 +1840,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ]
   ]
