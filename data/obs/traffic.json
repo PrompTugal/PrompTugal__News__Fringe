@@ -5,7 +5,7 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T07:38Z",
+ "generated": "2026-11-12T07:39Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
@@ -18,8 +18,8 @@
   "shares": 189,
   "bots": 1884,
   "crawler_tabs": 1,
-  "agent_runs": 322,
-  "agent_runs_signed": 286
+  "agent_runs": 323,
+  "agent_runs_signed": 287
  },
  "by_hour": [
   [
@@ -1394,7 +1394,7 @@
   ],
   [
    "observability.fringe@PrompTugal.dinis",
-   15
+   16
   ],
   [
    "design.2.fringe@PrompTugal.dinis",
