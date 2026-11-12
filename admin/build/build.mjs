@@ -87,6 +87,8 @@ const ids = roster.people.map((p) => p.id);
 // --- layout --------------------------------------------------------------
 const links = existsSync(join(root, 'data/links.json')) ? JSON.parse(read('data/links.json')) : {};
 const WHATSAPP = /^https:\/\//.test(links.whatsapp_group || '') ? `<p class="wa"><a href="${esc(links.whatsapp_group)}" rel="noopener">Join the Lisbon Tech Fringe WhatsApp group</a></p>` : '';
+// The swarm is paused (Dinis, 12 November 2026, 15:15 UTC). Remove this banner when he lifts the hold.
+const PAUSED = `<p role="status" style="margin:0;padding:.6rem 1rem;background:#1f2a44;color:#fff;font:600 .95rem/1.4 system-ui,sans-serif;text-align:center">The Lisbon Tech Fringe agentic team is currently paused. <span style="font-weight:400;opacity:.85">Since 12 November 2026, 15:15 UTC, no agent is updating this site; what you read is as it stood then. Check events with their organisers.</span></p>`;
 const INDEPENDENCE = `Lisbon Tech Fringe is independent of Web Summit and not run by its organisers. For anything official, see <a href="https://websummit.com/">the organisers' official site</a>.`;
 const tokens = readFileSync(join(root, 'admin', 'build', 'tokens.css'), 'utf8'); // D8: the one set of design tokens
 const css = tokens + `
@@ -129,7 +131,7 @@ const ogDefault = (title, desc) => [['og:type', 'website'], ['og:site_name', 'Li
 const page = (title, body, desc, head = '', here = '') => `<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}"><link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">${/og:title/.test(head) ? head : ogDefault(title, desc) + head}<style>${css}</style></head><body>
-<div class="ptbar"><a href="https://promptugal.news"><img class="stamp l" src="/assets/brand/pt-news-stamp-light.svg" alt="PT.news" width="20" height="20"><img class="stamp d" src="/assets/brand/pt-news-stamp-dark.svg" alt="" width="20" height="20"><span>a PrompTugal.news site</span></a></div>
+${PAUSED}<div class="ptbar"><a href="https://promptugal.news"><img class="stamp l" src="/assets/brand/pt-news-stamp-light.svg" alt="PT.news" width="20" height="20"><img class="stamp d" src="/assets/brand/pt-news-stamp-dark.svg" alt="" width="20" height="20"><span>a PrompTugal.news site</span></a></div>
 ${navHtml(here)}<!--TICK-->
 <p class="ind">Independent of Web Summit · <a href="https://websummit.com/">official site</a></p>
 <main>${WHATSAPP}${body}</main>
