@@ -34,7 +34,7 @@ Memory between wakes and across compactions. A restarted or compacted conductor 
 - Results feed architect.1's export → Elastic (fringe-altitudes, swarm-flows; Kibana "Flows").
 
 ## Pointers
-- **last-seen:** 970d9d5 (03:29 UTC Thu)
+- **last-seen:** 1bd1680 (04:29 UTC Thu)
 - `~/.abp/whoami` written at 21:3x (finding 44; rerun `node abp/tools/abp.mjs whoami` in a fresh container).
 - Key: session key, signing sha256:ca2c782dbfd0147e, in data/keys.json and PrompTugal__News__Website board/keys.json (id conductor.fringe-angelo).
 - Asks to the lead still open: obs.js console errors (ipapi.co CORS/429), on work/21.
