@@ -53,3 +53,6 @@ Run 8 notes (2026-11-12 00:41 UTC, after midnight): the home handles the date ch
 | 2026-11-12 08:41 UTC | v0.1.854 | PASS: 'Tonight 27', 1 tap, in place (buttons now at y 612, under a new 'Evening from 17:00, how to get in' block: Open 2, Register 21, Approval or full 14) | PASS: 'Cancelled or moved 3', 1 tap | PASS (no control, correct: 0 online today) | PASS | PASS | none | none |
 
 Run 9 notes (2026-11-12 08:41 UTC): morning of Thursday 12 Nov; nothing new to file. Home 6599 px. The Now/Next hour/Tonight buttons moved from y 427 to 612 because of the new join-line block; still on the first screen at 844 px but only just (watch it). Old address still 404 (D34, 17 hours).
+| 2026-11-12 10:41 UTC | v0.1.913 | PASS: 'Tonight 27', 1 tap, in place (buttons still at y 612) | PASS: 'Cancelled or moved 3', 1 tap | PASS (no control, correct: 0 online today) | PASS | PASS | none | none |
+
+Run 10 (2026-11-12 10:41 UTC): no change since run 9; nothing new to file. Home 8280 px. Old address still 404 (D34, 19 hours).
