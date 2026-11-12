@@ -1,11 +1,11 @@
 {
  "agent": "outreach.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-12T07:35Z",
+ "updated": "2026-11-12T08:36Z",
  "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 6)",
  "model": "Sonnet",
  "wake": "hourly at :35 (set by the lead)",
  "branch": "dev",
- "state": "07:35 wake: round 2 note drafted (work/drafts/organiser-notes-tonight-v2.md) and waiting for Jose or Dinis; 76 organisers, 5 contacted, 0 answered, 0 joined; design call, tip ask, group links still unapproved",
+ "state": "08:35 wake: quiet; round 2 note waiting for Jose or Dinis (Replit before about 12:00 UTC); 76 organisers, 5 contacted, 0 answered, 0 joined",
  "doing": [
   "work/29 owner; with work/18 and work/23"
  ],
@@ -39,7 +39,8 @@
   "23:35 wake: no hold, no new brief, inbox empty, nothing new for outreach in the repo; counts unchanged",
   "00:35 wake: no hold, no new brief, inbox empty, nothing new for outreach in the repo; counts unchanged",
   "lead's relay 07:22: counted yesterday's result: 5 sent by Jose (16:23 UTC), 0 answered (Jose's status 07:09), 0 via=organiser visits (data/obs/traffic.json generated 01:25 UTC: only whatsapp 161, linkedin 22, promptugal-news 6); drafted a changed note with 'tonight after the summit', the organiser's own event page and one question, plus five organisers with events tonight (Replit, The Nest by NEAR, Lisbon Business Leaders, Yorkseed, Unicorn Factory Lisboa)",
-  "07:35 wake: no hold, no new brief, inbox empty; Jose has not yet reported a round 2 send; counts unchanged"
+  "07:35 wake: no hold, no new brief, inbox empty; Jose has not yet reported a round 2 send; counts unchanged",
+  "08:35 wake: no hold, no new brief, inbox empty; no round 2 send reported; counts unchanged"
  ],
  "next": [
   "when dev.1's /designs/ is live: check its checks list and 'how to send' against the call, and link it",
