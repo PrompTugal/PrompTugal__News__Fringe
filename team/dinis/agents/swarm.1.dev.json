@@ -1,12 +1,12 @@
 {
   "agent": "swarm.1.dev.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T06:31Z",
+  "updated": "2026-11-12T07:30Z",
   "written_by": "swarm.1.dev.fringe@PrompTugal.dinis (its own session)",
   "session": "session_01Kw9UwFCZKpkLq9iapcyzSt",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis at Dinis's word (23:4x UTC)",
   "reports_to": "swarm.1.fringe@PrompTugal.dinis",
-  "state": "waiting for Dinis (07:00 UTC). The stage (Swarm dev, after bf04a46) is ready: the brisk main track rehearsed at 06:3x (10 presses, ← lands on the previous scene's end, no errors); the whole story walks clean at 1920x1080 and 1366x768 (158 steps, layout and caption-overlap checks).",
+  "state": "after Dinis's morning review (07:10): his priority 3, the stage, is done (Swarm cd694c3); offering the engine's reach data for the views' blast radius (priority 2, with swarm.1.designer)",
   "doing": [
     "the stage: new evidence becomes scenes as it lands"
   ],
@@ -30,14 +30,15 @@
     "2026-11-12T05:36Z: a play hint while a step or scene plays (swarm.1's brisk review, ec3c8f1); the whole story walked at 1366x768, one label collision fixed on 'elsewhere'",
     "2026-11-12T06:12Z: cards grow into the room the stage gives them, never past overflow (audience.1's review 6, 345a890); the walk checks card overflow",
     "2026-11-12T06:22Z: the reach counter names its base: 22 of the run's 30 units, the agent and all it started (swarm.1's review 5, e3708dd)",
-    "2026-11-12T06:31Z: overnight close: the walk measures what is visible against the caption (swarm.1.designer); zero problems at 1920 and 1366; brisk main track rehearsed"
+    "2026-11-12T06:31Z: overnight close: the walk measures what is visible against the caption (swarm.1.designer); zero problems at 1920 and 1366; brisk main track rehearsed",
+    "2026-11-12T07:30Z: Dinis's morning review, priority 3 (briefs/2026-11-12-0717): no raw run text under the stage (sources behind '▸ source'), » goes to the end of the last scene, ▶▶ all plays the whole story, the pack chips one size (Swarm cd694c3)"
   ],
   "next": [
-    "Dinis's word on the main track or the whole story, and on F1 and F6/h003",
-    "then: harness.1's next rows as scenes; refresh data/agent-activity.json"
+    "the blast radius on views, with swarm.1.designer",
+    "Dinis's word on the 'circles' if the pack chips were not what he meant"
   ],
   "asks": [
-    "Dinis: present stage.html#pack=main&brisk (10 presses; Present on the index opens it) or the whole story? May findings F1 and F6/h003 be shown (held back at #pack=findings)?"
+    "Dinis: 'the circles are not complete': I made the pack chips one size in a grid; if you meant something else, say which"
   ],
   "wake": "none: works through the night at Dinis's word (01:2x UTC: not on a schedule; ready by 06:00-07:00 UTC)"
 }
