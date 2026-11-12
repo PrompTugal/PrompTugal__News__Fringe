@@ -59,6 +59,8 @@ async function exportSpan(flowId, body) {
   const r = await fetch(`${ep}/v1/traces`, { method: 'POST', headers, body: JSON.stringify(body) });
   if (!r.ok) console.error(`flow: span not exported (OTLP HTTP ${r.status})`);
 }
+// a document id unique even when parallel processes share one FLOW_ID (a run's matrix of jobs): flow, unit, phase, seq
+export const evId = (ev) => `${ev.flow}:${ev.unit_id}:${ev.phase}:${ev.seq}`;
 const ROLE = { A4: 'swarm', A3: 'agent', A2: 'loop', A1: 'llm call', A0: 'compute' };
 const now = () => new Date().toISOString();
 
@@ -73,7 +75,7 @@ export function flow({ id = process.env.FLOW_ID, runner = process.env.FLOW_RUNNE
     const B = lib.base(), headers = { 'content-type': 'application/json', ...lib.auth() };
     ready ||= (async () => { const h = await fetch(`${B}/${INDEX}`, { method: 'HEAD', headers }); if (h.status === 404) await fetch(`${B}/${INDEX}`, { method: 'PUT', headers, body: JSON.stringify(MAPPING) }); })();
     await ready;
-    const r = await fetch(`${B}/${INDEX}/_doc/${encodeURIComponent(ev.flow + ':' + ev.seq)}`, { method: 'PUT', headers, body: JSON.stringify(ev) });   // _id = flow:seq, so a later ingest of the same events is idempotent
+    const r = await fetch(`${B}/${INDEX}/_doc/${encodeURIComponent(evId(ev))}`, { method: 'PUT', headers, body: JSON.stringify(ev) });   // _id = flow:seq, so a later ingest of the same events is idempotent
     if (!r.ok) { tally.errors++; console.error(`flow: event not stored (HTTP ${r.status})`); } else tally.sent++;
   };
   const emit = (u, phase, extra = {}) => {

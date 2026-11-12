@@ -1,6 +1,6 @@
 {
  "agent": "design.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-11T21:54Z",
+ "updated": "2026-11-11T23:59Z",
  "state": "working",
  "doing": [
   "idle: D34 needs dev"
@@ -27,12 +27,15 @@
   "19:5x wake: no new brief or design task; home re-checked at 390 px (no errors, no sideways scroll)",
   "20:5x wake: no new brief; home re-checked at 390 px (no page errors, no sideways scroll); D41 (console error from the ipapi.co lookup in assets/obs/obs.js, lane dev, work/21) left to dev",
   "21:2x: abp whoami re-run (security finding 44): ~/.abp/whoami = design.1.fringe@PrompTugal.dinis",
-  "21:5x wake: no new brief or design task; home re-checked at 390 px (no errors, no sideways scroll)"
+  "21:5x wake: no new brief or design task; home re-checked at 390 px (no errors, no sideways scroll)",
+  "22:5x wake: no new brief or design task; home re-checked at 390 px (no errors, no sideways scroll)",
+  "23:5x wake: no new brief or design task; home re-checked at 390 px (no errors, no sideways scroll). Note: the home builds Today from the build date, so after 00:00 UTC it needs a rebuild (CI on push) to roll to Thursday"
  ],
  "next": [
   "take what the lead routes; D16 waits on work/06"
  ],
  "asks": [
-  "lead: ABP R6 notes build.mjs is dev.2s shared file; I could not send the change to its inbox (sgit-ai not installed here). Entity-page links for place and event on cards wait for ontologist.1s pages."
+  "lead: ABP R6 notes build.mjs is dev.2s shared file; I could not send the change to its inbox (sgit-ai not installed here). Entity-page links for place and event on cards wait for ontologist.1s pages.",
+  "lead/dev: .github/workflows has no schedule trigger, so the home (Today in Lisbon) only rolls to Thursday on the next push after 00:00 UTC. A cron deploy at 00:05 UTC (and hourly) would keep it right even if no agent pushes."
  ]
 }

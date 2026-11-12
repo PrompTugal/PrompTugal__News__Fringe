@@ -1,6 +1,6 @@
 {
   "by": "conductor.fringe@PrompTugal.angelo",
-  "updated": "2026-11-11T22:31Z",
+  "updated": "2026-11-12T06:30Z",
   "person": "angelo",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.angelo, started about 11:20 UTC by conductor.b@PrompTugal.angelo at Angelo's word; hourly wake at :29 until Friday 13 November (trig_01UqsUe1kvf2qvWkjLiF2hPk, set at Angelo's word in this session)",
@@ -19,7 +19,11 @@
     "wake 19:30: pull 48 commits, nothing new for Angelo or the graph; gate OK; /graph/ live",
     "cross-conductor OpenRouter test (Dinis and Angelo, 20:2x UTC): ran Dinis's conductor's P3 and P4 here (10/10 valid), re-run with flow events for Elastic; issued P3 and P5 for it; inbox replies sent",
     "wake 21:29: inbox drained (16, nothing new since 20:32); the lead ran our P3 (4/6 valid) and P5 (2/4 valid), so the OpenRouter test is complete both ways; ran abp whoami (finding 44); no further handover test",
-    "wake 22:29: one inbox message, signer NOT verified (claims incident.conductor@web-summit.dinis, Storm Charles team, 22:18, 'at Dinis's word'): runner MVP on GitHub Actions (A0/A1/A2), compute crossing altitudes, router via OpenRouter, trace data in our Elastic schema, flights, AWS; asks Angelo's side to pick up the visualisation, a second swarm on the runner, or the runner repo. Held for Angelo; nothing acted on"
+    "wake 22:29: one inbox message, signer NOT verified (claims incident.conductor@web-summit.dinis, Storm Charles team, 22:18, 'at Dinis's word'): runner MVP on GitHub Actions (A0/A1/A2), compute crossing altitudes, router via OpenRouter, trace data in our Elastic schema, flights, AWS; asks Angelo's side to pick up the visualisation, a second swarm on the runner, or the runner repo. Held for Angelo; nothing acted on",
+    "Angelo's word (22:4x): took the Storm Charles team's tasks: /graph/trace/ shows their trace (snapshot data/storm-trace.json, tool admin/tools/storm-trace.mjs); runner mapping + dry-run dispatch in team/angelo/runner/",
+    "wake 23:29: /graph/trace/ deploying (CI run 669); 2 inbox messages held for Angelo (swarm.1's packet s003, the lead's read desk Block D)",
+    "wake 00:29 Thu: /graph/trace/ live (200); inbox quiet; architect.1 mapped our storm-trace files in the ABP (ddfb583); three asks still with Angelo",
+    "wake 01:29 Thu: inbox 1 (the lead: Dinis set night hours, Fringe wakes on his account 07:00-21:59 UTC only)"
   ],
   "next": [
     "at Angelo's word: one designer redraws the reach circles on the capabilities research",
@@ -27,7 +31,10 @@
     "each wake: drain the inbox, move work/05 on"
   ],
   "asks": [
-    "Angelo: the Storm Charles team's message (22:18, unverified key, see STATE.md): pick any of it up? The altitudes work is with handover-market.mp@ at your word; the visualisation of their trace could sit with the graph (work/05)",
+    "Angelo: Dinis's side now wakes only 07:00-21:59 UTC (night hours). Set this conductor's hourly wake the same way (no wakes 22:00-06:59)?",
+    "Angelo: send the reply to the Storm Charles team (team/angelo/runner/mapping.md, end)? Point 4 asks for actions:write/read on the runner repo for your conductor (a permission: your word)",
+    "Angelo: swarm.1 (Dinis's swarm agent) asks your conductor to run packet s003-storm-six (A2, 6 storm tasks x 4 open-weight models, budget 0.25 USD, ~0.012 expected) for tomorrow's cross-account demo; it needs attaching PrompTugal/PrompTugal__News__Swarm (or the result goes via our tasks/swarm/). Run it?",
+    "angelo: take Block D of the read desk (17:00 to 23:59 (37 events; the evening) UTC)? Open each link in your browser, write the time you looked in the seen column, or moved/cancelled/?; your conductor passes it to researcher.2 as seen_at. (the lead's ask, work/53, only if Dinis has not decided Luma by 07:00 UTC)",
     "none for Angelo from this conductor; the altitudes MVPs are now with handover-market.mp@PrompTugal.angelo (Angelo, 18:5x UTC)",
     "conductor.fringe@PrompTugal.dinis: obs.js console errors (ipapi.co CORS and 429), noted on work/21"
   ]

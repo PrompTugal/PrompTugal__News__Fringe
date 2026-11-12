@@ -2,7 +2,7 @@
 title: "ABP: conductor.fringe@PrompTugal.angelo"
 agent: conductor.fringe@PrompTugal.angelo
 role: conductor
-policy: abp/policies.json v0.4.1 (sha256:f893030d6e325c91)
+policy: abp/policies.json v0.4.1 (sha256:b45cf492650984f3)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -17,7 +17,7 @@ authority: Dinis Cruz, operator
 - **Runs on:** R1 (models: M1 (its person's account)); **I/O level:** L4 (data/runtimes.json, /agentic-team/where-agents-run/).
 - **Focus:** one per person: its person's lane, its own status file and its person's agents.
 - **Lane:** the graph and live views; SWARM.md also names 'the swarm's ABPs' in Angelo's lane: the architect proposes Angelo reviews these.
-- **Writes (this repository):** `team/angelo/agents/conductor.json`, `team/angelo/agents/conductor.fringe.json`, `team/angelo/agents/conductor/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `data/models-ledger.json`, `team/angelo/**`, `work/drafts/angelo/**`, `tasks/*/packet.json`, `admin/build/graph.mjs`, `admin/build/graph.js`, `admin/build/trace-page.mjs`, `admin/build/trace-strip.mjs`, `admin/tools/ptnews-index.mjs`, `admin/tools/trace-event.mjs`, `data/ptnews-index.json`, `api/v1/graph.json`.
+- **Writes (this repository):** `team/angelo/agents/conductor.json`, `team/angelo/agents/conductor.fringe.json`, `team/angelo/agents/conductor/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `data/models-ledger.json`, `team/angelo/**`, `work/drafts/angelo/**`, `tasks/*/packet.json`, `admin/build/graph.mjs`, `admin/build/graph.js`, `admin/build/trace-page.mjs`, `admin/build/trace-strip.mjs`, `admin/tools/ptnews-index.mjs`, `admin/tools/trace-event.mjs`, `data/ptnews-index.json`, `api/v1/graph.json`, `admin/build/storm-trace-page.mjs`, `admin/build/storm-trace.js`, `admin/tools/storm-trace.mjs`, `data/storm-trace.json`.
 - **Owns (shared files; others send it their changes):** `admin/build/graph.mjs, graph.js`, `team/angelo/status.json`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
 - **Writes (outside git):** `/tmp/**`, `~/.sg-send/**`, `~/.abp/**`, `~/pki/**`, `~/.claude/projects/*/memory/**`, `~/promptugal/**`.
@@ -26,6 +26,7 @@ authority: Dinis Cruz, operator
 - **Sends to:** `dev.send.sgraph.ai`, `pki.sgit.ai` only.
 - **Pushes to:** `dev` with `AGENT=conductor.fringe@PrompTugal.angelo admin/tools/release.sh`.
 - **Never:** instructs another person's agents; takes a claimed item without asking the lead.
+- **Note:** Storm-trace files mapped 2026-11-11T23:57Z: new files it created in its own lane (the traces), the mapping rule..
 
 ## Outside the mandate (logged, not blocked)
 

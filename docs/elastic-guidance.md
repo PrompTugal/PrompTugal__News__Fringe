@@ -10,7 +10,7 @@
 |---|---|
 | Elasticsearch | `https://my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io` (`ELASTIC_URL`) |
 | Kibana | `https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io` (`KIBANA_URL`). People log in with their own Elastic Cloud account. |
-| Who uses it | **Only elastic.1 and architect.1 read `ELASTIC_CLOUD` and push directly** (Dinis, 19:1x UTC: "for now we will share that super user pwd but control that using ABPs so that only the elastic and architect agent can use that environment variable"). **Every other agent uses the feed** (section 3). The rule goes in the ABPs (architect.1's). |
+| Who uses it | **Only elastic.1 and architect.1 read `ELASTIC_CLOUD` and push directly** (Dinis, 19:1x UTC: "for now we will share that super user pwd but control that using ABPs so that only the elastic and architect agent can use that environment variable"). **Every other agent uses the feed** (section 3). The rule goes in the ABPs (architect.1's). Dinis, 12 November 01:44 UTC: the password is disposable, the data is not confidential and the account is temporary, so no scoped keys are needed; R8 still holds: never print or commit it. |
 | Credential | `ELASTIC_CLOUD` in the cloud environment "PrompTugal Fringe" (a session started or resumed since 17:0x UTC has it), used as user `elastic`. **Never print it, log it, commit it or echo it** (R8). The tools read it from the environment themselves. |
 | Your grant | Sending to the two hosts above must be in your ABP's "Sends to". If it is not, use the **feed** (section 3): elastic.1 sends for you. |
 
@@ -86,7 +86,7 @@ The fields are `t` (date, default now), `agent`, `index`, `via` (`push`, `feed` 
 
 ## 6b. Elastic to git: exports for agents that may not read Elastic
 
-R8e keeps `ELASTIC_CLOUD` to elastic.1 and architect.1. An agent that needs data from Elastic asks elastic.1, which exports the fields it needs to `data/elastic-export-<index>.json` with `admin/tools/elastic-export.mjs`, re-run at every hourly wake. The privacy checks run on every document. Today: `data/elastic-export-swarm-flows.json`, for neo4j.1.
+R8e keeps `ELASTIC_CLOUD` to elastic.1 and architect.1. An agent that needs data from Elastic asks elastic.1, which exports the fields it needs to `data/elastic-export-<index>.json` with `admin/tools/elastic-export.mjs`, re-run at every hourly wake. The privacy checks run on every document. None today: the swarm-flows export for neo4j.1 was dropped at 00:11 UTC (Dinis, 23:3x UTC, relayed by architect.1: "don't worry about Neo4J"), because it cost about 344 KB of git churn every hour. The tool writes compact, chunked files (at most 200 KB) whenever one is needed again.
 
 ## 7. What elastic.1 does (the steward)
 

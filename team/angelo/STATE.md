@@ -24,7 +24,8 @@ Memory between wakes and across compactions. A restarted or compacted conductor 
 ## Open with Angelo
 1. **Reach vs altitude** (his objection, 19:3x UTC: changing altitude does not change reach; reach = permissions and capabilities). Drafts in `team/angelo/drafts/reach-circles/`: a.html (target, altitudes as markers), b.html (rings of reach, slices of altitude), capabilities.md (29 capabilities: native / platform / configured; spawning and scheduling change altitude, not reach; a swarm reaches up to the owner's account ceiling, not beyond; sub-agents sit at the session's reach and can only spread it by starting sessions). Next, at his word: one designer redraws (rings = reach to the account's ceiling; schedules as a "standing grant" wall; "start others" as spreading, not raising, reach).
 2. **where-agents-run review** (work/48, Dinis's ask 4 "correct ... with Angelo"): 7 concepts given at 19:05 UTC; waiting on Angelo to agree concepts, then structure (plain names, no R1/M2/L4 codes, history to a changelog), then details. The rewrite goes to Dinis's lead as Angelo's corrections, not over architect.1's page.
-4. **Storm Charles team (inbox 22:18, signer not in our keyring; key at storm-charles.promptugal.news/data/keys.json, id incident-conductor-dinis):** runner MVP (GitHub Actions, A0/A1/A2; RUNNER.html), compute crossing altitudes (COMPUTE.html), OpenRouter router, trace in our Elastic schema (data/trace/), flights, AWS. Offers to Angelo's side: visualise their trace, a second swarm on the runner, maybe the runner repo. Held for Angelo; altitudes belong to handover-market.mp@.
+4. **Storm Charles team (inbox 22:18, signer not in our keyring; key at storm-charles.promptugal.news/data/keys.json, id incident-conductor-dinis):** runner MVP (GitHub Actions, A0/A1/A2; RUNNER.html), compute crossing altitudes (COMPUTE.html), OpenRouter router, trace in our Elastic schema (data/trace/), flights, AWS. Offers to Angelo's side: visualise their trace, a second swarm on the runner, maybe the runner repo. Angelo (22:4x): "take the tasks and process them": /graph/trace/ built (refresh: `NODE_USE_ENV_PROXY=1 node admin/tools/storm-trace.mjs`), runner mapping and dry-run in team/angelo/runner/; reply held (asks a permission).
+5. **Held for Angelo (inbox 22:54, 23:22):** swarm.1's packet s003-storm-six (repo PrompTugal__News__Swarm, `tools/swarm.mjs run`; result may go to our tasks/swarm/); the lead's read desk Block D (work/53). Answer the lead on its inbox either way.
 3. **Claude feature feed** (proposed, waiting on his yes): Claude Code CHANGELOG.md (raw.githubusercontent.com/anthropics/claude-code/main) joined with npm publish times (registry.npmjs.org/@anthropic-ai/claude-code), plus a snapshot of this session's tool list at each wake to catch platform changes.
 
 ## The OpenRouter test (Dinis and Angelo, 20:2x UTC)
@@ -33,7 +34,7 @@ Memory between wakes and across compactions. A restarted or compacted conductor 
 - Results feed architect.1's export → Elastic (fringe-altitudes, swarm-flows; Kibana "Flows").
 
 ## Pointers
-- **last-seen:** 3dfc326 (22:29 UTC)
+- **last-seen:** b5be82d (06:29 UTC Thu)
 - `~/.abp/whoami` written at 21:3x (finding 44; rerun `node abp/tools/abp.mjs whoami` in a fresh container).
 - Key: session key, signing sha256:ca2c782dbfd0147e, in data/keys.json and PrompTugal__News__Website board/keys.json (id conductor.fringe-angelo).
 - Asks to the lead still open: obs.js console errors (ipapi.co CORS/429), on work/21.

@@ -1,7 +1,7 @@
 {
   "about": "The Agent Behaviour Policies of Lisbon Fringe (lisbontechfringe.com, origin in admin/site.json; WS-215) as data: deny by default, one grant per role and agent, across this repository and the others the swarm touches. Ported from PrompTugal__News__Website board/abp/policies.json (abp@PrompTugal.dinis, v1.7.0, since 6 November 2026), not invented anew; built on RiskMandate's Agent Behaviour Policy and Licence to Operate (https://riskmandate.ai/agent-behaviour-policy.html). Read by the hooks (.claude/settings.json, .claude/hooks/abp.mjs) and by the gate's commit check (abp/tools/abp.mjs check). abp/<agent>.md is generated from this file (node abp/tools/abp.mjs build), never edited by hand. Kept by architect.1.fringe@PrompTugal.dinis (work/39); any relaxation, and any move towards enforcement, is Dinis's decision.",
   "version": "0.4.1",
-  "updated": "2026-11-11T22:52Z",
+  "updated": "2026-11-12T01:44Z",
   "operator": "Dinis Cruz",
   "kept_by": "architect.1.fringe@PrompTugal.dinis",
   "status": "DRAFT: grants proposed from the git log (data/architecture.json observed); Dinis and the lead review",
@@ -278,6 +278,29 @@
       "what": "Lisbon Fringe on iOS; repository unknown to this map",
       "writes": [],
       "reads": "/api/v1/events.json, /api/v1/communities.json"
+    },
+    "promptugal/promptugal__news__swarm__runs": {
+      "what": "the record of every swarm run: one folder per run (the signed request, the signed result, the flow events), each run started by a GitHub Action on a push, so a run maps to a commit",
+      "writes": [
+        "swarm.1.fringe@PrompTugal.dinis: requests/** and the workflows, until the design is set"
+      ],
+      "branch": "dev; the Action commits results back",
+      "note": "created by Dinis, 2026-11-11T23:28Z (\"ok, repo created\"; \"every run should start with the GitHub action ... that maps to the commit\"); small JSON only, no prompt or answer text, no keys",
+      "secrets": {
+        "names": [
+          "ELASTIC_CLOUD",
+          "GRAFANA_TOKEN",
+          "OPEN_ROUTER_KEY",
+          "SG_SEND_ACCESS_TOKEN"
+        ],
+        "added": "by Dinis, 2026-11-11T23:31Z, for the demo (12 November)",
+        "rules": "read only by workflows triggered by push or workflow_dispatch (never pull_request_target); passed to a step through env, never echoed or written to a file in the repo; ELASTIC_CLOUD is a disposable password on a temporary account with no confidential data (Dinis, 2026-11-12T01:44Z); a secret no workflow uses should be removed"
+      }
+    },
+    "promptugal/promptugal__news__swarm": {
+      "what": "swarm.promptugal.news: the swarm demo (swarm.1's lane); its CLAUDE.md adds its own rules (the gate tools/gate.mjs, runs in runs/, a budget per run)",
+      "writes": "the swarm role and its two workers below",
+      "branch": "dev; main only by Dinis"
     }
   },
   "common": {
@@ -626,8 +649,39 @@
       "send_hosts": [
         "openrouter.ai"
       ],
-      "send_hosts_note": "the model router only, through admin/tools/llm.mjs; cloud runtimes (Cloudflare, AWS, GCP, Netlify) wait on Dinis's scoped credentials and his word (its own asks)",
-      "never": "starts sessions or cloud resources without Dinis's word and a number; uses ELASTIC_CLOUD (R8e: flows travel in signed results or the feed); prints or commits a key"
+      "send_hosts_note": "the model router only, through admin/tools/llm.mjs; cloud runtimes (Cloudflare, AWS, GCP, Netlify) wait on Dinis's scoped credentials and his word (its own asks); in GitHub Actions (R8) only, the Runs repo's workflows send flow events to the Elastic es host with the repository secret ELASTIC_CLOUD (Dinis's demo decision), mapped 2026-11-12T00:11Z",
+      "never": "starts sessions or cloud resources without Dinis's word and a number; uses ELASTIC_CLOUD (R8e: flows travel in signed results or the feed); prints or commits a key",
+      "writes_other_repos": [
+        "PrompTugal__News__Swarm__Runs: requests/**, .github/workflows/**, docs/**"
+      ],
+      "send_hosts_actions": [
+        "my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io"
+      ]
+    },
+    "swarm-dev": {
+      "focus": "the swarm's code under swarm.1 (work/52): tools/ (the engine, the gate), the workflows, the runners; in PrompTugal__News__Swarm__Runs, the push-triggered runs of docs/handoffs/2026-11-11-swarm-runs-design.md; the presentation stage (stage.html, scenes as data in stage/scenes.json), at Dinis's word in its session, about 01:2x UTC on 12 November (relayed by swarm.1.dev, mapped 2026-11-12T01:28Z: new files in its own lane, owned by no one else)",
+      "writes": [
+        "team/{person}/agents/{name}.json"
+      ],
+      "writes_other_repos": [
+        "PrompTugal__News__Swarm: tools/**, .github/workflows/**, runners/**, packets/**, data/**, RUNNER.md, stage.html, stage/**",
+        "PrompTugal__News__Swarm__Runs: requests/**, .github/workflows/**, docs/** (workflows there only after Dinis's word to swarm.1)"
+      ],
+      "send_hosts": [
+        "openrouter.ai"
+      ],
+      "never": "pushes a workflow next to the Runs repo's secrets without Dinis's word; prints a secret; uses ELASTIC_CLOUD outside a workflow (R8e); stores model text"
+    },
+    "swarm-designer": {
+      "focus": "the swarm's pages under swarm.1: swarm.promptugal.news (index.html, how.html, the run views), so the demo reads well on a laptop, a projector and a phone; the stage's themes and 3D modes (swarm.1.dev builds stage.html; the designer owns how it looks)",
+      "writes": [
+        "team/{person}/agents/{name}.json"
+      ],
+      "writes_other_repos": [
+        "PrompTugal__News__Swarm: index.html, how.html, assets/**, css/**, pages/**, MAP.md"
+      ],
+      "send_hosts": [],
+      "never": "changes the engine, the workflows or the runs; uses Web Summit's name or logo as a brand; loads scripts from hosts other than the site's own and the pinned libraries"
     }
   },
   "agents": {
@@ -818,14 +872,19 @@
         "admin/tools/ptnews-index.mjs",
         "admin/tools/trace-event.mjs",
         "data/ptnews-index.json",
-        "api/v1/graph.json"
+        "api/v1/graph.json",
+        "admin/build/storm-trace-page.mjs",
+        "admin/build/storm-trace.js",
+        "admin/tools/storm-trace.mjs",
+        "data/storm-trace.json"
       ],
       "lane": "the graph and live views; SWARM.md also names 'the swarm's ABPs' in Angelo's lane: the architect proposes Angelo reviews these",
       "account": "Angelo's",
       "owns_shared": [
         "admin/build/graph.js",
         "admin/build/graph.mjs"
-      ]
+      ],
+      "note": "Storm-trace files mapped 2026-11-11T23:57Z: new files it created in its own lane (the traces), the mapping rule."
     },
     "designer.fringe@PrompTugal.angelo": {
       "role": "design",
@@ -978,6 +1037,18 @@
       "role": "swarm",
       "account": "riskmandate-personal (Ultra)",
       "note": "started by the lead at Dinis's word (about 21:0x UTC); mapped 2026-11-11T21:51Z to its own lane (swarm/, work/52), the mapping rule"
+    },
+    "swarm.1.dev.fringe@PrompTugal.dinis": {
+      "role": "swarm-dev",
+      "under": "swarm.1.fringe@PrompTugal.dinis",
+      "account": "riskmandate-personal (Ultra)",
+      "note": "started by architect.1 at Dinis's word in its session (2026-11-11T23:42Z: 'can you spin up an swarm.1.dev@... and an swarm.1.designer@...', 'agents here in Claude')"
+    },
+    "swarm.1.designer.fringe@PrompTugal.dinis": {
+      "role": "swarm-designer",
+      "under": "swarm.1.fringe@PrompTugal.dinis",
+      "account": "riskmandate-personal (Ultra)",
+      "note": "started by architect.1 at Dinis's word in its session (2026-11-11T23:42Z: 'can you spin up an swarm.1.dev@... and an swarm.1.designer@...', 'agents here in Claude')"
     }
   },
   "external": {
@@ -1162,6 +1233,11 @@
         "round": 10,
         "file": "abp/reviews/2026-11-11-22.md",
         "at": "2026-11-11T22:52Z"
+      },
+      {
+        "round": 11,
+        "file": "abp/reviews/2026-11-11-23.md",
+        "at": "2026-11-11T23:57Z"
       }
     ]
   },
@@ -1314,7 +1390,9 @@
       "instead": "docs/elastic-guidance.md section 3: commit a JSON with \"elastic_feed\"; elastic.1 sends it hourly under the committing agent's name",
       "rule": "R8e",
       "source": "Dinis in elastic.1's session, before 19:06 UTC, relayed by elastic.1: \"for now we will share that super user pwd but control that using ABPs so that only the elastic and architect agent can use that environment variable\"",
-      "added": "2026-11-11T19:06Z"
+      "added": "2026-11-11T19:06Z",
+      "also": "PrompTugal__News__Swarm__Runs' GitHub Actions workflows (R8) read it as the repository secret ELASTIC_CLOUD, which Dinis added himself for the demo (2026-11-11, 23:2x UTC); there it is the Action's, not an agent's, and only through env at the flow step.",
+      "dinis_risk_decision": "Dinis, 2026-11-12T01:44Z: \"don't worry about the elastic password because that's disposable. None of that is confidential. None of the data that is there is confidential, and it's a temporary Elastic account.\" So no scoped Elastic keys are asked for; R8e stays an observed habit (who uses it), and R8 still means it is never printed or committed."
     }
   ]
 }

@@ -37,3 +37,14 @@ Done by architect.1: Elastic added to its sends (at this word); flows: every uni
 - "yes start with open telemetry" (flow.mjs now emits OTel spans; the APM credential waits on his word).
 - "can you make it take the full width?" (both Gravity universes).
 - "also can you spin up an neo4j agent?" (neo4j.1.fringe@PrompTugal.dinis, session_01Kw9UwERnn4khZSspzGuxJo).
+
+### 23:3x UTC (Dinis in architect.1's session)
+
+- "ok, so don't worry about Neo4J" (its host is no longer asked for).
+- Asked whether the repository that stores all runs should be called PrompTugal__News__Swarm__Runner.
+- "ok, repo created do I add it to the swarm agent. I'm thinking here is that for provenance and for traceability, every run should start with the GitHub action. And the GitHub action is what determines what type of run it is ... and then that maps to the commit ... So then the push triggers the information." (PrompTugal__News__Swarm__Runs)
+- "hi can you spin up an swarm.1.dev@... and an swarm.1.designer@...." / "agents here in Claude" (two Claude Code sessions under swarm.1).
+
+### 12 November, 01:3x UTC (Dinis in architect.1's session)
+
+- "Okay, but don't worry about the elastic password because that's disposable. None of that is confidential. None of the data that is there is confidential, and it's a temporary Elastic account."

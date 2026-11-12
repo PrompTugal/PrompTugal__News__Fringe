@@ -1,7 +1,7 @@
 {
   "about": "Every agent's grant, flattened from abp/policies.json by node abp/tools/abp.mjs build: what /abp/ shows.",
   "policy": "0.4.1",
-  "sha256": "f893030d6e325c91",
+  "sha256": "b45cf492650984f3",
   "mode": "observe",
   "agents": [
     {
@@ -760,7 +760,11 @@
         "admin/tools/ptnews-index.mjs",
         "admin/tools/trace-event.mjs",
         "data/ptnews-index.json",
-        "api/v1/graph.json"
+        "api/v1/graph.json",
+        "admin/build/storm-trace-page.mjs",
+        "admin/build/storm-trace.js",
+        "admin/tools/storm-trace.mjs",
+        "data/storm-trace.json"
       ],
       "owns": [
         "admin/build/graph.mjs, graph.js",
@@ -1271,6 +1275,55 @@
         "openrouter.ai"
       ],
       "page": "abp/swarm.1.fringe@PrompTugal.dinis.md"
+    },
+    {
+      "agent": "swarm.1.dev.fringe@PrompTugal.dinis",
+      "role": "swarm-dev",
+      "person": "dinis",
+      "account": "riskmandate-personal (Ultra)",
+      "branch": "dev",
+      "writes": [
+        "team/dinis/agents/swarm.1.dev.json",
+        "team/dinis/agents/swarm.1.dev.fringe.json",
+        "team/dinis/agents/swarm.1.dev/**",
+        "data/keys.json (your own entry)",
+        "data/inboxes/<your key id>.json",
+        "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
+        "data/models-ledger.json",
+        "team/dinis/agents/swarm.1.dev.json"
+      ],
+      "owns": [],
+      "sends": [
+        "dev.send.sgraph.ai",
+        "pki.sgit.ai",
+        "openrouter.ai"
+      ],
+      "page": "abp/swarm.1.dev.fringe@PrompTugal.dinis.md"
+    },
+    {
+      "agent": "swarm.1.designer.fringe@PrompTugal.dinis",
+      "role": "swarm-designer",
+      "person": "dinis",
+      "account": "riskmandate-personal (Ultra)",
+      "branch": "dev",
+      "writes": [
+        "team/dinis/agents/swarm.1.designer.json",
+        "team/dinis/agents/swarm.1.designer.fringe.json",
+        "team/dinis/agents/swarm.1.designer/**",
+        "data/keys.json (your own entry)",
+        "data/inboxes/<your key id>.json",
+        "work/NN-<item you own>.md",
+        "tasks/*/result-*.json",
+        "data/models-ledger.json",
+        "team/dinis/agents/swarm.1.designer.json"
+      ],
+      "owns": [],
+      "sends": [
+        "dev.send.sgraph.ai",
+        "pki.sgit.ai"
+      ],
+      "page": "abp/swarm.1.designer.fringe@PrompTugal.dinis.md"
     }
   ]
 }

@@ -1,0 +1,43 @@
+{
+  "agent": "swarm.1.dev.fringe@PrompTugal.dinis",
+  "updated": "2026-11-12T06:31Z",
+  "written_by": "swarm.1.dev.fringe@PrompTugal.dinis (its own session)",
+  "session": "session_01Kw9UwFCZKpkLq9iapcyzSt",
+  "account": "riskmandate-personal (Ultra)",
+  "started_by": "architect.1.fringe@PrompTugal.dinis at Dinis's word (23:4x UTC)",
+  "reports_to": "swarm.1.fringe@PrompTugal.dinis",
+  "state": "waiting for Dinis (07:00 UTC). The stage (Swarm dev, after bf04a46) is ready: the brisk main track rehearsed at 06:3x (10 presses, ← lands on the previous scene's end, no errors); the whole story walks clean at 1920x1080 and 1366x768 (158 steps, layout and caption-overlap checks).",
+  "doing": [
+    "the stage: new evidence becomes scenes as it lands"
+  ],
+  "done": [
+    "orientation",
+    "Swarm__Runs: requests.mjs batch, tools/check-run.mjs, docs/demo.md (its dbd1fe7, landed by swarm.1 as 44d3ad9); check-run found the re-run bug on its first day",
+    "2026-11-12T00:01Z: tools/summary.mjs (runs/summary.json), landed by swarm.1; first used on the 12-request scale test",
+    "2026-11-12T01:25Z: session key made (signing sha256:7436510cadaff6ef, encryption sha256:8c1dd6910f8e2498); swarm.1.dev.fringe-dinis in data/keys.json (public half only); abp whoami set; add_repo push to Swarm__Runs and Fringe approved by Dinis in this session",
+    "2026-11-12T01:46Z: PrompTugal__News__Swarm stage.html (9ec7bd3, 095713b, 468d3e9): the talk player's clock (back lands on the end of the previous step); top-down, tree, radial, force with anchors, 3D universe (three.js 0.147.0 + bloom); overlays (same privileges, policy, isolated); simulated assets labelled; counters from runs and the Runs summary.json; cost bars; cards (slide, mandate-reach-gap, harness probe lights); the session tree. Tested in Chromium with no console errors",
+    "2026-11-12T02:01Z: stage: packs as entry points (#pack=questions, harness, pki, vaults...); click any unit for its box (mandate, grant, budget, keys, hashes); REAL / SIMULATED / ILLUSTRATION on every scene; storytelling.1's fact-check fixed; Gmail and Calendar with riskmandate.ai's findings; the gap measured (Fringe data/run-reach.json); pack 0, the five questions; harness.1's E1-E6 as scenes; the policy check inside vs outside; the vault handover (relay flows); swarm.1.designer's SwarmViews as view 6 (Swarm ccb2299, c1673db, 6a85009, 3c706ee)",
+    "2026-11-12T02:14Z: stage: audience.1's review 2 fixed; red only for real harm; the database run (sims/db-mandate) and the licence to operate (sims/licence) as scenes; the vault handover (h001, 21 steps) as a timeline; harness.1's E1-E6; swarm.1.designer's animated packs embedded; tools/agent-activity.mjs (commits per agent per hour) with the team scene sized by commits and live every minute (Swarm 6ed642d, fa28969, 8ac79ec, d0049f4)",
+    "2026-11-12T02:20Z: stage: double-click zooms to a unit and everything it started; the Runs summary live every minute; 'Every run' includes the Runs repo's 15 runs; F1 built and held back; the designer's orbit mode (Swarm 8d14251, 1ae5ae0, 5db6d57)",
+    "2026-11-12T02:35Z: 02:30 wake: handovers h002 and h003 as scenes (an 'inside the harness' lane, failed steps amber); card scenes fold 'This run' (Dinis: hide things, fade in); agent-activity refreshed (911 commits, 46 agents); merged swarm.1.designer's flow and pulse styles (Swarm dcb84d7)",
+    "2026-11-12T03:01Z: the real engine under the harness (E7); h002 in two beats (reach vs behaviour); the main track; audience.1's review 3 (counts, act numbers, capabilities named, ELASTIC_CLOUD as it is); the disk-plaintext lane; FIX: compare/keys/needheld/glyph renderers restored after d0049f4 cut them; the walk now flags a card that shows only its title (Swarm 96415ee, 8fec05d, a0a96cb)",
+    "2026-11-12T03:09Z: E8 as scene harness-loops (4 A2 loops x 3 tries, 12 of 12 refused, $0); swarm.1's review: the harness pack opens on the harness, full hop text on hover/click, the whole team tree from the start, a second number on identity, the database badge REAL RUN · SIMULATED DATABASE; ELASTIC_CLOUD as a disposable logging account with the honest gap (storytelling.1's c95e554) (Swarm 89edf3e)",
+    "2026-11-12T03:40Z: ELASTIC_CLOUD said as the deployment's superuser password on a disposable account (swarm.1's correction, 07621f2); the walk checks card layouts (grid rows) after the designer restored the CSS d0049f4 had cut (0b525b0); tree labels no longer collide and the caption keeps its own room on screen (ee8bdbc)",
+    "2026-11-12T03:55Z: E9 as scene harness-key-inside after E5 (ee09d20); brisk mode, one press per scene, and the harness card's 'closed since' step (swarm.1's 03:45 review, 4e0b060)",
+    "2026-11-12T04:08Z: the harness pack opens on 'Everything it was asked to do, it did' (storytelling.1); E10 as step 5 of the key scene, Yama corrected; E11 in amber as 'mandate allowed, credential not yet carried' (harness.1); an Elastic node with the Action's one live reach line on 'elsewhere' (audience.1's review 4) (Swarm c0d7ad1)",
+    "2026-11-12T04:32Z: a card's long note waits behind a 'why' toggle and fades in when opened (Dinis's 'hide things, let them fade in'; Swarm 3f045e8)",
+    "2026-11-12T04:52Z: packs open with step 1 played (08d7725); review 5: tables' first row with the frame, scale's counters say 'all of tonight', the sentence badged AGREED, short commit labels (eded138, 25440cb)",
+    "2026-11-12T05:36Z: a play hint while a step or scene plays (swarm.1's brisk review, ec3c8f1); the whole story walked at 1366x768, one label collision fixed on 'elsewhere'",
+    "2026-11-12T06:12Z: cards grow into the room the stage gives them, never past overflow (audience.1's review 6, 345a890); the walk checks card overflow",
+    "2026-11-12T06:22Z: the reach counter names its base: 22 of the run's 30 units, the agent and all it started (swarm.1's review 5, e3708dd)",
+    "2026-11-12T06:31Z: overnight close: the walk measures what is visible against the caption (swarm.1.designer); zero problems at 1920 and 1366; brisk main track rehearsed"
+  ],
+  "next": [
+    "Dinis's word on the main track or the whole story, and on F1 and F6/h003",
+    "then: harness.1's next rows as scenes; refresh data/agent-activity.json"
+  ],
+  "asks": [
+    "Dinis: present stage.html#pack=main&brisk (10 presses; Present on the index opens it) or the whole story? May findings F1 and F6/h003 be shown (held back at #pack=findings)?"
+  ],
+  "wake": "none: works through the night at Dinis's word (01:2x UTC: not on a schedule; ready by 06:00-07:00 UTC)"
+}

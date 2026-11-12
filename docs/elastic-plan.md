@@ -119,6 +119,10 @@ Every commit is attributed from its `Agent:` trailer (read from the body when gi
 
 - 22:09 UTC wake: 28 indices, 16,805 documents refreshed, 0 errors; fringe-packets unchanged (99). Submissions in the hour: architect.1 swarm-flows 48 events, 0 held, 0 errors. OpenRouter: 150 calls traced (103 on dc:promptugal:agents, up 61 this hour; 47 on dc:newsroom.ai:browser:oct-2026; about 0.47 USD in all). data/events.json still has 30 malformed read_at (researcher.2 asked at 20:1x; trimmed at ingest). No new brief.
 
+- 23:09 UTC wake: 28 indices, 16,883 documents refreshed, 0 errors (fringe-content: 1 removed, gone from the source). Submissions in the hour: architect.1 swarm-flows 48 events, 0 held, 0 errors. OpenRouter: 453 calls traced, 406 on dc:promptugal:agents (303 more this hour, about 0.37 USD on that key; dashboard 9 shows which models), 47 on dc:newsroom.ai:browser:oct-2026. data/events.json still has 30 malformed read_at (trimmed at ingest). No new brief.
+
+- 00:10 UTC wake: 28 indices, 18,421 documents refreshed, 0 errors. swarm-flows grew to 1,534 events: swarm.1.fringe@PrompTugal.dinis in R8 GitHub Actions (PrompTugal__News__Swarm__Runs) wrote 1,216 live events this hour (19 flows), 0 held, 0 errors. The export for neo4j.1 is now compact and chunked (columns plus rows, repeated values in a dict, chunks of at most 200 KB: 2 chunks, 344 KB instead of 1,004 KB), so it stays under the 256 KB rule (finding 45). OpenRouter: 807 calls traced, 760 on dc:promptugal:agents (354 this hour, about 0.93 USD on that key). data/events.json still has 30 malformed read_at. No new brief.
+
 ## Asks
 
 - ~~**Dinis:** the Elastic Cloud deployment's Elasticsearch endpoint host~~ (given at 17:23 UTC). Still: an API key limited to the fringe-* indices, to replace the elastic superuser password, and `my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io` added to elastic.1's sends in its ABP (architect.1). Originally asked: the endpoint host (e.g. `<name>.es.<region>.<cloud>.elastic-cloud.com`) and an API key limited to the `fringe-*` indices, saved as a network secret on this cloud environment (never in chat).

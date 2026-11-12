@@ -1,31 +1,93 @@
 {
-  "agent": "swarm.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T21:38Z",
-  "account": "riskmandate-personal (Ultra)",
-  "session": "session_01Kw9UwFHqLAjKake7UEDjL3",
-  "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (11 Nov 2026, about 21:0x UTC: 'start a new agent called Swarm ... for our Swarm capabilities and our risk mandate Swarm, which we want to demo tomorrow')",
-  "branch": "dev",
-  "wake": "none: works when Dinis talks to it in its session",
-  "state": "building the swarm demo: the ladder r0 to r5 ran for real; swarm.promptugal.news first version pushed (PrompTugal__News__Swarm dev cd3da14)",
-  "doing": [
-    "work/52: the swarm demo: many A1 and A2 units at once, visible, measured, inside a written budget"
-  ],
-  "done": [
-    "2026-11-11T21:22Z: read CLAUDE.md, ROLES.md, SWARM.md, REALITY.md, briefs/ (19), work/README.md, docs/where-agents-run.md, abp/tools/packets.mjs and flow.mjs",
-    "21:20: session key made (encryption sha256:34b41ce385701d90, signing sha256:ff58f6f0f4de27c1); swarm.1.fringe-dinis in data/keys.json (public half only); abp whoami set",
-    "2026-11-11T21:22Z: baseline read: 6 packets (tasks/), 6 signed results, 3 runners on 2 accounts, all verified; router credit 72.42 USD on the key (cap 5 USD a day); 16 model calls today for 0.0006 USD (DeepSeek V4 Flash)",
-    "2026-11-11T21:38Z: Dinis's brief (21:3x UTC): the ladder, the storm workload, cloud agents, GitHub and vault, per-run metrics; mapped in PrompTugal__News__Swarm MAP.md",
-    "2026-11-11T21:38Z: runs r0 to r5 (swarm/tools/run.mjs): 53 calls on 4 open-weight models, 0.0148 USD (budget 1 USD, 120 calls, 0 sessions); r5: 24 loops, 48 units at once, same tokens on Sonnet 0.33 USD",
-    "2026-11-11T21:38Z: PrompTugal__News__Swarm: flat viewer (index.html), runs/, MAP.md, CLAUDE.md, gate, Pages workflow; pushed to dev cd3da14"
-  ],
-  "next": [
-    "r6: sessions across accounts (Dinis 3, Angelo 2) running the same packets, at Dinis's word with a number",
-    "r7: swarm.cloudflare, swarm.aws, swarm.gcp, swarm.netlify, each with a credential from Dinis",
-    "results in a vault as well as GitHub; flows into Elastic swarm-flows"
-  ],
-  "asks": [
-    "Dinis: the Swarm repo's Pages workflow had not started by 2026-11-11T21:38Z; if Actions is off for the repo, turn it on, and set Pages source to 'GitHub Actions' (it deploys from dev)",
-    "Dinis: for the cloud agents, a scoped credential each (Cloudflare Workers token, AWS IAM limited to one bucket and function, GCP service account, Netlify site token); and your word, with a number, for any new session",
-    "Dinis: not yet added to PrompTugal__News__Website board/keys.json"
-  ]
+ "agent": "swarm.1.fringe@PrompTugal.dinis",
+ "updated": "2026-11-12T06:48:00Z",
+ "account": "riskmandate-personal (Ultra)",
+ "session": "session_01Kw9UwFHqLAjKake7UEDjL3",
+ "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (11 Nov 2026, about 21:0x UTC: 'start a new agent called Swarm ... for our Swarm capabilities and our risk mandate Swarm, which we want to demo tomorrow')",
+ "branch": "dev",
+ "wake": "none: works when Dinis talks to it in its session",
+ "state": "overnight: 8 agents building the demo packs (stage, harness, vaults, audience); hourly review with screenshots to Dinis",
+ "doing": "Morning review at 06:47: main track brisk in focus at 1920 clean; packs page sent. storytelling.1, designer and audience.1 stop at 07:00; swarm.1.dev still waking hourly (scene 3 overlap at 1920). Waiting on Dinis's eight decisions.",
+ "done": [
+  "2026-11-11T21:22Z: read CLAUDE.md, ROLES.md, SWARM.md, REALITY.md, briefs/ (19), work/README.md, docs/where-agents-run.md, abp/tools/packets.mjs and flow.mjs",
+  "21:20: session key made (encryption sha256:34b41ce385701d90, signing sha256:ff58f6f0f4de27c1); swarm.1.fringe-dinis in data/keys.json (public half only); abp whoami set",
+  "2026-11-11T21:22Z: baseline read: 6 packets (tasks/), 6 signed results, 3 runners on 2 accounts, all verified; router credit 72.42 USD on the key (cap 5 USD a day); 16 model calls today for 0.0006 USD (DeepSeek V4 Flash)",
+  "2026-11-11T21:38Z: Dinis's brief (21:3x UTC): the ladder, the storm workload, cloud agents, GitHub and vault, per-run metrics; mapped in PrompTugal__News__Swarm MAP.md",
+  "2026-11-11T21:38Z: runs r0 to r5 (swarm/tools/run.mjs): 53 calls on 4 open-weight models, 0.0148 USD (budget 1 USD, 120 calls, 0 sessions); r5: 24 loops, 48 units at once, same tokens on Sonnet 0.33 USD",
+  "2026-11-11T21:38Z: PrompTugal__News__Swarm: flat viewer (index.html), runs/, MAP.md, CLAUDE.md, gate, Pages workflow; pushed to dev cd3da14",
+  "2026-11-11T22:54Z: PrompTugal__News__Swarm 5b31c16: tools/swarm.mjs (issue, run, verify, publish; the ladder moved here), a copy of the router, packets s001 to s003, s001 run by me (32 calls, 21 valid, 0.012 USD), how.html (the GitHub flow), RUNNER.md (the prompt for any account), live polling",
+  "2026-11-11T22:54Z: started runner.1.swarm@PrompTugal.dinis at Dinis's word (one session, Sonnet, session_01Kw9UwCptHeeznCWAbMSQC5) to run s002",
+  "2026-11-11T22:54Z: inbox to conductor.fringe-angelo: packet s003-storm-six, at Dinis's word ('yes you can send the requests to angelo')",
+  "2026-11-11T23:00Z: Swarm 576bbe9: r5b (12 tasks x 4 models, 48 loops, 73 calls, 96 units at once, 0.031 USD); r4c on Claude Haiku and Sonnet via the router (first try out of tokens at 300: 3 of 32; at 1500: 12 of 12, 0.063 USD); r4s, 3 Claude Code sub-agents (Haiku), 3 of 3 valid, 241k tokens; a GitHub Actions runner workflow (needs the OPENROUTER_API_KEY repository secret)",
+  "2026-11-11T23:00Z: runner.1's keygen refused by its sandbox's classifier; told it to skip the PKI key (swarm.mjs signs per run) and run s002",
+  "2026-11-11T23:47Z: PrompTugal__News__Swarm__Runs (architect.1's design, at Dinis's go 23:3x UTC): tools/requests.mjs (new, verify against data/keys.json, plan, run, index), tools/engine.mjs (A0/A1/A2 with live flow hooks), .github/workflows/run.yml (plan, run matrix, commit with attest-build-provenance)",
+  "2026-11-11T23:47Z: first runs: push 6d72d7f -> workflow run 43122148416 -> result commit f3c2f1c (swarm-runs[bot]), attestation 66472238; A1 18/18 valid in 25 s, 0.0069 USD; A2 19 valid of 37 calls, 0.012 USD",
+  "2026-11-11T23:47Z: runner.1 ran s002 (20/33 valid, 0.0138 USD), published; swarm.promptugal.news reads the Runs repo (73428d8)",
+  "2026-11-11T23:56Z: landed swarm.1.dev's batch, check-run and demo runbook (Runs 44d3ad9); check-run found that push 15bf673 had re-run storm-a1 and a2 (depth-2 clone, diff fallback to all requests); fixed (full history, never re-run a request with a result on a push, fresh provenance per result); re-ran both on purpose by workflow_dispatch: all three runs verify 13/13 (e3bc6ca)",
+  "2026-11-12T00:01Z: landed swarm.1.dev's summary.mjs (Runs 2b88148, sha256 checked); scale test: 12 signed A1 requests in one push (dbcca7b) -> 12 jobs at once, 144 calls, ~75 s push to result commit (555790e); check-run 12/12 verified. All runs: 15 requests, 216 calls, 172 valid, 0.068 USD (Sonnet would be 1.99)",
+  "2026-11-12T00:39Z: Dinis approved keys and Fringe push for the helpers ('yes i approve', 00:1x UTC); his words relayed to swarm.1.designer, swarm.1.dev and runner.1, who retry in their own sessions (any prompt is his to accept there)",
+  "2026-11-12T00:44Z: 'Check GitHub now' no longer hangs when GitHub's API limit (60 an hour per network) is reached: it says so and reads the branch (Swarm ac68dc4)",
+  "2026-11-12T00:44Z: Angelo offline: packet s004-storm-six for runner.2 on Dinis's other account (Swarm c08f716)",
+  "2026-11-12T00:44Z: started storytelling.1.fringe@PrompTugal.dinis at Dinis's word (one session, Opus, session_01Kw9UwCdVBkvPFracQLidZu): a conversation about the stories to tell; writes stories/ in the Swarm repo",
+  "2026-11-12T01:29Z: at Dinis's word ('make sure they're running on a schedule ... working in collaboration'), hourly wakes at :28 until 07:00 UTC for swarm.1.dev (trig_01Lp8B73E73u3Cy8PnvUun1w), swarm.1.designer (trig_01D7N8FkBZ2xT4L7AkaM7wCx) and storytelling.1 (trig_01QFsRdf6w5xwn66xT6fkh4r); a reminder at 07:05 to disable them (trig_01T5xkh8YNUDuy3psoga8fa3); his guidance (hide, fade in, clean; slides and animated infographics welcome) passed to them and to the lead",
+  "2026-11-12T01:40Z: SHarness measured here (sharness-ai 0.2.0): before, root with all capabilities and the internet; under one policy, 6 of 6 probes held (Swarm harness/, 52360a9)",
+  "2026-11-12T01:40Z: at Dinis's word, started harness.1 (session_01Kw9UwEJ6ftqZvGuZ71MoFz), audience.1 the synthetic audience (session_01Kw9UwEqnB3nx2WMmjWDoye), and relay.1, relay.2, relay.3 for the Git and vault handover (session_01Kw9UwFh848oDoySQUW2thv, session_01Kw9UwBvW6QLYPMDxmiacxW, session_01Kw9UwBCB9ibNPNCC92HQC4); hourly wakes at :39 until 07:00 UTC; my own hourly review with screenshots at :45; all wakes disabled at 07:05 (trig_01T5xkh8YNUDuy3psoga8fa3)",
+  "2026-11-12T01:40Z: the new mandate (click to zoom, the policy box and checks, SHarness before and after, PKI on everything, vaults colour-coded, mandate/reach/gap, demo packs) sent to swarm.1.dev, swarm.1.designer and storytelling.1",
+  "2026-11-12T01:43Z: Swarm site publishes every tracked folder (602a6a8); data/agents.json, the session tree building the demo (cd8b4fc); pack 0 'the five questions' (a founder's identity/communication/governance/audit/why-allowed questions) with its evidence sent to storytelling.1; fast replay, size controls and the live agents view sent to swarm.1.dev and the designer; the storm newsroom's runner design noted as a case study",
+  "2026-11-12T01:47Z: hourly review 1: stage.html live (run 28, 13 scenes in 9 acts), screenshots and analysis sent to Dinis, fixes sent to swarm.1.dev and the designer; harness.1 unblocked by Dinis: of 12 attempts 11 succeed unharnessed and 2 (the workspace ones) plus 1 gap (17 credential-like env names inherited) under the harness, same output sha256 both ways; relay.2 unblocked, key in handover/keys.json",
+  "2026-11-12T02:47Z: hourly review 2: stage run 91 (43 scenes, 16 packs: five questions, harness, vaults, who built this ...), screenshots and analysis to Dinis, 5 fixes to swarm.1.dev; agent activity refreshed (924 commits, 46 agents, 24 h); overnight results: harness E1 to E7 plus 7 drafted findings; handovers h001 ok, h002 refused, h003 blocked under SHarness (finding F6)",
+  "2026-11-12T03:47Z: hourly review 3: stage run 105, main track (9 + close) walked; screenshots to Dinis; pacing and the E9 follow-up sent to swarm.1.dev; harness E9 closed the env and key-file gaps; relays idle (h004 waits on Dinis's door fix)",
+  "2026-11-12T04:53Z: hourly review 4: stage run 128, main track in brisk mode, no errors; screenshots to Dinis; brisk-press hint and IBAN-row opacity sent to swarm.1.dev; relays' wakes paused at 04:40 (no work until Dinis picks the F6 door fix); harness E10-E12 and harness/SUMMARY.md; 07:05 reminder updated with the links and 6 decisions"
+ ],
+ "next": [
+  "07:05 morning review for Dinis: his decisions (file the 7 SHarness findings? F1 on stage? h003 fix; the 9-scene main track; which packs to keep; findings public on the site?)"
+ ],
+ "asks": [
+  "Dinis: the repo's About box: gear icon > Website: https://swarm.promptugal.news (or tick 'Use your GitHub Pages website'); my tools cannot edit it",
+  "Dinis: not yet added to PrompTugal__News__Website board/keys.json",
+  "Dinis: GRAFANA_TOKEN and SG_SEND_ACCESS_TOKEN in the Runs repo are unused: delete them unless you want the vault carrier tomorrow",
+  "Dinis: after the demo, replace ELASTIC_CLOUD with a key limited to swarm-* (architect.1)",
+  "Dinis: for runner.2 on your other account: a Claude Code session there with PrompTugal/PrompTugal__News__Swarm attached and an OpenRouter key on its environment; paste RUNNER.md's prompt with <n>=2, <id>=dinis; its packet is s004-storm-six"
+ ],
+ "team": {
+  "swarm.1.dev.fringe@PrompTugal.dinis": {
+   "session": "session_01Kw9UwFCZKpkLq9iapcyzSt",
+   "started_by": "architect.1 at Dinis's word (23:4x UTC)",
+   "doing": "Runs repo: requests batch (scale), tools/check-run.mjs, docs/demo.md (the runbook)"
+  },
+  "swarm.1.designer.fringe@PrompTugal.dinis": {
+   "session": "session_01Kw9UwCNvq4z94R3XVA2Lvm",
+   "started_by": "architect.1 at Dinis's word (23:4x UTC)",
+   "doing": "swarm.promptugal.news: big runs fit (1920/1280/390), timeline strip, the provenance chain, how.html section"
+  },
+  "runner.1.swarm@PrompTugal.dinis": {
+   "session": "session_01Kw9UwCptHeeznCWAbMSQC5",
+   "doing": "ran s002; waiting"
+  },
+  "storytelling.1.fringe@PrompTugal.dinis": {
+   "session": "session_01Kw9UwCdVBkvPFracQLidZu",
+   "started_by": "swarm.1 at Dinis's word (00:4x UTC)",
+   "doing": "the stories to tell; talks with Dinis in its own session"
+  },
+  "harness.1.fringe@PrompTugal.dinis": {
+   "session": "session_01Kw9UwEJ6ftqZvGuZ71MoFz",
+   "started_by": "swarm.1 at Dinis's word (01:5x UTC)"
+  },
+  "audience.1.fringe@PrompTugal.dinis": {
+   "session": "session_01Kw9UwEqnB3nx2WMmjWDoye",
+   "started_by": "swarm.1 at Dinis's word (01:5x UTC)"
+  },
+  "relay.1.fringe@PrompTugal.dinis": {
+   "session": "session_01Kw9UwFh848oDoySQUW2thv",
+   "started_by": "swarm.1 at Dinis's word (01:5x UTC)"
+  },
+  "relay.2.fringe@PrompTugal.dinis": {
+   "session": "session_01Kw9UwBvW6QLYPMDxmiacxW",
+   "started_by": "swarm.1 at Dinis's word (01:5x UTC)"
+  },
+  "relay.3.fringe@PrompTugal.dinis": {
+   "session": "session_01Kw9UwBCB9ibNPNCC92HQC4",
+   "started_by": "swarm.1 at Dinis's word (01:5x UTC)"
+  }
+ }
 }
