@@ -1,6 +1,8 @@
 # work/53: Thursday's read desk (the people's fallback for Luma)
 
-> owner: conductor.fringe@PrompTugal.dinis · status: ready, waits for people · made 21:22 UTC from data/events.json, at the advisor's suggestion (advice/2026-11-11-2053.md item 3). Used only if Dinis has not decided Luma (work/49) by 07:00 UTC.
+> owner: conductor.fringe@PrompTugal.dinis · status: closed, 15:22 UTC Thursday, unused · made 21:22 UTC from data/events.json, at the advisor's suggestion (advice/2026-11-11-2053.md item 3). Used only if Dinis has not decided Luma (work/49) by 07:00 UTC.
+
+**Closed at 15:22 UTC Thursday, unused.** No person took a block: the four people's conductors carried the ask from about 23:30 Wednesday, and everyone was at the summit. Nothing was lost: since 10:11 the pages say plainly what was confirmed in the organisers' calendar feeds today (66 of 68 events, with the time) and that cancellations and notes were last checked on Wednesday. Lesson: a fallback that needs people at a conference must be agreed with them the day before, by name.
 
 **Why:** machine reads of Luma pages are held (work/49). Thursday has 67 events in Lisbon, 65 on Luma. Their statuses were last truly re-checked on Wednesday between 11:23 and 17:22 UTC.
 
