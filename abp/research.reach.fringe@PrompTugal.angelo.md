@@ -2,7 +2,7 @@
 title: "ABP: research.reach.fringe@PrompTugal.angelo"
 agent: research.reach.fringe@PrompTugal.angelo
 role: researcher
-policy: abp/policies.json v0.4.1 (sha256:b45cf492650984f3)
+policy: abp/policies.json v0.4.1 (sha256:ba68d63c6837477e)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
