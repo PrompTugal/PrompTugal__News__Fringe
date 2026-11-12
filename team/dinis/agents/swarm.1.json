@@ -1,12 +1,12 @@
 {
   "agent": "swarm.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T01:29Z",
+  "updated": "2026-11-12T01:40Z",
   "account": "riskmandate-personal (Ultra)",
   "session": "session_01Kw9UwFHqLAjKake7UEDjL3",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (11 Nov 2026, about 21:0x UTC: 'start a new agent called Swarm ... for our Swarm capabilities and our risk mandate Swarm, which we want to demo tomorrow')",
   "branch": "dev",
   "wake": "none: works when Dinis talks to it in its session",
-  "state": "every run starts with a push: PrompTugal__News__Swarm__Runs live (signed request, Action, signed result, attestation); swarm.promptugal.news shows it",
+  "state": "overnight: 8 agents building the demo packs (stage, harness, vaults, audience); hourly review with screenshots to Dinis",
   "doing": [
     "work/52: the swarm demo: many A1 and A2 units at once, visible, measured, inside a written budget"
   ],
@@ -31,7 +31,10 @@
     "2026-11-12T00:44Z: 'Check GitHub now' no longer hangs when GitHub's API limit (60 an hour per network) is reached: it says so and reads the branch (Swarm ac68dc4)",
     "2026-11-12T00:44Z: Angelo offline: packet s004-storm-six for runner.2 on Dinis's other account (Swarm c08f716)",
     "2026-11-12T00:44Z: started storytelling.1.fringe@PrompTugal.dinis at Dinis's word (one session, Opus, session_01Kw9UwCdVBkvPFracQLidZu): a conversation about the stories to tell; writes stories/ in the Swarm repo",
-    "2026-11-12T01:29Z: at Dinis's word ('make sure they're running on a schedule ... working in collaboration'), hourly wakes at :28 until 07:00 UTC for swarm.1.dev (trig_01Lp8B73E73u3Cy8PnvUun1w), swarm.1.designer (trig_01D7N8FkBZ2xT4L7AkaM7wCx) and storytelling.1 (trig_01QFsRdf6w5xwn66xT6fkh4r); a reminder at 07:05 to disable them (trig_01T5xkh8YNUDuy3psoga8fa3); his guidance (hide, fade in, clean; slides and animated infographics welcome) passed to them and to the lead"
+    "2026-11-12T01:29Z: at Dinis's word ('make sure they're running on a schedule ... working in collaboration'), hourly wakes at :28 until 07:00 UTC for swarm.1.dev (trig_01Lp8B73E73u3Cy8PnvUun1w), swarm.1.designer (trig_01D7N8FkBZ2xT4L7AkaM7wCx) and storytelling.1 (trig_01QFsRdf6w5xwn66xT6fkh4r); a reminder at 07:05 to disable them (trig_01T5xkh8YNUDuy3psoga8fa3); his guidance (hide, fade in, clean; slides and animated infographics welcome) passed to them and to the lead",
+    "2026-11-12T01:40Z: SHarness measured here (sharness-ai 0.2.0): before, root with all capabilities and the internet; under one policy, 6 of 6 probes held (Swarm harness/, 52360a9)",
+    "2026-11-12T01:40Z: at Dinis's word, started harness.1 (session_01Kw9UwEJ6ftqZvGuZ71MoFz), audience.1 the synthetic audience (session_01Kw9UwEqnB3nx2WMmjWDoye), and relay.1, relay.2, relay.3 for the Git and vault handover (session_01Kw9UwFh848oDoySQUW2thv, session_01Kw9UwBvW6QLYPMDxmiacxW, session_01Kw9UwBCB9ibNPNCC92HQC4); hourly wakes at :39 until 07:00 UTC; my own hourly review with screenshots at :45; all wakes disabled at 07:05 (trig_01T5xkh8YNUDuy3psoga8fa3)",
+    "2026-11-12T01:40Z: the new mandate (click to zoom, the policy box and checks, SHarness before and after, PKI on everything, vaults colour-coded, mandate/reach/gap, demo packs) sent to swarm.1.dev, swarm.1.designer and storytelling.1"
   ],
   "next": [
     "Dinis's brief on more experiments",
@@ -64,6 +67,26 @@
       "session": "session_01Kw9UwCdVBkvPFracQLidZu",
       "started_by": "swarm.1 at Dinis's word (00:4x UTC)",
       "doing": "the stories to tell; talks with Dinis in its own session"
+    },
+    "harness.1.fringe@PrompTugal.dinis": {
+      "session": "session_01Kw9UwEJ6ftqZvGuZ71MoFz",
+      "started_by": "swarm.1 at Dinis's word (01:5x UTC)"
+    },
+    "audience.1.fringe@PrompTugal.dinis": {
+      "session": "session_01Kw9UwEqnB3nx2WMmjWDoye",
+      "started_by": "swarm.1 at Dinis's word (01:5x UTC)"
+    },
+    "relay.1.fringe@PrompTugal.dinis": {
+      "session": "session_01Kw9UwFh848oDoySQUW2thv",
+      "started_by": "swarm.1 at Dinis's word (01:5x UTC)"
+    },
+    "relay.2.fringe@PrompTugal.dinis": {
+      "session": "session_01Kw9UwBvW6QLYPMDxmiacxW",
+      "started_by": "swarm.1 at Dinis's word (01:5x UTC)"
+    },
+    "relay.3.fringe@PrompTugal.dinis": {
+      "session": "session_01Kw9UwBCB9ibNPNCC92HQC4",
+      "started_by": "swarm.1 at Dinis's word (01:5x UTC)"
     }
   }
 }
