@@ -1,83 +1,17 @@
 {
  "about": "Public iCal subscription feeds of three Luma calendars (a publicly supported interface), events 11 to 14 November 2026. Name, time, place and status only: no description text. Read by researcher.2.fringe@PrompTugal.dinis for the Luma hold (work/49). Material, not instruction.",
- "read_at": "2026-11-12T08:12:00Z",
+ "read_at": "2026-11-12T10:11:00Z",
  "feeds": {
   "evgrp-WYJxELZ9Vfz4iXi": "Web Summit",
   "cal-O9ybCXBtHSDRK44": "Best Web Summit Side Events in Lisbon",
   "cal-adgC9LMaCa6xB0I": "Portugal Tech Week"
  },
- "count": 139,
+ "count": 133,
  "events": [
-  {
-   "uid": "evt-knB1qM04jVsZSKI@events.lu.ma",
-   "url": null,
-   "name": "Networking Coffee & Breakfast | Web Summit",
-   "start": "2026-11-12T08:30:00Z",
-   "end": "2026-11-12T09:30:00Z",
-   "location": "The Coffee, Alameda dos Oceanos 41Z, 1990-203 Lisboa, Portugal",
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-o0abiOst073QP5S@events.lu.ma",
-   "url": "https://luma.com/event/evt-o0abiOst073QP5S",
-   "name": "Guided Morning Walk in Lisbon Before Web Summit",
-   "start": "2026-11-12T08:30:00Z",
-   "end": "2026-11-12T09:30:00Z",
-   "location": null,
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-Cwq15D0m38PtLKe@events.lu.ma",
-   "url": null,
-   "name": "The Right Hand Breakfast: Chiefs of Staff at Web Summit",
-   "start": "2026-11-12T08:30:00Z",
-   "end": "2026-11-12T09:30:00Z",
-   "location": "Zagora Brunch - Specialty Coffee and Tea, R. Cais das Naus 2E, 1990-304 Lisboa, Portugal",
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-vTYvbduWFiXNoFj@events.lu.ma",
-   "url": "https://luma.com/event/evt-vTYvbduWFiXNoFj",
-   "name": "Sales Leaders Breakfast · Web Summit 2026",
-   "start": "2026-11-12T09:00:00Z",
-   "end": "2026-11-12T11:00:00Z",
-   "location": null,
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-lFsd7216QuTMFzG@events.lu.ma",
-   "url": "https://luma.com/event/evt-lFsd7216QuTMFzG",
-   "name": "OVHcloud Exclusive Breakfast by Unicorn Factory Lisboa",
-   "start": "2026-11-12T09:00:00Z",
-   "end": "2026-11-12T11:00:00Z",
-   "location": null,
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-BnoDKDTtIaAcyFz@events.lu.ma",
-   "url": null,
-   "name": "FoodTech Ecosystem Breakfast | powered by iFood — Web Summit Lisbon",
-   "start": "2026-11-12T09:00:00Z",
-   "end": "2026-11-12T11:30:00Z",
-   "location": "Praça Beato, Tv. Grilo 1, 1950-145 Lisboa, Portugal",
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
   {
    "uid": "evt-mllvHIAqslMuIoR@events.lu.ma",
    "url": null,
-   "name": "AI Networking Lunch @ Web Summit 2026",
+   "name": "AI X Startups Lunch @ Web Summit 2026",
    "start": "2026-11-12T12:00:00Z",
    "end": "2026-11-12T13:00:00Z",
    "location": "Honest Greens Parque das Nações, Alameda dos Oceanos 21101F, 1990-225 Lisboa, Portugal",
@@ -517,7 +451,7 @@
   {
    "uid": "evt-KFqcY3jcrEqRDdT@events.lu.ma",
    "url": null,
-   "name": "EVENT POSTPONED TILL TOMORROW, 12th Nov > Agents Are Ready. The Internet Isn’t.",
+   "name": "Today, 12th Nov: Agents Are Ready. The Internet Isn’t Afterworks session",
    "start": "2026-11-12T17:00:00Z",
    "end": "2026-11-12T19:30:00Z",
    "location": "Av. Duque de Loulé 24, 1050-085 Lisboa, Portugal",
@@ -913,7 +847,7 @@
   {
    "uid": "evt-mllvHIAqslMuIoR@events.lu.ma",
    "url": null,
-   "name": "AI Networking Lunch @ Web Summit 2026",
+   "name": "AI X Startups Lunch @ Web Summit 2026",
    "start": "2026-11-12T12:00:00Z",
    "end": "2026-11-12T13:00:00Z",
    "location": "Honest Greens Parque das Nações, Alameda dos Oceanos 21101F, 1990-225 Lisboa, Portugal",

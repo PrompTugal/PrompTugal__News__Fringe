@@ -11,7 +11,8 @@ const H = 3600000;
 // ---- shared: these two functions run on the server and in the browser, so they use no imports ----------------
 // items: [{h: href, n: name, p: place, s: start ms, e: end ms, st: status, x: 1 if the end is not stated}]
 function pick(items, now, limit, hrs) {
-  const live = items.filter((i) => i.st !== 'cancelled' && i.s <= now && i.e > now).sort((a, b) => a.s - b.s);
+  // an unknown status never leads Now: it sits after every on / online / moved event (the lead, 12 Nov 10:2x, as the home page already rules)
+  const live = items.filter((i) => i.st !== 'cancelled' && i.s <= now && i.e > now).sort((a, b) => ((a.st === 'unknown') - (b.st === 'unknown')) || (a.s - b.s));
   const next = items.filter((i) => i.st !== 'cancelled' && i.s > now && i.s <= now + hrs * H).sort((a, b) => a.s - b.s);
   const maxLive = Math.min(live.length, Math.max(2, limit - Math.min(next.length, 3)));   // always leave room for what is next
   const nowRows = live.slice(0, maxLive);
@@ -23,9 +24,12 @@ function rowHtml(i, esc, now) {
   const on = i.s <= now;
   const label = { on: 'On', online: 'Online', moved: 'Moved', unknown: 'Unknown' }[i.st] || 'Unknown';
   const st = { on: 1, online: 1, moved: 1, unknown: 1 }[i.st] ? i.st : 'unknown';
-  const until = on ? `until ${hm(i.e)}${i.x ? ' (end not stated)' : ''}` : `${hm(i.s)}${i.x ? '' : '–' + hm(i.e)}`;
+  // an event that runs past midnight UTC shows its dates, "Wed 11 14:30 to Thu 12 17:30" (no imports: this function also runs in the browser)
+  const dhm = (t) => { const d = new Date(t); return ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][d.getUTCDay()] + ' ' + d.getUTCDate() + ' ' + hm(t); };
+  const multi = !i.x && new Date(i.s).toISOString().slice(0, 10) !== new Date(i.e).toISOString().slice(0, 10);
+  const until = multi ? `${dhm(i.s)} to ${dhm(i.e)}` : on ? `until ${hm(i.e)}${i.x ? ' (end not stated)' : ''}` : `${hm(i.s)}${i.x ? '' : '–' + hm(i.e)}`;
   return `<li class="tl-row ${on ? 'tl-live' : 'tl-next'}"><span class="tl-t">${hm(i.s)}</span><span class="tl-dot" aria-hidden="true"></span>`
-    + `<div class="tl-c"><a class="tl-n" href='${esc(i.h)}'>${esc(i.n)}</a><div class="tl-m"><span class="chip ${st}">${label}</span> <span>${esc(st === 'online' || i.p === 'Online' ? '' : i.p + ' · ')}${until} UTC</span></div></div></li>`;
+    + `<div class="tl-c"><a class="tl-n" href='${esc(i.h)}'>${esc(i.n)}</a><div class="tl-m"><span class="chip ${st}">${label}</span> <span>${multi ? esc(until) + ' UTC' + esc(st === 'online' || i.p === 'Online' ? '' : ' · ' + i.p) : esc(st === 'online' || i.p === 'Online' ? '' : i.p + ' · ') + until + ' UTC'}</span></div></div></li>`;
 }
 function render(items, now, limit, esc, hrs) {
   const r = pick(items, now, limit, hrs);

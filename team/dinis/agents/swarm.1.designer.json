@@ -1,15 +1,15 @@
 {
   "agent": "swarm.1.designer.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T08:06Z",
+  "updated": "2026-11-12T09:23Z",
   "written_by": "swarm.1.designer.fringe@PrompTugal.dinis (its own session, its own key)",
   "session": "session_01Kw9UwCNvq4z94R3XVA2Lvm",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis at Dinis's word (23:4x UTC)",
   "reports_to": "swarm.1.fringe@PrompTugal.dinis",
   "branch": "PrompTugal__News__Swarm dev",
-  "state": "Studio in the shared UI; Stories on StoryKit; booth on every page",
+  "state": "the first real stories (dont-hope, appliances) checked on every screen",
   "doing": [
-    "waiting for the first real story, to check it on the tablets"
+    "waiting for the stories' trail.json (swarm.1's story-trail) to check Timeline, Graph and Delivery with real hops"
   ],
   "done": [
     "2026-11-11T23:52Z: index.html: run timeline by altitude, budget, signatures, responsive at 1280/1920/390 (PrompTugal__News__Swarm dev)",
@@ -31,12 +31,13 @@
     "2026-11-12T07:55Z: tablet-first and booth mode (Swarm 5876303): assets/booth.js (?booth=1: larger type, full screen on first touch, attract loop of the stories after 60 s idle, touch returns to the hub), swipe in story Present and theme notes, 44 px targets, phone nav folds into Menu, theme notes stack under the demo collapsed; stage embed for theme demos and the hub preview (swarm.1.dev cc270e5); walked 5 pages on 8 device sizes, clean; screenshots to Dinis",
     "2026-11-12T07:57Z: story.html renders through swarm.1.dev's StoryKit (Swarm 11e5164), sample included; step counter clear of the feedback pill on phones (swarm.1 review 8; items 1-2 already in 5876303); 22 steps clean at 1366, Tab S4, iPhone 14",
     "2026-11-12T08:04Z: Story Studio (swarm.1's stand.html) in the shared UI and tablet-first (Swarm 8f3b36b): css/story.css shared deck look, focus, swipe, folding ask, caption under the deck, tablet and phone layouts, scenes fit their frame (story.html too); Studio in the nav and on the hub; booth.js on every page (fa8f7f8); partners.1's pages checked, in the shared look",
-    "2026-11-12T08:06Z: Timeline opens on StoryKit.replay with the list following it; table tones (gap amber, refusal teal); one step per swipe (kit swipes, page and Studio copies removed); Partners as its own hub row (Swarm c7bca3b)"
+    "2026-11-12T08:06Z: Timeline opens on StoryKit.replay with the list following it; table tones (gap amber, refusal teal); one step per swipe (kit swipes, page and Studio copies removed); Partners as its own hub row (Swarm c7bca3b)",
+    "2026-11-12T09:23Z: devices and badges in the deck look (Swarm 49e4398); story header from StoryKit.badgeOf, and fit-to-frame fixed for the first real stories: caption room, no needless shrinking, embeds bounded, phone deck scrolls (1867796); dont-hope 27 and appliances 26 steps clean at 1366, iPad Mini, Tab S4"
   ],
   "next": [
-    "first real story: check on the tablets",
-    "Studio with a real key: check the coordinator select and the live build on a tablet",
-    "Dinis: try pages/stand.html and ?booth=1 at the stand"
+    "real trails: check the replay and graph on tablets",
+    "Studio with a real key: check on a tablet",
+    "Dinis: review pages/story.html?s=dont-hope and ?s=appliances"
   ],
   "asks": []
 }
