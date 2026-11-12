@@ -1,11 +1,11 @@
 {
  "agent": "outreach.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-12T10:36Z",
+ "updated": "2026-11-12T12:35Z",
  "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 6)",
  "model": "Sonnet",
  "wake": "hourly at :35 (set by the lead)",
  "branch": "dev",
- "state": "10:35 wake: quiet; no round 2 send reported; organiser-tagged visits 0 (/traffic/ 10:25 UTC, 565 views); 76 organisers, 5 contacted, 0 answered, 0 joined",
+ "state": "12:35 wake: quiet; no round 2 send or lunchtime post reported; organiser-tagged visits 0 (/traffic/ 12:25 UTC, 574 views; whatsapp 161, linkedin 22 unchanged); 76 organisers, 5 contacted, 0 answered, 0 joined",
  "doing": [
   "work/29 owner; with work/18 and work/23"
  ],
@@ -43,7 +43,9 @@
   "08:35 wake: no hold, no new brief, inbox empty; no round 2 send reported; counts unchanged",
   "09:22 lead's relay: (1) work/drafts/post-tonight-after-the-summit.md for WhatsApp and LinkedIn (lunch and about 16:30 UTC): says 'what's on tonight', not 'walk in' (no event is marked walk-in in data/events.json: 38 events from 16:30, 30 free, 23 with a public address); (2) work/drafts/organiser-notes-tonight-v2.md now uses ?via=organiser-<tracker id> per organiser",
   "09:35 wake: no hold, no new brief, inbox empty; counted ?via=organiser* visits in /traffic/ (generated 09:26 UTC, 559 views): 0; Jose's status (09:08) still 'answers pending'; drafts waiting: tonight post, round 2 notes, design call, tip ask, group links",
-  "10:35 wake: no hold, no new brief, inbox empty; organiser-tagged visits still 0; Replit's note (17:30 event) should go before about 12:00 UTC if it is to go"
+  "10:35 wake: no hold, no new brief, inbox empty; organiser-tagged visits still 0; Replit's note (17:30 event) should go before about 12:00 UTC if it is to go",
+  "11:35 wake: no hold, no new brief, inbox empty; organiser-tagged visits still 0; whatsapp 161, linkedin 22 unchanged since yesterday; the lunchtime 'tonight' post has not been reported posted",
+  "12:35 wake: no hold, no new brief, inbox empty; nothing sent since yesterday as far as the tracker and /traffic/ show; the 16:30 UTC 'tonight' post slot is next"
  ],
  "next": [
   "next wake: count by_via entries starting 'organiser-' in /traffic/traffic.json and note them in the tracker",

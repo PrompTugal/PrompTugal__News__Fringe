@@ -1,9 +1,9 @@
 {
   "agent": "design.3.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T10:31:32Z",
+  "updated": "2026-11-12T12:32:02Z",
   "state": "idle",
   "doing": [
-    "nothing open for design (10:31 wake, Thu 12 Nov). Friday from 07:00 UTC: the extraBlocks hook in event-pages.mjs (see next)."
+    "nothing open for design (12:31 wake, Thu 12 Nov)."
   ],
   "done": [
     "D3 event cards: admin/build/cards.mjs; 390/1280 px, light and dark, no overflow or console errors",

@@ -1,15 +1,15 @@
 {
   "agent": "ontologist.1.fringe@PrompTugal.dinis",
   "by": "ontologist.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T09:56Z",
+  "updated": "2026-11-12T11:56Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 13: \"get the ontologist on the case\")",
   "model": "Opus",
   "account": "this (the lead's)",
   "wake": "hourly at :55 (set by the lead)",
   "branch": "dev",
-  "state": "work/42: topic noise cut: 96 -> 57 topics (single-event topics 63 -> 19) by curated folds; each topic lists the tags it gathers",
+  "state": "work/42 done (evidence in the item); maintained at each wake: seen ids, graph-check, folds",
   "doing": [
-    "work/42 the semantic graph: slice 1 pushed; next, the event page linking up to its festival and organisers, sessions of the major days, and the organiser noise Dinis named (101 organisers)"
+    "maintaining work/42 at each wake (briefs/work/sources first; seen.json; build; graph-check)"
   ],
   "done": [
     "session key ontologist.1.fringe-dinis in data/keys.json (signing sha256:371caaed5542ea3a)",
@@ -36,12 +36,14 @@
     "wake 23:59: briefs/work/sources first (23:3x note: Neo4j dropped, Swarm runs repo; nothing for me); inbox quiet; seen.json refreshed; this push after 00:00 rebuilds /o/ and the persona pages with Thursday as today (the site builds on push only)",
     "wake 07:56 (night hours since 00:41, brief 16): briefs/work/sources first, brief 16 read (night hours; nothing for me); inbox quiet; day pages /d/<day>/: still to come first, already over folded, kept live by the persona pages' script (Thursday at 08:00: 68 of 68; with the clock at 19:00: 35 to come, 33 over; no errors); seen.json refreshed",
     "wake 08:56: briefs/work/sources first, no changes; inbox quiet; places unified with design.3's map (admin/build/lisbon-areas.mjs, imported not copied): one set of names, centres on 18 areas, a junk place from a bracketed note removed, events with no named neighbourhood 101 -> 60 (42 placed from the address, labelled evidence on the event page); place_how and centre in the API; old place URLs that were folded (e.g. rato-campo-de-ourique) no longer exist",
-    "wake 09:55: briefs/work/sources first, no changes; inbox quiet; data/graph/topics.json folds near-duplicate tags (healthtech -> health & bio, cloud/DevOps, design & UX, careers, ...); topics 96 -> 57, singletons 63 -> 19; tags listed on each /t/ page and in the API; countries kept as written"
+    "wake 09:55: briefs/work/sources first, no changes; inbox quiet; data/graph/topics.json folds near-duplicate tags (healthtech -> health & bio, cloud/DevOps, design & UX, careers, ...); topics 96 -> 57, singletons 63 -> 19; tags listed on each /t/ page and in the API; countries kept as written",
+    "wake 10:59: briefs/work/sources first, no changes; inbox quiet; admin/build/graph-check.mjs: unique ids, every verb with an inverse, no relates_to, link ends of the right type, event links carry source and read_at, held organisers absent, no Web Summit organiser, no Luma session titles, every entity page and API file built; tested by breaking the data on purpose (a Luma title and a missing page caught; a hold correctly removes its organiser); OK at 10:59",
+    "wake 11:56: no changes, inbox quiet, graph-check OK; work/42 set done with evidence, stating the one choice that differs from its done-means (per-type JSON derived at build, served under /api/v1/graph/)"
   ],
   "next": [
-    "at every wake: read briefs/ and work/ (and sources.md) before any source",
+    "at each wake: briefs/work/sources first, then graph-check.mjs after the build",
     "sessions only from sources the holds allow",
-    "seen.json at each wake"
+    "work/43: dev.1 to load platforms, links, retired"
   ],
   "asks": [
     "dev.1: assets/data/data.js TYPES still lacks platforms, links and retired (/api/v1/graph/*.json, live since 14:06, 14:04 and 17:57); /data/'s examples group the raw organiser text. Inbox notes sent 15:00 and 18:00 with ready queries."

@@ -1,7 +1,7 @@
 {
   "agent": "researcher.2.fringe@PrompTugal.dinis",
   "by": "researcher.2.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T10:11Z",
+  "updated": "2026-11-12T12:14Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "wake": "hourly at :10 (set by the lead) until Friday 13 November",
   "branch": "dev",
@@ -38,7 +38,9 @@
     "07:22 UTC: the lead confirms data/feeds/** and work/13 are in my grant (architect.1 round 4) and that the 4 inbox messages are the ones I already read; the two asks are removed",
     "08:12 UTC Thu wake (iCal only): 139 feed entries, added 0, gone 1, changed 0; seen_at on 107; inbox and tips: nothing new",
     "09:11 UTC Thu wake (iCal only): 133 feed entries, added 0, gone 6 (start already passed except: []), changed 2; seen_at on 104; inbox and tips: nothing new",
-    "10:11 UTC Thu wake (iCal only): 133 feed entries, added 0, gone 0, changed 1; seen_at on 104; inbox and tips: nothing new"
+    "10:11 UTC Thu wake (iCal only): 133 feed entries, added 0, gone 0, changed 1; seen_at on 104; inbox and tips: nothing new",
+    "11:13 UTC wake (iCal only): 133 feed entries, added 0, gone 0 (all already started), changed 0; seen_at on 104; inbox and tips: nothing new",
+    "12:14 UTC wake (iCal only): 132 feed entries, added 0, gone 1 (all already started), changed 0; seen_at on 104; inbox and tips: nothing new"
   ],
   "next": [
     "17:10 UTC wake: read the 3 iCal feeds only; no Luma event pages unless a person asks; tips lane; briefs",

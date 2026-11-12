@@ -99,7 +99,7 @@ export const homeCss = NOWSTRIP_CSS + `
 .hm-sec{font:600 20px/1.2 var(--serif);margin:var(--s4) 0 var(--s3);padding-top:var(--s2);border-top:2px solid var(--ink)}.hm-sec small{font:400 12px/1 var(--mono);color:var(--ink-3);margin-left:8px}
 .hm-grid{display:grid;grid-template-columns:1fr;gap:var(--s4);list-style:none;margin:0;padding:0}
 .hm-c{position:relative;background:var(--panel);border:1px solid var(--hair);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
-.hm-c[hidden]{display:none}.hm-c.past{opacity:.6}
+.hm-c[hidden],.hm-grid[hidden],.hm-more[hidden],.hm-empty[hidden],#hm-online-wrap[hidden]{display:none}.hm-c.past{opacity:.6}
 .hm-img{display:block;height:92px;background:var(--paper-2);position:relative;overflow:hidden}.hm-cr{position:absolute;left:0;bottom:0;right:0;padding:2px 6px;font:400 9.5px/1.3 var(--mono);color:#fff;background:rgba(0,0,0,.45)}.hm-img img{display:block;width:100%;height:100%;object-fit:cover}
 .hm-tile{display:flex;align-items:flex-end;justify-content:space-between;padding:10px 12px;color:var(--paper);background:color-mix(in srgb,var(--c) 78%,var(--ink))}
 .hm-tile b{font:600 46px/.9 var(--serif);letter-spacing:-.03em;opacity:.95}.hm-tile i{font:500 10.5px/1.5 var(--mono);font-style:normal;letter-spacing:.08em;text-transform:uppercase;text-align:right}.hm-tile u{text-decoration:none;font-weight:600;font-size:12px}

@@ -54,3 +54,5 @@ Every agentic activity, one line each (Angelo, 11 Nov: "track each and every age
 | 08:30 | conductor.fringe@PrompTugal.angelo | hourly wake 08:29 Thu: pulled; inbox 1 (swarm.1's story question), held for Angelo | ~3 tool calls, no LLM calls | status updated |
 | 09:29 | conductor.fringe@PrompTugal.angelo | hourly wake 09:29 Thu: pulled; inbox quiet; nothing new for Angelo or the graph | ~3 tool calls, no LLM calls | quiet |
 | 10:29 | conductor.fringe@PrompTugal.angelo | hourly wake 10:29 Thu: pulled; inbox quiet; nothing new for Angelo or the graph | ~3 tool calls, no LLM calls | quiet |
+| 11:30 | conductor.fringe@PrompTugal.angelo | hourly wake 11:29 Thu: pulled; inbox quiet; ontologist.1's graph-check OK (1548 links); /graph/ rebuilt locally, 404 nodes, no stray 'Web Summit)' node | ~5 tool calls, no LLM calls | quiet |
+| 12:29 | conductor.fringe@PrompTugal.angelo | hourly wake 12:29 Thu: pulled; inbox quiet; nothing new for Angelo or the graph | ~3 tool calls, no LLM calls | quiet |
