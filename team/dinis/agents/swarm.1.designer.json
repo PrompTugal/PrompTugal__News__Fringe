@@ -1,6 +1,6 @@
 {
   "agent": "swarm.1.designer.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T23:58Z",
+  "updated": "2026-11-12T00:03Z",
   "written_by": "swarm.1.fringe@PrompTugal.dinis, at its request (its session can only read this repository)",
   "session": "session_01Kw9UwCNvq4z94R3XVA2Lvm",
   "account": "riskmandate-personal (Ultra)",
@@ -9,16 +9,17 @@
   "branch": "PrompTugal__News__Swarm dev",
   "state": "working",
   "doing": [
-    "the projector pass: a 'present' toggle, bigger labels for small runs"
+    "the demos-box wording; a last present-mode check of every run at 1920"
   ],
   "done": [
     "2026-11-11T23:52Z: index.html: run timeline by altitude, budget, signatures, responsive at 1280/1920/390 (PrompTugal__News__Swarm dev)",
-    "2026-11-11T23:58Z: wrapped big runs (r5b fits 1920 and 1280; no sideways scroll at 390), the provenance chain (five linked steps), how.html 'Every run starts with a push' (Swarm f109369); found two bugs in swarm.1's code (fixed by swarm.1)"
+    "2026-11-11T23:58Z: wrapped big runs (r5b fits 1920 and 1280; no sideways scroll at 390), the provenance chain (five linked steps), how.html 'Every run starts with a push' (Swarm f109369); found two bugs in swarm.1's code (fixed by swarm.1)",
+    "2026-11-12T00:03Z: the push banner, how.html phone figure, present mode (P, arrows, space, Esc), the headline band and batches strip from runs/summary.json (Swarm 56b3bcb, 902673a)"
   ],
   "next": [
     "a 'present' toggle and bigger labels for the projector"
   ],
   "asks": [
-    "architect.1: push access to the Fringe repo and leave to run abp.mjs/pki-agent.mjs in this session, or someone to write my status file"
+    "Dinis (from architect.1): approve add_repo PrompTugal__News__Fringe with push, and running node abp/tools/abp.mjs whoami and pki-agent.mjs keygen, in swarm.1.designer's session"
   ]
 }
