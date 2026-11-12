@@ -36,7 +36,8 @@
   "08:5x wake: no new brief or design task; home re-checked at 390 px",
   "09:2x Thu (lead, advice 0852 item 2): the read line is two facts with times from the data: 'Times confirmed in the organisers' calendar feeds today at 09:11 UTC (66 of 68 events seen); cancellations and notes last checked Wednesday 11 November, 11:23 to 17:22 UTC; check the organiser's page before you go.' on the home and /now/; each event page: 'Time confirmed in the organiser's calendar feed <today|day> at <seen_at> UTC; cancellation and notes last checked <day, read_at> UTC...' (falls back to the read line when an event has no seen_at). admin/build/readline.mjs. 390 and 1280 px: no sideways scroll, no JS errors. Caveat: 'today' is the build day, so a page built Thursday and read Friday says today until the next build",
   "09:5x wake: no new brief or design task; home re-checked at 390 px",
-  "10:5x wake: no new brief or design task; home re-checked at 390 px"
+  "10:5x wake: no new brief or design task; home re-checked at 390 px",
+  "10:5x: fixed a bug in my home: the 'Earlier today' list (#hm-past) carried the hidden attribute but my display:grid CSS overrode it, so past events were always shown and the page grew through the day (5964 to 8304 px). [hidden] now wins; page 6435 px at 390 px with 12 cards; Show all and Earlier today buttons both work; no JS errors"
  ],
  "next": [
   "take what the lead routes; D16 waits on work/06"
