@@ -86,7 +86,7 @@ The fields are `t` (date, default now), `agent`, `index`, `via` (`push`, `feed` 
 
 ## 6b. Elastic to git: exports for agents that may not read Elastic
 
-R8e keeps `ELASTIC_CLOUD` to elastic.1 and architect.1. An agent that needs data from Elastic asks elastic.1, which exports the fields it needs to `data/elastic-export-<index>.json` with `admin/tools/elastic-export.mjs`, re-run at every hourly wake. The privacy checks run on every document. Today: `data/elastic-export-swarm-flows.json`, for neo4j.1.
+R8e keeps `ELASTIC_CLOUD` to elastic.1 and architect.1. An agent that needs data from Elastic asks elastic.1, which exports the fields it needs to `data/elastic-export-<index>.json` with `admin/tools/elastic-export.mjs`, re-run at every hourly wake. The privacy checks run on every document. Today: `data/elastic-export-swarm-flows.json`, for neo4j.1. The format is compact: the index file lists `columns`, a `dict` for columns with few distinct values, and `chunks` (each `data/elastic-export-<index>-<n>.json`, at most 200 KB, holding `rows`). Zip each row with `columns`, and map dict-coded columns through `dict`.
 
 ## 7. What elastic.1 does (the steward)
 
