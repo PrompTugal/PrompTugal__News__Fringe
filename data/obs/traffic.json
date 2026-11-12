@@ -5,27 +5,23 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T13:10Z",
+ "generated": "2026-11-12T13:26Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 576,
-  "reads": 489,
-  "tabs": 280,
+  "views": 578,
+  "reads": 490,
+  "tabs": 281,
   "countries": 21,
   "shares": 193,
-  "bots": 2160,
+  "bots": 2167,
   "crawler_tabs": 1,
-  "agent_runs": 414,
-  "agent_runs_signed": 365
+  "agent_runs": 420,
+  "agent_runs_signed": 369
  },
  "by_hour": [
-  [
-   "2026-11-10 13:00",
-   0
-  ],
   [
    "2026-11-10 14:00",
    0
@@ -212,6 +208,10 @@
   ],
   [
    "2026-11-12 12:00",
+   2
+  ],
+  [
+   "2026-11-12 13:00",
    2
   ]
  ],
@@ -582,6 +582,14 @@
   ],
   [
    "/e/2026-11-12-ptw-classroom-portuguese-for-tech-life-meet-gr/",
+   1
+  ],
+  [
+   "/e/2026-11-12-get-down-at-the-dev-house/",
+   1
+  ],
+  [
+   "/e/2026-11-12-ufl-web-summit-after-party/",
    1
   ]
  ],
@@ -1137,12 +1145,18 @@
    1,
    1,
    0
+  ],
+  [
+   "/e/2026-11-12-get-down-at-the-dev-house/",
+   1,
+   12,
+   76
   ]
  ],
  "by_country": [
   [
    "Portugal",
-   364
+   366
   ],
   [
    "United Kingdom",
@@ -1228,7 +1242,7 @@
  "by_city": [
   [
    "Lisbon, Portugal",
-   275
+   277
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -1302,7 +1316,7 @@
   ],
   [
    "www.google.com",
-   5
+   6
   ],
   [
    "promptugal.news",
@@ -1320,14 +1334,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   537
+   539
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 4946,
+ "other_hosts_views": 5002,
  "by_via": [
   [
    "whatsapp",
@@ -1362,7 +1376,7 @@
  "by_screen": [
   [
    "desktop",
-   314
+   316
   ],
   [
    "phone",
@@ -1376,7 +1390,7 @@
  "agents": [
   [
    "elastic.1.fringe@PrompTugal.dinis",
-   33
+   34
   ],
   [
    "design.4.fringe@PrompTugal.dinis",
@@ -1388,7 +1402,7 @@
   ],
   [
    "conductor.fringe@PrompTugal.jose",
-   29
+   30
   ],
   [
    "ontologist.1.fringe@PrompTugal.dinis",
@@ -1408,7 +1422,7 @@
   ],
   [
    "researcher.fringe@PrompTugal.dinis",
-   22
+   23
   ],
   [
    "observability.fringe@PrompTugal.dinis",
@@ -1416,14 +1430,14 @@
   ],
   [
    "design.2.fringe@PrompTugal.dinis",
-   20
-  ],
-  [
-   "dev.1.fringe@PrompTugal.dinis",
-   18
+   21
   ],
   [
    "researcher.2@PrompTugal.dinis",
+   19
+  ],
+  [
+   "dev.1.fringe@PrompTugal.dinis",
    18
   ],
   [
@@ -1436,7 +1450,7 @@
   ],
   [
    "dev.2.fringe@PrompTugal.dinis",
-   15
+   16
   ],
   [
    "swarm.1.fringe@PrompTugal.dinis",
@@ -1464,7 +1478,7 @@
   ]
  ],
  "flows": {
-  "tabs": 278,
+  "tabs": 279,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
@@ -1476,7 +1490,7 @@
    ],
    [
     "from another site",
-    7
+    8
    ]
   ],
   "entry_pages": [
@@ -1712,7 +1726,7 @@
    ],
    [
     "2",
-    39
+    40
    ],
    [
     "3",
@@ -1727,7 +1741,7 @@
     22
    ]
   ],
-  "bounce_rate": 71,
+  "bounce_rate": 70,
   "via_reached": [
    [
     "whatsapp: /",
@@ -1794,11 +1808,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
@@ -1806,7 +1820,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
     1
    ]
   ]
@@ -1837,7 +1851,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 275,
+    "views": 277,
     "lat": 38.7,
     "lon": -9.1
    },
