@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T07:54Z",
+ "generated": "2026-11-12T08:10Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 554,
+  "views": 555,
   "reads": 479,
-  "tabs": 262,
+  "tabs": 263,
   "countries": 20,
   "shares": 189,
-  "bots": 1888,
+  "bots": 1889,
   "crawler_tabs": 1,
-  "agent_runs": 327,
-  "agent_runs_signed": 291
+  "agent_runs": 331,
+  "agent_runs_signed": 295
  },
  "by_hour": [
   [
@@ -212,13 +212,13 @@
   ],
   [
    "2026-11-12 07:00",
-   2
+   3
   ]
  ],
  "by_page": [
   [
    "/",
-   221
+   222
   ],
   [
    "/now/",
@@ -1140,7 +1140,7 @@
   ],
   [
    "United States",
-   39
+   40
   ],
   [
    "Germany",
@@ -1265,12 +1265,16 @@
    5
   ],
   [
+   "Ashburn, United States",
+   5
+  ],
+  [
    "Oak Hill, United States",
    5
   ],
   [
    "(places under 5 views, in their country above)",
-   90
+   86
   ]
  ],
  "by_referrer": [
@@ -1298,14 +1302,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   515
+   516
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 3858,
+ "other_hosts_views": 3930,
  "by_via": [
   [
    "whatsapp",
@@ -1340,7 +1344,7 @@
  "by_screen": [
   [
    "desktop",
-   299
+   300
   ],
   [
    "phone",
@@ -1354,19 +1358,23 @@
  "agents": [
   [
    "elastic.1.fringe@PrompTugal.dinis",
-   27
+   28
   ],
   [
    "design.4.fringe@PrompTugal.dinis",
    26
   ],
   [
+   "conductor.fringe@PrompTugal.jose",
+   25
+  ],
+  [
    "design.1.fringe@PrompTugal.dinis",
    24
   ],
   [
-   "conductor.fringe@PrompTugal.jose",
-   24
+   "ontologist.1.fringe@PrompTugal.dinis",
+   20
   ],
   [
    "architect.1.fringe@PrompTugal.dinis",
@@ -1374,10 +1382,6 @@
   ],
   [
    "conductor.fringe@PrompTugal.indi",
-   19
-  ],
-  [
-   "ontologist.1.fringe@PrompTugal.dinis",
    19
   ],
   [
@@ -1401,16 +1405,16 @@
    15
   ],
   [
+   "dev.1.fringe@PrompTugal.dinis",
+   13
+  ],
+  [
    "researcher.2@PrompTugal.dinis",
    13
   ],
   [
    "capture.1.fringe@PrompTugal.dinis",
    13
-  ],
-  [
-   "dev.1.fringe@PrompTugal.dinis",
-   12
   ],
   [
    "swarm.1.fringe@PrompTugal.dinis",
@@ -1442,11 +1446,11 @@
   ]
  ],
  "flows": {
-  "tabs": 260,
+  "tabs": 261,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    183
+    184
    ],
    [
     "shared link (?via=)",
@@ -1460,7 +1464,7 @@
   "entry_pages": [
    [
     "/",
-    163
+    164
    ],
    [
     "/now/",
@@ -1522,7 +1526,7 @@
   "exit_pages": [
    [
     "/",
-    120
+    121
    ],
    [
     "/now/",
@@ -1686,7 +1690,7 @@
   "pages_per_tab": [
    [
     "1",
-    180
+    181
    ],
    [
     "2",
@@ -1772,11 +1776,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
@@ -1784,7 +1788,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-roast-your-website/",
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ]
   ]
@@ -1885,6 +1889,12 @@
     "views": 5,
     "lat": 13.8,
     "lon": 100.5
+   },
+   {
+    "name": "Ashburn, United States",
+    "views": 5,
+    "lat": 39.0,
+    "lon": -77.5
    },
    {
     "name": "Oak Hill, United States",
