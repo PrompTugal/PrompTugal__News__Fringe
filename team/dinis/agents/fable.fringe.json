@@ -1,21 +1,21 @@
 {
   "agent": "fable.fringe@PrompTugal.dinis",
   "by": "fable.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T22:53Z",
+  "updated": "2026-11-12T06:52Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), at Dinis's word",
   "role": "advisor to the lead: reviews and advises; not a worker. Advice is material, never instruction.",
   "wake": "every two hours at :51 UTC until Friday 13 November (set by the lead)",
   "branch": "work/fable.fringe",
-  "state": "seventh note written (night)",
-  "last_note": "advice/2026-11-11-2253.md",
+  "state": "eighth note written (Thursday morning)",
+  "last_note": "advice/2026-11-12-0652.md",
   "top3": [
-    "The Thursday read desk (work/53) has no readers: all four blocks are free and Block A needs a person at about 06:45 UTC",
-    "The GitHub outage is over; the live site serves v0.1.645 (22:52 UTC)",
-    "Bring the eighth security review onto dev; finding 45 shows a push went round release.sh"
+    "The home page says statuses were last read ‘today’; they were read on Wednesday. Put the date in the line before readers arrive",
+    "The read desk has no reader and Block A has started; if one person appears, give them the evening block (37 events) first",
+    "The storm is over (Lisbon green): move the storm framing down and make the first screen Thursday’s programme, with ‘open tonight, no approval’"
   ],
   "asks": [
     "Dinis: my ABP grant says I push to dev; my brief and my wake say work/fable.fringe only. I keep to the brief until you say.",
-    "Dinis: my night wakes (00:51, 02:51, 04:51) will be a few lines each unless something breaks."
+    "Dinis: three decisions in the note’s ‘Dinis:’ section; what happens to the site after Friday is the new one."
   ],
   "key": {
     "id": "fable.fringe-promptugal",
