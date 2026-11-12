@@ -1,9 +1,9 @@
 {
   "by": "conductor.fringe@PrompTugal.jose",
-  "updated": "2026-11-12T15:11Z",
+  "updated": "2026-11-12T16:10Z",
   "person": "jose",
   "role": "member",
-  "state": "on: conductor.fringe@PrompTugal.jose; hourly wake at :07 until Friday 13 November, 23:59 UTC; wake 15:11 (Thu 12 Nov): quiet; no answer from Jose yet (story, night hours); tracker 5 contacted, 0 answered; views by channel since launch: whatsapp 161, linkedin 22, promptugal-news 10, organiser 0 (586 views in all)",
+  "state": "on: conductor.fringe@PrompTugal.jose; hourly wake at :07 until Friday 13 November, 23:59 UTC; wake 16:10 (Thu 12 Nov): the lead closed the read desk unused (15:22 UTC); no answer from Jose yet (story, night hours); tracker 5 contacted, 0 answered; views by channel since launch: whatsapp 161, linkedin 22 (from 3 tabs), promptugal-news 10, organiser 0 (593 views in all)",
   "lane": "channels (SWARM.md): the posts and messages that point people to the site; a person sends, the conductor never posts or messages anyone",
   "doing": [
     "the home page proposal with design.1 and Dinis (work/drafts/jose/home-proposal.md); organiser answers on Luma"
@@ -37,7 +37,8 @@
     "21:24 (design.4, 0ce6017): on the home, status unknown is never ON NOW and multi-day events show their dates; this matches the question in Jose's home proposal (the commit does not cite it)",
     "00:23 (design.4, 9602e1a): the home's counts line and Now tab now agree on 'on now'; this matches item 3 of Jose's home proposal (the commit does not cite it)",
     "10:09: told the lead (inbox) that Jose has not answered on read-desk Block B, so not to count on him for it",
-    "13:12: read-desk Block B's window passed without an answer from Jose; the ask is closed (the lead was told at 10:09 not to count on him)"
+    "13:12: read-desk Block B's window passed without an answer from Jose; the ask is closed (the lead was told at 10:09 not to count on him)",
+    "15:22 (the lead): Thursday's read desk (work/53) closed unused; its ask was already dropped from this status at 13:11"
   ],
   "next": [
     "watch /traffic/ for ?via=linkedin visits and report them to Jose",
@@ -53,8 +54,8 @@
     "Dinis: this session's network refuses lisbontechfringe.com and fringe.promptugal.news, so the served version.json is checked through the deploy run, not the page."
   ],
   "today": [
-    "16:23: 5 organiser notes sent by hand (WonderLead in Tech, ideaic.io, Canopy Community, FounderLink, Portugal Tech Week), online storm events first, checked at source",
-    "17:31: LinkedIn post up, linking tonight's events (/now/?via=linkedin)",
-    "18:38: Jose's six dashboard changes live on /dashboard/, approved by Dinis (with a design pass)"
+    "Thu 12 Nov: no new sends yet; Wednesday's LinkedIn post (17:31) has brought 22 page views from 3 browser tabs",
+    "Wed 11 Nov, 16:23: 5 organiser notes sent by hand (WonderLead in Tech, ideaic.io, Canopy Community, FounderLink, Portugal Tech Week), online storm events first, checked at source",
+    "Wed 11 Nov, 18:38: Jose's six dashboard changes live on /dashboard/, approved by Dinis (with a design pass)"
   ]
 }
