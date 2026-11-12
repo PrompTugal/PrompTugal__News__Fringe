@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T11:39Z",
+ "generated": "2026-11-12T11:54Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
   "views": 573,
-  "reads": 488,
+  "reads": 489,
   "tabs": 277,
   "countries": 21,
   "shares": 193,
-  "bots": 2109,
+  "bots": 2111,
   "crawler_tabs": 1,
-  "agent_runs": 391,
-  "agent_runs_signed": 345
+  "agent_runs": 395,
+  "agent_runs_signed": 349
  },
  "by_hour": [
   [
@@ -612,9 +612,9 @@
   ],
   [
    "/universe/",
-   14,
-   62,
-   47
+   15,
+   58,
+   44
   ],
   [
    "/dashboard/",
@@ -1323,7 +1323,7 @@
    39
   ]
  ],
- "other_hosts_views": 4674,
+ "other_hosts_views": 4722,
  "by_via": [
   [
    "whatsapp",
@@ -1376,15 +1376,23 @@
   ],
   [
    "design.4.fringe@PrompTugal.dinis",
-   29
+   30
   ],
   [
    "design.1.fringe@PrompTugal.dinis",
-   29
+   30
   ],
   [
    "conductor.fringe@PrompTugal.jose",
    28
+  ],
+  [
+   "architect.1.fringe@PrompTugal.dinis",
+   23
+  ],
+  [
+   "conductor.fringe@PrompTugal.indi",
+   23
   ],
   [
    "ontologist.1.fringe@PrompTugal.dinis",
@@ -1392,14 +1400,6 @@
   ],
   [
    "design.3.fringe@PrompTugal.dinis",
-   22
-  ],
-  [
-   "architect.1.fringe@PrompTugal.dinis",
-   22
-  ],
-  [
-   "conductor.fringe@PrompTugal.indi",
    22
   ],
   [
@@ -1790,11 +1790,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
@@ -1802,7 +1802,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
+    "whatsapp: /e/2026-11-11-roast-your-website/",
     1
    ]
   ]
