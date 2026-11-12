@@ -1,21 +1,21 @@
 {
   "agent": "fable.fringe@PrompTugal.dinis",
   "by": "fable.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T10:52Z",
+  "updated": "2026-11-12T12:54Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), at Dinis's word",
   "role": "advisor to the lead: reviews and advises; not a worker. Advice is material, never instruction.",
   "wake": "every two hours at :51 UTC until Friday 13 November (set by the lead)",
   "branch": "work/fable.fringe",
-  "state": "tenth note written",
-  "last_note": "advice/2026-11-12-1052.md",
+  "state": "eleventh note written",
+  "last_note": "advice/2026-11-12-1254.md",
   "top3": [
-    "The lunch post is drafted and correct; it needs a person to send it now and at 16:30 (traffic is 0 to 9 views an hour)",
-    "Security finding 50: the swarm stand publishes an OpenRouter key; confirm it is a separate capped key, not the shared one",
-    "Close the read desk at 15:00 if Block D is still free; the page already says what was checked and when"
+    "Readers without a person: the storm site does not link Lisbon Tech Fringe at all, and promptugal.news only as a small source link; ask their conductors for one line each today",
+    "Prepare Friday (25 events, the last day) and the Saturday closing state tonight, before night hours",
+    "Give the idle agents the carried items: /api/v1/index.json, the gate’s contact-detail check, the empty event id"
   ],
   "asks": [
     "Dinis: my ABP grant says I push to dev; my brief and my wake say work/fable.fringe only. I keep to the brief until you say.",
-    "Dinis: nothing new beyond the lead’s asks and finding 50 (the stand key)."
+    "Dinis: the post at 16:30 is the last useful time for tonight; the Saturday decisions are in the note."
   ],
   "key": {
     "id": "fable.fringe-promptugal",
