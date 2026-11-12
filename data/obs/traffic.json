@@ -5,27 +5,23 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T17:10Z",
+ "generated": "2026-11-12T17:25Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 596,
-  "reads": 505,
-  "tabs": 292,
+  "views": 601,
+  "reads": 509,
+  "tabs": 294,
   "countries": 23,
   "shares": 194,
-  "bots": 2339,
+  "bots": 2344,
   "crawler_tabs": 1,
-  "agent_runs": 477,
-  "agent_runs_signed": 419
+  "agent_runs": 482,
+  "agent_runs_signed": 423
  },
  "by_hour": [
-  [
-   "2026-11-10 17:00",
-   0
-  ],
   [
    "2026-11-10 18:00",
    0
@@ -213,6 +209,10 @@
   [
    "2026-11-12 16:00",
    3
+  ],
+  [
+   "2026-11-12 17:00",
+   5
   ]
  ],
  "by_page": [
@@ -342,6 +342,10 @@
   ],
   [
    "/e/2026-11-12-healthcare-re-imagined-by-ai/",
+   3
+  ],
+  [
+   "/e/2026-11-12-300-oysters-and-ai-web-summit-lisbon-side-even/",
    3
   ],
   [
@@ -597,7 +601,15 @@
    1
   ],
   [
-   "/e/2026-11-12-300-oysters-and-ai-web-summit-lisbon-side-even/",
+   "/e/2026-11-12-moon-summit-web-summit-closing-night/",
+   1
+  ],
+  [
+   "/e/2026-11-12-closing-night-the-nest/",
+   1
+  ],
+  [
+   "/d/2026-11-12/",
    1
   ]
  ],
@@ -945,6 +957,12 @@
    60
   ],
   [
+   "/e/2026-11-12-300-oysters-and-ai-web-summit-lisbon-side-even/",
+   2,
+   8,
+   38
+  ],
+  [
    "/e/2026-11-11-startup-legal-roast/",
    1,
    16,
@@ -1173,16 +1191,28 @@
    27
   ],
   [
-   "/e/2026-11-12-300-oysters-and-ai-web-summit-lisbon-side-even/",
+   "/d/2026-11-12/",
    1,
-   9,
-   30
+   23,
+   67
+  ],
+  [
+   "/e/2026-11-12-closing-night-the-nest/",
+   1,
+   4,
+   16
+  ],
+  [
+   "/e/2026-11-12-moon-summit-web-summit-closing-night/",
+   1,
+   15,
+   25
   ]
  ],
  "by_country": [
   [
    "Portugal",
-   379
+   384
   ],
   [
    "United Kingdom",
@@ -1276,7 +1306,7 @@
  "by_city": [
   [
    "Lisbon, Portugal",
-   288
+   289
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -1299,12 +1329,12 @@
    17
   ],
   [
-   "Harrietsham, United Kingdom",
-   13
+   "Montijo, Portugal",
+   15
   ],
   [
-   "Montijo, Portugal",
-   11
+   "Harrietsham, United Kingdom",
+   13
   ],
   [
    "Boardman, United States",
@@ -1346,7 +1376,7 @@
  "by_referrer": [
   [
    "www.google.com",
-   11
+   13
   ],
   [
    "lnkd.in",
@@ -1368,14 +1398,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   557
+   562
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 5682,
+ "other_hosts_views": 5730,
  "by_via": [
   [
    "whatsapp",
@@ -1414,7 +1444,7 @@
   ],
   [
    "phone",
-   263
+   268
   ],
   [
    "tablet",
@@ -1424,7 +1454,7 @@
  "agents": [
   [
    "elastic.1.fringe@PrompTugal.dinis",
-   37
+   38
   ],
   [
    "design.4.fringe@PrompTugal.dinis",
@@ -1451,11 +1481,11 @@
    27
   ],
   [
-   "architect.1.fringe@PrompTugal.dinis",
-   26
+   "researcher.fringe@PrompTugal.dinis",
+   27
   ],
   [
-   "researcher.fringe@PrompTugal.dinis",
+   "architect.1.fringe@PrompTugal.dinis",
    26
   ],
   [
@@ -1464,7 +1494,7 @@
   ],
   [
    "design.2.fringe@PrompTugal.dinis",
-   24
+   25
   ],
   [
    "dev.1.fringe@PrompTugal.dinis",
@@ -1480,7 +1510,7 @@
   ],
   [
    "dev.2.fringe@PrompTugal.dinis",
-   19
+   20
   ],
   [
    "researcher.1.fringe@PrompTugal.jose",
@@ -1512,11 +1542,11 @@
   ],
   [
    "researcher.2.fringe@PrompTugal.dinis",
-   1
+   2
   ]
  ],
  "flows": {
-  "tabs": 290,
+  "tabs": 292,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
@@ -1528,7 +1558,7 @@
    ],
    [
     "from another site",
-    13
+    15
    ]
   ],
   "entry_pages": [
@@ -1565,6 +1595,10 @@
     3
    ],
    [
+    "/e/2026-11-12-300-oysters-and-ai-web-summit-lisbon-side-even/",
+    3
+   ],
+   [
     "/me/",
     2
    ],
@@ -1586,10 +1620,6 @@
    ],
    [
     "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&ct=ga&cd=CAEYACoTNzU4MTg5ODA1MDE5MTA5ODQ2NzIcMDE4ZGYwYTk5NWVlNmM3MDpjb206ZW46VVM6TA&usg=AOvVaw0652Ojza7KUs4TwPwCMRUX",
-    2
-   ],
-   [
-    "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&ss=tw&rt=PTW+Classroom+-+Who+Flies+When+the+CEO+Ejects",
     2
    ]
   ],
@@ -1760,7 +1790,7 @@
   "pages_per_tab": [
    [
     "1",
-    203
+    204
    ],
    [
     "2",
@@ -1772,7 +1802,7 @@
    ],
    [
     "4",
-    5
+    6
    ],
    [
     "5+",
@@ -1846,11 +1876,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
@@ -1858,7 +1888,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
     1
    ]
   ]
@@ -1889,7 +1919,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 288,
+    "views": 289,
     "lat": 38.7,
     "lon": -9.1
    },
@@ -1924,16 +1954,16 @@
     "lon": -0.1
    },
    {
+    "name": "Montijo, Portugal",
+    "views": 15,
+    "lat": 38.7,
+    "lon": -9.0
+   },
+   {
     "name": "Harrietsham, United Kingdom",
     "views": 13,
     "lat": 51.2,
     "lon": 0.6
-   },
-   {
-    "name": "Montijo, Portugal",
-    "views": 11,
-    "lat": 38.7,
-    "lon": -9.0
    },
    {
     "name": "Boardman, United States",
@@ -2051,6 +2081,10 @@
    2
   ],
   [
+   "/e/2026-11-12-300-oysters-and-ai-web-summit-lisbon-side-even/ → luma.com/qnu3jyg0",
+   2
+  ],
+  [
    "/e/2026-11-11-between-the-waves/ → luma.com/5yucusdb",
    1
   ],
@@ -2100,10 +2134,6 @@
   ],
   [
    "/e/2026-11-11-yorkseed-investor-pitch/ → luma.com/bmu7tyec",
-   1
-  ],
-  [
-   "/e/2026-11-11-roast-your-website/ → luma.com/m146luuy",
    1
   ]
  ]
