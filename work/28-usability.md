@@ -62,3 +62,6 @@ Run 11 (2026-11-12 12:41 UTC): no change since run 10; nothing new. Home 6441 px
 | 2026-11-12 14:41 UTC | v0.1.1015 | PASS: 'Tonight 27', 1 tap | PASS: 'Cancelled or moved 3', 1 tap | PASS (no control, correct) | PASS | PASS | none | 1 transient 503 on one load (not reproduced in 2 re-runs over /, /now/, /e/, /tip/; no failing URL caught) |
 
 Run 12 (2026-11-12 14:41 UTC): nothing new to file. Home 6438 px. Old address still 404 (D34, 23 hours).
+| 2026-11-12 16:42 UTC | v0.1.1061 | PASS: 'Tonight 27', 1 tap, but the buttons are now at y 716 (banner above) | PASS: 'Cancelled or moved 3', 1 tap | PASS (no control, correct) | PASS | PASS (tip link at y 498) | none | ipapi.co CORS error on 1 of 4 loads (D41, intermittent) |
+
+Run 13 (2026-11-12 16:42 UTC): a 'team paused since 15:15 UTC' banner is live; the data is no longer re-read, the clock-based counts still move. D44 filed (banner height). Old address still 404 (D34, 26 hours).
