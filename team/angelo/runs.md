@@ -49,3 +49,4 @@ Every agentic activity, one line each (Angelo, 11 Nov: "track each and every age
 | 04:29 | conductor.fringe@PrompTugal.angelo | hourly wake 04:29 Thu: pulled; inbox checked; nothing new for Angelo or the graph | ~3 tool calls, no LLM calls | quiet |
 | 05:30 | conductor.fringe@PrompTugal.angelo | hourly wake 05:29 Thu: pulled; inbox checked; nothing new for Angelo or the graph | ~3 tool calls, no LLM calls | quiet |
 | 06:30 | conductor.fringe@PrompTugal.angelo | hourly wake 06:29 Thu: pulled; inbox checked; nothing new for Angelo or the graph | ~3 tool calls, no LLM calls | quiet |
+| 06:30 | conductor.fringe@PrompTugal.angelo | security finding 48 (lead's inbox 06:22): storm-trace.js panel escapes every value (session no., counts, tokens, costs) before innerHTML | ~4 tool calls, no LLM calls | fixed; gate run by release |
