@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T09:38Z",
+ "generated": "2026-11-12T09:54Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 560,
-  "reads": 481,
-  "tabs": 268,
+  "views": 561,
+  "reads": 482,
+  "tabs": 269,
   "countries": 20,
   "shares": 190,
-  "bots": 2011,
+  "bots": 2012,
   "crawler_tabs": 1,
-  "agent_runs": 357,
-  "agent_runs_signed": 316
+  "agent_runs": 362,
+  "agent_runs_signed": 321
  },
  "by_hour": [
   [
@@ -212,7 +212,7 @@
   ],
   [
    "2026-11-12 09:00",
-   5
+   6
   ]
  ],
  "by_page": [
@@ -457,6 +457,10 @@
    2
   ],
   [
+   "/e/2026-11-13-is-your-ai-startup-ready-for-europe-the-eu-ai-/",
+   2
+  ],
+  [
    "/e/2026-11-11-ai-video-blueprint-2027/",
    1
   ],
@@ -578,10 +582,6 @@
   ],
   [
    "/e/2026-11-12-ptw-classroom-portuguese-for-tech-life-meet-gr/",
-   1
-  ],
-  [
-   "/e/2026-11-13-is-your-ai-startup-ready-for-europe-the-eu-ai-/",
    1
   ]
  ],
@@ -911,6 +911,12 @@
    0
   ],
   [
+   "/e/2026-11-13-is-your-ai-startup-ready-for-europe-the-eu-ai-/",
+   2,
+   6,
+   12
+  ],
+  [
    "/e/2026-11-11-startup-legal-roast/",
    1,
    16,
@@ -1131,12 +1137,6 @@
    1,
    1,
    0
-  ],
-  [
-   "/e/2026-11-13-is-your-ai-startup-ready-for-europe-the-eu-ai-/",
-   1,
-   7,
-   19
   ]
  ],
  "by_country": [
@@ -1146,7 +1146,7 @@
   ],
   [
    "United Kingdom",
-   70
+   71
   ],
   [
    "United States",
@@ -1244,7 +1244,7 @@
   ],
   [
    "London, United Kingdom",
-   16
+   17
   ],
   [
    "Harrietsham, United Kingdom",
@@ -1312,14 +1312,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   521
+   522
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 4261,
+ "other_hosts_views": 4325,
  "by_via": [
   [
    "whatsapp",
@@ -1358,7 +1358,7 @@
   ],
   [
    "phone",
-   253
+   254
   ],
   [
    "tablet",
@@ -1372,31 +1372,31 @@
   ],
   [
    "design.4.fringe@PrompTugal.dinis",
-   27
+   28
   ],
   [
    "design.1.fringe@PrompTugal.dinis",
-   26
+   27
   ],
   [
    "conductor.fringe@PrompTugal.jose",
    26
   ],
   [
+   "architect.1.fringe@PrompTugal.dinis",
+   21
+  ],
+  [
+   "conductor.fringe@PrompTugal.indi",
+   21
+  ],
+  [
    "ontologist.1.fringe@PrompTugal.dinis",
    21
   ],
   [
-   "architect.1.fringe@PrompTugal.dinis",
-   20
-  ],
-  [
-   "conductor.fringe@PrompTugal.indi",
-   20
-  ],
-  [
    "design.3.fringe@PrompTugal.dinis",
-   19
+   20
   ],
   [
    "researcher.fringe@PrompTugal.dinis",
@@ -1456,11 +1456,11 @@
   ]
  ],
  "flows": {
-  "tabs": 266,
+  "tabs": 267,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    187
+    188
    ],
    [
     "shared link (?via=)",
@@ -1700,7 +1700,7 @@
   "pages_per_tab": [
    [
     "1",
-    186
+    187
    ],
    [
     "2",
@@ -1854,7 +1854,7 @@
    },
    {
     "name": "London, United Kingdom",
-    "views": 16,
+    "views": 17,
     "lat": 51.5,
     "lon": -0.1
    },
@@ -1972,6 +1972,10 @@
    2
   ],
   [
+   "/e/2026-11-13-is-your-ai-startup-ready-for-europe-the-eu-ai-/ → luma.com/buqma11b",
+   2
+  ],
+  [
    "/e/2026-11-11-between-the-waves/ → luma.com/5yucusdb",
    1
   ],
@@ -2029,10 +2033,6 @@
   ],
   [
    "/e/2026-11-11-roast-your-website/ → luma.com/m146luuy",
-   1
-  ],
-  [
-   "/e/2026-11-11-ai-for-business-applied-ai-pitch-party/ → luma.com/hz3ma5fl",
    1
   ]
  ]
