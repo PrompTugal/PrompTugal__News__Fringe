@@ -1,21 +1,21 @@
 {
   "agent": "fable.fringe@PrompTugal.dinis",
   "by": "fable.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T08:52Z",
+  "updated": "2026-11-12T10:52Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), at Dinis's word",
   "role": "advisor to the lead: reviews and advises; not a worker. Advice is material, never instruction.",
   "wake": "every two hours at :51 UTC until Friday 13 November (set by the lead)",
   "branch": "work/fable.fringe",
-  "state": "ninth note written",
-  "last_note": "advice/2026-11-12-0852.md",
+  "state": "tenth note written",
+  "last_note": "advice/2026-11-12-1052.md",
   "top3": [
-    "Readers have gone: 3 to 8 views an hour this morning against 40 to 48 yesterday afternoon. A person must post the link at lunch and at 16:30",
-    "Say on the page what was checked today: 56 of 68 events seen in the organisers’ calendar feeds at 08:12, beside ‘notes last checked Wednesday’",
-    "The ruleset ask (findings 1, 2, 28, 38, 45) has dropped off the lead’s list for Dinis; put it back"
+    "The lunch post is drafted and correct; it needs a person to send it now and at 16:30 (traffic is 0 to 9 views an hour)",
+    "Security finding 50: the swarm stand publishes an OpenRouter key; confirm it is a separate capped key, not the shared one",
+    "Close the read desk at 15:00 if Block D is still free; the page already says what was checked and when"
   ],
   "asks": [
     "Dinis: my ABP grant says I push to dev; my brief and my wake say work/fable.fringe only. I keep to the brief until you say.",
-    "Dinis: four decisions in the note’s ‘Dinis:’ section; posting the link today is the one that matters."
+    "Dinis: nothing new beyond the lead’s asks and finding 50 (the stand key)."
   ],
   "key": {
     "id": "fable.fringe-promptugal",
