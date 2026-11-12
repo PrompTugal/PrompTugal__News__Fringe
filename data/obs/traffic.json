@@ -5,7 +5,7 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T12:38Z",
+ "generated": "2026-11-12T12:39Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
@@ -18,8 +18,8 @@
   "shares": 193,
   "bots": 2152,
   "crawler_tabs": 1,
-  "agent_runs": 405,
-  "agent_runs_signed": 357
+  "agent_runs": 406,
+  "agent_runs_signed": 358
  },
  "by_hour": [
   [
@@ -1408,7 +1408,7 @@
   ],
   [
    "observability.fringe@PrompTugal.dinis",
-   20
+   21
   ],
   [
    "design.2.fringe@PrompTugal.dinis",
@@ -1790,11 +1790,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
@@ -1802,7 +1802,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-roast-your-website/",
+    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
     1
    ]
   ]
