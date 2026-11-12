@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T13:26Z",
+ "generated": "2026-11-12T13:38Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 578,
-  "reads": 490,
-  "tabs": 281,
+  "views": 581,
+  "reads": 493,
+  "tabs": 282,
   "countries": 21,
   "shares": 193,
-  "bots": 2167,
+  "bots": 2199,
   "crawler_tabs": 1,
-  "agent_runs": 420,
-  "agent_runs_signed": 369
+  "agent_runs": 423,
+  "agent_runs_signed": 372
  },
  "by_hour": [
   [
@@ -212,17 +212,17 @@
   ],
   [
    "2026-11-12 13:00",
-   2
+   5
   ]
  ],
  "by_page": [
   [
    "/",
-   236
+   238
   ],
   [
    "/now/",
-   44
+   45
   ],
   [
    "/how/",
@@ -596,7 +596,7 @@
  "reading": [
   [
    "/",
-   180,
+   182,
    28,
    13
   ],
@@ -1151,12 +1151,18 @@
    1,
    12,
    76
+  ],
+  [
+   "/e/2026-11-12-ufl-web-summit-after-party/",
+   1,
+   146,
+   98
   ]
  ],
  "by_country": [
   [
    "Portugal",
-   366
+   368
   ],
   [
    "United Kingdom",
@@ -1164,7 +1170,7 @@
   ],
   [
    "United States",
-   41
+   42
   ],
   [
    "Germany",
@@ -1242,7 +1248,7 @@
  "by_city": [
   [
    "Lisbon, Portugal",
-   277
+   279
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -1306,7 +1312,7 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   87
+   88
   ]
  ],
  "by_referrer": [
@@ -1334,14 +1340,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   539
+   542
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 5002,
+ "other_hosts_views": 5050,
  "by_via": [
   [
    "whatsapp",
@@ -1376,7 +1382,7 @@
  "by_screen": [
   [
    "desktop",
-   316
+   319
   ],
   [
    "phone",
@@ -1409,16 +1415,16 @@
    25
   ],
   [
+   "design.3.fringe@PrompTugal.dinis",
+   24
+  ],
+  [
    "architect.1.fringe@PrompTugal.dinis",
    24
   ],
   [
    "conductor.fringe@PrompTugal.indi",
    24
-  ],
-  [
-   "design.3.fringe@PrompTugal.dinis",
-   23
   ],
   [
    "researcher.fringe@PrompTugal.dinis",
@@ -1433,16 +1439,16 @@
    21
   ],
   [
+   "dev.1.fringe@PrompTugal.dinis",
+   19
+  ],
+  [
    "researcher.2@PrompTugal.dinis",
    19
   ],
   [
-   "dev.1.fringe@PrompTugal.dinis",
-   18
-  ],
-  [
    "capture.1.fringe@PrompTugal.dinis",
-   18
+   19
   ],
   [
    "researcher.1.fringe@PrompTugal.jose",
@@ -1478,11 +1484,11 @@
   ]
  ],
  "flows": {
-  "tabs": 279,
+  "tabs": 280,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    197
+    198
    ],
    [
     "shared link (?via=)",
@@ -1496,7 +1502,7 @@
   "entry_pages": [
    [
     "/",
-    175
+    176
    ],
    [
     "/now/",
@@ -1562,7 +1568,7 @@
    ],
    [
     "/now/",
-    16
+    17
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
@@ -1620,7 +1626,7 @@
   "steps": [
    [
     "/ → /now/",
-    19
+    20
    ],
    [
     "/ → /programme/",
@@ -1730,7 +1736,7 @@
    ],
    [
     "3",
-    16
+    17
    ],
    [
     "4",
@@ -1851,7 +1857,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 277,
+    "views": 279,
     "lat": 38.7,
     "lon": -9.1
    },
