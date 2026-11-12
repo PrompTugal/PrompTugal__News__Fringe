@@ -5,7 +5,8 @@
 //   2. no secret: private keys, tokens, vault keys;
 //   3. every tracked JSON parses; every published event has a name, an https source and the time it was read;
 //   4. every internal link resolves in the built site;
-//   5. every page carries the independence line and links the organisers; the front page links the storm site.
+//   5. every page carries the independence line and links the organisers; the front page links the storm site;
+//   7. no email address or phone number in data/ or the built site (finding 5; allow-list in the section).
 // Run: node admin/build/validate.mjs
 import fs from 'node:fs';
 import path from 'node:path';
@@ -81,6 +82,28 @@ for (const rel of ['index.html', 'join/index.html', 'graph/index.html']) {   // 
   const h = fs.readFileSync(path.join(OUT, rel), 'utf8');
   for (const need of ['og:title', 'og:description', `og:image" content="${SITE_ORIGIN}/assets/og/share.png`, 'twitter:card'])
     if (!h.includes(need)) fail(`${rel}: missing ${need}`);
+}
+// 7. NO CONTACT DETAILS (security finding 5, dev.2.fringe@PrompTugal.dinis; CLAUDE.md: "No contact details, ever"): fails on an email address or a phone
+//    number in tracked data/ JSON and in the built pages and API. Matches are reported MASKED (never printed in full). Allow-list, each a known non-contact:
+//    agent labels (<role>@PrompTugal.<id>, @web-summit.<id>, with an optional .md for a file name), iCal uids (<evt|calev>-<id>@events.lu.ma: an opaque event id, not a
+//    mailbox), and phone-shaped numbers inside SVG path data. A phone is a +<country> number, a tel: link, or a Portuguese mobile written with separators.
+{
+  const EMAIL = /[A-Za-z0-9._%+\-]+@[A-Za-z0-9\-]+(?:\.[A-Za-z0-9\-]+)+/g;
+  const PHONE = /(?<![\w.])\+\d{1,3}[\s.\-]?\(?\d{1,4}\)?(?:[\s.\-]?\d{2,4}){2,4}(?!\d)|(?<![\w.])tel:[+\d]|(?<!\d)9[1236]\d[ .\-]\d{3}[ .\-]\d{3}(?!\d)/g;
+  const OK_EMAIL = /@(?:[\w-]+\.)*(?:PrompTugal|web-summit)\.[a-z]+(?:\.md)?$|^[a-z]+-[A-Za-z0-9]+@events\.lu\.ma$/;
+  const mask = (v) => v.slice(0, 2) + '***' + (v.includes('@') ? v.slice(v.indexOf('@')) : v.slice(-2));
+  const targets = tracked.filter((f) => /^data\/.*\.jsonl?$/.test(f)).map((f) => path.join(ROOT, f));
+  const walkOut = (d) => { for (const e of fs.readdirSync(d, { withFileTypes: true })) { const f = path.join(d, e.name); if (e.isDirectory()) walkOut(f); else if (/\.(html|json|txt|xml|md)$/.test(e.name)) targets.push(f); } };
+  if (fs.existsSync(OUT)) walkOut(OUT);
+  let found = 0;
+  for (const f of targets) {
+    if (!fs.existsSync(f)) continue;
+    const txt = fs.readFileSync(f, 'utf8'), rel = path.relative(ROOT, f);
+    for (const m of txt.matchAll(EMAIL)) if (!OK_EMAIL.test(m[0]) && found++ < 20) fail(`${rel}: an email address (${mask(m[0])}): no contact details, ever`);
+    const nopath = txt.replace(/\s(?:d|points|viewBox|transform)="[^"]*"/g, '');
+    for (const m of nopath.matchAll(PHONE)) if (found++ < 20) fail(`${rel}: a phone number (${mask(m[0])}): no contact details, ever`);
+  }
+  if (found > 20) fail(`...and ${found - 20} more contact-detail hits`);
 }
 const ms = Date.now() - t0;
 // 6. ABP (work/39, abp/tools/abp.mjs check): each new commit's paths against its Agent: trailer's grant.

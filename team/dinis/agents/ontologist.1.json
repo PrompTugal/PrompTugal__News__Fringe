@@ -1,7 +1,7 @@
 {
   "agent": "ontologist.1.fringe@PrompTugal.dinis",
   "by": "ontologist.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T11:56Z",
+  "updated": "2026-11-12T13:56Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 13: \"get the ontologist on the case\")",
   "model": "Opus",
   "account": "this (the lead's)",
@@ -38,7 +38,9 @@
     "wake 08:56: briefs/work/sources first, no changes; inbox quiet; places unified with design.3's map (admin/build/lisbon-areas.mjs, imported not copied): one set of names, centres on 18 areas, a junk place from a bracketed note removed, events with no named neighbourhood 101 -> 60 (42 placed from the address, labelled evidence on the event page); place_how and centre in the API; old place URLs that were folded (e.g. rato-campo-de-ourique) no longer exist",
     "wake 09:55: briefs/work/sources first, no changes; inbox quiet; data/graph/topics.json folds near-duplicate tags (healthtech -> health & bio, cloud/DevOps, design & UX, careers, ...); topics 96 -> 57, singletons 63 -> 19; tags listed on each /t/ page and in the API; countries kept as written",
     "wake 10:59: briefs/work/sources first, no changes; inbox quiet; admin/build/graph-check.mjs: unique ids, every verb with an inverse, no relates_to, link ends of the right type, event links carry source and read_at, held organisers absent, no Web Summit organiser, no Luma session titles, every entity page and API file built; tested by breaking the data on purpose (a Luma title and a missing page caught; a hold correctly removes its organiser); OK at 10:59",
-    "wake 11:56: no changes, inbox quiet, graph-check OK; work/42 set done with evidence, stating the one choice that differs from its done-means (per-type JSON derived at build, served under /api/v1/graph/)"
+    "wake 11:56: no changes, inbox quiet, graph-check OK; work/42 set done with evidence, stating the one choice that differs from its done-means (per-type JSON derived at build, served under /api/v1/graph/)",
+    "wake 12:56: briefs/work/sources first, no changes; inbox quiet; seen.json refreshed (45 commits, 8 retired); graph-check OK (103 organisers, 179 events, 1548 links)",
+    "wake 13:55: no changes; inbox quiet; seen.json refreshed (46 commits); graph-check OK (1548 links)"
   ],
   "next": [
     "at each wake: briefs/work/sources first, then graph-check.mjs after the build",

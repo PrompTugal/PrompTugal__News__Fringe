@@ -59,3 +59,6 @@ Run 10 (2026-11-12 10:41 UTC): no change since run 9; nothing new to file. Home 
 | 2026-11-12 12:41 UTC | v0.1.962 | PASS: 'Tonight 27', 1 tap | PASS: 'Cancelled or moved 3', 1 tap | PASS (no control, correct) | PASS | PASS | none | none |
 
 Run 11 (2026-11-12 12:41 UTC): no change since run 10; nothing new. Home 6441 px. Old address still 404 (D34, 21 hours).
+| 2026-11-12 14:41 UTC | v0.1.1015 | PASS: 'Tonight 27', 1 tap | PASS: 'Cancelled or moved 3', 1 tap | PASS (no control, correct) | PASS | PASS | none | 1 transient 503 on one load (not reproduced in 2 re-runs over /, /now/, /e/, /tip/; no failing URL caught) |
+
+Run 12 (2026-11-12 14:41 UTC): nothing new to file. Home 6438 px. Old address still 404 (D34, 23 hours).

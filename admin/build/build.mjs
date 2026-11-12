@@ -8,6 +8,7 @@ import { loadEvolution, evolutionBody, evolutionCss } from './evolution.mjs';   
 import { trafficBody, trafficCss } from './traffic.mjs';   // work/21, observability.fringe@PrompTugal.dinis
 import { dataBody, dataCss } from './data-page.mjs';   // work/43
 import { loadDesigns, buildDesigns } from './designs.mjs';   // work/35
+import { apiIndex } from './api-index.mjs';   // /api/v1/index.json
 import { collectActivity } from './activity.mjs';   // brief 10
 import { universeBody, universeCss, vendored as gravityVendored } from './universe.mjs';   // gravity.1.fringe@PrompTugal.silvio's page, served by dev.2
 import { modelsBody, modelsCss, modelsData } from './models.mjs';   // work/47, dev.2.fringe@PrompTugal.dinis
@@ -419,4 +420,5 @@ await buildDesigns({ root, out, designs: await loadDesigns(root), page, esc, SIT
     writeFileSync(fp, h);
   }
 }
+writeFileSync(join(out, 'api', 'v1', 'index.json'), JSON.stringify(apiIndex({ out, SITE, VERSION, BUILT }), null, 1) + '\n');   // last, so it lists everything above
 console.log(`built _site/ ${VERSION}: /, /join/, /graph/ (${graph.nodes.length} nodes, ${graph.edges.length} edges), ${events.length} events, ${ePages.length} event pages (${roster.people.length} people, ${board.length} board items, ${Object.keys(status).length} status files)`);

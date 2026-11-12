@@ -1,10 +1,10 @@
 {
  "about": "Second-opinion checks (work/20): a cheap open model read each event's public page and our entry. EVIDENCE only, never fact: no data changed from it. Verdicts only; no page or model text is kept in git. Mismatches are for work/13 and researcher.2 to re-read at source.",
- "run_at": "2026-11-12T12:21:47Z",
+ "run_at": "2026-11-12T14:21:29Z",
  "by": "dev.2.fringe@PrompTugal.dinis",
  "model": "tier check (see admin/tools/llm-models.json) for non-Luma pages; Luma events from the calendars' public iCal data (data/feeds/luma-ical.json), no page fetched",
  "hours": 2,
- "checked": 85,
+ "checked": 82,
  "errors": 0,
  "mismatches": 0,
  "cost_usd_this_run": 0,
@@ -173,20 +173,6 @@
    "place": "match"
   },
   {
-   "id": "2026-11-12-ai-engineers-lunch-web-summit-week",
-   "status": "match",
-   "start": "match",
-   "end": "match",
-   "place": "match"
-  },
-  {
-   "id": "2026-11-12-business-lunch-lisbon-fsense-cvortex-web-summi",
-   "status": "match",
-   "start": "match",
-   "end": "match",
-   "place": "match"
-  },
-  {
    "id": "2026-11-12-ai-promises-to-give-us-time-back-who-gets-to-k",
    "status": "match",
    "start": "match",
@@ -272,13 +258,6 @@
   },
   {
    "id": "2026-11-12-building-better-trading-strategies-with-ai",
-   "status": "match",
-   "start": "match",
-   "end": "match",
-   "place": "match"
-  },
-  {
-   "id": "2026-11-12-eit-jumpstarter-2026-awards-ceremony-web-summi",
    "status": "match",
    "start": "match",
    "end": "match",

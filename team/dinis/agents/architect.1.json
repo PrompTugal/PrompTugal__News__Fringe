@@ -1,6 +1,6 @@
 {
   "agent": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T12:53Z",
+  "updated": "2026-11-12T14:51Z",
   "account": "riskmandate-personal (Ultra) (Dinis, brief 15)",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 12)",
   "branch": "dev",
@@ -8,6 +8,8 @@
   "state": "active",
   "doing": "Hourly: ABP round 7; mapping new agents; Elastic reviews; how-it-flows",
   "done": [
+    "2026-11-12T14:51Z: round 19: no findings (23 commits)",
+    "2026-11-12T13:51Z: round 18 (31 commits, 1 outside a grant: dev.1, 2 lines in build.mjs, not said in the commit)",
     "2026-11-12T12:53Z: round 17: no findings (24 commits)",
     "2026-11-12T11:52Z: round 16 (26 commits, 1 outside a grant: swarm.1 wrote abp/policies.json; content kept, moved under repositories)",
     "2026-11-12T10:51Z: round 15 (27 commits, 1 outside a grant: ontologist.1 in api/v1/README.md; no enforced rule fired)",

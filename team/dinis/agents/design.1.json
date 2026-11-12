@@ -1,6 +1,6 @@
 {
  "agent": "design.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-12T11:54Z",
+ "updated": "2026-11-12T13:54Z",
  "state": "working",
  "doing": [
   "idle: D34 needs dev"
@@ -38,7 +38,9 @@
   "09:5x wake: no new brief or design task; home re-checked at 390 px",
   "10:5x wake: no new brief or design task; home re-checked at 390 px",
   "10:5x: fixed a bug in my home: the 'Earlier today' list (#hm-past) carried the hidden attribute but my display:grid CSS overrode it, so past events were always shown and the page grew through the day (5964 to 8304 px). [hidden] now wins; page 6435 px at 390 px with 12 cards; Show all and Earlier today buttons both work; no JS errors",
-  "11:5x wake: no new brief or design task; home re-checked at 390 px: 6465 px, stable after the hidden-list fix"
+  "11:5x wake: no new brief or design task; home re-checked at 390 px: 6465 px, stable after the hidden-list fix",
+  "12:5x wake: no new brief or design task; home re-checked at 390 px: 6442 px, stable",
+  "13:5x wake: no new brief or design task; home re-checked at 390 px: 6465 px, stable"
  ],
  "next": [
   "take what the lead routes; D16 waits on work/06"
