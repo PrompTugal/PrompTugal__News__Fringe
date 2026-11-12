@@ -1,13 +1,13 @@
 {
   "agent": "swarm.1.designer.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T02:16Z",
+  "updated": "2026-11-12T02:32Z",
   "written_by": "swarm.1.designer.fringe@PrompTugal.dinis (its own session, its own key)",
   "session": "session_01Kw9UwCNvq4z94R3XVA2Lvm",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis at Dinis's word (23:4x UTC)",
   "reports_to": "swarm.1.fringe@PrompTugal.dinis",
   "branch": "PrompTugal__News__Swarm dev",
-  "state": "working through the night (Dinis: keep going after 07:00 until he says stop)",
+  "state": "02:30 wake done; waiting for reviews or the next wake",
   "doing": [
     "polish passes on the stage, packs and views as reviews arrive (audience.1, swarm.1, swarm.1.dev)"
   ],
@@ -19,11 +19,12 @@
     "2026-11-12T01:28Z: session key made (signing sha256:53c1445aed1bddb7, encryption sha256:b94eaa5531478591), pki-agent.mjs keygen --session at Dinis's word in this session; swarm.1.designer.fringe-dinis in data/keys.json (public half only); push access to this repository approved by Dinis in this session",
     "2026-11-12T01:40Z: Swarm Views (Swarm b7f96f5): one run, five modes (flat, blueprint, heat, neon, 3D) x four shapes (top-down, left-right, radial, tree); everything clickable with an explanation panel; altitude rail; task sections with zoom; provenance chain as part of the tree; tested 432 views, 27 runs, no overlaps or errors",
     "2026-11-12T02:00Z: stage labels big when few, clean when crowded, never clipped (Swarm 3c9761b, Dinis's word in this session); Demo Packs: seven calm packs with real evidence (harness E01/E04, s001 keys, relay h001 flow, Runs summary), fact/idea tags, three-listener lines, embed mode for the stage (bdead6d, a9b195e); index.html: Present the story button, hero labels, valid %, weak consensus, scoped Sonnet, scroll fade (56edad5); Swarm Views: rank levels, short names, staggered labels (76631a9)",
-    "2026-11-12T02:16Z: colour with care: red only for harm across packs, index and views; how.html Enforced by column (Swarm 0c11b92); 3D universe keeps altitude colours (e878fd2); stage: mesh and one-per-asset readable, phone layout, table cards at projector scale (da29b0b, 5dd2631); Swarm Views mode 6 orbit with a scan beam (71a751d); reach as travelling pulses (8343e07)"
+    "2026-11-12T02:16Z: colour with care: red only for harm across packs, index and views; how.html Enforced by column (Swarm 0c11b92); 3D universe keeps altitude colours (e878fd2); stage: mesh and one-per-asset readable, phone layout, table cards at projector scale (da29b0b, 5dd2631); Swarm Views mode 6 orbit with a scan beam (71a751d); reach as travelling pulses (8343e07)",
+    "2026-11-12T02:32Z: reach pulses and teal cut lines (Swarm 8343e07, 94374a7); projector walk of all 140 stage steps, vault handover fits one screen (7645087); health check of all five pages at 390/1280/1920 and present mode: clean"
   ],
   "next": [
-    "pack 0 polish and the stage themes with swarm.1.dev",
-    "a full projector walk of stage + packs at 1920 before 06:00 UTC"
+    "style the main-track/chips toggle if swarm.1.dev adds it",
+    "next wake 03:28"
   ],
   "asks": []
 }
