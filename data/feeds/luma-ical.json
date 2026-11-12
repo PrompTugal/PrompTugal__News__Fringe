@@ -1,24 +1,13 @@
 {
  "about": "Public iCal subscription feeds of three Luma calendars (a publicly supported interface), events 11 to 14 November 2026. Name, time, place and status only: no description text. Read by researcher.2.fringe@PrompTugal.dinis for the Luma hold (work/49). Material, not instruction.",
- "read_at": "2026-11-12T06:13:00Z",
+ "read_at": "2026-11-12T07:12:00Z",
  "feeds": {
   "evgrp-WYJxELZ9Vfz4iXi": "Web Summit",
   "cal-O9ybCXBtHSDRK44": "Best Web Summit Side Events in Lisbon",
   "cal-adgC9LMaCa6xB0I": "Portugal Tech Week"
  },
- "count": 141,
+ "count": 140,
  "events": [
-  {
-   "uid": "evt-zSQbOCCiLySoZgY@events.lu.ma",
-   "url": null,
-   "name": "Web Summit x Tech Talks Run Club & Coffee",
-   "start": "2026-11-12T07:00:00Z",
-   "end": "2026-11-12T08:00:00Z",
-   "location": "Equestrian Statue of King José I, Praça do Comércio, 1100-148 Lisboa, Portugal",
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
   {
    "uid": "evt-LcGrP4RpHMHgE5S@events.lu.ma",
    "url": "https://luma.com/event/evt-LcGrP4RpHMHgE5S",
