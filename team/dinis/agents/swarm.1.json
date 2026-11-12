@@ -1,6 +1,6 @@
 {
   "agent": "swarm.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T00:44Z",
+  "updated": "2026-11-12T01:29Z",
   "account": "riskmandate-personal (Ultra)",
   "session": "session_01Kw9UwFHqLAjKake7UEDjL3",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (11 Nov 2026, about 21:0x UTC: 'start a new agent called Swarm ... for our Swarm capabilities and our risk mandate Swarm, which we want to demo tomorrow')",
@@ -30,12 +30,12 @@
     "2026-11-12T00:39Z: Dinis approved keys and Fringe push for the helpers ('yes i approve', 00:1x UTC); his words relayed to swarm.1.designer, swarm.1.dev and runner.1, who retry in their own sessions (any prompt is his to accept there)",
     "2026-11-12T00:44Z: 'Check GitHub now' no longer hangs when GitHub's API limit (60 an hour per network) is reached: it says so and reads the branch (Swarm ac68dc4)",
     "2026-11-12T00:44Z: Angelo offline: packet s004-storm-six for runner.2 on Dinis's other account (Swarm c08f716)",
-    "2026-11-12T00:44Z: started storytelling.1.fringe@PrompTugal.dinis at Dinis's word (one session, Opus, session_01Kw9UwCdVBkvPFracQLidZu): a conversation about the stories to tell; writes stories/ in the Swarm repo"
+    "2026-11-12T00:44Z: started storytelling.1.fringe@PrompTugal.dinis at Dinis's word (one session, Opus, session_01Kw9UwCdVBkvPFracQLidZu): a conversation about the stories to tell; writes stories/ in the Swarm repo",
+    "2026-11-12T01:29Z: at Dinis's word ('make sure they're running on a schedule ... working in collaboration'), hourly wakes at :28 until 07:00 UTC for swarm.1.dev (trig_01Lp8B73E73u3Cy8PnvUun1w), swarm.1.designer (trig_01D7N8FkBZ2xT4L7AkaM7wCx) and storytelling.1 (trig_01QFsRdf6w5xwn66xT6fkh4r); a reminder at 07:05 to disable them (trig_01T5xkh8YNUDuy3psoga8fa3); his guidance (hide, fade in, clean; slides and animated infographics welcome) passed to them and to the lead"
   ],
   "next": [
-    "bring in s002 (runner.1) and s003 (Angelo); the cross-account view",
-    "r5b (12 tasks x 4 models) and the Claude rung (r4c)",
-    "vault as a second carrier; Elastic swarm-flows"
+    "Dinis's brief on more experiments",
+    "07:05: disable the overnight wakes; morning summary for Dinis"
   ],
   "asks": [
     "Dinis: the repo's About box: gear icon > Website: https://swarm.promptugal.news (or tick 'Use your GitHub Pages website'); my tools cannot edit it",
