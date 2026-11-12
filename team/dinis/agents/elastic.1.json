@@ -1,6 +1,6 @@
 {
   "agent": "elastic.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T09:08Z",
+  "updated": "2026-11-12T10:11Z",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis, at Dinis's word (briefs/2026-11-11-1630-r5-r8-r9-enforced-and-elastic.md)",
   "branch": "dev",
@@ -44,7 +44,8 @@
     "07:11 UTC wake (first after night hours): 28 indices, 18,819 documents refreshed, 0 errors. Overnight (00:10 to 07:00 UTC) on Elastic: no agent submissions, no new swarm-flows events (swarm.1's last at 00:00:54 UTC; 1,534 events in all): the swarm agents spent the night building the demo packs (stage, harness, vaults, audience), not executing runs, and are ready for Dinis at 07:00 (swarm.1.dev: 'Elastic drawn'). OpenRouter: 827 calls traced (760 on dc:promptugal:agents, unchanged overnight; 67 on dc:newsroom.ai:browser:oct-2026, 20 overnight). data/events.json still has 30 malformed read_at (researcher.2 asked; trimmed at ingest). No new brief since brief 16.",
     "07:58 UTC: at Dinis's word (07:4x UTC: 'a complete new page ... a best of ... screenshots of Kibana ... allow me to present ... the same brief to Grafana'): The Swarm on Elastic, https://claude.ai/artifact/WJx2hi9yZnJbPawga5UMz6 (a private Artifact, Dinis's to share): 15 scenes in 6 acts in the swarm stage's language (its dark palette and --alt-* colours; the scenes rail, the view with a spotlight and numbered callouts, what to say, Open live), 13 screenshots (10 Kibana dashboards, 2 Discover ES|QL views, grafana.1's Swarm dashboard in Grafana, read-only with GRAFANA_TOKEN at Dinis's word), every callout placed on its panel from the measured layout. New: dashboard 11, the swarm's runs in Kibana (Vega-Lite: one run as a waterfall by altitude, the evening, the ladder; the stage's colours). Source in git: elastic/showcase/ (scenes, template) and admin/tools/elastic-showcase.mjs; screenshots stay outside git.",
     "08:10 UTC wake: 28 indices, 18,987 documents refreshed, 0 errors. Submissions in the hour: architect.1 swarm-abp-reviews 77, 0 held, 0 errors. swarm-flows unchanged since 00:00 UTC (1,534). OpenRouter: 830 calls traced (763 on the agents' key, 3 new). data/events.json still has 30 malformed read_at. No new brief.",
-    "09:08 UTC wake: 28 indices, 19,076 documents refreshed, 0 errors. No agent submissions in the hour but the catalog feed; swarm-flows unchanged since 00:00 UTC (1,534). OpenRouter: 848 calls traced (775 on the agents' key, 12 new; 73 on the newsroom key, 6 new). data/events.json still has 30 malformed read_at. No new brief."
+    "09:08 UTC wake: 28 indices, 19,076 documents refreshed, 0 errors. No agent submissions in the hour but the catalog feed; swarm-flows unchanged since 00:00 UTC (1,534). OpenRouter: 848 calls traced (775 on the agents' key, 12 new; 73 on the newsroom key, 6 new). data/events.json still has 30 malformed read_at. No new brief.",
+    "10:11 UTC wake: 28 indices, 19,172 documents, 0 errors; 221 Kibana objects; no agent submissions but the catalog feed; swarm-flows unchanged (1,534); OpenRouter 40 trace documents in the hour; 30 malformed read_at remain (researcher.2 asked). No new brief."
   ],
   "next": [
     "refresh the best-of's screenshots before the demo if the data moves (node scratchpad capture, then admin/tools/elastic-showcase.mjs, republish the same Artifact)",
