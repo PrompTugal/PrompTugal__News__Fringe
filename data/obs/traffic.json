@@ -5,31 +5,23 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T08:55Z",
+ "generated": "2026-11-12T09:10Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 555,
-  "reads": 479,
-  "tabs": 263,
+  "views": 559,
+  "reads": 480,
+  "tabs": 267,
   "countries": 20,
-  "shares": 189,
-  "bots": 1964,
+  "shares": 190,
+  "bots": 1969,
   "crawler_tabs": 1,
-  "agent_runs": 345,
-  "agent_runs_signed": 306
+  "agent_runs": 349,
+  "agent_runs_signed": 310
  },
  "by_hour": [
-  [
-   "2026-11-10 08:00",
-   0
-  ],
-  [
-   "2026-11-10 09:00",
-   0
-  ],
   [
    "2026-11-10 10:00",
    0
@@ -213,12 +205,20 @@
   [
    "2026-11-12 07:00",
    3
+  ],
+  [
+   "2026-11-12 08:00",
+   0
+  ],
+  [
+   "2026-11-12 09:00",
+   4
   ]
  ],
  "by_page": [
   [
    "/",
-   222
+   226
   ],
   [
    "/now/",
@@ -584,7 +584,7 @@
  "reading": [
   [
    "/",
-   175,
+   176,
    27,
    13
   ],
@@ -1132,15 +1132,15 @@
  "by_country": [
   [
    "Portugal",
-   350
+   352
   ],
   [
    "United Kingdom",
-   68
+   69
   ],
   [
    "United States",
-   40
+   41
   ],
   [
    "Germany",
@@ -1214,7 +1214,7 @@
  "by_city": [
   [
    "Lisbon, Portugal",
-   263
+   265
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -1234,7 +1234,7 @@
   ],
   [
    "London, United Kingdom",
-   14
+   15
   ],
   [
    "Harrietsham, United Kingdom",
@@ -1274,7 +1274,7 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   86
+   87
   ]
  ],
  "by_referrer": [
@@ -1283,12 +1283,12 @@
    7
   ],
   [
-   "www.google.com",
+   "promptugal.news",
    3
   ],
   [
-   "promptugal.news",
-   2
+   "www.google.com",
+   3
   ],
   [
    "org.telegram.messenger",
@@ -1302,14 +1302,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   516
+   520
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 4115,
+ "other_hosts_views": 4162,
  "by_via": [
   [
    "whatsapp",
@@ -1321,7 +1321,7 @@
   ],
   [
    "promptugal-news",
-   6
+   7
   ]
  ],
  "via_detail": {
@@ -1336,19 +1336,19 @@
    "countries": 2
   },
   "promptugal-news": {
-   "views": 6,
-   "tabs": 2,
+   "views": 7,
+   "tabs": 3,
    "countries": 1
   }
  },
  "by_screen": [
   [
    "desktop",
-   300
+   303
   ],
   [
    "phone",
-   251
+   252
   ],
   [
    "tablet",
@@ -1358,19 +1358,23 @@
  "agents": [
   [
    "elastic.1.fringe@PrompTugal.dinis",
-   29
+   30
   ],
   [
    "design.4.fringe@PrompTugal.dinis",
    27
   ],
   [
+   "conductor.fringe@PrompTugal.jose",
+   26
+  ],
+  [
    "design.1.fringe@PrompTugal.dinis",
    25
   ],
   [
-   "conductor.fringe@PrompTugal.jose",
-   25
+   "ontologist.1.fringe@PrompTugal.dinis",
+   21
   ],
   [
    "architect.1.fringe@PrompTugal.dinis",
@@ -1378,10 +1382,6 @@
   ],
   [
    "conductor.fringe@PrompTugal.indi",
-   20
-  ],
-  [
-   "ontologist.1.fringe@PrompTugal.dinis",
    20
   ],
   [
@@ -1405,16 +1405,16 @@
    16
   ],
   [
+   "dev.1.fringe@PrompTugal.dinis",
+   14
+  ],
+  [
    "researcher.2@PrompTugal.dinis",
    14
   ],
   [
    "capture.1.fringe@PrompTugal.dinis",
    14
-  ],
-  [
-   "dev.1.fringe@PrompTugal.dinis",
-   13
   ],
   [
    "swarm.1.fringe@PrompTugal.dinis",
@@ -1446,15 +1446,15 @@
   ]
  ],
  "flows": {
-  "tabs": 261,
+  "tabs": 265,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    184
+    187
    ],
    [
     "shared link (?via=)",
-    72
+    73
    ],
    [
     "from another site",
@@ -1464,7 +1464,7 @@
   "entry_pages": [
    [
     "/",
-    164
+    168
    ],
    [
     "/now/",
@@ -1526,7 +1526,7 @@
   "exit_pages": [
    [
     "/",
-    121
+    125
    ],
    [
     "/now/",
@@ -1690,7 +1690,7 @@
   "pages_per_tab": [
    [
     "1",
-    181
+    185
    ],
    [
     "2",
@@ -1709,7 +1709,7 @@
     22
    ]
   ],
-  "bounce_rate": 69,
+  "bounce_rate": 70,
   "via_reached": [
    [
     "whatsapp: /",
@@ -1744,6 +1744,10 @@
     3
    ],
    [
+    "promptugal-news: /",
+    3
+   ],
+   [
     "whatsapp: /e/2026-11-11-kuma-align-leadership-ai/",
     2
    ],
@@ -1765,10 +1769,6 @@
    ],
    [
     "whatsapp: /e/2026-11-11-lisbon-tech-side-event/",
-    2
-   ],
-   [
-    "promptugal-news: /",
     2
    ],
    [
@@ -1814,7 +1814,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 263,
+    "views": 265,
     "lat": 38.7,
     "lon": -9.1
    },
@@ -1844,7 +1844,7 @@
    },
    {
     "name": "London, United Kingdom",
-    "views": 14,
+    "views": 15,
     "lat": 51.5,
     "lon": -0.1
    },
