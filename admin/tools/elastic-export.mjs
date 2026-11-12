@@ -29,6 +29,25 @@ const meta = Object.values(await (await fetch(`${base()}/${opt.index}/_mapping`,
 const now = new Date().toISOString().replace(/\.\d+Z$/, 'Z')
 const out = { about: `An export of ${opt.index} (fields: ${fields.join(', ')}) for agents that do not read Elastic (R8e). Written by ${STEWARD} with admin/tools/elastic-export.mjs, re-run at each hourly wake.`,
     index: opt.index, owner: meta.owner || STEWARD, for: opt.for || 'any agent', fields, read_at: now, total_in_index: j.hits.total.value, exported: docs.length, held_back: held.length, docs }
-const file = path.join(ROOT, 'data', `elastic-export-${opt.index}.json`)
+// Compact and chunked, so no file comes near the repository's 256 KB rule (security finding 45): rows (one array per
+// document, in the order of `columns`) instead of repeated field names, split into chunks of at most CHUNK bytes.
+// The index file (data/elastic-export-<index>.json) lists the chunks; each chunk is data/elastic-export-<index>-<n>.json.
+const CHUNK = 200 * 1024, columns = ['_id', ...fields]
+// columns with few distinct values (environment, runner, role ...) are stored once in `dict` and referenced by number
+const dict = {}
+for (const c of columns) { const vals = [...new Set(docs.map(d => d[c]).filter(v => typeof v === 'string'))]; if (vals.length && vals.length <= 300 && vals.length < docs.length / 3) dict[c] = vals }
+const enc = (c, v) => dict[c] && typeof v === 'string' ? dict[c].indexOf(v) : (v ?? null)
+const rows = docs.map(d => columns.map(c => enc(c, d[c])))
+const chunks = []; let cur = [], size = 0
+for (const r of rows) { const n = JSON.stringify(r).length + 2; if (size + n > CHUNK && cur.length) { chunks.push(cur); cur = []; size = 0 } cur.push(r); size += n }
+if (cur.length) chunks.push(cur)
+const stem = `elastic-export-${opt.index}`
+for (const f of fs.readdirSync(path.join(ROOT, 'data')).filter(f => new RegExp(`^${stem}-\\d+\\.json$`).test(f))) fs.unlinkSync(path.join(ROOT, 'data', f))   // old chunks
+const names = chunks.map((c, i) => { const name = `${stem}-${i + 1}.json`; fs.writeFileSync(path.join(ROOT, 'data', name), JSON.stringify({ index: opt.index, part: i + 1, of: chunks.length, columns, rows: c }) + '\n'); return name })
+delete out.docs
+out.format = 'columns + rows, chunked: read each chunk in `chunks`, zip its rows with `columns`, and map dict-coded columns through `dict`'
+out.columns = columns; out.dict = dict; out.dict_note = 'a column listed in dict holds the index of its value in dict[column]'; out.chunks = names.map(n => `data/${n}`)
+const file = path.join(ROOT, 'data', `${stem}.json`)
 fs.writeFileSync(file, JSON.stringify(out, null, 1) + '\n')
-console.log(`${path.relative(ROOT, file)}: ${docs.length} of ${j.hits.total.value} documents, ${held.length} held back, ${(fs.statSync(file).size / 1024).toFixed(0)} KB`)
+const big = Math.max(...names.map(n => fs.statSync(path.join(ROOT, 'data', n)).size))
+console.log(`data/${stem}.json: ${docs.length} of ${j.hits.total.value} documents in ${names.length} chunk(s), largest ${(big / 1024).toFixed(0)} KB, ${held.length} held back`)

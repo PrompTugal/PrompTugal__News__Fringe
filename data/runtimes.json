@@ -1,7 +1,7 @@
 {
   "about": "Where agents run, as data (work/48, brief 14: Dinis with Angelo, 11 November 2026, 14:12 UTC): runtimes, model endpoints, I/O levels, the other requirements of a task, the placement formula, the matrix of our tasks, and each agent's runtime and I/O level today. From docs/where-agents-run.md (the lead's draft v0.1), corrected by architect.1.fringe@PrompTugal.dinis. A draft for Dinis and Angelo to correct.",
   "by": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T18:26Z",
+  "updated": "2026-11-11T23:47Z",
   "status": "draft",
   "doc": "docs/where-agents-run.md",
   "page": "/agentic-team/where-agents-run/",
@@ -72,6 +72,15 @@
         "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/release-notes.md",
         "https://aws.amazon.com/about-aws/whats-new/2026/08/agentcorememory-fine-grained-access-control"
       ]
+    },
+    {
+      "id": "R8",
+      "name": "GitHub Actions: PrompTugal__News__Swarm__Runs",
+      "loop": "a push of a signed request starts a workflow: an A0 plan job verifies each packet's signature, a matrix of run jobs (A1 calls, A2 loops) runs inside the packet's budget, and a commit job writes the signed result back with a GitHub attestation. Each job is a fresh, closed environment: no memory across runs, no spawning, no schedule (A0 to A2; never A3)",
+      "hooks": false,
+      "io_max": "L2 (OpenRouter and Elastic over HTTPS; git through the workflow's own token)",
+      "notes": "every run maps to a commit: run id = <request>@<sha12>#<run_id>.<attempt> = the flow id, so every flow event links to the commit, the run and the attestation (docs/handoffs/2026-11-11-swarm-runs-design.md)",
+      "status": "first run 2026-11-11 23:44 UTC (push 6d72d7f, workflow run 43122148416, result f3c2f1c, attestation 66472238): A1 18/18 valid, A2 19 valid in 37 calls; 238 flow events in swarm-flows (read 2026-11-11T23:47Z)"
     }
   ],
   "endpoints": [

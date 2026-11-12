@@ -5,31 +5,23 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-11T22:25Z",
+ "generated": "2026-11-12T00:25Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 500,
-  "reads": 431,
-  "tabs": 231,
+  "views": 532,
+  "reads": 460,
+  "tabs": 240,
   "countries": 19,
-  "shares": 166,
-  "bots": 1645,
+  "shares": 189,
+  "bots": 1751,
   "crawler_tabs": 1,
-  "agent_runs": 239,
-  "agent_runs_signed": 218
+  "agent_runs": 279,
+  "agent_runs_signed": 253
  },
  "by_hour": [
-  [
-   "2026-11-09 23:00",
-   0
-  ],
-  [
-   "2026-11-10 00:00",
-   0
-  ],
   [
    "2026-11-10 01:00",
    0
@@ -212,53 +204,61 @@
   ],
   [
    "2026-11-11 22:00",
+   9
+  ],
+  [
+   "2026-11-11 23:00",
+   23
+  ],
+  [
+   "2026-11-12 00:00",
    3
   ]
  ],
  "by_page": [
   [
    "/",
-   206
+   212
   ],
   [
    "/now/",
-   37
+   44
+  ],
+  [
+   "/how/",
+   22
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
    21
   ],
   [
-   "/how/",
-   17
+   "/dashboard/",
+   13
   ],
   [
-   "/dashboard/",
-   12
+   "/universe/",
+   13
   ],
   [
    "/programme/",
    12
   ],
   [
-   "/universe/",
-   12
+   "/join/",
+   11
   ],
   [
    "/traffic/",
-   9
+   10
   ],
   [
    "/organisers/",
    9
   ],
   [
-   "/join/",
-   7
-  ],
-  [
    "/graph/",
-   7
+   8
   ],
   [
    "/e/2026-11-11-tech-startups-on-the-rooftop/",
@@ -377,6 +377,10 @@
    2
   ],
   [
+   "/e/2026-11-12-female-founders-breakfast/",
+   2
+  ],
+  [
    "/e/2026-11-11-lisbon-tech-side-event/",
    2
   ],
@@ -390,6 +394,10 @@
   ],
   [
    "/e/2026-11-11-travel-tech-pitch-party/",
+   2
+  ],
+  [
+   "/gravity",
    2
   ],
   [
@@ -414,6 +422,14 @@
   ],
   [
    "/agentic-team/how-it-flows/",
+   2
+  ],
+  [
+   "/e/2026-11-11-district-909-back-where-it-all-started/",
+   2
+  ],
+  [
+   "/e/2026-11-12-healthcare-re-imagined-by-ai/",
    2
   ],
   [
@@ -481,10 +497,6 @@
    1
   ],
   [
-   "/e/2026-11-12-female-founders-breakfast/",
-   1
-  ],
-  [
    "/e/2026-11-12-the-founder-effect/",
    1
   ],
@@ -510,10 +522,6 @@
   ],
   [
    "/e/2026-11-11-healthtech-pitch-party/",
-   1
-  ],
-  [
-   "/gravity",
    1
   ],
   [
@@ -553,22 +561,28 @@
    1
   ],
   [
-   "/e/2026-11-11-district-909-back-where-it-all-started/",
+   "/e/2026-11-12-ptw-classroom-portuguese-for-tech-life-meet-gr/",
    1
   ]
  ],
  "reading": [
   [
    "/",
-   162,
-   29,
+   167,
+   28,
    13
   ],
   [
    "/now/",
-   32,
    38,
+   34,
    47
+  ],
+  [
+   "/how/",
+   21,
+   11,
+   24
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
@@ -577,22 +591,28 @@
    29
   ],
   [
-   "/how/",
-   16,
-   12,
-   8
-  ],
-  [
    "/dashboard/",
-   12,
-   6,
-   7
+   13,
+   11,
+   14
   ],
   [
    "/universe/",
+   13,
+   67,
+   51
+  ],
+  [
+   "/join/",
+   11,
+   22,
+   39
+  ],
+  [
+   "/traffic/",
+   10,
    12,
-   70,
-   47
+   29
   ],
   [
    "/organisers/",
@@ -601,28 +621,16 @@
    17
   ],
   [
-   "/traffic/",
-   9,
-   11,
-   31
-  ],
-  [
    "/programme/",
    9,
    43,
    53
   ],
   [
-   "/join/",
-   7,
-   6,
-   25
-  ],
-  [
    "/graph/",
-   6,
-   13,
-   33
+   7,
+   12,
+   29
   ],
   [
    "/e/2026-11-11-corporate-academy-of-tomorrow/",
@@ -787,6 +795,12 @@
    32
   ],
   [
+   "/e/2026-11-12-female-founders-breakfast/",
+   2,
+   26,
+   78
+  ],
+  [
    "/e/2026-11-11-lisbon-tech-side-event/",
    2,
    30,
@@ -833,6 +847,18 @@
    2,
    9,
    0
+  ],
+  [
+   "/e/2026-11-11-district-909-back-where-it-all-started/",
+   2,
+   40,
+   50
+  ],
+  [
+   "/e/2026-11-12-healthcare-re-imagined-by-ai/",
+   2,
+   52,
+   27
   ],
   [
    "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
@@ -935,12 +961,6 @@
    1,
    122,
    52
-  ],
-  [
-   "/e/2026-11-12-female-founders-breakfast/",
-   1,
-   23,
-   100
   ],
   [
    "/e/2026-11-12-the-founder-effect/",
@@ -1063,31 +1083,31 @@
    0
   ],
   [
-   "/e/2026-11-11-district-909-back-where-it-all-started/",
+   "/e/2026-11-12-ptw-classroom-portuguese-for-tech-life-meet-gr/",
    1,
-   75,
-   100
+   11,
+   37
   ]
  ],
  "by_country": [
   [
    "Portugal",
-   315
+   343
   ],
   [
    "United Kingdom",
-   65
+   68
   ],
   [
    "United States",
    31
   ],
   [
-   "Estonia",
-   21
+   "Germany",
+   22
   ],
   [
-   "Germany",
+   "Estonia",
    21
   ],
   [
@@ -1150,7 +1170,7 @@
  "by_city": [
   [
    "Lisbon, Portugal",
-   233
+   259
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -1166,14 +1186,14 @@
   ],
   [
    "Frankfurt am Main, Germany",
-   17
-  ],
-  [
-   "Harrietsham, United Kingdom",
-   13
+   18
   ],
   [
    "London, United Kingdom",
+   14
+  ],
+  [
+   "Harrietsham, United Kingdom",
    13
   ],
   [
@@ -1202,10 +1222,18 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   78
+   82
   ]
  ],
  "by_referrer": [
+  [
+   "lnkd.in",
+   7
+  ],
+  [
+   "www.google.com",
+   3
+  ],
   [
    "promptugal.news",
    2
@@ -1222,38 +1250,38 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   461
+   493
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 2534,
+ "other_hosts_views": 3024,
  "by_via": [
   [
    "whatsapp",
-   159
+   161
+  ],
+  [
+   "linkedin",
+   22
   ],
   [
    "promptugal-news",
    6
-  ],
-  [
-   "linkedin",
-   1
   ]
  ],
  "via_detail": {
   "whatsapp": {
-   "views": 159,
-   "tabs": 65,
+   "views": 161,
+   "tabs": 67,
    "countries": 9
   },
   "linkedin": {
-   "views": 1,
-   "tabs": 1,
-   "countries": 1
+   "views": 22,
+   "tabs": 3,
+   "countries": 2
   },
   "promptugal-news": {
    "views": 6,
@@ -1264,11 +1292,11 @@
  "by_screen": [
   [
    "desktop",
-   277
+   280
   ],
   [
    "phone",
-   219
+   248
   ],
   [
    "tablet",
@@ -1277,59 +1305,67 @@
  ],
  "agents": [
   [
-   "design.4.fringe@PrompTugal.dinis",
-   21
+   "elastic.1.fringe@PrompTugal.dinis",
+   25
   ],
   [
-   "elastic.1.fringe@PrompTugal.dinis",
-   21
+   "design.4.fringe@PrompTugal.dinis",
+   24
   ],
   [
    "design.1.fringe@PrompTugal.dinis",
+   21
+  ],
+  [
+   "ontologist.1.fringe@PrompTugal.dinis",
    19
+  ],
+  [
+   "architect.1.fringe@PrompTugal.dinis",
+   18
+  ],
+  [
+   "conductor.fringe@PrompTugal.jose",
+   17
   ],
   [
    "researcher.1.fringe@PrompTugal.jose",
    17
   ],
   [
-   "ontologist.1.fringe@PrompTugal.dinis",
-   17
-  ],
-  [
-   "architect.1.fringe@PrompTugal.dinis",
-   16
-  ],
-  [
-   "conductor.fringe@PrompTugal.jose",
+   "design.3.fringe@PrompTugal.dinis",
    15
   ],
   [
-   "design.3.fringe@PrompTugal.dinis",
-   13
-  ],
-  [
    "observability.fringe@PrompTugal.dinis",
-   12
+   14
   ],
   [
    "design.2.fringe@PrompTugal.dinis",
-   12
+   14
   ],
   [
    "conductor.fringe@PrompTugal.indi",
-   9
+   11
   ],
   [
    "dev.1.fringe@PrompTugal.dinis",
-   9
+   11
   ],
   [
    "researcher.2@PrompTugal.dinis",
-   9
+   11
   ],
   [
    "capture.1.fringe@PrompTugal.dinis",
+   11
+  ],
+  [
+   "researcher.fringe@PrompTugal.dinis",
+   10
+  ],
+  [
+   "dev.2.fringe@PrompTugal.dinis",
    9
   ],
   [
@@ -1337,12 +1373,16 @@
    9
   ],
   [
-   "researcher.fringe@PrompTugal.dinis",
-   8
+   "swarm.1.fringe@PrompTugal.dinis",
+   7
   ],
   [
-   "dev.2.fringe@PrompTugal.dinis",
-   7
+   "usability.1.fringe@PrompTugal.dinis",
+   4
+  ],
+  [
+   "fable.fringe@PrompTugal.dinis",
+   4
   ],
   [
    "gravity.1.fringe@PrompTugal.silvio",
@@ -1351,48 +1391,36 @@
   [
    "grafana.1.fringe@PrompTugal.dinis",
    4
-  ],
-  [
-   "usability.1.fringe@PrompTugal.dinis",
-   3
-  ],
-  [
-   "fable.fringe@PrompTugal.dinis",
-   3
-  ],
-  [
-   "swarm.1.fringe@PrompTugal.dinis",
-   2
   ]
  ],
  "flows": {
-  "tabs": 231,
+  "tabs": 240,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    161
+    163
    ],
    [
     "shared link (?via=)",
-    68
+    72
    ],
    [
     "from another site",
-    2
+    5
    ]
   ],
   "entry_pages": [
    [
     "/",
-    152
+    155
+   ],
+   [
+    "/now/",
+    12
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
     11
-   ],
-   [
-    "/now/",
-    9
    ],
    [
     "/universe/",
@@ -1446,11 +1474,11 @@
   "exit_pages": [
    [
     "/",
-    109
+    112
    ],
    [
     "/now/",
-    14
+    16
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
@@ -1489,6 +1517,10 @@
     3
    ],
    [
+    "/dashboard/",
+    3
+   ],
+   [
     "/me/",
     2
    ],
@@ -1499,16 +1531,12 @@
    [
     "/e/2026-11-11-foundacious-lisbon/",
     2
-   ],
-   [
-    "/e/2026-11-11-founders-house-party/",
-    2
    ]
   ],
   "steps": [
    [
     "/ → /now/",
-    18
+    19
    ],
    [
     "/ → /programme/",
@@ -1520,6 +1548,10 @@
    ],
    [
     "/traffic/ → /",
+    4
+   ],
+   [
+    "/ → /how/",
     4
    ],
    [
@@ -1535,7 +1567,7 @@
     3
    ],
    [
-    "/ → /how/",
+    "/how/ → /traffic/",
     3
    ],
    [
@@ -1571,11 +1603,15 @@
     2
    ],
    [
+    "/how/ → /join/",
+    2
+   ],
+   [
     "/join/ → /traffic/",
     2
    ],
    [
-    "/how/ → /traffic/",
+    "/traffic/ → /how/",
     2
    ],
    [
@@ -1597,43 +1633,35 @@
    [
     "/now/ → /e/2026-11-11-lisbon-tech-side-event/",
     2
-   ],
-   [
-    "/how/ → /dashboard/",
-    2
-   ],
-   [
-    "/ → /e/2026-11-11-aubay-the-next-move/",
-    2
    ]
   ],
   "pages_per_tab": [
    [
     "1",
-    157
+    162
    ],
    [
     "2",
-    35
+    36
    ],
    [
     "3",
-    14
+    15
    ],
    [
     "4",
-    4
+    5
    ],
    [
     "5+",
-    21
+    22
    ]
   ],
   "bounce_rate": 68,
   "via_reached": [
    [
     "whatsapp: /",
-    65
+    67
    ],
    [
     "whatsapp: /now/",
@@ -1657,6 +1685,10 @@
    ],
    [
     "whatsapp: /e/2026-11-11-ai-horizon-conference/",
+    3
+   ],
+   [
+    "linkedin: /now/",
     3
    ],
    [
@@ -1692,11 +1724,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
@@ -1704,11 +1736,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
-    1
-   ],
-   [
-    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    "whatsapp: /e/2026-11-11-roast-your-website/",
     1
    ]
   ]
@@ -1734,7 +1762,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 233,
+    "views": 259,
     "lat": 38.7,
     "lon": -9.1
    },
@@ -1758,21 +1786,21 @@
    },
    {
     "name": "Frankfurt am Main, Germany",
-    "views": 17,
+    "views": 18,
     "lat": 50.1,
     "lon": 8.7
+   },
+   {
+    "name": "London, United Kingdom",
+    "views": 14,
+    "lat": 51.5,
+    "lon": -0.1
    },
    {
     "name": "Harrietsham, United Kingdom",
     "views": 13,
     "lat": 51.2,
     "lon": 0.6
-   },
-   {
-    "name": "London, United Kingdom",
-    "views": 13,
-    "lat": 51.5,
-    "lon": -0.1
    },
    {
     "name": "Montijo, Portugal",

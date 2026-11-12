@@ -36,6 +36,7 @@ import { whereAgentsRunBody, agenticTeamBody, articles, runsUniverseBody, howItF
 import { operatingModelBody, slidePage, SLIDES as OM_SLIDES } from './operating-model.mjs';   // work/48, Dinis 14:40 UTC, architect.1   // work/48, architect.1.fringe@PrompTugal.dinis   // work/40, work/39, architect.1.fringe@PrompTugal.dinis
 import { traceBody } from './trace-page.mjs';   // Angelo's traces, designer.fringe@PrompTugal.angelo
 import { writeGraph } from './graph-pages.mjs';   // work/42, ontologist.1.fringe@PrompTugal.dinis
+import { stormTraceBody, stormTraceCss } from './storm-trace-page.mjs';   // the storm team's trace, trace.view.fringe@PrompTugal.angelo
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const out = join(root, '_site');
@@ -256,7 +257,7 @@ const joinPage = page('Join Lisbon Tech Fringe', `
 // --- /graph/ (work/05) ----------------------------------------------------
 const ptnews = existsSync(join(root, 'data/ptnews-index.json')) ? JSON.parse(read('data/ptnews-index.json')) : null;
 const graph = buildGraph(events, ptnews, existsSync(join(root, 'data/communities.json')) ? JSON.parse(read('data/communities.json')).communities : []);   // work/05 uses work/04's communities
-const graphPage = page('Connect the dots: Lisbon Tech Fringe', `<style>${graphCss}</style>` + graphBody(graph, esc) + '<p class="muted">Also drawn as <a href="/universe/">the Fringe universe</a>, with Gravity.</p>', 'The fringe as a graph: events, communities, topics and places, with filters.', '', '/graph/');
+const graphPage = page('Connect the dots: Lisbon Tech Fringe', `<style>${graphCss}</style>` + graphBody(graph, esc) + '<p class="muted">Also drawn as <a href="/universe/">the Fringe universe</a>, with Gravity.</p><p class="muted">The Storm Charles team\'s agents at work: <a href="/graph/trace/">their trace, as a timeline by altitude</a>.</p>', 'The fringe as a graph: events, communities, topics and places, with filters.', '', '/graph/');
 
 // --- write ---------------------------------------------------------------
 mkdirSync(join(out, 'join'), { recursive: true });
@@ -276,6 +277,12 @@ writeFileSync(join(out, 'how', 'index.html'), page('How Lisbon Tech Fringe is ma
 mkdirSync(join(out, 'graph'), { recursive: true });
 writeFileSync(join(out, 'graph', 'index.html'), graphPage);
 writeFileSync(join(out, 'graph.js'), read('admin/build/graph.js'));
+// /graph/trace/: the Storm Charles team's trace (data/storm-trace.json, from admin/tools/storm-trace.mjs)
+const stormTrace = existsSync(join(root, 'data/storm-trace.json')) ? JSON.parse(read('data/storm-trace.json')) : null;
+mkdirSync(join(out, 'graph', 'trace'), { recursive: true });
+writeFileSync(join(out, 'graph', 'trace', 'index.html'), page("The storm team's trace: Lisbon Tech Fringe", `<style>${stormTraceCss}</style>` + stormTraceBody(stormTrace, esc), "The Storm Charles incident team's agents at work: sessions, loops, model calls and compute on a timeline, coloured by altitude. Their public data, read at their site.", '', '/graph/'));
+if (stormTrace) writeFileSync(join(out, 'graph', 'trace', 'storm-trace.json'), read('data/storm-trace.json'));
+writeFileSync(join(out, 'storm-trace.js'), read('admin/build/storm-trace.js'));
 writeFileSync(join(out, 'CNAME'), new URL(ORIGIN).host + '\n');
 writeFileSync(join(out, '404.html'), page('Not found', '<h1>That page is not here</h1><p>It may have moved, or it is not built yet. Try one of these:</p><p><a class="btn" href="/">Today in Lisbon</a></p><ul><li><a href="/#events">All events, today and tomorrow</a></li><li><a href="/api/v1/events.json">Every event as data</a></li><li><a href="/now/">What is on now</a></li><li><a href="/tip/">Send a tip</a></li><li><a href="/join/">Join the team</a></li></ul>', 'Page not found.'));
 mkdirSync(join(out, 'api', 'v1'), { recursive: true });

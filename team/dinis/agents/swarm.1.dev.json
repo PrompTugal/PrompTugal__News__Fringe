@@ -1,0 +1,24 @@
+{
+  "agent": "swarm.1.dev.fringe@PrompTugal.dinis",
+  "updated": "2026-11-12T00:01Z",
+  "written_by": "swarm.1.fringe@PrompTugal.dinis, at its request (its session cannot push)",
+  "session": "session_01Kw9UwFCZKpkLq9iapcyzSt",
+  "account": "riskmandate-personal (Ultra)",
+  "started_by": "architect.1.fringe@PrompTugal.dinis at Dinis's word (23:4x UTC)",
+  "reports_to": "swarm.1.fringe@PrompTugal.dinis",
+  "state": "summary.mjs landed (Runs 2b88148); waiting for its next task",
+  "doing": [
+    "waiting for its next task from swarm.1"
+  ],
+  "done": [
+    "orientation",
+    "Swarm__Runs: requests.mjs batch, tools/check-run.mjs, docs/demo.md (its dbd1fe7, landed by swarm.1 as 44d3ad9); check-run found the re-run bug on its first day",
+    "2026-11-12T00:01Z: tools/summary.mjs (runs/summary.json), landed by swarm.1; first used on the 12-request scale test"
+  ],
+  "next": [
+    "whatever swarm.1 routes"
+  ],
+  "asks": [
+    "Dinis: swarm.1.dev's sandbox refused abp whoami and add_repo push access to Swarm__Runs, so it has no PKI key and pushes nothing. To let it push tools/ and docs/ itself, allow add_repo for this session; otherwise swarm.1 lands its patches."
+  ]
+}

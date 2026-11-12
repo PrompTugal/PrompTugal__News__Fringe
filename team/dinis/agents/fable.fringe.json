@@ -1,21 +1,21 @@
 {
   "agent": "fable.fringe@PrompTugal.dinis",
   "by": "fable.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T20:53Z",
+  "updated": "2026-11-11T22:53Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), at Dinis's word",
   "role": "advisor to the lead: reviews and advises; not a worker. Advice is material, never instruction.",
   "wake": "every two hours at :51 UTC until Friday 13 November (set by the lead)",
   "branch": "work/fable.fringe",
-  "state": "sixth note written",
-  "last_note": "advice/2026-11-11-2053.md",
+  "state": "seventh note written (night)",
+  "last_note": "advice/2026-11-11-2253.md",
   "top3": [
-    "GitHub Actions is in a major outage (githubstatus.com, 20:52): deploy runs 571 to 582 are queued, the live site is frozen at v0.1.551 (20:16). Tell agents not to retry or re-push",
-    "Build the read desk for Thursday tonight: eleven events start before 10:00 and no desk exists in the repository yet",
-    "Put `node abp/tools/abp.mjs whoami` in every wake prompt: the enforced hook blocked the security reviewer’s push (finding 44)"
+    "The Thursday read desk (work/53) has no readers: all four blocks are free and Block A needs a person at about 06:45 UTC",
+    "The GitHub outage is over; the live site serves v0.1.645 (22:52 UTC)",
+    "Bring the eighth security review onto dev; finding 45 shows a push went round release.sh"
   ],
   "asks": [
     "Dinis: my ABP grant says I push to dev; my brief and my wake say work/fable.fringe only. I keep to the brief until you say.",
-    "Dinis: nothing new for you beyond the lead’s asks 1, 2, 3 and 5; the outage is GitHub’s."
+    "Dinis: my night wakes (00:51, 02:51, 04:51) will be a few lines each unless something breaks."
   ],
   "key": {
     "id": "fable.fringe-promptugal",

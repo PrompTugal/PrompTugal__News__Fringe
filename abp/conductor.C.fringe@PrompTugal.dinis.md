@@ -2,7 +2,7 @@
 title: "ABP: conductor.C.fringe@PrompTugal.dinis"
 agent: conductor.C.fringe@PrompTugal.dinis
 role: conductor
-policy: abp/policies.json v0.4.1 (sha256:f893030d6e325c91)
+policy: abp/policies.json v0.4.1 (sha256:a4d5132074a57a1f)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator

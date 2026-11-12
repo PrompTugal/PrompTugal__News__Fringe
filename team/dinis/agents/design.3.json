@@ -1,9 +1,9 @@
 {
   "agent": "design.3.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T21:32:55Z",
+  "updated": "2026-11-11T23:31:28Z",
   "state": "idle",
   "doing": [
-    "nothing open for design (21:32 wake). D41 (console error from assets/obs/obs.js) is lane dev, outside my grant; D34 lane dev; D28 is design.1's."
+    "nothing open for design (23:31 wake): no new briefs or tasks. Next wake 00:30 UTC; my wake runs to Friday 13 Nov 23:59 UTC."
   ],
   "done": [
     "D3 event cards: admin/build/cards.mjs; 390/1280 px, light and dark, no overflow or console errors",

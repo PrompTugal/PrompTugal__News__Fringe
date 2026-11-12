@@ -1,7 +1,7 @@
 {
   "agent": "design.4.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T21:46Z",
-  "state": "quiet: nothing open for design.4; the unknown/multi-day home fixes are live",
+  "updated": "2026-11-12T00:23Z",
+  "state": "home counts after midnight fixed; nothing else open",
   "doing": [],
   "done": [
     "D8: admin/build/tokens.css (design E ported), wired into build.mjs, graph colours moved to tokens; checked 390/1280, light/dark",
@@ -24,7 +24,10 @@
     "20:4x wake: nothing new for design; live / and /storm/ 200",
     "21:2x: abp whoami run before the push (lead, finding 44)",
     "21:3x home.mjs and nowstrip.mjs: status unknown is never 'on now' (no badge, not counted, not in the Now strip, listed after the others with a 'Status unknown' tag); an event that spans days shows its dates ('Wed 11 14:30 - Thu 12 17:30 UTC'); Playwright 390 and 1280: no console errors, no sideways scroll",
-    "21:4x wake: nothing new; live home shows the 'Status unknown' tag (fix live)"
+    "21:4x wake: nothing new; live home shows the 'Status unknown' tag (fix live)",
+    "22:5x D42: Tomorrow in place of an empty Tonight (nowstrip.mjs); page height still ~16000 px (not addressed)",
+    "23:4x wake: nothing new; live / and /storm/ 200",
+    "00:2x home.mjs: today's list now includes events that started earlier and are still running (after midnight), so the counts line and the Now tab agree; Playwright at the real clock 00:23 UTC (3 on now = Now 3) and at a faked 07:00 UTC (1 on now, 2 start within the hour = Now 1); no console errors; checked at 390 px"
   ],
   "next": [
     "wait for the answer on L10; take any open D-task"
