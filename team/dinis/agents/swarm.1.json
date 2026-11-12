@@ -1,13 +1,13 @@
 {
  "agent": "swarm.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-12T08:46:00Z",
+ "updated": "2026-11-12T09:49:00Z",
  "account": "riskmandate-personal (Ultra)",
  "session": "session_01Kw9UwFHqLAjKake7UEDjL3",
  "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (11 Nov 2026, about 21:0x UTC: 'start a new agent called Swarm ... for our Swarm capabilities and our risk mandate Swarm, which we want to demo tomorrow')",
  "branch": "dev",
  "wake": "none: works when Dinis talks to it in its session",
  "state": "overnight: 8 agents building the demo packs (stage, harness, vaults, audience); hourly review with screenshots to Dinis",
- "doing": "Review 9 (08:46): no team feedback or story answers yet (Indi and Jose have the question as asks); Studio: front page, closing offer with 25% summit discount, Infographics (Gemini), spend counter, no passphrase; Partners live (33); partners.1 adding the discount.",
+ "doing": "Review 10 (09:48): no team feedback or story answers yet; Studio (two decks up front, tick to send), galaxy restored on the stand (via xray@web-summit), attendees.1 started, three summit decks published (tools/make-deck.mjs). Waiting on: the stand key on the site, consent for the told lines, the £5,000 tier name.",
  "done": [
   "2026-11-11T21:22Z: read CLAUDE.md, ROLES.md, SWARM.md, REALITY.md, briefs/ (19), work/README.md, docs/where-agents-run.md, abp/tools/packets.mjs and flow.mjs",
   "21:20: session key made (encryption sha256:34b41ce385701d90, signing sha256:ff58f6f0f4de27c1); swarm.1.fringe-dinis in data/keys.json (public half only); abp whoami set",
@@ -89,6 +89,7 @@
    "session": "session_01Kw9UwBCB9ibNPNCC92HQC4",
    "started_by": "swarm.1 at Dinis's word (01:5x UTC)"
   },
-  "partners.1": "session_01Kw9UwB98qSP7CmaXER7vfN (Summit Partners, at Dinis's word ~07:52 UTC)"
+  "partners.1": "session_01Kw9UwB98qSP7CmaXER7vfN (Summit Partners, at Dinis's word ~07:52 UTC)",
+  "attendees.1": "session_01Kw9UwDQoyMrncHUnfyAw16 (people met at the summit; private records in an sgit vault; at Dinis's word ~09:28 UTC)"
  }
 }
