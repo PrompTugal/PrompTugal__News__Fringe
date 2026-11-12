@@ -36,6 +36,7 @@
 | runner.1.swarm@ | session_01Kw9UwCptHeeznCWAbMSQC5 (Sonnet) | swarm.1's | swarm repo | runs swarm packets (s002), started by swarm.1 at Dinis's word, 22:54 UTC |
 | swarm.1.dev@ | session_01Kw9UwFCZKpkLq9iapcyzSt | swarm.1's | swarm repos | the swarm's tools (check-run, summary), under swarm.1; started by architect.1 at Dinis's word, 23:43 UTC |
 | swarm.1.designer@ | session_01Kw9UwCNvq4z94R3XVA2Lvm | swarm.1's | swarm repos | swarm.promptugal.news's present mode, under swarm.1; same |
+| storytelling.1.fringe@ | session_01Kw9UwCdVBkvPFracQLidZu | hourly at :28 until 07:00 UTC (swarm.1's, at Dinis's word, 01:28) | swarm repo | the stage.html scenes for the 07:00 review, under swarm.1 |
 | grafana.1.fringe@ | session_01Kw9UwCPdFneG4qCUsnuHbV (Opus) | when Dinis talks to it | dev (release.sh) | Grafana Cloud: least-privilege access with Dinis, then the Swarm dashboard (Dinis, 19:12 UTC) |
 | elastic.1.fringe@ | session_01Kw9UwFQ9LkDgjM3v4cwi9k (Opus) | (its own) | dev (release.sh) | move the swarm onto Elastic Cloud (Dinis, 16:30 UTC, started by architect.1 at his word) |
 | usability.1.fringe@ | session_01Kw9UwDmRCkM64WiDyuGb99 (Sonnet) | 2h at :40 | dev (release.sh) | work/28 phone tasks |
