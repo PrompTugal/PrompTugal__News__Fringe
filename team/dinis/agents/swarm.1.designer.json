@@ -1,15 +1,16 @@
 {
   "agent": "swarm.1.designer.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T07:31Z",
+  "updated": "2026-11-12T07:43Z",
   "written_by": "swarm.1.designer.fringe@PrompTugal.dinis (its own session, its own key)",
   "session": "session_01Kw9UwCNvq4z94R3XVA2Lvm",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis at Dinis's word (23:4x UTC)",
   "reports_to": "swarm.1.fringe@PrompTugal.dinis",
   "branch": "PrompTugal__News__Swarm dev",
-  "state": "working on Dinis's morning review (07:10, relayed by swarm.1)",
+  "state": "working on the Stories section (Dinis 07:35, relayed by swarm.1)",
   "doing": [
-    "views: the blast-radius overlay (waiting on swarm.1.dev for the data)"
+    "Stories: wiring story.html to swarm.1.dev's StoryKit and the first real story when they land",
+    "views: the blast-radius overlay (waiting on swarm.1.dev for data/reach)"
   ],
   "done": [
     "2026-11-11T23:52Z: index.html: run timeline by altitude, budget, signatures, responsive at 1280/1920/390 (PrompTugal__News__Swarm dev)",
@@ -25,11 +26,13 @@
     "2026-11-12T04:36Z: vault hops stay in their columns (Swarm cd0de3d, audience.1 review 4); walked main at 1920 and 1280 and the harness pack, clean; reported one clock edge to swarm.1.dev (opening on a pack skips step 1 reveal)",
     "2026-11-12T05:39Z: closed why-note without a frame (Swarm f3ca121); Present opens the main track brisk (eef68dc); at 1280 the caption takes its width and the play hint moved bottom-right (b15c021); main track clean at 1280 and 1920",
     "2026-11-12T06:40Z: focus mode grows cards at 1366x768 (Swarm 24aa336); demos line and short graph labels (7602947); gap rings fit short screens (bf04a46); final walk of the main track (step and brisk) at 1920 and 1280, no console errors",
-    "2026-11-12T07:31Z: the home page is a hub with live previews, one navigation on every page with a way back from focus, Execution flow and map pages, hash links reload (Swarm 5efb447); views run picker with previews and names, collapsible panels (932bb5d); theme pages and Best of / Themes on the hub (99a7f65)"
+    "2026-11-12T07:31Z: the home page is a hub with live previews, one navigation on every page with a way back from focus, Execution flow and map pages, hash links reload (Swarm 5efb447); views run picker with previews and names, collapsible panels (932bb5d); theme pages and Best of / Themes on the hub (99a7f65)",
+    "2026-11-12T07:43Z: Stories section (Swarm 3752e09): pages/stories.html (who asked, who answered, when, ABP, GitHub compute, live preview) and pages/story.html?s=<id> in four modes: Present (deck at stage size, play-all, focus), Timeline, Graph, Delivery; reads stories/<id>/story.json + trail.json, uses StoryKit when present; a sample marked 'Sample · invented' until then; Stories in the nav and on the hub; clean at 390/1366/1920"
   ],
   "next": [
+    "Stories: switch to StoryKit and the first real story",
     "blast-radius overlay in views",
-    "Dinis: review the hub at swarm.promptugal.news"
+    "Dinis: review pages/stories.html and pages/story.html?s=sample"
   ],
   "asks": []
 }
