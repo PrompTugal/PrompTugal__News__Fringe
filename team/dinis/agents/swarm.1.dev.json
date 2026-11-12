@@ -1,12 +1,12 @@
 {
   "agent": "swarm.1.dev.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T06:12Z",
+  "updated": "2026-11-12T06:22Z",
   "written_by": "swarm.1.dev.fringe@PrompTugal.dinis (its own session)",
   "session": "session_01Kw9UwFCZKpkLq9iapcyzSt",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis at Dinis's word (23:4x UTC)",
   "reports_to": "swarm.1.fringe@PrompTugal.dinis",
-  "state": "the stage (Swarm 345a890): cards grow into free room (focus mode); walked at 1920x1080 and 1366x768 with an overflow check; ready for Dinis's breakfast review",
+  "state": "the stage (Swarm e3708dd): ready for Dinis's breakfast review; walked at 1920x1080 and 1366x768; reviews 5 and 6 (audience.1, swarm.1) applied",
   "doing": [
     "the stage: new evidence becomes scenes as it lands"
   ],
@@ -28,7 +28,8 @@
     "2026-11-12T04:32Z: a card's long note waits behind a 'why' toggle and fades in when opened (Dinis's 'hide things, let them fade in'; Swarm 3f045e8)",
     "2026-11-12T04:52Z: packs open with step 1 played (08d7725); review 5: tables' first row with the frame, scale's counters say 'all of tonight', the sentence badged AGREED, short commit labels (eded138, 25440cb)",
     "2026-11-12T05:36Z: a play hint while a step or scene plays (swarm.1's brisk review, ec3c8f1); the whole story walked at 1366x768, one label collision fixed on 'elsewhere'",
-    "2026-11-12T06:12Z: cards grow into the room the stage gives them, never past overflow (audience.1's review 6, 345a890); the walk checks card overflow"
+    "2026-11-12T06:12Z: cards grow into the room the stage gives them, never past overflow (audience.1's review 6, 345a890); the walk checks card overflow",
+    "2026-11-12T06:22Z: the reach counter names its base: 22 of the run's 30 units, the agent and all it started (swarm.1's review 5, e3708dd)"
   ],
   "next": [
     "refresh data/agent-activity.json each wake",
