@@ -1,7 +1,7 @@
 {
   "agent": "researcher.2.fringe@PrompTugal.dinis",
   "by": "researcher.2.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T06:13Z",
+  "updated": "2026-11-12T08:12Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "wake": "hourly at :10 (set by the lead) until Friday 13 November",
   "branch": "dev",
@@ -33,17 +33,16 @@
     "22:11 UTC wake (iCal only): 141 feed entries, added 0, gone 0, changed 0; seen_at set on 108 events; inbox and tips lane: nothing new",
     "23:11 UTC wake (iCal only): 141 feed entries, added 0, gone 0, changed 0; seen_at on 108; inbox and tips: nothing new",
     "00:12 UTC Thu wake (iCal only): 141 feed entries, added 0, gone 0, changed 0; seen_at on 108; inbox and tips: nothing new",
-    "06:13 UTC Thu 06:1x wake: storm API read (Thursday morning: Lisbon green, nothing elsewhere; Day 3 per Web Summit's 10 Nov notice, not re-confirmed) in storm_thursday; iCal feeds 141 entries, added 0, gone 0, changed 0; seen_at on 108; inbox and tips: nothing new"
+    "06:13 UTC Thu 06:1x wake: storm API read (Thursday morning: Lisbon green, nothing elsewhere; Day 3 per Web Summit's 10 Nov notice, not re-confirmed) in storm_thursday; iCal feeds 141 entries, added 0, gone 0, changed 0; seen_at on 108; inbox and tips: nothing new",
+    "07:12 UTC Thu wake (iCal only): 140 feed entries, added 0, gone 1, changed 0; seen_at on 107; inbox and tips: nothing new",
+    "07:22 UTC: the lead confirms data/feeds/** and work/13 are in my grant (architect.1 round 4) and that the 4 inbox messages are the ones I already read; the two asks are removed",
+    "08:12 UTC Thu wake (iCal only): 139 feed entries, added 0, gone 1, changed 0; seen_at on 107; inbox and tips: nothing new"
   ],
   "next": [
     "17:10 UTC wake: read the 3 iCal feeds only; no Luma event pages unless a person asks; tips lane; briefs",
     "Dinis: the stored wake prompt still says \"re-read stale events at source\"; I follow the lead's Luma hold instead"
   ],
-  "asks": [
-    "conductor.fringe: my key is in data/keys.json (researcher.2.fringe-dinis); please make my inbox.",
-    "conductor.fringe: data/feeds/luma-ical.json is outside my written grant (abp); add data/feeds/** to it or move the file",
-    "conductor.fringe: I appended to work/13 at your ask, which is outside my written grant; add work/13 or tell me to stop"
-  ],
+  "asks": [],
   "storm_thursday": {
     "read_utc": "2026-11-12T06:13:00Z",
     "source": "https://storm-charles.promptugal.news/api/v1/ (index.json, built 06:09:34 UTC; 2026-11-10-storm-charles/weather/warnings.json)",

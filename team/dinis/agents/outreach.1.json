@@ -1,11 +1,11 @@
 {
  "agent": "outreach.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-12T00:36Z",
+ "updated": "2026-11-12T08:36Z",
  "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 6)",
  "model": "Sonnet",
  "wake": "hourly at :35 (set by the lead)",
  "branch": "dev",
- "state": "00:35 wake (Thu 12 Nov): quiet; 76 organisers, 5 contacted, 0 answered, 0 joined; waiting on Dinis for design call, tip ask, group links",
+ "state": "08:35 wake: quiet; round 2 note waiting for Jose or Dinis (Replit before about 12:00 UTC); 76 organisers, 5 contacted, 0 answered, 0 joined",
  "doing": [
   "work/29 owner; with work/18 and work/23"
  ],
@@ -37,7 +37,10 @@
   "21:35 wake: no hold, no new brief, inbox empty, nothing new for outreach in the repo; counts unchanged",
   "22:35 wake: no hold, no new brief, inbox empty, nothing new for outreach in the repo; counts unchanged",
   "23:35 wake: no hold, no new brief, inbox empty, nothing new for outreach in the repo; counts unchanged",
-  "00:35 wake: no hold, no new brief, inbox empty, nothing new for outreach in the repo; counts unchanged"
+  "00:35 wake: no hold, no new brief, inbox empty, nothing new for outreach in the repo; counts unchanged",
+  "lead's relay 07:22: counted yesterday's result: 5 sent by Jose (16:23 UTC), 0 answered (Jose's status 07:09), 0 via=organiser visits (data/obs/traffic.json generated 01:25 UTC: only whatsapp 161, linkedin 22, promptugal-news 6); drafted a changed note with 'tonight after the summit', the organiser's own event page and one question, plus five organisers with events tonight (Replit, The Nest by NEAR, Lisbon Business Leaders, Yorkseed, Unicorn Factory Lisboa)",
+  "07:35 wake: no hold, no new brief, inbox empty; Jose has not yet reported a round 2 send; counts unchanged",
+  "08:35 wake: no hold, no new brief, inbox empty; no round 2 send reported; counts unchanged"
  ],
  "next": [
   "when dev.1's /designs/ is live: check its checks list and 'how to send' against the call, and link it",
@@ -56,6 +59,7 @@
   "dev.1@: the call says: PR adding designs/<slug>/ (HTML, CSS, small JS reading /api/v1/, no binaries, gate green) or a link; please keep /designs/'s 'Send a design' text the same, and tell me when it is live",
   "Dinis: approve work/drafts/whatsapp-tip-ask.md; fill <group> per group; drop the 'report' line in block 3 if no per-organiser report is live",
   "Jose: after you send each note, set that organiser's state to 'sent' in data/outreach-tracker.json (sent_by, sent_at), or tell me, and I rerun outreach.py; no agent marks a send",
-  "Dinis: Jose asks you to confirm his 5 organiser notes (work/drafts/organiser-notes-today-jose.md); Kuma goes before 15:00 UTC. Brief 15 says Jose sends them today; a one-line 'yes' from you in this session or to the lead settles it"
+  "Dinis: Jose asks you to confirm his 5 organiser notes (work/drafts/organiser-notes-today-jose.md); Kuma goes before 15:00 UTC. Brief 15 says Jose sends them today; a one-line 'yes' from you in this session or to the lead settles it",
+  "jose / conductor.fringe@PrompTugal.jose: read work/drafts/organiser-notes-tonight-v2.md; if you send any, send before 12:00 UTC for the 17:30 Replit event, and tell me each send so the tracker can record it (Dinis approved the note on 11 Nov; this is a changed version, so Dinis or Jose should read it first)"
  ]
 }

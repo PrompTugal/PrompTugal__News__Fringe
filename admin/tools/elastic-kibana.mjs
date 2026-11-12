@@ -14,7 +14,7 @@ import path from 'node:path'
 import { spawnSync } from 'node:child_process'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 import * as K from './elastic-kibana-lib.mjs'
-const { uid, add, objects, INDEPENDENT, DV, dataView, C, lens, metric, overTime, top, donut, table, heat, search, md, dashboard, L, S, V } = K
+const { uid, add, objects, INDEPENDENT, DV, dataView, C, lens, metric, overTime, top, donut, table, heat, search, md, dashboard, vega, L, S, V } = K
 
 if (process.env.HTTPS_PROXY && !process.env.NODE_USE_ENV_PROXY && process.argv[2] === 'import') {
     const r = spawnSync(process.execPath, ['--no-warnings', ...process.argv.slice(1)], { stdio: 'inherit', env: { ...process.env, NODE_USE_ENV_PROXY: '1' } })
@@ -42,6 +42,7 @@ dataView('elastic-submissions', 'Elastic operations: every submission', 't')
 dataView('fringe-*,ptnews-*,websummit-*,swarm-*,agents-*', 'Everything on Elastic (by ingest time)', 'ingested_at')
 dataView('traces-generic.otel-default', 'OpenRouter traces (OTel): the A1 calls from the provider side', '@timestamp')
 dataView('fringe-packets', 'Task packets: issued, run, every call (cross-conductor)', 't')
+dataView('swarm-flows', 'The swarm\'s runs: every unit, start and end (architect.1, swarm.1)', 'at')
 dataView('fringe-workloads', 'Distributed workloads: altitudes, runtimes, placements, traces', 't')
 for (const s of ['fringe', 'ptnews', 'websummit']) for (const k of ['commits', 'content', 'entities', 'runs', 'status']) dataView(`${s}-${k}`, `${{ fringe: 'Fringe', ptnews: 'PrompTugal.news', websummit: 'Web Summit' }[s]}: ${k}`, 't')
 for (const k of ['commits', 'content', 'entities', 'runs', 'status']) dataView(`fringe-${k},ptnews-${k},websummit-${k}`, `All sites: ${k}`, 't')
@@ -239,6 +240,70 @@ D.cross = dashboard('cross', 'Cross-conductor test: Dinis and Angelo, live', "Ta
     [[overTime('x-or-key', "OpenRouter's side: calls over time, by API key", DV['traces-generic.otel-default'], '@timestamp', 'attributes.trace.metadata.openrouter.api_key_name', 'name:"LLM Generation"', { interval: '1m' }), L, 24, 13],
      [table('x-or-table', "OpenRouter's side: per key and model", DV['traces-generic.otel-default'], [['attributes.trace.metadata.openrouter.api_key_name', 'API key (name)', 6], ['attributes.gen_ai.request.model', 'Model', 8]], [C.count('Calls'), C.sum('attributes.gen_ai.usage.total_cost', 'USD'), C.avg('attributes.trace.metadata.openrouter.provider_time_to_first_token_ms', 'Avg TTFT ms')], 'name:"LLM Generation"'), L, 24, 13]],
 ], { from: 'now-3h', to: 'now', refresh: 30000 })
+
+// =====================================================================================================
+// 11. The swarm's runs, in Kibana: the stage's visual language (altitude lanes, its colours) on swarm-flows
+// =====================================================================================================
+const SW = { bg: '#04100F', panel: '#0b2826', ink: '#EAF6F3', muted: '#8EADA8', line: 'rgba(150,230,215,0.14)', bad: '#FF4D6D', accent: '#43D9C6' }
+const ALTS = ['A4', 'A3', 'A2', 'A1', 'A0'], ALT_COLORS = ['#ff7a59', '#5ec2ff', '#9b8cff', '#4fd1a5', '#c9d4d2']   // the stage's --alt-* tokens (stage/themes.css)
+const flowsData = { url: { index: 'swarm-flows', '%context%': true, '%timefield%': 'at', body: { size: 3000, _source: ['at', 'phase', 'duration_ms', 'altitude', 'role', 'name', 'valid', 'cost_usd', 'model', 'runner', 'environment', 'flow'] } }, format: { property: 'hits.hits' } }
+const flowsTransform = [
+    { filter: "datum._source.phase === 'end'" },
+    { calculate: 'toDate(datum._source.at)', as: 'end' },
+    { calculate: 'datum.end - (datum._source.duration_ms || 150)', as: 'start' },
+    { calculate: 'datum._source.altitude', as: 'altitude' },
+    { calculate: 'datum._source.role', as: 'role' },
+    { calculate: 'datum._source.name', as: 'unit' },
+    { calculate: 'datum._source.model || ""', as: 'model' },
+    { calculate: 'datum._source.duration_ms || 0', as: 'ms' },
+    { calculate: 'datum._source.cost_usd || 0', as: 'usd' },
+    { calculate: "datum._source.valid === false ? 'invalid' : 'ok'", as: 'outcome' },
+    { calculate: "split(datum._source.environment || '', ',')[0]", as: 'where' },
+]
+const axisStyle = { labelColor: SW.muted, titleColor: SW.muted, gridColor: SW.line, domainColor: SW.line, tickColor: SW.line, labelFont: 'Inter, system-ui, sans-serif', titleFont: 'Inter, system-ui, sans-serif' }
+const sw = d => ({ $schema: 'https://vega.github.io/schema/vega-lite/v5.json', background: SW.bg, padding: 12, autosize: { type: 'fit', contains: 'padding' },
+    config: { view: { stroke: null }, axis: axisStyle, legend: { labelColor: SW.muted, titleColor: SW.muted }, title: { color: SW.ink, fontSize: 15, font: 'Inter, system-ui, sans-serif', anchor: 'start', subtitleColor: SW.muted } }, ...d })
+const tooltip = [{ field: 'unit', title: 'unit' }, { field: 'role' }, { field: 'altitude' }, { field: 'ms', title: 'ms' }, { field: 'model' }, { field: 'usd', title: 'USD', format: '.5f' }, { field: 'outcome' }, { field: 'where' }]
+
+const waterfall = vega('sw-waterfall', 'One run, every unit, by altitude', sw({
+    title: { text: 'One run, every unit, by altitude', subtitle: 'A4 swarm, A3 agent, A2 loop, A1 model call, A0 compute: each bar is one unit with its own key, from start to signed end. Red edge: an invalid answer.' },
+    data: flowsData, transform: [...flowsTransform,
+        { window: [{ op: 'row_number', as: 'rn' }], groupby: ['altitude'], sort: [{ field: 'start' }] }, { calculate: 'datum.rn % 14', as: 'slot' }],
+    mark: { type: 'bar', cornerRadius: 3, opacity: 0.92 },
+    encoding: {
+        x: { field: 'start', type: 'temporal', title: null, axis: { format: '%H:%M:%S', labelFlush: true } }, x2: { field: 'end' },
+        y: { field: 'altitude', type: 'ordinal', sort: ALTS, title: null, axis: { labelFontSize: 14, labelFontWeight: 'bold' } },
+        yOffset: { field: 'slot', type: 'ordinal' },
+        color: { field: 'altitude', type: 'nominal', scale: { domain: ALTS, range: ALT_COLORS }, legend: null },
+        stroke: { condition: { test: "datum.outcome === 'invalid'", value: SW.bad }, value: null }, strokeWidth: { value: 2 },
+        tooltip,
+    } }))
+const evening = vega('sw-evening', 'The evening: every unit of every run', sw({
+    title: { text: 'The evening: every unit of every run', subtitle: 'Each tick is a unit ending, coloured by altitude; the runs climb the ladder as the night goes on.' },
+    data: flowsData, transform: flowsTransform,
+    mark: { type: 'tick', thickness: 2, opacity: 0.85 },
+    encoding: {
+        x: { field: 'end', type: 'temporal', title: null, axis: { format: '%H:%M' } },
+        y: { field: 'altitude', type: 'ordinal', sort: ALTS, title: null, axis: { labelFontSize: 14, labelFontWeight: 'bold' } },
+        color: { field: 'altitude', type: 'nominal', scale: { domain: ALTS, range: ALT_COLORS }, legend: null }, tooltip,
+    } }))
+const ladder = vega('sw-ladder', 'The ladder: units and cost by altitude', sw({
+    title: { text: 'The ladder', subtitle: 'Units per altitude (bars) and what they cost (labels, USD)' },
+    data: flowsData, transform: [...flowsTransform, { aggregate: [{ op: 'count', as: 'units' }, { op: 'sum', field: 'usd', as: 'cost' }], groupby: ['altitude'] }],
+    layer: [
+        { mark: { type: 'bar', cornerRadius: 4 }, encoding: { y: { field: 'altitude', type: 'ordinal', sort: ALTS, title: null, axis: { labelFontSize: 14, labelFontWeight: 'bold' } }, x: { field: 'units', type: 'quantitative', title: 'units' },
+            color: { field: 'altitude', type: 'nominal', scale: { domain: ALTS, range: ALT_COLORS }, legend: null }, tooltip: [{ field: 'altitude' }, { field: 'units' }, { field: 'cost', format: '.4f' }] } },
+        { mark: { type: 'text', align: 'left', dx: 6, color: SW.ink, fontSize: 13 }, encoding: { y: { field: 'altitude', type: 'ordinal', sort: ALTS }, x: { field: 'units', type: 'quantitative' }, text: { field: 'units' } } },
+    ] }))
+const sf = DV['swarm-flows'], END = 'phase:end'
+D.swarmruns = dashboard('swarmruns', "The swarm's runs, in Kibana", "Every unit of every run the agentic swarm made on 11 November (architect.1, the conductors and swarm.1 in GitHub Actions), drawn the way the swarm's own stage draws it: altitude lanes, the stage's colours, one bar per unit with its own key.", TAGS.swarm, [
+    [[md('sw-head', `## The swarm's runs, in Kibana\nThe same runs the swarm's stage replays at [swarm.promptugal.news](https://swarm.promptugal.news), straight from \`swarm-flows\`: **every unit** (A4 swarm, A3 agent, A2 loop, A1 model call, A0 compute) emits a start and a signed end, from wherever it runs (Claude Code cloud **R1**, GitHub Actions **R8**). The lanes and colours are the stage's own (\`stage/themes.css\`). Top: one storm run, about 93 units in 50 seconds. Below: the whole evening. Hover any bar for its unit, model, cost and outcome.`), V, 48, 6]],
+    [[waterfall, V, 48, 22, { timeRange: { from: '2026-11-11T23:44:57.000Z', to: '2026-11-11T23:45:51.000Z' } }]],
+    [[evening, V, 32, 16], [ladder, V, 16, 16]],
+    [[metric('sw-m1', 'Units (ended)', sf, C.count('Units'), END), L, 8, 6], [metric('sw-m2', 'Runs', sf, C.unique('flow', 'Runs')), L, 8, 6], [metric('sw-m3', 'Model calls (A1)', sf, C.count('A1'), 'phase:end and altitude:A1'), L, 8, 6],
+     [metric('sw-m4', 'Cost of the runs (USD)', sf, C.sum('cost_usd', 'USD'), END), L, 8, 6], [metric('sw-m5', 'Invalid answers', sf, { ...C.count('Invalid'), params: { emptyAsNull: false } }, 'phase:end and valid:false'), L, 8, 6], [metric('sw-m6', 'Environments', sf, C.unique('environment', 'Environments')), L, 8, 6]],
+    [[donut('sw-where', 'Where the units ran', sf, 'environment', END), L, 16, 14], [top('sw-runners', 'Who ran them', sf, 'runner', END, { size: 8 }), L, 16, 14], [top('sw-cost', 'Cost per run (USD)', sf, 'flow', END, { size: 10, metricCol: C.sum('cost_usd', 'USD'), label: 'Run' }), L, 16, 14]],
+], { from: '2026-11-11T18:50:00.000Z', to: '2026-11-12T00:05:00.000Z', refresh: 0 })
 
 // ---------- build / import ----------
 const cmd = process.argv[2]

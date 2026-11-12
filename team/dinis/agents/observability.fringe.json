@@ -1,12 +1,12 @@
 {
   "agent": "observability.fringe@PrompTugal.dinis",
   "by": "observability.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T00:38Z",
+  "updated": "2026-11-12T08:39Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), about 11:45 UTC, at Dinis's word (brief 2)",
   "session": "session_01Kw9UwDEe3BXvda7DY68R8B",
-  "wake": "hourly at :37 UTC until Friday 13 November (the lead), with a 15-minute drain loop inside each wake (brief 4)",
+  "wake": "hourly at :37 UTC, 07:00 to 21:59 UTC (night hours, brief 16), until Friday 13 November; a 15-minute drain loop inside each wake",
   "branch": "dev",
-  "state": "running: live sender yes; 15-minute drain loop; last drain 00:38 UTC: all time 532 reader views, 240 visits, 19 countries, 189 via shared links",
+  "state": "running: live sender yes; 15-minute drain loop; last drain 08:38 UTC: all time 555 reader views, 263 visits, 20 countries, 189 via shared links",
   "doing": [
     "work/21: drains every 15 minutes; /traffic/ with the map, flows, outbound clicks and the design lab"
   ],
@@ -24,7 +24,8 @@
     "14:29 UTC: a tab with more than 40 views counts as a crawler (PrompTugal.news's rule); one US phone-sized tab had read 171 pages and doubled the reader views. Outbound clicks now flow: readers follow event pages to the organisers' luma.com pages",
     "Inbox: the architect's note on the old origin is handled (the drain counts admin/site.json's origin, fringe.promptugal.news and lisbontechfringe.com); Dinis keeps the place lookup (finding 20, 14:28 UTC)",
     "15:27 UTC: abp whoami run at the lead's ask (finding 28); the ABP grant now lists this status file",
-    "21:23 UTC: abp whoami re-run at the lead's ask (finding 44)"
+    "21:23 UTC: abp whoami re-run at the lead's ask (finding 44)",
+    "12 November 07:37 UTC: first wake after the night hours (brief 16); the lanes held the night's events and were drained in one go, nothing lost"
   ],
   "next": [
     "Each wake: drain loop, /traffic/, status; the first outbound-click and design-lab numbers to Dinis",
@@ -108,6 +109,16 @@
       "started": "2026-11-12T00:37Z",
       "outcome": "ok",
       "line": "all time 532 reader views, 19 countries; quiet night"
+    },
+    {
+      "started": "2026-11-12T07:37Z",
+      "outcome": "ok",
+      "line": "night drained; all time 554 reader views, 20 countries"
+    },
+    {
+      "started": "2026-11-12T08:38Z",
+      "outcome": "ok",
+      "line": "all time 555 reader views, 20 countries"
     }
   ]
 }

@@ -50,3 +50,6 @@ Run 7 notes (2026-11-11 22:46 UTC): the D41 console error is gone (no console er
 | 2026-11-12 00:41 UTC | v0.1.718 | PASS: the home rolled to Thursday after midnight; 'Tonight 27' (Thursday 18:00 on), 1 tap, in place | PASS: 'Cancelled or moved 3', 1 tap | PASS (no control, correct): no online events on Thursday in the data, so the Online control is hidden and the counts say '0 online' | PASS | PASS | none | none |
 
 Run 8 notes (2026-11-12 00:41 UTC, after midnight): the home handles the date change; Wednesday events running past midnight show as 'Wed 11 ... until Thu 12 02:00'. Home 6029 px. D42 (a Tomorrow control late in the evening) is still open. Old address still 404 (D34, 13 hours).
+| 2026-11-12 08:41 UTC | v0.1.854 | PASS: 'Tonight 27', 1 tap, in place (buttons now at y 612, under a new 'Evening from 17:00, how to get in' block: Open 2, Register 21, Approval or full 14) | PASS: 'Cancelled or moved 3', 1 tap | PASS (no control, correct: 0 online today) | PASS | PASS | none | none |
+
+Run 9 notes (2026-11-12 08:41 UTC): morning of Thursday 12 Nov; nothing new to file. Home 6599 px. The Now/Next hour/Tonight buttons moved from y 427 to 612 because of the new join-line block; still on the first screen at 844 px but only just (watch it). Old address still 404 (D34, 17 hours).

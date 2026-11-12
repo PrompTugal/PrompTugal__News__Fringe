@@ -89,7 +89,11 @@ ${m.festivals.length ? `<p class="muted">Festivals</p>${chips('festival', m.fest
   // --- days, places, personas, topics ------------------------------------------------------------------------------
   for (const d of m.days) write(`${PREFIX.day}/${d.id}`, d.name, `<h1>${esc(d.name)}</h1>${d.festivals.length ? `<p class="muted">Festivals on</p>${chips('festival', d.festivals)}` : ''}
 <p class="muted">Organisers</p>${chips('organiser', orgsOf(d.events))}<p class="muted">Places</p>${chips('place', neighbours(d.events, 'place'))}
-<p class="muted">For</p>${chips('persona', neighbours(d.events, 'personas'))}<h2>${d.events.length} events</h2>${evList(d.events)}${api('days')}`, `Every side event in Lisbon on ${d.name}.`);
+<p class="muted">For</p>${chips('persona', neighbours(d.events, 'personas'))}${(() => {
+    // still to come first; what has ended folds away, live in the browser (the same script as the persona pages)
+    const nowB = BUILT.slice(0, 16), done = d.events.filter((id) => { const e = B.events.get(id); return e.end && e.end.slice(0, 16) <= nowB; }), rest = d.events.filter((id) => !done.includes(id));
+    return `<h2><span id="gx-n">${rest.length}</span> of ${d.events.length} events still to come</h2><p class="muted" id="gx-asof">As of ${esc(BUILT.slice(11, 16))} UTC on ${esc(BUILT.slice(0, 10))}, when this page was built.</p>
+<div id="gx-ahead">${evList(rest)}</div><details id="gx-over"${done.length ? '' : ' hidden'}><summary>Already over: <span id="gx-on">${done.length}</span></summary>${evList(done)}</details>${FOLD_JS}`; })()}${api('days')}`, `Every side event in Lisbon on ${d.name}.`);
   for (const p of m.places) write(`${PREFIX.place}/${p.id}`, p.name, `<h1>${esc(p.name)}</h1><p>${p.city === 'online' ? 'Online events.' : p.city === 'Lisbon' ? (p.name === 'Lisbon' ? 'In Lisbon, where the page names no neighbourhood (often: the address goes to guests).' : 'A neighbourhood of Lisbon.') : `<strong>Not in Lisbon:</strong> ${esc(p.city)}.`}</p>
 <p class="muted">Days</p>${chips('day', neighbours(p.events, 'day'))}<p class="muted">Organisers</p>${chips('organiser', orgsOf(p.events))}<h2>${p.events.length} events</h2>${evList(p.events)}${api('places')}`, `Side events this week in ${p.name}.`);
   // Personas: "who are you?" then today in Lisbon first, still to come before what already ended (brief 13).
