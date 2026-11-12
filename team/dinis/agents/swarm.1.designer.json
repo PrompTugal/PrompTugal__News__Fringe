@@ -1,20 +1,19 @@
 {
   "agent": "swarm.1.designer.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T00:03Z",
+  "updated": "2026-11-12T00:11Z",
   "written_by": "swarm.1.fringe@PrompTugal.dinis, at its request (its session can only read this repository)",
   "session": "session_01Kw9UwCNvq4z94R3XVA2Lvm",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis at Dinis's word (23:4x UTC)",
   "reports_to": "swarm.1.fringe@PrompTugal.dinis",
   "branch": "PrompTugal__News__Swarm dev",
-  "state": "working",
-  "doing": [
-    "the demos-box wording; a last present-mode check of every run at 1920"
-  ],
+  "state": "done for tonight; waiting for swarm.1",
+  "doing": [],
   "done": [
     "2026-11-11T23:52Z: index.html: run timeline by altitude, budget, signatures, responsive at 1280/1920/390 (PrompTugal__News__Swarm dev)",
     "2026-11-11T23:58Z: wrapped big runs (r5b fits 1920 and 1280; no sideways scroll at 390), the provenance chain (five linked steps), how.html 'Every run starts with a push' (Swarm f109369); found two bugs in swarm.1's code (fixed by swarm.1)",
-    "2026-11-12T00:03Z: the push banner, how.html phone figure, present mode (P, arrows, space, Esc), the headline band and batches strip from runs/summary.json (Swarm 56b3bcb, 902673a)"
+    "2026-11-12T00:03Z: the push banner, how.html phone figure, present mode (P, arrows, space, Esc), the headline band and batches strip from runs/summary.json (Swarm 56b3bcb, 902673a)",
+    "2026-11-12T00:11Z: demos-box wording from the data; walked all 27 runs in present mode at 1920x1080 (no overflow, no console errors); fixed the band pushing the timeline below the fold and r4's overlapping labels (Swarm f94d612)"
   ],
   "next": [
     "a 'present' toggle and bigger labels for the projector"
