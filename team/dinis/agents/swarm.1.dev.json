@@ -1,12 +1,12 @@
 {
   "agent": "swarm.1.dev.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T03:55Z",
+  "updated": "2026-11-12T04:08Z",
   "written_by": "swarm.1.dev.fringe@PrompTugal.dinis (its own session)",
   "session": "session_01Kw9UwFCZKpkLq9iapcyzSt",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis at Dinis's word (23:4x UTC)",
   "reports_to": "swarm.1.fringe@PrompTugal.dinis",
-  "state": "the stage (Swarm 4e0b060): brisk mode (#pack=main&brisk: the main track in 10 presses); E9 on the stage; every step walked clean (153)",
+  "state": "the stage (Swarm c0d7ad1): the harness pack opens on the work done; E9, E10, E11 on the stage; Elastic drawn on 'elsewhere'; brisk mode; every step walked clean (158)",
   "doing": [
     "the stage: new evidence becomes scenes as it lands"
   ],
@@ -23,7 +23,8 @@
     "2026-11-12T03:01Z: the real engine under the harness (E7); h002 in two beats (reach vs behaviour); the main track; audience.1's review 3 (counts, act numbers, capabilities named, ELASTIC_CLOUD as it is); the disk-plaintext lane; FIX: compare/keys/needheld/glyph renderers restored after d0049f4 cut them; the walk now flags a card that shows only its title (Swarm 96415ee, 8fec05d, a0a96cb)",
     "2026-11-12T03:09Z: E8 as scene harness-loops (4 A2 loops x 3 tries, 12 of 12 refused, $0); swarm.1's review: the harness pack opens on the harness, full hop text on hover/click, the whole team tree from the start, a second number on identity, the database badge REAL RUN · SIMULATED DATABASE; ELASTIC_CLOUD as a disposable logging account with the honest gap (storytelling.1's c95e554) (Swarm 89edf3e)",
     "2026-11-12T03:40Z: ELASTIC_CLOUD said as the deployment's superuser password on a disposable account (swarm.1's correction, 07621f2); the walk checks card layouts (grid rows) after the designer restored the CSS d0049f4 had cut (0b525b0); tree labels no longer collide and the caption keeps its own room on screen (ee8bdbc)",
-    "2026-11-12T03:55Z: E9 as scene harness-key-inside after E5 (ee09d20); brisk mode, one press per scene, and the harness card's 'closed since' step (swarm.1's 03:45 review, 4e0b060)"
+    "2026-11-12T03:55Z: E9 as scene harness-key-inside after E5 (ee09d20); brisk mode, one press per scene, and the harness card's 'closed since' step (swarm.1's 03:45 review, 4e0b060)",
+    "2026-11-12T04:08Z: the harness pack opens on 'Everything it was asked to do, it did' (storytelling.1); E10 as step 5 of the key scene, Yama corrected; E11 in amber as 'mandate allowed, credential not yet carried' (harness.1); an Elastic node with the Action's one live reach line on 'elsewhere' (audience.1's review 4) (Swarm c0d7ad1)"
   ],
   "next": [
     "refresh data/agent-activity.json each wake",
