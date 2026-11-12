@@ -1,7 +1,7 @@
 {
   "agent": "design.4.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T16:46Z",
-  "state": "D44 done; nothing else open",
+  "updated": "2026-11-12T17:46Z",
+  "state": "quiet: nothing open for design.4; D44 live",
   "doing": [],
   "done": [
     "D8: admin/build/tokens.css (design E ported), wired into build.mjs, graph colours moved to tokens; checked 390/1280, light/dark",
@@ -38,7 +38,8 @@
     "13:4x wake: nothing new; live / and /storm/ 200",
     "14:4x wake: nothing new; live / and /storm/ 200",
     "15:4x wake: nothing new; live / and /storm/ 200",
-    "16:4x D44: paused banner to two lines (40 px); buttons end at y 696"
+    "16:4x D44: paused banner to two lines (40 px); buttons end at y 696",
+    "17:4x wake: nothing new; live / and /storm/ 200; the two-line banner is live"
   ],
   "next": [
     "wait for the answer on L10; take any open D-task"
