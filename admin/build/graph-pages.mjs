@@ -94,7 +94,7 @@ ${m.festivals.length ? `<p class="muted">Festivals</p>${chips('festival', m.fest
     const nowB = BUILT.slice(0, 16), done = d.events.filter((id) => { const e = B.events.get(id); return e.end && e.end.slice(0, 16) <= nowB; }), rest = d.events.filter((id) => !done.includes(id));
     return `<h2><span id="gx-n">${rest.length}</span> of ${d.events.length} events still to come</h2><p class="muted" id="gx-asof">As of ${esc(BUILT.slice(11, 16))} UTC on ${esc(BUILT.slice(0, 10))}, when this page was built.</p>
 <div id="gx-ahead">${evList(rest)}</div><details id="gx-over"${done.length ? '' : ' hidden'}><summary>Already over: <span id="gx-on">${done.length}</span></summary>${evList(done)}</details>${FOLD_JS}`; })()}${api('days')}`, `Every side event in Lisbon on ${d.name}.`);
-  for (const p of m.places) write(`${PREFIX.place}/${p.id}`, p.name, `<h1>${esc(p.name)}</h1><p>${p.city === 'online' ? 'Online events.' : p.city === 'Lisbon' ? (p.name === 'Lisbon' ? 'In Lisbon, where the page names no neighbourhood (often: the address goes to guests).' : 'A neighbourhood of Lisbon.') : `<strong>Not in Lisbon:</strong> ${esc(p.city)}.`}</p>
+  for (const p of m.places) write(`${PREFIX.place}/${p.id}`, p.name, `<h1>${esc(p.name)}</h1>${p.centre ? `<p class="muted">On the map near ${p.centre.lat.toFixed(3)}, ${p.centre.lon.toFixed(3)}: the area's approximate centre, not a venue (the same names as <a href="/">the home's map</a>).</p>` : ''}<p>${p.city === 'online' ? 'Online events.' : p.city === 'Lisbon' ? (p.name === 'Lisbon' ? 'In Lisbon, where the page names no neighbourhood (often: the address goes to guests).' : 'A neighbourhood of Lisbon.') : `<strong>Not in Lisbon:</strong> ${esc(p.city)}.`}</p>
 <p class="muted">Days</p>${chips('day', neighbours(p.events, 'day'))}<p class="muted">Organisers</p>${chips('organiser', orgsOf(p.events))}<h2>${p.events.length} events</h2>${evList(p.events)}${api('places')}`, `Side events this week in ${p.name}.`);
   // Personas: "who are you?" then today in Lisbon first, still to come before what already ended (brief 13).
   const day1 = BUILT.slice(0, 10), nowIso = BUILT.slice(0, 16);
@@ -172,7 +172,7 @@ ${nx ? `<p><strong>This event has a new page:</strong> ${evLink(nx.id)}.</p>` : 
     const row = (k, v) => v ? `<dt>${k}</dt><dd class="gx-chips">${v}</dd>` : '';
     return `<style>${CSS}</style>` + row('Organisers', e.organisers.map((o) => a('organiser', o.id)).join(''))
       + row('Festival', [e.festival, ...e.listed_by].filter(Boolean).map((f) => a('festival', f, name('festival', f) + (f === e.festival ? '' : ' (in its feed)'))).join(''))
-      + row('Day', a('day', e.day)) + row('Place', e.place ? a('place', e.place) + (e.in_lisbon || e.city === 'online' ? '' : ` <strong>not in Lisbon</strong>`) : '')
+      + row('Day', a('day', e.day)) + row('Place', e.place ? a('place', e.place) + (e.in_lisbon || e.city === 'online' ? '' : ` <strong>not in Lisbon</strong>`) + (e.place_how && /address/.test(e.place_how) ? ` <span class="muted">(${esc(e.place_how)})</span>` : '') : '')
       + row('Register on', e.platform ? a('platform', e.platform) : '') + row('For', e.personas.map((p) => a('persona', p)).join(''))
       + row('About', e.topics.map((t) => a('topic', t)).join(''))
       + (e.agenda_url ? row('Agenda', `<a href="${esc(e.agenda_url)}">on the organiser's page</a>`) : '')

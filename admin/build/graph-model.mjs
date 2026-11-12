@@ -10,6 +10,7 @@
 
 import { readFileSync, existsSync } from 'node:fs';
 import { organisersOf, areaOf } from './graph.mjs';
+import { AREAS, areaOf as mapAreaOf } from './lisbon-areas.mjs';   // design.3's map vocabulary and centres (D28): one set of names for map and graph
 
 const norm = (s) => String(s ?? '').normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase()
   .replace(/^the\s+/, '').replace(/[™®]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
@@ -159,13 +160,19 @@ export function buildModel(root, events) {
       if (new RegExp(f._m.listed, 'i').test(`${e.check || ''} ${e.note || ''} ${e.place || ''}`)) { ev.listed_by.push(f.id); f.listed.push(id); link(f.id, 'lists', id, e); }
     }
 
-    // place: the neighbourhood as the page names it, else the area in the place line, else the city
-    const area = e.neighbourhood || areaOf(e.place);
-    const pname = area === 'Online' || city === 'online' ? 'Online' : (area && area !== 'Lisbon' ? area : (city !== 'unknown' ? city : null));
+    // place: one vocabulary with the home's map (design.3, admin/build/lisbon-areas.mjs). The map's area wins when it
+    // names a known area; else the neighbourhood the page names; else the city. Bracketed notes are never places.
+    const own = e.neighbourhood || areaOf(e.place);
+    const ownOk = own && own !== 'Lisbon' && !/address|written|description|guest|given|page|stated/i.test(own) ? own : null;
+    const mapA = city === 'Lisbon' ? mapAreaOf(e) : null;
+    const known = mapA && AREAS[mapA] ? mapA : null;
+    const pname = own === 'Online' || city === 'online' ? 'Online' : (known || ownOk || (city !== 'unknown' ? city : null));
+    const placeHow = pname === 'Online' || pname === city ? null : (known && !e.neighbourhood && !ownOk ? 'from the address, by the map\'s rules (evidence)' : 'as the page names it');
     if (pname) {
       const pid = slug(pname);
-      if (!E.places.has(pid)) E.places.set(pid, { id: pid, type: 'place', name: pname, city: pname === 'Online' ? 'online' : (ELSEWHERE.includes(pname) ? pname : (city === 'Lisbon' || pname === 'Lisbon' ? 'Lisbon' : city)), events: [] });
-      E.places.get(pid).events.push(id); ev.place = pid; link(id, 'at', pid, e);
+      if (!E.places.has(pid)) E.places.set(pid, { id: pid, type: 'place', name: pname, city: pname === 'Online' ? 'online' : (ELSEWHERE.includes(pname) ? pname : (city === 'Lisbon' || pname === 'Lisbon' ? 'Lisbon' : city)),
+        centre: AREAS[pname] ? { lon: AREAS[pname][0], lat: AREAS[pname][1], note: 'approximate centre of the area (design.3, admin/build/lisbon-areas.mjs); not a venue' } : null, events: [] });
+      E.places.get(pid).events.push(id); ev.place = pid; ev.place_how = placeHow; link(id, 'at', pid, e);
     }
 
     // platform
