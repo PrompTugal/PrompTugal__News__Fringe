@@ -47,3 +47,6 @@ Run 6 notes (2026-11-11 20:41 UTC): all five tasks pass on the live home at 390 
 | 2026-11-11 22:46 UTC | v0.1.642 | PASS (empty state): Tonight 0 says 'Nothing checked for tonight yet' (wording, D42); no Tomorrow control | PASS: 'Cancelled or moved 5', 1 tap | PASS: Online list says nothing is on now/next, earlier ones folded | PASS | PASS | none | none (D41 gone) |
 
 Run 7 notes (2026-11-11 22:46 UTC): the D41 console error is gone (no console errors on /, /e/). Home page 16404 px. Old address still 404 (D34, 11 hours). New: D42 (tomorrow, at night).
+| 2026-11-12 00:41 UTC | v0.1.718 | PASS: the home rolled to Thursday after midnight; 'Tonight 27' (Thursday 18:00 on), 1 tap, in place | PASS: 'Cancelled or moved 3', 1 tap | PASS (no control, correct): no online events on Thursday in the data, so the Online control is hidden and the counts say '0 online' | PASS | PASS | none | none |
+
+Run 8 notes (2026-11-12 00:41 UTC, after midnight): the home handles the date change; Wednesday events running past midnight show as 'Wed 11 ... until Thu 12 02:00'. Home 6029 px. D42 (a Tomorrow control late in the evening) is still open. Old address still 404 (D34, 13 hours).
