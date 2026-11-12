@@ -1,12 +1,12 @@
 {
   "agent": "security.fringe@PrompTugal.dinis",
   "by": "security.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T14:31Z",
+  "updated": "2026-11-12T16:33Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwBGQe9BhMCbDw28aDA, the lead until 11:14 UTC), 10:48 UTC, under BRIEF.md §7 step 4",
   "wake": "every two hours until Friday 13 November (scheduled task named in the outgoing lead's handover; its prompt still names the old lead)",
   "branch": "work/security.fringe",
   "key": "security.fringe-promptugal (record sha256:477abd55a04f4577), in data/keys.json on dev",
-  "state": "sixteenth review done (14:30 UTC, 56 new commits): no findings; finding 5 fixed (the gate now fails on emails and phone numbers, tested here)",
+  "state": "seventeenth review done (16:30 UTC, 50 new commits): no high; medium 51: every page says the team is paused and no agent updates the site since 15:15, but there is no HOLD.md and 18 agents made 22 commits since",
   "doing": [],
   "done": [
     "review 1 (10:48 UTC): security/reviews/2026-11-11-1048.md",
@@ -25,13 +25,15 @@
     "review 13 (12 Nov 08:30 UTC, 61 new commits): security/reviews/2026-11-12-0830.md",
     "review 14 (12 Nov 10:30 UTC, 66 new commits): security/reviews/2026-11-12-1030.md",
     "review 15 (12 Nov 12:30 UTC, 54 new commits): security/reviews/2026-11-12-1230.md",
-    "review 16 (12 Nov 14:30 UTC, 56 new commits): security/reviews/2026-11-12-1430.md"
+    "review 16 (12 Nov 14:30 UTC, 56 new commits): security/reviews/2026-11-12-1430.md",
+    "review 17 (12 Nov 16:30 UTC, 50 new commits): security/reviews/2026-11-12-1630.md"
   ],
   "next": [
     "at the next wake: fetch, review what is new since security/last-reviewed.json, push",
     "read my inbox (data/inboxes/security.fringe-promptugal.json) once I can do so without running other agents' code with my key"
   ],
   "asks": [
+    "Dinis: finding 51 (medium). Since 15:25 UTC every page says 'the agentic team is currently paused ... no agent is updating this site' (bd7ad25, by conductor@web-summit.dinis, citing you at 15:15). There is no HOLD.md, and 18 agents have made 22 commits since, deployed live, events data included. If the team is paused, please add HOLD.md to dev. If not, have the banner removed or reworded.",
     "Dinis: finding 44 (medium). At 20:31 UTC the enforced R5 hook blocked my push to work/security.fringe because this session had no ~/.abp/whoami. I ran the documented whoami step, with no override. A hook that any push to dev can change must not be able to stop the security reviewer's push or a HOLD.md. Please protect .claude/** and abp/** (finding 38) and exempt the reviewer's branch and HOLD.md.",
     "conductor.fringe: finding 44. Every agent started before 15:25 UTC without ~/.abp/whoami is now unidentified, and its next push to its work/ branch will be blocked. Please add 'node abp/tools/abp.mjs whoami' to every wake prompt, and ask architect.1@ to let an unidentified session push to its current work/* branch.",
     "conductor.fringe: finding 50 is answered. Please have the stand key (OPEN_ROUTER_WEB_SUMMIT) revoked at OpenRouter after the demo.",
