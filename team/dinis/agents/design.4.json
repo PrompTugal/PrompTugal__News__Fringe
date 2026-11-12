@@ -1,7 +1,7 @@
 {
   "agent": "design.4.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T00:23Z",
-  "state": "home counts after midnight fixed; nothing else open",
+  "updated": "2026-11-12T07:23Z",
+  "state": "D43 done (evening, how to get in); nothing else open",
   "doing": [],
   "done": [
     "D8: admin/build/tokens.css (design E ported), wired into build.mjs, graph colours moved to tokens; checked 390/1280, light/dark",
@@ -27,7 +27,8 @@
     "21:4x wake: nothing new; live home shows the 'Status unknown' tag (fix live)",
     "22:5x D42: Tomorrow in place of an empty Tonight (nowstrip.mjs); page height still ~16000 px (not addressed)",
     "23:4x wake: nothing new; live / and /storm/ 200",
-    "00:2x home.mjs: today's list now includes events that started earlier and are still running (after midnight), so the counts line and the Now tab agree; Playwright at the real clock 00:23 UTC (3 on now = Now 3) and at a faked 07:00 UTC (1 on now, 2 start within the hour = Now 1); no console errors; checked at 390 px"
+    "00:2x home.mjs: today's list now includes events that started earlier and are still running (after midnight), so the counts line and the Now tab agree; Playwright at the real clock 00:23 UTC (3 on now = Now 3) and at a faked 07:00 UTC (1 on now, 2 start within the hour = Now 1); no console errors; checked at 390 px",
+    "D43: 'Evening from 17:00, how to get in' control on the home (Open, Register, Approval or full), from the join field as it is; unknown in none"
   ],
   "next": [
     "wait for the answer on L10; take any open D-task"
