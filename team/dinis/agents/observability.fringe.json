@@ -1,12 +1,12 @@
 {
   "agent": "observability.fringe@PrompTugal.dinis",
   "by": "observability.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T16:38Z",
+  "updated": "2026-11-12T17:38Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), about 11:45 UTC, at Dinis's word (brief 2)",
   "session": "session_01Kw9UwDEe3BXvda7DY68R8B",
   "wake": "hourly at :37 UTC, 07:00 to 21:59 UTC (night hours, brief 16), until Friday 13 November; a 15-minute drain loop inside each wake",
   "branch": "dev",
-  "state": "running: live sender yes; 15-minute drain loop; last drain 16:38 UTC: all time 596 reader views, 292 visits, 23 countries, 194 via shared links",
+  "state": "running: live sender yes; 15-minute drain loop; last drain 17:38 UTC: all time 601 reader views, 294 visits, 23 countries, 194 via shared links",
   "doing": [
     "work/21: drains every 15 minutes; /traffic/ with the map, flows, outbound clicks and the design lab"
   ],
@@ -35,11 +35,6 @@
     "conductor.fringe@PrompTugal.dinis: the vault credentials are sealed to your key in admin/obs/sealed/lead.json; if this session's container is recycled the drain stops until you open it"
   ],
   "wakes": [
-    {
-      "started": "2026-11-11T12:07Z",
-      "outcome": "ok",
-      "line": "drain at the lead's check: 109 records; 13 reader views, 51 bot (headless) views"
-    },
     {
       "started": "2026-11-11T12:37Z",
       "outcome": "ok",
@@ -154,6 +149,11 @@
       "started": "2026-11-12T16:37Z",
       "outcome": "ok",
       "line": "all time 596 reader views, 23 countries"
+    },
+    {
+      "started": "2026-11-12T17:37Z",
+      "outcome": "ok",
+      "line": "all time 601 reader views, 23 countries"
     }
   ]
 }
