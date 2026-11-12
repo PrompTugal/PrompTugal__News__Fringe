@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T17:38Z",
+ "generated": "2026-11-12T17:54Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 601,
-  "reads": 509,
-  "tabs": 294,
+  "views": 602,
+  "reads": 510,
+  "tabs": 295,
   "countries": 23,
   "shares": 194,
-  "bots": 2371,
+  "bots": 2376,
   "crawler_tabs": 1,
-  "agent_runs": 485,
-  "agent_runs_signed": 426
+  "agent_runs": 488,
+  "agent_runs_signed": 429
  },
  "by_hour": [
   [
@@ -212,7 +212,7 @@
   ],
   [
    "2026-11-12 17:00",
-   5
+   6
   ]
  ],
  "by_page": [
@@ -333,6 +333,10 @@
    3
   ],
   [
+   "/e/2026-11-12-the-founder-effect/",
+   3
+  ],
+  [
    "/e/2026-11-11-like-minded/",
    3
   ],
@@ -394,10 +398,6 @@
   ],
   [
    "/e/2026-11-12-female-founders-breakfast/",
-   2
-  ],
-  [
-   "/e/2026-11-12-the-founder-effect/",
    2
   ],
   [
@@ -771,6 +771,12 @@
    46
   ],
   [
+   "/e/2026-11-12-the-founder-effect/",
+   3,
+   22,
+   25
+  ],
+  [
    "/e/2026-11-11-like-minded/",
    3,
    9,
@@ -865,12 +871,6 @@
    2,
    26,
    78
-  ],
-  [
-   "/e/2026-11-12-the-founder-effect/",
-   2,
-   28,
-   38
   ],
   [
    "/e/2026-11-11-lisbon-tech-side-event/",
@@ -1216,7 +1216,7 @@
   ],
   [
    "United Kingdom",
-   71
+   72
   ],
   [
    "United States",
@@ -1321,12 +1321,12 @@
    21
   ],
   [
-   "Frankfurt am Main, Germany",
+   "London, United Kingdom",
    18
   ],
   [
-   "London, United Kingdom",
-   17
+   "Frankfurt am Main, Germany",
+   18
   ],
   [
    "Montijo, Portugal",
@@ -1376,7 +1376,7 @@
  "by_referrer": [
   [
    "www.google.com",
-   13
+   14
   ],
   [
    "lnkd.in",
@@ -1398,14 +1398,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   562
+   563
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 5770,
+ "other_hosts_views": 5794,
  "by_via": [
   [
    "whatsapp",
@@ -1444,7 +1444,7 @@
   ],
   [
    "phone",
-   268
+   269
   ],
   [
    "tablet",
@@ -1458,15 +1458,19 @@
   ],
   [
    "design.4.fringe@PrompTugal.dinis",
-   35
+   36
   ],
   [
    "design.1.fringe@PrompTugal.dinis",
-   35
+   36
   ],
   [
    "conductor.fringe@PrompTugal.jose",
    33
+  ],
+  [
+   "conductor.fringe@PrompTugal.indi",
+   29
   ],
   [
    "ontologist.1.fringe@PrompTugal.dinis",
@@ -1474,10 +1478,6 @@
   ],
   [
    "design.3.fringe@PrompTugal.dinis",
-   28
-  ],
-  [
-   "conductor.fringe@PrompTugal.indi",
    28
   ],
   [
@@ -1546,7 +1546,7 @@
   ]
  ],
  "flows": {
-  "tabs": 292,
+  "tabs": 293,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
@@ -1558,7 +1558,7 @@
    ],
    [
     "from another site",
-    15
+    16
    ]
   ],
   "entry_pages": [
@@ -1591,6 +1591,10 @@
     3
    ],
    [
+    "/e/2026-11-12-the-founder-effect/",
+    3
+   ],
+   [
     "/e/2026-11-12-disconnect-2-connect/",
     3
    ],
@@ -1604,10 +1608,6 @@
    ],
    [
     "/e/2026-11-11-corporate-academy-of-tomorrow/",
-    2
-   ],
-   [
-    "/e/2026-11-12-the-founder-effect/",
     2
    ],
    [
@@ -1673,15 +1673,15 @@
     3
    ],
    [
+    "/e/2026-11-12-the-founder-effect/",
+    3
+   ],
+   [
     "/dashboard/",
     3
    ],
    [
     "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
-    2
-   ],
-   [
-    "/me/",
     2
    ]
   ],
@@ -1790,7 +1790,7 @@
   "pages_per_tab": [
    [
     "1",
-    204
+    205
    ],
    [
     "2",
@@ -1876,11 +1876,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
@@ -1888,7 +1888,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-roast-your-website/",
+    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
     1
    ]
   ]
@@ -1942,16 +1942,16 @@
     "lon": 24.8
    },
    {
+    "name": "London, United Kingdom",
+    "views": 18,
+    "lat": 51.5,
+    "lon": -0.1
+   },
+   {
     "name": "Frankfurt am Main, Germany",
     "views": 18,
     "lat": 50.1,
     "lon": 8.7
-   },
-   {
-    "name": "London, United Kingdom",
-    "views": 17,
-    "lat": 51.5,
-    "lon": -0.1
    },
    {
     "name": "Montijo, Portugal",
