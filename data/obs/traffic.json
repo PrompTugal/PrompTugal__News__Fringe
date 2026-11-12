@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T10:25Z",
+ "generated": "2026-11-12T10:38Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 565,
-  "reads": 485,
-  "tabs": 272,
+  "views": 571,
+  "reads": 488,
+  "tabs": 275,
   "countries": 20,
-  "shares": 190,
-  "bots": 2028,
+  "shares": 193,
+  "bots": 2055,
   "crawler_tabs": 1,
-  "agent_runs": 370,
-  "agent_runs_signed": 327
+  "agent_runs": 372,
+  "agent_runs_signed": 329
  },
  "by_hour": [
   [
@@ -212,13 +212,13 @@
   ],
   [
    "2026-11-12 10:00",
-   1
+   7
   ]
  ],
  "by_page": [
   [
    "/",
-   227
+   231
   ],
   [
    "/now/",
@@ -234,7 +234,7 @@
   ],
   [
    "/universe/",
-   15
+   17
   ],
   [
    "/dashboard/",
@@ -588,8 +588,8 @@
  "reading": [
   [
    "/",
-   177,
-   27,
+   180,
+   28,
    13
   ],
   [
@@ -1142,7 +1142,7 @@
  "by_country": [
   [
    "Portugal",
-   356
+   362
   ],
   [
    "United Kingdom",
@@ -1224,7 +1224,7 @@
  "by_city": [
   [
    "Lisbon, Portugal",
-   267
+   273
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -1298,7 +1298,7 @@
   ],
   [
    "promptugal.news",
-   3
+   4
   ],
   [
    "org.telegram.messenger",
@@ -1312,14 +1312,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   526
+   532
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 4432,
+ "other_hosts_views": 4472,
  "by_via": [
   [
    "whatsapp",
@@ -1331,7 +1331,7 @@
   ],
   [
    "promptugal-news",
-   7
+   10
   ]
  ],
  "via_detail": {
@@ -1346,15 +1346,15 @@
    "countries": 2
   },
   "promptugal-news": {
-   "views": 7,
-   "tabs": 3,
+   "views": 10,
+   "tabs": 4,
    "countries": 1
   }
  },
  "by_screen": [
   [
    "desktop",
-   304
+   310
   ],
   [
    "phone",
@@ -1387,16 +1387,16 @@
    22
   ],
   [
+   "design.3.fringe@PrompTugal.dinis",
+   21
+  ],
+  [
    "architect.1.fringe@PrompTugal.dinis",
    21
   ],
   [
    "conductor.fringe@PrompTugal.indi",
    21
-  ],
-  [
-   "design.3.fringe@PrompTugal.dinis",
-   20
   ],
   [
    "researcher.fringe@PrompTugal.dinis",
@@ -1419,11 +1419,11 @@
    16
   ],
   [
-   "dev.1.fringe@PrompTugal.dinis",
-   15
+   "capture.1.fringe@PrompTugal.dinis",
+   16
   ],
   [
-   "capture.1.fringe@PrompTugal.dinis",
+   "dev.1.fringe@PrompTugal.dinis",
    15
   ],
   [
@@ -1456,15 +1456,15 @@
   ]
  ],
  "flows": {
-  "tabs": 270,
+  "tabs": 273,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    190
+    192
    ],
    [
     "shared link (?via=)",
-    73
+    74
    ],
    [
     "from another site",
@@ -1474,7 +1474,7 @@
   "entry_pages": [
    [
     "/",
-    169
+    170
    ],
    [
     "/now/",
@@ -1486,7 +1486,7 @@
    ],
    [
     "/universe/",
-    9
+    11
    ],
    [
     "/dashboard/",
@@ -1536,7 +1536,7 @@
   "exit_pages": [
    [
     "/",
-    126
+    127
    ],
    [
     "/now/",
@@ -1548,7 +1548,7 @@
    ],
    [
     "/universe/",
-    10
+    12
    ],
    [
     "/programme/",
@@ -1700,7 +1700,7 @@
   "pages_per_tab": [
    [
     "1",
-    189
+    191
    ],
    [
     "2",
@@ -1708,7 +1708,7 @@
    ],
    [
     "3",
-    15
+    16
    ],
    [
     "4",
@@ -1742,6 +1742,10 @@
     4
    ],
    [
+    "promptugal-news: /",
+    4
+   ],
+   [
     "whatsapp: /e/2026-11-11-founderlink-storm-summit-afternoon/",
     3
    ],
@@ -1751,10 +1755,6 @@
    ],
    [
     "linkedin: /now/",
-    3
-   ],
-   [
-    "promptugal-news: /",
     3
    ],
    [
@@ -1786,11 +1786,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
@@ -1798,7 +1798,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-roast-your-website/",
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ]
   ]
@@ -1806,7 +1806,12 @@
  "design_lab": [
   {
    "design": "b",
-   "views": 6,
+   "views": 8,
+   "votes": 1
+  },
+  {
+   "design": "d",
+   "views": 0,
    "votes": 1
   },
   {
@@ -1824,7 +1829,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 267,
+    "views": 273,
     "lat": 38.7,
     "lon": -9.1
    },
