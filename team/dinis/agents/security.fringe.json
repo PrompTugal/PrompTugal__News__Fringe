@@ -1,12 +1,12 @@
 {
   "agent": "security.fringe@PrompTugal.dinis",
   "by": "security.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T22:32Z",
+  "updated": "2026-11-12T00:33Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwBGQe9BhMCbDw28aDA, the lead until 11:14 UTC), 10:48 UTC, under BRIEF.md §7 step 4",
   "wake": "every two hours until Friday 13 November (scheduled task named in the outgoing lead's handover; its prompt still names the old lead)",
   "branch": "work/security.fringe",
   "key": "security.fringe-promptugal (record sha256:477abd55a04f4577), in data/keys.json on dev",
-  "state": "eighth review done (22:30 UTC, 80 new commits): no high, no new medium; one file over 256 KB pushed and removed a minute later (finding 45, low)",
+  "state": "ninth review done (00:30 UTC, 79 new commits): no high; medium 47: the Elastic superuser password is shared in every session and now in the Runs repository Actions",
   "doing": [],
   "done": [
     "review 1 (10:48 UTC): security/reviews/2026-11-11-1048.md",
@@ -17,16 +17,17 @@
     "review 6 (18:30 UTC, 92 new commits): security/reviews/2026-11-11-1830.md",
     "review 7 (20:30 UTC, 122 new commits): security/reviews/2026-11-11-2030.md",
     "ran node abp/tools/abp.mjs whoami (20:33 UTC): ~/.abp/whoami = security.fringe@PrompTugal.dinis, so the hook knows this session",
-    "review 8 (22:30 UTC, 80 new commits): security/reviews/2026-11-11-2230.md"
+    "review 8 (22:30 UTC, 80 new commits): security/reviews/2026-11-11-2230.md",
+    "review 9 (12 Nov 00:30 UTC, 79 new commits): security/reviews/2026-11-12-0030.md"
   ],
   "next": [
     "at the next wake: fetch, review what is new since security/last-reviewed.json, push",
     "read my inbox (data/inboxes/security.fringe-promptugal.json) once I can do so without running other agents' code with my key"
   ],
   "asks": [
+    "Dinis: finding 47 (medium). ELASTIC_CLOUD is the Elastic superuser password. It sits in every session's environment and, since 23:2x UTC, in PrompTugal__News__Swarm__Runs Actions, which run model steps and have public logs. Please create the scoped API key now (create_doc and index on swarm-flows), use it in place of the password everywhere, rotate the password after the demo, and delete GRAFANA_TOKEN and SG_SEND_ACCESS_TOKEN from the Runs repository if unused.",
     "Dinis: finding 44 (medium). At 20:31 UTC the enforced R5 hook blocked my push to work/security.fringe because this session had no ~/.abp/whoami. I ran the documented whoami step, with no override. A hook that any push to dev can change must not be able to stop the security reviewer's push or a HOLD.md. Please protect .claude/** and abp/** (finding 38) and exempt the reviewer's branch and HOLD.md.",
     "conductor.fringe: finding 44. Every agent started before 15:25 UTC without ~/.abp/whoami is now unidentified, and its next push to its work/ branch will be blocked. Please add 'node abp/tools/abp.mjs whoami' to every wake prompt, and ask architect.1@ to let an unidentified session push to its current work/* branch.",
-    "conductor.fringe: finding 41 (low). R8e restricts ELASTIC_CLOUD by an identity file any session can write, and the credential sits in every session's environment on the account. Please keep the Elastic and Neo4j credentials in a separate environment for their agents only.",
     "conductor.fringe: finding 45 (low). elastic.1@ pushed elastic/kibana/objects.ndjson at 262,171 bytes (eebb9cd), past the gate, and removed it a minute later. Please remind agents to push only through release.sh.",
     "Dinis: finding 38 (medium). R5, R8 and R9 now block in every agent's session, but .claude/**, abp/policies.json and abp/overrides.json can be changed by any push to dev, including an override marked 'by: dinis'. Please protect those paths with a CODEOWNERS file and a branch rule, and make overrides count only when signed by your key.",
     "conductor.fringe: findings 1, 2 and 29 are still open. The deploy job holds contents: write while it runs repository code, and workflow_dispatch can deploy from any branch.",
@@ -35,6 +36,7 @@
     "Dinis: finding 32. inboxes.py and agent-log.mjs need sgit-ai and my key. Shall a reviewer session install and run them?",
     "Dinis: finding 13. Please confirm in your own words that session_01Kw9UwCFpT9ihNBcQFxkomq is conductor.fringe@PrompTugal.dinis.",
     "Dinis: protect main (pull requests only) and limit the github-pages environment to dev.",
-    "Dinis: my session has GitHub access to PrompTugal__News__Fringe only, so my public key is not yet in PrompTugal__News__Website board/keys.json."
+    "Dinis: my session has GitHub access to PrompTugal__News__Fringe only, so my public key is not yet in PrompTugal__News__Website board/keys.json.",
+    "conductor.fringe: finding 48 (low). admin/build/storm-trace.js dl() writes values into innerHTML unescaped. Please route it to Angelo's conductor."
   ]
 }
