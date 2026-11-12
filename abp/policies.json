@@ -1,7 +1,7 @@
 {
   "about": "The Agent Behaviour Policies of Lisbon Fringe (lisbontechfringe.com, origin in admin/site.json; WS-215) as data: deny by default, one grant per role and agent, across this repository and the others the swarm touches. Ported from PrompTugal__News__Website board/abp/policies.json (abp@PrompTugal.dinis, v1.7.0, since 6 November 2026), not invented anew; built on RiskMandate's Agent Behaviour Policy and Licence to Operate (https://riskmandate.ai/agent-behaviour-policy.html). Read by the hooks (.claude/settings.json, .claude/hooks/abp.mjs) and by the gate's commit check (abp/tools/abp.mjs check). abp/<agent>.md is generated from this file (node abp/tools/abp.mjs build), never edited by hand. Kept by architect.1.fringe@PrompTugal.dinis (work/39); any relaxation, and any move towards enforcement, is Dinis's decision.",
   "version": "0.4.1",
-  "updated": "2026-11-12T00:11Z",
+  "updated": "2026-11-12T01:28Z",
   "operator": "Dinis Cruz",
   "kept_by": "architect.1.fringe@PrompTugal.dinis",
   "status": "DRAFT: grants proposed from the git log (data/architecture.json observed); Dinis and the lead review",
@@ -659,12 +659,12 @@
       ]
     },
     "swarm-dev": {
-      "focus": "the swarm's code under swarm.1 (work/52): tools/ (the engine, the gate), the workflows, the runners; in PrompTugal__News__Swarm__Runs, the push-triggered runs of docs/handoffs/2026-11-11-swarm-runs-design.md",
+      "focus": "the swarm's code under swarm.1 (work/52): tools/ (the engine, the gate), the workflows, the runners; in PrompTugal__News__Swarm__Runs, the push-triggered runs of docs/handoffs/2026-11-11-swarm-runs-design.md; the presentation stage (stage.html, scenes as data in stage/scenes.json), at Dinis's word in its session, about 01:2x UTC on 12 November (relayed by swarm.1.dev, mapped 2026-11-12T01:28Z: new files in its own lane, owned by no one else)",
       "writes": [
         "team/{person}/agents/{name}.json"
       ],
       "writes_other_repos": [
-        "PrompTugal__News__Swarm: tools/**, .github/workflows/**, runners/**, packets/**, data/**, RUNNER.md",
+        "PrompTugal__News__Swarm: tools/**, .github/workflows/**, runners/**, packets/**, data/**, RUNNER.md, stage.html, stage/**",
         "PrompTugal__News__Swarm__Runs: requests/**, .github/workflows/**, docs/** (workflows there only after Dinis's word to swarm.1)"
       ],
       "send_hosts": [
@@ -673,7 +673,7 @@
       "never": "pushes a workflow next to the Runs repo's secrets without Dinis's word; prints a secret; uses ELASTIC_CLOUD outside a workflow (R8e); stores model text"
     },
     "swarm-designer": {
-      "focus": "the swarm's pages under swarm.1: swarm.promptugal.news (index.html, how.html, the run views), so the demo reads well on a laptop, a projector and a phone",
+      "focus": "the swarm's pages under swarm.1: swarm.promptugal.news (index.html, how.html, the run views), so the demo reads well on a laptop, a projector and a phone; the stage's themes and 3D modes (swarm.1.dev builds stage.html; the designer owns how it looks)",
       "writes": [
         "team/{person}/agents/{name}.json"
       ],

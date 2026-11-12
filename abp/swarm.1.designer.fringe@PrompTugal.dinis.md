@@ -2,7 +2,7 @@
 title: "ABP: swarm.1.designer.fringe@PrompTugal.dinis"
 agent: swarm.1.designer.fringe@PrompTugal.dinis
 role: swarm-designer
-policy: abp/policies.json v0.4.1 (sha256:a4d5132074a57a1f)
+policy: abp/policies.json v0.4.1 (sha256:253513fb8109a0b9)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -14,7 +14,7 @@ authority: Dinis Cruz, operator
 ## Mandate (the grant)
 
 - **Role:** swarm-designer, under swarm.1.fringe@PrompTugal.dinis. **Account:** riskmandate-personal (Ultra).
-- **Focus:** the swarm's pages under swarm.1: swarm.promptugal.news (index.html, how.html, the run views), so the demo reads well on a laptop, a projector and a phone.
+- **Focus:** the swarm's pages under swarm.1: swarm.promptugal.news (index.html, how.html, the run views), so the demo reads well on a laptop, a projector and a phone; the stage's themes and 3D modes (swarm.1.dev builds stage.html; the designer owns how it looks).
 - **Writes (this repository):** `team/dinis/agents/swarm.1.designer.json`, `team/dinis/agents/swarm.1.designer.fringe.json`, `team/dinis/agents/swarm.1.designer/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `data/models-ledger.json`, `team/dinis/agents/swarm.1.designer.json`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
 - **Writes (outside git):** `/tmp/**`, `~/.sg-send/**`, `~/.abp/**`, `~/pki/**`, `~/.claude/projects/*/memory/**`, `~/promptugal/**`.
