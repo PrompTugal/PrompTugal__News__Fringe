@@ -1,6 +1,6 @@
 {
   "agent": "swarm.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T01:47Z",
+  "updated": "2026-11-12T03:47Z",
   "account": "riskmandate-personal (Ultra)",
   "session": "session_01Kw9UwFHqLAjKake7UEDjL3",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (11 Nov 2026, about 21:0x UTC: 'start a new agent called Swarm ... for our Swarm capabilities and our risk mandate Swarm, which we want to demo tomorrow')",
@@ -36,11 +36,12 @@
     "2026-11-12T01:40Z: at Dinis's word, started harness.1 (session_01Kw9UwEJ6ftqZvGuZ71MoFz), audience.1 the synthetic audience (session_01Kw9UwEqnB3nx2WMmjWDoye), and relay.1, relay.2, relay.3 for the Git and vault handover (session_01Kw9UwFh848oDoySQUW2thv, session_01Kw9UwBvW6QLYPMDxmiacxW, session_01Kw9UwBCB9ibNPNCC92HQC4); hourly wakes at :39 until 07:00 UTC; my own hourly review with screenshots at :45; all wakes disabled at 07:05 (trig_01T5xkh8YNUDuy3psoga8fa3)",
     "2026-11-12T01:40Z: the new mandate (click to zoom, the policy box and checks, SHarness before and after, PKI on everything, vaults colour-coded, mandate/reach/gap, demo packs) sent to swarm.1.dev, swarm.1.designer and storytelling.1",
     "2026-11-12T01:43Z: Swarm site publishes every tracked folder (602a6a8); data/agents.json, the session tree building the demo (cd8b4fc); pack 0 'the five questions' (a founder's identity/communication/governance/audit/why-allowed questions) with its evidence sent to storytelling.1; fast replay, size controls and the live agents view sent to swarm.1.dev and the designer; the storm newsroom's runner design noted as a case study",
-    "2026-11-12T01:47Z: hourly review 1: stage.html live (run 28, 13 scenes in 9 acts), screenshots and analysis sent to Dinis, fixes sent to swarm.1.dev and the designer; harness.1 unblocked by Dinis: of 12 attempts 11 succeed unharnessed and 2 (the workspace ones) plus 1 gap (17 credential-like env names inherited) under the harness, same output sha256 both ways; relay.2 unblocked, key in handover/keys.json"
+    "2026-11-12T01:47Z: hourly review 1: stage.html live (run 28, 13 scenes in 9 acts), screenshots and analysis sent to Dinis, fixes sent to swarm.1.dev and the designer; harness.1 unblocked by Dinis: of 12 attempts 11 succeed unharnessed and 2 (the workspace ones) plus 1 gap (17 credential-like env names inherited) under the harness, same output sha256 both ways; relay.2 unblocked, key in handover/keys.json",
+    "2026-11-12T02:47Z: hourly review 2: stage run 91 (43 scenes, 16 packs: five questions, harness, vaults, who built this ...), screenshots and analysis to Dinis, 5 fixes to swarm.1.dev; agent activity refreshed (924 commits, 46 agents, 24 h); overnight results: harness E1 to E7 plus 7 drafted findings; handovers h001 ok, h002 refused, h003 blocked under SHarness (finding F6)",
+    "2026-11-12T03:47Z: hourly review 3: stage run 105, main track (9 + close) walked; screenshots to Dinis; pacing and the E9 follow-up sent to swarm.1.dev; harness E9 closed the env and key-file gaps; relays idle (h004 waits on Dinis's door fix)"
   ],
   "next": [
-    "Dinis's brief on more experiments",
-    "07:05: disable the overnight wakes; morning summary for Dinis"
+    "07:05 morning review for Dinis: his decisions (file the 7 SHarness findings? F1 on stage? h003 fix; the 9-scene main track; which packs to keep; findings public on the site?)"
   ],
   "asks": [
     "Dinis: the repo's About box: gear icon > Website: https://swarm.promptugal.news (or tick 'Use your GitHub Pages website'); my tools cannot edit it",
