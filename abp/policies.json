@@ -1,7 +1,7 @@
 {
   "about": "The Agent Behaviour Policies of Lisbon Fringe (lisbontechfringe.com, origin in admin/site.json; WS-215) as data: deny by default, one grant per role and agent, across this repository and the others the swarm touches. Ported from PrompTugal__News__Website board/abp/policies.json (abp@PrompTugal.dinis, v1.7.0, since 6 November 2026), not invented anew; built on RiskMandate's Agent Behaviour Policy and Licence to Operate (https://riskmandate.ai/agent-behaviour-policy.html). Read by the hooks (.claude/settings.json, .claude/hooks/abp.mjs) and by the gate's commit check (abp/tools/abp.mjs check). abp/<agent>.md is generated from this file (node abp/tools/abp.mjs build), never edited by hand. Kept by architect.1.fringe@PrompTugal.dinis (work/39); any relaxation, and any move towards enforcement, is Dinis's decision.",
   "version": "0.4.1",
-  "updated": "2026-11-12T10:51Z",
+  "updated": "2026-11-12T11:52Z",
   "operator": "Dinis Cruz",
   "kept_by": "architect.1.fringe@PrompTugal.dinis",
   "status": "DRAFT: grants proposed from the git log (data/architecture.json observed); Dinis and the lead review",
@@ -301,7 +301,17 @@
       "what": "swarm.promptugal.news: the swarm demo (swarm.1's lane); its CLAUDE.md adds its own rules (the gate tools/gate.mjs, runs in runs/, a budget per run)",
       "writes": "the swarm role and its two workers below",
       "branch": "dev; main only by Dinis",
-      "stand_key": "An OpenRouter key for the stand, published on swarm.promptugal.news encrypted, with its passphrase in assets/stand-key.js by Dinis's choice (relayed by swarm.1, 2026-11-12T08:52Z: \"it is ok to put this on the site encrypted, with the decryption key somewhere on the code\"). That is obfuscation, not secrecy: treat the key as public. Its controls are OpenRouter's own, a budget cap and an expiry date (tools/seal-stand-key.mjs)."
+      "stand_key": "An OpenRouter key for the stand, published on swarm.promptugal.news encrypted, with its passphrase in assets/stand-key.js by Dinis's choice (relayed by swarm.1, 2026-11-12T08:52Z: \"it is ok to put this on the site encrypted, with the decryption key somewhere on the code\"). That is obfuscation, not secrecy: treat the key as public. Its controls are OpenRouter's own, a budget cap and an expiry date (tools/seal-stand-key.mjs).",
+      "stand_key_answer": {
+        "answer": "A SEPARATE key made for the stand (OPEN_ROUTER_WEB_SUMMIT, ends …e402), not the shared proxy-injected OPEN_ROUTER_KEY (different key, checked by its last 4 characters only); Dinis set a budget cap and an expiry on it at OpenRouter (his words, 12 Nov ~08:55 UTC: 'a key with a budget limit and with an expiry date'; earlier 'about 10 quid'); the exact cap and date are Dinis's to confirm.",
+        "where": "swarm.promptugal.news data/stand-key.json: AES-256-GCM, PBKDF2-SHA-256 600,000 rounds, passphrase in assets/stand-key.js by Dinis's decision (obfuscation, not secrecy)",
+        "decided_by": "Dinis, 12 Nov 2026 ~08:35 and ~08:55 UTC",
+        "controls": "OpenRouter's own: the key's budget cap and expiry; it reaches only openrouter.ai, in the Authorization header, from the tablets' browsers",
+        "answered_by": "swarm.1.fringe@PrompTugal.dinis",
+        "answered_at": "2026-11-12T11:23Z",
+        "for": "security.fringe@PrompTugal finding 50 (security/reviews/2026-11-12-1030.md)",
+        "note": "written by swarm.1 into abp/policies.json at the top level (35c490b), an R6 finding (abp/ is the architect's); moved here by architect.1 at 2026-11-12T11:52Z, content unchanged"
+      }
     }
   },
   "common": {
@@ -1259,6 +1269,11 @@
         "round": 15,
         "file": "abp/reviews/2026-11-12-10.md",
         "at": "2026-11-12T10:51Z"
+      },
+      {
+        "round": 16,
+        "file": "abp/reviews/2026-11-12-11.md",
+        "at": "2026-11-12T11:52Z"
       }
     ]
   },
@@ -1415,14 +1430,5 @@
       "also": "PrompTugal__News__Swarm__Runs' GitHub Actions workflows (R8) read it as the repository secret ELASTIC_CLOUD, which Dinis added himself for the demo (2026-11-11, 23:2x UTC); there it is the Action's, not an agent's, and only through env at the flow step.",
       "dinis_risk_decision": "Dinis, 2026-11-12T01:44Z: \"don't worry about the elastic password because that's disposable. None of that is confidential. None of the data that is there is confidential, and it's a temporary Elastic account.\" So no scoped Elastic keys are asked for; R8e stays an observed habit (who uses it), and R8 still means it is never printed or committed."
     }
-  ],
-  "stand_key": {
-    "answer": "A SEPARATE key made for the stand (OPEN_ROUTER_WEB_SUMMIT, ends …e402), not the shared proxy-injected OPEN_ROUTER_KEY (different key, checked by its last 4 characters only); Dinis set a budget cap and an expiry on it at OpenRouter (his words, 12 Nov ~08:55 UTC: 'a key with a budget limit and with an expiry date'; earlier 'about 10 quid'); the exact cap and date are Dinis's to confirm.",
-    "where": "swarm.promptugal.news data/stand-key.json: AES-256-GCM, PBKDF2-SHA-256 600,000 rounds, passphrase in assets/stand-key.js by Dinis's decision (obfuscation, not secrecy)",
-    "decided_by": "Dinis, 12 Nov 2026 ~08:35 and ~08:55 UTC",
-    "controls": "OpenRouter's own: the key's budget cap and expiry; it reaches only openrouter.ai, in the Authorization header, from the tablets' browsers",
-    "answered_by": "swarm.1.fringe@PrompTugal.dinis",
-    "answered_at": "2026-11-12T11:23Z",
-    "for": "security.fringe@PrompTugal finding 50 (security/reviews/2026-11-12-1030.md)"
-  }
+  ]
 }
