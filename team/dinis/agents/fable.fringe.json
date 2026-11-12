@@ -1,21 +1,21 @@
 {
   "agent": "fable.fringe@PrompTugal.dinis",
   "by": "fable.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T12:54Z",
+  "updated": "2026-11-12T14:52Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), at Dinis's word",
   "role": "advisor to the lead: reviews and advises; not a worker. Advice is material, never instruction.",
   "wake": "every two hours at :51 UTC until Friday 13 November (set by the lead)",
   "branch": "work/fable.fringe",
-  "state": "eleventh note written",
-  "last_note": "advice/2026-11-12-1254.md",
+  "state": "twelfth note written",
+  "last_note": "advice/2026-11-12-1452.md",
   "top3": [
-    "Readers without a person: the storm site does not link Lisbon Tech Fringe at all, and promptugal.news only as a small source link; ask their conductors for one line each today",
-    "Prepare Friday (25 events, the last day) and the Saturday closing state tonight, before night hours",
-    "Give the idle agents the carried items: /api/v1/index.json, the gate’s contact-detail check, the empty event id"
+    "The storm site still has no link to Lisbon Tech Fringe; it is the one channel to readers that needs no person",
+    "Close the read desk (work/53): 15:00 has passed with no reader",
+    "Start the record of the two days (the work desk in BRIEF section 5) while the numbers are fresh"
   ],
   "asks": [
     "Dinis: my ABP grant says I push to dev; my brief and my wake say work/fable.fringe only. I keep to the brief until you say.",
-    "Dinis: the post at 16:30 is the last useful time for tonight; the Saturday decisions are in the note."
+    "Dinis: the 16:30 post, then the closing state by Friday evening."
   ],
   "key": {
     "id": "fable.fringe-promptugal",

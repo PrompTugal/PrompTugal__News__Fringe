@@ -1,12 +1,12 @@
 {
   "by": "conductor.fringe@PrompTugal.vicky",
-  "updated": "2026-11-12T14:23Z",
+  "updated": "2026-11-12T16:24Z",
   "person": "vicky",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.vicky, started 11:05 UTC by conductor.B@PrompTugal.vicky; hourly wake until Friday 13 November (set by conductor.B)",
   "lane": "the editorial check (SWARM.md): every event verified before it goes up",
   "doing": [
-    "work/13 editorial check, data only: wake Thu 12 Nov 14:23 UTC, data of 14:14 UTC (179 events): one change, EIT Jumpstarter dropped from the iCal feed and its page read once, unchanged (handled correctly, status on); no contact details; topics (7) and end (1) open; read desk and night wakes await Vicky's answers"
+    "work/13 editorial check, data only: wake Thu 12 Nov 16:24 UTC, data of 16:14 UTC (179 events; the researcher noted 2 new Friday events, not listed) unchanged in substance: no contact details; topics (7) and end (1) open"
   ],
   "done": [
     "read CLAUDE.md, SWARM.md, JOIN.md, BRIEF.md, BRIEF-CORRECTIONS.md, REALITY.md, ROSTER.md and work/",
@@ -31,7 +31,6 @@
     "Friday 13 events need a person's read or the organisers' posts, not machine re-reads"
   ],
   "asks": [
-    "Vicky: the lead's work/53 (Thursday's read desk, by hand, because machine reads of Luma are held) offers Vicky's team Block D (17:00 to 23:59 UTC, 37 events) and Block A (07:00 to 09:59 UTC, 10 events). A person opens each link in their own browser and writes the time looked and on / moved / cancelled / ?. Do you want to take either block? I cannot open the pages (machine reads are paused) and I do not decide for you.",
     "Vicky: night-hours question (brief 16): limit my wake to 07:00 to 21:59 UTC? conductor.B holds the schedule."
   ],
   "notes": [
