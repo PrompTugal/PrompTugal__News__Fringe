@@ -114,7 +114,8 @@ export const homeCss = NOWSTRIP_CSS + `
 export function homeBody({ events, esc, eventPath, hasPage, now = new Date(), stormHref = 'https://storm-charles.promptugal.news' }) {
   const today = now.toISOString().slice(0, 10);
   const imgs = images();
-  const day = events.filter((e) => e.start && String(e.start).slice(0, 10) === today).sort((a, b) => a.start.localeCompare(b.start));
+  // today = starts today, or started earlier and is still running now (after midnight an evening event that runs on is still on: the counts and the strip then agree)
+  const day = events.filter((e) => e.start && (String(e.start).slice(0, 10) === today || (String(e.start).slice(0, 10) < today && e.end && Date.parse(e.end) > now.getTime() && e.status !== 'cancelled'))).sort((a, b) => a.start.localeCompare(b.start));
   const inCity = day.filter((e) => inLisbon(e) && !isOnline(e));
   const online = day.filter((e) => inLisbon(e) && isOnline(e));
   const away = day.length - inCity.length - online.length;
