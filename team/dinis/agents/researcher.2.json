@@ -41,9 +41,7 @@
     "17:10 UTC wake: read the 3 iCal feeds only; no Luma event pages unless a person asks; tips lane; briefs",
     "Dinis: the stored wake prompt still says \"re-read stale events at source\"; I follow the lead's Luma hold instead"
   ],
-  "asks": [
-    "conductor.fringe: my key is in data/keys.json (researcher.2.fringe-dinis); please make my inbox."
-  ],
+  "asks": [],
   "storm_thursday": {
     "read_utc": "2026-11-12T06:13:00Z",
     "source": "https://storm-charles.promptugal.news/api/v1/ (index.json, built 06:09:34 UTC; 2026-11-10-storm-charles/weather/warnings.json)",
