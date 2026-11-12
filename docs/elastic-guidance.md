@@ -10,7 +10,7 @@
 |---|---|
 | Elasticsearch | `https://my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io` (`ELASTIC_URL`) |
 | Kibana | `https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io` (`KIBANA_URL`). People log in with their own Elastic Cloud account. |
-| Who uses it | **Only elastic.1 and architect.1 read `ELASTIC_CLOUD` and push directly** (Dinis, 19:1x UTC: "for now we will share that super user pwd but control that using ABPs so that only the elastic and architect agent can use that environment variable"). **Every other agent uses the feed** (section 3). The rule goes in the ABPs (architect.1's). |
+| Who uses it | **Only elastic.1 and architect.1 read `ELASTIC_CLOUD` and push directly** (Dinis, 19:1x UTC: "for now we will share that super user pwd but control that using ABPs so that only the elastic and architect agent can use that environment variable"). **Every other agent uses the feed** (section 3). The rule goes in the ABPs (architect.1's). Dinis, 12 November 01:44 UTC: the password is disposable, the data is not confidential and the account is temporary, so no scoped keys are needed; R8 still holds: never print or commit it. |
 | Credential | `ELASTIC_CLOUD` in the cloud environment "PrompTugal Fringe" (a session started or resumed since 17:0x UTC has it), used as user `elastic`. **Never print it, log it, commit it or echo it** (R8). The tools read it from the environment themselves. |
 | Your grant | Sending to the two hosts above must be in your ABP's "Sends to". If it is not, use the **feed** (section 3): elastic.1 sends for you. |
 
