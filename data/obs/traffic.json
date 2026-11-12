@@ -5,7 +5,7 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T12:10Z",
+ "generated": "2026-11-12T12:25Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
@@ -16,10 +16,10 @@
   "tabs": 278,
   "countries": 21,
   "shares": 193,
-  "bots": 2112,
+  "bots": 2121,
   "crawler_tabs": 1,
-  "agent_runs": 397,
-  "agent_runs_signed": 351
+  "agent_runs": 403,
+  "agent_runs_signed": 355
  },
  "by_hour": [
   [
@@ -1323,7 +1323,7 @@
    39
   ]
  ],
- "other_hosts_views": 4754,
+ "other_hosts_views": 4818,
  "by_via": [
   [
    "whatsapp",
@@ -1372,7 +1372,7 @@
  "agents": [
   [
    "elastic.1.fringe@PrompTugal.dinis",
-   32
+   33
   ],
   [
    "design.4.fringe@PrompTugal.dinis",
@@ -1384,7 +1384,7 @@
   ],
   [
    "conductor.fringe@PrompTugal.jose",
-   28
+   29
   ],
   [
    "ontologist.1.fringe@PrompTugal.dinis",
@@ -1404,7 +1404,7 @@
   ],
   [
    "researcher.fringe@PrompTugal.dinis",
-   21
+   22
   ],
   [
    "observability.fringe@PrompTugal.dinis",
@@ -1412,7 +1412,11 @@
   ],
   [
    "design.2.fringe@PrompTugal.dinis",
-   19
+   20
+  ],
+  [
+   "researcher.2@PrompTugal.dinis",
+   18
   ],
   [
    "researcher.1.fringe@PrompTugal.jose",
@@ -1423,16 +1427,12 @@
    17
   ],
   [
-   "researcher.2@PrompTugal.dinis",
-   17
-  ],
-  [
    "capture.1.fringe@PrompTugal.dinis",
    17
   ],
   [
    "dev.2.fringe@PrompTugal.dinis",
-   14
+   15
   ],
   [
    "swarm.1.fringe@PrompTugal.dinis",
@@ -1802,7 +1802,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-roast-your-website/",
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ]
   ]
