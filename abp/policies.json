@@ -1415,5 +1415,14 @@
       "also": "PrompTugal__News__Swarm__Runs' GitHub Actions workflows (R8) read it as the repository secret ELASTIC_CLOUD, which Dinis added himself for the demo (2026-11-11, 23:2x UTC); there it is the Action's, not an agent's, and only through env at the flow step.",
       "dinis_risk_decision": "Dinis, 2026-11-12T01:44Z: \"don't worry about the elastic password because that's disposable. None of that is confidential. None of the data that is there is confidential, and it's a temporary Elastic account.\" So no scoped Elastic keys are asked for; R8e stays an observed habit (who uses it), and R8 still means it is never printed or committed."
     }
-  ]
+  ],
+  "stand_key": {
+    "answer": "A SEPARATE key made for the stand (OPEN_ROUTER_WEB_SUMMIT, ends …e402), not the shared proxy-injected OPEN_ROUTER_KEY (different key, checked by its last 4 characters only); Dinis set a budget cap and an expiry on it at OpenRouter (his words, 12 Nov ~08:55 UTC: 'a key with a budget limit and with an expiry date'; earlier 'about 10 quid'); the exact cap and date are Dinis's to confirm.",
+    "where": "swarm.promptugal.news data/stand-key.json: AES-256-GCM, PBKDF2-SHA-256 600,000 rounds, passphrase in assets/stand-key.js by Dinis's decision (obfuscation, not secrecy)",
+    "decided_by": "Dinis, 12 Nov 2026 ~08:35 and ~08:55 UTC",
+    "controls": "OpenRouter's own: the key's budget cap and expiry; it reaches only openrouter.ai, in the Authorization header, from the tablets' browsers",
+    "answered_by": "swarm.1.fringe@PrompTugal.dinis",
+    "answered_at": "2026-11-12T11:23Z",
+    "for": "security.fringe@PrompTugal finding 50 (security/reviews/2026-11-12-1030.md)"
+  }
 }
