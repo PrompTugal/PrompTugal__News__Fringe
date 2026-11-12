@@ -1,11 +1,11 @@
 {
  "agent": "outreach.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-12T16:36Z",
+ "updated": "2026-11-12T17:35Z",
  "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 6)",
  "model": "Sonnet",
  "wake": "hourly at :35 (set by the lead)",
  "branch": "dev",
- "state": "16:35 wake: quiet; /traffic/ 16:26 UTC: 596 views, whatsapp 162 (+1), linkedin 22; organiser-tagged visits 0; 76 organisers, 5 contacted, 0 answered, 0 joined; 'tonight' post slot is now; Friday's post by about 07:00 UTC",
+ "state": "17:35 wake: quiet; /traffic/ 17:25 UTC: 601 views, whatsapp 162, linkedin 22; organiser-tagged visits 0; 76 organisers, 5 contacted, 0 answered, 0 joined; Friday's counts to be rechecked at the 21:35 wake before night hours",
  "doing": [
   "work/29 owner; with work/18 and work/23"
  ],
@@ -50,11 +50,12 @@
   "13:35 wake: no hold, no new brief, inbox empty; the lead's wake (13:21) routed Friday's post to outreach.1: already drafted at 13:2x",
   "14:35 wake: no hold, no new brief, inbox empty; counts unchanged",
   "15:35 wake: no hold, no new brief, inbox empty; counts unchanged",
-  "16:35 wake: no hold, no new brief, inbox empty; counts unchanged; whatsapp tag +1 view since 15:26"
+  "16:35 wake: no hold, no new brief, inbox empty; counts unchanged; whatsapp tag +1 view since 15:26",
+  "17:35 wake: no hold, no new brief, inbox empty; no commit from anyone else since 16:35; counts unchanged"
  ],
  "next": [
-  "next wake: count by_via entries starting 'organiser-' in /traffic/traffic.json and note them in the tracker",
-  "when Jose or Dinis sends round 2 notes: mark them sent in the tracker"
+  "21:35 wake: recheck Friday's counts in work/drafts/post-friday.md against data/events.json (25 events, first 08:00, 19 free, 12 at PTW Palace, one in M\u00e9rtola) and update if it changed",
+  "count organiser-tagged visits at each wake"
  ],
  "asks": [
   "Dinis: 'contacts' = public routes and official accounts; named public professionals need your word, emails/phones stay out of git (CLAUDE.md)",
