@@ -1,11 +1,11 @@
 {
   "agent": "elastic.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T01:45Z",
+  "updated": "2026-11-12T07:11Z",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis, at Dinis's word (briefs/2026-11-11-1630-r5-r8-r9-enforced-and-elastic.md)",
   "branch": "dev",
   "wake": "hourly at :07, 07:07 to 21:07 UTC (night hours, brief 16), until Friday 13 November",
-  "state": "working: the steward of the swarm's Elastic; every agent can now submit (docs/elastic-guidance.md)",
+  "state": "working: the steward of the swarm's Elastic; 10 dashboards live for today's Web Summit demo",
   "doing": [
     "the cross-conductor test, live: https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io/app/dashboards#/view/c05d37c3-bf3c-6cb2-e2c9-a7dda8441c97 (watcher until about 22:3x UTC)",
     "stewarding Elastic: the agents' submissions (push and feed), the catalog, the operations dashboard; the eight dashboards refreshed hourly"
@@ -40,7 +40,8 @@
     "23:23: security finding 45 (the lead, 8th review): accepted. elastic/kibana/objects.ndjson was 257,550 bytes at edf4d97 (under the limit, passed); eebb9cd took it to 262,171 bytes (gate RED, not pushed by release.sh); the fix 30d59e6 passed the gate (file gone from the tree), but the push carried eebb9cd as its parent, so the blob is in dev's history. The gate checks HEAD's tree, not each pushed commit: suggested to the lead that release.sh check every commit in origin/dev..HEAD (dev's tool). Mine: generated objects stay outside git; a RED gate gets fixed before any oversized commit is pushed; no history rewrite",
     "00:10 UTC wake: 28 indices, 18,421 documents refreshed, 0 errors. swarm-flows grew to 1,534 events: swarm.1.fringe@PrompTugal.dinis in R8 GitHub Actions (PrompTugal__News__Swarm__Runs) wrote 1,216 live events this hour (19 flows), 0 held, 0 errors. The export for neo4j.1 is now compact and chunked (columns plus rows, repeated values in a dict, chunks of at most 200 KB: 2 chunks, 344 KB instead of 1,004 KB), so it stays under the 256 KB rule (finding 45). OpenRouter: 807 calls traced, 760 on dc:promptugal:agents (354 this hour, about 0.93 USD on that key). data/events.json still has 30 malformed read_at. No new brief.",
     "00:11: architect.1's answers (material): swarm.1 in GitHub Actions uses the superuser password as a repository secret Dinis added for the demo, recorded in abp/policies.json (R8e.also; checked); Neo4j not needed now (Dinis 23:3x), so the swarm-flows export is dropped from git and from the hourly wake",
-    "01:45: Dinis's risk decision (01:44 UTC, relayed by architect.1; checked in abp/policies.json restricted_secrets.dinis_risk_decision): the Elastic password is disposable, the data is not confidential, the account is temporary; no scoped Elastic keys asked for; R8 still holds (never printed or committed). Asks about scoped keys removed (2). Brief 16 (00:41 UTC): night hours; my wake now runs 07:07 to 21:07 UTC (changed by the lead at Dinis's word); the swarm demo agents write swarm-flows live overnight, so the altitude dashboards stay current"
+    "01:45: Dinis's risk decision (01:44 UTC, relayed by architect.1; checked in abp/policies.json restricted_secrets.dinis_risk_decision): the Elastic password is disposable, the data is not confidential, the account is temporary; no scoped Elastic keys asked for; R8 still holds (never printed or committed). Asks about scoped keys removed (2). Brief 16 (00:41 UTC): night hours; my wake now runs 07:07 to 21:07 UTC (changed by the lead at Dinis's word); the swarm demo agents write swarm-flows live overnight, so the altitude dashboards stay current",
+    "07:11 UTC wake (first after night hours): 28 indices, 18,819 documents refreshed, 0 errors. Overnight (00:10 to 07:00 UTC) on Elastic: no agent submissions, no new swarm-flows events (swarm.1's last at 00:00:54 UTC; 1,534 events in all): the swarm agents spent the night building the demo packs (stage, harness, vaults, audience), not executing runs, and are ready for Dinis at 07:00 (swarm.1.dev: 'Elastic drawn'). OpenRouter: 827 calls traced (760 on dc:promptugal:agents, unchanged overnight; 67 on dc:newsroom.ai:browser:oct-2026, 20 overnight). data/events.json still has 30 malformed read_at (researcher.2 asked; trimmed at ingest). No new brief since brief 16."
   ],
   "next": [
     "each wake: the OpenRouter traces come in with every router call (dashboard 9); join them with fringe-altitudes A1 units on model and time",
