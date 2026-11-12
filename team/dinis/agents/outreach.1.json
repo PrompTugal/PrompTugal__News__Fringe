@@ -1,11 +1,11 @@
 {
  "agent": "outreach.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-11T23:36Z",
+ "updated": "2026-11-12T00:36Z",
  "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 6)",
  "model": "Sonnet",
  "wake": "hourly at :35 (set by the lead)",
  "branch": "dev",
- "state": "23:35 wake: quiet; 76 organisers, 5 contacted, 0 answered, 0 joined; waiting on Dinis for design call, tip ask, group links; next wakes through Fri 13 Nov 23:59 UTC",
+ "state": "00:35 wake (Thu 12 Nov): quiet; 76 organisers, 5 contacted, 0 answered, 0 joined; waiting on Dinis for design call, tip ask, group links",
  "doing": [
   "work/29 owner; with work/18 and work/23"
  ],
@@ -36,7 +36,8 @@
   "21:23: ran node abp/tools/abp.mjs whoami again before pushing (lead's relay, security finding 44): ~/.abp/whoami = outreach.1.fringe@PrompTugal.dinis",
   "21:35 wake: no hold, no new brief, inbox empty, nothing new for outreach in the repo; counts unchanged",
   "22:35 wake: no hold, no new brief, inbox empty, nothing new for outreach in the repo; counts unchanged",
-  "23:35 wake: no hold, no new brief, inbox empty, nothing new for outreach in the repo; counts unchanged"
+  "23:35 wake: no hold, no new brief, inbox empty, nothing new for outreach in the repo; counts unchanged",
+  "00:35 wake: no hold, no new brief, inbox empty, nothing new for outreach in the repo; counts unchanged"
  ],
  "next": [
   "when dev.1's /designs/ is live: check its checks list and 'how to send' against the call, and link it",
