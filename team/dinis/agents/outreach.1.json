@@ -1,11 +1,11 @@
 {
  "agent": "outreach.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-12T13:36Z",
+ "updated": "2026-11-12T14:35Z",
  "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 6)",
  "model": "Sonnet",
  "wake": "hourly at :35 (set by the lead)",
  "branch": "dev",
- "state": "13:35 wake: Friday's post done (work/drafts/post-friday.md); nothing sent since yesterday as far as /traffic/ shows (13:26 UTC: 578 views; whatsapp 161, linkedin 22 unchanged); organiser-tagged visits 0; 76 organisers, 5 contacted, 0 answered, 0 joined",
+ "state": "14:35 wake: quiet; nothing sent since yesterday as far as /traffic/ shows (14:26 UTC: 585 views; whatsapp 161, linkedin 22); organiser-tagged visits 0; 76 organisers, 5 contacted, 0 answered, 0 joined; next slot: 'tonight' post about 16:30 UTC",
  "doing": [
   "work/29 owner; with work/18 and work/23"
  ],
@@ -47,7 +47,8 @@
   "11:35 wake: no hold, no new brief, inbox empty; organiser-tagged visits still 0; whatsapp 161, linkedin 22 unchanged since yesterday; the lunchtime 'tonight' post has not been reported posted",
   "12:35 wake: no hold, no new brief, inbox empty; nothing sent since yesterday as far as the tracker and /traffic/ show; the 16:30 UTC 'tonight' post slot is next",
   "lead's relay 13:24: work/drafts/post-friday.md (WhatsApp and LinkedIn; morning about 07:00 UTC and again about 12:00 UTC; no 'walk in'; tagged; independence line); flagged that M\u00e9rtola Tech Day is not in Lisbon",
-  "13:35 wake: no hold, no new brief, inbox empty; the lead's wake (13:21) routed Friday's post to outreach.1: already drafted at 13:2x"
+  "13:35 wake: no hold, no new brief, inbox empty; the lead's wake (13:21) routed Friday's post to outreach.1: already drafted at 13:2x",
+  "14:35 wake: no hold, no new brief, inbox empty; counts unchanged"
  ],
  "next": [
   "next wake: count by_via entries starting 'organiser-' in /traffic/traffic.json and note them in the tracker",
