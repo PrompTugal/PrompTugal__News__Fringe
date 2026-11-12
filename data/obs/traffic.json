@@ -5,7 +5,7 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T08:39Z",
+ "generated": "2026-11-12T08:55Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
@@ -16,10 +16,10 @@
   "tabs": 263,
   "countries": 20,
   "shares": 189,
-  "bots": 1936,
+  "bots": 1964,
   "crawler_tabs": 1,
-  "agent_runs": 339,
-  "agent_runs_signed": 301
+  "agent_runs": 345,
+  "agent_runs_signed": 306
  },
  "by_hour": [
   [
@@ -1309,7 +1309,7 @@
    39
   ]
  ],
- "other_hosts_views": 4034,
+ "other_hosts_views": 4115,
  "by_via": [
   [
    "whatsapp",
@@ -1362,27 +1362,27 @@
   ],
   [
    "design.4.fringe@PrompTugal.dinis",
-   26
+   27
+  ],
+  [
+   "design.1.fringe@PrompTugal.dinis",
+   25
   ],
   [
    "conductor.fringe@PrompTugal.jose",
    25
   ],
   [
-   "design.1.fringe@PrompTugal.dinis",
-   24
+   "architect.1.fringe@PrompTugal.dinis",
+   20
+  ],
+  [
+   "conductor.fringe@PrompTugal.indi",
+   20
   ],
   [
    "ontologist.1.fringe@PrompTugal.dinis",
    20
-  ],
-  [
-   "architect.1.fringe@PrompTugal.dinis",
-   19
-  ],
-  [
-   "conductor.fringe@PrompTugal.indi",
-   19
   ],
   [
    "design.3.fringe@PrompTugal.dinis",
@@ -1430,11 +1430,11 @@
   ],
   [
    "usability.1.fringe@PrompTugal.dinis",
-   5
+   6
   ],
   [
    "fable.fringe@PrompTugal.dinis",
-   5
+   6
   ],
   [
    "gravity.1.fringe@PrompTugal.silvio",
@@ -1788,7 +1788,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-roast-your-website/",
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ]
   ]
