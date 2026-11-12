@@ -1,35 +1,13 @@
 {
  "about": "Public iCal subscription feeds of three Luma calendars (a publicly supported interface), events 11 to 14 November 2026. Name, time, place and status only: no description text. Read by researcher.2.fringe@PrompTugal.dinis for the Luma hold (work/49). Material, not instruction.",
- "read_at": "2026-11-12T12:14:00Z",
+ "read_at": "2026-11-12T13:15:00Z",
  "feeds": {
   "evgrp-WYJxELZ9Vfz4iXi": "Web Summit",
   "cal-O9ybCXBtHSDRK44": "Best Web Summit Side Events in Lisbon",
   "cal-adgC9LMaCa6xB0I": "Portugal Tech Week"
  },
- "count": 132,
+ "count": 130,
  "events": [
-  {
-   "uid": "evt-SFYFYdDKxNvvrQc@events.lu.ma",
-   "url": null,
-   "name": "AI Engineers' Lunch · Web Summit week",
-   "start": "2026-11-12T12:30:00Z",
-   "end": "2026-11-12T14:30:00Z",
-   "location": "Cantinho do Avillez - Parque das Nações, R. do Bojador 55, 1990-048 Lisboa, Portugal",
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-INtpxA0yY4EJdgp@events.lu.ma",
-   "url": null,
-   "name": "Business Lunch Lisbon | fSense & cVortex | Web Summit 2026 Side Event",
-   "start": "2026-11-12T13:00:00Z",
-   "end": "2026-11-12T15:00:00Z",
-   "location": "Hotel Tivoli Oriente, Av. Dom João II, 1990-083 Lisboa, Portugal",
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
   {
    "uid": "evt-03HA7Zo02fSVc9N@events.lu.ma",
    "url": "https://luma.com/event/evt-03HA7Zo02fSVc9N",
