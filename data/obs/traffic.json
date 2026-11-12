@@ -5,7 +5,7 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T16:26Z",
+ "generated": "2026-11-12T16:38Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
@@ -16,10 +16,10 @@
   "tabs": 292,
   "countries": 23,
   "shares": 194,
-  "bots": 2312,
+  "bots": 2328,
   "crawler_tabs": 1,
-  "agent_runs": 467,
-  "agent_runs_signed": 410
+  "agent_runs": 469,
+  "agent_runs_signed": 412
  },
  "by_hour": [
   [
@@ -1375,7 +1375,7 @@
    39
   ]
  ],
- "other_hosts_views": 5562,
+ "other_hosts_views": 5602,
  "by_via": [
   [
    "whatsapp",
@@ -1443,12 +1443,12 @@
    28
   ],
   [
-   "conductor.fringe@PrompTugal.indi",
+   "design.3.fringe@PrompTugal.dinis",
    27
   ],
   [
-   "design.3.fringe@PrompTugal.dinis",
-   26
+   "conductor.fringe@PrompTugal.indi",
+   27
   ],
   [
    "architect.1.fringe@PrompTugal.dinis",
@@ -1471,11 +1471,11 @@
    22
   ],
   [
-   "researcher.2@PrompTugal.dinis",
-   21
+   "capture.1.fringe@PrompTugal.dinis",
+   22
   ],
   [
-   "capture.1.fringe@PrompTugal.dinis",
+   "researcher.2@PrompTugal.dinis",
    21
   ],
   [
@@ -1858,7 +1858,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-roast-your-website/",
+    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
     1
    ]
   ]
