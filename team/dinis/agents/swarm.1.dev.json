@@ -1,12 +1,12 @@
 {
   "agent": "swarm.1.dev.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T03:09Z",
+  "updated": "2026-11-12T03:40Z",
   "written_by": "swarm.1.dev.fringe@PrompTugal.dinis (its own session)",
   "session": "session_01Kw9UwFCZKpkLq9iapcyzSt",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis at Dinis's word (23:4x UTC)",
   "reports_to": "swarm.1.fringe@PrompTugal.dinis",
-  "state": "the stage (Swarm 89edf3e): 40 scenes in the whole story, the main track (9 + close), 16 packs; E8 (loops under the harness) is in; swarm.1's review 1-5 applied; every step walked clean (148)",
+  "state": "the stage (Swarm ee8bdbc): main track reviewed scene by scene at 1920; every step walked clean (148, main 37) with a new layout check (NO LAYOUT, the designer's idea)",
   "doing": [
     "the stage: new evidence becomes scenes as it lands"
   ],
@@ -21,13 +21,14 @@
     "2026-11-12T02:20Z: stage: double-click zooms to a unit and everything it started; the Runs summary live every minute; 'Every run' includes the Runs repo's 15 runs; F1 built and held back; the designer's orbit mode (Swarm 8d14251, 1ae5ae0, 5db6d57)",
     "2026-11-12T02:35Z: 02:30 wake: handovers h002 and h003 as scenes (an 'inside the harness' lane, failed steps amber); card scenes fold 'This run' (Dinis: hide things, fade in); agent-activity refreshed (911 commits, 46 agents); merged swarm.1.designer's flow and pulse styles (Swarm dcb84d7)",
     "2026-11-12T03:01Z: the real engine under the harness (E7); h002 in two beats (reach vs behaviour); the main track; audience.1's review 3 (counts, act numbers, capabilities named, ELASTIC_CLOUD as it is); the disk-plaintext lane; FIX: compare/keys/needheld/glyph renderers restored after d0049f4 cut them; the walk now flags a card that shows only its title (Swarm 96415ee, 8fec05d, a0a96cb)",
-    "2026-11-12T03:09Z: E8 as scene harness-loops (4 A2 loops x 3 tries, 12 of 12 refused, $0); swarm.1's review: the harness pack opens on the harness, full hop text on hover/click, the whole team tree from the start, a second number on identity, the database badge REAL RUN · SIMULATED DATABASE; ELASTIC_CLOUD as a disposable logging account with the honest gap (storytelling.1's c95e554) (Swarm 89edf3e)"
+    "2026-11-12T03:09Z: E8 as scene harness-loops (4 A2 loops x 3 tries, 12 of 12 refused, $0); swarm.1's review: the harness pack opens on the harness, full hop text on hover/click, the whole team tree from the start, a second number on identity, the database badge REAL RUN · SIMULATED DATABASE; ELASTIC_CLOUD as a disposable logging account with the honest gap (storytelling.1's c95e554) (Swarm 89edf3e)",
+    "2026-11-12T03:40Z: ELASTIC_CLOUD said as the deployment's superuser password on a disposable account (swarm.1's correction, 07621f2); the walk checks card layouts (grid rows) after the designer restored the CSS d0049f4 had cut (0b525b0); tree labels no longer collide and the caption keeps its own room on screen (ee8bdbc)"
   ],
   "next": [
     "refresh data/agent-activity.json each wake",
     "F1 and h003 join the story if Dinis says yes",
     "harness.1's next experiments as scenes",
-    "the designer's review of 89edf3e at projector scale"
+    "keep reviewing the main track at 1920 and laptop width"
   ],
   "asks": [
     "Dinis: the main track (#pack=main, 9 scenes + the sentence) or the whole story: which one do you present? And may findings F1 and F6/h003 be shown (held back at #pack=findings)?"
