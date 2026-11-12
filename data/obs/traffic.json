@@ -18,8 +18,8 @@
   "shares": 194,
   "bots": 2328,
   "crawler_tabs": 1,
-  "agent_runs": 469,
-  "agent_runs_signed": 412
+  "agent_runs": 470,
+  "agent_runs_signed": 413
  },
  "by_hour": [
   [
@@ -1460,7 +1460,7 @@
   ],
   [
    "observability.fringe@PrompTugal.dinis",
-   24
+   25
   ],
   [
    "design.2.fringe@PrompTugal.dinis",
@@ -1858,7 +1858,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
+    "whatsapp: /e/2026-11-11-roast-your-website/",
     1
    ]
   ]
