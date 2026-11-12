@@ -15,3 +15,22 @@ export function checkedPhrase(reads) {
   return `${day(a)} ${hm(a)} to ${day(b)} ${hm(b)} UTC`;
 }
 export const checkedLine = (reads, esc = String) => { const p = checkedPhrase(reads); return p ? `Status last checked ${esc(p)}; check the organiser's page before you go.` : ''; };
+
+// Two facts, each with its time (advice 0852, the lead 09:2x): the times seen in the organisers' own calendar feeds (seen_at, from
+// researcher.2's iCal pass), and when cancellations and notes were last read (read_at). "today" only when it is the build's day.
+const when = (iso, now) => (String(iso).slice(0, 10) === new Date(now).toISOString().slice(0, 10) ? 'today' : day(iso));
+export function statusLine(events, now = new Date(), esc = String) {
+  const reads = events.map((e) => e.read_at).filter(Boolean);
+  const seen = events.filter((e) => e.seen_at);
+  if (!reads.length) return '';
+  const tail = `cancellations and notes last checked ${checkedPhrase(reads)}; check the organiser's page before you go.`;
+  if (!seen.length) return esc(`Status last checked ${checkedPhrase(reads)}; check the organiser's page before you go.`);
+  const latest = seen.map((e) => e.seen_at).sort().at(-1);
+  return esc(`Times confirmed in the organisers' calendar feeds ${when(latest, now)} at ${hm(latest)} UTC (${seen.length} of ${events.length} events seen); ${tail}`);
+}
+export function eventStatusLine(e, now = new Date(), esc = String) {
+  if (!e.read_at) return '';
+  const tail = `cancellation and notes last checked ${checkedPhrase([e.read_at])}; check the organiser's page before you go.`;
+  if (!e.seen_at) return esc(`Status last checked ${checkedPhrase([e.read_at])}; check the organiser's page before you go.`);
+  return esc(`Time confirmed in the organiser's calendar feed ${when(e.seen_at, now)} at ${hm(e.seen_at)} UTC; ${tail}`);
+}

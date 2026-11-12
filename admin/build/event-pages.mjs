@@ -63,7 +63,7 @@ const CSS = `.star{background:var(--card);border:1px solid var(--line);border-le
 blockquote{margin:.4em 0;padding:.3em .8em;border-left:3px solid var(--line);color:var(--fg)}.yours{border-left:4px solid var(--warn)}`;
 
 // page(title, body, desc, head) and linkify come from build.mjs, so the layout, independence line and footer are the site's own.
-import { checkedLine } from './readline.mjs';   // design.1
+import { eventStatusLine } from './readline.mjs';   // design.1
 export function eventPages(events, { page, esc, linkify, SITE, card, cardList, orgs, dense, intel = "", graphLinks = () => '' }) {
   ORGS = orgs || null;
   const list = events.filter(hasPage);
@@ -103,7 +103,7 @@ else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.
 else{done('Copy this address: '+u)}}})();</script>
 <dl class="facts">${facts}${graphLinks(e.id)}</dl>
 <p class="muted">Source: <a href="${esc(e.url)}">${esc(e.url)}</a>, read ${esc(String(e.read_at).slice(0, 16).replace('T', ' '))} UTC.</p>
-<p class="muted readline" data-read="${Date.parse(e.read_at) || 0}">${checkedLine([e.read_at], esc)}<span class="readage"></span></p><script src="/age.js" defer></script>
+<p class="muted readline" data-read="${Date.parse(e.read_at) || 0}">${eventStatusLine(e, new Date(), esc)}<span class="readage"></span></p><script src="/age.js" defer></script>
 ${rel.length ? `<h2>Related events</h2>` + `<ul class="dense">${rel.map(({ o, why }) => dense(o, why)).join('')}</ul>` : ''}
 ${intel}
 <p class="ind yours">Organisers: is this right? This page is yours to improve. See <a href="/join/">/join/</a>.</p>
