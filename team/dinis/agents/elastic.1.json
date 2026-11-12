@@ -1,6 +1,6 @@
 {
   "agent": "elastic.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T00:10Z",
+  "updated": "2026-11-12T00:11Z",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis, at Dinis's word (briefs/2026-11-11-1630-r5-r8-r9-enforced-and-elastic.md)",
   "branch": "dev",
@@ -38,7 +38,8 @@
     "22:09 UTC wake: 28 indices, 16,805 documents refreshed, 0 errors; fringe-packets unchanged (99). Submissions in the hour: architect.1 swarm-flows 48 events, 0 held, 0 errors. OpenRouter: 150 calls traced (103 on dc:promptugal:agents, up 61 this hour; 47 on dc:newsroom.ai:browser:oct-2026; about 0.47 USD in all). data/events.json still has 30 malformed read_at (researcher.2 asked at 20:1x; trimmed at ingest). No new brief.",
     "23:09 UTC wake: 28 indices, 16,883 documents refreshed, 0 errors (fringe-content: 1 removed, gone from the source). Submissions in the hour: architect.1 swarm-flows 48 events, 0 held, 0 errors. OpenRouter: 453 calls traced, 406 on dc:promptugal:agents (303 more this hour, about 0.37 USD on that key; dashboard 9 shows which models), 47 on dc:newsroom.ai:browser:oct-2026. data/events.json still has 30 malformed read_at (trimmed at ingest). No new brief.",
     "23:23: security finding 45 (the lead, 8th review): accepted. elastic/kibana/objects.ndjson was 257,550 bytes at edf4d97 (under the limit, passed); eebb9cd took it to 262,171 bytes (gate RED, not pushed by release.sh); the fix 30d59e6 passed the gate (file gone from the tree), but the push carried eebb9cd as its parent, so the blob is in dev's history. The gate checks HEAD's tree, not each pushed commit: suggested to the lead that release.sh check every commit in origin/dev..HEAD (dev's tool). Mine: generated objects stay outside git; a RED gate gets fixed before any oversized commit is pushed; no history rewrite",
-    "00:10 UTC wake: 28 indices, 18,421 documents refreshed, 0 errors. swarm-flows grew to 1,534 events: swarm.1.fringe@PrompTugal.dinis in R8 GitHub Actions (PrompTugal__News__Swarm__Runs) wrote 1,216 live events this hour (19 flows), 0 held, 0 errors. The export for neo4j.1 is now compact and chunked (columns plus rows, repeated values in a dict, chunks of at most 200 KB: 2 chunks, 344 KB instead of 1,004 KB), so it stays under the 256 KB rule (finding 45). OpenRouter: 807 calls traced, 760 on dc:promptugal:agents (354 this hour, about 0.93 USD on that key). data/events.json still has 30 malformed read_at. No new brief."
+    "00:10 UTC wake: 28 indices, 18,421 documents refreshed, 0 errors. swarm-flows grew to 1,534 events: swarm.1.fringe@PrompTugal.dinis in R8 GitHub Actions (PrompTugal__News__Swarm__Runs) wrote 1,216 live events this hour (19 flows), 0 held, 0 errors. The export for neo4j.1 is now compact and chunked (columns plus rows, repeated values in a dict, chunks of at most 200 KB: 2 chunks, 344 KB instead of 1,004 KB), so it stays under the 256 KB rule (finding 45). OpenRouter: 807 calls traced, 760 on dc:promptugal:agents (354 this hour, about 0.93 USD on that key). data/events.json still has 30 malformed read_at. No new brief.",
+    "00:11: architect.1's answers (material): swarm.1 in GitHub Actions uses the superuser password as a repository secret Dinis added for the demo, recorded in abp/policies.json (R8e.also; checked); Neo4j not needed now (Dinis 23:3x), so the swarm-flows export is dropped from git and from the hourly wake"
   ],
   "next": [
     "each wake: the OpenRouter traces come in with every router call (dashboard 9); join them with fringe-altitudes A1 units on model and time",
@@ -55,6 +56,6 @@
     "architect.1 / Dinis: for agents to push directly, both deployment hosts must be in their ABP 'Sends to' (es and kb); until then the feed path works for every agent. I messaged architect.1 by session message at Dinis's word (send_message is outside my grant).",
     "Dinis: 'pip install sgit-ai' was refused in this sandbox, so admin/tools/inboxes.py cannot send or drain; the lead is told through this status file and the commits.",
     "researcher.2: data/events.json has 30 read_at values with trailing punctuation since 33587a6 (27 end in ';', 3 in '.', e.g. '2026-11-11T11:55:00Z;'): they are not ISO times. Elastic rejected them until elastic.1 trimmed them at ingest; please fix them at the source (the site and the iOS app read the same field).",
-    "architect.1 / Dinis: swarm.1.fringe@PrompTugal.dinis writes live to swarm-flows (architect.1's index) from GitHub Actions (R8): 1,216 events in the hour to 00:0x UTC. R8e keeps ELASTIC_CLOUD to elastic.1 and architect.1, so which credential does swarm.1 use? If it is the superuser password as a GitHub secret, an API key limited to swarm-flows would be safer, and its ABP should name the hosts. Not a finding: a steward's question."
+    "Dinis: after the demo, replace the superuser password in PrompTugal__News__Swarm__Runs' GitHub secret ELASTIC_CLOUD with an API key limited to swarm-flows (create_doc, index); it is recorded in abp/policies.json restricted_secrets[R8e].also, and architect.1 asks the same."
   ]
 }
