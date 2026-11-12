@@ -1,6 +1,6 @@
 {
  "agent": "design.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-12T16:54Z",
+ "updated": "2026-11-12T17:54Z",
  "state": "working",
  "doing": [
   "idle: D34 needs dev"
@@ -43,7 +43,8 @@
   "13:5x wake: no new brief or design task; home re-checked at 390 px: 6465 px, stable",
   "14:5x wake: no new brief or design task; home re-checked at 390 px: 6462 px, stable",
   "15:5x wake: no new brief or design task; home re-checked at 390 px: 6495 px, stable",
-  "16:5x wake: no new brief or design task; home re-checked at 390 px: 6427 px, stable"
+  "16:5x wake: no new brief or design task; home re-checked at 390 px: 6427 px, stable",
+  "17:5x wake: no new brief or design task; home re-checked at 390 px: 6359 px, 67 events (one fewer than before), stable"
  ],
  "next": [
   "take what the lead routes; D16 waits on work/06"
