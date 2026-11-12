@@ -5,27 +5,23 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T17:54Z",
+ "generated": "2026-11-12T18:10Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 602,
+  "views": 603,
   "reads": 510,
-  "tabs": 295,
+  "tabs": 296,
   "countries": 23,
   "shares": 194,
-  "bots": 2376,
+  "bots": 2377,
   "crawler_tabs": 1,
-  "agent_runs": 488,
-  "agent_runs_signed": 429
+  "agent_runs": 491,
+  "agent_runs_signed": 432
  },
  "by_hour": [
-  [
-   "2026-11-10 18:00",
-   0
-  ],
   [
    "2026-11-10 19:00",
    0
@@ -213,6 +209,10 @@
   [
    "2026-11-12 17:00",
    6
+  ],
+  [
+   "2026-11-12 18:00",
+   1
   ]
  ],
  "by_page": [
@@ -297,6 +297,10 @@
    4
   ],
   [
+   "/e/2026-11-12-the-founder-effect/",
+   4
+  ],
+  [
    "/e/2026-11-11-valois-allocator-residence/",
    4
   ],
@@ -330,10 +334,6 @@
   ],
   [
    "/e/2026-11-11-indiesummit-lisboa/",
-   3
-  ],
-  [
-   "/e/2026-11-12-the-founder-effect/",
    3
   ],
   [
@@ -1216,7 +1216,7 @@
   ],
   [
    "United Kingdom",
-   72
+   73
   ],
   [
    "United States",
@@ -1322,7 +1322,7 @@
   ],
   [
    "London, United Kingdom",
-   18
+   19
   ],
   [
    "Frankfurt am Main, Germany",
@@ -1376,7 +1376,7 @@
  "by_referrer": [
   [
    "www.google.com",
-   14
+   15
   ],
   [
    "lnkd.in",
@@ -1398,14 +1398,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   563
+   564
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 5794,
+ "other_hosts_views": 5818,
  "by_via": [
   [
    "whatsapp",
@@ -1444,7 +1444,7 @@
   ],
   [
    "phone",
-   269
+   270
   ],
   [
    "tablet",
@@ -1454,7 +1454,7 @@
  "agents": [
   [
    "elastic.1.fringe@PrompTugal.dinis",
-   38
+   39
   ],
   [
    "design.4.fringe@PrompTugal.dinis",
@@ -1469,11 +1469,11 @@
    33
   ],
   [
-   "conductor.fringe@PrompTugal.indi",
-   29
+   "ontologist.1.fringe@PrompTugal.dinis",
+   30
   ],
   [
-   "ontologist.1.fringe@PrompTugal.dinis",
+   "conductor.fringe@PrompTugal.indi",
    29
   ],
   [
@@ -1498,7 +1498,7 @@
   ],
   [
    "dev.1.fringe@PrompTugal.dinis",
-   23
+   24
   ],
   [
    "capture.1.fringe@PrompTugal.dinis",
@@ -1546,7 +1546,7 @@
   ]
  ],
  "flows": {
-  "tabs": 293,
+  "tabs": 294,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
@@ -1558,7 +1558,7 @@
    ],
    [
     "from another site",
-    16
+    17
    ]
   ],
   "entry_pages": [
@@ -1587,11 +1587,11 @@
     5
    ],
    [
-    "/programme/",
-    3
+    "/e/2026-11-12-the-founder-effect/",
+    4
    ],
    [
-    "/e/2026-11-12-the-founder-effect/",
+    "/programme/",
     3
    ],
    [
@@ -1657,6 +1657,10 @@
     4
    ],
    [
+    "/e/2026-11-12-the-founder-effect/",
+    4
+   ],
+   [
     "/e/2026-11-11-ai-for-business-applied-ai-pitch-party/",
     3
    ],
@@ -1670,10 +1674,6 @@
    ],
    [
     "/e/2026-11-11-enchant-pitch-parties/",
-    3
-   ],
-   [
-    "/e/2026-11-12-the-founder-effect/",
     3
    ],
    [
@@ -1790,7 +1790,7 @@
   "pages_per_tab": [
    [
     "1",
-    205
+    206
    ],
    [
     "2",
@@ -1876,11 +1876,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
@@ -1888,7 +1888,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
+    "whatsapp: /e/2026-11-11-roast-your-website/",
     1
    ]
   ]
@@ -1943,7 +1943,7 @@
    },
    {
     "name": "London, United Kingdom",
-    "views": 18,
+    "views": 19,
     "lat": 51.5,
     "lon": -0.1
    },
