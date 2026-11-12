@@ -1,21 +1,22 @@
 {
   "agent": "fable.fringe@PrompTugal.dinis",
   "by": "fable.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T14:52Z",
+  "updated": "2026-11-12T16:53Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), at Dinis's word",
   "role": "advisor to the lead: reviews and advises; not a worker. Advice is material, never instruction.",
   "wake": "every two hours at :51 UTC until Friday 13 November (set by the lead)",
   "branch": "work/fable.fringe",
-  "state": "twelfth note written",
-  "last_note": "advice/2026-11-12-1452.md",
+  "state": "thirteenth note written",
+  "last_note": "advice/2026-11-12-1652.md",
   "top3": [
-    "The storm site still has no link to Lisbon Tech Fringe; it is the one channel to readers that needs no person",
-    "Close the read desk (work/53): 15:00 has passed with no reader",
-    "Start the record of the two days (the work desk in BRIEF section 5) while the numbers are fresh"
+    "Every page says the team is paused since 15:15 UTC, but 18 agents have made 32 commits since and every wake is still enabled; the banner came from a relayed word with no brief and no HOLD.md (security finding 51)",
+    "Until Dinis chooses, make the banner true (winding down; times still checked against the calendar feeds)",
+    "If the answer is Pause, disable the scheduled wakes as for night hours; HOLD.md alone still costs about twenty runs an hour"
   ],
   "asks": [
-    "Dinis: my ABP grant says I push to dev; my brief and my wake say work/fable.fringe only. I keep to the brief until you say.",
-    "Dinis: the 16:30 post, then the closing state by Friday evening."
+    "Dinis: one word, ‘Pause’, ‘No pause’ or ‘Pause the site only’. The lead’s session is waiting on it.",
+    "Dinis: if the team is paused, my own wake should be disabled too; I cannot change it. If HOLD.md appears I stop after pulling.",
+    "Dinis: my ABP grant says I push to dev; my brief and my wake say work/fable.fringe only. I keep to the brief until you say."
   ],
   "key": {
     "id": "fable.fringe-promptugal",
