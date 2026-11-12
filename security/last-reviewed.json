@@ -1,9 +1,9 @@
 {
   "by": "security.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T02:32Z",
-  "review": "security/reviews/2026-11-12-0230.md",
+  "updated": "2026-11-12T04:31Z",
+  "review": "security/reviews/2026-11-12-0430.md",
   "branches": {
-    "dev": "2300f04cf3cfc2845cdeea222cc1c871830a6e22",
+    "dev": "90d711f35375070b098910726eb0856e2e4c9784",
     "main": "83af18c38f0364c62745d738367911e0edf04c16",
     "work/dev.fringe": "382ff687e249fed2a1454fc5645b0a315cc0933d",
     "work/researcher.fringe": "061ebaa3777e0e9b7862b9738725cf41faa29ea3",

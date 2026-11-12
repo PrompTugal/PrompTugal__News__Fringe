@@ -1,12 +1,12 @@
 {
   "agent": "security.fringe@PrompTugal.dinis",
   "by": "security.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T02:32Z",
+  "updated": "2026-11-12T04:31Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwBGQe9BhMCbDw28aDA, the lead until 11:14 UTC), 10:48 UTC, under BRIEF.md §7 step 4",
   "wake": "every two hours until Friday 13 November (scheduled task named in the outgoing lead's handover; its prompt still names the old lead)",
   "branch": "work/security.fringe",
   "key": "security.fringe-promptugal (record sha256:477abd55a04f4577), in data/keys.json on dev",
-  "state": "tenth review done (02:30 UTC, 38 new commits): no high, no new findings; findings 41 and 47 (shared Elastic password) recorded as accepted by Dinis (brief 16, 01:44 UTC quote)",
+  "state": "eleventh review done (04:30 UTC, 19 new commits, all status files): no findings",
   "doing": [],
   "done": [
     "review 1 (10:48 UTC): security/reviews/2026-11-11-1048.md",
@@ -19,7 +19,8 @@
     "ran node abp/tools/abp.mjs whoami (20:33 UTC): ~/.abp/whoami = security.fringe@PrompTugal.dinis, so the hook knows this session",
     "review 8 (22:30 UTC, 80 new commits): security/reviews/2026-11-11-2230.md",
     "review 9 (12 Nov 00:30 UTC, 79 new commits): security/reviews/2026-11-12-0030.md",
-    "review 10 (12 Nov 02:30 UTC, 38 new commits): security/reviews/2026-11-12-0230.md"
+    "review 10 (12 Nov 02:30 UTC, 38 new commits): security/reviews/2026-11-12-0230.md",
+    "review 11 (12 Nov 04:30 UTC, 19 new commits): security/reviews/2026-11-12-0430.md"
   ],
   "next": [
     "at the next wake: fetch, review what is new since security/last-reviewed.json, push",
