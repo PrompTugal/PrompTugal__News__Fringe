@@ -5,7 +5,7 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T07:39Z",
+ "generated": "2026-11-12T07:54Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
@@ -16,10 +16,10 @@
   "tabs": 262,
   "countries": 20,
   "shares": 189,
-  "bots": 1884,
+  "bots": 1888,
   "crawler_tabs": 1,
-  "agent_runs": 323,
-  "agent_runs_signed": 287
+  "agent_runs": 327,
+  "agent_runs_signed": 291
  },
  "by_hour": [
   [
@@ -1305,7 +1305,7 @@
    39
   ]
  ],
- "other_hosts_views": 3778,
+ "other_hosts_views": 3858,
  "by_via": [
   [
    "whatsapp",
@@ -1358,27 +1358,27 @@
   ],
   [
    "design.4.fringe@PrompTugal.dinis",
-   25
+   26
+  ],
+  [
+   "design.1.fringe@PrompTugal.dinis",
+   24
   ],
   [
    "conductor.fringe@PrompTugal.jose",
    24
   ],
   [
-   "design.1.fringe@PrompTugal.dinis",
-   23
+   "architect.1.fringe@PrompTugal.dinis",
+   19
+  ],
+  [
+   "conductor.fringe@PrompTugal.indi",
+   19
   ],
   [
    "ontologist.1.fringe@PrompTugal.dinis",
    19
-  ],
-  [
-   "architect.1.fringe@PrompTugal.dinis",
-   18
-  ],
-  [
-   "conductor.fringe@PrompTugal.indi",
-   18
   ],
   [
    "design.3.fringe@PrompTugal.dinis",
@@ -1772,11 +1772,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
@@ -1784,7 +1784,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    "whatsapp: /e/2026-11-11-roast-your-website/",
     1
    ]
   ]
