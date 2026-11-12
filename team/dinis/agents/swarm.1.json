@@ -1,6 +1,6 @@
 {
   "agent": "swarm.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T00:39Z",
+  "updated": "2026-11-12T00:44Z",
   "account": "riskmandate-personal (Ultra)",
   "session": "session_01Kw9UwFHqLAjKake7UEDjL3",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (11 Nov 2026, about 21:0x UTC: 'start a new agent called Swarm ... for our Swarm capabilities and our risk mandate Swarm, which we want to demo tomorrow')",
@@ -27,7 +27,10 @@
     "2026-11-11T23:47Z: runner.1 ran s002 (20/33 valid, 0.0138 USD), published; swarm.promptugal.news reads the Runs repo (73428d8)",
     "2026-11-11T23:56Z: landed swarm.1.dev's batch, check-run and demo runbook (Runs 44d3ad9); check-run found that push 15bf673 had re-run storm-a1 and a2 (depth-2 clone, diff fallback to all requests); fixed (full history, never re-run a request with a result on a push, fresh provenance per result); re-ran both on purpose by workflow_dispatch: all three runs verify 13/13 (e3bc6ca)",
     "2026-11-12T00:01Z: landed swarm.1.dev's summary.mjs (Runs 2b88148, sha256 checked); scale test: 12 signed A1 requests in one push (dbcca7b) -> 12 jobs at once, 144 calls, ~75 s push to result commit (555790e); check-run 12/12 verified. All runs: 15 requests, 216 calls, 172 valid, 0.068 USD (Sonnet would be 1.99)",
-    "2026-11-12T00:39Z: Dinis approved keys and Fringe push for the helpers ('yes i approve', 00:1x UTC); his words relayed to swarm.1.designer, swarm.1.dev and runner.1, who retry in their own sessions (any prompt is his to accept there)"
+    "2026-11-12T00:39Z: Dinis approved keys and Fringe push for the helpers ('yes i approve', 00:1x UTC); his words relayed to swarm.1.designer, swarm.1.dev and runner.1, who retry in their own sessions (any prompt is his to accept there)",
+    "2026-11-12T00:44Z: 'Check GitHub now' no longer hangs when GitHub's API limit (60 an hour per network) is reached: it says so and reads the branch (Swarm ac68dc4)",
+    "2026-11-12T00:44Z: Angelo offline: packet s004-storm-six for runner.2 on Dinis's other account (Swarm c08f716)",
+    "2026-11-12T00:44Z: started storytelling.1.fringe@PrompTugal.dinis at Dinis's word (one session, Opus, session_01Kw9UwCdVBkvPFracQLidZu): a conversation about the stories to tell; writes stories/ in the Swarm repo"
   ],
   "next": [
     "bring in s002 (runner.1) and s003 (Angelo); the cross-account view",
@@ -39,7 +42,8 @@
     "Dinis: not yet added to PrompTugal__News__Website board/keys.json",
     "Dinis: GRAFANA_TOKEN and SG_SEND_ACCESS_TOKEN in the Runs repo are unused: delete them unless you want the vault carrier tomorrow",
     "Dinis: after the demo, replace ELASTIC_CLOUD with a key limited to swarm-* (architect.1)",
-    "Dinis: if swarm.1.dev, swarm.1.designer or runner.1 shows a permission prompt (add_repo push, abp whoami, keygen), it waits for you in that session"
+    "Dinis: if swarm.1.dev, swarm.1.designer or runner.1 shows a permission prompt (add_repo push, abp whoami, keygen), it waits for you in that session",
+    "Dinis: for runner.2 on your other account: a Claude Code session there with PrompTugal/PrompTugal__News__Swarm attached and an OpenRouter key on its environment; paste RUNNER.md's prompt with <n>=2, <id>=dinis; its packet is s004-storm-six"
   ],
   "team": {
     "swarm.1.dev.fringe@PrompTugal.dinis": {
@@ -55,6 +59,11 @@
     "runner.1.swarm@PrompTugal.dinis": {
       "session": "session_01Kw9UwCptHeeznCWAbMSQC5",
       "doing": "ran s002; waiting"
+    },
+    "storytelling.1.fringe@PrompTugal.dinis": {
+      "session": "session_01Kw9UwCdVBkvPFracQLidZu",
+      "started_by": "swarm.1 at Dinis's word (00:4x UTC)",
+      "doing": "the stories to tell; talks with Dinis in its own session"
     }
   }
 }
