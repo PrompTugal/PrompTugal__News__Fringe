@@ -1,15 +1,15 @@
 {
   "agent": "swarm.1.designer.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T07:55Z",
+  "updated": "2026-11-12T07:57Z",
   "written_by": "swarm.1.designer.fringe@PrompTugal.dinis (its own session, its own key)",
   "session": "session_01Kw9UwCNvq4z94R3XVA2Lvm",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis at Dinis's word (23:4x UTC)",
   "reports_to": "swarm.1.fringe@PrompTugal.dinis",
   "branch": "PrompTugal__News__Swarm dev",
-  "state": "tablet-first and booth mode shipped (Dinis ~07:50 via swarm.1)",
+  "state": "Stories on StoryKit; tablet and booth shipped",
   "doing": [
-    "Stories: wiring story.html to swarm.1.dev's StoryKit and the first real story when they land"
+    "waiting for the first real story (storytelling.1) and partners.1's pages, to bring them into the shared UI"
   ],
   "done": [
     "2026-11-11T23:52Z: index.html: run timeline by altitude, budget, signatures, responsive at 1280/1920/390 (PrompTugal__News__Swarm dev)",
@@ -28,12 +28,13 @@
     "2026-11-12T07:31Z: the home page is a hub with live previews, one navigation on every page with a way back from focus, Execution flow and map pages, hash links reload (Swarm 5efb447); views run picker with previews and names, collapsible panels (932bb5d); theme pages and Best of / Themes on the hub (99a7f65)",
     "2026-11-12T07:43Z: Stories section (Swarm 3752e09): pages/stories.html (who asked, who answered, when, ABP, GitHub compute, live preview) and pages/story.html?s=<id> in four modes: Present (deck at stage size, play-all, focus), Timeline, Graph, Delivery; reads stories/<id>/story.json + trail.json, uses StoryKit when present; a sample marked 'Sample · invented' until then; Stories in the nav and on the hub; clean at 390/1366/1920",
     "2026-11-12T07:46Z: Views blast-radius overlay (Swarm f8c7e2a) from swarm.1.dev's data/reach (0601c36): per-asset buttons (SIM/REAL, n of N units), 'reaches all of them', amber light that survives mode and shape changes, and per-unit reach with its reason; tested r2, r5b and an Actions run",
-    "2026-11-12T07:55Z: tablet-first and booth mode (Swarm 5876303): assets/booth.js (?booth=1: larger type, full screen on first touch, attract loop of the stories after 60 s idle, touch returns to the hub), swipe in story Present and theme notes, 44 px targets, phone nav folds into Menu, theme notes stack under the demo collapsed; stage embed for theme demos and the hub preview (swarm.1.dev cc270e5); walked 5 pages on 8 device sizes, clean; screenshots to Dinis"
+    "2026-11-12T07:55Z: tablet-first and booth mode (Swarm 5876303): assets/booth.js (?booth=1: larger type, full screen on first touch, attract loop of the stories after 60 s idle, touch returns to the hub), swipe in story Present and theme notes, 44 px targets, phone nav folds into Menu, theme notes stack under the demo collapsed; stage embed for theme demos and the hub preview (swarm.1.dev cc270e5); walked 5 pages on 8 device sizes, clean; screenshots to Dinis",
+    "2026-11-12T07:57Z: story.html renders through swarm.1.dev's StoryKit (Swarm 11e5164), sample included; step counter clear of the feedback pill on phones (swarm.1 review 8; items 1-2 already in 5876303); 22 steps clean at 1366, Tab S4, iPhone 14"
   ],
   "next": [
-    "Stories: switch to StoryKit and the first real story",
-    "swarm.1.dev: stage controls to 44 px, swipe and pinch on the stage (asked)",
-    "Dinis: try ?booth=1 on a stand tablet"
+    "first real story: check it on the tablets",
+    "partners.1's pages: bring into the shared UI",
+    "swarm.1.dev: table cell tones (gap amber, refusal teal), stage controls 44 px, stage swipe"
   ],
   "asks": []
 }
