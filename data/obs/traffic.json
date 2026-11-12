@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T09:26Z",
+ "generated": "2026-11-12T09:38Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 559,
-  "reads": 480,
-  "tabs": 267,
+  "views": 560,
+  "reads": 481,
+  "tabs": 268,
   "countries": 20,
   "shares": 190,
-  "bots": 1980,
+  "bots": 2010,
   "crawler_tabs": 1,
-  "agent_runs": 354,
-  "agent_runs_signed": 313
+  "agent_runs": 356,
+  "agent_runs_signed": 315
  },
  "by_hour": [
   [
@@ -212,7 +212,7 @@
   ],
   [
    "2026-11-12 09:00",
-   4
+   5
   ]
  ],
  "by_page": [
@@ -578,6 +578,10 @@
   ],
   [
    "/e/2026-11-12-ptw-classroom-portuguese-for-tech-life-meet-gr/",
+   1
+  ],
+  [
+   "/e/2026-11-13-is-your-ai-startup-ready-for-europe-the-eu-ai-/",
    1
   ]
  ],
@@ -1127,6 +1131,12 @@
    1,
    1,
    0
+  ],
+  [
+   "/e/2026-11-13-is-your-ai-startup-ready-for-europe-the-eu-ai-/",
+   1,
+   7,
+   19
   ]
  ],
  "by_country": [
@@ -1136,7 +1146,7 @@
   ],
   [
    "United Kingdom",
-   69
+   70
   ],
   [
    "United States",
@@ -1234,7 +1244,7 @@
   ],
   [
    "London, United Kingdom",
-   15
+   16
   ],
   [
    "Harrietsham, United Kingdom",
@@ -1283,11 +1293,11 @@
    7
   ],
   [
-   "promptugal.news",
-   3
+   "www.google.com",
+   4
   ],
   [
-   "www.google.com",
+   "promptugal.news",
    3
   ],
   [
@@ -1302,14 +1312,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   520
+   521
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 4221,
+ "other_hosts_views": 4261,
  "by_via": [
   [
    "whatsapp",
@@ -1348,7 +1358,7 @@
   ],
   [
    "phone",
-   252
+   253
   ],
   [
    "tablet",
@@ -1385,12 +1395,12 @@
    20
   ],
   [
-   "researcher.fringe@PrompTugal.dinis",
+   "design.3.fringe@PrompTugal.dinis",
    19
   ],
   [
-   "design.3.fringe@PrompTugal.dinis",
-   18
+   "researcher.fringe@PrompTugal.dinis",
+   19
   ],
   [
    "observability.fringe@PrompTugal.dinis",
@@ -1409,11 +1419,11 @@
    15
   ],
   [
-   "dev.1.fringe@PrompTugal.dinis",
-   14
+   "capture.1.fringe@PrompTugal.dinis",
+   15
   ],
   [
-   "capture.1.fringe@PrompTugal.dinis",
+   "dev.1.fringe@PrompTugal.dinis",
    14
   ],
   [
@@ -1446,7 +1456,7 @@
   ]
  ],
  "flows": {
-  "tabs": 265,
+  "tabs": 266,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
@@ -1458,7 +1468,7 @@
    ],
    [
     "from another site",
-    5
+    6
    ]
   ],
   "entry_pages": [
@@ -1690,7 +1700,7 @@
   "pages_per_tab": [
    [
     "1",
-    185
+    186
    ],
    [
     "2",
@@ -1788,7 +1798,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-roast-your-website/",
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ]
   ]
@@ -1844,7 +1854,7 @@
    },
    {
     "name": "London, United Kingdom",
-    "views": 15,
+    "views": 16,
     "lat": 51.5,
     "lon": -0.1
    },
