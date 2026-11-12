@@ -5,27 +5,23 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T13:54Z",
+ "generated": "2026-11-12T14:10Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 583,
-  "reads": 494,
-  "tabs": 283,
-  "countries": 21,
+  "views": 585,
+  "reads": 495,
+  "tabs": 284,
+  "countries": 22,
   "shares": 193,
-  "bots": 2201,
+  "bots": 2203,
   "crawler_tabs": 1,
-  "agent_runs": 428,
-  "agent_runs_signed": 377
+  "agent_runs": 430,
+  "agent_runs_signed": 379
  },
  "by_hour": [
-  [
-   "2026-11-10 14:00",
-   0
-  ],
   [
    "2026-11-10 15:00",
    0
@@ -213,6 +209,10 @@
   [
    "2026-11-12 13:00",
    7
+  ],
+  [
+   "2026-11-12 14:00",
+   2
   ]
  ],
  "by_page": [
@@ -458,6 +458,10 @@
   ],
   [
    "/e/2026-11-13-is-your-ai-startup-ready-for-europe-the-eu-ai-/",
+   2
+  ],
+  [
+   "/e/2026-11-12-ptw-classroom-storytelling-game-by-pina/",
    2
   ],
   [
@@ -1157,6 +1161,12 @@
    1,
    146,
    98
+  ],
+  [
+   "/e/2026-11-12-ptw-classroom-storytelling-game-by-pina/",
+   1,
+   11,
+   27
   ]
  ],
  "by_country": [
@@ -1218,6 +1228,10 @@
   ],
   [
    "Czechia",
+   2
+  ],
+  [
+   "Spain",
    2
   ],
   [
@@ -1312,7 +1326,7 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   88
+   90
   ]
  ],
  "by_referrer": [
@@ -1340,14 +1354,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   544
+   546
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 5098,
+ "other_hosts_views": 5130,
  "by_via": [
   [
    "whatsapp",
@@ -1386,7 +1400,7 @@
   ],
   [
    "phone",
-   257
+   259
   ],
   [
    "tablet",
@@ -1411,15 +1425,15 @@
    30
   ],
   [
+   "ontologist.1.fringe@PrompTugal.dinis",
+   26
+  ],
+  [
    "architect.1.fringe@PrompTugal.dinis",
    25
   ],
   [
    "conductor.fringe@PrompTugal.indi",
-   25
-  ],
-  [
-   "ontologist.1.fringe@PrompTugal.dinis",
    25
   ],
   [
@@ -1440,7 +1454,7 @@
   ],
   [
    "dev.1.fringe@PrompTugal.dinis",
-   19
+   20
   ],
   [
    "researcher.2@PrompTugal.dinis",
@@ -1484,11 +1498,11 @@
   ]
  ],
  "flows": {
-  "tabs": 281,
+  "tabs": 282,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    199
+    200
    ],
    [
     "shared link (?via=)",
@@ -1732,7 +1746,7 @@
    ],
    [
     "2",
-    41
+    42
    ],
    [
     "3",
@@ -1814,11 +1828,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
@@ -1826,7 +1840,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-roast-your-website/",
+    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
     1
    ]
   ]
