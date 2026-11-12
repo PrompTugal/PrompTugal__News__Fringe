@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T11:54Z",
+ "generated": "2026-11-12T12:10Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 573,
+  "views": 574,
   "reads": 489,
-  "tabs": 277,
+  "tabs": 278,
   "countries": 21,
   "shares": 193,
-  "bots": 2111,
+  "bots": 2112,
   "crawler_tabs": 1,
-  "agent_runs": 395,
-  "agent_runs_signed": 349
+  "agent_runs": 397,
+  "agent_runs_signed": 351
  },
  "by_hour": [
   [
@@ -212,13 +212,13 @@
   ],
   [
    "2026-11-12 11:00",
-   2
+   3
   ]
  ],
  "by_page": [
   [
    "/",
-   233
+   234
   ],
   [
    "/now/",
@@ -1142,7 +1142,7 @@
  "by_country": [
   [
    "Portugal",
-   363
+   364
   ],
   [
    "United Kingdom",
@@ -1228,7 +1228,7 @@
  "by_city": [
   [
    "Lisbon, Portugal",
-   274
+   275
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -1316,14 +1316,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   534
+   535
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 4722,
+ "other_hosts_views": 4754,
  "by_via": [
   [
    "whatsapp",
@@ -1366,7 +1366,7 @@
   ],
   [
    "tablet",
-   4
+   5
   ]
  ],
  "agents": [
@@ -1387,15 +1387,15 @@
    28
   ],
   [
+   "ontologist.1.fringe@PrompTugal.dinis",
+   24
+  ],
+  [
    "architect.1.fringe@PrompTugal.dinis",
    23
   ],
   [
    "conductor.fringe@PrompTugal.indi",
-   23
-  ],
-  [
-   "ontologist.1.fringe@PrompTugal.dinis",
    23
   ],
   [
@@ -1419,16 +1419,16 @@
    17
   ],
   [
+   "dev.1.fringe@PrompTugal.dinis",
+   17
+  ],
+  [
    "researcher.2@PrompTugal.dinis",
    17
   ],
   [
    "capture.1.fringe@PrompTugal.dinis",
    17
-  ],
-  [
-   "dev.1.fringe@PrompTugal.dinis",
-   16
   ],
   [
    "dev.2.fringe@PrompTugal.dinis",
@@ -1460,11 +1460,11 @@
   ]
  ],
  "flows": {
-  "tabs": 275,
+  "tabs": 276,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    194
+    195
    ],
    [
     "shared link (?via=)",
@@ -1478,7 +1478,7 @@
   "entry_pages": [
    [
     "/",
-    172
+    173
    ],
    [
     "/now/",
@@ -1540,7 +1540,7 @@
   "exit_pages": [
    [
     "/",
-    129
+    130
    ],
    [
     "/now/",
@@ -1704,7 +1704,7 @@
   "pages_per_tab": [
    [
     "1",
-    193
+    194
    ],
    [
     "2",
@@ -1833,7 +1833,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 274,
+    "views": 275,
     "lat": 38.7,
     "lon": -9.1
    },
