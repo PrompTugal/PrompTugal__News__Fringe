@@ -95,9 +95,9 @@ export function dashboard(key, title, description, tag, rows, { from = 'now-30d'
     let y = 0, n = 0
     for (const row of rows) {
         let x = 0, h = 0
-        for (const [id, type, w, ph] of row) {
+        for (const [id, type, w, ph, opts = {}] of row) {   // opts: { timeRange: {from, to}, title } for this panel only
             const i = `p${++n}`
-            panels.push({ type, gridData: { x, y, w, h: ph, i }, panelIndex: i, embeddableConfig: { enhancements: {}, ...(type === 'visualization' || METRICS.has(id) ? { hidePanelTitles: true } : {}) }, panelRefName: `panel_${i}` })
+            panels.push({ type, gridData: { x, y, w, h: ph, i }, panelIndex: i, embeddableConfig: { enhancements: {}, ...(type === 'visualization' && !opts.title || METRICS.has(id) ? { hidePanelTitles: true } : {}), ...(opts.timeRange ? { timeRange: opts.timeRange } : {}), ...(opts.title ? { title: opts.title } : {}) }, panelRefName: `panel_${i}` })
             refs.push({ name: `${i}:panel_${i}`, type, id })
             x += w; h = Math.max(h, ph)
         }
@@ -125,3 +125,8 @@ export async function importObjects(kibanaUrl, list = objects) {
     return j
 }
 export const dashboards = () => objects.filter(o => o.type === 'dashboard')
+
+// a Vega or Vega-Lite panel (the spec as an object; Kibana keeps it as text). Used for the swarm's own views in Kibana.
+export const vega = (key, title, spec) => add({ type: 'visualization', id: uid('vega', key), attributes: { title, description: '', uiStateJSON: '{}', version: 1,
+    visState: JSON.stringify({ title, type: 'vega', aggs: [], params: { spec: JSON.stringify(spec, null, 2) } }),
+    kibanaSavedObjectMeta: { searchSourceJSON: JSON.stringify({ query: { query: '', language: 'kuery' }, filter: [] }) } }, references: [] })

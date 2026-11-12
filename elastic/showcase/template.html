@@ -1,0 +1,226 @@
+<title>The Swarm on Elastic</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: the swarm stage's three panes (scenes | the view | what to say), its dark palette and altitude colours
+   (PrompTugal__News__Swarm stage/themes.css), with the stage's paper theme for light mode. */
+:root {
+  --bg: #fbfbf8; --bg2: #f0f0ea; --panel: #ffffff; --line: #d6d6cf; --ink: #161616; --muted: #5d5d58; --dim: #a3a39c;
+  --accent: #0f766e; --accent2: #b45309; --bad: #b91c1c; --ok: #15803d; --shade: rgba(22, 22, 22, .55); --glow: 0 0 0 0 transparent;
+  --alt-A4: #c2410c; --alt-A3: #1d4ed8; --alt-A2: #7c3aed; --alt-A1: #0f766e; --alt-A0: #5d5d58;
+  --display: "Space Grotesk", "Inter", system-ui, sans-serif; --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #04100F; --bg2: #0E3330; --panel: #0b2826; --line: rgba(150, 230, 215, .16); --ink: #EAF6F3; --muted: #8EADA8; --dim: #5F7D79;
+  --accent: #43D9C6; --accent2: #D9B26E; --bad: #FF4D6D; --ok: #3DDC97; --shade: rgba(2, 10, 9, .62); --glow: 0 0 22px rgba(67, 217, 198, .45);
+  --alt-A4: #ff7a59; --alt-A3: #5ec2ff; --alt-A2: #9b8cff; --alt-A1: #4fd1a5; --alt-A0: #c9d4d2; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #04100F; --bg2: #0E3330; --panel: #0b2826; --line: rgba(150, 230, 215, .16); --ink: #EAF6F3; --muted: #8EADA8; --dim: #5F7D79;
+  --accent: #43D9C6; --accent2: #D9B26E; --bad: #FF4D6D; --ok: #3DDC97; --shade: rgba(2, 10, 9, .62); --glow: 0 0 22px rgba(67, 217, 198, .45);
+  --alt-A4: #ff7a59; --alt-A3: #5ec2ff; --alt-A2: #9b8cff; --alt-A1: #4fd1a5; --alt-A0: #c9d4d2; color-scheme: dark }
+* { box-sizing: border-box }
+[hidden] { display: none !important }
+html, body { height: 100% }
+body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--body); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0; }
+a { color: var(--accent) }
+button { font: inherit; color: inherit }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px }
+.app { display: grid; grid-template-rows: auto 1fr auto; height: 100%; gap: 10px; padding-block: 10px }
+header { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; min-width: 0 }
+.brand { display: flex; align-items: baseline; gap: 10px; min-width: 0 }
+.brand h1 { font: 700 20px/1.1 var(--display); margin: 0; letter-spacing: -.01em }
+.brand .sub { color: var(--muted); font-size: 13px }
+.ladder { display: flex; gap: 3px; margin-left: 4px } .ladder i { width: 8px; height: 18px; border-radius: 2px; display: block }
+.spacer { flex: 1 }
+.btn { border: 1px solid var(--line); background: var(--panel); border-radius: 8px; padding: 6px 11px; cursor: pointer; font-size: 13px; white-space: nowrap }
+.btn:hover { border-color: var(--accent) } .btn.primary { background: var(--accent); color: var(--bg); border-color: var(--accent); font-weight: 600 }
+.main { display: grid; grid-template-columns: 236px minmax(0, 1fr) 320px; gap: 12px; min-height: 0 }
+.rail, .side { min-width: 0; overflow: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--panel) }
+.rail { padding: 8px }
+.act { font: 600 11px/1.2 var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 10px 8px 4px }
+.sc { display: grid; grid-template-columns: 22px 1fr; gap: 6px; align-items: start; width: 100%; text-align: left; border: 0; background: none; padding: 6px 8px; border-radius: 8px; cursor: pointer; color: var(--ink) }
+.sc .n { font: 600 12px/20px var(--mono); color: var(--dim) } .sc span { font-size: 13.5px; line-height: 1.35 }
+.sc:hover { background: var(--bg2) } .sc[aria-current="true"] { background: var(--bg2); box-shadow: inset 3px 0 0 var(--accent) } .sc[aria-current="true"] .n { color: var(--accent) }
+.stage { min-width: 0; min-height: 0; display: grid; grid-template-rows: auto 1fr; gap: 8px }
+.head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; min-width: 0 }
+.head .kicker { font: 600 12px var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--accent) }
+.head h2 { font: 600 clamp(19px, 2.1vw, 26px)/1.15 var(--display); margin: 0; text-wrap: balance }
+.view { position: relative; min-height: 0; overflow: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--bg2); scroll-behavior: smooth }
+.frame { position: relative; width: 100% } .frame img { display: block; width: 100%; height: auto }
+.frame svg.over { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none }
+.co { position: absolute; transform: translate(0, calc(-100% - 10px)); max-width: min(380px, 60%); background: var(--accent); color: var(--bg); padding: 7px 11px 7px 9px; border-radius: 9px; font: 600 13.5px/1.3 var(--body); box-shadow: var(--glow), 0 6px 20px rgba(0, 0, 0, .25); display: flex; gap: 8px; align-items: flex-start; transition: opacity .25s }
+.co b { font: 700 12px/18px var(--mono); background: var(--bg); color: var(--accent); border-radius: 5px; padding: 0 6px; flex: none }
+.co::after { content: ""; position: absolute; left: 18px; bottom: -8px; border: 8px solid transparent; border-bottom: 0; border-top-color: var(--accent) }
+.co.below { transform: translate(0, 10px) } .co.below::after { bottom: auto; top: -8px; border-top: 0; border-bottom: 8px solid var(--accent) }
+.co.past { opacity: .0 } .co.hidden { display: none }
+.slide { display: grid; place-content: center; min-height: 100%; padding: clamp(18px, 4vw, 56px); background: radial-gradient(1200px 600px at 20% 0%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 60%), var(--bg2) }
+.slide .k { font: 600 13px var(--body); letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px }
+.slide h3 { font: 700 clamp(26px, 3.6vw, 46px)/1.08 var(--display); margin: 0 0 18px; max-width: 22ch; text-wrap: balance; letter-spacing: -.015em }
+.slide ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; max-width: 64ch }
+.slide li { font-size: clamp(15px, 1.4vw, 19px); color: var(--muted); padding-left: 20px; position: relative; opacity: 0; transform: translateY(6px); transition: opacity .35s, transform .35s }
+.slide li.on { opacity: 1; transform: none } .slide li::before { content: ""; position: absolute; left: 0; top: .55em; width: 9px; height: 9px; border-radius: 2px; background: var(--accent) }
+.slide li.big { color: var(--ink); font: 600 clamp(19px, 2vw, 26px)/1.3 var(--display) }
+.slide .nums { display: flex; flex-wrap: wrap; gap: 22px 34px; margin-top: 24px }
+.slide .num b { display: block; font: 700 clamp(26px, 3vw, 40px)/1 var(--display); color: var(--ink); font-variant-numeric: tabular-nums } .slide .num span { color: var(--muted); font-size: 13px }
+.slide .src { margin-top: 22px; font: 12px var(--mono); color: var(--dim) }
+.side { padding: 16px; display: grid; gap: 14px; align-content: start }
+.side h4 { margin: 0; font: 600 11px/1.2 var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--muted) }
+.say { font-size: 15.5px; line-height: 1.55 } .point { font: 600 17px/1.35 var(--display); border-left: 3px solid var(--accent); padding-left: 10px }
+.point:empty { display: none } .meta { font: 12px/1.5 var(--mono); color: var(--dim); overflow-wrap: anywhere }
+.live { display: flex; gap: 8px; flex-wrap: wrap }
+footer { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; color: var(--muted); font-size: 12.5px }
+.dots { display: flex; gap: 4px; flex-wrap: wrap } .dots i { width: 18px; height: 4px; border-radius: 2px; background: var(--line) } .dots i.on { background: var(--accent) } .dots i.seen { background: var(--dim) }
+kbd { font: 600 11px var(--mono); border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 0 5px; background: var(--panel) }
+.gallery { position: fixed; inset: 0; z-index: 20; background: var(--bg); overflow: auto; padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 24px max(16px, env(safe-area-inset-left, 0px)) }
+.gallery .top { display: flex; align-items: center; gap: 12px; margin-bottom: 14px } .gallery h2 { font: 700 22px var(--display); margin: 0 }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 14px }
+.card { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); overflow: hidden; display: grid; grid-template-rows: auto 1fr }
+.card .thumb { aspect-ratio: 16 / 10; overflow: hidden; background: var(--bg2); cursor: pointer; border: 0; padding: 0; width: 100% } .card .thumb img { width: 100%; display: block }
+.card .thumb.slidethumb { display: grid; place-content: center; padding: 18px; font: 700 18px/1.2 var(--display); text-align: left }
+.card .body { padding: 10px 12px; display: grid; gap: 6px } .card .body strong { font: 600 15px/1.25 var(--display) } .card .body span { color: var(--muted); font-size: 13px }
+.help { position: fixed; z-index: 30; right: max(16px, env(safe-area-inset-right, 0px)); bottom: max(16px, env(safe-area-inset-bottom, 0px)); background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; box-shadow: 0 10px 40px rgba(0,0,0,.3); font-size: 13.5px; display: grid; gap: 6px }
+@media (max-width: 1180px) { .main { grid-template-columns: 210px minmax(0, 1fr) } .side { grid-column: 1 / -1 } }
+@media (max-width: 760px) {
+  html, body { height: auto } .app { height: auto }
+  .main { grid-template-columns: minmax(0, 1fr) } .rail { display: flex; gap: 4px; overflow-x: auto; padding: 6px } .rail .act { display: none }
+  .sc { grid-template-columns: auto; width: auto; flex: none; max-width: 180px } .sc .n { display: none }
+  .view { max-height: 70vh } .co { font-size: 12px; max-width: 75% }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important } }
+</style>
+
+<div class="app">
+  <header>
+    <div class="brand"><div class="ladder" aria-hidden="true"><i style="background:var(--alt-A4)"></i><i style="background:var(--alt-A3)"></i><i style="background:var(--alt-A2)"></i><i style="background:var(--alt-A1)"></i><i style="background:var(--alt-A0)"></i></div>
+      <h1 id="title">The Swarm on Elastic</h1><span class="sub" id="sub"></span></div>
+    <div class="spacer"></div>
+    <button class="btn" id="prev" title="Previous (←)">← Back</button>
+    <button class="btn primary" id="next" title="Next (→ or Space)">Next →</button>
+    <button class="btn" id="gal" title="All views (G)">All views</button>
+    <button class="btn" id="fs" title="Full screen (F)">Full screen</button>
+    <button class="btn" id="hlp" title="Keys (?)">?</button>
+  </header>
+  <div class="main">
+    <nav class="rail" id="rail" aria-label="Scenes"></nav>
+    <section class="stage" aria-live="polite">
+      <div class="head"><span class="kicker" id="kicker"></span><h2 id="stitle"></h2></div>
+      <div class="view" id="view"></div>
+    </section>
+    <aside class="side">
+      <div class="point" id="point"></div>
+      <div><h4>What to say</h4><div class="say" id="say"></div></div>
+      <div class="live" id="live"></div>
+      <div class="meta" id="meta"></div>
+    </aside>
+  </div>
+  <footer><div class="dots" id="dots"></div><div class="spacer"></div><span><kbd>←</kbd> <kbd>→</kbd> step · <kbd>G</kbd> all views · <kbd>F</kbd> full screen</span><span id="stamp"></span></footer>
+</div>
+<div class="gallery" id="gallery" hidden><div class="top"><h2>All views</h2><div class="spacer"></div><button class="btn" id="galclose">Back to the presentation</button></div><div class="grid" id="grid"></div></div>
+<div class="help" id="help" hidden><strong>Keys</strong><span><kbd>→</kbd> or <kbd>Space</kbd>: the next callout, then the next scene</span><span><kbd>←</kbd>: back</span><span><kbd>PgDn</kbd> <kbd>PgUp</kbd>: next or previous scene</span><span><kbd>G</kbd>: all views · <kbd>F</kbd>: full screen · <kbd>L</kbd>: open the live view</span><button class="btn" id="helpclose">Close</button></div>
+
+<script>
+const DATA = /*__DATA__*/null;
+const $ = id => document.getElementById(id);
+const scenes = DATA.scenes;
+let si = 0, step = 0;
+const steps = s => s.shot ? (s.callouts || []).length : (s.lines || []).length;
+document.title = DATA.title; $('title').textContent = DATA.title; $('sub').textContent = DATA.about || '';
+$('stamp').textContent = DATA.read_at ? 'Data as of ' + DATA.read_at : '';
+
+// the rail, grouped by act
+(function rail() {
+  let act = null, html = '';
+  scenes.forEach((s, i) => { if (s.act !== act) { act = s.act; html += `<div class="act">${esc(act)}</div>`; }
+    html += `<button class="sc" data-i="${i}"><span class="n">${String(i + 1).padStart(2, '0')}</span><span>${esc(s.title)}</span></button>`; });
+  $('rail').innerHTML = html;
+  $('rail').addEventListener('click', e => { const b = e.target.closest('.sc'); if (b) go(+b.dataset.i, 0); });
+  $('dots').innerHTML = scenes.map(() => '<i></i>').join('');
+})();
+function esc(s) { return String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+
+function render() {
+  const s = scenes[si];
+  document.querySelectorAll('.sc').forEach((b, i) => b.setAttribute('aria-current', i === si ? 'true' : 'false'));
+  document.querySelectorAll('.dots i').forEach((d, i) => d.className = i === si ? 'on' : i < si ? 'seen' : '');
+  $('kicker').textContent = s.kicker || s.act || '';
+  $('stitle').textContent = s.title;
+  $('say').textContent = s.say || '';
+  $('meta').textContent = s.source ? 'Source: ' + s.source : '';
+  $('live').innerHTML = (s.live ? `<a class="btn primary" href="${esc(s.live)}" target="_blank" rel="noopener">Open live in ${esc(s.liveLabel || (s.live.includes('grafana') ? 'Grafana' : 'Kibana'))} ↗</a>` : '') + (s.links || []).map(l => `<a class="btn" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join('');
+  const view = $('view');
+  if (s.shot && s.img) {
+    if (view.dataset.scene !== s.id) {
+      view.dataset.scene = s.id;
+      view.innerHTML = `<div class="frame" id="frame"><img src="${s.img}" alt="${esc(s.title)}: a screenshot of ${esc(s.liveLabel || 'Kibana')}" width="${s.w}" height="${s.h}"><svg class="over" id="over" viewBox="0 0 1000 ${Math.round(1000 * s.h / s.w)}" preserveAspectRatio="none" aria-hidden="true"></svg></div>`;
+      view.scrollTop = 0;
+    }
+    drawCallouts(s);
+  } else {
+    view.dataset.scene = s.id;
+    view.innerHTML = `<div class="slide"><div class="k">${esc(s.kicker || '')}</div><h3>${esc(s.headline || s.title)}</h3><ul>${(s.lines || []).map((l, i) => `<li class="${l.big ? 'big' : ''} ${i < Math.max(step, s.showAll ? 99 : 0) ? 'on' : ''}">${esc(l.text || l)}</li>`).join('')}</ul>${s.nums ? `<div class="nums">${s.nums.map(n => `<div class="num"><b>${esc(n.v)}</b><span>${esc(n.l)}</span></div>`).join('')}</div>` : ''}${s.footnote ? `<div class="src">${esc(s.footnote)}</div>` : ''}</div>`;
+    $('point').textContent = '';
+  }
+  try { history.replaceState(null, '', '#' + s.id); } catch (e) {}
+  try { localStorage.setItem('swarm-elastic-pos', JSON.stringify({ si, step })); } catch (e) {}
+}
+
+function drawCallouts(s) {
+  const frame = $('frame'), over = $('over'); if (!frame) return;
+  frame.querySelectorAll('.co').forEach(n => n.remove());
+  const H = 1000 * s.h / s.w, cos = s.callouts || [];
+  const cur = step > 0 ? cos[step - 1] : null;
+  // spotlight: shade everything but the current panel
+  let svg = '';
+  if (cur) {
+    const b = cur.box, x = b.x * 1000, y = b.y * H, w = b.w * 1000, h = b.h * H;
+    svg += `<defs><mask id="m"><rect width="1000" height="${H}" fill="white"/><rect x="${x - 4}" y="${y - 4}" width="${w + 8}" height="${h + 8}" rx="10" fill="black"/></mask></defs>`;
+    svg += `<rect width="1000" height="${H}" fill="var(--shade)" mask="url(#m)"/>`;
+  }
+  cos.forEach((c, i) => { if (i >= step) return; const b = c.box, cur2 = i === step - 1;
+    svg += `<rect x="${b.x * 1000 - 3}" y="${b.y * H - 3}" width="${b.w * 1000 + 6}" height="${b.h * H + 6}" rx="9" fill="none" stroke="var(--accent)" stroke-width="${cur2 ? 3 : 1.5}" vector-effect="non-scaling-stroke" opacity="${cur2 ? 1 : .55}"/>`; });
+  over.innerHTML = svg;
+  cos.forEach((c, i) => {
+    if (i !== step - 1) return;
+    const el = document.createElement('div'); const b = c.box;
+    const below = b.y < 0.06;
+    el.className = 'co' + (below ? ' below' : '');
+    el.style.left = Math.min(b.x * 100, 70) + '%';
+    el.style.top = (below ? (b.y + b.h) : b.y) * 100 + '%';
+    el.innerHTML = `<b>${i + 1}</b><span>${esc(c.label)}</span>`;
+    frame.appendChild(el);
+  });
+  $('point').textContent = cur ? cur.point || cur.label : (s.lead || '');
+  // bring the current panel into view
+  const view = $('view');
+  if (cur) { const img = frame.querySelector('img'); const scale = img.clientHeight / s.h; const top = cur.box.y * s.h * scale; view.scrollTop = Math.max(0, top - 70); }
+}
+
+function go(i, st) { si = Math.max(0, Math.min(scenes.length - 1, i)); step = st === 'end' ? steps(scenes[si]) : st; render(); }
+function next() { const s = scenes[si]; if (step < steps(s)) { step++; render(); } else if (si < scenes.length - 1) go(si + 1, 0); }
+function prev() { if (step > 0) { step--; render(); } else if (si > 0) go(si - 1, 'end'); }
+$('next').onclick = next; $('prev').onclick = prev;
+$('fs').onclick = () => { const d = document.documentElement; (document.fullscreenElement ? document.exitFullscreen() : d.requestFullscreen?.())?.catch?.(() => {}); };
+$('hlp').onclick = () => $('help').hidden = !$('help').hidden; $('helpclose').onclick = () => $('help').hidden = true;
+function gallery(show) {
+  if (show) $('grid').innerHTML = scenes.map((s, i) => `<article class="card">${s.img ? `<button class="thumb" data-i="${i}" aria-label="Present ${esc(s.title)}"><img src="${s.img}" alt="" loading="lazy"></button>` : `<button class="thumb slidethumb" data-i="${i}">${esc(s.headline || s.title)}</button>`}<div class="body"><strong>${esc(s.title)}</strong><span>${esc(s.lead || s.kicker || '')}</span>${s.live ? `<a href="${esc(s.live)}" target="_blank" rel="noopener">Open live ↗</a>` : ''}</div></article>`).join('');
+  $('gallery').hidden = !show;
+}
+$('gal').onclick = () => gallery(true); $('galclose').onclick = () => gallery(false);
+$('grid').addEventListener('click', e => { const b = e.target.closest('.thumb'); if (b) { gallery(false); go(+b.dataset.i, 0); } });
+document.addEventListener('keydown', e => {
+  if (e.target.closest('input, textarea')) return;
+  const k = e.key;
+  if (k === 'ArrowRight' || k === ' ') { e.preventDefault(); next(); }
+  else if (k === 'ArrowLeft') { e.preventDefault(); prev(); }
+  else if (k === 'PageDown') { e.preventDefault(); go(si + 1, 0); } else if (k === 'PageUp') { e.preventDefault(); go(si - 1, 0); }
+  else if (k === 'Home') go(0, 0); else if (k === 'End') go(scenes.length - 1, 0);
+  else if (k === 'g' || k === 'G') gallery($('gallery').hidden); else if (k === 'Escape') { gallery(false); $('help').hidden = true; }
+  else if (k === 'f' || k === 'F') $('fs').click(); else if (k === '?') $('hlp').click();
+  else if ((k === 'l' || k === 'L') && scenes[si].live) window.open(scenes[si].live, '_blank', 'noopener');
+});
+window.addEventListener('resize', () => { if (scenes[si].shot) drawCallouts(scenes[si]); });
+function fromHash() { const id = location.hash.slice(1); const i = scenes.findIndex(s => s.id === id); return i; }
+window.addEventListener('hashchange', () => { const i = fromHash(); if (i >= 0 && i !== si) go(i, 0); });
+(function start() { let i = fromHash(); if (i < 0) { try { const p = JSON.parse(localStorage.getItem('swarm-elastic-pos') || 'null'); if (p) { go(p.si || 0, 0); return; } } catch (e) {} i = 0; } go(i, 0); })();
+</script>

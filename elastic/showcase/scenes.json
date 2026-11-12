@@ -1,0 +1,162 @@
+{
+  "title": "The Swarm on Elastic",
+  "about": "the best of Kibana and Grafana, for the agentic swarm at Web Summit",
+  "read_at": "2026-11-12T07:46Z",
+  "by": "elastic.1.fringe@PrompTugal.dinis",
+  "kibana": "https://my-observability-deployment-cd4ce8.kb.us-central1.gcp.cloud.es.io",
+  "scenes": [
+    { "id": "opening", "act": "1 · The swarm, in one place", "title": "Everything the swarm does lands on one stack",
+      "kicker": "Elastic · the agentic swarm", "headline": "Every run, every agent, every model call. One stack.",
+      "lines": [
+        "Three public sites, built by about 200 agents for 6 people, since 28 October.",
+        "Every unit of work signs its own result: the A4 swarm, A3 agents, A2 loops, A1 model calls, A0 compute.",
+        { "text": "It all goes to Elastic, from wherever it runs: Claude Code, GitHub Actions, OpenRouter.", "big": true }
+      ],
+      "nums": [ { "v": "28,923", "l": "documents in 30 indices" }, { "v": "11,115", "l": "commits by 200 agents" }, { "v": "773", "l": "signed units in 27 runs" }, { "v": "827", "l": "model calls, 16 models, 24 providers" } ],
+      "footnote": "Read from the deployment at 07:46 UTC, 12 November 2026 (_cat/indices; ES|QL on *-commits, swarm-flows, traces-generic.otel-default).",
+      "say": "Open with the scale. Everything you'll see is live data: three public repositories, the agents' own run records, and OpenRouter's traces of every model call. Nothing was typed in by hand.",
+      "lead": "The scale, from the deployment itself." },
+
+    { "id": "swarm-runs", "act": "1 · The swarm, in one place", "title": "The swarm's runs, drawn the stage's way", "shot": "swarmruns",
+      "kicker": "Kibana · Vega", "lead": "The swarm's stage, rebuilt inside Kibana from swarm-flows.",
+      "callouts": [
+        { "panel": "One run, every unit", "label": "One storm run: about 93 units in 50 seconds, each bar one unit with its own key.", "point": "Every bar is a unit of work that started, ran and signed its result: A3 agent at the top, A1 model calls and A0 compute below." },
+        { "panel": "The evening", "label": "The whole evening: the runs climb the ladder, A0 up to A4.", "point": "As the night went on, the runs moved up the altitudes: compute first, then model calls, then loops and agents." },
+        { "panel": "The ladder", "label": "369 model calls and 319 compute steps under 76 loops and 8 agents.", "point": "The ladder: most work is cheap, small and low down. That is the point of the altitudes." },
+        { "panel": "Where the units ran", "label": "93% of the units ran in GitHub Actions (R8), not in a chat session.", "point": "The same records come from any environment: Claude Code cloud (R1) and GitHub Actions (R8) here." }
+      ],
+      "say": "This is the swarm's own stage, rebuilt in Kibana with Vega-Lite: the same altitude lanes and the same colours, straight from the swarm-flows index. Hover any bar in the live view for its model, cost and outcome. Red edges are invalid answers that were retried.",
+      "source": "swarm-flows (architect.1's flow.mjs, swarm.1 in GitHub Actions); dashboard 11, admin/tools/elastic-kibana.mjs" },
+
+    { "id": "altitudes", "act": "2 · The altitudes of execution", "title": "Every unit signs, and we can see who held too much", "shot": "altitudes",
+      "kicker": "Kibana · Lens", "lead": "The operating model's rules, as data.",
+      "callouts": [
+        { "panel": "1. Units by altitude", "label": "Every unit of every run, by the time its key was born.", "point": "Each unit gets its own key when it starts and signs when it ends." },
+        { "panel": "2. The tree of each run", "label": "Each run as a tree: depth, altitude and role.", "point": "An agent starts loops; loops start model calls and compute. The tree is in the data." },
+        { "panel": "4. The keys", "label": "One key per unit, born to signed: 130 of 132 verified.", "point": "The two without a signature are agents, which sign with their session key." },
+        { "panel": "6. Mixing altitudes", "label": "Loops and compute held 20 to 22 capabilities they did not need.", "point": "Mixing altitudes: the low units inherited the agent's reach. This is the finding the policy now watches (R12)." },
+        { "panel": "7. LLM calls: valid answers", "label": "38% of the first answers were invalid and retried.", "point": "Cheap open-weight calls fail more often, and the retries are visible and cheap." }
+      ],
+      "say": "Dinis and Angelo's model: the same shape at every size, an objective, a mandate, a grant, a key and a signed result. Here it is as data. The keys panel proves each unit signed; the mixing panel shows the one thing to fix, units that held far more than they needed.",
+      "source": "fringe-altitudes (architect.1's data/altitude-runs.json, from signed sources only); dashboard 7" },
+
+    { "id": "esql-ladder", "act": "2 · The altitudes of execution", "title": "One query, the whole ladder", "shot": "esql-ladder",
+      "kicker": "Discover · ES|QL", "lead": "Type it live: one ES|QL query answers the altitude question.",
+      "liveLabel": "Discover",
+      "say": "Switch to Discover and type this live. One ES|QL query over the runs gives units, cost, average duration and invalid answers per altitude. No dashboard needed: the question is the query.",
+      "source": "FROM swarm-flows | WHERE phase == \"end\" | STATS units, usd, avg_ms, invalid BY altitude" },
+
+    { "id": "workloads", "act": "2 · The altitudes of execution", "title": "Where each agent runs, and what could run cheaper", "shot": "workloads",
+      "kicker": "Kibana · Lens", "lead": "Placements, the matrix and Angelo's run log.",
+      "callouts": [
+        { "panel": "Board items by lowest altitude", "label": "Every board item placed at the lowest altitude that can do it.", "point": "51 items: most need an agent (A3); some need only a model call or code." },
+        { "panel": "Agents: runtime by I/O level", "label": "Today every agent is an A3 loop on Claude Code (R1).", "point": "The gap to close: work that could run on open-weight models, cheaper." },
+        { "panel": "The matrix", "label": "Each task: who does it now, and what could.", "point": "The where-agents-run matrix, from Dinis and Angelo's brief 14." },
+        { "panel": "Angelo's run log", "label": "Angelo's conductor logs every agentic activity, one line each.", "point": "Angelo's side, in the same place as Dinis's." }
+      ],
+      "say": "The planning view: where every agent runs today, every board item at its lowest altitude, and the matrix of what could move to cheaper models. Angelo's conductor's run log and traces sit beside it.",
+      "source": "fringe-workloads (data/runtimes.json, operating-model.json, work-altitudes.json, run-reach.json, tasks/, team/angelo/); dashboard 6" },
+
+    { "id": "cross", "act": "3 · Two conductors, one test", "title": "Dinis's conductor and Angelo's, side by side", "shot": "cross",
+      "kicker": "Kibana · cross-conductor", "lead": "Packets issued by one person's conductor, run by the other's.",
+      "callouts": [
+        { "panel": "Who issued what to whom", "label": "p3 and p4 issued by Dinis's lead, run by Angelo's conductor, and two back.", "point": "A task packet is signed by its issuer; the result is signed by whoever ran it, in their own account." },
+        { "panel": "Side by side", "label": "Same model, two accounts: cost and latency per call.", "point": "Angelo's runs: 6 of 6 and 4 of 4 valid. Dinis's lead: 4 of 6 and 2 of 4." },
+        { "panel": "The runs as they happened", "label": "Every unit's start and end, from both environments.", "point": "The flow events come inside each result, with trace and span ids." },
+        { "panel": "OpenRouter's side: per key", "label": "OpenRouter's own traces of the same calls, by API key.", "point": "Ten calls on the agents' key match Angelo's ten packet calls exactly: two independent records agree." }
+      ],
+      "say": "The live cross-conductor test from last night. Dinis's conductor issued two task packets to Angelo's; Angelo's issued two back. Our records on the left, OpenRouter's traces on the right: the two independent sources match call for call.",
+      "source": "fringe-packets (tasks/*/packet.json, result-*.json); traces-generic.otel-default; dashboard 10" },
+
+    { "id": "openrouter", "act": "3 · Two conductors, one test", "title": "Every model call, from the provider's side", "shot": "openrouter",
+      "kicker": "OpenTelemetry · OpenRouter Broadcast", "lead": "OpenRouter sends a trace of every call straight to Elastic.",
+      "callouts": [
+        { "panel": "Who served them", "label": "OpenRouter spread the calls across many providers.", "point": "One request, many possible providers: the trace says which one answered." },
+        { "panel": "Time to first token by model", "label": "Open-weight models answer in about 130 to 200 ms; frontier in about 1.9 s.", "point": "Speed and cost per model, measured, not quoted." },
+        { "panel": "How calls ended", "label": "Calls cut at the token limit show up at once.", "point": "We caught our own max_tokens set too low within minutes." },
+        { "panel": "Open-weight and frontier side by side", "label": "Per model and provider: calls, cost, tokens, latency.", "point": "The table you take to a procurement conversation." }
+      ],
+      "say": "We switched on OpenRouter's Broadcast: every model call any agent makes arrives as an OpenTelemetry trace, with model, provider, tokens, cost and time to first token. Prompts are kept in the traces by Dinis's decision, and shown on no panel.",
+      "source": "traces-generic.otel-default (service.name openrouter); dashboard 9" },
+
+    { "id": "swarm", "act": "4 · Three sites, one view", "title": "Three sites, 11,000 commits, one view", "shot": "swarm",
+      "kicker": "Kibana · Lens", "lead": "Lisbon Tech Fringe, PrompTugal.news and the Web Summit site, together.",
+      "callouts": [
+        { "panel": "Commits per hour, by site", "label": "Every commit on the three sites, hour by hour since 28 October.", "point": "Read from the public repositories; each commit attributed to its agent from its Agent: trailer." },
+        { "panel": "The busiest agents", "label": "The busiest agents across all three sites.", "point": "About 200 agents; under 1% of commits stay unattributed." },
+        { "panel": "Who works where", "label": "Who works where: each person's agents, by site.", "point": "One person, several sites, many agents: the swarm's shape." }
+      ],
+      "say": "The swarm's whole output since 28 October: every commit on the three public sites, attributed to the agent that made it. This is the view a manager asks for: who did what, where, and when.",
+      "source": "fringe-commits, ptnews-commits, websummit-commits (admin/tools/elastic-sites.mjs); dashboard 1" },
+
+    { "id": "esql-changepoint", "act": "4 · Three sites, one view", "title": "The engine finds the moment the pace changed", "shot": "esql-changepoint",
+      "kicker": "Discover · ES|QL CHANGE_POINT", "lead": "Statistics in the query language.",
+      "liveLabel": "Discover",
+      "say": "One more ES|QL query, live: commits per hour across the three sites, and CHANGE_POINT finds where the pace changed, a trend change on 10 November at 17:00 UTC, with a p-value of about 10⁻⁷. Nobody told it where to look.",
+      "source": "FROM *-commits | STATS commits = COUNT(*) BY bucket = BUCKET(t, 1 hour) | CHANGE_POINT commits ON bucket" },
+
+    { "id": "fringe", "act": "4 · Three sites, one view", "title": "Lisbon Tech Fringe: the week, live", "shot": "fringe",
+      "kicker": "Kibana · the side events", "lead": "179 side events, each re-read at its public page.",
+      "callouts": [
+        { "panel": "Events by start hour", "label": "The week by start hour and type.", "point": "Wednesday to Saturday, side events, meetups and workshops." },
+        { "panel": "Status", "label": "Status as read at each source: on, moved, cancelled, unknown.", "point": "Unknown is a valid status; a guess is not a fact." },
+        { "panel": "Topics", "label": "What the week is about.", "point": "AI leads, then growth and international expansion." }
+      ],
+      "say": "The public side of the work: lisbontechfringe.com's 179 side events, each re-read at its own public page, searchable and filterable here. The site stays static; Elastic is an extra reader.",
+      "source": "fringe-events (data/events.json); dashboard 2" },
+
+    { "id": "ptnews", "act": "4 · Three sites, one view", "title": "PrompTugal.news: an agentic newsroom", "shot": "ptnews",
+      "kicker": "Kibana · the newsroom", "lead": "Stories from idea to published, and the desks that run it.",
+      "callouts": [
+        { "panel": "Stories: where each is", "label": "89 stories, most already published.", "point": "Each story moves idea, draft, review, published, each step by an agent." },
+        { "panel": "Tool calls by agent", "label": "Tool calls per desk agent.", "point": "The newsroom's work, measured per agent from its run reports." }
+      ],
+      "say": "The newsroom behind promptugal.news: stories, companies, organisations, events and evidence, and the run reports of every desk agent, 1,700 and counting.",
+      "source": "ptnews-entities, ptnews-runs, ptnews-content (PrompTugal__News__Website); dashboard 3" },
+
+    { "id": "governance", "act": "5 · Governed by policy", "title": "Who did what, under which policy", "shot": "abp",
+      "kicker": "Kibana · the Agent Behaviour Policy", "lead": "Every tool call checked against the agent's grant.",
+      "callouts": [
+        { "panel": "Hook decisions", "label": "Every tool call: allowed, observed outside the grant, or denied.", "point": "The ABP hook logs each decision; the enforced rules (R5, R8, R9) deny." },
+        { "panel": "Hook events, newest first", "label": "Each event, with its command redacted.", "point": "No secret ever reaches the log: commands are redacted twice." }
+      ],
+      "say": "Governance you can query. Every tool call an agent makes passes its policy hook: allowed, logged as outside its grant, or denied by an enforced rule. Here are the decisions, swarm-wide as more agents push their logs.",
+      "source": "fringe-hooklog (.claude/hooks/abp.mjs logs), swarm-abp-reviews (architect.1); dashboard 5" },
+
+    { "id": "operations", "act": "5 · Governed by policy", "title": "Many agents write to Elastic; one steward watches", "shot": "ops",
+      "kicker": "Kibana · operations", "lead": "Every submission, by every agent, audited.",
+      "callouts": [
+        { "panel": "Submissions over time", "label": "Every submission, push or feed, by agent.", "point": "Agents write to their own indices; the owner is recorded in the index itself." },
+        { "panel": "Indices: documents", "label": "Every index, its documents and when it was last fed.", "point": "The catalog of the swarm's data." }
+      ],
+      "say": "Elastic isn't one agent's tool: any agent can push to its own index or commit a feed. Privacy checks hold back anything that looks like an email, a phone or a key; this dashboard shows every submission and anything held.",
+      "source": "elastic-submissions, swarm-elastic-catalog (admin/tools/elastic-submit.mjs, elastic-feeds.mjs); dashboard 8; docs/elastic-guidance.md" },
+
+    { "id": "grafana", "act": "6 · And in Grafana", "title": "The same swarm, in Grafana", "shot": "grafana",
+      "kicker": "Grafana Cloud · grafana.1", "lead": "grafana.1's Swarm dashboard, from the site's public API.",
+      "liveLabel": "Grafana",
+      "callouts": [
+        { "box": { "x": 0.02, "y": 0.06, "w": 0.96, "h": 0.1 }, "label": "Swarm health, agents online, commits and deploys, from the public API.", "point": "Read from lisbontechfringe.com's /api/v1/, rebuilt at each deploy." },
+        { "box": { "x": 0.02, "y": 0.47, "w": 0.48, "h": 0.33 }, "label": "Commits per agent in the last three hours.", "point": "The same agents as in Kibana, from a different source." }
+      ],
+      "say": "The same swarm in Grafana, built by grafana.1 from the site's public API. Its four Elastic panels wait for an Elasticsearch data source in Grafana; once added, Grafana reads the very indices you just saw.",
+      "source": "grafana.1's dashboard swarm-fringe on vividwombat1572.grafana.net (read-only screenshot)" },
+
+    { "id": "how", "act": "6 · And in Grafana", "title": "How it's built", "kicker": "The plumbing",
+      "headline": "All of it is code, and all of it refreshes every hour.",
+      "lines": [
+        "Ingest tools read the public repositories and the agents' signed records; every document carries its source, read time and signer.",
+        "Privacy checks run on every document: contact details, private people and keys are held back before they leave.",
+        "Dashboards are generated from one script; any agent can add its own from a spec in its own folder.",
+        { "text": "Same data, many views: Kibana, Discover, Vega, Grafana, and the swarm's own stage.", "big": true }
+      ],
+      "links": [
+        { "label": "The guidance", "url": "https://github.com/PrompTugal/PrompTugal__News__Fringe/blob/dev/docs/elastic-guidance.md" },
+        { "label": "The research: Kibana for the altitudes", "url": "https://github.com/PrompTugal/PrompTugal__News__Fringe/blob/dev/docs/elastic-kibana-features.md" },
+        { "label": "The swarm's stage", "url": "https://swarm.promptugal.news" }
+      ],
+      "footnote": "admin/tools/elastic*.mjs and elastic/ in PrompTugal/PrompTugal__News__Fringe; kept by elastic.1.fringe@PrompTugal.dinis.",
+      "say": "Close on how: everything is code in the open repository, it refreshes every hour, and any agent can add its own data and dashboards under the same rules.",
+      "lead": "Code in the open, refreshed hourly." }
+  ]
+}

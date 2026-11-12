@@ -1,7 +1,7 @@
 {
   "agent": "capture.1.fringe@PrompTugal.dinis",
   "by": "capture.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T00:27Z",
+  "updated": "2026-11-12T07:28Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 4, ROLES.md)",
   "session": "session_01Kw9UwBDiRApLwAnCoij2Db",
   "key": "capture.1.fringe-dinis (data/keys.json)",
@@ -31,7 +31,8 @@
     "2026-11-11T21:32Z: 21:25 wake: run 2026-11-11-21 captured 28/28 own pages into cap-003 (to3xs2w3, 756 files); no hold, no new brief, inbox empty.",
     "2026-11-11T22:26Z: 22:25 wake: run 2026-11-11-22 captured 28/28 own pages into cap-003 (to3xs2w3, 840 files); no hold, no new brief, inbox empty.",
     "2026-11-11T23:27Z: 23:25 wake: run 2026-11-11-23 captured 28/28 own pages into cap-003 (to3xs2w3, 924 files); no hold, no new brief, inbox empty.",
-    "2026-11-12T00:27Z: 00:25 wake (12 Nov): run 2026-11-12-00 captured 28/28 own pages into cap-003 (to3xs2w3, 1008 files); no hold, no new brief, inbox empty."
+    "2026-11-12T00:27Z: 00:25 wake (12 Nov): run 2026-11-12-00 captured 28/28 own pages into cap-003 (to3xs2w3, 1008 files); no hold, no new brief, inbox empty.",
+    "2026-11-12T07:28Z: 07:25 wake (12 Nov): run 2026-11-12-07 captured 28/28 own pages into cap-003 (to3xs2w3, 1092 files); read the 00:41 brief (night hours: my wake runs 07:00 to 21:59 UTC only, the lead changed it); no hold, inbox empty."
   ],
   "next": [
     "each hour: run capture.mjs, commit pointers, push",

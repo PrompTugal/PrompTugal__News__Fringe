@@ -1,9 +1,9 @@
 {
   "by": "conductor.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T06:22Z",
+  "updated": "2026-11-12T08:23Z",
   "person": "dinis",
   "role": "head",
-  "state": "wake 06:22 Thursday: live at v0.1.785; night was quiet (status-only wakes on other accounts; ours slept); the swarm team built stage.html through the night; storm: Lisbon green per the storm site's API (researcher.2, 06:12)",
+  "state": "wake 08:23 Thursday: live at v0.1.842; the home says 'last checked Wednesday ... check the organiser's page before you go'; D43 (how to get in tonight: Open, Register, Approval) live; the swarm site gained a hub, Stories and booth mode",
   "conductor": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq, the lead since 11:14 UTC at Dinis's word; it replaces session_01Kw9UwBGQe9BhMCbDw28aDA)",
   "agents": [
     {
@@ -127,6 +127,8 @@
     "reviewing what lands on dev; routing Dinis's briefs"
   ],
   "done": [
+    "08:23: the morning advice landed: design.1's dated read line (home, /now/, event pages), design.4's D43 evening 'how to get in', outreach.1 counted round 1 (0 answers) and drafted round 2 ('tonight after the summit') for Jose; elastic.1's 'The Swarm on Elastic' presenter and Kibana dashboard 11; swarm.1's Stories question put to Dinis",
+    "07:22: advisor's eighth note and security's twelfth review onto dev (no findings; finding 48 fixed by Angelo's conductor); routed: the home line to say 'last checked Wednesday', the storm block to history (design.1); an 'Open tonight, walk in' block (design.4); researcher.2's asks answered; outreach.1 to count yesterday's result before more notes; read desk Block D (and A) put to Vicky",
     "06:22: security's ninth to eleventh reviews onto dev (no high; finding 47 is finding 41, which you accepted at 00:41; finding 48, low, an unescaped innerHTML in Angelo's storm-trace, sent to Angelo's conductor); inboxes for swarm.1.dev and swarm.1.designer (28 lanes); read desk: Jose, Indi and Angelo were asked by their conductors, no one has taken a block yet",
     "00:41: Dinis said yes to night hours: 15 scheduled tasks now wake 07:00 to 21:59 UTC (researcher.2, design.1, the advisor and the lead from about 06:10 to 06:53); finding 41 (shared credentials) accepted by Dinis; brief 16",
     "00:22: drained (Indi's conductor: Block C put to Indi; Angelo's conductor: a reply for incident.conductor@web-summit.dinis, outside this swarm, held for you); swarm.1.dev and swarm.1.designer on the roster (started by architect.1 at your word, 23:43)",
@@ -182,8 +184,8 @@
     "tell conductor@PrompTugal.dinis the URL so pt.news links it; tell incident.conductor@web-summit.dinis that we read the storm site's /api/v1/"
   ],
   "asks": [
-    "Dinis (1, now, 07:00): Luma. No word yet, and no one has taken a read-desk block (work/53; Block A, 10 events from 07:00, is free; Vicky's conductor has not put it to her). Choose: your word on Luma; or take Block A yourself in a browser; or let the Thursday statuses stand as last re-checked on Wednesday (the pages say so).",
-    "Dinis (2, GitHub settings, a few minutes): one ruleset protecting main, .claude/** and abp/** and requiring pushes to dev through the gate (findings 1, 2, 28, 38, 45); a yes to architect.1's signed overrides and its fix for unidentified sessions (finding 44); and a scheduled deploy at 00:05 and hourly in .github/workflows (design.1: the home rolls to the new day even when no agent pushes).",
+    "Dinis (1): Thursday's statuses: the pages now say plainly 'last checked Wednesday'; Blocks B, C, D of the read desk (work/53) still have no reader. Your word on Luma, or one person on Block D (17:00 on, 37 events), would make tonight's list current.",
+    "Dinis (2, for the swarm's Stories): answer one of swarm.1's three questions in your own words (voice or typed), and say if it may be published: 1. What is RiskMandate? 2. What is an agent behaviour policy? 3. What have you been working on this week? I send it to swarm.1's inbox.",
     "Dinis (3, the swarm demo): add the repository secret OPENROUTER_API_KEY to PrompTugal__News__Swarm (Settings > Secrets and variables > Actions) so GitHub Actions can run packets; set the repo's About website to https://swarm.promptugal.news; scoped cloud credentials and a number for any new session. Also: how long to keep OpenRouter traces in Elastic.",
     "Dinis (4): the old address fringe.promptugal.news has been 404 for six hours; an org admin creates the redirect repository (admin/redirect/). And R5: may the lead mirror dev to claude/magical-mayer-pxpzed, that branch only?"
   ]

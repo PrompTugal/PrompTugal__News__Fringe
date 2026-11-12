@@ -163,6 +163,12 @@ def drain(me_id, show_all, lane=None):
                         tdir = os.path.expanduser('~/.sg-send/fringe-tips'); os.makedirs(tdir, mode=0o700, exist_ok=True); tp = os.path.join(tdir, msg['id'] + '.jpg')
                         open(tp, 'wb').write(base64.b64decode(msg['image'].split(',', 1)[1])); tipx['screenshot'] = tp
                     msg.pop('image', None)
+                if msg.get('kind') == 'swarm.promptugal.news/stand-story/v1' and re.fullmatch(r'stand-[0-9a-z]{4,16}', str(msg.get('id'))):   # swarm.1: a story made at the stand; saved OUTSIDE git for swarm.1 to check and publish
+                    sdir = os.path.expanduser('~/.sg-send/fringe-stand'); os.makedirs(sdir, mode=0o700, exist_ok=True); sp = os.path.join(sdir, msg['id'] + '.json')
+                    open(sp, 'w').write(json.dumps(msg, indent=1, ensure_ascii=False)); tipx = {'stand_story': msg['id'], 'saved': sp, 'scenes': len((msg.get('story') or {}).get('scenes') or []), 'consent': msg.get('consent_to_publish')}
+                    msg['text'] = '(a stand story: see saved)'
+                if msg.get('kind') == 'swarm.promptugal.news/feedback/v1':   # swarm.1: a team member's note from the swarm site's feedback button
+                    tipx = {'feedback_id': msg.get('id'), 'reaction': msg.get('reaction'), 'name': msg.get('name'), 'page': msg.get('page'), 'hash': msg.get('hash'), 'heading': msg.get('heading'), 'screen': msg.get('screen')}
                 print(json.dumps({**tipx, 'file': f['file_id'], 'signed_by': who, 'check': ok, 'claims_from': msg.get('from'), 'sent': msg.get('sent'), 'subject': msg.get('subject'), 'text': msg.get('text')}, ensure_ascii=False))
             except Exception as e:
                 print(json.dumps({'file': f['file_id'], 'undecryptable': type(e).__name__}))

@@ -1,12 +1,12 @@
 {
   "by": "conductor.fringe@PrompTugal.vicky",
-  "updated": "2026-11-12T06:24Z",
+  "updated": "2026-11-12T08:24Z",
   "person": "vicky",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.vicky, started 11:05 UTC by conductor.B@PrompTugal.vicky; hourly wake until Friday 13 November (set by conductor.B)",
   "lane": "the editorial check (SWARM.md): every event verified before it goes up",
   "doing": [
-    "work/13 editorial check, data only: wake Thu 12 Nov 06:24 UTC, data of 06:13 UTC (179 events; researcher's morning iCal read: feeds unchanged): no contact details; topics (7) and end (1) open; night-hours question for Vicky in asks"
+    "work/13 editorial check, data only: wake Thu 12 Nov 08:24 UTC, data of 08:12 UTC (179 events) unchanged: no contact details; topics (7) and end (1) open; read desk (work/53) blocks A and D waiting on Vicky's word, no seen entries yet"
   ],
   "done": [
     "read CLAUDE.md, SWARM.md, JOIN.md, BRIEF.md, BRIEF-CORRECTIONS.md, REALITY.md, ROSTER.md and work/",
@@ -30,7 +30,8 @@
     "Friday 13 events need a person's read or the organisers' posts, not machine re-reads"
   ],
   "asks": [
-    "Vicky: brief 16 (Dinis, 00:41 UTC): the lead moved its Fringe wakes to 07:00 to 21:59 UTC and says each person decides for their own team. My hourly wake still runs overnight and has found nothing new since 22:00. Do you want it limited to the same hours? (conductor.B holds the schedule; I may not change it.)"
+    "Vicky: the lead's work/53 (Thursday's read desk, by hand, because machine reads of Luma are held) offers Vicky's team Block D (17:00 to 23:59 UTC, 37 events) and Block A (07:00 to 09:59 UTC, 10 events). A person opens each link in their own browser and writes the time looked and on / moved / cancelled / ?. Do you want to take either block? I cannot open the pages (machine reads are paused) and I do not decide for you.",
+    "Vicky: night-hours question (brief 16): limit my wake to 07:00 to 21:59 UTC? conductor.B holds the schedule."
   ],
   "notes": [
     "Standing rules (Vicky's word relayed by conductor.B@PrompTugal.vicky, 11 Nov about 14:30 UTC, after Dinis's answer): (1) no machine reads of websummit.com, any subdomain, or the app: no curl, fetch, script, sub-agent, headless/automated browser, API or AI-agent access; its word comes only from a person's own browser read, the organisers' own public posts, or the press. (2) my tools, scripts, notes and wake prompt carry no such step (checked 14:3x UTC). (3) no new work from data copied from the organisers' site; if any is found in this repo, report it, do not change it, until Dinis says. Findings of that check: none found in data/events.json (no websummit.com URL in it); websummit.com appears in this repo only as prohibitions (sources.md, tool headers, data/architecture.json, data/runtimes.json) and as the independence line's link in admin/build/build.mjs, a link not a read.",
