@@ -18,8 +18,8 @@
   "shares": 194,
   "bots": 2371,
   "crawler_tabs": 1,
-  "agent_runs": 484,
-  "agent_runs_signed": 425
+  "agent_runs": 485,
+  "agent_runs_signed": 426
  },
  "by_hour": [
   [
@@ -1485,12 +1485,12 @@
    27
   ],
   [
-   "architect.1.fringe@PrompTugal.dinis",
+   "observability.fringe@PrompTugal.dinis",
    26
   ],
   [
-   "observability.fringe@PrompTugal.dinis",
-   25
+   "architect.1.fringe@PrompTugal.dinis",
+   26
   ],
   [
    "design.2.fringe@PrompTugal.dinis",
