@@ -1,9 +1,9 @@
 {
   "by": "conductor.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T10:22Z",
+  "updated": "2026-11-12T11:22Z",
   "person": "dinis",
   "role": "head",
-  "state": "wake 10:22 Thursday: live at v0.1.902; the read line now says 'Times confirmed in the organisers' calendar feeds today at 10:11 UTC (66 of 68 events seen); cancellations and notes last checked Wednesday'; the post for lunch is drafted",
+  "state": "wake 11:22 Thursday: live at v0.1.929; the lunch post is ready and waits for a person; security finding 50 (the stand's published OpenRouter key) asked of swarm.1",
   "conductor": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq, the lead since 11:14 UTC at Dinis's word; it replaces session_01Kw9UwBGQe9BhMCbDw28aDA)",
   "agents": [
     {
@@ -127,6 +127,7 @@
     "reviewing what lands on dev; routing Dinis's briefs"
   ],
   "done": [
+    "11:22: advisor's tenth note and security's fourteenth review onto dev (no high, no medium; finding 50, low: the swarm stand's OpenRouter key is public by design, safe only if it is a separate capped key); swarm.1 asked which key, its cap and expiry; tonight's 'how to get in' summary is already on the home (Open 2, Register 21, Approval or full 14)",
     "10:22: design.1's two-fact read line live; outreach.1 drafted the post (work/drafts/post-tonight-after-the-summit.md) and corrected the lead: our data does not say 'walk in', so it says '38 events from 16:30, 30 free, most need a quick registration'; round 2 organiser notes tagged per organiser (0 tagged visits so far); Jose's conductor: no answer from Jose on Block B; hotspot fixes set for Friday 07:00",
     "09:22: advisor's ninth note and security's thirteenth review onto dev (no findings; storm-trace escaping confirmed); inboxes.py back to generic (--save-dir; swarm kinds moved to the Swarm repo); routed: a read line with today's calendar-feed confirmation (design.1), the lunch and 16:30 post and outreach round 2 with per-organiser links (outreach.1)",
     "08:23: the morning advice landed: design.1's dated read line (home, /now/, event pages), design.4's D43 evening 'how to get in', outreach.1 counted round 1 (0 answers) and drafted round 2 ('tonight after the summit') for Jose; elastic.1's 'The Swarm on Elastic' presenter and Kibana dashboard 11; swarm.1's Stories question put to Dinis",
@@ -186,10 +187,10 @@
     "tell conductor@PrompTugal.dinis the URL so pt.news links it; tell incident.conductor@web-summit.dinis that we read the storm site's /api/v1/"
   ],
   "asks": [
-    "Dinis (1, people only): post at lunch and about 16:30 UTC, in the WhatsApp groups and on LinkedIn: the drafts are in work/drafts/post-tonight-after-the-summit.md ('Tonight after the summit, in Lisbon: 38 tech events from 16:30, 30 of them free', each link tagged). Check the live count before you post.",
+    "Dinis (1, now, lunch): post 'Tonight after the summit, in Lisbon: 38 tech events from 16:30, 30 of them free' in the WhatsApp groups and on LinkedIn; text in work/drafts/post-tonight-after-the-summit.md, tagged links. Again about 16:30 UTC. Jose can post too.",
+    "Dinis (2, security finding 50): the swarm stand's OpenRouter key is on swarm.promptugal.news with its passphrase, so it is public. Confirm it is a separate key with a small cap and an expiry, not the shared OPEN_ROUTER_KEY all agents use; swarm.1 is asked the same.",
     "Dinis (2, GitHub, a few minutes): one ruleset protecting main, .claude/** and abp/** (security findings 1, 2, 28, 38, 45); a yes to architect.1's signed overrides; and a scheduled deploy in .github/workflows.",
     "Dinis (3): the read desk (work/53): someone on Block D (17:00 on, 37 events) between 15:00 and 16:30 UTC, or close it; the pages say plainly what was checked and when either way.",
-    "Dinis (4): fewer agents on a stable site: keep one design, one dev, researcher.2, security, observability and the lead on the Fringe today; pause the others or move them to the swarm demo by name (17 'nothing open' commits since 07:00).",
-    "Dinis (5): the swarm repository's OpenRouter secret and About link; the redirect for fringe.promptugal.news; R5 for the lead's session branch."
+    "Dinis (4): fewer agents on a stable site: keep one design, one dev, researcher.2, security, observability and the lead on the Fringe today; pause the others or move them to the swarm demo by name (17 'nothing open' commits since 07:00)."
   ]
 }
