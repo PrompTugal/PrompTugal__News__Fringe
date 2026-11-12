@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T15:39Z",
+ "generated": "2026-11-12T15:54Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 588,
-  "reads": 498,
-  "tabs": 287,
-  "countries": 22,
+  "views": 593,
+  "reads": 504,
+  "tabs": 290,
+  "countries": 23,
   "shares": 193,
-  "bots": 2290,
+  "bots": 2292,
   "crawler_tabs": 1,
-  "agent_runs": 456,
-  "agent_runs_signed": 400
+  "agent_runs": 459,
+  "agent_runs_signed": 403
  },
  "by_hour": [
   [
@@ -212,17 +212,17 @@
   ],
   [
    "2026-11-12 15:00",
-   2
+   7
   ]
  ],
  "by_page": [
   [
    "/",
-   240
+   241
   ],
   [
    "/now/",
-   45
+   46
   ],
   [
    "/how/",
@@ -329,6 +329,10 @@
    3
   ],
   [
+   "/e/2026-11-11-indiesummit-lisboa/",
+   3
+  ],
+  [
    "/e/2026-11-11-like-minded/",
    3
   ],
@@ -381,15 +385,15 @@
    2
   ],
   [
-   "/e/2026-11-11-indiesummit-lisboa/",
-   2
-  ],
-  [
    "/e/2026-11-11-kuma-h2h-2/",
    2
   ],
   [
    "/e/2026-11-12-female-founders-breakfast/",
+   2
+  ],
+  [
+   "/e/2026-11-12-the-founder-effect/",
    2
   ],
   [
@@ -529,10 +533,6 @@
    1
   ],
   [
-   "/e/2026-11-12-the-founder-effect/",
-   1
-  ],
-  [
    "/e/2026-11-12-venture-dinner/",
    1
   ],
@@ -595,20 +595,24 @@
   [
    "/e/2026-11-12-get-down-at-the-dev-house/",
    1
+  ],
+  [
+   "/e/2026-11-12-300-oysters-and-ai-web-summit-lisbon-side-even/",
+   1
   ]
  ],
  "reading": [
   [
    "/",
-   184,
+   185,
    47,
    13
   ],
   [
    "/now/",
-   38,
+   39,
    34,
-   47
+   46
   ],
   [
    "/how/",
@@ -719,6 +723,12 @@
    36
   ],
   [
+   "/e/2026-11-12-disconnect-2-connect/",
+   4,
+   10,
+   9
+  ],
+  [
    "/e/2026-11-11-aubay-the-next-move/",
    3,
    101,
@@ -743,6 +753,12 @@
    0
   ],
   [
+   "/e/2026-11-11-indiesummit-lisboa/",
+   3,
+   32,
+   46
+  ],
+  [
    "/e/2026-11-11-like-minded/",
    3,
    9,
@@ -753,12 +769,6 @@
    3,
    0,
    0
-  ],
-  [
-   "/e/2026-11-12-disconnect-2-connect/",
-   3,
-   12,
-   12
   ],
   [
    "/e/2026-11-12-healthcare-re-imagined-by-ai/",
@@ -833,12 +843,6 @@
    24
   ],
   [
-   "/e/2026-11-11-indiesummit-lisboa/",
-   2,
-   16,
-   20
-  ],
-  [
    "/e/2026-11-11-kuma-h2h-2/",
    2,
    14,
@@ -849,6 +853,12 @@
    2,
    26,
    78
+  ],
+  [
+   "/e/2026-11-12-the-founder-effect/",
+   2,
+   28,
+   38
   ],
   [
    "/e/2026-11-11-lisbon-tech-side-event/",
@@ -1031,12 +1041,6 @@
    52
   ],
   [
-   "/e/2026-11-12-the-founder-effect/",
-   1,
-   6,
-   0
-  ],
-  [
    "/e/2026-11-11-demonightlx/",
    1,
    11,
@@ -1167,12 +1171,18 @@
    1,
    11,
    27
+  ],
+  [
+   "/e/2026-11-12-300-oysters-and-ai-web-summit-lisbon-side-even/",
+   1,
+   9,
+   30
   ]
  ],
  "by_country": [
   [
    "Portugal",
-   372
+   376
   ],
   [
    "United Kingdom",
@@ -1257,12 +1267,16 @@
   [
    "Singapore",
    1
+  ],
+  [
+   "Pakistan",
+   1
   ]
  ],
  "by_city": [
   [
    "Lisbon, Portugal",
-   282
+   285
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -1290,7 +1304,7 @@
   ],
   [
    "Montijo, Portugal",
-   10
+   11
   ],
   [
    "Boardman, United States",
@@ -1326,13 +1340,13 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   92
+   93
   ]
  ],
  "by_referrer": [
   [
    "www.google.com",
-   8
+   11
   ],
   [
    "lnkd.in",
@@ -1354,14 +1368,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   549
+   554
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 5434,
+ "other_hosts_views": 5475,
  "by_via": [
   [
    "whatsapp",
@@ -1396,11 +1410,11 @@
  "by_screen": [
   [
    "desktop",
-   322
+   326
   ],
   [
    "phone",
-   261
+   262
   ],
   [
    "tablet",
@@ -1414,15 +1428,19 @@
   ],
   [
    "design.4.fringe@PrompTugal.dinis",
-   33
+   34
   ],
   [
    "design.1.fringe@PrompTugal.dinis",
-   33
+   34
   ],
   [
    "conductor.fringe@PrompTugal.jose",
    32
+  ],
+  [
+   "conductor.fringe@PrompTugal.indi",
+   27
   ],
   [
    "ontologist.1.fringe@PrompTugal.dinis",
@@ -1434,10 +1452,6 @@
   ],
   [
    "architect.1.fringe@PrompTugal.dinis",
-   26
-  ],
-  [
-   "conductor.fringe@PrompTugal.indi",
    26
   ],
   [
@@ -1498,7 +1512,7 @@
   ]
  ],
  "flows": {
-  "tabs": 285,
+  "tabs": 288,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
@@ -1510,7 +1524,7 @@
    ],
    [
     "from another site",
-    10
+    13
    ]
   ],
   "entry_pages": [
@@ -1555,6 +1569,10 @@
     2
    ],
    [
+    "/e/2026-11-12-the-founder-effect/",
+    2
+   ],
+   [
     "/e/2026-11-11-ai-for-business-applied-ai-pitch-party/",
     2
    ],
@@ -1568,10 +1586,6 @@
    ],
    [
     "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&ss=tw&rt=PTW+Classroom+-+Who+Flies+When+the+CEO+Ejects",
-    2
-   ],
-   [
-    "/agentic-team/how-it-flows/",
     2
    ]
   ],
@@ -1640,7 +1654,7 @@
   "steps": [
    [
     "/ → /now/",
-    20
+    21
    ],
    [
     "/ → /programme/",
@@ -1742,7 +1756,7 @@
   "pages_per_tab": [
    [
     "1",
-    199
+    202
    ],
    [
     "2",
@@ -1750,7 +1764,7 @@
    ],
    [
     "3",
-    17
+    16
    ],
    [
     "4",
@@ -1758,7 +1772,7 @@
    ],
    [
     "5+",
-    22
+    23
    ]
   ],
   "bounce_rate": 70,
@@ -1828,11 +1842,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
@@ -1840,7 +1854,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
     1
    ]
   ]
@@ -1871,7 +1885,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 282,
+    "views": 285,
     "lat": 38.7,
     "lon": -9.1
    },
@@ -1913,7 +1927,7 @@
    },
    {
     "name": "Montijo, Portugal",
-    "views": 10,
+    "views": 11,
     "lat": 38.7,
     "lon": -9.0
    },
@@ -2005,6 +2019,10 @@
    2
   ],
   [
+   "/e/2026-11-11-indiesummit-lisboa/ → www.meetup.com/indiebeers-lisboa/events/317024539/",
+   2
+  ],
+  [
    "/e/2026-11-11-ai-horizon-conference/ → luma.com/p6glepvg",
    2
   ],
@@ -2042,10 +2060,6 @@
   ],
   [
    "/e/2026-11-12-covilha-tech-day-2026/ → luma.com/u522v47o",
-   1
-  ],
-  [
-   "/e/2026-11-11-indiesummit-lisboa/ → www.meetup.com/indiebeers-lisboa/events/317024539/",
    1
   ],
   [
