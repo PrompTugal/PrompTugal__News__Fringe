@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T18:10Z",
+ "generated": "2026-11-12T18:26Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 603,
-  "reads": 510,
-  "tabs": 296,
+  "views": 605,
+  "reads": 511,
+  "tabs": 298,
   "countries": 23,
   "shares": 194,
-  "bots": 2377,
+  "bots": 2387,
   "crawler_tabs": 1,
-  "agent_runs": 491,
-  "agent_runs_signed": 432
+  "agent_runs": 494,
+  "agent_runs_signed": 434
  },
  "by_hour": [
   [
@@ -212,7 +212,7 @@
   ],
   [
    "2026-11-12 18:00",
-   1
+   3
   ]
  ],
  "by_page": [
@@ -285,6 +285,10 @@
    5
   ],
   [
+   "/e/2026-11-12-disconnect-2-connect/",
+   5
+  ],
+  [
    "/e/2026-11-11-lisboaux-web-summit-edition/",
    4
   ],
@@ -302,10 +306,6 @@
   ],
   [
    "/e/2026-11-11-valois-allocator-residence/",
-   4
-  ],
-  [
-   "/e/2026-11-12-disconnect-2-connect/",
    4
   ],
   [
@@ -394,6 +394,10 @@
   ],
   [
    "/e/2026-11-11-kuma-h2h-2/",
+   2
+  ],
+  [
+   "/e/2026-11-12-lisbon-business-leaders-evening/",
    2
   ],
   [
@@ -530,10 +534,6 @@
   ],
   [
    "/e/2026-11-11-demonightlx/",
-   1
-  ],
-  [
-   "/e/2026-11-12-lisbon-business-leaders-evening/",
    1
   ],
   [
@@ -705,6 +705,12 @@
    29
   ],
   [
+   "/e/2026-11-12-disconnect-2-connect/",
+   5,
+   10,
+   10
+  ],
+  [
    "/e/2026-11-11-founderlink-storm-summit-afternoon/",
    4,
    16,
@@ -733,12 +739,6 @@
    4,
    10,
    36
-  ],
-  [
-   "/e/2026-11-12-disconnect-2-connect/",
-   4,
-   10,
-   9
   ],
   [
    "/e/2026-11-11-aubay-the-next-move/",
@@ -1212,11 +1212,11 @@
  "by_country": [
   [
    "Portugal",
-   384
+   385
   ],
   [
    "United Kingdom",
-   73
+   74
   ],
   [
    "United States",
@@ -1306,7 +1306,7 @@
  "by_city": [
   [
    "Lisbon, Portugal",
-   289
+   290
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -1322,7 +1322,7 @@
   ],
   [
    "London, United Kingdom",
-   19
+   20
   ],
   [
    "Frankfurt am Main, Germany",
@@ -1376,7 +1376,7 @@
  "by_referrer": [
   [
    "www.google.com",
-   15
+   16
   ],
   [
    "lnkd.in",
@@ -1398,14 +1398,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   564
+   566
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 5818,
+ "other_hosts_views": 5858,
  "by_via": [
   [
    "whatsapp",
@@ -1444,7 +1444,7 @@
   ],
   [
    "phone",
-   270
+   272
   ],
   [
    "tablet",
@@ -1482,7 +1482,7 @@
   ],
   [
    "researcher.fringe@PrompTugal.dinis",
-   27
+   28
   ],
   [
    "observability.fringe@PrompTugal.dinis",
@@ -1510,7 +1510,7 @@
   ],
   [
    "dev.2.fringe@PrompTugal.dinis",
-   20
+   21
   ],
   [
    "researcher.1.fringe@PrompTugal.jose",
@@ -1542,15 +1542,15 @@
   ],
   [
    "researcher.2.fringe@PrompTugal.dinis",
-   2
+   3
   ]
  ],
  "flows": {
-  "tabs": 294,
+  "tabs": 296,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    202
+    203
    ],
    [
     "shared link (?via=)",
@@ -1558,7 +1558,7 @@
    ],
    [
     "from another site",
-    17
+    18
    ]
   ],
   "entry_pages": [
@@ -1591,11 +1591,11 @@
     4
    ],
    [
-    "/programme/",
-    3
+    "/e/2026-11-12-disconnect-2-connect/",
+    4
    ],
    [
-    "/e/2026-11-12-disconnect-2-connect/",
+    "/programme/",
     3
    ],
    [
@@ -1611,15 +1611,15 @@
     2
    ],
    [
+    "/e/2026-11-12-lisbon-business-leaders-evening/",
+    2
+   ],
+   [
     "/e/2026-11-11-ai-for-business-applied-ai-pitch-party/",
     2
    ],
    [
     "/e/2026-11-11-open-mercato-night/",
-    2
-   ],
-   [
-    "/e/2026-11-12-ptw-classroom-who-flies-when-the-ceo-ejects-a-/&ct=ga&cd=CAEYACoTNzU4MTg5ODA1MDE5MTA5ODQ2NzIcMDE4ZGYwYTk5NWVlNmM3MDpjb206ZW46VVM6TA&usg=AOvVaw0652Ojza7KUs4TwPwCMRUX",
     2
    ]
   ],
@@ -1649,11 +1649,11 @@
     7
    ],
    [
-    "/e/2026-11-11-founderlink-storm-summit-afternoon/",
-    4
+    "/e/2026-11-12-disconnect-2-connect/",
+    5
    ],
    [
-    "/e/2026-11-12-disconnect-2-connect/",
+    "/e/2026-11-11-founderlink-storm-summit-afternoon/",
     4
    ],
    [
@@ -1790,7 +1790,7 @@
   "pages_per_tab": [
    [
     "1",
-    206
+    208
    ],
    [
     "2",
@@ -1888,7 +1888,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-roast-your-website/",
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ]
   ]
@@ -1919,7 +1919,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 289,
+    "views": 290,
     "lat": 38.7,
     "lon": -9.1
    },
@@ -1943,7 +1943,7 @@
    },
    {
     "name": "London, United Kingdom",
-    "views": 19,
+    "views": 20,
     "lat": 51.5,
     "lon": -0.1
    },
