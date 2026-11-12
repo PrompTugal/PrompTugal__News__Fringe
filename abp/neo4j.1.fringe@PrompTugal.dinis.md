@@ -2,7 +2,7 @@
 title: "ABP: neo4j.1.fringe@PrompTugal.dinis"
 agent: neo4j.1.fringe@PrompTugal.dinis
 role: neo4j
-policy: abp/policies.json v0.4.1 (sha256:6072eb81a453ba35)
+policy: abp/policies.json v0.4.1 (sha256:a4d5132074a57a1f)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator

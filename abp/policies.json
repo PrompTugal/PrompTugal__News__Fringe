@@ -1,7 +1,7 @@
 {
   "about": "The Agent Behaviour Policies of Lisbon Fringe (lisbontechfringe.com, origin in admin/site.json; WS-215) as data: deny by default, one grant per role and agent, across this repository and the others the swarm touches. Ported from PrompTugal__News__Website board/abp/policies.json (abp@PrompTugal.dinis, v1.7.0, since 6 November 2026), not invented anew; built on RiskMandate's Agent Behaviour Policy and Licence to Operate (https://riskmandate.ai/agent-behaviour-policy.html). Read by the hooks (.claude/settings.json, .claude/hooks/abp.mjs) and by the gate's commit check (abp/tools/abp.mjs check). abp/<agent>.md is generated from this file (node abp/tools/abp.mjs build), never edited by hand. Kept by architect.1.fringe@PrompTugal.dinis (work/39); any relaxation, and any move towards enforcement, is Dinis's decision.",
   "version": "0.4.1",
-  "updated": "2026-11-11T23:57Z",
+  "updated": "2026-11-12T00:11Z",
   "operator": "Dinis Cruz",
   "kept_by": "architect.1.fringe@PrompTugal.dinis",
   "status": "DRAFT: grants proposed from the git log (data/architecture.json observed); Dinis and the lead review",
@@ -649,10 +649,13 @@
       "send_hosts": [
         "openrouter.ai"
       ],
-      "send_hosts_note": "the model router only, through admin/tools/llm.mjs; cloud runtimes (Cloudflare, AWS, GCP, Netlify) wait on Dinis's scoped credentials and his word (its own asks)",
+      "send_hosts_note": "the model router only, through admin/tools/llm.mjs; cloud runtimes (Cloudflare, AWS, GCP, Netlify) wait on Dinis's scoped credentials and his word (its own asks); in GitHub Actions (R8) only, the Runs repo's workflows send flow events to the Elastic es host with the repository secret ELASTIC_CLOUD (Dinis's demo decision), mapped 2026-11-12T00:11Z",
       "never": "starts sessions or cloud resources without Dinis's word and a number; uses ELASTIC_CLOUD (R8e: flows travel in signed results or the feed); prints or commits a key",
       "writes_other_repos": [
         "PrompTugal__News__Swarm__Runs: requests/**, .github/workflows/**, docs/**"
+      ],
+      "send_hosts_actions": [
+        "my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io"
       ]
     },
     "swarm-dev": {
@@ -1387,7 +1390,8 @@
       "instead": "docs/elastic-guidance.md section 3: commit a JSON with \"elastic_feed\"; elastic.1 sends it hourly under the committing agent's name",
       "rule": "R8e",
       "source": "Dinis in elastic.1's session, before 19:06 UTC, relayed by elastic.1: \"for now we will share that super user pwd but control that using ABPs so that only the elastic and architect agent can use that environment variable\"",
-      "added": "2026-11-11T19:06Z"
+      "added": "2026-11-11T19:06Z",
+      "also": "PrompTugal__News__Swarm__Runs' GitHub Actions workflows (R8) read it as the repository secret ELASTIC_CLOUD, which Dinis added himself for the demo (2026-11-11, 23:2x UTC); there it is the Action's, not an agent's, and only through env at the flow step. To be replaced by an API key limited to swarm-flows (create_doc, index) after the demo (elastic.1, 00:08 UTC; abp/policies.json repositories)."
     }
   ]
 }
