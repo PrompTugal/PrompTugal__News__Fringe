@@ -1,26 +1,30 @@
 {
   "agent": "swarm.1.designer.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T01:28Z",
+  "updated": "2026-11-12T01:40Z",
   "written_by": "swarm.1.designer.fringe@PrompTugal.dinis (its own session, its own key)",
   "session": "session_01Kw9UwCNvq4z94R3XVA2Lvm",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis at Dinis's word (23:4x UTC)",
   "reports_to": "swarm.1.fringe@PrompTugal.dinis",
   "branch": "PrompTugal__News__Swarm dev",
-  "state": "key made; status file taken over; designing the swarm views with swarm.1.dev and storytelling.1",
+  "state": "working through the night with swarm.1.dev (stage.html) and storytelling.1; ready by 06:00-07:00 UTC",
   "doing": [
-    "Dinis's brief (01:2x UTC, in this session): the best way to tell the run stories; connect the altitudes across views; everything clickable and explained; five visual modes on a spectrum from the current flat view to futuristic (one 3D); layouts (top-down, left-right, radial, tree); zoom into sections. Working with swarm.1.dev (the viewer) and storytelling.1 (stories/)."
+    "the visual language for Dinis's security concepts (encrypted/decrypted/public, a key's lifetime, mandate vs reach and the gap, the harness box): assets/swarm-glyphs.js, for calm demo packs in swarm.1.dev's stage",
+    "the look, themes and 3D for stage.html (swarm.1.dev owns its engine)"
   ],
   "done": [
     "2026-11-11T23:52Z: index.html: run timeline by altitude, budget, signatures, responsive at 1280/1920/390 (PrompTugal__News__Swarm dev)",
     "2026-11-11T23:58Z: wrapped big runs (r5b fits 1920 and 1280; no sideways scroll at 390), the provenance chain (five linked steps), how.html 'Every run starts with a push' (Swarm f109369); found two bugs in swarm.1's code (fixed by swarm.1)",
     "2026-11-12T00:03Z: the push banner, how.html phone figure, present mode (P, arrows, space, Esc), the headline band and batches strip from runs/summary.json (Swarm 56b3bcb, 902673a)",
     "2026-11-12T00:11Z: demos-box wording from the data; walked all 27 runs in present mode at 1920x1080 (no overflow, no console errors); fixed the band pushing the timeline below the fold and r4's overlapping labels (Swarm f94d612)",
-    "2026-11-12T01:28Z: session key made (signing sha256:53c1445aed1bddb7, encryption sha256:b94eaa5531478591), pki-agent.mjs keygen --session at Dinis's word in this session; swarm.1.designer.fringe-dinis in data/keys.json (public half only); push access to this repository approved by Dinis in this session"
+    "2026-11-12T01:28Z: session key made (signing sha256:53c1445aed1bddb7, encryption sha256:b94eaa5531478591), pki-agent.mjs keygen --session at Dinis's word in this session; swarm.1.designer.fringe-dinis in data/keys.json (public half only); push access to this repository approved by Dinis in this session",
+    "2026-11-12T01:40Z: Swarm Views (Swarm b7f96f5): one run, five modes (flat, blueprint, heat, neon, 3D) x four shapes (top-down, left-right, radial, tree); everything clickable with an explanation panel; altitude rail; task sections with zoom; provenance chain as part of the tree; tested 432 views, 27 runs, no overlaps or errors"
   ],
   "next": [
-    "read swarm.1.dev's viewer and storytelling.1's stories; agree a scene and section map with them",
-    "build the five modes as themes the viewer can switch, in the Swarm repo (assets/, css/, pages/)"
+    "swarm-glyphs.js and the first demo packs",
+    "theme stage.html when swarm.1.dev pushes its first cut"
   ],
-  "asks": []
+  "asks": [
+    "swarm.1: add assets css pages stage stage.html to .github/workflows/pages.yml line 32 (the site copies a fixed list; Swarm Views 404s until then)"
+  ]
 }
