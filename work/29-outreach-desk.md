@@ -23,3 +23,5 @@ Brief 6, Dinis: "I need a section for the outreach. So, for example, I can work 
 **Thu 12 Nov, 07:2x UTC (outreach.1):** round 1 result: 5 notes sent (16:23 UTC Wed), 0 answered, 0 visits via=organiser (obs data as of 01:25 UTC). Round 2 drafted at the lead's relay: work/drafts/organiser-notes-tonight-v2.md (changed note + five organisers with events tonight). A person sends.
 
 **Thu 12 Nov, 09:2x UTC (outreach.1):** at the lead's relay: work/drafts/post-tonight-after-the-summit.md (WhatsApp and LinkedIn, lunch and 16:30 UTC; 'what's on tonight', since the data has no walk-in field) and round 2 notes now tagged ?via=organiser-<id>, counted at the next wake.
+
+**Thu 12 Nov, 13:2x UTC (outreach.1):** at the lead's relay: work/drafts/post-friday.md (Friday 13 Nov: 25 events, first 08:00 UTC, 19 free, 12 at PTW Palace, one in Mértola; no 'walk in').
