@@ -5,27 +5,23 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T12:54Z",
+ "generated": "2026-11-12T13:10Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 574,
+  "views": 576,
   "reads": 489,
-  "tabs": 278,
+  "tabs": 280,
   "countries": 21,
   "shares": 193,
-  "bots": 2158,
+  "bots": 2160,
   "crawler_tabs": 1,
-  "agent_runs": 411,
-  "agent_runs_signed": 362
+  "agent_runs": 414,
+  "agent_runs_signed": 365
  },
  "by_hour": [
-  [
-   "2026-11-10 12:00",
-   0
-  ],
   [
    "2026-11-10 13:00",
    0
@@ -213,12 +209,16 @@
   [
    "2026-11-12 11:00",
    3
+  ],
+  [
+   "2026-11-12 12:00",
+   2
   ]
  ],
  "by_page": [
   [
    "/",
-   234
+   236
   ],
   [
    "/now/",
@@ -1161,12 +1161,12 @@
    21
   ],
   [
-   "Italy",
-   8
+   "The Netherlands",
+   9
   ],
   [
-   "The Netherlands",
-   7
+   "Italy",
+   8
   ],
   [
    "Tanzania",
@@ -1275,6 +1275,10 @@
    5
   ],
   [
+   "Amsterdam, The Netherlands",
+   5
+  ],
+  [
    "Bangkok, Thailand",
    5
   ],
@@ -1288,7 +1292,7 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   90
+   87
   ]
  ],
  "by_referrer": [
@@ -1316,14 +1320,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   535
+   537
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 4914,
+ "other_hosts_views": 4946,
  "by_via": [
   [
    "whatsapp",
@@ -1358,7 +1362,7 @@
  "by_screen": [
   [
    "desktop",
-   312
+   314
   ],
   [
    "phone",
@@ -1380,11 +1384,15 @@
   ],
   [
    "design.1.fringe@PrompTugal.dinis",
-   30
+   31
   ],
   [
    "conductor.fringe@PrompTugal.jose",
    29
+  ],
+  [
+   "ontologist.1.fringe@PrompTugal.dinis",
+   25
   ],
   [
    "architect.1.fringe@PrompTugal.dinis",
@@ -1392,10 +1400,6 @@
   ],
   [
    "conductor.fringe@PrompTugal.indi",
-   24
-  ],
-  [
-   "ontologist.1.fringe@PrompTugal.dinis",
    24
   ],
   [
@@ -1415,6 +1419,10 @@
    20
   ],
   [
+   "dev.1.fringe@PrompTugal.dinis",
+   18
+  ],
+  [
    "researcher.2@PrompTugal.dinis",
    18
   ],
@@ -1424,10 +1432,6 @@
   ],
   [
    "researcher.1.fringe@PrompTugal.jose",
-   17
-  ],
-  [
-   "dev.1.fringe@PrompTugal.dinis",
    17
   ],
   [
@@ -1460,11 +1464,11 @@
   ]
  ],
  "flows": {
-  "tabs": 276,
+  "tabs": 278,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    195
+    197
    ],
    [
     "shared link (?via=)",
@@ -1478,7 +1482,7 @@
   "entry_pages": [
    [
     "/",
-    173
+    175
    ],
    [
     "/now/",
@@ -1540,7 +1544,7 @@
   "exit_pages": [
    [
     "/",
-    130
+    132
    ],
    [
     "/now/",
@@ -1704,7 +1708,7 @@
   "pages_per_tab": [
    [
     "1",
-    194
+    196
    ],
    [
     "2",
@@ -1723,7 +1727,7 @@
     22
    ]
   ],
-  "bounce_rate": 70,
+  "bounce_rate": 71,
   "via_reached": [
    [
     "whatsapp: /",
@@ -1790,11 +1794,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
@@ -1802,7 +1806,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ]
   ]
@@ -1902,6 +1906,12 @@
     "views": 5,
     "lat": -6.2,
     "lon": 35.7
+   },
+   {
+    "name": "Amsterdam, The Netherlands",
+    "views": 5,
+    "lat": 52.4,
+    "lon": 4.9
    },
    {
     "name": "Bangkok, Thailand",
