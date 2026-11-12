@@ -22,7 +22,7 @@ if (!SHOTS || !OUT) { console.log('usage: elastic-showcase.mjs --shots <dir> --o
 const S = JSON.parse(fs.readFileSync(path.join(ROOT, 'elastic', 'showcase', 'scenes.json'), 'utf8'))
 const CAP = JSON.parse(fs.readFileSync(path.join(SHOTS, 'capture.json'), 'utf8'))
 const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
-const norm = s => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
+const norm = s => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '')   // titles and hover-action keys (which drop spaces) compare alike
 
 let missing = 0
 const scenes = S.scenes.map(sc => {
@@ -36,7 +36,7 @@ const scenes = S.scenes.map(sc => {
         out.callouts = (sc.callouts || []).map(co => {
             let box = co.box
             if (!box && co.panel !== undefined) {
-                const cands = typeof co.panel === 'number' ? [c.boxes[co.panel]] : c.boxes.filter(b => norm(b.title).includes(norm(co.panel)))
+                const cands = typeof co.panel === 'number' ? [c.boxes[co.panel]] : c.boxes.filter(b => norm(b.title).includes(norm(co.panel)) || norm(b.key).includes(norm(co.panel)))
                 const b = cands[0]
                 if (!b) { console.log(`  scene ${sc.id}: no panel "${co.panel}"`); missing++ } else box = { x: b.x / c.width, y: b.y / c.height, w: b.w / c.width, h: b.h / c.height }
             }
