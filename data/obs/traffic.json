@@ -5,27 +5,23 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T00:54Z",
+ "generated": "2026-11-12T01:09Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 533,
-  "reads": 461,
-  "tabs": 241,
+  "views": 534,
+  "reads": 462,
+  "tabs": 242,
   "countries": 19,
   "shares": 189,
-  "bots": 1795,
+  "bots": 1799,
   "crawler_tabs": 1,
   "agent_runs": 284,
   "agent_runs_signed": 257
  },
  "by_hour": [
-  [
-   "2026-11-10 01:00",
-   0
-  ],
   [
    "2026-11-10 02:00",
    0
@@ -213,12 +209,16 @@
   [
    "2026-11-12 00:00",
    4
+  ],
+  [
+   "2026-11-12 01:00",
+   1
   ]
  ],
  "by_page": [
   [
    "/",
-   213
+   214
   ],
   [
    "/now/",
@@ -568,9 +568,9 @@
  "reading": [
   [
    "/",
-   168,
+   169,
    28,
-   12
+   13
   ],
   [
    "/now/",
@@ -1131,6 +1131,10 @@
    3
   ],
   [
+   "Canada",
+   3
+  ],
+  [
    "France",
    2
   ],
@@ -1144,10 +1148,6 @@
   ],
   [
    "Czechia",
-   2
-  ],
-  [
-   "Canada",
    2
   ],
   [
@@ -1222,7 +1222,7 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   82
+   83
   ]
  ],
  "by_referrer": [
@@ -1250,14 +1250,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   494
+   495
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 3112,
+ "other_hosts_views": 3120,
  "by_via": [
   [
    "whatsapp",
@@ -1292,7 +1292,7 @@
  "by_screen": [
   [
    "desktop",
-   281
+   282
   ],
   [
    "phone",
@@ -1394,11 +1394,11 @@
   ]
  ],
  "flows": {
-  "tabs": 241,
+  "tabs": 242,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    164
+    165
    ],
    [
     "shared link (?via=)",
@@ -1412,7 +1412,7 @@
   "entry_pages": [
    [
     "/",
-    156
+    157
    ],
    [
     "/now/",
@@ -1474,7 +1474,7 @@
   "exit_pages": [
    [
     "/",
-    113
+    114
    ],
    [
     "/now/",
@@ -1638,7 +1638,7 @@
   "pages_per_tab": [
    [
     "1",
-    163
+    164
    ],
    [
     "2",
@@ -1736,7 +1736,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-roast-your-website/",
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ]
   ]
