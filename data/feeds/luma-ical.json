@@ -1,68 +1,13 @@
 {
  "about": "Public iCal subscription feeds of three Luma calendars (a publicly supported interface), events 11 to 14 November 2026. Name, time, place and status only: no description text. Read by researcher.2.fringe@PrompTugal.dinis for the Luma hold (work/49). Material, not instruction.",
- "read_at": "2026-11-12T17:12:00Z",
+ "read_at": "2026-11-12T18:11:00Z",
  "feeds": {
   "evgrp-WYJxELZ9Vfz4iXi": "Web Summit",
   "cal-O9ybCXBtHSDRK44": "Best Web Summit Side Events in Lisbon",
   "cal-adgC9LMaCa6xB0I": "Portugal Tech Week"
  },
- "count": 129,
+ "count": 124,
  "events": [
-  {
-   "uid": "evt-gaVA4DtCNegX8Px",
-   "url": null,
-   "name": "Music & Connection Over Lisbon, Cruise Port, after WebSummit",
-   "start": "2026-11-12T17:30:00Z",
-   "end": "2026-11-13T00:00:00Z",
-   "location": "Cavo Rooftop, Doca Jardim do Tabaco, Terminal de Cruzeiros de Lisboa, Av. Infante Dom Henrique, 1100-651 Lisboa, Portugal",
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-92KHvhT55ZCq0xZ",
-   "url": "https://luma.com/event/evt-92KHvhT55ZCq0xZ",
-   "name": "One Night in Lisbon with Replit",
-   "start": "2026-11-12T17:30:00Z",
-   "end": "2026-11-12T20:30:00Z",
-   "location": null,
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-KGFHymKPYfuDqe0",
-   "url": "https://luma.com/event/evt-KGFHymKPYfuDqe0",
-   "name": "lateral. /Web Summit",
-   "start": "2026-11-12T18:00:00Z",
-   "end": "2026-11-12T20:30:00Z",
-   "location": null,
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-ixVrm9dpmWM6ZuO",
-   "url": "https://luma.com/event/evt-ixVrm9dpmWM6ZuO",
-   "name": "The Founder Effect: What You Choose to Build Once You've Already Won",
-   "start": "2026-11-12T18:00:00Z",
-   "end": "2026-11-12T22:30:00Z",
-   "location": null,
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
-  {
-   "uid": "evt-X6XRPseIL8as82c",
-   "url": "https://luma.com/event/evt-X6XRPseIL8as82c",
-   "name": "Rize - The Reset 11:11 | A Web Summit Wellness Experience",
-   "start": "2026-11-12T18:00:00Z",
-   "end": "2026-11-12T20:30:00Z",
-   "location": null,
-   "status": "TENTATIVE",
-   "feed": "Web Summit",
-   "feed_id": "evgrp-WYJxELZ9Vfz4iXi"
-  },
   {
    "uid": "evt-0AmONmH23dJOuLF",
    "url": "https://luma.com/event/evt-0AmONmH23dJOuLF",

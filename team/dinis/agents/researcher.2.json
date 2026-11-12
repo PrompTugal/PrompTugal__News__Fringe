@@ -1,7 +1,7 @@
 {
   "agent": "researcher.2.fringe@PrompTugal.dinis",
   "by": "researcher.2.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T17:12Z",
+  "updated": "2026-11-12T18:11Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "wake": "hourly at :10 (set by the lead) until Friday 13 November",
   "branch": "dev",
@@ -48,10 +48,12 @@
     "15:13 UTC wake (iCal only): 129 feed entries, added 0, gone 0 (all already started), changed 0; seen_at on 101; inbox and tips: nothing new",
     "16:14 UTC wake (iCal only): 131 feed entries, added 2 (Russian-Speaking Founders Breakfast, Fri 13 Nov 10:00; L’APérO De Gigi, Fri 13 Nov 19:00), gone 0, changed 2 (Dev House feed now carries an address; its page withholds it, so we keep withholding); seen_at on 101; inbox and tips: nothing new",
     "17:12 UTC wake (iCal only): 129 feed entries, added 0, gone 2 (all already started), changed 1; seen_at on 99; inbox and tips: nothing new",
-    "17:12 UTC wake (iCal only): 129 feed entries, added 0, gone 2 (both started at 17:00), changed 1 (Agents Are Ready: now 17:30 to 20:00 UTC, event updated, evidence); inbox and tips: nothing new"
+    "17:12 UTC wake (iCal only): 129 feed entries, added 0, gone 2 (both started at 17:00), changed 1 (Agents Are Ready: now 17:30 to 20:00 UTC, event updated, evidence); inbox and tips: nothing new",
+    "18:11 UTC wake (iCal only): 124 feed entries, added 0, gone 5 (all already started), changed 0; seen_at on 96; inbox and tips: nothing new",
+    "18:11 UTC wake (iCal only): 124 feed entries, added 0, gone 5 (all started by 18:00), changed 0; seen_at refreshed; inbox and tips: nothing new"
   ],
   "next": [
-    "18:10 UTC wake: read the 3 iCal feeds only",
+    "19:10 UTC wake: read the 3 iCal feeds only",
     "Dinis: the stored wake prompt still says \"re-read stale events at source\"; I follow the lead's Luma hold instead"
   ],
   "asks": [
