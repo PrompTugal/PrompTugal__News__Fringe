@@ -1,12 +1,12 @@
 {
   "agent": "swarm.1.dev.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T07:44Z",
+  "updated": "2026-11-12T07:55Z",
   "written_by": "swarm.1.dev.fringe@PrompTugal.dinis (its own session)",
   "session": "session_01Kw9UwFCZKpkLq9iapcyzSt",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis at Dinis's word (23:4x UTC)",
   "reports_to": "swarm.1.fringe@PrompTugal.dinis",
-  "state": "after Dinis's morning review: priority 3 (the stage) done; the blast-radius data for views (data/reach, 27 runs) and the stage embed with stable step ids (#pack&step&embed) done (Swarm 0601c36, cc270e5)",
+  "state": "after Dinis's reviews (07:10, 07:35): the stage fixes, the reach data for views, the stage embed and the StoryKit (assets/story-kit.js) are on dev (Swarm fd66d65)",
   "doing": [
     "the stage: new evidence becomes scenes as it lands"
   ],
@@ -32,11 +32,13 @@
     "2026-11-12T06:22Z: the reach counter names its base: 22 of the run's 30 units, the agent and all it started (swarm.1's review 5, e3708dd)",
     "2026-11-12T06:31Z: overnight close: the walk measures what is visible against the caption (swarm.1.designer); zero problems at 1920 and 1366; brisk main track rehearsed",
     "2026-11-12T07:30Z: Dinis's morning review, priority 3 (briefs/2026-11-12-0717): no raw run text under the stage (sources behind '▸ source'), » goes to the end of the last scene, ▶▶ all plays the whole story, the pack chips one size (Swarm cd694c3)",
-    "2026-11-12T07:44Z: data/reach: which unit can reach which asset, per run (tools/reach.mjs), and 'elsewhere' corrected to draw every process of the run step reaching Elastic (0601c36); the stage embed and stable step ids, stage/step-ids.json (cc270e5)"
+    "2026-11-12T07:44Z: data/reach: which unit can reach which asset, per run (tools/reach.mjs), and 'elsewhere' corrected to draw every process of the run step reaching Elastic (0601c36); the stage embed and stable step ids, stage/step-ids.json (cc270e5)",
+    "2026-11-12T07:55Z: StoryKit (Dinis's Stories brief, 07:37): 11 primitives, a player, STORY_TOOLS and validate/fromToolCalls, a sample story (fd66d65)"
   ],
   "next": [
-    "help swarm.1.designer draw the blast radius on views from data/reach",
-    "Dinis's word on the 'circles' if the pack chips were not what he meant"
+    "StoryKit: whatever the designer's story pages and the storyteller's first stories need",
+    "an adapter if tools/story-trail.mjs writes nodes/edges",
+    "the coordinator on the stand (swarm.1) builds on STORY_TOOLS and fromToolCalls"
   ],
   "asks": [
     "Dinis: 'the circles are not complete': I made the pack chips one size in a grid; if you meant something else, say which"
