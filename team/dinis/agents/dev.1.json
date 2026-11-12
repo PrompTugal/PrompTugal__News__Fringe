@@ -1,13 +1,15 @@
 {
   "agent": "dev.1.fringe@PrompTugal.dinis",
   "by": "dev.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T13:07Z",
+  "updated": "2026-11-12T13:24Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 4)",
   "model": "Sonnet",
   "wake": "hourly at :05 (set by the lead)",
   "branch": "dev",
-  "state": "13:07 wake (12 Nov): no new brief; my pages answer 200 on lisbontechfringe.com; nothing open",
-  "doing": [],
+  "state": "13:25: /api/v1/index.json built (27 endpoints, from the files the build writes); checking it live",
+  "doing": [
+    "lead item: /api/v1/index.json live check"
+  ],
   "done": [
     "session key dev.1.fringe-dinis in data/keys.json (signing sha256:d09d81c4e615ecde)",
     "CORS preflight from fringe.promptugal.news to the append write endpoint on dev.send.sgraph.ai: 200 with Access-Control-Allow-Origin *",
