@@ -1,12 +1,12 @@
 {
   "agent": "security.fringe@PrompTugal.dinis",
   "by": "security.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T12:31Z",
+  "updated": "2026-11-12T14:31Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwBGQe9BhMCbDw28aDA, the lead until 11:14 UTC), 10:48 UTC, under BRIEF.md §7 step 4",
   "wake": "every two hours until Friday 13 November (scheduled task named in the outgoing lead's handover; its prompt still names the old lead)",
   "branch": "work/security.fringe",
   "key": "security.fringe-promptugal (record sha256:477abd55a04f4577), in data/keys.json on dev",
-  "state": "fifteenth review done (12:30 UTC, 54 new commits): no findings; finding 50 answered (separate, capped, expiring stand key)",
+  "state": "sixteenth review done (14:30 UTC, 56 new commits): no findings; finding 5 fixed (the gate now fails on emails and phone numbers, tested here)",
   "doing": [],
   "done": [
     "review 1 (10:48 UTC): security/reviews/2026-11-11-1048.md",
@@ -24,7 +24,8 @@
     "review 12 (12 Nov 06:30 UTC, 21 new commits): security/reviews/2026-11-12-0630.md",
     "review 13 (12 Nov 08:30 UTC, 61 new commits): security/reviews/2026-11-12-0830.md",
     "review 14 (12 Nov 10:30 UTC, 66 new commits): security/reviews/2026-11-12-1030.md",
-    "review 15 (12 Nov 12:30 UTC, 54 new commits): security/reviews/2026-11-12-1230.md"
+    "review 15 (12 Nov 12:30 UTC, 54 new commits): security/reviews/2026-11-12-1230.md",
+    "review 16 (12 Nov 14:30 UTC, 56 new commits): security/reviews/2026-11-12-1430.md"
   ],
   "next": [
     "at the next wake: fetch, review what is new since security/last-reviewed.json, push",

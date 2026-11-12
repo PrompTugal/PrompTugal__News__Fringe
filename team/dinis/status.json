@@ -1,9 +1,9 @@
 {
   "by": "conductor.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T14:22Z",
+  "updated": "2026-11-12T15:22Z",
   "person": "dinis",
   "role": "head",
-  "state": "wake 14:22 Thursday: live at v0.1.1005; every carried item routed at 13:21 is done; readers 2 to 7 an hour; the post has not gone out",
+  "state": "wake 15:22 Thursday: live at v0.1.1029; the read desk closed unused; readers 2 to 7 an hour; the 16:30 post waits for a person",
   "conductor": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq, the lead since 11:14 UTC at Dinis's word; it replaces session_01Kw9UwBGQe9BhMCbDw28aDA)",
   "agents": [
     {
@@ -123,10 +123,12 @@
     }
   ],
   "doing": [
-    "briefs 4 and 5: the swarm at full throttle; four design agents on the Lisbon identity; dashboard, captures, usability, the loop",
-    "reviewing what lands on dev; routing Dinis's briefs"
+    "the lead's hourly loop until Friday 23:59 UTC: review and bring work onto dev, route the advisor's and security's notes, keep Dinis's five asks",
+    "Thursday evening: the post at 16:30 (Dinis or Jose), promptugal.news's front-page line (its correspondent deciding), Friday's post ready (work/drafts/post-friday.md)",
+    "the close: work/drafts/closing-state.md for Dinis to choose by Friday evening"
   ],
   "done": [
+    "15:22: read desk (work/53) closed, unused, with its lesson; advisor's twelfth note and security's sixteenth review onto dev (no findings; the gate's contact check confirmed); status 'doing' brought up to date",
     "14:22: done since 13:21: /api/v1/index.json (dev.1, 27 endpoints); the gate fails on email addresses and phone numbers (dev.2, security finding 5 closed); feed uids without the @ part, and the empty id was the Russian-language founders' breakfast, superseded (researcher.2); Friday's post drafted (outreach.1, work/drafts/post-friday.md); promptugal.news's correspondent weighing a front-page line",
     "13:24: advisor's eleventh note and security's fifteenth review onto dev (no findings); asked conductor.b (promptugal.news) for a front-page link today and to relay to the storm site; routed one real item each to the idle: /api/v1/index.json (dev.1), the gate's contact check, finding 5 (dev.2), the empty id (researcher.2), Friday's post (outreach.1); work/drafts/closing-state.md for Dinis",
     "12:22: swarm.1 recorded the stand key as a separate key (OPEN_ROUTER_WEB_SUMMIT), capped and expiring (finding 50); ontologist.1 closed work/42 (the semantic graph) with evidence; nothing new from the advisor or security this hour",
@@ -192,8 +194,7 @@
   "asks": [
     "Dinis (1, now, lunch): post 'Tonight after the summit, in Lisbon: 38 tech events from 16:30, 30 of them free' in the WhatsApp groups and on LinkedIn; text in work/drafts/post-tonight-after-the-summit.md, tagged links. Again about 16:30 UTC. Jose can post too.",
     "Dinis (2, GitHub, a few minutes): one ruleset protecting main, .claude/** and abp/** (security findings 1, 2, 28, 38, 45); a yes to architect.1's signed overrides; and a scheduled deploy in .github/workflows.",
-    "Dinis (3): the read desk (work/53): someone on Block D (17:00 on, 37 events) between 15:00 and 16:30 UTC, or close it; the pages say plainly what was checked and when either way.",
-    "Dinis (4): how the site closes: work/drafts/closing-state.md (the home page from Saturday, the agents' wakes ending, the data in vaults, Elastic, Neo4j and Grafana, revoking the disposable keys). Choose by Friday evening.",
-    "Dinis (5): fewer agents on a stable site: keep one design, one dev, researcher.2, security, observability and the lead on the Fringe today; pause the others or move them to the swarm demo by name (17 'nothing open' commits since 07:00)."
+    "Dinis (3): how the site closes: work/drafts/closing-state.md (the home page from Saturday, the agents' wakes ending, the data in vaults, Elastic, Neo4j and Grafana, revoking the disposable keys). Choose by Friday evening.",
+    "Dinis (4): fewer agents on a stable site: keep one design, one dev, researcher.2, security, observability and the lead on the Fringe today; pause the others or move them to the swarm demo by name (17 'nothing open' commits since 07:00)."
   ]
 }

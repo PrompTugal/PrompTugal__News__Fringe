@@ -91,4 +91,5 @@ header nav[aria-label="Main"]{position:relative}
 /* lab check L10: 44 px hit areas for the small header links without making the header taller */
 .ptbar a,.brand a,.ind a{position:relative}
 .ptbar a::after,.brand a::after,.ind a::after{content:"";position:absolute;left:0;right:0;top:50%;height:44px;transform:translateY(-50%)}
+.paused{margin:0;padding:var(--s1) var(--gutter);background:var(--ink);color:var(--paper);font:600 12px/1.35 var(--sans);text-align:left}.paused span{font-weight:400;opacity:.85}
 `;
