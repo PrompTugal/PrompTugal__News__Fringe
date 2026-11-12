@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T14:54Z",
+ "generated": "2026-11-12T15:10Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 585,
-  "reads": 495,
-  "tabs": 284,
+  "views": 586,
+  "reads": 497,
+  "tabs": 285,
   "countries": 22,
   "shares": 193,
-  "bots": 2251,
+  "bots": 2254,
   "crawler_tabs": 1,
-  "agent_runs": 444,
-  "agent_runs_signed": 390
+  "agent_runs": 447,
+  "agent_runs_signed": 393
  },
  "by_hour": [
   [
@@ -212,7 +212,7 @@
   ],
   [
    "2026-11-12 14:00",
-   2
+   3
   ]
  ],
  "by_page": [
@@ -461,6 +461,10 @@
    2
   ],
   [
+   "/e/2026-11-12-ufl-web-summit-after-party/",
+   2
+  ],
+  [
    "/e/2026-11-12-ptw-classroom-storytelling-game-by-pina/",
    2
   ],
@@ -591,17 +595,13 @@
   [
    "/e/2026-11-12-get-down-at-the-dev-house/",
    1
-  ],
-  [
-   "/e/2026-11-12-ufl-web-summit-after-party/",
-   1
   ]
  ],
  "reading": [
   [
    "/",
-   183,
-   28,
+   184,
+   47,
    13
   ],
   [
@@ -929,6 +929,12 @@
    12
   ],
   [
+   "/e/2026-11-12-ufl-web-summit-after-party/",
+   2,
+   82,
+   60
+  ],
+  [
    "/e/2026-11-11-startup-legal-roast/",
    1,
    16,
@@ -1157,12 +1163,6 @@
    76
   ],
   [
-   "/e/2026-11-12-ufl-web-summit-after-party/",
-   1,
-   146,
-   98
-  ],
-  [
    "/e/2026-11-12-ptw-classroom-storytelling-game-by-pina/",
    1,
    11,
@@ -1196,7 +1196,7 @@
   ],
   [
    "Italy",
-   8
+   9
   ],
   [
    "Tanzania",
@@ -1326,17 +1326,17 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   90
+   91
   ]
  ],
  "by_referrer": [
   [
-   "lnkd.in",
+   "www.google.com",
    7
   ],
   [
-   "www.google.com",
-   6
+   "lnkd.in",
+   7
   ],
   [
    "promptugal.news",
@@ -1354,14 +1354,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   546
+   547
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 5290,
+ "other_hosts_views": 5322,
  "by_via": [
   [
    "whatsapp",
@@ -1400,7 +1400,7 @@
   ],
   [
    "phone",
-   259
+   260
   ],
   [
    "tablet",
@@ -1418,11 +1418,15 @@
   ],
   [
    "design.1.fringe@PrompTugal.dinis",
-   32
+   33
   ],
   [
    "conductor.fringe@PrompTugal.jose",
    31
+  ],
+  [
+   "ontologist.1.fringe@PrompTugal.dinis",
+   27
   ],
   [
    "architect.1.fringe@PrompTugal.dinis",
@@ -1430,10 +1434,6 @@
   ],
   [
    "conductor.fringe@PrompTugal.indi",
-   26
-  ],
-  [
-   "ontologist.1.fringe@PrompTugal.dinis",
    26
   ],
   [
@@ -1454,7 +1454,7 @@
   ],
   [
    "dev.1.fringe@PrompTugal.dinis",
-   20
+   21
   ],
   [
    "researcher.2@PrompTugal.dinis",
@@ -1498,7 +1498,7 @@
   ]
  ],
  "flows": {
-  "tabs": 282,
+  "tabs": 283,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
@@ -1510,7 +1510,7 @@
    ],
    [
     "from another site",
-    8
+    9
    ]
   ],
   "entry_pages": [
@@ -1742,7 +1742,7 @@
   "pages_per_tab": [
    [
     "1",
-    196
+    197
    ],
    [
     "2",
@@ -1840,7 +1840,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-roast-your-website/",
+    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
     1
    ]
   ]
