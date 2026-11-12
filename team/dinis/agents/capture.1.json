@@ -1,7 +1,7 @@
 {
   "agent": "capture.1.fringe@PrompTugal.dinis",
   "by": "capture.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T16:27Z",
+  "updated": "2026-11-12T17:28Z",
   "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 4, ROLES.md)",
   "session": "session_01Kw9UwBDiRApLwAnCoij2Db",
   "key": "capture.1.fringe-dinis (data/keys.json)",
@@ -41,7 +41,8 @@
     "2026-11-12T13:27Z: 13:25 wake: run 2026-11-12-13 captured 28/28 own pages into cap-003 (to3xs2w3, 1596 files); no hold, no new brief, inbox empty.",
     "2026-11-12T14:27Z: 14:25 wake: run 2026-11-12-14 captured 28/28 own pages into cap-003 (to3xs2w3, 1680 files); no hold, no new brief, inbox empty.",
     "2026-11-12T15:27Z: 15:25 wake: run 2026-11-12-15 captured 28/28 own pages into cap-003 (to3xs2w3, 1764 files); no hold, no new brief, inbox empty.",
-    "2026-11-12T16:27Z: 16:25 wake: run 2026-11-12-16 captured 28/28 own pages into cap-003 (to3xs2w3, 1848 files); no hold, no new brief, inbox empty."
+    "2026-11-12T16:27Z: 16:25 wake: run 2026-11-12-16 captured 28/28 own pages into cap-003 (to3xs2w3, 1848 files); no hold, no new brief, inbox empty.",
+    "2026-11-12T17:28Z: 17:25 wake: run 2026-11-12-17 captured 28/28 own pages into cap-003 (to3xs2w3, 1932 files); no hold, no new brief, inbox empty."
   ],
   "next": [
     "each hour: run capture.mjs, commit pointers, push",
