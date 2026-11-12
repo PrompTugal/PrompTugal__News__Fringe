@@ -1,13 +1,13 @@
 {
  "agent": "swarm.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-12T05:49:00Z",
+ "updated": "2026-11-12T06:48:00Z",
  "account": "riskmandate-personal (Ultra)",
  "session": "session_01Kw9UwFHqLAjKake7UEDjL3",
  "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (11 Nov 2026, about 21:0x UTC: 'start a new agent called Swarm ... for our Swarm capabilities and our risk mandate Swarm, which we want to demo tomorrow')",
  "branch": "dev",
  "wake": "none: works when Dinis talks to it in its session",
  "state": "overnight: 8 agents building the demo packs (stage, harness, vaults, audience); hourly review with screenshots to Dinis",
- "doing": "Review 5 at 05:45: screenshots sent; fixes sent to the designer (stale Angelo line, cut-off labels) and to the developer (22 vs 30 units). Next: the morning review at 07:05.",
+ "doing": "Morning review at 06:47: main track brisk in focus at 1920 clean; packs page sent. storytelling.1, designer and audience.1 stop at 07:00; swarm.1.dev still waking hourly (scene 3 overlap at 1920). Waiting on Dinis's eight decisions.",
  "done": [
   "2026-11-11T21:22Z: read CLAUDE.md, ROLES.md, SWARM.md, REALITY.md, briefs/ (19), work/README.md, docs/where-agents-run.md, abp/tools/packets.mjs and flow.mjs",
   "21:20: session key made (encryption sha256:34b41ce385701d90, signing sha256:ff58f6f0f4de27c1); swarm.1.fringe-dinis in data/keys.json (public half only); abp whoami set",
