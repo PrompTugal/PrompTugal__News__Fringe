@@ -5,35 +5,23 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T08:26Z",
+ "generated": "2026-11-12T10:25Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 555,
-  "reads": 479,
-  "tabs": 263,
+  "views": 565,
+  "reads": 485,
+  "tabs": 272,
   "countries": 20,
-  "shares": 189,
-  "bots": 1906,
+  "shares": 190,
+  "bots": 2028,
   "crawler_tabs": 1,
-  "agent_runs": 336,
-  "agent_runs_signed": 298
+  "agent_runs": 370,
+  "agent_runs_signed": 327
  },
  "by_hour": [
-  [
-   "2026-11-10 08:00",
-   0
-  ],
-  [
-   "2026-11-10 09:00",
-   0
-  ],
-  [
-   "2026-11-10 10:00",
-   0
-  ],
   [
    "2026-11-10 11:00",
    0
@@ -213,12 +201,24 @@
   [
    "2026-11-12 07:00",
    3
+  ],
+  [
+   "2026-11-12 08:00",
+   0
+  ],
+  [
+   "2026-11-12 09:00",
+   9
+  ],
+  [
+   "2026-11-12 10:00",
+   1
   ]
  ],
  "by_page": [
   [
    "/",
-   222
+   227
   ],
   [
    "/now/",
@@ -226,7 +226,7 @@
   ],
   [
    "/how/",
-   22
+   24
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
@@ -337,6 +337,10 @@
    3
   ],
   [
+   "/e/2026-11-12-healthcare-re-imagined-by-ai/",
+   3
+  ],
+  [
    "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
    2
   ],
@@ -437,10 +441,6 @@
    2
   ],
   [
-   "/e/2026-11-12-healthcare-re-imagined-by-ai/",
-   2
-  ],
-  [
    "/e/2026-11-11-ptw-classroom-deep-work-wexio/&ss=fb&rt=PTW+Classroom:+Deep+Work+x+Wexio,+an+hour+to+get+your+inbox+back+-+Fringe&cd=KhM4NDgyNTMxNDEzOTc2NTIxMDc5MhwwMThkZjBhOTk1ZWU2YzcwOmNvbTplbjpVUzpM&ssp=AMJHsmW5QAncgAa4maeEuUb8fhtv9ae8Hg",
    2
   ],
@@ -454,6 +454,10 @@
   ],
   [
    "/e/2026-11-11-ptw-classroom-deep-work-wexio/&ss=tw&rt=PTW+Classroom:+Deep+Work+x+Wexio,+an+hour+to+get+your+inbox+back+-+Fringe&cd=KhM4NDgyNTMxNDEzOTc2NTIxMDc5MhwwMThkZjBhOTk1ZWU2YzcwOmNvbTplbjpVUzpM&ssp=AMJHsmW5QAncgAa4maeEuUb8fhtv9ae8Hg",
+   2
+  ],
+  [
+   "/e/2026-11-13-is-your-ai-startup-ready-for-europe-the-eu-ai-/",
    2
   ],
   [
@@ -584,7 +588,7 @@
  "reading": [
   [
    "/",
-   175,
+   177,
    27,
    13
   ],
@@ -596,8 +600,8 @@
   ],
   [
    "/how/",
-   21,
-   11,
+   22,
+   12,
    24
   ],
   [
@@ -745,6 +749,12 @@
    12
   ],
   [
+   "/e/2026-11-12-healthcare-re-imagined-by-ai/",
+   3,
+   35,
+   18
+  ],
+  [
    "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
    2,
    103,
@@ -883,12 +893,6 @@
    50
   ],
   [
-   "/e/2026-11-12-healthcare-re-imagined-by-ai/",
-   2,
-   52,
-   27
-  ],
-  [
    "/e/2026-11-11-ptw-classroom-deep-work-wexio/&ct=ga&cd=CAEYBSoTODQ4MjUzMTQxMzk3NjUyMTA3OTIcMDE4ZGYwYTk5NWVlNmM3MDpjb206ZW46VVM6TA&usg=AOvVaw2nQCqBf3jXmBTenL63pma6",
    2,
    3,
@@ -905,6 +909,12 @@
    2,
    4,
    0
+  ],
+  [
+   "/e/2026-11-13-is-your-ai-startup-ready-for-europe-the-eu-ai-/",
+   2,
+   6,
+   12
   ],
   [
    "/e/2026-11-11-startup-legal-roast/",
@@ -1132,15 +1142,15 @@
  "by_country": [
   [
    "Portugal",
-   350
+   356
   ],
   [
    "United Kingdom",
-   68
+   71
   ],
   [
    "United States",
-   40
+   41
   ],
   [
    "Germany",
@@ -1214,7 +1224,7 @@
  "by_city": [
   [
    "Lisbon, Portugal",
-   263
+   267
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -1234,7 +1244,7 @@
   ],
   [
    "London, United Kingdom",
-   14
+   17
   ],
   [
    "Harrietsham, United Kingdom",
@@ -1274,7 +1284,7 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   86
+   89
   ]
  ],
  "by_referrer": [
@@ -1284,11 +1294,11 @@
   ],
   [
    "www.google.com",
-   3
+   5
   ],
   [
    "promptugal.news",
-   2
+   3
   ],
   [
    "org.telegram.messenger",
@@ -1302,14 +1312,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   516
+   526
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 3986,
+ "other_hosts_views": 4432,
  "by_via": [
   [
    "whatsapp",
@@ -1321,7 +1331,7 @@
   ],
   [
    "promptugal-news",
-   6
+   7
   ]
  ],
  "via_detail": {
@@ -1336,19 +1346,19 @@
    "countries": 2
   },
   "promptugal-news": {
-   "views": 6,
-   "tabs": 2,
+   "views": 7,
+   "tabs": 3,
    "countries": 1
   }
  },
  "by_screen": [
   [
    "desktop",
-   300
+   304
   ],
   [
    "phone",
-   251
+   257
   ],
   [
    "tablet",
@@ -1358,62 +1368,66 @@
  "agents": [
   [
    "elastic.1.fringe@PrompTugal.dinis",
-   29
+   31
   ],
   [
    "design.4.fringe@PrompTugal.dinis",
-   26
-  ],
-  [
-   "conductor.fringe@PrompTugal.jose",
-   25
+   28
   ],
   [
    "design.1.fringe@PrompTugal.dinis",
-   24
+   27
+  ],
+  [
+   "conductor.fringe@PrompTugal.jose",
+   27
   ],
   [
    "ontologist.1.fringe@PrompTugal.dinis",
-   20
+   22
   ],
   [
    "architect.1.fringe@PrompTugal.dinis",
-   19
+   21
   ],
   [
    "conductor.fringe@PrompTugal.indi",
-   19
-  ],
-  [
-   "researcher.fringe@PrompTugal.dinis",
-   18
+   21
   ],
   [
    "design.3.fringe@PrompTugal.dinis",
-   17
+   20
+  ],
+  [
+   "researcher.fringe@PrompTugal.dinis",
+   20
+  ],
+  [
+   "observability.fringe@PrompTugal.dinis",
+   18
+  ],
+  [
+   "design.2.fringe@PrompTugal.dinis",
+   18
   ],
   [
    "researcher.1.fringe@PrompTugal.jose",
    17
   ],
   [
-   "observability.fringe@PrompTugal.dinis",
-   16
-  ],
-  [
-   "design.2.fringe@PrompTugal.dinis",
-   16
-  ],
-  [
    "researcher.2@PrompTugal.dinis",
-   14
+   16
   ],
   [
    "dev.1.fringe@PrompTugal.dinis",
-   13
+   15
   ],
   [
    "capture.1.fringe@PrompTugal.dinis",
+   15
+  ],
+  [
+   "dev.2.fringe@PrompTugal.dinis",
    13
   ],
   [
@@ -1421,20 +1435,16 @@
    12
   ],
   [
-   "dev.2.fringe@PrompTugal.dinis",
-   11
-  ],
-  [
    "neo4j.1.fringe@PrompTugal.dinis",
    9
   ],
   [
    "usability.1.fringe@PrompTugal.dinis",
-   5
+   6
   ],
   [
    "fable.fringe@PrompTugal.dinis",
-   5
+   6
   ],
   [
    "gravity.1.fringe@PrompTugal.silvio",
@@ -1446,25 +1456,25 @@
   ]
  ],
  "flows": {
-  "tabs": 261,
+  "tabs": 270,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    184
+    190
    ],
    [
     "shared link (?via=)",
-    72
+    73
    ],
    [
     "from another site",
-    5
+    7
    ]
   ],
   "entry_pages": [
    [
     "/",
-    164
+    169
    ],
    [
     "/now/",
@@ -1484,7 +1494,7 @@
    ],
    [
     "/how/",
-    4
+    5
    ],
    [
     "/programme/",
@@ -1519,14 +1529,14 @@
     2
    ],
    [
-    "/e/2026-11-11-ptw-classroom-deep-work-wexio/&ss=fb&rt=PTW+Classroom:+Deep+Work+x+Wexio,+an+hour+to+get+your+inbox+back+-+Fringe&cd=KhM4NDgyNTMxNDEzOTc2NTIxMDc5MhwwMThkZjBhOTk1ZWU2YzcwOmNvbTplbjpVUzpM&ssp=AMJHsmW5QAncgAa4maeEuUb8fhtv9ae8Hg",
+    "/e/2026-11-12-healthcare-re-imagined-by-ai/",
     2
    ]
   ],
   "exit_pages": [
    [
     "/",
-    121
+    126
    ],
    [
     "/now/",
@@ -1546,7 +1556,7 @@
    ],
    [
     "/how/",
-    5
+    7
    ],
    [
     "/e/2026-11-11-founderlink-storm-summit-afternoon/",
@@ -1690,11 +1700,11 @@
   "pages_per_tab": [
    [
     "1",
-    181
+    189
    ],
    [
     "2",
-    38
+    39
    ],
    [
     "3",
@@ -1709,7 +1719,7 @@
     22
    ]
   ],
-  "bounce_rate": 69,
+  "bounce_rate": 70,
   "via_reached": [
    [
     "whatsapp: /",
@@ -1744,6 +1754,10 @@
     3
    ],
    [
+    "promptugal-news: /",
+    3
+   ],
+   [
     "whatsapp: /e/2026-11-11-kuma-align-leadership-ai/",
     2
    ],
@@ -1768,10 +1782,6 @@
     2
    ],
    [
-    "promptugal-news: /",
-    2
-   ],
-   [
     "whatsapp: /e/2026-11-11-yorkseed-allocator-lunch/",
     1
    ],
@@ -1788,7 +1798,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
+    "whatsapp: /e/2026-11-11-roast-your-website/",
     1
    ]
   ]
@@ -1814,7 +1824,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 263,
+    "views": 267,
     "lat": 38.7,
     "lon": -9.1
    },
@@ -1844,7 +1854,7 @@
    },
    {
     "name": "London, United Kingdom",
-    "views": 14,
+    "views": 17,
     "lat": 51.5,
     "lon": -0.1
    },
@@ -1962,6 +1972,10 @@
    2
   ],
   [
+   "/e/2026-11-13-is-your-ai-startup-ready-for-europe-the-eu-ai-/ → luma.com/buqma11b",
+   2
+  ],
+  [
    "/e/2026-11-11-between-the-waves/ → luma.com/5yucusdb",
    1
   ],
@@ -2019,10 +2033,6 @@
   ],
   [
    "/e/2026-11-11-roast-your-website/ → luma.com/m146luuy",
-   1
-  ],
-  [
-   "/e/2026-11-11-ai-for-business-applied-ai-pitch-party/ → luma.com/hz3ma5fl",
    1
   ]
  ]

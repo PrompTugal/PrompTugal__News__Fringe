@@ -128,8 +128,14 @@ def send(frm, to, text, subject):
     print(f'inboxes: sent to {to}' if r.get('ok', True) and 'error' not in r else f'inboxes: not sent: {r}')
 
 
-def drain(me_id, show_all, lane=None):
+def drain(me_id, show_all, lane=None, save_dir=None):
     c, store = crypto(); ks = active_keys()
+    if save_dir:   # the lead, 12 Nov (swarm.1's ask): each decrypted message as <file_id>.json, 0600, in a folder OUTSIDE any git checkout, for a handler to read
+        save_dir = os.path.realpath(os.path.expanduser(save_dir)); p = save_dir
+        while p != os.path.dirname(p):
+            if os.path.exists(os.path.join(p, '.git')): sys.exit(f'inboxes: --save-dir {save_dir} is inside a git checkout ({p}); choose a folder outside git')
+            p = os.path.dirname(p)
+        os.makedirs(save_dir, mode=0o700, exist_ok=True)
     if me_id not in ks: sys.exit(f'inboxes: {me_id} has no active key in data/keys.json')
     me = ks[me_id]['bundle']; pair = my_pair(store, me)
     os.makedirs(KEEP, mode=0o700, exist_ok=True); cf = os.path.join(KEEP, me_id + ('--' + lane if lane else '') + '.json')
@@ -163,12 +169,10 @@ def drain(me_id, show_all, lane=None):
                         tdir = os.path.expanduser('~/.sg-send/fringe-tips'); os.makedirs(tdir, mode=0o700, exist_ok=True); tp = os.path.join(tdir, msg['id'] + '.jpg')
                         open(tp, 'wb').write(base64.b64decode(msg['image'].split(',', 1)[1])); tipx['screenshot'] = tp
                     msg.pop('image', None)
-                if msg.get('kind') == 'swarm.promptugal.news/stand-story/v1' and re.fullmatch(r'stand-[0-9a-z]{4,16}', str(msg.get('id'))):   # swarm.1: a story made at the stand; saved OUTSIDE git for swarm.1 to check and publish
-                    sdir = os.path.expanduser('~/.sg-send/fringe-stand'); os.makedirs(sdir, mode=0o700, exist_ok=True); sp = os.path.join(sdir, msg['id'] + '.json')
-                    open(sp, 'w').write(json.dumps(msg, indent=1, ensure_ascii=False)); tipx = {'stand_story': msg['id'], 'saved': sp, 'scenes': len((msg.get('story') or {}).get('scenes') or []), 'consent': msg.get('consent_to_publish')}
-                    msg['text'] = '(a stand story: see saved)'
-                if msg.get('kind') == 'swarm.promptugal.news/feedback/v1':   # swarm.1: a team member's note from the swarm site's feedback button
-                    tipx = {'feedback_id': msg.get('id'), 'reaction': msg.get('reaction'), 'name': msg.get('name'), 'page': msg.get('page'), 'hash': msg.get('hash'), 'heading': msg.get('heading'), 'screen': msg.get('screen')}
+                if save_dir:
+                    sp = os.path.join(save_dir, re.sub(r'[^A-Za-z0-9_.-]', '_', f['file_id']) + '.json'); fd = os.open(sp, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+                    with os.fdopen(fd, 'w') as fh: fh.write(json.dumps({'file': f['file_id'], 'signed_by': who, 'verified': bool(out['verified']), 'message': msg}, ensure_ascii=False, indent=1))
+                    tipx = {**tipx, 'saved': sp}
                 print(json.dumps({**tipx, 'file': f['file_id'], 'signed_by': who, 'check': ok, 'claims_from': msg.get('from'), 'sent': msg.get('sent'), 'subject': msg.get('subject'), 'text': msg.get('text')}, ensure_ascii=False))
             except Exception as e:
                 print(json.dumps({'file': f['file_id'], 'undecryptable': type(e).__name__}))
@@ -180,8 +184,8 @@ def drain(me_id, show_all, lane=None):
 if __name__ == '__main__':
     a = argparse.ArgumentParser(); a.add_argument('cmd', choices=['issue', 'send', 'drain'])
     a.add_argument('--only', nargs='*'); a.add_argument('--from', dest='frm'); a.add_argument('--to'); a.add_argument('--text'); a.add_argument('--subject')
-    a.add_argument('--me'); a.add_argument('--all', action='store_true'); a.add_argument('--lane')
+    a.add_argument('--me'); a.add_argument('--all', action='store_true'); a.add_argument('--lane'); a.add_argument('--save-dir', dest='save_dir')
     o = a.parse_args()
     if o.cmd == 'issue': issue(o.only)
     elif o.cmd == 'send': send(o.frm, o.to, o.text, o.subject)
-    else: drain(o.me, o.all, o.lane)
+    else: drain(o.me, o.all, o.lane, o.save_dir)

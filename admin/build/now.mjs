@@ -1,4 +1,4 @@
-import { checkedLine } from './readline.mjs';   // design.1
+import { eventStatusLine } from './readline.mjs';   // design.1
 // work/16 (dev.2.fringe@PrompTugal.dinis): what is on now and in the next three hours.
 // Server-renders the list for the build time (works without JavaScript); every event in the window of
 // the week is in the markup with its start/end/read_at in ms, and /now.js re-filters by the reader's clock.
@@ -16,7 +16,7 @@ export function span(e) {
 }
 
 // The quiet line (fable.fringe@ note 4, via the lead): the status was read at the organiser's page at this time; the reader checks before going.
-export const readLine = (e, esc) => checkedLine([e.read_at], esc);
+export const readLine = (e, esc) => eventStatusLine(e, new Date(), esc);
 
 export function nowItems(events, esc, { eventPath, hasPage }) {
   return events.map((e) => ({ e, sp: span(e) })).filter((x) => x.sp).sort((a, b) => a.sp.s - b.sp.s).map(({ e, sp }) => {

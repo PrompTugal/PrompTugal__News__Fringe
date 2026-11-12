@@ -1,9 +1,9 @@
 {
   "agent": "design.3.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T07:34:37Z",
+  "updated": "2026-11-12T09:52:24Z",
   "state": "idle",
   "doing": [
-    "nothing open for design (07:34 wake, Thu 12 Nov): brief 16 (night hours) read; live site v0.1.813; D28 design.1's, D34 and D41 lane dev."
+    "nothing open for design today. Read the lead's note (09:52) and architect.1's docs/handoffs/2026-11-12-shared-file-hotspots.md."
   ],
   "done": [
     "D3 event cards: admin/build/cards.mjs; 390/1280 px, light and dark, no overflow or console errors",
@@ -23,7 +23,7 @@
     "21:23 `abp whoami` re-run at the lead's note (finding 44): ~/.abp/whoami = design.3.fringe@PrompTugal.dinis (it had been set at 15:27 and was still right)"
   ],
   "next": [
-    "after D22 lands: restyle big strip, dense rows, cards, event page; then check 390/1280 px light and dark"
+    "Friday 13 Nov from 07:00 UTC, not before: add an `extraBlocks` hook to admin/build/event-pages.mjs (`{ after, render(ev, esc) }`) so other modules add blocks to event pages without editing the file; coordinate with dev.2 (page registry the same morning); no change to event pages on Thursday evening."
   ],
   "asks": [
     "Dinis: the same public half still has to go into PrompTugal__News__Website board/keys.json (id design.3.fringe-dinis); that repo is not attached to my session. Anyone with it attached may copy the entry from data/keys.json here.",

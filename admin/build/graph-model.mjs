@@ -10,6 +10,7 @@
 
 import { readFileSync, existsSync } from 'node:fs';
 import { organisersOf, areaOf } from './graph.mjs';
+import { AREAS, areaOf as mapAreaOf } from './lisbon-areas.mjs';   // design.3's map vocabulary and centres (D28): one set of names for map and graph
 
 const norm = (s) => String(s ?? '').normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase()
   .replace(/^the\s+/, '').replace(/[™®]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
@@ -89,6 +90,8 @@ export function buildModel(root, events) {
   const personaSeed = readJSON(root, 'data/graph/personas.json')?.personas || [];
   const orgSeed = [...(readJSON(root, 'data/organisers.json')?.organisers || []), ...(readJSON(root, 'data/graph/organisers.json')?.organisers || [])];
   const communities = readJSON(root, 'data/communities.json')?.communities || [];
+  const FOLD = readJSON(root, 'data/graph/topics.json')?.folds || {};   // curated: a tag shown under a broader topic
+  const topicOf = (t) => { const n = topicName(t); return FOLD[n] || FOLD[String(t)] || n; };
   const commById = new Map(communities.map((c) => [c.id, c]));
   const commByName = new Map(communities.map((c) => [norm(c.name), c]));
 
@@ -159,13 +162,19 @@ export function buildModel(root, events) {
       if (new RegExp(f._m.listed, 'i').test(`${e.check || ''} ${e.note || ''} ${e.place || ''}`)) { ev.listed_by.push(f.id); f.listed.push(id); link(f.id, 'lists', id, e); }
     }
 
-    // place: the neighbourhood as the page names it, else the area in the place line, else the city
-    const area = e.neighbourhood || areaOf(e.place);
-    const pname = area === 'Online' || city === 'online' ? 'Online' : (area && area !== 'Lisbon' ? area : (city !== 'unknown' ? city : null));
+    // place: one vocabulary with the home's map (design.3, admin/build/lisbon-areas.mjs). The map's area wins when it
+    // names a known area; else the neighbourhood the page names; else the city. Bracketed notes are never places.
+    const own = e.neighbourhood || areaOf(e.place);
+    const ownOk = own && own !== 'Lisbon' && !/address|written|description|guest|given|page|stated/i.test(own) ? own : null;
+    const mapA = city === 'Lisbon' ? mapAreaOf(e) : null;
+    const known = mapA && AREAS[mapA] ? mapA : null;
+    const pname = own === 'Online' || city === 'online' ? 'Online' : (known || ownOk || (city !== 'unknown' ? city : null));
+    const placeHow = pname === 'Online' || pname === city ? null : (known && !e.neighbourhood && !ownOk ? 'from the address, by the map\'s rules (evidence)' : 'as the page names it');
     if (pname) {
       const pid = slug(pname);
-      if (!E.places.has(pid)) E.places.set(pid, { id: pid, type: 'place', name: pname, city: pname === 'Online' ? 'online' : (ELSEWHERE.includes(pname) ? pname : (city === 'Lisbon' || pname === 'Lisbon' ? 'Lisbon' : city)), events: [] });
-      E.places.get(pid).events.push(id); ev.place = pid; link(id, 'at', pid, e);
+      if (!E.places.has(pid)) E.places.set(pid, { id: pid, type: 'place', name: pname, city: pname === 'Online' ? 'online' : (ELSEWHERE.includes(pname) ? pname : (city === 'Lisbon' || pname === 'Lisbon' ? 'Lisbon' : city)),
+        centre: AREAS[pname] ? { lon: AREAS[pname][0], lat: AREAS[pname][1], note: 'approximate centre of the area (design.3, admin/build/lisbon-areas.mjs); not a venue' } : null, events: [] });
+      E.places.get(pid).events.push(id); ev.place = pid; ev.place_how = placeHow; link(id, 'at', pid, e);
     }
 
     // platform
@@ -175,11 +184,13 @@ export function buildModel(root, events) {
     ev.platform = pf.id; link(id, 'registerOn', pf.id, e);
 
     // topics
-    for (const t of new Set((e.topics || []).map(topicName))) {
+    for (const t of new Set((e.topics || []).map(topicOf))) {
       const tid = slug(t);
-      if (!E.topics.has(tid)) E.topics.set(tid, { id: tid, type: 'topic', name: t, events: [] });
-      E.topics.get(tid).events.push(id); ev.topics.push(tid); link(id, 'about', tid, e);
+      if (!E.topics.has(tid)) E.topics.set(tid, { id: tid, type: 'topic', name: t, tags: [], events: [] });
+      const T = E.topics.get(tid); T.events.push(id); ev.topics.push(tid); link(id, 'about', tid, e);
+      for (const raw of e.topics || []) if (topicOf(raw) === t && !T.tags.includes(String(raw))) T.tags.push(String(raw));
     }
+
 
     // personas, by rule
     const text = `${e.name} ${(e.topics || []).join(' ')} ${e.kind || ''}`;

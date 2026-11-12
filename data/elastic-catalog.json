@@ -8,80 +8,80 @@
     "about": "every index on the swarm's Elastic, its owner and what it holds"
   },
   "about": "The index catalog of the swarm's Elastic (docs/elastic-guidance.md section 7), written by admin/tools/elastic-catalog.mjs.",
-  "read_at": "2026-11-12T08:10:10Z",
+  "read_at": "2026-11-12T10:09:51Z",
   "by": "elastic.1.fringe@PrompTugal.dinis",
   "docs": [
     {
       "id": "elastic-submissions",
       "index": "elastic-submissions",
       "owner": "elastic.1.fringe@PrompTugal.dinis",
-      "docs": 36,
-      "size": "223kb",
+      "docs": 38,
+      "size": "72.1kb",
       "about": "the audit trail: every submission by every agent",
       "tool": "admin/tools/elastic-lib.mjs submitDocs",
       "dashboard": "Elastic operations: who submits what",
       "dynamic": 10,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "fringe-altitudes",
       "index": "fringe-altitudes",
       "owner": "elastic.1.fringe@PrompTugal.dinis",
       "docs": 132,
-      "size": "214.2kb",
+      "size": "214.3kb",
       "about": "every unit of every agentic run (architect.1's data/altitude-runs.json)",
       "tool": "admin/tools/elastic-altitudes.mjs",
       "dashboard": "The altitudes of execution, live",
       "dynamic": 50,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "fringe-commits",
       "index": "fringe-commits",
       "owner": "elastic.1.fringe@PrompTugal.dinis",
-      "docs": 903,
-      "size": "4.3mb",
+      "docs": 965,
+      "size": "4.5mb",
       "about": "Lisbon Tech Fringe: commits, from its public repository",
       "tool": "admin/tools/elastic-sites.mjs",
       "dashboard": "Lisbon Tech Fringe: the week live",
       "dynamic": 32,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "fringe-content",
       "index": "fringe-content",
       "owner": "elastic.1.fringe@PrompTugal.dinis",
-      "docs": 196,
-      "size": "1.7mb",
+      "docs": 202,
+      "size": "1.8mb",
       "about": "Lisbon Tech Fringe: content, from its public repository",
       "tool": "admin/tools/elastic-sites.mjs",
       "dashboard": "Lisbon Tech Fringe: the week live",
       "dynamic": 32,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "fringe-entities",
       "index": "fringe-entities",
       "owner": "elastic.1.fringe@PrompTugal.dinis",
       "docs": 193,
-      "size": "352.7kb",
+      "size": "353.2kb",
       "about": "Lisbon Tech Fringe: entities, from its public repository",
       "tool": "admin/tools/elastic-sites.mjs",
       "dashboard": "Lisbon Tech Fringe: the week live",
       "dynamic": 32,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "fringe-events",
       "index": "fringe-events",
       "owner": "elastic.1.fringe@PrompTugal.dinis",
       "docs": 179,
-      "size": "728kb",
+      "size": "729.7kb",
       "about": "Lisbon Tech Fringe events, each re-read at its public URL",
       "tool": "admin/tools/elastic.mjs",
       "dashboard": "Lisbon Tech Fringe: the week live",
       "dynamic": 28,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "fringe-graph",
@@ -93,19 +93,19 @@
       "tool": "admin/tools/elastic.mjs",
       "dashboard": "Lisbon Tech Fringe: the week live",
       "dynamic": 23,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "fringe-hooklog",
       "index": "fringe-hooklog",
       "owner": "elastic.1.fringe@PrompTugal.dinis",
-      "docs": 406,
-      "size": "766.4kb",
+      "docs": 418,
+      "size": "827.3kb",
       "about": "ABP hook decisions (elastic.1's session; others to come)",
       "tool": "admin/tools/elastic.mjs",
       "dashboard": "The agentic team: who did what, and under which policy",
       "dynamic": 20,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "fringe-models",
@@ -117,43 +117,43 @@
       "tool": "admin/tools/elastic.mjs",
       "dashboard": "Lisbon Tech Fringe: the week live",
       "dynamic": 18,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "fringe-packets",
       "index": "fringe-packets",
       "owner": "elastic.1.fringe@PrompTugal.dinis",
       "docs": 99,
-      "size": "166.3kb",
+      "size": "166.2kb",
       "about": "",
       "tool": "",
       "dashboard": "",
       "dynamic": 53,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "fringe-runs",
       "index": "fringe-runs",
       "owner": "elastic.1.fringe@PrompTugal.dinis",
       "docs": 0,
-      "size": "498b",
+      "size": "499b",
       "about": "Lisbon Tech Fringe: runs, from its public repository",
       "tool": "admin/tools/elastic-sites.mjs",
       "dashboard": "Lisbon Tech Fringe: the week live",
       "dynamic": 32,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "fringe-status",
       "index": "fringe-status",
       "owner": "elastic.1.fringe@PrompTugal.dinis",
       "docs": 30,
-      "size": "1.4mb",
+      "size": "1.5mb",
       "about": "Lisbon Tech Fringe: status, from its public repository",
       "tool": "admin/tools/elastic-sites.mjs",
       "dashboard": "Lisbon Tech Fringe: the week live",
       "dynamic": 32,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "fringe-tasks",
@@ -165,43 +165,43 @@
       "tool": "admin/tools/elastic.mjs",
       "dashboard": "",
       "dynamic": 22,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "fringe-workloads",
       "index": "fringe-workloads",
       "owner": "elastic.1.fringe@PrompTugal.dinis",
-      "docs": 307,
-      "size": "535.2kb",
+      "docs": 309,
+      "size": "537.1kb",
       "about": "distributed workloads: runtimes, endpoints, placements, matrix, altitudes, trials, reach, packets, Angelo's runs and traces",
       "tool": "admin/tools/elastic-workloads.mjs",
       "dashboard": "Distributed workloads: the altitudes of execution (Dinis and Angelo)",
       "dynamic": 44,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "ptnews-commits",
       "index": "ptnews-commits",
       "owner": "elastic.1.fringe@PrompTugal.dinis",
-      "docs": 4732,
-      "size": "10.7mb",
+      "docs": 4773,
+      "size": "10.8mb",
       "about": "PrompTugal.news: commits, from its public repository",
       "tool": "admin/tools/elastic-sites.mjs",
       "dashboard": "PrompTugal.news: the agentic newsroom",
       "dynamic": 32,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "ptnews-content",
       "index": "ptnews-content",
       "owner": "elastic.1.fringe@PrompTugal.dinis",
-      "docs": 737,
+      "docs": 740,
       "size": "10.2mb",
       "about": "PrompTugal.news: content, from its public repository",
       "tool": "admin/tools/elastic-sites.mjs",
       "dashboard": "PrompTugal.news: the agentic newsroom",
       "dynamic": 32,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "ptnews-entities",
@@ -213,19 +213,19 @@
       "tool": "admin/tools/elastic-sites.mjs",
       "dashboard": "PrompTugal.news: the agentic newsroom",
       "dynamic": 32,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "ptnews-runs",
       "index": "ptnews-runs",
       "owner": "elastic.1.fringe@PrompTugal.dinis",
-      "docs": 1873,
+      "docs": 1895,
       "size": "10.7mb",
       "about": "PrompTugal.news: runs, from its public repository",
       "tool": "admin/tools/elastic-sites.mjs",
       "dashboard": "PrompTugal.news: the agentic newsroom",
       "dynamic": 32,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "ptnews-status",
@@ -237,7 +237,7 @@
       "tool": "admin/tools/elastic-sites.mjs",
       "dashboard": "PrompTugal.news: the agentic newsroom",
       "dynamic": 32,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "swarm-abp-reviews",
@@ -250,20 +250,20 @@
       "dashboard": "",
       "created_at": "2026-11-11T19:04:40.081Z",
       "dynamic": 21,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "swarm-elastic-catalog",
       "index": "swarm-elastic-catalog",
       "owner": "elastic.1.fringe@PrompTugal.dinis",
       "docs": 29,
-      "size": "81.8kb",
+      "size": "81.9kb",
       "about": "every index on the swarm's Elastic, its owner and what it holds",
       "tool": "",
       "dashboard": "",
       "created_at": "2026-11-11T18:59:27.397Z",
       "dynamic": 18,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "swarm-elastic-selftest",
@@ -276,7 +276,7 @@
       "dashboard": "",
       "created_at": "2026-11-11T18:57:23.613Z",
       "dynamic": 12,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "swarm-flows",
@@ -288,31 +288,31 @@
       "tool": "admin/tools/elastic-submit.mjs",
       "dashboard": "",
       "dynamic": 27,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "websummit-commits",
       "index": "websummit-commits",
       "owner": "elastic.1.fringe@PrompTugal.dinis",
-      "docs": 5565,
-      "size": "13.1mb",
+      "docs": 5599,
+      "size": "13.2mb",
       "about": "the Web Summit site: commits, from its public repository",
       "tool": "admin/tools/elastic-sites.mjs",
       "dashboard": "Web Summit site: the team's field guide",
       "dynamic": 32,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "websummit-content",
       "index": "websummit-content",
       "owner": "elastic.1.fringe@PrompTugal.dinis",
-      "docs": 639,
+      "docs": 640,
       "size": "7.3mb",
       "about": "the Web Summit site: content, from its public repository",
       "tool": "admin/tools/elastic-sites.mjs",
       "dashboard": "Web Summit site: the team's field guide",
       "dynamic": 32,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "websummit-entities",
@@ -324,19 +324,19 @@
       "tool": "admin/tools/elastic-sites.mjs",
       "dashboard": "Web Summit site: the team's field guide",
       "dynamic": 32,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "websummit-runs",
       "index": "websummit-runs",
       "owner": "elastic.1.fringe@PrompTugal.dinis",
       "docs": 23,
-      "size": "185.4kb",
+      "size": "185.2kb",
       "about": "the Web Summit site: runs, from its public repository",
       "tool": "admin/tools/elastic-sites.mjs",
       "dashboard": "Web Summit site: the team's field guide",
       "dynamic": 32,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     },
     {
       "id": "websummit-status",
@@ -348,7 +348,7 @@
       "tool": "admin/tools/elastic-sites.mjs",
       "dashboard": "Web Summit site: the team's field guide",
       "dynamic": 32,
-      "read_at": "2026-11-12T08:10:10Z"
+      "read_at": "2026-11-12T10:09:51Z"
     }
   ]
 }

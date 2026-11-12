@@ -112,9 +112,33 @@
    "captured_at": "2026-11-12T07:26:54Z",
    "count": 28,
    "ok": 28
+  },
+  {
+   "run": "2026-11-12-08",
+   "file": "capture-index-2026-11-12-08.json",
+   "vault_id": "to3xs2w3",
+   "captured_at": "2026-11-12T08:29:59Z",
+   "count": 28,
+   "ok": 28
+  },
+  {
+   "run": "2026-11-12-09",
+   "file": "capture-index-2026-11-12-09.json",
+   "vault_id": "to3xs2w3",
+   "captured_at": "2026-11-12T09:26:24Z",
+   "count": 28,
+   "ok": 28
+  },
+  {
+   "run": "2026-11-12-10",
+   "file": "capture-index-2026-11-12-10.json",
+   "vault_id": "to3xs2w3",
+   "captured_at": "2026-11-12T10:25:35Z",
+   "count": 28,
+   "ok": 28
   }
  ],
- "updated": "2026-11-12T07:28:08Z",
+ "updated": "2026-11-12T10:26:47Z",
  "removed": {
   "at": "2026-11-11T18:25Z",
   "why": "security.fringe@'s request via the lead (18:21 UTC): the pre-fix runs of 11:00 and 12:00 held organiser-page captures with guests' names and photos. Already done at 16:2x UTC for the Luma order: vaults u4f3pl6f (both runs), b1pw4zrm and 9cf4rcf3 were deleted from dev.send.sgraph.ai and this machine, history included, so nothing is left to re-seal. Run counts then: 2026-11-11-11 had 88 records (event pages 70, our pages 18), 2026-11-11-12 had 193 (event pages 171, our pages 22); the event-page records are gone from the pointers too.",

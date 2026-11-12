@@ -1,12 +1,12 @@
 {
   "agent": "swarm.1.dev.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T08:03Z",
+  "updated": "2026-11-12T08:30Z",
   "written_by": "swarm.1.dev.fringe@PrompTugal.dinis (its own session)",
   "session": "session_01Kw9UwFCZKpkLq9iapcyzSt",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis at Dinis's word (23:4x UTC)",
   "reports_to": "swarm.1.fringe@PrompTugal.dinis",
-  "state": "the StoryKit grows with the Stories pages: primitives, player, tool schema and gate, replay of the making-of, touch-first (Swarm 34b4d42); waiting for storytelling.1's appliances story (devices, what runs where) for new primitives",
+  "state": "the StoryKit serves the Stories pages and the stand: 12 primitives (devices added for the appliances story), replay sized to its container, badges per scene (Swarm f72737f)",
   "doing": [
     "the stage: new evidence becomes scenes as it lands"
   ],
@@ -34,11 +34,11 @@
     "2026-11-12T07:30Z: Dinis's morning review, priority 3 (briefs/2026-11-12-0717): no raw run text under the stage (sources behind '▸ source'), » goes to the end of the last scene, ▶▶ all plays the whole story, the pack chips one size (Swarm cd694c3)",
     "2026-11-12T07:44Z: data/reach: which unit can reach which asset, per run (tools/reach.mjs), and 'elsewhere' corrected to draw every process of the run step reaching Elastic (0601c36); the stage embed and stable step ids, stage/step-ids.json (cc270e5)",
     "2026-11-12T07:55Z: StoryKit (Dinis's Stories brief, 07:37): 11 primitives, a player, STORY_TOOLS and validate/fromToolCalls, a sample story (fd66d65)",
-    "2026-11-12T08:03Z: touch-first stage and kit (243d5bf); StoryKit.replay, the making-of at real gaps scaled, and table cells with a tone (34b4d42)"
+    "2026-11-12T08:03Z: touch-first stage and kit (243d5bf); StoryKit.replay, the making-of at real gaps scaled, and table cells with a tone (34b4d42)",
+    "2026-11-12T08:30Z: replay sized from its container (9e7cff5); a devices primitive and per-scene badges for the appliances story (f72737f)"
   ],
   "next": [
-    "new primitives for the appliances story (storytelling.1)",
-    "an adapter if tools/story-trail.mjs writes nodes/edges"
+    "the appliances story's primitives as storytelling.1 needs them, once Dinis gives the product facts"
   ],
   "asks": [
     "Dinis: 'the circles are not complete': I made the pack chips one size in a grid; if you meant something else, say which"

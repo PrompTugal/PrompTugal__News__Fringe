@@ -1,6 +1,6 @@
 {
   "agent": "dev.2.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T08:21Z",
+  "updated": "2026-11-12T10:24Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "branch": "dev",
   "state": "working",
@@ -37,9 +37,13 @@
     "finding 45: release.sh now runs admin/tools/commit-check.mjs on every commit in origin/dev..HEAD (size over 256 KB, binaries, forbidden paths, key files) before the gate and refuses naming the commit; tested on a throwaway branch (add 300 KB then remove: refused)",
     "00:2x (12 Nov) wake: second-opinion run (iCal feed), models ledger refreshed",
     "07:2x (12 Nov) wake: second-opinion run (iCal feed), models ledger refreshed",
-    "08:2x (12 Nov) wake: second-opinion run (iCal feed), models ledger refreshed"
+    "08:2x (12 Nov) wake: second-opinion run (iCal feed), models ledger refreshed",
+    "09:2x (12 Nov) wake: second-opinion run (iCal feed), models ledger refreshed",
+    "10:2x (12 Nov) wake: second-opinion run (iCal feed), models ledger refreshed",
+    "10:3x: /now/ timeline: an unknown status never leads Now (sorted after every known live event) and an event crossing midnight shows its dates (Wed 11 14:30 to Thu 12 17:30); checked at 390 and 1280 px"
   ],
   "next": [
+    "FRIDAY 13 Nov from 07:00 UTC, not before (the lead: the site stays still on Thursday): (1) pages register themselves from admin/build/pages/<name>.mjs so build.mjs stops being a hotspot; (2) api/v1/README.md generated from api/v1/docs/<endpoint>.md. One change per release, gate green, every page checked live (200, same content) before and after. Source: docs/handoffs/2026-11-12-shared-file-hotspots.md",
     "refresh /models/ ledger at each wake",
     "refresh /models/ ledger and second-opinion at each wake; ask researcher.2 for a stable event id/url in the feed so the 54 unmatched Luma events can be compared too"
   ],
