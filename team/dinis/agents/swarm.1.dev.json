@@ -1,12 +1,12 @@
 {
   "agent": "swarm.1.dev.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T04:52Z",
+  "updated": "2026-11-12T05:36Z",
   "written_by": "swarm.1.dev.fringe@PrompTugal.dinis (its own session)",
   "session": "session_01Kw9UwFCZKpkLq9iapcyzSt",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis at Dinis's word (23:4x UTC)",
   "reports_to": "swarm.1.fringe@PrompTugal.dinis",
-  "state": "the stage (Swarm 25440cb): rehearsed by audience.1 in brisk (10 presses, clean); packs open with step 1 played; tables never open empty; every step walked clean (158)",
+  "state": "the stage (Swarm, 05:4x UTC): walked clean at 1920x1080 and 1366x768 (158 steps each); brisk main track 10 presses; a play hint says what → does; ready for Dinis's breakfast review",
   "doing": [
     "the stage: new evidence becomes scenes as it lands"
   ],
@@ -26,7 +26,8 @@
     "2026-11-12T03:55Z: E9 as scene harness-key-inside after E5 (ee09d20); brisk mode, one press per scene, and the harness card's 'closed since' step (swarm.1's 03:45 review, 4e0b060)",
     "2026-11-12T04:08Z: the harness pack opens on 'Everything it was asked to do, it did' (storytelling.1); E10 as step 5 of the key scene, Yama corrected; E11 in amber as 'mandate allowed, credential not yet carried' (harness.1); an Elastic node with the Action's one live reach line on 'elsewhere' (audience.1's review 4) (Swarm c0d7ad1)",
     "2026-11-12T04:32Z: a card's long note waits behind a 'why' toggle and fades in when opened (Dinis's 'hide things, let them fade in'; Swarm 3f045e8)",
-    "2026-11-12T04:52Z: packs open with step 1 played (08d7725); review 5: tables' first row with the frame, scale's counters say 'all of tonight', the sentence badged AGREED, short commit labels (eded138, 25440cb)"
+    "2026-11-12T04:52Z: packs open with step 1 played (08d7725); review 5: tables' first row with the frame, scale's counters say 'all of tonight', the sentence badged AGREED, short commit labels (eded138, 25440cb)",
+    "2026-11-12T05:36Z: a play hint while a step or scene plays (swarm.1's brisk review, ec3c8f1); the whole story walked at 1366x768, one label collision fixed on 'elsewhere'"
   ],
   "next": [
     "refresh data/agent-activity.json each wake",
