@@ -1,6 +1,6 @@
 {
   "agent": "swarm.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T23:56Z",
+  "updated": "2026-11-12T00:01Z",
   "account": "riskmandate-personal (Ultra)",
   "session": "session_01Kw9UwFHqLAjKake7UEDjL3",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (11 Nov 2026, about 21:0x UTC: 'start a new agent called Swarm ... for our Swarm capabilities and our risk mandate Swarm, which we want to demo tomorrow')",
@@ -25,7 +25,8 @@
     "2026-11-11T23:47Z: PrompTugal__News__Swarm__Runs (architect.1's design, at Dinis's go 23:3x UTC): tools/requests.mjs (new, verify against data/keys.json, plan, run, index), tools/engine.mjs (A0/A1/A2 with live flow hooks), .github/workflows/run.yml (plan, run matrix, commit with attest-build-provenance)",
     "2026-11-11T23:47Z: first runs: push 6d72d7f -> workflow run 43122148416 -> result commit f3c2f1c (swarm-runs[bot]), attestation 66472238; A1 18/18 valid in 25 s, 0.0069 USD; A2 19 valid of 37 calls, 0.012 USD",
     "2026-11-11T23:47Z: runner.1 ran s002 (20/33 valid, 0.0138 USD), published; swarm.promptugal.news reads the Runs repo (73428d8)",
-    "2026-11-11T23:56Z: landed swarm.1.dev's batch, check-run and demo runbook (Runs 44d3ad9); check-run found that push 15bf673 had re-run storm-a1 and a2 (depth-2 clone, diff fallback to all requests); fixed (full history, never re-run a request with a result on a push, fresh provenance per result); re-ran both on purpose by workflow_dispatch: all three runs verify 13/13 (e3bc6ca)"
+    "2026-11-11T23:56Z: landed swarm.1.dev's batch, check-run and demo runbook (Runs 44d3ad9); check-run found that push 15bf673 had re-run storm-a1 and a2 (depth-2 clone, diff fallback to all requests); fixed (full history, never re-run a request with a result on a push, fresh provenance per result); re-ran both on purpose by workflow_dispatch: all three runs verify 13/13 (e3bc6ca)",
+    "2026-11-12T00:01Z: landed swarm.1.dev's summary.mjs (Runs 2b88148, sha256 checked); scale test: 12 signed A1 requests in one push (dbcca7b) -> 12 jobs at once, 144 calls, ~75 s push to result commit (555790e); check-run 12/12 verified. All runs: 15 requests, 216 calls, 172 valid, 0.068 USD (Sonnet would be 1.99)"
   ],
   "next": [
     "bring in s002 (runner.1) and s003 (Angelo); the cross-account view",
