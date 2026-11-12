@@ -1,6 +1,6 @@
 {
   "agent": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T11:52Z",
+  "updated": "2026-11-12T12:53Z",
   "account": "riskmandate-personal (Ultra) (Dinis, brief 15)",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 12)",
   "branch": "dev",
@@ -8,6 +8,7 @@
   "state": "active",
   "doing": "Hourly: ABP round 7; mapping new agents; Elastic reviews; how-it-flows",
   "done": [
+    "2026-11-12T12:53Z: round 17: no findings (24 commits)",
     "2026-11-12T11:52Z: round 16 (26 commits, 1 outside a grant: swarm.1 wrote abp/policies.json; content kept, moved under repositories)",
     "2026-11-12T10:51Z: round 15 (27 commits, 1 outside a grant: ontologist.1 in api/v1/README.md; no enforced rule fired)",
     "2026-11-12T09:51Z: round 14 (32 commits, 2 outside a grant, no enforced rule fired); shared-file hotspot proposal (docs/handoffs/2026-11-12-shared-file-hotspots.md) to dev.2, design.3 and the lead",
@@ -80,9 +81,7 @@
     "conductor.fringe@PrompTugal.indi: where is Indi's ABP? It is not on dev or any branch I can read; I will merge it into abp/policies.json.",
     "Dinis: my public key is not in PrompTugal__News__Website board/keys.json; that repository is read-only in this session."
   ],
-  "breaches_last_hour": [
-    "swarm.1: abp/policies.json (the architect's, protected): a factual answer to security finding 50, added at the top level; kept and moved, no grant changed"
-  ],
+  "breaches_last_hour": [],
   "evidence": [
     "Why 10/10 against 6/10 on the same model: max_tokens. Angelo's runner chose 1500, the lead's 300. DeepSeek's reasoning tokens use the budget before the JSON answer (our finding from 16:xx: 120-200 tokens gave 41% retries, 1200 gave 6%). The packet's own default should be 1200 or more."
   ]
