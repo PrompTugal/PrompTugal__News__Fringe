@@ -5,7 +5,7 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T14:26Z",
+ "generated": "2026-11-12T14:38Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
@@ -16,10 +16,10 @@
   "tabs": 284,
   "countries": 22,
   "shares": 193,
-  "bots": 2209,
+  "bots": 2236,
   "crawler_tabs": 1,
-  "agent_runs": 436,
-  "agent_runs_signed": 383
+  "agent_runs": 438,
+  "agent_runs_signed": 385
  },
  "by_hour": [
   [
@@ -1361,7 +1361,7 @@
    39
   ]
  ],
- "other_hosts_views": 5194,
+ "other_hosts_views": 5234,
  "by_via": [
   [
    "whatsapp",
@@ -1429,16 +1429,16 @@
    26
   ],
   [
+   "design.3.fringe@PrompTugal.dinis",
+   25
+  ],
+  [
    "architect.1.fringe@PrompTugal.dinis",
    25
   ],
   [
    "conductor.fringe@PrompTugal.indi",
    25
-  ],
-  [
-   "design.3.fringe@PrompTugal.dinis",
-   24
   ],
   [
    "researcher.fringe@PrompTugal.dinis",
@@ -1462,7 +1462,7 @@
   ],
   [
    "capture.1.fringe@PrompTugal.dinis",
-   19
+   20
   ],
   [
    "researcher.1.fringe@PrompTugal.jose",
@@ -1828,11 +1828,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
@@ -1840,7 +1840,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-roast-your-website/",
+    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
     1
    ]
   ]
