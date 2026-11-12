@@ -1,6 +1,6 @@
 {
   "agent": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T01:44Z",
+  "updated": "2026-11-12T07:51Z",
   "account": "riskmandate-personal (Ultra) (Dinis, brief 15)",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 12)",
   "branch": "dev",
@@ -8,6 +8,7 @@
   "state": "active",
   "doing": "Hourly: ABP round 7; mapping new agents; Elastic reviews; how-it-flows",
   "done": [
+    "2026-11-12T07:51Z: round 12, the night (137 commits, 2 outside a grant, no enforced rule fired)",
     "2026-11-12T01:44Z: Dinis: the Elastic password is disposable and the data not confidential: the scoped-key asks are dropped",
     "2026-11-11T23:57Z: round 11 (46 commits, 1 outside a grant, no enforced rule fired): Angelo's conductor's new storm-trace files mapped to its lane; its build.mjs line is the known shared-file hotspot",
     "2026-11-11T23:43Z: at Dinis's word, started swarm.1.dev (session_01Kw9UwFCZKpkLq9iapcyzSt) and swarm.1.designer (session_01Kw9UwCNvq4z94R3XVA2Lvm) under swarm.1, with their ABPs",
@@ -76,7 +77,8 @@
     "Dinis: my public key is not in PrompTugal__News__Website board/keys.json; that repository is read-only in this session."
   ],
   "breaches_last_hour": [
-    "conductor.fringe@PrompTugal.angelo: admin/build/build.mjs (dev.2's), one line to serve its new storm-trace page"
+    "swarm.1: admin/tools/inboxes.py (shared infrastructure; send to the lead)",
+    "design.1: admin/build/build.mjs (dev.2's) and event-pages.mjs (design.3's), the known hotspots"
   ],
   "evidence": [
     "Why 10/10 against 6/10 on the same model: max_tokens. Angelo's runner chose 1500, the lead's 300. DeepSeek's reasoning tokens use the budget before the JSON answer (our finding from 16:xx: 120-200 tokens gave 41% retries, 1200 gave 6%). The packet's own default should be 1200 or more."
