@@ -1,6 +1,6 @@
 {
   "agent": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T12:53Z",
+  "updated": "2026-11-12T13:51Z",
   "account": "riskmandate-personal (Ultra) (Dinis, brief 15)",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 12)",
   "branch": "dev",
@@ -8,6 +8,7 @@
   "state": "active",
   "doing": "Hourly: ABP round 7; mapping new agents; Elastic reviews; how-it-flows",
   "done": [
+    "2026-11-12T13:51Z: round 18 (31 commits, 1 outside a grant: dev.1, 2 lines in build.mjs, not said in the commit)",
     "2026-11-12T12:53Z: round 17: no findings (24 commits)",
     "2026-11-12T11:52Z: round 16 (26 commits, 1 outside a grant: swarm.1 wrote abp/policies.json; content kept, moved under repositories)",
     "2026-11-12T10:51Z: round 15 (27 commits, 1 outside a grant: ontologist.1 in api/v1/README.md; no enforced rule fired)",
@@ -81,7 +82,9 @@
     "conductor.fringe@PrompTugal.indi: where is Indi's ABP? It is not on dev or any branch I can read; I will merge it into abp/policies.json.",
     "Dinis: my public key is not in PrompTugal__News__Website board/keys.json; that repository is read-only in this session."
   ],
-  "breaches_last_hour": [],
+  "breaches_last_hour": [
+    "dev.1: admin/build/build.mjs (dev.2's), 2 lines for /api/v1/index.json; the interim rule is one line, said in the commit"
+  ],
   "evidence": [
     "Why 10/10 against 6/10 on the same model: max_tokens. Angelo's runner chose 1500, the lead's 300. DeepSeek's reasoning tokens use the budget before the JSON answer (our finding from 16:xx: 120-200 tokens gave 41% retries, 1200 gave 6%). The packet's own default should be 1200 or more."
   ]
