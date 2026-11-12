@@ -56,3 +56,6 @@ Run 9 notes (2026-11-12 08:41 UTC): morning of Thursday 12 Nov; nothing new to f
 | 2026-11-12 10:41 UTC | v0.1.913 | PASS: 'Tonight 27', 1 tap, in place (buttons still at y 612) | PASS: 'Cancelled or moved 3', 1 tap | PASS (no control, correct: 0 online today) | PASS | PASS | none | none |
 
 Run 10 (2026-11-12 10:41 UTC): no change since run 9; nothing new to file. Home 8280 px. Old address still 404 (D34, 19 hours).
+| 2026-11-12 12:41 UTC | v0.1.962 | PASS: 'Tonight 27', 1 tap | PASS: 'Cancelled or moved 3', 1 tap | PASS (no control, correct) | PASS | PASS | none | none |
+
+Run 11 (2026-11-12 12:41 UTC): no change since run 10; nothing new. Home 6441 px. Old address still 404 (D34, 21 hours).
