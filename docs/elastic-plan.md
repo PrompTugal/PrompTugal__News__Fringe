@@ -137,6 +137,10 @@ Every commit is attributed from its `Agent:` trailer (read from the body when gi
 
 - 12:12 UTC wake: 28 indices, 19,329 documents refreshed, 0 errors; 221 Kibana objects re-imported. No agent submissions in the hour but the catalog feed; swarm-flows unchanged since 00:00 UTC (1,534). OpenRouter: 10,603 trace documents (218 since the 11:11 wake; latest 12:12 UTC). data/events.json still has 30 malformed read_at (trimmed at ingest). ABP round 16 (4ecbff0) read: no change to this grant. No new brief.
 
+- 13:13 UTC wake: 28 indices, 19,422 documents refreshed, 0 errors; 221 Kibana objects re-imported. No agent submissions in the hour but the catalog feed; swarm-flows unchanged since 00:00 UTC (1,534). OpenRouter: 10,773 trace documents (170 since the 12:12 wake; latest 13:02 UTC). data/events.json still has 30 malformed read_at (trimmed at ingest). ABP round 17 (a44942a): no findings. No new brief.
+
+- 14:12 UTC wake: 28 indices, 19,486 documents refreshed, 0 errors; 221 Kibana objects re-imported. No agent submissions in the hour but the catalog feed; swarm-flows unchanged since 00:00 UTC (1,534). OpenRouter: 10,807 trace documents (34 since the 13:12 wake; latest 14:00 UTC). data/events.json still has 30 malformed read_at (trimmed at ingest). ABP round 18 (b436804): nothing for elastic.1. No new brief.
+
 ## Asks
 
 - ~~**Dinis:** the Elastic Cloud deployment's Elasticsearch endpoint host~~ (given at 17:23 UTC). Still: an API key limited to the fringe-* indices, to replace the elastic superuser password, and `my-observability-deployment-cd4ce8.es.us-central1.gcp.cloud.es.io` added to elastic.1's sends in its ABP (architect.1). Originally asked: the endpoint host (e.g. `<name>.es.<region>.<cloud>.elastic-cloud.com`) and an API key limited to the `fringe-*` indices, saved as a network secret on this cloud environment (never in chat).

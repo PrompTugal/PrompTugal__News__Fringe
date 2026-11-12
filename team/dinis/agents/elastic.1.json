@@ -1,6 +1,6 @@
 {
   "agent": "elastic.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T12:12Z",
+  "updated": "2026-11-12T14:12Z",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis, at Dinis's word (briefs/2026-11-11-1630-r5-r8-r9-enforced-and-elastic.md)",
   "branch": "dev",
@@ -47,7 +47,9 @@
     "09:08 UTC wake: 28 indices, 19,076 documents refreshed, 0 errors. No agent submissions in the hour but the catalog feed; swarm-flows unchanged since 00:00 UTC (1,534). OpenRouter: 848 calls traced (775 on the agents' key, 12 new; 73 on the newsroom key, 6 new). data/events.json still has 30 malformed read_at. No new brief.",
     "10:11 UTC wake: 28 indices, 19,172 documents, 0 errors; 221 Kibana objects; no agent submissions but the catalog feed; swarm-flows unchanged (1,534); OpenRouter 40 trace documents in the hour; 30 malformed read_at remain (researcher.2 asked). No new brief.",
     "11:11 UTC wake: 28 indices, 19,243 documents refreshed, 0 errors; 221 Kibana objects re-imported. No agent submissions in the hour but the catalog feed; swarm-flows unchanged since 00:00 UTC (1,534). OpenRouter: 10,385 trace documents (200 since the 10:11 wake; latest 11:10 UTC). data/events.json still has 30 malformed read_at (trimmed at ingest). No new brief.",
-    "12:12 UTC wake: 28 indices, 19,329 documents refreshed, 0 errors; 221 Kibana objects re-imported. No agent submissions in the hour but the catalog feed; swarm-flows unchanged since 00:00 UTC (1,534). OpenRouter: 10,603 trace documents (218 since the 11:11 wake; latest 12:12 UTC). data/events.json still has 30 malformed read_at (trimmed at ingest). ABP round 16 (4ecbff0) read: no change to this grant. No new brief."
+    "12:12 UTC wake: 28 indices, 19,329 documents refreshed, 0 errors; 221 Kibana objects re-imported. No agent submissions in the hour but the catalog feed; swarm-flows unchanged since 00:00 UTC (1,534). OpenRouter: 10,603 trace documents (218 since the 11:11 wake; latest 12:12 UTC). data/events.json still has 30 malformed read_at (trimmed at ingest). ABP round 16 (4ecbff0) read: no change to this grant. No new brief.",
+    "13:13 UTC wake: 28 indices, 19,422 documents refreshed, 0 errors; 221 Kibana objects re-imported. No agent submissions in the hour but the catalog feed; swarm-flows unchanged since 00:00 UTC (1,534). OpenRouter: 10,773 trace documents (170 since the 12:12 wake; latest 13:02 UTC). data/events.json still has 30 malformed read_at (trimmed at ingest). ABP round 17 (a44942a): no findings. No new brief.",
+    "14:12 UTC wake: 28 indices, 19,486 documents refreshed, 0 errors; 221 Kibana objects re-imported. No agent submissions in the hour but the catalog feed; swarm-flows unchanged since 00:00 UTC (1,534). OpenRouter: 10,807 trace documents (34 since the 13:12 wake; latest 14:00 UTC). data/events.json still has 30 malformed read_at (trimmed at ingest). ABP round 18 (b436804): nothing for elastic.1. No new brief."
   ],
   "next": [
     "refresh the best-of's screenshots before the demo if the data moves (node scratchpad capture, then admin/tools/elastic-showcase.mjs, republish the same Artifact)",

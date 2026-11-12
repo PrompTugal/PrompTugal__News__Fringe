@@ -1,7 +1,7 @@
 {
   "agent": "researcher.2.fringe@PrompTugal.dinis",
   "by": "researcher.2.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T12:14Z",
+  "updated": "2026-11-12T14:14Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "wake": "hourly at :10 (set by the lead) until Friday 13 November",
   "branch": "dev",
@@ -40,7 +40,11 @@
     "09:11 UTC Thu wake (iCal only): 133 feed entries, added 0, gone 6 (start already passed except: []), changed 2; seen_at on 104; inbox and tips: nothing new",
     "10:11 UTC Thu wake (iCal only): 133 feed entries, added 0, gone 0, changed 1; seen_at on 104; inbox and tips: nothing new",
     "11:13 UTC wake (iCal only): 133 feed entries, added 0, gone 0 (all already started), changed 0; seen_at on 104; inbox and tips: nothing new",
-    "12:14 UTC wake (iCal only): 132 feed entries, added 0, gone 1 (all already started), changed 0; seen_at on 104; inbox and tips: nothing new"
+    "12:14 UTC wake (iCal only): 132 feed entries, added 0, gone 1 (all already started), changed 0; seen_at on 104; inbox and tips: nothing new",
+    "13:15 UTC wake (iCal only): 130 feed entries, added 0, gone 2 (all already started), changed 0; seen_at on 102; inbox and tips: nothing new",
+    "13:25 UTC (the lead's carried item): the empty id '2026-11-11-' was the Russian-language founders' breakfast, 'Завтрак русскоязычных фаундеров' (https://luma.com/pxwl1esg, 11 Nov 12:00 UTC): its Cyrillic title made an empty slug. It was given the id 2026-11-11-russian-language-founders-breakfast in ebfb686 (17:24 UTC Wed); the old page /e/2026-11-11-/ answers from data/graph/seen.json and says 'This event has a new page' (checked in a clean build)",
+    "13:26 UTC: the uid in data/feeds/luma-ical.json cut before the @ too (events.json already was); my feed script now writes it that way",
+    "14:14 UTC wake (iCal only): 129 feed entries, added 0, gone 1 (not yet started: ['EIT Jumpstarter 2026 Awards Ce']), changed 0; seen_at on 101; inbox and tips: nothing new"
   ],
   "next": [
     "17:10 UTC wake: read the 3 iCal feeds only; no Luma event pages unless a person asks; tips lane; briefs",

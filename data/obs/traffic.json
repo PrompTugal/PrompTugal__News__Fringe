@@ -5,35 +5,23 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T12:25Z",
+ "generated": "2026-11-12T14:26Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 574,
-  "reads": 489,
-  "tabs": 278,
-  "countries": 21,
+  "views": 585,
+  "reads": 495,
+  "tabs": 284,
+  "countries": 22,
   "shares": 193,
-  "bots": 2121,
+  "bots": 2209,
   "crawler_tabs": 1,
-  "agent_runs": 403,
-  "agent_runs_signed": 355
+  "agent_runs": 436,
+  "agent_runs_signed": 383
  },
  "by_hour": [
-  [
-   "2026-11-10 12:00",
-   0
-  ],
-  [
-   "2026-11-10 13:00",
-   0
-  ],
-  [
-   "2026-11-10 14:00",
-   0
-  ],
   [
    "2026-11-10 15:00",
    0
@@ -213,16 +201,28 @@
   [
    "2026-11-12 11:00",
    3
+  ],
+  [
+   "2026-11-12 12:00",
+   2
+  ],
+  [
+   "2026-11-12 13:00",
+   7
+  ],
+  [
+   "2026-11-12 14:00",
+   2
   ]
  ],
  "by_page": [
   [
    "/",
-   234
+   239
   ],
   [
    "/now/",
-   44
+   45
   ],
   [
    "/how/",
@@ -242,7 +242,7 @@
   ],
   [
    "/programme/",
-   12
+   13
   ],
   [
    "/join/",
@@ -461,6 +461,10 @@
    2
   ],
   [
+   "/e/2026-11-12-ptw-classroom-storytelling-game-by-pina/",
+   2
+  ],
+  [
    "/e/2026-11-11-ai-video-blueprint-2027/",
    1
   ],
@@ -583,12 +587,20 @@
   [
    "/e/2026-11-12-ptw-classroom-portuguese-for-tech-life-meet-gr/",
    1
+  ],
+  [
+   "/e/2026-11-12-get-down-at-the-dev-house/",
+   1
+  ],
+  [
+   "/e/2026-11-12-ufl-web-summit-after-party/",
+   1
   ]
  ],
  "reading": [
   [
    "/",
-   180,
+   183,
    28,
    13
   ],
@@ -1137,12 +1149,30 @@
    1,
    1,
    0
+  ],
+  [
+   "/e/2026-11-12-get-down-at-the-dev-house/",
+   1,
+   12,
+   76
+  ],
+  [
+   "/e/2026-11-12-ufl-web-summit-after-party/",
+   1,
+   146,
+   98
+  ],
+  [
+   "/e/2026-11-12-ptw-classroom-storytelling-game-by-pina/",
+   1,
+   11,
+   27
   ]
  ],
  "by_country": [
   [
    "Portugal",
-   364
+   370
   ],
   [
    "United Kingdom",
@@ -1150,7 +1180,7 @@
   ],
   [
    "United States",
-   41
+   42
   ],
   [
    "Germany",
@@ -1161,12 +1191,12 @@
    21
   ],
   [
-   "Italy",
-   8
+   "The Netherlands",
+   9
   ],
   [
-   "The Netherlands",
-   7
+   "Italy",
+   8
   ],
   [
    "Tanzania",
@@ -1201,6 +1231,10 @@
    2
   ],
   [
+   "Spain",
+   2
+  ],
+  [
    "Netherlands",
    1
   ],
@@ -1228,7 +1262,7 @@
  "by_city": [
   [
    "Lisbon, Portugal",
-   275
+   281
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -1275,6 +1309,10 @@
    5
   ],
   [
+   "Amsterdam, The Netherlands",
+   5
+  ],
+  [
    "Bangkok, Thailand",
    5
   ],
@@ -1298,7 +1336,7 @@
   ],
   [
    "www.google.com",
-   5
+   6
   ],
   [
    "promptugal.news",
@@ -1316,14 +1354,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   535
+   546
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 4818,
+ "other_hosts_views": 5194,
  "by_via": [
   [
    "whatsapp",
@@ -1358,11 +1396,11 @@
  "by_screen": [
   [
    "desktop",
-   312
+   321
   ],
   [
    "phone",
-   257
+   259
   ],
   [
    "tablet",
@@ -1372,67 +1410,67 @@
  "agents": [
   [
    "elastic.1.fringe@PrompTugal.dinis",
-   33
+   35
   ],
   [
    "design.4.fringe@PrompTugal.dinis",
-   30
+   32
   ],
   [
    "design.1.fringe@PrompTugal.dinis",
-   30
+   32
   ],
   [
    "conductor.fringe@PrompTugal.jose",
-   29
+   31
   ],
   [
    "ontologist.1.fringe@PrompTugal.dinis",
-   24
+   26
   ],
   [
    "architect.1.fringe@PrompTugal.dinis",
-   23
+   25
   ],
   [
    "conductor.fringe@PrompTugal.indi",
-   23
+   25
   ],
   [
    "design.3.fringe@PrompTugal.dinis",
-   22
+   24
   ],
   [
    "researcher.fringe@PrompTugal.dinis",
-   22
+   24
   ],
   [
    "observability.fringe@PrompTugal.dinis",
-   20
+   22
   ],
   [
    "design.2.fringe@PrompTugal.dinis",
+   22
+  ],
+  [
+   "dev.1.fringe@PrompTugal.dinis",
    20
   ],
   [
    "researcher.2@PrompTugal.dinis",
-   18
+   20
+  ],
+  [
+   "capture.1.fringe@PrompTugal.dinis",
+   19
   ],
   [
    "researcher.1.fringe@PrompTugal.jose",
    17
   ],
   [
-   "dev.1.fringe@PrompTugal.dinis",
-   17
-  ],
-  [
-   "capture.1.fringe@PrompTugal.dinis",
-   17
-  ],
-  [
    "dev.2.fringe@PrompTugal.dinis",
-   15
+   17
   ],
   [
    "swarm.1.fringe@PrompTugal.dinis",
@@ -1444,11 +1482,11 @@
   ],
   [
    "usability.1.fringe@PrompTugal.dinis",
-   7
+   8
   ],
   [
    "fable.fringe@PrompTugal.dinis",
-   7
+   8
   ],
   [
    "gravity.1.fringe@PrompTugal.silvio",
@@ -1460,11 +1498,11 @@
   ]
  ],
  "flows": {
-  "tabs": 276,
+  "tabs": 282,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    195
+    200
    ],
    [
     "shared link (?via=)",
@@ -1472,13 +1510,13 @@
    ],
    [
     "from another site",
-    7
+    8
    ]
   ],
   "entry_pages": [
    [
     "/",
-    173
+    177
    ],
    [
     "/now/",
@@ -1540,11 +1578,11 @@
   "exit_pages": [
    [
     "/",
-    130
+    132
    ],
    [
     "/now/",
-    16
+    17
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
@@ -1556,7 +1594,7 @@
    ],
    [
     "/programme/",
-    8
+    9
    ],
    [
     "/how/",
@@ -1602,11 +1640,11 @@
   "steps": [
    [
     "/ → /now/",
-    19
+    20
    ],
    [
     "/ → /programme/",
-    8
+    9
    ],
    [
     "/ → /e/2026-11-11-wet-summit-lisbon/",
@@ -1704,15 +1742,15 @@
   "pages_per_tab": [
    [
     "1",
-    194
+    196
    ],
    [
     "2",
-    39
+    42
    ],
    [
     "3",
-    16
+    17
    ],
    [
     "4",
@@ -1790,11 +1828,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
@@ -1802,7 +1840,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    "whatsapp: /e/2026-11-11-roast-your-website/",
     1
    ]
   ]
@@ -1833,7 +1871,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 275,
+    "views": 281,
     "lat": 38.7,
     "lon": -9.1
    },
@@ -1902,6 +1940,12 @@
     "views": 5,
     "lat": -6.2,
     "lon": 35.7
+   },
+   {
+    "name": "Amsterdam, The Netherlands",
+    "views": 5,
+    "lat": 52.4,
+    "lon": 4.9
    },
    {
     "name": "Bangkok, Thailand",

@@ -1,6 +1,6 @@
 {
   "agent": "dev.2.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T12:21Z",
+  "updated": "2026-11-12T14:21Z",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 4)",
   "branch": "dev",
   "state": "working",
@@ -42,7 +42,10 @@
     "10:2x (12 Nov) wake: second-opinion run (iCal feed), models ledger refreshed",
     "10:3x: /now/ timeline: an unknown status never leads Now (sorted after every known live event) and an event crossing midnight shows its dates (Wed 11 14:30 to Thu 12 17:30); checked at 390 and 1280 px",
     "11:2x (12 Nov) wake: second-opinion run (iCal feed), models ledger refreshed",
-    "12:2x (12 Nov) wake: second-opinion run (iCal feed), models ledger refreshed"
+    "12:2x (12 Nov) wake: second-opinion run (iCal feed), models ledger refreshed",
+    "13:2x (12 Nov) wake: second-opinion run (iCal feed), models ledger refreshed",
+    "finding 5: the gate (validate.mjs section 7) now fails on email addresses and phone numbers in tracked data/ JSON and the built site; 0 hits on the current tree after the allow-list; negative tests pass",
+    "14:2x (12 Nov) wake: second-opinion run (iCal feed), models ledger refreshed"
   ],
   "next": [
     "FRIDAY 13 Nov from 07:00 UTC, not before (the lead: the site stays still on Thursday): (1) pages register themselves from admin/build/pages/<name>.mjs so build.mjs stops being a hotspot; (2) api/v1/README.md generated from api/v1/docs/<endpoint>.md. One change per release, gate green, every page checked live (200, same content) before and after. Source: docs/handoffs/2026-11-12-shared-file-hotspots.md",

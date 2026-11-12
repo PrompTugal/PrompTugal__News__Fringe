@@ -1,11 +1,11 @@
 {
  "agent": "outreach.1.fringe@PrompTugal.dinis",
- "updated": "2026-11-12T11:36Z",
+ "updated": "2026-11-12T13:36Z",
  "started_by": "conductor.fringe@PrompTugal.dinis at Dinis's word (brief 6)",
  "model": "Sonnet",
  "wake": "hourly at :35 (set by the lead)",
  "branch": "dev",
- "state": "11:35 wake: quiet; no round 2 send reported (Replit's window closes about 12:00 UTC); organiser-tagged visits 0 (/traffic/ 11:25 UTC, 571 views); 76 organisers, 5 contacted, 0 answered, 0 joined",
+ "state": "13:35 wake: Friday's post done (work/drafts/post-friday.md); nothing sent since yesterday as far as /traffic/ shows (13:26 UTC: 578 views; whatsapp 161, linkedin 22 unchanged); organiser-tagged visits 0; 76 organisers, 5 contacted, 0 answered, 0 joined",
  "doing": [
   "work/29 owner; with work/18 and work/23"
  ],
@@ -44,7 +44,10 @@
   "09:22 lead's relay: (1) work/drafts/post-tonight-after-the-summit.md for WhatsApp and LinkedIn (lunch and about 16:30 UTC): says 'what's on tonight', not 'walk in' (no event is marked walk-in in data/events.json: 38 events from 16:30, 30 free, 23 with a public address); (2) work/drafts/organiser-notes-tonight-v2.md now uses ?via=organiser-<tracker id> per organiser",
   "09:35 wake: no hold, no new brief, inbox empty; counted ?via=organiser* visits in /traffic/ (generated 09:26 UTC, 559 views): 0; Jose's status (09:08) still 'answers pending'; drafts waiting: tonight post, round 2 notes, design call, tip ask, group links",
   "10:35 wake: no hold, no new brief, inbox empty; organiser-tagged visits still 0; Replit's note (17:30 event) should go before about 12:00 UTC if it is to go",
-  "11:35 wake: no hold, no new brief, inbox empty; organiser-tagged visits still 0; whatsapp 161, linkedin 22 unchanged since yesterday; the lunchtime 'tonight' post has not been reported posted"
+  "11:35 wake: no hold, no new brief, inbox empty; organiser-tagged visits still 0; whatsapp 161, linkedin 22 unchanged since yesterday; the lunchtime 'tonight' post has not been reported posted",
+  "12:35 wake: no hold, no new brief, inbox empty; nothing sent since yesterday as far as the tracker and /traffic/ show; the 16:30 UTC 'tonight' post slot is next",
+  "lead's relay 13:24: work/drafts/post-friday.md (WhatsApp and LinkedIn; morning about 07:00 UTC and again about 12:00 UTC; no 'walk in'; tagged; independence line); flagged that M\u00e9rtola Tech Day is not in Lisbon",
+  "13:35 wake: no hold, no new brief, inbox empty; the lead's wake (13:21) routed Friday's post to outreach.1: already drafted at 13:2x"
  ],
  "next": [
   "next wake: count by_via entries starting 'organiser-' in /traffic/traffic.json and note them in the tracker",
@@ -64,6 +67,7 @@
   "Jose: after you send each note, set that organiser's state to 'sent' in data/outreach-tracker.json (sent_by, sent_at), or tell me, and I rerun outreach.py; no agent marks a send",
   "Dinis: Jose asks you to confirm his 5 organiser notes (work/drafts/organiser-notes-today-jose.md); Kuma goes before 15:00 UTC. Brief 15 says Jose sends them today; a one-line 'yes' from you in this session or to the lead settles it",
   "jose / conductor.fringe@PrompTugal.jose: read work/drafts/organiser-notes-tonight-v2.md; if you send any, send before 12:00 UTC for the 17:30 Replit event, and tell me each send so the tracker can record it (Dinis approved the note on 11 Nov; this is a changed version, so Dinis or Jose should read it first)",
-  "Dinis / jose: post work/drafts/post-tonight-after-the-summit.md at lunch and about 16:30 UTC; it says 'what's on tonight' because no event is marked walk-in; if you want 'walk in', someone must read each page for it"
+  "Dinis / jose: post work/drafts/post-tonight-after-the-summit.md at lunch and about 16:30 UTC; it says 'what's on tonight' because no event is marked walk-in; if you want 'walk in', someone must read each page for it",
+  "Dinis / jose: Friday's post is ready in work/drafts/post-friday.md; post by about 07:00 UTC (first event 08:00); recheck the count first (it may change overnight)"
  ]
 }
