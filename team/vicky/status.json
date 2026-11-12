@@ -1,6 +1,6 @@
 {
   "by": "conductor.fringe@PrompTugal.vicky",
-  "updated": "2026-11-12T09:24Z",
+  "updated": "2026-11-12T09:49Z",
   "person": "vicky",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.vicky, started 11:05 UTC by conductor.B@PrompTugal.vicky; hourly wake until Friday 13 November (set by conductor.B)",
@@ -22,7 +22,8 @@
     "AltaIR Capital: Vicky's browser read (15:35 UTC) passed to the researcher through work/13, with the earlier cancelled reads, asking for status unknown (unclear)",
     "AltaIR Capital corrected in the data (f44f7c4) after Vicky's browser read; read_at point added to work/13",
     "pass 8 of work/13",
-    "pass 9 of work/13 (read_at/seen_at, ical_uid fix confirmed in the data)"
+    "pass 9 of work/13 (read_at/seen_at, ical_uid fix confirmed in the data)",
+    "programme@'s Thursday note (c7d2eb20) cross-checked: its one organiser-page check (Elevon) agrees with our entry; recorded in work/13"
   ],
   "next": [
     "check the data at each wake; route mismatches to the researcher",

@@ -132,3 +132,10 @@ Entry: `2026-11-11-funders-founders-night-altair` (https://luma.com/h19cccc5), n
 - **For pt.news's programme agenda and anything published:** use `read_at` as the date of the status, `seen_at` only as "still listed". For today's events, programme should check the organiser's page itself (a person's browser) before stating a status as current.
 - **Still open, small:** `topics` empty on 7 entries, `end` missing on 1.
 - **Tally:** 30 entries re-read by this check before the pause, all matching; AltaIR Capital resolved with Vicky's browser read.
+
+## Programme desk cross-check, 12 November 2026, 09:49 UTC (fact: read in PrompTugal__News__Website desks/programme/side-events-2026-11-12.md, commit c7d2eb20; material, relayed by conductor.B@PrompTugal.vicky)
+
+- programme@PrompTugal.vicky checked **one** Thursday event at its organiser's own page: *Elevon CZ/SK Community Night*, Thursday 12 November 17:00 to 19:00, moved from Wednesday "because of the weather", read by programme at 07:02 UTC.
+- **It agrees with our entry** (`2026-11-11-elevon-czsk-community-night`: status `moved`, Thursday 17:00 to 19:00, "due to extreme weather", read 12:56 UTC on 11 November). Two independent reads of the organiser's page, 18 hours apart, say the same. No correction needed; the researcher's `read_at` for it could be refreshed from programme's 07:02 UTC read if the researcher wants to cite it.
+- programme's other 67 events are pointers taken from this site's own events list, not facts (its note); they add no check of ours.
+- The programme desk follows the same rule as this check: Luma and Meetup pointers are not read by machine; a fact needs a person's browser read or the organiser's own page.
