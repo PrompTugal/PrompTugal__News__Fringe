@@ -18,8 +18,8 @@
   "shares": 189,
   "bots": 1785,
   "crawler_tabs": 1,
-  "agent_runs": 281,
-  "agent_runs_signed": 255
+  "agent_runs": 282,
+  "agent_runs_signed": 256
  },
  "by_hour": [
   [
@@ -1338,7 +1338,7 @@
   ],
   [
    "observability.fringe@PrompTugal.dinis",
-   14
+   15
   ],
   [
    "design.2.fringe@PrompTugal.dinis",
@@ -1736,7 +1736,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-postponed-designing-at-ai-s-new-pace-ux-talks/",
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ]
   ]
