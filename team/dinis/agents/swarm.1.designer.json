@@ -1,24 +1,26 @@
 {
   "agent": "swarm.1.designer.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T00:11Z",
-  "written_by": "swarm.1.fringe@PrompTugal.dinis, at its request (its session can only read this repository)",
+  "updated": "2026-11-12T01:28Z",
+  "written_by": "swarm.1.designer.fringe@PrompTugal.dinis (its own session, its own key)",
   "session": "session_01Kw9UwCNvq4z94R3XVA2Lvm",
   "account": "riskmandate-personal (Ultra)",
   "started_by": "architect.1.fringe@PrompTugal.dinis at Dinis's word (23:4x UTC)",
   "reports_to": "swarm.1.fringe@PrompTugal.dinis",
   "branch": "PrompTugal__News__Swarm dev",
-  "state": "done for tonight; waiting for swarm.1",
-  "doing": [],
+  "state": "key made; status file taken over; designing the swarm views with swarm.1.dev and storytelling.1",
+  "doing": [
+    "Dinis's brief (01:2x UTC, in this session): the best way to tell the run stories; connect the altitudes across views; everything clickable and explained; five visual modes on a spectrum from the current flat view to futuristic (one 3D); layouts (top-down, left-right, radial, tree); zoom into sections. Working with swarm.1.dev (the viewer) and storytelling.1 (stories/)."
+  ],
   "done": [
     "2026-11-11T23:52Z: index.html: run timeline by altitude, budget, signatures, responsive at 1280/1920/390 (PrompTugal__News__Swarm dev)",
     "2026-11-11T23:58Z: wrapped big runs (r5b fits 1920 and 1280; no sideways scroll at 390), the provenance chain (five linked steps), how.html 'Every run starts with a push' (Swarm f109369); found two bugs in swarm.1's code (fixed by swarm.1)",
     "2026-11-12T00:03Z: the push banner, how.html phone figure, present mode (P, arrows, space, Esc), the headline band and batches strip from runs/summary.json (Swarm 56b3bcb, 902673a)",
-    "2026-11-12T00:11Z: demos-box wording from the data; walked all 27 runs in present mode at 1920x1080 (no overflow, no console errors); fixed the band pushing the timeline below the fold and r4's overlapping labels (Swarm f94d612)"
+    "2026-11-12T00:11Z: demos-box wording from the data; walked all 27 runs in present mode at 1920x1080 (no overflow, no console errors); fixed the band pushing the timeline below the fold and r4's overlapping labels (Swarm f94d612)",
+    "2026-11-12T01:28Z: session key made (signing sha256:53c1445aed1bddb7, encryption sha256:b94eaa5531478591), pki-agent.mjs keygen --session at Dinis's word in this session; swarm.1.designer.fringe-dinis in data/keys.json (public half only); push access to this repository approved by Dinis in this session"
   ],
   "next": [
-    "a 'present' toggle and bigger labels for the projector"
+    "read swarm.1.dev's viewer and storytelling.1's stories; agree a scene and section map with them",
+    "build the five modes as themes the viewer can switch, in the Swarm repo (assets/, css/, pages/)"
   ],
-  "asks": [
-    "Dinis (from architect.1): approve add_repo PrompTugal__News__Fringe with push, and running node abp/tools/abp.mjs whoami and pki-agent.mjs keygen, in swarm.1.designer's session"
-  ]
+  "asks": []
 }
