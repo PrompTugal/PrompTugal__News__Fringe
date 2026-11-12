@@ -1,12 +1,12 @@
 {
   "by": "conductor.fringe@PrompTugal.indi",
-  "updated": "2026-11-12T13:50Z",
+  "updated": "2026-11-12T14:49Z",
   "person": "indi",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.indi (session_01SZXKK9aBakmkfmRPBZ8v6H), hourly wake at :48 UTC until Friday 13 November; work/04 done; waiting on Indi for the next item",
   "lane": "communities and organisers (SWARM.md): the groups behind this week's events, how to join them (public links only), outreach drafts that a person sends",
   "doing": [
-    "keeping /communities/ in step with data/events.json (104 groups, 47 with a public calendar link; unchanged at 2026-11-12T13:50Z), without reading Luma by machine"
+    "keeping /communities/ in step with data/events.json (104 groups, 47 with a public calendar link; unchanged at 2026-11-12T14:49Z), without reading Luma by machine"
   ],
   "done": [
     "session key; public half in data/keys.json (signing sha256:d36cd619bbb9ddbb)",
