@@ -1,7 +1,7 @@
 {
   "about": "The Agent Behaviour Policies of Lisbon Fringe (lisbontechfringe.com, origin in admin/site.json; WS-215) as data: deny by default, one grant per role and agent, across this repository and the others the swarm touches. Ported from PrompTugal__News__Website board/abp/policies.json (abp@PrompTugal.dinis, v1.7.0, since 6 November 2026), not invented anew; built on RiskMandate's Agent Behaviour Policy and Licence to Operate (https://riskmandate.ai/agent-behaviour-policy.html). Read by the hooks (.claude/settings.json, .claude/hooks/abp.mjs) and by the gate's commit check (abp/tools/abp.mjs check). abp/<agent>.md is generated from this file (node abp/tools/abp.mjs build), never edited by hand. Kept by architect.1.fringe@PrompTugal.dinis (work/39); any relaxation, and any move towards enforcement, is Dinis's decision.",
   "version": "0.4.1",
-  "updated": "2026-11-12T00:11Z",
+  "updated": "2026-11-12T01:44Z",
   "operator": "Dinis Cruz",
   "kept_by": "architect.1.fringe@PrompTugal.dinis",
   "status": "DRAFT: grants proposed from the git log (data/architecture.json observed); Dinis and the lead review",
@@ -294,7 +294,7 @@
           "SG_SEND_ACCESS_TOKEN"
         ],
         "added": "by Dinis, 2026-11-11T23:31Z, for the demo (12 November)",
-        "rules": "read only by workflows triggered by push or workflow_dispatch (never pull_request_target); passed to a step through env, never echoed or written to a file in the repo; ELASTIC_CLOUD (the superuser password) to be replaced by a key limited to swarm-* when Dinis makes one; a secret no workflow uses should be removed"
+        "rules": "read only by workflows triggered by push or workflow_dispatch (never pull_request_target); passed to a step through env, never echoed or written to a file in the repo; ELASTIC_CLOUD is a disposable password on a temporary account with no confidential data (Dinis, 2026-11-12T01:44Z); a secret no workflow uses should be removed"
       }
     },
     "promptugal/promptugal__news__swarm": {
@@ -659,12 +659,12 @@
       ]
     },
     "swarm-dev": {
-      "focus": "the swarm's code under swarm.1 (work/52): tools/ (the engine, the gate), the workflows, the runners; in PrompTugal__News__Swarm__Runs, the push-triggered runs of docs/handoffs/2026-11-11-swarm-runs-design.md",
+      "focus": "the swarm's code under swarm.1 (work/52): tools/ (the engine, the gate), the workflows, the runners; in PrompTugal__News__Swarm__Runs, the push-triggered runs of docs/handoffs/2026-11-11-swarm-runs-design.md; the presentation stage (stage.html, scenes as data in stage/scenes.json), at Dinis's word in its session, about 01:2x UTC on 12 November (relayed by swarm.1.dev, mapped 2026-11-12T01:28Z: new files in its own lane, owned by no one else)",
       "writes": [
         "team/{person}/agents/{name}.json"
       ],
       "writes_other_repos": [
-        "PrompTugal__News__Swarm: tools/**, .github/workflows/**, runners/**, packets/**, data/**, RUNNER.md",
+        "PrompTugal__News__Swarm: tools/**, .github/workflows/**, runners/**, packets/**, data/**, RUNNER.md, stage.html, stage/**",
         "PrompTugal__News__Swarm__Runs: requests/**, .github/workflows/**, docs/** (workflows there only after Dinis's word to swarm.1)"
       ],
       "send_hosts": [
@@ -673,7 +673,7 @@
       "never": "pushes a workflow next to the Runs repo's secrets without Dinis's word; prints a secret; uses ELASTIC_CLOUD outside a workflow (R8e); stores model text"
     },
     "swarm-designer": {
-      "focus": "the swarm's pages under swarm.1: swarm.promptugal.news (index.html, how.html, the run views), so the demo reads well on a laptop, a projector and a phone",
+      "focus": "the swarm's pages under swarm.1: swarm.promptugal.news (index.html, how.html, the run views), so the demo reads well on a laptop, a projector and a phone; the stage's themes and 3D modes (swarm.1.dev builds stage.html; the designer owns how it looks)",
       "writes": [
         "team/{person}/agents/{name}.json"
       ],
@@ -1391,7 +1391,8 @@
       "rule": "R8e",
       "source": "Dinis in elastic.1's session, before 19:06 UTC, relayed by elastic.1: \"for now we will share that super user pwd but control that using ABPs so that only the elastic and architect agent can use that environment variable\"",
       "added": "2026-11-11T19:06Z",
-      "also": "PrompTugal__News__Swarm__Runs' GitHub Actions workflows (R8) read it as the repository secret ELASTIC_CLOUD, which Dinis added himself for the demo (2026-11-11, 23:2x UTC); there it is the Action's, not an agent's, and only through env at the flow step. To be replaced by an API key limited to swarm-flows (create_doc, index) after the demo (elastic.1, 00:08 UTC; abp/policies.json repositories)."
+      "also": "PrompTugal__News__Swarm__Runs' GitHub Actions workflows (R8) read it as the repository secret ELASTIC_CLOUD, which Dinis added himself for the demo (2026-11-11, 23:2x UTC); there it is the Action's, not an agent's, and only through env at the flow step.",
+      "dinis_risk_decision": "Dinis, 2026-11-12T01:44Z: \"don't worry about the elastic password because that's disposable. None of that is confidential. None of the data that is there is confidential, and it's a temporary Elastic account.\" So no scoped Elastic keys are asked for; R8e stays an observed habit (who uses it), and R8 still means it is never printed or committed."
     }
   ]
 }

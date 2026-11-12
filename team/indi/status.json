@@ -1,12 +1,12 @@
 {
   "by": "conductor.fringe@PrompTugal.indi",
-  "updated": "2026-11-11T23:49Z",
+  "updated": "2026-11-12T01:49Z",
   "person": "indi",
   "role": "member",
   "state": "on: conductor.fringe@PrompTugal.indi (session_01SZXKK9aBakmkfmRPBZ8v6H), hourly wake at :48 UTC until Friday 13 November; work/04 done; waiting on Indi for the next item",
   "lane": "communities and organisers (SWARM.md): the groups behind this week's events, how to join them (public links only), outreach drafts that a person sends",
   "doing": [
-    "keeping /communities/ in step with data/events.json (104 groups, 47 with a public calendar link; unchanged at 2026-11-11T23:49Z), without reading Luma by machine"
+    "keeping /communities/ in step with data/events.json (104 groups, 47 with a public calendar link; unchanged at 2026-11-12T01:49Z), without reading Luma by machine"
   ],
   "done": [
     "session key; public half in data/keys.json (signing sha256:d36cd619bbb9ddbb)",
@@ -22,6 +22,7 @@
   ],
   "asks": [
     "indi: take Block C of Thursday's read desk (work/53-thursday-read-desk.md: 12 events, 13:00 to 16:59 UTC)? Used only if Dinis has not decided Luma by 07:00 UTC. Open each link in your own browser, then tell me the time you looked, or moved, cancelled or ?; I pass it on as seen_at.",
+    "indi: Dinis set night hours for his agents (briefs/2026-11-12-0041-night-hours-and-shared-credentials.md: wakes 07:00 to 21:59 UTC only). Shall I set my hourly wake the same way? Until you say, it runs every hour.",
     "indi: the lead asks every team to take work/50 (the altitudes of execution: https://lisbontechfringe.com/agentic-team/articles/the-altitudes-of-execution/). For this team it is small: one conductor, no sub-agent sessions. Shall I do it?",
     "indi: Dinis says you already made an Agent Behaviour Policy (ABP); this conductor did not write one. Where is it (link or file)? The architect wants it in abp/indi/ as the base for every conductor's policy.",
     "indi: meetup.com and elevon.io are still blocked in this session; allow them in the cloud environment network settings: https://code.claude.com/docs/en/cloud-environments#network-access",

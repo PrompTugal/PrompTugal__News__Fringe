@@ -5,27 +5,23 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T00:25Z",
+ "generated": "2026-11-12T01:25Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 532,
-  "reads": 460,
-  "tabs": 240,
+  "views": 537,
+  "reads": 463,
+  "tabs": 245,
   "countries": 19,
   "shares": 189,
-  "bots": 1751,
+  "bots": 1804,
   "crawler_tabs": 1,
-  "agent_runs": 279,
-  "agent_runs_signed": 253
+  "agent_runs": 286,
+  "agent_runs_signed": 258
  },
  "by_hour": [
-  [
-   "2026-11-10 01:00",
-   0
-  ],
   [
    "2026-11-10 02:00",
    0
@@ -212,13 +208,17 @@
   ],
   [
    "2026-11-12 00:00",
-   3
+   4
+  ],
+  [
+   "2026-11-12 01:00",
+   4
   ]
  ],
  "by_page": [
   [
    "/",
-   212
+   216
   ],
   [
    "/now/",
@@ -233,11 +233,11 @@
    21
   ],
   [
-   "/dashboard/",
-   13
+   "/universe/",
+   14
   ],
   [
-   "/universe/",
+   "/dashboard/",
    13
   ],
   [
@@ -568,7 +568,7 @@
  "reading": [
   [
    "/",
-   167,
+   170,
    28,
    13
   ],
@@ -1092,7 +1092,7 @@
  "by_country": [
   [
    "Portugal",
-   343
+   346
   ],
   [
    "United Kingdom",
@@ -1100,7 +1100,7 @@
   ],
   [
    "United States",
-   31
+   32
   ],
   [
    "Germany",
@@ -1131,6 +1131,10 @@
    3
   ],
   [
+   "Canada",
+   3
+  ],
+  [
    "France",
    2
   ],
@@ -1144,10 +1148,6 @@
   ],
   [
    "Czechia",
-   2
-  ],
-  [
-   "Canada",
    2
   ],
   [
@@ -1170,7 +1170,7 @@
  "by_city": [
   [
    "Lisbon, Portugal",
-   259
+   261
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -1222,7 +1222,7 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   82
+   85
   ]
  ],
  "by_referrer": [
@@ -1250,14 +1250,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   493
+   498
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 3024,
+ "other_hosts_views": 3144,
  "by_via": [
   [
    "whatsapp",
@@ -1292,11 +1292,11 @@
  "by_screen": [
   [
    "desktop",
-   280
+   284
   ],
   [
    "phone",
-   248
+   249
   ],
   [
    "tablet",
@@ -1321,12 +1321,12 @@
    19
   ],
   [
-   "architect.1.fringe@PrompTugal.dinis",
+   "conductor.fringe@PrompTugal.jose",
    18
   ],
   [
-   "conductor.fringe@PrompTugal.jose",
-   17
+   "architect.1.fringe@PrompTugal.dinis",
+   18
   ],
   [
    "researcher.1.fringe@PrompTugal.jose",
@@ -1334,11 +1334,11 @@
   ],
   [
    "design.3.fringe@PrompTugal.dinis",
-   15
+   16
   ],
   [
    "observability.fringe@PrompTugal.dinis",
-   14
+   15
   ],
   [
    "design.2.fringe@PrompTugal.dinis",
@@ -1346,7 +1346,11 @@
   ],
   [
    "conductor.fringe@PrompTugal.indi",
-   11
+   12
+  ],
+  [
+   "capture.1.fringe@PrompTugal.dinis",
+   12
   ],
   [
    "dev.1.fringe@PrompTugal.dinis",
@@ -1357,12 +1361,8 @@
    11
   ],
   [
-   "capture.1.fringe@PrompTugal.dinis",
-   11
-  ],
-  [
    "researcher.fringe@PrompTugal.dinis",
-   10
+   11
   ],
   [
    "dev.2.fringe@PrompTugal.dinis",
@@ -1378,7 +1378,7 @@
   ],
   [
    "usability.1.fringe@PrompTugal.dinis",
-   4
+   5
   ],
   [
    "fable.fringe@PrompTugal.dinis",
@@ -1394,11 +1394,11 @@
   ]
  ],
  "flows": {
-  "tabs": 240,
+  "tabs": 245,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    163
+    168
    ],
    [
     "shared link (?via=)",
@@ -1412,7 +1412,7 @@
   "entry_pages": [
    [
     "/",
-    155
+    159
    ],
    [
     "/now/",
@@ -1424,7 +1424,7 @@
    ],
    [
     "/universe/",
-    8
+    9
    ],
    [
     "/dashboard/",
@@ -1474,7 +1474,7 @@
   "exit_pages": [
    [
     "/",
-    112
+    116
    ],
    [
     "/now/",
@@ -1486,7 +1486,7 @@
    ],
    [
     "/universe/",
-    9
+    10
    ],
    [
     "/programme/",
@@ -1638,7 +1638,7 @@
   "pages_per_tab": [
    [
     "1",
-    162
+    167
    ],
    [
     "2",
@@ -1762,7 +1762,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 259,
+    "views": 261,
     "lat": 38.7,
     "lon": -9.1
    },

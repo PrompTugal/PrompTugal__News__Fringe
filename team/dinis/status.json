@@ -1,6 +1,6 @@
 {
   "by": "conductor.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T00:22Z",
+  "updated": "2026-11-12T00:41Z",
   "person": "dinis",
   "role": "head",
   "state": "wake 00:22 Thursday: live at v0.1.707; home rolled to Thursday; swarm.1's scale test: 12 jobs at once on GitHub Actions, 144 calls, 12/12 verified, 216 calls in all for $0.068; read desk offered (Indi and Jose asked, asleep)",
@@ -127,6 +127,7 @@
     "reviewing what lands on dev; routing Dinis's briefs"
   ],
   "done": [
+    "00:41: Dinis said yes to night hours: 15 scheduled tasks now wake 07:00 to 21:59 UTC (researcher.2, design.1, the advisor and the lead from about 06:10 to 06:53); finding 41 (shared credentials) accepted by Dinis; brief 16",
     "00:22: drained (Indi's conductor: Block C put to Indi; Angelo's conductor: a reply for incident.conductor@web-summit.dinis, outside this swarm, held for you); swarm.1.dev and swarm.1.designer on the roster (started by architect.1 at your word, 23:43)",
     "23:22: advisor's seventh note and security's eighth review onto dev (no high, no new medium; finding 45: a 262 KB file pushed round the gate and removed a minute later, rule restated to elastic.1); read-desk blocks offered through each conductor's inbox; storm block for Thursday morning routed to researcher.2's 06:11 wake",
     "22:22: read desk renumbered work/53 (swarm.1's work/52 came first, 21:22 vs 21:23); inbox for swarm.1 (26 lanes); 13 agents ran whoami (finding 44); capture.1 closed finding 21 (vault u4f3pl6f deleted); design.4's home fix live (unknown never ON NOW; multi-day dates)",
@@ -182,8 +183,7 @@
   "asks": [
     "Dinis (1, Thursday 07:00): Luma. Your word, or the read desk (work/53): I offered Block A (07:00 to 09:59, 10 events) to Vicky, B to Jose, C to Indi, D (the evening, 37 events) to Angelo through their conductors; please say it in the team chat too, since only people can wake people.",
     "Dinis (2, GitHub settings, a few minutes): one ruleset protecting main, .claude/** and abp/** and requiring pushes to dev through the gate (findings 1, 2, 28, 38, 45); a yes to architect.1's signed overrides and its fix for unidentified sessions (finding 44); and a scheduled deploy at 00:05 and hourly in .github/workflows (design.1: the home rolls to the new day even when no agent pushes).",
-    "Dinis (3): night hours: after 22:00 UTC only security and one researcher run (06:30); the rest resume at 07:00. About 160 runs saved. Yes or no?",
-    "Dinis (4, the swarm demo): add the repository secret OPENROUTER_API_KEY to PrompTugal__News__Swarm (Settings > Secrets and variables > Actions) so GitHub Actions can run packets; set the repo's About website to https://swarm.promptugal.news; scoped cloud credentials and a number for any new session. Also: how long to keep OpenRouter traces in Elastic.",
-    "Dinis (5): the old address fringe.promptugal.news has been 404 for six hours; an org admin creates the redirect repository (admin/redirect/). And R5: may the lead mirror dev to claude/magical-mayer-pxpzed, that branch only?"
+    "Dinis (3, the swarm demo): add the repository secret OPENROUTER_API_KEY to PrompTugal__News__Swarm (Settings > Secrets and variables > Actions) so GitHub Actions can run packets; set the repo's About website to https://swarm.promptugal.news; scoped cloud credentials and a number for any new session. Also: how long to keep OpenRouter traces in Elastic.",
+    "Dinis (4): the old address fringe.promptugal.news has been 404 for six hours; an org admin creates the redirect repository (admin/redirect/). And R5: may the lead mirror dev to claude/magical-mayer-pxpzed, that branch only?"
   ]
 }

@@ -1,6 +1,6 @@
 {
   "agent": "architect.1.fringe@PrompTugal.dinis",
-  "updated": "2026-11-11T23:57Z",
+  "updated": "2026-11-12T01:44Z",
   "account": "riskmandate-personal (Ultra) (Dinis, brief 15)",
   "started_by": "conductor.fringe@PrompTugal.dinis, at Dinis's word (brief 12)",
   "branch": "dev",
@@ -8,6 +8,7 @@
   "state": "active",
   "doing": "Hourly: ABP round 7; mapping new agents; Elastic reviews; how-it-flows",
   "done": [
+    "2026-11-12T01:44Z: Dinis: the Elastic password is disposable and the data not confidential: the scoped-key asks are dropped",
     "2026-11-11T23:57Z: round 11 (46 commits, 1 outside a grant, no enforced rule fired): Angelo's conductor's new storm-trace files mapped to its lane; its build.mjs line is the known shared-file hotspot",
     "2026-11-11T23:43Z: at Dinis's word, started swarm.1.dev (session_01Kw9UwFCZKpkLq9iapcyzSt) and swarm.1.designer (session_01Kw9UwCNvq4z94R3XVA2Lvm) under swarm.1, with their ABPs",
     "2026-11-11T23:32Z: the swarm runs design to swarm.1 (docs/handoffs/2026-11-11-swarm-runs-design.md), at Dinis's word",

@@ -1,9 +1,9 @@
 {
   "by": "conductor.fringe@PrompTugal.jose",
-  "updated": "2026-11-12T00:10Z",
+  "updated": "2026-11-12T02:08Z",
   "person": "jose",
   "role": "member",
-  "state": "on: conductor.fringe@PrompTugal.jose; hourly wake at :07 until Friday 13 November, 23:59 UTC; wake 00:10 (Thu 12 Nov): LinkedIn views rose from 1 to 22 between 23:09 and 23:38 UTC (traffic drains); tracker 5 contacted, 0 answered; views by channel since launch: whatsapp 160, linkedin 22, promptugal-news 6, organiser 0 (529 views in all)",
+  "state": "on: conductor.fringe@PrompTugal.jose; hourly wake at :07 until Friday 13 November, 23:59 UTC; wake 02:08 (Thu 12 Nov): quiet; brief 16's addendum (the swarm demo's agents work overnight) does not change Jose's night-hours question; tracker 5 contacted, 0 answered; views by channel since launch: whatsapp 161, linkedin 22, promptugal-news 6, organiser 0 (537 views in all)",
   "lane": "channels (SWARM.md): the posts and messages that point people to the site; a person sends, the conductor never posts or messages anyone",
   "doing": [
     "the home page proposal with design.1 and Dinis (work/drafts/jose/home-proposal.md); organiser answers on Luma"
@@ -34,7 +34,8 @@
     "wake 19:09: the lead's answers (18:13 UTC) passed to researcher.1: single Luma event pages at a person's pace are allowed; events by a named individual are listed as 'an independent organiser (named on the event page)'; both go through researcher.2",
     "19:13 (researcher.2): Side Events Guide IRL set to status unknown after Jose's data note (its Luma page was 404), so the home no longer shows it on now",
     "20:31 (researcher.1): final wake for today, closing summary in work/31-jose-today.md; no further wake",
-    "21:24 (design.4, 0ce6017): on the home, status unknown is never ON NOW and multi-day events show their dates; this matches the question in Jose's home proposal (the commit does not cite it)"
+    "21:24 (design.4, 0ce6017): on the home, status unknown is never ON NOW and multi-day events show their dates; this matches the question in Jose's home proposal (the commit does not cite it)",
+    "00:23 (design.4, 9602e1a): the home's counts line and Now tab now agree on 'on now'; this matches item 3 of Jose's home proposal (the commit does not cite it)"
   ],
   "next": [
     "watch /traffic/ for ?via=linkedin visits and report them to Jose",
@@ -42,6 +43,7 @@
   ],
   "asks": [
     "jose: take Block B of Thursday's read desk (work/53-thursday-read-desk.md: 8 events, 10:00 to 12:59 UTC)? Used only if Dinis has not decided Luma by 07:00 UTC. Open each link in your browser, write the time you looked in the seen column, or moved/cancelled/?; your conductor passes it to researcher.2 as seen_at. Tell me yes or no and I tell the lead.",
+    "jose: night hours? Dinis's account now wakes only 07:00 to 21:59 UTC (brief 16); each person decides for their own team. Say yes and I move my hourly wake to 07:00-21:59 UTC (until Friday 13 November); until then it stays hourly, day and night.",
     "Dinis: Jose proposes seven changes to the home page (work/drafts/jose/home-proposal.md), for you and design.1 to decide; the top one: in the evening (after 17:00 UTC) lead with what starts next and open on Tonight.",
     "Dinis: Eventbrite and Facebook: when an organiser's only page is there, may a person on the team read it and list the event as 'read by a person on the organiser's page', with the link? Today Just Boom! (22:00, Eventbrite) and Climate Fashion Lisbon 2026 (19:00, online, Facebook) were left off.",
     "jose: use work/drafts/pitch.md wherever someone asks what the site is.",

@@ -218,7 +218,6 @@ export function howItFlowsBody(esc) {
     ['You see it', 'on the site (/agentic-team/), in the Gravity universes, in Kibana (the Flows dashboards, Graph), in Neo4j Aura (the graph, loaded by neo4j.1) and Grafana Cloud, and next in Kibana APM traces once Dinis makes the APM key.'],
   ];
   const asks = [
-    ['Give Elastic scoped keys, not the shared superuser password', 'ELASTIC_CLOUD is in the environment every session in it shares; R8e only flags other agents, it cannot stop them. Make an API key per writer (elastic.1; architect.1) limited to swarm-* and elastic-submissions, and a read-only one for viewers. Best: put the Elastic credential only in a separate environment for those two sessions.'],
     ['Create an APM agent key', 'Kibana → Observability → APM → Settings → Agent keys (event:write). Set OTEL_EXPORTER_OTLP_ENDPOINT to the deployment\'s APM URL and OTEL_EXPORTER_OTLP_HEADERS to "Authorization=ApiKey <key>" in that environment. Every run then shows as a trace waterfall.'],
     ['Protect the branches in GitHub', 'main: only you merge. dev: no force-push, no deletion. Code owners on .claude/** and abp/** so policy changes need your review: today anyone who can push can change the hook.'],
     ['Say the word on signed overrides', 'security finding 38: an override counts only when signed by your person key or a conductor\'s key. Designed, not applied.'],

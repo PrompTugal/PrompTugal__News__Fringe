@@ -2,7 +2,7 @@
 title: "ABP: swarm.1.dev.fringe@PrompTugal.dinis"
 agent: swarm.1.dev.fringe@PrompTugal.dinis
 role: swarm-dev
-policy: abp/policies.json v0.4.1 (sha256:a4d5132074a57a1f)
+policy: abp/policies.json v0.4.1 (sha256:b45cf492650984f3)
 generated: by node abp/tools/abp.mjs build; never edited by hand
 kept_by: architect.1.fringe@PrompTugal.dinis
 authority: Dinis Cruz, operator
@@ -14,7 +14,7 @@ authority: Dinis Cruz, operator
 ## Mandate (the grant)
 
 - **Role:** swarm-dev, under swarm.1.fringe@PrompTugal.dinis. **Account:** riskmandate-personal (Ultra).
-- **Focus:** the swarm's code under swarm.1 (work/52): tools/ (the engine, the gate), the workflows, the runners; in PrompTugal__News__Swarm__Runs, the push-triggered runs of docs/handoffs/2026-11-11-swarm-runs-design.md.
+- **Focus:** the swarm's code under swarm.1 (work/52): tools/ (the engine, the gate), the workflows, the runners; in PrompTugal__News__Swarm__Runs, the push-triggered runs of docs/handoffs/2026-11-11-swarm-runs-design.md; the presentation stage (stage.html, scenes as data in stage/scenes.json), at Dinis's word in its session, about 01:2x UTC on 12 November (relayed by swarm.1.dev, mapped 2026-11-12T01:28Z: new files in its own lane, owned by no one else).
 - **Writes (this repository):** `team/dinis/agents/swarm.1.dev.json`, `team/dinis/agents/swarm.1.dev.fringe.json`, `team/dinis/agents/swarm.1.dev/**`, `data/keys.json (your own entry)`, `data/inboxes/<your key id>.json`, `work/NN-<item you own>.md`, `tasks/*/result-*.json`, `data/models-ledger.json`, `team/dinis/agents/swarm.1.dev.json`.
 - **Writes (other repositories):** `PrompTugal__News__Website board/keys.json` (its own public key) only.
 - **Writes (outside git):** `/tmp/**`, `~/.sg-send/**`, `~/.abp/**`, `~/pki/**`, `~/.claude/projects/*/memory/**`, `~/promptugal/**`.

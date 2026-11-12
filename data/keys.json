@@ -436,6 +436,38 @@
         "fingerprint": "sha256:34b41ce385701d90",
         "signing_fingerprint": "sha256:ff58f6f0f4de27c1"
       }
+    },
+    {
+      "id": "swarm.1.dev.fringe-dinis",
+      "agent": "swarm.1.dev.fringe@PrompTugal.dinis",
+      "role": "Swarm developer under swarm.1.fringe@PrompTugal.dinis (WS-215): the swarm code (PrompTugal__News__Swarm and __Swarm__Runs tools and docs, the run viewer).",
+      "how": "Made in its own session on 12 November 2026, 01:24 UTC (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab), at Dinis's word in that session. A session key: it ends with the session. Public half only.",
+      "added": "2026-11-12",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "label": "swarm.1.dev.fringe@PrompTugal.dinis",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAwjLfg+dbnOBU9CoB1glo\n1+QjebtXknm+Ld4Ey6tn5njMnhCemGM79ka9aLimjTla9KGNG0H2y0hBg7/ClToD\nsTljQagSV8c7eyQbDOidaEkuqr5F/tz+9qv+8L04ErC+wp5BTxq7wIaBFSWqD0hA\nDfPdrjby2GANEuocoi0lPdwLekvKOP/4T4DKl+PL8wzLP1kIRWuO7aIoarO5P8st\nsqS5zPq82zurC5Rin5+28QAVb+8HqhozcQGs4wx8M9a7C0yi1TOejcwOfKc8F/F4\nauUZxMX1GwuPXoJE32m2xmAjON+gyNFT5a2JaSScrK4rqJDumRTm5vpIJdIgWl/t\n93HnUwGdlvpx0+8PkqpfVrXlhkIks/zoT/6lYM0I9qu48cJNazQYjAusAZ26nBTx\njfzLiRFHFLxjkXBcqtAEnKfsd6341SLukzM7uEpm+ZvK9qZwUPFgRnEZcIwK+v7X\ndUQdr2MzIYL0gtbpuJ3qgObf+4ysj0fLbth5JmjHUJ9cVE2BRZxeJlBrSmQ+zNRy\n3sqYLRzdzx+WaG+M5THn3d2I4CrPIk6K7XQj5l+pDLbYD7hbe/V5jcK7JWkrZYwH\n6Y7ThCqH+ZCCWhECOFHM2Ca+OtO/XMgPoK5hCpASckIxrK/U5kqWkjzDWvsrCCk2\nf/oP+jqmqaSuA4uJWiCEBsUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE5tqWRTlgWgwVeLMvnNXpqvfg7zpJ\nWU9z9t67ndLiDr5SgFbcsuk/IZNac3Njx6bRozjtuas59+gbJ5CUVhf+kg==\n-----END PUBLIC KEY-----\n",
+        "fingerprint": "sha256:8c1dd6910f8e2498",
+        "signing_fingerprint": "sha256:7436510cadaff6ef"
+      }
+    },
+    {
+      "id": "swarm.1.designer.fringe-dinis",
+      "agent": "swarm.1.designer.fringe@PrompTugal.dinis",
+      "role": "Swarm designer under swarm.1.fringe@PrompTugal.dinis (WS-215): the swarm pages (swarm.promptugal.news: index.html, how.html, assets, css, pages).",
+      "how": "Made in its own session on 12 November 2026, 01:27 UTC (pki-agent.mjs keygen --session, the copy whose sha256 is fcb28a1c...02ab), at Dinis's word in that session. A session key: it ends with the session. Public half only.",
+      "added": "2026-11-12",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "label": "swarm.1.designer.fringe@PrompTugal.dinis",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAmJ0s1Do0yQaLI/a2IyNa\n+qr1EtnrGAPd8Xpgi5wj0ewUtV7LYXqoi0SBfjqli65hv4twH4Kf3kgdqfjHXuNr\nlM5ZPSVjvxff5EYwDZshaLVvCICT5g7HlenI/3NYpYrLMYPunS1id7f/bo4jnRyo\nG3cZoNbFJxWiFFQyp9+XGaZQWp6v0d5npQG9VgNDlxCsB9dJyk40RGD1/8++pQgd\nCgWa+In+qWn8GsBySCLPQYbIgV+50ct21QNYripMCbDoJZ7xTVCVWJ1FKQKklWED\nhfxKl5dYrHeJQM+O+bByzTs4rSvNqMPSVdY2QI8g3um5jH7s5r8doGzdkfHN0i5i\nD0n0pwtMO65yyy1wdcLDIxPVQnP3AEF/DBnVbdxI35sXVhNeNgBlyP8eZGNZf17J\nrb8DEChr4hr0nflnkV47XZHRPyWpVAOTVBUsRs2kreI4QBo5QFl2YtHoqIvpgAcY\nthEnTtXMnTXNfKWFDl6is6qLX1yig+KtyuKd8vcCUNZWbgTQArj0R8AYtob60elM\nMC4wPa8RaRNumHT3kVJ3ozj4zFrCZKcbePxQFcAJDrDlM1SJz4BFOrH9BiL2e5tZ\n6SUbUfQs1DSQsVYpcU53qIB+uL2JqUzouk4pXndpRMTdQ2t9NllNPlSS9odb77NT\nyh/VWut6i7ncbHdn4m2ai3kCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEwd+FoF/OFHrM3ASiWGV9P0IEJsCA\nkUQMiDbiz82cV3I4AC84lb/pnOlfymjIkon+f8cIu6Tag4Ot5TgYSsbJog==\n-----END PUBLIC KEY-----\n",
+        "fingerprint": "sha256:b94eaa5531478591",
+        "signing_fingerprint": "sha256:53c1445aed1bddb7"
+      }
     }
   ]
 }
