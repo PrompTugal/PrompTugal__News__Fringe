@@ -5,21 +5,21 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-13T18:38Z",
+ "generated": "2026-11-13T19:38Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 643,
-  "reads": 536,
-  "tabs": 329,
+  "views": 644,
+  "reads": 537,
+  "tabs": 330,
   "countries": 25,
   "shares": 195,
-  "bots": 2526,
+  "bots": 2532,
   "crawler_tabs": 1,
-  "agent_runs": 496,
-  "agent_runs_signed": 436
+  "agent_runs": 497,
+  "agent_runs_signed": 437
  },
  "by_hour": [
   [
@@ -212,7 +212,7 @@
   ],
   [
    "2026-11-13 18:00",
-   1
+   2
   ]
  ],
  "by_page": [
@@ -226,7 +226,7 @@
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
-   34
+   35
   ],
   [
    "/how/",
@@ -640,9 +640,9 @@
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
-   29,
+   30,
    13,
-   27
+   26
   ],
   [
    "/how/",
@@ -1244,7 +1244,7 @@
   ],
   [
    "United States",
-   49
+   50
   ],
   [
    "Germany",
@@ -1406,7 +1406,7 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   100
+   101
   ]
  ],
  "by_referrer": [
@@ -1442,14 +1442,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   604
+   605
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 6090,
+ "other_hosts_views": 6098,
  "by_via": [
   [
    "whatsapp",
@@ -1488,7 +1488,7 @@
   ],
   [
    "phone",
-   297
+   298
   ],
   [
    "tablet",
@@ -1517,12 +1517,12 @@
    30
   ],
   [
-   "conductor.fringe@PrompTugal.indi",
+   "observability.fringe@PrompTugal.dinis",
    29
   ],
   [
-   "observability.fringe@PrompTugal.dinis",
-   28
+   "conductor.fringe@PrompTugal.indi",
+   29
   ],
   [
    "design.3.fringe@PrompTugal.dinis",
@@ -1590,11 +1590,11 @@
   ]
  ],
  "flows": {
-  "tabs": 327,
+  "tabs": 328,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    222
+    223
    ],
    [
     "shared link (?via=)",
@@ -1612,7 +1612,7 @@
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
-    21
+    22
    ],
    [
     "/now/",
@@ -1674,7 +1674,7 @@
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
-    23
+    24
    ],
    [
     "/now/",
@@ -1834,7 +1834,7 @@
   "pages_per_tab": [
    [
     "1",
-    236
+    237
    ],
    [
     "2",
@@ -1932,7 +1932,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-roast-your-website/",
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ]
   ]
