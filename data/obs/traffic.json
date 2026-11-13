@@ -5,107 +5,23 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-12T18:26Z",
+ "generated": "2026-11-13T16:45Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 605,
-  "reads": 511,
-  "tabs": 298,
-  "countries": 23,
-  "shares": 194,
-  "bots": 2387,
+  "views": 640,
+  "reads": 533,
+  "tabs": 326,
+  "countries": 25,
+  "shares": 195,
+  "bots": 2517,
   "crawler_tabs": 1,
   "agent_runs": 494,
   "agent_runs_signed": 434
  },
  "by_hour": [
-  [
-   "2026-11-10 19:00",
-   0
-  ],
-  [
-   "2026-11-10 20:00",
-   0
-  ],
-  [
-   "2026-11-10 21:00",
-   0
-  ],
-  [
-   "2026-11-10 22:00",
-   0
-  ],
-  [
-   "2026-11-10 23:00",
-   0
-  ],
-  [
-   "2026-11-11 00:00",
-   0
-  ],
-  [
-   "2026-11-11 01:00",
-   0
-  ],
-  [
-   "2026-11-11 02:00",
-   0
-  ],
-  [
-   "2026-11-11 03:00",
-   0
-  ],
-  [
-   "2026-11-11 04:00",
-   0
-  ],
-  [
-   "2026-11-11 05:00",
-   0
-  ],
-  [
-   "2026-11-11 06:00",
-   0
-  ],
-  [
-   "2026-11-11 07:00",
-   0
-  ],
-  [
-   "2026-11-11 08:00",
-   0
-  ],
-  [
-   "2026-11-11 09:00",
-   0
-  ],
-  [
-   "2026-11-11 10:00",
-   0
-  ],
-  [
-   "2026-11-11 11:00",
-   11
-  ],
-  [
-   "2026-11-11 12:00",
-   35
-  ],
-  [
-   "2026-11-11 13:00",
-   139
-  ],
-  [
-   "2026-11-11 14:00",
-   63
-  ],
-  [
-   "2026-11-11 15:00",
-   67
-  ],
   [
    "2026-11-11 16:00",
    48
@@ -212,25 +128,109 @@
   ],
   [
    "2026-11-12 18:00",
+   10
+  ],
+  [
+   "2026-11-12 19:00",
    3
+  ],
+  [
+   "2026-11-12 20:00",
+   2
+  ],
+  [
+   "2026-11-12 21:00",
+   1
+  ],
+  [
+   "2026-11-12 22:00",
+   1
+  ],
+  [
+   "2026-11-12 23:00",
+   0
+  ],
+  [
+   "2026-11-13 00:00",
+   7
+  ],
+  [
+   "2026-11-13 01:00",
+   5
+  ],
+  [
+   "2026-11-13 02:00",
+   0
+  ],
+  [
+   "2026-11-13 03:00",
+   0
+  ],
+  [
+   "2026-11-13 04:00",
+   1
+  ],
+  [
+   "2026-11-13 05:00",
+   0
+  ],
+  [
+   "2026-11-13 06:00",
+   0
+  ],
+  [
+   "2026-11-13 07:00",
+   0
+  ],
+  [
+   "2026-11-13 08:00",
+   1
+  ],
+  [
+   "2026-11-13 09:00",
+   0
+  ],
+  [
+   "2026-11-13 10:00",
+   2
+  ],
+  [
+   "2026-11-13 11:00",
+   1
+  ],
+  [
+   "2026-11-13 12:00",
+   2
+  ],
+  [
+   "2026-11-13 13:00",
+   0
+  ],
+  [
+   "2026-11-13 14:00",
+   1
+  ],
+  [
+   "2026-11-13 15:00",
+   1
   ]
  ],
  "by_page": [
   [
    "/",
-   243
+   252
   ],
   [
    "/now/",
-   46
-  ],
-  [
-   "/how/",
-   24
+   47
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
-   21
+   32
+  ],
+  [
+   "/how/",
+   25
   ],
   [
    "/universe/",
@@ -254,10 +254,14 @@
   ],
   [
    "/organisers/",
-   9
+   10
   ],
   [
    "/graph/",
+   8
+  ],
+  [
+   "/e/2026-11-12-disconnect-2-connect/",
    8
   ],
   [
@@ -281,11 +285,11 @@
    5
   ],
   [
-   "/e/2026-11-11-stranded-networking-drinks-limited-seats/",
+   "/e/2026-11-12-the-founder-effect/",
    5
   ],
   [
-   "/e/2026-11-12-disconnect-2-connect/",
+   "/e/2026-11-11-stranded-networking-drinks-limited-seats/",
    5
   ],
   [
@@ -301,11 +305,11 @@
    4
   ],
   [
-   "/e/2026-11-12-the-founder-effect/",
+   "/e/2026-11-11-valois-allocator-residence/",
    4
   ],
   [
-   "/e/2026-11-11-valois-allocator-residence/",
+   "/e/2026-11-12-healthcare-re-imagined-by-ai/",
    4
   ],
   [
@@ -337,6 +341,10 @@
    3
   ],
   [
+   "/e/2026-11-12-lisbon-business-leaders-evening/",
+   3
+  ],
+  [
    "/e/2026-11-11-like-minded/",
    3
   ],
@@ -345,7 +353,7 @@
    3
   ],
   [
-   "/e/2026-11-12-healthcare-re-imagined-by-ai/",
+   "/e/2026-11-12-ufl-web-summit-after-party/",
    3
   ],
   [
@@ -394,10 +402,6 @@
   ],
   [
    "/e/2026-11-11-kuma-h2h-2/",
-   2
-  ],
-  [
-   "/e/2026-11-12-lisbon-business-leaders-evening/",
    2
   ],
   [
@@ -473,11 +477,15 @@
    2
   ],
   [
-   "/e/2026-11-12-ufl-web-summit-after-party/",
+   "/e/2026-11-12-get-down-at-the-dev-house/",
    2
   ],
   [
    "/e/2026-11-12-ptw-classroom-storytelling-game-by-pina/",
+   2
+  ],
+  [
+   "/e/2026-11-12-moon-summit-web-summit-closing-night/",
    2
   ],
   [
@@ -597,46 +605,50 @@
    1
   ],
   [
-   "/e/2026-11-12-get-down-at-the-dev-house/",
-   1
-  ],
-  [
-   "/e/2026-11-12-moon-summit-web-summit-closing-night/",
-   1
-  ],
-  [
    "/e/2026-11-12-closing-night-the-nest/",
    1
   ],
   [
    "/d/2026-11-12/",
    1
+  ],
+  [
+   "/e/2026-11-12-one-night-in-lisbon-with-replit/",
+   1
+  ],
+  [
+   "/o/valois-by-yorkseed/",
+   1
+  ],
+  [
+   "/e/2026-11-11-funders-founders-night-altair/",
+   1
   ]
  ],
  "reading": [
   [
    "/",
-   186,
-   47,
+   189,
+   46,
    14
   ],
   [
    "/now/",
-   39,
-   34,
+   40,
+   33,
    46
   ],
   [
-   "/how/",
-   22,
-   12,
-   24
+   "/e/2026-11-11-wet-summit-lisbon/",
+   27,
+   13,
+   27
   ],
   [
-   "/e/2026-11-11-wet-summit-lisbon/",
-   19,
+   "/how/",
+   23,
    13,
-   29
+   23
   ],
   [
    "/universe/",
@@ -657,16 +669,16 @@
    39
   ],
   [
+   "/organisers/",
+   10,
+   15,
+   23
+  ],
+  [
    "/traffic/",
    10,
    12,
    29
-  ],
-  [
-   "/organisers/",
-   9,
-   8,
-   17
   ],
   [
    "/programme/",
@@ -679,6 +691,12 @@
    7,
    12,
    29
+  ],
+  [
+   "/e/2026-11-12-disconnect-2-connect/",
+   7,
+   16,
+   14
   ],
   [
    "/e/2026-11-11-corporate-academy-of-tomorrow/",
@@ -705,12 +723,6 @@
    29
   ],
   [
-   "/e/2026-11-12-disconnect-2-connect/",
-   5,
-   10,
-   10
-  ],
-  [
    "/e/2026-11-11-founderlink-storm-summit-afternoon/",
    4,
    16,
@@ -727,6 +739,12 @@
    4,
    26,
    49
+  ],
+  [
+   "/e/2026-11-12-the-founder-effect/",
+   4,
+   19,
+   38
   ],
   [
    "/e/2026-11-11-valois-allocator-residence/",
@@ -771,10 +789,10 @@
    46
   ],
   [
-   "/e/2026-11-12-the-founder-effect/",
+   "/e/2026-11-12-lisbon-business-leaders-evening/",
    3,
-   22,
-   25
+   43,
+   20
   ],
   [
    "/e/2026-11-11-like-minded/",
@@ -951,6 +969,12 @@
    12
   ],
   [
+   "/e/2026-11-12-get-down-at-the-dev-house/",
+   2,
+   6,
+   38
+  ],
+  [
    "/e/2026-11-12-ufl-web-summit-after-party/",
    2,
    82,
@@ -1051,12 +1075,6 @@
    1,
    0,
    0
-  ],
-  [
-   "/e/2026-11-12-lisbon-business-leaders-evening/",
-   1,
-   122,
-   52
   ],
   [
    "/e/2026-11-11-demonightlx/",
@@ -1179,12 +1197,6 @@
    0
   ],
   [
-   "/e/2026-11-12-get-down-at-the-dev-house/",
-   1,
-   12,
-   76
-  ],
-  [
    "/e/2026-11-12-ptw-classroom-storytelling-game-by-pina/",
    1,
    11,
@@ -1207,20 +1219,32 @@
    1,
    15,
    25
+  ],
+  [
+   "/o/valois-by-yorkseed/",
+   1,
+   8,
+   60
+  ],
+  [
+   "/e/2026-11-11-funders-founders-night-altair/",
+   1,
+   6,
+   0
   ]
  ],
  "by_country": [
   [
    "Portugal",
-   385
+   393
   ],
   [
    "United Kingdom",
-   74
+   79
   ],
   [
    "United States",
-   42
+   48
   ],
   [
    "Germany",
@@ -1232,7 +1256,11 @@
   ],
   [
    "The Netherlands",
-   9
+   12
+  ],
+  [
+   "Spain",
+   10
   ],
   [
    "Italy",
@@ -1263,15 +1291,15 @@
    3
   ],
   [
+   "Singapore",
+   3
+  ],
+  [
    "Luxembourg",
    2
   ],
   [
    "Czechia",
-   2
-  ],
-  [
-   "Spain",
    2
   ],
   [
@@ -1295,18 +1323,22 @@
    1
   ],
   [
-   "Singapore",
+   "Pakistan",
    1
   ],
   [
-   "Pakistan",
+   "Finland",
+   1
+  ],
+  [
+   "Ukraine",
    1
   ]
  ],
  "by_city": [
   [
    "Lisbon, Portugal",
-   290
+   296
   ],
   [
    "Oliveira de Azemeis, Portugal",
@@ -1314,15 +1346,15 @@
   ],
   [
    "Woking, United Kingdom",
-   32
+   33
+  ],
+  [
+   "London, United Kingdom",
+   23
   ],
   [
    "Tallinn, Estonia",
    21
-  ],
-  [
-   "London, United Kingdom",
-   20
   ],
   [
    "Frankfurt am Main, Germany",
@@ -1334,10 +1366,22 @@
   ],
   [
    "Harrietsham, United Kingdom",
-   13
+   14
+  ],
+  [
+   "Madrid, Spain",
+   10
   ],
   [
    "Boardman, United States",
+   9
+  ],
+  [
+   "Ashburn, United States",
+   8
+  ],
+  [
+   "Amsterdam, The Netherlands",
    7
   ],
   [
@@ -1353,15 +1397,7 @@
    5
   ],
   [
-   "Amsterdam, The Netherlands",
-   5
-  ],
-  [
    "Bangkok, Thailand",
-   5
-  ],
-  [
-   "Ashburn, United States",
    5
   ],
   [
@@ -1370,13 +1406,13 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   93
+   99
   ]
  ],
  "by_referrer": [
   [
    "www.google.com",
-   16
+   25
   ],
   [
    "lnkd.in",
@@ -1387,29 +1423,37 @@
    4
   ],
   [
+   "www.facebook.com",
+   2
+  ],
+  [
    "org.telegram.messenger",
    1
   ],
   [
    "com.linkedin.android",
    1
+  ],
+  [
+   "m.facebook.com",
+   1
   ]
  ],
  "by_host": [
   [
    "lisbontechfringe.com",
-   566
+   601
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 5858,
+ "other_hosts_views": 6074,
  "by_via": [
   [
    "whatsapp",
-   162
+   163
   ],
   [
    "linkedin",
@@ -1422,8 +1466,8 @@
  ],
  "via_detail": {
   "whatsapp": {
-   "views": 162,
-   "tabs": 68,
+   "views": 163,
+   "tabs": 69,
    "countries": 9
   },
   "linkedin": {
@@ -1440,11 +1484,11 @@
  "by_screen": [
   [
    "desktop",
-   328
+   339
   ],
   [
    "phone",
-   272
+   296
   ],
   [
    "tablet",
@@ -1546,56 +1590,64 @@
   ]
  ],
  "flows": {
-  "tabs": 296,
+  "tabs": 324,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    203
+    219
    ],
    [
     "shared link (?via=)",
-    75
+    76
    ],
    [
     "from another site",
-    18
+    29
    ]
   ],
   "entry_pages": [
    [
     "/",
-    180
+    188
+   ],
+   [
+    "/e/2026-11-11-wet-summit-lisbon/",
+    19
    ],
    [
     "/now/",
     12
    ],
    [
-    "/e/2026-11-11-wet-summit-lisbon/",
+    "/universe/",
     11
    ],
    [
-    "/universe/",
-    11
+    "/e/2026-11-12-disconnect-2-connect/",
+    7
+   ],
+   [
+    "/how/",
+    6
    ],
    [
     "/dashboard/",
     5
    ],
    [
-    "/how/",
+    "/e/2026-11-12-the-founder-effect/",
     5
    ],
    [
-    "/e/2026-11-12-the-founder-effect/",
-    4
-   ],
-   [
-    "/e/2026-11-12-disconnect-2-connect/",
-    4
+    "/e/2026-11-12-lisbon-business-leaders-evening/",
+    3
    ],
    [
     "/programme/",
+    3
+   ],
+   [
+    "/e/2026-11-12-healthcare-re-imagined-by-ai/",
     3
    ],
    [
@@ -1611,30 +1663,22 @@
     2
    ],
    [
-    "/e/2026-11-12-lisbon-business-leaders-evening/",
-    2
-   ],
-   [
     "/e/2026-11-11-ai-for-business-applied-ai-pitch-party/",
-    2
-   ],
-   [
-    "/e/2026-11-11-open-mercato-night/",
     2
    ]
   ],
   "exit_pages": [
    [
     "/",
-    134
+    142
+   ],
+   [
+    "/e/2026-11-11-wet-summit-lisbon/",
+    21
    ],
    [
     "/now/",
     17
-   ],
-   [
-    "/e/2026-11-11-wet-summit-lisbon/",
-    13
    ],
    [
     "/universe/",
@@ -1646,18 +1690,18 @@
    ],
    [
     "/how/",
-    7
+    8
    ],
    [
     "/e/2026-11-12-disconnect-2-connect/",
+    8
+   ],
+   [
+    "/e/2026-11-12-the-founder-effect/",
     5
    ],
    [
     "/e/2026-11-11-founderlink-storm-summit-afternoon/",
-    4
-   ],
-   [
-    "/e/2026-11-12-the-founder-effect/",
     4
    ],
    [
@@ -1681,14 +1725,14 @@
     3
    ],
    [
-    "/e/2026-11-11-ptw-classroom-deep-work-wexio/",
-    2
+    "/e/2026-11-12-ufl-web-summit-after-party/",
+    3
    ]
   ],
   "steps": [
    [
     "/ → /now/",
-    21
+    22
    ],
    [
     "/ → /programme/",
@@ -1790,7 +1834,7 @@
   "pages_per_tab": [
    [
     "1",
-    208
+    233
    ],
    [
     "2",
@@ -1798,22 +1842,22 @@
    ],
    [
     "3",
-    16
+    18
    ],
    [
     "4",
-    6
+    7
    ],
    [
     "5+",
     23
    ]
   ],
-  "bounce_rate": 70,
+  "bounce_rate": 72,
   "via_reached": [
    [
     "whatsapp: /",
-    68
+    69
    ],
    [
     "whatsapp: /now/",
@@ -1876,11 +1920,11 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
+    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-cisco-automation-to-autonomy/",
+    "whatsapp: /e/2026-11-11-aubay-the-next-move/",
     1
    ],
    [
@@ -1888,7 +1932,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
+    "whatsapp: /e/2026-11-11-roast-your-website/",
     1
    ]
   ]
@@ -1919,7 +1963,7 @@
   "towns": [
    {
     "name": "Lisbon, Portugal",
-    "views": 290,
+    "views": 296,
     "lat": 38.7,
     "lon": -9.1
    },
@@ -1931,21 +1975,21 @@
    },
    {
     "name": "Woking, United Kingdom",
-    "views": 32,
+    "views": 33,
     "lat": 51.3,
     "lon": -0.6
+   },
+   {
+    "name": "London, United Kingdom",
+    "views": 23,
+    "lat": 51.5,
+    "lon": -0.1
    },
    {
     "name": "Tallinn, Estonia",
     "views": 21,
     "lat": 59.4,
     "lon": 24.8
-   },
-   {
-    "name": "London, United Kingdom",
-    "views": 20,
-    "lat": 51.5,
-    "lon": -0.1
    },
    {
     "name": "Frankfurt am Main, Germany",
@@ -1961,15 +2005,33 @@
    },
    {
     "name": "Harrietsham, United Kingdom",
-    "views": 13,
+    "views": 14,
     "lat": 51.2,
     "lon": 0.6
    },
    {
+    "name": "Madrid, Spain",
+    "views": 10,
+    "lat": 40.4,
+    "lon": -3.7
+   },
+   {
     "name": "Boardman, United States",
-    "views": 7,
+    "views": 9,
     "lat": 45.8,
     "lon": -119.7
+   },
+   {
+    "name": "Ashburn, United States",
+    "views": 8,
+    "lat": 39.0,
+    "lon": -77.5
+   },
+   {
+    "name": "Amsterdam, The Netherlands",
+    "views": 7,
+    "lat": 52.3,
+    "lon": 4.9
    },
    {
     "name": "Reston, United States",
@@ -1990,22 +2052,10 @@
     "lon": 35.7
    },
    {
-    "name": "Amsterdam, The Netherlands",
-    "views": 5,
-    "lat": 52.4,
-    "lon": 4.9
-   },
-   {
     "name": "Bangkok, Thailand",
     "views": 5,
     "lat": 13.8,
     "lon": 100.5
-   },
-   {
-    "name": "Ashburn, United States",
-    "views": 5,
-    "lat": 39.0,
-    "lon": -77.5
    },
    {
     "name": "Oak Hill, United States",
@@ -2077,7 +2127,15 @@
    2
   ],
   [
+   "/e/2026-11-12-healthcare-re-imagined-by-ai/ → luma.com/uomuj3gw",
+   2
+  ],
+  [
    "/e/2026-11-13-is-your-ai-startup-ready-for-europe-the-eu-ai-/ → luma.com/buqma11b",
+   2
+  ],
+  [
+   "/e/2026-11-12-disconnect-2-connect/ → luma.com/f9rois6p",
    2
   ],
   [
@@ -2126,14 +2184,6 @@
   ],
   [
    "/e/2026-11-11-frontier-founders-vcs-soiree/ → luma.com/tjed8ali",
-   1
-  ],
-  [
-   "/e/2026-11-11-founderlink-storm-summit-evening/ → luma.com/stormsummit7pm",
-   1
-  ],
-  [
-   "/e/2026-11-11-yorkseed-investor-pitch/ → luma.com/bmu7tyec",
    1
   ]
  ]

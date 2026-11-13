@@ -1,12 +1,12 @@
 {
   "agent": "observability.fringe@PrompTugal.dinis",
   "by": "observability.fringe@PrompTugal.dinis",
-  "updated": "2026-11-12T17:38Z",
+  "updated": "2026-11-13T16:46Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), about 11:45 UTC, at Dinis's word (brief 2)",
   "session": "session_01Kw9UwDEe3BXvda7DY68R8B",
   "wake": "hourly at :37 UTC, 07:00 to 21:59 UTC (night hours, brief 16), until Friday 13 November; a 15-minute drain loop inside each wake",
   "branch": "dev",
-  "state": "running: live sender yes; 15-minute drain loop; last drain 17:38 UTC: all time 601 reader views, 294 visits, 23 countries, 194 via shared links",
+  "state": "running: live sender yes; hourly drain; last drain 16:45 UTC: all time 640 reader views, 326 visits, 25 countries, 195 via shared links",
   "doing": [
     "work/21: drains every 15 minutes; /traffic/ with the map, flows, outbound clicks and the design lab"
   ],
@@ -25,21 +25,18 @@
     "Inbox: the architect's note on the old origin is handled (the drain counts admin/site.json's origin, fringe.promptugal.news and lisbontechfringe.com); Dinis keeps the place lookup (finding 20, 14:28 UTC)",
     "15:27 UTC: abp whoami run at the lead's ask (finding 28); the ABP grant now lists this status file",
     "21:23 UTC: abp whoami re-run at the lead's ask (finding 44)",
-    "12 November 07:37 UTC: first wake after the night hours (brief 16); the lanes held the night's events and were drained in one go, nothing lost"
+    "12 November 07:37 UTC: first wake after the night hours (brief 16); the lanes held the night's events and were drained in one go, nothing lost",
+    "12 November 18:12 to 13 November 15:40 UTC: on hold (HOLD.md, Dinis); drained the vaults hourly as the hold allowed, pushed nothing. 13 November 16:45 UTC: the hold lifted at Dinis's word (bc2db2a); counts published again"
   ],
   "next": [
     "Each wake: drain loop, /traffic/, status; the first outbound-click and design-lab numbers to Dinis",
     "Feed outreach new numbers when shares move"
   ],
   "asks": [
-    "conductor.fringe@PrompTugal.dinis: the vault credentials are sealed to your key in admin/obs/sealed/lead.json; if this session's container is recycled the drain stops until you open it"
+    "conductor.fringe@PrompTugal.dinis: the vault credentials are sealed to your key in admin/obs/sealed/lead.json; if this session's container is recycled the drain stops until you open it",
+    "Dinis: my hourly wake ends after Friday 13 November 23:59 UTC. Say if the drain should keep running after that, so late page views are not left in the lanes"
   ],
   "wakes": [
-    {
-      "started": "2026-11-11T12:37Z",
-      "outcome": "ok",
-      "line": "loop drains 12:09/12:24/12:39; all time 36 reader views, 3 countries, 6 agent runs"
-    },
     {
       "started": "2026-11-11T13:37Z",
       "outcome": "ok",
@@ -154,6 +151,11 @@
       "started": "2026-11-12T17:37Z",
       "outcome": "ok",
       "line": "all time 601 reader views, 23 countries"
+    },
+    {
+      "started": "2026-11-13T16:44Z",
+      "outcome": "ok",
+      "line": "hold lifted; all time 640 reader views, 25 countries"
     }
   ]
 }
