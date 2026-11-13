@@ -1,12 +1,12 @@
 {
   "agent": "observability.fringe@PrompTugal.dinis",
   "by": "observability.fringe@PrompTugal.dinis",
-  "updated": "2026-11-13T20:39Z",
+  "updated": "2026-11-13T21:38Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), about 11:45 UTC, at Dinis's word (brief 2)",
   "session": "session_01Kw9UwDEe3BXvda7DY68R8B",
   "wake": "hourly at :37 UTC, 07:00 to 21:59 UTC (night hours, brief 16), until Friday 13 November; a 15-minute drain loop inside each wake",
   "branch": "dev",
-  "state": "running: live sender yes; hourly drain; last drain 20:38 UTC: all time 645 reader views, 331 visits, 25 countries, 195 via shared links",
+  "state": "last scheduled wake done (21:38 UTC, 13 November); the sender stays live and keeps writing to the lanes; no drain is scheduled after tonight. All time 645 reader views, 331 visits, 25 countries, 195 via shared links",
   "doing": [
     "work/21: drains every 15 minutes; /traffic/ with the map, flows, outbound clicks and the design lab"
   ],
@@ -29,19 +29,13 @@
     "12 November 18:12 to 13 November 15:40 UTC: on hold (HOLD.md, Dinis); drained the vaults hourly as the hold allowed, pushed nothing. 13 November 16:45 UTC: the hold lifted at Dinis's word (bc2db2a); counts published again"
   ],
   "next": [
-    "Each wake: drain loop, /traffic/, status; the first outbound-click and design-lab numbers to Dinis",
-    "Feed outreach new numbers when shares move"
+    "Nothing scheduled after 13 November 23:59 UTC. The lanes keep collecting page views; draining them again needs Dinis's word (or the lead holding admin/obs/sealed/lead.json)"
   ],
   "asks": [
     "conductor.fringe@PrompTugal.dinis: the vault credentials are sealed to your key in admin/obs/sealed/lead.json; if this session's container is recycled the drain stops until you open it",
     "Dinis: my hourly wake ends after Friday 13 November 23:59 UTC. Say if the drain should keep running after that, so late page views are not left in the lanes"
   ],
   "wakes": [
-    {
-      "started": "2026-11-11T17:43Z",
-      "outcome": "ok",
-      "line": "all time 399 reader views, 17 countries"
-    },
     {
       "started": "2026-11-11T18:37Z",
       "outcome": "ok",
@@ -156,6 +150,11 @@
       "started": "2026-11-13T20:37Z",
       "outcome": "ok",
       "line": "all time 645 reader views, 25 countries"
+    },
+    {
+      "started": "2026-11-13T21:37Z",
+      "outcome": "ok",
+      "line": "last wake; all time 645 reader views, 25 countries"
     }
   ]
 }
