@@ -5,31 +5,23 @@
   "lisbontechfringe.com",
   "www.lisbontechfringe.com"
  ],
- "generated": "2026-11-13T16:45Z",
+ "generated": "2026-11-13T17:38Z",
  "public_vault": "p6x0mm4m",
  "city_min": 5,
  "by": "observability.fringe@PrompTugal.dinis",
  "about": "Counts only, drained from the private vault by admin/tools/obs/obs_drain.py: no raw event, IP, tab id, time zone or language. Readers exclude declared bots and automation (counted in totals.bots).",
  "totals": {
-  "views": 640,
-  "reads": 533,
-  "tabs": 326,
+  "views": 642,
+  "reads": 535,
+  "tabs": 328,
   "countries": 25,
   "shares": 195,
-  "bots": 2517,
+  "bots": 2522,
   "crawler_tabs": 1,
-  "agent_runs": 494,
-  "agent_runs_signed": 434
+  "agent_runs": 495,
+  "agent_runs_signed": 435
  },
  "by_hour": [
-  [
-   "2026-11-11 16:00",
-   48
-  ],
-  [
-   "2026-11-11 17:00",
-   42
-  ],
   [
    "2026-11-11 18:00",
    41
@@ -213,6 +205,14 @@
   [
    "2026-11-13 15:00",
    1
+  ],
+  [
+   "2026-11-13 16:00",
+   0
+  ],
+  [
+   "2026-11-13 17:00",
+   2
   ]
  ],
  "by_page": [
@@ -226,7 +226,7 @@
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
-   32
+   34
   ],
   [
    "/how/",
@@ -640,7 +640,7 @@
   ],
   [
    "/e/2026-11-11-wet-summit-lisbon/",
-   27,
+   29,
    13,
    27
   ],
@@ -1244,7 +1244,7 @@
   ],
   [
    "United States",
-   48
+   49
   ],
   [
    "Germany",
@@ -1260,7 +1260,7 @@
   ],
   [
    "Spain",
-   10
+   11
   ],
   [
    "Italy",
@@ -1370,7 +1370,7 @@
   ],
   [
    "Madrid, Spain",
-   10
+   11
   ],
   [
    "Boardman, United States",
@@ -1406,7 +1406,7 @@
   ],
   [
    "(places under 5 views, in their country above)",
-   99
+   100
   ]
  ],
  "by_referrer": [
@@ -1442,14 +1442,14 @@
  "by_host": [
   [
    "lisbontechfringe.com",
-   601
+   603
   ],
   [
    "fringe.promptugal.news",
    39
   ]
  ],
- "other_hosts_views": 6074,
+ "other_hosts_views": 6082,
  "by_via": [
   [
    "whatsapp",
@@ -1484,11 +1484,11 @@
  "by_screen": [
   [
    "desktop",
-   339
+   340
   ],
   [
    "phone",
-   296
+   297
   ],
   [
    "tablet",
@@ -1530,7 +1530,7 @@
   ],
   [
    "observability.fringe@PrompTugal.dinis",
-   26
+   27
   ],
   [
    "architect.1.fringe@PrompTugal.dinis",
@@ -1590,11 +1590,11 @@
   ]
  ],
  "flows": {
-  "tabs": 324,
+  "tabs": 326,
   "arrived": [
    [
     "no referrer (an app, typed or bookmarked)",
-    219
+    221
    ],
    [
     "shared link (?via=)",
@@ -1612,7 +1612,7 @@
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
-    19
+    21
    ],
    [
     "/now/",
@@ -1674,7 +1674,7 @@
    ],
    [
     "/e/2026-11-11-wet-summit-lisbon/",
-    21
+    23
    ],
    [
     "/now/",
@@ -1834,7 +1834,7 @@
   "pages_per_tab": [
    [
     "1",
-    233
+    235
    ],
    [
     "2",
@@ -1932,7 +1932,7 @@
     1
    ],
    [
-    "whatsapp: /e/2026-11-11-roast-your-website/",
+    "whatsapp: /e/2026-11-11-corporate-academy-of-tomorrow/",
     1
    ]
   ]
@@ -2011,7 +2011,7 @@
    },
    {
     "name": "Madrid, Spain",
-    "views": 10,
+    "views": 11,
     "lat": 40.4,
     "lon": -3.7
    },

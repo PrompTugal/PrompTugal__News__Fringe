@@ -1,12 +1,12 @@
 {
   "agent": "observability.fringe@PrompTugal.dinis",
   "by": "observability.fringe@PrompTugal.dinis",
-  "updated": "2026-11-13T16:46Z",
+  "updated": "2026-11-13T17:38Z",
   "started_by": "conductor.fringe@PrompTugal.dinis (session_01Kw9UwCFpT9ihNBcQFxkomq), about 11:45 UTC, at Dinis's word (brief 2)",
   "session": "session_01Kw9UwDEe3BXvda7DY68R8B",
   "wake": "hourly at :37 UTC, 07:00 to 21:59 UTC (night hours, brief 16), until Friday 13 November; a 15-minute drain loop inside each wake",
   "branch": "dev",
-  "state": "running: live sender yes; hourly drain; last drain 16:45 UTC: all time 640 reader views, 326 visits, 25 countries, 195 via shared links",
+  "state": "running: live sender yes; hourly drain; last drain 17:38 UTC: all time 642 reader views, 328 visits, 25 countries, 195 via shared links",
   "doing": [
     "work/21: drains every 15 minutes; /traffic/ with the map, flows, outbound clicks and the design lab"
   ],
@@ -37,11 +37,6 @@
     "Dinis: my hourly wake ends after Friday 13 November 23:59 UTC. Say if the drain should keep running after that, so late page views are not left in the lanes"
   ],
   "wakes": [
-    {
-      "started": "2026-11-11T13:37Z",
-      "outcome": "ok",
-      "line": "all time 119 reader views, 10 countries; 13:00 hour busiest"
-    },
     {
       "started": "2026-11-11T14:37Z",
       "outcome": "ok",
@@ -156,6 +151,11 @@
       "started": "2026-11-13T16:44Z",
       "outcome": "ok",
       "line": "hold lifted; all time 640 reader views, 25 countries"
+    },
+    {
+      "started": "2026-11-13T17:37Z",
+      "outcome": "ok",
+      "line": "all time 642 reader views, 25 countries"
     }
   ]
 }
