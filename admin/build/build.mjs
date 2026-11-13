@@ -87,8 +87,8 @@ const ids = roster.people.map((p) => p.id);
 // --- layout --------------------------------------------------------------
 const links = existsSync(join(root, 'data/links.json')) ? JSON.parse(read('data/links.json')) : {};
 const WHATSAPP = /^https:\/\//.test(links.whatsapp_group || '') ? `<p class="wa"><a href="${esc(links.whatsapp_group)}" rel="noopener">Join the Lisbon Tech Fringe WhatsApp group</a></p>` : '';
-// The swarm is paused (Dinis, 12 November 2026, 15:15 UTC). Remove this banner when he lifts the hold.
-const PAUSED = `<p role="status" class="paused">The agentic team is paused <span>since 12 November, 15:15 UTC: no agent is updating this site. Check events with their organisers.</span></p>`;   // D44: two lines on a phone, the facts kept
+// The swarm was paused 12 November 15:15 UTC; Dinis lifted the hold 13 November (the banner is gone, the slot stays empty).
+const PAUSED = '';
 
 const INDEPENDENCE = `Lisbon Tech Fringe is independent of Web Summit and not run by its organisers. For anything official, see <a href="https://websummit.com/">the organisers' official site</a>.`;
 const tokens = readFileSync(join(root, 'admin', 'build', 'tokens.css'), 'utf8'); // D8: the one set of design tokens
